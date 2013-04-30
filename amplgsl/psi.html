@@ -1,0 +1,177 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Psi (Digamma) Function &mdash; AMPL Modeling Language for Mathematical Programming</title>
+    
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '20121105',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="AMPL Modeling Language for Mathematical Programming" href="../index.html" />
+    <link rel="up" title="Special Functions" href="special.html" />
+    <link rel="next" title="Synchrotron Functions" href="synchrotron.html" />
+    <link rel="prev" title="Power Function" href="pow.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="synchrotron.html" title="Synchrotron Functions"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="pow.html" title="Power Function"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">AMPL</a> &raquo;</li>
+          <li><a href="index.html" >AMPL bindings for the GNU Scientific Library</a> &raquo;</li>
+          <li><a href="special.html" accesskey="U">Special Functions</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Psi (Digamma) Function</a><ul>
+<li><a class="reference internal" href="#digamma-function">Digamma Function</a></li>
+<li><a class="reference internal" href="#trigamma-function">Trigamma Function</a></li>
+<li><a class="reference internal" href="#polygamma-function">Polygamma Function</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="pow.html"
+                        title="previous chapter">Power Function</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="synchrotron.html"
+                        title="next chapter">Synchrotron Functions</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="psi-digamma-function">
+<h1>Psi (Digamma) Function<a class="headerlink" href="#psi-digamma-function" title="Permalink to this headline">¶</a></h1>
+<p>The polygamma functions of order <span class="math">\(n\)</span> are defined by</p>
+<div class="math">
+\[\psi^{(n)}(x) = (d/dx)^n \psi(x) = (d/dx)^{n+1} \log(\Gamma(x))\]</div>
+<p>where <span class="math">\(\psi(x) = \Gamma'(x)/\Gamma(x)\)</span> is known as the digamma function.</p>
+<div class="section" id="digamma-function">
+<span id="index-0"></span><h2>Digamma Function<a class="headerlink" href="#digamma-function" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="gsl_sf_psi_int">
+<tt class="descname">gsl_sf_psi_int</tt><big>(</big><em>n</em><big>)</big><a class="headerlink" href="#gsl_sf_psi_int" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the <span class="target" id="index-1"></span>digamma function <span class="math">\(\psi(n)\)</span> for positive
+integer <span class="math">\(n\)</span>. The digamma function is also called the Psi function.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="gsl_sf_psi">
+<tt class="descname">gsl_sf_psi</tt><big>(</big><em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_psi" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the digamma function <span class="math">\(\psi(x)\)</span> for general
+<span class="math">\(x, x \ne 0\)</span>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="gsl_sf_psi_1piy">
+<tt class="descname">gsl_sf_psi_1piy</tt><big>(</big><em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_psi_1piy" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the real part of the digamma function on
+the line <span class="math">\(1+i y, \operatorname{Re}[\psi(1 + i y)]\)</span>.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="trigamma-function">
+<h2>Trigamma Function<a class="headerlink" href="#trigamma-function" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="gsl_sf_psi_1_int">
+<tt class="descname">gsl_sf_psi_1_int</tt><big>(</big><em>n</em><big>)</big><a class="headerlink" href="#gsl_sf_psi_1_int" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the <span class="target" id="index-2"></span>Trigamma function <span class="math">\(\psi'(n)\)</span> for
+positive integer <span class="math">\(n\)</span>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="gsl_sf_psi_1">
+<tt class="descname">gsl_sf_psi_1</tt><big>(</big><em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_psi_1" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the Trigamma function <span class="math">\(\psi'(x)\)</span> for general <span class="math">\(x\)</span>.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="polygamma-function">
+<h2>Polygamma Function<a class="headerlink" href="#polygamma-function" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="gsl_sf_psi_n">
+<tt class="descname">gsl_sf_psi_n</tt><big>(</big><em>n</em>, <em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_psi_n" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the polygamma function <span class="math">\(\psi^{(n)}(x)\)</span> for
+<span class="math">\(n \geq 0, x &gt; 0\)</span>.</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="synchrotron.html" title="Synchrotron Functions"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="pow.html" title="Power Function"
+             >previous</a> |</li>
+        <li><a href="../index.html">AMPL</a> &raquo;</li>
+          <li><a href="index.html" >AMPL bindings for the GNU Scientific Library</a> &raquo;</li>
+          <li><a href="special.html" >Special Functions</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012 AMPL Optimization, Inc.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

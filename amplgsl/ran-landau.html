@@ -1,0 +1,135 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>The Landau Distribution &mdash; AMPL Modeling Language for Mathematical Programming</title>
+    
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '20121105',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="AMPL Modeling Language for Mathematical Programming" href="../index.html" />
+    <link rel="up" title="Random Number Distributions" href="randist.html" />
+    <link rel="next" title="The Levy alpha-Stable Distribution" href="ran-levy.html" />
+    <link rel="prev" title="The Rayleigh Tail Distribution" href="ran-rayleigh-tail.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="ran-levy.html" title="The Levy alpha-Stable Distribution"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="ran-rayleigh-tail.html" title="The Rayleigh Tail Distribution"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">AMPL</a> &raquo;</li>
+          <li><a href="index.html" >AMPL bindings for the GNU Scientific Library</a> &raquo;</li>
+          <li><a href="randist.html" accesskey="U">Random Number Distributions</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="ran-rayleigh-tail.html"
+                        title="previous chapter">The Rayleigh Tail Distribution</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="ran-levy.html"
+                        title="next chapter">The Levy alpha-Stable Distribution</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="the-landau-distribution">
+<h1>The Landau Distribution<a class="headerlink" href="#the-landau-distribution" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="gsl_ran_landau">
+<tt class="descname">gsl_ran_landau</tt><big>(</big><big>)</big><a class="headerlink" href="#gsl_ran_landau" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function returns a random variate from the <span class="target" id="index-0"></span>Landau
+distribution. The probability distribution for Landau random
+variates is defined analytically by the complex integral,</p>
+<div class="math">
+\[p(x) = (1/(2 \pi i))
+  \int_{c-i\infty}^{c+i\infty} \exp(s \log(s) + x s) ds\]</div>
+<p>For numerical purposes it is more convenient to use the following
+equivalent form of the integral,</p>
+<div class="math">
+\[p(x) = (1/\pi) \int_0^\infty \exp(-t \log(t) - x t) \sin(\pi t) dt.\]</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="gsl_ran_landau_pdf">
+<tt class="descname">gsl_ran_landau_pdf</tt><big>(</big><em>x</em><big>)</big><a class="headerlink" href="#gsl_ran_landau_pdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function computes the probability density <span class="math">\(p(x)\)</span> at <span class="math">\(x\)</span> for the
+Landau distribution using an approximation to the formula given above.</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="ran-levy.html" title="The Levy alpha-Stable Distribution"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="ran-rayleigh-tail.html" title="The Rayleigh Tail Distribution"
+             >previous</a> |</li>
+        <li><a href="../index.html">AMPL</a> &raquo;</li>
+          <li><a href="index.html" >AMPL bindings for the GNU Scientific Library</a> &raquo;</li>
+          <li><a href="randist.html" >Random Number Distributions</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012 AMPL Optimization, Inc.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

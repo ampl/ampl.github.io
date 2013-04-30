@@ -1,0 +1,29 @@
+
+
+
+The Poisson Distribution
+========================
+   
+.. function:: gsl_ran_poisson(mu)
+
+ This function returns a random variate from the `Poisson
+ distribution`:index: with mean ``mu``. The probability distribution
+ for Poisson variates is,
+
+ .. math::
+   p(k) = {\mu^k \over k!} \exp(-\mu)
+
+ for :math:`k \geq 0`.
+   
+.. function:: gsl_ran_poisson_pdf(k, mu)
+
+ This function computes the probability :math:`p(k)` of obtaining :math:`k` from a
+ Poisson distribution with mean ``mu``, using the formula given above.
+   
+.. function:: gsl_cdf_poisson_P(k, mu)
+   
+.. function:: gsl_cdf_poisson_Q(k, mu)
+
+ These functions compute the cumulative distribution functions
+ :math:`P(k), Q(k)` for the Poisson distribution with parameter ``mu``.
+   

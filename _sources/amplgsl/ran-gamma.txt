@@ -1,0 +1,44 @@
+
+
+
+The Gamma Distribution
+======================
+   
+.. function:: gsl_ran_gamma(a, b)
+
+ This function returns a random variate from the `gamma
+ distribution`:index:. The distribution function is,
+
+ .. math::
+   p(x) dx = {1 \over \Gamma(a) b^a} x^{a-1} e^{-x/b} dx
+
+ for :math:`x > 0`.
+
+ The gamma distribution with an integer parameter ``a`` is known as
+ the Erlang distribution.
+
+ The variates are computed using the Marsaglia-Tsang fast gamma method.
+   
+.. function:: gsl_ran_gamma_knuth(a, b)
+
+ This function returns a gamma variate using the algorithms from Knuth
+ (vol 2).
+   
+.. function:: gsl_ran_gamma_pdf(x, a, b)
+
+ This function computes the probability density :math:`p(x)` at :math:`x` for a
+ gamma distribution with parameters ``a`` and ``b``, using the formula
+ given above.
+   
+.. function:: gsl_cdf_gamma_P(x, a, b)
+   
+.. function:: gsl_cdf_gamma_Q(x, a, b)
+   
+.. function:: gsl_cdf_gamma_Pinv(P, a, b)
+   
+.. function:: gsl_cdf_gamma_Qinv(Q, a, b)
+
+ These functions compute the cumulative distribution functions
+ :math:`P(x), Q(x)` and their inverses for the gamma distribution with
+ parameters ``a`` and ``b``.
+   

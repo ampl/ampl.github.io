@@ -1,0 +1,141 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Database and spreadsheet connection guide &mdash; AMPL Modeling Language for Mathematical Programming</title>
+    
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '20121105',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="AMPL Modeling Language for Mathematical Programming" href="../index.html" />
+    <link rel="next" title="Connecting AMPL to MySQL" href="mysql.html" />
+    <link rel="prev" title="History" href="../amplgsl/history.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="mysql.html" title="Connecting AMPL to MySQL"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../amplgsl/history.html" title="History"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">AMPL</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../amplgsl/history.html"
+                        title="previous chapter">History</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="mysql.html"
+                        title="next chapter">Connecting AMPL to MySQL</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="database-and-spreadsheet-connection-guide">
+<h1>Database and spreadsheet connection guide<a class="headerlink" href="#database-and-spreadsheet-connection-guide" title="Permalink to this headline">¶</a></h1>
+<blockquote class="epigraph">
+<div><p>The Guide is definitive. Reality is frequently inaccurate.</p>
+<p class="attribution">&mdash;Douglas Adams</p>
+</div></blockquote>
+<p>AMPL&#8217;s <a class="reference external" href="http://www.ampl.com/NEW/tables.html">relational database facility</a>
+provides a convenient mechanism for accessing data in spreadsheets and
+databases. A flexible <tt class="docutils literal"><span class="pre">table</span></tt> declaration defines correspondences between
+sets, parameters, variables, and expressions in AMPL models and external
+tables managed by database systems or spreadsheet applications.
+The <tt class="docutils literal"><span class="pre">read</span> <span class="pre">table</span></tt> and <tt class="docutils literal"><span class="pre">write</span> <span class="pre">table</span></tt> commands use these correspondences to
+import data values into AMPL and to export data and solution values from
+AMPL.</p>
+<p>AMPL can connect to external data sources through a standard <a class="reference external" href="http://en.wikipedia.org/wiki/ODBC">Open Database
+Connectivity (ODBC)</a> interface.
+This requires an ODBC driver for the type of data source you are using.
+For example if you want to connect to an Oracle database, you should have
+an <a class="reference external" href="http://www.oracle.com/technetwork/database/windows/index-098976.html">Oracle ODBC driver</a>
+installed.</p>
+<p>There are ODBC drivers for most database management systems (DBMS) and some
+non-DBMS data sources such as Microsoft Excel and even CSV files.</p>
+<p>This document will guide you through the set up necessary to connect AMPL
+to one of the following database systems:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="mysql.html">Connecting AMPL to MySQL</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="mysql.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mysql.html#usage">Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mysql.html#sql-statements">SQL statements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mysql.html#troubleshooting">Troubleshooting</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="mysql.html" title="Connecting AMPL to MySQL"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../amplgsl/history.html" title="History"
+             >previous</a> |</li>
+        <li><a href="../index.html">AMPL</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012 AMPL Optimization, Inc.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

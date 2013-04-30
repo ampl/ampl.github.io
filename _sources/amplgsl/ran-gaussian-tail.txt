@@ -1,0 +1,40 @@
+
+
+
+The Gaussian Tail Distribution
+==============================
+   
+.. function:: gsl_ran_gaussian_tail(a, sigma)
+
+ This function provides random variates from the upper tail of a
+ Gaussian distribution with standard deviation ``sigma``. The values
+ returned are larger than the lower limit ``a``, which must be positive.
+ The method is based on Marsaglia's famous rectangle-wedge-tail
+ algorithm (Ann. Math. Stat. 32, 894-899 (1961)), with this aspect
+ explained in Knuth, v2, 3rd ed, p139,586 (exercise 11).
+
+ The probability distribution for Gaussian tail random variates is,
+
+ .. math::
+   p(x) dx = {1 \over N(a;\sigma) \sqrt{2 \pi \sigma^2}}
+     \exp (- x^2/(2 \sigma^2)) dx
+
+ for :math:`x > a` where :math:`N(a;\sigma)` is the normalization constant,
+
+ .. math::
+   N(a;\sigma) = (1/2) \operatorname{erfc}(a / \sqrt{2 \sigma^2}).
+   
+.. function:: gsl_ran_gaussian_tail_pdf(x, a, sigma)
+
+ This function computes the probability density :math:`p(x)` at :math:`x` for a
+ Gaussian tail distribution with standard deviation ``sigma`` and lower
+ limit ``a``, using the formula given above.
+   
+.. function:: gsl_ran_ugaussian_tail(a)
+   
+.. function:: gsl_ran_ugaussian_tail_pdf(x, a)
+
+ These functions compute results for the tail of a unit Gaussian
+ distribution. They are equivalent to the functions above with a
+ standard deviation of one, ``sigma`` = 1.
+   

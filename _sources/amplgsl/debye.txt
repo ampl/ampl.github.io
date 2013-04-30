@@ -1,0 +1,45 @@
+
+
+
+Debye Functions
+===============
+
+The Debye functions :math:`D_n(x)` are defined by the following integral,
+
+.. math::
+  D_n(x) = n/x^n \int_0^x (t^n/(e^t - 1)) dt
+
+.. index:: Debye function
+
+For further information see Abramowitz & Stegun, Section 27.1.
+   
+.. function:: gsl_sf_debye_1(x)
+
+ This routine computes the first-order Debye function
+ :math:`D_1(x) = (1/x) \int_0^x (t/(e^t - 1)) dt`.
+   
+.. function:: gsl_sf_debye_2(x)
+
+ This routine computes the second-order Debye function
+ :math:`D_2(x) = (2/x^2) \int_0^x (t^2/(e^t - 1)) dt`.
+   
+.. function:: gsl_sf_debye_3(x)
+
+ This routine computes the third-order Debye function
+ :math:`D_3(x) = (3/x^3) \int_0^x (t^3/(e^t - 1)) dt`.
+   
+.. function:: gsl_sf_debye_4(x)
+
+ This routine computes the fourth-order Debye function
+ :math:`D_4(x) = (4/x^4) \int_0^x (t^4/(e^t - 1)) dt`.
+   
+.. function:: gsl_sf_debye_5(x)
+
+ This routine computes the fifth-order Debye function
+ :math:`D_5(x) = (5/x^5) \int_0^x (t^5/(e^t - 1)) dt`.
+   
+.. function:: gsl_sf_debye_6(x)
+
+ This routine computes the sixth-order Debye function
+ :math:`D_6(x) = (6/x^6) \int_0^x (t^6/(e^t - 1)) dt`.
+   

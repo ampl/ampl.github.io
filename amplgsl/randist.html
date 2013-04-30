@@ -1,0 +1,169 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Random Number Distributions &mdash; AMPL Modeling Language for Mathematical Programming</title>
+    
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '20121105',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="AMPL Modeling Language for Mathematical Programming" href="../index.html" />
+    <link rel="up" title="AMPL bindings for the GNU Scientific Library" href="index.html" />
+    <link rel="next" title="Introduction" href="ran-intro.html" />
+    <link rel="prev" title="Random Number Generation" href="rng.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="ran-intro.html" title="Introduction"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="rng.html" title="Random Number Generation"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">AMPL</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">AMPL bindings for the GNU Scientific Library</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="rng.html"
+                        title="previous chapter">Random Number Generation</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="ran-intro.html"
+                        title="next chapter">Introduction</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="random-number-distributions">
+<h1>Random Number Distributions<a class="headerlink" href="#random-number-distributions" title="Permalink to this headline">¶</a></h1>
+<p>This chapter describes functions for generating random variates and
+computing their probability distributions. Samples from the distributions
+described in this chapter can be obtained using any of the random number
+generators in the library as an underlying source of randomness.</p>
+<p id="index-0">In the simplest cases a non-uniform distribution can be obtained
+analytically from the uniform distribution of a random number generator
+by applying an appropriate transformation. This method uses one call
+to the random number generator. More complicated distributions are
+created by the acceptance-rejection method, which compares the desired
+distribution against a distribution which is similar and known
+analytically. This usually requires several samples from the generator.</p>
+<p>The library also provides cumulative distribution functions and inverse
+cumulative distribution functions, sometimes referred to as quantile
+functions. The cumulative distribution functions and their inverses are
+computed separately for the upper and lower tails of the distribution,
+allowing full accuracy to be retained for small results.</p>
+<p id="index-1">Note that the discrete random variate functions always return a value
+of type unsigned int, and on most platforms this has a maximum value of
+<span class="math">\(2^{32}-1 \approx 4.29e9\)</span>. They should only be called with a safe range of
+parameters (where there is a negligible probability of a variate
+exceeding this limit) to prevent incorrect results due to overflow.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ran-intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ran-gaussian.html">The Gaussian Distribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ran-gaussian-tail.html">The Gaussian Tail Distribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ran-exponential.html">The Exponential Distribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ran-laplace.html">The Laplace Distribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ran-exppow.html">The Exponential Power Distribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ran-cauchy.html">The Cauchy Distribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ran-rayleigh.html">The Rayleigh Distribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ran-rayleigh-tail.html">The Rayleigh Tail Distribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ran-landau.html">The Landau Distribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ran-levy.html">The Levy alpha-Stable Distribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ran-levy-skew.html">The Levy skew alpha-Stable Distribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ran-gamma.html">The Gamma Distribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ran-flat.html">The Flat (Uniform) Distribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ran-lognormal.html">The Lognormal Distribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ran-chisq.html">The Chi-squared Distribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ran-fdist.html">The F-distribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ran-tdist.html">The t-distribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ran-beta.html">The Beta Distribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ran-logistic.html">The Logistic Distribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ran-pareto.html">The Pareto Distribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ran-weibull.html">The Weibull Distribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ran-gumbel1.html">The Type-1 Gumbel Distribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ran-gumbel2.html">The Type-2 Gumbel Distribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ran-poisson.html">The Poisson Distribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ran-bernoulli.html">The Bernoulli Distribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ran-binomial.html">The Binomial Distribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ran-negative-binomial.html">The Negative Binomial Distribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ran-pascal.html">The Pascal Distribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ran-geometric.html">The Geometric Distribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ran-hypergeometric.html">The Hypergeometric Distribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ran-logarithmic.html">The Logarithmic Distribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ran-refs.html">References and Further Reading</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="ran-intro.html" title="Introduction"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="rng.html" title="Random Number Generation"
+             >previous</a> |</li>
+        <li><a href="../index.html">AMPL</a> &raquo;</li>
+          <li><a href="index.html" >AMPL bindings for the GNU Scientific Library</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012 AMPL Optimization, Inc.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

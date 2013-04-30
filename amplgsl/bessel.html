@@ -1,0 +1,488 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Bessel Functions &mdash; AMPL Modeling Language for Mathematical Programming</title>
+    
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '20121105',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="AMPL Modeling Language for Mathematical Programming" href="../index.html" />
+    <link rel="up" title="Special Functions" href="special.html" />
+    <link rel="next" title="Clausen Function" href="clausen.html" />
+    <link rel="prev" title="Airy Functions and Derivatives" href="airy.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="clausen.html" title="Clausen Function"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="airy.html" title="Airy Functions and Derivatives"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">AMPL</a> &raquo;</li>
+          <li><a href="index.html" >AMPL bindings for the GNU Scientific Library</a> &raquo;</li>
+          <li><a href="special.html" accesskey="U">Special Functions</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Bessel Functions</a><ul>
+<li><a class="reference internal" href="#regular-cylindrical-bessel-functions">Regular Cylindrical Bessel Functions</a></li>
+<li><a class="reference internal" href="#irregular-cylindrical-bessel-functions">Irregular Cylindrical Bessel Functions</a></li>
+<li><a class="reference internal" href="#regular-modified-cylindrical-bessel-functions">Regular Modified Cylindrical Bessel Functions</a></li>
+<li><a class="reference internal" href="#irregular-modified-cylindrical-bessel-functions">Irregular Modified Cylindrical Bessel Functions</a></li>
+<li><a class="reference internal" href="#regular-spherical-bessel-functions">Regular Spherical Bessel Functions</a></li>
+<li><a class="reference internal" href="#irregular-spherical-bessel-functions">Irregular Spherical Bessel Functions</a></li>
+<li><a class="reference internal" href="#regular-modified-spherical-bessel-functions">Regular Modified Spherical Bessel Functions</a></li>
+<li><a class="reference internal" href="#irregular-modified-spherical-bessel-functions">Irregular Modified Spherical Bessel Functions</a></li>
+<li><a class="reference internal" href="#regular-bessel-function-fractional-order">Regular Bessel Function - Fractional Order</a></li>
+<li><a class="reference internal" href="#irregular-bessel-function-fractional-order">Irregular Bessel Function - Fractional Order</a></li>
+<li><a class="reference internal" href="#regular-modified-bessel-functions-fractional-order">Regular Modified Bessel Functions - Fractional Order</a></li>
+<li><a class="reference internal" href="#irregular-modified-bessel-functions-fractional-order">Irregular Modified Bessel Functions - Fractional Order</a></li>
+<li><a class="reference internal" href="#zeros-of-regular-bessel-functions">Zeros of Regular Bessel Functions</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="airy.html"
+                        title="previous chapter">Airy Functions and Derivatives</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="clausen.html"
+                        title="next chapter">Clausen Function</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="bessel-functions">
+<h1>Bessel Functions<a class="headerlink" href="#bessel-functions" title="Permalink to this headline">¶</a></h1>
+<p>The routines described in this section compute the Cylindrical Bessel
+functions <span class="math">\(J_n(x)\)</span>, <span class="math">\(Y_n(x)\)</span>, Modified cylindrical Bessel functions
+<span class="math">\(I_n(x)\)</span>, <span class="math">\(K_n(x)\)</span>, Spherical Bessel functions <span class="math">\(j_l(x)\)</span>, <span class="math">\(y_l(x)\)</span>,
+and Modified Spherical Bessel functions <span class="math">\(i_l(x)\)</span>, <span class="math">\(k_l(x)\)</span>.
+For more information see Abramowitz &amp; Stegun, Chapters 9 and 10.</p>
+<div class="section" id="regular-cylindrical-bessel-functions">
+<span id="index-0"></span><h2>Regular Cylindrical Bessel Functions<a class="headerlink" href="#regular-cylindrical-bessel-functions" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="gsl_sf_bessel_J0">
+<tt class="descname">gsl_sf_bessel_J0</tt><big>(</big><em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_bessel_J0" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the regular cylindrical Bessel function of
+zeroth order, <span class="math">\(J_0(x)\)</span>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="gsl_sf_bessel_J1">
+<tt class="descname">gsl_sf_bessel_J1</tt><big>(</big><em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_bessel_J1" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the regular cylindrical Bessel function of
+first order, <span class="math">\(J_1(x)\)</span>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="gsl_sf_bessel_Jn">
+<tt class="descname">gsl_sf_bessel_Jn</tt><big>(</big><em>n</em>, <em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_bessel_Jn" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the regular cylindrical Bessel function of
+integer order <span class="math">\(n\)</span>, <span class="math">\(J_n(x)\)</span>.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="irregular-cylindrical-bessel-functions">
+<h2>Irregular Cylindrical Bessel Functions<a class="headerlink" href="#irregular-cylindrical-bessel-functions" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="gsl_sf_bessel_Y0">
+<tt class="descname">gsl_sf_bessel_Y0</tt><big>(</big><em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_bessel_Y0" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the irregular cylindrical Bessel function of
+zeroth order, <span class="math">\(Y_0(x)\)</span>, for <span class="math">\(x &gt; 0\)</span>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="gsl_sf_bessel_Y1">
+<tt class="descname">gsl_sf_bessel_Y1</tt><big>(</big><em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_bessel_Y1" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the irregular cylindrical Bessel function of
+first order, <span class="math">\(Y_1(x)\)</span>, for <span class="math">\(x &gt; 0\)</span>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="gsl_sf_bessel_Yn">
+<tt class="descname">gsl_sf_bessel_Yn</tt><big>(</big><em>n</em>, <em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_bessel_Yn" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the irregular cylindrical Bessel function of
+integer order <span class="math">\(n\)</span>, <span class="math">\(Y_n(x)\)</span>, for <span class="math">\(x &gt; 0\)</span>.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="regular-modified-cylindrical-bessel-functions">
+<h2>Regular Modified Cylindrical Bessel Functions<a class="headerlink" href="#regular-modified-cylindrical-bessel-functions" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="gsl_sf_bessel_I0">
+<tt class="descname">gsl_sf_bessel_I0</tt><big>(</big><em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_bessel_I0" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the regular modified cylindrical Bessel function
+of zeroth order, <span class="math">\(I_0(x)\)</span>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="gsl_sf_bessel_I1">
+<tt class="descname">gsl_sf_bessel_I1</tt><big>(</big><em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_bessel_I1" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the regular modified cylindrical Bessel function
+of first order, <span class="math">\(I_1(x)\)</span>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="gsl_sf_bessel_In">
+<tt class="descname">gsl_sf_bessel_In</tt><big>(</big><em>n</em>, <em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_bessel_In" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the regular modified cylindrical Bessel function
+of integer order <span class="math">\(n\)</span>, <span class="math">\(I_n(x)\)</span>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="gsl_sf_bessel_I0_scaled">
+<tt class="descname">gsl_sf_bessel_I0_scaled</tt><big>(</big><em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_bessel_I0_scaled" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the scaled regular modified cylindrical
+Bessel function of zeroth order <span class="math">\(\exp(-|x|) I_0(x)\)</span>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="gsl_sf_bessel_I1_scaled">
+<tt class="descname">gsl_sf_bessel_I1_scaled</tt><big>(</big><em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_bessel_I1_scaled" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the scaled regular modified cylindrical
+Bessel function of first order <span class="math">\(\exp(-|x|) I_1(x)\)</span>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="gsl_sf_bessel_In_scaled">
+<tt class="descname">gsl_sf_bessel_In_scaled</tt><big>(</big><em>n</em>, <em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_bessel_In_scaled" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the scaled regular modified cylindrical
+Bessel function of integer order <span class="math">\(n\)</span>, <span class="math">\(\exp(-|x|) I_n(x)\)</span>.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="irregular-modified-cylindrical-bessel-functions">
+<h2>Irregular Modified Cylindrical Bessel Functions<a class="headerlink" href="#irregular-modified-cylindrical-bessel-functions" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="gsl_sf_bessel_K0">
+<tt class="descname">gsl_sf_bessel_K0</tt><big>(</big><em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_bessel_K0" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the irregular modified cylindrical Bessel
+function of zeroth order, <span class="math">\(K_0(x)\)</span>, for <span class="math">\(x &gt; 0\)</span>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="gsl_sf_bessel_K1">
+<tt class="descname">gsl_sf_bessel_K1</tt><big>(</big><em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_bessel_K1" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the irregular modified cylindrical Bessel
+function of first order, <span class="math">\(K_1(x)\)</span>, for <span class="math">\(x &gt; 0\)</span>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="gsl_sf_bessel_Kn">
+<tt class="descname">gsl_sf_bessel_Kn</tt><big>(</big><em>n</em>, <em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_bessel_Kn" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the irregular modified cylindrical Bessel
+function of integer order <span class="math">\(n\)</span>, <span class="math">\(K_n(x)\)</span>, for <span class="math">\(x &gt; 0\)</span>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="gsl_sf_bessel_K0_scaled">
+<tt class="descname">gsl_sf_bessel_K0_scaled</tt><big>(</big><em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_bessel_K0_scaled" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the scaled irregular modified cylindrical Bessel
+function of zeroth order, <span class="math">\(\exp(x) K_0(x)\)</span>, for <span class="math">\(x &gt; 0\)</span>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="gsl_sf_bessel_K1_scaled">
+<tt class="descname">gsl_sf_bessel_K1_scaled</tt><big>(</big><em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_bessel_K1_scaled" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the scaled irregular modified cylindrical Bessel
+function of first order, <span class="math">\(\exp(x) K_1(x)\)</span>, for <span class="math">\(x &gt; 0\)</span>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="gsl_sf_bessel_Kn_scaled">
+<tt class="descname">gsl_sf_bessel_Kn_scaled</tt><big>(</big><em>n</em>, <em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_bessel_Kn_scaled" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the scaled irregular modified cylindrical Bessel
+function of integer order <span class="math">\(n\)</span>, <span class="math">\(\exp(x) K_n(x)\)</span>, for <span class="math">\(x &gt; 0\)</span>.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="regular-spherical-bessel-functions">
+<h2>Regular Spherical Bessel Functions<a class="headerlink" href="#regular-spherical-bessel-functions" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="gsl_sf_bessel_j0">
+<tt class="descname">gsl_sf_bessel_j0</tt><big>(</big><em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_bessel_j0" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the regular spherical Bessel function of zeroth
+order, <span class="math">\(j_0(x) = \sin(x)/x\)</span>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="gsl_sf_bessel_j1">
+<tt class="descname">gsl_sf_bessel_j1</tt><big>(</big><em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_bessel_j1" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the regular spherical Bessel function of first
+order, <span class="math">\(j_1(x) = (\sin(x)/x - \cos(x))/x\)</span>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="gsl_sf_bessel_j2">
+<tt class="descname">gsl_sf_bessel_j2</tt><big>(</big><em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_bessel_j2" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the regular spherical Bessel function of second
+order, <span class="math">\(j_2(x) = ((3/x^2 - 1)\sin(x) - 3\cos(x)/x)/x\)</span>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="gsl_sf_bessel_jl">
+<tt class="descname">gsl_sf_bessel_jl</tt><big>(</big><em>l</em>, <em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_bessel_jl" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the regular spherical Bessel function of integer
+order <span class="math">\(l\)</span>, <span class="math">\(j_l(x)\)</span>, for <span class="math">\(l \geq 0\)</span> and <span class="math">\(x \geq 0\)</span>.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="irregular-spherical-bessel-functions">
+<h2>Irregular Spherical Bessel Functions<a class="headerlink" href="#irregular-spherical-bessel-functions" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="gsl_sf_bessel_y0">
+<tt class="descname">gsl_sf_bessel_y0</tt><big>(</big><em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_bessel_y0" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the irregular spherical Bessel function of
+zeroth order, <span class="math">\(y_0(x) = -\cos(x)/x\)</span>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="gsl_sf_bessel_y1">
+<tt class="descname">gsl_sf_bessel_y1</tt><big>(</big><em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_bessel_y1" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the irregular spherical Bessel function of
+first order, <span class="math">\(y_1(x) = -(\cos(x)/x + \sin(x))/x\)</span>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="gsl_sf_bessel_y2">
+<tt class="descname">gsl_sf_bessel_y2</tt><big>(</big><em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_bessel_y2" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the irregular spherical Bessel function of
+second order, <span class="math">\(y_2(x) = (-3/x^3 + 1/x)\cos(x) - (3/x^2)\sin(x)\)</span>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="gsl_sf_bessel_yl">
+<tt class="descname">gsl_sf_bessel_yl</tt><big>(</big><em>l</em>, <em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_bessel_yl" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the irregular spherical Bessel function of
+integer order <span class="math">\(l\)</span>, <span class="math">\(y_l(x)\)</span>, for <span class="math">\(l \geq 0\)</span>.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="regular-modified-spherical-bessel-functions">
+<h2>Regular Modified Spherical Bessel Functions<a class="headerlink" href="#regular-modified-spherical-bessel-functions" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="gsl_sf_bessel_i0_scaled">
+<tt class="descname">gsl_sf_bessel_i0_scaled</tt><big>(</big><em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_bessel_i0_scaled" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the regular modified spherical Bessel function
+of zeroth order, <span class="math">\(\exp(-|x|) i_0(x)\)</span>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="gsl_sf_bessel_i1_scaled">
+<tt class="descname">gsl_sf_bessel_i1_scaled</tt><big>(</big><em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_bessel_i1_scaled" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the regular modified spherical Bessel function
+of first order, <span class="math">\(\exp(-|x|) i_1(x)\)</span>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="gsl_sf_bessel_i2_scaled">
+<tt class="descname">gsl_sf_bessel_i2_scaled</tt><big>(</big><em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_bessel_i2_scaled" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the regular modified spherical Bessel function
+of second order, <span class="math">\(\exp(-|x|) i_2(x)\)</span>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="gsl_sf_bessel_il_scaled">
+<tt class="descname">gsl_sf_bessel_il_scaled</tt><big>(</big><em>l</em>, <em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_bessel_il_scaled" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the regular modified spherical Bessel function
+of integer order <span class="math">\(l\)</span>, <span class="math">\(\exp(-|x|) i_l(x)\)</span>.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="irregular-modified-spherical-bessel-functions">
+<h2>Irregular Modified Spherical Bessel Functions<a class="headerlink" href="#irregular-modified-spherical-bessel-functions" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="gsl_sf_bessel_k0_scaled">
+<tt class="descname">gsl_sf_bessel_k0_scaled</tt><big>(</big><em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_bessel_k0_scaled" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the scaled irregular modified spherical Bessel
+function of zeroth order, <span class="math">\(\exp(x) k_0(x)\)</span>, for <span class="math">\(x &gt; 0\)</span>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="gsl_sf_bessel_k1_scaled">
+<tt class="descname">gsl_sf_bessel_k1_scaled</tt><big>(</big><em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_bessel_k1_scaled" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the scaled irregular modified spherical Bessel
+function of first order, <span class="math">\(\exp(x) k_1(x)\)</span>, for <span class="math">\(x &gt; 0\)</span>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="gsl_sf_bessel_k2_scaled">
+<tt class="descname">gsl_sf_bessel_k2_scaled</tt><big>(</big><em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_bessel_k2_scaled" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the scaled irregular modified spherical Bessel
+function of second order, <span class="math">\(\exp(x) k_2(x)\)</span>, for <span class="math">\(x &gt; 0\)</span>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="gsl_sf_bessel_kl_scaled">
+<tt class="descname">gsl_sf_bessel_kl_scaled</tt><big>(</big><em>l</em>, <em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_bessel_kl_scaled" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the scaled irregular modified spherical Bessel
+function of integer order <span class="math">\(l\)</span>, <span class="math">\(\exp(x) k_l(x)\)</span>, for <span class="math">\(x &gt; 0\)</span>.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="regular-bessel-function-fractional-order">
+<h2>Regular Bessel Function - Fractional Order<a class="headerlink" href="#regular-bessel-function-fractional-order" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="gsl_sf_bessel_Jnu">
+<tt class="descname">gsl_sf_bessel_Jnu</tt><big>(</big><em>nu</em>, <em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_bessel_Jnu" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the regular cylindrical Bessel function of
+fractional order <span class="math">\(\nu\)</span>, <span class="math">\(J_\nu(x)\)</span>.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="irregular-bessel-function-fractional-order">
+<h2>Irregular Bessel Function - Fractional Order<a class="headerlink" href="#irregular-bessel-function-fractional-order" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="gsl_sf_bessel_Ynu">
+<tt class="descname">gsl_sf_bessel_Ynu</tt><big>(</big><em>nu</em>, <em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_bessel_Ynu" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the irregular cylindrical Bessel function of
+fractional order <span class="math">\(\nu\)</span>, <span class="math">\(Y_\nu(x)\)</span>.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="regular-modified-bessel-functions-fractional-order">
+<h2>Regular Modified Bessel Functions - Fractional Order<a class="headerlink" href="#regular-modified-bessel-functions-fractional-order" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="gsl_sf_bessel_Inu">
+<tt class="descname">gsl_sf_bessel_Inu</tt><big>(</big><em>nu</em>, <em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_bessel_Inu" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the regular modified Bessel function of
+fractional order <span class="math">\(\nu\)</span>, <span class="math">\(I_\nu(x)\)</span> for <span class="math">\(x &gt; 0\)</span>, <span class="math">\(\nu &gt; 0\)</span>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="gsl_sf_bessel_Inu_scaled">
+<tt class="descname">gsl_sf_bessel_Inu_scaled</tt><big>(</big><em>nu</em>, <em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_bessel_Inu_scaled" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the scaled regular modified Bessel function of
+fractional order <span class="math">\(\nu\)</span>, <span class="math">\(\exp(-|x|) I_\nu(x)\)</span> for <span class="math">\(x &gt; 0\)</span>,
+<span class="math">\(\nu &gt; 0\)</span>.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="irregular-modified-bessel-functions-fractional-order">
+<h2>Irregular Modified Bessel Functions - Fractional Order<a class="headerlink" href="#irregular-modified-bessel-functions-fractional-order" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="gsl_sf_bessel_Knu">
+<tt class="descname">gsl_sf_bessel_Knu</tt><big>(</big><em>nu</em>, <em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_bessel_Knu" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the irregular modified Bessel function of
+fractional order <span class="math">\(\nu\)</span>, <span class="math">\(K_\nu(x)\)</span> for <span class="math">\(x &gt; 0\)</span>, <span class="math">\(\nu &gt; 0\)</span>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="gsl_sf_bessel_lnKnu">
+<tt class="descname">gsl_sf_bessel_lnKnu</tt><big>(</big><em>nu</em>, <em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_bessel_lnKnu" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the logarithm of the irregular modified Bessel
+function of fractional order <span class="math">\(\nu\)</span>, <span class="math">\(\ln(K_\nu(x))\)</span> for <span class="math">\(x &gt; 0\)</span>,
+<span class="math">\(\nu &gt; 0\)</span>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="gsl_sf_bessel_Knu_scaled">
+<tt class="descname">gsl_sf_bessel_Knu_scaled</tt><big>(</big><em>nu</em>, <em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_bessel_Knu_scaled" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the scaled irregular modified Bessel function of
+fractional order <span class="math">\(\nu\)</span>, <span class="math">\(\exp(|x|) K_\nu(x)\)</span> for <span class="math">\(x &gt; 0\)</span>, <span class="math">\(\nu &gt; 0\)</span>.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="zeros-of-regular-bessel-functions">
+<h2>Zeros of Regular Bessel Functions<a class="headerlink" href="#zeros-of-regular-bessel-functions" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="gsl_sf_bessel_zero_J0">
+<tt class="descname">gsl_sf_bessel_zero_J0</tt><big>(</big><em>s</em><big>)</big><a class="headerlink" href="#gsl_sf_bessel_zero_J0" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the location of the <span class="math">\(s\)</span>-th positive zero of the
+Bessel function <span class="math">\(J_0(x)\)</span>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="gsl_sf_bessel_zero_J1">
+<tt class="descname">gsl_sf_bessel_zero_J1</tt><big>(</big><em>s</em><big>)</big><a class="headerlink" href="#gsl_sf_bessel_zero_J1" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the location of the <span class="math">\(s\)</span>-th positive zero of the
+Bessel function <span class="math">\(J_1(x)\)</span>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="gsl_sf_bessel_zero_Jnu">
+<tt class="descname">gsl_sf_bessel_zero_Jnu</tt><big>(</big><em>nu</em>, <em>s</em><big>)</big><a class="headerlink" href="#gsl_sf_bessel_zero_Jnu" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the location of the <span class="math">\(s\)</span>-th positive zero of the
+Bessel function <span class="math">\(J_\nu(x)\)</span>. The current implementation does not support
+negative values of <tt class="docutils literal"><span class="pre">nu</span></tt>.</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="clausen.html" title="Clausen Function"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="airy.html" title="Airy Functions and Derivatives"
+             >previous</a> |</li>
+        <li><a href="../index.html">AMPL</a> &raquo;</li>
+          <li><a href="index.html" >AMPL bindings for the GNU Scientific Library</a> &raquo;</li>
+          <li><a href="special.html" >Special Functions</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012 AMPL Optimization, Inc.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

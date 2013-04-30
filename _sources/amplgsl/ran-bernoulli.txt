@@ -1,0 +1,24 @@
+
+
+
+The Bernoulli Distribution
+==========================
+
+.. index:: Bernoulli distribution
+   
+.. function:: gsl_ran_bernoulli(p)
+
+ This function returns either 0 or 1, the result of a Bernoulli trial
+ with probability ``p``. The probability distribution for a Bernoulli
+ trial is,
+
+ .. math::
+   p(0) = 1 - p \\
+   p(1) = p
+   
+.. function:: gsl_ran_bernoulli_pdf(k, p)
+
+ This function computes the probability :math:`p(k)` of obtaining :math:`k` from a
+ Bernoulli distribution with probability parameter ``p``, using the
+ formula given above.
+   

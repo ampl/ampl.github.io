@@ -1,0 +1,35 @@
+
+
+
+The Lognormal Distribution
+==========================
+   
+.. function:: gsl_ran_lognormal(zeta, sigma)
+
+ This function returns a random variate from the `lognormal
+ distribution`:index:. The distribution function is,
+
+ .. math::
+   p(x) dx = {1 \over x \sqrt{2 \pi \sigma^2} }
+     \exp(-(\ln(x) - \zeta)^2/2 \sigma^2) dx
+
+ for :math:`x > 0`.
+   
+.. function:: gsl_ran_lognormal_pdf(x, zeta, sigma)
+
+ This function computes the probability density :math:`p(x)` at :math:`x` for a
+ lognormal distribution with parameters ``zeta`` and ``sigma``, using
+ the formula given above.
+   
+.. function:: gsl_cdf_lognormal_P(x, zeta, sigma)
+   
+.. function:: gsl_cdf_lognormal_Q(x, zeta, sigma)
+   
+.. function:: gsl_cdf_lognormal_Pinv(P, zeta, sigma)
+   
+.. function:: gsl_cdf_lognormal_Qinv(Q, zeta, sigma)
+
+ These functions compute the cumulative distribution functions
+ :math:`P(x), Q(x)` and their inverses for the lognormal distribution
+ with parameters ``zeta`` and ``sigma``.
+   

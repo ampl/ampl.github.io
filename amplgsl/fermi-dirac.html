@@ -1,0 +1,197 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Fermi-Dirac Function &mdash; AMPL Modeling Language for Mathematical Programming</title>
+    
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '20121105',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="AMPL Modeling Language for Mathematical Programming" href="../index.html" />
+    <link rel="up" title="Special Functions" href="special.html" />
+    <link rel="next" title="Gamma and Beta Functions" href="gamma-beta.html" />
+    <link rel="prev" title="Exponential Integrals" href="expint.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="gamma-beta.html" title="Gamma and Beta Functions"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="expint.html" title="Exponential Integrals"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">AMPL</a> &raquo;</li>
+          <li><a href="index.html" >AMPL bindings for the GNU Scientific Library</a> &raquo;</li>
+          <li><a href="special.html" accesskey="U">Special Functions</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Fermi-Dirac Function</a><ul>
+<li><a class="reference internal" href="#complete-fermi-dirac-integrals">Complete Fermi-Dirac Integrals</a></li>
+<li><a class="reference internal" href="#incomplete-fermi-dirac-integrals">Incomplete Fermi-Dirac Integrals</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="expint.html"
+                        title="previous chapter">Exponential Integrals</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="gamma-beta.html"
+                        title="next chapter">Gamma and Beta Functions</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="fermi-dirac-function">
+<h1>Fermi-Dirac Function<a class="headerlink" href="#fermi-dirac-function" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="complete-fermi-dirac-integrals">
+<span id="index-0"></span><h2>Complete Fermi-Dirac Integrals<a class="headerlink" href="#complete-fermi-dirac-integrals" title="Permalink to this headline">¶</a></h2>
+<p>The complete <span class="target" id="index-1"></span>Fermi-Dirac integral <span class="math">\(F_j(x)\)</span> is given by,</p>
+<div class="math">
+\[F_j(x) := (1/\Gamma(j+1)) \int_0^\infty (t^j / (\exp(t-x) + 1)) dt\]</div>
+<p>Note that the Fermi-Dirac integral is sometimes defined without the
+normalisation factor in other texts.</p>
+<dl class="function">
+<dt id="gsl_sf_fermi_dirac_m1">
+<tt class="descname">gsl_sf_fermi_dirac_m1</tt><big>(</big><em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_fermi_dirac_m1" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the complete Fermi-Dirac integral with an index
+of -1. This integral is given by <span class="math">\(F_{-1}(x) = e^x / (1 + e^x)\)</span>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="gsl_sf_fermi_dirac_0">
+<tt class="descname">gsl_sf_fermi_dirac_0</tt><big>(</big><em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_fermi_dirac_0" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the complete Fermi-Dirac integral with an index
+of 0. This integral is given by <span class="math">\(F_0(x) = \ln(1 + e^x)\)</span>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="gsl_sf_fermi_dirac_1">
+<tt class="descname">gsl_sf_fermi_dirac_1</tt><big>(</big><em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_fermi_dirac_1" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the complete Fermi-Dirac integral with an index
+of 1, <span class="math">\(F_1(x) = \int_0^\infty (t /(\exp(t-x)+1)) dt\)</span>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="gsl_sf_fermi_dirac_2">
+<tt class="descname">gsl_sf_fermi_dirac_2</tt><big>(</big><em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_fermi_dirac_2" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the complete Fermi-Dirac integral with an index
+of 2, <span class="math">\(F_2(x) = (1/2) \int_0^\infty (t^2 /(\exp(t-x)+1)) dt\)</span>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="gsl_sf_fermi_dirac_int">
+<tt class="descname">gsl_sf_fermi_dirac_int</tt><big>(</big><em>j</em>, <em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_fermi_dirac_int" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the complete Fermi-Dirac integral with an
+integer index of <span class="math">\(j\)</span>,
+<span class="math">\(F_j(x) = (1/\Gamma(j+1)) \int_0^\infty (t^j /(\exp(t-x)+1)) dt\)</span>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="gsl_sf_fermi_dirac_mhalf">
+<tt class="descname">gsl_sf_fermi_dirac_mhalf</tt><big>(</big><em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_fermi_dirac_mhalf" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the complete Fermi-Dirac integral <span class="math">\(F_{-1/2}(x)\)</span>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="gsl_sf_fermi_dirac_half">
+<tt class="descname">gsl_sf_fermi_dirac_half</tt><big>(</big><em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_fermi_dirac_half" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the complete Fermi-Dirac integral <span class="math">\(F_{1/2}(x)\)</span>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="gsl_sf_fermi_dirac_3half">
+<tt class="descname">gsl_sf_fermi_dirac_3half</tt><big>(</big><em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_fermi_dirac_3half" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the complete Fermi-Dirac integral <span class="math">\(F_{3/2}(x)\)</span>.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="incomplete-fermi-dirac-integrals">
+<h2>Incomplete Fermi-Dirac Integrals<a class="headerlink" href="#incomplete-fermi-dirac-integrals" title="Permalink to this headline">¶</a></h2>
+<p>The incomplete Fermi-Dirac integral F_j(x,b) is given by,</p>
+<div class="math">
+\[F_j(x,b) := (1/\Gamma(j+1)) \int_b^\infty (t^j / (\exp(t-x) + 1)) dt\]</div>
+<dl class="function">
+<dt id="gsl_sf_fermi_dirac_inc_0">
+<tt class="descname">gsl_sf_fermi_dirac_inc_0</tt><big>(</big><em>x</em>, <em>b</em><big>)</big><a class="headerlink" href="#gsl_sf_fermi_dirac_inc_0" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the incomplete Fermi-Dirac integral with an index
+of zero, <span class="math">\(F_0(x,b) = \ln(1 + e^{b-x}) - (b-x)\)</span>.</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="gamma-beta.html" title="Gamma and Beta Functions"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="expint.html" title="Exponential Integrals"
+             >previous</a> |</li>
+        <li><a href="../index.html">AMPL</a> &raquo;</li>
+          <li><a href="index.html" >AMPL bindings for the GNU Scientific Library</a> &raquo;</li>
+          <li><a href="special.html" >Special Functions</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012 AMPL Optimization, Inc.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

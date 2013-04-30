@@ -1,0 +1,23 @@
+
+
+
+The Logarithmic Distribution
+============================
+   
+.. function:: gsl_ran_logarithmic(p)
+
+ This function returns a random integer from the `logarithmic
+ distribution`:index. The probability distribution for logarithmic
+ random variates is,
+
+ .. math::
+   p(k) = {-1 \over \log(1-p)} {\left(p^k \over k\right)}
+
+ for :math:`k \geq 1`.
+   
+.. function:: gsl_ran_logarithmic_pdf(k, p)
+
+ This function computes the probability :math:`p(k)` of obtaining :math:`k` from
+ a logarithmic distribution with probability parameter ``p``, using the
+ formula given above.
+   

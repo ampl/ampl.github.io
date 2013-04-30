@@ -1,0 +1,33 @@
+
+
+
+The Exponential Power Distribution
+==================================
+   
+.. function:: gsl_ran_exppow(a, b)
+
+ This function returns a random variate from `exponential power
+ distribution`:index: with scale parameter ``a`` and exponent ``b``.
+ The distribution is,
+
+ .. math::
+   p(x) dx = {1 \over 2 a \Gamma(1+1/b)} \exp(-|x/a|^b) dx
+
+ for :math:`x \geq 0`. For :math:`b = 1` this reduces to the Laplace distribution.
+ For :math:`b = 2` it has the same form as a Gaussian distribution, but with
+ :math:`a = \sqrt{2} \sigma`.
+   
+.. function:: gsl_ran_exppow_pdf(x, a, b)
+
+ This function computes the probability density :math:`p(x)` at :math:`x` for an
+ exponential power distribution with scale parameter ``a`` and exponent
+ ``b``, using the formula given above.
+   
+.. function:: gsl_ran_exppow_P(x, a, b)
+   
+.. function:: gsl_ran_exppow_Q(x, a, b)
+
+ These functions compute the cumulative distribution functions
+ :math:`P(x), Q(x)` for the exponential power distribution with parameters
+ ``a`` and ``b``.
+   

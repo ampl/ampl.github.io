@@ -1,0 +1,152 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>The Gaussian Tail Distribution &mdash; AMPL Modeling Language for Mathematical Programming</title>
+    
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '20121105',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="AMPL Modeling Language for Mathematical Programming" href="../index.html" />
+    <link rel="up" title="Random Number Distributions" href="randist.html" />
+    <link rel="next" title="The Exponential Distribution" href="ran-exponential.html" />
+    <link rel="prev" title="The Gaussian Distribution" href="ran-gaussian.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="ran-exponential.html" title="The Exponential Distribution"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="ran-gaussian.html" title="The Gaussian Distribution"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">AMPL</a> &raquo;</li>
+          <li><a href="index.html" >AMPL bindings for the GNU Scientific Library</a> &raquo;</li>
+          <li><a href="randist.html" accesskey="U">Random Number Distributions</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="ran-gaussian.html"
+                        title="previous chapter">The Gaussian Distribution</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="ran-exponential.html"
+                        title="next chapter">The Exponential Distribution</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="the-gaussian-tail-distribution">
+<h1>The Gaussian Tail Distribution<a class="headerlink" href="#the-gaussian-tail-distribution" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="gsl_ran_gaussian_tail">
+<tt class="descname">gsl_ran_gaussian_tail</tt><big>(</big><em>a</em>, <em>sigma</em><big>)</big><a class="headerlink" href="#gsl_ran_gaussian_tail" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function provides random variates from the upper tail of a
+Gaussian distribution with standard deviation <tt class="docutils literal"><span class="pre">sigma</span></tt>. The values
+returned are larger than the lower limit <tt class="docutils literal"><span class="pre">a</span></tt>, which must be positive.
+The method is based on Marsaglia&#8217;s famous rectangle-wedge-tail
+algorithm (Ann. Math. Stat. 32, 894-899 (1961)), with this aspect
+explained in Knuth, v2, 3rd ed, p139,586 (exercise 11).</p>
+<p>The probability distribution for Gaussian tail random variates is,</p>
+<div class="math">
+\[p(x) dx = {1 \over N(a;\sigma) \sqrt{2 \pi \sigma^2}}
+  \exp (- x^2/(2 \sigma^2)) dx\]</div>
+<p>for <span class="math">\(x &gt; a\)</span> where <span class="math">\(N(a;\sigma)\)</span> is the normalization constant,</p>
+<div class="math">
+\[N(a;\sigma) = (1/2) \operatorname{erfc}(a / \sqrt{2 \sigma^2}).\]</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="gsl_ran_gaussian_tail_pdf">
+<tt class="descname">gsl_ran_gaussian_tail_pdf</tt><big>(</big><em>x</em>, <em>a</em>, <em>sigma</em><big>)</big><a class="headerlink" href="#gsl_ran_gaussian_tail_pdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function computes the probability density <span class="math">\(p(x)\)</span> at <span class="math">\(x\)</span> for a
+Gaussian tail distribution with standard deviation <tt class="docutils literal"><span class="pre">sigma</span></tt> and lower
+limit <tt class="docutils literal"><span class="pre">a</span></tt>, using the formula given above.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="gsl_ran_ugaussian_tail">
+<tt class="descname">gsl_ran_ugaussian_tail</tt><big>(</big><em>a</em><big>)</big><a class="headerlink" href="#gsl_ran_ugaussian_tail" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="gsl_ran_ugaussian_tail_pdf">
+<tt class="descname">gsl_ran_ugaussian_tail_pdf</tt><big>(</big><em>x</em>, <em>a</em><big>)</big><a class="headerlink" href="#gsl_ran_ugaussian_tail_pdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>These functions compute results for the tail of a unit Gaussian
+distribution. They are equivalent to the functions above with a
+standard deviation of one, <tt class="docutils literal"><span class="pre">sigma</span></tt> = 1.</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="ran-exponential.html" title="The Exponential Distribution"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="ran-gaussian.html" title="The Gaussian Distribution"
+             >previous</a> |</li>
+        <li><a href="../index.html">AMPL</a> &raquo;</li>
+          <li><a href="index.html" >AMPL bindings for the GNU Scientific Library</a> &raquo;</li>
+          <li><a href="randist.html" >Random Number Distributions</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012 AMPL Optimization, Inc.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

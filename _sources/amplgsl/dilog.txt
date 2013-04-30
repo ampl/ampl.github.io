@@ -1,0 +1,21 @@
+
+
+
+Dilogarithm
+===========
+
+.. index:: dilogarithm
+   
+.. function:: gsl_sf_dilog(x)
+
+ This routine computes the dilogarithm for a real argument. In Lewin's
+ notation this is :math:`\operatorname{Li}_2(x)`, the real part of the
+ dilogarithm of a real :math:`x`. It is defined by the integral representation
+ :math:`\operatorname{Li}_2(x) = -\operatorname{Re}\int_0^x (\log(1-s) / s) ds`.
+ Note that :math:`\operatorname{Im}(\operatorname{Li}_2(x)) = 0` for :math:`x <= 1`,
+ and :math:`-\pi\log(x)` for :math:`x > 1`.
+
+ Note that Abramowitz & Stegun refer to the Spence integral
+ :math:`S(x)=\operatorname{Li}_2(1-x)` as the dilogarithm rather than
+ :math:`\operatorname{Li}_2(x)`.
+   

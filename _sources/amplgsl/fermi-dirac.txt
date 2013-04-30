@@ -1,0 +1,70 @@
+
+
+
+Fermi-Dirac Function
+====================
+
+.. index:: Fermi-Dirac function
+   
+Complete Fermi-Dirac Integrals
+------------------------------
+
+The complete `Fermi-Dirac integral`:index: :math:`F_j(x)` is given by,
+
+.. math::
+  F_j(x) := (1/\Gamma(j+1)) \int_0^\infty (t^j / (\exp(t-x) + 1)) dt
+
+Note that the Fermi-Dirac integral is sometimes defined without the
+normalisation factor in other texts.
+   
+.. function:: gsl_sf_fermi_dirac_m1(x)
+
+ This routine computes the complete Fermi-Dirac integral with an index
+ of -1. This integral is given by :math:`F_{-1}(x) = e^x / (1 + e^x)`.
+   
+.. function:: gsl_sf_fermi_dirac_0(x)
+
+ This routine computes the complete Fermi-Dirac integral with an index
+ of 0. This integral is given by :math:`F_0(x) = \ln(1 + e^x)`.
+   
+.. function:: gsl_sf_fermi_dirac_1(x)
+
+ This routine computes the complete Fermi-Dirac integral with an index
+ of 1, :math:`F_1(x) = \int_0^\infty (t /(\exp(t-x)+1)) dt`.
+   
+.. function:: gsl_sf_fermi_dirac_2(x)
+
+ This routine computes the complete Fermi-Dirac integral with an index
+ of 2, :math:`F_2(x) = (1/2) \int_0^\infty (t^2 /(\exp(t-x)+1)) dt`.
+   
+.. function:: gsl_sf_fermi_dirac_int(j, x)
+
+ This routine computes the complete Fermi-Dirac integral with an
+ integer index of :math:`j`,
+ :math:`F_j(x) = (1/\Gamma(j+1)) \int_0^\infty (t^j /(\exp(t-x)+1)) dt`.
+   
+.. function:: gsl_sf_fermi_dirac_mhalf(x)
+
+ This routine computes the complete Fermi-Dirac integral :math:`F_{-1/2}(x)`.
+   
+.. function:: gsl_sf_fermi_dirac_half(x)
+
+ This routine computes the complete Fermi-Dirac integral :math:`F_{1/2}(x)`.
+   
+.. function:: gsl_sf_fermi_dirac_3half(x)
+
+ This routine computes the complete Fermi-Dirac integral :math:`F_{3/2}(x)`.
+   
+Incomplete Fermi-Dirac Integrals
+--------------------------------
+
+The incomplete Fermi-Dirac integral F_j(x,b) is given by,
+
+.. math::
+  F_j(x,b) := (1/\Gamma(j+1)) \int_b^\infty (t^j / (\exp(t-x) + 1)) dt
+   
+.. function:: gsl_sf_fermi_dirac_inc_0(x, b)
+
+ This routine computes the incomplete Fermi-Dirac integral with an index
+ of zero, :math:`F_0(x,b) = \ln(1 + e^{b-x}) - (b-x)`.
+   

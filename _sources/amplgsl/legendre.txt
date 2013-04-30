@@ -1,0 +1,151 @@
+
+
+
+Legendre Functions and Spherical Harmonics
+==========================================
+
+The Legendre Functions and Legendre Polynomials are described in
+Abramowitz & Stegun, Chapter 8.
+
+.. index::
+  Legendre function
+  Legendre polynomial
+   
+Legendre Polynomials
+--------------------
+   
+.. function:: gsl_sf_legendre_P1(x)
+   
+.. function:: gsl_sf_legendre_P2(x)
+   
+.. function:: gsl_sf_legendre_P3(x)
+
+ These functions evaluate the Legendre polynomials :math:`P_l(x)` using
+ explicit representations for :math:`l=1, 2, 3`.
+   
+.. function:: gsl_sf_legendre_Pl(l, x)
+
+ This function evaluates the Legendre polynomial :math:`P_l(x)` for a
+ specific value of integer parameter :math:`l`, :math:`x` subject to
+ :math:`l \geq 0, |x| \leq 1`.
+   
+.. function:: gsl_sf_legendre_Q0(x)
+
+ This routine computes the Legendre function :math:`Q_0(x)` for
+ :math:`x > -1, x \ne 1`.
+   
+.. function:: gsl_sf_legendre_Q1(x)
+
+ This routine computes the Legendre function :math:`Q_1(x)` for
+ :math:`x > -1, x \ne 1`.
+   
+.. function:: gsl_sf_legendre_Ql(l, x)
+
+ This routine computes the Legendre function :math:`Q_l(x)` for
+ :math:`x > -1, x \ne 1` and :math:`l \geq 0`.
+   
+Associated Legendre Polynomials and Spherical Harmonics
+-------------------------------------------------------
+
+The following functions compute the associated Legendre Polynomials
+:math:`P_l^m(x)`. Note that this function grows combinatorially with :math:`l` and
+can overflow for :math:`l` larger than about 150. There is no trouble for
+small :math:`m`, but overflow occurs when :math:`m` and :math:`l` are both large.
+Rather than allow overflows, these functions refuse to calculate
+:math:`P_l^m(x)` and return an error when they can sense that :math:`l` and :math:`m`
+are too big.
+
+If you want to calculate a spherical harmonic, then do not use these
+functions. Instead use ``gsl_sf_legendre_sphPlm`` below, which uses a
+similar recursion, but with the normalized functions.
+   
+.. function:: gsl_sf_legendre_Plm(l, m, x)
+
+ This routine computes the associated Legendre polynomial
+ :math:`P_l^m(x)` for :math:`m \geq 0, l \geq m, |x| \leq 1`.
+   
+.. function:: gsl_sf_legendre_sphPlm(l, m, x)
+
+ This routine computes the normalized associated Legendre polynomial
+ :math:`\sqrt{(2l+1)/(4\pi)} \sqrt{(l-m)!/(l+m)!} P_l^m(x)` suitable for use
+ in spherical harmonics. The parameters must satisfy
+ :math:`m \geq 0, l \geq m, |x| \leq 1`. Theses routines avoid the overflows
+ that occur for the standard normalization of :math:`P_l^m(x)`.
+   
+Conical Functions
+-----------------
+
+The Conical Functions :math:`P^\mu_{-(1/2)+i\lambda}(x)` and
+:math:`Q^\mu_{-(1/2)+i\lambda}` are described in Abramowitz & Stegun,
+Section 8.12.
+   
+.. function:: gsl_sf_conicalP_half(lambda, x)
+
+ This routine computes the irregular Spherical Conical Function
+ :math:`P^{1/2}_{-1/2 + i \lambda}(x)` for :math:`x > -1`.
+   
+.. function:: gsl_sf_conicalP_mhalf(lambda, x)
+
+ This routine computes the regular Spherical Conical Function
+ :math:`P^{-1/2}_{-1/2 + i \lambda}(x)` for :math:`x > -1`.
+   
+.. function:: gsl_sf_conicalP_0(lambda, x)
+
+ This routine computes the conical function
+ :math:`P^0_{-1/2 + i \lambda}(x)` for :math:`x > -1`.
+   
+.. function:: gsl_sf_conicalP_1(lambda, x)
+
+ This routine computes the conical function
+ :math:`P^1_{-1/2 + i \lambda}(x)` for :math:`x > -1`.
+   
+.. function:: gsl_sf_conicalP_sph_reg(l, lambda, x)
+
+ This routine computes the Regular Spherical Conical Function
+ :math:`P^{-1/2-l}_{-1/2 + i \lambda}(x)` for :math:`x > -1, l \geq -1`.
+   
+.. function:: gsl_sf_conicalP_cyl_reg(m, lambda, x)
+
+ This routine computes the Regular Cylindrical Conical Function
+ :math:`P^{-m}_{-1/2 + i \lambda}(x)` for :math:`x > -1, m \geq -1`.
+   
+Radial Functions for Hyperbolic Space
+-------------------------------------
+
+The following spherical functions are specializations of Legendre
+functions which give the regular eigenfunctions of the Laplacian
+on a 3-dimensional hyperbolic space H3d. Of particular interest is
+the flat limit, :math:`\lambda \to \infty, \eta \to 0, \lambda\eta` fixed.
+   
+.. function:: gsl_sf_legendre_H3d_0(lambda, eta)
+
+ This routine computes the zeroth radial eigenfunction of the
+ Laplacian on the 3-dimensional hyperbolic space,
+
+ .. math::
+   L^{H3d}_0(\lambda,\eta) :=
+     \sin(\lambda\eta)/(\lambda\sinh(\eta)) \text{ for } \eta \geq 0.
+
+ In the flat limit this takes the form
+ :math:`L^{H3d}_0(\lambda,\eta) = j_0(\lambda\eta)`.
+   
+.. function:: gsl_sf_legendre_H3d_1(lambda, eta)
+
+ This routine computes the first radial eigenfunction of the
+ Laplacian on the 3-dimensional hyperbolic space,
+
+ .. math::
+   L^{H3d}_1(\lambda,\eta) := 1/\sqrt{\lambda^2 + 1} \sin(\lambda \eta)/
+     (\lambda \sinh(\eta)) (\coth(\eta) - \lambda \cot(\lambda\eta))
+     \text{ for } \eta \geq 0.
+
+ In the flat limit this takes the form
+ :math:`L^{H3d}_1(\lambda,\eta) = j_1(\lambda\eta)`.
+   
+.. function:: gsl_sf_legendre_H3d(l, lambda, eta)
+
+ This routine computes the :math:`l`-th radial eigenfunction of the
+ Laplacian on the 3-dimensional hyperbolic space :math:`\eta \geq 0, l \geq 0`.
+ In the flat limit this takes the form
+ :math:`L^{H3d}_l(\lambda,\eta) = j_l(\lambda\eta)`.
+   

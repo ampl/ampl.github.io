@@ -1,0 +1,33 @@
+
+
+
+The Geometric Distribution
+==========================
+   
+.. function:: gsl_ran_geometric(p)
+
+ This function returns a random integer from the `geometric
+ distribution`:index:, the number of independent trials with
+ probability ``p`` until the first success. The probability
+ distribution for geometric variates is,
+
+ .. math::
+   p(k) =  p (1-p)^{k-1}
+
+ for :math:`k \geq 1`. Note that the distribution begins with :math:`k=1` with this
+ definition. There is another convention in which the exponent :math:`k-1` is
+ replaced by :math:`k`.
+   
+.. function:: gsl_ran_geometric_pdf(k, p)
+
+ This function computes the probability :math:`p(k)` of obtaining :math:`k` from
+ a geometric distribution with probability parameter ``p``, using the
+ formula given above.
+   
+.. function:: gsl_cdf_geometric_P(k, p)
+   
+.. function:: gsl_cdf_geometric_Q(k, p)
+
+ These functions compute the cumulative distribution functions
+ :math:`P(k), Q(k)` for the geometric distribution with parameter ``p``.
+   

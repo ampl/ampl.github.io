@@ -1,0 +1,224 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Special Functions &mdash; AMPL Modeling Language for Mathematical Programming</title>
+    
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '20121105',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="AMPL Modeling Language for Mathematical Programming" href="../index.html" />
+    <link rel="up" title="AMPL bindings for the GNU Scientific Library" href="index.html" />
+    <link rel="next" title="Airy Functions and Derivatives" href="airy.html" />
+    <link rel="prev" title="Elementary Functions" href="elementary.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="airy.html" title="Airy Functions and Derivatives"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="elementary.html" title="Elementary Functions"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">AMPL</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">AMPL bindings for the GNU Scientific Library</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="elementary.html"
+                        title="previous chapter">Elementary Functions</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="airy.html"
+                        title="next chapter">Airy Functions and Derivatives</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="special-functions">
+<h1>Special Functions<a class="headerlink" href="#special-functions" title="Permalink to this headline">¶</a></h1>
+<p>This chapter describes the AMPL bindings for the GSL special function
+library. The library includes routines for calculating the values of
+Airy functions, Bessel functions, Clausen functions, Coulomb wave
+functions, Coupling coefficients, the Dawson function, Debye functions,
+Dilogarithms, Elliptic integrals, Jacobi elliptic functions, Error
+functions, Exponential integrals, Fermi-Dirac functions, Gamma functions,
+Gegenbauer functions, Hypergeometric functions, Laguerre functions,
+Legendre functions and Spherical Harmonics, the Psi (Digamma) Function,
+Synchrotron functions, Transport functions and Zeta functions.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="airy.html">Airy Functions and Derivatives</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="airy.html#airy-functions">Airy Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="airy.html#zeros-of-airy-functions">Zeros of Airy Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="airy.html#zeros-of-derivatives-of-airy-functions">Zeros of Derivatives of Airy Functions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="bessel.html">Bessel Functions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="bessel.html#regular-cylindrical-bessel-functions">Regular Cylindrical Bessel Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bessel.html#irregular-cylindrical-bessel-functions">Irregular Cylindrical Bessel Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bessel.html#regular-modified-cylindrical-bessel-functions">Regular Modified Cylindrical Bessel Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bessel.html#irregular-modified-cylindrical-bessel-functions">Irregular Modified Cylindrical Bessel Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bessel.html#regular-spherical-bessel-functions">Regular Spherical Bessel Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bessel.html#irregular-spherical-bessel-functions">Irregular Spherical Bessel Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bessel.html#regular-modified-spherical-bessel-functions">Regular Modified Spherical Bessel Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bessel.html#irregular-modified-spherical-bessel-functions">Irregular Modified Spherical Bessel Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bessel.html#regular-bessel-function-fractional-order">Regular Bessel Function - Fractional Order</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bessel.html#irregular-bessel-function-fractional-order">Irregular Bessel Function - Fractional Order</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bessel.html#regular-modified-bessel-functions-fractional-order">Regular Modified Bessel Functions - Fractional Order</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bessel.html#irregular-modified-bessel-functions-fractional-order">Irregular Modified Bessel Functions - Fractional Order</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bessel.html#zeros-of-regular-bessel-functions">Zeros of Regular Bessel Functions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="clausen.html">Clausen Function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="coulomb.html">Coulomb Functions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="coulomb.html#normalized-hydrogenic-bound-states">Normalized Hydrogenic Bound States</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coulomb.html#coulomb-wave-function-normalization-constant">Coulomb Wave Function Normalization Constant</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="coupling.html">Coupling Coefficients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dawson.html">Dawson Function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="debye.html">Debye Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dilog.html">Dilogarithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ellint.html">Elliptic Integrals</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ellint.html#definition-of-legendre-forms">Definition of Legendre Forms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ellint.html#definition-of-carlson-forms">Definition of Carlson Forms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ellint.html#legendre-form-of-complete-elliptic-integrals">Legendre Form of Complete Elliptic Integrals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ellint.html#legendre-form-of-incomplete-elliptic-integrals">Legendre Form of Incomplete Elliptic Integrals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ellint.html#carlson-forms">Carlson Forms</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="erf.html">Error Functions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="erf.html#probability-functions">Probability functions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="expint.html">Exponential Integrals</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="expint.html#exponential-integral">Exponential Integral</a></li>
+<li class="toctree-l2"><a class="reference internal" href="expint.html#ei-x">Ei(x)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="expint.html#hyperbolic-integrals">Hyperbolic Integrals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="expint.html#ei-3-x">Ei_3(x)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="expint.html#trigonometric-integrals">Trigonometric Integrals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="expint.html#arctangent-integral">Arctangent Integral</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="fermi-dirac.html">Fermi-Dirac Function</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="fermi-dirac.html#complete-fermi-dirac-integrals">Complete Fermi-Dirac Integrals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fermi-dirac.html#incomplete-fermi-dirac-integrals">Incomplete Fermi-Dirac Integrals</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="gamma-beta.html">Gamma and Beta Functions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gamma-beta.html#gamma-functions">Gamma Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gamma-beta.html#pochhammer-symbol">Pochhammer Symbol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gamma-beta.html#incomplete-gamma-functions">Incomplete Gamma Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gamma-beta.html#beta-functions">Beta Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gamma-beta.html#incomplete-beta-function">Incomplete Beta Function</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="gegenpoly.html">Gegenbauer Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hyperg.html">Hypergeometric Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="laguerre.html">Laguerre Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lambert.html">Lambert W Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="legendre.html">Legendre Functions and Spherical Harmonics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="legendre.html#legendre-polynomials">Legendre Polynomials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="legendre.html#associated-legendre-polynomials-and-spherical-harmonics">Associated Legendre Polynomials and Spherical Harmonics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="legendre.html#conical-functions">Conical Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="legendre.html#radial-functions-for-hyperbolic-space">Radial Functions for Hyperbolic Space</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="log.html">Logarithm and Related Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mathieu.html">Mathieu Functions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="mathieu.html#angular-mathieu-functions">Angular Mathieu Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mathieu.html#radial-mathieu-functions">Radial Mathieu Functions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pow.html">Power Function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="psi.html">Psi (Digamma) Function</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="psi.html#digamma-function">Digamma Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psi.html#trigamma-function">Trigamma Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psi.html#polygamma-function">Polygamma Function</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="synchrotron.html">Synchrotron Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transport.html">Transport Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="zeta.html">Zeta Functions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="zeta.html#riemann-zeta-function">Riemann Zeta Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zeta.html#riemann-zeta-function-minus-one">Riemann Zeta Function Minus One</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zeta.html#hurwitz-zeta-function">Hurwitz Zeta Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zeta.html#eta-function">Eta Function</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sf-refs.html">References and Further Reading</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="airy.html" title="Airy Functions and Derivatives"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="elementary.html" title="Elementary Functions"
+             >previous</a> |</li>
+        <li><a href="../index.html">AMPL</a> &raquo;</li>
+          <li><a href="index.html" >AMPL bindings for the GNU Scientific Library</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012 AMPL Optimization, Inc.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

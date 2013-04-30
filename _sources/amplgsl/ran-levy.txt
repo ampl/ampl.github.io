@@ -1,0 +1,25 @@
+
+
+
+The Levy alpha-Stable Distribution
+==================================
+   
+.. function:: gsl_ran_levy(c, alpha)
+
+ This function returns a random variate from the `Levy symmetric
+ stable distribution`:index: with scale ``c`` and exponent ``alpha``.
+ The symmetric stable probability distribution is defined by a
+ Fourier transform,
+
+ .. math::
+   p(x) = {1 \over 2 \pi}
+     \int_{-\infty}^{+\infty} \exp(-it x - |c t|^\alpha) dt
+
+ There is no explicit solution for the form of :math:`p(x)` and the library
+ does not define a corresponding pdf function. For :math:`\alpha = 1` the
+ distribution reduces to the Cauchy distribution. For :math:`\alpha = 2` it
+ is a Gaussian distribution with :math:`\sigma = \sqrt{2} c`. For :math:`\alpha < 1`
+ the tails of the distribution become extremely wide.
+
+ The algorithm only works for :math:`0 < \alpha \leq 2`.
+   

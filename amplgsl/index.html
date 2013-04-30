@@ -1,0 +1,194 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>AMPL bindings for the GNU Scientific Library &mdash; AMPL Modeling Language for Mathematical Programming</title>
+    
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '20121105',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="AMPL Modeling Language for Mathematical Programming" href="../index.html" />
+    <link rel="next" title="Front Matter" href="front-matter.html" />
+    <link rel="prev" title="Contents" href="../index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="front-matter.html" title="Front Matter"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../index.html" title="Contents"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">AMPL</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../index.html"
+                        title="previous chapter">Contents</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="front-matter.html"
+                        title="next chapter">Front Matter</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="ampl-bindings-for-the-gnu-scientific-library">
+<h1>AMPL bindings for the GNU Scientific Library<a class="headerlink" href="#ampl-bindings-for-the-gnu-scientific-library" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="front-matter.html">Front Matter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="no-warranty.html">No Warranty</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accuracy.html">Accuracy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="elementary.html">Elementary Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="special.html">Special Functions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="airy.html">Airy Functions and Derivatives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bessel.html">Bessel Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="clausen.html">Clausen Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coulomb.html">Coulomb Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coupling.html">Coupling Coefficients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dawson.html">Dawson Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="debye.html">Debye Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dilog.html">Dilogarithm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ellint.html">Elliptic Integrals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="erf.html">Error Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="expint.html">Exponential Integrals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fermi-dirac.html">Fermi-Dirac Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gamma-beta.html">Gamma and Beta Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gegenpoly.html">Gegenbauer Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hyperg.html">Hypergeometric Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="laguerre.html">Laguerre Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lambert.html">Lambert W Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="legendre.html">Legendre Functions and Spherical Harmonics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="log.html">Logarithm and Related Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mathieu.html">Mathieu Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pow.html">Power Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psi.html">Psi (Digamma) Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="synchrotron.html">Synchrotron Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transport.html">Transport Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zeta.html">Zeta Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sf-refs.html">References and Further Reading</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="rng.html">Random Number Generation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="rng.html#random-number-generator-algorithms">Random number generator algorithms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rng.html#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="randist.html">Random Number Distributions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ran-intro.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ran-gaussian.html">The Gaussian Distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ran-gaussian-tail.html">The Gaussian Tail Distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ran-exponential.html">The Exponential Distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ran-laplace.html">The Laplace Distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ran-exppow.html">The Exponential Power Distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ran-cauchy.html">The Cauchy Distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ran-rayleigh.html">The Rayleigh Distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ran-rayleigh-tail.html">The Rayleigh Tail Distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ran-landau.html">The Landau Distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ran-levy.html">The Levy alpha-Stable Distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ran-levy-skew.html">The Levy skew alpha-Stable Distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ran-gamma.html">The Gamma Distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ran-flat.html">The Flat (Uniform) Distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ran-lognormal.html">The Lognormal Distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ran-chisq.html">The Chi-squared Distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ran-fdist.html">The F-distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ran-tdist.html">The t-distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ran-beta.html">The Beta Distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ran-logistic.html">The Logistic Distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ran-pareto.html">The Pareto Distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ran-weibull.html">The Weibull Distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ran-gumbel1.html">The Type-1 Gumbel Distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ran-gumbel2.html">The Type-2 Gumbel Distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ran-poisson.html">The Poisson Distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ran-bernoulli.html">The Bernoulli Distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ran-binomial.html">The Binomial Distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ran-negative-binomial.html">The Negative Binomial Distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ran-pascal.html">The Pascal Distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ran-geometric.html">The Geometric Distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ran-hypergeometric.html">The Hypergeometric Distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ran-logarithmic.html">The Logarithmic Distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ran-refs.html">References and Further Reading</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="freedoc.html">Free Software Needs Free Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gpl.html">GNU General Public License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fdl.html">GNU Free Documentation License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="history.html">History</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="front-matter.html" title="Front Matter"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../index.html" title="Contents"
+             >previous</a> |</li>
+        <li><a href="../index.html">AMPL</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012 AMPL Optimization, Inc.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

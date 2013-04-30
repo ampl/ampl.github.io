@@ -1,0 +1,276 @@
+
+
+
+Bessel Functions
+================
+
+The routines described in this section compute the Cylindrical Bessel
+functions :math:`J_n(x)`, :math:`Y_n(x)`, Modified cylindrical Bessel functions
+:math:`I_n(x)`, :math:`K_n(x)`, Spherical Bessel functions :math:`j_l(x)`, :math:`y_l(x)`,
+and Modified Spherical Bessel functions :math:`i_l(x)`, :math:`k_l(x)`.
+For more information see Abramowitz & Stegun, Chapters 9 and 10.
+
+.. index:: Bessel function
+   
+Regular Cylindrical Bessel Functions
+------------------------------------
+   
+.. function:: gsl_sf_bessel_J0(x)
+
+ This routine computes the regular cylindrical Bessel function of
+ zeroth order, :math:`J_0(x)`.
+   
+.. function:: gsl_sf_bessel_J1(x)
+
+ This routine computes the regular cylindrical Bessel function of
+ first order, :math:`J_1(x)`.
+   
+.. function:: gsl_sf_bessel_Jn(n, x)
+
+ This routine computes the regular cylindrical Bessel function of
+ integer order :math:`n`, :math:`J_n(x)`.
+   
+Irregular Cylindrical Bessel Functions
+--------------------------------------
+   
+.. function:: gsl_sf_bessel_Y0(x)
+
+ This routine computes the irregular cylindrical Bessel function of
+ zeroth order, :math:`Y_0(x)`, for :math:`x > 0`.
+   
+.. function:: gsl_sf_bessel_Y1(x)
+
+ This routine computes the irregular cylindrical Bessel function of
+ first order, :math:`Y_1(x)`, for :math:`x > 0`.
+   
+.. function:: gsl_sf_bessel_Yn(n, x)
+
+ This routine computes the irregular cylindrical Bessel function of
+ integer order :math:`n`, :math:`Y_n(x)`, for :math:`x > 0`.
+   
+Regular Modified Cylindrical Bessel Functions
+---------------------------------------------
+   
+.. function:: gsl_sf_bessel_I0(x)
+
+ This routine computes the regular modified cylindrical Bessel function
+ of zeroth order, :math:`I_0(x)`.
+   
+.. function:: gsl_sf_bessel_I1(x)
+
+ This routine computes the regular modified cylindrical Bessel function
+ of first order, :math:`I_1(x)`.
+   
+.. function:: gsl_sf_bessel_In(n, x)
+
+ This routine computes the regular modified cylindrical Bessel function
+ of integer order :math:`n`, :math:`I_n(x)`.
+   
+.. function:: gsl_sf_bessel_I0_scaled(x)
+
+ This routine computes the scaled regular modified cylindrical
+ Bessel function of zeroth order :math:`\exp(-|x|) I_0(x)`.
+   
+.. function:: gsl_sf_bessel_I1_scaled(x)
+
+ This routine computes the scaled regular modified cylindrical
+ Bessel function of first order :math:`\exp(-|x|) I_1(x)`.
+   
+.. function:: gsl_sf_bessel_In_scaled(n, x)
+
+ This routine computes the scaled regular modified cylindrical
+ Bessel function of integer order :math:`n`, :math:`\exp(-|x|) I_n(x)`.
+   
+Irregular Modified Cylindrical Bessel Functions
+-----------------------------------------------
+   
+.. function:: gsl_sf_bessel_K0(x)
+
+ This routine computes the irregular modified cylindrical Bessel
+ function of zeroth order, :math:`K_0(x)`, for :math:`x > 0`.
+   
+.. function:: gsl_sf_bessel_K1(x)
+
+ This routine computes the irregular modified cylindrical Bessel
+ function of first order, :math:`K_1(x)`, for :math:`x > 0`.
+   
+.. function:: gsl_sf_bessel_Kn(n, x)
+
+ This routine computes the irregular modified cylindrical Bessel
+ function of integer order :math:`n`, :math:`K_n(x)`, for :math:`x > 0`.
+   
+.. function:: gsl_sf_bessel_K0_scaled(x)
+
+ This routine computes the scaled irregular modified cylindrical Bessel
+ function of zeroth order, :math:`\exp(x) K_0(x)`, for :math:`x > 0`.
+   
+.. function:: gsl_sf_bessel_K1_scaled(x)
+
+ This routine computes the scaled irregular modified cylindrical Bessel
+ function of first order, :math:`\exp(x) K_1(x)`, for :math:`x > 0`.
+   
+.. function:: gsl_sf_bessel_Kn_scaled(n, x)
+
+ This routine computes the scaled irregular modified cylindrical Bessel
+ function of integer order :math:`n`, :math:`\exp(x) K_n(x)`, for :math:`x > 0`.
+   
+Regular Spherical Bessel Functions
+----------------------------------
+   
+.. function:: gsl_sf_bessel_j0(x)
+
+ This routine computes the regular spherical Bessel function of zeroth
+ order, :math:`j_0(x) = \sin(x)/x`.
+   
+.. function:: gsl_sf_bessel_j1(x)
+
+ This routine computes the regular spherical Bessel function of first
+ order, :math:`j_1(x) = (\sin(x)/x - \cos(x))/x`.
+   
+.. function:: gsl_sf_bessel_j2(x)
+
+ This routine computes the regular spherical Bessel function of second
+ order, :math:`j_2(x) = ((3/x^2 - 1)\sin(x) - 3\cos(x)/x)/x`.
+   
+.. function:: gsl_sf_bessel_jl(l, x)
+
+ This routine computes the regular spherical Bessel function of integer
+ order :math:`l`, :math:`j_l(x)`, for :math:`l \geq 0` and :math:`x \geq 0`.
+   
+Irregular Spherical Bessel Functions
+------------------------------------
+   
+.. function:: gsl_sf_bessel_y0(x)
+
+ This routine computes the irregular spherical Bessel function of
+ zeroth order, :math:`y_0(x) = -\cos(x)/x`.
+   
+.. function:: gsl_sf_bessel_y1(x)
+
+ This routine computes the irregular spherical Bessel function of
+ first order, :math:`y_1(x) = -(\cos(x)/x + \sin(x))/x`.
+   
+.. function:: gsl_sf_bessel_y2(x)
+
+ This routine computes the irregular spherical Bessel function of
+ second order, :math:`y_2(x) = (-3/x^3 + 1/x)\cos(x) - (3/x^2)\sin(x)`.
+   
+.. function:: gsl_sf_bessel_yl(l, x)
+
+ This routine computes the irregular spherical Bessel function of
+ integer order :math:`l`, :math:`y_l(x)`, for :math:`l \geq 0`.
+   
+Regular Modified Spherical Bessel Functions
+-------------------------------------------
+   
+.. function:: gsl_sf_bessel_i0_scaled(x)
+
+ This routine computes the regular modified spherical Bessel function
+ of zeroth order, :math:`\exp(-|x|) i_0(x)`.
+   
+.. function:: gsl_sf_bessel_i1_scaled(x)
+
+ This routine computes the regular modified spherical Bessel function
+ of first order, :math:`\exp(-|x|) i_1(x)`.
+   
+.. function:: gsl_sf_bessel_i2_scaled(x)
+
+ This routine computes the regular modified spherical Bessel function
+ of second order, :math:`\exp(-|x|) i_2(x)`.
+   
+.. function:: gsl_sf_bessel_il_scaled(l, x)
+
+ This routine computes the regular modified spherical Bessel function
+ of integer order :math:`l`, :math:`\exp(-|x|) i_l(x)`.
+   
+Irregular Modified Spherical Bessel Functions
+---------------------------------------------
+   
+.. function:: gsl_sf_bessel_k0_scaled(x)
+
+ This routine computes the scaled irregular modified spherical Bessel
+ function of zeroth order, :math:`\exp(x) k_0(x)`, for :math:`x > 0`.
+   
+.. function:: gsl_sf_bessel_k1_scaled(x)
+
+ This routine computes the scaled irregular modified spherical Bessel
+ function of first order, :math:`\exp(x) k_1(x)`, for :math:`x > 0`.
+   
+.. function:: gsl_sf_bessel_k2_scaled(x)
+
+ This routine computes the scaled irregular modified spherical Bessel
+ function of second order, :math:`\exp(x) k_2(x)`, for :math:`x > 0`.
+   
+.. function:: gsl_sf_bessel_kl_scaled(l, x)
+
+ This routine computes the scaled irregular modified spherical Bessel
+ function of integer order :math:`l`, :math:`\exp(x) k_l(x)`, for :math:`x > 0`.
+   
+Regular Bessel Function - Fractional Order
+------------------------------------------
+   
+.. function:: gsl_sf_bessel_Jnu(nu, x)
+
+ This routine computes the regular cylindrical Bessel function of
+ fractional order :math:`\nu`, :math:`J_\nu(x)`.
+   
+Irregular Bessel Function - Fractional Order
+---------------------------------------------
+   
+.. function:: gsl_sf_bessel_Ynu(nu, x)
+
+ This routine computes the irregular cylindrical Bessel function of
+ fractional order :math:`\nu`, :math:`Y_\nu(x)`.
+   
+Regular Modified Bessel Functions - Fractional Order
+----------------------------------------------------
+   
+.. function:: gsl_sf_bessel_Inu(nu, x)
+
+ This routine computes the regular modified Bessel function of
+ fractional order :math:`\nu`, :math:`I_\nu(x)` for :math:`x > 0`, :math:`\nu > 0`.
+   
+.. function:: gsl_sf_bessel_Inu_scaled(nu, x)
+
+ This routine computes the scaled regular modified Bessel function of
+ fractional order :math:`\nu`, :math:`\exp(-|x|) I_\nu(x)` for :math:`x > 0`,
+ :math:`\nu > 0`.
+   
+Irregular Modified Bessel Functions - Fractional Order
+------------------------------------------------------
+   
+.. function:: gsl_sf_bessel_Knu(nu, x)
+
+ This routine computes the irregular modified Bessel function of
+ fractional order :math:`\nu`, :math:`K_\nu(x)` for :math:`x > 0`, :math:`\nu > 0`.
+   
+.. function:: gsl_sf_bessel_lnKnu(nu, x)
+
+ This routine computes the logarithm of the irregular modified Bessel
+ function of fractional order :math:`\nu`, :math:`\ln(K_\nu(x))` for :math:`x > 0`,
+ :math:`\nu > 0`.
+   
+.. function:: gsl_sf_bessel_Knu_scaled(nu, x)
+
+ This routine computes the scaled irregular modified Bessel function of
+ fractional order :math:`\nu`, :math:`\exp(|x|) K_\nu(x)` for :math:`x > 0`, :math:`\nu > 0`.
+   
+Zeros of Regular Bessel Functions
+---------------------------------
+   
+.. function:: gsl_sf_bessel_zero_J0(s)
+
+ This routine computes the location of the :math:`s`-th positive zero of the
+ Bessel function :math:`J_0(x)`.
+   
+.. function:: gsl_sf_bessel_zero_J1(s)
+
+ This routine computes the location of the :math:`s`-th positive zero of the
+ Bessel function :math:`J_1(x)`.
+   
+.. function:: gsl_sf_bessel_zero_Jnu(nu, s)
+
+ This routine computes the location of the :math:`s`-th positive zero of the
+ Bessel function :math:`J_\nu(x)`. The current implementation does not support
+ negative values of ``nu``.
+   

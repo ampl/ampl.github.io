@@ -1,0 +1,34 @@
+
+
+
+The Type-2 Gumbel Distribution
+==============================
+   
+.. function:: gsl_ran_gumbel2(a, b)
+
+ This function returns a random variate from the `Type-2 Gumbel
+ distribution`:index:. The Type-2 Gumbel distribution function is,
+
+ .. math::
+   p(x) dx = a b x^{-a-1} \exp(-b x^{-a}) dx
+
+ for :math:`-\infty < x < \infty`.
+   
+.. function:: gsl_ran_gumbel2_pdf(x, a, b)
+
+ This function computes the probability density :math:`p(x)` at :math:`x` for a
+ Type-2 Gumbel distribution with parameters ``a`` and ``b``, using the
+ formula given above.
+   
+.. function:: gsl_cdf_gumbel2_P(x, a, b)
+   
+.. function:: gsl_cdf_gumbel2_Q(x, a, b)
+   
+.. function:: gsl_cdf_gumbel2_Pinv(P, a, b)
+   
+.. function:: gsl_cdf_gumbel2_Qinv(Q, a, b)
+
+ These functions compute the cumulative distribution functions
+ :math:`P(x), Q(x)` and their inverses for the Type-2 Gumbel distribution
+ with parameters ``a`` and ``b``.
+   

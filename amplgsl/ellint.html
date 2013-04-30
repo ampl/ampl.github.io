@@ -1,0 +1,251 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Elliptic Integrals &mdash; AMPL Modeling Language for Mathematical Programming</title>
+    
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '20121105',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="AMPL Modeling Language for Mathematical Programming" href="../index.html" />
+    <link rel="up" title="Special Functions" href="special.html" />
+    <link rel="next" title="Error Functions" href="erf.html" />
+    <link rel="prev" title="Dilogarithm" href="dilog.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="erf.html" title="Error Functions"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="dilog.html" title="Dilogarithm"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">AMPL</a> &raquo;</li>
+          <li><a href="index.html" >AMPL bindings for the GNU Scientific Library</a> &raquo;</li>
+          <li><a href="special.html" accesskey="U">Special Functions</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Elliptic Integrals</a><ul>
+<li><a class="reference internal" href="#definition-of-legendre-forms">Definition of Legendre Forms</a></li>
+<li><a class="reference internal" href="#definition-of-carlson-forms">Definition of Carlson Forms</a></li>
+<li><a class="reference internal" href="#legendre-form-of-complete-elliptic-integrals">Legendre Form of Complete Elliptic Integrals</a></li>
+<li><a class="reference internal" href="#legendre-form-of-incomplete-elliptic-integrals">Legendre Form of Incomplete Elliptic Integrals</a></li>
+<li><a class="reference internal" href="#carlson-forms">Carlson Forms</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="dilog.html"
+                        title="previous chapter">Dilogarithm</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="erf.html"
+                        title="next chapter">Error Functions</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="elliptic-integrals">
+<h1>Elliptic Integrals<a class="headerlink" href="#elliptic-integrals" title="Permalink to this headline">¶</a></h1>
+<p>Information about the elliptic integrals can be found in
+Abramowitz &amp; Stegun, Chapter 17.</p>
+<div class="section" id="definition-of-legendre-forms">
+<span id="index-0"></span><h2>Definition of Legendre Forms<a class="headerlink" href="#definition-of-legendre-forms" title="Permalink to this headline">¶</a></h2>
+<p>The Legendre forms of elliptic integrals <span class="math">\(F(\phi,k)\)</span>, <span class="math">\(E(\phi,k)\)</span> and
+<span class="math">\(\Pi(\phi,k,n)\)</span> are defined by,</p>
+<div class="math">
+\[\begin{split}F(\phi,k) = \int_0^\phi 1/\sqrt{1 - k^2 \sin^2(t)} dt \\
+E(\phi,k) = \int_0^\phi \sqrt{1 - k^2 \sin^2(t)} dt \\
+\Pi(\phi,k,n) =
+  \int_0^\phi 1/((1 + n \sin^2(t))\sqrt{1 - k^2 \sin^2(t)}) dt\end{split}\]</div>
+<p>The complete Legendre forms are denoted by <span class="math">\(K(k) = F(\pi/2, k)\)</span> and
+<span class="math">\(E(k) = E(\pi/2, k)\)</span>.</p>
+<p>The notation used here is based on Carlson, Numerische Mathematik 33
+(1979) 1 and differs slightly from that used by Abramowitz &amp; Stegun,
+where the functions are given in terms of the parameter <span class="math">\(m = k^2\)</span> and
+<span class="math">\(n\)</span> is replaced by <span class="math">\(-n\)</span>.</p>
+</div>
+<div class="section" id="definition-of-carlson-forms">
+<h2>Definition of Carlson Forms<a class="headerlink" href="#definition-of-carlson-forms" title="Permalink to this headline">¶</a></h2>
+<p>The Carlson symmetric forms of elliptical integrals <span class="math">\(RC(x,y)\)</span>,
+<span class="math">\(RD(x,y,z)\)</span>, <span class="math">\(RF(x,y,z)\)</span> and <span class="math">\(RJ(x,y,z,p)\)</span> are defined by,</p>
+<div class="math">
+\[\begin{split}RC(x,y) = 1/2 \int_0^\infty (t+x)^{-1/2} (t+y)^{-1} dt \\
+RD(x,y,z) = 3/2 \int_0^\infty
+  (t+x)^{-1/2} (t+y)^{-1/2} (t+z)^{-3/2} dt \\
+RF(x,y,z) = 1/2 \int_0^\infty
+  (t+x)^{-1/2} (t+y)^{-1/2} (t+z)^{-1/2} dt \\
+RJ(x,y,z,p) = 3/2 \int_0^\infty
+  (t+x)^{-1/2} (t+y)^{-1/2} (t+z)^{-1/2} (t+p)^{-1} dt\end{split}\]</div>
+</div>
+<div class="section" id="legendre-form-of-complete-elliptic-integrals">
+<h2>Legendre Form of Complete Elliptic Integrals<a class="headerlink" href="#legendre-form-of-complete-elliptic-integrals" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="gsl_sf_ellint_Kcomp">
+<tt class="descname">gsl_sf_ellint_Kcomp</tt><big>(</big><em>k</em><big>)</big><a class="headerlink" href="#gsl_sf_ellint_Kcomp" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the complete elliptic integral <span class="math">\(K(k)\)</span>.
+Note that Abramowitz &amp; Stegun define this function in terms
+of the parameter <span class="math">\(m = k^2\)</span>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="gsl_sf_ellint_Ecomp">
+<tt class="descname">gsl_sf_ellint_Ecomp</tt><big>(</big><em>k</em><big>)</big><a class="headerlink" href="#gsl_sf_ellint_Ecomp" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the complete elliptic integral <span class="math">\(E(k)\)</span>.
+Note that Abramowitz &amp; Stegun define this function in terms
+of the parameter <span class="math">\(m = k^2\)</span>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="gsl_sf_ellint_Pcomp">
+<tt class="descname">gsl_sf_ellint_Pcomp</tt><big>(</big><em>k</em>, <em>n</em><big>)</big><a class="headerlink" href="#gsl_sf_ellint_Pcomp" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the complete elliptic integral <span class="math">\(\Pi(k,n)\)</span>.
+Note that Abramowitz &amp; Stegun define this function in terms
+of the parameters <span class="math">\(m = k^2\)</span> and <span class="math">\(\sin^2(\alpha) = k^2\)</span>, with the
+change of sign <span class="math">\(n \to -n\)</span>.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="legendre-form-of-incomplete-elliptic-integrals">
+<h2>Legendre Form of Incomplete Elliptic Integrals<a class="headerlink" href="#legendre-form-of-incomplete-elliptic-integrals" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="gsl_sf_ellint_F">
+<tt class="descname">gsl_sf_ellint_F</tt><big>(</big><em>phi</em>, <em>k</em><big>)</big><a class="headerlink" href="#gsl_sf_ellint_F" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the incomplete elliptic integral <span class="math">\(F(\phi,k)\)</span>.
+Note that Abramowitz &amp; Stegun define this function in terms of the
+parameter <span class="math">\(m = k^2\)</span>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="gsl_sf_ellint_E">
+<tt class="descname">gsl_sf_ellint_E</tt><big>(</big><em>phi</em>, <em>k</em><big>)</big><a class="headerlink" href="#gsl_sf_ellint_E" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the incomplete elliptic integral <span class="math">\(E(\phi,k)\)</span>.
+Note that Abramowitz &amp; Stegun define this function in terms of the
+parameter <span class="math">\(m = k^2\)</span>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="gsl_sf_ellint_P">
+<tt class="descname">gsl_sf_ellint_P</tt><big>(</big><em>phi</em>, <em>k</em>, <em>n</em><big>)</big><a class="headerlink" href="#gsl_sf_ellint_P" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the incomplete elliptic integral <span class="math">\(\Pi(\phi,k,n)\)</span>.
+Note that Abramowitz &amp; Stegun define this function in terms of the
+parameters <span class="math">\(m = k^2\)</span> and <span class="math">\(\sin^2(\alpha) = k^2\)</span>, with the change of
+sign <span class="math">\(n \to -n\)</span>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="gsl_sf_ellint_D">
+<tt class="descname">gsl_sf_ellint_D</tt><big>(</big><em>phi</em>, <em>k</em>, <em>n</em><big>)</big><a class="headerlink" href="#gsl_sf_ellint_D" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the incomplete elliptic integral <span class="math">\(D(\phi,k,n)\)</span>
+which is defined through the Carlson form <span class="math">\(RD(x,y,z)\)</span> by the following
+relation,</p>
+<div class="math">
+\[D(\phi,k,n) = (1/3)(\sin(\phi))^3
+  RD (1-\sin^2(\phi), 1-k^2 \sin^2(\phi), 1).\]</div>
+</dd></dl>
+
+<p>The argument <span class="math">\(n\)</span> is not used and will be removed in a future release.</p>
+</div>
+<div class="section" id="carlson-forms">
+<h2>Carlson Forms<a class="headerlink" href="#carlson-forms" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="gsl_sf_ellint_RC">
+<tt class="descname">gsl_sf_ellint_RC</tt><big>(</big><em>x</em>, <em>y</em><big>)</big><a class="headerlink" href="#gsl_sf_ellint_RC" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the incomplete elliptic integral <span class="math">\(RC(x,y)\)</span>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="gsl_sf_ellint_RD">
+<tt class="descname">gsl_sf_ellint_RD</tt><big>(</big><em>x</em>, <em>y</em>, <em>z</em><big>)</big><a class="headerlink" href="#gsl_sf_ellint_RD" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the incomplete elliptic integral <span class="math">\(RD(x,y,z)\)</span>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="gsl_sf_ellint_RF">
+<tt class="descname">gsl_sf_ellint_RF</tt><big>(</big><em>x</em>, <em>y</em>, <em>z</em><big>)</big><a class="headerlink" href="#gsl_sf_ellint_RF" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the incomplete elliptic integral <span class="math">\(RF(x,y,z)\)</span>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="gsl_sf_ellint_RJ">
+<tt class="descname">gsl_sf_ellint_RJ</tt><big>(</big><em>x</em>, <em>y</em>, <em>z</em>, <em>p</em><big>)</big><a class="headerlink" href="#gsl_sf_ellint_RJ" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the incomplete elliptic integral <span class="math">\(RJ(x,y,z,p)\)</span>.</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="erf.html" title="Error Functions"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="dilog.html" title="Dilogarithm"
+             >previous</a> |</li>
+        <li><a href="../index.html">AMPL</a> &raquo;</li>
+          <li><a href="index.html" >AMPL bindings for the GNU Scientific Library</a> &raquo;</li>
+          <li><a href="special.html" >Special Functions</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012 AMPL Optimization, Inc.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,56 @@
+
+
+
+Introduction
+============
+
+Continuous random number distributions are defined by a probability
+density function, :math:`p(x)`, such that the probability of :math:`x` occurring
+in the infinitesimal range :math:`x` to :math:`x+dx` is :math:`p dx`.
+
+The cumulative distribution function for the lower tail :math:`P(x)` is defined
+by the integral,
+
+.. math::
+  P(x) = \int_{-\infty}^{x} dx' p(x')
+
+and gives the probability of a variate taking a value less than :math:`x`.
+
+The cumulative distribution function for the upper tail :math:`Q(x)` is defined
+by the integral,
+
+.. math::
+  Q(x) = \int_{x}^{+\infty} dx' p(x')
+
+and gives the probability of a variate taking a value greater than :math:`x`.
+
+The upper and lower cumulative distribution functions are related by
+:math:`P(x) + Q(x) = 1` and satisfy :math:`0 \leq P(x) \leq 1, 0 \leq Q(x) \leq 1`.
+
+The inverse cumulative distributions, :math:`x=P^{-1}(P)` and :math:`x=Q^{-1}(Q)`
+give the values of :math:`x` which correspond to a specific value of :math:`P` or :math:`Q`.
+They can be used to find confidence limits from probability values.
+
+For discrete distributions the probability of sampling the integer
+value :math:`k` is given by :math:`p(k)`, where :math:`\sum_k p(k) = 1`. The cumulative
+distribution for the lower tail :math:`P(k)` of a discrete distribution is
+defined as,
+
+.. math::
+  P(k) = \sum_{i \leq k} p(i)
+
+where the sum is over the allowed range of the distribution less than
+or equal to :math:`k`.
+
+The cumulative distribution for the upper tail of a discrete distribution
+:math:`Q(k)` is defined as
+
+.. math::
+  Q(k) = \sum_{i > k} p(i)
+
+giving the sum of probabilities for all values greater than :math:`k`.
+These two definitions satisfy the identity :math:`P(k)+Q(k)=1`.
+
+If the range of the distribution is :math:`1` to :math:`n` inclusive then
+:math:`P(n)=1, Q(n)=0` while :math:`P(1) = p(1), Q(1)=1-p(1)`.
+   

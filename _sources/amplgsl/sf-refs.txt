@@ -1,0 +1,28 @@
+
+
+
+References and Further Reading
+------------------------------
+
+The library follows the conventions of Abramowitz & Stegun where
+possible,
+
+* Abramowitz & Stegun (eds.), *Handbook of Mathematical Functions*
+
+The following papers contain information on the algorithms used to
+compute the special functions,
+
+* Allan J. MacLeod, MISCFUN: A software package to compute uncommon
+  special functions. *ACM Trans. Math. Soft.*, vol. 22, 1996, 288-301
+* G.N. Watson, A Treatise on the Theory of Bessel Functions,
+  2nd Edition (Cambridge University Press, 1944).
+* G. Nemeth, Mathematical Approximations of Special Functions,
+  Nova Science Publishers, ISBN 1-56072-052-2
+* B.C. Carlson, Special Functions of Applied Mathematics (1977)
+* N. M. Temme, Special Functions: An Introduction to the Classical
+  Functions of Mathematical Physics (1996), ISBN 978-0471113133.
+* W.J. Thompson, Atlas for Computing Mathematical Functions, John Wiley
+  & Sons, New York (1997).
+* Y.Y. Luke, Algorithms for the Computation of Mathematical Functions,
+  Academic Press, New York (1977).
+   

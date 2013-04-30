@@ -1,0 +1,46 @@
+
+
+
+Special Functions
+-----------------
+
+This chapter describes the AMPL bindings for the GSL special function
+library. The library includes routines for calculating the values of
+Airy functions, Bessel functions, Clausen functions, Coulomb wave
+functions, Coupling coefficients, the Dawson function, Debye functions,
+Dilogarithms, Elliptic integrals, Jacobi elliptic functions, Error
+functions, Exponential integrals, Fermi-Dirac functions, Gamma functions,
+Gegenbauer functions, Hypergeometric functions, Laguerre functions,
+Legendre functions and Spherical Harmonics, the Psi (Digamma) Function,
+Synchrotron functions, Transport functions and Zeta functions.
+
+.. toctree::
+   :maxdepth: 2
+
+   airy
+   bessel
+   clausen
+   coulomb
+   coupling
+   dawson
+   debye
+   dilog
+   ellint
+   erf
+   expint
+   fermi-dirac
+   gamma-beta
+   gegenpoly
+   hyperg
+   laguerre
+   lambert
+   legendre
+   log
+   mathieu
+   pow
+   psi
+   synchrotron
+   transport
+   zeta
+   sf-refs
+   

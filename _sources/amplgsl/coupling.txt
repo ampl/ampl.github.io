@@ -1,0 +1,63 @@
+
+
+
+Coupling Coefficients
+=====================
+
+The Wigner 3-j, 6-j and 9-j symbols give the coupling coefficients
+for combined angular momentum vectors. Since the arguments of the
+standard coupling coefficient functions are integer or half-integer,
+the arguments of the following functions are, by convention,
+integers equal to twice the actual spin value. For information on
+the 3-j coefficients see Abramowitz & Stegun, Section 27.9.
+
+.. index:: coupling coefficient
+   
+.. function:: gsl_sf_coupling_3j(two_ja, two_jb, two_jc, two_ma, two_mb, two_mc)
+
+ These routines compute the Wigner 3-j coefficient,
+
+ .. math::
+   \left( \begin{array}{ccc}
+          ja & jb & jc \\
+          ma & mb & mc
+          \end{array} \right)
+
+ where the arguments are given in half-integer units, ja = two_ja / 2,
+ ma = two_ma / 2, etc.
+
+.. index:: Wigner 3-j coefficient
+   
+.. function::
+  gsl_sf_coupling_6j(two_ja, two_jb, two_jc, two_jd, two_je, two_jf)
+
+ These routines compute the Wigner 6-j coefficient,
+
+ .. math::
+   \left( \begin{array}{ccc}
+          ja & jb & jc \\
+          jd & je & jf
+          \end{array} \right)
+
+ where the arguments are given in half-integer units, ja = two_ja / 2,
+ jb = two_jb / 2, etc.
+
+.. index:: Wigner 6-j coefficient
+   
+.. function::
+  gsl_sf_coupling_9j(two_ja, two_jb, two_jc, two_jd, two_je, two_jf, two_jg, two_jh, two_ji)
+
+ These routines compute the Wigner 9-j coefficient,
+
+ .. math::
+   \left( \begin{array}{ccc}
+          ja & jb & jc \\
+          jd & je & jf \\
+          jg & jh & ji
+          \end{array} \right)
+
+ where the arguments are given in half-integer units, ja = two_ja / 2,
+ jb = two_jb / 2, etc.
+
+.. index:: Wigner 9-j coefficient
+   

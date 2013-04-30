@@ -1,0 +1,233 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Exponential Integrals &mdash; AMPL Modeling Language for Mathematical Programming</title>
+    
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '20121105',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="AMPL Modeling Language for Mathematical Programming" href="../index.html" />
+    <link rel="up" title="Special Functions" href="special.html" />
+    <link rel="next" title="Fermi-Dirac Function" href="fermi-dirac.html" />
+    <link rel="prev" title="Error Functions" href="erf.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="fermi-dirac.html" title="Fermi-Dirac Function"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="erf.html" title="Error Functions"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">AMPL</a> &raquo;</li>
+          <li><a href="index.html" >AMPL bindings for the GNU Scientific Library</a> &raquo;</li>
+          <li><a href="special.html" accesskey="U">Special Functions</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Exponential Integrals</a><ul>
+<li><a class="reference internal" href="#exponential-integral">Exponential Integral</a></li>
+<li><a class="reference internal" href="#ei-x">Ei(x)</a></li>
+<li><a class="reference internal" href="#hyperbolic-integrals">Hyperbolic Integrals</a></li>
+<li><a class="reference internal" href="#ei-3-x">Ei_3(x)</a></li>
+<li><a class="reference internal" href="#trigonometric-integrals">Trigonometric Integrals</a></li>
+<li><a class="reference internal" href="#arctangent-integral">Arctangent Integral</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="erf.html"
+                        title="previous chapter">Error Functions</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="fermi-dirac.html"
+                        title="next chapter">Fermi-Dirac Function</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="exponential-integrals">
+<h1>Exponential Integrals<a class="headerlink" href="#exponential-integrals" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="exponential-integral">
+<span id="index-0"></span><h2>Exponential Integral<a class="headerlink" href="#exponential-integral" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="gsl_sf_expint_E1">
+<tt class="descname">gsl_sf_expint_E1</tt><big>(</big><em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_expint_E1" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the exponential integral <span class="math">\(\operatorname{E_1}(x)\)</span>,</p>
+<div class="math">
+\[\operatorname{E_1}(x) :=
+  \operatorname{Re} \int_1^\infty \exp(-xt)/t dt.\]</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="gsl_sf_expint_E2">
+<tt class="descname">gsl_sf_expint_E2</tt><big>(</big><em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_expint_E2" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the second-order exponential integral
+<span class="math">\(\operatorname{E_2}(x)\)</span>,</p>
+<div class="math">
+\[\operatorname{E_2(x)} :=
+  \operatorname{Re} \int_1^\infty \exp(-xt)/t^2 dt.\]</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="gsl_sf_expint_En">
+<tt class="descname">gsl_sf_expint_En</tt><big>(</big><em>n</em>, <em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_expint_En" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the exponential integral <span class="math">\(\operatorname{E_n}(x)\)</span>
+of order <span class="math">\(n\)</span>,</p>
+<div class="math">
+\[\operatorname{E_n}(x) :=
+  \operatorname{Re} \int_1^\infty \exp(-xt)/t^n dt.\]</div>
+</dd></dl>
+
+</div>
+<div class="section" id="ei-x">
+<h2>Ei(x)<a class="headerlink" href="#ei-x" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="gsl_sf_expint_Ei">
+<tt class="descname">gsl_sf_expint_Ei</tt><big>(</big><em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_expint_Ei" title="Permalink to this definition">¶</a></dt>
+<dd><p>These routines compute the exponential integral <span class="math">\(\operatorname{Ei}(x)\)</span>,</p>
+<div class="math">
+\[\operatorname{Ei}(x) := - PV(\int_{-x}^\infty \exp(-t)/t dt)\]</div>
+<p>where <span class="math">\(PV\)</span> denotes the principal value of the integral.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="hyperbolic-integrals">
+<h2>Hyperbolic Integrals<a class="headerlink" href="#hyperbolic-integrals" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="gsl_sf_Shi">
+<tt class="descname">gsl_sf_Shi</tt><big>(</big><em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_Shi" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the integral</p>
+<div class="math">
+\[\operatorname{Shi}(x) = \int_0^x \sinh(t)/t dt.\]</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="gsl_sf_Chi">
+<tt class="descname">gsl_sf_Chi</tt><big>(</big><em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_Chi" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the integral</p>
+<div class="math">
+\[\operatorname{Chi}(x) := \operatorname{Re}[
+  \gamma_E + \log(x) + \int_0^x (\cosh(t)-1)/t dt],\]</div>
+<p>where <span class="math">\(\gamma_E\)</span> is the Euler constant.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="ei-3-x">
+<h2>Ei_3(x)<a class="headerlink" href="#ei-3-x" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="gsl_sf_expint_3">
+<tt class="descname">gsl_sf_expint_3</tt><big>(</big><em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_expint_3" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the third-order exponential integral</p>
+<div class="math">
+\[\operatorname{Ei_3}(x) = \int_0^x \exp(-t^3) dt \text{ for } x \geq 0.\]</div>
+</dd></dl>
+
+</div>
+<div class="section" id="trigonometric-integrals">
+<h2>Trigonometric Integrals<a class="headerlink" href="#trigonometric-integrals" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="gsl_sf_Si">
+<tt class="descname">gsl_sf_Si</tt><big>(</big><em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_Si" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the <span class="target" id="index-1"></span>Sine integral</p>
+<div class="math">
+\[\operatorname{Si}(x) = \int_0^x \sin(t)/t dt.\]</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="gsl_sf_Ci">
+<tt class="descname">gsl_sf_Ci</tt><big>(</big><em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_Ci" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the <span class="target" id="index-2"></span>Cosine integral</p>
+<div class="math">
+\[\begin{split}\operatorname{Ci}(x) = -\int_x^\infty \cos(t)/t dt \text{ for } x &gt; 0.\end{split}\]</div>
+</dd></dl>
+
+</div>
+<div class="section" id="arctangent-integral">
+<h2>Arctangent Integral<a class="headerlink" href="#arctangent-integral" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="gsl_sf_atanint">
+<tt class="descname">gsl_sf_atanint</tt><big>(</big><em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_atanint" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the <span class="target" id="index-3"></span>Arctangent integral, which is
+defined as</p>
+<div class="math">
+\[\operatorname{AtanInt}(x) = \int_0^x \arctan(t)/t dt.\]</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="fermi-dirac.html" title="Fermi-Dirac Function"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="erf.html" title="Error Functions"
+             >previous</a> |</li>
+        <li><a href="../index.html">AMPL</a> &raquo;</li>
+          <li><a href="index.html" >AMPL bindings for the GNU Scientific Library</a> &raquo;</li>
+          <li><a href="special.html" >Special Functions</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012 AMPL Optimization, Inc.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

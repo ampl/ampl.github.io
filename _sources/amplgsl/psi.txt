@@ -1,0 +1,55 @@
+
+
+
+Psi (Digamma) Function
+======================
+
+The polygamma functions of order :math:`n` are defined by
+
+.. math::
+  \psi^{(n)}(x) = (d/dx)^n \psi(x) = (d/dx)^{n+1} \log(\Gamma(x))
+
+where :math:`\psi(x) = \Gamma'(x)/\Gamma(x)` is known as the digamma function.
+
+.. index::
+  psi function
+  polygamma function
+   
+Digamma Function
+----------------
+   
+.. function:: gsl_sf_psi_int(n)
+
+ This routine computes the `digamma function`:index: :math:`\psi(n)` for positive
+ integer :math:`n`. The digamma function is also called the Psi function.
+   
+.. function:: gsl_sf_psi(x)
+
+ This routine computes the digamma function :math:`\psi(x)` for general
+ :math:`x, x \ne 0`.
+   
+.. function:: gsl_sf_psi_1piy(x)
+
+ This routine computes the real part of the digamma function on
+ the line :math:`1+i y, \operatorname{Re}[\psi(1 + i y)]`.
+   
+Trigamma Function
+-----------------
+   
+.. function:: gsl_sf_psi_1_int(n)
+
+ This routine computes the `Trigamma function`:index: :math:`\psi'(n)` for
+ positive integer :math:`n`.
+   
+.. function:: gsl_sf_psi_1(x)
+
+ This routine computes the Trigamma function :math:`\psi'(x)` for general :math:`x`.
+   
+Polygamma Function
+------------------
+   
+.. function:: gsl_sf_psi_n(n, x)
+
+ This routine computes the polygamma function :math:`\psi^{(n)}(x)` for
+ :math:`n \geq 0, x > 0`.
+   

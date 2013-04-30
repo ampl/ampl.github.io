@@ -1,0 +1,40 @@
+
+
+
+Coulomb Functions
+=================
+
+.. index:: Coulomb function
+   
+Normalized Hydrogenic Bound States
+----------------------------------
+   
+.. function:: gsl_sf_hydrogenicR_1(Z, r)
+
+ This routine computes the lowest-order normalized hydrogenic bound
+ state radial wavefunction :math:`R_1 := 2 Z \sqrt{Z} \exp(-Z r)`.
+   
+.. function:: gsl_sf_hydrogenicR(n, l, Z, r)
+
+ This routine computes the :math:`n`-th normalized hydrogenic bound state
+ radial wavefunction,
+
+ .. math::
+   R_n := 2 (Z^{3/2}/n^2) \sqrt{(n-l-1)!/(n+l)!} \exp(-Z r/n) (2Zr/n)^l
+             L^{2l+1}_{n-l-1}(2Zr/n).
+
+ where :math:`L^a_b(x)` is the generalized Laguerre polynomial
+ (see :ref:`laguerre-functions`). The normalization is chosen such that
+ the wavefunction :math:`\psi` is given by :math:`\psi(n,l,r) = R_n Y_{lm}`.
+   
+Coulomb Wave Function Normalization Constant
+--------------------------------------------
+
+The Coulomb wave function normalization constant is defined in
+Abramowitz 14.1.7.
+   
+.. function:: gsl_sf_coulomb_CL(L, eta)
+
+ This function computes the Coulomb wave function normalization
+ constant :math:`C_L(\eta)` for :math:`L > -1`.
+   

@@ -1,0 +1,28 @@
+
+
+
+Gegenbauer Functions
+====================
+
+The Gegenbauer polynomials are defined in Abramowitz & Stegun,
+Chapter 22, where they are known as Ultraspherical polynomials.
+
+.. index::
+  Gegenbauer function
+  Gegenbauer polynomial
+   
+.. function:: gsl_sf_gegenpoly_1(lambda, x)
+   
+.. function:: gsl_sf_gegenpoly_2(lambda, x)
+   
+.. function:: gsl_sf_gegenpoly_3(lambda, x)
+
+ These functions evaluate the Gegenbauer polynomials :math:`C^{(\lambda)}_n(x)`
+ using explicit representations for :math:`n = 1, 2, 3`.
+   
+.. function:: gsl_sf_gegenpoly_n(n, lambda, x)
+
+ This function evaluates the Gegenbauer polynomial :math:`C^{(\lambda)}_n(x)`
+ for a specific value of :math:`n`, :math:`\lambda`, :math:`x` subject to :math:`\lambda > -1/2`,
+ :math:`n \geq 0`.
+   

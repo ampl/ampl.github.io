@@ -1,0 +1,160 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>The Chi-squared Distribution &mdash; AMPL Modeling Language for Mathematical Programming</title>
+    
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '20121105',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="AMPL Modeling Language for Mathematical Programming" href="../index.html" />
+    <link rel="up" title="Random Number Distributions" href="randist.html" />
+    <link rel="next" title="The F-distribution" href="ran-fdist.html" />
+    <link rel="prev" title="The Lognormal Distribution" href="ran-lognormal.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="ran-fdist.html" title="The F-distribution"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="ran-lognormal.html" title="The Lognormal Distribution"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">AMPL</a> &raquo;</li>
+          <li><a href="index.html" >AMPL bindings for the GNU Scientific Library</a> &raquo;</li>
+          <li><a href="randist.html" accesskey="U">Random Number Distributions</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="ran-lognormal.html"
+                        title="previous chapter">The Lognormal Distribution</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="ran-fdist.html"
+                        title="next chapter">The F-distribution</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="the-chi-squared-distribution">
+<h1>The Chi-squared Distribution<a class="headerlink" href="#the-chi-squared-distribution" title="Permalink to this headline">¶</a></h1>
+<p>The <span class="target" id="index-0"></span>chi-squared distribution arises in statistics. If <span class="math">\(Y_i\)</span>
+are <span class="math">\(n\)</span> independent Gaussian random variates with unit variance then the
+sum-of-squares,</p>
+<div class="math">
+\[X_i = \sum_i Y_i^2\]</div>
+<p>has a chi-squared distribution with <span class="math">\(n\)</span> degrees of freedom.</p>
+<dl class="function">
+<dt id="gsl_ran_chisq">
+<tt class="descname">gsl_ran_chisq</tt><big>(</big><em>nu</em><big>)</big><a class="headerlink" href="#gsl_ran_chisq" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function returns a random variate from chi-squared distribution
+with <tt class="docutils literal"><span class="pre">nu</span></tt> degrees of freedom. The distribution function is,</p>
+<div class="math">
+\[p(x) dx = {1 \over 2 \Gamma(\nu/2) } (x/2)^{\nu/2 - 1} \exp(-x/2) dx\]</div>
+<p>for <span class="math">\(x \geq 0\)</span>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="gsl_ran_chisq_pdf">
+<tt class="descname">gsl_ran_chisq_pdf</tt><big>(</big><em>x</em>, <em>nu</em><big>)</big><a class="headerlink" href="#gsl_ran_chisq_pdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function computes the probability density <span class="math">\(p(x)\)</span> at <span class="math">\(x\)</span> for a
+chi-squared distribution with <tt class="docutils literal"><span class="pre">nu</span></tt> degrees of freedom, using the
+formula given above.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="gsl_ran_chisq_P">
+<tt class="descname">gsl_ran_chisq_P</tt><big>(</big><em>x</em>, <em>nu</em><big>)</big><a class="headerlink" href="#gsl_ran_chisq_P" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="gsl_ran_chisq_Q">
+<tt class="descname">gsl_ran_chisq_Q</tt><big>(</big><em>x</em>, <em>nu</em><big>)</big><a class="headerlink" href="#gsl_ran_chisq_Q" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="gsl_ran_chisq_Pinv">
+<tt class="descname">gsl_ran_chisq_Pinv</tt><big>(</big><em>P</em>, <em>nu</em><big>)</big><a class="headerlink" href="#gsl_ran_chisq_Pinv" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="gsl_ran_chisq_Qinv">
+<tt class="descname">gsl_ran_chisq_Qinv</tt><big>(</big><em>Q</em>, <em>nu</em><big>)</big><a class="headerlink" href="#gsl_ran_chisq_Qinv" title="Permalink to this definition">¶</a></dt>
+<dd><p>These functions compute the cumulative distribution functions
+<span class="math">\(P(x), Q(x)\)</span> and their inverses for the chi-squared distribution
+with <tt class="docutils literal"><span class="pre">nu</span></tt> degrees of freedom.</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="ran-fdist.html" title="The F-distribution"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="ran-lognormal.html" title="The Lognormal Distribution"
+             >previous</a> |</li>
+        <li><a href="../index.html">AMPL</a> &raquo;</li>
+          <li><a href="index.html" >AMPL bindings for the GNU Scientific Library</a> &raquo;</li>
+          <li><a href="randist.html" >Random Number Distributions</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012 AMPL Optimization, Inc.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

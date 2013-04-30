@@ -1,0 +1,191 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Zeta Functions &mdash; AMPL Modeling Language for Mathematical Programming</title>
+    
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '20121105',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="AMPL Modeling Language for Mathematical Programming" href="../index.html" />
+    <link rel="up" title="Special Functions" href="special.html" />
+    <link rel="next" title="References and Further Reading" href="sf-refs.html" />
+    <link rel="prev" title="Transport Functions" href="transport.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="sf-refs.html" title="References and Further Reading"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="transport.html" title="Transport Functions"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">AMPL</a> &raquo;</li>
+          <li><a href="index.html" >AMPL bindings for the GNU Scientific Library</a> &raquo;</li>
+          <li><a href="special.html" accesskey="U">Special Functions</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Zeta Functions</a><ul>
+<li><a class="reference internal" href="#riemann-zeta-function">Riemann Zeta Function</a></li>
+<li><a class="reference internal" href="#riemann-zeta-function-minus-one">Riemann Zeta Function Minus One</a></li>
+<li><a class="reference internal" href="#hurwitz-zeta-function">Hurwitz Zeta Function</a></li>
+<li><a class="reference internal" href="#eta-function">Eta Function</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="transport.html"
+                        title="previous chapter">Transport Functions</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="sf-refs.html"
+                        title="next chapter">References and Further Reading</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="zeta-functions">
+<h1>Zeta Functions<a class="headerlink" href="#zeta-functions" title="Permalink to this headline">¶</a></h1>
+<p>The <span class="target" id="index-0"></span>Riemann zeta function is defined in Abramowitz &amp; Stegun,
+Section 23.2.</p>
+<div class="section" id="riemann-zeta-function">
+<span id="index-1"></span><h2>Riemann Zeta Function<a class="headerlink" href="#riemann-zeta-function" title="Permalink to this headline">¶</a></h2>
+<p>The Riemann zeta function is defined by the infinite sum
+<span class="math">\(\zeta(s) = \sum_{k=1}^\infty k^{-s}\)</span>.</p>
+<dl class="function">
+<dt id="gsl_sf_zeta_int">
+<tt class="descname">gsl_sf_zeta_int</tt><big>(</big><em>n</em><big>)</big><a class="headerlink" href="#gsl_sf_zeta_int" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the Riemann zeta function <span class="math">\(\zeta(n)\)</span> for integer
+<span class="math">\(n, n \ne 1\)</span>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="gsl_sf_zeta">
+<tt class="descname">gsl_sf_zeta</tt><big>(</big><em>s</em><big>)</big><a class="headerlink" href="#gsl_sf_zeta" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the Riemann zeta function <span class="math">\(\zeta(s)\)</span> for arbitrary
+<span class="math">\(s, s \ne 1\)</span>.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="riemann-zeta-function-minus-one">
+<h2>Riemann Zeta Function Minus One<a class="headerlink" href="#riemann-zeta-function-minus-one" title="Permalink to this headline">¶</a></h2>
+<p>For large positive argument, the Riemann zeta function approaches one.
+In this region the fractional part is interesting, and therefore we need
+a function to evaluate it explicitly.</p>
+<dl class="function">
+<dt id="gsl_sf_zetam1_int">
+<tt class="descname">gsl_sf_zetam1_int</tt><big>(</big><em>n</em><big>)</big><a class="headerlink" href="#gsl_sf_zetam1_int" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes <span class="math">\(\zeta(n) - 1\)</span> for integer <span class="math">\(n, n \ne 1\)</span>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="gsl_sf_zetam1">
+<tt class="descname">gsl_sf_zetam1</tt><big>(</big><em>s</em><big>)</big><a class="headerlink" href="#gsl_sf_zetam1" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes <span class="math">\(\zeta(s) - 1\)</span> for arbitrary <span class="math">\(s, s \ne 1.\)</span>.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="hurwitz-zeta-function">
+<h2>Hurwitz Zeta Function<a class="headerlink" href="#hurwitz-zeta-function" title="Permalink to this headline">¶</a></h2>
+<p>The <span class="target" id="index-2"></span>Hurwitz zeta function is defined by
+<span class="math">\(\zeta(s,q) = \sum_0^\infty (k+q)^{-s}\)</span>.</p>
+<dl class="function">
+<dt id="gsl_sf_hzeta">
+<tt class="descname">gsl_sf_hzeta</tt><big>(</big><em>s</em>, <em>q</em><big>)</big><a class="headerlink" href="#gsl_sf_hzeta" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the Hurwitz zeta function <span class="math">\(\zeta(s,q)\)</span> for
+<span class="math">\(s &gt; 1, q &gt; 0\)</span>.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="eta-function">
+<h2>Eta Function<a class="headerlink" href="#eta-function" title="Permalink to this headline">¶</a></h2>
+<p>The <span class="target" id="index-3"></span>eta function is defined by <span class="math">\(\eta(s) = (1-2^{1-s}) \zeta(s)\)</span>.</p>
+<dl class="function">
+<dt id="gsl_sf_eta_int">
+<tt class="descname">gsl_sf_eta_int</tt><big>(</big><em>n</em><big>)</big><a class="headerlink" href="#gsl_sf_eta_int" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the eta function <span class="math">\(\eta(n)\)</span> for integer <span class="math">\(n\)</span>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="gsl_sf_eta">
+<tt class="descname">gsl_sf_eta</tt><big>(</big><em>s</em><big>)</big><a class="headerlink" href="#gsl_sf_eta" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the eta function <span class="math">\(\eta(s)\)</span> for arbitrary <span class="math">\(s\)</span>.</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="sf-refs.html" title="References and Further Reading"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="transport.html" title="Transport Functions"
+             >previous</a> |</li>
+        <li><a href="../index.html">AMPL</a> &raquo;</li>
+          <li><a href="index.html" >AMPL bindings for the GNU Scientific Library</a> &raquo;</li>
+          <li><a href="special.html" >Special Functions</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012 AMPL Optimization, Inc.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

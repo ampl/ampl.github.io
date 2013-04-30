@@ -1,0 +1,131 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>The Levy alpha-Stable Distribution &mdash; AMPL Modeling Language for Mathematical Programming</title>
+    
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '20121105',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="AMPL Modeling Language for Mathematical Programming" href="../index.html" />
+    <link rel="up" title="Random Number Distributions" href="randist.html" />
+    <link rel="next" title="The Levy skew alpha-Stable Distribution" href="ran-levy-skew.html" />
+    <link rel="prev" title="The Landau Distribution" href="ran-landau.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="ran-levy-skew.html" title="The Levy skew alpha-Stable Distribution"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="ran-landau.html" title="The Landau Distribution"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">AMPL</a> &raquo;</li>
+          <li><a href="index.html" >AMPL bindings for the GNU Scientific Library</a> &raquo;</li>
+          <li><a href="randist.html" accesskey="U">Random Number Distributions</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="ran-landau.html"
+                        title="previous chapter">The Landau Distribution</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="ran-levy-skew.html"
+                        title="next chapter">The Levy skew alpha-Stable Distribution</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="the-levy-alpha-stable-distribution">
+<h1>The Levy alpha-Stable Distribution<a class="headerlink" href="#the-levy-alpha-stable-distribution" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="gsl_ran_levy">
+<tt class="descname">gsl_ran_levy</tt><big>(</big><em>c</em>, <em>alpha</em><big>)</big><a class="headerlink" href="#gsl_ran_levy" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function returns a random variate from the <span class="target" id="index-0"></span>Levy symmetric
+stable distribution with scale <tt class="docutils literal"><span class="pre">c</span></tt> and exponent <tt class="docutils literal"><span class="pre">alpha</span></tt>.
+The symmetric stable probability distribution is defined by a
+Fourier transform,</p>
+<div class="math">
+\[p(x) = {1 \over 2 \pi}
+  \int_{-\infty}^{+\infty} \exp(-it x - |c t|^\alpha) dt\]</div>
+<p>There is no explicit solution for the form of <span class="math">\(p(x)\)</span> and the library
+does not define a corresponding pdf function. For <span class="math">\(\alpha = 1\)</span> the
+distribution reduces to the Cauchy distribution. For <span class="math">\(\alpha = 2\)</span> it
+is a Gaussian distribution with <span class="math">\(\sigma = \sqrt{2} c\)</span>. For <span class="math">\(\alpha &lt; 1\)</span>
+the tails of the distribution become extremely wide.</p>
+<p>The algorithm only works for <span class="math">\(0 &lt; \alpha \leq 2\)</span>.</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="ran-levy-skew.html" title="The Levy skew alpha-Stable Distribution"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="ran-landau.html" title="The Landau Distribution"
+             >previous</a> |</li>
+        <li><a href="../index.html">AMPL</a> &raquo;</li>
+          <li><a href="index.html" >AMPL bindings for the GNU Scientific Library</a> &raquo;</li>
+          <li><a href="randist.html" >Random Number Distributions</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012 AMPL Optimization, Inc.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

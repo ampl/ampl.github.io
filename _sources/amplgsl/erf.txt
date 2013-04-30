@@ -1,0 +1,59 @@
+
+
+
+Error Functions
+===============
+
+The `error function`:index: is described in Abramowitz & Stegun,
+Chapter 7.
+   
+.. function:: gsl_sf_erf(x)
+
+ This routine computes the error function :math:`\operatorname{erf}(x)`, where
+
+ .. math::
+   \operatorname{erf}(x) = (2/\sqrt{\pi}) \int_0^x \exp(-t^2) dt.
+   
+.. function:: gsl_sf_erfc(x)
+
+ This routine computes the complementary error function
+
+ .. math::
+   \operatorname{erfc}(x) = 1 - \operatorname{erf}(x) =
+     (2/\sqrt{\pi}) \int_x^\infty \exp(-t^2) dt.
+   
+.. function:: gsl_sf_log_erfc(x)
+
+ This routine computes the logarithm of the complementary error function
+ :math:`\log(\operatorname{erfc}(x))`.
+   
+Probability functions
+---------------------
+
+The probability functions for the Normal or Gaussian distribution are
+described in Abramowitz & Stegun, Section 26.2.
+   
+.. function:: gsl_sf_erf_Z(x)
+
+ This routine computes the Gaussian probability density function
+ :math:`Z(x) = (1/\sqrt{2\pi}) \exp(-x^2/2)`.
+   
+.. function:: gsl_sf_erf_Q(x)
+
+ This routine computes the upper tail of the Gaussian probability
+ function :math:`Q(x) = (1/\sqrt{2\pi}) \int_x^\infty \exp(-t^2/2) dt`.
+   
+The hazard function for the normal distribution, also known as the
+inverse Mills' ratio, is defined as,
+
+.. math::
+  h(x) = Z(x)/Q(x) =
+    \sqrt{2/\pi} \exp(-x^2 / 2) / \operatorname{erfc}(x/\sqrt 2)
+
+It decreases rapidly as :math:`x` approaches :math:`-\infty` and asymptotes
+to :math:`h(x) \sim x` as :math:`x` approaches :math:`+\infty`.
+   
+.. function:: gsl_sf_hazard(x)
+
+ This routine computes the hazard function for the normal distribution.
+   

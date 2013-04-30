@@ -1,0 +1,190 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Hypergeometric Functions &mdash; AMPL Modeling Language for Mathematical Programming</title>
+    
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '20121105',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="AMPL Modeling Language for Mathematical Programming" href="../index.html" />
+    <link rel="up" title="Special Functions" href="special.html" />
+    <link rel="next" title="Laguerre Functions" href="laguerre.html" />
+    <link rel="prev" title="Gegenbauer Functions" href="gegenpoly.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="laguerre.html" title="Laguerre Functions"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="gegenpoly.html" title="Gegenbauer Functions"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">AMPL</a> &raquo;</li>
+          <li><a href="index.html" >AMPL bindings for the GNU Scientific Library</a> &raquo;</li>
+          <li><a href="special.html" accesskey="U">Special Functions</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="gegenpoly.html"
+                        title="previous chapter">Gegenbauer Functions</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="laguerre.html"
+                        title="next chapter">Laguerre Functions</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="hypergeometric-functions">
+<h1>Hypergeometric Functions<a class="headerlink" href="#hypergeometric-functions" title="Permalink to this headline">¶</a></h1>
+<p>Hypergeometric functions are described in Abramowitz &amp; Stegun,
+Chapters 13 and 15.</p>
+<span class="target" id="index-0"></span><dl class="function">
+<dt id="gsl_sf_hyperg_0F1">
+<tt class="descname">gsl_sf_hyperg_0F1</tt><big>(</big><em>c</em>, <em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_hyperg_0F1" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the hypergeometric function <span class="math">\({}_0F_1(c,x)\)</span>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="gsl_sf_hyperg_1F1_int">
+<tt class="descname">gsl_sf_hyperg_1F1_int</tt><big>(</big><em>m</em>, <em>n</em>, <em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_hyperg_1F1_int" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the confluent hypergeometric function
+<span class="math">\({}_1F_1(m,n,x) = M(m,n,x)\)</span> for integer parameters <span class="math">\(m\)</span>, <span class="math">\(n\)</span>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="gsl_sf_hyperg_1F1">
+<tt class="descname">gsl_sf_hyperg_1F1</tt><big>(</big><em>a</em>, <em>b</em>, <em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_hyperg_1F1" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the confluent hypergeometric function
+<span class="math">\({}_1F_1(a,b,x) = M(a,b,x)\)</span> for general parameters <span class="math">\(a\)</span>, <span class="math">\(b\)</span>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="gsl_sf_hyperg_U_int">
+<tt class="descname">gsl_sf_hyperg_U_int</tt><big>(</big><em>m</em>, <em>n</em>, <em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_hyperg_U_int" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the confluent hypergeometric function
+<span class="math">\(U(m,n,x)\)</span> for integer parameters <span class="math">\(m\)</span>, <span class="math">\(n\)</span>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="gsl_sf_hyperg_U">
+<tt class="descname">gsl_sf_hyperg_U</tt><big>(</big><em>a</em>, <em>b</em>, <em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_hyperg_U" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the confluent hypergeometric function <span class="math">\(U(a,b,x)\)</span>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="gsl_sf_hyperg_2F1">
+<tt class="descname">gsl_sf_hyperg_2F1</tt><big>(</big><em>a</em>, <em>b</em>, <em>c</em>, <em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_hyperg_2F1" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the Gauss hypergeometric function
+<span class="math">\({}_2F_1(a,b,c,x) = F(a,b,c,x)\)</span> for <span class="math">\(|x| &lt; 1\)</span>.</p>
+<p>If the arguments <span class="math">\((a,b,c,x)\)</span> are too close to a singularity then
+the function can return an error when the series approximation
+converges too slowly. This occurs in the region of
+<span class="math">\(x=1, c - a - b = m\)</span> for integer <span class="math">\(m\)</span>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="gsl_sf_hyperg_2F1_conj">
+<tt class="descname">gsl_sf_hyperg_2F1_conj</tt><big>(</big><em>aR</em>, <em>aI</em>, <em>c</em>, <em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_hyperg_2F1_conj" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the Gauss hypergeometric function
+<span class="math">\({}_2F_1(a_R + i a_I, a_R - i a_I, c, x)\)</span> with complex parameters
+for <span class="math">\(|x| &lt; 1\)</span>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="gsl_sf_hyperg_2F1_renorm">
+<tt class="descname">gsl_sf_hyperg_2F1_renorm</tt><big>(</big><em>a</em>, <em>b</em>, <em>c</em>, <em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_hyperg_2F1_renorm" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the renormalized Gauss hypergeometric
+function <span class="math">\({}_2F_1(a,b,c,x) / \Gamma(c)\)</span> for <span class="math">\(|x| &lt; 1\)</span>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="gsl_sf_hyperg_2F1_conj_renorm">
+<tt class="descname">gsl_sf_hyperg_2F1_conj_renorm</tt><big>(</big><em>aR</em>, <em>aI</em>, <em>c</em>, <em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_hyperg_2F1_conj_renorm" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the renormalized Gauss hypergeometric
+function <span class="math">\({}_2F_1(a_R + i a_I, a_R - i a_I, c, x) / \Gamma(c)\)</span>
+for <span class="math">\(|x| &lt; 1\)</span>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="gsl_sf_hyperg_2F0">
+<tt class="descname">gsl_sf_hyperg_2F0</tt><big>(</big><em>a</em>, <em>b</em>, <em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_hyperg_2F0" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the hypergeometric function <span class="math">\({}_2F_0(a,b,x)\)</span>.
+The series representation is a divergent hypergeometric series.
+However, for <span class="math">\(x &lt; 0\)</span> we have <span class="math">\({}_2F_0(a,b,x) = (-1/x)^a U(a,1+a-b,-1/x)\)</span></p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="laguerre.html" title="Laguerre Functions"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="gegenpoly.html" title="Gegenbauer Functions"
+             >previous</a> |</li>
+        <li><a href="../index.html">AMPL</a> &raquo;</li>
+          <li><a href="index.html" >AMPL bindings for the GNU Scientific Library</a> &raquo;</li>
+          <li><a href="special.html" >Special Functions</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012 AMPL Optimization, Inc.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

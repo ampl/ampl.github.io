@@ -1,0 +1,132 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Lambert W Functions &mdash; AMPL Modeling Language for Mathematical Programming</title>
+    
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '20121105',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="AMPL Modeling Language for Mathematical Programming" href="../index.html" />
+    <link rel="up" title="Special Functions" href="special.html" />
+    <link rel="next" title="Legendre Functions and Spherical Harmonics" href="legendre.html" />
+    <link rel="prev" title="Laguerre Functions" href="laguerre.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="legendre.html" title="Legendre Functions and Spherical Harmonics"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="laguerre.html" title="Laguerre Functions"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">AMPL</a> &raquo;</li>
+          <li><a href="index.html" >AMPL bindings for the GNU Scientific Library</a> &raquo;</li>
+          <li><a href="special.html" accesskey="U">Special Functions</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="laguerre.html"
+                        title="previous chapter">Laguerre Functions</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="legendre.html"
+                        title="next chapter">Legendre Functions and Spherical Harmonics</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="lambert-w-functions">
+<h1>Lambert W Functions<a class="headerlink" href="#lambert-w-functions" title="Permalink to this headline">¶</a></h1>
+<p>Lambert&#8217;s <span class="math">\(W\)</span> functions, <span class="math">\(W(x)\)</span>, are defined to be solutions of the
+equation <span class="math">\(W(x) \exp(W(x)) = x\)</span>. This function has multiple branches
+for <span class="math">\(x &lt; 0\)</span>; however, it has only two real-valued branches. We define
+<span class="math">\(W_0(x)\)</span> to be the principal branch, where <span class="math">\(W &gt; -1\)</span> for <span class="math">\(x &lt; 0\)</span>, and
+<span class="math">\(W_{-1}(x)\)</span> to be the other real branch, where <span class="math">\(W &lt; -1\)</span> for <span class="math">\(x &lt; 0\)</span>.</p>
+<span class="target" id="index-0"></span><dl class="function">
+<dt id="gsl_sf_lambert_W0">
+<tt class="descname">gsl_sf_lambert_W0</tt><big>(</big><em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_lambert_W0" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the principal branch of the Lambert <span class="math">\(W\)</span> function,
+<span class="math">\(W_0(x)\)</span>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="gsl_sf_lambert_Wm1">
+<tt class="descname">gsl_sf_lambert_Wm1</tt><big>(</big><em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_lambert_Wm1" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the secondary real-valued branch of the Lambert
+<span class="math">\(W\)</span> function, <span class="math">\(W_{-1}(x)\)</span>.</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="legendre.html" title="Legendre Functions and Spherical Harmonics"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="laguerre.html" title="Laguerre Functions"
+             >previous</a> |</li>
+        <li><a href="../index.html">AMPL</a> &raquo;</li>
+          <li><a href="index.html" >AMPL bindings for the GNU Scientific Library</a> &raquo;</li>
+          <li><a href="special.html" >Special Functions</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012 AMPL Optimization, Inc.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

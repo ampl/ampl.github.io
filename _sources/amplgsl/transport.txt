@@ -1,0 +1,27 @@
+
+
+
+Transport Functions
+===================
+
+The transport functions :math:`J(n,x)` are defined by the integral
+representations :math:`J(n,x) := \int_0^x t^n e^t /(e^t - 1)^2 dt`.
+
+.. index:: transport function
+   
+.. function:: gsl_sf_transport_2(x)
+
+ This routine computes the transport function :math:`J(2,x)`.
+   
+.. function:: gsl_sf_transport_3(x)
+
+ This routine computes the transport function :math:`J(3,x)`.
+   
+.. function:: gsl_sf_transport_4(x)
+
+ This routine computes the transport function :math:`J(4,x)`.
+   
+.. function:: gsl_sf_transport_5(x)
+
+ This routine computes the transport function :math:`J(5,x)`.
+   

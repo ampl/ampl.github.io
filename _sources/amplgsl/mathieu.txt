@@ -1,0 +1,63 @@
+
+
+
+Mathieu Functions
+=================
+
+The routines described in this section compute the angular and radial
+Mathieu functions, and their characteristic values. Mathieu functions
+are the solutions of the following two differential equations:
+
+.. math::
+  d^2y/dv^2 + (a - 2q\cos 2v)y = 0 \\
+  d^2f/du^2 - (a - 2q\cosh 2u)f = 0
+
+.. index:: Mathieu function
+
+The angular Mathieu functions :math:`ce_r(x,q), se_r(x,q)` are the even
+and odd periodic solutions of the first equation, which is known as
+Mathieu's equation. These exist only for the discrete sequence of
+characteristic values :math:`a=a_r(q)` (even-periodic) and :math:`a=b_r(q)`
+(odd-periodic).
+
+The radial Mathieu functions :math:`Mc^{(j)}_{r}(z,q), Ms^{(j)}_{r}(z,q)`
+are the solutions of the second equation, which is referred to as
+Mathieu's modified equation. The radial Mathieu functions of the
+first, second, third and fourth kind are denoted by the parameter
+:math:`j`, which takes the value 1, 2, 3 or 4.
+
+For more information on the Mathieu functions, see Abramowitz and
+Stegun, Chapter 20.
+   
+.. function:: gsl_sf_mathieu_a(n, q)
+   
+.. function:: gsl_sf_mathieu_b(n, q)
+
+ These routines compute the characteristic values :math:`a_n(q), b_n(q)`
+ of the Mathieu functions :math:`ce_n(q,x)` and :math:`se_n(q,x)`, respectively.
+   
+Angular Mathieu Functions
+-------------------------
+   
+.. function:: gsl_sf_mathieu_ce(n, q, x)
+   
+.. function:: gsl_sf_mathieu_se(n, q, x)
+
+ These routines compute the angular Mathieu functions :math:`ce_n(q,x)` and
+ :math:`se_n(q,x)`, respectively.
+   
+Radial Mathieu Functions
+------------------------
+   
+.. function:: gsl_sf_mathieu_Mc(j, n, q, x)
+   
+.. function:: gsl_sf_mathieu_Ms(j, n, q, x)
+
+ These routines compute the radial :math:`j`-th kind Mathieu functions
+ :math:`Mc_n^{(j)}(q,x)` and :math:`Ms_n^{(j)}(q,x)` of order :math:`n`.
+
+ The allowed values of :math:`j` are :math:`1` and :math:`2`. The functions for
+ :math:`j = 3, 4` can be computed as :math:`M_n^{(3)} = M_n^{(1)} + iM_n^{(2)}`
+ and :math:`M_n^{(4)} = M_n^{(1)} - iM_n^{(2)}`, where
+ :math:`M_n^{(j)} = Mc_n^{(j)}` or :math:`Ms_n^{(j)}`.
+   

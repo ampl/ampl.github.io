@@ -1,0 +1,142 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Logarithm and Related Functions &mdash; AMPL Modeling Language for Mathematical Programming</title>
+    
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '20121105',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="AMPL Modeling Language for Mathematical Programming" href="../index.html" />
+    <link rel="up" title="Special Functions" href="special.html" />
+    <link rel="next" title="Mathieu Functions" href="mathieu.html" />
+    <link rel="prev" title="Legendre Functions and Spherical Harmonics" href="legendre.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="mathieu.html" title="Mathieu Functions"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="legendre.html" title="Legendre Functions and Spherical Harmonics"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">AMPL</a> &raquo;</li>
+          <li><a href="index.html" >AMPL bindings for the GNU Scientific Library</a> &raquo;</li>
+          <li><a href="special.html" accesskey="U">Special Functions</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="legendre.html"
+                        title="previous chapter">Legendre Functions and Spherical Harmonics</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="mathieu.html"
+                        title="next chapter">Mathieu Functions</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="logarithm-and-related-functions">
+<h1>Logarithm and Related Functions<a class="headerlink" href="#logarithm-and-related-functions" title="Permalink to this headline">¶</a></h1>
+<p>Information on the properties of the Logarithm function can be found
+in Abramowitz &amp; Stegun, Chapter 4.</p>
+<span class="target" id="index-0"></span><dl class="function">
+<dt id="gsl_sf_log">
+<tt class="descname">gsl_sf_log</tt><big>(</big><em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_log" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the logarithm of <span class="math">\(x\)</span>, <span class="math">\(\log(x)\)</span>, for <span class="math">\(x &gt; 0\)</span>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="gsl_sf_log_abs">
+<tt class="descname">gsl_sf_log_abs</tt><big>(</big><em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_log_abs" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes the logarithm of the magnitude of <span class="math">\(x\)</span>,
+<span class="math">\(\log(|x|)\)</span>, for <span class="math">\(x \ne 0\)</span>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="gsl_sf_log_1plusx">
+<tt class="descname">gsl_sf_log_1plusx</tt><big>(</big><em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_log_1plusx" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes <span class="math">\(\log(1 + x)\)</span> for <span class="math">\(x &gt; -1\)</span> using an algorithm
+that is accurate for small <span class="math">\(x\)</span>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="gsl_sf_log_1plusx_mx">
+<tt class="descname">gsl_sf_log_1plusx_mx</tt><big>(</big><em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_log_1plusx_mx" title="Permalink to this definition">¶</a></dt>
+<dd><p>This routine computes <span class="math">\(\log(1 + x) - x\)</span> for <span class="math">\(x &gt; -1\)</span> using an
+algorithm that is accurate for small <span class="math">\(x\)</span>.</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="mathieu.html" title="Mathieu Functions"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="legendre.html" title="Legendre Functions and Spherical Harmonics"
+             >previous</a> |</li>
+        <li><a href="../index.html">AMPL</a> &raquo;</li>
+          <li><a href="index.html" >AMPL bindings for the GNU Scientific Library</a> &raquo;</li>
+          <li><a href="special.html" >Special Functions</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012 AMPL Optimization, Inc.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>
