@@ -221,15 +221,15 @@ that satisfies certain nutritional requirements. It is described in
 <a class="reference external" href="http://www.ampl.com/BOOK/CHAPTERS/05-tut2.pdf">Chapter 2 of the AMPL book</a>.</p>
 <p>We assume that you&#8217;ve already installed the MySQL ODBC driver using
 the instructions above and have access to the MySQL <tt class="docutils literal"><span class="pre">test</span></tt> database.</p>
-<p>First download the data for the diet problem <a class="reference external" href="https://raw.github.com/vitaut/ampl/master/models/tables/diet-mysql.sql">diet-mysql.sql</a>
+<p>First download the data for the diet problem <a class="reference external" href="http://ampl.github.io/models/tables/diet-mysql.sql">diet-mysql.sql</a>
 and import it to MySQL:</p>
 <blockquote>
 <div><div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>mysql <span class="nb">test</span> &lt; diet-mysql.sql
 </pre></div>
 </div>
 </div></blockquote>
-<p>Then download the model file <a class="reference external" href="https://raw.github.com/vitaut/ampl/master/models/tables/diet.mod">diet.mod</a>
-and the script file <a class="reference external" href="https://raw.github.com/vitaut/ampl/master/models/tables/diet-mysql.run">diet-mysql.run</a>.</p>
+<p>Then download the model file <a class="reference external" href="http://ampl.github.io/models/tables/diet.mod">diet.mod</a>
+and the script file <a class="reference external" href="http://ampl.github.io/models/tables/diet-mysql.run">diet-mysql.run</a>.</p>
 <p>The script file first reads the model:</p>
 <blockquote>
 <div><div class="highlight-none"><div class="highlight"><pre>model diet.mod;
