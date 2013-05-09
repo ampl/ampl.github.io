@@ -8,7 +8,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Connecting AMPL to MySQL &mdash; AMPL Modeling Language for Mathematical Programming</title>
+    <title>Connecting AMPL to SQL Server &mdash; AMPL Modeling Language for Mathematical Programming</title>
     
     <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -28,8 +28,7 @@
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="top" title="AMPL Modeling Language for Mathematical Programming" href="../index.html" />
     <link rel="up" title="Database and spreadsheet connection guide" href="index.html" />
-    <link rel="next" title="Connecting AMPL to SQL Server" href="sqlserver.html" />
-    <link rel="prev" title="Database and spreadsheet connection guide" href="index.html" /> 
+    <link rel="prev" title="Connecting AMPL to MySQL" href="mysql.html" /> 
   </head>
   <body>
     <div class="related">
@@ -39,10 +38,7 @@
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="sqlserver.html" title="Connecting AMPL to SQL Server"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="index.html" title="Database and spreadsheet connection guide"
+          <a href="mysql.html" title="Connecting AMPL to MySQL"
              accesskey="P">previous</a> |</li>
         <li><a href="../index.html">AMPL</a> &raquo;</li>
           <li><a href="index.html" accesskey="U">Database and spreadsheet connection guide</a> &raquo;</li> 
@@ -52,15 +48,9 @@
         <div class="sphinxsidebarwrapper">
   <h3><a href="../index.html">Table Of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">Connecting AMPL to MySQL</a><ul>
+<li><a class="reference internal" href="#">Connecting AMPL to SQL Server</a><ul>
 <li><a class="reference internal" href="#installation">Installation</a><ul>
-<li><a class="reference internal" href="#gnu-linux">GNU/Linux</a><ul>
-<li><a class="reference internal" href="#debian-based-distributions">Debian-based distributions</a></li>
-<li><a class="reference internal" href="#suse-linux">SUSE Linux</a></li>
-<li><a class="reference internal" href="#other-distributions">Other distributions</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#macos-x">MacOS X</a></li>
+<li><a class="reference internal" href="#gnu-linux">GNU/Linux</a></li>
 <li><a class="reference internal" href="#windows">Windows</a></li>
 </ul>
 </li>
@@ -68,7 +58,6 @@
 <li><a class="reference internal" href="#sql-statements">SQL statements</a></li>
 <li><a class="reference internal" href="#troubleshooting">Troubleshooting</a><ul>
 <li><a class="reference internal" href="#data-source-name-not-found">Data source name not found</a></li>
-<li><a class="reference internal" href="#can-t-connect-through-socket">Can&#8217;t connect through socket</a></li>
 </ul>
 </li>
 </ul>
@@ -76,11 +65,8 @@
 </ul>
 
   <h4>Previous topic</h4>
-  <p class="topless"><a href="index.html"
-                        title="previous chapter">Database and spreadsheet connection guide</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="sqlserver.html"
-                        title="next chapter">Connecting AMPL to SQL Server</a></p>
+  <p class="topless"><a href="mysql.html"
+                        title="previous chapter">Connecting AMPL to MySQL</a></p>
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
@@ -102,141 +88,55 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="connecting-ampl-to-mysql">
-<h1>Connecting AMPL to MySQL<a class="headerlink" href="#connecting-ampl-to-mysql" title="Permalink to this headline">¶</a></h1>
-<p>To use MySQL with AMPL, you need to have the MySQL ODBC driver, also known as
-<a class="reference external" href="http://dev.mysql.com/doc/refman/5.1/en/connector-odbc.html">Connector/ODBC</a>,
-installed and to have access to a database server, which could be either
-local or remote. You can download the latest version of the MySQL ODBC driver
-for various platforms from <a class="reference external" href="http://dev.mysql.com/downloads/connector/odbc/">http://dev.mysql.com/downloads/connector/odbc/</a>.</p>
+  <div class="section" id="connecting-ampl-to-sql-server">
+<h1>Connecting AMPL to SQL Server<a class="headerlink" href="#connecting-ampl-to-sql-server" title="Permalink to this headline">¶</a></h1>
+<p>To use Microsoft SQL Server with AMPL, you need to have the ODBC driver for SQL
+Server installed and to have access to a database server, which could be either
+local or remote.</p>
 <div class="section" id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="gnu-linux">
 <h3>GNU/Linux<a class="headerlink" href="#gnu-linux" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="debian-based-distributions">
-<h4>Debian-based distributions<a class="headerlink" href="#debian-based-distributions" title="Permalink to this headline">¶</a></h4>
-<p>The following instructions apply to <a class="reference external" href="http://www.debian.org/">Debian</a>
-and Debian-based Linux distributions such as <a class="reference external" href="http://www.ubuntu.com/">Ubuntu</a> and <a class="reference external" href="http://linuxmint.com/">Mint</a>.</p>
-<ol class="arabic">
-<li><p class="first">Install the MySQL ODBC driver:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>sudo apt-get install libmyodbc
-</pre></div>
-</div>
-</li>
-<li><p class="first">Register the driver:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>sudo odbcinst -i -d -f /usr/share/libmyodbc/odbcinst.ini
-</pre></div>
-</div>
-</li>
-</ol>
-<p>Go to <a class="reference internal" href="sqlserver.html#usage"><em>Usage</em></a>.</p>
-</div>
-<div class="section" id="suse-linux">
-<h4>SUSE Linux<a class="headerlink" href="#suse-linux" title="Permalink to this headline">¶</a></h4>
-<ol class="arabic">
-<li><p class="first">Install the MySQL ODBC driver:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>sudo zypper install MyODBC-unixODBC
-</pre></div>
-</div>
-</li>
-<li><p class="first">Register the ODBC driver. The easiest way to register the driver
-is by using the <tt class="docutils literal"><span class="pre">myodbc-installer</span></tt> utility included in the
-<tt class="docutils literal"><span class="pre">MyODBC-unixODBC</span></tt> package, for example:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>sudo myodbc-installer -d -a -n <span class="s2">&quot;MySQL&quot;</span> <span class="se">\</span>
-    -t <span class="s2">&quot;DRIVER=/usr/lib/libmyodbc5.so&quot;</span>
-</pre></div>
-</div>
-<p><tt class="docutils literal"><span class="pre">/usr/lib/libmyodbc5.so</span></tt> is the path to the driver library
-that you installed in the previous step. You might need to change it
-if you have a different version of the driver.</p>
-<p>Note that the MySQL ODBC/Connector distribution does not include a
-setup library. If you invoke <tt class="docutils literal"><span class="pre">myodbc-installer</span> <span class="pre">--help</span></tt>, you may see an
-outdated example with a <tt class="docutils literal"><span class="pre">SETUP</span></tt> attribute specifying a setup library.
-Omit this attribute during the driver registration unless you have
-installed a setup library from some other source.</p>
-</li>
-</ol>
-<p>Go to <a class="reference internal" href="sqlserver.html#usage"><em>Usage</em></a>.</p>
-</div>
-<div class="section" id="other-distributions">
-<h4>Other distributions<a class="headerlink" href="#other-distributions" title="Permalink to this headline">¶</a></h4>
-<ol class="arabic">
-<li><p class="first">Install <a class="reference external" href="http://www.unixodbc.org">unixODBC</a> following <a class="reference external" href="http://www.unixodbc.org/download.html">these instructions</a>.</p>
-</li>
-<li><p class="first">Install the MySQL Connector/ODBC following <a class="reference external" href="http://dev.mysql.com/doc/refman/5.1/en/connector-odbc-installation.html#connector-odbc-installation-binary-unix">these instructions</a>.
-Make sure that you use compatible versions of the ODBC driver
-(Connector/ODBC) and the MySQL client library, otherwise the driver
-library will not load and any connection attempt will fail.</p>
-</li>
-<li><p class="first">Register the ODBC driver. The easiest way to register the driver is
-by using the <tt class="docutils literal"><span class="pre">myodbc-installer</span></tt> utility included in the distribution,
-for example:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>sudo myodbc-installer -d -a -n <span class="s2">&quot;MySQL&quot;</span> <span class="se">\</span>
-    -t <span class="s2">&quot;DRIVER=/usr/local/lib/libmyodbc5a.so&quot;</span>
-</pre></div>
-</div>
-<p><tt class="docutils literal"><span class="pre">/usr/local/lib/libmyodbc5a.so</span></tt> is the path to the driver library
-that you installed in the previous step. You might need to change it
-if you have a different version of the driver or installed it in a
-different location. See the name of the <tt class="docutils literal"><span class="pre">.so</span></tt> file in the <tt class="docutils literal"><span class="pre">lib</span></tt>
-directory of the installation package.</p>
-<p>Note that the MySQL ODBC/Connector distribution does not include a
-setup library. If you invoke <tt class="docutils literal"><span class="pre">myodbc-installer</span> <span class="pre">--help</span></tt>, you may see an
-outdated example with a <tt class="docutils literal"><span class="pre">SETUP</span></tt> attribute specifying a setup library.
-Omit this attribute during the driver registration unless you have
-installed a setup library from some other source.</p>
-</li>
-</ol>
-<p>Go to <a class="reference internal" href="sqlserver.html#usage"><em>Usage</em></a>.</p>
-</div>
-</div>
-<div class="section" id="macos-x">
-<h3>MacOS X<a class="headerlink" href="#macos-x" title="Permalink to this headline">¶</a></h3>
-<ol class="arabic">
-<li><p class="first">Install the MySQL Connector/ODBC as described <a class="reference external" href="http://dev.mysql.com/doc/refman/5.1/en/connector-odbc-installation.html#connector-odbc-installation-binary-macosx">here</a>,
-skipping the outdated last step (driver registration).</p>
-</li>
-<li><p class="first">Register the driver:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>sudo myodbc-installer -d -a -n <span class="s2">&quot;MySQL&quot;</span> <span class="se">\</span>
-    -t <span class="s2">&quot;DRIVER=/usr/local/lib/libmyodbc5a.so&quot;</span>
-</pre></div>
-</div>
-<p><tt class="docutils literal"><span class="pre">/usr/local/lib/libmyodbc5a.so</span></tt> is the path to the driver library
-that you installed in the previous step. You might need to change it
-if you have a different version of the driver or installed it in a
-different location. See the name of the <tt class="docutils literal"><span class="pre">.so</span></tt> file in the <tt class="docutils literal"><span class="pre">lib</span></tt>
-directory of the installation package.</p>
-<p>Note that the MySQL ODBC/Connector distribution does not include a
-setup library. If you invoke <tt class="docutils literal"><span class="pre">myodbc-installer</span> <span class="pre">--help</span></tt>, you may see an
-outdated example with a <tt class="docutils literal"><span class="pre">SETUP</span></tt> attribute specifying a setup library.
-Omit this attribute during the driver registration unless you have
-installed a setup library from some other source.</p>
-</li>
-</ol>
-<p>Go to <a class="reference internal" href="sqlserver.html#usage"><em>Usage</em></a>.</p>
+<p>Follow the instructions in <a class="reference external" href="http://msdn.microsoft.com/en-us/library/hh568454.aspx">Installing the Microsoft ODBC Driver for SQL Server on Linux</a>.</p>
 </div>
 <div class="section" id="windows">
 <h3>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h3>
-<p>Install and register the MySQL Connector/ODBC following <a class="reference external" href="http://dev.mysql.com/doc/refman/5.1/en/connector-odbc-installation.html#connector-odbc-installation-binary-windows">these instructions</a>.</p>
+<p>The ODBC driver for MS SQL Server often comes installed by default on modern versions
+of Windows. You can check if the driver is installed by running the ODBC Data Source
+Administrator, <tt class="docutils literal"><span class="pre">odbcad32.exe</span></tt>, and looking for SQL Server in the <tt class="docutils literal"><span class="pre">Drivers</span></tt> tab.</p>
+<img alt="../_images/odbcad32-sqlserver.png" src="../_images/odbcad32-sqlserver.png" />
+<p>If the driver is missing, follow the instructions in
+<a class="reference external" href="http://msdn.microsoft.com/en-us/library/jj730315.aspx">Microsoft ODBC Driver for SQL Server: System Requirements, Installation, and Driver Files</a> to install it.</p>
 </div>
 </div>
 <div class="section" id="usage">
 <span id="id1"></span><h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
-<p>We&#8217;ll demonstrate usage of MySQL with AMPL on a small example.
+<p>We&#8217;ll demonstrate usage of MS SQL Server with AMPL on a small example.
 For this example we use the diet problem, which finds a combination of foods
 that satisfies certain nutritional requirements. It is described in
 <a class="reference external" href="http://www.ampl.com/BOOK/CHAPTERS/05-tut2.pdf">Chapter 2 of the AMPL book</a>.</p>
-<p>We assume that you&#8217;ve already installed the MySQL ODBC driver using
-the instructions above and have access to the MySQL <tt class="docutils literal"><span class="pre">test</span></tt> database.</p>
-<p>First download the data for the diet problem <a class="reference external" href="http://ampl.github.io/models/tables/diet-mysql.sql">diet-mysql.sql</a>
-and import it to MySQL:</p>
-<blockquote>
-<div><div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>mysql <span class="nb">test</span> &lt; diet-mysql.sql
-</pre></div>
-</div>
-</div></blockquote>
-<p>Then download the model file <a class="reference external" href="http://ampl.github.io/models/tables/diet.mod">diet.mod</a>
-and the script file <a class="reference external" href="http://ampl.github.io/models/tables/diet-mysql.run">diet-mysql.run</a>.</p>
+<p>We assume that you&#8217;ve already installed the MS SQL Server ODBC driver using
+the instructions above and have access to the <tt class="docutils literal"><span class="pre">test</span></tt> database.</p>
+<p>First download the data for the diet problem <a class="reference external" href="models/tables/diet.xls">diet.xls</a> and import it using the <a class="reference external" href="http://msdn.microsoft.com/en-us/library/ms141209.aspx">SQL Server Import and
+Export Wizard</a>
+which can be run from the Start menu -&gt; All Programs -&gt; Microsoft SQL Server
+-&gt; Import and Export Data. Skip the Welcome page if any by clicking Next,
+then choose <tt class="docutils literal"><span class="pre">Microsoft</span> <span class="pre">Excel</span></tt> as a Data source and specify the path to
+the downloaded <tt class="docutils literal"><span class="pre">diet.xls</span></tt> file in Excel file path:</p>
+<img alt="../_images/sql-server-import-source.png" src="../_images/sql-server-import-source.png" />
+<p>Click Next and on the next page provide the connection settings for the
+SQL Server instance you are going to use. Use <tt class="docutils literal"><span class="pre">test</span></tt> as a database name
+creating it if necessary:</p>
+<img alt="../_images/sql-server-import-destination.png" src="../_images/sql-server-import-destination.png" />
+<p>Click Next, select <tt class="docutils literal"><span class="pre">Copy</span> <span class="pre">data</span> <span class="pre">from</span> <span class="pre">one</span> <span class="pre">or</span> <span class="pre">more</span> <span class="pre">tables</span> <span class="pre">or</span> <span class="pre">views</span></tt> on the next
+page and click Next again.</p>
+<p>Select tables <tt class="docutils literal"><span class="pre">Amounts</span></tt>, <tt class="docutils literal"><span class="pre">Foods</span></tt> and <tt class="docutils literal"><span class="pre">Nutrients</span></tt> for import and click
+Next:</p>
+<img alt="../_images/sql-server-import-tables.png" src="../_images/sql-server-import-tables.png" />
+<p>Select <tt class="docutils literal"><span class="pre">Run</span> <span class="pre">immediately</span></tt> and click Finish on the next page and the one that
+follows.</p>
+<p>Once import is complete, download the model file <a class="reference external" href="http://ampl.github.io/models/tables/diet.mod">diet.mod</a>
+and the script file <a class="reference external" href="http://ampl.github.io/models/tables/diet-sqlserver.run">diet-sqlserver.run</a>.</p>
 <p>The script file first reads the model:</p>
 <blockquote>
 <div><div class="highlight-none"><div class="highlight"><pre>model diet.mod;
@@ -249,7 +149,7 @@ avoid unnecessary duplication. In this case we specify all the connection
 parameters explicitly. Alternatively, you could use a DSN file name or
 <tt class="docutils literal"><span class="pre">&quot;DSN=&lt;dsn-name&gt;&quot;</span></tt> as a connection string.</p>
 <blockquote>
-<div><div class="highlight-none"><div class="highlight"><pre>param ConnectionStr symbolic = &quot;DRIVER=MySQL; DATABASE=test;&quot;;
+<div><div class="highlight-none"><div class="highlight"><pre>param ConnectionStr symbolic = &quot;DRIVER={SQL Server}; SERVER=(local); DATABASE=test;&quot;;
 </pre></div>
 </div>
 </div></blockquote>
@@ -364,42 +264,12 @@ list of installed ODBC drivers using one of the following commands:</p>
 <div class="highlight-none"><div class="highlight"><pre>$ odbcinst -d -q
 </pre></div>
 </div>
-<p>On Windows use the ODBC Data Source Administrator (see <a class="reference internal" href="sqlserver.html#usage"><em>Usage</em></a>).</p>
+<p>On Windows use the ODBC Data Source Administrator (see <a class="reference internal" href="#usage"><em>Usage</em></a>).</p>
 <p>If the driver name contains a semicolon (<tt class="docutils literal"><span class="pre">;</span></tt>), check that the name is
 surrounded with <tt class="docutils literal"><span class="pre">{</span></tt> and <tt class="docutils literal"><span class="pre">}</span></tt> in the connection string, for example:</p>
 <blockquote>
 <div><div class="highlight-none"><div class="highlight"><pre>table Foods &quot;ODBC&quot; &quot;DRIVER={MySQL ODBC Driver; version 5.2}; DATABASE=test;&quot;:
   ...
-</pre></div>
-</div>
-</div></blockquote>
-</div>
-<div class="section" id="can-t-connect-through-socket">
-<h3>Can&#8217;t connect through socket<a class="headerlink" href="#can-t-connect-through-socket" title="Permalink to this headline">¶</a></h3>
-<p>Verbose error:</p>
-<div class="highlight-none"><div class="highlight"><pre>SQLDriverConnect returned -1
-sqlstate = &quot;08S01&quot;
-errmsg = &quot;[unixODBC][MySQL][ODBC 5.2(a) Driver]Can&#39;t connect to local MySQL server through socket &#39;/tmp/mysql.sock&#39; (2)&quot;
-native_errno = 2002
-</pre></div>
-</div>
-<p>First check that the MySQL server is running. If it is running then
-it is likely that the Unix socket file that is used for communication
-between the server and the client is in a different location.
-To find the location of the socket file open <tt class="docutils literal"><span class="pre">/etc/my.cnf</span></tt> or
-<tt class="docutils literal"><span class="pre">/etc/mysql/my.cnf</span></tt> and search for lines of the form</p>
-<div class="highlight-none"><div class="highlight"><pre>[mysqld]
-...
-socket          = /var/run/mysqld/mysqld.sock
-</pre></div>
-</div>
-<p>The <tt class="docutils literal"><span class="pre">socket</span> <span class="pre">=</span> <span class="pre">&lt;path&gt;</span></tt> line specifies the path to the socket file.
-You can either create a link from <tt class="docutils literal"><span class="pre">/tmp/mysql.sock</span></tt> to the socket file
-or specify the socket explicitly in the connection string:</p>
-<blockquote>
-<div><div class="highlight-none"><div class="highlight"><pre>table Foods &quot;ODBC&quot;
-  &quot;DRIVER=MySQL; DATABASE=test; SOCKET=/var/run/mysqld/mysqld.sock;&quot;:
-   ...
 </pre></div>
 </div>
 </div></blockquote>
@@ -420,10 +290,7 @@ or specify the socket explicitly in the connection string:</p>
           <a href="../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="sqlserver.html" title="Connecting AMPL to SQL Server"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="index.html" title="Database and spreadsheet connection guide"
+          <a href="mysql.html" title="Connecting AMPL to MySQL"
              >previous</a> |</li>
         <li><a href="../index.html">AMPL</a> &raquo;</li>
           <li><a href="index.html" >Database and spreadsheet connection guide</a> &raquo;</li> 
