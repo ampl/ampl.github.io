@@ -116,17 +116,16 @@ For this example we use the diet problem, which finds a combination of foods
 that satisfies certain nutritional requirements. It is described in
 <a class="reference external" href="http://www.ampl.com/BOOK/CHAPTERS/05-tut2.pdf">Chapter 2 of the AMPL book</a>.</p>
 <p>We assume that you&#8217;ve already installed the MS SQL Server ODBC driver using
-the instructions above and have access to the <tt class="docutils literal"><span class="pre">test</span></tt> database.</p>
+the instructions above and have access to an SQL Server database.</p>
 <p>First download the data for the diet problem <a class="reference external" href="models/tables/diet.xls">diet.xls</a> and import it using the <a class="reference external" href="http://msdn.microsoft.com/en-us/library/ms141209.aspx">SQL Server Import and
 Export Wizard</a>
 which can be run from the Start menu -&gt; All Programs -&gt; Microsoft SQL Server
--&gt; Import and Export Data. Skip the Welcome page if any by clicking Next,
+-&gt; Import and Export Data. Skip the Welcome page, if any, by clicking Next,
 then choose <tt class="docutils literal"><span class="pre">Microsoft</span> <span class="pre">Excel</span></tt> as a Data source and specify the path to
 the downloaded <tt class="docutils literal"><span class="pre">diet.xls</span></tt> file in Excel file path:</p>
 <img alt="../_images/sql-server-import-source.png" src="../_images/sql-server-import-source.png" />
 <p>Click Next and on the next page provide the connection settings for the
-SQL Server instance you are going to use. Use <tt class="docutils literal"><span class="pre">test</span></tt> as a database name
-creating it if necessary:</p>
+SQL Server database you are going to use:</p>
 <img alt="../_images/sql-server-import-destination.png" src="../_images/sql-server-import-destination.png" />
 <p>Click Next, select <tt class="docutils literal"><span class="pre">Copy</span> <span class="pre">data</span> <span class="pre">from</span> <span class="pre">one</span> <span class="pre">or</span> <span class="pre">more</span> <span class="pre">tables</span> <span class="pre">or</span> <span class="pre">views</span></tt> on the next
 page and click Next again.</p>
@@ -149,7 +148,7 @@ avoid unnecessary duplication. In this case we specify all the connection
 parameters explicitly. Alternatively, you could use a DSN file name or
 <tt class="docutils literal"><span class="pre">&quot;DSN=&lt;dsn-name&gt;&quot;</span></tt> as a connection string.</p>
 <blockquote>
-<div><div class="highlight-none"><div class="highlight"><pre>param ConnectionStr symbolic = &quot;DRIVER={SQL Server}; SERVER=(local); DATABASE=test;&quot;;
+<div><div class="highlight-none"><div class="highlight"><pre>param ConnectionStr symbolic = &quot;DRIVER={SQL Server}; SERVER=(local);&quot;;
 </pre></div>
 </div>
 </div></blockquote>
@@ -167,7 +166,7 @@ installed drivers are listed and look for the one containing <tt class="docutils
 <tt class="docutils literal"><span class="pre">{</span></tt> and <tt class="docutils literal"><span class="pre">}</span></tt> in a connection string, for example:</p>
 <blockquote>
 <div><div class="highlight-none"><div class="highlight"><pre>param ConnectionStr symbolic =
-  &quot;DRIVER={MySQL ODBC Driver; version 5.2}; DATABASE=test;&quot;;
+  &quot;DRIVER={MySQL ODBC Driver; version 5.2};&quot;;
 </pre></div>
 </div>
 </div></blockquote>
@@ -228,7 +227,7 @@ the ANSI standard quote character (<tt class="docutils literal"><span class="pre
 <a class="reference external" href="http://dev.mysql.com/doc/refman/5.1/en/server-sql-mode.html#sqlmode_ansi_quotes">ANSI_QUOTES</a>.</p>
 <p>Example:</p>
 <blockquote>
-<div><div class="highlight-none"><div class="highlight"><pre>table Foods &quot;ODBC&quot; &quot;DRIVER=MySQL; DATABASE=test;&quot;
+<div><div class="highlight-none"><div class="highlight"><pre>table Foods &quot;ODBC&quot; &quot;DRIVER={SQL Server};&quot;
    &quot;SQL=SELECT `FOOD`, `cost` FROM `Foods`;&quot;: [FOOD], cost;
 </pre></div>
 </div>
@@ -268,7 +267,7 @@ list of installed ODBC drivers using one of the following commands:</p>
 <p>If the driver name contains a semicolon (<tt class="docutils literal"><span class="pre">;</span></tt>), check that the name is
 surrounded with <tt class="docutils literal"><span class="pre">{</span></tt> and <tt class="docutils literal"><span class="pre">}</span></tt> in the connection string, for example:</p>
 <blockquote>
-<div><div class="highlight-none"><div class="highlight"><pre>table Foods &quot;ODBC&quot; &quot;DRIVER={MySQL ODBC Driver; version 5.2}; DATABASE=test;&quot;:
+<div><div class="highlight-none"><div class="highlight"><pre>table Foods &quot;ODBC&quot; &quot;DRIVER={MySQL ODBC Driver; version 5.2};&quot;:
   ...
 </pre></div>
 </div>
