@@ -56,10 +56,7 @@
 </li>
 <li><a class="reference internal" href="#usage">Usage</a></li>
 <li><a class="reference internal" href="#sql-statements">SQL statements</a></li>
-<li><a class="reference internal" href="#troubleshooting">Troubleshooting</a><ul>
-<li><a class="reference internal" href="#data-source-name-not-found">Data source name not found</a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#troubleshooting">Troubleshooting</a></li>
 </ul>
 </li>
 </ul>
@@ -152,21 +149,21 @@ parameters explicitly. Alternatively, you could use a DSN file name or
 </pre></div>
 </div>
 </div></blockquote>
-<p>If you are using Linux or MacOS X and have chosen a driver name other
-than <tt class="docutils literal"><span class="pre">MySQL</span></tt>, you will have to specify this name instead of <tt class="docutils literal"><span class="pre">MySQL</span></tt>
-in the <tt class="docutils literal"><span class="pre">DRIVER=MySQL</span></tt> attribute in the connection string.</p>
-<p>A driver name is chosen automatically during installation on Windows,
+<p>If you are using Linux and have chosen a driver name other than <tt class="docutils literal"><span class="pre">SQL</span> <span class="pre">Server</span></tt>,
+you will have to specify this name instead of <tt class="docutils literal"><span class="pre">SQL</span> <span class="pre">Server</span></tt> in the
+<tt class="docutils literal"><span class="pre">DRIVER={SQL</span> <span class="pre">Server}</span></tt> attribute in the connection string.</p>
+<p>You can use a different version of the ODBC driver for SQL Server on Windows
+as well.  driver name is chosen automatically during installation on Windows,
 so if you are using this OS, you will have to find the driver name and
-specify it instead of <tt class="docutils literal"><span class="pre">MySQL</span></tt> in the connection string.
+specify it instead of <tt class="docutils literal"><span class="pre">SQL</span> <span class="pre">Server</span></tt> in the connection string.
 To discover the driver name on Windows, run the ODBC Data Source
 Administrator, <tt class="docutils literal"><span class="pre">odbcad32.exe</span></tt>.  Go to the <tt class="docutils literal"><span class="pre">Drivers</span></tt> tab where all the
-installed drivers are listed and look for the one containing <tt class="docutils literal"><span class="pre">MySQL</span></tt>:</p>
-<img alt="../_images/odbcad32.png" src="../_images/odbcad32.png" />
+installed drivers are listed and look for the one containing <tt class="docutils literal"><span class="pre">SQL</span> <span class="pre">Server</span></tt>:</p>
+<img alt="../_images/odbcad32-sqlserver.png" src="../_images/odbcad32-sqlserver.png" />
 <p>A driver name containing a semicolon (<tt class="docutils literal"><span class="pre">;</span></tt>) should be surrounded with
 <tt class="docutils literal"><span class="pre">{</span></tt> and <tt class="docutils literal"><span class="pre">}</span></tt> in a connection string, for example:</p>
 <blockquote>
-<div><div class="highlight-none"><div class="highlight"><pre>param ConnectionStr symbolic =
-  &quot;DRIVER={MySQL ODBC Driver; version 5.2};&quot;;
+<div><div class="highlight-none"><div class="highlight"><pre>param ConnectionStr symbolic = &quot;DRIVER={SQL Server; version 11.0};&quot;;
 </pre></div>
 </div>
 </div></blockquote>
@@ -203,32 +200,30 @@ read table dietAmts;
 </div>
 </div></blockquote>
 <p>Note that the same table <tt class="docutils literal"><span class="pre">dietFoods</span></tt> is used both for input and output.</p>
-<p>Running the <tt class="docutils literal"><span class="pre">diet-mysql.run</span></tt> script with ampl shows that data connection
+<p>Running the <tt class="docutils literal"><span class="pre">diet-sqlserver.run</span></tt> script with ampl shows that data connection
 is working properly and the problem is easily solved:</p>
 <blockquote>
-<div><div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>ampl diet-mysql.run
+<div><div class="highlight-bash"><div class="highlight"><pre>&gt; ampl diet-sqlserver.run
 MINOS 5.51: optimal solution found.
 13 iterations, objective 118.0594032
 </pre></div>
 </div>
 </div></blockquote>
-<p>You can use various database tools such as <a class="reference external" href="https://www.mysql.com/products/workbench/">MySQL workbench</a> or <a class="reference external" href="http://dev.mysql.com/doc/refman/5.5/en/mysql.html">MySQL command-line tool</a> to view the data
+<p>You can use various database tools such as <a class="reference external" href="http://msdn.microsoft.com/en-us/library/hh213248.aspx">SQL Server Management Studio</a> to view the data
 exported to the database from the AMPL script:</p>
-<img alt="../_images/mysql-workbench.png" src="../_images/mysql-workbench.png" />
+<img alt="../_images/sql-server-management-studio.png" src="../_images/sql-server-management-studio.png" />
 </div>
 <div class="section" id="sql-statements">
 <h2>SQL statements<a class="headerlink" href="#sql-statements" title="Permalink to this headline">¶</a></h2>
-<p>The default <a class="reference external" href="http://dev.mysql.com/doc/refman/5.0/en/identifiers.html">identifier quote character in MySQL</a>
-is the backquote (<tt class="docutils literal"><span class="pre">`</span></tt>). AMPL&#8217;s ODBC table handler detects the quote
-character automatically and uses it when necessary. However,
-user-supplied SQL statements are passed to the MySQL ODBC driver as is
-and should use the correct quotation. It is possible to enable support for
-the ANSI standard quote character (<tt class="docutils literal"><span class="pre">&quot;</span></tt>) in MySQL by setting the SQL mode to
-<a class="reference external" href="http://dev.mysql.com/doc/refman/5.1/en/server-sql-mode.html#sqlmode_ansi_quotes">ANSI_QUOTES</a>.</p>
+<p>The default <a class="reference external" href="http://msdn.microsoft.com/en-us/library/ms174393.aspx">identifier quote character in SQL Server</a>
+is the double quotation mark (<tt class="docutils literal"><span class="pre">&quot;</span></tt>). AMPL&#8217;s ODBC table handler detects the
+quote character automatically and uses it when necessary. However,
+user-supplied SQL statements are passed to the ODBC driver for SQL Server
+as is and should use the correct quotation.</p>
 <p>Example:</p>
 <blockquote>
-<div><div class="highlight-none"><div class="highlight"><pre>table Foods &quot;ODBC&quot; &quot;DRIVER={SQL Server};&quot;
-   &quot;SQL=SELECT `FOOD`, `cost` FROM `Foods`;&quot;: [FOOD], cost;
+<div><div class="highlight-none"><div class="highlight"><pre>table Foods &#39;ODBC&#39; &#39;DRIVER={SQL Server};&#39;
+   &#39;SQL=SELECT &quot;FOOD&quot;, &quot;cost&quot; FROM &quot;Foods&quot;;&#39;: [FOOD], cost;
 </pre></div>
 </div>
 </div></blockquote>
@@ -244,35 +239,6 @@ for example:</p>
 </pre></div>
 </div>
 <p>Then rerun your code and you should get a more detailed error message.</p>
-<div class="section" id="data-source-name-not-found">
-<h3>Data source name not found<a class="headerlink" href="#data-source-name-not-found" title="Permalink to this headline">¶</a></h3>
-<p>Verbose error:</p>
-<div class="highlight-none"><div class="highlight"><pre>SQLDriverConnect returned -1
-sqlstate = &quot;IM002&quot;
-errmsg = &quot;[unixODBC][Driver Manager]Data source name not found, and no default driver specified&quot;
-native_errno = 0
-</pre></div>
-</div>
-<p>If the data source name (DSN) was not found as in the example above check
-if it is spelled correctly in the connection string. If you are not using a
-DSN, check the driver name instead. On a Unix-based system you can get the
-list of installed ODBC drivers using one of the following commands:</p>
-<div class="highlight-none"><div class="highlight"><pre>$ myodbc-installer -d -l
-</pre></div>
-</div>
-<div class="highlight-none"><div class="highlight"><pre>$ odbcinst -d -q
-</pre></div>
-</div>
-<p>On Windows use the ODBC Data Source Administrator (see <a class="reference internal" href="#usage"><em>Usage</em></a>).</p>
-<p>If the driver name contains a semicolon (<tt class="docutils literal"><span class="pre">;</span></tt>), check that the name is
-surrounded with <tt class="docutils literal"><span class="pre">{</span></tt> and <tt class="docutils literal"><span class="pre">}</span></tt> in the connection string, for example:</p>
-<blockquote>
-<div><div class="highlight-none"><div class="highlight"><pre>table Foods &quot;ODBC&quot; &quot;DRIVER={MySQL ODBC Driver; version 5.2};&quot;:
-  ...
-</pre></div>
-</div>
-</div></blockquote>
-</div>
 </div>
 </div>
 
