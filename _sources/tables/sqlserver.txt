@@ -63,8 +63,8 @@ Next:
 
 .. image:: ../img/sql-server-import-tables.png
 
-Select ``Run immediately`` and click Next. Click Finish on the next page and
-the one that follows.
+Select ``Run immediately`` and click Finish on the next page and the one that
+follows.
 
 Once import is complete, download the model file `diet.mod
 <../models/tables/diet.mod>`__ and the script file `diet-sqlserver.run
