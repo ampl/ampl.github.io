@@ -229,29 +229,23 @@ that satisfies certain nutritional requirements. It is described in
 the instructions above and have access to the MySQL <tt class="docutils literal"><span class="pre">test</span></tt> database.</p>
 <p>First download the data for the diet problem <a class="reference external" href="http://ampl.github.io/models/tables/diet-mysql.sql">diet-mysql.sql</a>
 and import it to MySQL:</p>
-<blockquote>
-<div><div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>mysql <span class="nb">test</span> &lt; diet-mysql.sql
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>mysql <span class="nb">test</span> &lt; diet-mysql.sql
 </pre></div>
 </div>
-</div></blockquote>
 <p>Then download the model file <a class="reference external" href="http://ampl.github.io/models/tables/diet.mod">diet.mod</a>
 and the script file <a class="reference external" href="http://ampl.github.io/models/tables/diet-mysql.run">diet-mysql.run</a>.</p>
 <p>The script file first reads the model:</p>
-<blockquote>
-<div><div class="highlight-none"><div class="highlight"><pre>model diet.mod;
+<div class="highlight-none"><div class="highlight"><pre>model diet.mod;
 </pre></div>
 </div>
-</div></blockquote>
 <p>Then it defines a parameter to hold a connection string. Since the connection
 parameters are the same for all table declarations in our example, we
 avoid unnecessary duplication. In this case we specify all the connection
 parameters explicitly. Alternatively, you could use a DSN file name or
 <tt class="docutils literal"><span class="pre">&quot;DSN=&lt;dsn-name&gt;&quot;</span></tt> as a connection string.</p>
-<blockquote>
-<div><div class="highlight-none"><div class="highlight"><pre>param ConnectionStr symbolic = &quot;DRIVER=MySQL; DATABASE=test;&quot;;
+<div class="highlight-none"><div class="highlight"><pre>param ConnectionStr symbolic = &quot;DRIVER=MySQL; DATABASE=test;&quot;;
 </pre></div>
 </div>
-</div></blockquote>
 <p>If you are using Linux or MacOS X and have chosen a driver name other
 than <tt class="docutils literal"><span class="pre">MySQL</span></tt>, you will have to specify this name instead of <tt class="docutils literal"><span class="pre">MySQL</span></tt>
 in the <tt class="docutils literal"><span class="pre">DRIVER=MySQL</span></tt> attribute in the connection string.</p>
@@ -264,16 +258,13 @@ installed drivers are listed and look for the one containing <tt class="docutils
 <img alt="../_images/odbcad32.png" src="../_images/odbcad32.png" />
 <p>A driver name containing a semicolon (<tt class="docutils literal"><span class="pre">;</span></tt>) should be surrounded with
 <tt class="docutils literal"><span class="pre">{</span></tt> and <tt class="docutils literal"><span class="pre">}</span></tt> in a connection string, for example:</p>
-<blockquote>
-<div><div class="highlight-none"><div class="highlight"><pre>param ConnectionStr symbolic =
+<div class="highlight-none"><div class="highlight"><pre>param ConnectionStr symbolic =
   &quot;DRIVER={MySQL ODBC Driver; version 5.2}; DATABASE=test;&quot;;
 </pre></div>
 </div>
-</div></blockquote>
 <p>Next there are several table declarations that use the <tt class="docutils literal"><span class="pre">ConnectionStr</span></tt>
 parameter defined previously:</p>
-<blockquote>
-<div><div class="highlight-none"><div class="highlight"><pre>table dietFoods &quot;ODBC&quot; (ConnectionStr) &quot;Foods&quot;:
+<div class="highlight-none"><div class="highlight"><pre>table dietFoods &quot;ODBC&quot; (ConnectionStr) &quot;Foods&quot;:
    FOOD &lt;- [FOOD], cost IN, f_min IN, f_max IN,
    Buy OUT, Buy.rc ~ BuyRC OUT, {j in FOOD} Buy[j]/f_max[j] ~ BuyFrac;
 
@@ -281,37 +272,28 @@ table dietNutrs IN &quot;ODBC&quot; (ConnectionStr) &quot;Nutrients&quot;: NUTR 
 table dietAmts IN &quot;ODBC&quot; (ConnectionStr) &quot;Amounts&quot;: [NUTR, FOOD], amt;
 </pre></div>
 </div>
-</div></blockquote>
 <p>Finally the script reads the data from the tables</p>
-<blockquote>
-<div><div class="highlight-none"><div class="highlight"><pre>read table dietFoods;
+<div class="highlight-none"><div class="highlight"><pre>read table dietFoods;
 read table dietNutrs;
 read table dietAmts;
 </pre></div>
 </div>
-</div></blockquote>
 <p>solves the problem</p>
-<blockquote>
-<div><div class="highlight-none"><div class="highlight"><pre>solve;
+<div class="highlight-none"><div class="highlight"><pre>solve;
 </pre></div>
 </div>
-</div></blockquote>
 <p>and writes the solution back to the database:</p>
-<blockquote>
-<div><div class="highlight-none"><div class="highlight"><pre>write table dietFoods;
+<div class="highlight-none"><div class="highlight"><pre>write table dietFoods;
 </pre></div>
 </div>
-</div></blockquote>
 <p>Note that the same table <tt class="docutils literal"><span class="pre">dietFoods</span></tt> is used both for input and output.</p>
 <p>Running the <tt class="docutils literal"><span class="pre">diet-mysql.run</span></tt> script with ampl shows that data connection
 is working properly and the problem is easily solved:</p>
-<blockquote>
-<div><div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>ampl diet-mysql.run
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>ampl diet-mysql.run
 MINOS 5.51: optimal solution found.
 13 iterations, objective 118.0594032
 </pre></div>
 </div>
-</div></blockquote>
 <p>You can use various database tools such as <a class="reference external" href="https://www.mysql.com/products/workbench/">MySQL workbench</a> or <a class="reference external" href="http://dev.mysql.com/doc/refman/5.5/en/mysql.html">MySQL command-line tool</a> to view the data
 exported to the database from the AMPL script:</p>
 <img alt="../_images/mysql-workbench.png" src="../_images/mysql-workbench.png" />
@@ -326,12 +308,10 @@ and should use the correct quotation. It is possible to enable support for
 the ANSI standard quote character (<tt class="docutils literal"><span class="pre">&quot;</span></tt>) in MySQL by setting the SQL mode to
 <a class="reference external" href="http://dev.mysql.com/doc/refman/5.1/en/server-sql-mode.html#sqlmode_ansi_quotes">ANSI_QUOTES</a>.</p>
 <p>Example:</p>
-<blockquote>
-<div><div class="highlight-none"><div class="highlight"><pre>table Foods &quot;ODBC&quot; &quot;DRIVER=MySQL; DATABASE=test;&quot;
+<div class="highlight-none"><div class="highlight"><pre>table Foods &quot;ODBC&quot; &quot;DRIVER=MySQL; DATABASE=test;&quot;
    &quot;SQL=SELECT `FOOD`, `cost` FROM `Foods`;&quot;: [FOOD], cost;
 </pre></div>
 </div>
-</div></blockquote>
 </div>
 <div class="section" id="troubleshooting">
 <h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h2>
@@ -366,12 +346,10 @@ list of installed ODBC drivers using one of the following commands:</p>
 <p>On Windows use the ODBC Data Source Administrator (see <a class="reference internal" href="#mysql-usage"><em>Usage</em></a>).</p>
 <p>If the driver name contains a semicolon (<tt class="docutils literal"><span class="pre">;</span></tt>), check that the name is
 surrounded with <tt class="docutils literal"><span class="pre">{</span></tt> and <tt class="docutils literal"><span class="pre">}</span></tt> in the connection string, for example:</p>
-<blockquote>
-<div><div class="highlight-none"><div class="highlight"><pre>table Foods &quot;ODBC&quot; &quot;DRIVER={MySQL ODBC Driver; version 5.2}; DATABASE=test;&quot;:
+<div class="highlight-none"><div class="highlight"><pre>table Foods &quot;ODBC&quot; &quot;DRIVER={MySQL ODBC Driver; version 5.2}; DATABASE=test;&quot;:
   ...
 </pre></div>
 </div>
-</div></blockquote>
 </div>
 <div class="section" id="can-t-connect-through-socket">
 <h3>Can&#8217;t connect through socket<a class="headerlink" href="#can-t-connect-through-socket" title="Permalink to this headline">¶</a></h3>
@@ -395,13 +373,11 @@ socket          = /var/run/mysqld/mysqld.sock
 <p>The <tt class="docutils literal"><span class="pre">socket</span> <span class="pre">=</span> <span class="pre">&lt;path&gt;</span></tt> line specifies the path to the socket file.
 You can either create a link from <tt class="docutils literal"><span class="pre">/tmp/mysql.sock</span></tt> to the socket file
 or specify the socket explicitly in the connection string:</p>
-<blockquote>
-<div><div class="highlight-none"><div class="highlight"><pre>table Foods &quot;ODBC&quot;
+<div class="highlight-none"><div class="highlight"><pre>table Foods &quot;ODBC&quot;
   &quot;DRIVER=MySQL; DATABASE=test; SOCKET=/var/run/mysqld/mysqld.sock;&quot;:
    ...
 </pre></div>
 </div>
-</div></blockquote>
 </div>
 </div>
 </div>

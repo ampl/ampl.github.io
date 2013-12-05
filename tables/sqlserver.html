@@ -133,21 +133,17 @@ Next:</p>
 follows.</p>
 <p>Once import is complete, download the model file <a class="reference external" href="../models/tables/diet.mod">diet.mod</a> and the script file <a class="reference external" href="../models/tables/diet-sqlserver.run">diet-sqlserver.run</a>.</p>
 <p>The script file first reads the model:</p>
-<blockquote>
-<div><div class="highlight-none"><div class="highlight"><pre>model diet.mod;
+<div class="highlight-none"><div class="highlight"><pre>model diet.mod;
 </pre></div>
 </div>
-</div></blockquote>
 <p>Then it defines a parameter to hold a connection string. Since the connection
 parameters are the same for all table declarations in our example, we
 avoid unnecessary duplication. In this case we specify all the connection
 parameters explicitly. Alternatively, you could use a DSN file name or
 <tt class="docutils literal"><span class="pre">&quot;DSN=&lt;dsn-name&gt;&quot;</span></tt> as a connection string.</p>
-<blockquote>
-<div><div class="highlight-none"><div class="highlight"><pre>param ConnectionStr symbolic = &quot;DRIVER={SQL Server}; SERVER=(local);&quot;;
+<div class="highlight-none"><div class="highlight"><pre>param ConnectionStr symbolic = &quot;DRIVER={SQL Server}; SERVER=(local);&quot;;
 </pre></div>
 </div>
-</div></blockquote>
 <p>If you are using Linux and have chosen a driver name other than <tt class="docutils literal"><span class="pre">SQL</span> <span class="pre">Server</span></tt>,
 you will have to specify this name instead of <tt class="docutils literal"><span class="pre">SQL</span> <span class="pre">Server</span></tt> in the
 <tt class="docutils literal"><span class="pre">DRIVER={SQL</span> <span class="pre">Server}</span></tt> attribute in the connection string.</p>
@@ -161,15 +157,12 @@ installed drivers are listed and look for the one containing <tt class="docutils
 <img alt="../_images/odbcad32-sqlserver.png" src="../_images/odbcad32-sqlserver.png" />
 <p>A driver name containing a semicolon (<tt class="docutils literal"><span class="pre">;</span></tt>) should be surrounded with
 <tt class="docutils literal"><span class="pre">{</span></tt> and <tt class="docutils literal"><span class="pre">}</span></tt> in a connection string, for example:</p>
-<blockquote>
-<div><div class="highlight-none"><div class="highlight"><pre>param ConnectionStr symbolic = &quot;DRIVER={SQL Server; version 11.0};&quot;;
+<div class="highlight-none"><div class="highlight"><pre>param ConnectionStr symbolic = &quot;DRIVER={SQL Server; version 11.0};&quot;;
 </pre></div>
 </div>
-</div></blockquote>
 <p>Next there are several table declarations that use the <tt class="docutils literal"><span class="pre">ConnectionStr</span></tt>
 parameter defined previously:</p>
-<blockquote>
-<div><div class="highlight-none"><div class="highlight"><pre>table dietFoods &quot;ODBC&quot; (ConnectionStr) &quot;Foods&quot;:
+<div class="highlight-none"><div class="highlight"><pre>table dietFoods &quot;ODBC&quot; (ConnectionStr) &quot;Foods&quot;:
    FOOD &lt;- [FOOD], cost IN, f_min IN, f_max IN,
    Buy OUT, Buy.rc ~ BuyRC OUT, {j in FOOD} Buy[j]/f_max[j] ~ BuyFrac;
 
@@ -177,37 +170,28 @@ table dietNutrs IN &quot;ODBC&quot; (ConnectionStr) &quot;Nutrients&quot;: NUTR 
 table dietAmts IN &quot;ODBC&quot; (ConnectionStr) &quot;Amounts&quot;: [NUTR, FOOD], amt;
 </pre></div>
 </div>
-</div></blockquote>
 <p>Finally the script reads the data from the tables</p>
-<blockquote>
-<div><div class="highlight-none"><div class="highlight"><pre>read table dietFoods;
+<div class="highlight-none"><div class="highlight"><pre>read table dietFoods;
 read table dietNutrs;
 read table dietAmts;
 </pre></div>
 </div>
-</div></blockquote>
 <p>solves the problem</p>
-<blockquote>
-<div><div class="highlight-none"><div class="highlight"><pre>solve;
+<div class="highlight-none"><div class="highlight"><pre>solve;
 </pre></div>
 </div>
-</div></blockquote>
 <p>and writes the solution back to the database:</p>
-<blockquote>
-<div><div class="highlight-none"><div class="highlight"><pre>write table dietFoods;
+<div class="highlight-none"><div class="highlight"><pre>write table dietFoods;
 </pre></div>
 </div>
-</div></blockquote>
 <p>Note that the same table <tt class="docutils literal"><span class="pre">dietFoods</span></tt> is used both for input and output.</p>
 <p>Running the <tt class="docutils literal"><span class="pre">diet-sqlserver.run</span></tt> script with ampl shows that data connection
 is working properly and the problem is easily solved:</p>
-<blockquote>
-<div><div class="highlight-bash"><div class="highlight"><pre>&gt; ampl diet-sqlserver.run
+<div class="highlight-bash"><div class="highlight"><pre>&gt; ampl diet-sqlserver.run
 MINOS 5.51: optimal solution found.
 13 iterations, objective 118.0594032
 </pre></div>
 </div>
-</div></blockquote>
 <p>You can use various database tools such as <a class="reference external" href="http://msdn.microsoft.com/en-us/library/hh213248.aspx">SQL Server Management Studio</a> to view the data
 exported to the database from the AMPL script:</p>
 <img alt="../_images/sql-server-management-studio.png" src="../_images/sql-server-management-studio.png" />
@@ -220,12 +204,10 @@ quote character automatically and uses it when necessary. However,
 user-supplied SQL statements are passed to the ODBC driver for SQL Server
 as is and should use the correct quotation.</p>
 <p>Example:</p>
-<blockquote>
-<div><div class="highlight-none"><div class="highlight"><pre>table Foods &#39;ODBC&#39; &#39;DRIVER={SQL Server};&#39;
+<div class="highlight-none"><div class="highlight"><pre>table Foods &#39;ODBC&#39; &#39;DRIVER={SQL Server};&#39;
    &#39;SQL=SELECT &quot;FOOD&quot;, &quot;cost&quot; FROM &quot;Foods&quot;;&#39;: [FOOD], cost;
 </pre></div>
 </div>
-</div></blockquote>
 </div>
 <div class="section" id="troubleshooting">
 <h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h2>
