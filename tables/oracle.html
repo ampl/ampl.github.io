@@ -8,7 +8,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Connecting AMPL to SQL Server &mdash; AMPL Modeling Language for Mathematical Programming</title>
+    <title>Connecting AMPL to Oracle &mdash; AMPL Modeling Language for Mathematical Programming</title>
     
     <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -28,7 +28,8 @@
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="top" title="AMPL Modeling Language for Mathematical Programming" href="../index.html" />
     <link rel="up" title="Database and spreadsheet connection guide" href="index.html" />
-    <link rel="prev" title="Connecting AMPL to Oracle" href="oracle.html" /> 
+    <link rel="next" title="Connecting AMPL to SQL Server" href="sqlserver.html" />
+    <link rel="prev" title="Connecting AMPL to MySQL" href="mysql.html" /> 
   </head>
   <body>
     <div class="related">
@@ -38,7 +39,10 @@
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="oracle.html" title="Connecting AMPL to Oracle"
+          <a href="sqlserver.html" title="Connecting AMPL to SQL Server"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="mysql.html" title="Connecting AMPL to MySQL"
              accesskey="P">previous</a> |</li>
         <li><a href="../index.html">AMPL</a> &raquo;</li>
           <li><a href="index.html" accesskey="U">Database and spreadsheet connection guide</a> &raquo;</li> 
@@ -48,22 +52,26 @@
         <div class="sphinxsidebarwrapper">
   <h3><a href="../index.html">Table Of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">Connecting AMPL to SQL Server</a><ul>
+<li><a class="reference internal" href="#">Connecting AMPL to Oracle</a><ul>
 <li><a class="reference internal" href="#installation">Installation</a><ul>
-<li><a class="reference internal" href="#gnu-linux">GNU/Linux</a></li>
 <li><a class="reference internal" href="#windows">Windows</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#usage">Usage</a></li>
-<li><a class="reference internal" href="#sql-statements">SQL statements</a></li>
-<li><a class="reference internal" href="#troubleshooting">Troubleshooting</a></li>
+<li><a class="reference internal" href="#troubleshooting">Troubleshooting</a><ul>
+<li><a class="reference internal" href="#data-source-name-not-found">Data source name not found</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 
   <h4>Previous topic</h4>
-  <p class="topless"><a href="oracle.html"
-                        title="previous chapter">Connecting AMPL to Oracle</a></p>
+  <p class="topless"><a href="mysql.html"
+                        title="previous chapter">Connecting AMPL to MySQL</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="sqlserver.html"
+                        title="next chapter">Connecting AMPL to SQL Server</a></p>
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
@@ -85,53 +93,43 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="connecting-ampl-to-sql-server">
-<span id="index-0"></span><h1>Connecting AMPL to SQL Server<a class="headerlink" href="#connecting-ampl-to-sql-server" title="Permalink to this headline">¶</a></h1>
-<p>To use Microsoft SQL Server with AMPL, you need to have the ODBC driver for SQL
-Server installed and to have access to a database server, which could be either
+  <div class="section" id="connecting-ampl-to-oracle">
+<span id="index-0"></span><h1>Connecting AMPL to Oracle<a class="headerlink" href="#connecting-ampl-to-oracle" title="Permalink to this headline">¶</a></h1>
+<p>To use Oracle with AMPL, you need to have the <cite>Oracle ODBC driver
+&lt;http://www.oracle.com/technetwork/database/windows/index-098976.html&gt;</cite>
+installed and to have access to a database server, which could be either
 local or remote.</p>
 <div class="section" id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="gnu-linux">
-<h3>GNU/Linux<a class="headerlink" href="#gnu-linux" title="Permalink to this headline">¶</a></h3>
-<p>Follow the instructions in <a class="reference external" href="http://msdn.microsoft.com/en-us/library/hh568454.aspx">Installing the Microsoft ODBC Driver for SQL Server on Linux</a>.</p>
-</div>
 <div class="section" id="windows">
 <h3>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h3>
-<p>The ODBC driver for MS SQL Server often comes installed by default on modern versions
+<p>The ODBC driver for Oracle often comes installed by default on modern versions
 of Windows. You can check if the driver is installed by running the ODBC Data Source
-Administrator, <tt class="docutils literal"><span class="pre">odbcad32.exe</span></tt>, and looking for SQL Server in the <tt class="docutils literal"><span class="pre">Drivers</span></tt> tab.</p>
-<img alt="../_images/odbcad32-sqlserver.png" src="../_images/odbcad32-sqlserver.png" />
+Administrator, <tt class="docutils literal"><span class="pre">odbcad32.exe</span></tt>, and looking for Oracel in the <tt class="docutils literal"><span class="pre">Drivers</span></tt> tab.</p>
+<img alt="../_images/odbcad32-oracle.png" src="../_images/odbcad32-oracle.png" />
 <p>If the driver is missing, follow the instructions in
 <a class="reference external" href="http://msdn.microsoft.com/en-us/library/jj730315.aspx">Microsoft ODBC Driver for SQL Server: System Requirements, Installation, and Driver Files</a> to install it.</p>
 </div>
 </div>
 <div class="section" id="usage">
 <span id="id1"></span><h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
-<p>We&#8217;ll demonstrate usage of MS SQL Server with AMPL on a small example.
+<p>We&#8217;ll demonstrate usage of Oracle with AMPL on a small example.
 For this example we use the diet problem, which finds a combination of foods
 that satisfies certain nutritional requirements. It is described in
 <a class="reference external" href="http://www.ampl.com/BOOK/CHAPTERS/05-tut2.pdf">Chapter 2 of the AMPL book</a>.</p>
-<p>We assume that you&#8217;ve already installed the MS SQL Server ODBC driver using
-the instructions above and have access to a local SQL Server database.</p>
-<p>First download the data for the diet problem <a class="reference external" href="../models/tables/diet.xls">diet.xls</a> and import it using the <a class="reference external" href="http://msdn.microsoft.com/en-us/library/ms141209.aspx">SQL Server Import and
-Export Wizard</a>
-which can be run from the Start menu -&gt; All Programs -&gt; Microsoft SQL Server
--&gt; Import and Export Data. Skip the Welcome page, if any, by clicking Next,
-then choose <tt class="docutils literal"><span class="pre">Microsoft</span> <span class="pre">Excel</span></tt> as a Data source and specify the path to
-the downloaded <tt class="docutils literal"><span class="pre">diet.xls</span></tt> file in Excel file path:</p>
-<img alt="../_images/sql-server-import-source.png" src="../_images/sql-server-import-source.png" />
-<p>Click Next and on the following page provide the connection settings for the
-SQL Server database you are going to use:</p>
-<img alt="../_images/sql-server-import-destination.png" src="../_images/sql-server-import-destination.png" />
-<p>Click Next, select <tt class="docutils literal"><span class="pre">Copy</span> <span class="pre">data</span> <span class="pre">from</span> <span class="pre">one</span> <span class="pre">or</span> <span class="pre">more</span> <span class="pre">tables</span> <span class="pre">or</span> <span class="pre">views</span></tt> on the next
-page and click Next again.</p>
-<p>Select tables <tt class="docutils literal"><span class="pre">Amounts</span></tt>, <tt class="docutils literal"><span class="pre">Foods</span></tt> and <tt class="docutils literal"><span class="pre">Nutrients</span></tt> for import and click
-Next:</p>
-<img alt="../_images/sql-server-import-tables.png" src="../_images/sql-server-import-tables.png" />
-<p>Select <tt class="docutils literal"><span class="pre">Run</span> <span class="pre">immediately</span></tt> and click Finish on the next page and the one that
-follows.</p>
-<p>Once import is complete, download the model file <a class="reference external" href="../models/tables/diet.mod">diet.mod</a> and the script file <a class="reference external" href="../models/tables/diet-sqlserver.run">diet-sqlserver.run</a>.</p>
+<p>We assume that you&#8217;ve already installed the Oracle ODBC driver using
+the instructions above and have access to a local Oracle database.</p>
+<p>First download the data for the diet problem <a class="reference external" href="http://ampl.github.io/models/tables/diet-oracle.sql">diet-oracle.sql</a>
+and import it into an Oracle database:</p>
+<blockquote>
+<div><div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>sqlplus &lt;username&gt;/&lt;password&gt; @diet-mysql.sql
+</pre></div>
+</div>
+</div></blockquote>
+<p>where <tt class="docutils literal"><span class="pre">&lt;username&gt;</span></tt> is the name of a database user and <tt class="docutils literal"><span class="pre">&lt;password&gt;</span></tt> is the
+user&#8217;s password.</p>
+<p>Then download the model file <a class="reference external" href="http://ampl.github.io/models/tables/diet.mod">diet.mod</a>
+and the script file <a class="reference external" href="http://ampl.github.io/models/tables/diet-oracle.run">diet-oracle.run</a>.</p>
 <p>The script file first reads the model:</p>
 <blockquote>
 <div><div class="highlight-none"><div class="highlight"><pre>model diet.mod;
@@ -144,25 +142,25 @@ avoid unnecessary duplication. In this case we specify all the connection
 parameters explicitly. Alternatively, you could use a DSN file name or
 <tt class="docutils literal"><span class="pre">&quot;DSN=&lt;dsn-name&gt;&quot;</span></tt> as a connection string.</p>
 <blockquote>
-<div><div class="highlight-none"><div class="highlight"><pre>param ConnectionStr symbolic = &quot;DRIVER={SQL Server}; SERVER=(local);&quot;;
+<div><div class="highlight-none"><div class="highlight"><pre>param ConnectionStr symbolic = &quot;DRIVER=Oracle; SERVER=localhost;&quot;;
 </pre></div>
 </div>
 </div></blockquote>
-<p>If you are using Linux and have chosen a driver name other than <tt class="docutils literal"><span class="pre">SQL</span> <span class="pre">Server</span></tt>,
-you will have to specify this name instead of <tt class="docutils literal"><span class="pre">SQL</span> <span class="pre">Server</span></tt> in the
-<tt class="docutils literal"><span class="pre">DRIVER={SQL</span> <span class="pre">Server}</span></tt> attribute in the connection string.</p>
-<p>You can use a different version of the ODBC driver for SQL Server on Windows
-as well. The driver name is chosen automatically during installation on Windows,
+<p>If you are using Linux or MacOS X and have chosen a driver name other
+than <tt class="docutils literal"><span class="pre">Oracle</span></tt>, you will have to specify this name instead of <tt class="docutils literal"><span class="pre">Oracle</span></tt>
+in the <tt class="docutils literal"><span class="pre">DRIVER=Oracle</span></tt> attribute in the connection string.</p>
+<p>A driver name is chosen automatically during installation on Windows,
 so if you are using this OS, you will have to find the driver name and
-specify it instead of <tt class="docutils literal"><span class="pre">SQL</span> <span class="pre">Server</span></tt> in the connection string.
+specify it instead of <tt class="docutils literal"><span class="pre">Oracle</span></tt> in the connection string.
 To discover the driver name on Windows, run the ODBC Data Source
 Administrator, <tt class="docutils literal"><span class="pre">odbcad32.exe</span></tt>.  Go to the <tt class="docutils literal"><span class="pre">Drivers</span></tt> tab where all the
-installed drivers are listed and look for the one containing <tt class="docutils literal"><span class="pre">SQL</span> <span class="pre">Server</span></tt>:</p>
-<img alt="../_images/odbcad32-sqlserver.png" src="../_images/odbcad32-sqlserver.png" />
+installed drivers are listed and look for the one containing <tt class="docutils literal"><span class="pre">Oracle</span></tt>:</p>
+<img alt="../_images/odbcad32-oracle.png" src="../_images/odbcad32-oracle.png" />
 <p>A driver name containing a semicolon (<tt class="docutils literal"><span class="pre">;</span></tt>) should be surrounded with
 <tt class="docutils literal"><span class="pre">{</span></tt> and <tt class="docutils literal"><span class="pre">}</span></tt> in a connection string, for example:</p>
 <blockquote>
-<div><div class="highlight-none"><div class="highlight"><pre>param ConnectionStr symbolic = &quot;DRIVER={SQL Server; version 11.0};&quot;;
+<div><div class="highlight-none"><div class="highlight"><pre>param ConnectionStr symbolic =
+  &quot;DRIVER={Oracle ODBC Driver; version 6.01}; SERVER=localhost;&quot;;
 </pre></div>
 </div>
 </div></blockquote>
@@ -199,30 +197,12 @@ read table dietAmts;
 </div>
 </div></blockquote>
 <p>Note that the same table <tt class="docutils literal"><span class="pre">dietFoods</span></tt> is used both for input and output.</p>
-<p>Running the <tt class="docutils literal"><span class="pre">diet-sqlserver.run</span></tt> script with ampl shows that data connection
+<p>Running the <tt class="docutils literal"><span class="pre">diet-oracle.run</span></tt> script with ampl shows that data connection
 is working properly and the problem is easily solved:</p>
 <blockquote>
-<div><div class="highlight-bash"><div class="highlight"><pre>&gt; ampl diet-sqlserver.run
+<div><div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>ampl diet-oracle.run
 MINOS 5.51: optimal solution found.
 13 iterations, objective 118.0594032
-</pre></div>
-</div>
-</div></blockquote>
-<p>You can use various database tools such as <a class="reference external" href="http://msdn.microsoft.com/en-us/library/hh213248.aspx">SQL Server Management Studio</a> to view the data
-exported to the database from the AMPL script:</p>
-<img alt="../_images/sql-server-management-studio.png" src="../_images/sql-server-management-studio.png" />
-</div>
-<div class="section" id="sql-statements">
-<h2>SQL statements<a class="headerlink" href="#sql-statements" title="Permalink to this headline">¶</a></h2>
-<p>The default <a class="reference external" href="http://msdn.microsoft.com/en-us/library/ms174393.aspx">identifier quote character in SQL Server</a>
-is the double quotation mark (<tt class="docutils literal"><span class="pre">&quot;</span></tt>). AMPL&#8217;s ODBC table handler detects the
-quote character automatically and uses it when necessary. However,
-user-supplied SQL statements are passed to the ODBC driver for SQL Server
-as is and should use the correct quotation.</p>
-<p>Example:</p>
-<blockquote>
-<div><div class="highlight-none"><div class="highlight"><pre>table Foods &#39;ODBC&#39; &#39;DRIVER={SQL Server};&#39;
-   &#39;SQL=SELECT &quot;FOOD&quot;, &quot;cost&quot; FROM &quot;Foods&quot;;&#39;: [FOOD], cost;
 </pre></div>
 </div>
 </div></blockquote>
@@ -238,6 +218,35 @@ for example:</p>
 </pre></div>
 </div>
 <p>Then rerun your code and you should get a more detailed error message.</p>
+<div class="section" id="data-source-name-not-found">
+<h3>Data source name not found<a class="headerlink" href="#data-source-name-not-found" title="Permalink to this headline">¶</a></h3>
+<p>Verbose error:</p>
+<div class="highlight-none"><div class="highlight"><pre>SQLDriverConnect returned -1
+sqlstate = &quot;IM002&quot;
+errmsg = &quot;[unixODBC][Driver Manager]Data source name not found, and no default driver specified&quot;
+native_errno = 0
+</pre></div>
+</div>
+<p>If the data source name (DSN) was not found as in the example above check
+if it is spelled correctly in the connection string. If you are not using a
+DSN, check the driver name instead. On a Unix-based system you can get the
+list of installed ODBC drivers using one of the following commands:</p>
+<div class="highlight-none"><div class="highlight"><pre>$ myodbc-installer -d -l
+</pre></div>
+</div>
+<div class="highlight-none"><div class="highlight"><pre>$ odbcinst -d -q
+</pre></div>
+</div>
+<p>On Windows use the ODBC Data Source Administrator (see <a class="reference internal" href="sqlserver.html#usage"><em>Usage</em></a>).</p>
+<p>If the driver name contains a semicolon (<tt class="docutils literal"><span class="pre">;</span></tt>), check that the name is
+surrounded with <tt class="docutils literal"><span class="pre">{</span></tt> and <tt class="docutils literal"><span class="pre">}</span></tt> in the connection string, for example:</p>
+<blockquote>
+<div><div class="highlight-none"><div class="highlight"><pre>table Foods &quot;ODBC&quot; &quot;DRIVER={Oracle ODBC Driver; version 6.01}; DATABASE=test;&quot;:
+  ...
+</pre></div>
+</div>
+</div></blockquote>
+</div>
 </div>
 </div>
 
@@ -254,7 +263,10 @@ for example:</p>
           <a href="../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="oracle.html" title="Connecting AMPL to Oracle"
+          <a href="sqlserver.html" title="Connecting AMPL to SQL Server"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="mysql.html" title="Connecting AMPL to MySQL"
              >previous</a> |</li>
         <li><a href="../index.html">AMPL</a> &raquo;</li>
           <li><a href="index.html" >Database and spreadsheet connection guide</a> &raquo;</li> 
