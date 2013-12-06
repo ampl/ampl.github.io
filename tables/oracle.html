@@ -144,7 +144,8 @@ sudo ldconfig
 </div>
 </li>
 <li><p class="first">Create a symbolic link for <tt class="docutils literal"><span class="pre">libodbcinst.so</span></tt> on <tt class="docutils literal"><span class="pre">x86-64</span></tt>:</p>
-<div class="highlight-bash"><div class="highlight"><pre>sudo ln -s /usr/lib/x86_64-linux-gnu/libodbcinst.so /usr/lib/x86_64-linux-gnu/libodbcinst.so.2
+<div class="highlight-bash"><div class="highlight"><pre>sudo ln -s /usr/lib/x86_64-linux-gnu/libodbcinst.so <span class="se">\</span>
+           /usr/lib/x86_64-linux-gnu/libodbcinst.so.2
 </pre></div>
 </div>
 <p>Use the following command with the <tt class="docutils literal"><span class="pre">x86</span></tt> version instead:</p>
@@ -157,7 +158,7 @@ sudo ldconfig
 </pre></div>
 </div>
 <p>replacing <tt class="docutils literal"><span class="pre">&lt;installation-dir&gt;</span></tt> with the actual installation directory which can
-printed with the command <tt class="docutils literal"><span class="pre">echo</span> <span class="pre">/usr/lib/oracle/*/client*</span></tt>.</p>
+be printed with the command <tt class="docutils literal"><span class="pre">echo</span> <span class="pre">/usr/lib/oracle/*/client*</span></tt>.</p>
 <p>Alternatively you can add the line <tt class="docutils literal"><span class="pre">ORACLE_HOME=&lt;installation-dir&gt;</span></tt> to
 <tt class="docutils literal"><span class="pre">~/.pam_environment</span></tt> to set this environment variable permanently for
 the current user. Use <tt class="docutils literal"><span class="pre">/etc/environment</span></tt> instead of <tt class="docutils literal"><span class="pre">~/.pam_environment</span></tt>
@@ -280,7 +281,7 @@ native_errno = 0
 if it is spelled correctly in the connection string. If you are not using a
 DSN, check the driver name instead. On a Unix-based system you can get the
 list of installed ODBC drivers using  the following commands:</p>
-<div class="highlight-none"><div class="highlight"><pre>$ odbcinst -d -q
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>odbcinst -d -q
 </pre></div>
 </div>
 <p>On Windows use the ODBC Data Source Administrator (see <a class="reference internal" href="#oracle-usage"><em>Usage</em></a>).</p>
