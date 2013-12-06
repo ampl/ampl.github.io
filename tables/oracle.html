@@ -118,7 +118,7 @@ You will need Basic and ODBC packages. In the Usage example we also use <tt clas
 the SQL*Plus package.</p>
 </li>
 <li><p class="first">Install dependencies:</p>
-<div class="highlight-bash"><div class="highlight"><pre>sudo apt-get install alien libaio1 unixodbc
+<div class="highlight-bash"><div class="highlight"><pre>sudo apt-get install alien libaio1 unixodbc-dev
 </pre></div>
 </div>
 </li>
@@ -149,7 +149,8 @@ sudo ldconfig
 </pre></div>
 </div>
 <p>Use the following command with the <tt class="docutils literal"><span class="pre">x86</span></tt> version instead:</p>
-<div class="highlight-bash"><div class="highlight"><pre>sudo ln -s /usr/lib/libodbcinst.so /usr/lib/libodbcinst.so.2
+<div class="highlight-bash"><div class="highlight"><pre>sudo ln -s /usr/lib/i386-linux-gnu/libodbcinst.so <span class="se">\</span>
+           /usr/lib/i386-linux-gnu/libodbcinst.so.2
 </pre></div>
 </div>
 </li>
