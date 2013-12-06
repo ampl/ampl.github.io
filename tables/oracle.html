@@ -62,7 +62,8 @@
 <li><a class="reference internal" href="#windows">Windows</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#usage">Usage</a><ul>
+<li><a class="reference internal" href="#usage">Usage</a></li>
+<li><a class="reference internal" href="#sql-statements">SQL statements</a><ul>
 <li><a class="reference internal" href="#dsn-example">DSN Example</a></li>
 </ul>
 </li>
@@ -223,13 +224,17 @@ parameters explicitly. Alternatively, you could use a DSN file name or
 <div class="highlight-none"><div class="highlight"><pre>param ConnectionStr symbolic = &quot;DRIVER=Oracle; SERVER=localhost;&quot;;
 </pre></div>
 </div>
-<p>If you are using Linux or MacOS X and have chosen a driver name other
-than <tt class="docutils literal"><span class="pre">Oracle</span></tt>, you will have to specify this name instead of <tt class="docutils literal"><span class="pre">Oracle</span></tt>
-in the <tt class="docutils literal"><span class="pre">DRIVER=Oracle</span></tt> attribute in the connection string.</p>
-<p>A driver name is chosen automatically during installation on Windows,
-so if you are using this OS, you will have to find the driver name and
-specify it instead of <tt class="docutils literal"><span class="pre">Oracle</span></tt> in the connection string.
-To discover the driver name on Windows, run the ODBC Data Source
+<p>Replace <tt class="docutils literal"><span class="pre">Oracle</span></tt> with the actual driver name in the connection string above.</p>
+<p>To find out the driver name on Linux, run the command <tt class="docutils literal"><span class="pre">odbcinst</span> <span class="pre">-q</span> <span class="pre">-d</span></tt> to
+display the names of installed ODBC drivers on Linux</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>odbcinst -q -d
+<span class="o">[</span>SQLite3<span class="o">]</span>
+<span class="o">[</span>Oracle 12c ODBC driver<span class="o">]</span>
+</pre></div>
+</div>
+<p>and select the one containing <tt class="docutils literal"><span class="pre">Oracle</span></tt>. In the example above it is
+<tt class="docutils literal"><span class="pre">Oracle</span> <span class="pre">12c</span> <span class="pre">ODBC</span> <span class="pre">driver</span></tt>. Note that the square brackets are not part of the name.</p>
+<p>To discover the driver name on Windows, run the ODBC Data Source
 Administrator, <tt class="docutils literal"><span class="pre">odbcad32.exe</span></tt>.  Go to the <tt class="docutils literal"><span class="pre">Drivers</span></tt> tab where all the
 installed drivers are listed and look for the one containing <tt class="docutils literal"><span class="pre">Oracle</span></tt>:</p>
 <img alt="../_images/odbcad32-oracle.png" src="../_images/odbcad32-oracle.png" />
@@ -276,6 +281,20 @@ MINOS 5.51: optimal solution found.
 or <a class="reference external" href="http://docs.oracle.com/cd/B19306_01/server.102/b14357/toc.htm">sqlplus</a>
 to view the data exported to the database from the AMPL script:</p>
 <img alt="../_images/oracle-application-express.png" src="../_images/oracle-application-express.png" />
+</div>
+<div class="section" id="sql-statements">
+<h2>SQL statements<a class="headerlink" href="#sql-statements" title="Permalink to this headline">¶</a></h2>
+<p>The identifier quote character in Oracle the ANSI standard quote character (<tt class="docutils literal"><span class="pre">&quot;</span></tt>).
+AMPL&#8217;s ODBC table handler detects the quote character automatically and uses it
+when necessary. However, user-supplied SQL statements are passed to the Oracle ODBC
+driver as is and should use the correct quotation.</p>
+<p>Example:</p>
+<blockquote>
+<div><div class="highlight-none"><div class="highlight"><pre>table Foods &quot;ODBC&quot; &quot;DRIVER=Oracle; SERVER=localhost;&quot;
+  &#39;SQL=SELECT &quot;FOOD&quot;, &quot;cost&quot; FROM &quot;Foods&quot;;&#39;: [FOOD], cost;
+</pre></div>
+</div>
+</div></blockquote>
 <div class="section" id="dsn-example">
 <h3>DSN Example<a class="headerlink" href="#dsn-example" title="Permalink to this headline">¶</a></h3>
 <p>The following example shows a DSN entry in the <tt class="docutils literal"><span class="pre">odbc.ini</span></tt> file that
