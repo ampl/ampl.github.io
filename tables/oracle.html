@@ -54,12 +54,17 @@
   <ul>
 <li><a class="reference internal" href="#">Connecting AMPL to Oracle</a><ul>
 <li><a class="reference internal" href="#installation">Installation</a><ul>
+<li><a class="reference internal" href="#gnu-linux">GNU/Linux</a><ul>
+<li><a class="reference internal" href="#debian-based-distributions">Debian-based distributions</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#windows">Windows</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#usage">Usage</a></li>
 <li><a class="reference internal" href="#troubleshooting">Troubleshooting</a><ul>
 <li><a class="reference internal" href="#data-source-name-not-found">Data source name not found</a></li>
+<li><a class="reference internal" href="#driver-s-sqlallochandle-on-sql-handle-henv-failed">Driver&#8217;s SQLAllocHandle on SQL_HANDLE_HENV failed</a></li>
 </ul>
 </li>
 </ul>
@@ -100,6 +105,63 @@ installed and to have access to a database server, which could be either
 local or remote.</p>
 <div class="section" id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="gnu-linux">
+<h3>GNU/Linux<a class="headerlink" href="#gnu-linux" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="debian-based-distributions">
+<h4>Debian-based distributions<a class="headerlink" href="#debian-based-distributions" title="Permalink to this headline">¶</a></h4>
+<p>The following instructions apply to <a class="reference external" href="http://www.debian.org/">Debian</a>
+and Debian-based Linux distributions such as <a class="reference external" href="http://www.ubuntu.com/">Ubuntu</a> and <a class="reference external" href="http://linuxmint.com/">Mint</a>.</p>
+<ol class="arabic">
+<li><p class="first">Download RPM packages of Oracle Instant Client for your Linux platform from the
+<a class="reference external" href="http://www.oracle.com/technetwork/database/features/instant-client/index-097480.html">Instant Client Downloads page</a>.
+You will need Basic and ODBC packages. In the Usage example we also use <tt class="docutils literal"><span class="pre">sqlplus</span></tt> from
+the SQL*Plus package.</p>
+</li>
+<li><p class="first">Convert packages from RPM to DEB format:</p>
+<div class="highlight-bash"><div class="highlight"><pre>sudo alien oracle-instantclient*.rpm
+</pre></div>
+</div>
+</li>
+<li><p class="first">Install the packages:</p>
+<div class="highlight-bash"><div class="highlight"><pre>sudo dpkg -i oracle-instantclient*.deb
+</pre></div>
+</div>
+</li>
+<li><p class="first">Install dependencies:</p>
+<div class="highlight-bash"><div class="highlight"><pre>sudo apt-get install libaio1 unixodbc
+</pre></div>
+</div>
+</li>
+<li><p class="first">Add the Oracle library directory to the library search paths:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nb">echo</span> /usr/lib/oracle/12.1/client64/lib | sudo tee -a /etc/ld.so.conf
+sudo ldconfig
+</pre></div>
+</div>
+<p>Change <tt class="docutils literal"><span class="pre">/usr/lib/oracle/12.1/client64/lib</span></tt> to <a href="#id1"><span class="problematic" id="id2">``</span></a>`` for a 32-bit (x86) platform.</p>
+</li>
+<li><p class="first">Register the ODBC driver:</p>
+<div class="highlight-bash"><div class="highlight"><pre>sudo /usr/share/oracle/12.1/client64/odbc_update_ini.sh / /usr/lib/oracle/12.1/client64/lib
+</pre></div>
+</div>
+</li>
+<li><p class="first">Create a symbolic link libodbcinst.so.2:</p>
+<div class="highlight-bash"><div class="highlight"><pre>sudo ln -s /usr/lib/x86_64-linux-gnu/libodbcinst.so /usr/lib/x86_64-linux-gnu/libodbcinst.so.2
+</pre></div>
+</div>
+</li>
+<li><p class="first">Set the <tt class="docutils literal"><span class="pre">ORACLE_HOME</span></tt> environment variable:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nb">export </span><span class="nv">ORACLE_HOME</span><span class="o">=</span>/usr/lib/oracle/12.1/client64
+</pre></div>
+</div>
+<p>Alternatively you can add the line <tt class="docutils literal"><span class="pre">ORACLE_HOME=/usr/lib/oracle/12.1/client64</span></tt> to
+<tt class="docutils literal"><span class="pre">~/.pam_environment</span></tt> to set this environment variable permanently for the current user.
+Use <tt class="docutils literal"><span class="pre">/etc/environment</span></tt> instead of <tt class="docutils literal"><span class="pre">~/.pam_environment</span></tt> for system-wide environment variables.
+See also <a class="reference external" href="https://help.ubuntu.com/community/EnvironmentVariables#Persistent_environment_variables">Persistent environment variables</a>.</p>
+</li>
+</ol>
+<p>Go to <a class="reference internal" href="#oracle-usage"><em>Usage</em></a>.</p>
+</div>
+</div>
 <div class="section" id="windows">
 <h3>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h3>
 <p>The ODBC driver for Oracle often comes installed by default on modern versions
@@ -222,6 +284,17 @@ surrounded with <tt class="docutils literal"><span class="pre">{</span></tt> and
   ...
 </pre></div>
 </div>
+</div>
+<div class="section" id="driver-s-sqlallochandle-on-sql-handle-henv-failed">
+<h3>Driver&#8217;s SQLAllocHandle on SQL_HANDLE_HENV failed<a class="headerlink" href="#driver-s-sqlallochandle-on-sql-handle-henv-failed" title="Permalink to this headline">¶</a></h3>
+<p>Verbose error:</p>
+<div class="highlight-none"><div class="highlight"><pre>SQLDriverConnect returned -1
+sqlstate = &quot;IM004&quot;
+errmsg = &quot;[unixODBC][Driver Manager]Driver&#39;s SQLAllocHandle on SQL_HANDLE_HENV failed&quot;
+native_errno = 0
+</pre></div>
+</div>
+<p>This error may occur if the <tt class="docutils literal"><span class="pre">ORACLE_HOME</span></tt> environment variable is not set.</p>
 </div>
 </div>
 </div>
