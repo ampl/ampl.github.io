@@ -117,6 +117,11 @@ and Debian-based Linux distributions such as <a class="reference external" href=
 You will need Basic and ODBC packages. In the Usage example we also use <tt class="docutils literal"><span class="pre">sqlplus</span></tt> from
 the SQL*Plus package.</p>
 </li>
+<li><p class="first">Install dependencies:</p>
+<div class="highlight-bash"><div class="highlight"><pre>sudo apt-get install alien libaio1 unixodbc
+</pre></div>
+</div>
+</li>
 <li><p class="first">Convert packages from RPM to DEB format:</p>
 <div class="highlight-bash"><div class="highlight"><pre>sudo alien oracle-instantclient*.rpm
 </pre></div>
@@ -124,11 +129,6 @@ the SQL*Plus package.</p>
 </li>
 <li><p class="first">Install the packages:</p>
 <div class="highlight-bash"><div class="highlight"><pre>sudo dpkg -i oracle-instantclient*.deb
-</pre></div>
-</div>
-</li>
-<li><p class="first">Install dependencies:</p>
-<div class="highlight-bash"><div class="highlight"><pre>sudo apt-get install libaio1 unixodbc
 </pre></div>
 </div>
 </li>
