@@ -58,10 +58,14 @@
 <li><a class="reference internal" href="#debian-based-distributions">Debian-based distributions</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#macos-x">MacOS X</a></li>
 <li><a class="reference internal" href="#windows">Windows</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#usage">Usage</a></li>
+<li><a class="reference internal" href="#usage">Usage</a><ul>
+<li><a class="reference internal" href="#dsn-example">DSN Example</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#troubleshooting">Troubleshooting</a><ul>
 <li><a class="reference internal" href="#data-source-name-not-found">Data source name not found</a></li>
 <li><a class="reference internal" href="#driver-s-sqlallochandle-on-sql-handle-henv-failed">Driver&#8217;s SQLAllocHandle on SQL_HANDLE_HENV failed</a></li>
@@ -170,6 +174,16 @@ See also <a class="reference external" href="https://help.ubuntu.com/community/E
 <p>Go to <a class="reference internal" href="#oracle-usage"><em>Usage</em></a>.</p>
 </div>
 </div>
+<div class="section" id="macos-x">
+<h3>MacOS X<a class="headerlink" href="#macos-x" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Download zip archives of Oracle Instant Client for your Mac platform from the
+<a class="reference external" href="http://www.oracle.com/technetwork/database/features/instant-client/index-097480.html">Instant Client Downloads page</a>.
+You will need Basic and ODBC packages. In the Usage example we also use <tt class="docutils literal"><span class="pre">sqlplus</span></tt> from
+the SQL*Plus package.</li>
+</ol>
+<p>Go to <a class="reference internal" href="#oracle-usage"><em>Usage</em></a>.</p>
+</div>
 <div class="section" id="windows">
 <h3>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h3>
 <p>The ODBC driver for Oracle often comes installed by default on modern versions
@@ -256,6 +270,30 @@ is working properly and the problem is easily solved:</p>
 MINOS 5.51: optimal solution found.
 13 iterations, objective 118.0594032
 </pre></div>
+</div>
+<p>You can use various database tools such as <a class="reference external" href="http://www.oracle.com/technetwork/developer-tools/sql-developer/overview/index.html">Oracle SQL Developer IDE</a>,
+<a class="reference external" href="http://www.oracle.com/technetwork/developer-tools/apex/overview/index.html">Oracle Application Express</a>,
+or <a class="reference external" href="http://docs.oracle.com/cd/B19306_01/server.102/b14357/toc.htm">sqlplus</a>
+to view the data exported to the database from the AMPL script:</p>
+<img alt="../_images/oracle-application-express.png" src="../_images/oracle-application-express.png" />
+<div class="section" id="dsn-example">
+<h3>DSN Example<a class="headerlink" href="#dsn-example" title="Permalink to this headline">¶</a></h3>
+<p>The following example shows a DSN entry in the <tt class="docutils literal"><span class="pre">odbc.ini</span></tt> file that
+can be used to connect to a remote Oracle Express Edition (XE) database:</p>
+<div class="highlight-none"><div class="highlight"><pre>[Diet]
+Driver       = Oracle 12c ODBC driver
+ServerName   = &lt;server-ip-or-hostname&gt;
+Database     = XE
+DSN          = Diet
+Port         = 1521
+UserID       = &lt;username&gt;
+Password     = &lt;password&gt;
+</pre></div>
+</div>
+<p>The DSN can be used in an AMPL table declaration as follows:</p>
+<div class="highlight-none"><div class="highlight"><pre>table Foods &quot;ODBC&quot; &quot;DSN=Diet;&quot;: ...
+</pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="troubleshooting">
