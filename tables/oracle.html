@@ -56,6 +56,7 @@
 <li><a class="reference internal" href="#installation">Installation</a><ul>
 <li><a class="reference internal" href="#gnu-linux">GNU/Linux</a><ul>
 <li><a class="reference internal" href="#debian-based-distributions">Debian-based distributions</a></li>
+<li><a class="reference internal" href="#other-distributions">Other distributions</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#macos-x">MacOS X</a></li>
@@ -70,6 +71,7 @@
 <li><a class="reference internal" href="#troubleshooting">Troubleshooting</a><ul>
 <li><a class="reference internal" href="#data-source-name-not-found">Data source name not found</a></li>
 <li><a class="reference internal" href="#driver-s-sqlallochandle-on-sql-handle-henv-failed">Driver&#8217;s SQLAllocHandle on SQL_HANDLE_HENV failed</a></li>
+<li><a class="reference internal" href="#oid-generation-failed">OID generation failed</a></li>
 </ul>
 </li>
 </ul>
@@ -156,6 +158,54 @@ sudo ldconfig
 <p>Use the following command with the <tt class="docutils literal"><span class="pre">x86</span></tt> version instead:</p>
 <div class="highlight-bash"><div class="highlight"><pre>sudo ln -s /usr/lib/i386-linux-gnu/libodbcinst.so <span class="se">\</span>
            /usr/lib/i386-linux-gnu/libodbcinst.so.2
+</pre></div>
+</div>
+</li>
+<li><p class="first">Set the <tt class="docutils literal"><span class="pre">ORACLE_HOME</span></tt> environment variable:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nb">export </span><span class="nv">ORACLE_HOME</span><span class="o">=</span>&lt;installation-dir&gt;
+</pre></div>
+</div>
+<p>replacing <tt class="docutils literal"><span class="pre">&lt;installation-dir&gt;</span></tt> with the actual installation directory which can
+be printed with the command <tt class="docutils literal"><span class="pre">echo</span> <span class="pre">/usr/lib/oracle/*/client*</span></tt>.</p>
+<p>Alternatively you can add the line <tt class="docutils literal"><span class="pre">ORACLE_HOME=&lt;installation-dir&gt;</span></tt> to
+<tt class="docutils literal"><span class="pre">~/.pam_environment</span></tt> to set this environment variable permanently for
+the current user. Use <tt class="docutils literal"><span class="pre">/etc/environment</span></tt> instead of <tt class="docutils literal"><span class="pre">~/.pam_environment</span></tt>
+for system-wide environment variables.
+See also <a class="reference external" href="https://help.ubuntu.com/community/EnvironmentVariables#Persistent_environment_variables">Persistent environment variables</a>.</p>
+</li>
+</ol>
+<p>Go to <a class="reference internal" href="#oracle-usage"><em>Usage</em></a>.</p>
+</div>
+<div class="section" id="other-distributions">
+<h4>Other distributions<a class="headerlink" href="#other-distributions" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic">
+<li><p class="first">Install <a class="reference external" href="http://www.unixodbc.org">unixODBC</a> following <a class="reference external" href="http://www.unixodbc.org/download.html">these instructions</a>.</p>
+</li>
+<li><p class="first">Download and install Oracle Instant Client packages for your Linux platform from the
+<a class="reference external" href="http://www.oracle.com/technetwork/database/features/instant-client/index-097480.html">Instant Client Downloads page</a>.
+You will need Basic and ODBC packages. In the Usage example we also use <tt class="docutils literal"><span class="pre">sqlplus</span></tt> from
+the SQL*Plus package.</p>
+</li>
+<li><p class="first">Add the Oracle library directory to the library search paths:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nb">echo</span> /usr/lib/oracle/*/client*/lib | sudo tee -a /etc/ld.so.conf
+sudo /sbin/ldconfig
+</pre></div>
+</div>
+</li>
+<li><p class="first">If the files <tt class="docutils literal"><span class="pre">odbc.ini</span></tt> and <tt class="docutils literal"><span class="pre">odbcinst.ini</span></tt> are located in
+<tt class="docutils literal"><span class="pre">/etc/unixODBC</span></tt> instead of <tt class="docutils literal"><span class="pre">/etc</span></tt> create symbolic links:</p>
+<div class="highlight-bash"><div class="highlight"><pre>sudo ln -s /etc/unixODBC/odbc.ini /etc/odbc.ini
+sudo ln -s /etc/unixODBC/odbcinst.ini /etc/odbcinst.ini
+</pre></div>
+</div>
+</li>
+<li><p class="first">Register the ODBC driver:</p>
+<div class="highlight-bash"><div class="highlight"><pre>sudo /usr/share/oracle/*/client*/odbc_update_ini.sh / /usr/lib/oracle/*/client*/lib
+</pre></div>
+</div>
+</li>
+<li><p class="first">If <tt class="docutils literal"><span class="pre">/usr/lib/libodbc.so.1</span></tt> doesn&#8217;t exist create a symbolic link</p>
+<div class="highlight-bash"><div class="highlight"><pre>sudo ln -s /usr/lib/libodbc.so.2 /usr/lib/libodbc.so.1
 </pre></div>
 </div>
 </li>
@@ -289,12 +339,10 @@ AMPL&#8217;s ODBC table handler detects the quote character automatically and us
 when necessary. However, user-supplied SQL statements are passed to the Oracle ODBC
 driver as is and should use the correct quotation.</p>
 <p>Example:</p>
-<blockquote>
-<div><div class="highlight-none"><div class="highlight"><pre>table Foods &quot;ODBC&quot; &quot;DRIVER=Oracle; SERVER=localhost;&quot;
+<div class="highlight-none"><div class="highlight"><pre>table Foods &quot;ODBC&quot; &quot;DRIVER=Oracle; SERVER=localhost;&quot;
   &#39;SQL=SELECT &quot;FOOD&quot;, &quot;cost&quot; FROM &quot;Foods&quot;;&#39;: [FOOD], cost;
 </pre></div>
 </div>
-</div></blockquote>
 <div class="section" id="dsn-example">
 <h3>DSN Example<a class="headerlink" href="#dsn-example" title="Permalink to this headline">¶</a></h3>
 <p>The following example shows a DSN entry in the <tt class="docutils literal"><span class="pre">odbc.ini</span></tt> file that
@@ -360,6 +408,21 @@ native_errno = 0
 </pre></div>
 </div>
 <p>This error may occur if the <tt class="docutils literal"><span class="pre">ORACLE_HOME</span></tt> environment variable is not set.</p>
+</div>
+<div class="section" id="oid-generation-failed">
+<h3>OID generation failed<a class="headerlink" href="#oid-generation-failed" title="Permalink to this headline">¶</a></h3>
+<p><tt class="docutils literal"><span class="pre">sqlplus</span></tt> prints the following error message:</p>
+<div class="highlight-none"><div class="highlight"><pre>ORA-21561: OID generation failed
+</pre></div>
+</div>
+<p>Make sure your hostname and the name asociated with 127.0.1.1 IP address in <tt class="docutils literal"><span class="pre">/etc/hosts</span></tt>
+are the same:</p>
+<div class="highlight-none"><div class="highlight"><pre>$ hostname
+your-machine
+$ grep 127.0.1.1 /etc/hosts
+127.0.1.1    your-machine
+</pre></div>
+</div>
 </div>
 </div>
 </div>
