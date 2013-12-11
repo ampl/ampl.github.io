@@ -121,7 +121,7 @@ and Debian-based Linux distributions such as <a class="reference external" href=
 <ol class="arabic">
 <li><p class="first">Download RPM packages of Oracle Instant Client for your Linux platform from the
 <a class="reference external" href="http://www.oracle.com/technetwork/database/features/instant-client/index-097480.html">Instant Client Downloads page</a>.
-You will need Basic and ODBC packages. In the Usage example we also use <tt class="docutils literal"><span class="pre">sqlplus</span></tt> from
+You will need the Basic and ODBC packages. In the Usage example we also use <tt class="docutils literal"><span class="pre">sqlplus</span></tt> from
 the SQL*Plus package.</p>
 </li>
 <li><p class="first">Install dependencies:</p>
@@ -165,7 +165,7 @@ sudo ldconfig
 <div class="highlight-bash"><div class="highlight"><pre><span class="nb">export </span><span class="nv">ORACLE_HOME</span><span class="o">=</span>&lt;installation-dir&gt;
 </pre></div>
 </div>
-<p>replacing <tt class="docutils literal"><span class="pre">&lt;installation-dir&gt;</span></tt> with the actual installation directory which can
+<p>replacing <tt class="docutils literal"><span class="pre">&lt;installation-dir&gt;</span></tt> with the actual installation directory, which can
 be printed with the command <tt class="docutils literal"><span class="pre">echo</span> <span class="pre">/usr/lib/oracle/*/client*</span></tt>.</p>
 <p>Alternatively you can add the line <tt class="docutils literal"><span class="pre">ORACLE_HOME=&lt;installation-dir&gt;</span></tt> to
 <tt class="docutils literal"><span class="pre">~/.pam_environment</span></tt> to set this environment variable permanently for
@@ -183,7 +183,7 @@ See also <a class="reference external" href="https://help.ubuntu.com/community/E
 </li>
 <li><p class="first">Download and install Oracle Instant Client packages for your Linux platform from the
 <a class="reference external" href="http://www.oracle.com/technetwork/database/features/instant-client/index-097480.html">Instant Client Downloads page</a>.
-You will need Basic and ODBC packages. In the Usage example we also use <tt class="docutils literal"><span class="pre">sqlplus</span></tt> from
+You will need the Basic and ODBC packages. In the Usage example we also use <tt class="docutils literal"><span class="pre">sqlplus</span></tt> from
 the SQL*Plus package.</p>
 </li>
 <li><p class="first">Add the Oracle library directory to the library search paths:</p>
@@ -213,12 +213,12 @@ sudo ln -s /etc/unixODBC/odbcinst.ini /etc/odbcinst.ini
 <div class="highlight-bash"><div class="highlight"><pre><span class="nb">export </span><span class="nv">ORACLE_HOME</span><span class="o">=</span>&lt;installation-dir&gt;
 </pre></div>
 </div>
-<p>replacing <tt class="docutils literal"><span class="pre">&lt;installation-dir&gt;</span></tt> with the actual installation directory which can
+<p>replacing <tt class="docutils literal"><span class="pre">&lt;installation-dir&gt;</span></tt> with the actual installation directory, which can
 be printed with the command <tt class="docutils literal"><span class="pre">echo</span> <span class="pre">/usr/lib/oracle/*/client*</span></tt>.</p>
 <p>Alternatively you can add the line <tt class="docutils literal"><span class="pre">ORACLE_HOME=&lt;installation-dir&gt;</span></tt> to
-<tt class="docutils literal"><span class="pre">~/.pam_environment</span></tt> to set this environment variable permanently for
-the current user. Use <tt class="docutils literal"><span class="pre">/etc/environment</span></tt> instead of <tt class="docutils literal"><span class="pre">~/.pam_environment</span></tt>
-for system-wide environment variables.
+<tt class="docutils literal"><span class="pre">~/.pam_environment</span></tt> or to <tt class="docutils literal"><span class="pre">~/.bashrc</span></tt> (depending on your distribution)
+to set this environment variable permanently for the current user.
+Use <tt class="docutils literal"><span class="pre">/etc/environment</span></tt> for system-wide environment variables.
 See also <a class="reference external" href="https://help.ubuntu.com/community/EnvironmentVariables#Persistent_environment_variables">Persistent environment variables</a>.</p>
 </li>
 </ol>
@@ -238,7 +238,8 @@ of Windows. You can check if the driver is installed by running the ODBC Data So
 Administrator, <tt class="docutils literal"><span class="pre">odbcad32.exe</span></tt>, and looking for Oracle in the <tt class="docutils literal"><span class="pre">Drivers</span></tt> tab.</p>
 <img alt="../_images/odbcad32-oracle.png" src="../_images/odbcad32-oracle.png" />
 <p>If the driver is missing, download one from <a class="reference external" href="http://www.oracle.com/technetwork/database/windows/downloads/index-096177.html">OracleODBC Drivers Download Page</a>
-and install it.</p>
+(32-bit version) and install it. 64-bit version of the driver is available as
+a part of <a class="reference external" href="http://www.oracle.com/technetwork/database/windows/downloads/index-090165.html">Oracle Data Access Components</a>.</p>
 </div>
 </div>
 <div class="section" id="usage">
@@ -379,10 +380,10 @@ errmsg = &quot;[unixODBC][Driver Manager]Data source name not found, and no defa
 native_errno = 0
 </pre></div>
 </div>
-<p>If the data source name (DSN) was not found as in the example above check
+<p>If the data source name (DSN) was not found as in the example above, check
 if it is spelled correctly in the connection string. If you are not using a
 DSN, check the driver name instead. On a Unix-based system you can get the
-list of installed ODBC drivers using  the following commands:</p>
+list of installed ODBC drivers using the following command:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>odbcinst -d -q
 </pre></div>
 </div>
@@ -411,7 +412,7 @@ native_errno = 0
 <div class="highlight-none"><div class="highlight"><pre>ORA-21561: OID generation failed
 </pre></div>
 </div>
-<p>Make sure your hostname and the name asociated with 127.0.1.1 IP address in <tt class="docutils literal"><span class="pre">/etc/hosts</span></tt>
+<p>Make sure your hostname and the name associated with IP address 127.0.1.1 in <tt class="docutils literal"><span class="pre">/etc/hosts</span></tt>
 are the same:</p>
 <div class="highlight-none"><div class="highlight"><pre>$ hostname
 your-machine
