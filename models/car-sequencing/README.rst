@@ -9,14 +9,16 @@ Usage
 
 Solving a car sequencing model with CPLEX::
 
-  file=<filename> ampl cplex.ampl
+  [file=<filename>] [timelimit=<timelimit>] ampl cplex.ampl
 
 Solving a car sequencing model with LocalSolver::
 
-  file=<filename> ampl localsolver.ampl
+  [file=<filename>] [timelimit=<timelimit>] ampl localsolver.ampl
 
-In both cases, `<filename>` is the name of a data file in the format
-described below.
+In both cases, ``<filename>`` is the name of a data file in the format
+described below and ``<timelimit>`` is the time limit in seconds.
+The default filename is ``data/10_93.in`` and the default time limit
+is 5 seconds.
 
 Description
 -----------

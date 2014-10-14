@@ -2,7 +2,9 @@
 
 model mip.ampl;
 commands read-data.ampl;
-option cplex_options 'timelimit=5 mipdisplay=1';
+
+if $timelimit = "" then option timelimit 5;
+option cplex_options ('mipdisplay=1 timelimit=' & $timelimit);
 option solver cplex;
 solve;
 display optionAtPosition;
