@@ -4,7 +4,7 @@ model cp.ampl;
 commands read-data.ampl;
 
 if $timelimit = "" then option timelimit 5;
-option localsolver_options 'timelimit=' & $timelimit;
+option localsolver_options ('timelimit=' & $timelimit);
 option solver localsolver;
 solve;
 display optionAtPosition;
