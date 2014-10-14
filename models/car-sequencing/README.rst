@@ -1,7 +1,7 @@
 Car Sequencing
 ==============
 
-Source: [CSPLib](http://www.csplib.org/)
+Source: `CSPLib <http://www.csplib.org/>`_
 
 A number of cars are to be produced; they are not identical, because
 different options are available as variants on the basic model.
