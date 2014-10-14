@@ -5,3 +5,4 @@ commands read-data.ampl;
 option localsolver_options 'timelimit=5';
 option solver localsolver;
 solve;
+display optionAtPosition;
