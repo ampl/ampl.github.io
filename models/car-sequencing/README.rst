@@ -7,11 +7,11 @@ Source: `CSPLib <http://www.csplib.org/>`_
 Usage
 -----
 
-Solving a car sequencing model with CPLEX::
+Solving the car sequencing problem with CPLEX::
 
   [file=<filename>] [timelimit=<timelimit>] ampl cplex.ampl
 
-Solving a car sequencing model with LocalSolver::
+Solving the car sequencing problem with LocalSolver::
 
   [file=<filename>] [timelimit=<timelimit>] ampl localsolver.ampl
 
