@@ -3,6 +3,24 @@ Car Sequencing
 
 Source: `CSPLib <http://www.csplib.org/>`_
 
+
+Usage
+-----
+
+Solving a car sequencing model with CPLEX::
+
+  file=<filename> ampl cplex.ampl
+
+Solving a car sequencing model with LocalSolver::
+
+  file=<filename> ampl localsolver.ampl
+
+In both cases, `<filename>` is the name of a data file in the format
+described below.
+
+Description
+-----------
+
 A number of cars are to be produced; they are not identical, because
 different options are available as variants on the basic model.
 The assembly line has different stations which install the various
