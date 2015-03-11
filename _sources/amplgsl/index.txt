@@ -9,6 +9,7 @@ AMPL Bindings for the GNU Scientific Library
    elementary
    special
    rng
+   randist
    freedoc
    gpl
    fdl
