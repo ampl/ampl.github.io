@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>The Logarithmic Distribution &mdash; AMPL Modeling Language for Mathematical Programming</title>
+    <title>The Logarithmic Distribution &mdash; MP None documentation</title>
     
     <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -23,38 +23,21 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="AMPL Modeling Language for Mathematical Programming" href="../index.html" />
-    <link rel="up" title="Random Number Distributions" href="randist.html" />
-    <link rel="next" title="References and Further Reading" href="ran-refs.html" />
-    <link rel="prev" title="The Hypergeometric Distribution" href="ran-hypergeometric.html" /> 
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="MP None documentation" href="../index.html" /> 
   </head>
-  <body>
-    <div class="related">
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="ran-refs.html" title="References and Further Reading"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="ran-hypergeometric.html" title="The Hypergeometric Distribution"
-             accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">AMPL</a> &raquo;</li>
-          <li><a href="index.html" >AMPL bindings for the GNU Scientific Library</a> &raquo;</li>
-          <li><a href="randist.html" accesskey="U">Random Number Distributions</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">MP</a> &raquo;</li> 
       </ul>
     </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="ran-hypergeometric.html"
-                        title="previous chapter">The Hypergeometric Distribution</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="ran-refs.html"
-                        title="next chapter">References and Further Reading</a></p>
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
@@ -74,15 +57,15 @@
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="the-logarithmic-distribution">
 <h1>The Logarithmic Distribution<a class="headerlink" href="#the-logarithmic-distribution" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
-<dt id="gsl_ran_logarithmic">
-<tt class="descname">gsl_ran_logarithmic</tt><big>(</big><em>p</em><big>)</big><a class="headerlink" href="#gsl_ran_logarithmic" title="Permalink to this definition">¶</a></dt>
-<dd><p>This function returns a random integer from the <cite>logarithmic
-distribution</cite>:index. The probability distribution for logarithmic
+<dt id="_CPPv219gsl_ran_logarithmic1p">
+<span id="gsl_ran_logarithmic__p"></span><code class="descclassname"></code><code class="descname">gsl_ran_logarithmic</code><span class="sig-paren">(</span>p<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv219gsl_ran_logarithmic1p" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function returns a random integer from the <span class="target" id="index-0"></span>logarithmic
+distribution. The probability distribution for logarithmic
 random variates is,</p>
 <div class="math">
 \[p(k) = {-1 \over \log(1-p)} {\left(p^k \over k\right)}\]</div>
@@ -90,10 +73,10 @@ random variates is,</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="gsl_ran_logarithmic_pdf">
-<tt class="descname">gsl_ran_logarithmic_pdf</tt><big>(</big><em>k</em>, <em>p</em><big>)</big><a class="headerlink" href="#gsl_ran_logarithmic_pdf" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv223gsl_ran_logarithmic_pdf1k1p">
+<span id="gsl_ran_logarithmic_pdf__k.p"></span><code class="descclassname"></code><code class="descname">gsl_ran_logarithmic_pdf</code><span class="sig-paren">(</span>k, p<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv223gsl_ran_logarithmic_pdf1k1p" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function computes the probability <span class="math">\(p(k)\)</span> of obtaining <span class="math">\(k\)</span> from
-a logarithmic distribution with probability parameter <tt class="docutils literal"><span class="pre">p</span></tt>, using the
+a logarithmic distribution with probability parameter <code class="docutils literal"><span class="pre">p</span></code>, using the
 formula given above.</p>
 </dd></dl>
 
@@ -105,27 +88,19 @@ formula given above.</p>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="../genindex.html" title="General Index"
              >index</a></li>
-        <li class="right" >
-          <a href="ran-refs.html" title="References and Further Reading"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="ran-hypergeometric.html" title="The Hypergeometric Distribution"
-             >previous</a> |</li>
-        <li><a href="../index.html">AMPL</a> &raquo;</li>
-          <li><a href="index.html" >AMPL bindings for the GNU Scientific Library</a> &raquo;</li>
-          <li><a href="randist.html" >Random Number Distributions</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">MP</a> &raquo;</li> 
       </ul>
     </div>
 
-    <div class="footer">
-        &copy; Copyright 2012 AMPL Optimization, Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015 AMPL Optimization, Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3b3+.
     </div>
 <!-- Google Analytics -->
 <script>

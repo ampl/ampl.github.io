@@ -3,11 +3,11 @@
 
 The Levy alpha-Stable Distribution
 ==================================
-   
+
 .. function:: gsl_ran_levy(c, alpha)
 
- This function returns a random variate from the `Levy symmetric
- stable distribution`:index: with scale ``c`` and exponent ``alpha``.
+ This function returns a random variate from the :index:`Levy symmetric
+ stable distribution` with scale ``c`` and exponent ``alpha``.
  The symmetric stable probability distribution is defined by a
  Fourier transform,
 
@@ -22,4 +22,3 @@ The Levy alpha-Stable Distribution
  the tails of the distribution become extremely wide.
 
  The algorithm only works for :math:`0 < \alpha \leq 2`.
-   

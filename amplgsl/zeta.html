@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Zeta Functions &mdash; AMPL Modeling Language for Mathematical Programming</title>
+    <title>Zeta Functions &mdash; MP None documentation</title>
     
     <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -23,14 +23,14 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="AMPL Modeling Language for Mathematical Programming" href="../index.html" />
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="MP None documentation" href="../index.html" />
     <link rel="up" title="Special Functions" href="special.html" />
     <link rel="next" title="References and Further Reading" href="sf-refs.html" />
     <link rel="prev" title="Transport Functions" href="transport.html" /> 
   </head>
-  <body>
-    <div class="related">
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -42,12 +42,12 @@
         <li class="right" >
           <a href="transport.html" title="Transport Functions"
              accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">AMPL</a> &raquo;</li>
-          <li><a href="index.html" >AMPL bindings for the GNU Scientific Library</a> &raquo;</li>
-          <li><a href="special.html" accesskey="U">Special Functions</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">MP</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >AMPL Bindings for the GNU Scientific Library</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="special.html" accesskey="U">Special Functions</a> &raquo;</li> 
       </ul>
     </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h3><a href="../index.html">Table Of Contents</a></h3>
   <ul>
@@ -85,7 +85,7 @@
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="zeta-functions">
 <h1>Zeta Functions<a class="headerlink" href="#zeta-functions" title="Permalink to this headline">¶</a></h1>
@@ -96,15 +96,15 @@ Section 23.2.</p>
 <p>The Riemann zeta function is defined by the infinite sum
 <span class="math">\(\zeta(s) = \sum_{k=1}^\infty k^{-s}\)</span>.</p>
 <dl class="function">
-<dt id="gsl_sf_zeta_int">
-<tt class="descname">gsl_sf_zeta_int</tt><big>(</big><em>n</em><big>)</big><a class="headerlink" href="#gsl_sf_zeta_int" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv215gsl_sf_zeta_int1n">
+<span id="gsl_sf_zeta_int__n"></span><code class="descclassname"></code><code class="descname">gsl_sf_zeta_int</code><span class="sig-paren">(</span>n<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv215gsl_sf_zeta_int1n" title="Permalink to this definition">¶</a></dt>
 <dd><p>This routine computes the Riemann zeta function <span class="math">\(\zeta(n)\)</span> for integer
 <span class="math">\(n, n \ne 1\)</span>.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="gsl_sf_zeta">
-<tt class="descname">gsl_sf_zeta</tt><big>(</big><em>s</em><big>)</big><a class="headerlink" href="#gsl_sf_zeta" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv211gsl_sf_zeta1s">
+<span id="gsl_sf_zeta__s"></span><code class="descclassname"></code><code class="descname">gsl_sf_zeta</code><span class="sig-paren">(</span>s<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv211gsl_sf_zeta1s" title="Permalink to this definition">¶</a></dt>
 <dd><p>This routine computes the Riemann zeta function <span class="math">\(\zeta(s)\)</span> for arbitrary
 <span class="math">\(s, s \ne 1\)</span>.</p>
 </dd></dl>
@@ -116,14 +116,14 @@ Section 23.2.</p>
 In this region the fractional part is interesting, and therefore we need
 a function to evaluate it explicitly.</p>
 <dl class="function">
-<dt id="gsl_sf_zetam1_int">
-<tt class="descname">gsl_sf_zetam1_int</tt><big>(</big><em>n</em><big>)</big><a class="headerlink" href="#gsl_sf_zetam1_int" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv217gsl_sf_zetam1_int1n">
+<span id="gsl_sf_zetam1_int__n"></span><code class="descclassname"></code><code class="descname">gsl_sf_zetam1_int</code><span class="sig-paren">(</span>n<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv217gsl_sf_zetam1_int1n" title="Permalink to this definition">¶</a></dt>
 <dd><p>This routine computes <span class="math">\(\zeta(n) - 1\)</span> for integer <span class="math">\(n, n \ne 1\)</span>.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="gsl_sf_zetam1">
-<tt class="descname">gsl_sf_zetam1</tt><big>(</big><em>s</em><big>)</big><a class="headerlink" href="#gsl_sf_zetam1" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv213gsl_sf_zetam11s">
+<span id="gsl_sf_zetam1__s"></span><code class="descclassname"></code><code class="descname">gsl_sf_zetam1</code><span class="sig-paren">(</span>s<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv213gsl_sf_zetam11s" title="Permalink to this definition">¶</a></dt>
 <dd><p>This routine computes <span class="math">\(\zeta(s) - 1\)</span> for arbitrary <span class="math">\(s, s \ne 1.\)</span>.</p>
 </dd></dl>
 
@@ -133,8 +133,8 @@ a function to evaluate it explicitly.</p>
 <p>The <span class="target" id="index-2"></span>Hurwitz zeta function is defined by
 <span class="math">\(\zeta(s,q) = \sum_0^\infty (k+q)^{-s}\)</span>.</p>
 <dl class="function">
-<dt id="gsl_sf_hzeta">
-<tt class="descname">gsl_sf_hzeta</tt><big>(</big><em>s</em>, <em>q</em><big>)</big><a class="headerlink" href="#gsl_sf_hzeta" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv212gsl_sf_hzeta1s1q">
+<span id="gsl_sf_hzeta__s.q"></span><code class="descclassname"></code><code class="descname">gsl_sf_hzeta</code><span class="sig-paren">(</span>s, q<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv212gsl_sf_hzeta1s1q" title="Permalink to this definition">¶</a></dt>
 <dd><p>This routine computes the Hurwitz zeta function <span class="math">\(\zeta(s,q)\)</span> for
 <span class="math">\(s &gt; 1, q &gt; 0\)</span>.</p>
 </dd></dl>
@@ -144,14 +144,14 @@ a function to evaluate it explicitly.</p>
 <h2>Eta Function<a class="headerlink" href="#eta-function" title="Permalink to this headline">¶</a></h2>
 <p>The <span class="target" id="index-3"></span>eta function is defined by <span class="math">\(\eta(s) = (1-2^{1-s}) \zeta(s)\)</span>.</p>
 <dl class="function">
-<dt id="gsl_sf_eta_int">
-<tt class="descname">gsl_sf_eta_int</tt><big>(</big><em>n</em><big>)</big><a class="headerlink" href="#gsl_sf_eta_int" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv214gsl_sf_eta_int1n">
+<span id="gsl_sf_eta_int__n"></span><code class="descclassname"></code><code class="descname">gsl_sf_eta_int</code><span class="sig-paren">(</span>n<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv214gsl_sf_eta_int1n" title="Permalink to this definition">¶</a></dt>
 <dd><p>This routine computes the eta function <span class="math">\(\eta(n)\)</span> for integer <span class="math">\(n\)</span>.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="gsl_sf_eta">
-<tt class="descname">gsl_sf_eta</tt><big>(</big><em>s</em><big>)</big><a class="headerlink" href="#gsl_sf_eta" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv210gsl_sf_eta1s">
+<span id="gsl_sf_eta__s"></span><code class="descclassname"></code><code class="descname">gsl_sf_eta</code><span class="sig-paren">(</span>s<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv210gsl_sf_eta1s" title="Permalink to this definition">¶</a></dt>
 <dd><p>This routine computes the eta function <span class="math">\(\eta(s)\)</span> for arbitrary <span class="math">\(s\)</span>.</p>
 </dd></dl>
 
@@ -164,7 +164,7 @@ a function to evaluate it explicitly.</p>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -176,15 +176,15 @@ a function to evaluate it explicitly.</p>
         <li class="right" >
           <a href="transport.html" title="Transport Functions"
              >previous</a> |</li>
-        <li><a href="../index.html">AMPL</a> &raquo;</li>
-          <li><a href="index.html" >AMPL bindings for the GNU Scientific Library</a> &raquo;</li>
-          <li><a href="special.html" >Special Functions</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">MP</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >AMPL Bindings for the GNU Scientific Library</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="special.html" >Special Functions</a> &raquo;</li> 
       </ul>
     </div>
 
-    <div class="footer">
-        &copy; Copyright 2012 AMPL Optimization, Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015 AMPL Optimization, Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3b3+.
     </div>
 <!-- Google Analytics -->
 <script>

@@ -53,4 +53,3 @@ These two definitions satisfy the identity :math:`P(k)+Q(k)=1`.
 
 If the range of the distribution is :math:`1` to :math:`n` inclusive then
 :math:`P(n)=1, Q(n)=0` while :math:`P(1) = p(1), Q(1)=1-p(1)`.
-   

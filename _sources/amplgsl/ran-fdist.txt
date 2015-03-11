@@ -4,7 +4,7 @@
 The F-distribution
 ==================
 
-The `F-distribution`:index: arises in statistics. If :math:`Y_1` and :math:`Y_2`
+The :index:`F-distribution` arises in statistics. If :math:`Y_1` and :math:`Y_2`
 are chi-squared deviates with :math:`\nu_1` and :math:`\nu_2` degrees of freedom
 then the ratio,
 
@@ -12,7 +12,7 @@ then the ratio,
   X = { (Y_1 / \nu_1) \over (Y_2 / \nu_2) }
 
 has an F-distribution :math:`F(x;\nu_1,\nu_2)`.
-   
+
 .. function:: gsl_ran_fdist(nu1, nu2)
 
  This function returns a random variate from the F-distribution with
@@ -26,22 +26,21 @@ has an F-distribution :math:`F(x;\nu_1,\nu_2)`.
         x^{\nu_1/2 - 1} (\nu_2 + \nu_1 x)^{-\nu_1/2 -\nu_2/2}
 
 for :math:`x \geq 0`.
-   
+
 .. function:: gsl_ran_fdist_pdf(x, nu1, nu2)
 
  This function computes the probability density :math:`p(x)` at :math:`x` for an
  F-distribution with ``nu1`` and ``nu2`` degrees of freedom, using
  the formula given above.
-   
+
 .. function:: gsl_cdf_fdist_P(x, nu1, nu2)
-   
+
 .. function:: gsl_cdf_fdist_Q(x, nu1, nu2)
-   
+
 .. function:: gsl_cdf_fdist_Pinv(P, nu1, nu2)
-   
+
 .. function:: gsl_cdf_fdist_Qinv(Q, nu1, nu2)
 
  These functions compute the cumulative distribution functions
  :math:`P(x), Q(x)` and their inverses for the F-distribution with
  ``nu1`` and ``nu2`` degrees of freedom.
-   

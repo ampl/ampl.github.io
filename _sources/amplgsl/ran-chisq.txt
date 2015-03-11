@@ -4,7 +4,7 @@
 The Chi-squared Distribution
 ============================
 
-The `chi-squared distribution`:index: arises in statistics. If :math:`Y_i`
+The :index:`chi-squared distribution` arises in statistics. If :math:`Y_i`
 are :math:`n` independent Gaussian random variates with unit variance then the
 sum-of-squares,
 
@@ -12,7 +12,7 @@ sum-of-squares,
   X_i = \sum_i Y_i^2
 
 has a chi-squared distribution with :math:`n` degrees of freedom.
-   
+
 .. function:: gsl_ran_chisq(nu)
 
  This function returns a random variate from chi-squared distribution
@@ -22,22 +22,21 @@ has a chi-squared distribution with :math:`n` degrees of freedom.
    p(x) dx = {1 \over 2 \Gamma(\nu/2) } (x/2)^{\nu/2 - 1} \exp(-x/2) dx
 
  for :math:`x \geq 0`.
-   
+
 .. function:: gsl_ran_chisq_pdf(x, nu)
 
  This function computes the probability density :math:`p(x)` at :math:`x` for a
  chi-squared distribution with ``nu`` degrees of freedom, using the
  formula given above.
-   
+
 .. function:: gsl_ran_chisq_P(x, nu)
-   
+
 .. function:: gsl_ran_chisq_Q(x, nu)
-   
+
 .. function:: gsl_ran_chisq_Pinv(P, nu)
-   
+
 .. function:: gsl_ran_chisq_Qinv(Q, nu)
 
  These functions compute the cumulative distribution functions
  :math:`P(x), Q(x)` and their inverses for the chi-squared distribution
  with ``nu`` degrees of freedom.
-   

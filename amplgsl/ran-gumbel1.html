@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>The Type-1 Gumbel Distribution &mdash; AMPL Modeling Language for Mathematical Programming</title>
+    <title>The Type-1 Gumbel Distribution &mdash; MP None documentation</title>
     
     <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -23,38 +23,21 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="AMPL Modeling Language for Mathematical Programming" href="../index.html" />
-    <link rel="up" title="Random Number Distributions" href="randist.html" />
-    <link rel="next" title="The Type-2 Gumbel Distribution" href="ran-gumbel2.html" />
-    <link rel="prev" title="The Weibull Distribution" href="ran-weibull.html" /> 
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="MP None documentation" href="../index.html" /> 
   </head>
-  <body>
-    <div class="related">
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="ran-gumbel2.html" title="The Type-2 Gumbel Distribution"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="ran-weibull.html" title="The Weibull Distribution"
-             accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">AMPL</a> &raquo;</li>
-          <li><a href="index.html" >AMPL bindings for the GNU Scientific Library</a> &raquo;</li>
-          <li><a href="randist.html" accesskey="U">Random Number Distributions</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">MP</a> &raquo;</li> 
       </ul>
     </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="ran-weibull.html"
-                        title="previous chapter">The Weibull Distribution</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="ran-gumbel2.html"
-                        title="next chapter">The Type-2 Gumbel Distribution</a></p>
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
@@ -74,13 +57,13 @@
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="the-type-1-gumbel-distribution">
 <h1>The Type-1 Gumbel Distribution<a class="headerlink" href="#the-type-1-gumbel-distribution" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
-<dt id="gsl_ran_gumbel1">
-<tt class="descname">gsl_ran_gumbel1</tt><big>(</big><em>a</em>, <em>b</em><big>)</big><a class="headerlink" href="#gsl_ran_gumbel1" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv215gsl_ran_gumbel11a1b">
+<span id="gsl_ran_gumbel1__a.b"></span><code class="descclassname"></code><code class="descname">gsl_ran_gumbel1</code><span class="sig-paren">(</span>a, b<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv215gsl_ran_gumbel11a1b" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function returns a random variate from the <span class="target" id="index-0"></span>Type-1 Gumbel
 distribution. The Type-1 Gumbel distribution function is,</p>
 <div class="math">
@@ -89,34 +72,34 @@ distribution. The Type-1 Gumbel distribution function is,</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="gsl_ran_gumbel1_pdf">
-<tt class="descname">gsl_ran_gumbel1_pdf</tt><big>(</big><em>x</em>, <em>a</em>, <em>b</em><big>)</big><a class="headerlink" href="#gsl_ran_gumbel1_pdf" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv219gsl_ran_gumbel1_pdf1x1a1b">
+<span id="gsl_ran_gumbel1_pdf__x.a.b"></span><code class="descclassname"></code><code class="descname">gsl_ran_gumbel1_pdf</code><span class="sig-paren">(</span>x, a, b<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv219gsl_ran_gumbel1_pdf1x1a1b" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function computes the probability density <span class="math">\(p(x)\)</span> at <span class="math">\(x\)</span> for a
-Type-1 Gumbel distribution with parameters <tt class="docutils literal"><span class="pre">a</span></tt> and <tt class="docutils literal"><span class="pre">b</span></tt>, using the
+Type-1 Gumbel distribution with parameters <code class="docutils literal"><span class="pre">a</span></code> and <code class="docutils literal"><span class="pre">b</span></code>, using the
 formula given above.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="gsl_cdf_gumbel1_P">
-<tt class="descname">gsl_cdf_gumbel1_P</tt><big>(</big><em>x</em>, <em>a</em>, <em>b</em><big>)</big><a class="headerlink" href="#gsl_cdf_gumbel1_P" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv217gsl_cdf_gumbel1_P1x1a1b">
+<span id="gsl_cdf_gumbel1_P__x.a.b"></span><code class="descclassname"></code><code class="descname">gsl_cdf_gumbel1_P</code><span class="sig-paren">(</span>x, a, b<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv217gsl_cdf_gumbel1_P1x1a1b" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="gsl_cdf_gumbel1_Q">
-<tt class="descname">gsl_cdf_gumbel1_Q</tt><big>(</big><em>x</em>, <em>a</em>, <em>b</em><big>)</big><a class="headerlink" href="#gsl_cdf_gumbel1_Q" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv217gsl_cdf_gumbel1_Q1x1a1b">
+<span id="gsl_cdf_gumbel1_Q__x.a.b"></span><code class="descclassname"></code><code class="descname">gsl_cdf_gumbel1_Q</code><span class="sig-paren">(</span>x, a, b<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv217gsl_cdf_gumbel1_Q1x1a1b" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="gsl_cdf_gumbel1_Pinv">
-<tt class="descname">gsl_cdf_gumbel1_Pinv</tt><big>(</big><em>P</em>, <em>a</em>, <em>b</em><big>)</big><a class="headerlink" href="#gsl_cdf_gumbel1_Pinv" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv220gsl_cdf_gumbel1_Pinv1P1a1b">
+<span id="gsl_cdf_gumbel1_Pinv__P.a.b"></span><code class="descclassname"></code><code class="descname">gsl_cdf_gumbel1_Pinv</code><span class="sig-paren">(</span>P, a, b<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv220gsl_cdf_gumbel1_Pinv1P1a1b" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="gsl_cdf_gumbel1_Qinv">
-<tt class="descname">gsl_cdf_gumbel1_Qinv</tt><big>(</big><em>Q</em>, <em>a</em>, <em>b</em><big>)</big><a class="headerlink" href="#gsl_cdf_gumbel1_Qinv" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv220gsl_cdf_gumbel1_Qinv1Q1a1b">
+<span id="gsl_cdf_gumbel1_Qinv__Q.a.b"></span><code class="descclassname"></code><code class="descname">gsl_cdf_gumbel1_Qinv</code><span class="sig-paren">(</span>Q, a, b<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv220gsl_cdf_gumbel1_Qinv1Q1a1b" title="Permalink to this definition">¶</a></dt>
 <dd><p>These functions compute the cumulative distribution functions
 <span class="math">\(P(x), Q(x)\)</span> and their inverses for the Type-1 Gumbel distribution
-with parameters <tt class="docutils literal"><span class="pre">a</span></tt> and <tt class="docutils literal"><span class="pre">b</span></tt>.</p>
+with parameters <code class="docutils literal"><span class="pre">a</span></code> and <code class="docutils literal"><span class="pre">b</span></code>.</p>
 </dd></dl>
 
 </div>
@@ -127,27 +110,19 @@ with parameters <tt class="docutils literal"><span class="pre">a</span></tt> and
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="../genindex.html" title="General Index"
              >index</a></li>
-        <li class="right" >
-          <a href="ran-gumbel2.html" title="The Type-2 Gumbel Distribution"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="ran-weibull.html" title="The Weibull Distribution"
-             >previous</a> |</li>
-        <li><a href="../index.html">AMPL</a> &raquo;</li>
-          <li><a href="index.html" >AMPL bindings for the GNU Scientific Library</a> &raquo;</li>
-          <li><a href="randist.html" >Random Number Distributions</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">MP</a> &raquo;</li> 
       </ul>
     </div>
 
-    <div class="footer">
-        &copy; Copyright 2012 AMPL Optimization, Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015 AMPL Optimization, Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3b3+.
     </div>
 <!-- Google Analytics -->
 <script>

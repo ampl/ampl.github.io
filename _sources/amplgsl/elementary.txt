@@ -3,27 +3,26 @@
 
 Elementary Functions
 --------------------
-   
+
 .. function:: gsl_log1p(x)
 
  This function computes the value of :math:`\log(1+x)` in a way that is
  accurate for small :math:`x`. It provides an alternative to the BSD math
  function ``log1p(x)``.
-   
+
 .. function:: gsl_expm1(x)
 
  This function computes the value of :math:`\exp(x)-1` in a way that is
  accurate for small :math:`x`. It provides an alternative to the BSD math
  function ``expm1(x)``.
-   
+
 .. function:: gsl_hypot(x, y)
 
  This function computes the value of :math:`\sqrt{x^2 + y^2}` in a way that
  avoids overflow. It provides an alternative to the BSD math function
  ``hypot(x,y)``.
-   
+
 .. function:: gsl_hypot3(x, y, z)
 
  This function computes the value of :math:`\sqrt{x^2 + y^2 + z^2}` in a way
  that avoids overflow.
-   

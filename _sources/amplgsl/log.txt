@@ -8,23 +8,22 @@ Information on the properties of the Logarithm function can be found
 in Abramowitz & Stegun, Chapter 4.
 
 .. index:: logarithm
-   
+
 .. function:: gsl_sf_log(x)
 
  This routine computes the logarithm of :math:`x`, :math:`\log(x)`, for :math:`x > 0`.
-   
+
 .. function:: gsl_sf_log_abs(x)
 
  This routine computes the logarithm of the magnitude of :math:`x`,
  :math:`\log(|x|)`, for :math:`x \ne 0`.
-   
+
 .. function:: gsl_sf_log_1plusx(x)
 
  This routine computes :math:`\log(1 + x)` for :math:`x > -1` using an algorithm
  that is accurate for small :math:`x`.
-   
+
 .. function:: gsl_sf_log_1plusx_mx(x)
 
  This routine computes :math:`\log(1 + x) - x` for :math:`x > -1` using an
  algorithm that is accurate for small :math:`x`.
-   

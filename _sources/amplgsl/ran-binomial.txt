@@ -3,11 +3,11 @@
 
 The Binomial Distribution
 =========================
-   
+
 .. function:: gsl_ran_binomial(p, n)
 
- This function returns a random integer from the `binomial
- distribution`:index:, the number of successes in ``n`` independent
+ This function returns a random integer from the :index:`binomial
+ distribution`, the number of successes in ``n`` independent
  trials with probability ``p``. The probability distribution for
  binomial variates is,
 
@@ -15,18 +15,17 @@ The Binomial Distribution
    p(k) = {n! \over k! (n-k)! } p^k (1-p)^{n-k}
 
  for :math:`0 \leq k \leq n`.
-   
+
 .. function:: gsl_ran_binomial_pdf(k, p, n)
 
  This function computes the probability :math:`p(k)` of obtaining :math:`k` from
- a `binomial distribution`:index: with parameters ``p`` and ``n``, using
+ a :index:`binomial distribution` with parameters ``p`` and ``n``, using
  the formula given above.
-   
+
 .. function:: gsl_cdf_binomial_P(k, p, n)
-   
+
 .. function:: gsl_cdf_binomial_Q(k, p, n)
 
  These functions compute the cumulative distribution functions
  :math:`P(k), Q(k)` for the binomial distribution with parameters
  ``p`` and ``n``.
-   

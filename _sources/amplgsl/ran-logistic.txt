@@ -3,32 +3,31 @@
 
 The Logistic Distribution
 =========================
-   
+
 .. function:: gsl_ran_logistic(a)
 
- This function returns a random variate from the `logistic
- distribution`:index:. The distribution is,
+ This function returns a random variate from the :index:`logistic
+ distribution`. The distribution is,
 
  .. math::
    p(x) dx = { \exp(-x/a) \over a (1 + \exp(-x/a))^2 } dx
 
  for :math:`-\infty < x < \infty`.
-   
+
 .. function:: gsl_ran_logistic_pdf(x, a)
 
  This function computes the probability density :math:`p(x)` at :math:`x` for a
  logistic distribution with scale parameter a, using the formula given
  above.
-   
+
 .. function:: gsl_ran_logistic_P(x, a)
-   
+
 .. function:: gsl_ran_logistic_Q(x, a)
-   
+
 .. function:: gsl_ran_logistic_Pinv(P, a)
-   
+
 .. function:: gsl_ran_logistic_Qinv(Q, a)
 
  These functions compute the cumulative distribution functions
  :math:`P(x), Q(x)` and their inverses for the logistic distribution
  with scale parameter ``a``.
-   

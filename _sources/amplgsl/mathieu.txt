@@ -28,29 +28,29 @@ first, second, third and fourth kind are denoted by the parameter
 
 For more information on the Mathieu functions, see Abramowitz and
 Stegun, Chapter 20.
-   
+
 .. function:: gsl_sf_mathieu_a(n, q)
-   
+
 .. function:: gsl_sf_mathieu_b(n, q)
 
  These routines compute the characteristic values :math:`a_n(q), b_n(q)`
  of the Mathieu functions :math:`ce_n(q,x)` and :math:`se_n(q,x)`, respectively.
-   
+
 Angular Mathieu Functions
 -------------------------
-   
+
 .. function:: gsl_sf_mathieu_ce(n, q, x)
-   
+
 .. function:: gsl_sf_mathieu_se(n, q, x)
 
  These routines compute the angular Mathieu functions :math:`ce_n(q,x)` and
  :math:`se_n(q,x)`, respectively.
-   
+
 Radial Mathieu Functions
 ------------------------
-   
+
 .. function:: gsl_sf_mathieu_Mc(j, n, q, x)
-   
+
 .. function:: gsl_sf_mathieu_Ms(j, n, q, x)
 
  These routines compute the radial :math:`j`-th kind Mathieu functions
@@ -60,4 +60,3 @@ Radial Mathieu Functions
  :math:`j = 3, 4` can be computed as :math:`M_n^{(3)} = M_n^{(1)} + iM_n^{(2)}`
  and :math:`M_n^{(4)} = M_n^{(1)} - iM_n^{(2)}`, where
  :math:`M_n^{(j)} = Mc_n^{(j)}` or :math:`Ms_n^{(j)}`.
-   

@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Elliptic Integrals &mdash; AMPL Modeling Language for Mathematical Programming</title>
+    <title>Elliptic Integrals &mdash; MP None documentation</title>
     
     <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -23,14 +23,14 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="AMPL Modeling Language for Mathematical Programming" href="../index.html" />
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="MP None documentation" href="../index.html" />
     <link rel="up" title="Special Functions" href="special.html" />
     <link rel="next" title="Error Functions" href="erf.html" />
     <link rel="prev" title="Dilogarithm" href="dilog.html" /> 
   </head>
-  <body>
-    <div class="related">
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -42,12 +42,12 @@
         <li class="right" >
           <a href="dilog.html" title="Dilogarithm"
              accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">AMPL</a> &raquo;</li>
-          <li><a href="index.html" >AMPL bindings for the GNU Scientific Library</a> &raquo;</li>
-          <li><a href="special.html" accesskey="U">Special Functions</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">MP</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >AMPL Bindings for the GNU Scientific Library</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="special.html" accesskey="U">Special Functions</a> &raquo;</li> 
       </ul>
     </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h3><a href="../index.html">Table Of Contents</a></h3>
   <ul>
@@ -86,7 +86,7 @@
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="elliptic-integrals">
 <h1>Elliptic Integrals<a class="headerlink" href="#elliptic-integrals" title="Permalink to this headline">¶</a></h1>
@@ -124,24 +124,24 @@ RJ(x,y,z,p) = 3/2 \int_0^\infty
 <div class="section" id="legendre-form-of-complete-elliptic-integrals">
 <h2>Legendre Form of Complete Elliptic Integrals<a class="headerlink" href="#legendre-form-of-complete-elliptic-integrals" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
-<dt id="gsl_sf_ellint_Kcomp">
-<tt class="descname">gsl_sf_ellint_Kcomp</tt><big>(</big><em>k</em><big>)</big><a class="headerlink" href="#gsl_sf_ellint_Kcomp" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv219gsl_sf_ellint_Kcomp1k">
+<span id="gsl_sf_ellint_Kcomp__k"></span><code class="descclassname"></code><code class="descname">gsl_sf_ellint_Kcomp</code><span class="sig-paren">(</span>k<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv219gsl_sf_ellint_Kcomp1k" title="Permalink to this definition">¶</a></dt>
 <dd><p>This routine computes the complete elliptic integral <span class="math">\(K(k)\)</span>.
 Note that Abramowitz &amp; Stegun define this function in terms
 of the parameter <span class="math">\(m = k^2\)</span>.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="gsl_sf_ellint_Ecomp">
-<tt class="descname">gsl_sf_ellint_Ecomp</tt><big>(</big><em>k</em><big>)</big><a class="headerlink" href="#gsl_sf_ellint_Ecomp" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv219gsl_sf_ellint_Ecomp1k">
+<span id="gsl_sf_ellint_Ecomp__k"></span><code class="descclassname"></code><code class="descname">gsl_sf_ellint_Ecomp</code><span class="sig-paren">(</span>k<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv219gsl_sf_ellint_Ecomp1k" title="Permalink to this definition">¶</a></dt>
 <dd><p>This routine computes the complete elliptic integral <span class="math">\(E(k)\)</span>.
 Note that Abramowitz &amp; Stegun define this function in terms
 of the parameter <span class="math">\(m = k^2\)</span>.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="gsl_sf_ellint_Pcomp">
-<tt class="descname">gsl_sf_ellint_Pcomp</tt><big>(</big><em>k</em>, <em>n</em><big>)</big><a class="headerlink" href="#gsl_sf_ellint_Pcomp" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv219gsl_sf_ellint_Pcomp1k1n">
+<span id="gsl_sf_ellint_Pcomp__k.n"></span><code class="descclassname"></code><code class="descname">gsl_sf_ellint_Pcomp</code><span class="sig-paren">(</span>k, n<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv219gsl_sf_ellint_Pcomp1k1n" title="Permalink to this definition">¶</a></dt>
 <dd><p>This routine computes the complete elliptic integral <span class="math">\(\Pi(k,n)\)</span>.
 Note that Abramowitz &amp; Stegun define this function in terms
 of the parameters <span class="math">\(m = k^2\)</span> and <span class="math">\(\sin^2(\alpha) = k^2\)</span>, with the
@@ -152,24 +152,24 @@ change of sign <span class="math">\(n \to -n\)</span>.</p>
 <div class="section" id="legendre-form-of-incomplete-elliptic-integrals">
 <h2>Legendre Form of Incomplete Elliptic Integrals<a class="headerlink" href="#legendre-form-of-incomplete-elliptic-integrals" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
-<dt id="gsl_sf_ellint_F">
-<tt class="descname">gsl_sf_ellint_F</tt><big>(</big><em>phi</em>, <em>k</em><big>)</big><a class="headerlink" href="#gsl_sf_ellint_F" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv215gsl_sf_ellint_F3phi1k">
+<span id="gsl_sf_ellint_F__phi.k"></span><code class="descclassname"></code><code class="descname">gsl_sf_ellint_F</code><span class="sig-paren">(</span>phi, k<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv215gsl_sf_ellint_F3phi1k" title="Permalink to this definition">¶</a></dt>
 <dd><p>This routine computes the incomplete elliptic integral <span class="math">\(F(\phi,k)\)</span>.
 Note that Abramowitz &amp; Stegun define this function in terms of the
 parameter <span class="math">\(m = k^2\)</span>.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="gsl_sf_ellint_E">
-<tt class="descname">gsl_sf_ellint_E</tt><big>(</big><em>phi</em>, <em>k</em><big>)</big><a class="headerlink" href="#gsl_sf_ellint_E" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv215gsl_sf_ellint_E3phi1k">
+<span id="gsl_sf_ellint_E__phi.k"></span><code class="descclassname"></code><code class="descname">gsl_sf_ellint_E</code><span class="sig-paren">(</span>phi, k<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv215gsl_sf_ellint_E3phi1k" title="Permalink to this definition">¶</a></dt>
 <dd><p>This routine computes the incomplete elliptic integral <span class="math">\(E(\phi,k)\)</span>.
 Note that Abramowitz &amp; Stegun define this function in terms of the
 parameter <span class="math">\(m = k^2\)</span>.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="gsl_sf_ellint_P">
-<tt class="descname">gsl_sf_ellint_P</tt><big>(</big><em>phi</em>, <em>k</em>, <em>n</em><big>)</big><a class="headerlink" href="#gsl_sf_ellint_P" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv215gsl_sf_ellint_P3phi1k1n">
+<span id="gsl_sf_ellint_P__phi.k.n"></span><code class="descclassname"></code><code class="descname">gsl_sf_ellint_P</code><span class="sig-paren">(</span>phi, k, n<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv215gsl_sf_ellint_P3phi1k1n" title="Permalink to this definition">¶</a></dt>
 <dd><p>This routine computes the incomplete elliptic integral <span class="math">\(\Pi(\phi,k,n)\)</span>.
 Note that Abramowitz &amp; Stegun define this function in terms of the
 parameters <span class="math">\(m = k^2\)</span> and <span class="math">\(\sin^2(\alpha) = k^2\)</span>, with the change of
@@ -177,8 +177,8 @@ sign <span class="math">\(n \to -n\)</span>.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="gsl_sf_ellint_D">
-<tt class="descname">gsl_sf_ellint_D</tt><big>(</big><em>phi</em>, <em>k</em>, <em>n</em><big>)</big><a class="headerlink" href="#gsl_sf_ellint_D" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv215gsl_sf_ellint_D3phi1k1n">
+<span id="gsl_sf_ellint_D__phi.k.n"></span><code class="descclassname"></code><code class="descname">gsl_sf_ellint_D</code><span class="sig-paren">(</span>phi, k, n<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv215gsl_sf_ellint_D3phi1k1n" title="Permalink to this definition">¶</a></dt>
 <dd><p>This routine computes the incomplete elliptic integral <span class="math">\(D(\phi,k,n)\)</span>
 which is defined through the Carlson form <span class="math">\(RD(x,y,z)\)</span> by the following
 relation,</p>
@@ -192,26 +192,26 @@ relation,</p>
 <div class="section" id="carlson-forms">
 <h2>Carlson Forms<a class="headerlink" href="#carlson-forms" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
-<dt id="gsl_sf_ellint_RC">
-<tt class="descname">gsl_sf_ellint_RC</tt><big>(</big><em>x</em>, <em>y</em><big>)</big><a class="headerlink" href="#gsl_sf_ellint_RC" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv216gsl_sf_ellint_RC1x1y">
+<span id="gsl_sf_ellint_RC__x.y"></span><code class="descclassname"></code><code class="descname">gsl_sf_ellint_RC</code><span class="sig-paren">(</span>x, y<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv216gsl_sf_ellint_RC1x1y" title="Permalink to this definition">¶</a></dt>
 <dd><p>This routine computes the incomplete elliptic integral <span class="math">\(RC(x,y)\)</span>.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="gsl_sf_ellint_RD">
-<tt class="descname">gsl_sf_ellint_RD</tt><big>(</big><em>x</em>, <em>y</em>, <em>z</em><big>)</big><a class="headerlink" href="#gsl_sf_ellint_RD" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv216gsl_sf_ellint_RD1x1y1z">
+<span id="gsl_sf_ellint_RD__x.y.z"></span><code class="descclassname"></code><code class="descname">gsl_sf_ellint_RD</code><span class="sig-paren">(</span>x, y, z<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv216gsl_sf_ellint_RD1x1y1z" title="Permalink to this definition">¶</a></dt>
 <dd><p>This routine computes the incomplete elliptic integral <span class="math">\(RD(x,y,z)\)</span>.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="gsl_sf_ellint_RF">
-<tt class="descname">gsl_sf_ellint_RF</tt><big>(</big><em>x</em>, <em>y</em>, <em>z</em><big>)</big><a class="headerlink" href="#gsl_sf_ellint_RF" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv216gsl_sf_ellint_RF1x1y1z">
+<span id="gsl_sf_ellint_RF__x.y.z"></span><code class="descclassname"></code><code class="descname">gsl_sf_ellint_RF</code><span class="sig-paren">(</span>x, y, z<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv216gsl_sf_ellint_RF1x1y1z" title="Permalink to this definition">¶</a></dt>
 <dd><p>This routine computes the incomplete elliptic integral <span class="math">\(RF(x,y,z)\)</span>.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="gsl_sf_ellint_RJ">
-<tt class="descname">gsl_sf_ellint_RJ</tt><big>(</big><em>x</em>, <em>y</em>, <em>z</em>, <em>p</em><big>)</big><a class="headerlink" href="#gsl_sf_ellint_RJ" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv216gsl_sf_ellint_RJ1x1y1z1p">
+<span id="gsl_sf_ellint_RJ__x.y.z.p"></span><code class="descclassname"></code><code class="descname">gsl_sf_ellint_RJ</code><span class="sig-paren">(</span>x, y, z, p<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv216gsl_sf_ellint_RJ1x1y1z1p" title="Permalink to this definition">¶</a></dt>
 <dd><p>This routine computes the incomplete elliptic integral <span class="math">\(RJ(x,y,z,p)\)</span>.</p>
 </dd></dl>
 
@@ -224,7 +224,7 @@ relation,</p>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -236,15 +236,15 @@ relation,</p>
         <li class="right" >
           <a href="dilog.html" title="Dilogarithm"
              >previous</a> |</li>
-        <li><a href="../index.html">AMPL</a> &raquo;</li>
-          <li><a href="index.html" >AMPL bindings for the GNU Scientific Library</a> &raquo;</li>
-          <li><a href="special.html" >Special Functions</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">MP</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >AMPL Bindings for the GNU Scientific Library</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="special.html" >Special Functions</a> &raquo;</li> 
       </ul>
     </div>
 
-    <div class="footer">
-        &copy; Copyright 2012 AMPL Optimization, Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015 AMPL Optimization, Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3b3+.
     </div>
 <!-- Google Analytics -->
 <script>

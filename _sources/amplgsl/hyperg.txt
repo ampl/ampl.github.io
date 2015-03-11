@@ -8,30 +8,30 @@ Hypergeometric functions are described in Abramowitz & Stegun,
 Chapters 13 and 15.
 
 .. index:: Hypergeometric function
-   
+
 .. function:: gsl_sf_hyperg_0F1(c, x)
 
  This routine computes the hypergeometric function :math:`{}_0F_1(c,x)`.
-   
+
 .. function:: gsl_sf_hyperg_1F1_int(m, n, x)
 
  This routine computes the confluent hypergeometric function
  :math:`{}_1F_1(m,n,x) = M(m,n,x)` for integer parameters :math:`m`, :math:`n`.
-   
+
 .. function:: gsl_sf_hyperg_1F1(a, b, x)
 
  This routine computes the confluent hypergeometric function
  :math:`{}_1F_1(a,b,x) = M(a,b,x)` for general parameters :math:`a`, :math:`b`.
-   
+
 .. function:: gsl_sf_hyperg_U_int(m, n, x)
 
  This routine computes the confluent hypergeometric function
  :math:`U(m,n,x)` for integer parameters :math:`m`, :math:`n`.
-   
+
 .. function:: gsl_sf_hyperg_U(a, b, x)
 
  This routine computes the confluent hypergeometric function :math:`U(a,b,x)`.
-   
+
 .. function:: gsl_sf_hyperg_2F1(a, b, c, x)
 
  This routine computes the Gauss hypergeometric function
@@ -41,27 +41,26 @@ Chapters 13 and 15.
  the function can return an error when the series approximation
  converges too slowly. This occurs in the region of
  :math:`x=1, c - a - b = m` for integer :math:`m`.
-   
+
 .. function:: gsl_sf_hyperg_2F1_conj(aR, aI, c, x)
 
  This routine computes the Gauss hypergeometric function
  :math:`{}_2F_1(a_R + i a_I, a_R - i a_I, c, x)` with complex parameters
  for :math:`|x| < 1`.
-   
+
 .. function:: gsl_sf_hyperg_2F1_renorm(a, b, c, x)
 
  This routine computes the renormalized Gauss hypergeometric
  function :math:`{}_2F_1(a,b,c,x) / \Gamma(c)` for :math:`|x| < 1`.
-   
+
 .. function:: gsl_sf_hyperg_2F1_conj_renorm(aR, aI, c, x)
 
  This routine computes the renormalized Gauss hypergeometric
  function :math:`{}_2F_1(a_R + i a_I, a_R - i a_I, c, x) / \Gamma(c)`
  for :math:`|x| < 1`.
-   
+
 .. function:: gsl_sf_hyperg_2F0(a, b, x)
 
  This routine computes the hypergeometric function :math:`{}_2F_0(a,b,x)`.
  The series representation is a divergent hypergeometric series.
  However, for :math:`x < 0` we have :math:`{}_2F_0(a,b,x) = (-1/x)^a U(a,1+a-b,-1/x)`
-   

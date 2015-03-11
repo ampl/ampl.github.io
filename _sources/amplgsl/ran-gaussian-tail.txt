@@ -3,7 +3,7 @@
 
 The Gaussian Tail Distribution
 ==============================
-   
+
 .. function:: gsl_ran_gaussian_tail(a, sigma)
 
  This function provides random variates from the upper tail of a
@@ -23,18 +23,17 @@ The Gaussian Tail Distribution
 
  .. math::
    N(a;\sigma) = (1/2) \operatorname{erfc}(a / \sqrt{2 \sigma^2}).
-   
+
 .. function:: gsl_ran_gaussian_tail_pdf(x, a, sigma)
 
  This function computes the probability density :math:`p(x)` at :math:`x` for a
  Gaussian tail distribution with standard deviation ``sigma`` and lower
  limit ``a``, using the formula given above.
-   
+
 .. function:: gsl_ran_ugaussian_tail(a)
-   
+
 .. function:: gsl_ran_ugaussian_tail_pdf(x, a)
 
  These functions compute results for the tail of a unit Gaussian
  distribution. They are equivalent to the functions above with a
  standard deviation of one, ``sigma`` = 1.
-   

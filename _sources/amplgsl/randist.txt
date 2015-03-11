@@ -72,4 +72,3 @@ exceeding this limit) to prevent incorrect results due to overflow.
    ran-hypergeometric
    ran-logarithmic
    ran-refs
-   

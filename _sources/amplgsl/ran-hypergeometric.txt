@@ -3,11 +3,11 @@
 
 The Hypergeometric Distribution
 ===============================
-   
+
 .. function:: gsl_ran_hypergeometric(p, n1, n2, t)
 
- This function returns a random integer from the `hypergeometric
- distribution`:index:. The probability distribution for hypergeometric
+ This function returns a random integer from the :index:`hypergeometric
+ distribution`. The probability distribution for hypergeometric
  random variates is,
 
  .. math::
@@ -20,18 +20,17 @@ The Hypergeometric Distribution
  elements of "type 2" then the hypergeometric distribution gives
  the probability of obtaining :math:`k` elements of "type 1" in :math:`t`
  samples from the population without replacement.
-   
+
 .. function:: gsl_ran_hypergeometric_pdf(k, n1, n2, t)
 
  This function computes the probability :math:`p(k)` of obtaining :math:`k` from
  a hypergeometric distribution with parameters ``n1``, ``n2``, ``t``,
  using the formula given above.
-   
+
 .. function:: gsl_cdf_hypergeometric_P(k, n1, n2, t)
-   
+
 .. function:: gsl_cdf_hypergeometric_Q(k, n1, n2, t)
 
  These functions compute the cumulative distribution functions
  :math:`P(k), Q(k)` for the hypergeometric distribution with parameters
  ``n1``, ``n2`` and ``t``.
-   

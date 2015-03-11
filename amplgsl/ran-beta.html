@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>The Beta Distribution &mdash; AMPL Modeling Language for Mathematical Programming</title>
+    <title>The Beta Distribution &mdash; MP None documentation</title>
     
     <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -23,38 +23,21 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="AMPL Modeling Language for Mathematical Programming" href="../index.html" />
-    <link rel="up" title="Random Number Distributions" href="randist.html" />
-    <link rel="next" title="The Logistic Distribution" href="ran-logistic.html" />
-    <link rel="prev" title="The t-distribution" href="ran-tdist.html" /> 
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="MP None documentation" href="../index.html" /> 
   </head>
-  <body>
-    <div class="related">
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="ran-logistic.html" title="The Logistic Distribution"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="ran-tdist.html" title="The t-distribution"
-             accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">AMPL</a> &raquo;</li>
-          <li><a href="index.html" >AMPL bindings for the GNU Scientific Library</a> &raquo;</li>
-          <li><a href="randist.html" accesskey="U">Random Number Distributions</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">MP</a> &raquo;</li> 
       </ul>
     </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="ran-tdist.html"
-                        title="previous chapter">The t-distribution</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="ran-logistic.html"
-                        title="next chapter">The Logistic Distribution</a></p>
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
@@ -74,13 +57,13 @@
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="the-beta-distribution">
 <h1>The Beta Distribution<a class="headerlink" href="#the-beta-distribution" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
-<dt id="gsl_ran_beta">
-<tt class="descname">gsl_ran_beta</tt><big>(</big><em>a</em>, <em>b</em><big>)</big><a class="headerlink" href="#gsl_ran_beta" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv212gsl_ran_beta1a1b">
+<span id="gsl_ran_beta__a.b"></span><code class="descclassname"></code><code class="descname">gsl_ran_beta</code><span class="sig-paren">(</span>a, b<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv212gsl_ran_beta1a1b" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function returns a random variate from the <span class="target" id="index-0"></span>beta
 distribution. The distribution function is,</p>
 <div class="math">
@@ -90,34 +73,34 @@ distribution. The distribution function is,</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="gsl_ran_beta_pdf">
-<tt class="descname">gsl_ran_beta_pdf</tt><big>(</big><em>x</em>, <em>a</em>, <em>b</em><big>)</big><a class="headerlink" href="#gsl_ran_beta_pdf" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv216gsl_ran_beta_pdf1x1a1b">
+<span id="gsl_ran_beta_pdf__x.a.b"></span><code class="descclassname"></code><code class="descname">gsl_ran_beta_pdf</code><span class="sig-paren">(</span>x, a, b<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv216gsl_ran_beta_pdf1x1a1b" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function computes the probability density <span class="math">\(p(x)\)</span> at <span class="math">\(x\)</span> for a
-beta distribution with parameters <tt class="docutils literal"><span class="pre">a</span></tt> and <tt class="docutils literal"><span class="pre">b</span></tt>, using the formula
+beta distribution with parameters <code class="docutils literal"><span class="pre">a</span></code> and <code class="docutils literal"><span class="pre">b</span></code>, using the formula
 given above.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="gsl_cdf_beta_P">
-<tt class="descname">gsl_cdf_beta_P</tt><big>(</big><em>x</em>, <em>a</em>, <em>b</em><big>)</big><a class="headerlink" href="#gsl_cdf_beta_P" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv214gsl_cdf_beta_P1x1a1b">
+<span id="gsl_cdf_beta_P__x.a.b"></span><code class="descclassname"></code><code class="descname">gsl_cdf_beta_P</code><span class="sig-paren">(</span>x, a, b<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv214gsl_cdf_beta_P1x1a1b" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="gsl_cdf_beta_Q">
-<tt class="descname">gsl_cdf_beta_Q</tt><big>(</big><em>x</em>, <em>a</em>, <em>b</em><big>)</big><a class="headerlink" href="#gsl_cdf_beta_Q" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv214gsl_cdf_beta_Q1x1a1b">
+<span id="gsl_cdf_beta_Q__x.a.b"></span><code class="descclassname"></code><code class="descname">gsl_cdf_beta_Q</code><span class="sig-paren">(</span>x, a, b<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv214gsl_cdf_beta_Q1x1a1b" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="gsl_cdf_beta_Pinv">
-<tt class="descname">gsl_cdf_beta_Pinv</tt><big>(</big><em>P</em>, <em>a</em>, <em>b</em><big>)</big><a class="headerlink" href="#gsl_cdf_beta_Pinv" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv217gsl_cdf_beta_Pinv1P1a1b">
+<span id="gsl_cdf_beta_Pinv__P.a.b"></span><code class="descclassname"></code><code class="descname">gsl_cdf_beta_Pinv</code><span class="sig-paren">(</span>P, a, b<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv217gsl_cdf_beta_Pinv1P1a1b" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="gsl_cdf_beta_Qinv">
-<tt class="descname">gsl_cdf_beta_Qinv</tt><big>(</big><em>Q</em>, <em>a</em>, <em>b</em><big>)</big><a class="headerlink" href="#gsl_cdf_beta_Qinv" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv217gsl_cdf_beta_Qinv1Q1a1b">
+<span id="gsl_cdf_beta_Qinv__Q.a.b"></span><code class="descclassname"></code><code class="descname">gsl_cdf_beta_Qinv</code><span class="sig-paren">(</span>Q, a, b<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv217gsl_cdf_beta_Qinv1Q1a1b" title="Permalink to this definition">¶</a></dt>
 <dd><p>These functions compute the cumulative distribution functions
 <span class="math">\(P(x), Q(x)\)</span> and their inverses for the beta distribution with
-parameters <tt class="docutils literal"><span class="pre">a</span></tt> and <tt class="docutils literal"><span class="pre">b</span></tt>.</p>
+parameters <code class="docutils literal"><span class="pre">a</span></code> and <code class="docutils literal"><span class="pre">b</span></code>.</p>
 </dd></dl>
 
 </div>
@@ -128,27 +111,19 @@ parameters <tt class="docutils literal"><span class="pre">a</span></tt> and <tt 
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="../genindex.html" title="General Index"
              >index</a></li>
-        <li class="right" >
-          <a href="ran-logistic.html" title="The Logistic Distribution"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="ran-tdist.html" title="The t-distribution"
-             >previous</a> |</li>
-        <li><a href="../index.html">AMPL</a> &raquo;</li>
-          <li><a href="index.html" >AMPL bindings for the GNU Scientific Library</a> &raquo;</li>
-          <li><a href="randist.html" >Random Number Distributions</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">MP</a> &raquo;</li> 
       </ul>
     </div>
 
-    <div class="footer">
-        &copy; Copyright 2012 AMPL Optimization, Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015 AMPL Optimization, Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3b3+.
     </div>
 <!-- Google Analytics -->
 <script>

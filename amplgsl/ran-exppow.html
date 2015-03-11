@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>The Exponential Power Distribution &mdash; AMPL Modeling Language for Mathematical Programming</title>
+    <title>The Exponential Power Distribution &mdash; MP None documentation</title>
     
     <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -23,38 +23,21 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="AMPL Modeling Language for Mathematical Programming" href="../index.html" />
-    <link rel="up" title="Random Number Distributions" href="randist.html" />
-    <link rel="next" title="The Cauchy Distribution" href="ran-cauchy.html" />
-    <link rel="prev" title="The Laplace Distribution" href="ran-laplace.html" /> 
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="MP None documentation" href="../index.html" /> 
   </head>
-  <body>
-    <div class="related">
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="ran-cauchy.html" title="The Cauchy Distribution"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="ran-laplace.html" title="The Laplace Distribution"
-             accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">AMPL</a> &raquo;</li>
-          <li><a href="index.html" >AMPL bindings for the GNU Scientific Library</a> &raquo;</li>
-          <li><a href="randist.html" accesskey="U">Random Number Distributions</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">MP</a> &raquo;</li> 
       </ul>
     </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="ran-laplace.html"
-                        title="previous chapter">The Laplace Distribution</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="ran-cauchy.html"
-                        title="next chapter">The Cauchy Distribution</a></p>
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
@@ -74,15 +57,15 @@
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="the-exponential-power-distribution">
 <h1>The Exponential Power Distribution<a class="headerlink" href="#the-exponential-power-distribution" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
-<dt id="gsl_ran_exppow">
-<tt class="descname">gsl_ran_exppow</tt><big>(</big><em>a</em>, <em>b</em><big>)</big><a class="headerlink" href="#gsl_ran_exppow" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv214gsl_ran_exppow1a1b">
+<span id="gsl_ran_exppow__a.b"></span><code class="descclassname"></code><code class="descname">gsl_ran_exppow</code><span class="sig-paren">(</span>a, b<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv214gsl_ran_exppow1a1b" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function returns a random variate from <span class="target" id="index-0"></span>exponential power
-distribution with scale parameter <tt class="docutils literal"><span class="pre">a</span></tt> and exponent <tt class="docutils literal"><span class="pre">b</span></tt>.
+distribution with scale parameter <code class="docutils literal"><span class="pre">a</span></code> and exponent <code class="docutils literal"><span class="pre">b</span></code>.
 The distribution is,</p>
 <div class="math">
 \[p(x) dx = {1 \over 2 a \Gamma(1+1/b)} \exp(-|x/a|^b) dx\]</div>
@@ -92,24 +75,24 @@ For <span class="math">\(b = 2\)</span> it has the same form as a Gaussian distr
 </dd></dl>
 
 <dl class="function">
-<dt id="gsl_ran_exppow_pdf">
-<tt class="descname">gsl_ran_exppow_pdf</tt><big>(</big><em>x</em>, <em>a</em>, <em>b</em><big>)</big><a class="headerlink" href="#gsl_ran_exppow_pdf" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv218gsl_ran_exppow_pdf1x1a1b">
+<span id="gsl_ran_exppow_pdf__x.a.b"></span><code class="descclassname"></code><code class="descname">gsl_ran_exppow_pdf</code><span class="sig-paren">(</span>x, a, b<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv218gsl_ran_exppow_pdf1x1a1b" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function computes the probability density <span class="math">\(p(x)\)</span> at <span class="math">\(x\)</span> for an
-exponential power distribution with scale parameter <tt class="docutils literal"><span class="pre">a</span></tt> and exponent
-<tt class="docutils literal"><span class="pre">b</span></tt>, using the formula given above.</p>
+exponential power distribution with scale parameter <code class="docutils literal"><span class="pre">a</span></code> and exponent
+<code class="docutils literal"><span class="pre">b</span></code>, using the formula given above.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="gsl_ran_exppow_P">
-<tt class="descname">gsl_ran_exppow_P</tt><big>(</big><em>x</em>, <em>a</em>, <em>b</em><big>)</big><a class="headerlink" href="#gsl_ran_exppow_P" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv216gsl_ran_exppow_P1x1a1b">
+<span id="gsl_ran_exppow_P__x.a.b"></span><code class="descclassname"></code><code class="descname">gsl_ran_exppow_P</code><span class="sig-paren">(</span>x, a, b<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv216gsl_ran_exppow_P1x1a1b" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="gsl_ran_exppow_Q">
-<tt class="descname">gsl_ran_exppow_Q</tt><big>(</big><em>x</em>, <em>a</em>, <em>b</em><big>)</big><a class="headerlink" href="#gsl_ran_exppow_Q" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv216gsl_ran_exppow_Q1x1a1b">
+<span id="gsl_ran_exppow_Q__x.a.b"></span><code class="descclassname"></code><code class="descname">gsl_ran_exppow_Q</code><span class="sig-paren">(</span>x, a, b<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv216gsl_ran_exppow_Q1x1a1b" title="Permalink to this definition">¶</a></dt>
 <dd><p>These functions compute the cumulative distribution functions
 <span class="math">\(P(x), Q(x)\)</span> for the exponential power distribution with parameters
-<tt class="docutils literal"><span class="pre">a</span></tt> and <tt class="docutils literal"><span class="pre">b</span></tt>.</p>
+<code class="docutils literal"><span class="pre">a</span></code> and <code class="docutils literal"><span class="pre">b</span></code>.</p>
 </dd></dl>
 
 </div>
@@ -120,27 +103,19 @@ exponential power distribution with scale parameter <tt class="docutils literal"
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="../genindex.html" title="General Index"
              >index</a></li>
-        <li class="right" >
-          <a href="ran-cauchy.html" title="The Cauchy Distribution"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="ran-laplace.html" title="The Laplace Distribution"
-             >previous</a> |</li>
-        <li><a href="../index.html">AMPL</a> &raquo;</li>
-          <li><a href="index.html" >AMPL bindings for the GNU Scientific Library</a> &raquo;</li>
-          <li><a href="randist.html" >Random Number Distributions</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">MP</a> &raquo;</li> 
       </ul>
     </div>
 
-    <div class="footer">
-        &copy; Copyright 2012 AMPL Optimization, Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015 AMPL Optimization, Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3b3+.
     </div>
 <!-- Google Analytics -->
 <script>

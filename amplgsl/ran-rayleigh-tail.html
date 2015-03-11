@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>The Rayleigh Tail Distribution &mdash; AMPL Modeling Language for Mathematical Programming</title>
+    <title>The Rayleigh Tail Distribution &mdash; MP None documentation</title>
     
     <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -23,38 +23,21 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="AMPL Modeling Language for Mathematical Programming" href="../index.html" />
-    <link rel="up" title="Random Number Distributions" href="randist.html" />
-    <link rel="next" title="The Landau Distribution" href="ran-landau.html" />
-    <link rel="prev" title="The Rayleigh Distribution" href="ran-rayleigh.html" /> 
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="MP None documentation" href="../index.html" /> 
   </head>
-  <body>
-    <div class="related">
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="ran-landau.html" title="The Landau Distribution"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="ran-rayleigh.html" title="The Rayleigh Distribution"
-             accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">AMPL</a> &raquo;</li>
-          <li><a href="index.html" >AMPL bindings for the GNU Scientific Library</a> &raquo;</li>
-          <li><a href="randist.html" accesskey="U">Random Number Distributions</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">MP</a> &raquo;</li> 
       </ul>
     </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="ran-rayleigh.html"
-                        title="previous chapter">The Rayleigh Distribution</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="ran-landau.html"
-                        title="next chapter">The Landau Distribution</a></p>
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
@@ -74,27 +57,27 @@
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="the-rayleigh-tail-distribution">
 <h1>The Rayleigh Tail Distribution<a class="headerlink" href="#the-rayleigh-tail-distribution" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
-<dt id="gsl_ran_rayleigh_tail">
-<tt class="descname">gsl_ran_rayleigh_tail</tt><big>(</big><em>a</em>, <em>sigma</em><big>)</big><a class="headerlink" href="#gsl_ran_rayleigh_tail" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv221gsl_ran_rayleigh_tail1a5sigma">
+<span id="gsl_ran_rayleigh_tail__a.sigma"></span><code class="descclassname"></code><code class="descname">gsl_ran_rayleigh_tail</code><span class="sig-paren">(</span>a, sigma<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv221gsl_ran_rayleigh_tail1a5sigma" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function returns a random variate from the tail of the Rayleigh
-distribution with scale parameter <tt class="docutils literal"><span class="pre">sigma</span></tt> and a lower limit of
-<tt class="docutils literal"><span class="pre">a</span></tt>. The distribution is,</p>
+distribution with scale parameter <code class="docutils literal"><span class="pre">sigma</span></code> and a lower limit of
+<code class="docutils literal"><span class="pre">a</span></code>. The distribution is,</p>
 <div class="math">
 \[p(x) dx = {x \over \sigma^2} \exp ((a^2 - x^2) /(2 \sigma^2)) dx\]</div>
 <p>for <span class="math">\(x &gt; a\)</span>.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="gsl_ran_rayleigh_tail_pdf">
-<tt class="descname">gsl_ran_rayleigh_tail_pdf</tt><big>(</big><em>x</em>, <em>a</em>, <em>sigma</em><big>)</big><a class="headerlink" href="#gsl_ran_rayleigh_tail_pdf" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv225gsl_ran_rayleigh_tail_pdf1x1a5sigma">
+<span id="gsl_ran_rayleigh_tail_pdf__x.a.sigma"></span><code class="descclassname"></code><code class="descname">gsl_ran_rayleigh_tail_pdf</code><span class="sig-paren">(</span>x, a, sigma<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv225gsl_ran_rayleigh_tail_pdf1x1a5sigma" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function computes the probability density <span class="math">\(p(x)\)</span> at <span class="math">\(x\)</span> for a
-Rayleigh tail distribution with scale parameter <tt class="docutils literal"><span class="pre">sigma</span></tt> and lower
-limit <tt class="docutils literal"><span class="pre">a</span></tt>, using the formula given above.</p>
+Rayleigh tail distribution with scale parameter <code class="docutils literal"><span class="pre">sigma</span></code> and lower
+limit <code class="docutils literal"><span class="pre">a</span></code>, using the formula given above.</p>
 </dd></dl>
 
 </div>
@@ -105,27 +88,19 @@ limit <tt class="docutils literal"><span class="pre">a</span></tt>, using the fo
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="../genindex.html" title="General Index"
              >index</a></li>
-        <li class="right" >
-          <a href="ran-landau.html" title="The Landau Distribution"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="ran-rayleigh.html" title="The Rayleigh Distribution"
-             >previous</a> |</li>
-        <li><a href="../index.html">AMPL</a> &raquo;</li>
-          <li><a href="index.html" >AMPL bindings for the GNU Scientific Library</a> &raquo;</li>
-          <li><a href="randist.html" >Random Number Distributions</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">MP</a> &raquo;</li> 
       </ul>
     </div>
 
-    <div class="footer">
-        &copy; Copyright 2012 AMPL Optimization, Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015 AMPL Optimization, Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3b3+.
     </div>
 <!-- Google Analytics -->
 <script>

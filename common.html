@@ -6,41 +6,55 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>The Bernoulli Distribution &mdash; MP None documentation</title>
+    <title>Common Declarations &mdash; MP None documentation</title>
     
-    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
+        URL_ROOT:    './',
         VERSION:     '20121105',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
       };
     </script>
-    <script type="text/javascript" src="../_static/jquery.js"></script>
-    <script type="text/javascript" src="../_static/underscore.js"></script>
-    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="MP None documentation" href="../index.html" /> 
+    <link rel="top" title="MP None documentation" href="index.html" />
+    <link rel="next" title="AMPL Bindings for the GNU Scientific Library" href="amplgsl/index.html" />
+    <link rel="prev" title="Contents" href="index.html" /> 
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="../genindex.html" title="General Index"
+          <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../index.html">MP</a> &raquo;</li> 
+        <li class="right" >
+          <a href="amplgsl/index.html" title="AMPL Bindings for the GNU Scientific Library"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Contents"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">MP</a> &raquo;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Contents</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="amplgsl/index.html"
+                        title="next chapter">AMPL Bindings for the GNU Scientific Library</a></p>
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
-    <form class="search" action="../search.html" method="get">
+    <form class="search" action="search.html" method="get">
       <input type="text" name="q" />
       <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
@@ -59,27 +73,9 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="the-bernoulli-distribution">
-<h1>The Bernoulli Distribution<a class="headerlink" href="#the-bernoulli-distribution" title="Permalink to this headline">¶</a></h1>
-<span class="target" id="index-0"></span><dl class="function">
-<dt id="_CPPv217gsl_ran_bernoulli1p">
-<span id="gsl_ran_bernoulli__p"></span><code class="descclassname"></code><code class="descname">gsl_ran_bernoulli</code><span class="sig-paren">(</span>p<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv217gsl_ran_bernoulli1p" title="Permalink to this definition">¶</a></dt>
-<dd><p>This function returns either 0 or 1, the result of a Bernoulli trial
-with probability <code class="docutils literal"><span class="pre">p</span></code>. The probability distribution for a Bernoulli
-trial is,</p>
-<div class="math">
-\[\begin{split}p(0) = 1 - p \\
-p(1) = p\end{split}\]</div>
-</dd></dl>
-
-<dl class="function">
-<dt id="_CPPv221gsl_ran_bernoulli_pdf1k1p">
-<span id="gsl_ran_bernoulli_pdf__k.p"></span><code class="descclassname"></code><code class="descname">gsl_ran_bernoulli_pdf</code><span class="sig-paren">(</span>k, p<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv221gsl_ran_bernoulli_pdf1k1p" title="Permalink to this definition">¶</a></dt>
-<dd><p>This function computes the probability <span class="math">\(p(k)\)</span> of obtaining <span class="math">\(k\)</span> from a
-Bernoulli distribution with probability parameter <code class="docutils literal"><span class="pre">p</span></code>, using the
-formula given above.</p>
-</dd></dl>
-
+  <div class="section" id="common-declarations">
+<h1>Common Declarations<a class="headerlink" href="#common-declarations" title="Permalink to this headline">¶</a></h1>
+<p>Header: <code class="file docutils literal"><span class="pre">mp/common.h</span></code></p>
 </div>
 
 
@@ -92,9 +88,15 @@ formula given above.</p>
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="../genindex.html" title="General Index"
+          <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../index.html">MP</a> &raquo;</li> 
+        <li class="right" >
+          <a href="amplgsl/index.html" title="AMPL Bindings for the GNU Scientific Library"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Contents"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">MP</a> &raquo;</li> 
       </ul>
     </div>
 

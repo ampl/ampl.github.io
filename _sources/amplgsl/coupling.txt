@@ -12,7 +12,7 @@ integers equal to twice the actual spin value. For information on
 the 3-j coefficients see Abramowitz & Stegun, Section 27.9.
 
 .. index:: coupling coefficient
-   
+
 .. function:: gsl_sf_coupling_3j(two_ja, two_jb, two_jc, two_ma, two_mb, two_mc)
 
  These routines compute the Wigner 3-j coefficient,
@@ -27,7 +27,7 @@ the 3-j coefficients see Abramowitz & Stegun, Section 27.9.
  ma = two_ma / 2, etc.
 
 .. index:: Wigner 3-j coefficient
-   
+
 .. function::
   gsl_sf_coupling_6j(two_ja, two_jb, two_jc, two_jd, two_je, two_jf)
 
@@ -43,7 +43,7 @@ the 3-j coefficients see Abramowitz & Stegun, Section 27.9.
  jb = two_jb / 2, etc.
 
 .. index:: Wigner 6-j coefficient
-   
+
 .. function::
   gsl_sf_coupling_9j(two_ja, two_jb, two_jc, two_jd, two_je, two_jf, two_jg, two_jh, two_ji)
 
@@ -60,4 +60,3 @@ the 3-j coefficients see Abramowitz & Stegun, Section 27.9.
  jb = two_jb / 2, etc.
 
 .. index:: Wigner 9-j coefficient
-   

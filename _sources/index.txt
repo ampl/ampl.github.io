@@ -4,6 +4,7 @@ Contents
 .. toctree::
    :maxdepth: 2
 
+   common
    amplgsl/index
    tables/index
 

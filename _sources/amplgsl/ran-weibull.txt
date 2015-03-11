@@ -3,32 +3,31 @@
 
 The Weibull Distribution
 ========================
-   
+
 .. function:: gsl_ran_weibull(a, b)
 
- This function returns a random variate from the `Weibull
- distribution`:index:. The distribution function is,
+ This function returns a random variate from the :index:`Weibull
+ distribution`. The distribution function is,
 
  .. math::
    p(x) dx = {b \over a^b} x^{b-1} \exp(-(x/a)^b) dx
 
  for :math:`x \geq 0`.
-   
+
 .. function:: gsl_ran_weibull_pdf(x, a, b)
 
  This function computes the probability density :math:`p(x)` at :math:`x` for a
  Weibull distribution with scale ``a`` and exponent ``b``, using the
  formula given above.
-   
+
 .. function:: gsl_cdf_weibull_P(x, a, b)
-   
+
 .. function:: gsl_cdf_weibull_Q(x, a, b)
-   
+
 .. function:: gsl_cdf_weibull_Pinv(P, a, b)
-   
+
 .. function:: gsl_cdf_weibull_Qinv(Q, a, b)
 
  These functions compute the cumulative distribution functions
  :math:`P(x), Q(x)` and their inverses for the Weibull distribution
  with scale ``a`` and exponent ``b``.
-   

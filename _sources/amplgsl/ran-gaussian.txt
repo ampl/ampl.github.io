@@ -5,10 +5,10 @@ The Gaussian Distribution
 =========================
 
 .. index:: Gaussian distribution
-   
+
 .. function:: gsl_ran_gaussian(sigma)
 
- This function returns a `Gaussian random variate`:index:, with mean
+ This function returns a :index:`Gaussian random variate`, with mean
  zero and standard deviation ``sigma``. The probability distribution
  for Gaussian random variates is,
 
@@ -20,51 +20,50 @@ The Gaussian Distribution
  a Gaussian distribution with mean :math:`\mu`. This function uses the
  Box-Muller algorithm which requires two calls to the random number
  generator.
-   
+
 .. function:: gsl_ran_gaussian_pdf(x, sigma)
 
  This function computes the probability density :math:`p(x)` at :math:`x` for a
  Gaussian distribution with standard deviation ``sigma``, using the formula
  given above.
-   
+
 .. function:: gsl_ran_gaussian_ziggurat(sigma)
-   
+
 .. function:: gsl_ran_gaussian_ratio_method(sigma)
 
  These functions compute a Gaussian random variate using the alternative
  Marsaglia-Tsang ziggurat and Kinderman-Monahan-Leva ratio methods.
  The Ziggurat algorithm is the fastest available algorithm in most cases.
-   
+
 .. function:: gsl_ran_ugaussian()
-   
+
 .. function:: gsl_ran_ugaussian_pdf(x)
-   
+
 .. function:: gsl_ran_ugaussian_ratio_method()
 
  These functions compute results for the unit Gaussian distribution.
  They are equivalent to the functions above with a standard deviation
  of one, ``sigma`` = 1.
-   
+
 .. function:: gsl_cdf_gaussian_P(x, sigma)
-   
+
 .. function:: gsl_cdf_gaussian_Q(x, sigma)
-   
+
 .. function:: gsl_cdf_gaussian_Pinv(P, sigma)
-   
+
 .. function:: gsl_cdf_gaussian_Qinv(Q, sigma)
 
  These functions compute the cumulative distribution functions
  :math:`P(x), Q(x)` and their inverses for the Gaussian distribution with
  standard deviation ``sigma``.
-   
+
 .. function:: gsl_cdf_ugaussian_P(x)
-   
+
 .. function:: gsl_cdf_ugaussian_Q(x)
-   
+
 .. function:: gsl_cdf_ugaussian_Pinv(P)
-   
+
 .. function:: gsl_cdf_ugaussian_Qinv(Q)
 
  These functions compute the cumulative distribution functions
  :math:`P(x), Q(x)` and their inverses for the unit Gaussian distribution.
-   

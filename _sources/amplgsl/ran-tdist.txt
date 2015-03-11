@@ -4,7 +4,7 @@
 The t-distribution
 ============================
 
-The `t-distribution`:index: arises in statistics. If :math:`Y_1` has a normal
+The :index:`t-distribution` arises in statistics. If :math:`Y_1` has a normal
 distribution and :math:`Y_2` has a chi-squared distribution with :math:`\nu`
 degrees of freedom then the ratio,
 
@@ -12,7 +12,7 @@ degrees of freedom then the ratio,
   X = { Y_1 \over \sqrt{Y_2 / \nu} }
 
 has a t-distribution :math:`t(x;\nu)` with :math:`\nu` degrees of freedom.
-   
+
 .. function:: gsl_ran_tdist(nu)
 
  This function returns a random variate from the t-distribution.
@@ -23,22 +23,21 @@ has a t-distribution :math:`t(x;\nu)` with :math:`\nu` degrees of freedom.
         (1 + x^2/\nu)^{-(\nu + 1)/2} dx
 
  for :math:`-\infty < x < +\infty`.
-   
+
 .. function:: gsl_ran_tdist_pdf(x, nu)
 
  This function computes the probability density :math:`p(x)` at :math:`x` for a
  t-distribution with ``nu`` degrees of freedom, using the formula
  given above.
-   
+
 .. function:: gsl_ran_tdist_P(x, nu)
-   
+
 .. function:: gsl_ran_tdist_Q(x, nu)
-   
+
 .. function:: gsl_ran_tdist_Pinv(P, nu)
-   
+
 .. function:: gsl_ran_tdist_Qinv(Q, nu)
 
  These functions compute the cumulative distribution functions
  :math:`P(x), Q(x)` and their inverses for the t-distribution with ``nu``
  degrees of freedom.
-   

@@ -25,4 +25,3 @@ compute the special functions,
   & Sons, New York (1997).
 * Y.Y. Luke, Algorithms for the Computation of Mathematical Functions,
   Academic Press, New York (1977).
-   

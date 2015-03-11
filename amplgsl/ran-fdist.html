@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>The F-distribution &mdash; AMPL Modeling Language for Mathematical Programming</title>
+    <title>The F-distribution &mdash; MP None documentation</title>
     
     <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -23,38 +23,21 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="AMPL Modeling Language for Mathematical Programming" href="../index.html" />
-    <link rel="up" title="Random Number Distributions" href="randist.html" />
-    <link rel="next" title="The t-distribution" href="ran-tdist.html" />
-    <link rel="prev" title="The Chi-squared Distribution" href="ran-chisq.html" /> 
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="MP None documentation" href="../index.html" /> 
   </head>
-  <body>
-    <div class="related">
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="ran-tdist.html" title="The t-distribution"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="ran-chisq.html" title="The Chi-squared Distribution"
-             accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">AMPL</a> &raquo;</li>
-          <li><a href="index.html" >AMPL bindings for the GNU Scientific Library</a> &raquo;</li>
-          <li><a href="randist.html" accesskey="U">Random Number Distributions</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">MP</a> &raquo;</li> 
       </ul>
     </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="ran-chisq.html"
-                        title="previous chapter">The Chi-squared Distribution</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="ran-tdist.html"
-                        title="next chapter">The t-distribution</a></p>
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
@@ -74,7 +57,7 @@
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="the-f-distribution">
 <h1>The F-distribution<a class="headerlink" href="#the-f-distribution" title="Permalink to this headline">¶</a></h1>
@@ -85,10 +68,10 @@ then the ratio,</p>
 \[X = { (Y_1 / \nu_1) \over (Y_2 / \nu_2) }\]</div>
 <p>has an F-distribution <span class="math">\(F(x;\nu_1,\nu_2)\)</span>.</p>
 <dl class="function">
-<dt id="gsl_ran_fdist">
-<tt class="descname">gsl_ran_fdist</tt><big>(</big><em>nu1</em>, <em>nu2</em><big>)</big><a class="headerlink" href="#gsl_ran_fdist" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv213gsl_ran_fdist3nu13nu2">
+<span id="gsl_ran_fdist__nu1.nu2"></span><code class="descclassname"></code><code class="descname">gsl_ran_fdist</code><span class="sig-paren">(</span>nu1, nu2<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv213gsl_ran_fdist3nu13nu2" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function returns a random variate from the F-distribution with
-degrees of freedom <tt class="docutils literal"><span class="pre">nu1</span></tt> and <tt class="docutils literal"><span class="pre">nu2</span></tt>. The distribution function is,</p>
+degrees of freedom <code class="docutils literal"><span class="pre">nu1</span></code> and <code class="docutils literal"><span class="pre">nu2</span></code>. The distribution function is,</p>
 <div class="math">
 \[p(x) dx =
      { \Gamma((\nu_1 + \nu_2)/2)
@@ -99,34 +82,34 @@ degrees of freedom <tt class="docutils literal"><span class="pre">nu1</span></tt
 
 <p>for <span class="math">\(x \geq 0\)</span>.</p>
 <dl class="function">
-<dt id="gsl_ran_fdist_pdf">
-<tt class="descname">gsl_ran_fdist_pdf</tt><big>(</big><em>x</em>, <em>nu1</em>, <em>nu2</em><big>)</big><a class="headerlink" href="#gsl_ran_fdist_pdf" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv217gsl_ran_fdist_pdf1x3nu13nu2">
+<span id="gsl_ran_fdist_pdf__x.nu1.nu2"></span><code class="descclassname"></code><code class="descname">gsl_ran_fdist_pdf</code><span class="sig-paren">(</span>x, nu1, nu2<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv217gsl_ran_fdist_pdf1x3nu13nu2" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function computes the probability density <span class="math">\(p(x)\)</span> at <span class="math">\(x\)</span> for an
-F-distribution with <tt class="docutils literal"><span class="pre">nu1</span></tt> and <tt class="docutils literal"><span class="pre">nu2</span></tt> degrees of freedom, using
+F-distribution with <code class="docutils literal"><span class="pre">nu1</span></code> and <code class="docutils literal"><span class="pre">nu2</span></code> degrees of freedom, using
 the formula given above.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="gsl_cdf_fdist_P">
-<tt class="descname">gsl_cdf_fdist_P</tt><big>(</big><em>x</em>, <em>nu1</em>, <em>nu2</em><big>)</big><a class="headerlink" href="#gsl_cdf_fdist_P" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv215gsl_cdf_fdist_P1x3nu13nu2">
+<span id="gsl_cdf_fdist_P__x.nu1.nu2"></span><code class="descclassname"></code><code class="descname">gsl_cdf_fdist_P</code><span class="sig-paren">(</span>x, nu1, nu2<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv215gsl_cdf_fdist_P1x3nu13nu2" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="gsl_cdf_fdist_Q">
-<tt class="descname">gsl_cdf_fdist_Q</tt><big>(</big><em>x</em>, <em>nu1</em>, <em>nu2</em><big>)</big><a class="headerlink" href="#gsl_cdf_fdist_Q" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv215gsl_cdf_fdist_Q1x3nu13nu2">
+<span id="gsl_cdf_fdist_Q__x.nu1.nu2"></span><code class="descclassname"></code><code class="descname">gsl_cdf_fdist_Q</code><span class="sig-paren">(</span>x, nu1, nu2<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv215gsl_cdf_fdist_Q1x3nu13nu2" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="gsl_cdf_fdist_Pinv">
-<tt class="descname">gsl_cdf_fdist_Pinv</tt><big>(</big><em>P</em>, <em>nu1</em>, <em>nu2</em><big>)</big><a class="headerlink" href="#gsl_cdf_fdist_Pinv" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv218gsl_cdf_fdist_Pinv1P3nu13nu2">
+<span id="gsl_cdf_fdist_Pinv__P.nu1.nu2"></span><code class="descclassname"></code><code class="descname">gsl_cdf_fdist_Pinv</code><span class="sig-paren">(</span>P, nu1, nu2<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv218gsl_cdf_fdist_Pinv1P3nu13nu2" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="gsl_cdf_fdist_Qinv">
-<tt class="descname">gsl_cdf_fdist_Qinv</tt><big>(</big><em>Q</em>, <em>nu1</em>, <em>nu2</em><big>)</big><a class="headerlink" href="#gsl_cdf_fdist_Qinv" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv218gsl_cdf_fdist_Qinv1Q3nu13nu2">
+<span id="gsl_cdf_fdist_Qinv__Q.nu1.nu2"></span><code class="descclassname"></code><code class="descname">gsl_cdf_fdist_Qinv</code><span class="sig-paren">(</span>Q, nu1, nu2<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv218gsl_cdf_fdist_Qinv1Q3nu13nu2" title="Permalink to this definition">¶</a></dt>
 <dd><p>These functions compute the cumulative distribution functions
 <span class="math">\(P(x), Q(x)\)</span> and their inverses for the F-distribution with
-<tt class="docutils literal"><span class="pre">nu1</span></tt> and <tt class="docutils literal"><span class="pre">nu2</span></tt> degrees of freedom.</p>
+<code class="docutils literal"><span class="pre">nu1</span></code> and <code class="docutils literal"><span class="pre">nu2</span></code> degrees of freedom.</p>
 </dd></dl>
 
 </div>
@@ -137,27 +120,19 @@ the formula given above.</p>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="../genindex.html" title="General Index"
              >index</a></li>
-        <li class="right" >
-          <a href="ran-tdist.html" title="The t-distribution"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="ran-chisq.html" title="The Chi-squared Distribution"
-             >previous</a> |</li>
-        <li><a href="../index.html">AMPL</a> &raquo;</li>
-          <li><a href="index.html" >AMPL bindings for the GNU Scientific Library</a> &raquo;</li>
-          <li><a href="randist.html" >Random Number Distributions</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">MP</a> &raquo;</li> 
       </ul>
     </div>
 
-    <div class="footer">
-        &copy; Copyright 2012 AMPL Optimization, Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015 AMPL Optimization, Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3b3+.
     </div>
 <!-- Google Analytics -->
 <script>

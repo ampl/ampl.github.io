@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Coulomb Functions &mdash; AMPL Modeling Language for Mathematical Programming</title>
+    <title>Coulomb Functions &mdash; MP None documentation</title>
     
     <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -23,14 +23,14 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="AMPL Modeling Language for Mathematical Programming" href="../index.html" />
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="MP None documentation" href="../index.html" />
     <link rel="up" title="Special Functions" href="special.html" />
     <link rel="next" title="Coupling Coefficients" href="coupling.html" />
     <link rel="prev" title="Clausen Function" href="clausen.html" /> 
   </head>
-  <body>
-    <div class="related">
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -42,12 +42,12 @@
         <li class="right" >
           <a href="clausen.html" title="Clausen Function"
              accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">AMPL</a> &raquo;</li>
-          <li><a href="index.html" >AMPL bindings for the GNU Scientific Library</a> &raquo;</li>
-          <li><a href="special.html" accesskey="U">Special Functions</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">MP</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >AMPL Bindings for the GNU Scientific Library</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="special.html" accesskey="U">Special Functions</a> &raquo;</li> 
       </ul>
     </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h3><a href="../index.html">Table Of Contents</a></h3>
   <ul>
@@ -83,29 +83,29 @@
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="coulomb-functions">
 <h1>Coulomb Functions<a class="headerlink" href="#coulomb-functions" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="normalized-hydrogenic-bound-states">
 <span id="index-0"></span><h2>Normalized Hydrogenic Bound States<a class="headerlink" href="#normalized-hydrogenic-bound-states" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
-<dt id="gsl_sf_hydrogenicR_1">
-<tt class="descname">gsl_sf_hydrogenicR_1</tt><big>(</big><em>Z</em>, <em>r</em><big>)</big><a class="headerlink" href="#gsl_sf_hydrogenicR_1" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv220gsl_sf_hydrogenicR_11Z1r">
+<span id="gsl_sf_hydrogenicR_1__Z.r"></span><code class="descclassname"></code><code class="descname">gsl_sf_hydrogenicR_1</code><span class="sig-paren">(</span>Z, r<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv220gsl_sf_hydrogenicR_11Z1r" title="Permalink to this definition">¶</a></dt>
 <dd><p>This routine computes the lowest-order normalized hydrogenic bound
 state radial wavefunction <span class="math">\(R_1 := 2 Z \sqrt{Z} \exp(-Z r)\)</span>.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="gsl_sf_hydrogenicR">
-<tt class="descname">gsl_sf_hydrogenicR</tt><big>(</big><em>n</em>, <em>l</em>, <em>Z</em>, <em>r</em><big>)</big><a class="headerlink" href="#gsl_sf_hydrogenicR" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv218gsl_sf_hydrogenicR1n1l1Z1r">
+<span id="gsl_sf_hydrogenicR__n.l.Z.r"></span><code class="descclassname"></code><code class="descname">gsl_sf_hydrogenicR</code><span class="sig-paren">(</span>n, l, Z, r<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv218gsl_sf_hydrogenicR1n1l1Z1r" title="Permalink to this definition">¶</a></dt>
 <dd><p>This routine computes the <span class="math">\(n\)</span>-th normalized hydrogenic bound state
 radial wavefunction,</p>
 <div class="math">
 \[R_n := 2 (Z^{3/2}/n^2) \sqrt{(n-l-1)!/(n+l)!} \exp(-Z r/n) (2Zr/n)^l
           L^{2l+1}_{n-l-1}(2Zr/n).\]</div>
 <p>where <span class="math">\(L^a_b(x)\)</span> is the generalized Laguerre polynomial
-(see <a class="reference internal" href="laguerre.html#laguerre-functions"><em>Laguerre Functions</em></a>). The normalization is chosen such that
+(see <a class="reference internal" href="laguerre.html#laguerre-functions"><span>Laguerre Functions</span></a>). The normalization is chosen such that
 the wavefunction <span class="math">\(\psi\)</span> is given by <span class="math">\(\psi(n,l,r) = R_n Y_{lm}\)</span>.</p>
 </dd></dl>
 
@@ -115,8 +115,8 @@ the wavefunction <span class="math">\(\psi\)</span> is given by <span class="mat
 <p>The Coulomb wave function normalization constant is defined in
 Abramowitz 14.1.7.</p>
 <dl class="function">
-<dt id="gsl_sf_coulomb_CL">
-<tt class="descname">gsl_sf_coulomb_CL</tt><big>(</big><em>L</em>, <em>eta</em><big>)</big><a class="headerlink" href="#gsl_sf_coulomb_CL" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv217gsl_sf_coulomb_CL1L3eta">
+<span id="gsl_sf_coulomb_CL__L.eta"></span><code class="descclassname"></code><code class="descname">gsl_sf_coulomb_CL</code><span class="sig-paren">(</span>L, eta<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv217gsl_sf_coulomb_CL1L3eta" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function computes the Coulomb wave function normalization
 constant <span class="math">\(C_L(\eta)\)</span> for <span class="math">\(L &gt; -1\)</span>.</p>
 </dd></dl>
@@ -130,7 +130,7 @@ constant <span class="math">\(C_L(\eta)\)</span> for <span class="math">\(L &gt;
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -142,15 +142,15 @@ constant <span class="math">\(C_L(\eta)\)</span> for <span class="math">\(L &gt;
         <li class="right" >
           <a href="clausen.html" title="Clausen Function"
              >previous</a> |</li>
-        <li><a href="../index.html">AMPL</a> &raquo;</li>
-          <li><a href="index.html" >AMPL bindings for the GNU Scientific Library</a> &raquo;</li>
-          <li><a href="special.html" >Special Functions</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">MP</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >AMPL Bindings for the GNU Scientific Library</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="special.html" >Special Functions</a> &raquo;</li> 
       </ul>
     </div>
 
-    <div class="footer">
-        &copy; Copyright 2012 AMPL Optimization, Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015 AMPL Optimization, Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3b3+.
     </div>
 <!-- Google Analytics -->
 <script>

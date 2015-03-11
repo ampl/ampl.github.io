@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Logarithm and Related Functions &mdash; AMPL Modeling Language for Mathematical Programming</title>
+    <title>Logarithm and Related Functions &mdash; MP None documentation</title>
     
     <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -23,14 +23,14 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="AMPL Modeling Language for Mathematical Programming" href="../index.html" />
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="MP None documentation" href="../index.html" />
     <link rel="up" title="Special Functions" href="special.html" />
     <link rel="next" title="Mathieu Functions" href="mathieu.html" />
     <link rel="prev" title="Legendre Functions and Spherical Harmonics" href="legendre.html" /> 
   </head>
-  <body>
-    <div class="related">
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -42,12 +42,12 @@
         <li class="right" >
           <a href="legendre.html" title="Legendre Functions and Spherical Harmonics"
              accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">AMPL</a> &raquo;</li>
-          <li><a href="index.html" >AMPL bindings for the GNU Scientific Library</a> &raquo;</li>
-          <li><a href="special.html" accesskey="U">Special Functions</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">MP</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >AMPL Bindings for the GNU Scientific Library</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="special.html" accesskey="U">Special Functions</a> &raquo;</li> 
       </ul>
     </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
   <p class="topless"><a href="legendre.html"
@@ -74,35 +74,35 @@
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="logarithm-and-related-functions">
 <h1>Logarithm and Related Functions<a class="headerlink" href="#logarithm-and-related-functions" title="Permalink to this headline">¶</a></h1>
 <p>Information on the properties of the Logarithm function can be found
 in Abramowitz &amp; Stegun, Chapter 4.</p>
 <span class="target" id="index-0"></span><dl class="function">
-<dt id="gsl_sf_log">
-<tt class="descname">gsl_sf_log</tt><big>(</big><em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_log" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv210gsl_sf_log1x">
+<span id="gsl_sf_log__x"></span><code class="descclassname"></code><code class="descname">gsl_sf_log</code><span class="sig-paren">(</span>x<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv210gsl_sf_log1x" title="Permalink to this definition">¶</a></dt>
 <dd><p>This routine computes the logarithm of <span class="math">\(x\)</span>, <span class="math">\(\log(x)\)</span>, for <span class="math">\(x &gt; 0\)</span>.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="gsl_sf_log_abs">
-<tt class="descname">gsl_sf_log_abs</tt><big>(</big><em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_log_abs" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv214gsl_sf_log_abs1x">
+<span id="gsl_sf_log_abs__x"></span><code class="descclassname"></code><code class="descname">gsl_sf_log_abs</code><span class="sig-paren">(</span>x<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv214gsl_sf_log_abs1x" title="Permalink to this definition">¶</a></dt>
 <dd><p>This routine computes the logarithm of the magnitude of <span class="math">\(x\)</span>,
 <span class="math">\(\log(|x|)\)</span>, for <span class="math">\(x \ne 0\)</span>.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="gsl_sf_log_1plusx">
-<tt class="descname">gsl_sf_log_1plusx</tt><big>(</big><em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_log_1plusx" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv217gsl_sf_log_1plusx1x">
+<span id="gsl_sf_log_1plusx__x"></span><code class="descclassname"></code><code class="descname">gsl_sf_log_1plusx</code><span class="sig-paren">(</span>x<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv217gsl_sf_log_1plusx1x" title="Permalink to this definition">¶</a></dt>
 <dd><p>This routine computes <span class="math">\(\log(1 + x)\)</span> for <span class="math">\(x &gt; -1\)</span> using an algorithm
 that is accurate for small <span class="math">\(x\)</span>.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="gsl_sf_log_1plusx_mx">
-<tt class="descname">gsl_sf_log_1plusx_mx</tt><big>(</big><em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_log_1plusx_mx" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv220gsl_sf_log_1plusx_mx1x">
+<span id="gsl_sf_log_1plusx_mx__x"></span><code class="descclassname"></code><code class="descname">gsl_sf_log_1plusx_mx</code><span class="sig-paren">(</span>x<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv220gsl_sf_log_1plusx_mx1x" title="Permalink to this definition">¶</a></dt>
 <dd><p>This routine computes <span class="math">\(\log(1 + x) - x\)</span> for <span class="math">\(x &gt; -1\)</span> using an
 algorithm that is accurate for small <span class="math">\(x\)</span>.</p>
 </dd></dl>
@@ -115,7 +115,7 @@ algorithm that is accurate for small <span class="math">\(x\)</span>.</p>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -127,15 +127,15 @@ algorithm that is accurate for small <span class="math">\(x\)</span>.</p>
         <li class="right" >
           <a href="legendre.html" title="Legendre Functions and Spherical Harmonics"
              >previous</a> |</li>
-        <li><a href="../index.html">AMPL</a> &raquo;</li>
-          <li><a href="index.html" >AMPL bindings for the GNU Scientific Library</a> &raquo;</li>
-          <li><a href="special.html" >Special Functions</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">MP</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >AMPL Bindings for the GNU Scientific Library</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="special.html" >Special Functions</a> &raquo;</li> 
       </ul>
     </div>
 
-    <div class="footer">
-        &copy; Copyright 2012 AMPL Optimization, Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015 AMPL Optimization, Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3b3+.
     </div>
 <!-- Google Analytics -->
 <script>

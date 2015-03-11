@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>The Exponential Distribution &mdash; AMPL Modeling Language for Mathematical Programming</title>
+    <title>The Exponential Distribution &mdash; MP None documentation</title>
     
     <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -23,38 +23,21 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="AMPL Modeling Language for Mathematical Programming" href="../index.html" />
-    <link rel="up" title="Random Number Distributions" href="randist.html" />
-    <link rel="next" title="The Laplace Distribution" href="ran-laplace.html" />
-    <link rel="prev" title="The Gaussian Tail Distribution" href="ran-gaussian-tail.html" /> 
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="MP None documentation" href="../index.html" /> 
   </head>
-  <body>
-    <div class="related">
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="ran-laplace.html" title="The Laplace Distribution"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="ran-gaussian-tail.html" title="The Gaussian Tail Distribution"
-             accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">AMPL</a> &raquo;</li>
-          <li><a href="index.html" >AMPL bindings for the GNU Scientific Library</a> &raquo;</li>
-          <li><a href="randist.html" accesskey="U">Random Number Distributions</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">MP</a> &raquo;</li> 
       </ul>
     </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="ran-gaussian-tail.html"
-                        title="previous chapter">The Gaussian Tail Distribution</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="ran-laplace.html"
-                        title="next chapter">The Laplace Distribution</a></p>
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
@@ -74,48 +57,48 @@
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="the-exponential-distribution">
 <h1>The Exponential Distribution<a class="headerlink" href="#the-exponential-distribution" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
-<dt id="gsl_ran_exponential">
-<tt class="descname">gsl_ran_exponential</tt><big>(</big><em>mu</em><big>)</big><a class="headerlink" href="#gsl_ran_exponential" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv219gsl_ran_exponential2mu">
+<span id="gsl_ran_exponential__mu"></span><code class="descclassname"></code><code class="descname">gsl_ran_exponential</code><span class="sig-paren">(</span>mu<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv219gsl_ran_exponential2mu" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function returns a random variate from the <span class="target" id="index-0"></span>exponential
-distribution with mean <tt class="docutils literal"><span class="pre">mu</span></tt>. The distribution is,</p>
+distribution with mean <code class="docutils literal"><span class="pre">mu</span></code>. The distribution is,</p>
 <div class="math">
 \[p(x) dx = {1 \over \mu} \exp(-x/\mu) dx\]</div>
 <p>for <span class="math">\(x \geq 0\)</span>.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="gsl_ran_exponential_pdf">
-<tt class="descname">gsl_ran_exponential_pdf</tt><big>(</big><em>x</em>, <em>mu</em><big>)</big><a class="headerlink" href="#gsl_ran_exponential_pdf" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv223gsl_ran_exponential_pdf1x2mu">
+<span id="gsl_ran_exponential_pdf__x.mu"></span><code class="descclassname"></code><code class="descname">gsl_ran_exponential_pdf</code><span class="sig-paren">(</span>x, mu<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv223gsl_ran_exponential_pdf1x2mu" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function computes the probability density <span class="math">\(p(x)\)</span> at <span class="math">\(x\)</span> for an
-exponential distribution with mean <tt class="docutils literal"><span class="pre">mu</span></tt>, using the formula given above.</p>
+exponential distribution with mean <code class="docutils literal"><span class="pre">mu</span></code>, using the formula given above.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="gsl_cdf_exponential_P">
-<tt class="descname">gsl_cdf_exponential_P</tt><big>(</big><em>x</em>, <em>mu</em><big>)</big><a class="headerlink" href="#gsl_cdf_exponential_P" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv221gsl_cdf_exponential_P1x2mu">
+<span id="gsl_cdf_exponential_P__x.mu"></span><code class="descclassname"></code><code class="descname">gsl_cdf_exponential_P</code><span class="sig-paren">(</span>x, mu<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv221gsl_cdf_exponential_P1x2mu" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="gsl_cdf_exponential_Q">
-<tt class="descname">gsl_cdf_exponential_Q</tt><big>(</big><em>x</em>, <em>mu</em><big>)</big><a class="headerlink" href="#gsl_cdf_exponential_Q" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv221gsl_cdf_exponential_Q1x2mu">
+<span id="gsl_cdf_exponential_Q__x.mu"></span><code class="descclassname"></code><code class="descname">gsl_cdf_exponential_Q</code><span class="sig-paren">(</span>x, mu<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv221gsl_cdf_exponential_Q1x2mu" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="gsl_cdf_exponential_Pinv">
-<tt class="descname">gsl_cdf_exponential_Pinv</tt><big>(</big><em>P</em>, <em>mu</em><big>)</big><a class="headerlink" href="#gsl_cdf_exponential_Pinv" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv224gsl_cdf_exponential_Pinv1P2mu">
+<span id="gsl_cdf_exponential_Pinv__P.mu"></span><code class="descclassname"></code><code class="descname">gsl_cdf_exponential_Pinv</code><span class="sig-paren">(</span>P, mu<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv224gsl_cdf_exponential_Pinv1P2mu" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="gsl_cdf_exponential_Qinv">
-<tt class="descname">gsl_cdf_exponential_Qinv</tt><big>(</big><em>Q</em>, <em>mu</em><big>)</big><a class="headerlink" href="#gsl_cdf_exponential_Qinv" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv224gsl_cdf_exponential_Qinv1Q2mu">
+<span id="gsl_cdf_exponential_Qinv__Q.mu"></span><code class="descclassname"></code><code class="descname">gsl_cdf_exponential_Qinv</code><span class="sig-paren">(</span>Q, mu<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv224gsl_cdf_exponential_Qinv1Q2mu" title="Permalink to this definition">¶</a></dt>
 <dd><p>These functions compute the cumulative distribution functions
 <span class="math">\(P(x), Q(x)\)</span> and their inverses for the exponential distribution
-with mean <tt class="docutils literal"><span class="pre">mu</span></tt>.</p>
+with mean <code class="docutils literal"><span class="pre">mu</span></code>.</p>
 </dd></dl>
 
 </div>
@@ -126,27 +109,19 @@ with mean <tt class="docutils literal"><span class="pre">mu</span></tt>.</p>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="../genindex.html" title="General Index"
              >index</a></li>
-        <li class="right" >
-          <a href="ran-laplace.html" title="The Laplace Distribution"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="ran-gaussian-tail.html" title="The Gaussian Tail Distribution"
-             >previous</a> |</li>
-        <li><a href="../index.html">AMPL</a> &raquo;</li>
-          <li><a href="index.html" >AMPL bindings for the GNU Scientific Library</a> &raquo;</li>
-          <li><a href="randist.html" >Random Number Distributions</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">MP</a> &raquo;</li> 
       </ul>
     </div>
 
-    <div class="footer">
-        &copy; Copyright 2012 AMPL Optimization, Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015 AMPL Optimization, Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3b3+.
     </div>
 <!-- Google Analytics -->
 <script>

@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Examples &mdash; AMPL Modeling Language for Mathematical Programming</title>
+    <title>Examples &mdash; MP None documentation</title>
     
     <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -23,14 +23,14 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="AMPL Modeling Language for Mathematical Programming" href="../index.html" />
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="MP None documentation" href="../index.html" />
     <link rel="up" title="Introduction" href="intro.html" />
     <link rel="next" title="Elementary Functions" href="elementary.html" />
     <link rel="prev" title="Accuracy" href="accuracy.html" /> 
   </head>
-  <body>
-    <div class="related">
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -42,12 +42,12 @@
         <li class="right" >
           <a href="accuracy.html" title="Accuracy"
              accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">AMPL</a> &raquo;</li>
-          <li><a href="index.html" >AMPL bindings for the GNU Scientific Library</a> &raquo;</li>
-          <li><a href="intro.html" accesskey="U">Introduction</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">MP</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >AMPL Bindings for the GNU Scientific Library</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="intro.html" accesskey="U">Introduction</a> &raquo;</li> 
       </ul>
     </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h3><a href="../index.html">Table Of Contents</a></h3>
   <ul>
@@ -83,14 +83,14 @@
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="examples">
 <h1>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="finding-minimum-of-the-gamma-function">
 <h2>Finding Minimum of the Gamma Function<a class="headerlink" href="#finding-minimum-of-the-gamma-function" title="Permalink to this headline">¶</a></h2>
 <p>The following model (<a class="reference external" href="https://raw.github.com/vitaut/ampl/master/models/gsl/gamma.mod">gamma.mod</a>) finds a
-minimum of the <a class="reference internal" href="gamma-beta.html#gamma-functions"><em>gamma function</em></a> <span class="math">\(\Gamma(x)\)</span> for
+minimum of the <a class="reference internal" href="gamma-beta.html#gamma-functions"><span>gamma function</span></a> <span class="math">\(\Gamma(x)\)</span> for
 <span class="math">\(x &gt; 0\)</span>:</p>
 <div class="highlight-none"><div class="highlight"><pre># Find minimum of the gamma function for x &gt; 0.
 
@@ -111,7 +111,7 @@ can be verified <a class="reference external" href="http://oeis.org/A030169">her
 <a class="reference external" href="https://raw.github.com/vitaut/ampl/master/models/gsl/hs068.mod">hs068.mod</a>
 and
 <a class="reference external" href="https://raw.github.com/vitaut/ampl/master/models/gsl/hs069.mod">hs069.mod</a>
-models demonstrate the use of <a class="reference internal" href="ran-gaussian.html#gsl_cdf_ugaussian_P" title="gsl_cdf_ugaussian_P"><tt class="xref py py-func docutils literal"><span class="pre">gsl_cdf_ugaussian_P()</span></tt></a>. They are taken
+models demonstrate the use of <a class="reference internal" href="ran-gaussian.html#_CPPv219gsl_cdf_ugaussian_P1x" title="gsl_cdf_ugaussian_P"><code class="xref cpp cpp-func docutils literal"><span class="pre">gsl_cdf_ugaussian_P()</span></code></a>. They are taken
 form the Robert Vanderbei&#8217;s <a class="reference external" href="http://orfe.princeton.edu/~rvdb/ampl/nlmodels/">collection of nonlinear models</a> and adapted for AMPLGSL.
 These models can be solved with a nonlinear AMPL solver such as MINOS:</p>
 <div class="highlight-none"><div class="highlight"><pre>$ ampl hs068.mod
@@ -141,7 +141,7 @@ Best known objective value: -0.920425026
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -153,15 +153,15 @@ Best known objective value: -0.920425026
         <li class="right" >
           <a href="accuracy.html" title="Accuracy"
              >previous</a> |</li>
-        <li><a href="../index.html">AMPL</a> &raquo;</li>
-          <li><a href="index.html" >AMPL bindings for the GNU Scientific Library</a> &raquo;</li>
-          <li><a href="intro.html" >Introduction</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">MP</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >AMPL Bindings for the GNU Scientific Library</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="intro.html" >Introduction</a> &raquo;</li> 
       </ul>
     </div>
 
-    <div class="footer">
-        &copy; Copyright 2012 AMPL Optimization, Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015 AMPL Optimization, Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3b3+.
     </div>
 <!-- Google Analytics -->
 <script>

@@ -3,11 +3,11 @@
 
 The Cauchy Distribution
 ========================
-   
+
 .. function:: gsl_ran_cauchy(a)
 
- This function returns a random variate from the `Cauchy
- distribution`:index: with scale parameter ``a``. The probability
+ This function returns a random variate from the :index:`Cauchy
+ distribution` with scale parameter ``a``. The probability
  distribution for Cauchy random variates is,
 
  .. math::
@@ -15,22 +15,21 @@ The Cauchy Distribution
 
  for :math:`x` in the range :math:`-\infty` to :math:`+\infty`. The Cauchy distribution
  is also known as the Lorentz distribution.
-   
+
 .. function:: gsl_ran_cauchy_pdf(x, a)
 
  This function computes the probability density :math:`p(x)` at :math:`x` for a
  Cauchy distribution with scale parameter ``a``, using the formula
  given above.
-   
+
 .. function:: gsl_ran_cauchy_P(x, a)
-   
+
 .. function:: gsl_ran_cauchy_Q(x, a)
-   
+
 .. function:: gsl_ran_cauchy_Pinv(P, a)
-   
+
 .. function:: gsl_ran_cauchy_Qinv(Q, a)
 
  These functions compute the cumulative distribution functions
  :math:`P(x), Q(x)` and their inverses for the Cauchy distribution with
  scale parameter ``a``.
-   

@@ -3,7 +3,7 @@
 
 The Flat (Uniform) Distribution
 ===============================
-   
+
 .. function:: gsl_ran_flat(a, b)
 
  This function returns a random variate from the flat (uniform)
@@ -17,21 +17,20 @@ The Flat (Uniform) Distribution
  .. index::
    flat distribution
    uniform distribution
-   
+
 .. function:: gsl_ran_flat_pdf(x, a, b)
 
  This function computes the probability density :math:`p(x)` at :math:`x` for a
  uniform distribution from ``a`` to ``b``, using the formula given above.
-   
+
 .. function:: gsl_cdf_flat_P(x, a, b)
-   
+
 .. function:: gsl_cdf_flat_Q(x, a, b)
-   
+
 .. function:: gsl_cdf_flat_Pinv(P, a, b)
-   
+
 .. function:: gsl_cdf_flat_Qinv(Q, a, b)
 
  These functions compute the cumulative distribution functions
  :math:`P(x), Q(x)` and their inverses for a uniform distribution from
  ``a`` to ``b``.
-   

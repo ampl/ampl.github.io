@@ -5,10 +5,10 @@ Exponential Integrals
 =====================
 
 .. index:: exponential integral
-   
+
 Exponential Integral
 --------------------
-   
+
 .. function:: gsl_sf_expint_E1(x)
 
  This routine computes the exponential integral :math:`\operatorname{E_1}(x)`,
@@ -16,7 +16,7 @@ Exponential Integral
  .. math::
    \operatorname{E_1}(x) :=
      \operatorname{Re} \int_1^\infty \exp(-xt)/t dt.
-   
+
 .. function:: gsl_sf_expint_E2(x)
 
  This routine computes the second-order exponential integral
@@ -25,7 +25,7 @@ Exponential Integral
  .. math::
    \operatorname{E_2(x)} :=
      \operatorname{Re} \int_1^\infty \exp(-xt)/t^2 dt.
-   
+
 .. function:: gsl_sf_expint_En(n, x)
 
  This routine computes the exponential integral :math:`\operatorname{E_n}(x)`
@@ -34,10 +34,10 @@ Exponential Integral
  .. math::
    \operatorname{E_n}(x) :=
      \operatorname{Re} \int_1^\infty \exp(-xt)/t^n dt.
-   
+
 Ei(x)
 -----
-   
+
 .. function:: gsl_sf_expint_Ei(x)
 
  These routines compute the exponential integral :math:`\operatorname{Ei}(x)`,
@@ -46,17 +46,17 @@ Ei(x)
    \operatorname{Ei}(x) := - PV(\int_{-x}^\infty \exp(-t)/t dt)
 
  where :math:`PV` denotes the principal value of the integral.
-   
+
 Hyperbolic Integrals
 --------------------
-   
+
 .. function:: gsl_sf_Shi(x)
 
  This routine computes the integral
 
  .. math::
    \operatorname{Shi}(x) = \int_0^x \sinh(t)/t dt.
-   
+
 .. function:: gsl_sf_Chi(x)
 
  This routine computes the integral
@@ -66,42 +66,41 @@ Hyperbolic Integrals
      \gamma_E + \log(x) + \int_0^x (\cosh(t)-1)/t dt],
 
  where :math:`\gamma_E` is the Euler constant.
-   
+
 Ei_3(x)
 -------
-   
+
 .. function:: gsl_sf_expint_3(x)
 
  This routine computes the third-order exponential integral
 
  .. math::
    \operatorname{Ei_3}(x) = \int_0^x \exp(-t^3) dt \text{ for } x \geq 0.
-   
+
 Trigonometric Integrals
 -----------------------
-   
+
 .. function:: gsl_sf_Si(x)
 
- This routine computes the `Sine integral`:index:
+ This routine computes the :index:`Sine integral`
 
  .. math::
    \operatorname{Si}(x) = \int_0^x \sin(t)/t dt.
-   
+
 .. function:: gsl_sf_Ci(x)
 
- This routine computes the `Cosine integral`:index:
+ This routine computes the :index:`Cosine integral`
 
  .. math::
    \operatorname{Ci}(x) = -\int_x^\infty \cos(t)/t dt \text{ for } x > 0.
-   
+
 Arctangent Integral
 -------------------
-   
+
 .. function:: gsl_sf_atanint(x)
 
- This routine computes the `Arctangent integral`:index:, which is
+ This routine computes the :index:`Arctangent integral`, which is
  defined as
 
  .. math::
    \operatorname{AtanInt}(x) = \int_0^x \arctan(t)/t dt.
-   

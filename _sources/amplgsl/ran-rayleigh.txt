@@ -3,33 +3,32 @@
 
 The Rayleigh Distribution
 =========================
-   
+
 .. function:: gsl_ran_rayleigh(sigma)
 
- This function returns a random variate from the `Rayleigh
- distribution`:index: with scale parameter ``sigma``.
+ This function returns a random variate from the :index:`Rayleigh
+ distribution` with scale parameter ``sigma``.
  The distribution is,
 
  .. math::
    p(x) dx = {x \over \sigma^2} \exp(- x^2/(2 \sigma^2)) dx
 
  for :math:`x > 0`.
-   
+
 .. function:: gsl_ran_rayleigh_pdf(x, sigma)
 
  This function computes the probability density :math:`p(x)` at :math:`x` for a
  Rayleigh distribution with scale parameter ``sigma``, using the formula
  given above.
-   
+
 .. function:: gsl_ran_rayleigh_P(x, sigma)
-   
+
 .. function:: gsl_ran_rayleigh_Q(x, sigma)
-   
+
 .. function:: gsl_ran_rayleigh_Pinv(P, sigma)
-   
+
 .. function:: gsl_ran_rayleigh_Qinv(Q, sigma)
 
  These functions compute the cumulative distribution functions
  :math:`P(x), Q(x)` and their inverses for the Rayleigh distribution with
  scale parameter ``sigma``.
-   

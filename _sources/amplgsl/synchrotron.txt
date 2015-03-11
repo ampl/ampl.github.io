@@ -3,14 +3,13 @@
 
 Synchrotron Functions
 =====================
-   
+
 .. function:: gsl_sf_synchrotron_1(x)
 
- This routine computes the first `synchrotron function`:index:
+ This routine computes the first :index:`synchrotron function`
  :math:`x \int_x^\infty K_{5/3}(t) dt` for :math:`x \geq 0`.
-   
+
 .. function:: gsl_sf_synchrotron_2(x)
 
  This routine computes the second synchrotron function
  :math:`x K_{2/3}(x)` for :math:`x \geq 0`.
-   

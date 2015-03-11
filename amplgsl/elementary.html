@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Elementary Functions &mdash; AMPL Modeling Language for Mathematical Programming</title>
+    <title>Elementary Functions &mdash; MP None documentation</title>
     
     <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -23,14 +23,14 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="AMPL Modeling Language for Mathematical Programming" href="../index.html" />
-    <link rel="up" title="AMPL bindings for the GNU Scientific Library" href="index.html" />
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="MP None documentation" href="../index.html" />
+    <link rel="up" title="AMPL Bindings for the GNU Scientific Library" href="index.html" />
     <link rel="next" title="Special Functions" href="special.html" />
     <link rel="prev" title="Examples" href="examples.html" /> 
   </head>
-  <body>
-    <div class="related">
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -42,11 +42,11 @@
         <li class="right" >
           <a href="examples.html" title="Examples"
              accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">AMPL</a> &raquo;</li>
-          <li><a href="index.html" accesskey="U">AMPL bindings for the GNU Scientific Library</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">MP</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">AMPL Bindings for the GNU Scientific Library</a> &raquo;</li> 
       </ul>
     </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
   <p class="topless"><a href="examples.html"
@@ -73,37 +73,37 @@
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="elementary-functions">
 <h1>Elementary Functions<a class="headerlink" href="#elementary-functions" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
-<dt id="gsl_log1p">
-<tt class="descname">gsl_log1p</tt><big>(</big><em>x</em><big>)</big><a class="headerlink" href="#gsl_log1p" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv29gsl_log1p1x">
+<span id="gsl_log1p__x"></span><code class="descclassname"></code><code class="descname">gsl_log1p</code><span class="sig-paren">(</span>x<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv29gsl_log1p1x" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function computes the value of <span class="math">\(\log(1+x)\)</span> in a way that is
 accurate for small <span class="math">\(x\)</span>. It provides an alternative to the BSD math
-function <tt class="docutils literal"><span class="pre">log1p(x)</span></tt>.</p>
+function <code class="docutils literal"><span class="pre">log1p(x)</span></code>.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="gsl_expm1">
-<tt class="descname">gsl_expm1</tt><big>(</big><em>x</em><big>)</big><a class="headerlink" href="#gsl_expm1" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv29gsl_expm11x">
+<span id="gsl_expm1__x"></span><code class="descclassname"></code><code class="descname">gsl_expm1</code><span class="sig-paren">(</span>x<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv29gsl_expm11x" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function computes the value of <span class="math">\(\exp(x)-1\)</span> in a way that is
 accurate for small <span class="math">\(x\)</span>. It provides an alternative to the BSD math
-function <tt class="docutils literal"><span class="pre">expm1(x)</span></tt>.</p>
+function <code class="docutils literal"><span class="pre">expm1(x)</span></code>.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="gsl_hypot">
-<tt class="descname">gsl_hypot</tt><big>(</big><em>x</em>, <em>y</em><big>)</big><a class="headerlink" href="#gsl_hypot" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv29gsl_hypot1x1y">
+<span id="gsl_hypot__x.y"></span><code class="descclassname"></code><code class="descname">gsl_hypot</code><span class="sig-paren">(</span>x, y<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv29gsl_hypot1x1y" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function computes the value of <span class="math">\(\sqrt{x^2 + y^2}\)</span> in a way that
 avoids overflow. It provides an alternative to the BSD math function
-<tt class="docutils literal"><span class="pre">hypot(x,y)</span></tt>.</p>
+<code class="docutils literal"><span class="pre">hypot(x,y)</span></code>.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="gsl_hypot3">
-<tt class="descname">gsl_hypot3</tt><big>(</big><em>x</em>, <em>y</em>, <em>z</em><big>)</big><a class="headerlink" href="#gsl_hypot3" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv210gsl_hypot31x1y1z">
+<span id="gsl_hypot3__x.y.z"></span><code class="descclassname"></code><code class="descname">gsl_hypot3</code><span class="sig-paren">(</span>x, y, z<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv210gsl_hypot31x1y1z" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function computes the value of <span class="math">\(\sqrt{x^2 + y^2 + z^2}\)</span> in a way
 that avoids overflow.</p>
 </dd></dl>
@@ -116,7 +116,7 @@ that avoids overflow.</p>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -128,14 +128,14 @@ that avoids overflow.</p>
         <li class="right" >
           <a href="examples.html" title="Examples"
              >previous</a> |</li>
-        <li><a href="../index.html">AMPL</a> &raquo;</li>
-          <li><a href="index.html" >AMPL bindings for the GNU Scientific Library</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">MP</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >AMPL Bindings for the GNU Scientific Library</a> &raquo;</li> 
       </ul>
     </div>
 
-    <div class="footer">
-        &copy; Copyright 2012 AMPL Optimization, Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015 AMPL Optimization, Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3b3+.
     </div>
 <!-- Google Analytics -->
 <script>

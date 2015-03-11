@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>The t-distribution &mdash; AMPL Modeling Language for Mathematical Programming</title>
+    <title>The t-distribution &mdash; MP None documentation</title>
     
     <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -23,38 +23,21 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="AMPL Modeling Language for Mathematical Programming" href="../index.html" />
-    <link rel="up" title="Random Number Distributions" href="randist.html" />
-    <link rel="next" title="The Beta Distribution" href="ran-beta.html" />
-    <link rel="prev" title="The F-distribution" href="ran-fdist.html" /> 
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="MP None documentation" href="../index.html" /> 
   </head>
-  <body>
-    <div class="related">
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="ran-beta.html" title="The Beta Distribution"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="ran-fdist.html" title="The F-distribution"
-             accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">AMPL</a> &raquo;</li>
-          <li><a href="index.html" >AMPL bindings for the GNU Scientific Library</a> &raquo;</li>
-          <li><a href="randist.html" accesskey="U">Random Number Distributions</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">MP</a> &raquo;</li> 
       </ul>
     </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="ran-fdist.html"
-                        title="previous chapter">The F-distribution</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="ran-beta.html"
-                        title="next chapter">The Beta Distribution</a></p>
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
@@ -74,7 +57,7 @@
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="the-t-distribution">
 <h1>The t-distribution<a class="headerlink" href="#the-t-distribution" title="Permalink to this headline">¶</a></h1>
@@ -85,8 +68,8 @@ degrees of freedom then the ratio,</p>
 \[X = { Y_1 \over \sqrt{Y_2 / \nu} }\]</div>
 <p>has a t-distribution <span class="math">\(t(x;\nu)\)</span> with <span class="math">\(\nu\)</span> degrees of freedom.</p>
 <dl class="function">
-<dt id="gsl_ran_tdist">
-<tt class="descname">gsl_ran_tdist</tt><big>(</big><em>nu</em><big>)</big><a class="headerlink" href="#gsl_ran_tdist" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv213gsl_ran_tdist2nu">
+<span id="gsl_ran_tdist__nu"></span><code class="descclassname"></code><code class="descname">gsl_ran_tdist</code><span class="sig-paren">(</span>nu<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv213gsl_ran_tdist2nu" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function returns a random variate from the t-distribution.
 The distribution function is,</p>
 <div class="math">
@@ -96,33 +79,33 @@ The distribution function is,</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="gsl_ran_tdist_pdf">
-<tt class="descname">gsl_ran_tdist_pdf</tt><big>(</big><em>x</em>, <em>nu</em><big>)</big><a class="headerlink" href="#gsl_ran_tdist_pdf" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv217gsl_ran_tdist_pdf1x2nu">
+<span id="gsl_ran_tdist_pdf__x.nu"></span><code class="descclassname"></code><code class="descname">gsl_ran_tdist_pdf</code><span class="sig-paren">(</span>x, nu<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv217gsl_ran_tdist_pdf1x2nu" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function computes the probability density <span class="math">\(p(x)\)</span> at <span class="math">\(x\)</span> for a
-t-distribution with <tt class="docutils literal"><span class="pre">nu</span></tt> degrees of freedom, using the formula
+t-distribution with <code class="docutils literal"><span class="pre">nu</span></code> degrees of freedom, using the formula
 given above.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="gsl_ran_tdist_P">
-<tt class="descname">gsl_ran_tdist_P</tt><big>(</big><em>x</em>, <em>nu</em><big>)</big><a class="headerlink" href="#gsl_ran_tdist_P" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv215gsl_ran_tdist_P1x2nu">
+<span id="gsl_ran_tdist_P__x.nu"></span><code class="descclassname"></code><code class="descname">gsl_ran_tdist_P</code><span class="sig-paren">(</span>x, nu<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv215gsl_ran_tdist_P1x2nu" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="gsl_ran_tdist_Q">
-<tt class="descname">gsl_ran_tdist_Q</tt><big>(</big><em>x</em>, <em>nu</em><big>)</big><a class="headerlink" href="#gsl_ran_tdist_Q" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv215gsl_ran_tdist_Q1x2nu">
+<span id="gsl_ran_tdist_Q__x.nu"></span><code class="descclassname"></code><code class="descname">gsl_ran_tdist_Q</code><span class="sig-paren">(</span>x, nu<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv215gsl_ran_tdist_Q1x2nu" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="gsl_ran_tdist_Pinv">
-<tt class="descname">gsl_ran_tdist_Pinv</tt><big>(</big><em>P</em>, <em>nu</em><big>)</big><a class="headerlink" href="#gsl_ran_tdist_Pinv" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv218gsl_ran_tdist_Pinv1P2nu">
+<span id="gsl_ran_tdist_Pinv__P.nu"></span><code class="descclassname"></code><code class="descname">gsl_ran_tdist_Pinv</code><span class="sig-paren">(</span>P, nu<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv218gsl_ran_tdist_Pinv1P2nu" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="gsl_ran_tdist_Qinv">
-<tt class="descname">gsl_ran_tdist_Qinv</tt><big>(</big><em>Q</em>, <em>nu</em><big>)</big><a class="headerlink" href="#gsl_ran_tdist_Qinv" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv218gsl_ran_tdist_Qinv1Q2nu">
+<span id="gsl_ran_tdist_Qinv__Q.nu"></span><code class="descclassname"></code><code class="descname">gsl_ran_tdist_Qinv</code><span class="sig-paren">(</span>Q, nu<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv218gsl_ran_tdist_Qinv1Q2nu" title="Permalink to this definition">¶</a></dt>
 <dd><p>These functions compute the cumulative distribution functions
-<span class="math">\(P(x), Q(x)\)</span> and their inverses for the t-distribution with <tt class="docutils literal"><span class="pre">nu</span></tt>
+<span class="math">\(P(x), Q(x)\)</span> and their inverses for the t-distribution with <code class="docutils literal"><span class="pre">nu</span></code>
 degrees of freedom.</p>
 </dd></dl>
 
@@ -134,27 +117,19 @@ degrees of freedom.</p>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="../genindex.html" title="General Index"
              >index</a></li>
-        <li class="right" >
-          <a href="ran-beta.html" title="The Beta Distribution"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="ran-fdist.html" title="The F-distribution"
-             >previous</a> |</li>
-        <li><a href="../index.html">AMPL</a> &raquo;</li>
-          <li><a href="index.html" >AMPL bindings for the GNU Scientific Library</a> &raquo;</li>
-          <li><a href="randist.html" >Random Number Distributions</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">MP</a> &raquo;</li> 
       </ul>
     </div>
 
-    <div class="footer">
-        &copy; Copyright 2012 AMPL Optimization, Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015 AMPL Optimization, Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3b3+.
     </div>
 <!-- Google Analytics -->
 <script>

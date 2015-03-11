@@ -11,14 +11,13 @@ for :math:`x < 0`; however, it has only two real-valued branches. We define
 :math:`W_{-1}(x)` to be the other real branch, where :math:`W < -1` for :math:`x < 0`.
 
 .. index:: Lambert W function
-   
+
 .. function:: gsl_sf_lambert_W0(x)
 
  This routine computes the principal branch of the Lambert :math:`W` function,
  :math:`W_0(x)`.
-   
+
 .. function:: gsl_sf_lambert_Wm1(x)
 
  This routine computes the secondary real-valued branch of the Lambert
  :math:`W` function, :math:`W_{-1}(x)`.
-   

@@ -16,9 +16,8 @@ It is related to the dilogarithm by
 .. math::
   \operatorname{Cl_2}(\theta) =
     \operatorname{Im} \operatorname{Li_2}(\exp(i\theta)).
-   
+
 .. function:: gsl_sf_clausen(x)
 
- This routine computes the `Clausen integral`:index:
+ This routine computes the :index:`Clausen integral`
  :math:`\operatorname{Cl_2}(x)`.
-   

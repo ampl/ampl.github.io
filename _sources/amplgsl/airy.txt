@@ -16,55 +16,54 @@ defined by the integral representations,
 .. index:: Airy function
 
 For further information see Abramowitz & Stegun, Section 10.4.
-   
+
 Airy Functions
 --------------
-   
+
 .. function:: gsl_sf_airy_Ai(x)
 
  This routine computes the Airy function :math:`\operatorname{Ai}(x)`.
-   
+
 .. function:: gsl_sf_airy_Bi(x)
 
  This routine computes the Airy function :math:`\operatorname{Bi}(x)`.
-   
+
 .. function:: gsl_sf_airy_Ai_scaled(x)
 
  This routine computes a scaled version of the Airy function
  :math:`\operatorname{S_A}(x) \operatorname{Ai}(x)`. For :math:`x > 0` the scaling
  factor :math:`\operatorname{S_A}(x)` is :math:`\exp(+(2/3) x^{3/2})`, and is :math:`1`
  for :math:`x < 0`.
-   
+
 .. function:: gsl_sf_airy_Bi_scaled(x)
 
  This routine computes a scaled version of the Airy function
  :math:`\operatorname{S_B}(x) \operatorname{Bi}(x)`. For :math:`x > 0` the scaling
  factor :math:`\operatorname{S_B}(x)` is :math:`\exp(-(2/3) x^{3/2})`, and is :math:`1`
  for :math:`x < 0`.
-   
+
 Zeros of Airy Functions
 -----------------------
-   
+
 .. function:: gsl_sf_airy_zero_Ai(s)
 
  This routine computes the location of the :math:`s`-th zero of the Airy
  function :math:`\operatorname{Ai}(x)`.
-   
+
 .. function:: gsl_sf_airy_zero_Bi(s)
 
  This routine computes the location of the :math:`s`-th zero of the Airy
  function :math:`\operatorname{Bi}(x)`.
-   
+
 Zeros of Derivatives of Airy Functions
 --------------------------------------
-   
+
 .. function:: gsl_sf_airy_zero_Ai_deriv(s)
 
  This routine computes the location of the :math:`s`-th zero of the Airy
  function derivative :math:`\operatorname{Ai}'(x)`.
-   
+
 .. function:: gsl_sf_airy_zero_Bi_deriv(s)
 
  This routine computes the location of the :math:`s`-th zero of the Airy
  function derivative :math:`\operatorname{Bi}'(x)`.
-   

@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>The Geometric Distribution &mdash; AMPL Modeling Language for Mathematical Programming</title>
+    <title>The Geometric Distribution &mdash; MP None documentation</title>
     
     <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -23,38 +23,21 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="AMPL Modeling Language for Mathematical Programming" href="../index.html" />
-    <link rel="up" title="Random Number Distributions" href="randist.html" />
-    <link rel="next" title="The Hypergeometric Distribution" href="ran-hypergeometric.html" />
-    <link rel="prev" title="The Pascal Distribution" href="ran-pascal.html" /> 
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="MP None documentation" href="../index.html" /> 
   </head>
-  <body>
-    <div class="related">
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="ran-hypergeometric.html" title="The Hypergeometric Distribution"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="ran-pascal.html" title="The Pascal Distribution"
-             accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">AMPL</a> &raquo;</li>
-          <li><a href="index.html" >AMPL bindings for the GNU Scientific Library</a> &raquo;</li>
-          <li><a href="randist.html" accesskey="U">Random Number Distributions</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">MP</a> &raquo;</li> 
       </ul>
     </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="ran-pascal.html"
-                        title="previous chapter">The Pascal Distribution</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="ran-hypergeometric.html"
-                        title="next chapter">The Hypergeometric Distribution</a></p>
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
@@ -74,16 +57,16 @@
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="the-geometric-distribution">
 <h1>The Geometric Distribution<a class="headerlink" href="#the-geometric-distribution" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
-<dt id="gsl_ran_geometric">
-<tt class="descname">gsl_ran_geometric</tt><big>(</big><em>p</em><big>)</big><a class="headerlink" href="#gsl_ran_geometric" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv217gsl_ran_geometric1p">
+<span id="gsl_ran_geometric__p"></span><code class="descclassname"></code><code class="descname">gsl_ran_geometric</code><span class="sig-paren">(</span>p<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv217gsl_ran_geometric1p" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function returns a random integer from the <span class="target" id="index-0"></span>geometric
 distribution, the number of independent trials with
-probability <tt class="docutils literal"><span class="pre">p</span></tt> until the first success. The probability
+probability <code class="docutils literal"><span class="pre">p</span></code> until the first success. The probability
 distribution for geometric variates is,</p>
 <div class="math">
 \[p(k) =  p (1-p)^{k-1}\]</div>
@@ -93,23 +76,23 @@ replaced by <span class="math">\(k\)</span>.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="gsl_ran_geometric_pdf">
-<tt class="descname">gsl_ran_geometric_pdf</tt><big>(</big><em>k</em>, <em>p</em><big>)</big><a class="headerlink" href="#gsl_ran_geometric_pdf" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv221gsl_ran_geometric_pdf1k1p">
+<span id="gsl_ran_geometric_pdf__k.p"></span><code class="descclassname"></code><code class="descname">gsl_ran_geometric_pdf</code><span class="sig-paren">(</span>k, p<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv221gsl_ran_geometric_pdf1k1p" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function computes the probability <span class="math">\(p(k)\)</span> of obtaining <span class="math">\(k\)</span> from
-a geometric distribution with probability parameter <tt class="docutils literal"><span class="pre">p</span></tt>, using the
+a geometric distribution with probability parameter <code class="docutils literal"><span class="pre">p</span></code>, using the
 formula given above.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="gsl_cdf_geometric_P">
-<tt class="descname">gsl_cdf_geometric_P</tt><big>(</big><em>k</em>, <em>p</em><big>)</big><a class="headerlink" href="#gsl_cdf_geometric_P" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv219gsl_cdf_geometric_P1k1p">
+<span id="gsl_cdf_geometric_P__k.p"></span><code class="descclassname"></code><code class="descname">gsl_cdf_geometric_P</code><span class="sig-paren">(</span>k, p<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv219gsl_cdf_geometric_P1k1p" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="gsl_cdf_geometric_Q">
-<tt class="descname">gsl_cdf_geometric_Q</tt><big>(</big><em>k</em>, <em>p</em><big>)</big><a class="headerlink" href="#gsl_cdf_geometric_Q" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv219gsl_cdf_geometric_Q1k1p">
+<span id="gsl_cdf_geometric_Q__k.p"></span><code class="descclassname"></code><code class="descname">gsl_cdf_geometric_Q</code><span class="sig-paren">(</span>k, p<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv219gsl_cdf_geometric_Q1k1p" title="Permalink to this definition">¶</a></dt>
 <dd><p>These functions compute the cumulative distribution functions
-<span class="math">\(P(k), Q(k)\)</span> for the geometric distribution with parameter <tt class="docutils literal"><span class="pre">p</span></tt>.</p>
+<span class="math">\(P(k), Q(k)\)</span> for the geometric distribution with parameter <code class="docutils literal"><span class="pre">p</span></code>.</p>
 </dd></dl>
 
 </div>
@@ -120,27 +103,19 @@ formula given above.</p>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="../genindex.html" title="General Index"
              >index</a></li>
-        <li class="right" >
-          <a href="ran-hypergeometric.html" title="The Hypergeometric Distribution"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="ran-pascal.html" title="The Pascal Distribution"
-             >previous</a> |</li>
-        <li><a href="../index.html">AMPL</a> &raquo;</li>
-          <li><a href="index.html" >AMPL bindings for the GNU Scientific Library</a> &raquo;</li>
-          <li><a href="randist.html" >Random Number Distributions</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">MP</a> &raquo;</li> 
       </ul>
     </div>
 
-    <div class="footer">
-        &copy; Copyright 2012 AMPL Optimization, Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015 AMPL Optimization, Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3b3+.
     </div>
 <!-- Google Analytics -->
 <script>

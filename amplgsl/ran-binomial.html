@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>The Binomial Distribution &mdash; AMPL Modeling Language for Mathematical Programming</title>
+    <title>The Binomial Distribution &mdash; MP None documentation</title>
     
     <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -23,38 +23,21 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="AMPL Modeling Language for Mathematical Programming" href="../index.html" />
-    <link rel="up" title="Random Number Distributions" href="randist.html" />
-    <link rel="next" title="The Negative Binomial Distribution" href="ran-negative-binomial.html" />
-    <link rel="prev" title="The Bernoulli Distribution" href="ran-bernoulli.html" /> 
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="MP None documentation" href="../index.html" /> 
   </head>
-  <body>
-    <div class="related">
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="ran-negative-binomial.html" title="The Negative Binomial Distribution"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="ran-bernoulli.html" title="The Bernoulli Distribution"
-             accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">AMPL</a> &raquo;</li>
-          <li><a href="index.html" >AMPL bindings for the GNU Scientific Library</a> &raquo;</li>
-          <li><a href="randist.html" accesskey="U">Random Number Distributions</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">MP</a> &raquo;</li> 
       </ul>
     </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="ran-bernoulli.html"
-                        title="previous chapter">The Bernoulli Distribution</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="ran-negative-binomial.html"
-                        title="next chapter">The Negative Binomial Distribution</a></p>
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
@@ -74,16 +57,16 @@
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="the-binomial-distribution">
 <h1>The Binomial Distribution<a class="headerlink" href="#the-binomial-distribution" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
-<dt id="gsl_ran_binomial">
-<tt class="descname">gsl_ran_binomial</tt><big>(</big><em>p</em>, <em>n</em><big>)</big><a class="headerlink" href="#gsl_ran_binomial" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv216gsl_ran_binomial1p1n">
+<span id="gsl_ran_binomial__p.n"></span><code class="descclassname"></code><code class="descname">gsl_ran_binomial</code><span class="sig-paren">(</span>p, n<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv216gsl_ran_binomial1p1n" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function returns a random integer from the <span class="target" id="index-0"></span>binomial
-distribution, the number of successes in <tt class="docutils literal"><span class="pre">n</span></tt> independent
-trials with probability <tt class="docutils literal"><span class="pre">p</span></tt>. The probability distribution for
+distribution, the number of successes in <code class="docutils literal"><span class="pre">n</span></code> independent
+trials with probability <code class="docutils literal"><span class="pre">p</span></code>. The probability distribution for
 binomial variates is,</p>
 <div class="math">
 \[p(k) = {n! \over k! (n-k)! } p^k (1-p)^{n-k}\]</div>
@@ -91,24 +74,24 @@ binomial variates is,</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="gsl_ran_binomial_pdf">
-<tt class="descname">gsl_ran_binomial_pdf</tt><big>(</big><em>k</em>, <em>p</em>, <em>n</em><big>)</big><a class="headerlink" href="#gsl_ran_binomial_pdf" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv220gsl_ran_binomial_pdf1k1p1n">
+<span id="gsl_ran_binomial_pdf__k.p.n"></span><code class="descclassname"></code><code class="descname">gsl_ran_binomial_pdf</code><span class="sig-paren">(</span>k, p, n<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv220gsl_ran_binomial_pdf1k1p1n" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function computes the probability <span class="math">\(p(k)\)</span> of obtaining <span class="math">\(k\)</span> from
-a <span class="target" id="index-1"></span>binomial distribution with parameters <tt class="docutils literal"><span class="pre">p</span></tt> and <tt class="docutils literal"><span class="pre">n</span></tt>, using
+a <span class="target" id="index-1"></span>binomial distribution with parameters <code class="docutils literal"><span class="pre">p</span></code> and <code class="docutils literal"><span class="pre">n</span></code>, using
 the formula given above.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="gsl_cdf_binomial_P">
-<tt class="descname">gsl_cdf_binomial_P</tt><big>(</big><em>k</em>, <em>p</em>, <em>n</em><big>)</big><a class="headerlink" href="#gsl_cdf_binomial_P" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv218gsl_cdf_binomial_P1k1p1n">
+<span id="gsl_cdf_binomial_P__k.p.n"></span><code class="descclassname"></code><code class="descname">gsl_cdf_binomial_P</code><span class="sig-paren">(</span>k, p, n<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv218gsl_cdf_binomial_P1k1p1n" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="gsl_cdf_binomial_Q">
-<tt class="descname">gsl_cdf_binomial_Q</tt><big>(</big><em>k</em>, <em>p</em>, <em>n</em><big>)</big><a class="headerlink" href="#gsl_cdf_binomial_Q" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv218gsl_cdf_binomial_Q1k1p1n">
+<span id="gsl_cdf_binomial_Q__k.p.n"></span><code class="descclassname"></code><code class="descname">gsl_cdf_binomial_Q</code><span class="sig-paren">(</span>k, p, n<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv218gsl_cdf_binomial_Q1k1p1n" title="Permalink to this definition">¶</a></dt>
 <dd><p>These functions compute the cumulative distribution functions
 <span class="math">\(P(k), Q(k)\)</span> for the binomial distribution with parameters
-<tt class="docutils literal"><span class="pre">p</span></tt> and <tt class="docutils literal"><span class="pre">n</span></tt>.</p>
+<code class="docutils literal"><span class="pre">p</span></code> and <code class="docutils literal"><span class="pre">n</span></code>.</p>
 </dd></dl>
 
 </div>
@@ -119,27 +102,19 @@ the formula given above.</p>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="../genindex.html" title="General Index"
              >index</a></li>
-        <li class="right" >
-          <a href="ran-negative-binomial.html" title="The Negative Binomial Distribution"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="ran-bernoulli.html" title="The Bernoulli Distribution"
-             >previous</a> |</li>
-        <li><a href="../index.html">AMPL</a> &raquo;</li>
-          <li><a href="index.html" >AMPL bindings for the GNU Scientific Library</a> &raquo;</li>
-          <li><a href="randist.html" >Random Number Distributions</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">MP</a> &raquo;</li> 
       </ul>
     </div>
 
-    <div class="footer">
-        &copy; Copyright 2012 AMPL Optimization, Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015 AMPL Optimization, Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3b3+.
     </div>
 <!-- Google Analytics -->
 <script>

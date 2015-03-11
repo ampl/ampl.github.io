@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>The Weibull Distribution &mdash; AMPL Modeling Language for Mathematical Programming</title>
+    <title>The Weibull Distribution &mdash; MP None documentation</title>
     
     <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -23,38 +23,21 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="AMPL Modeling Language for Mathematical Programming" href="../index.html" />
-    <link rel="up" title="Random Number Distributions" href="randist.html" />
-    <link rel="next" title="The Type-1 Gumbel Distribution" href="ran-gumbel1.html" />
-    <link rel="prev" title="The Pareto Distribution" href="ran-pareto.html" /> 
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="MP None documentation" href="../index.html" /> 
   </head>
-  <body>
-    <div class="related">
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="ran-gumbel1.html" title="The Type-1 Gumbel Distribution"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="ran-pareto.html" title="The Pareto Distribution"
-             accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">AMPL</a> &raquo;</li>
-          <li><a href="index.html" >AMPL bindings for the GNU Scientific Library</a> &raquo;</li>
-          <li><a href="randist.html" accesskey="U">Random Number Distributions</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">MP</a> &raquo;</li> 
       </ul>
     </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="ran-pareto.html"
-                        title="previous chapter">The Pareto Distribution</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="ran-gumbel1.html"
-                        title="next chapter">The Type-1 Gumbel Distribution</a></p>
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
@@ -74,13 +57,13 @@
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="the-weibull-distribution">
 <h1>The Weibull Distribution<a class="headerlink" href="#the-weibull-distribution" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
-<dt id="gsl_ran_weibull">
-<tt class="descname">gsl_ran_weibull</tt><big>(</big><em>a</em>, <em>b</em><big>)</big><a class="headerlink" href="#gsl_ran_weibull" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv215gsl_ran_weibull1a1b">
+<span id="gsl_ran_weibull__a.b"></span><code class="descclassname"></code><code class="descname">gsl_ran_weibull</code><span class="sig-paren">(</span>a, b<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv215gsl_ran_weibull1a1b" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function returns a random variate from the <span class="target" id="index-0"></span>Weibull
 distribution. The distribution function is,</p>
 <div class="math">
@@ -89,34 +72,34 @@ distribution. The distribution function is,</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="gsl_ran_weibull_pdf">
-<tt class="descname">gsl_ran_weibull_pdf</tt><big>(</big><em>x</em>, <em>a</em>, <em>b</em><big>)</big><a class="headerlink" href="#gsl_ran_weibull_pdf" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv219gsl_ran_weibull_pdf1x1a1b">
+<span id="gsl_ran_weibull_pdf__x.a.b"></span><code class="descclassname"></code><code class="descname">gsl_ran_weibull_pdf</code><span class="sig-paren">(</span>x, a, b<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv219gsl_ran_weibull_pdf1x1a1b" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function computes the probability density <span class="math">\(p(x)\)</span> at <span class="math">\(x\)</span> for a
-Weibull distribution with scale <tt class="docutils literal"><span class="pre">a</span></tt> and exponent <tt class="docutils literal"><span class="pre">b</span></tt>, using the
+Weibull distribution with scale <code class="docutils literal"><span class="pre">a</span></code> and exponent <code class="docutils literal"><span class="pre">b</span></code>, using the
 formula given above.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="gsl_cdf_weibull_P">
-<tt class="descname">gsl_cdf_weibull_P</tt><big>(</big><em>x</em>, <em>a</em>, <em>b</em><big>)</big><a class="headerlink" href="#gsl_cdf_weibull_P" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv217gsl_cdf_weibull_P1x1a1b">
+<span id="gsl_cdf_weibull_P__x.a.b"></span><code class="descclassname"></code><code class="descname">gsl_cdf_weibull_P</code><span class="sig-paren">(</span>x, a, b<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv217gsl_cdf_weibull_P1x1a1b" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="gsl_cdf_weibull_Q">
-<tt class="descname">gsl_cdf_weibull_Q</tt><big>(</big><em>x</em>, <em>a</em>, <em>b</em><big>)</big><a class="headerlink" href="#gsl_cdf_weibull_Q" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv217gsl_cdf_weibull_Q1x1a1b">
+<span id="gsl_cdf_weibull_Q__x.a.b"></span><code class="descclassname"></code><code class="descname">gsl_cdf_weibull_Q</code><span class="sig-paren">(</span>x, a, b<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv217gsl_cdf_weibull_Q1x1a1b" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="gsl_cdf_weibull_Pinv">
-<tt class="descname">gsl_cdf_weibull_Pinv</tt><big>(</big><em>P</em>, <em>a</em>, <em>b</em><big>)</big><a class="headerlink" href="#gsl_cdf_weibull_Pinv" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv220gsl_cdf_weibull_Pinv1P1a1b">
+<span id="gsl_cdf_weibull_Pinv__P.a.b"></span><code class="descclassname"></code><code class="descname">gsl_cdf_weibull_Pinv</code><span class="sig-paren">(</span>P, a, b<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv220gsl_cdf_weibull_Pinv1P1a1b" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="gsl_cdf_weibull_Qinv">
-<tt class="descname">gsl_cdf_weibull_Qinv</tt><big>(</big><em>Q</em>, <em>a</em>, <em>b</em><big>)</big><a class="headerlink" href="#gsl_cdf_weibull_Qinv" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv220gsl_cdf_weibull_Qinv1Q1a1b">
+<span id="gsl_cdf_weibull_Qinv__Q.a.b"></span><code class="descclassname"></code><code class="descname">gsl_cdf_weibull_Qinv</code><span class="sig-paren">(</span>Q, a, b<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv220gsl_cdf_weibull_Qinv1Q1a1b" title="Permalink to this definition">¶</a></dt>
 <dd><p>These functions compute the cumulative distribution functions
 <span class="math">\(P(x), Q(x)\)</span> and their inverses for the Weibull distribution
-with scale <tt class="docutils literal"><span class="pre">a</span></tt> and exponent <tt class="docutils literal"><span class="pre">b</span></tt>.</p>
+with scale <code class="docutils literal"><span class="pre">a</span></code> and exponent <code class="docutils literal"><span class="pre">b</span></code>.</p>
 </dd></dl>
 
 </div>
@@ -127,27 +110,19 @@ with scale <tt class="docutils literal"><span class="pre">a</span></tt> and expo
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="../genindex.html" title="General Index"
              >index</a></li>
-        <li class="right" >
-          <a href="ran-gumbel1.html" title="The Type-1 Gumbel Distribution"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="ran-pareto.html" title="The Pareto Distribution"
-             >previous</a> |</li>
-        <li><a href="../index.html">AMPL</a> &raquo;</li>
-          <li><a href="index.html" >AMPL bindings for the GNU Scientific Library</a> &raquo;</li>
-          <li><a href="randist.html" >Random Number Distributions</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">MP</a> &raquo;</li> 
       </ul>
     </div>
 
-    <div class="footer">
-        &copy; Copyright 2012 AMPL Optimization, Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015 AMPL Optimization, Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3b3+.
     </div>
 <!-- Google Analytics -->
 <script>

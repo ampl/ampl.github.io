@@ -15,18 +15,17 @@ For more information see Abramowitz & Stegun, Chapter 22.
 .. index::
   Laguerre function
   Laguerre polynomial
-   
+
 .. function:: gsl_sf_laguerre_1(a, x)
-   
+
 .. function:: gsl_sf_laguerre_2(a, x)
-   
+
 .. function:: gsl_sf_laguerre_3(a, x)
 
  These routines evaluate the generalized Laguerre polynomials
  :math:`L^a_1(x), L^a_2(x), L^a_3(x)` using explicit representations.
-   
+
 .. function:: gsl_sf_laguerre_n(n, a, x)
 
  This routine evaluates the generalized Laguerre polynomials
  :math:`L^a_n(x)` for :math:`a > -1, n >= 0`.
-   

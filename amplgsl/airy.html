@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Airy Functions and Derivatives &mdash; AMPL Modeling Language for Mathematical Programming</title>
+    <title>Airy Functions and Derivatives &mdash; MP None documentation</title>
     
     <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -23,14 +23,14 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="AMPL Modeling Language for Mathematical Programming" href="../index.html" />
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="MP None documentation" href="../index.html" />
     <link rel="up" title="Special Functions" href="special.html" />
     <link rel="next" title="Bessel Functions" href="bessel.html" />
     <link rel="prev" title="Special Functions" href="special.html" /> 
   </head>
-  <body>
-    <div class="related">
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -42,12 +42,12 @@
         <li class="right" >
           <a href="special.html" title="Special Functions"
              accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">AMPL</a> &raquo;</li>
-          <li><a href="index.html" >AMPL bindings for the GNU Scientific Library</a> &raquo;</li>
-          <li><a href="special.html" accesskey="U">Special Functions</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">MP</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >AMPL Bindings for the GNU Scientific Library</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="special.html" accesskey="U">Special Functions</a> &raquo;</li> 
       </ul>
     </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h3><a href="../index.html">Table Of Contents</a></h3>
   <ul>
@@ -84,7 +84,7 @@
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="airy-functions-and-derivatives">
 <h1>Airy Functions and Derivatives<a class="headerlink" href="#airy-functions-and-derivatives" title="Permalink to this headline">¶</a></h1>
@@ -99,20 +99,20 @@ defined by the integral representations,</p>
 <div class="section" id="airy-functions">
 <h2>Airy Functions<a class="headerlink" href="#airy-functions" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
-<dt id="gsl_sf_airy_Ai">
-<tt class="descname">gsl_sf_airy_Ai</tt><big>(</big><em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_airy_Ai" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv214gsl_sf_airy_Ai1x">
+<span id="gsl_sf_airy_Ai__x"></span><code class="descclassname"></code><code class="descname">gsl_sf_airy_Ai</code><span class="sig-paren">(</span>x<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv214gsl_sf_airy_Ai1x" title="Permalink to this definition">¶</a></dt>
 <dd><p>This routine computes the Airy function <span class="math">\(\operatorname{Ai}(x)\)</span>.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="gsl_sf_airy_Bi">
-<tt class="descname">gsl_sf_airy_Bi</tt><big>(</big><em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_airy_Bi" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv214gsl_sf_airy_Bi1x">
+<span id="gsl_sf_airy_Bi__x"></span><code class="descclassname"></code><code class="descname">gsl_sf_airy_Bi</code><span class="sig-paren">(</span>x<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv214gsl_sf_airy_Bi1x" title="Permalink to this definition">¶</a></dt>
 <dd><p>This routine computes the Airy function <span class="math">\(\operatorname{Bi}(x)\)</span>.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="gsl_sf_airy_Ai_scaled">
-<tt class="descname">gsl_sf_airy_Ai_scaled</tt><big>(</big><em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_airy_Ai_scaled" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv221gsl_sf_airy_Ai_scaled1x">
+<span id="gsl_sf_airy_Ai_scaled__x"></span><code class="descclassname"></code><code class="descname">gsl_sf_airy_Ai_scaled</code><span class="sig-paren">(</span>x<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv221gsl_sf_airy_Ai_scaled1x" title="Permalink to this definition">¶</a></dt>
 <dd><p>This routine computes a scaled version of the Airy function
 <span class="math">\(\operatorname{S_A}(x) \operatorname{Ai}(x)\)</span>. For <span class="math">\(x &gt; 0\)</span> the scaling
 factor <span class="math">\(\operatorname{S_A}(x)\)</span> is <span class="math">\(\exp(+(2/3) x^{3/2})\)</span>, and is <span class="math">\(1\)</span>
@@ -120,8 +120,8 @@ for <span class="math">\(x &lt; 0\)</span>.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="gsl_sf_airy_Bi_scaled">
-<tt class="descname">gsl_sf_airy_Bi_scaled</tt><big>(</big><em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_airy_Bi_scaled" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv221gsl_sf_airy_Bi_scaled1x">
+<span id="gsl_sf_airy_Bi_scaled__x"></span><code class="descclassname"></code><code class="descname">gsl_sf_airy_Bi_scaled</code><span class="sig-paren">(</span>x<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv221gsl_sf_airy_Bi_scaled1x" title="Permalink to this definition">¶</a></dt>
 <dd><p>This routine computes a scaled version of the Airy function
 <span class="math">\(\operatorname{S_B}(x) \operatorname{Bi}(x)\)</span>. For <span class="math">\(x &gt; 0\)</span> the scaling
 factor <span class="math">\(\operatorname{S_B}(x)\)</span> is <span class="math">\(\exp(-(2/3) x^{3/2})\)</span>, and is <span class="math">\(1\)</span>
@@ -132,15 +132,15 @@ for <span class="math">\(x &lt; 0\)</span>.</p>
 <div class="section" id="zeros-of-airy-functions">
 <h2>Zeros of Airy Functions<a class="headerlink" href="#zeros-of-airy-functions" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
-<dt id="gsl_sf_airy_zero_Ai">
-<tt class="descname">gsl_sf_airy_zero_Ai</tt><big>(</big><em>s</em><big>)</big><a class="headerlink" href="#gsl_sf_airy_zero_Ai" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv219gsl_sf_airy_zero_Ai1s">
+<span id="gsl_sf_airy_zero_Ai__s"></span><code class="descclassname"></code><code class="descname">gsl_sf_airy_zero_Ai</code><span class="sig-paren">(</span>s<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv219gsl_sf_airy_zero_Ai1s" title="Permalink to this definition">¶</a></dt>
 <dd><p>This routine computes the location of the <span class="math">\(s\)</span>-th zero of the Airy
 function <span class="math">\(\operatorname{Ai}(x)\)</span>.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="gsl_sf_airy_zero_Bi">
-<tt class="descname">gsl_sf_airy_zero_Bi</tt><big>(</big><em>s</em><big>)</big><a class="headerlink" href="#gsl_sf_airy_zero_Bi" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv219gsl_sf_airy_zero_Bi1s">
+<span id="gsl_sf_airy_zero_Bi__s"></span><code class="descclassname"></code><code class="descname">gsl_sf_airy_zero_Bi</code><span class="sig-paren">(</span>s<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv219gsl_sf_airy_zero_Bi1s" title="Permalink to this definition">¶</a></dt>
 <dd><p>This routine computes the location of the <span class="math">\(s\)</span>-th zero of the Airy
 function <span class="math">\(\operatorname{Bi}(x)\)</span>.</p>
 </dd></dl>
@@ -149,15 +149,15 @@ function <span class="math">\(\operatorname{Bi}(x)\)</span>.</p>
 <div class="section" id="zeros-of-derivatives-of-airy-functions">
 <h2>Zeros of Derivatives of Airy Functions<a class="headerlink" href="#zeros-of-derivatives-of-airy-functions" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
-<dt id="gsl_sf_airy_zero_Ai_deriv">
-<tt class="descname">gsl_sf_airy_zero_Ai_deriv</tt><big>(</big><em>s</em><big>)</big><a class="headerlink" href="#gsl_sf_airy_zero_Ai_deriv" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv225gsl_sf_airy_zero_Ai_deriv1s">
+<span id="gsl_sf_airy_zero_Ai_deriv__s"></span><code class="descclassname"></code><code class="descname">gsl_sf_airy_zero_Ai_deriv</code><span class="sig-paren">(</span>s<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv225gsl_sf_airy_zero_Ai_deriv1s" title="Permalink to this definition">¶</a></dt>
 <dd><p>This routine computes the location of the <span class="math">\(s\)</span>-th zero of the Airy
 function derivative <span class="math">\(\operatorname{Ai}'(x)\)</span>.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="gsl_sf_airy_zero_Bi_deriv">
-<tt class="descname">gsl_sf_airy_zero_Bi_deriv</tt><big>(</big><em>s</em><big>)</big><a class="headerlink" href="#gsl_sf_airy_zero_Bi_deriv" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv225gsl_sf_airy_zero_Bi_deriv1s">
+<span id="gsl_sf_airy_zero_Bi_deriv__s"></span><code class="descclassname"></code><code class="descname">gsl_sf_airy_zero_Bi_deriv</code><span class="sig-paren">(</span>s<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv225gsl_sf_airy_zero_Bi_deriv1s" title="Permalink to this definition">¶</a></dt>
 <dd><p>This routine computes the location of the <span class="math">\(s\)</span>-th zero of the Airy
 function derivative <span class="math">\(\operatorname{Bi}'(x)\)</span>.</p>
 </dd></dl>
@@ -171,7 +171,7 @@ function derivative <span class="math">\(\operatorname{Bi}'(x)\)</span>.</p>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -183,15 +183,15 @@ function derivative <span class="math">\(\operatorname{Bi}'(x)\)</span>.</p>
         <li class="right" >
           <a href="special.html" title="Special Functions"
              >previous</a> |</li>
-        <li><a href="../index.html">AMPL</a> &raquo;</li>
-          <li><a href="index.html" >AMPL bindings for the GNU Scientific Library</a> &raquo;</li>
-          <li><a href="special.html" >Special Functions</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">MP</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >AMPL Bindings for the GNU Scientific Library</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="special.html" >Special Functions</a> &raquo;</li> 
       </ul>
     </div>
 
-    <div class="footer">
-        &copy; Copyright 2012 AMPL Optimization, Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015 AMPL Optimization, Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3b3+.
     </div>
 <!-- Google Analytics -->
 <script>

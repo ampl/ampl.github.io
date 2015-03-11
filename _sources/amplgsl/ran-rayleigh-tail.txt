@@ -3,7 +3,7 @@
 
 The Rayleigh Tail Distribution
 ==============================
-   
+
 .. function:: gsl_ran_rayleigh_tail(a, sigma)
 
  This function returns a random variate from the tail of the Rayleigh
@@ -14,10 +14,9 @@ The Rayleigh Tail Distribution
    p(x) dx = {x \over \sigma^2} \exp ((a^2 - x^2) /(2 \sigma^2)) dx
 
  for :math:`x > a`.
-   
+
 .. function:: gsl_ran_rayleigh_tail_pdf(x, a, sigma)
 
  This function computes the probability density :math:`p(x)` at :math:`x` for a
  Rayleigh tail distribution with scale parameter ``sigma`` and lower
  limit ``a``, using the formula given above.
-   

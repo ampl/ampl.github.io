@@ -46,4 +46,3 @@ are based on the following papers,
   W. Fraser, J.F. Hart. Numerische Mathematik 12, 242-251 (1968).
 * *Rational Chebyshev Approximations for the Error Function*, W.J. Cody.
   Mathematics of Computation 23, n107, 631-637 (July 1969).
-   

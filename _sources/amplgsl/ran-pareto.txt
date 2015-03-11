@@ -3,32 +3,31 @@
 
 The Pareto Distribution
 =======================
-   
+
 .. function:: gsl_ran_pareto(a, b)
 
- This function returns a random variate from the `Pareto
- distribution`:index: of order ``a``. The distribution function is,
+ This function returns a random variate from the :index:`Pareto
+ distribution` of order ``a``. The distribution function is,
 
  .. math::
    p(x) dx = (a/b) / (x/b)^{a+1} dx
 
  for :math:`x \geq b`.
-   
+
 .. function:: gsl_ran_pareto_pdf(x, a, b)
 
  This function computes the probability density :math:`p(x)` at :math:`x` for a
  Pareto distribution with exponent ``a`` and scale ``b``, using the
  formula given above.
-   
+
 .. function:: gsl_cdf_pareto_P(x, a, b)
-   
+
 .. function:: gsl_cdf_pareto_Q(x, a, b)
-   
+
 .. function:: gsl_cdf_pareto_Pinv(P, a, b)
-   
+
 .. function:: gsl_cdf_pareto_Qinv(Q, a, b)
 
  These functions compute the cumulative distribution functions
  :math:`P(x), Q(x)` and their inverses for the Pareto distribution
  with exponent ``a`` and scale ``b``.
-   

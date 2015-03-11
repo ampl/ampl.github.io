@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Legendre Functions and Spherical Harmonics &mdash; AMPL Modeling Language for Mathematical Programming</title>
+    <title>Legendre Functions and Spherical Harmonics &mdash; MP None documentation</title>
     
     <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -23,14 +23,14 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="AMPL Modeling Language for Mathematical Programming" href="../index.html" />
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="MP None documentation" href="../index.html" />
     <link rel="up" title="Special Functions" href="special.html" />
     <link rel="next" title="Logarithm and Related Functions" href="log.html" />
     <link rel="prev" title="Lambert W Functions" href="lambert.html" /> 
   </head>
-  <body>
-    <div class="related">
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -42,12 +42,12 @@
         <li class="right" >
           <a href="lambert.html" title="Lambert W Functions"
              accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">AMPL</a> &raquo;</li>
-          <li><a href="index.html" >AMPL bindings for the GNU Scientific Library</a> &raquo;</li>
-          <li><a href="special.html" accesskey="U">Special Functions</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">MP</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >AMPL Bindings for the GNU Scientific Library</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="special.html" accesskey="U">Special Functions</a> &raquo;</li> 
       </ul>
     </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h3><a href="../index.html">Table Of Contents</a></h3>
   <ul>
@@ -85,7 +85,7 @@
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="legendre-functions-and-spherical-harmonics">
 <h1>Legendre Functions and Spherical Harmonics<a class="headerlink" href="#legendre-functions-and-spherical-harmonics" title="Permalink to this headline">¶</a></h1>
@@ -94,47 +94,47 @@ Abramowitz &amp; Stegun, Chapter 8.</p>
 <div class="section" id="legendre-polynomials">
 <span id="index-0"></span><h2>Legendre Polynomials<a class="headerlink" href="#legendre-polynomials" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
-<dt id="gsl_sf_legendre_P1">
-<tt class="descname">gsl_sf_legendre_P1</tt><big>(</big><em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_legendre_P1" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv218gsl_sf_legendre_P11x">
+<span id="gsl_sf_legendre_P1__x"></span><code class="descclassname"></code><code class="descname">gsl_sf_legendre_P1</code><span class="sig-paren">(</span>x<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv218gsl_sf_legendre_P11x" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="gsl_sf_legendre_P2">
-<tt class="descname">gsl_sf_legendre_P2</tt><big>(</big><em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_legendre_P2" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv218gsl_sf_legendre_P21x">
+<span id="gsl_sf_legendre_P2__x"></span><code class="descclassname"></code><code class="descname">gsl_sf_legendre_P2</code><span class="sig-paren">(</span>x<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv218gsl_sf_legendre_P21x" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="gsl_sf_legendre_P3">
-<tt class="descname">gsl_sf_legendre_P3</tt><big>(</big><em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_legendre_P3" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv218gsl_sf_legendre_P31x">
+<span id="gsl_sf_legendre_P3__x"></span><code class="descclassname"></code><code class="descname">gsl_sf_legendre_P3</code><span class="sig-paren">(</span>x<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv218gsl_sf_legendre_P31x" title="Permalink to this definition">¶</a></dt>
 <dd><p>These functions evaluate the Legendre polynomials <span class="math">\(P_l(x)\)</span> using
 explicit representations for <span class="math">\(l=1, 2, 3\)</span>.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="gsl_sf_legendre_Pl">
-<tt class="descname">gsl_sf_legendre_Pl</tt><big>(</big><em>l</em>, <em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_legendre_Pl" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv218gsl_sf_legendre_Pl1l1x">
+<span id="gsl_sf_legendre_Pl__l.x"></span><code class="descclassname"></code><code class="descname">gsl_sf_legendre_Pl</code><span class="sig-paren">(</span>l, x<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv218gsl_sf_legendre_Pl1l1x" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function evaluates the Legendre polynomial <span class="math">\(P_l(x)\)</span> for a
 specific value of integer parameter <span class="math">\(l\)</span>, <span class="math">\(x\)</span> subject to
 <span class="math">\(l \geq 0, |x| \leq 1\)</span>.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="gsl_sf_legendre_Q0">
-<tt class="descname">gsl_sf_legendre_Q0</tt><big>(</big><em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_legendre_Q0" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv218gsl_sf_legendre_Q01x">
+<span id="gsl_sf_legendre_Q0__x"></span><code class="descclassname"></code><code class="descname">gsl_sf_legendre_Q0</code><span class="sig-paren">(</span>x<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv218gsl_sf_legendre_Q01x" title="Permalink to this definition">¶</a></dt>
 <dd><p>This routine computes the Legendre function <span class="math">\(Q_0(x)\)</span> for
 <span class="math">\(x &gt; -1, x \ne 1\)</span>.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="gsl_sf_legendre_Q1">
-<tt class="descname">gsl_sf_legendre_Q1</tt><big>(</big><em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_legendre_Q1" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv218gsl_sf_legendre_Q11x">
+<span id="gsl_sf_legendre_Q1__x"></span><code class="descclassname"></code><code class="descname">gsl_sf_legendre_Q1</code><span class="sig-paren">(</span>x<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv218gsl_sf_legendre_Q11x" title="Permalink to this definition">¶</a></dt>
 <dd><p>This routine computes the Legendre function <span class="math">\(Q_1(x)\)</span> for
 <span class="math">\(x &gt; -1, x \ne 1\)</span>.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="gsl_sf_legendre_Ql">
-<tt class="descname">gsl_sf_legendre_Ql</tt><big>(</big><em>l</em>, <em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_legendre_Ql" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv218gsl_sf_legendre_Ql1l1x">
+<span id="gsl_sf_legendre_Ql__l.x"></span><code class="descclassname"></code><code class="descname">gsl_sf_legendre_Ql</code><span class="sig-paren">(</span>l, x<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv218gsl_sf_legendre_Ql1l1x" title="Permalink to this definition">¶</a></dt>
 <dd><p>This routine computes the Legendre function <span class="math">\(Q_l(x)\)</span> for
 <span class="math">\(x &gt; -1, x \ne 1\)</span> and <span class="math">\(l \geq 0\)</span>.</p>
 </dd></dl>
@@ -150,18 +150,18 @@ Rather than allow overflows, these functions refuse to calculate
 <span class="math">\(P_l^m(x)\)</span> and return an error when they can sense that <span class="math">\(l\)</span> and <span class="math">\(m\)</span>
 are too big.</p>
 <p>If you want to calculate a spherical harmonic, then do not use these
-functions. Instead use <tt class="docutils literal"><span class="pre">gsl_sf_legendre_sphPlm</span></tt> below, which uses a
+functions. Instead use <code class="docutils literal"><span class="pre">gsl_sf_legendre_sphPlm</span></code> below, which uses a
 similar recursion, but with the normalized functions.</p>
 <dl class="function">
-<dt id="gsl_sf_legendre_Plm">
-<tt class="descname">gsl_sf_legendre_Plm</tt><big>(</big><em>l</em>, <em>m</em>, <em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_legendre_Plm" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv219gsl_sf_legendre_Plm1l1m1x">
+<span id="gsl_sf_legendre_Plm__l.m.x"></span><code class="descclassname"></code><code class="descname">gsl_sf_legendre_Plm</code><span class="sig-paren">(</span>l, m, x<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv219gsl_sf_legendre_Plm1l1m1x" title="Permalink to this definition">¶</a></dt>
 <dd><p>This routine computes the associated Legendre polynomial
 <span class="math">\(P_l^m(x)\)</span> for <span class="math">\(m \geq 0, l \geq m, |x| \leq 1\)</span>.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="gsl_sf_legendre_sphPlm">
-<tt class="descname">gsl_sf_legendre_sphPlm</tt><big>(</big><em>l</em>, <em>m</em>, <em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_legendre_sphPlm" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv222gsl_sf_legendre_sphPlm1l1m1x">
+<span id="gsl_sf_legendre_sphPlm__l.m.x"></span><code class="descclassname"></code><code class="descname">gsl_sf_legendre_sphPlm</code><span class="sig-paren">(</span>l, m, x<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv222gsl_sf_legendre_sphPlm1l1m1x" title="Permalink to this definition">¶</a></dt>
 <dd><p>This routine computes the normalized associated Legendre polynomial
 <span class="math">\(\sqrt{(2l+1)/(4\pi)} \sqrt{(l-m)!/(l+m)!} P_l^m(x)\)</span> suitable for use
 in spherical harmonics. The parameters must satisfy
@@ -176,43 +176,43 @@ that occur for the standard normalization of <span class="math">\(P_l^m(x)\)</sp
 <span class="math">\(Q^\mu_{-(1/2)+i\lambda}\)</span> are described in Abramowitz &amp; Stegun,
 Section 8.12.</p>
 <dl class="function">
-<dt id="gsl_sf_conicalP_half">
-<tt class="descname">gsl_sf_conicalP_half</tt><big>(</big><em>lambda</em>, <em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_conicalP_half" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv220gsl_sf_conicalP_half6lambda1x">
+<span id="gsl_sf_conicalP_half__lambda.x"></span><code class="descclassname"></code><code class="descname">gsl_sf_conicalP_half</code><span class="sig-paren">(</span>lambda, x<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv220gsl_sf_conicalP_half6lambda1x" title="Permalink to this definition">¶</a></dt>
 <dd><p>This routine computes the irregular Spherical Conical Function
 <span class="math">\(P^{1/2}_{-1/2 + i \lambda}(x)\)</span> for <span class="math">\(x &gt; -1\)</span>.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="gsl_sf_conicalP_mhalf">
-<tt class="descname">gsl_sf_conicalP_mhalf</tt><big>(</big><em>lambda</em>, <em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_conicalP_mhalf" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv221gsl_sf_conicalP_mhalf6lambda1x">
+<span id="gsl_sf_conicalP_mhalf__lambda.x"></span><code class="descclassname"></code><code class="descname">gsl_sf_conicalP_mhalf</code><span class="sig-paren">(</span>lambda, x<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv221gsl_sf_conicalP_mhalf6lambda1x" title="Permalink to this definition">¶</a></dt>
 <dd><p>This routine computes the regular Spherical Conical Function
 <span class="math">\(P^{-1/2}_{-1/2 + i \lambda}(x)\)</span> for <span class="math">\(x &gt; -1\)</span>.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="gsl_sf_conicalP_0">
-<tt class="descname">gsl_sf_conicalP_0</tt><big>(</big><em>lambda</em>, <em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_conicalP_0" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv217gsl_sf_conicalP_06lambda1x">
+<span id="gsl_sf_conicalP_0__lambda.x"></span><code class="descclassname"></code><code class="descname">gsl_sf_conicalP_0</code><span class="sig-paren">(</span>lambda, x<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv217gsl_sf_conicalP_06lambda1x" title="Permalink to this definition">¶</a></dt>
 <dd><p>This routine computes the conical function
 <span class="math">\(P^0_{-1/2 + i \lambda}(x)\)</span> for <span class="math">\(x &gt; -1\)</span>.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="gsl_sf_conicalP_1">
-<tt class="descname">gsl_sf_conicalP_1</tt><big>(</big><em>lambda</em>, <em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_conicalP_1" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv217gsl_sf_conicalP_16lambda1x">
+<span id="gsl_sf_conicalP_1__lambda.x"></span><code class="descclassname"></code><code class="descname">gsl_sf_conicalP_1</code><span class="sig-paren">(</span>lambda, x<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv217gsl_sf_conicalP_16lambda1x" title="Permalink to this definition">¶</a></dt>
 <dd><p>This routine computes the conical function
 <span class="math">\(P^1_{-1/2 + i \lambda}(x)\)</span> for <span class="math">\(x &gt; -1\)</span>.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="gsl_sf_conicalP_sph_reg">
-<tt class="descname">gsl_sf_conicalP_sph_reg</tt><big>(</big><em>l</em>, <em>lambda</em>, <em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_conicalP_sph_reg" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv223gsl_sf_conicalP_sph_reg1l6lambda1x">
+<span id="gsl_sf_conicalP_sph_reg__l.lambda.x"></span><code class="descclassname"></code><code class="descname">gsl_sf_conicalP_sph_reg</code><span class="sig-paren">(</span>l, lambda, x<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv223gsl_sf_conicalP_sph_reg1l6lambda1x" title="Permalink to this definition">¶</a></dt>
 <dd><p>This routine computes the Regular Spherical Conical Function
 <span class="math">\(P^{-1/2-l}_{-1/2 + i \lambda}(x)\)</span> for <span class="math">\(x &gt; -1, l \geq -1\)</span>.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="gsl_sf_conicalP_cyl_reg">
-<tt class="descname">gsl_sf_conicalP_cyl_reg</tt><big>(</big><em>m</em>, <em>lambda</em>, <em>x</em><big>)</big><a class="headerlink" href="#gsl_sf_conicalP_cyl_reg" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv223gsl_sf_conicalP_cyl_reg1m6lambda1x">
+<span id="gsl_sf_conicalP_cyl_reg__m.lambda.x"></span><code class="descclassname"></code><code class="descname">gsl_sf_conicalP_cyl_reg</code><span class="sig-paren">(</span>m, lambda, x<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv223gsl_sf_conicalP_cyl_reg1m6lambda1x" title="Permalink to this definition">¶</a></dt>
 <dd><p>This routine computes the Regular Cylindrical Conical Function
 <span class="math">\(P^{-m}_{-1/2 + i \lambda}(x)\)</span> for <span class="math">\(x &gt; -1, m \geq -1\)</span>.</p>
 </dd></dl>
@@ -225,8 +225,8 @@ functions which give the regular eigenfunctions of the Laplacian
 on a 3-dimensional hyperbolic space H3d. Of particular interest is
 the flat limit, <span class="math">\(\lambda \to \infty, \eta \to 0, \lambda\eta\)</span> fixed.</p>
 <dl class="function">
-<dt id="gsl_sf_legendre_H3d_0">
-<tt class="descname">gsl_sf_legendre_H3d_0</tt><big>(</big><em>lambda</em>, <em>eta</em><big>)</big><a class="headerlink" href="#gsl_sf_legendre_H3d_0" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv221gsl_sf_legendre_H3d_06lambda3eta">
+<span id="gsl_sf_legendre_H3d_0__lambda.eta"></span><code class="descclassname"></code><code class="descname">gsl_sf_legendre_H3d_0</code><span class="sig-paren">(</span>lambda, eta<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv221gsl_sf_legendre_H3d_06lambda3eta" title="Permalink to this definition">¶</a></dt>
 <dd><p>This routine computes the zeroth radial eigenfunction of the
 Laplacian on the 3-dimensional hyperbolic space,</p>
 <div class="math">
@@ -237,8 +237,8 @@ Laplacian on the 3-dimensional hyperbolic space,</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="gsl_sf_legendre_H3d_1">
-<tt class="descname">gsl_sf_legendre_H3d_1</tt><big>(</big><em>lambda</em>, <em>eta</em><big>)</big><a class="headerlink" href="#gsl_sf_legendre_H3d_1" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv221gsl_sf_legendre_H3d_16lambda3eta">
+<span id="gsl_sf_legendre_H3d_1__lambda.eta"></span><code class="descclassname"></code><code class="descname">gsl_sf_legendre_H3d_1</code><span class="sig-paren">(</span>lambda, eta<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv221gsl_sf_legendre_H3d_16lambda3eta" title="Permalink to this definition">¶</a></dt>
 <dd><p>This routine computes the first radial eigenfunction of the
 Laplacian on the 3-dimensional hyperbolic space,</p>
 <div class="math">
@@ -250,8 +250,8 @@ Laplacian on the 3-dimensional hyperbolic space,</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="gsl_sf_legendre_H3d">
-<tt class="descname">gsl_sf_legendre_H3d</tt><big>(</big><em>l</em>, <em>lambda</em>, <em>eta</em><big>)</big><a class="headerlink" href="#gsl_sf_legendre_H3d" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv219gsl_sf_legendre_H3d1l6lambda3eta">
+<span id="gsl_sf_legendre_H3d__l.lambda.eta"></span><code class="descclassname"></code><code class="descname">gsl_sf_legendre_H3d</code><span class="sig-paren">(</span>l, lambda, eta<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv219gsl_sf_legendre_H3d1l6lambda3eta" title="Permalink to this definition">¶</a></dt>
 <dd><p>This routine computes the <span class="math">\(l\)</span>-th radial eigenfunction of the
 Laplacian on the 3-dimensional hyperbolic space <span class="math">\(\eta \geq 0, l \geq 0\)</span>.
 In the flat limit this takes the form
@@ -267,7 +267,7 @@ In the flat limit this takes the form
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -279,15 +279,15 @@ In the flat limit this takes the form
         <li class="right" >
           <a href="lambert.html" title="Lambert W Functions"
              >previous</a> |</li>
-        <li><a href="../index.html">AMPL</a> &raquo;</li>
-          <li><a href="index.html" >AMPL bindings for the GNU Scientific Library</a> &raquo;</li>
-          <li><a href="special.html" >Special Functions</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">MP</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >AMPL Bindings for the GNU Scientific Library</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="special.html" >Special Functions</a> &raquo;</li> 
       </ul>
     </div>
 
-    <div class="footer">
-        &copy; Copyright 2012 AMPL Optimization, Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015 AMPL Optimization, Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3b3+.
     </div>
 <!-- Google Analytics -->
 <script>

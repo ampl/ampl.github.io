@@ -3,31 +3,30 @@
 
 The Laplace Distribution
 ========================
-   
+
 .. function:: gsl_ran_laplace(a)
 
- This function returns a random variate from the `Laplace
- distribution`:index: with width ``a``. The distribution is,
+ This function returns a random variate from the :index:`Laplace
+ distribution` with width ``a``. The distribution is,
 
  .. math::
    p(x) dx = {1 \over 2 a}  \exp(-|x/a|) dx
 
  for :math:`-\infty < x < \infty`.
-   
+
 .. function:: gsl_ran_laplace_pdf(x, a)
 
  This function computes the probability density :math:`p(x)` at :math:`x` for a
  Laplace distribution with width ``a``, using the formula given above.
-   
+
 .. function:: gsl_ran_laplace_P(x, a)
-   
+
 .. function:: gsl_ran_laplace_Q(x, a)
-   
+
 .. function:: gsl_ran_laplace_Pinv(P, a)
-   
+
 .. function:: gsl_ran_laplace_Qinv(Q, a)
 
  These functions compute the cumulative distribution functions
  :math:`P(x), Q(x)` and their inverses for the Laplace distribution
  with width ``a``.
-   

@@ -5,7 +5,7 @@ Dilogarithm
 ===========
 
 .. index:: dilogarithm
-   
+
 .. function:: gsl_sf_dilog(x)
 
  This routine computes the dilogarithm for a real argument. In Lewin's
@@ -18,4 +18,3 @@ Dilogarithm
  Note that Abramowitz & Stegun refer to the Spence integral
  :math:`S(x)=\operatorname{Li}_2(1-x)` as the dilogarithm rather than
  :math:`\operatorname{Li}_2(x)`.
-   

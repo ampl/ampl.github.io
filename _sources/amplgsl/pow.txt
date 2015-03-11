@@ -5,7 +5,7 @@ Power Function
 ==============
 
 .. index:: power function
-   
+
 .. function:: gsl_sf_pow_int(x, n)
 
  This routine computes the power :math:`x^n` for integer :math:`n`. The power is
@@ -19,4 +19,3 @@ Power Function
    include gsl.ampl;
    # compute and print 3**12
    print gsl_sf_pow_int(3, 12);
-   

@@ -4,63 +4,62 @@
 Zeta Functions
 ==============
 
-The `Riemann zeta function`:index: is defined in Abramowitz & Stegun,
+The :index:`Riemann zeta function` is defined in Abramowitz & Stegun,
 Section 23.2.
 
 .. index:: zeta function
-   
+
 Riemann Zeta Function
 ---------------------
 
 The Riemann zeta function is defined by the infinite sum
 :math:`\zeta(s) = \sum_{k=1}^\infty k^{-s}`.
-   
+
 .. function:: gsl_sf_zeta_int(n)
 
  This routine computes the Riemann zeta function :math:`\zeta(n)` for integer
  :math:`n, n \ne 1`.
-   
+
 .. function:: gsl_sf_zeta(s)
 
  This routine computes the Riemann zeta function :math:`\zeta(s)` for arbitrary
  :math:`s, s \ne 1`.
-   
+
 Riemann Zeta Function Minus One
 -------------------------------
 
 For large positive argument, the Riemann zeta function approaches one.
 In this region the fractional part is interesting, and therefore we need
 a function to evaluate it explicitly.
-   
+
 .. function:: gsl_sf_zetam1_int(n)
 
  This routine computes :math:`\zeta(n) - 1` for integer :math:`n, n \ne 1`.
-   
+
 .. function:: gsl_sf_zetam1(s)
 
  This routine computes :math:`\zeta(s) - 1` for arbitrary :math:`s, s \ne 1.`.
-   
+
 Hurwitz Zeta Function
 ---------------------
 
-The `Hurwitz zeta function`:index: is defined by
+The :index:`Hurwitz zeta function` is defined by
 :math:`\zeta(s,q) = \sum_0^\infty (k+q)^{-s}`.
-   
+
 .. function:: gsl_sf_hzeta(s, q)
 
  This routine computes the Hurwitz zeta function :math:`\zeta(s,q)` for
  :math:`s > 1, q > 0`.
-   
+
 Eta Function
 ------------
 
-The `eta function`:index: is defined by :math:`\eta(s) = (1-2^{1-s}) \zeta(s)`.
-   
+The :index:`eta function` is defined by :math:`\eta(s) = (1-2^{1-s}) \zeta(s)`.
+
 .. function:: gsl_sf_eta_int(n)
 
  This routine computes the eta function :math:`\eta(n)` for integer :math:`n`.
-   
+
 .. function:: gsl_sf_eta(s)
 
  This routine computes the eta function :math:`\eta(s)` for arbitrary :math:`s`.
-   
