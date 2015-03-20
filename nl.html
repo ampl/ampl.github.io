@@ -118,8 +118,8 @@ template &lt;typename Handler&gt;</dt>
 and sends notifications of the problem components to the <em>handler</em> object.</p>
 <p>The <em>filename</em> argument can be a C string or an <code class="docutils literal"><span class="pre">std::string</span></code> object.
 <em>flags</em> can be either 0, which is the default, to read all constructs in
-the order they appear in the input, or <a class="reference internal" href="#_CPPv2N2mp17READ_BOUNDS_FIRSTE" title="mp::READ_BOUNDS_FIRST"><code class="xref cpp cpp-member docutils literal"><span class="pre">mp::READ_BOUNDS_FIRST</span></code></a> to
-read variable bounds after the NL header and before other constructs such as
+the order they appear in the input, or <a class="reference internal" href="#_CPPv2N2mp17READ_BOUNDS_FIRSTE" title="mp::READ_BOUNDS_FIRST"><code class="xref cpp cpp-any docutils literal"><span class="pre">mp::READ_BOUNDS_FIRST</span></code></a> to read
+variable bounds after the NL header and before other constructs such as
 nonlinear expressions.</p>
 <p><strong>Example</strong>:</p>
 <div class="highlight-c++"><div class="highlight"><pre><span class="c1">// Count the number of variable references in all nonlinear expressions.</span>
@@ -149,8 +149,8 @@ and sends notifications of the problem components to the <em>handler</em> object
 <p>Both <em>str</em> and <em>name</em> can be C strings or <code class="docutils literal"><span class="pre">std::string</span></code> objects.
 The <em>name</em> argument is used as the name of the input when reporting errors.
 <em>flags</em> can be either 0, which is the default, to read all constructs in
-the order they appear in the input, or <a class="reference internal" href="#_CPPv2N2mp17READ_BOUNDS_FIRSTE" title="mp::READ_BOUNDS_FIRST"><code class="xref cpp cpp-member docutils literal"><span class="pre">mp::READ_BOUNDS_FIRST</span></code></a> to
-read variable bounds after the NL header and before other constructs such as
+the order they appear in the input, or <a class="reference internal" href="#_CPPv2N2mp17READ_BOUNDS_FIRSTE" title="mp::READ_BOUNDS_FIRST"><code class="xref cpp cpp-any docutils literal"><span class="pre">mp::READ_BOUNDS_FIRST</span></code></a> to read
+variable bounds after the NL header and before other constructs such as
 nonlinear expressions.</p>
  </p>
 </dd></dl>
@@ -174,8 +174,8 @@ nonlinear expressions.</p>
 <dt id="_CPPv2N2mp9NLHandlerI8ExprTypeE11NumericExprE">
 <span id="mp::NLHandler:ExprType:::NumericExpr"></span><span class="target" id="project0classmp_1_1NLHandler_1a7f6d90e849ebafb5ffeb8d73ca32eaed"></span><em class="property">typedef </em><a class="reference internal" href="#_CPPv2N2mp9NLHandlerI8ExprTypeE4ExprE" title="mp::NLHandler&lt;ExprType&gt;::Expr">Expr</a> <code class="descname">NumericExpr</code><a class="headerlink" href="#_CPPv2N2mp9NLHandlerI8ExprTypeE11NumericExprE" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>A numeric expression type.
-It is a typedef of <a class="reference internal" href="#_CPPv2N2mp9NLHandlerI8ExprTypeE4ExprE" title="mp::NLHandler&lt;ExprType&gt;::Expr"><code class="xref cpp cpp-type docutils literal"><span class="pre">Expr</span></code></a> but subclasses may define it as a different type
-convertible to <a class="reference internal" href="#_CPPv2N2mp9NLHandlerI8ExprTypeE4ExprE" title="mp::NLHandler&lt;ExprType&gt;::Expr"><code class="xref cpp cpp-type docutils literal"><span class="pre">Expr</span></code></a>.</p>
+It is a typedef of <a class="reference internal" href="#_CPPv2N2mp9NLHandlerI8ExprTypeE4ExprE" title="mp::NLHandler&lt;ExprType&gt;::Expr"><code class="xref cpp cpp-any docutils literal"><span class="pre">Expr</span></code></a> but subclasses may define it as a different type
+convertible to <a class="reference internal" href="#_CPPv2N2mp9NLHandlerI8ExprTypeE4ExprE" title="mp::NLHandler&lt;ExprType&gt;::Expr"><code class="xref cpp cpp-any docutils literal"><span class="pre">Expr</span></code></a>.</p>
  </p>
 </dd></dl>
 
@@ -183,8 +183,8 @@ convertible to <a class="reference internal" href="#_CPPv2N2mp9NLHandlerI8ExprTy
 <dt id="_CPPv2N2mp9NLHandlerI8ExprTypeE11LogicalExprE">
 <span id="mp::NLHandler:ExprType:::LogicalExpr"></span><span class="target" id="project0classmp_1_1NLHandler_1aba573b280216c241b75cdacfdd072f35"></span><em class="property">typedef </em><a class="reference internal" href="#_CPPv2N2mp9NLHandlerI8ExprTypeE4ExprE" title="mp::NLHandler&lt;ExprType&gt;::Expr">Expr</a> <code class="descname">LogicalExpr</code><a class="headerlink" href="#_CPPv2N2mp9NLHandlerI8ExprTypeE11LogicalExprE" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>A logical expression type.
-It is a typedef of <a class="reference internal" href="#_CPPv2N2mp9NLHandlerI8ExprTypeE4ExprE" title="mp::NLHandler&lt;ExprType&gt;::Expr"><code class="xref cpp cpp-type docutils literal"><span class="pre">Expr</span></code></a> but subclasses may define it as a different type
-convertible to <a class="reference internal" href="#_CPPv2N2mp9NLHandlerI8ExprTypeE4ExprE" title="mp::NLHandler&lt;ExprType&gt;::Expr"><code class="xref cpp cpp-type docutils literal"><span class="pre">Expr</span></code></a>.</p>
+It is a typedef of <a class="reference internal" href="#_CPPv2N2mp9NLHandlerI8ExprTypeE4ExprE" title="mp::NLHandler&lt;ExprType&gt;::Expr"><code class="xref cpp cpp-any docutils literal"><span class="pre">Expr</span></code></a> but subclasses may define it as a different type
+convertible to <a class="reference internal" href="#_CPPv2N2mp9NLHandlerI8ExprTypeE4ExprE" title="mp::NLHandler&lt;ExprType&gt;::Expr"><code class="xref cpp cpp-any docutils literal"><span class="pre">Expr</span></code></a>.</p>
  </p>
 </dd></dl>
 
@@ -192,8 +192,8 @@ convertible to <a class="reference internal" href="#_CPPv2N2mp9NLHandlerI8ExprTy
 <dt id="_CPPv2N2mp9NLHandlerI8ExprTypeE9CountExprE">
 <span id="mp::NLHandler:ExprType:::CountExpr"></span><span class="target" id="project0classmp_1_1NLHandler_1a88b5fa23d97f581a5eb1be501eec6eea"></span><em class="property">typedef </em><a class="reference internal" href="#_CPPv2N2mp9NLHandlerI8ExprTypeE4ExprE" title="mp::NLHandler&lt;ExprType&gt;::Expr">Expr</a> <code class="descname">CountExpr</code><a class="headerlink" href="#_CPPv2N2mp9NLHandlerI8ExprTypeE9CountExprE" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>A count expression type.
-It is a typedef of <a class="reference internal" href="#_CPPv2N2mp9NLHandlerI8ExprTypeE4ExprE" title="mp::NLHandler&lt;ExprType&gt;::Expr"><code class="xref cpp cpp-type docutils literal"><span class="pre">Expr</span></code></a> but subclasses may define it as a different type
-convertible to <a class="reference internal" href="#_CPPv2N2mp9NLHandlerI8ExprTypeE11NumericExprE" title="mp::NLHandler&lt;ExprType&gt;::NumericExpr"><code class="xref cpp cpp-type docutils literal"><span class="pre">NumericExpr</span></code></a>.</p>
+It is a typedef of <a class="reference internal" href="#_CPPv2N2mp9NLHandlerI8ExprTypeE4ExprE" title="mp::NLHandler&lt;ExprType&gt;::Expr"><code class="xref cpp cpp-any docutils literal"><span class="pre">Expr</span></code></a> but subclasses may define it as a different type
+convertible to <a class="reference internal" href="#_CPPv2N2mp9NLHandlerI8ExprTypeE11NumericExprE" title="mp::NLHandler&lt;ExprType&gt;::NumericExpr"><code class="xref cpp cpp-any docutils literal"><span class="pre">NumericExpr</span></code></a>.</p>
  </p>
 </dd></dl>
 
@@ -201,8 +201,8 @@ convertible to <a class="reference internal" href="#_CPPv2N2mp9NLHandlerI8ExprTy
 <dt id="_CPPv2N2mp9NLHandlerI8ExprTypeE9ReferenceE">
 <span id="mp::NLHandler:ExprType:::Reference"></span><span class="target" id="project0classmp_1_1NLHandler_1a57a9e220cc9ae203bed9375ead4c0985"></span><em class="property">typedef </em><a class="reference internal" href="#_CPPv2N2mp9NLHandlerI8ExprTypeE4ExprE" title="mp::NLHandler&lt;ExprType&gt;::Expr">Expr</a> <code class="descname">Reference</code><a class="headerlink" href="#_CPPv2N2mp9NLHandlerI8ExprTypeE9ReferenceE" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>A reference expression type.
-It is a typedef of <a class="reference internal" href="#_CPPv2N2mp9NLHandlerI8ExprTypeE4ExprE" title="mp::NLHandler&lt;ExprType&gt;::Expr"><code class="xref cpp cpp-type docutils literal"><span class="pre">Expr</span></code></a> but subclasses may define it as a different type
-convertible to <a class="reference internal" href="#_CPPv2N2mp9NLHandlerI8ExprTypeE11NumericExprE" title="mp::NLHandler&lt;ExprType&gt;::NumericExpr"><code class="xref cpp cpp-type docutils literal"><span class="pre">NumericExpr</span></code></a>.</p>
+It is a typedef of <a class="reference internal" href="#_CPPv2N2mp9NLHandlerI8ExprTypeE4ExprE" title="mp::NLHandler&lt;ExprType&gt;::Expr"><code class="xref cpp cpp-any docutils literal"><span class="pre">Expr</span></code></a> but subclasses may define it as a different type
+convertible to <a class="reference internal" href="#_CPPv2N2mp9NLHandlerI8ExprTypeE11NumericExprE" title="mp::NLHandler&lt;ExprType&gt;::NumericExpr"><code class="xref cpp cpp-any docutils literal"><span class="pre">NumericExpr</span></code></a>.</p>
  </p>
 </dd></dl>
 
@@ -252,8 +252,8 @@ expression</span></a> arguments.</p>
 <dl class="type">
 <dt id="_CPPv2N2mp9NLHandlerI8ExprTypeE15CountArgHandlerE">
 <span id="mp::NLHandler:ExprType:::CountArgHandler"></span><span class="target" id="project0classmp_1_1NLHandler_1a099f1ea9bd0886807dc7d50e8392af0a"></span><em class="property">typedef </em>ArgHandler <code class="descname">CountArgHandler</code><a class="headerlink" href="#_CPPv2N2mp9NLHandlerI8ExprTypeE15CountArgHandlerE" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>A typedef of a class that receives notifications of <span class="xref std std-ref">count
-expression</span> arguments.</p>
+<dd><p><p>A typedef of a class that receives notifications of <a class="reference internal" href="common.html#count-expr"><span>count
+expression</span></a> arguments.</p>
  </p>
 </dd></dl>
 
@@ -514,14 +514,14 @@ in a nonlinear expression.</p>
 <dl class="function">
 <dt id="_CPPv2N2mp9NLHandlerI8ExprTypeE10BeginCountEi">
 <span id="mp::NLHandler:ExprType:::BeginCount__i"></span><span class="target" id="project0classmp_1_1NLHandler_1a8a89b1455f991967c80e111e2842c8fb"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandlerI8ExprTypeE15CountArgHandlerE" title="mp::NLHandler&lt;ExprType&gt;::CountArgHandler">CountArgHandler</a> <code class="descname">BeginCount</code><span class="sig-paren">(</span>int <em>num_args</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandlerI8ExprTypeE10BeginCountEi" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>Receives notification of the beginning of a <span class="xref std std-ref">count expression</span>.</p>
+<dd><p><p>Receives notification of the beginning of a <a class="reference internal" href="common.html#count-expr"><span>count expression</span></a>.</p>
  </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv2N2mp9NLHandlerI8ExprTypeE8EndCountE15CountArgHandler">
 <span id="mp::NLHandler:ExprType:::EndCount__CountArgHandler"></span><span class="target" id="project0classmp_1_1NLHandler_1a3556c1db5db5747ed0d4bde3fca3c9c0"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandlerI8ExprTypeE9CountExprE" title="mp::NLHandler&lt;ExprType&gt;::CountExpr">CountExpr</a> <code class="descname">EndCount</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv2N2mp9NLHandlerI8ExprTypeE15CountArgHandlerE" title="mp::NLHandler&lt;ExprType&gt;::CountArgHandler">CountArgHandler</a> <em>handler</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandlerI8ExprTypeE8EndCountE15CountArgHandler" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>Receives notification of the end of a <span class="xref std std-ref">count expression</span>.</p>
+<dd><p><p>Receives notification of the end of a <a class="reference internal" href="common.html#count-expr"><span>count expression</span></a>.</p>
  </p>
 </dd></dl>
 
@@ -542,22 +542,22 @@ in a nonlinear expression.</p>
 <dl class="function">
 <dt id="_CPPv2N2mp9NLHandlerI8ExprTypeE21BeginSymbolicNumberOfEi4Expr">
 <span id="mp::NLHandler:ExprType:::BeginSymbolicNumberOf__i.Expr"></span><span class="target" id="project0classmp_1_1NLHandler_1a115b86bacbf2049e62bf738898676849"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandlerI8ExprTypeE18SymbolicArgHandlerE" title="mp::NLHandler&lt;ExprType&gt;::SymbolicArgHandler">SymbolicArgHandler</a> <code class="descname">BeginSymbolicNumberOf</code><span class="sig-paren">(</span>int <em>num_args</em>, <a class="reference internal" href="#_CPPv2N2mp9NLHandlerI8ExprTypeE4ExprE" title="mp::NLHandler&lt;ExprType&gt;::Expr">Expr</a> <em>arg0</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandlerI8ExprTypeE21BeginSymbolicNumberOfEi4Expr" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>Receives notification of the beginning of a <span class="xref std std-ref">symbolic numberof
-expression</span>.</p>
+<dd><p><p>Receives notification of the beginning of a <a class="reference internal" href="common.html#numberof-sym-expr"><span>symbolic numberof
+expression</span></a>.</p>
  </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv2N2mp9NLHandlerI8ExprTypeE19EndSymbolicNumberOfE18SymbolicArgHandler">
 <span id="mp::NLHandler:ExprType:::EndSymbolicNumberOf__SymbolicArgHandler"></span><span class="target" id="project0classmp_1_1NLHandler_1aceee3bc47ca093b7d08919169ddb3c42"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandlerI8ExprTypeE11NumericExprE" title="mp::NLHandler&lt;ExprType&gt;::NumericExpr">NumericExpr</a> <code class="descname">EndSymbolicNumberOf</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv2N2mp9NLHandlerI8ExprTypeE18SymbolicArgHandlerE" title="mp::NLHandler&lt;ExprType&gt;::SymbolicArgHandler">SymbolicArgHandler</a> <em>handler</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandlerI8ExprTypeE19EndSymbolicNumberOfE18SymbolicArgHandler" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>Receives notification of the end of a <span class="xref std std-ref">symbolic numberof expression</span>.</p>
+<dd><p><p>Receives notification of the end of a <a class="reference internal" href="common.html#numberof-sym-expr"><span>symbolic numberof expression</span></a>.</p>
  </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv2N2mp9NLHandlerI8ExprTypeE17OnLogicalConstantEb">
 <span id="mp::NLHandler:ExprType:::OnLogicalConstant__b"></span><span class="target" id="project0classmp_1_1NLHandler_1ae9b7ed0a909258899e2db5bcf45734c9"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandlerI8ExprTypeE11LogicalExprE" title="mp::NLHandler&lt;ExprType&gt;::LogicalExpr">LogicalExpr</a> <code class="descname">OnLogicalConstant</code><span class="sig-paren">(</span>bool <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandlerI8ExprTypeE17OnLogicalConstantEb" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>Receives notification of a <a class="reference internal" href="common.html#logical-constant"><span>logical constant</span></a>.</p>
+<dd><p><p>Receives notification of a <a class="reference internal" href="common.html#bool"><span>logical constant</span></a>.</p>
  </p>
 </dd></dl>
 
@@ -636,7 +636,7 @@ The <em>value</em> argument is a string value and it is not zero terminated.</p>
 <dl class="function">
 <dt id="_CPPv2N2mp9NLHandlerI8ExprTypeE12OnSymbolicIfE11LogicalExpr4Expr4Expr">
 <span id="mp::NLHandler:ExprType:::OnSymbolicIf__LogicalExpr.Expr.Expr"></span><span class="target" id="project0classmp_1_1NLHandler_1a00234b40bb6e019d10a1e806f3f1a800"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandlerI8ExprTypeE4ExprE" title="mp::NLHandler&lt;ExprType&gt;::Expr">Expr</a> <code class="descname">OnSymbolicIf</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv2N2mp9NLHandlerI8ExprTypeE11LogicalExprE" title="mp::NLHandler&lt;ExprType&gt;::LogicalExpr">LogicalExpr</a> <em>condition</em>, <a class="reference internal" href="#_CPPv2N2mp9NLHandlerI8ExprTypeE4ExprE" title="mp::NLHandler&lt;ExprType&gt;::Expr">Expr</a> <em>true_expr</em>, <a class="reference internal" href="#_CPPv2N2mp9NLHandlerI8ExprTypeE4ExprE" title="mp::NLHandler&lt;ExprType&gt;::Expr">Expr</a> <em>false_expr</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandlerI8ExprTypeE12OnSymbolicIfE11LogicalExpr4Expr4Expr" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>Receives notification of a <a class="reference internal" href="common.html#symbolic-if-expr"><span>symbolic if expression</span></a>.</p>
+<dd><p><p>Receives notification of a <a class="reference internal" href="common.html#ifsym"><span>symbolic if expression</span></a>.</p>
  </p>
 </dd></dl>
 
@@ -645,9 +645,8 @@ The <em>value</em> argument is a string value and it is not zero terminated.</p>
 <dt id="_CPPv2N2mp9NLHandler10ArgHandlerE">
 <span id="mp::NLHandler::ArgHandler"></span><span class="target" id="project0structmp_1_1NLHandler_1_1ArgHandler"></span><em class="property">struct </em><code class="descname">ArgHandler</code><a class="headerlink" href="#_CPPv2N2mp9NLHandler10ArgHandlerE" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>A class (struct) that receives notifications of expression arguments.
-All argument handlers in <a class="reference internal" href="#_CPPv2N2mp9NLHandlerE" title="mp::NLHandler"><code class="xref cpp cpp-class docutils literal"><span class="pre">mp::NLHandler</span></code></a> are typedefs of this class,
-but subclasses of <a class="reference internal" href="#_CPPv2N2mp9NLHandlerE" title="mp::NLHandler"><code class="xref cpp cpp-class docutils literal"><span class="pre">mp::NLHandler</span></code></a> may define them as different
-classes.</p>
+All argument handlers in <a class="reference internal" href="#_CPPv2N2mp9NLHandlerE" title="mp::NLHandler"><code class="xref cpp cpp-any docutils literal"><span class="pre">mp::NLHandler</span></code></a> are typedefs of this class, but
+subclasses of <a class="reference internal" href="#_CPPv2N2mp9NLHandlerE" title="mp::NLHandler"><code class="xref cpp cpp-any docutils literal"><span class="pre">mp::NLHandler</span></code></a> may define them as different classes.</p>
  </p>
 <div class="breathe-sectiondef container">
 <p class="breathe-sectiondef-title rubric">Public Functions</p>
@@ -751,7 +750,7 @@ classes.</p>
 <dd><p><p>An NL <a class="reference external" href="http://en.wikipedia.org/wiki/Header_(computing)">header</a>
 which contains information about problem dimensions, such as the number of
 variables and constraints, and the input format.</p>
-<p>Base class: <a class="reference internal" href="common.html#_CPPv2N2mp11ProblemInfoE" title="mp::ProblemInfo"><code class="xref cpp cpp-class docutils literal"><span class="pre">mp::ProblemInfo</span></code></a></p>
+<p>Base class: <a class="reference internal" href="common.html#_CPPv2N2mp11ProblemInfoE" title="mp::ProblemInfo"><code class="xref cpp cpp-any docutils literal"><span class="pre">mp::ProblemInfo</span></code></a></p>
  </p>
 <div class="breathe-sectiondef container">
 <p class="breathe-sectiondef-title rubric">Public Types</p>
@@ -824,14 +823,14 @@ variables and constraints, and the input format.</p>
 <dd><p><p>Floating-point arithmetic kind used with binary format to check
 if an .nl file is written using a compatible representation of
 floating-point numbers. It is not used with the text format and normally
-set to <a class="reference internal" href="#_CPPv2N2mp5arith7UNKNOWNE" title="mp::arith::UNKNOWN"><code class="xref cpp cpp-member docutils literal"><span class="pre">mp::arith::UNKNOWN</span></code></a> there.</p>
+set to <a class="reference internal" href="#_CPPv2N2mp5arith7UNKNOWNE" title="mp::arith::UNKNOWN"><code class="xref cpp cpp-any docutils literal"><span class="pre">mp::arith::UNKNOWN</span></code></a> there.</p>
  </p>
 </dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp8NLHeader5flagsE">
 <span id="mp::NLHeader::flags__i"></span><span class="target" id="project0structmp_1_1NLHeader_1a35feeaf6ccf91aa8982c145ec5ae86c8"></span>int <code class="descname">flags</code><a class="headerlink" href="#_CPPv2N2mp8NLHeader5flagsE" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>Flags. Can be either 0 or <a class="reference internal" href="#_CPPv2N2mp8NLHeader20WANT_OUTPUT_SUFFIXESE" title="mp::NLHeader::WANT_OUTPUT_SUFFIXES"><code class="xref cpp cpp-member docutils literal"><span class="pre">mp::NLHeader::WANT_OUTPUT_SUFFIXES</span></code></a>.</p>
+<dd><p><p>Flags. Can be either 0 or <a class="reference internal" href="#_CPPv2N2mp8NLHeader20WANT_OUTPUT_SUFFIXESE" title="mp::NLHeader::WANT_OUTPUT_SUFFIXES"><code class="xref cpp cpp-any docutils literal"><span class="pre">mp::NLHeader::WANT_OUTPUT_SUFFIXES</span></code></a>.</p>
  </p>
 </dd></dl>
 

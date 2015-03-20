@@ -469,24 +469,33 @@ is a variable.</p>
 <dl class="member">
 <dt id="_CPPv2N2mp4expr13FIRST_LOGICALE">
 <span id="mp::expr::FIRST_LOGICAL"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a9652e3b908e27b92a88157f02bc6cf8a"></span><code class="descname">FIRST_LOGICAL</code><a class="headerlink" href="#_CPPv2N2mp4expr13FIRST_LOGICALE" title="Permalink to this definition">¶</a></dt>
-<dd><p><span class="target" id="id1"></span><span class="target" id="id2"></span><span class="target" id="logical-expr"></span><span class="target" id="logical-constant"></span><span class="target" id="not-expr"></span><span class="target" id="binary-logical-expr"></span><span class="target" id="relational-expr"></span><span class="target" id="logical-count-expr"></span><span class="target" id="implication-expr"></span><span class="target" id="iterated-logical-expr"></span><span class="target" id="pairwise-expr"></span><span class="target" id="string-expr"></span><span class="target" id="symbolic-if-expr"></span><p>A logical expression.</p>
+<dd><p><span class="target" id="logical-expr"></span><p>A logical expression.</p>
  </p>
 </dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr4BOOLE">
 <span id="mp::expr::BOOL"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a860dbfd9449b56a29675b14c39baa5fa"></span><code class="descname">BOOL</code> =  FIRST_LOGICAL<a class="headerlink" href="#_CPPv2N2mp4expr4BOOLE" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p><span class="target" id="bool"></span><p>A Boolean (logical) constant such as <code class="docutils literal"><span class="pre">0</span></code> or <code class="docutils literal"><span class="pre">1</span></code>.</p>
+ </p>
+</dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr3NOTE">
 <span id="mp::expr::NOT"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a3683ecd7076a6a507e38f2634e3a947e"></span><code class="descname">NOT</code><a class="headerlink" href="#_CPPv2N2mp4expr3NOTE" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p><span class="target" id="not-expr"></span><p>A logical NOT expression.
+Example: <code class="docutils literal"><span class="pre">not</span> <span class="pre">a</span></code>, where <code class="docutils literal"><span class="pre">a</span></code> is a logical expression.</p>
+ </p>
+</dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr20FIRST_BINARY_LOGICALE">
 <span id="mp::expr::FIRST_BINARY_LOGICAL"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618ab42517e314843a80215bf10237149a0b"></span><code class="descname">FIRST_BINARY_LOGICAL</code><a class="headerlink" href="#_CPPv2N2mp4expr20FIRST_BINARY_LOGICALE" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p><span class="target" id="binary-logical-expr"></span><p>A binary logical expression.
+Examples: <code class="docutils literal"><span class="pre">a</span> <span class="pre">||</span> <span class="pre">b</span></code>, <code class="docutils literal"><span class="pre">a</span> <span class="pre">&amp;&amp;</span> <span class="pre">b</span></code>, where <code class="docutils literal"><span class="pre">a</span></code> and <code class="docutils literal"><span class="pre">b</span></code> are logical
+expressions.</p>
+ </p>
+</dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr2ORE">
@@ -511,7 +520,11 @@ is a variable.</p>
 <dl class="member">
 <dt id="_CPPv2N2mp4expr16FIRST_RELATIONALE">
 <span id="mp::expr::FIRST_RELATIONAL"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a81b5e08d76254e45ebe6fe27f7befd05"></span><code class="descname">FIRST_RELATIONAL</code><a class="headerlink" href="#_CPPv2N2mp4expr16FIRST_RELATIONALE" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p><span class="target" id="relational-expr"></span><p>A relational expression.
+Examples: <code class="docutils literal"><span class="pre">a</span> <span class="pre">&lt;</span> <span class="pre">b</span></code>, <code class="docutils literal"><span class="pre">a</span> <span class="pre">!=</span> <span class="pre">b</span></code>, where <code class="docutils literal"><span class="pre">a</span></code> and <code class="docutils literal"><span class="pre">b</span></code> are numeric
+expressions.</p>
+ </p>
+</dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr2LTE">
@@ -551,7 +564,11 @@ is a variable.</p>
 <dl class="member">
 <dt id="_CPPv2N2mp4expr19FIRST_LOGICAL_COUNTE">
 <span id="mp::expr::FIRST_LOGICAL_COUNT"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a06369453ef1ffff81cb9dea0115f0357"></span><code class="descname">FIRST_LOGICAL_COUNT</code><a class="headerlink" href="#_CPPv2N2mp4expr19FIRST_LOGICAL_COUNTE" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p><span class="target" id="logical-count-expr"></span><p>A logical count expression.
+Examples: <code class="docutils literal"><span class="pre">atleast</span> <span class="pre">1</span> <span class="pre">(a</span> <span class="pre">&lt;</span> <span class="pre">b,</span> <span class="pre">a</span> <span class="pre">!=</span> <span class="pre">b)</span></code>, where <code class="docutils literal"><span class="pre">a</span></code> and <code class="docutils literal"><span class="pre">b</span></code> are
+numeric expressions.</p>
+ </p>
+</dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr7ATLEASTE">
@@ -591,12 +608,20 @@ is a variable.</p>
 <dl class="member">
 <dt id="_CPPv2N2mp4expr11IMPLICATIONE">
 <span id="mp::expr::IMPLICATION"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a040cfb2626f1d0c58b1557f3688bdc1a"></span><code class="descname">IMPLICATION</code><a class="headerlink" href="#_CPPv2N2mp4expr11IMPLICATIONE" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p><span class="target" id="implication-expr"></span><p>An implication expression.
+Example: <code class="docutils literal"><span class="pre">a</span> <span class="pre">==&gt;</span> <span class="pre">b</span> <span class="pre">else</span> <span class="pre">c</span></code>, where <code class="docutils literal"><span class="pre">a</span></code>, <code class="docutils literal"><span class="pre">b</span></code> and <code class="docutils literal"><span class="pre">c</span></code> are logical
+expressions.</p>
+ </p>
+</dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr22FIRST_ITERATED_LOGICALE">
 <span id="mp::expr::FIRST_ITERATED_LOGICAL"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618aeef5fb76c601d9c5ebf0d41bf453ca57"></span><code class="descname">FIRST_ITERATED_LOGICAL</code><a class="headerlink" href="#_CPPv2N2mp4expr22FIRST_ITERATED_LOGICALE" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p><span class="target" id="iterated-logical-expr"></span><p>An iterated logical expression.
+Example: <code class="docutils literal"><span class="pre">exists{i</span> <span class="pre">in</span> <span class="pre">I}</span> <span class="pre">x[i]</span> <span class="pre">&gt;=</span> <span class="pre">0</span></code>, where <code class="docutils literal"><span class="pre">I</span></code> is a set and <code class="docutils literal"><span class="pre">x</span></code> is a
+variable.</p>
+ </p>
+</dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr6EXISTSE">
@@ -616,7 +641,11 @@ is a variable.</p>
 <dl class="member">
 <dt id="_CPPv2N2mp4expr14FIRST_PAIRWISEE">
 <span id="mp::expr::FIRST_PAIRWISE"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a34381bfadd4aa169bdab7c0049ca27c7"></span><code class="descname">FIRST_PAIRWISE</code><a class="headerlink" href="#_CPPv2N2mp4expr14FIRST_PAIRWISEE" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p><span class="target" id="pairwise-expr"></span><p>A pairwise expression (<code class="docutils literal"><span class="pre">alldiff</span></code> or <code class="docutils literal"><span class="pre">!alldiff</span></code>).
+Example: <code class="docutils literal"><span class="pre">alldiff{i</span> <span class="pre">in</span> <span class="pre">I}</span> <span class="pre">x[i]</span></code>, where <code class="docutils literal"><span class="pre">I</span></code> is a set and <code class="docutils literal"><span class="pre">x</span></code> is a
+variable.</p>
+ </p>
+</dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr7ALLDIFFE">
@@ -641,12 +670,17 @@ is a variable.</p>
 <dl class="member">
 <dt id="_CPPv2N2mp4expr6STRINGE">
 <span id="mp::expr::STRING"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a45e078a66ffc9dfd8e10d610c1856300"></span><code class="descname">STRING</code><a class="headerlink" href="#_CPPv2N2mp4expr6STRINGE" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p><span class="target" id="string-expr"></span><p>A string such as <code class="docutils literal"><span class="pre">&quot;abc&quot;</span></code>.</p>
+ </p>
+</dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr5IFSYME">
 <span id="mp::expr::IFSYM"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a133a4b0781cb6d3471cd9a90096b1cee"></span><code class="descname">IFSYM</code><a class="headerlink" href="#_CPPv2N2mp4expr5IFSYME" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p><span class="target" id="ifsym"></span><p>A symbolic if-then-else expression.
+Example: <code class="docutils literal"><span class="pre">if</span> <span class="pre">x</span> <span class="pre">!=</span> <span class="pre">0</span> <span class="pre">then</span> <span class="pre">'a'</span> <span class="pre">else</span> <span class="pre">0</span></code>, where <code class="docutils literal"><span class="pre">x</span></code> is a variable.</p>
+ </p>
+</dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr9LAST_EXPRE">
