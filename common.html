@@ -402,7 +402,8 @@ Example: <code class="docutils literal"><span class="pre">f(x)</span></code>, wh
 <dl class="member">
 <dt id="_CPPv2N2mp4expr12FIRST_VARARGE">
 <span id="mp::expr::FIRST_VARARG"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a27186591bcdfd5637c6ac4cd07356cb0"></span><code class="descname">FIRST_VARARG</code> =  FIRST_ITERATED<a class="headerlink" href="#_CPPv2N2mp4expr12FIRST_VARARGE" title="Permalink to this definition">¶</a></dt>
-<dd><p><span class="target" id="vararg-expr"></span><span class="target" id="sum-expr"></span><span class="target" id="numberof-expr"></span><span class="target" id="numberof-sym-expr"></span><span class="target" id="count-expr"></span><span class="target" id="logical-expr"></span><span class="target" id="logical-constant"></span><span class="target" id="not-expr"></span><span class="target" id="binary-logical-expr"></span><span class="target" id="relational-expr"></span><span class="target" id="logical-count-expr"></span><span class="target" id="implication-expr"></span><span class="target" id="iterated-logical-expr"></span><span class="target" id="pairwise-expr"></span><span class="target" id="string-expr"></span><span class="target" id="symbolic-if-expr"></span><p>Expression kind.</p>
+<dd><p><span class="target" id="vararg-expr"></span><p>A varag expression (<code class="docutils literal"><span class="pre">min</span></code> or <code class="docutils literal"><span class="pre">max</span></code>). Example: <code class="docutils literal"><span class="pre">min{i</span> <span class="pre">in</span> <span class="pre">I}</span> <span class="pre">x[i]</span></code>,
+where <code class="docutils literal"><span class="pre">I</span></code> is a set and <code class="docutils literal"><span class="pre">x</span></code> is a variable.</p>
  </p>
 </dd></dl>
 
@@ -424,12 +425,18 @@ Example: <code class="docutils literal"><span class="pre">f(x)</span></code>, wh
 <dl class="member">
 <dt id="_CPPv2N2mp4expr3SUME">
 <span id="mp::expr::SUM"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a7cf98e49213e4662ee1107a678b563e4"></span><code class="descname">SUM</code><a class="headerlink" href="#_CPPv2N2mp4expr3SUME" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p><span class="target" id="sum-expr"></span><p>A sum expression. Example: <code class="docutils literal"><span class="pre">sum{i</span> <span class="pre">in</span> <span class="pre">I}</span> <span class="pre">x[i]</span></code>, where <code class="docutils literal"><span class="pre">I</span></code> is a set and
+<code class="docutils literal"><span class="pre">x</span></code> is a variable.</p>
+ </p>
+</dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr8NUMBEROFE">
 <span id="mp::expr::NUMBEROF"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a66037d50682a5caa7885f015118a1674"></span><code class="descname">NUMBEROF</code><a class="headerlink" href="#_CPPv2N2mp4expr8NUMBEROFE" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p><span class="target" id="numberof-expr"></span><p>A numberof expression. Example: <code class="docutils literal"><span class="pre">numberof</span> <span class="pre">42</span> <span class="pre">in</span> <span class="pre">({i</span> <span class="pre">in</span> <span class="pre">I}</span> <span class="pre">x[i])</span></code>,
+where <code class="docutils literal"><span class="pre">I</span></code> is a set and <code class="docutils literal"><span class="pre">x</span></code> is a variable.</p>
+ </p>
+</dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr13LAST_ITERATEDE">
@@ -439,12 +446,20 @@ Example: <code class="docutils literal"><span class="pre">f(x)</span></code>, wh
 <dl class="member">
 <dt id="_CPPv2N2mp4expr12NUMBEROF_SYME">
 <span id="mp::expr::NUMBEROF_SYM"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618ab7113b915604dda2f2325b5ed8011d2b"></span><code class="descname">NUMBEROF_SYM</code><a class="headerlink" href="#_CPPv2N2mp4expr12NUMBEROF_SYME" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p><span class="target" id="numberof-sym-expr"></span><p>A symbolic numberof expression.
+Example: <code class="docutils literal"><span class="pre">numberof</span> <span class="pre">(if</span> <span class="pre">x</span> <span class="pre">then</span> <span class="pre">'a'</span> <span class="pre">else</span> <span class="pre">'b')</span> <span class="pre">in</span> <span class="pre">('a',</span> <span class="pre">'b',</span> <span class="pre">'c')</span></code>,
+where <code class="docutils literal"><span class="pre">x</span></code> is a variable.</p>
+ </p>
+</dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr5COUNTE">
 <span id="mp::expr::COUNT"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a7d8ce35056be0d80687962a68c78f185"></span><code class="descname">COUNT</code><a class="headerlink" href="#_CPPv2N2mp4expr5COUNTE" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p><span class="target" id="count-expr"></span><p>A count expression.
+Example: <code class="docutils literal"><span class="pre">count{i</span> <span class="pre">in</span> <span class="pre">I}</span> <span class="pre">(x[i]</span> <span class="pre">&gt;=</span> <span class="pre">0)</span></code>, where <code class="docutils literal"><span class="pre">I</span></code> is a set and <code class="docutils literal"><span class="pre">x</span></code>
+is a variable.</p>
+ </p>
+</dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr12LAST_NUMERICE">
@@ -454,7 +469,9 @@ Example: <code class="docutils literal"><span class="pre">f(x)</span></code>, wh
 <dl class="member">
 <dt id="_CPPv2N2mp4expr13FIRST_LOGICALE">
 <span id="mp::expr::FIRST_LOGICAL"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a9652e3b908e27b92a88157f02bc6cf8a"></span><code class="descname">FIRST_LOGICAL</code><a class="headerlink" href="#_CPPv2N2mp4expr13FIRST_LOGICALE" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p><span class="target" id="id1"></span><span class="target" id="id2"></span><span class="target" id="logical-expr"></span><span class="target" id="logical-constant"></span><span class="target" id="not-expr"></span><span class="target" id="binary-logical-expr"></span><span class="target" id="relational-expr"></span><span class="target" id="logical-count-expr"></span><span class="target" id="implication-expr"></span><span class="target" id="iterated-logical-expr"></span><span class="target" id="pairwise-expr"></span><span class="target" id="string-expr"></span><span class="target" id="symbolic-if-expr"></span><p>A logical expression.</p>
+ </p>
+</dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr4BOOLE">
