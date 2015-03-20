@@ -140,7 +140,7 @@
 <dl class="member">
 <dt id="_CPPv2N2mp4expr6NUMBERE">
 <span id="mp::expr::NUMBER"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618aff49c8f1e3bd7524577fbbebd2c61c05"></span><code class="descname">NUMBER</code> =  FIRST_NUMERIC<a class="headerlink" href="#_CPPv2N2mp4expr6NUMBERE" title="Permalink to this definition">¶</a></dt>
-<dd><p><span class="target" id="numeric-constant"></span><p>A number such as 42 or -1.23e-4</p>
+<dd><p><span class="target" id="numeric-constant"></span><p>A number such as <code class="docutils literal"><span class="pre">42</span></code> or <code class="docutils literal"><span class="pre">-1.23e-4</span></code>.</p>
  </p>
 </dd></dl>
 
@@ -171,7 +171,8 @@
 <dl class="member">
 <dt id="_CPPv2N2mp4expr11FIRST_UNARYE">
 <span id="mp::expr::FIRST_UNARY"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a2eade1b0a0d0c688f9880179c91923e7"></span><code class="descname">FIRST_UNARY</code><a class="headerlink" href="#_CPPv2N2mp4expr11FIRST_UNARYE" title="Permalink to this definition">¶</a></dt>
-<dd><p><span class="target" id="unary-expr"></span><span class="target" id="binary-expr"></span><span class="target" id="if-expr"></span><span class="target" id="plterm"></span><span class="target" id="call-expr"></span><span class="target" id="vararg-expr"></span><span class="target" id="sum-expr"></span><span class="target" id="numberof-expr"></span><span class="target" id="numberof-sym-expr"></span><span class="target" id="count-expr"></span><span class="target" id="logical-expr"></span><span class="target" id="logical-constant"></span><span class="target" id="not-expr"></span><span class="target" id="binary-logical-expr"></span><span class="target" id="relational-expr"></span><span class="target" id="logical-count-expr"></span><span class="target" id="implication-expr"></span><span class="target" id="iterated-logical-expr"></span><span class="target" id="pairwise-expr"></span><span class="target" id="string-expr"></span><span class="target" id="symbolic-if-expr"></span><p>Expression kind.</p>
+<dd><p><span class="target" id="unary-expr"></span><p>A unary numeric expression.
+Examples: <code class="docutils literal"><span class="pre">-x</span></code>, <code class="docutils literal"><span class="pre">sin(x)</span></code>, where <code class="docutils literal"><span class="pre">x</span></code> is a variable.</p>
  </p>
 </dd></dl>
 
@@ -288,7 +289,10 @@
 <dl class="member">
 <dt id="_CPPv2N2mp4expr12FIRST_BINARYE">
 <span id="mp::expr::FIRST_BINARY"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a7d1b243e86a3482a907b21ac6cd2d7ab"></span><code class="descname">FIRST_BINARY</code><a class="headerlink" href="#_CPPv2N2mp4expr12FIRST_BINARYE" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p><span class="target" id="binary-expr"></span><p>A binary numeric expression.
+Examples: <code class="docutils literal"><span class="pre">x</span> <span class="pre">/</span> <span class="pre">y</span></code>, <code class="docutils literal"><span class="pre">atan2(x,</span> <span class="pre">y)</span></code>, where <code class="docutils literal"><span class="pre">x</span></code> and <code class="docutils literal"><span class="pre">y</span></code> are variables.</p>
+ </p>
+</dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr3ADDE">
@@ -368,17 +372,27 @@
 <dl class="member">
 <dt id="_CPPv2N2mp4expr2IFE">
 <span id="mp::expr::IF"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a597c71d8f3f365871f413566db39e284"></span><code class="descname">IF</code><a class="headerlink" href="#_CPPv2N2mp4expr2IFE" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p><span class="target" id="if-expr"></span><p>An if-then-else expression.
+Example: <code class="docutils literal"><span class="pre">if</span> <span class="pre">x</span> <span class="pre">!=</span> <span class="pre">0</span> <span class="pre">then</span> <span class="pre">y</span> <span class="pre">else</span> <span class="pre">z</span></code>, where <code class="docutils literal"><span class="pre">x</span></code>, <code class="docutils literal"><span class="pre">y</span></code> and <code class="docutils literal"><span class="pre">z</span></code> are
+variables.</p>
+ </p>
+</dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr6PLTERME">
 <span id="mp::expr::PLTERM"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a8f186eafa0a15fdec2387067305434e9"></span><code class="descname">PLTERM</code><a class="headerlink" href="#_CPPv2N2mp4expr6PLTERME" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p><span class="target" id="plterm"></span><p>A piecewise-linear term.
+Example: <code class="docutils literal"><span class="pre">&lt;&lt;0;</span> <span class="pre">-1,</span> <span class="pre">1&gt;&gt;</span> <span class="pre">x</span></code>, where <code class="docutils literal"><span class="pre">x</span></code> is a variable.</p>
+ </p>
+</dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr4CALLE">
 <span id="mp::expr::CALL"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618ab0d734faa3b68bc3d4396509bba4965e"></span><code class="descname">CALL</code><a class="headerlink" href="#_CPPv2N2mp4expr4CALLE" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p><span class="target" id="call-expr"></span><p>A function call expression.
+Example: <code class="docutils literal"><span class="pre">f(x)</span></code>, where <code class="docutils literal"><span class="pre">f</span></code> is a function and <code class="docutils literal"><span class="pre">x</span></code> is a variable.</p>
+ </p>
+</dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr14FIRST_ITERATEDE">
@@ -388,7 +402,9 @@
 <dl class="member">
 <dt id="_CPPv2N2mp4expr12FIRST_VARARGE">
 <span id="mp::expr::FIRST_VARARG"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a27186591bcdfd5637c6ac4cd07356cb0"></span><code class="descname">FIRST_VARARG</code> =  FIRST_ITERATED<a class="headerlink" href="#_CPPv2N2mp4expr12FIRST_VARARGE" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p><span class="target" id="vararg-expr"></span><span class="target" id="sum-expr"></span><span class="target" id="numberof-expr"></span><span class="target" id="numberof-sym-expr"></span><span class="target" id="count-expr"></span><span class="target" id="logical-expr"></span><span class="target" id="logical-constant"></span><span class="target" id="not-expr"></span><span class="target" id="binary-logical-expr"></span><span class="target" id="relational-expr"></span><span class="target" id="logical-count-expr"></span><span class="target" id="implication-expr"></span><span class="target" id="iterated-logical-expr"></span><span class="target" id="pairwise-expr"></span><span class="target" id="string-expr"></span><span class="target" id="symbolic-if-expr"></span><p>Expression kind.</p>
+ </p>
+</dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr3MINE">
