@@ -693,6 +693,211 @@ Example: <code class="docutils literal"><span class="pre">if</span> <span class=
 <dt id="_CPPv2N2mp11ProblemInfoE">
 <span id="mp::ProblemInfo"></span><span class="target" id="project0structmp_1_1ProblemInfo"></span><em class="property">struct </em><code class="descclassname">mp::</code><code class="descname">ProblemInfo</code><a class="headerlink" href="#_CPPv2N2mp11ProblemInfoE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Information about an optimization problem. </p>
+<div class="breathe-sectiondef container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv2N2mp11ProblemInfo16num_integer_varsEv">
+<span id="mp::ProblemInfo::num_integer_vars"></span><span class="target" id="project0structmp_1_1ProblemInfo_1a437deebadc0280399f44a59e6a5a3316"></span>int <code class="descname">num_integer_vars</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N2mp11ProblemInfo16num_integer_varsEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the number of integer variables (includes binary variable). </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N2mp11ProblemInfo19num_continuous_varsEv">
+<span id="mp::ProblemInfo::num_continuous_vars"></span><span class="target" id="project0structmp_1_1ProblemInfo_1a3119223e28425d01a89ee5b5025dddf6"></span>int <code class="descname">num_continuous_vars</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N2mp11ProblemInfo19num_continuous_varsEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the number of continuous variables. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N2mp11ProblemInfo16num_common_exprsEv">
+<span id="mp::ProblemInfo::num_common_exprs"></span><span class="target" id="project0structmp_1_1ProblemInfo_1a77558a5cc4878956e5ae3d20dd3c2434"></span>int <code class="descname">num_common_exprs</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N2mp11ProblemInfo16num_common_exprsEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the total number of common expressions. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="member">
+<dt id="_CPPv2N2mp11ProblemInfo8num_varsE">
+<span id="mp::ProblemInfo::num_vars__i"></span><span class="target" id="project0structmp_1_1ProblemInfo_1a96e09b22771fd99e9fd4b1d050a57929"></span>int <code class="descname">num_vars</code><a class="headerlink" href="#_CPPv2N2mp11ProblemInfo8num_varsE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Total number of variables. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N2mp11ProblemInfo18num_algebraic_consE">
+<span id="mp::ProblemInfo::num_algebraic_cons__i"></span><span class="target" id="project0structmp_1_1ProblemInfo_1affd7eb2adf16721e1a5317fc20f65b12"></span>int <code class="descname">num_algebraic_cons</code><a class="headerlink" href="#_CPPv2N2mp11ProblemInfo18num_algebraic_consE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of algebraic constraints including ranges and equality constraints. </p>
+<p>It doesn&#8217;t include logical constraints. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N2mp11ProblemInfo8num_objsE">
+<span id="mp::ProblemInfo::num_objs__i"></span><span class="target" id="project0structmp_1_1ProblemInfo_1aa599557c6fabfd5c57e7cd13a9682a7a"></span>int <code class="descname">num_objs</code><a class="headerlink" href="#_CPPv2N2mp11ProblemInfo8num_objsE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Total number of objectives. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N2mp11ProblemInfo10num_rangesE">
+<span id="mp::ProblemInfo::num_ranges__i"></span><span class="target" id="project0structmp_1_1ProblemInfo_1a5e4194e8e33e2f6e226d6d0c3a83eec4"></span>int <code class="descname">num_ranges</code><a class="headerlink" href="#_CPPv2N2mp11ProblemInfo10num_rangesE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of ranges (constraints with -Infinity &lt; LHS &lt; RHS &lt; Infinity). </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N2mp11ProblemInfo8num_eqnsE">
+<span id="mp::ProblemInfo::num_eqns__i"></span><span class="target" id="project0structmp_1_1ProblemInfo_1a73c86463b211594bb6ea54afde19310d"></span>int <code class="descname">num_eqns</code><a class="headerlink" href="#_CPPv2N2mp11ProblemInfo8num_eqnsE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of equality constraints or -1 if unknown (AMPL prior to 19970627). </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N2mp11ProblemInfo16num_logical_consE">
+<span id="mp::ProblemInfo::num_logical_cons__i"></span><span class="target" id="project0structmp_1_1ProblemInfo_1a0030eb2939e6a0712ae3a2ddbf017789"></span>int <code class="descname">num_logical_cons</code><a class="headerlink" href="#_CPPv2N2mp11ProblemInfo16num_logical_consE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of logical constraints. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N2mp11ProblemInfo11num_nl_consE">
+<span id="mp::ProblemInfo::num_nl_cons__i"></span><span class="target" id="project0structmp_1_1ProblemInfo_1a3bbafbf1260235e807039233c85ee292"></span>int <code class="descname">num_nl_cons</code><a class="headerlink" href="#_CPPv2N2mp11ProblemInfo11num_nl_consE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Total number of nonlinear constraints. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N2mp11ProblemInfo11num_nl_objsE">
+<span id="mp::ProblemInfo::num_nl_objs__i"></span><span class="target" id="project0structmp_1_1ProblemInfo_1a26fce6b6251dc9f76c5a8924f668ffed"></span>int <code class="descname">num_nl_objs</code><a class="headerlink" href="#_CPPv2N2mp11ProblemInfo11num_nl_objsE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Total number of nonlinear objectives. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N2mp11ProblemInfo15num_compl_condsE">
+<span id="mp::ProblemInfo::num_compl_conds__i"></span><span class="target" id="project0structmp_1_1ProblemInfo_1a8c2e219fae9652527ade926a1245496a"></span>int <code class="descname">num_compl_conds</code><a class="headerlink" href="#_CPPv2N2mp11ProblemInfo15num_compl_condsE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Total number of complementarity conditions. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N2mp11ProblemInfo18num_nl_compl_condsE">
+<span id="mp::ProblemInfo::num_nl_compl_conds__i"></span><span class="target" id="project0structmp_1_1ProblemInfo_1a9760dae9cf815a48e43cc5cde563f60c"></span>int <code class="descname">num_nl_compl_conds</code><a class="headerlink" href="#_CPPv2N2mp11ProblemInfo18num_nl_compl_condsE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of nonlinear complementarity conditions. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N2mp11ProblemInfo19num_compl_dbl_ineqsE">
+<span id="mp::ProblemInfo::num_compl_dbl_ineqs__i"></span><span class="target" id="project0structmp_1_1ProblemInfo_1aeaf34a065058d0a353953e51d44cb325"></span>int <code class="descname">num_compl_dbl_ineqs</code><a class="headerlink" href="#_CPPv2N2mp11ProblemInfo19num_compl_dbl_ineqsE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of complementarities involving double inequalities (for ``ASL_cc_simplify``). </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N2mp11ProblemInfo25num_compl_vars_with_nz_lbE">
+<span id="mp::ProblemInfo::num_compl_vars_with_nz_lb__i"></span><span class="target" id="project0structmp_1_1ProblemInfo_1a35ce1ea870cb04e9dc4c1259e43656a4"></span>int <code class="descname">num_compl_vars_with_nz_lb</code><a class="headerlink" href="#_CPPv2N2mp11ProblemInfo25num_compl_vars_with_nz_lbE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of complemented variables with a nonzero lower bound (for ASL_cc_simplify). </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N2mp11ProblemInfo15num_nl_net_consE">
+<span id="mp::ProblemInfo::num_nl_net_cons__i"></span><span class="target" id="project0structmp_1_1ProblemInfo_1a03d300be30e3a3c65a45219659a4b534"></span>int <code class="descname">num_nl_net_cons</code><a class="headerlink" href="#_CPPv2N2mp11ProblemInfo15num_nl_net_consE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of nonlinear network constraints. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N2mp11ProblemInfo19num_linear_net_consE">
+<span id="mp::ProblemInfo::num_linear_net_cons__i"></span><span class="target" id="project0structmp_1_1ProblemInfo_1ab3b06f08aae1d9e9856dce97451f94d6"></span>int <code class="descname">num_linear_net_cons</code><a class="headerlink" href="#_CPPv2N2mp11ProblemInfo19num_linear_net_consE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of linear network constraints. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N2mp11ProblemInfo19num_nl_vars_in_consE">
+<span id="mp::ProblemInfo::num_nl_vars_in_cons__i"></span><span class="target" id="project0structmp_1_1ProblemInfo_1aa58581f76fe8e65369b66e3ba4e018be"></span>int <code class="descname">num_nl_vars_in_cons</code><a class="headerlink" href="#_CPPv2N2mp11ProblemInfo19num_nl_vars_in_consE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of nonlinear variables in constraints including nonlinear variables in both constraints and objectives. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N2mp11ProblemInfo19num_nl_vars_in_objsE">
+<span id="mp::ProblemInfo::num_nl_vars_in_objs__i"></span><span class="target" id="project0structmp_1_1ProblemInfo_1a1b91d63b1676b9cbce39eb0af173724c"></span>int <code class="descname">num_nl_vars_in_objs</code><a class="headerlink" href="#_CPPv2N2mp11ProblemInfo19num_nl_vars_in_objsE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of nonlinear variables in objectives including nonlinear variables in both constraints and objectives. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N2mp11ProblemInfo19num_nl_vars_in_bothE">
+<span id="mp::ProblemInfo::num_nl_vars_in_both__i"></span><span class="target" id="project0structmp_1_1ProblemInfo_1ab99a3eacf3c026c6b60ed2f9b70b2ffc"></span>int <code class="descname">num_nl_vars_in_both</code><a class="headerlink" href="#_CPPv2N2mp11ProblemInfo19num_nl_vars_in_bothE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of nonlinear variables in both constraints and objectives. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N2mp11ProblemInfo19num_linear_net_varsE">
+<span id="mp::ProblemInfo::num_linear_net_vars__i"></span><span class="target" id="project0structmp_1_1ProblemInfo_1a729b7dd43e0ae217d924822324afc24e"></span>int <code class="descname">num_linear_net_vars</code><a class="headerlink" href="#_CPPv2N2mp11ProblemInfo19num_linear_net_varsE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of linear network variables (arcs). </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N2mp11ProblemInfo9num_funcsE">
+<span id="mp::ProblemInfo::num_funcs__i"></span><span class="target" id="project0structmp_1_1ProblemInfo_1a322d5fc1a9dfdf3db2fa45c40b5a7f64"></span>int <code class="descname">num_funcs</code><a class="headerlink" href="#_CPPv2N2mp11ProblemInfo9num_funcsE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of functions. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N2mp11ProblemInfo22num_linear_binary_varsE">
+<span id="mp::ProblemInfo::num_linear_binary_vars__i"></span><span class="target" id="project0structmp_1_1ProblemInfo_1a363ac0d3faee04371ec53a1875255849"></span>int <code class="descname">num_linear_binary_vars</code><a class="headerlink" href="#_CPPv2N2mp11ProblemInfo22num_linear_binary_varsE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of linear binary variables. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N2mp11ProblemInfo23num_linear_integer_varsE">
+<span id="mp::ProblemInfo::num_linear_integer_vars__i"></span><span class="target" id="project0structmp_1_1ProblemInfo_1a5ea8f58e307a6a766ddf4729edc40dd3"></span>int <code class="descname">num_linear_integer_vars</code><a class="headerlink" href="#_CPPv2N2mp11ProblemInfo23num_linear_integer_varsE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of linear non-binary integer variables. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N2mp11ProblemInfo27num_nl_integer_vars_in_bothE">
+<span id="mp::ProblemInfo::num_nl_integer_vars_in_both__i"></span><span class="target" id="project0structmp_1_1ProblemInfo_1aca94eb93a8bdf1db5b60ef6109820fc6"></span>int <code class="descname">num_nl_integer_vars_in_both</code><a class="headerlink" href="#_CPPv2N2mp11ProblemInfo27num_nl_integer_vars_in_bothE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of integer nonlinear variables in both constraints and objectives. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N2mp11ProblemInfo27num_nl_integer_vars_in_consE">
+<span id="mp::ProblemInfo::num_nl_integer_vars_in_cons__i"></span><span class="target" id="project0structmp_1_1ProblemInfo_1a440d5a515279d66f15918e2c756c4fd4"></span>int <code class="descname">num_nl_integer_vars_in_cons</code><a class="headerlink" href="#_CPPv2N2mp11ProblemInfo27num_nl_integer_vars_in_consE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of integer nonlinear variables just in constraints. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N2mp11ProblemInfo27num_nl_integer_vars_in_objsE">
+<span id="mp::ProblemInfo::num_nl_integer_vars_in_objs__i"></span><span class="target" id="project0structmp_1_1ProblemInfo_1a0e0fd842304bcea3df7a4bf8ecef7760"></span>int <code class="descname">num_nl_integer_vars_in_objs</code><a class="headerlink" href="#_CPPv2N2mp11ProblemInfo27num_nl_integer_vars_in_objsE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of integer nonlinear variables just in objectives. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N2mp11ProblemInfo16num_con_nonzerosE">
+<span id="mp::ProblemInfo::num_con_nonzeros__std::s"></span><span class="target" id="project0structmp_1_1ProblemInfo_1aa17a69bab817bc0d83c090ff9ff8c773"></span>std::size_t <code class="descname">num_con_nonzeros</code><a class="headerlink" href="#_CPPv2N2mp11ProblemInfo16num_con_nonzerosE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of nonzeros in constraints&#8217; Jacobian. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N2mp11ProblemInfo16num_obj_nonzerosE">
+<span id="mp::ProblemInfo::num_obj_nonzeros__std::s"></span><span class="target" id="project0structmp_1_1ProblemInfo_1a40de34846c4af6ce5c2760191bfcd0ff"></span>std::size_t <code class="descname">num_obj_nonzeros</code><a class="headerlink" href="#_CPPv2N2mp11ProblemInfo16num_obj_nonzerosE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of nonzeros in all objective gradients. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N2mp11ProblemInfo16max_con_name_lenE">
+<span id="mp::ProblemInfo::max_con_name_len__i"></span><span class="target" id="project0structmp_1_1ProblemInfo_1a3855d9b0fe446713eea81f62b42bb672"></span>int <code class="descname">max_con_name_len</code><a class="headerlink" href="#_CPPv2N2mp11ProblemInfo16max_con_name_lenE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Length of longest constraint name (if ``stub.row`` exists). </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N2mp11ProblemInfo16max_var_name_lenE">
+<span id="mp::ProblemInfo::max_var_name_len__i"></span><span class="target" id="project0structmp_1_1ProblemInfo_1aeaf7de604bb56d848197fc2963616bb2"></span>int <code class="descname">max_var_name_len</code><a class="headerlink" href="#_CPPv2N2mp11ProblemInfo16max_var_name_lenE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Length of longest variable name (if ``stub.col`` exists). </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N2mp11ProblemInfo31num_common_exprs_in_single_consE">
+<span id="mp::ProblemInfo::num_common_exprs_in_single_cons__i"></span><span class="target" id="project0structmp_1_1ProblemInfo_1aa5fae39880b1ab16e6b370909cbf7820"></span>int <code class="descname">num_common_exprs_in_single_cons</code><a class="headerlink" href="#_CPPv2N2mp11ProblemInfo31num_common_exprs_in_single_consE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of common expressions that only appear in a single constraint and don&#8217;t appear in objectives. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N2mp11ProblemInfo31num_common_exprs_in_single_objsE">
+<span id="mp::ProblemInfo::num_common_exprs_in_single_objs__i"></span><span class="target" id="project0structmp_1_1ProblemInfo_1a415fcda98bb8a141526eebd4f410d91b"></span>int <code class="descname">num_common_exprs_in_single_objs</code><a class="headerlink" href="#_CPPv2N2mp11ProblemInfo31num_common_exprs_in_single_objsE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of common expressions that only appear in a single objective and don&#8217;t appear in constraints. </p>
+</dd></dl>
+
+</div>
 </dd></dl>
 
 </div>
