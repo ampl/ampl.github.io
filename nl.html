@@ -276,7 +276,7 @@ expression</span></a> arguments.</p>
 <dt id="_CPPv2N2mp9NLHandlerI8ExprTypeE18SymbolicArgHandlerE">
 <span id="mp::NLHandler:ExprType:::SymbolicArgHandler"></span><span class="target" id="project0classmp_1_1NLHandler_1a5e949865325962a723bc22fae10b68f7"></span><em class="property">typedef </em>ArgHandler <code class="descname">SymbolicArgHandler</code><a class="headerlink" href="#_CPPv2N2mp9NLHandlerI8ExprTypeE18SymbolicArgHandlerE" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>A typedef of a class that receives notifications of symbolic
-(<a class="reference internal" href="common.html#numeric-expr"><span>numeric</span></a> or <a class="reference internal" href="common.html#string-expr"><span>string</span></a>) arguments.</p>
+(<a class="reference internal" href="common.html#numeric-expr"><span>numeric</span></a> or <span class="xref std std-ref">string</span>) arguments.</p>
  </p>
 </dd></dl>
 
@@ -411,10 +411,9 @@ The <em>name</em> argument is a suffix name and it is not zero terminated.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv2N2mp9NLHandlerI8ExprTypeE17OnNumericConstantEd">
-<span id="mp::NLHandler:ExprType:::OnNumericConstant__double"></span><span class="target" id="project0classmp_1_1NLHandler_1a82451701ed0e3d7d13d104360b4b5b02"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandlerI8ExprTypeE11NumericExprE" title="mp::NLHandler&lt;ExprType&gt;::NumericExpr">NumericExpr</a> <code class="descname">OnNumericConstant</code><span class="sig-paren">(</span>double <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandlerI8ExprTypeE17OnNumericConstantEd" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>Receives notification of a <a class="reference internal" href="common.html#numeric-constant"><span>numeric constant</span></a>
-in a nonlinear expression.</p>
+<dt id="_CPPv2N2mp9NLHandlerI8ExprTypeE8OnNumberEd">
+<span id="mp::NLHandler:ExprType:::OnNumber__double"></span><span class="target" id="project0classmp_1_1NLHandler_1ad5dd3bd87ca87d959fc9ed6b41148544"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandlerI8ExprTypeE11NumericExprE" title="mp::NLHandler&lt;ExprType&gt;::NumericExpr">NumericExpr</a> <code class="descname">OnNumber</code><span class="sig-paren">(</span>double <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandlerI8ExprTypeE8OnNumberEd" title="Permalink to this definition">¶</a></dt>
+<dd><p><p>Receives notification of a <span class="xref std std-ref">number</span> in a nonlinear expression.</p>
  </p>
 </dd></dl>
 
@@ -555,9 +554,9 @@ expression</span></a>.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv2N2mp9NLHandlerI8ExprTypeE17OnLogicalConstantEb">
-<span id="mp::NLHandler:ExprType:::OnLogicalConstant__b"></span><span class="target" id="project0classmp_1_1NLHandler_1ae9b7ed0a909258899e2db5bcf45734c9"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandlerI8ExprTypeE11LogicalExprE" title="mp::NLHandler&lt;ExprType&gt;::LogicalExpr">LogicalExpr</a> <code class="descname">OnLogicalConstant</code><span class="sig-paren">(</span>bool <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandlerI8ExprTypeE17OnLogicalConstantEb" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>Receives notification of a <a class="reference internal" href="common.html#bool"><span>logical constant</span></a>.</p>
+<dt id="_CPPv2N2mp9NLHandlerI8ExprTypeE6OnBoolEb">
+<span id="mp::NLHandler:ExprType:::OnBool__b"></span><span class="target" id="project0classmp_1_1NLHandler_1a2cabe03d17d3ed319ea4992008704269"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandlerI8ExprTypeE11LogicalExprE" title="mp::NLHandler&lt;ExprType&gt;::LogicalExpr">LogicalExpr</a> <code class="descname">OnBool</code><span class="sig-paren">(</span>bool <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandlerI8ExprTypeE6OnBoolEb" title="Permalink to this definition">¶</a></dt>
+<dd><p><p>Receives notification of a <a class="reference internal" href="common.html#bool"><span>Boolean value</span></a>.</p>
  </p>
 </dd></dl>
 
@@ -626,9 +625,9 @@ expression</span></a>.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv2N2mp9NLHandlerI8ExprTypeE15OnStringLiteralEN3fmt9StringRefE">
-<span id="mp::NLHandler:ExprType:::OnStringLiteral__fmt::StringRef"></span><span class="target" id="project0classmp_1_1NLHandler_1a318b495a756b20ca51db11d0bf18c63f"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandlerI8ExprTypeE4ExprE" title="mp::NLHandler&lt;ExprType&gt;::Expr">Expr</a> <code class="descname">OnStringLiteral</code><span class="sig-paren">(</span>fmt::StringRef <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandlerI8ExprTypeE15OnStringLiteralEN3fmt9StringRefE" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>Receives notification of a <a class="reference internal" href="common.html#string-expr"><span>string literal</span></a>.
+<dt id="_CPPv2N2mp9NLHandlerI8ExprTypeE8OnStringEN3fmt9StringRefE">
+<span id="mp::NLHandler:ExprType:::OnString__fmt::StringRef"></span><span class="target" id="project0classmp_1_1NLHandler_1ac6a14a715a88165e312b46948e66c0d5"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandlerI8ExprTypeE4ExprE" title="mp::NLHandler&lt;ExprType&gt;::Expr">Expr</a> <code class="descname">OnString</code><span class="sig-paren">(</span>fmt::StringRef <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandlerI8ExprTypeE8OnStringEN3fmt9StringRefE" title="Permalink to this definition">¶</a></dt>
+<dd><p><p>Receives notification of a <span class="xref std std-ref">string</span>.
 The <em>value</em> argument is a string value and it is not zero terminated.</p>
  </p>
 </dd></dl>
