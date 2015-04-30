@@ -841,6 +841,78 @@ set to <a class="reference internal" href="#_CPPv2N2mp5arith7UNKNOWNE" title="mp
 </div>
 </dd></dl>
 
+<dl class="class">
+<dt id="_CPPv2N2mp9ReadErrorE">
+<span id="mp::ReadError"></span><span class="target" id="project0classmp_1_1ReadError"></span><em class="property">class </em><code class="descclassname">mp::</code><code class="descname">ReadError</code><a class="headerlink" href="#_CPPv2N2mp9ReadErrorE" title="Permalink to this definition">¶</a></dt>
+<dd><p>A read error with location information. </p>
+<div class="breathe-sectiondef container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv2N2mp9ReadError9ReadErrorEN3fmt9StringRefEiiN3fmt9StringRefE">
+<span id="mp::ReadError::ReadError__fmt::StringRef.i.i.fmt::StringRef"></span><span class="target" id="project0classmp_1_1ReadError_1a8edd482373354f6f2ae172c77462da80"></span><code class="descname">ReadError</code><span class="sig-paren">(</span>fmt::StringRef <em>filename</em>, int <em>line</em>, int <em>column</em>, fmt::StringRef <em>message</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9ReadError9ReadErrorEN3fmt9StringRefEiiN3fmt9StringRefE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Constructs the exception object. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N2mp9ReadErrorD0Ev">
+<span id="mp::ReadError::~ReadError"></span><span class="target" id="project0classmp_1_1ReadError_1ae1704a854922e69c13225eb074b25d99"></span><code class="descname">~ReadError</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9ReadErrorD0Ev" title="Permalink to this definition">¶</a></dt>
+<dd><p>Destructs the exception object. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N2mp9ReadError8filenameEv">
+<span id="mp::ReadError::filename"></span><span class="target" id="project0classmp_1_1ReadError_1ab53f54f74bf73ba56ee236696ec4a962"></span><em class="property">const</em> std::string &amp;<code class="descname">filename</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N2mp9ReadError8filenameEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the name of the file where error occurred. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N2mp9ReadError4lineEv">
+<span id="mp::ReadError::line"></span><span class="target" id="project0classmp_1_1ReadError_1ad9c57b117bcf7b5fdc65685dfb41e65b"></span>int <code class="descname">line</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N2mp9ReadError4lineEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the line number where error occurred, starting from 1. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N2mp9ReadError6columnEv">
+<span id="mp::ReadError::column"></span><span class="target" id="project0classmp_1_1ReadError_1a5d19e0fcda3a7e22f76ce074d1cdd7c8"></span>int <code class="descname">column</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N2mp9ReadError6columnEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the column number where error occurred, starting from 1. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv2N2mp15BinaryReadErrorE">
+<span id="mp::BinaryReadError"></span><span class="target" id="project0classmp_1_1BinaryReadError"></span><em class="property">class </em><code class="descclassname">mp::</code><code class="descname">BinaryReadError</code><a class="headerlink" href="#_CPPv2N2mp15BinaryReadErrorE" title="Permalink to this definition">¶</a></dt>
+<dd><p>A read error with information about offset in a binary input. </p>
+<div class="breathe-sectiondef container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv2N2mp15BinaryReadError15BinaryReadErrorEN3fmt9StringRefENSt6size_tEN3fmt9StringRefE">
+<span id="mp::BinaryReadError::BinaryReadError__fmt::StringRef.std::s.fmt::StringRef"></span><span class="target" id="project0classmp_1_1BinaryReadError_1abf5d7dfcfb7654ba7ef9dcaf30f62835"></span><code class="descname">BinaryReadError</code><span class="sig-paren">(</span>fmt::StringRef <em>filename</em>, std::size_t <em>offset</em>, fmt::StringRef <em>message</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp15BinaryReadError15BinaryReadErrorEN3fmt9StringRefENSt6size_tEN3fmt9StringRefE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Constructs the exception object. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N2mp15BinaryReadErrorD0Ev">
+<span id="mp::BinaryReadError::~BinaryReadError"></span><span class="target" id="project0classmp_1_1BinaryReadError_1a59e17f7e390fa9b8e763888c68aaddee"></span><code class="descname">~BinaryReadError</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp15BinaryReadErrorD0Ev" title="Permalink to this definition">¶</a></dt>
+<dd><p>Destructs the exception object. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N2mp15BinaryReadError8filenameEv">
+<span id="mp::BinaryReadError::filename"></span><span class="target" id="project0classmp_1_1BinaryReadError_1a228623434f06a7c74e485708154d8349"></span><em class="property">const</em> std::string &amp;<code class="descname">filename</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N2mp15BinaryReadError8filenameEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the name of the file where error occurred. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N2mp15BinaryReadError6offsetEv">
+<span id="mp::BinaryReadError::offset"></span><span class="target" id="project0classmp_1_1BinaryReadError_1ada05af6d7010818d40721f50cc0a315e"></span>std::size_t <code class="descname">offset</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N2mp15BinaryReadError6offsetEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the offset in chars to the error location. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
 <dl class="type">
 <dt id="_CPPv2N2mp5arith4KindE">
 <span id="mp::arith::Kind"></span><span class="target" id="project0namespacemp_1_1arith_1ae61163c11b0581390bfb3fedb8643b91"></span><em class="property">enum </em><code class="descclassname">mp::arith::</code><code class="descname">Kind</code><a class="headerlink" href="#_CPPv2N2mp5arith4KindE" title="Permalink to this definition">¶</a></dt>
