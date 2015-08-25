@@ -177,15 +177,16 @@ the range <code class="docutils literal"><span class="pre">[FIRST_REFERENCE,</sp
 <dl class="member">
 <dt id="_CPPv2N2mp4expr11FIRST_UNARYE">
 <span id="mp::expr::FIRST_UNARY"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a2eade1b0a0d0c688f9880179c91923e7"></span><code class="descname">FIRST_UNARY</code><a class="headerlink" href="#_CPPv2N2mp4expr11FIRST_UNARYE" title="Permalink to this definition">¶</a></dt>
-<dd><p><span class="target" id="unary-expr"></span><p>The first unary numeric expression kind.
-Examples: <code class="docutils literal"><span class="pre">-x</span></code>, <code class="docutils literal"><span class="pre">sin(x)</span></code>, where <code class="docutils literal"><span class="pre">x</span></code> is a variable.</p>
+<dd><p><span class="target" id="unary-expr"></span><p>The first unary numeric expression kind. Unary numeric expression kinds
+are in the range <code class="docutils literal"><span class="pre">[FIRST_UNARY,</span> <span class="pre">LAST_UNARY]</span></code>.</p>
  </p>
 </dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr5MINUSE">
 <span id="mp::expr::MINUS"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618af9e0b31d6956fb1737f27c11b2d69f91"></span><code class="descname">MINUS</code> =  FIRST_UNARY<a class="headerlink" href="#_CPPv2N2mp4expr5MINUSE" title="Permalink to this definition">¶</a></dt>
-<dd><p>A unary minus expression. </p>
+<dd><p><p>A unary minus, <span class="math">\(-x\)</span>.</p>
+ </p>
 </dd></dl>
 
 <dl class="member">
@@ -219,7 +220,7 @@ Examples: <code class="docutils literal"><span class="pre">-x</span></code>, <co
 <dl class="member">
 <dt id="_CPPv2N2mp4expr4POW2E">
 <span id="mp::expr::POW2"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a11d0f59dec9934188cd16e61f18f595c"></span><code class="descname">POW2</code><a class="headerlink" href="#_CPPv2N2mp4expr4POW2E" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>The power function with exponent 2: <span class="math">\(\mathrm{pow2}(x) = x^2\)</span>.</p>
+<dd><p><p>The power function with exponent 2: <span class="math">\(\mathrm{pow}(x, 2) = x^2\)</span>.</p>
  </p>
 </dd></dl>
 
@@ -240,7 +241,8 @@ Examples: <code class="docutils literal"><span class="pre">-x</span></code>, <co
 <dl class="member">
 <dt id="_CPPv2N2mp4expr5LOG10E">
 <span id="mp::expr::LOG10"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a2789a1bf252feea654f86393e35f33c8"></span><code class="descname">LOG10</code><a class="headerlink" href="#_CPPv2N2mp4expr5LOG10E" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>The base 10 logarithmic function, <span class="math">\(\mathrm{log10}(x) = \mathrm{log}_{10}(x)\)</span>.</p>
+<dd><p><p>The base 10 logarithmic function,
+<span class="math">\(\mathrm{log10}(x) = \mathrm{log}_{10}(x)\)</span>.</p>
  </p>
 </dd></dl>
 
@@ -289,42 +291,42 @@ Examples: <code class="docutils literal"><span class="pre">-x</span></code>, <co
 <dl class="member">
 <dt id="_CPPv2N2mp4expr4ASINE">
 <span id="mp::expr::ASIN"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618ae48153f6e6193a7523f2cc443451699f"></span><code class="descname">ASIN</code><a class="headerlink" href="#_CPPv2N2mp4expr4ASINE" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>Inverse sine, <span class="math">\(\mathrm{sin}^{-1}(x)\)</span>.</p>
+<dd><p><p>Inverse sine, <span class="math">\(\mathrm{asin}(x) = \mathrm{sin}^{-1}(x)\)</span>.</p>
  </p>
 </dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr5ASINHE">
 <span id="mp::expr::ASINH"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618ab32dbdc4fd7b12bbeb80d21b555c6c36"></span><code class="descname">ASINH</code><a class="headerlink" href="#_CPPv2N2mp4expr5ASINHE" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>Inverse hyperbolic sine, <span class="math">\(\mathrm{sinh}^{-1}(x)\)</span>.</p>
+<dd><p><p>Inverse hyperbolic sine, <span class="math">\(\mathrm{asinh}(x) = \mathrm{sinh}^{-1}(x)\)</span>.</p>
  </p>
 </dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr4ACOSE">
 <span id="mp::expr::ACOS"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a66524cf9b0897ff556d09fbc5c1a5126"></span><code class="descname">ACOS</code><a class="headerlink" href="#_CPPv2N2mp4expr4ACOSE" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>Inverse cosine, <span class="math">\(\mathrm{cos}^{-1}(x)\)</span>.</p>
+<dd><p><p>Inverse cosine, <span class="math">\(\mathrm{acos}(x) = \mathrm{cos}^{-1}(x)\)</span>.</p>
  </p>
 </dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr5ACOSHE">
 <span id="mp::expr::ACOSH"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a7aa9fa4806e9e65a4b47a9ad6cf6c00d"></span><code class="descname">ACOSH</code><a class="headerlink" href="#_CPPv2N2mp4expr5ACOSHE" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>Inverse hyperbolic cosine, <span class="math">\(\mathrm{cosh}^{-1}(x)\)</span>.</p>
+<dd><p><p>Inverse hyperbolic cosine, <span class="math">\(\mathrm{acosh}(x) = \mathrm{cosh}^{-1}(x)\)</span>.</p>
  </p>
 </dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr4ATANE">
 <span id="mp::expr::ATAN"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a7f8942e265a7feafe07555450b34bcf3"></span><code class="descname">ATAN</code><a class="headerlink" href="#_CPPv2N2mp4expr4ATANE" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>Inverse tangent, <span class="math">\(\mathrm{tan}^{-1}(x)\)</span>.</p>
+<dd><p><p>Inverse tangent, <span class="math">\(\mathrm{atan}(x) = \mathrm{tan}^{-1}(x)\)</span>.</p>
  </p>
 </dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr5ATANHE">
 <span id="mp::expr::ATANH"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618aa5b15f4892195b0d35a6cf4192956172"></span><code class="descname">ATANH</code><a class="headerlink" href="#_CPPv2N2mp4expr5ATANHE" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>Inverse hyperbolic tangent, <span class="math">\(\mathrm{tanh}^{-1}(x)\)</span>.</p>
+<dd><p><p>Inverse hyperbolic tangent, <span class="math">\(\mathrm{atanh}(x) = \mathrm{tanh}^{-1}(x)\)</span>.</p>
  </p>
 </dd></dl>
 
@@ -337,15 +339,16 @@ Examples: <code class="docutils literal"><span class="pre">-x</span></code>, <co
 <dl class="member">
 <dt id="_CPPv2N2mp4expr12FIRST_BINARYE">
 <span id="mp::expr::FIRST_BINARY"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a7d1b243e86a3482a907b21ac6cd2d7ab"></span><code class="descname">FIRST_BINARY</code><a class="headerlink" href="#_CPPv2N2mp4expr12FIRST_BINARYE" title="Permalink to this definition">¶</a></dt>
-<dd><p><span class="target" id="binary-expr"></span><p>A binary numeric expression.
-Examples: <code class="docutils literal"><span class="pre">x</span> <span class="pre">/</span> <span class="pre">y</span></code>, <code class="docutils literal"><span class="pre">atan2(x,</span> <span class="pre">y)</span></code>, where <code class="docutils literal"><span class="pre">x</span></code> and <code class="docutils literal"><span class="pre">y</span></code> are variables.</p>
+<dd><p><span class="target" id="binary-expr"></span><p>The first binary numeric expression kind.</p>
  </p>
 </dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr3ADDE">
 <span id="mp::expr::ADD"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618ac7ebe836145f2970942e901fe4ac33a8"></span><code class="descname">ADD</code> =  FIRST_BINARY<a class="headerlink" href="#_CPPv2N2mp4expr3ADDE" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p><p>An addition, <span class="math">\(x + y\)</span>.</p>
+ </p>
+</dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr3SUBE">
@@ -415,7 +418,8 @@ Examples: <code class="docutils literal"><span class="pre">x</span> <span class=
 <dl class="member">
 <dt id="_CPPv2N2mp4expr11LAST_BINARYE">
 <span id="mp::expr::LAST_BINARY"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a8958b792a8edf2af171c3e8d4139ad00"></span><code class="descname">LAST_BINARY</code> =  TRUNC<a class="headerlink" href="#_CPPv2N2mp4expr11LAST_BINARYE" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>The last binary numeric expression kind. </p>
+</dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr2IFE">
