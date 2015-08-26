@@ -220,7 +220,7 @@ are in the range <code class="docutils literal"><span class="pre">[FIRST_UNARY,<
 <dl class="member">
 <dt id="_CPPv2N2mp4expr4POW2E">
 <span id="mp::expr::POW2"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a11d0f59dec9934188cd16e61f18f595c"></span><code class="descname">POW2</code><a class="headerlink" href="#_CPPv2N2mp4expr4POW2E" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>The power function with exponent 2: <span class="math">\(\mathrm{pow}(x, 2) = x^2\)</span>.</p>
+<dd><p><p>Squaring: <span class="math">\(\mathrm{pow}(x, 2) = x^2\)</span>.</p>
  </p>
 </dd></dl>
 
@@ -346,14 +346,16 @@ are in the range <code class="docutils literal"><span class="pre">[FIRST_UNARY,<
 <dl class="member">
 <dt id="_CPPv2N2mp4expr3ADDE">
 <span id="mp::expr::ADD"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618ac7ebe836145f2970942e901fe4ac33a8"></span><code class="descname">ADD</code> = FIRST_BINARY<a class="headerlink" href="#_CPPv2N2mp4expr3ADDE" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>An addition, <span class="math">\(x + y\)</span>.</p>
+<dd><p><p>Addition, <span class="math">\(x + y\)</span>.</p>
  </p>
 </dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr3SUBE">
 <span id="mp::expr::SUB"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a764906a1c5b6bfcb189414425943c1c4"></span><code class="descname">SUB</code><a class="headerlink" href="#_CPPv2N2mp4expr3SUBE" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p><p>Subtraction, <span class="math">\(x - y\)</span>.</p>
+ </p>
+</dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr4LESSE">
@@ -363,37 +365,51 @@ are in the range <code class="docutils literal"><span class="pre">[FIRST_UNARY,<
 <dl class="member">
 <dt id="_CPPv2N2mp4expr3MULE">
 <span id="mp::expr::MUL"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a9afde2fa33f7aa75111251cca83a955f"></span><code class="descname">MUL</code><a class="headerlink" href="#_CPPv2N2mp4expr3MULE" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p><p>Multiplication, <span class="math">\(x * y = x y\)</span>.</p>
+ </p>
+</dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr3DIVE">
 <span id="mp::expr::DIV"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a759ea5f6a13a3858e5126552764dcdb6"></span><code class="descname">DIV</code><a class="headerlink" href="#_CPPv2N2mp4expr3DIVE" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p><p>Division, <span class="math">\(x / y\)</span>.</p>
+ </p>
+</dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr7INT_DIVE">
 <span id="mp::expr::INT_DIV"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a1b4bbe044efe58bc04e3f493b7e9994b"></span><code class="descname">INT_DIV</code><a class="headerlink" href="#_CPPv2N2mp4expr7INT_DIVE" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p><p>Truncated division, <span class="math">\(x \mathrm{div} y = \mathrm{trunc}(x / y)\)</span>.</p>
+ </p>
+</dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr3MODE">
 <span id="mp::expr::MOD"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618aebbd665829d2e1cc8b251aadf8d14f80"></span><code class="descname">MOD</code><a class="headerlink" href="#_CPPv2N2mp4expr3MODE" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p><p>The modulo operation, <span class="math">\(x \mathrm{mod} y\)</span>.</p>
+ </p>
+</dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr3POWE">
 <span id="mp::expr::POW"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a303c7916d46ddb8fc6cdc3c2574cd940"></span><code class="descname">POW</code><a class="headerlink" href="#_CPPv2N2mp4expr3POWE" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p><p>Exponentiation, <span class="math">\(x^y\)</span>.</p>
+ </p>
+</dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr14POW_CONST_BASEE">
 <span id="mp::expr::POW_CONST_BASE"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a405c70fcc259b102f639a2dabcd6b09b"></span><code class="descname">POW_CONST_BASE</code><a class="headerlink" href="#_CPPv2N2mp4expr14POW_CONST_BASEE" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p><p>Exponentiation with a constant base, <span class="math">\(a^x\)</span>.</p>
+ </p>
+</dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr13POW_CONST_EXPE">
 <span id="mp::expr::POW_CONST_EXP"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618ad938a2c0e6d3ed906452ce6207e4c85e"></span><code class="descname">POW_CONST_EXP</code><a class="headerlink" href="#_CPPv2N2mp4expr13POW_CONST_EXPE" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p><p>Exponentiation with a constant exponent <span class="math">\(x^a\)</span>.</p>
+ </p>
+</dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr5ATAN2E">
