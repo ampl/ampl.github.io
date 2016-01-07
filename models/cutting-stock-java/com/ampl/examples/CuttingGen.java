@@ -3,7 +3,6 @@
 package com.ampl.examples;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
 import com.ampl.AMPL;
 import com.ampl.Variable;
@@ -58,7 +57,7 @@ class CuttingGen {
       DataFrame widthOrder = new DataFrame(1, "WIDTHS", "order");
       widthOrder.setColumn("WIDTHS", widths);
       widthOrder.setColumn("order", orders);
-      ampl.setData(widthOrder, true);
+      ampl.setData(widthOrder, "WIDTHS");
 
       // Send initial patterns to AMPL model
       DataFrame initPatterns = new DataFrame(2, "WIDTHS", "PATTERNS", "rolls");
@@ -67,7 +66,7 @@ class CuttingGen {
         maxpat[i] = roll_width / widths[i];
         initPatterns.addRow(widths[i], i + 1, maxpat[i]);
       }
-      ampl.setData(initPatterns, false);
+      ampl.setData(initPatterns);
 
       // Set solve options
       ampl.setOption("solver" ,"gurobi");
@@ -76,8 +75,7 @@ class CuttingGen {
       while (true) {
         ampl.solve();
 
-        // Get solution vector and dual values to a DataFrame object
-        double[] cuttingPlan = cut.getValues().getColumnAsDoubles("val");
+        // Get dual values to a DataFrame object
         double[] dualPrices = limits.getValues().getColumnAsDoubles("dual");
 
         int numKnapsackVars = 0;
@@ -96,7 +94,7 @@ class CuttingGen {
         }
 
         boolean[] knapsackSol = new boolean[numKnapsackVars];
-        double value = solve01Knapsack(weights, values, roll_width, knapsackSol);
+        solve01Knapsack(weights, values, roll_width, knapsackSol);
         if (solve01Knapsack(weights, values, roll_width, knapsackSol) < 1.000001)
           break;
 

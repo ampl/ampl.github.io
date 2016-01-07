@@ -57,7 +57,7 @@ class CuttingAll {
       DataFrame widthOrder = new DataFrame(1, "WIDTHS", "order");
       widthOrder.setColumn("WIDTHS", widths);
       widthOrder.setColumn("order", orders);
-      ampl.setData(widthOrder, true);
+      ampl.setData(widthOrder, "WIDTHS");
 
       DataFrame allPatterns = new DataFrame(2, "WIDTHS", "PATTERNS", "rolls");
       for (int i = 0; i < widths.length; i++) {
@@ -66,7 +66,7 @@ class CuttingAll {
             sortedWidths[i], j + 1, patterns.get(j * widths.length + i));
         }
       }
-      ampl.setData(allPatterns, false);
+      ampl.setData(allPatterns);
 
       // Solve
       ampl.setOption("solver", "gurobi");
