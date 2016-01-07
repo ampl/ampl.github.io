@@ -88,17 +88,15 @@ Legendre Form of Incomplete Elliptic Integrals
  parameters :math:`m = k^2` and :math:`\sin^2(\alpha) = k^2`, with the change of
  sign :math:`n \to -n`.
 
-.. function:: gsl_sf_ellint_D(phi, k, n)
+.. function:: gsl_sf_ellint_D(phi, k)
 
- This routine computes the incomplete elliptic integral :math:`D(\phi,k,n)`
+ This routine computes the incomplete elliptic integral :math:`D(\phi,k)`
  which is defined through the Carlson form :math:`RD(x,y,z)` by the following
  relation,
 
  .. math::
-   D(\phi,k,n) = (1/3)(\sin(\phi))^3
+   D(\phi,k) = (1/3)(\sin(\phi))^3
      RD (1-\sin^2(\phi), 1-k^2 \sin^2(\phi), 1).
-
-The argument :math:`n` is not used and will be removed in a future release.
 
 Carlson Forms
 -------------
