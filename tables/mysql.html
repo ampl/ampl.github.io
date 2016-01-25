@@ -117,12 +117,12 @@ for various platforms from <a class="reference external" href="http://dev.mysql.
 and Debian-based Linux distributions such as <a class="reference external" href="http://www.ubuntu.com/">Ubuntu</a> and <a class="reference external" href="http://linuxmint.com/">Mint</a>.</p>
 <ol class="arabic">
 <li><p class="first">Install the MySQL ODBC driver:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>sudo apt-get install libmyodbc
+<div class="highlight-bash"><div class="highlight"><pre>$ sudo apt-get install libmyodbc
 </pre></div>
 </div>
 </li>
 <li><p class="first">Register the driver:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>sudo odbcinst -i -d -f /usr/share/libmyodbc/odbcinst.ini
+<div class="highlight-bash"><div class="highlight"><pre>$ sudo odbcinst -i -d -f /usr/share/libmyodbc/odbcinst.ini
 </pre></div>
 </div>
 </li>
@@ -133,14 +133,14 @@ and Debian-based Linux distributions such as <a class="reference external" href=
 <h4>SUSE Linux<a class="headerlink" href="#suse-linux" title="Permalink to this headline">¶</a></h4>
 <ol class="arabic">
 <li><p class="first">Install the MySQL ODBC driver:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>sudo zypper install MyODBC-unixODBC
+<div class="highlight-bash"><div class="highlight"><pre>$ sudo zypper install MyODBC-unixODBC
 </pre></div>
 </div>
 </li>
 <li><p class="first">Register the ODBC driver. The easiest way to register the driver
 is by using the <code class="docutils literal"><span class="pre">myodbc-installer</span></code> utility included in the
 <code class="docutils literal"><span class="pre">MyODBC-unixODBC</span></code> package, for example:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>sudo myodbc-installer -d -a -n <span class="s2">&quot;MySQL&quot;</span> <span class="se">\</span>
+<div class="highlight-bash"><div class="highlight"><pre>$ sudo myodbc-installer -d -a -n <span class="s2">&quot;MySQL&quot;</span> <span class="se">\</span>
     -t <span class="s2">&quot;DRIVER=/usr/lib/libmyodbc5.so&quot;</span>
 </pre></div>
 </div>
@@ -169,7 +169,7 @@ library will not load and any connection attempt will fail.</p>
 <li><p class="first">Register the ODBC driver. The easiest way to register the driver is
 by using the <code class="docutils literal"><span class="pre">myodbc-installer</span></code> utility included in the distribution,
 for example:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>sudo myodbc-installer -d -a -n <span class="s2">&quot;MySQL&quot;</span> <span class="se">\</span>
+<div class="highlight-bash"><div class="highlight"><pre>$ sudo myodbc-installer -d -a -n <span class="s2">&quot;MySQL&quot;</span> <span class="se">\</span>
     -t <span class="s2">&quot;DRIVER=/usr/local/lib/libmyodbc5a.so&quot;</span>
 </pre></div>
 </div>
@@ -196,7 +196,7 @@ installer available for download as a DMG archive from the
 <p>Alternatively you can install the MySQL Connector/ODBC as described <a class="reference external" href="http://dev.mysql.com/doc/refman/5.1/en/connector-odbc-installation.html#connector-odbc-installation-binary-macosx">here</a>,
 skipping the outdated last step (driver registration) and then register
 the driver with the following command:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>sudo myodbc-installer -d -a -n <span class="s2">&quot;MySQL&quot;</span> <span class="se">\</span>
+<div class="highlight-bash"><div class="highlight"><pre>$ sudo myodbc-installer -d -a -n <span class="s2">&quot;MySQL&quot;</span> <span class="se">\</span>
     -t <span class="s2">&quot;DRIVER=/usr/local/lib/libmyodbc5w.so&quot;</span>
 </pre></div>
 </div>
@@ -227,7 +227,7 @@ that satisfies certain nutritional requirements. It is described in
 the instructions above and have access to the MySQL <code class="docutils literal"><span class="pre">test</span></code> database.</p>
 <p>First download the data for the diet problem <a class="reference external" href="http://ampl.github.io/models/tables/diet-mysql.sql">diet-mysql.sql</a>
 and import it to MySQL:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>mysql <span class="nb">test</span> &lt; diet-mysql.sql
+<div class="highlight-bash"><div class="highlight"><pre>$ mysql <span class="nb">test</span> &lt; diet-mysql.sql
 </pre></div>
 </div>
 <p>Then download the model file <a class="reference external" href="http://ampl.github.io/models/tables/diet.mod">diet.mod</a>
@@ -287,7 +287,7 @@ read table dietAmts;
 <p>Note that the same table <code class="docutils literal"><span class="pre">dietFoods</span></code> is used both for input and output.</p>
 <p>Running the <code class="docutils literal"><span class="pre">diet-mysql.run</span></code> script with ampl shows that data connection
 is working properly and the problem is easily solved:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>ampl diet-mysql.run
+<div class="highlight-bash"><div class="highlight"><pre>$ ampl diet-mysql.run
 MINOS 5.51: optimal solution found.
 <span class="m">13</span> iterations, objective 118.0594032
 </pre></div>
@@ -335,10 +335,10 @@ native_errno = 0
 if it is spelled correctly in the connection string. If you are not using a
 DSN, check the driver name instead. On a Unix-based system you can get the
 list of installed ODBC drivers using one of the following commands:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>myodbc-installer -d -l
+<div class="highlight-bash"><div class="highlight"><pre>$ myodbc-installer -d -l
 </pre></div>
 </div>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>odbcinst -d -q
+<div class="highlight-bash"><div class="highlight"><pre>$ odbcinst -d -q
 </pre></div>
 </div>
 <p>On Windows use the ODBC Data Source Administrator (see <a class="reference internal" href="#mysql-usage"><span>Usage</span></a>).</p>

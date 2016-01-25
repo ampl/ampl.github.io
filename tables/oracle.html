@@ -160,7 +160,7 @@ sudo ldconfig
 </div>
 </li>
 <li><p class="first">Set the <code class="docutils literal"><span class="pre">ORACLE_HOME</span></code> environment variable:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nb">export </span><span class="nv">ORACLE_HOME</span><span class="o">=</span>&lt;installation-dir&gt;
+<div class="highlight-bash"><div class="highlight"><pre><span class="nb">export</span> <span class="nv">ORACLE_HOME</span><span class="o">=</span>&lt;installation-dir&gt;
 </pre></div>
 </div>
 <p>replacing <code class="docutils literal"><span class="pre">&lt;installation-dir&gt;</span></code> with the actual installation directory, which can
@@ -208,7 +208,7 @@ sudo ln -s /etc/unixODBC/odbcinst.ini /etc/odbcinst.ini
 </div>
 </li>
 <li><p class="first">Set the <code class="docutils literal"><span class="pre">ORACLE_HOME</span></code> environment variable:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nb">export </span><span class="nv">ORACLE_HOME</span><span class="o">=</span>&lt;installation-dir&gt;
+<div class="highlight-bash"><div class="highlight"><pre><span class="nb">export</span> <span class="nv">ORACLE_HOME</span><span class="o">=</span>&lt;installation-dir&gt;
 </pre></div>
 </div>
 <p>replacing <code class="docutils literal"><span class="pre">&lt;installation-dir&gt;</span></code> with the actual installation directory, which can
@@ -250,7 +250,7 @@ that satisfies certain nutritional requirements. It is described in
 the instructions above and have access to a local Oracle database.</p>
 <p>First download the data for the diet problem <a class="reference external" href="http://ampl.github.io/models/tables/diet-oracle.sql">diet-oracle.sql</a>
 and import it into an Oracle database:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>sqlplus &lt;username&gt;/&lt;password&gt; @diet-oracle.sql
+<div class="highlight-bash"><div class="highlight"><pre>$ sqlplus &lt;username&gt;/&lt;password&gt; @diet-oracle.sql
 </pre></div>
 </div>
 <p>where <code class="docutils literal"><span class="pre">&lt;username&gt;</span></code> is the name of a database user and <code class="docutils literal"><span class="pre">&lt;password&gt;</span></code> is the
@@ -272,7 +272,7 @@ parameters explicitly. Alternatively, you could use a DSN file name or
 <p>Replace <code class="docutils literal"><span class="pre">Oracle</span></code> with the actual driver name in the connection string above.</p>
 <p>To find out the driver name on Linux, run the command <code class="docutils literal"><span class="pre">odbcinst</span> <span class="pre">-q</span> <span class="pre">-d</span></code> to
 display the names of installed ODBC drivers on Linux</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>odbcinst -q -d
+<div class="highlight-bash"><div class="highlight"><pre>$ odbcinst -q -d
 <span class="o">[</span>SQLite3<span class="o">]</span>
 <span class="o">[</span>Oracle 12c ODBC driver<span class="o">]</span>
 </pre></div>
@@ -316,7 +316,7 @@ read table dietAmts;
 <p>Note that the same table <code class="docutils literal"><span class="pre">dietFoods</span></code> is used both for input and output.</p>
 <p>Running the <code class="docutils literal"><span class="pre">diet-oracle.run</span></code> script with ampl shows that data connection
 is working properly and the problem is easily solved:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>ampl diet-oracle.run
+<div class="highlight-bash"><div class="highlight"><pre>$ ampl diet-oracle.run
 MINOS 5.51: optimal solution found.
 <span class="m">13</span> iterations, objective 118.0594032
 </pre></div>
@@ -382,7 +382,7 @@ native_errno = 0
 if it is spelled correctly in the connection string. If you are not using a
 DSN, check the driver name instead. On a Unix-based system you can get the
 list of installed ODBC drivers using the following command:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>odbcinst -d -q
+<div class="highlight-bash"><div class="highlight"><pre>$ odbcinst -d -q
 </pre></div>
 </div>
 <p>On Windows use the ODBC Data Source Administrator (see <a class="reference internal" href="#oracle-usage"><span>Usage</span></a>).</p>
