@@ -111,8 +111,8 @@ AMPL Solver Library</li>
 <dl class="function">
 <dt>
 template &lt;typename Handler&gt;</dt>
-<dt id="_CPPv2N2mp10ReadNLFileEN3fmt9StringRefER7Handleri">
-<span id="mp::ReadNLFile__fmt::StringRef.HandlerR.i"></span><span class="target" id="project0namespacemp_1a890839d99ca60fed865268a6877ad50e"></span>void <code class="descclassname">mp::</code><code class="descname">ReadNLFile</code><span class="sig-paren">(</span>fmt::StringRef <em>filename</em>, Handler &amp;<em>handler</em>, int <em>flags</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp10ReadNLFileEN3fmt9StringRefER7Handleri" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv2N2mp10ReadNLFileEN3fmt10CStringRefER7Handleri">
+<span id="mp::ReadNLFile__fmt::CStringRef.HandlerR.i"></span><span class="target" id="project0namespacemp_1a0add09a6269093f88c5414f3cb243630"></span>void <code class="descclassname">mp::</code><code class="descname">ReadNLFile</code><span class="sig-paren">(</span>fmt::CStringRef <em>filename</em>, Handler &amp;<em>handler</em>, int <em>flags</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp10ReadNLFileEN3fmt10CStringRefER7Handleri" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>Reads an optimization problem in the NL format from the file <em>filename</em>
 and sends notifications of the problem components to the <em>handler</em> object.</p>
 <p>The <em>filename</em> argument can be a C string or an <code class="docutils literal"><span class="pre">std::string</span></code> object.
@@ -141,11 +141,12 @@ nonlinear expressions.</p>
 <dl class="function">
 <dt>
 template &lt;typename Handler&gt;</dt>
-<dt id="_CPPv2N2mp12ReadNLStringEN3fmt9StringRefER7HandlerN3fmt9StringRefEi">
-<span id="mp::ReadNLString__fmt::StringRef.HandlerR.fmt::StringRef.i"></span><span class="target" id="project0namespacemp_1a32da5a6618fb01b1f900cc7e5146e92b"></span>void <code class="descclassname">mp::</code><code class="descname">ReadNLString</code><span class="sig-paren">(</span>fmt::StringRef <em>str</em>, Handler &amp;<em>handler</em>, fmt::StringRef <em>name</em>, int <em>flags</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp12ReadNLStringEN3fmt9StringRefER7HandlerN3fmt9StringRefEi" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv2N2mp12ReadNLStringEN3fmt9StringRefER7HandlerN3fmt10CStringRefEi">
+<span id="mp::ReadNLString__fmt::StringRef.HandlerR.fmt::CStringRef.i"></span><span class="target" id="project0namespacemp_1aebc17ed664bfa82f049ceb25739705b2"></span>void <code class="descclassname">mp::</code><code class="descname">ReadNLString</code><span class="sig-paren">(</span>fmt::StringRef <em>str</em>, Handler &amp;<em>handler</em>, fmt::CStringRef <em>name</em>, int <em>flags</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp12ReadNLStringEN3fmt9StringRefER7HandlerN3fmt10CStringRefEi" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>Reads an optimization problem in the NL format from the string <em>str</em>
 and sends notifications of the problem components to the <em>handler</em> object.</p>
 <p>Both <em>str</em> and <em>name</em> can be C strings or <code class="docutils literal"><span class="pre">std::string</span></code> objects.
+The string <em>str</em> must be null-terminated.
 The <em>name</em> argument is used as the name of the input when reporting errors.
 <em>flags</em> can be either 0, which is the default, to read all constructs in
 the order they appear in the input, or <a class="reference internal" href="#_CPPv2N2mp17READ_BOUNDS_FIRSTE" title="mp::READ_BOUNDS_FIRST"><code class="xref cpp cpp-any docutils literal"><span class="pre">mp::READ_BOUNDS_FIRST</span></code></a> to read
@@ -845,8 +846,8 @@ set to <a class="reference internal" href="#_CPPv2N2mp5arith7UNKNOWNE" title="mp
 <div class="breathe-sectiondef container">
 <p class="breathe-sectiondef-title rubric">Public Functions</p>
 <dl class="function">
-<dt id="_CPPv2N2mp9ReadError9ReadErrorEN3fmt9StringRefEiiN3fmt9StringRefEN3fmt7ArgListE">
-<span id="mp::ReadError::ReadError__fmt::StringRef.i.i.fmt::StringRef.fmt::ArgList"></span><span class="target" id="project0classmp_1_1ReadError_1a97b1c91d86383b9985673fd00d51227e"></span><code class="descname">ReadError</code><span class="sig-paren">(</span>fmt::StringRef <em>filename</em>, int <em>line</em>, int <em>column</em>, fmt::StringRef <em>format_str</em>, fmt::ArgList <em>args</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9ReadError9ReadErrorEN3fmt9StringRefEiiN3fmt9StringRefEN3fmt7ArgListE" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv2N2mp9ReadError9ReadErrorEN3fmt10CStringRefEiiN3fmt10CStringRefEN3fmt7ArgListE">
+<span id="mp::ReadError::ReadError__fmt::CStringRef.i.i.fmt::CStringRef.fmt::ArgList"></span><span class="target" id="project0classmp_1_1ReadError_1a5c6ac21363139b94663f4c1f30d63ae0"></span><code class="descname">ReadError</code><span class="sig-paren">(</span>fmt::CStringRef <em>filename</em>, int <em>line</em>, int <em>column</em>, fmt::CStringRef <em>format_str</em>, fmt::ArgList <em>args</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9ReadError9ReadErrorEN3fmt10CStringRefEiiN3fmt10CStringRefEN3fmt7ArgListE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Constructs the exception object. </p>
 </dd></dl>
 
@@ -884,8 +885,8 @@ set to <a class="reference internal" href="#_CPPv2N2mp5arith7UNKNOWNE" title="mp
 <div class="breathe-sectiondef container">
 <p class="breathe-sectiondef-title rubric">Public Functions</p>
 <dl class="function">
-<dt id="_CPPv2N2mp15BinaryReadError15BinaryReadErrorEN3fmt9StringRefENSt6size_tEN3fmt9StringRefE">
-<span id="mp::BinaryReadError::BinaryReadError__fmt::StringRef.std::s.fmt::StringRef"></span><span class="target" id="project0classmp_1_1BinaryReadError_1abf5d7dfcfb7654ba7ef9dcaf30f62835"></span><code class="descname">BinaryReadError</code><span class="sig-paren">(</span>fmt::StringRef <em>filename</em>, std::size_t <em>offset</em>, fmt::StringRef <em>message</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp15BinaryReadError15BinaryReadErrorEN3fmt9StringRefENSt6size_tEN3fmt9StringRefE" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv2N2mp15BinaryReadError15BinaryReadErrorERKNSt6stringENSt6size_tEN3fmt10CStringRefE">
+<span id="mp::BinaryReadError::BinaryReadError__ssCR.std::s.fmt::CStringRef"></span><span class="target" id="project0classmp_1_1BinaryReadError_1ae2987996241f9b76bc51ae71eb9ffc61"></span><code class="descname">BinaryReadError</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>filename</em>, std::size_t <em>offset</em>, fmt::CStringRef <em>message</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp15BinaryReadError15BinaryReadErrorERKNSt6stringENSt6size_tEN3fmt10CStringRefE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Constructs the exception object. </p>
 </dd></dl>
 
