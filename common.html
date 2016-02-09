@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Common Declarations &mdash; MP 2.1.0 documentation</title>
+    <title>Common Declarations &mdash; MP None documentation</title>
     
     <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -24,7 +24,7 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="MP 2.1.0 documentation" href="index.html" />
+    <link rel="top" title="MP None documentation" href="index.html" />
     <link rel="next" title="Support for the NL Format" href="nl.html" />
     <link rel="prev" title="Contents" href="index.html" /> 
   </head>
@@ -122,342 +122,256 @@
 <dl class="member">
 <dt id="_CPPv2N2mp4expr7UNKNOWNE">
 <span id="mp::expr::UNKNOWN"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a806018bed9140373134a9bfb42f0b390"></span><code class="descname">UNKNOWN</code> = 0<a class="headerlink" href="#_CPPv2N2mp4expr7UNKNOWNE" title="Permalink to this definition">¶</a></dt>
-<dd><p>An unknown expression. </p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr10FIRST_EXPRE">
 <span id="mp::expr::FIRST_EXPR"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a305dc0fab039102889f971c5232a2186"></span><code class="descname">FIRST_EXPR</code><a class="headerlink" href="#_CPPv2N2mp4expr10FIRST_EXPRE" title="Permalink to this definition">¶</a></dt>
-<dd><p>The first expression kind other than the unknown expression kind. </p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr13FIRST_NUMERICE">
 <span id="mp::expr::FIRST_NUMERIC"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a96d37bff43e644b712b86dbfb0f0947a"></span><code class="descname">FIRST_NUMERIC</code> = FIRST_EXPR<a class="headerlink" href="#_CPPv2N2mp4expr13FIRST_NUMERICE" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>The first numeric expression kind. Numeric expression kinds are in
-the range [<a class="reference internal" href="#_CPPv2N2mp4expr13FIRST_NUMERICE" title="mp::expr::FIRST_NUMERIC"><code class="xref cpp cpp-any docutils literal"><span class="pre">FIRST_NUMERIC</span></code></a>, <a class="reference internal" href="#_CPPv2N2mp4expr12LAST_NUMERICE" title="mp::expr::LAST_NUMERIC"><code class="xref cpp cpp-any docutils literal"><span class="pre">LAST_NUMERIC</span></code></a>].</p>
+<dd><p><span class="target" id="numeric-expr"></span><p>A numeric expression.</p>
  </p>
 </dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr6NUMBERE">
 <span id="mp::expr::NUMBER"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618aff49c8f1e3bd7524577fbbebd2c61c05"></span><code class="descname">NUMBER</code> = FIRST_NUMERIC<a class="headerlink" href="#_CPPv2N2mp4expr6NUMBERE" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>A number such as 42 or -1.23e-4.</p>
+<dd><p><span class="target" id="number"></span><p>A number such as <code class="docutils literal"><span class="pre">42</span></code> or <code class="docutils literal"><span class="pre">-1.23e-4</span></code>.</p>
  </p>
 </dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr15FIRST_REFERENCEE">
 <span id="mp::expr::FIRST_REFERENCE"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618af3644bd580ea3a8d85a0ea840cc48023"></span><code class="descname">FIRST_REFERENCE</code><a class="headerlink" href="#_CPPv2N2mp4expr15FIRST_REFERENCEE" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>The first reference expression kind. Reference expression kinds are in
-the range [<a class="reference internal" href="#_CPPv2N2mp4expr15FIRST_REFERENCEE" title="mp::expr::FIRST_REFERENCE"><code class="xref cpp cpp-any docutils literal"><span class="pre">FIRST_REFERENCE</span></code></a>, <a class="reference internal" href="#_CPPv2N2mp4expr14LAST_REFERENCEE" title="mp::expr::LAST_REFERENCE"><code class="xref cpp cpp-any docutils literal"><span class="pre">LAST_REFERENCE</span></code></a>].</p>
- </p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr8VARIABLEE">
 <span id="mp::expr::VARIABLE"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a22a2b1fa576efe580962090b99921e51"></span><code class="descname">VARIABLE</code> = FIRST_REFERENCE<a class="headerlink" href="#_CPPv2N2mp4expr8VARIABLEE" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>A reference to a variable.</p>
+<dd><p><span class="target" id="variable"></span><p>A reference to a variable.</p>
  </p>
 </dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr11COMMON_EXPRE">
 <span id="mp::expr::COMMON_EXPR"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a4a9e944510c06b683282585d456fd019"></span><code class="descname">COMMON_EXPR</code><a class="headerlink" href="#_CPPv2N2mp4expr11COMMON_EXPRE" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>A reference to a common expression.</p>
+<dd><p><span class="target" id="common-expr"></span><p>A reference to a common expression.</p>
  </p>
 </dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr14LAST_REFERENCEE">
 <span id="mp::expr::LAST_REFERENCE"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a8bb3e25c37182f5ef2e957f0907e5a73"></span><code class="descname">LAST_REFERENCE</code> = COMMON_EXPR<a class="headerlink" href="#_CPPv2N2mp4expr14LAST_REFERENCEE" title="Permalink to this definition">¶</a></dt>
-<dd><p>The last reference expression kind. </p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr11FIRST_UNARYE">
 <span id="mp::expr::FIRST_UNARY"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a2eade1b0a0d0c688f9880179c91923e7"></span><code class="descname">FIRST_UNARY</code><a class="headerlink" href="#_CPPv2N2mp4expr11FIRST_UNARYE" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>The first unary numeric expression kind. Unary numeric expression kinds
-are in the range [<a class="reference internal" href="#_CPPv2N2mp4expr11FIRST_UNARYE" title="mp::expr::FIRST_UNARY"><code class="xref cpp cpp-any docutils literal"><span class="pre">FIRST_UNARY</span></code></a>, <a class="reference internal" href="#_CPPv2N2mp4expr10LAST_UNARYE" title="mp::expr::LAST_UNARY"><code class="xref cpp cpp-any docutils literal"><span class="pre">LAST_UNARY</span></code></a>].</p>
+<dd><p><span class="target" id="unary-expr"></span><p>A unary numeric expression.
+Examples: <code class="docutils literal"><span class="pre">-x</span></code>, <code class="docutils literal"><span class="pre">sin(x)</span></code>, where <code class="docutils literal"><span class="pre">x</span></code> is a variable.</p>
  </p>
 </dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr5MINUSE">
 <span id="mp::expr::MINUS"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618af9e0b31d6956fb1737f27c11b2d69f91"></span><code class="descname">MINUS</code> = FIRST_UNARY<a class="headerlink" href="#_CPPv2N2mp4expr5MINUSE" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>A unary minus, <span class="math">\(-x\)</span>.</p>
- </p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr3ABSE">
 <span id="mp::expr::ABS"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618aea432286dee070e73139d87dae388c36"></span><code class="descname">ABS</code><a class="headerlink" href="#_CPPv2N2mp4expr3ABSE" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>The absolute value function, <span class="math">\(\mathrm{abs}(x) = |x|\)</span>.</p>
- </p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr5FLOORE">
 <span id="mp::expr::FLOOR"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a230172f3644542b94158751224328702"></span><code class="descname">FLOOR</code><a class="headerlink" href="#_CPPv2N2mp4expr5FLOORE" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>The floor function, <span class="math">\(\mathrm{floor}(x) = \lfloor x \rfloor\)</span>.</p>
- </p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr4CEILE">
 <span id="mp::expr::CEIL"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a4f350245393e806580fcc61ac2cd3c6a"></span><code class="descname">CEIL</code><a class="headerlink" href="#_CPPv2N2mp4expr4CEILE" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>The ceiling function, <span class="math">\(\mathrm{ceil}(x) = \lceil x \rceil\)</span>.</p>
- </p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr4SQRTE">
 <span id="mp::expr::SQRT"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a73b62ef020c45ecb706ec5f7ac93d585"></span><code class="descname">SQRT</code><a class="headerlink" href="#_CPPv2N2mp4expr4SQRTE" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>The square root function, <span class="math">\(\mathrm{sqrt}(x) = \sqrt{x}\)</span>.</p>
- </p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr4POW2E">
 <span id="mp::expr::POW2"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a11d0f59dec9934188cd16e61f18f595c"></span><code class="descname">POW2</code><a class="headerlink" href="#_CPPv2N2mp4expr4POW2E" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>Squaring: <span class="math">\(x \mathop{\verb!^!} 2 = x^2\)</span>.</p>
- </p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr3EXPE">
 <span id="mp::expr::EXP"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618aefd48f39f5514741990a083341cc45d7"></span><code class="descname">EXP</code><a class="headerlink" href="#_CPPv2N2mp4expr3EXPE" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>The natural exponential function, <span class="math">\(\mathrm{exp}(x) = e^x\)</span>.</p>
- </p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr3LOGE">
 <span id="mp::expr::LOG"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a4ebed2570a71816f565d9b9fc924299c"></span><code class="descname">LOG</code><a class="headerlink" href="#_CPPv2N2mp4expr3LOGE" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>The natural logarithmic function, <span class="math">\(\mathrm{log}(x) = \mathrm{ln}(x)\)</span>.</p>
- </p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr5LOG10E">
 <span id="mp::expr::LOG10"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a2789a1bf252feea654f86393e35f33c8"></span><code class="descname">LOG10</code><a class="headerlink" href="#_CPPv2N2mp4expr5LOG10E" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>The base 10 logarithmic function,
-<span class="math">\(\mathrm{log10}(x) = \mathrm{log}_{10}(x)\)</span>.</p>
- </p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr3SINE">
 <span id="mp::expr::SIN"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618af05a3044236ff7c5a83ccf494c107595"></span><code class="descname">SIN</code><a class="headerlink" href="#_CPPv2N2mp4expr3SINE" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>Sine, <span class="math">\(\mathrm{sin}(x)\)</span>.</p>
- </p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr4SINHE">
 <span id="mp::expr::SINH"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a726c8a20ae4c0a97d746392344525296"></span><code class="descname">SINH</code><a class="headerlink" href="#_CPPv2N2mp4expr4SINHE" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>Hyperbolic sine, <span class="math">\(\mathrm{sinh}(x)\)</span>.</p>
- </p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr3COSE">
 <span id="mp::expr::COS"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618abdbc1ccef1c8993ceb022ea82025bf62"></span><code class="descname">COS</code><a class="headerlink" href="#_CPPv2N2mp4expr3COSE" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>Cosine, <span class="math">\(\mathrm{cos}(x)\)</span>.</p>
- </p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr4COSHE">
 <span id="mp::expr::COSH"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a91afb572ea686a453d117d881446c5b5"></span><code class="descname">COSH</code><a class="headerlink" href="#_CPPv2N2mp4expr4COSHE" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>Hyperbolic cosine, <span class="math">\(\mathrm{cosh}(x)\)</span>.</p>
- </p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr3TANE">
 <span id="mp::expr::TAN"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a5420efd58b5da2fdf638dc1c51caddbe"></span><code class="descname">TAN</code><a class="headerlink" href="#_CPPv2N2mp4expr3TANE" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>Tangent, <span class="math">\(\mathrm{tan}(x)\)</span>.</p>
- </p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr4TANHE">
 <span id="mp::expr::TANH"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618ae4e0a454be8705d075e59aae6517e301"></span><code class="descname">TANH</code><a class="headerlink" href="#_CPPv2N2mp4expr4TANHE" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>Hyperbolic tangent, <span class="math">\(\mathrm{tan}(x)\)</span>.</p>
- </p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr4ASINE">
 <span id="mp::expr::ASIN"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618ae48153f6e6193a7523f2cc443451699f"></span><code class="descname">ASIN</code><a class="headerlink" href="#_CPPv2N2mp4expr4ASINE" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>Inverse sine, <span class="math">\(\mathrm{asin}(x) = \mathrm{sin}^{-1}(x)\)</span>.</p>
- </p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr5ASINHE">
 <span id="mp::expr::ASINH"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618ab32dbdc4fd7b12bbeb80d21b555c6c36"></span><code class="descname">ASINH</code><a class="headerlink" href="#_CPPv2N2mp4expr5ASINHE" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>Inverse hyperbolic sine, <span class="math">\(\mathrm{asinh}(x) = \mathrm{sinh}^{-1}(x)\)</span>.</p>
- </p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr4ACOSE">
 <span id="mp::expr::ACOS"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a66524cf9b0897ff556d09fbc5c1a5126"></span><code class="descname">ACOS</code><a class="headerlink" href="#_CPPv2N2mp4expr4ACOSE" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>Inverse cosine, <span class="math">\(\mathrm{acos}(x) = \mathrm{cos}^{-1}(x)\)</span>.</p>
- </p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr5ACOSHE">
 <span id="mp::expr::ACOSH"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a7aa9fa4806e9e65a4b47a9ad6cf6c00d"></span><code class="descname">ACOSH</code><a class="headerlink" href="#_CPPv2N2mp4expr5ACOSHE" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>Inverse hyperbolic cosine,
-<span class="math">\(\mathrm{acosh}(x) = \mathrm{cosh}^{-1}(x)\)</span>.</p>
- </p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr4ATANE">
 <span id="mp::expr::ATAN"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a7f8942e265a7feafe07555450b34bcf3"></span><code class="descname">ATAN</code><a class="headerlink" href="#_CPPv2N2mp4expr4ATANE" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>Inverse tangent, <span class="math">\(\mathrm{atan}(x) = \mathrm{tan}^{-1}(x)\)</span>.</p>
- </p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr5ATANHE">
 <span id="mp::expr::ATANH"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618aa5b15f4892195b0d35a6cf4192956172"></span><code class="descname">ATANH</code><a class="headerlink" href="#_CPPv2N2mp4expr5ATANHE" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>Inverse hyperbolic tangent,
-<span class="math">\(\mathrm{atanh}(x) = \mathrm{tanh}^{-1}(x)\)</span>.</p>
- </p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr10LAST_UNARYE">
 <span id="mp::expr::LAST_UNARY"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618aa4c49ec630d33792ea93a57f70084e84"></span><code class="descname">LAST_UNARY</code> = ATANH<a class="headerlink" href="#_CPPv2N2mp4expr10LAST_UNARYE" title="Permalink to this definition">¶</a></dt>
-<dd><p>The last unary numeric expression kind. </p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr12FIRST_BINARYE">
 <span id="mp::expr::FIRST_BINARY"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a7d1b243e86a3482a907b21ac6cd2d7ab"></span><code class="descname">FIRST_BINARY</code><a class="headerlink" href="#_CPPv2N2mp4expr12FIRST_BINARYE" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>The first binary expression kind. Binary expression kinds are in
-the range [<a class="reference internal" href="#_CPPv2N2mp4expr12FIRST_BINARYE" title="mp::expr::FIRST_BINARY"><code class="xref cpp cpp-any docutils literal"><span class="pre">FIRST_BINARY</span></code></a>, <a class="reference internal" href="#_CPPv2N2mp4expr11LAST_BINARYE" title="mp::expr::LAST_BINARY"><code class="xref cpp cpp-any docutils literal"><span class="pre">LAST_BINARY</span></code></a>].</p>
+<dd><p><span class="target" id="binary-expr"></span><p>A binary numeric expression.
+Examples: <code class="docutils literal"><span class="pre">x</span> <span class="pre">/</span> <span class="pre">y</span></code>, <code class="docutils literal"><span class="pre">atan2(x,</span> <span class="pre">y)</span></code>, where <code class="docutils literal"><span class="pre">x</span></code> and <code class="docutils literal"><span class="pre">y</span></code> are variables.</p>
  </p>
 </dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr3ADDE">
 <span id="mp::expr::ADD"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618ac7ebe836145f2970942e901fe4ac33a8"></span><code class="descname">ADD</code> = FIRST_BINARY<a class="headerlink" href="#_CPPv2N2mp4expr3ADDE" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>Addition, <span class="math">\(x + y\)</span>.</p>
- </p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr3SUBE">
 <span id="mp::expr::SUB"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a764906a1c5b6bfcb189414425943c1c4"></span><code class="descname">SUB</code><a class="headerlink" href="#_CPPv2N2mp4expr3SUBE" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>Subtraction, <span class="math">\(x - y\)</span>.</p>
- </p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr4LESSE">
 <span id="mp::expr::LESS"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618ac66504b16890f89f5eefd382c4cf10fa"></span><code class="descname">LESS</code><a class="headerlink" href="#_CPPv2N2mp4expr4LESSE" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>The <span class="math">\(\mathrm{less}\)</span> operation,
-<span class="math">\(x \mathop{\rm less} y = \mathrm{max}(x - y, 0)\)</span>.</p>
- </p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr3MULE">
 <span id="mp::expr::MUL"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a9afde2fa33f7aa75111251cca83a955f"></span><code class="descname">MUL</code><a class="headerlink" href="#_CPPv2N2mp4expr3MULE" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>Multiplication, <span class="math">\(x * y = x y\)</span>.</p>
- </p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr3DIVE">
 <span id="mp::expr::DIV"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a759ea5f6a13a3858e5126552764dcdb6"></span><code class="descname">DIV</code><a class="headerlink" href="#_CPPv2N2mp4expr3DIVE" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>Division, <span class="math">\(x / y\)</span>.</p>
- </p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="member">
-<dt id="_CPPv2N2mp4expr9TRUNC_DIVE">
-<span id="mp::expr::TRUNC_DIV"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a014f3530310d34b2eabc048022e5a461"></span><code class="descname">TRUNC_DIV</code><a class="headerlink" href="#_CPPv2N2mp4expr9TRUNC_DIVE" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>Truncated division, <span class="math">\(x \mathop{\rm div} y = \mathrm{trunc}(x / y)\)</span>.</p>
- </p>
-</dd></dl>
+<dt id="_CPPv2N2mp4expr7INT_DIVE">
+<span id="mp::expr::INT_DIV"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a1b4bbe044efe58bc04e3f493b7e9994b"></span><code class="descname">INT_DIV</code><a class="headerlink" href="#_CPPv2N2mp4expr7INT_DIVE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr3MODE">
 <span id="mp::expr::MOD"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618aebbd665829d2e1cc8b251aadf8d14f80"></span><code class="descname">MOD</code><a class="headerlink" href="#_CPPv2N2mp4expr3MODE" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>The modulo operation, <span class="math">\(x \mathop{\rm mod} y\)</span>.</p>
- </p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr3POWE">
 <span id="mp::expr::POW"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a303c7916d46ddb8fc6cdc3c2574cd940"></span><code class="descname">POW</code><a class="headerlink" href="#_CPPv2N2mp4expr3POWE" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>Exponentiation, <span class="math">\(x \mathop{\verb!^!} y = x^y\)</span>.</p>
- </p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr14POW_CONST_BASEE">
 <span id="mp::expr::POW_CONST_BASE"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a405c70fcc259b102f639a2dabcd6b09b"></span><code class="descname">POW_CONST_BASE</code><a class="headerlink" href="#_CPPv2N2mp4expr14POW_CONST_BASEE" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>Exponentiation with a constant base, <span class="math">\(a^x\)</span>.</p>
- </p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr13POW_CONST_EXPE">
 <span id="mp::expr::POW_CONST_EXP"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618ad938a2c0e6d3ed906452ce6207e4c85e"></span><code class="descname">POW_CONST_EXP</code><a class="headerlink" href="#_CPPv2N2mp4expr13POW_CONST_EXPE" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>Exponentiation with a constant exponent <span class="math">\(x^a\)</span>.</p>
- </p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr5ATAN2E">
 <span id="mp::expr::ATAN2"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a6224a4207dcaeb5bb1b97b94c7ed6c73"></span><code class="descname">ATAN2</code><a class="headerlink" href="#_CPPv2N2mp4expr5ATAN2E" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>Inverse tangent, <span class="math">\(\mathrm{atan2}(y, x) = \mathrm{tan}^{-1}(y/x)\)</span>.</p>
- </p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr9PRECISIONE">
 <span id="mp::expr::PRECISION"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618aa5aed5102bbc669b0ee37cf7b00c79c2"></span><code class="descname">PRECISION</code><a class="headerlink" href="#_CPPv2N2mp4expr9PRECISIONE" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>The function <span class="math">\(\mathrm{precision}(x, n)\)</span> which returns <span class="math">\(x\)</span>
-rounded to <span class="math">\(n\)</span> significant decimal digits.</p>
- </p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr5ROUNDE">
 <span id="mp::expr::ROUND"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a92c9d338b507c78e6f50002799fa5a7a"></span><code class="descname">ROUND</code><a class="headerlink" href="#_CPPv2N2mp4expr5ROUNDE" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>The function <span class="math">\(\mathrm{round}(x, n)\)</span> which returns <span class="math">\(x\)</span>
-rounded to <span class="math">\(n\)</span> digits past decimal point.</p>
- </p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr5TRUNCE">
 <span id="mp::expr::TRUNC"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a5cb399ec50e169bfcfae5c3dadf6f61d"></span><code class="descname">TRUNC</code><a class="headerlink" href="#_CPPv2N2mp4expr5TRUNCE" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>The function <span class="math">\(\mathrm{trunc}(x, n)\)</span> which returns <span class="math">\(x\)</span>
-truncated to <span class="math">\(n\)</span> digits past decimal point.</p>
- </p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr11LAST_BINARYE">
 <span id="mp::expr::LAST_BINARY"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a8958b792a8edf2af171c3e8d4139ad00"></span><code class="descname">LAST_BINARY</code> = TRUNC<a class="headerlink" href="#_CPPv2N2mp4expr11LAST_BINARYE" title="Permalink to this definition">¶</a></dt>
-<dd><p>The last binary numeric expression kind. </p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr2IFE">
 <span id="mp::expr::IF"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a597c71d8f3f365871f413566db39e284"></span><code class="descname">IF</code><a class="headerlink" href="#_CPPv2N2mp4expr2IFE" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>An if-then-else expression.
+<dd><p><span class="target" id="if-expr"></span><p>An if-then-else expression.
 Example: <code class="docutils literal"><span class="pre">if</span> <span class="pre">x</span> <span class="pre">!=</span> <span class="pre">0</span> <span class="pre">then</span> <span class="pre">y</span> <span class="pre">else</span> <span class="pre">z</span></code>, where <code class="docutils literal"><span class="pre">x</span></code>, <code class="docutils literal"><span class="pre">y</span></code> and <code class="docutils literal"><span class="pre">z</span></code> are
 variables.</p>
  </p>
@@ -466,7 +380,7 @@ variables.</p>
 <dl class="member">
 <dt id="_CPPv2N2mp4expr6PLTERME">
 <span id="mp::expr::PLTERM"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a8f186eafa0a15fdec2387067305434e9"></span><code class="descname">PLTERM</code><a class="headerlink" href="#_CPPv2N2mp4expr6PLTERME" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>A piecewise-linear term.
+<dd><p><span class="target" id="plterm"></span><p>A piecewise-linear term.
 Example: <code class="docutils literal"><span class="pre">&lt;&lt;0;</span> <span class="pre">-1,</span> <span class="pre">1&gt;&gt;</span> <span class="pre">x</span></code>, where <code class="docutils literal"><span class="pre">x</span></code> is a variable.</p>
  </p>
 </dd></dl>
@@ -474,7 +388,7 @@ Example: <code class="docutils literal"><span class="pre">&lt;&lt;0;</span> <spa
 <dl class="member">
 <dt id="_CPPv2N2mp4expr4CALLE">
 <span id="mp::expr::CALL"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618ab0d734faa3b68bc3d4396509bba4965e"></span><code class="descname">CALL</code><a class="headerlink" href="#_CPPv2N2mp4expr4CALLE" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>A function call expression.
+<dd><p><span class="target" id="call-expr"></span><p>A function call expression.
 Example: <code class="docutils literal"><span class="pre">f(x)</span></code>, where <code class="docutils literal"><span class="pre">f</span></code> is a function and <code class="docutils literal"><span class="pre">x</span></code> is a variable.</p>
  </p>
 </dd></dl>
@@ -482,15 +396,12 @@ Example: <code class="docutils literal"><span class="pre">f(x)</span></code>, wh
 <dl class="member">
 <dt id="_CPPv2N2mp4expr14FIRST_ITERATEDE">
 <span id="mp::expr::FIRST_ITERATED"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a72f0de1053de58b03bf2bd8a1acff88f"></span><code class="descname">FIRST_ITERATED</code><a class="headerlink" href="#_CPPv2N2mp4expr14FIRST_ITERATEDE" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>The first iterated expression kind. Iterated expression kinds are in
-the range [<a class="reference internal" href="#_CPPv2N2mp4expr14FIRST_ITERATEDE" title="mp::expr::FIRST_ITERATED"><code class="xref cpp cpp-any docutils literal"><span class="pre">FIRST_ITERATED</span></code></a>, <a class="reference internal" href="#_CPPv2N2mp4expr13LAST_ITERATEDE" title="mp::expr::LAST_ITERATED"><code class="xref cpp cpp-any docutils literal"><span class="pre">LAST_ITERATED</span></code></a>].</p>
- </p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr12FIRST_VARARGE">
 <span id="mp::expr::FIRST_VARARG"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a27186591bcdfd5637c6ac4cd07356cb0"></span><code class="descname">FIRST_VARARG</code> = FIRST_ITERATED<a class="headerlink" href="#_CPPv2N2mp4expr12FIRST_VARARGE" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>A varag expression (<code class="docutils literal"><span class="pre">min</span></code> or <code class="docutils literal"><span class="pre">max</span></code>). Example: <code class="docutils literal"><span class="pre">min{i</span> <span class="pre">in</span> <span class="pre">I}</span> <span class="pre">x[i]</span></code>,
+<dd><p><span class="target" id="vararg-expr"></span><p>A varag expression (<code class="docutils literal"><span class="pre">min</span></code> or <code class="docutils literal"><span class="pre">max</span></code>). Example: <code class="docutils literal"><span class="pre">min{i</span> <span class="pre">in</span> <span class="pre">I}</span> <span class="pre">x[i]</span></code>,
 where <code class="docutils literal"><span class="pre">I</span></code> is a set and <code class="docutils literal"><span class="pre">x</span></code> is a variable.</p>
  </p>
 </dd></dl>
@@ -513,7 +424,7 @@ where <code class="docutils literal"><span class="pre">I</span></code> is a set 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr3SUME">
 <span id="mp::expr::SUM"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a7cf98e49213e4662ee1107a678b563e4"></span><code class="descname">SUM</code><a class="headerlink" href="#_CPPv2N2mp4expr3SUME" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>A sum expression. Example: <code class="docutils literal"><span class="pre">sum{i</span> <span class="pre">in</span> <span class="pre">I}</span> <span class="pre">x[i]</span></code>, where <code class="docutils literal"><span class="pre">I</span></code> is a set and
+<dd><p><span class="target" id="sum-expr"></span><p>A sum expression. Example: <code class="docutils literal"><span class="pre">sum{i</span> <span class="pre">in</span> <span class="pre">I}</span> <span class="pre">x[i]</span></code>, where <code class="docutils literal"><span class="pre">I</span></code> is a set and
 <code class="docutils literal"><span class="pre">x</span></code> is a variable.</p>
  </p>
 </dd></dl>
@@ -521,7 +432,7 @@ where <code class="docutils literal"><span class="pre">I</span></code> is a set 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr8NUMBEROFE">
 <span id="mp::expr::NUMBEROF"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a66037d50682a5caa7885f015118a1674"></span><code class="descname">NUMBEROF</code><a class="headerlink" href="#_CPPv2N2mp4expr8NUMBEROFE" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>A numberof expression. Example: <code class="docutils literal"><span class="pre">numberof</span> <span class="pre">42</span> <span class="pre">in</span> <span class="pre">({i</span> <span class="pre">in</span> <span class="pre">I}</span> <span class="pre">x[i])</span></code>,
+<dd><p><span class="target" id="numberof-expr"></span><p>A numberof expression. Example: <code class="docutils literal"><span class="pre">numberof</span> <span class="pre">42</span> <span class="pre">in</span> <span class="pre">({i</span> <span class="pre">in</span> <span class="pre">I}</span> <span class="pre">x[i])</span></code>,
 where <code class="docutils literal"><span class="pre">I</span></code> is a set and <code class="docutils literal"><span class="pre">x</span></code> is a variable.</p>
  </p>
 </dd></dl>
@@ -534,7 +445,7 @@ where <code class="docutils literal"><span class="pre">I</span></code> is a set 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr12NUMBEROF_SYME">
 <span id="mp::expr::NUMBEROF_SYM"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618ab7113b915604dda2f2325b5ed8011d2b"></span><code class="descname">NUMBEROF_SYM</code><a class="headerlink" href="#_CPPv2N2mp4expr12NUMBEROF_SYME" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>A symbolic numberof expression.
+<dd><p><span class="target" id="numberof-sym-expr"></span><p>A symbolic numberof expression.
 Example: <code class="docutils literal"><span class="pre">numberof</span> <span class="pre">(if</span> <span class="pre">x</span> <span class="pre">!=</span> <span class="pre">0</span> <span class="pre">then</span> <span class="pre">'a'</span> <span class="pre">else</span> <span class="pre">'b')</span> <span class="pre">in</span> <span class="pre">('a',</span> <span class="pre">'b',</span> <span class="pre">'c')</span></code>,
 where <code class="docutils literal"><span class="pre">x</span></code> is a variable.</p>
  </p>
@@ -543,7 +454,7 @@ where <code class="docutils literal"><span class="pre">x</span></code> is a vari
 <dl class="member">
 <dt id="_CPPv2N2mp4expr5COUNTE">
 <span id="mp::expr::COUNT"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a7d8ce35056be0d80687962a68c78f185"></span><code class="descname">COUNT</code><a class="headerlink" href="#_CPPv2N2mp4expr5COUNTE" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>A count expression.
+<dd><p><span class="target" id="count-expr"></span><p>A count expression.
 Example: <code class="docutils literal"><span class="pre">count{i</span> <span class="pre">in</span> <span class="pre">I}</span> <span class="pre">(x[i]</span> <span class="pre">&gt;=</span> <span class="pre">0)</span></code>, where <code class="docutils literal"><span class="pre">I</span></code> is a set and <code class="docutils literal"><span class="pre">x</span></code>
 is a variable.</p>
  </p>
@@ -557,22 +468,21 @@ is a variable.</p>
 <dl class="member">
 <dt id="_CPPv2N2mp4expr13FIRST_LOGICALE">
 <span id="mp::expr::FIRST_LOGICAL"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a9652e3b908e27b92a88157f02bc6cf8a"></span><code class="descname">FIRST_LOGICAL</code><a class="headerlink" href="#_CPPv2N2mp4expr13FIRST_LOGICALE" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>The first logical expression kind. Logical expression kinds are in
-the range [<a class="reference internal" href="#_CPPv2N2mp4expr13FIRST_LOGICALE" title="mp::expr::FIRST_LOGICAL"><code class="xref cpp cpp-any docutils literal"><span class="pre">FIRST_LOGICAL</span></code></a>, <a class="reference internal" href="#_CPPv2N2mp4expr12LAST_LOGICALE" title="mp::expr::LAST_LOGICAL"><code class="xref cpp cpp-any docutils literal"><span class="pre">LAST_LOGICAL</span></code></a>].</p>
+<dd><p><span class="target" id="logical-expr"></span><p>A logical expression.</p>
  </p>
 </dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr4BOOLE">
 <span id="mp::expr::BOOL"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a860dbfd9449b56a29675b14c39baa5fa"></span><code class="descname">BOOL</code> = FIRST_LOGICAL<a class="headerlink" href="#_CPPv2N2mp4expr4BOOLE" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>A Boolean (logical) constant such as <code class="docutils literal"><span class="pre">0</span></code> or <code class="docutils literal"><span class="pre">1</span></code>.</p>
+<dd><p><span class="target" id="bool"></span><p>A Boolean (logical) constant such as <code class="docutils literal"><span class="pre">0</span></code> or <code class="docutils literal"><span class="pre">1</span></code>.</p>
  </p>
 </dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr3NOTE">
 <span id="mp::expr::NOT"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a3683ecd7076a6a507e38f2634e3a947e"></span><code class="descname">NOT</code><a class="headerlink" href="#_CPPv2N2mp4expr3NOTE" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>A logical NOT expression.
+<dd><p><span class="target" id="not-expr"></span><p>A logical NOT expression.
 Example: <code class="docutils literal"><span class="pre">not</span> <span class="pre">a</span></code>, where <code class="docutils literal"><span class="pre">a</span></code> is a logical expression.</p>
  </p>
 </dd></dl>
@@ -580,7 +490,7 @@ Example: <code class="docutils literal"><span class="pre">not</span> <span class
 <dl class="member">
 <dt id="_CPPv2N2mp4expr20FIRST_BINARY_LOGICALE">
 <span id="mp::expr::FIRST_BINARY_LOGICAL"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618ab42517e314843a80215bf10237149a0b"></span><code class="descname">FIRST_BINARY_LOGICAL</code><a class="headerlink" href="#_CPPv2N2mp4expr20FIRST_BINARY_LOGICALE" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>A binary logical expression.
+<dd><p><span class="target" id="binary-logical-expr"></span><p>A binary logical expression.
 Examples: <code class="docutils literal"><span class="pre">a</span> <span class="pre">||</span> <span class="pre">b</span></code>, <code class="docutils literal"><span class="pre">a</span> <span class="pre">&amp;&amp;</span> <span class="pre">b</span></code>, where <code class="docutils literal"><span class="pre">a</span></code> and <code class="docutils literal"><span class="pre">b</span></code> are logical
 expressions.</p>
  </p>
@@ -609,7 +519,7 @@ expressions.</p>
 <dl class="member">
 <dt id="_CPPv2N2mp4expr16FIRST_RELATIONALE">
 <span id="mp::expr::FIRST_RELATIONAL"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a81b5e08d76254e45ebe6fe27f7befd05"></span><code class="descname">FIRST_RELATIONAL</code><a class="headerlink" href="#_CPPv2N2mp4expr16FIRST_RELATIONALE" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>A relational expression.
+<dd><p><span class="target" id="relational-expr"></span><p>A relational expression.
 Examples: <code class="docutils literal"><span class="pre">a</span> <span class="pre">&lt;</span> <span class="pre">b</span></code>, <code class="docutils literal"><span class="pre">a</span> <span class="pre">!=</span> <span class="pre">b</span></code>, where <code class="docutils literal"><span class="pre">a</span></code> and <code class="docutils literal"><span class="pre">b</span></code> are numeric
 expressions.</p>
  </p>
@@ -653,7 +563,7 @@ expressions.</p>
 <dl class="member">
 <dt id="_CPPv2N2mp4expr19FIRST_LOGICAL_COUNTE">
 <span id="mp::expr::FIRST_LOGICAL_COUNT"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a06369453ef1ffff81cb9dea0115f0357"></span><code class="descname">FIRST_LOGICAL_COUNT</code><a class="headerlink" href="#_CPPv2N2mp4expr19FIRST_LOGICAL_COUNTE" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>A logical count expression.
+<dd><p><span class="target" id="logical-count-expr"></span><p>A logical count expression.
 Examples: <code class="docutils literal"><span class="pre">atleast</span> <span class="pre">1</span> <span class="pre">(a</span> <span class="pre">&lt;</span> <span class="pre">b,</span> <span class="pre">a</span> <span class="pre">!=</span> <span class="pre">b)</span></code>, where <code class="docutils literal"><span class="pre">a</span></code> and <code class="docutils literal"><span class="pre">b</span></code> are
 numeric expressions.</p>
  </p>
@@ -697,7 +607,7 @@ numeric expressions.</p>
 <dl class="member">
 <dt id="_CPPv2N2mp4expr11IMPLICATIONE">
 <span id="mp::expr::IMPLICATION"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a040cfb2626f1d0c58b1557f3688bdc1a"></span><code class="descname">IMPLICATION</code><a class="headerlink" href="#_CPPv2N2mp4expr11IMPLICATIONE" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>An implication expression.
+<dd><p><span class="target" id="implication-expr"></span><p>An implication expression.
 Example: <code class="docutils literal"><span class="pre">a</span> <span class="pre">==&gt;</span> <span class="pre">b</span> <span class="pre">else</span> <span class="pre">c</span></code>, where <code class="docutils literal"><span class="pre">a</span></code>, <code class="docutils literal"><span class="pre">b</span></code> and <code class="docutils literal"><span class="pre">c</span></code> are logical
 expressions.</p>
  </p>
@@ -706,7 +616,7 @@ expressions.</p>
 <dl class="member">
 <dt id="_CPPv2N2mp4expr22FIRST_ITERATED_LOGICALE">
 <span id="mp::expr::FIRST_ITERATED_LOGICAL"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618aeef5fb76c601d9c5ebf0d41bf453ca57"></span><code class="descname">FIRST_ITERATED_LOGICAL</code><a class="headerlink" href="#_CPPv2N2mp4expr22FIRST_ITERATED_LOGICALE" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>An iterated logical expression.
+<dd><p><span class="target" id="iterated-logical-expr"></span><p>An iterated logical expression.
 Example: <code class="docutils literal"><span class="pre">exists{i</span> <span class="pre">in</span> <span class="pre">I}</span> <span class="pre">x[i]</span> <span class="pre">&gt;=</span> <span class="pre">0</span></code>, where <code class="docutils literal"><span class="pre">I</span></code> is a set and <code class="docutils literal"><span class="pre">x</span></code> is a
 variable.</p>
  </p>
@@ -730,7 +640,7 @@ variable.</p>
 <dl class="member">
 <dt id="_CPPv2N2mp4expr14FIRST_PAIRWISEE">
 <span id="mp::expr::FIRST_PAIRWISE"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a34381bfadd4aa169bdab7c0049ca27c7"></span><code class="descname">FIRST_PAIRWISE</code><a class="headerlink" href="#_CPPv2N2mp4expr14FIRST_PAIRWISEE" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>A pairwise expression (<code class="docutils literal"><span class="pre">alldiff</span></code> or <code class="docutils literal"><span class="pre">!alldiff</span></code>).
+<dd><p><span class="target" id="pairwise-expr"></span><p>A pairwise expression (<code class="docutils literal"><span class="pre">alldiff</span></code> or <code class="docutils literal"><span class="pre">!alldiff</span></code>).
 Example: <code class="docutils literal"><span class="pre">alldiff{i</span> <span class="pre">in</span> <span class="pre">I}</span> <span class="pre">x[i]</span></code>, where <code class="docutils literal"><span class="pre">I</span></code> is a set and <code class="docutils literal"><span class="pre">x</span></code> is a
 variable.</p>
  </p>
@@ -759,14 +669,14 @@ variable.</p>
 <dl class="member">
 <dt id="_CPPv2N2mp4expr6STRINGE">
 <span id="mp::expr::STRING"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a45e078a66ffc9dfd8e10d610c1856300"></span><code class="descname">STRING</code><a class="headerlink" href="#_CPPv2N2mp4expr6STRINGE" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>A string such as <code class="docutils literal"><span class="pre">&quot;abc&quot;</span></code>.</p>
+<dd><p><span class="target" id="string"></span><p>A string such as <code class="docutils literal"><span class="pre">&quot;abc&quot;</span></code>.</p>
  </p>
 </dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr5IFSYME">
 <span id="mp::expr::IFSYM"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a133a4b0781cb6d3471cd9a90096b1cee"></span><code class="descname">IFSYM</code><a class="headerlink" href="#_CPPv2N2mp4expr5IFSYME" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>A symbolic if-then-else expression.
+<dd><p><span class="target" id="ifsym"></span><p>A symbolic if-then-else expression.
 Example: <code class="docutils literal"><span class="pre">if</span> <span class="pre">x</span> <span class="pre">!=</span> <span class="pre">0</span> <span class="pre">then</span> <span class="pre">'a'</span> <span class="pre">else</span> <span class="pre">0</span></code>, where <code class="docutils literal"><span class="pre">x</span></code> is a variable.</p>
  </p>
 </dd></dl>
