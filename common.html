@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Common Declarations &mdash; MP 2.1.0 documentation</title>
+    <title>Common Definitions &mdash; MP 2.1.0 documentation</title>
     
     <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -73,8 +73,8 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="common-declarations">
-<h1>Common Declarations<a class="headerlink" href="#common-declarations" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="common-definitions">
+<h1>Common Definitions<a class="headerlink" href="#common-definitions" title="Permalink to this headline">¶</a></h1>
 <p>Header: <code class="file docutils literal"><span class="pre">mp/common.h</span></code></p>
 <dl class="type">
 <dt id="_CPPv2N2mp3obj4TypeE">
@@ -109,7 +109,7 @@
 <dl class="member">
 <dt id="_CPPv2N2mp4func8SYMBOLICE">
 <span id="mp::func::SYMBOLIC"></span><span class="target" id="project0namespacemp_1_1func_1adc4e42ea171f66c0e6488ecfd185756cacd12bfa762638b20cd60ca86a46e3370"></span><code class="descname">SYMBOLIC</code> = 1<a class="headerlink" href="#_CPPv2N2mp4func8SYMBOLICE" title="Permalink to this definition">¶</a></dt>
-<dd><p>A symbolic function - accepts numeric and string arguments. </p>
+<dd><p>A symbolic function accepting numeric and string arguments. </p>
 </dd></dl>
 
 </dd></dl>
@@ -457,25 +457,22 @@ truncated to <span class="math">\(n\)</span> digits past decimal point.</p>
 <dl class="member">
 <dt id="_CPPv2N2mp4expr2IFE">
 <span id="mp::expr::IF"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a597c71d8f3f365871f413566db39e284"></span><code class="descname">IF</code><a class="headerlink" href="#_CPPv2N2mp4expr2IFE" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>An if-then-else expression.
-Example: <code class="docutils literal"><span class="pre">if</span> <span class="pre">x</span> <span class="pre">!=</span> <span class="pre">0</span> <span class="pre">then</span> <span class="pre">y</span> <span class="pre">else</span> <span class="pre">z</span></code>, where <code class="docutils literal"><span class="pre">x</span></code>, <code class="docutils literal"><span class="pre">y</span></code> and <code class="docutils literal"><span class="pre">z</span></code> are
-variables.</p>
+<dd><p><p>An if-then-else expression,
+<span class="math">\(\verb|if | lexpr \verb| then | expr \verb| | [\verb|else | expr]\)</span>.</p>
  </p>
 </dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr6PLTERME">
 <span id="mp::expr::PLTERM"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a8f186eafa0a15fdec2387067305434e9"></span><code class="descname">PLTERM</code><a class="headerlink" href="#_CPPv2N2mp4expr6PLTERME" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>A piecewise-linear term.
-Example: <code class="docutils literal"><span class="pre">&lt;&lt;0;</span> <span class="pre">-1,</span> <span class="pre">1&gt;&gt;</span> <span class="pre">x</span></code>, where <code class="docutils literal"><span class="pre">x</span></code> is a variable.</p>
+<dd><p><p>A piecewise-linear term, <span class="math">\(\verb|&lt;&lt;|expr,...; expr,...\verb|&gt;&gt; | ref\)</span>.</p>
  </p>
 </dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr4CALLE">
 <span id="mp::expr::CALL"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618ab0d734faa3b68bc3d4396509bba4965e"></span><code class="descname">CALL</code><a class="headerlink" href="#_CPPv2N2mp4expr4CALLE" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>A function call expression.
-Example: <code class="docutils literal"><span class="pre">f(x)</span></code>, where <code class="docutils literal"><span class="pre">f</span></code> is a function and <code class="docutils literal"><span class="pre">x</span></code> is a variable.</p>
+<dd><p><p>A function call expression, <span class="math">\(f(expr,...)\)</span>.</p>
  </p>
 </dd></dl>
 
@@ -490,69 +487,71 @@ the range [<a class="reference internal" href="#_CPPv2N2mp4expr14FIRST_ITERATEDE
 <dl class="member">
 <dt id="_CPPv2N2mp4expr12FIRST_VARARGE">
 <span id="mp::expr::FIRST_VARARG"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a27186591bcdfd5637c6ac4cd07356cb0"></span><code class="descname">FIRST_VARARG</code> = FIRST_ITERATED<a class="headerlink" href="#_CPPv2N2mp4expr12FIRST_VARARGE" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>A varag expression (<code class="docutils literal"><span class="pre">min</span></code> or <code class="docutils literal"><span class="pre">max</span></code>). Example: <code class="docutils literal"><span class="pre">min{i</span> <span class="pre">in</span> <span class="pre">I}</span> <span class="pre">x[i]</span></code>,
-where <code class="docutils literal"><span class="pre">I</span></code> is a set and <code class="docutils literal"><span class="pre">x</span></code> is a variable.</p>
+<dd><p><p>A vararg expression, <span class="math">\(\mathrm{min}\)</span> or <span class="math">\(\mathrm{max}\)</span>.</p>
  </p>
 </dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr3MINE">
 <span id="mp::expr::MIN"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a56727c18c4b49212d4cc2ef06185f41b"></span><code class="descname">MIN</code> = FIRST_VARARG<a class="headerlink" href="#_CPPv2N2mp4expr3MINE" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p><p>The <span class="math">\(\mathrm{min}\)</span> expression, <span class="math">\(\mathrm{min}(expr,...)\)</span>.</p>
+ </p>
+</dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr3MAXE">
 <span id="mp::expr::MAX"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a680963f170b4b685a699d8424ff54cbe"></span><code class="descname">MAX</code><a class="headerlink" href="#_CPPv2N2mp4expr3MAXE" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p><p>The <span class="math">\(\mathrm{max}\)</span> expression, <span class="math">\(\mathrm{max}(expr,...)\)</span>.</p>
+ </p>
+</dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr11LAST_VARARGE">
 <span id="mp::expr::LAST_VARARG"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618ae895c0e49a151dba113737b02d61f117"></span><code class="descname">LAST_VARARG</code> = MAX<a class="headerlink" href="#_CPPv2N2mp4expr11LAST_VARARGE" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>The last vararg expression kind. </p>
+</dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr3SUME">
 <span id="mp::expr::SUM"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a7cf98e49213e4662ee1107a678b563e4"></span><code class="descname">SUM</code><a class="headerlink" href="#_CPPv2N2mp4expr3SUME" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>A sum expression. Example: <code class="docutils literal"><span class="pre">sum{i</span> <span class="pre">in</span> <span class="pre">I}</span> <span class="pre">x[i]</span></code>, where <code class="docutils literal"><span class="pre">I</span></code> is a set and
-<code class="docutils literal"><span class="pre">x</span></code> is a variable.</p>
+<dd><p><p>A <span class="math">\(\mathrm{sum}\)</span> expression, <span class="math">\(\mathrm{sum}(expr,...)\)</span>.</p>
  </p>
 </dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr8NUMBEROFE">
 <span id="mp::expr::NUMBEROF"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a66037d50682a5caa7885f015118a1674"></span><code class="descname">NUMBEROF</code><a class="headerlink" href="#_CPPv2N2mp4expr8NUMBEROFE" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>A numberof expression. Example: <code class="docutils literal"><span class="pre">numberof</span> <span class="pre">42</span> <span class="pre">in</span> <span class="pre">({i</span> <span class="pre">in</span> <span class="pre">I}</span> <span class="pre">x[i])</span></code>,
-where <code class="docutils literal"><span class="pre">I</span></code> is a set and <code class="docutils literal"><span class="pre">x</span></code> is a variable.</p>
+<dd><p><p>A <span class="math">\(\mathrm{numberof}\)</span> expression,
+<span class="math">\(\text{numberof } expr \text{ in } (expr,...)\)</span>.</p>
  </p>
 </dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr13LAST_ITERATEDE">
 <span id="mp::expr::LAST_ITERATED"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a3ad1a0e99447a06b2802ce31fac46c24"></span><code class="descname">LAST_ITERATED</code> = NUMBEROF<a class="headerlink" href="#_CPPv2N2mp4expr13LAST_ITERATEDE" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>The last iterated expression kind. </p>
+</dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr12NUMBEROF_SYME">
 <span id="mp::expr::NUMBEROF_SYM"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618ab7113b915604dda2f2325b5ed8011d2b"></span><code class="descname">NUMBEROF_SYM</code><a class="headerlink" href="#_CPPv2N2mp4expr12NUMBEROF_SYME" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>A symbolic numberof expression.
-Example: <code class="docutils literal"><span class="pre">numberof</span> <span class="pre">(if</span> <span class="pre">x</span> <span class="pre">!=</span> <span class="pre">0</span> <span class="pre">then</span> <span class="pre">'a'</span> <span class="pre">else</span> <span class="pre">'b')</span> <span class="pre">in</span> <span class="pre">('a',</span> <span class="pre">'b',</span> <span class="pre">'c')</span></code>,
-where <code class="docutils literal"><span class="pre">x</span></code> is a variable.</p>
+<dd><p><p>A symbolic <span class="math">\(\mathrm{numberof}\)</span> expression.
+<span class="math">\(\text{numberof } strexpr \text{ in } (strexpr,...)\)</span>.</p>
  </p>
 </dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr5COUNTE">
 <span id="mp::expr::COUNT"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a7d8ce35056be0d80687962a68c78f185"></span><code class="descname">COUNT</code><a class="headerlink" href="#_CPPv2N2mp4expr5COUNTE" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>A count expression.
-Example: <code class="docutils literal"><span class="pre">count{i</span> <span class="pre">in</span> <span class="pre">I}</span> <span class="pre">(x[i]</span> <span class="pre">&gt;=</span> <span class="pre">0)</span></code>, where <code class="docutils literal"><span class="pre">I</span></code> is a set and <code class="docutils literal"><span class="pre">x</span></code>
-is a variable.</p>
+<dd><p><p>A <span class="math">\(\mathrm{count}\)</span> expression, <span class="math">\(\mathrm{count}(lexpr,...)\)</span>.</p>
  </p>
 </dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr12LAST_NUMERICE">
 <span id="mp::expr::LAST_NUMERIC"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a5123c4070d9a0602d15a43bfbb4a1843"></span><code class="descname">LAST_NUMERIC</code> = COUNT<a class="headerlink" href="#_CPPv2N2mp4expr12LAST_NUMERICE" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>The last numeric expression kind. </p>
+</dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr13FIRST_LOGICALE">
@@ -869,13 +868,13 @@ Example: <code class="docutils literal"><span class="pre">if</span> <span class=
 <dl class="member">
 <dt id="_CPPv2N2mp11ProblemInfo19num_compl_dbl_ineqsE">
 <span id="mp::ProblemInfo::num_compl_dbl_ineqs__i"></span><span class="target" id="project0structmp_1_1ProblemInfo_1aeaf34a065058d0a353953e51d44cb325"></span>int <code class="descname">num_compl_dbl_ineqs</code><a class="headerlink" href="#_CPPv2N2mp11ProblemInfo19num_compl_dbl_ineqsE" title="Permalink to this definition">¶</a></dt>
-<dd><p>Number of complementarities involving double inequalities (for <code class="docutils literal"><span class="pre">ASL_cc_simplify</span></code>). </p>
+<dd><p>Number of complementarities involving double inequalities. </p>
 </dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp11ProblemInfo25num_compl_vars_with_nz_lbE">
 <span id="mp::ProblemInfo::num_compl_vars_with_nz_lb__i"></span><span class="target" id="project0structmp_1_1ProblemInfo_1a35ce1ea870cb04e9dc4c1259e43656a4"></span>int <code class="descname">num_compl_vars_with_nz_lb</code><a class="headerlink" href="#_CPPv2N2mp11ProblemInfo25num_compl_vars_with_nz_lbE" title="Permalink to this definition">¶</a></dt>
-<dd><p>Number of complemented variables with a nonzero lower bound (for ASL_cc_simplify). </p>
+<dd><p>Number of complemented variables with a nonzero lower bound. </p>
 </dd></dl>
 
 <dl class="member">
