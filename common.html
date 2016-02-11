@@ -545,14 +545,18 @@ of <span class="math">\(e_1, ..., e_n\)</span>.</p>
 <dt id="_CPPv2N2mp4expr12NUMBEROF_SYME">
 <span id="mp::expr::NUMBEROF_SYM"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618ab7113b915604dda2f2325b5ed8011d2b"></span><code class="descname">NUMBEROF_SYM</code><a class="headerlink" href="#_CPPv2N2mp4expr12NUMBEROF_SYME" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>A symbolic <span class="math">\(\mathrm{numberof}\)</span> expression.
-<span class="math">\(\text{numberof } s_0 \text{ in } (s_1,...)\)</span>.</p>
+<span class="math">\(\text{numberof } s_0 \text{ in } (s_1, ..., s_n)\)</span>, which evaluates
+to the number of times the value of <span class="math">\(s_0\)</span> appears among the values
+of <span class="math">\(s_1, ..., s_n\)</span>.</p>
  </p>
 </dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr5COUNTE">
 <span id="mp::expr::COUNT"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a7d8ce35056be0d80687962a68c78f185"></span><code class="descname">COUNT</code><a class="headerlink" href="#_CPPv2N2mp4expr5COUNTE" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>A <span class="math">\(\mathrm{count}\)</span> expression, <span class="math">\(\mathrm{count}(l_1, ..., l_n)\)</span>.</p>
+<dd><p><p>A <span class="math">\(\mathrm{count}\)</span> expression, <span class="math">\(\mathrm{count}(l_1, l_2, ...)\)</span>,
+where <span class="math">\(l_i\)</span> are logical expressions. This expression evaluates to
+the number of <span class="math">\(l_i\)</span> whose values are true.</p>
  </p>
 </dd></dl>
 
@@ -631,32 +635,44 @@ the range [<a class="reference internal" href="#_CPPv2N2mp4expr16FIRST_RELATIONA
 <dl class="member">
 <dt id="_CPPv2N2mp4expr2LTE">
 <span id="mp::expr::LT"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a69715bd7cada3d11029060f7e1d09e5c"></span><code class="descname">LT</code> = FIRST_RELATIONAL<a class="headerlink" href="#_CPPv2N2mp4expr2LTE" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p><p>Less than, <span class="math">\(e_1\)</span> &lt; <span class="math">\(e_2\)</span>.</p>
+ </p>
+</dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr2LEE">
 <span id="mp::expr::LE"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a873ac1ca87f4a9f3ae93a93ffbf190ad"></span><code class="descname">LE</code><a class="headerlink" href="#_CPPv2N2mp4expr2LEE" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p><p>Less or equal to, <span class="math">\(e_1\)</span> &lt;= <span class="math">\(e_2\)</span>.</p>
+ </p>
+</dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr2EQE">
 <span id="mp::expr::EQ"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a39aec268bf8df9dda0bd5674e236d947"></span><code class="descname">EQ</code><a class="headerlink" href="#_CPPv2N2mp4expr2EQE" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p><p>Equal to, <span class="math">\(e_1\)</span> = <span class="math">\(e_2\)</span>.</p>
+ </p>
+</dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr2GEE">
 <span id="mp::expr::GE"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618ab281904debf165012512cfc39fdb4335"></span><code class="descname">GE</code><a class="headerlink" href="#_CPPv2N2mp4expr2GEE" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p><p>Greater or equal to, <span class="math">\(e_1\)</span> &gt;= <span class="math">\(e_2\)</span>.</p>
+ </p>
+</dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr2GTE">
 <span id="mp::expr::GT"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a94e6711293de6e9aacf0a1181832b009"></span><code class="descname">GT</code><a class="headerlink" href="#_CPPv2N2mp4expr2GTE" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p><p>Greater than, <span class="math">\(e_1\)</span> &gt; <span class="math">\(e_2\)</span>.</p>
+ </p>
+</dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr2NEE">
 <span id="mp::expr::NE"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a0e5bc241010540022077556911ed3871"></span><code class="descname">NE</code><a class="headerlink" href="#_CPPv2N2mp4expr2NEE" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p><p>Not equal to, <span class="math">\(e_1\)</span> != <span class="math">\(e_2\)</span>.</p>
+ </p>
+</dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr15LAST_RELATIONALE">
