@@ -142,7 +142,7 @@ nonlinear expressions.</p>
 <dt>
 template &lt;typename Handler&gt;</dt>
 <dt id="_CPPv2N2mp12ReadNLStringE11NLStringRefR7HandlerN3fmt10CStringRefEi">
-<span id="mp::ReadNLString__NLStringRef.HandlerR.fmt::CStringRef.i"></span><span class="target" id="project0namespacemp_1a380b0b97c9e77dfa2a07dd9f81e5e885"></span>void <code class="descclassname">mp::</code><code class="descname">ReadNLString</code><span class="sig-paren">(</span>NLStringRef <em>str</em>, Handler &amp;<em>handler</em>, fmt::CStringRef <em>name</em>, int <em>flags</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp12ReadNLStringE11NLStringRefR7HandlerN3fmt10CStringRefEi" title="Permalink to this definition">¶</a></dt>
+<span id="mp::ReadNLString__NLStringRef.HandlerR.fmt::CStringRef.i"></span><span class="target" id="project0namespacemp_1a380b0b97c9e77dfa2a07dd9f81e5e885"></span>void <code class="descclassname">mp::</code><code class="descname">ReadNLString</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv2N2mp11NLStringRefE" title="mp::NLStringRef">NLStringRef</a> <em>str</em>, Handler &amp;<em>handler</em>, fmt::CStringRef <em>name</em>, int <em>flags</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp12ReadNLStringE11NLStringRefR7HandlerN3fmt10CStringRefEi" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>Reads an optimization problem in the NL format from the string <em>str</em>
 and sends notifications of the problem components to the <em>handler</em> object.</p>
 <p>Both <em>str</em> and <em>name</em> can be C strings or <code class="docutils literal"><span class="pre">std::string</span></code> objects.
@@ -152,6 +152,48 @@ the order they appear in the input, or <a class="reference internal" href="#_CPP
 variable bounds after the NL header and before other constructs such as
 nonlinear expressions.</p>
  </p>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv2N2mp11NLStringRefE">
+<span id="mp::NLStringRef"></span><span class="target" id="project0classmp_1_1NLStringRef"></span><em class="property">class </em><code class="descclassname">mp::</code><code class="descname">NLStringRef</code><a class="headerlink" href="#_CPPv2N2mp11NLStringRefE" title="Permalink to this definition">¶</a></dt>
+<dd><p>A reference to a null-terminated string with size. </p>
+<div class="breathe-sectiondef container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv2N2mp11NLStringRef11NLStringRefEPKc">
+<span id="mp::NLStringRef::NLStringRef__cCP"></span><span class="target" id="project0classmp_1_1NLStringRef_1a5a3c3b718bd5f4521cb726fa823b8db5"></span><code class="descname">NLStringRef</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp11NLStringRef11NLStringRefEPKc" title="Permalink to this definition">¶</a></dt>
+<dd><p><p>Constructs a string reference object from a C string computing
+the size with <code class="docutils literal"><span class="pre">std::strlen</span></code>.</p>
+ </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N2mp11NLStringRef11NLStringRefEPKcNSt6size_tE">
+<span id="mp::NLStringRef::NLStringRef__cCP.std::s"></span><span class="target" id="project0classmp_1_1NLStringRef_1a456d2b83e3eff9f2b453c39c0a8d420f"></span><code class="descname">NLStringRef</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>s</em>, std::size_t <em>size</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp11NLStringRef11NLStringRefEPKcNSt6size_tE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Constructs a string reference object from a C string and a size. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N2mp11NLStringRef11NLStringRefERKNSt6stringE">
+<span id="mp::NLStringRef::NLStringRef__ssCR"></span><span class="target" id="project0classmp_1_1NLStringRef_1a9b991dc6fa90c2ac40288fbbd6e542ce"></span><code class="descname">NLStringRef</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp11NLStringRef11NLStringRefERKNSt6stringE" title="Permalink to this definition">¶</a></dt>
+<dd><p><p>Constructs a string reference from an <code class="docutils literal"><span class="pre">std::string</span></code> object.</p>
+ </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N2mp11NLStringRef5c_strEv">
+<span id="mp::NLStringRef::c_str"></span><span class="target" id="project0classmp_1_1NLStringRef_1ac08b805beccefb3dd727b55cb9849165"></span><em class="property">const</em> char *<code class="descname">c_str</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N2mp11NLStringRef5c_strEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the pointer to a C string. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N2mp11NLStringRef4sizeEv">
+<span id="mp::NLStringRef::size"></span><span class="target" id="project0classmp_1_1NLStringRef_1a236a1dff3f8a72a4e3ecbb2d7d6656e7"></span>std::size_t <code class="descname">size</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N2mp11NLStringRef4sizeEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the string size. </p>
+</dd></dl>
+
+</div>
 </dd></dl>
 
 <dl class="class">
