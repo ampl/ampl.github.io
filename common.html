@@ -458,21 +458,28 @@ truncated to <span class="math">\(n\)</span> digits past decimal point.</p>
 <dt id="_CPPv2N2mp4expr2IFE">
 <span id="mp::expr::IF"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a597c71d8f3f365871f413566db39e284"></span><code class="descname">IF</code><a class="headerlink" href="#_CPPv2N2mp4expr2IFE" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>An if-then-else expression,
-<span class="math">\(\verb|if | lexpr \verb| then | expr \verb| | [\verb|else | expr]\)</span>.</p>
+<span class="math">\(\verb|if | c \verb| then | e_1 \verb| | [\verb|else |e_2]\)</span>,
+where <span class="math">\(c\)</span> is a logical expression representing condition, while
+<span class="math">\(e_1\)</span> and <span class="math">\(e_2\)</span> are numeric expression. The expression
+evaluates to <span class="math">\(e_1\)</span> if <span class="math">\(c\)</span> is true and to <span class="math">\(e_2\)</span> otherwise.
+If <span class="math">\(e_2\)</span> is omitted, it is assumed to be zero.</p>
  </p>
 </dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr6PLTERME">
 <span id="mp::expr::PLTERM"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a8f186eafa0a15fdec2387067305434e9"></span><code class="descname">PLTERM</code><a class="headerlink" href="#_CPPv2N2mp4expr6PLTERME" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>A piecewise-linear term, <span class="math">\(\verb|&lt;&lt;|expr,...; expr,...\verb|&gt;&gt; | ref\)</span>.</p>
+<dd><p><p>A piecewise-linear term,
+<span class="math">\(\verb|&lt;&lt;|b_1, ..., b_n; s_1, ..., s_{n + 1}\verb|&gt;&gt; | r\)</span>,
+where <span class="math">\(b_i\)</span> are breakpoints, <span class="math">\(s_i\)</span> are slopes and <span class="math">\(r\)</span> is
+a reference.</p>
  </p>
 </dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr4CALLE">
 <span id="mp::expr::CALL"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618ab0d734faa3b68bc3d4396509bba4965e"></span><code class="descname">CALL</code><a class="headerlink" href="#_CPPv2N2mp4expr4CALLE" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>A function call expression, <span class="math">\(f(expr,...)\)</span>.</p>
+<dd><p><p>A function call, <span class="math">\(f(e_1, ..., e_n)\)</span>.</p>
  </p>
 </dd></dl>
 
@@ -494,14 +501,14 @@ the range [<a class="reference internal" href="#_CPPv2N2mp4expr14FIRST_ITERATEDE
 <dl class="member">
 <dt id="_CPPv2N2mp4expr3MINE">
 <span id="mp::expr::MIN"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a56727c18c4b49212d4cc2ef06185f41b"></span><code class="descname">MIN</code> = FIRST_VARARG<a class="headerlink" href="#_CPPv2N2mp4expr3MINE" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>The <span class="math">\(\mathrm{min}\)</span> expression, <span class="math">\(\mathrm{min}(expr,...)\)</span>.</p>
+<dd><p><p>Minimum, <span class="math">\(\mathrm{min}(e_1, ..., e_n) = \min_{i=1,...,n} e_i\)</span>.</p>
  </p>
 </dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr3MAXE">
 <span id="mp::expr::MAX"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a680963f170b4b685a699d8424ff54cbe"></span><code class="descname">MAX</code><a class="headerlink" href="#_CPPv2N2mp4expr3MAXE" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>The <span class="math">\(\mathrm{max}\)</span> expression, <span class="math">\(\mathrm{max}(expr,...)\)</span>.</p>
+<dd><p><p>Maximum, <span class="math">\(\mathrm{max}(e_1, ..., e_n) = \max_{i=1,...,n} e_i\)</span>.</p>
  </p>
 </dd></dl>
 
@@ -514,7 +521,7 @@ the range [<a class="reference internal" href="#_CPPv2N2mp4expr14FIRST_ITERATEDE
 <dl class="member">
 <dt id="_CPPv2N2mp4expr3SUME">
 <span id="mp::expr::SUM"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a7cf98e49213e4662ee1107a678b563e4"></span><code class="descname">SUM</code><a class="headerlink" href="#_CPPv2N2mp4expr3SUME" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>A <span class="math">\(\mathrm{sum}\)</span> expression, <span class="math">\(\mathrm{sum}(expr,...)\)</span>.</p>
+<dd><p><p>Sum, <span class="math">\(\mathrm{sum}(e_1, ..., e_n) = \sum_{i=1}^n e_i\)</span>.</p>
  </p>
 </dd></dl>
 
@@ -522,7 +529,9 @@ the range [<a class="reference internal" href="#_CPPv2N2mp4expr14FIRST_ITERATEDE
 <dt id="_CPPv2N2mp4expr8NUMBEROFE">
 <span id="mp::expr::NUMBEROF"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a66037d50682a5caa7885f015118a1674"></span><code class="descname">NUMBEROF</code><a class="headerlink" href="#_CPPv2N2mp4expr8NUMBEROFE" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>A <span class="math">\(\mathrm{numberof}\)</span> expression,
-<span class="math">\(\text{numberof } expr \text{ in } (expr,...)\)</span>.</p>
+<span class="math">\(\text{numberof } e_0 \text{ in } (e_1, ..., e_n)\)</span>, which evaluates
+to the number of times the value of <span class="math">\(e_0\)</span> appears among the values
+of <span class="math">\(e_1, ..., e_n\)</span>.</p>
  </p>
 </dd></dl>
 
@@ -536,14 +545,14 @@ the range [<a class="reference internal" href="#_CPPv2N2mp4expr14FIRST_ITERATEDE
 <dt id="_CPPv2N2mp4expr12NUMBEROF_SYME">
 <span id="mp::expr::NUMBEROF_SYM"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618ab7113b915604dda2f2325b5ed8011d2b"></span><code class="descname">NUMBEROF_SYM</code><a class="headerlink" href="#_CPPv2N2mp4expr12NUMBEROF_SYME" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>A symbolic <span class="math">\(\mathrm{numberof}\)</span> expression.
-<span class="math">\(\text{numberof } strexpr \text{ in } (strexpr,...)\)</span>.</p>
+<span class="math">\(\text{numberof } s_0 \text{ in } (s_1,...)\)</span>.</p>
  </p>
 </dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr5COUNTE">
 <span id="mp::expr::COUNT"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a7d8ce35056be0d80687962a68c78f185"></span><code class="descname">COUNT</code><a class="headerlink" href="#_CPPv2N2mp4expr5COUNTE" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>A <span class="math">\(\mathrm{count}\)</span> expression, <span class="math">\(\mathrm{count}(lexpr,...)\)</span>.</p>
+<dd><p><p>A <span class="math">\(\mathrm{count}\)</span> expression, <span class="math">\(\mathrm{count}(l_1, ..., l_n)\)</span>.</p>
  </p>
 </dd></dl>
 
@@ -564,53 +573,58 @@ the range [<a class="reference internal" href="#_CPPv2N2mp4expr13FIRST_LOGICALE"
 <dl class="member">
 <dt id="_CPPv2N2mp4expr4BOOLE">
 <span id="mp::expr::BOOL"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a860dbfd9449b56a29675b14c39baa5fa"></span><code class="descname">BOOL</code> = FIRST_LOGICAL<a class="headerlink" href="#_CPPv2N2mp4expr4BOOLE" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>A Boolean (logical) constant such as <code class="docutils literal"><span class="pre">0</span></code> or <code class="docutils literal"><span class="pre">1</span></code>.</p>
+<dd><p><p>A Boolean (logical) constant, true or false.</p>
  </p>
 </dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr3NOTE">
 <span id="mp::expr::NOT"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a3683ecd7076a6a507e38f2634e3a947e"></span><code class="descname">NOT</code><a class="headerlink" href="#_CPPv2N2mp4expr3NOTE" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>A logical NOT expression.
-Example: <code class="docutils literal"><span class="pre">not</span> <span class="pre">a</span></code>, where <code class="docutils literal"><span class="pre">a</span></code> is a logical expression.</p>
+<dd><p><p>A logical NOT expression, <span class="math">\(!l\)</span>.</p>
  </p>
 </dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr20FIRST_BINARY_LOGICALE">
 <span id="mp::expr::FIRST_BINARY_LOGICAL"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618ab42517e314843a80215bf10237149a0b"></span><code class="descname">FIRST_BINARY_LOGICAL</code><a class="headerlink" href="#_CPPv2N2mp4expr20FIRST_BINARY_LOGICALE" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>A binary logical expression.
-Examples: <code class="docutils literal"><span class="pre">a</span> <span class="pre">||</span> <span class="pre">b</span></code>, <code class="docutils literal"><span class="pre">a</span> <span class="pre">&amp;&amp;</span> <span class="pre">b</span></code>, where <code class="docutils literal"><span class="pre">a</span></code> and <code class="docutils literal"><span class="pre">b</span></code> are logical
-expressions.</p>
+<dd><p><p>The first binary logical expression kind.
+Binary logical expression kinds are in the range
+[<a class="reference internal" href="#_CPPv2N2mp4expr20FIRST_BINARY_LOGICALE" title="mp::expr::FIRST_BINARY_LOGICAL"><code class="xref cpp cpp-any docutils literal"><span class="pre">FIRST_BINARY_LOGICAL</span></code></a>, <a class="reference internal" href="#_CPPv2N2mp4expr19LAST_BINARY_LOGICALE" title="mp::expr::LAST_BINARY_LOGICAL"><code class="xref cpp cpp-any docutils literal"><span class="pre">LAST_BINARY_LOGICAL</span></code></a>].</p>
  </p>
 </dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr2ORE">
 <span id="mp::expr::OR"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a5cfedbeb5eef23654cab4944061ccc53"></span><code class="descname">OR</code> = FIRST_BINARY_LOGICAL<a class="headerlink" href="#_CPPv2N2mp4expr2ORE" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p><p>Logical or, <span class="math">\(l_1\)</span> || <span class="math">\(l_2\)</span>.</p>
+ </p>
+</dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr3ANDE">
 <span id="mp::expr::AND"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a23ba10f2c5b8fc09485dd66bb31b9e24"></span><code class="descname">AND</code><a class="headerlink" href="#_CPPv2N2mp4expr3ANDE" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p><p>Logical and, <span class="math">\(l_1\)</span> &amp;&amp; <span class="math">\(l_2\)</span>.</p>
+ </p>
+</dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr3IFFE">
 <span id="mp::expr::IFF"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618abf974d972cc5602ca4544390778da64e"></span><code class="descname">IFF</code><a class="headerlink" href="#_CPPv2N2mp4expr3IFFE" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p><p>If and only if, <span class="math">\(l_1\)</span> &lt;==&gt; <span class="math">\(l_2\)</span>.</p>
+ </p>
+</dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr19LAST_BINARY_LOGICALE">
 <span id="mp::expr::LAST_BINARY_LOGICAL"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618adc53a513be0f5c059bd97ac8647ba794"></span><code class="descname">LAST_BINARY_LOGICAL</code> = IFF<a class="headerlink" href="#_CPPv2N2mp4expr19LAST_BINARY_LOGICALE" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>The last binary logical expression kind. </p>
+</dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr16FIRST_RELATIONALE">
 <span id="mp::expr::FIRST_RELATIONAL"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a81b5e08d76254e45ebe6fe27f7befd05"></span><code class="descname">FIRST_RELATIONAL</code><a class="headerlink" href="#_CPPv2N2mp4expr16FIRST_RELATIONALE" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>A relational expression.
-Examples: <code class="docutils literal"><span class="pre">a</span> <span class="pre">&lt;</span> <span class="pre">b</span></code>, <code class="docutils literal"><span class="pre">a</span> <span class="pre">!=</span> <span class="pre">b</span></code>, where <code class="docutils literal"><span class="pre">a</span></code> and <code class="docutils literal"><span class="pre">b</span></code> are numeric
-expressions.</p>
+<dd><p><p>The first relational expression kind. Relational expression kinds are in
+the range [<a class="reference internal" href="#_CPPv2N2mp4expr16FIRST_RELATIONALE" title="mp::expr::FIRST_RELATIONAL"><code class="xref cpp cpp-any docutils literal"><span class="pre">FIRST_RELATIONAL</span></code></a>, <a class="reference internal" href="#_CPPv2N2mp4expr15LAST_RELATIONALE" title="mp::expr::LAST_RELATIONAL"><code class="xref cpp cpp-any docutils literal"><span class="pre">LAST_RELATIONAL</span></code></a>].</p>
  </p>
 </dd></dl>
 
@@ -647,7 +661,8 @@ expressions.</p>
 <dl class="member">
 <dt id="_CPPv2N2mp4expr15LAST_RELATIONALE">
 <span id="mp::expr::LAST_RELATIONAL"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a4a68cc73b6d657ab10a780aea89c8654"></span><code class="descname">LAST_RELATIONAL</code> = NE<a class="headerlink" href="#_CPPv2N2mp4expr15LAST_RELATIONALE" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>The last relational expression kind. </p>
+</dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr19FIRST_LOGICAL_COUNTE">
@@ -773,7 +788,8 @@ Example: <code class="docutils literal"><span class="pre">if</span> <span class=
 <dl class="member">
 <dt id="_CPPv2N2mp4expr9LAST_EXPRE">
 <span id="mp::expr::LAST_EXPR"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a15f368d477a194e254e7a631de49882e"></span><code class="descname">LAST_EXPR</code> = IFSYM<a class="headerlink" href="#_CPPv2N2mp4expr9LAST_EXPRE" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>The last expression kind. </p>
+</dd></dl>
 
 </dd></dl>
 
