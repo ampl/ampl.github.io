@@ -1,0 +1,190 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>NL Reader &mdash; MP 2.1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '20121105',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="MP 2.1.0 documentation" href="index.html" />
+    <link rel="next" title="AMPL Bindings for the GNU Scientific Library" href="amplgsl/index.html" />
+    <link rel="prev" title="Common Definitions" href="common.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="amplgsl/index.html" title="AMPL Bindings for the GNU Scientific Library"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="common.html" title="Common Definitions"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">MP</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="common.html"
+                        title="previous chapter">Common Definitions</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="amplgsl/index.html"
+                        title="next chapter">AMPL Bindings for the GNU Scientific Library</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="nl-reader">
+<h1>NL Reader<a class="headerlink" href="#nl-reader" title="Permalink to this headline">¶</a></h1>
+<p>Header: <code class="file docutils literal"><span class="pre">mp/nl-reader.h</span></code></p>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Nl_(format)">NL</a> is a format for representing
+optimization problems in discrete or continuous variables. It is described in
+the technical report <a class="reference external" href="nlwrite.pdf">Writing .nl Files</a>.</p>
+<p>The NL format supports a wide range of problem types including but not limited
+to the following areas of optimization:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://en.wikipedia.org/wiki/Linear_programming">Linear programming</a></li>
+<li><a class="reference external" href="http://en.wikipedia.org/wiki/Quadratic_programming">Quadratic programming</a></li>
+<li><a class="reference external" href="http://en.wikipedia.org/wiki/Nonlinear_programming">Nonlinear programming</a></li>
+<li><a class="reference external" href="http://en.wikipedia.org/wiki/Linear_programming#Integer_unknowns">Mixed-integer programming</a></li>
+<li>Mixed-integer quadratic programming with or without convex quadratic constraints</li>
+<li>Mixed-integer nonlinear programming</li>
+<li><a class="reference external" href="http://en.wikipedia.org/wiki/Second-order_cone_programming">Second-order cone programming</a></li>
+<li><a class="reference external" href="http://en.wikipedia.org/wiki/Global_optimization">Global optimization</a></li>
+<li><a class="reference external" href="http://en.wikipedia.org/wiki/Semidefinite_programming">Semidefinite programming</a>
+problems with bilinear matrix inequalities</li>
+<li><a class="reference external" href="http://en.wikipedia.org/wiki/Complementarity_theory">Complementarity problems</a>
+(MPECs) in discrete or continuous variables</li>
+<li><a class="reference external" href="http://en.wikipedia.org/wiki/Constraint_programming">Constraint programming</a></li>
+</ul>
+<p>This section describes the C++ API of an NL reader which is</p>
+<ul class="simple">
+<li>Reusable: the reader can be used to process NL files in different ways
+and not limited to a single problem representation</li>
+<li>High performance: fast <a class="reference external" href="http://en.wikipedia.org/wiki/Mmap">mmap</a>-based reader
+with <a class="reference external" href="http://en.wikipedia.org/wiki/Simple_API_for_XML">SAX</a>-like API and no
+dynamic memory allocations in the common case</li>
+<li>Easy to use: clean, modern code base and simple API</li>
+<li>Complete: supports all NL constructs including extensions implemented in
+AMPL Solver Library</li>
+<li>Reliable: extensively and continuously tested on a variety of platforms</li>
+</ul>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">doxygenfunction: Cannot find function &#8220;ReadNLFile&#8221; in doxygen xml output for project &#8220;project0&#8221; from directory: doxyxml</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">doxygenfunction: Cannot find function &#8220;ReadNLString&#8221; in doxygen xml output for project &#8220;project0&#8221; from directory: doxyxml</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">doxygenclass: Cannot find class &#8220;mp::NLStringRef&#8221; in doxygen xml output for project &#8220;project0&#8221; from directory: doxyxml</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">doxygenclass: Cannot find class &#8220;mp::NLHandler&#8221; in doxygen xml output for project &#8220;project0&#8221; from directory: doxyxml</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">doxygenstruct: Cannot find class &#8220;mp::NLHeader&#8221; in doxygen xml output for project &#8220;project0&#8221; from directory: doxyxml</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">doxygenclass: Cannot find class &#8220;mp::ReadError&#8221; in doxygen xml output for project &#8220;project0&#8221; from directory: doxyxml</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">doxygenclass: Cannot find class &#8220;mp::BinaryReadError&#8221; in doxygen xml output for project &#8220;project0&#8221; from directory: doxyxml</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">doxygenenum: Cannot find enum &#8220;mp::arith::Kind&#8221; in doxygen xml output for project &#8220;project0&#8221; from directory: doxyxml</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">doxygenenumvalue: Cannot find enumvalue &#8220;mp::READ_BOUNDS_FIRST&#8221; in doxygen xml output for project &#8220;project0&#8221; from directory: doxyxml</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">doxygenenumvalue: Cannot find enumvalue &#8220;mp::MAX_AMPL_OPTIONS&#8221; in doxygen xml output for project &#8220;project0&#8221; from directory: doxyxml</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="amplgsl/index.html" title="AMPL Bindings for the GNU Scientific Library"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="common.html" title="Common Definitions"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">MP</a> &raquo;</li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015 AMPL Optimization, Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-20116650-3', 'ampl.github.io');
+  ga('send', 'pageview');
+</script>
+
+  </body>
+</html>
