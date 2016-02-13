@@ -529,9 +529,9 @@ the range [<a class="reference internal" href="#_CPPv2N2mp4expr14FIRST_ITERATEDE
 <dt id="_CPPv2N2mp4expr8NUMBEROFE">
 <span id="mp::expr::NUMBEROF"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a66037d50682a5caa7885f015118a1674"></span><code class="descname">NUMBEROF</code><a class="headerlink" href="#_CPPv2N2mp4expr8NUMBEROFE" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>A <span class="math">\(\mathrm{numberof}\)</span> expression,
-<span class="math">\(\text{numberof } e_0 \text{ in } (e_1, ..., e_n)\)</span>, which evaluates
-to the number of times the value of <span class="math">\(e_0\)</span> appears among the values
-of <span class="math">\(e_1, ..., e_n\)</span>.</p>
+<span class="math">\(\mathrm{numberof}\;e_0\;\mathrm{in}\;(e_1, ..., e_n)\)</span>, which
+evaluates to the number of times the value of <span class="math">\(e_0\)</span> appears among the
+values of <span class="math">\(e_1, ..., e_n\)</span>.</p>
  </p>
 </dd></dl>
 
@@ -545,16 +545,16 @@ of <span class="math">\(e_1, ..., e_n\)</span>.</p>
 <dt id="_CPPv2N2mp4expr12NUMBEROF_SYME">
 <span id="mp::expr::NUMBEROF_SYM"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618ab7113b915604dda2f2325b5ed8011d2b"></span><code class="descname">NUMBEROF_SYM</code><a class="headerlink" href="#_CPPv2N2mp4expr12NUMBEROF_SYME" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>A symbolic <span class="math">\(\mathrm{numberof}\)</span> expression.
-<span class="math">\(\text{numberof } s_0 \text{ in } (s_1, ..., s_n)\)</span>, which evaluates
-to the number of times the value of <span class="math">\(s_0\)</span> appears among the values
-of <span class="math">\(s_1, ..., s_n\)</span>.</p>
+<span class="math">\(\mathrm{numberof}\;s_0\;\mathrm{in}\;(s_1, ..., s_n)\)</span>, which
+evaluates to the number of times the value of <span class="math">\(s_0\)</span> appears among the
+values of <span class="math">\(s_1, ..., s_n\)</span>.</p>
  </p>
 </dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr5COUNTE">
 <span id="mp::expr::COUNT"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a7d8ce35056be0d80687962a68c78f185"></span><code class="descname">COUNT</code><a class="headerlink" href="#_CPPv2N2mp4expr5COUNTE" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>A <span class="math">\(\mathrm{count}\)</span> expression, <span class="math">\(\mathrm{count}(l_1, l_2, ...)\)</span>,
+<dd><p><p>A <span class="math">\(\mathrm{count}\)</span> expression, <span class="math">\(\mathrm{count}(l_1, ..., l_n)\)</span>,
 where <span class="math">\(l_i\)</span> are logical expressions. This expression evaluates to
 the number of <span class="math">\(l_i\)</span> whose values are true.</p>
  </p>
@@ -683,46 +683,71 @@ the range [<a class="reference internal" href="#_CPPv2N2mp4expr16FIRST_RELATIONA
 <dl class="member">
 <dt id="_CPPv2N2mp4expr19FIRST_LOGICAL_COUNTE">
 <span id="mp::expr::FIRST_LOGICAL_COUNT"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a06369453ef1ffff81cb9dea0115f0357"></span><code class="descname">FIRST_LOGICAL_COUNT</code><a class="headerlink" href="#_CPPv2N2mp4expr19FIRST_LOGICAL_COUNTE" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>A logical count expression.
-Examples: <code class="docutils literal"><span class="pre">atleast</span> <span class="pre">1</span> <span class="pre">(a</span> <span class="pre">&lt;</span> <span class="pre">b,</span> <span class="pre">a</span> <span class="pre">!=</span> <span class="pre">b)</span></code>, where <code class="docutils literal"><span class="pre">a</span></code> and <code class="docutils literal"><span class="pre">b</span></code> are
-numeric expressions.</p>
+<dd><p><p>The first logical count expression kind.
+Logical count expression kinds are in the range
+[<a class="reference internal" href="#_CPPv2N2mp4expr19FIRST_LOGICAL_COUNTE" title="mp::expr::FIRST_LOGICAL_COUNT"><code class="xref cpp cpp-any docutils literal"><span class="pre">FIRST_LOGICAL_COUNT</span></code></a>, <a class="reference internal" href="#_CPPv2N2mp4expr18LAST_LOGICAL_COUNTE" title="mp::expr::LAST_LOGICAL_COUNT"><code class="xref cpp cpp-any docutils literal"><span class="pre">LAST_LOGICAL_COUNT</span></code></a>].</p>
  </p>
 </dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr7ATLEASTE">
 <span id="mp::expr::ATLEAST"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a16e945cd629546ec3c540a534b44378d"></span><code class="descname">ATLEAST</code> = FIRST_LOGICAL_COUNT<a class="headerlink" href="#_CPPv2N2mp4expr7ATLEASTE" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p><p>An <span class="math">\(\mathrm{atleast}\)</span> expression,
+<span class="math">\(\mathrm{atleast}\;e\;(l_1, ..., l_n)\)</span>, where <span class="math">\(e\)</span> is a numeric
+expression and <span class="math">\(l_i\)</span> are logical expressions. It evaluates to true if
+at least <span class="math">\(e\)</span> expressions <span class="math">\(l_i\)</span> are true.</p>
+ </p>
+</dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr6ATMOSTE">
 <span id="mp::expr::ATMOST"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a3d11d89ff777c1cc6ae7e0bba2dbd736"></span><code class="descname">ATMOST</code><a class="headerlink" href="#_CPPv2N2mp4expr6ATMOSTE" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p><p>An <span class="math">\(\mathrm{atmost}\)</span> expression,
+<span class="math">\(\mathrm{atmost}\;e\;(l_1, ..., l_n)\)</span>, where <span class="math">\(e\)</span> is a numeric
+expression and <span class="math">\(l_i\)</span> are logical expressions. It evaluates to true if
+at most <span class="math">\(e\)</span> expressions <span class="math">\(l_i\)</span> are true.</p>
+ </p>
+</dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr7EXACTLYE">
 <span id="mp::expr::EXACTLY"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a7b42f3ea4ae94dd79cd2fd8914f7cb5f"></span><code class="descname">EXACTLY</code><a class="headerlink" href="#_CPPv2N2mp4expr7EXACTLYE" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p><p>An <span class="math">\(\mathrm{exactly}\)</span> expression,
+<span class="math">\(\mathrm{exactly}\;e\;(l_1, ..., l_n)\)</span>, where <span class="math">\(e\)</span> is a numeric
+expression and <span class="math">\(l_i\)</span> are logical expressions. It evaluates to true if
+exactly <span class="math">\(e\)</span> expressions <span class="math">\(l_i\)</span> are true.</p>
+ </p>
+</dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr11NOT_ATLEASTE">
 <span id="mp::expr::NOT_ATLEAST"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618acb338965b176ca48e62e61e23a62c335"></span><code class="descname">NOT_ATLEAST</code><a class="headerlink" href="#_CPPv2N2mp4expr11NOT_ATLEASTE" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p><p>The negation of an <span class="math">\(\mathrm{atleast}\)</span> expression,
+<span class="math">\(!\mathrm{atleast}\;e\;(l_1, ..., l_n)\)</span>.</p>
+ </p>
+</dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr10NOT_ATMOSTE">
 <span id="mp::expr::NOT_ATMOST"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618aa81e48487da5087540f682cb8e07e02f"></span><code class="descname">NOT_ATMOST</code><a class="headerlink" href="#_CPPv2N2mp4expr10NOT_ATMOSTE" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p><p>The negation of an <span class="math">\(\mathrm{atmost}\)</span> expression,
+<span class="math">\(!\mathrm{atmost}\;e\;(l_1, ..., l_n)\)</span>.</p>
+ </p>
+</dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr11NOT_EXACTLYE">
 <span id="mp::expr::NOT_EXACTLY"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a47f3ba0389b54f0f9556e117b34e311e"></span><code class="descname">NOT_EXACTLY</code><a class="headerlink" href="#_CPPv2N2mp4expr11NOT_EXACTLYE" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p><p>The negation of an <span class="math">\(\mathrm{exactly}\)</span> expression,
+<span class="math">\(!\mathrm{exactly}\;e\;(l_1, ..., l_n)\)</span>.</p>
+ </p>
+</dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr18LAST_LOGICAL_COUNTE">
 <span id="mp::expr::LAST_LOGICAL_COUNT"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a3bb283591c7697a012ebafb36c67cc72"></span><code class="descname">LAST_LOGICAL_COUNT</code> = NOT_EXACTLY<a class="headerlink" href="#_CPPv2N2mp4expr18LAST_LOGICAL_COUNTE" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>The last logical count expression kind. </p>
+</dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr11IMPLICATIONE">
