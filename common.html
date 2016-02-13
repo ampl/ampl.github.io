@@ -462,7 +462,7 @@ truncated to <span class="math">\(n\)</span> digits past decimal point.</p>
 where <span class="math">\(c\)</span> is a logical expression representing condition, while
 <span class="math">\(e_1\)</span> and <span class="math">\(e_2\)</span> are numeric expressions. The expression
 evaluates to <span class="math">\(e_1\)</span> if <span class="math">\(c\)</span> is true and to <span class="math">\(e_2\)</span> otherwise.
-If <span class="math">\(e_2\)</span> is omitted, it is assumed to be zero.</p>
+If the else clause is omitted, <span class="math">\(e_2\)</span> is assumed to be zero.</p>
  </p>
 </dd></dl>
 
@@ -472,14 +472,15 @@ If <span class="math">\(e_2\)</span> is omitted, it is assumed to be zero.</p>
 <dd><p><p>A piecewise-linear term,
 <span class="math">\(\verb|&lt;&lt;|b_1, ..., b_n; s_1, ..., s_{n + 1}\verb|&gt;&gt; | r\)</span>,
 where <span class="math">\(b_i\)</span> are breakpoints, <span class="math">\(s_i\)</span> are slopes and <span class="math">\(r\)</span> is
-a reference.</p>
+a <a class="reference internal" href="#_CPPv2N2mp4expr15FIRST_REFERENCEE" title="mp::expr::FIRST_REFERENCE"><code class="xref cpp cpp-any docutils literal"><span class="pre">reference</span></code></a>.</p>
  </p>
 </dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr4CALLE">
 <span id="mp::expr::CALL"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618ab0d734faa3b68bc3d4396509bba4965e"></span><code class="descname">CALL</code><a class="headerlink" href="#_CPPv2N2mp4expr4CALLE" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>A function call, <span class="math">\(f(e_1, ..., e_n)\)</span>.</p>
+<dd><p><p>A function call, <span class="math">\(f(e_1, ..., e_n)\)</span>, where <span class="math">\(f\)</span> is a function
+name and <span class="math">\(e_i\)</span> are numeric or string expressions.</p>
  </p>
 </dd></dl>
 
@@ -494,7 +495,9 @@ the range [<a class="reference internal" href="#_CPPv2N2mp4expr14FIRST_ITERATEDE
 <dl class="member">
 <dt id="_CPPv2N2mp4expr12FIRST_VARARGE">
 <span id="mp::expr::FIRST_VARARG"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a27186591bcdfd5637c6ac4cd07356cb0"></span><code class="descname">FIRST_VARARG</code> = FIRST_ITERATED<a class="headerlink" href="#_CPPv2N2mp4expr12FIRST_VARARGE" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>A vararg expression, <span class="math">\(\mathrm{min}\)</span> or <span class="math">\(\mathrm{max}\)</span>.</p>
+<dd><p><p>A vararg expression, <span class="math">\(\mathrm{min}\)</span> or <span class="math">\(\mathrm{max}\)</span>.
+Vararg expression kinds are in the range
+[<a class="reference internal" href="#_CPPv2N2mp4expr12FIRST_VARARGE" title="mp::expr::FIRST_VARARG"><code class="xref cpp cpp-any docutils literal"><span class="pre">FIRST_VARARG</span></code></a>, <a class="reference internal" href="#_CPPv2N2mp4expr11LAST_VARARGE" title="mp::expr::LAST_VARARG"><code class="xref cpp cpp-any docutils literal"><span class="pre">LAST_VARARG</span></code></a>].</p>
  </p>
 </dd></dl>
 
@@ -584,7 +587,7 @@ the range [<a class="reference internal" href="#_CPPv2N2mp4expr13FIRST_LOGICALE"
 <dl class="member">
 <dt id="_CPPv2N2mp4expr3NOTE">
 <span id="mp::expr::NOT"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a3683ecd7076a6a507e38f2634e3a947e"></span><code class="descname">NOT</code><a class="headerlink" href="#_CPPv2N2mp4expr3NOTE" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>A logical NOT expression, <span class="math">\(!l\)</span>.</p>
+<dd><p><p>A logical not, <span class="math">\(!l\)</span>, where <span class="math">\(l\)</span> is a logical expression.</p>
  </p>
 </dd></dl>
 
@@ -757,7 +760,7 @@ exactly <span class="math">\(e\)</span> expressions <span class="math">\(l_i\)</
 where <span class="math">\(c\)</span> is a logical expression representing condition, while
 <span class="math">\(l_1\)</span> and <span class="math">\(l_2\)</span> are logical expressions. The expression
 evaluates to <span class="math">\(l_1\)</span> if <span class="math">\(c\)</span> is true and to <span class="math">\(l_2\)</span> otherwise.
-If <span class="math">\(l_2\)</span> is omitted, it is assumed to be true.</p>
+If the else clause is omitted, <span class="math">\(l_2\)</span> is assumed to be true.</p>
  </p>
 </dd></dl>
 
@@ -773,12 +776,20 @@ Iterated logical expression kinds are in the range
 <dl class="member">
 <dt id="_CPPv2N2mp4expr6EXISTSE">
 <span id="mp::expr::EXISTS"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a71b14dc31f28f25adc4ad1e31c6558b3"></span><code class="descname">EXISTS</code> = FIRST_ITERATED_LOGICAL<a class="headerlink" href="#_CPPv2N2mp4expr6EXISTSE" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p><p>An <span class="math">\(\mathrm{exists}\)</span> expression,
+<span class="math">\(\mathrm{exists}(l_1, ..., l_n)\)</span>, where <span class="math">\(l_i\)</span> are logical
+expressions. It evaluates to true if at least one <span class="math">\(l_i\)</span> is true.</p>
+ </p>
+</dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr6FORALLE">
 <span id="mp::expr::FORALL"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a5773cd06dc5af00ae2fbfa7f31710af0"></span><code class="descname">FORALL</code><a class="headerlink" href="#_CPPv2N2mp4expr6FORALLE" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p><p>A <span class="math">\(\mathrm{forall}\)</span> expression,
+<span class="math">\(\mathrm{forall}(l_1, ..., l_n)\)</span>, where <span class="math">\(l_i\)</span> are logical
+expressions. It evaluates to true if all <span class="math">\(l_i\)</span> are true.</p>
+ </p>
+</dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr21LAST_ITERATED_LOGICALE">
@@ -789,26 +800,33 @@ Iterated logical expression kinds are in the range
 <dl class="member">
 <dt id="_CPPv2N2mp4expr14FIRST_PAIRWISEE">
 <span id="mp::expr::FIRST_PAIRWISE"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a34381bfadd4aa169bdab7c0049ca27c7"></span><code class="descname">FIRST_PAIRWISE</code><a class="headerlink" href="#_CPPv2N2mp4expr14FIRST_PAIRWISEE" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>A pairwise expression (<code class="docutils literal"><span class="pre">alldiff</span></code> or <code class="docutils literal"><span class="pre">!alldiff</span></code>).
-Example: <code class="docutils literal"><span class="pre">alldiff{i</span> <span class="pre">in</span> <span class="pre">I}</span> <span class="pre">x[i]</span></code>, where <code class="docutils literal"><span class="pre">I</span></code> is a set and <code class="docutils literal"><span class="pre">x</span></code> is a
-variable.</p>
+<dd><p><p>The first pairwise expression kind. Pairwise expression kinds are in the
+range [<a class="reference internal" href="#_CPPv2N2mp4expr14FIRST_PAIRWISEE" title="mp::expr::FIRST_PAIRWISE"><code class="xref cpp cpp-any docutils literal"><span class="pre">FIRST_PAIRWISE</span></code></a>, <a class="reference internal" href="#_CPPv2N2mp4expr13LAST_PAIRWISEE" title="mp::expr::LAST_PAIRWISE"><code class="xref cpp cpp-any docutils literal"><span class="pre">LAST_PAIRWISE</span></code></a>].</p>
  </p>
 </dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr7ALLDIFFE">
 <span id="mp::expr::ALLDIFF"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a5799b2127c9bfbd991da01111e9f13e0"></span><code class="descname">ALLDIFF</code> = FIRST_PAIRWISE<a class="headerlink" href="#_CPPv2N2mp4expr7ALLDIFFE" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p><p>An alldifferent expression, <span class="math">\(\mathrm{alldiff}(e_1, ..., e_n)\)</span>,
+where <span class="math">\(e_i\)</span> are numeric expressions. It evaluates to true if all
+<span class="math">\(e_i\)</span> take different values.</p>
+ </p>
+</dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr11NOT_ALLDIFFE">
 <span id="mp::expr::NOT_ALLDIFF"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a0c42a9585f790cda3a489cb1bd9d409f"></span><code class="descname">NOT_ALLDIFF</code><a class="headerlink" href="#_CPPv2N2mp4expr11NOT_ALLDIFFE" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p><p>The negation of an alldifferent expression,
+<span class="math">\(!\mathrm{alldiff}(e_1, ..., e_n)\)</span>.</p>
+ </p>
+</dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr13LAST_PAIRWISEE">
 <span id="mp::expr::LAST_PAIRWISE"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618ac2575debc616fe12e8751be6d2a8d8a5"></span><code class="descname">LAST_PAIRWISE</code> = NOT_ALLDIFF<a class="headerlink" href="#_CPPv2N2mp4expr13LAST_PAIRWISEE" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>The last pairwise expression kind. </p>
+</dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr12LAST_LOGICALE">
@@ -819,8 +837,7 @@ variable.</p>
 <dl class="member">
 <dt id="_CPPv2N2mp4expr6STRINGE">
 <span id="mp::expr::STRING"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a45e078a66ffc9dfd8e10d610c1856300"></span><code class="descname">STRING</code><a class="headerlink" href="#_CPPv2N2mp4expr6STRINGE" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>A string such as &#8220;abc&#8221;.</p>
- </p>
+<dd><p>A string such as &#8220;abc&#8221;. </p>
 </dd></dl>
 
 <dl class="member">
