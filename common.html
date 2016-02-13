@@ -458,7 +458,7 @@ truncated to <span class="math">\(n\)</span> digits past decimal point.</p>
 <dt id="_CPPv2N2mp4expr2IFE">
 <span id="mp::expr::IF"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a597c71d8f3f365871f413566db39e284"></span><code class="descname">IF</code><a class="headerlink" href="#_CPPv2N2mp4expr2IFE" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>An if-then-else expression,
-<span class="math">\(\verb|if | c \verb| then | e_1 \verb| | [\verb|else |e_2]\)</span>,
+<span class="math">\(\mathrm{if}\;c\;\mathrm{then}\;e_1\;[\mathrm{else}\;e_2]\)</span>,
 where <span class="math">\(c\)</span> is a logical expression representing condition, while
 <span class="math">\(e_1\)</span> and <span class="math">\(e_2\)</span> are numeric expressions. The expression
 evaluates to <span class="math">\(e_1\)</span> if <span class="math">\(c\)</span> is true and to <span class="math">\(e_2\)</span> otherwise.
@@ -752,18 +752,21 @@ exactly <span class="math">\(e\)</span> expressions <span class="math">\(l_i\)</
 <dl class="member">
 <dt id="_CPPv2N2mp4expr11IMPLICATIONE">
 <span id="mp::expr::IMPLICATION"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a040cfb2626f1d0c58b1557f3688bdc1a"></span><code class="descname">IMPLICATION</code><a class="headerlink" href="#_CPPv2N2mp4expr11IMPLICATIONE" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>An implication expression.
-Example: <code class="docutils literal"><span class="pre">a</span> <span class="pre">==&gt;</span> <span class="pre">b</span> <span class="pre">else</span> <span class="pre">c</span></code>, where <code class="docutils literal"><span class="pre">a</span></code>, <code class="docutils literal"><span class="pre">b</span></code> and <code class="docutils literal"><span class="pre">c</span></code> are logical
-expressions.</p>
+<dd><p><p>An implication expression,
+<span class="math">\(c\;\verb|==&gt;|\;l_1\;[\mathrm{else}\;l_2]\)</span>,
+where <span class="math">\(c\)</span> is a logical expression representing condition, while
+<span class="math">\(l_1\)</span> and <span class="math">\(l_2\)</span> are logical expressions. The expression
+evaluates to <span class="math">\(l_1\)</span> if <span class="math">\(c\)</span> is true and to <span class="math">\(l_2\)</span> otherwise.
+If <span class="math">\(l_2\)</span> is omitted, it is assumed to be true.</p>
  </p>
 </dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr22FIRST_ITERATED_LOGICALE">
 <span id="mp::expr::FIRST_ITERATED_LOGICAL"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618aeef5fb76c601d9c5ebf0d41bf453ca57"></span><code class="descname">FIRST_ITERATED_LOGICAL</code><a class="headerlink" href="#_CPPv2N2mp4expr22FIRST_ITERATED_LOGICALE" title="Permalink to this definition">¶</a></dt>
-<dd><p><p>An iterated logical expression.
-Example: <code class="docutils literal"><span class="pre">exists{i</span> <span class="pre">in</span> <span class="pre">I}</span> <span class="pre">x[i]</span> <span class="pre">&gt;=</span> <span class="pre">0</span></code>, where <code class="docutils literal"><span class="pre">I</span></code> is a set and <code class="docutils literal"><span class="pre">x</span></code> is a
-variable.</p>
+<dd><p><p>The first iterated logical expression kind.
+Iterated logical expression kinds are in the range
+[<a class="reference internal" href="#_CPPv2N2mp4expr22FIRST_ITERATED_LOGICALE" title="mp::expr::FIRST_ITERATED_LOGICAL"><code class="xref cpp cpp-any docutils literal"><span class="pre">FIRST_ITERATED_LOGICAL</span></code></a>, <a class="reference internal" href="#_CPPv2N2mp4expr21LAST_ITERATED_LOGICALE" title="mp::expr::LAST_ITERATED_LOGICAL"><code class="xref cpp cpp-any docutils literal"><span class="pre">LAST_ITERATED_LOGICAL</span></code></a>].</p>
  </p>
 </dd></dl>
 
@@ -780,7 +783,8 @@ variable.</p>
 <dl class="member">
 <dt id="_CPPv2N2mp4expr21LAST_ITERATED_LOGICALE">
 <span id="mp::expr::LAST_ITERATED_LOGICAL"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a3fbc78e1d31a9e4c5a1fb3d20764d51c"></span><code class="descname">LAST_ITERATED_LOGICAL</code> = FORALL<a class="headerlink" href="#_CPPv2N2mp4expr21LAST_ITERATED_LOGICALE" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>The last iterated logical expression kind. </p>
+</dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp4expr14FIRST_PAIRWISEE">
@@ -823,7 +827,7 @@ variable.</p>
 <dt id="_CPPv2N2mp4expr5IFSYME">
 <span id="mp::expr::IFSYM"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a133a4b0781cb6d3471cd9a90096b1cee"></span><code class="descname">IFSYM</code><a class="headerlink" href="#_CPPv2N2mp4expr5IFSYME" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>A symbolic if-then-else expression.
-<span class="math">\(\verb|if | c \verb| then | e_1 \verb| | [\verb|else |e_2]\)</span>,
+<span class="math">\(\mathrm{if}\;c\;\mathrm{then}\;e_1\;[\mathrm{else}\;e_2]\)</span>,
 where <span class="math">\(c\)</span> is a logical expression representing condition, while
 <span class="math">\(e_1\)</span> and <span class="math">\(e_2\)</span> are numeric or string expressions.
 The expression evaluates to <span class="math">\(e_1\)</span> if <span class="math">\(c\)</span> is true and to
