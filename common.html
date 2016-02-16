@@ -77,25 +77,6 @@
 <h1>Common Definitions<a class="headerlink" href="#common-definitions" title="Permalink to this headline">¶</a></h1>
 <p>Header: <code class="file docutils literal"><span class="pre">mp/common.h</span></code></p>
 <dl class="type">
-<dt id="_CPPv2N2mp3obj4TypeE">
-<span id="mp::obj::Type"></span><span class="target" id="project0namespacemp_1_1obj_1a95e7ca72cd1f6f2e1f93de7b027b9c42"></span><em class="property">enum </em><code class="descclassname">mp::obj::</code><code class="descname">Type</code><a class="headerlink" href="#_CPPv2N2mp3obj4TypeE" title="Permalink to this definition">¶</a></dt>
-<dd><p>Objective type. </p>
-<p><em>Values:</em></p>
-<dl class="member">
-<dt id="_CPPv2N2mp3obj3MINE">
-<span id="mp::obj::MIN"></span><span class="target" id="project0namespacemp_1_1obj_1a95e7ca72cd1f6f2e1f93de7b027b9c42a727563599245243fd0040a26611af532"></span><code class="descname">MIN</code> = 0<a class="headerlink" href="#_CPPv2N2mp3obj3MINE" title="Permalink to this definition">¶</a></dt>
-<dd><p>A minimization objective. </p>
-</dd></dl>
-
-<dl class="member">
-<dt id="_CPPv2N2mp3obj3MAXE">
-<span id="mp::obj::MAX"></span><span class="target" id="project0namespacemp_1_1obj_1a95e7ca72cd1f6f2e1f93de7b027b9c42a00e3c1ba34823d2c44504cecb4c101b5"></span><code class="descname">MAX</code> = 1<a class="headerlink" href="#_CPPv2N2mp3obj3MAXE" title="Permalink to this definition">¶</a></dt>
-<dd><p>A maximization objective. </p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="type">
 <dt id="_CPPv2N2mp3var4TypeE">
 <span id="mp::var::Type"></span><span class="target" id="project0namespacemp_1_1var_1a7b0a86a1b4a7506e6044b70f9ca55075"></span><em class="property">enum </em><code class="descclassname">mp::var::</code><code class="descname">Type</code><a class="headerlink" href="#_CPPv2N2mp3var4TypeE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Variable type. </p>
@@ -110,6 +91,25 @@
 <dt id="_CPPv2N2mp3var7INTEGERE">
 <span id="mp::var::INTEGER"></span><span class="target" id="project0namespacemp_1_1var_1a7b0a86a1b4a7506e6044b70f9ca55075af5e13c86fdaf19ae1f64cf93f29447a2"></span><code class="descname">INTEGER</code><a class="headerlink" href="#_CPPv2N2mp3var7INTEGERE" title="Permalink to this definition">¶</a></dt>
 <dd><p>An integer variable. </p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="type">
+<dt id="_CPPv2N2mp3obj4TypeE">
+<span id="mp::obj::Type"></span><span class="target" id="project0namespacemp_1_1obj_1a95e7ca72cd1f6f2e1f93de7b027b9c42"></span><em class="property">enum </em><code class="descclassname">mp::obj::</code><code class="descname">Type</code><a class="headerlink" href="#_CPPv2N2mp3obj4TypeE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Objective type. </p>
+<p><em>Values:</em></p>
+<dl class="member">
+<dt id="_CPPv2N2mp3obj3MINE">
+<span id="mp::obj::MIN"></span><span class="target" id="project0namespacemp_1_1obj_1a95e7ca72cd1f6f2e1f93de7b027b9c42a727563599245243fd0040a26611af532"></span><code class="descname">MIN</code> = 0<a class="headerlink" href="#_CPPv2N2mp3obj3MINE" title="Permalink to this definition">¶</a></dt>
+<dd><p>A minimization objective. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N2mp3obj3MAXE">
+<span id="mp::obj::MAX"></span><span class="target" id="project0namespacemp_1_1obj_1a95e7ca72cd1f6f2e1f93de7b027b9c42a00e3c1ba34823d2c44504cecb4c101b5"></span><code class="descname">MAX</code> = 1<a class="headerlink" href="#_CPPv2N2mp3obj3MAXE" title="Permalink to this definition">¶</a></dt>
+<dd><p>A maximization objective. </p>
 </dd></dl>
 
 </dd></dl>
@@ -895,6 +895,12 @@ Expressions of different kinds can have identical strings.
 For example, <a class="reference internal" href="#_CPPv2N2mp4expr3POWE" title="mp::expr::POW"><code class="xref cpp cpp-any docutils literal"><span class="pre">POW</span></code></a>, <a class="reference internal" href="#_CPPv2N2mp4expr14POW_CONST_BASEE" title="mp::expr::POW_CONST_BASE"><code class="xref cpp cpp-any docutils literal"><span class="pre">POW_CONST_BASE</span></code></a> and
 <a class="reference internal" href="#_CPPv2N2mp4expr13POW_CONST_EXPE" title="mp::expr::POW_CONST_EXP"><code class="xref cpp cpp-any docutils literal"><span class="pre">POW_CONST_EXP</span></code></a> all have the same representation &#8220;^&#8221;.</p>
  </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N2mp4expr9nl_opcodeEN4expr4KindE">
+<span id="mp::expr::nl_opcode__expr::Kind"></span><span class="target" id="project0namespacemp_1_1expr_1a6262022df4d78de0481fae0d6d307149"></span>int <code class="descclassname">mp::expr::</code><code class="descname">nl_opcode</code><span class="sig-paren">(</span>expr::<a class="reference internal" href="#_CPPv2N2mp4expr4KindE" title="mp::expr::Kind">Kind</a> <em>kind</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp4expr9nl_opcodeEN4expr4KindE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the NL opcode for the given expression kind. </p>
 </dd></dl>
 
 <dl class="class">
