@@ -96,6 +96,25 @@
 </dd></dl>
 
 <dl class="type">
+<dt id="_CPPv2N2mp3var4TypeE">
+<span id="mp::var::Type"></span><span class="target" id="project0namespacemp_1_1var_1a7b0a86a1b4a7506e6044b70f9ca55075"></span><em class="property">enum </em><code class="descclassname">mp::var::</code><code class="descname">Type</code><a class="headerlink" href="#_CPPv2N2mp3var4TypeE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Variable type. </p>
+<p><em>Values:</em></p>
+<dl class="member">
+<dt id="_CPPv2N2mp3var10CONTINUOUSE">
+<span id="mp::var::CONTINUOUS"></span><span class="target" id="project0namespacemp_1_1var_1a7b0a86a1b4a7506e6044b70f9ca55075ad593e7c798539fa34704377cf508485f"></span><code class="descname">CONTINUOUS</code><a class="headerlink" href="#_CPPv2N2mp3var10CONTINUOUSE" title="Permalink to this definition">¶</a></dt>
+<dd><p>A continuous variable. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N2mp3var7INTEGERE">
+<span id="mp::var::INTEGER"></span><span class="target" id="project0namespacemp_1_1var_1a7b0a86a1b4a7506e6044b70f9ca55075af5e13c86fdaf19ae1f64cf93f29447a2"></span><code class="descname">INTEGER</code><a class="headerlink" href="#_CPPv2N2mp3var7INTEGERE" title="Permalink to this definition">¶</a></dt>
+<dd><p>An integer variable. </p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="type">
 <dt id="_CPPv2N2mp4func4TypeE">
 <span id="mp::func::Type"></span><span class="target" id="project0namespacemp_1_1func_1adc4e42ea171f66c0e6488ecfd185756c"></span><em class="property">enum </em><code class="descclassname">mp::func::</code><code class="descname">Type</code><a class="headerlink" href="#_CPPv2N2mp4func4TypeE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Function type. </p>
@@ -118,6 +137,7 @@
 <dt id="_CPPv2N2mp4expr4KindE">
 <span id="mp::expr::Kind"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618"></span><em class="property">enum </em><code class="descclassname">mp::expr::</code><code class="descname">Kind</code><a class="headerlink" href="#_CPPv2N2mp4expr4KindE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Expression kind. </p>
+<p>Both AMPL-like and mathematical notation is given for each expression in the descriptions below as in :math:<code class="docutils literal"><span class="pre">\mathrm{abs}(x)</span> <span class="pre">=</span> <span class="pre">|x|</span></code>, unless they are identical such as :math:<code class="docutils literal"><span class="pre">\mathrm{sin}(x)</span></code> or there is no standard mathematical notation. </p>
 <p><em>Values:</em></p>
 <dl class="member">
 <dt id="_CPPv2N2mp4expr7UNKNOWNE">
@@ -489,6 +509,9 @@ name and <span class="math">\(e_i\)</span> are numeric or string expressions.</p
 <span id="mp::expr::FIRST_ITERATED"></span><span class="target" id="project0namespacemp_1_1expr_1a59b63e52b7b934515c9a511871577618a72f0de1053de58b03bf2bd8a1acff88f"></span><code class="descname">FIRST_ITERATED</code><a class="headerlink" href="#_CPPv2N2mp4expr14FIRST_ITERATEDE" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>The first iterated expression kind. Iterated expression kinds are in
 the range [<a class="reference internal" href="#_CPPv2N2mp4expr14FIRST_ITERATEDE" title="mp::expr::FIRST_ITERATED"><code class="xref cpp cpp-any docutils literal"><span class="pre">FIRST_ITERATED</span></code></a>, <a class="reference internal" href="#_CPPv2N2mp4expr13LAST_ITERATEDE" title="mp::expr::LAST_ITERATED"><code class="xref cpp cpp-any docutils literal"><span class="pre">LAST_ITERATED</span></code></a>].</p>
+<p>The term &#8220;iterated&#8221; in the context of operators and expressions comes
+from the article <a class="reference external" href="http://www.ampl.com/REFS/amplmod.pdf">AMPL: A Mathematical Programming Language</a> and is used to denote operators
+indexed over sets.</p>
  </p>
 </dd></dl>
 
@@ -1057,13 +1080,13 @@ For example, <a class="reference internal" href="#_CPPv2N2mp4expr3POWE" title="m
 <dl class="member">
 <dt id="_CPPv2N2mp11ProblemInfo16max_con_name_lenE">
 <span id="mp::ProblemInfo::max_con_name_len__i"></span><span class="target" id="project0structmp_1_1ProblemInfo_1a3855d9b0fe446713eea81f62b42bb672"></span>int <code class="descname">max_con_name_len</code><a class="headerlink" href="#_CPPv2N2mp11ProblemInfo16max_con_name_lenE" title="Permalink to this definition">¶</a></dt>
-<dd><p>Length of longest constraint name (if <code class="docutils literal"><span class="pre">stub.row</span></code> exists). </p>
+<dd><p>Length of longest constraint name if names are available. </p>
 </dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp11ProblemInfo16max_var_name_lenE">
 <span id="mp::ProblemInfo::max_var_name_len__i"></span><span class="target" id="project0structmp_1_1ProblemInfo_1aeaf7de604bb56d848197fc2963616bb2"></span>int <code class="descname">max_var_name_len</code><a class="headerlink" href="#_CPPv2N2mp11ProblemInfo16max_var_name_lenE" title="Permalink to this definition">¶</a></dt>
-<dd><p>Length of longest variable name (if <code class="docutils literal"><span class="pre">stub.col</span></code> exists). </p>
+<dd><p>Length of longest variable name if names are available. </p>
 </dd></dl>
 
 <dl class="member">
