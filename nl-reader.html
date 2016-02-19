@@ -376,14 +376,12 @@ arguments.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv2N2mp9NLHandler17OnComplementarityEiii">
-<span id="mp::NLHandler::OnComplementarity__i.i.i"></span><span class="target" id="project0classmp_1_1NLHandler_1a1d763b46855c13517e01eb4f8efc98a0"></span>void <code class="descname">OnComplementarity</code><span class="sig-paren">(</span>int <em>con_index</em>, int <em>var_index</em>, int <em>flags</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler17OnComplementarityEiii" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv2N2mp9NLHandler17OnComplementarityEii9ComplInfo">
+<span id="mp::NLHandler::OnComplementarity__i.i.ComplInfo"></span><span class="target" id="project0classmp_1_1NLHandler_1ad23c18be75bc8e31e172fc12b526fa44"></span>void <code class="descname">OnComplementarity</code><span class="sig-paren">(</span>int <em>con_index</em>, int <em>var_index</em>, <a class="reference internal" href="common.html#_CPPv2N2mp9ComplInfoE" title="mp::ComplInfo">ComplInfo</a> <em>info</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler17OnComplementarityEii9ComplInfo" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>Receives notification of a complementarity relation
-<code class="docutils literal"><span class="pre">lb</span> <span class="pre">&lt;=</span> <span class="pre">x</span> <span class="pre">&lt;=</span> <span class="pre">ub</span> <span class="pre">complements</span> <span class="pre">body</span></code>, where <code class="docutils literal"><span class="pre">x</span></code> is the variable at index
-<em>var_index</em> and <code class="docutils literal"><span class="pre">body</span></code> is the constraint body. <em>flags</em> is a bitwise OR
-of the flags defined in the <a class="reference internal" href="common.html#_CPPv2N2mp10complementE" title="mp::complement"><code class="xref cpp cpp-any docutils literal"><span class="pre">mp::complement</span></code></a> namespace specifying which
-bounds on the variable are finite. Bound values are given separately via
-<a class="reference internal" href="#_CPPv2N2mp9NLHandler11OnVarBoundsEidd" title="mp::NLHandler::OnVarBounds"><code class="xref cpp cpp-any docutils literal"><span class="pre">OnVarBounds</span></code></a>.</p>
+<code class="docutils literal"><span class="pre">lb</span> <span class="pre">&lt;=</span> <span class="pre">x</span> <span class="pre">&lt;=</span> <span class="pre">ub</span> <span class="pre">complements</span> <span class="pre">body</span></code>, where <code class="docutils literal"><span class="pre">x</span></code> is the variable at
+index <em>var_index</em> and <code class="docutils literal"><span class="pre">body</span></code> is the constraint body. <em>info</em> gives
+the constraint bounds.</p>
  </p>
 </dd></dl>
 
@@ -444,20 +442,20 @@ The <em>name</em> argument is a function name and it is not null-terminated.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv2N2mp9NLHandler11OnIntSuffixEN3fmt9StringRefEii">
-<span id="mp::NLHandler::OnIntSuffix__fmt::StringRef.i.i"></span><span class="target" id="project0classmp_1_1NLHandler_1a509f466b41f0af8bcd5e3dbaef1f04b8"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandler16IntSuffixHandlerE" title="mp::NLHandler::IntSuffixHandler">IntSuffixHandler</a> <code class="descname">OnIntSuffix</code><span class="sig-paren">(</span>fmt::StringRef <em>name</em>, int <em>kind</em>, int <em>num_values</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler11OnIntSuffixEN3fmt9StringRefEii" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv2N2mp9NLHandler11OnIntSuffixEN3fmt9StringRefEN3suf4KindEi">
+<span id="mp::NLHandler::OnIntSuffix__fmt::StringRef.suf::Kind.i"></span><span class="target" id="project0classmp_1_1NLHandler_1af4e4b9cc4243a02a76a46ea1a2b2b1a7"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandler16IntSuffixHandlerE" title="mp::NLHandler::IntSuffixHandler">IntSuffixHandler</a> <code class="descname">OnIntSuffix</code><span class="sig-paren">(</span>fmt::StringRef <em>name</em>, suf::<a class="reference internal" href="common.html#_CPPv2N2mp3suf4KindE" title="mp::suf::Kind">Kind</a> <em>kind</em>, int <em>num_values</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler11OnIntSuffixEN3fmt9StringRefEN3suf4KindEi" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>Receives notification of an integer suffix.
 The <em>name</em> argument is a suffix name and it is not null-terminated.
-<em>kind</em> is a bitwise OR of the constants defined in the <a class="reference internal" href="common.html#_CPPv2N2mp3sufE" title="mp::suf"><code class="xref cpp cpp-any docutils literal"><span class="pre">mp::suf</span></code></a> namespace.</p>
+<em>kind</em> specifies the suffix kind.</p>
  </p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv2N2mp9NLHandler11OnDblSuffixEN3fmt9StringRefEii">
-<span id="mp::NLHandler::OnDblSuffix__fmt::StringRef.i.i"></span><span class="target" id="project0classmp_1_1NLHandler_1a93b8b6be939dc940631ccba8e7c18fc4"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandler16DblSuffixHandlerE" title="mp::NLHandler::DblSuffixHandler">DblSuffixHandler</a> <code class="descname">OnDblSuffix</code><span class="sig-paren">(</span>fmt::StringRef <em>name</em>, int <em>kind</em>, int <em>num_values</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler11OnDblSuffixEN3fmt9StringRefEii" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv2N2mp9NLHandler11OnDblSuffixEN3fmt9StringRefEN3suf4KindEi">
+<span id="mp::NLHandler::OnDblSuffix__fmt::StringRef.suf::Kind.i"></span><span class="target" id="project0classmp_1_1NLHandler_1a93fe373fc532ca4a3bc609c4acda6c7a"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandler16DblSuffixHandlerE" title="mp::NLHandler::DblSuffixHandler">DblSuffixHandler</a> <code class="descname">OnDblSuffix</code><span class="sig-paren">(</span>fmt::StringRef <em>name</em>, suf::<a class="reference internal" href="common.html#_CPPv2N2mp3suf4KindE" title="mp::suf::Kind">Kind</a> <em>kind</em>, int <em>num_values</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler11OnDblSuffixEN3fmt9StringRefEN3suf4KindEi" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>Receives notification of a double suffix.
 The <em>name</em> argument is a suffix name and it is not null-terminated.
-<em>kind</em> is a bitwise OR of the constants defined in the <a class="reference internal" href="common.html#_CPPv2N2mp3sufE" title="mp::suf"><code class="xref cpp cpp-any docutils literal"><span class="pre">mp::suf</span></code></a> namespace.</p>
+<em>kind</em> specifies the suffix kind.</p>
  </p>
 </dd></dl>
 
@@ -833,13 +831,13 @@ variables and constraints, and the input format.</p>
 </dd></dl>
 
 <dl class="type">
-<dt id="_CPPv2N2mp8NLHeader12__anonymous7E">
-<span id="mp::NLHeader::__anonymous7"></span><span class="target" id="project0structmp_1_1NLHeader_1aa373ccc5bd68053f69cd5a82ee34372d"></span><em class="property">enum </em><code class="descname"><strong>[anonymous]</strong></code><a class="headerlink" href="#_CPPv2N2mp8NLHeader12__anonymous7E" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv2N2mp8NLHeader12__anonymous6E">
+<span id="mp::NLHeader::__anonymous6"></span><span class="target" id="project0structmp_1_1NLHeader_1a5d041f58eea89bc3d5bf61b08609037f"></span><em class="property">enum </em><code class="descname"><strong>[anonymous]</strong></code><a class="headerlink" href="#_CPPv2N2mp8NLHeader12__anonymous6E" title="Permalink to this definition">¶</a></dt>
 <dd><p>Flags. </p>
 <p><em>Values:</em></p>
 <dl class="member">
 <dt id="_CPPv2N2mp8NLHeader20WANT_OUTPUT_SUFFIXESE">
-<span id="mp::NLHeader::WANT_OUTPUT_SUFFIXES"></span><span class="target" id="project0structmp_1_1NLHeader_1aa373ccc5bd68053f69cd5a82ee34372da27d99b679177cbf4e7254d59aec0d12d"></span><code class="descname">WANT_OUTPUT_SUFFIXES</code> = 1<a class="headerlink" href="#_CPPv2N2mp8NLHeader20WANT_OUTPUT_SUFFIXESE" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHeader::WANT_OUTPUT_SUFFIXES"></span><span class="target" id="project0structmp_1_1NLHeader_1a5d041f58eea89bc3d5bf61b08609037fa27d99b679177cbf4e7254d59aec0d12d"></span><code class="descname">WANT_OUTPUT_SUFFIXES</code> = 1<a class="headerlink" href="#_CPPv2N2mp8NLHeader20WANT_OUTPUT_SUFFIXESE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Flag that specifies whether to write output suffixes to a .sol file. </p>
 </dd></dl>
 
