@@ -379,9 +379,9 @@ arguments.</p>
 <dt id="_CPPv2N2mp9NLHandler17OnComplementarityEii9ComplInfo">
 <span id="mp::NLHandler::OnComplementarity__i.i.ComplInfo"></span><span class="target" id="project0classmp_1_1NLHandler_1ad23c18be75bc8e31e172fc12b526fa44"></span>void <code class="descname">OnComplementarity</code><span class="sig-paren">(</span>int <em>con_index</em>, int <em>var_index</em>, <a class="reference internal" href="common.html#_CPPv2N2mp9ComplInfoE" title="mp::ComplInfo">ComplInfo</a> <em>info</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler17OnComplementarityEii9ComplInfo" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>Receives notification of a complementarity relation
-<code class="docutils literal"><span class="pre">lb</span> <span class="pre">&lt;=</span> <span class="pre">x</span> <span class="pre">&lt;=</span> <span class="pre">ub</span> <span class="pre">complements</span> <span class="pre">body</span></code>, where <code class="docutils literal"><span class="pre">x</span></code> is the variable at
-index <em>var_index</em> and <code class="docutils literal"><span class="pre">body</span></code> is the constraint body. <em>info</em> gives
-the constraint bounds.</p>
+<code class="docutils literal"><span class="pre">var_lb</span> <span class="pre">&lt;=</span> <span class="pre">x</span> <span class="pre">&lt;=</span> <span class="pre">var_ub</span> <span class="pre">complements</span> <span class="pre">con_lb</span> <span class="pre">&lt;=</span> <span class="pre">body</span> <span class="pre">&lt;=</span> <span class="pre">con_ub</span></code>, where <code class="docutils literal"><span class="pre">x</span></code>
+is the variable at index <em>var_index</em> and <code class="docutils literal"><span class="pre">body</span></code> is the constraint body.
+<em>info</em> gives the constraint bounds.</p>
  </p>
 </dd></dl>
 
