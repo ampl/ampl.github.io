@@ -208,13 +208,13 @@ the size with <code class="docutils literal"><span class="pre">std::strlen</span
 <dt id="_CPPv2N2mp9NLHandlerE">
 <span id="mp::NLHandler"></span><em class="property">class </em><code class="descclassname">mp::</code><code class="descname">NLHandler</code><a class="headerlink" href="#_CPPv2N2mp9NLHandlerE" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>An NL handler.</p>
-<p><code class="xref cpp cpp-any docutils literal"><span class="pre">NLHandler</span></code> can be used as a base class for other handlers. Subclasses
+<p><a class="reference internal" href="#_CPPv2N2mp9NLHandlerE" title="mp::NLHandler"><code class="xref cpp cpp-any docutils literal"><span class="pre">NLHandler</span></code></a> can be used as a base class for other handlers. Subclasses
 only need to redefine methods that handle constructs they are interested
 in and, possibly, the types used by these methods.</p>
-<p><em>Impl</em> is a type derived from <code class="xref cpp cpp-any docutils literal"><span class="pre">NLHandler</span></code> that will receive notifications of
-unhandled constructs via <code class="xref cpp cpp-any docutils literal"><span class="pre">NLHandler::OnUnhandled</span></code>.</p>
+<p><em>Impl</em> is a type derived from <a class="reference internal" href="#_CPPv2N2mp9NLHandlerE" title="mp::NLHandler"><code class="xref cpp cpp-any docutils literal"><span class="pre">NLHandler</span></code></a> that will receive notifications
+of unhandled constructs via <a class="reference internal" href="#_CPPv2N2mp9NLHandler11OnUnhandledEPKc" title="mp::NLHandler::OnUnhandled"><code class="xref cpp cpp-any docutils literal"><span class="pre">OnUnhandled</span></code></a>.</p>
 <p><em>ExprType</em> is a return type of expression handler methods such as
-<code class="xref cpp cpp-any docutils literal"><span class="pre">NLHandler::OnUnary</span></code> useful for building expression objects. If not used
+<a class="reference internal" href="#_CPPv2N2mp9NLHandler7OnUnaryEN4expr4KindE11NumericExpr" title="mp::NLHandler::OnUnary"><code class="xref cpp cpp-any docutils literal"><span class="pre">OnUnary</span></code></a> useful for building expression objects. If not used
 it can be any default-constructible type.</p>
  </p>
 <div class="breathe-sectiondef container">
@@ -820,8 +820,8 @@ subclasses of <a class="reference internal" href="#_CPPv2N2mp9NLHandlerE" title=
 <dt id="_CPPv2N2mp13NullNLHandlerE">
 <span id="mp::NullNLHandler"></span><em class="property">class </em><code class="descclassname">mp::</code><code class="descname">NullNLHandler</code><a class="headerlink" href="#_CPPv2N2mp13NullNLHandlerE" title="Permalink to this definition">¶</a></dt>
 <dd><p>An NL handler that ignores all input. </p>
-<p><code class="docutils literal"><a class="reference internal" href="#project0classmp_1_1NullNLHandler"><span><span class="pre">NullNLHandler</span></span></a></code> can be used as a base class when only a subset of constructs needs to be handled. Unhandled constructs will be ignored, not reported.</p>
-<p>ExprType* is a return type of expression handler methods such as <code class="docutils literal"><a class="reference internal" href="#project0classmp_1_1NLHandler_1a9cbfa5111f91b01d1d525c658372aa95"><span><span class="pre">NLHandler::OnUnary</span></span></a></code> useful for building expression objects. If not used it can be any default-constructible type. </p>
+<p><code class="docutils literal"><span class="pre">~mp::NullNLHandler</span></code> can be used as a base class when only a subset of constructs needs to be handled. Unhandled constructs will be ignored, not reported.</p>
+<p>ExprType* is a return type of expression handler methods such as <code class="docutils literal"><span class="pre">~mp::NLHandler::OnUnary</span></code> useful for building expression objects. If not used it can be any default-constructible type. </p>
 <div class="breathe-sectiondef container">
 <p class="breathe-sectiondef-title rubric">Public Functions</p>
 <dl class="function">
