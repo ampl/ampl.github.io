@@ -819,9 +819,14 @@ subclasses of <a class="reference internal" href="#_CPPv2N2mp9NLHandlerE" title=
 <span class="target" id="project0classmp_1_1NullNLHandler"></span>template &lt;typename <em>ExprType</em>&gt;</dt>
 <dt id="_CPPv2N2mp13NullNLHandlerE">
 <span id="mp::NullNLHandler"></span><em class="property">class </em><code class="descclassname">mp::</code><code class="descname">NullNLHandler</code><a class="headerlink" href="#_CPPv2N2mp13NullNLHandlerE" title="Permalink to this definition">¶</a></dt>
-<dd><p>An NL handler that ignores all input. </p>
-<p><code class="docutils literal"><span class="pre">~mp::NullNLHandler</span></code> can be used as a base class when only a subset of constructs needs to be handled. Unhandled constructs will be ignored, not reported.</p>
-<p>ExprType* is a return type of expression handler methods such as <code class="docutils literal"><span class="pre">~mp::NLHandler::OnUnary</span></code> useful for building expression objects. If not used it can be any default-constructible type. </p>
+<dd><p><p>An NL handler that ignores all input.</p>
+<p><a class="reference internal" href="#_CPPv2N2mp13NullNLHandlerE" title="mp::NullNLHandler"><code class="xref cpp cpp-any docutils literal"><span class="pre">NullNLHandler</span></code></a> can be used as a base class when only a subset of
+constructs needs to be handled. Unhandled constructs will be ignored, not
+reported.</p>
+<p><em>ExprType</em> is a return type of expression handler methods such as
+<a class="reference internal" href="#_CPPv2N2mp9NLHandler7OnUnaryEN4expr4KindE11NumericExpr" title="mp::NLHandler::OnUnary"><code class="xref cpp cpp-any docutils literal"><span class="pre">OnUnary</span></code></a> useful for building expression objects. If not used
+it can be any default-constructible type.</p>
+ </p>
 <div class="breathe-sectiondef container">
 <p class="breathe-sectiondef-title rubric">Public Functions</p>
 <dl class="function">
