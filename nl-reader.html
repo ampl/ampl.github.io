@@ -110,17 +110,42 @@ AMPL Solver Library</li>
 </ul>
 <p><a class="reference external" href="https://github.com/ampl/mp/blob/master/src/nl-example.cc">nl-example.cc</a>
 gives a few examples of how to use the NL reader.</p>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p>doxygenfunction: Unable to resolve multiple matches for function &#8220;ReadNLFile&#8221; with arguments (fmt::StringRef, Handler &amp;) in doxygen xml output for project &#8220;project0&#8221; from directory: doxyxml.
-Potential matches:
-</p>
-<pre class="last literal-block">
-- void mp::ReadNLFile(fmt::CStringRef, Problem&amp;)
-- template &lt;typename Handler&gt;
-  void mp::ReadNLFile(fmt::CStringRef, Handler&amp;, int)
-</pre>
+<dl class="function">
+<dt>
+template &lt;typename Handler&gt;</dt>
+<dt id="_CPPv2N2mp10ReadNLFileEN3fmt10CStringRefER7Handleri">
+<span id="mp::ReadNLFile__fmt::CStringRef.HandlerR.i"></span><span class="target" id="project0namespacemp_1a0add09a6269093f88c5414f3cb243630"></span>void <code class="descclassname">mp::</code><code class="descname">ReadNLFile</code><span class="sig-paren">(</span>fmt::CStringRef <em>filename</em>, Handler &amp;<em>handler</em>, int <em>flags</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp10ReadNLFileEN3fmt10CStringRefER7Handleri" title="Permalink to this definition">¶</a></dt>
+<dd><p><p>Reads an optimization problem in the NL format from the file <em>filename</em>
+and sends notifications of the problem components to the <em>handler</em> object.
+The handler class can be one of the following</p>
+<ul class="simple">
+<li>derived from <a class="reference internal" href="#_CPPv2N2mp9NLHandlerE" title="mp::NLHandler"><code class="xref cpp cpp-any docutils literal"><span class="pre">mp::NLHandler</span></code></a> or <a class="reference internal" href="#_CPPv2N2mp13NullNLHandlerE" title="mp::NullNLHandler"><code class="xref cpp cpp-any docutils literal"><span class="pre">mp::NullNLHandler</span></code></a>,</li>
+<li><code class="xref cpp cpp-any docutils literal"><span class="pre">mp::Problem</span></code>,</li>
+<li>provide an interface compatible with one of the above.</li>
+</ul>
+<p>The <em>filename</em> argument can be a C string or an <code class="docutils literal"><span class="pre">std::string</span></code> object.
+<em>flags</em> can be either 0, which is the default, to read all constructs in
+the order they appear in the input, or <a class="reference internal" href="#_CPPv2N2mp17READ_BOUNDS_FIRSTE" title="mp::READ_BOUNDS_FIRST"><code class="xref cpp cpp-any docutils literal"><span class="pre">mp::READ_BOUNDS_FIRST</span></code></a> to read
+variable bounds after the NL header and before other constructs such as
+nonlinear expressions.</p>
+<p><strong>Example</strong>:</p>
+<div class="highlight-c++"><div class="highlight"><pre><span></span><span class="c1">// Count the number of variable references in all nonlinear expressions.</span>
+<span class="k">struct</span> <span class="nl">VarCounter</span> <span class="p">:</span> <span class="n">mp</span><span class="o">::</span><span class="n">NullNLHandler</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="p">{</span>
+  <span class="kt">int</span> <span class="n">num_vars</span><span class="p">;</span>
+  <span class="n">VarCounter</span><span class="p">()</span> <span class="o">:</span> <span class="n">num_vars</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="p">{}</span>
+  <span class="n">Reference</span> <span class="n">OnVariableRef</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
+    <span class="o">++</span><span class="n">num_vars</span><span class="p">;</span>
+    <span class="k">return</span> <span class="nf">Reference</span><span class="p">();</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+<span class="n">VarCounter</span> <span class="n">counter</span><span class="p">;</span>
+<span class="n">mp</span><span class="o">::</span><span class="n">ReadNLFile</span><span class="p">(</span><span class="s">&quot;test.nl&quot;</span><span class="p">,</span> <span class="n">counter</span><span class="p">);</span>
+<span class="n">fmt</span><span class="o">::</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;The number of variable references is {}.&quot;</span><span class="p">,</span> <span class="n">counter</span><span class="p">.</span><span class="n">num_vars</span><span class="p">);</span>
+</pre></div>
 </div>
+ </p>
+</dd></dl>
+
 <dl class="function">
 <dt>
 template &lt;typename Handler&gt;</dt>
@@ -128,8 +153,12 @@ template &lt;typename Handler&gt;</dt>
 <span id="mp::ReadNLString__NLStringRef.HandlerR.fmt::CStringRef.i"></span><span class="target" id="project0namespacemp_1a380b0b97c9e77dfa2a07dd9f81e5e885"></span>void <code class="descclassname">mp::</code><code class="descname">ReadNLString</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv2N2mp11NLStringRefE" title="mp::NLStringRef">NLStringRef</a> <em>str</em>, Handler &amp;<em>handler</em>, fmt::CStringRef <em>name</em>, int <em>flags</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp12ReadNLStringE11NLStringRefR7HandlerN3fmt10CStringRefEi" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>Reads an optimization problem in the NL format from the string <em>str</em>
 and sends notifications of the problem components to the <em>handler</em> object.
-The handler class can be derived from <a class="reference internal" href="#_CPPv2N2mp9NLHandlerE" title="mp::NLHandler"><code class="xref cpp cpp-any docutils literal"><span class="pre">mp::NLHandler</span></code></a> or provide a compatible
-interface.</p>
+The handler class can be one of the following</p>
+<ul class="simple">
+<li>derived from <a class="reference internal" href="#_CPPv2N2mp9NLHandlerE" title="mp::NLHandler"><code class="xref cpp cpp-any docutils literal"><span class="pre">mp::NLHandler</span></code></a> or <a class="reference internal" href="#_CPPv2N2mp13NullNLHandlerE" title="mp::NullNLHandler"><code class="xref cpp cpp-any docutils literal"><span class="pre">mp::NullNLHandler</span></code></a>,</li>
+<li><code class="xref cpp cpp-any docutils literal"><span class="pre">mp::Problem</span></code>,</li>
+<li>provide an interface compatible with one of the above.</li>
+</ul>
 <p>Both <em>str</em> and <em>name</em> can be C strings or <code class="docutils literal"><span class="pre">std::string</span></code> objects.
 The <em>name</em> argument is used as the name of the input when reporting errors.
 <em>flags</em> can be either 0, which is the default, to read all constructs in
