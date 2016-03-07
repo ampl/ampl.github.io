@@ -112,9 +112,9 @@ AMPL Solver Library</li>
 gives a few examples of how to use the NL reader.</p>
 <dl class="function">
 <dt>
-template &lt;typename Handler&gt;</dt>
+<em class="property">template </em>&lt;<em class="property">typename</em> Handler&gt;</dt>
 <dt id="_CPPv2N2mp10ReadNLFileEN3fmt10CStringRefER7Handleri">
-<span id="mp::ReadNLFile__fmt::CStringRef.HandlerR.i"></span><span class="target" id="project0namespacemp_1a0add09a6269093f88c5414f3cb243630"></span>void <code class="descclassname">mp::</code><code class="descname">ReadNLFile</code><span class="sig-paren">(</span>fmt::CStringRef <em>filename</em>, Handler &amp;<em>handler</em>, int <em>flags</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp10ReadNLFileEN3fmt10CStringRefER7Handleri" title="Permalink to this definition">¶</a></dt>
+<span id="mp::ReadNLFile__fmt::CStringRef.HandlerR.i"></span><span class="target" id="mpnamespacemp_1a0add09a6269093f88c5414f3cb243630"></span>void <code class="descclassname">mp::</code><code class="descname">ReadNLFile</code><span class="sig-paren">(</span>fmt::CStringRef <em>filename</em>, Handler &amp;<em>handler</em>, int <em>flags</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp10ReadNLFileEN3fmt10CStringRefER7Handleri" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>Reads an optimization problem in the NL format from the file <em>filename</em>
 and sends notifications of the problem components to the <em>handler</em> object.
 The handler class can be one of the following</p>
@@ -148,9 +148,9 @@ nonlinear expressions.</p>
 
 <dl class="function">
 <dt>
-template &lt;typename Handler&gt;</dt>
+<em class="property">template </em>&lt;<em class="property">typename</em> Handler&gt;</dt>
 <dt id="_CPPv2N2mp12ReadNLStringE11NLStringRefR7HandlerN3fmt10CStringRefEi">
-<span id="mp::ReadNLString__NLStringRef.HandlerR.fmt::CStringRef.i"></span><span class="target" id="project0namespacemp_1a380b0b97c9e77dfa2a07dd9f81e5e885"></span>void <code class="descclassname">mp::</code><code class="descname">ReadNLString</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv2N2mp11NLStringRefE" title="mp::NLStringRef">NLStringRef</a> <em>str</em>, Handler &amp;<em>handler</em>, fmt::CStringRef <em>name</em>, int <em>flags</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp12ReadNLStringE11NLStringRefR7HandlerN3fmt10CStringRefEi" title="Permalink to this definition">¶</a></dt>
+<span id="mp::ReadNLString__NLStringRef.HandlerR.fmt::CStringRef.i"></span><span class="target" id="mpnamespacemp_1a380b0b97c9e77dfa2a07dd9f81e5e885"></span>void <code class="descclassname">mp::</code><code class="descname">ReadNLString</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv2N2mp11NLStringRefE" title="mp::NLStringRef">NLStringRef</a> <em>str</em>, Handler &amp;<em>handler</em>, fmt::CStringRef <em>name</em>, int <em>flags</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp12ReadNLStringE11NLStringRefR7HandlerN3fmt10CStringRefEi" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>Reads an optimization problem in the NL format from the string <em>str</em>
 and sends notifications of the problem components to the <em>handler</em> object.
 The handler class can be one of the following</p>
@@ -170,13 +170,13 @@ nonlinear expressions.</p>
 
 <dl class="class">
 <dt id="_CPPv2N2mp11NLStringRefE">
-<span id="mp::NLStringRef"></span><span class="target" id="project0classmp_1_1NLStringRef"></span><em class="property">class </em><code class="descclassname">mp::</code><code class="descname">NLStringRef</code><a class="headerlink" href="#_CPPv2N2mp11NLStringRefE" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLStringRef"></span><span class="target" id="mpclassmp_1_1NLStringRef"></span><em class="property">class </em><code class="descclassname">mp::</code><code class="descname">NLStringRef</code><a class="headerlink" href="#_CPPv2N2mp11NLStringRefE" title="Permalink to this definition">¶</a></dt>
 <dd><p>A reference to a null-terminated string with size. </p>
 <div class="breathe-sectiondef container">
 <p class="breathe-sectiondef-title rubric">Public Functions</p>
 <dl class="function">
 <dt id="_CPPv2N2mp11NLStringRef11NLStringRefEPKc">
-<span id="mp::NLStringRef::NLStringRef__cCP"></span><span class="target" id="project0classmp_1_1NLStringRef_1a5a3c3b718bd5f4521cb726fa823b8db5"></span><code class="descname">NLStringRef</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp11NLStringRef11NLStringRefEPKc" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLStringRef::NLStringRef__cCP"></span><span class="target" id="mpclassmp_1_1NLStringRef_1a5a3c3b718bd5f4521cb726fa823b8db5"></span><code class="descname">NLStringRef</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp11NLStringRef11NLStringRefEPKc" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>Constructs a string reference object from a C string computing
 the size with <code class="docutils literal"><span class="pre">std::strlen</span></code>.</p>
  </p>
@@ -184,26 +184,26 @@ the size with <code class="docutils literal"><span class="pre">std::strlen</span
 
 <dl class="function">
 <dt id="_CPPv2N2mp11NLStringRef11NLStringRefEPKcNSt6size_tE">
-<span id="mp::NLStringRef::NLStringRef__cCP.std::s"></span><span class="target" id="project0classmp_1_1NLStringRef_1a456d2b83e3eff9f2b453c39c0a8d420f"></span><code class="descname">NLStringRef</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>s</em>, std::size_t <em>size</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp11NLStringRef11NLStringRefEPKcNSt6size_tE" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLStringRef::NLStringRef__cCP.std::s"></span><span class="target" id="mpclassmp_1_1NLStringRef_1a456d2b83e3eff9f2b453c39c0a8d420f"></span><code class="descname">NLStringRef</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>s</em>, std::size_t <em>size</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp11NLStringRef11NLStringRefEPKcNSt6size_tE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Constructs a string reference object from a C string and a size. </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv2N2mp11NLStringRef11NLStringRefERKNSt6stringE">
-<span id="mp::NLStringRef::NLStringRef__ssCR"></span><span class="target" id="project0classmp_1_1NLStringRef_1a9b991dc6fa90c2ac40288fbbd6e542ce"></span><code class="descname">NLStringRef</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp11NLStringRef11NLStringRefERKNSt6stringE" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLStringRef::NLStringRef__ssCR"></span><span class="target" id="mpclassmp_1_1NLStringRef_1a9b991dc6fa90c2ac40288fbbd6e542ce"></span><code class="descname">NLStringRef</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp11NLStringRef11NLStringRefERKNSt6stringE" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>Constructs a string reference from an <code class="docutils literal"><span class="pre">std::string</span></code> object.</p>
  </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv2N2mp11NLStringRef5c_strEv">
-<span id="mp::NLStringRef::c_str"></span><span class="target" id="project0classmp_1_1NLStringRef_1ac08b805beccefb3dd727b55cb9849165"></span><em class="property">const</em> char *<code class="descname">c_str</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N2mp11NLStringRef5c_strEv" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLStringRef::c_str"></span><span class="target" id="mpclassmp_1_1NLStringRef_1ac08b805beccefb3dd727b55cb9849165"></span><em class="property">const</em> char *<code class="descname">c_str</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N2mp11NLStringRef5c_strEv" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the pointer to a C string. </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv2N2mp11NLStringRef4sizeEv">
-<span id="mp::NLStringRef::size"></span><span class="target" id="project0classmp_1_1NLStringRef_1a236a1dff3f8a72a4e3ecbb2d7d6656e7"></span>std::size_t <code class="descname">size</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N2mp11NLStringRef4sizeEv" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLStringRef::size"></span><span class="target" id="mpclassmp_1_1NLStringRef_1a236a1dff3f8a72a4e3ecbb2d7d6656e7"></span>std::size_t <code class="descname">size</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N2mp11NLStringRef4sizeEv" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the string size. </p>
 </dd></dl>
 
@@ -212,7 +212,7 @@ the size with <code class="docutils literal"><span class="pre">std::strlen</span
 
 <dl class="class">
 <dt>
-<span class="target" id="project0classmp_1_1NLHandler"></span>template &lt;typename <em>Impl</em>, typename <em>ExprType</em>&gt;</dt>
+<span class="target" id="mpclassmp_1_1NLHandler"></span><em class="property">template </em>&lt;typename <em>Impl</em>, typename <em>ExprType</em>&gt;</dt>
 <dt id="_CPPv2N2mp9NLHandlerE">
 <span id="mp::NLHandler"></span><em class="property">class </em><code class="descclassname">mp::</code><code class="descname">NLHandler</code><a class="headerlink" href="#_CPPv2N2mp9NLHandlerE" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>An NL handler.</p>
@@ -229,13 +229,13 @@ it can be any default-constructible type.</p>
 <p class="breathe-sectiondef-title rubric">Public Types</p>
 <dl class="type">
 <dt id="_CPPv2N2mp9NLHandler4ExprE">
-<span id="mp::NLHandler::Expr"></span><span class="target" id="project0classmp_1_1NLHandler_1a86c11fec52f5f148db51817c2ca62d63"></span><em class="property">typedef </em>ExprType <code class="descname">Expr</code><a class="headerlink" href="#_CPPv2N2mp9NLHandler4ExprE" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHandler::Expr"></span><span class="target" id="mpclassmp_1_1NLHandler_1a86c11fec52f5f148db51817c2ca62d63"></span><em class="property">typedef </em>ExprType <code class="descname">Expr</code><a class="headerlink" href="#_CPPv2N2mp9NLHandler4ExprE" title="Permalink to this definition">¶</a></dt>
 <dd><p>An expression type. </p>
 </dd></dl>
 
 <dl class="type">
 <dt id="_CPPv2N2mp9NLHandler11NumericExprE">
-<span id="mp::NLHandler::NumericExpr"></span><span class="target" id="project0classmp_1_1NLHandler_1a3abed38acdc0a912cb730bdbcdc07088"></span><em class="property">typedef </em><a class="reference internal" href="#_CPPv2N2mp9NLHandler4ExprE" title="mp::NLHandler::Expr">Expr</a> <code class="descname">NumericExpr</code><a class="headerlink" href="#_CPPv2N2mp9NLHandler11NumericExprE" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHandler::NumericExpr"></span><span class="target" id="mpclassmp_1_1NLHandler_1a3abed38acdc0a912cb730bdbcdc07088"></span><em class="property">typedef </em><a class="reference internal" href="#_CPPv2N2mp9NLHandler4ExprE" title="mp::NLHandler::Expr">Expr</a> <code class="descname">NumericExpr</code><a class="headerlink" href="#_CPPv2N2mp9NLHandler11NumericExprE" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>A numeric expression type.
 It is a typedef of <a class="reference internal" href="#_CPPv2N2mp9NLHandler4ExprE" title="mp::NLHandler::Expr"><code class="xref cpp cpp-any docutils literal"><span class="pre">Expr</span></code></a> but subclasses may define it as a different type
 convertible to <a class="reference internal" href="#_CPPv2N2mp9NLHandler4ExprE" title="mp::NLHandler::Expr"><code class="xref cpp cpp-any docutils literal"><span class="pre">Expr</span></code></a>.</p>
@@ -244,7 +244,7 @@ convertible to <a class="reference internal" href="#_CPPv2N2mp9NLHandler4ExprE" 
 
 <dl class="type">
 <dt id="_CPPv2N2mp9NLHandler11LogicalExprE">
-<span id="mp::NLHandler::LogicalExpr"></span><span class="target" id="project0classmp_1_1NLHandler_1a93caa27cd6d5414ffd4387053d56fcae"></span><em class="property">typedef </em><a class="reference internal" href="#_CPPv2N2mp9NLHandler4ExprE" title="mp::NLHandler::Expr">Expr</a> <code class="descname">LogicalExpr</code><a class="headerlink" href="#_CPPv2N2mp9NLHandler11LogicalExprE" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHandler::LogicalExpr"></span><span class="target" id="mpclassmp_1_1NLHandler_1a93caa27cd6d5414ffd4387053d56fcae"></span><em class="property">typedef </em><a class="reference internal" href="#_CPPv2N2mp9NLHandler4ExprE" title="mp::NLHandler::Expr">Expr</a> <code class="descname">LogicalExpr</code><a class="headerlink" href="#_CPPv2N2mp9NLHandler11LogicalExprE" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>A logical expression type.
 It is a typedef of <a class="reference internal" href="#_CPPv2N2mp9NLHandler4ExprE" title="mp::NLHandler::Expr"><code class="xref cpp cpp-any docutils literal"><span class="pre">Expr</span></code></a> but subclasses may define it as a different type
 convertible to <a class="reference internal" href="#_CPPv2N2mp9NLHandler4ExprE" title="mp::NLHandler::Expr"><code class="xref cpp cpp-any docutils literal"><span class="pre">Expr</span></code></a>.</p>
@@ -253,7 +253,7 @@ convertible to <a class="reference internal" href="#_CPPv2N2mp9NLHandler4ExprE" 
 
 <dl class="type">
 <dt id="_CPPv2N2mp9NLHandler9CountExprE">
-<span id="mp::NLHandler::CountExpr"></span><span class="target" id="project0classmp_1_1NLHandler_1a74c139e961545cce08c6f20a0792b557"></span><em class="property">typedef </em><a class="reference internal" href="#_CPPv2N2mp9NLHandler4ExprE" title="mp::NLHandler::Expr">Expr</a> <code class="descname">CountExpr</code><a class="headerlink" href="#_CPPv2N2mp9NLHandler9CountExprE" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHandler::CountExpr"></span><span class="target" id="mpclassmp_1_1NLHandler_1a74c139e961545cce08c6f20a0792b557"></span><em class="property">typedef </em><a class="reference internal" href="#_CPPv2N2mp9NLHandler4ExprE" title="mp::NLHandler::Expr">Expr</a> <code class="descname">CountExpr</code><a class="headerlink" href="#_CPPv2N2mp9NLHandler9CountExprE" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>A count expression type.
 It is a typedef of <a class="reference internal" href="#_CPPv2N2mp9NLHandler4ExprE" title="mp::NLHandler::Expr"><code class="xref cpp cpp-any docutils literal"><span class="pre">Expr</span></code></a> but subclasses may define it as a different type
 convertible to <a class="reference internal" href="#_CPPv2N2mp9NLHandler11NumericExprE" title="mp::NLHandler::NumericExpr"><code class="xref cpp cpp-any docutils literal"><span class="pre">NumericExpr</span></code></a>.</p>
@@ -262,7 +262,7 @@ convertible to <a class="reference internal" href="#_CPPv2N2mp9NLHandler11Numeri
 
 <dl class="type">
 <dt id="_CPPv2N2mp9NLHandler9ReferenceE">
-<span id="mp::NLHandler::Reference"></span><span class="target" id="project0classmp_1_1NLHandler_1a19b550387946f0f2a920a03af3131947"></span><em class="property">typedef </em><a class="reference internal" href="#_CPPv2N2mp9NLHandler4ExprE" title="mp::NLHandler::Expr">Expr</a> <code class="descname">Reference</code><a class="headerlink" href="#_CPPv2N2mp9NLHandler9ReferenceE" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHandler::Reference"></span><span class="target" id="mpclassmp_1_1NLHandler_1a19b550387946f0f2a920a03af3131947"></span><em class="property">typedef </em><a class="reference internal" href="#_CPPv2N2mp9NLHandler4ExprE" title="mp::NLHandler::Expr">Expr</a> <code class="descname">Reference</code><a class="headerlink" href="#_CPPv2N2mp9NLHandler9ReferenceE" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>A reference expression type.
 It is a typedef of <a class="reference internal" href="#_CPPv2N2mp9NLHandler4ExprE" title="mp::NLHandler::Expr"><code class="xref cpp cpp-any docutils literal"><span class="pre">Expr</span></code></a> but subclasses may define it as a different type
 convertible to <a class="reference internal" href="#_CPPv2N2mp9NLHandler11NumericExprE" title="mp::NLHandler::NumericExpr"><code class="xref cpp cpp-any docutils literal"><span class="pre">NumericExpr</span></code></a>.</p>
@@ -271,68 +271,68 @@ convertible to <a class="reference internal" href="#_CPPv2N2mp9NLHandler11Numeri
 
 <dl class="type">
 <dt id="_CPPv2N2mp9NLHandler16LinearObjHandlerE">
-<span id="mp::NLHandler::LinearObjHandler"></span><span class="target" id="project0classmp_1_1NLHandler_1abc636db98c1dfa7500c0dca56455e7e7"></span><em class="property">typedef </em><a class="reference internal" href="#_CPPv2N2mp9NLHandler17LinearExprHandlerE" title="mp::NLHandler::LinearExprHandler">LinearExprHandler</a> <code class="descname">LinearObjHandler</code><a class="headerlink" href="#_CPPv2N2mp9NLHandler16LinearObjHandlerE" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHandler::LinearObjHandler"></span><span class="target" id="mpclassmp_1_1NLHandler_1abc636db98c1dfa7500c0dca56455e7e7"></span><em class="property">typedef </em><a class="reference internal" href="#_CPPv2N2mp9NLHandler17LinearExprHandlerE" title="mp::NLHandler::LinearExprHandler">LinearExprHandler</a> <code class="descname">LinearObjHandler</code><a class="headerlink" href="#_CPPv2N2mp9NLHandler16LinearObjHandlerE" title="Permalink to this definition">¶</a></dt>
 <dd><p>A typedef of a class that receives notifications of terms in the linear part of an objective expression. </p>
 </dd></dl>
 
 <dl class="type">
 <dt id="_CPPv2N2mp9NLHandler16LinearConHandlerE">
-<span id="mp::NLHandler::LinearConHandler"></span><span class="target" id="project0classmp_1_1NLHandler_1a467762c71c2623f31b77bb96cfa54bf3"></span><em class="property">typedef </em><a class="reference internal" href="#_CPPv2N2mp9NLHandler17LinearExprHandlerE" title="mp::NLHandler::LinearExprHandler">LinearExprHandler</a> <code class="descname">LinearConHandler</code><a class="headerlink" href="#_CPPv2N2mp9NLHandler16LinearConHandlerE" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHandler::LinearConHandler"></span><span class="target" id="mpclassmp_1_1NLHandler_1a467762c71c2623f31b77bb96cfa54bf3"></span><em class="property">typedef </em><a class="reference internal" href="#_CPPv2N2mp9NLHandler17LinearExprHandlerE" title="mp::NLHandler::LinearExprHandler">LinearExprHandler</a> <code class="descname">LinearConHandler</code><a class="headerlink" href="#_CPPv2N2mp9NLHandler16LinearConHandlerE" title="Permalink to this definition">¶</a></dt>
 <dd><p>A typedef of a class that receives notifications of terms in the linear part of a constraint expression. </p>
 </dd></dl>
 
 <dl class="type">
 <dt id="_CPPv2N2mp9NLHandler17NumericArgHandlerE">
-<span id="mp::NLHandler::NumericArgHandler"></span><span class="target" id="project0classmp_1_1NLHandler_1ac6666d5aa8bcbd9520bd426c10cd77e2"></span><em class="property">typedef </em><a class="reference internal" href="#_CPPv2N2mp9NLHandler10ArgHandlerE" title="mp::NLHandler::ArgHandler">ArgHandler</a> <code class="descname">NumericArgHandler</code><a class="headerlink" href="#_CPPv2N2mp9NLHandler17NumericArgHandlerE" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHandler::NumericArgHandler"></span><span class="target" id="mpclassmp_1_1NLHandler_1ac6666d5aa8bcbd9520bd426c10cd77e2"></span><em class="property">typedef </em><a class="reference internal" href="#_CPPv2N2mp9NLHandler10ArgHandlerE" title="mp::NLHandler::ArgHandler">ArgHandler</a> <code class="descname">NumericArgHandler</code><a class="headerlink" href="#_CPPv2N2mp9NLHandler17NumericArgHandlerE" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>A typedef of a class that receives notifications of <a class="reference internal" href="common.html#_CPPv2N2mp4expr13FIRST_NUMERICE" title="mp::expr::FIRST_NUMERIC"><code class="xref cpp cpp-any docutils literal"><span class="pre">numeric</span></code></a> arguments.</p>
  </p>
 </dd></dl>
 
 <dl class="type">
 <dt id="_CPPv2N2mp9NLHandler13VarArgHandlerE">
-<span id="mp::NLHandler::VarArgHandler"></span><span class="target" id="project0classmp_1_1NLHandler_1a483244ef67d80e85f1cdfcfec909c304"></span><em class="property">typedef </em><a class="reference internal" href="#_CPPv2N2mp9NLHandler10ArgHandlerE" title="mp::NLHandler::ArgHandler">ArgHandler</a> <code class="descname">VarArgHandler</code><a class="headerlink" href="#_CPPv2N2mp9NLHandler13VarArgHandlerE" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHandler::VarArgHandler"></span><span class="target" id="mpclassmp_1_1NLHandler_1a483244ef67d80e85f1cdfcfec909c304"></span><em class="property">typedef </em><a class="reference internal" href="#_CPPv2N2mp9NLHandler10ArgHandlerE" title="mp::NLHandler::ArgHandler">ArgHandler</a> <code class="descname">VarArgHandler</code><a class="headerlink" href="#_CPPv2N2mp9NLHandler13VarArgHandlerE" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>A typedef of a class that receives notifications of <a class="reference internal" href="common.html#_CPPv2N2mp4expr12FIRST_VARARGE" title="mp::expr::FIRST_VARARG"><code class="xref cpp cpp-any docutils literal"><span class="pre">vararg</span> <span class="pre">expression</span></code></a> arguments.</p>
  </p>
 </dd></dl>
 
 <dl class="type">
 <dt id="_CPPv2N2mp9NLHandler14CallArgHandlerE">
-<span id="mp::NLHandler::CallArgHandler"></span><span class="target" id="project0classmp_1_1NLHandler_1a99b2e59f81e97efe1295090f70898ae1"></span><em class="property">typedef </em><a class="reference internal" href="#_CPPv2N2mp9NLHandler10ArgHandlerE" title="mp::NLHandler::ArgHandler">ArgHandler</a> <code class="descname">CallArgHandler</code><a class="headerlink" href="#_CPPv2N2mp9NLHandler14CallArgHandlerE" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHandler::CallArgHandler"></span><span class="target" id="mpclassmp_1_1NLHandler_1a99b2e59f81e97efe1295090f70898ae1"></span><em class="property">typedef </em><a class="reference internal" href="#_CPPv2N2mp9NLHandler10ArgHandlerE" title="mp::NLHandler::ArgHandler">ArgHandler</a> <code class="descname">CallArgHandler</code><a class="headerlink" href="#_CPPv2N2mp9NLHandler14CallArgHandlerE" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>A typedef of a class that receives notifications of <a class="reference internal" href="common.html#_CPPv2N2mp4expr4CALLE" title="mp::expr::CALL"><code class="xref cpp cpp-any docutils literal"><span class="pre">call</span> <span class="pre">expression</span></code></a> arguments.</p>
  </p>
 </dd></dl>
 
 <dl class="type">
 <dt id="_CPPv2N2mp9NLHandler18NumberOfArgHandlerE">
-<span id="mp::NLHandler::NumberOfArgHandler"></span><span class="target" id="project0classmp_1_1NLHandler_1a9259f36b6bf3e71d570e8d0d075e1d0d"></span><em class="property">typedef </em><a class="reference internal" href="#_CPPv2N2mp9NLHandler10ArgHandlerE" title="mp::NLHandler::ArgHandler">ArgHandler</a> <code class="descname">NumberOfArgHandler</code><a class="headerlink" href="#_CPPv2N2mp9NLHandler18NumberOfArgHandlerE" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHandler::NumberOfArgHandler"></span><span class="target" id="mpclassmp_1_1NLHandler_1a9259f36b6bf3e71d570e8d0d075e1d0d"></span><em class="property">typedef </em><a class="reference internal" href="#_CPPv2N2mp9NLHandler10ArgHandlerE" title="mp::NLHandler::ArgHandler">ArgHandler</a> <code class="descname">NumberOfArgHandler</code><a class="headerlink" href="#_CPPv2N2mp9NLHandler18NumberOfArgHandlerE" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>A typedef of a class that receives notifications of <a class="reference internal" href="common.html#_CPPv2N2mp4expr8NUMBEROFE" title="mp::expr::NUMBEROF"><code class="xref cpp cpp-any docutils literal"><span class="pre">numberof</span> <span class="pre">expression</span></code></a> arguments.</p>
  </p>
 </dd></dl>
 
 <dl class="type">
 <dt id="_CPPv2N2mp9NLHandler15CountArgHandlerE">
-<span id="mp::NLHandler::CountArgHandler"></span><span class="target" id="project0classmp_1_1NLHandler_1aa68d454bc738f9d345118c4ade81e3e2"></span><em class="property">typedef </em><a class="reference internal" href="#_CPPv2N2mp9NLHandler10ArgHandlerE" title="mp::NLHandler::ArgHandler">ArgHandler</a> <code class="descname">CountArgHandler</code><a class="headerlink" href="#_CPPv2N2mp9NLHandler15CountArgHandlerE" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHandler::CountArgHandler"></span><span class="target" id="mpclassmp_1_1NLHandler_1aa68d454bc738f9d345118c4ade81e3e2"></span><em class="property">typedef </em><a class="reference internal" href="#_CPPv2N2mp9NLHandler10ArgHandlerE" title="mp::NLHandler::ArgHandler">ArgHandler</a> <code class="descname">CountArgHandler</code><a class="headerlink" href="#_CPPv2N2mp9NLHandler15CountArgHandlerE" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>A typedef of a class that receives notifications of <a class="reference internal" href="common.html#_CPPv2N2mp4expr5COUNTE" title="mp::expr::COUNT"><code class="xref cpp cpp-any docutils literal"><span class="pre">count</span> <span class="pre">expression</span></code></a> arguments.</p>
  </p>
 </dd></dl>
 
 <dl class="type">
 <dt id="_CPPv2N2mp9NLHandler17LogicalArgHandlerE">
-<span id="mp::NLHandler::LogicalArgHandler"></span><span class="target" id="project0classmp_1_1NLHandler_1a357b1e1efdfaadaedffcc1db5dbe14ee"></span><em class="property">typedef </em><a class="reference internal" href="#_CPPv2N2mp9NLHandler10ArgHandlerE" title="mp::NLHandler::ArgHandler">ArgHandler</a> <code class="descname">LogicalArgHandler</code><a class="headerlink" href="#_CPPv2N2mp9NLHandler17LogicalArgHandlerE" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHandler::LogicalArgHandler"></span><span class="target" id="mpclassmp_1_1NLHandler_1a357b1e1efdfaadaedffcc1db5dbe14ee"></span><em class="property">typedef </em><a class="reference internal" href="#_CPPv2N2mp9NLHandler10ArgHandlerE" title="mp::NLHandler::ArgHandler">ArgHandler</a> <code class="descname">LogicalArgHandler</code><a class="headerlink" href="#_CPPv2N2mp9NLHandler17LogicalArgHandlerE" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>A typedef of a class that receives notifications of <a class="reference internal" href="common.html#_CPPv2N2mp4expr13FIRST_LOGICALE" title="mp::expr::FIRST_LOGICAL"><code class="xref cpp cpp-any docutils literal"><span class="pre">logical</span></code></a> arguments.</p>
  </p>
 </dd></dl>
 
 <dl class="type">
 <dt id="_CPPv2N2mp9NLHandler18PairwiseArgHandlerE">
-<span id="mp::NLHandler::PairwiseArgHandler"></span><span class="target" id="project0classmp_1_1NLHandler_1a1040c112f2448427eca696530f35fffe"></span><em class="property">typedef </em><a class="reference internal" href="#_CPPv2N2mp9NLHandler10ArgHandlerE" title="mp::NLHandler::ArgHandler">ArgHandler</a> <code class="descname">PairwiseArgHandler</code><a class="headerlink" href="#_CPPv2N2mp9NLHandler18PairwiseArgHandlerE" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHandler::PairwiseArgHandler"></span><span class="target" id="mpclassmp_1_1NLHandler_1a1040c112f2448427eca696530f35fffe"></span><em class="property">typedef </em><a class="reference internal" href="#_CPPv2N2mp9NLHandler10ArgHandlerE" title="mp::NLHandler::ArgHandler">ArgHandler</a> <code class="descname">PairwiseArgHandler</code><a class="headerlink" href="#_CPPv2N2mp9NLHandler18PairwiseArgHandlerE" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>A typedef of a class that receives notifications of <a class="reference internal" href="common.html#_CPPv2N2mp4expr14FIRST_PAIRWISEE" title="mp::expr::FIRST_PAIRWISE"><code class="xref cpp cpp-any docutils literal"><span class="pre">pairwise</span> <span class="pre">expression</span></code></a> arguments.</p>
  </p>
 </dd></dl>
 
 <dl class="type">
 <dt id="_CPPv2N2mp9NLHandler18SymbolicArgHandlerE">
-<span id="mp::NLHandler::SymbolicArgHandler"></span><span class="target" id="project0classmp_1_1NLHandler_1af3a8a0b5d2fa7b1739570b960e1772c4"></span><em class="property">typedef </em><a class="reference internal" href="#_CPPv2N2mp9NLHandler10ArgHandlerE" title="mp::NLHandler::ArgHandler">ArgHandler</a> <code class="descname">SymbolicArgHandler</code><a class="headerlink" href="#_CPPv2N2mp9NLHandler18SymbolicArgHandlerE" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHandler::SymbolicArgHandler"></span><span class="target" id="mpclassmp_1_1NLHandler_1af3a8a0b5d2fa7b1739570b960e1772c4"></span><em class="property">typedef </em><a class="reference internal" href="#_CPPv2N2mp9NLHandler10ArgHandlerE" title="mp::NLHandler::ArgHandler">ArgHandler</a> <code class="descname">SymbolicArgHandler</code><a class="headerlink" href="#_CPPv2N2mp9NLHandler18SymbolicArgHandlerE" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>A typedef of a class that receives notifications of symbolic
 (<a class="reference internal" href="common.html#_CPPv2N2mp4expr13FIRST_NUMERICE" title="mp::expr::FIRST_NUMERIC"><code class="xref cpp cpp-any docutils literal"><span class="pre">numeric</span></code></a> or <a class="reference internal" href="common.html#_CPPv2N2mp4expr6STRINGE" title="mp::expr::STRING"><code class="xref cpp cpp-any docutils literal"><span class="pre">string</span></code></a>)
 arguments.</p>
@@ -344,63 +344,63 @@ arguments.</p>
 <p class="breathe-sectiondef-title rubric">Public Functions</p>
 <dl class="function">
 <dt id="_CPPv2N2mp9NLHandlerD0Ev">
-<span id="mp::NLHandler::~NLHandler"></span>virtual <span class="target" id="project0classmp_1_1NLHandler_1ada81d15fee0f6c1ad7f5795900694d22"></span><code class="descname">~NLHandler</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandlerD0Ev" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHandler::~NLHandler"></span>virtual <span class="target" id="mpclassmp_1_1NLHandler_1ada81d15fee0f6c1ad7f5795900694d22"></span><code class="descname">~NLHandler</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandlerD0Ev" title="Permalink to this definition">¶</a></dt>
 <dd><p>Destroys the object. </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv2N2mp9NLHandler11OnUnhandledEPKc">
-<span id="mp::NLHandler::OnUnhandled__cCP"></span><span class="target" id="project0classmp_1_1NLHandler_1a17508adf60e7fcf115fd1df3b8c8b002"></span>void <code class="descname">OnUnhandled</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>kind</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler11OnUnhandledEPKc" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHandler::OnUnhandled__cCP"></span><span class="target" id="mpclassmp_1_1NLHandler_1a17508adf60e7fcf115fd1df3b8c8b002"></span>void <code class="descname">OnUnhandled</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>kind</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler11OnUnhandledEPKc" title="Permalink to this definition">¶</a></dt>
 <dd><p>Receives notification of an unhandled construct of the given kind. </p>
 <p>Throws <code class="docutils literal"><span class="pre">UnsupportedError</span></code>. </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv2N2mp9NLHandler8OnHeaderERK8NLHeader">
-<span id="mp::NLHandler::OnHeader__NLHeaderCR"></span><span class="target" id="project0classmp_1_1NLHandler_1a5692725e910c73511348b87b0920efb7"></span>void <code class="descname">OnHeader</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv2N2mp8NLHeaderE" title="mp::NLHeader">NLHeader</a> &amp;<em>h</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler8OnHeaderERK8NLHeader" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHandler::OnHeader__NLHeaderCR"></span><span class="target" id="mpclassmp_1_1NLHandler_1a5692725e910c73511348b87b0920efb7"></span>void <code class="descname">OnHeader</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv2N2mp8NLHeaderE" title="mp::NLHeader">NLHeader</a> &amp;<em>h</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler8OnHeaderERK8NLHeader" title="Permalink to this definition">¶</a></dt>
 <dd><p>Receives notification of an NL header. </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv2N2mp9NLHandler7NeedObjEi">
-<span id="mp::NLHandler::NeedObj__i"></span><span class="target" id="project0classmp_1_1NLHandler_1ad06a369b92dcd92c543b57feb28554b8"></span>bool <code class="descname">NeedObj</code><span class="sig-paren">(</span>int <em>obj_index</em><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N2mp9NLHandler7NeedObjEi" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHandler::NeedObj__i"></span><span class="target" id="mpclassmp_1_1NLHandler_1ad06a369b92dcd92c543b57feb28554b8"></span>bool <code class="descname">NeedObj</code><span class="sig-paren">(</span>int <em>obj_index</em><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N2mp9NLHandler7NeedObjEi" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>Returns true if the objective with index <em>obj_index</em> should be handled.</p>
  </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv2N2mp9NLHandler5OnObjEiN3obj4TypeE11NumericExpr">
-<span id="mp::NLHandler::OnObj__i.obj::Type.NumericExpr"></span><span class="target" id="project0classmp_1_1NLHandler_1a3d50d6e25280e2d6b4c22ccc17f7ec92"></span>void <code class="descname">OnObj</code><span class="sig-paren">(</span>int <em>index</em>, obj::<a class="reference internal" href="common.html#_CPPv2N2mp3obj4TypeE" title="mp::obj::Type">Type</a> <em>type</em>, <a class="reference internal" href="#_CPPv2N2mp9NLHandler11NumericExprE" title="mp::NLHandler::NumericExpr">NumericExpr</a> <em>expr</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler5OnObjEiN3obj4TypeE11NumericExpr" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHandler::OnObj__i.obj::Type.NumericExpr"></span><span class="target" id="mpclassmp_1_1NLHandler_1a3d50d6e25280e2d6b4c22ccc17f7ec92"></span>void <code class="descname">OnObj</code><span class="sig-paren">(</span>int <em>index</em>, obj::<a class="reference internal" href="common.html#_CPPv2N2mp3obj4TypeE" title="mp::obj::Type">Type</a> <em>type</em>, <a class="reference internal" href="#_CPPv2N2mp9NLHandler11NumericExprE" title="mp::NLHandler::NumericExpr">NumericExpr</a> <em>expr</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler5OnObjEiN3obj4TypeE11NumericExpr" title="Permalink to this definition">¶</a></dt>
 <dd><p>Receives notification of an objective type and the nonlinear part of an objective expression. </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv2N2mp9NLHandler14OnAlgebraicConEi11NumericExpr">
-<span id="mp::NLHandler::OnAlgebraicCon__i.NumericExpr"></span><span class="target" id="project0classmp_1_1NLHandler_1aecfa8993b630b2d9c9ce2da349daaf3a"></span>void <code class="descname">OnAlgebraicCon</code><span class="sig-paren">(</span>int <em>index</em>, <a class="reference internal" href="#_CPPv2N2mp9NLHandler11NumericExprE" title="mp::NLHandler::NumericExpr">NumericExpr</a> <em>expr</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler14OnAlgebraicConEi11NumericExpr" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHandler::OnAlgebraicCon__i.NumericExpr"></span><span class="target" id="mpclassmp_1_1NLHandler_1aecfa8993b630b2d9c9ce2da349daaf3a"></span>void <code class="descname">OnAlgebraicCon</code><span class="sig-paren">(</span>int <em>index</em>, <a class="reference internal" href="#_CPPv2N2mp9NLHandler11NumericExprE" title="mp::NLHandler::NumericExpr">NumericExpr</a> <em>expr</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler14OnAlgebraicConEi11NumericExpr" title="Permalink to this definition">¶</a></dt>
 <dd><p>Receives notification of the nonlinear part of an algebraic constraint expression. </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv2N2mp9NLHandler12OnLogicalConEi11LogicalExpr">
-<span id="mp::NLHandler::OnLogicalCon__i.LogicalExpr"></span><span class="target" id="project0classmp_1_1NLHandler_1a125702ddf85944186ffd775697ec5f36"></span>void <code class="descname">OnLogicalCon</code><span class="sig-paren">(</span>int <em>index</em>, <a class="reference internal" href="#_CPPv2N2mp9NLHandler11LogicalExprE" title="mp::NLHandler::LogicalExpr">LogicalExpr</a> <em>expr</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler12OnLogicalConEi11LogicalExpr" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHandler::OnLogicalCon__i.LogicalExpr"></span><span class="target" id="mpclassmp_1_1NLHandler_1a125702ddf85944186ffd775697ec5f36"></span>void <code class="descname">OnLogicalCon</code><span class="sig-paren">(</span>int <em>index</em>, <a class="reference internal" href="#_CPPv2N2mp9NLHandler11LogicalExprE" title="mp::NLHandler::LogicalExpr">LogicalExpr</a> <em>expr</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler12OnLogicalConEi11LogicalExpr" title="Permalink to this definition">¶</a></dt>
 <dd><p>Receives notification of a logical constraint expression. </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv2N2mp9NLHandler15BeginCommonExprEii">
-<span id="mp::NLHandler::BeginCommonExpr__i.i"></span><span class="target" id="project0classmp_1_1NLHandler_1a0c4aa35034af3b3e99651bbb7ff98a8b"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandler17LinearExprHandlerE" title="mp::NLHandler::LinearExprHandler">LinearExprHandler</a> <code class="descname">BeginCommonExpr</code><span class="sig-paren">(</span>int <em>index</em>, int <em>num_linear_terms</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler15BeginCommonExprEii" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHandler::BeginCommonExpr__i.i"></span><span class="target" id="mpclassmp_1_1NLHandler_1a0c4aa35034af3b3e99651bbb7ff98a8b"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandler17LinearExprHandlerE" title="mp::NLHandler::LinearExprHandler">LinearExprHandler</a> <code class="descname">BeginCommonExpr</code><span class="sig-paren">(</span>int <em>index</em>, int <em>num_linear_terms</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler15BeginCommonExprEii" title="Permalink to this definition">¶</a></dt>
 <dd><p>Receives notification of the beginning of a common expression (defined variable). </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv2N2mp9NLHandler13EndCommonExprE17LinearExprHandler11NumericExpri">
-<span id="mp::NLHandler::EndCommonExpr__LinearExprHandler.NumericExpr.i"></span><span class="target" id="project0classmp_1_1NLHandler_1a925bb9c1b6798798882940b78aec228c"></span>void <code class="descname">EndCommonExpr</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv2N2mp9NLHandler17LinearExprHandlerE" title="mp::NLHandler::LinearExprHandler">LinearExprHandler</a> <em>handler</em>, <a class="reference internal" href="#_CPPv2N2mp9NLHandler11NumericExprE" title="mp::NLHandler::NumericExpr">NumericExpr</a> <em>expr</em>, int <em>position</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler13EndCommonExprE17LinearExprHandler11NumericExpri" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHandler::EndCommonExpr__LinearExprHandler.NumericExpr.i"></span><span class="target" id="mpclassmp_1_1NLHandler_1a925bb9c1b6798798882940b78aec228c"></span>void <code class="descname">EndCommonExpr</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv2N2mp9NLHandler17LinearExprHandlerE" title="mp::NLHandler::LinearExprHandler">LinearExprHandler</a> <em>handler</em>, <a class="reference internal" href="#_CPPv2N2mp9NLHandler11NumericExprE" title="mp::NLHandler::NumericExpr">NumericExpr</a> <em>expr</em>, int <em>position</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler13EndCommonExprE17LinearExprHandler11NumericExpri" title="Permalink to this definition">¶</a></dt>
 <dd><p>Receives notification of the end of a common expression. </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv2N2mp9NLHandler17OnComplementarityEii9ComplInfo">
-<span id="mp::NLHandler::OnComplementarity__i.i.ComplInfo"></span><span class="target" id="project0classmp_1_1NLHandler_1aa6ae9e2cd369f8280ac08e69c508031f"></span>void <code class="descname">OnComplementarity</code><span class="sig-paren">(</span>int <em>con_index</em>, int <em>var_index</em>, <a class="reference internal" href="common.html#_CPPv2N2mp9ComplInfoE" title="mp::ComplInfo">ComplInfo</a> <em>info</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler17OnComplementarityEii9ComplInfo" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHandler::OnComplementarity__i.i.ComplInfo"></span><span class="target" id="mpclassmp_1_1NLHandler_1aa6ae9e2cd369f8280ac08e69c508031f"></span>void <code class="descname">OnComplementarity</code><span class="sig-paren">(</span>int <em>con_index</em>, int <em>var_index</em>, <a class="reference internal" href="common.html#_CPPv2N2mp9ComplInfoE" title="mp::ComplInfo">ComplInfo</a> <em>info</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler17OnComplementarityEii9ComplInfo" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>Receives notification of a complementarity relation
 <code class="docutils literal"><span class="pre">var_lb</span> <span class="pre">&lt;=</span> <span class="pre">x</span> <span class="pre">&lt;=</span> <span class="pre">var_ub</span> <span class="pre">complements</span> <span class="pre">con_lb</span> <span class="pre">&lt;=</span> <span class="pre">body</span> <span class="pre">&lt;=</span> <span class="pre">con_ub</span></code>, where <code class="docutils literal"><span class="pre">x</span></code>
 is the variable at index <em>var_index</em> and <code class="docutils literal"><span class="pre">body</span></code> is the constraint body.
@@ -410,55 +410,55 @@ is the variable at index <em>var_index</em> and <code class="docutils literal"><
 
 <dl class="function">
 <dt id="_CPPv2N2mp9NLHandler15OnLinearObjExprEii">
-<span id="mp::NLHandler::OnLinearObjExpr__i.i"></span><span class="target" id="project0classmp_1_1NLHandler_1a8fea8eaac3bbd4b9a6b55d750d4fe5c3"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandler16LinearObjHandlerE" title="mp::NLHandler::LinearObjHandler">LinearObjHandler</a> <code class="descname">OnLinearObjExpr</code><span class="sig-paren">(</span>int <em>obj_index</em>, int <em>num_linear_terms</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler15OnLinearObjExprEii" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHandler::OnLinearObjExpr__i.i"></span><span class="target" id="mpclassmp_1_1NLHandler_1a8fea8eaac3bbd4b9a6b55d750d4fe5c3"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandler16LinearObjHandlerE" title="mp::NLHandler::LinearObjHandler">LinearObjHandler</a> <code class="descname">OnLinearObjExpr</code><span class="sig-paren">(</span>int <em>obj_index</em>, int <em>num_linear_terms</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler15OnLinearObjExprEii" title="Permalink to this definition">¶</a></dt>
 <dd><p>Receives notification of the linear part of an objective expression. </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv2N2mp9NLHandler15OnLinearConExprEii">
-<span id="mp::NLHandler::OnLinearConExpr__i.i"></span><span class="target" id="project0classmp_1_1NLHandler_1a6af787452d58d7992317e19a9e256448"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandler16LinearConHandlerE" title="mp::NLHandler::LinearConHandler">LinearConHandler</a> <code class="descname">OnLinearConExpr</code><span class="sig-paren">(</span>int <em>con_index</em>, int <em>num_linear_terms</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler15OnLinearConExprEii" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHandler::OnLinearConExpr__i.i"></span><span class="target" id="mpclassmp_1_1NLHandler_1a6af787452d58d7992317e19a9e256448"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandler16LinearConHandlerE" title="mp::NLHandler::LinearConHandler">LinearConHandler</a> <code class="descname">OnLinearConExpr</code><span class="sig-paren">(</span>int <em>con_index</em>, int <em>num_linear_terms</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler15OnLinearConExprEii" title="Permalink to this definition">¶</a></dt>
 <dd><p>Receives notification of the linear part of a constraint expression. </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv2N2mp9NLHandler18OnLinearCommonExprEii">
-<span id="mp::NLHandler::OnLinearCommonExpr__i.i"></span><span class="target" id="project0classmp_1_1NLHandler_1abfcf53eabaf6bc515c41c82ee837fb15"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandler17LinearExprHandlerE" title="mp::NLHandler::LinearExprHandler">LinearExprHandler</a> <code class="descname">OnLinearCommonExpr</code><span class="sig-paren">(</span>int <em>expr_index</em>, int <em>num_linear_terms</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler18OnLinearCommonExprEii" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHandler::OnLinearCommonExpr__i.i"></span><span class="target" id="mpclassmp_1_1NLHandler_1abfcf53eabaf6bc515c41c82ee837fb15"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandler17LinearExprHandlerE" title="mp::NLHandler::LinearExprHandler">LinearExprHandler</a> <code class="descname">OnLinearCommonExpr</code><span class="sig-paren">(</span>int <em>expr_index</em>, int <em>num_linear_terms</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler18OnLinearCommonExprEii" title="Permalink to this definition">¶</a></dt>
 <dd><p>Receives notification of the linear part of a common expression. </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv2N2mp9NLHandler11OnVarBoundsEidd">
-<span id="mp::NLHandler::OnVarBounds__i.double.double"></span><span class="target" id="project0classmp_1_1NLHandler_1ac6ac62ec2450eae60cb2da2f6d32f2c9"></span>void <code class="descname">OnVarBounds</code><span class="sig-paren">(</span>int <em>index</em>, double <em>lb</em>, double <em>ub</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler11OnVarBoundsEidd" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHandler::OnVarBounds__i.double.double"></span><span class="target" id="mpclassmp_1_1NLHandler_1ac6ac62ec2450eae60cb2da2f6d32f2c9"></span>void <code class="descname">OnVarBounds</code><span class="sig-paren">(</span>int <em>index</em>, double <em>lb</em>, double <em>ub</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler11OnVarBoundsEidd" title="Permalink to this definition">¶</a></dt>
 <dd><p>Receives notification of variable bounds. </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv2N2mp9NLHandler11OnConBoundsEidd">
-<span id="mp::NLHandler::OnConBounds__i.double.double"></span><span class="target" id="project0classmp_1_1NLHandler_1adaff3b46458d74bc4fee8cffe4a160e2"></span>void <code class="descname">OnConBounds</code><span class="sig-paren">(</span>int <em>index</em>, double <em>lb</em>, double <em>ub</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler11OnConBoundsEidd" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHandler::OnConBounds__i.double.double"></span><span class="target" id="mpclassmp_1_1NLHandler_1adaff3b46458d74bc4fee8cffe4a160e2"></span>void <code class="descname">OnConBounds</code><span class="sig-paren">(</span>int <em>index</em>, double <em>lb</em>, double <em>ub</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler11OnConBoundsEidd" title="Permalink to this definition">¶</a></dt>
 <dd><p>Receives notification of constraint bounds (ranges). </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv2N2mp9NLHandler14OnInitialValueEid">
-<span id="mp::NLHandler::OnInitialValue__i.double"></span><span class="target" id="project0classmp_1_1NLHandler_1a984fc128fc218a22dd659212b9332ef1"></span>void <code class="descname">OnInitialValue</code><span class="sig-paren">(</span>int <em>var_index</em>, double <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler14OnInitialValueEid" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHandler::OnInitialValue__i.double"></span><span class="target" id="mpclassmp_1_1NLHandler_1a984fc128fc218a22dd659212b9332ef1"></span>void <code class="descname">OnInitialValue</code><span class="sig-paren">(</span>int <em>var_index</em>, double <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler14OnInitialValueEid" title="Permalink to this definition">¶</a></dt>
 <dd><p>Receives notification of the initial value for a variable. </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv2N2mp9NLHandler18OnInitialDualValueEid">
-<span id="mp::NLHandler::OnInitialDualValue__i.double"></span><span class="target" id="project0classmp_1_1NLHandler_1aaedce65a615fee6dcea201a84f99bc25"></span>void <code class="descname">OnInitialDualValue</code><span class="sig-paren">(</span>int <em>con_index</em>, double <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler18OnInitialDualValueEid" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHandler::OnInitialDualValue__i.double"></span><span class="target" id="mpclassmp_1_1NLHandler_1aaedce65a615fee6dcea201a84f99bc25"></span>void <code class="descname">OnInitialDualValue</code><span class="sig-paren">(</span>int <em>con_index</em>, double <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler18OnInitialDualValueEid" title="Permalink to this definition">¶</a></dt>
 <dd><p>Receives notification of the initial value for a dual variable. </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv2N2mp9NLHandler13OnColumnSizesEv">
-<span id="mp::NLHandler::OnColumnSizes"></span><span class="target" id="project0classmp_1_1NLHandler_1aafa06ec4bf9a487587953240fd170ec1"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandler17ColumnSizeHandlerE" title="mp::NLHandler::ColumnSizeHandler">ColumnSizeHandler</a> <code class="descname">OnColumnSizes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler13OnColumnSizesEv" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHandler::OnColumnSizes"></span><span class="target" id="mpclassmp_1_1NLHandler_1aafa06ec4bf9a487587953240fd170ec1"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandler17ColumnSizeHandlerE" title="mp::NLHandler::ColumnSizeHandler">ColumnSizeHandler</a> <code class="descname">OnColumnSizes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler13OnColumnSizesEv" title="Permalink to this definition">¶</a></dt>
 <dd><p>Receives notification of Jacobian column sizes. </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv2N2mp9NLHandler10OnFunctionEiN3fmt9StringRefEiN4func4TypeE">
-<span id="mp::NLHandler::OnFunction__i.fmt::StringRef.i.func::Type"></span><span class="target" id="project0classmp_1_1NLHandler_1a4b7b086b10a77b9563a4f7da8e15d06e"></span>void <code class="descname">OnFunction</code><span class="sig-paren">(</span>int <em>index</em>, fmt::StringRef <em>name</em>, int <em>num_args</em>, func::<a class="reference internal" href="common.html#_CPPv2N2mp4func4TypeE" title="mp::func::Type">Type</a> <em>type</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler10OnFunctionEiN3fmt9StringRefEiN4func4TypeE" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHandler::OnFunction__i.fmt::StringRef.i.func::Type"></span><span class="target" id="mpclassmp_1_1NLHandler_1a4b7b086b10a77b9563a4f7da8e15d06e"></span>void <code class="descname">OnFunction</code><span class="sig-paren">(</span>int <em>index</em>, fmt::StringRef <em>name</em>, int <em>num_args</em>, func::<a class="reference internal" href="common.html#_CPPv2N2mp4func4TypeE" title="mp::func::Type">Type</a> <em>type</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler10OnFunctionEiN3fmt9StringRefEiN4func4TypeE" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>Receives notification of a function.
 The <em>name</em> argument is a function name and it is not null-terminated.</p>
  </p>
@@ -466,7 +466,7 @@ The <em>name</em> argument is a function name and it is not null-terminated.</p>
 
 <dl class="function">
 <dt id="_CPPv2N2mp9NLHandler11OnIntSuffixEN3fmt9StringRefEN3suf4KindEi">
-<span id="mp::NLHandler::OnIntSuffix__fmt::StringRef.suf::Kind.i"></span><span class="target" id="project0classmp_1_1NLHandler_1af826544f6ab3355a9f06a047672d4a69"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandler16IntSuffixHandlerE" title="mp::NLHandler::IntSuffixHandler">IntSuffixHandler</a> <code class="descname">OnIntSuffix</code><span class="sig-paren">(</span>fmt::StringRef <em>name</em>, suf::<a class="reference internal" href="common.html#_CPPv2N2mp3suf4KindE" title="mp::suf::Kind">Kind</a> <em>kind</em>, int <em>num_values</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler11OnIntSuffixEN3fmt9StringRefEN3suf4KindEi" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHandler::OnIntSuffix__fmt::StringRef.suf::Kind.i"></span><span class="target" id="mpclassmp_1_1NLHandler_1af826544f6ab3355a9f06a047672d4a69"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandler16IntSuffixHandlerE" title="mp::NLHandler::IntSuffixHandler">IntSuffixHandler</a> <code class="descname">OnIntSuffix</code><span class="sig-paren">(</span>fmt::StringRef <em>name</em>, suf::<a class="reference internal" href="common.html#_CPPv2N2mp3suf4KindE" title="mp::suf::Kind">Kind</a> <em>kind</em>, int <em>num_values</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler11OnIntSuffixEN3fmt9StringRefEN3suf4KindEi" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>Receives notification of an integer suffix.
 The <em>name</em> argument is a suffix name and it is not null-terminated.
 <em>kind</em> specifies the suffix kind.</p>
@@ -475,7 +475,7 @@ The <em>name</em> argument is a suffix name and it is not null-terminated.
 
 <dl class="function">
 <dt id="_CPPv2N2mp9NLHandler11OnDblSuffixEN3fmt9StringRefEN3suf4KindEi">
-<span id="mp::NLHandler::OnDblSuffix__fmt::StringRef.suf::Kind.i"></span><span class="target" id="project0classmp_1_1NLHandler_1acfe154237a4296f1eb7e437fa83058a1"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandler16DblSuffixHandlerE" title="mp::NLHandler::DblSuffixHandler">DblSuffixHandler</a> <code class="descname">OnDblSuffix</code><span class="sig-paren">(</span>fmt::StringRef <em>name</em>, suf::<a class="reference internal" href="common.html#_CPPv2N2mp3suf4KindE" title="mp::suf::Kind">Kind</a> <em>kind</em>, int <em>num_values</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler11OnDblSuffixEN3fmt9StringRefEN3suf4KindEi" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHandler::OnDblSuffix__fmt::StringRef.suf::Kind.i"></span><span class="target" id="mpclassmp_1_1NLHandler_1acfe154237a4296f1eb7e437fa83058a1"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandler16DblSuffixHandlerE" title="mp::NLHandler::DblSuffixHandler">DblSuffixHandler</a> <code class="descname">OnDblSuffix</code><span class="sig-paren">(</span>fmt::StringRef <em>name</em>, suf::<a class="reference internal" href="common.html#_CPPv2N2mp3suf4KindE" title="mp::suf::Kind">Kind</a> <em>kind</em>, int <em>num_values</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler11OnDblSuffixEN3fmt9StringRefEN3suf4KindEi" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>Receives notification of a double suffix.
 The <em>name</em> argument is a suffix name and it is not null-terminated.
 <em>kind</em> specifies the suffix kind.</p>
@@ -484,7 +484,7 @@ The <em>name</em> argument is a suffix name and it is not null-terminated.
 
 <dl class="function">
 <dt id="_CPPv2N2mp9NLHandler8OnNumberEd">
-<span id="mp::NLHandler::OnNumber__double"></span><span class="target" id="project0classmp_1_1NLHandler_1a4df23fefecd646ee51d586c32afc189e"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandler11NumericExprE" title="mp::NLHandler::NumericExpr">NumericExpr</a> <code class="descname">OnNumber</code><span class="sig-paren">(</span>double <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler8OnNumberEd" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHandler::OnNumber__double"></span><span class="target" id="mpclassmp_1_1NLHandler_1a4df23fefecd646ee51d586c32afc189e"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandler11NumericExprE" title="mp::NLHandler::NumericExpr">NumericExpr</a> <code class="descname">OnNumber</code><span class="sig-paren">(</span>double <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler8OnNumberEd" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>Receives notification of a <a class="reference internal" href="common.html#_CPPv2N2mp4expr13FIRST_NUMERICE" title="mp::expr::FIRST_NUMERIC"><code class="xref cpp cpp-any docutils literal"><span class="pre">number</span></code></a> in a
 nonlinear expression.</p>
  </p>
@@ -492,14 +492,14 @@ nonlinear expression.</p>
 
 <dl class="function">
 <dt id="_CPPv2N2mp9NLHandler13OnVariableRefEi">
-<span id="mp::NLHandler::OnVariableRef__i"></span><span class="target" id="project0classmp_1_1NLHandler_1a96f21f42620a6de1600f93c9dc2f038e"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandler9ReferenceE" title="mp::NLHandler::Reference">Reference</a> <code class="descname">OnVariableRef</code><span class="sig-paren">(</span>int <em>var_index</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler13OnVariableRefEi" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHandler::OnVariableRef__i"></span><span class="target" id="mpclassmp_1_1NLHandler_1a96f21f42620a6de1600f93c9dc2f038e"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandler9ReferenceE" title="mp::NLHandler::Reference">Reference</a> <code class="descname">OnVariableRef</code><span class="sig-paren">(</span>int <em>var_index</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler13OnVariableRefEi" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>Receives notification of a <a class="reference internal" href="common.html#_CPPv2N2mp4expr15FIRST_REFERENCEE" title="mp::expr::FIRST_REFERENCE"><code class="xref cpp cpp-any docutils literal"><span class="pre">variable</span> <span class="pre">reference</span></code></a>.</p>
  </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv2N2mp9NLHandler15OnCommonExprRefEi">
-<span id="mp::NLHandler::OnCommonExprRef__i"></span><span class="target" id="project0classmp_1_1NLHandler_1ad609fe736a1ee6a28eeccc397380a3ef"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandler9ReferenceE" title="mp::NLHandler::Reference">Reference</a> <code class="descname">OnCommonExprRef</code><span class="sig-paren">(</span>int <em>expr_index</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler15OnCommonExprRefEi" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHandler::OnCommonExprRef__i"></span><span class="target" id="mpclassmp_1_1NLHandler_1ad609fe736a1ee6a28eeccc397380a3ef"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandler9ReferenceE" title="mp::NLHandler::Reference">Reference</a> <code class="descname">OnCommonExprRef</code><span class="sig-paren">(</span>int <em>expr_index</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler15OnCommonExprRefEi" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>Receives notification of a <a class="reference internal" href="common.html#_CPPv2N2mp4expr11COMMON_EXPRE" title="mp::expr::COMMON_EXPR"><code class="xref cpp cpp-any docutils literal"><span class="pre">common</span> <span class="pre">expression</span></code></a>
 (defined variable) reference.</p>
  </p>
@@ -507,35 +507,35 @@ nonlinear expression.</p>
 
 <dl class="function">
 <dt id="_CPPv2N2mp9NLHandler7OnUnaryEN4expr4KindE11NumericExpr">
-<span id="mp::NLHandler::OnUnary__expr::Kind.NumericExpr"></span><span class="target" id="project0classmp_1_1NLHandler_1a9cbfa5111f91b01d1d525c658372aa95"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandler11NumericExprE" title="mp::NLHandler::NumericExpr">NumericExpr</a> <code class="descname">OnUnary</code><span class="sig-paren">(</span>expr::<a class="reference internal" href="common.html#_CPPv2N2mp4expr4KindE" title="mp::expr::Kind">Kind</a> <em>kind</em>, <a class="reference internal" href="#_CPPv2N2mp9NLHandler11NumericExprE" title="mp::NLHandler::NumericExpr">NumericExpr</a> <em>arg</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler7OnUnaryEN4expr4KindE11NumericExpr" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHandler::OnUnary__expr::Kind.NumericExpr"></span><span class="target" id="mpclassmp_1_1NLHandler_1a9cbfa5111f91b01d1d525c658372aa95"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandler11NumericExprE" title="mp::NLHandler::NumericExpr">NumericExpr</a> <code class="descname">OnUnary</code><span class="sig-paren">(</span>expr::<a class="reference internal" href="common.html#_CPPv2N2mp4expr4KindE" title="mp::expr::Kind">Kind</a> <em>kind</em>, <a class="reference internal" href="#_CPPv2N2mp9NLHandler11NumericExprE" title="mp::NLHandler::NumericExpr">NumericExpr</a> <em>arg</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler7OnUnaryEN4expr4KindE11NumericExpr" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>Receives notification of a <a class="reference internal" href="common.html#_CPPv2N2mp4expr11FIRST_UNARYE" title="mp::expr::FIRST_UNARY"><code class="xref cpp cpp-any docutils literal"><span class="pre">unary</span> <span class="pre">expression</span></code></a>.</p>
  </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv2N2mp9NLHandler8OnBinaryEN4expr4KindE11NumericExpr11NumericExpr">
-<span id="mp::NLHandler::OnBinary__expr::Kind.NumericExpr.NumericExpr"></span><span class="target" id="project0classmp_1_1NLHandler_1aa3c4fc2584402de9fd06174b45108e6c"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandler11NumericExprE" title="mp::NLHandler::NumericExpr">NumericExpr</a> <code class="descname">OnBinary</code><span class="sig-paren">(</span>expr::<a class="reference internal" href="common.html#_CPPv2N2mp4expr4KindE" title="mp::expr::Kind">Kind</a> <em>kind</em>, <a class="reference internal" href="#_CPPv2N2mp9NLHandler11NumericExprE" title="mp::NLHandler::NumericExpr">NumericExpr</a> <em>lhs</em>, <a class="reference internal" href="#_CPPv2N2mp9NLHandler11NumericExprE" title="mp::NLHandler::NumericExpr">NumericExpr</a> <em>rhs</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler8OnBinaryEN4expr4KindE11NumericExpr11NumericExpr" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHandler::OnBinary__expr::Kind.NumericExpr.NumericExpr"></span><span class="target" id="mpclassmp_1_1NLHandler_1aa3c4fc2584402de9fd06174b45108e6c"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandler11NumericExprE" title="mp::NLHandler::NumericExpr">NumericExpr</a> <code class="descname">OnBinary</code><span class="sig-paren">(</span>expr::<a class="reference internal" href="common.html#_CPPv2N2mp4expr4KindE" title="mp::expr::Kind">Kind</a> <em>kind</em>, <a class="reference internal" href="#_CPPv2N2mp9NLHandler11NumericExprE" title="mp::NLHandler::NumericExpr">NumericExpr</a> <em>lhs</em>, <a class="reference internal" href="#_CPPv2N2mp9NLHandler11NumericExprE" title="mp::NLHandler::NumericExpr">NumericExpr</a> <em>rhs</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler8OnBinaryEN4expr4KindE11NumericExpr11NumericExpr" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>Receives notification of a <a class="reference internal" href="common.html#_CPPv2N2mp4expr12FIRST_BINARYE" title="mp::expr::FIRST_BINARY"><code class="xref cpp cpp-any docutils literal"><span class="pre">binary</span> <span class="pre">expression</span></code></a>.</p>
  </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv2N2mp9NLHandler4OnIfE11LogicalExpr11NumericExpr11NumericExpr">
-<span id="mp::NLHandler::OnIf__LogicalExpr.NumericExpr.NumericExpr"></span><span class="target" id="project0classmp_1_1NLHandler_1aafe8fbb39c3b0d4c8e9736e09ceb2043"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandler11NumericExprE" title="mp::NLHandler::NumericExpr">NumericExpr</a> <code class="descname">OnIf</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv2N2mp9NLHandler11LogicalExprE" title="mp::NLHandler::LogicalExpr">LogicalExpr</a> <em>condition</em>, <a class="reference internal" href="#_CPPv2N2mp9NLHandler11NumericExprE" title="mp::NLHandler::NumericExpr">NumericExpr</a> <em>then_expr</em>, <a class="reference internal" href="#_CPPv2N2mp9NLHandler11NumericExprE" title="mp::NLHandler::NumericExpr">NumericExpr</a> <em>else_expr</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler4OnIfE11LogicalExpr11NumericExpr11NumericExpr" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHandler::OnIf__LogicalExpr.NumericExpr.NumericExpr"></span><span class="target" id="mpclassmp_1_1NLHandler_1aafe8fbb39c3b0d4c8e9736e09ceb2043"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandler11NumericExprE" title="mp::NLHandler::NumericExpr">NumericExpr</a> <code class="descname">OnIf</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv2N2mp9NLHandler11LogicalExprE" title="mp::NLHandler::LogicalExpr">LogicalExpr</a> <em>condition</em>, <a class="reference internal" href="#_CPPv2N2mp9NLHandler11NumericExprE" title="mp::NLHandler::NumericExpr">NumericExpr</a> <em>then_expr</em>, <a class="reference internal" href="#_CPPv2N2mp9NLHandler11NumericExprE" title="mp::NLHandler::NumericExpr">NumericExpr</a> <em>else_expr</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler4OnIfE11LogicalExpr11NumericExpr11NumericExpr" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>Receives notification of an <a class="reference internal" href="common.html#_CPPv2N2mp4expr2IFE" title="mp::expr::IF"><code class="xref cpp cpp-any docutils literal"><span class="pre">if</span> <span class="pre">expression</span></code></a>.</p>
  </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv2N2mp9NLHandler11BeginPLTermEi">
-<span id="mp::NLHandler::BeginPLTerm__i"></span><span class="target" id="project0classmp_1_1NLHandler_1ab0290462a27b4e726b13ca12fb284787"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandler13PLTermHandlerE" title="mp::NLHandler::PLTermHandler">PLTermHandler</a> <code class="descname">BeginPLTerm</code><span class="sig-paren">(</span>int <em>num_breakpoints</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler11BeginPLTermEi" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHandler::BeginPLTerm__i"></span><span class="target" id="mpclassmp_1_1NLHandler_1ab0290462a27b4e726b13ca12fb284787"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandler13PLTermHandlerE" title="mp::NLHandler::PLTermHandler">PLTermHandler</a> <code class="descname">BeginPLTerm</code><span class="sig-paren">(</span>int <em>num_breakpoints</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler11BeginPLTermEi" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>Receives notification of the beginning of a <a class="reference internal" href="common.html#_CPPv2N2mp4expr6PLTERME" title="mp::expr::PLTERM"><code class="xref cpp cpp-any docutils literal"><span class="pre">piecewise-linear</span> <span class="pre">term</span></code></a>.</p>
  </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv2N2mp9NLHandler9EndPLTermE13PLTermHandler9Reference">
-<span id="mp::NLHandler::EndPLTerm__PLTermHandler.Reference"></span><span class="target" id="project0classmp_1_1NLHandler_1a68c124564aa3f97cc7ca592a13228275"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandler11NumericExprE" title="mp::NLHandler::NumericExpr">NumericExpr</a> <code class="descname">EndPLTerm</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv2N2mp9NLHandler13PLTermHandlerE" title="mp::NLHandler::PLTermHandler">PLTermHandler</a> <em>handler</em>, <a class="reference internal" href="#_CPPv2N2mp9NLHandler9ReferenceE" title="mp::NLHandler::Reference">Reference</a> <em>arg</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler9EndPLTermE13PLTermHandler9Reference" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHandler::EndPLTerm__PLTermHandler.Reference"></span><span class="target" id="mpclassmp_1_1NLHandler_1a68c124564aa3f97cc7ca592a13228275"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandler11NumericExprE" title="mp::NLHandler::NumericExpr">NumericExpr</a> <code class="descname">EndPLTerm</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv2N2mp9NLHandler13PLTermHandlerE" title="mp::NLHandler::PLTermHandler">PLTermHandler</a> <em>handler</em>, <a class="reference internal" href="#_CPPv2N2mp9NLHandler9ReferenceE" title="mp::NLHandler::Reference">Reference</a> <em>arg</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler9EndPLTermE13PLTermHandler9Reference" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>Receives notification of the end of a <a class="reference internal" href="common.html#_CPPv2N2mp4expr6PLTERME" title="mp::expr::PLTERM"><code class="xref cpp cpp-any docutils literal"><span class="pre">piecewise-linear</span> <span class="pre">term</span></code></a>.</p>
 <p><em>arg</em>: argument that is a variable or a common expression reference.</p>
  </p>
@@ -543,77 +543,77 @@ nonlinear expression.</p>
 
 <dl class="function">
 <dt id="_CPPv2N2mp9NLHandler9BeginCallEii">
-<span id="mp::NLHandler::BeginCall__i.i"></span><span class="target" id="project0classmp_1_1NLHandler_1a89f35db1fe6375547e468710ee10c748"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandler14CallArgHandlerE" title="mp::NLHandler::CallArgHandler">CallArgHandler</a> <code class="descname">BeginCall</code><span class="sig-paren">(</span>int <em>func_index</em>, int <em>num_args</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler9BeginCallEii" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHandler::BeginCall__i.i"></span><span class="target" id="mpclassmp_1_1NLHandler_1a89f35db1fe6375547e468710ee10c748"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandler14CallArgHandlerE" title="mp::NLHandler::CallArgHandler">CallArgHandler</a> <code class="descname">BeginCall</code><span class="sig-paren">(</span>int <em>func_index</em>, int <em>num_args</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler9BeginCallEii" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>Receives notification of the beginning of a <a class="reference internal" href="common.html#_CPPv2N2mp4expr4CALLE" title="mp::expr::CALL"><code class="xref cpp cpp-any docutils literal"><span class="pre">call</span> <span class="pre">expression</span></code></a>.</p>
  </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv2N2mp9NLHandler7EndCallE14CallArgHandler">
-<span id="mp::NLHandler::EndCall__CallArgHandler"></span><span class="target" id="project0classmp_1_1NLHandler_1a94c59d42adc752c3c83906a8ec272854"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandler11NumericExprE" title="mp::NLHandler::NumericExpr">NumericExpr</a> <code class="descname">EndCall</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv2N2mp9NLHandler14CallArgHandlerE" title="mp::NLHandler::CallArgHandler">CallArgHandler</a> <em>handler</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler7EndCallE14CallArgHandler" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHandler::EndCall__CallArgHandler"></span><span class="target" id="mpclassmp_1_1NLHandler_1a94c59d42adc752c3c83906a8ec272854"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandler11NumericExprE" title="mp::NLHandler::NumericExpr">NumericExpr</a> <code class="descname">EndCall</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv2N2mp9NLHandler14CallArgHandlerE" title="mp::NLHandler::CallArgHandler">CallArgHandler</a> <em>handler</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler7EndCallE14CallArgHandler" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>Receives notification of the end of a <a class="reference internal" href="common.html#_CPPv2N2mp4expr4CALLE" title="mp::expr::CALL"><code class="xref cpp cpp-any docutils literal"><span class="pre">call</span> <span class="pre">expression</span></code></a>.</p>
  </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv2N2mp9NLHandler11BeginVarArgEN4expr4KindEi">
-<span id="mp::NLHandler::BeginVarArg__expr::Kind.i"></span><span class="target" id="project0classmp_1_1NLHandler_1ad98fd1e9f1e4e5534ae8c3065d41b476"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandler13VarArgHandlerE" title="mp::NLHandler::VarArgHandler">VarArgHandler</a> <code class="descname">BeginVarArg</code><span class="sig-paren">(</span>expr::<a class="reference internal" href="common.html#_CPPv2N2mp4expr4KindE" title="mp::expr::Kind">Kind</a> <em>kind</em>, int <em>num_args</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler11BeginVarArgEN4expr4KindEi" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHandler::BeginVarArg__expr::Kind.i"></span><span class="target" id="mpclassmp_1_1NLHandler_1ad98fd1e9f1e4e5534ae8c3065d41b476"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandler13VarArgHandlerE" title="mp::NLHandler::VarArgHandler">VarArgHandler</a> <code class="descname">BeginVarArg</code><span class="sig-paren">(</span>expr::<a class="reference internal" href="common.html#_CPPv2N2mp4expr4KindE" title="mp::expr::Kind">Kind</a> <em>kind</em>, int <em>num_args</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler11BeginVarArgEN4expr4KindEi" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>Receives notification of the beginning of a <a class="reference internal" href="common.html#_CPPv2N2mp4expr12FIRST_VARARGE" title="mp::expr::FIRST_VARARG"><code class="xref cpp cpp-any docutils literal"><span class="pre">vararg</span> <span class="pre">expression</span></code></a>.</p>
  </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv2N2mp9NLHandler9EndVarArgE13VarArgHandler">
-<span id="mp::NLHandler::EndVarArg__VarArgHandler"></span><span class="target" id="project0classmp_1_1NLHandler_1a6ddfeaba35c17113abcd9643aef35d46"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandler11NumericExprE" title="mp::NLHandler::NumericExpr">NumericExpr</a> <code class="descname">EndVarArg</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv2N2mp9NLHandler13VarArgHandlerE" title="mp::NLHandler::VarArgHandler">VarArgHandler</a> <em>handler</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler9EndVarArgE13VarArgHandler" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHandler::EndVarArg__VarArgHandler"></span><span class="target" id="mpclassmp_1_1NLHandler_1a6ddfeaba35c17113abcd9643aef35d46"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandler11NumericExprE" title="mp::NLHandler::NumericExpr">NumericExpr</a> <code class="descname">EndVarArg</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv2N2mp9NLHandler13VarArgHandlerE" title="mp::NLHandler::VarArgHandler">VarArgHandler</a> <em>handler</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler9EndVarArgE13VarArgHandler" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>Receives notification of the end of a <a class="reference internal" href="common.html#_CPPv2N2mp4expr12FIRST_VARARGE" title="mp::expr::FIRST_VARARG"><code class="xref cpp cpp-any docutils literal"><span class="pre">vararg</span> <span class="pre">expression</span></code></a>.</p>
  </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv2N2mp9NLHandler8BeginSumEi">
-<span id="mp::NLHandler::BeginSum__i"></span><span class="target" id="project0classmp_1_1NLHandler_1ac92b60034ad912576c5a5eda48a1d3b6"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandler17NumericArgHandlerE" title="mp::NLHandler::NumericArgHandler">NumericArgHandler</a> <code class="descname">BeginSum</code><span class="sig-paren">(</span>int <em>num_args</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler8BeginSumEi" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHandler::BeginSum__i"></span><span class="target" id="mpclassmp_1_1NLHandler_1ac92b60034ad912576c5a5eda48a1d3b6"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandler17NumericArgHandlerE" title="mp::NLHandler::NumericArgHandler">NumericArgHandler</a> <code class="descname">BeginSum</code><span class="sig-paren">(</span>int <em>num_args</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler8BeginSumEi" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>Receives notification of the beginning of a <a class="reference internal" href="common.html#_CPPv2N2mp4expr3SUME" title="mp::expr::SUM"><code class="xref cpp cpp-any docutils literal"><span class="pre">summation</span></code></a>.</p>
  </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv2N2mp9NLHandler6EndSumE17NumericArgHandler">
-<span id="mp::NLHandler::EndSum__NumericArgHandler"></span><span class="target" id="project0classmp_1_1NLHandler_1ad9e04d1f86fa7abc415a8a5763f266ff"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandler11NumericExprE" title="mp::NLHandler::NumericExpr">NumericExpr</a> <code class="descname">EndSum</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv2N2mp9NLHandler17NumericArgHandlerE" title="mp::NLHandler::NumericArgHandler">NumericArgHandler</a> <em>handler</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler6EndSumE17NumericArgHandler" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHandler::EndSum__NumericArgHandler"></span><span class="target" id="mpclassmp_1_1NLHandler_1ad9e04d1f86fa7abc415a8a5763f266ff"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandler11NumericExprE" title="mp::NLHandler::NumericExpr">NumericExpr</a> <code class="descname">EndSum</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv2N2mp9NLHandler17NumericArgHandlerE" title="mp::NLHandler::NumericArgHandler">NumericArgHandler</a> <em>handler</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler6EndSumE17NumericArgHandler" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>Receives notification of the end of a <a class="reference internal" href="common.html#_CPPv2N2mp4expr3SUME" title="mp::expr::SUM"><code class="xref cpp cpp-any docutils literal"><span class="pre">summation</span></code></a>.</p>
  </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv2N2mp9NLHandler10BeginCountEi">
-<span id="mp::NLHandler::BeginCount__i"></span><span class="target" id="project0classmp_1_1NLHandler_1a6f1404772525084883c416b422fc141a"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandler15CountArgHandlerE" title="mp::NLHandler::CountArgHandler">CountArgHandler</a> <code class="descname">BeginCount</code><span class="sig-paren">(</span>int <em>num_args</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler10BeginCountEi" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHandler::BeginCount__i"></span><span class="target" id="mpclassmp_1_1NLHandler_1a6f1404772525084883c416b422fc141a"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandler15CountArgHandlerE" title="mp::NLHandler::CountArgHandler">CountArgHandler</a> <code class="descname">BeginCount</code><span class="sig-paren">(</span>int <em>num_args</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler10BeginCountEi" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>Receives notification of the beginning of a <a class="reference internal" href="common.html#_CPPv2N2mp4expr5COUNTE" title="mp::expr::COUNT"><code class="xref cpp cpp-any docutils literal"><span class="pre">count</span> <span class="pre">expression</span></code></a>.</p>
  </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv2N2mp9NLHandler8EndCountE15CountArgHandler">
-<span id="mp::NLHandler::EndCount__CountArgHandler"></span><span class="target" id="project0classmp_1_1NLHandler_1ab14b52a6d4ed984a76e5035cfbd29778"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandler9CountExprE" title="mp::NLHandler::CountExpr">CountExpr</a> <code class="descname">EndCount</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv2N2mp9NLHandler15CountArgHandlerE" title="mp::NLHandler::CountArgHandler">CountArgHandler</a> <em>handler</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler8EndCountE15CountArgHandler" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHandler::EndCount__CountArgHandler"></span><span class="target" id="mpclassmp_1_1NLHandler_1ab14b52a6d4ed984a76e5035cfbd29778"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandler9CountExprE" title="mp::NLHandler::CountExpr">CountExpr</a> <code class="descname">EndCount</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv2N2mp9NLHandler15CountArgHandlerE" title="mp::NLHandler::CountArgHandler">CountArgHandler</a> <em>handler</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler8EndCountE15CountArgHandler" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>Receives notification of the end of a <a class="reference internal" href="common.html#_CPPv2N2mp4expr5COUNTE" title="mp::expr::COUNT"><code class="xref cpp cpp-any docutils literal"><span class="pre">count</span> <span class="pre">expression</span></code></a>.</p>
  </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv2N2mp9NLHandler13BeginNumberOfEi11NumericExpr">
-<span id="mp::NLHandler::BeginNumberOf__i.NumericExpr"></span><span class="target" id="project0classmp_1_1NLHandler_1a840622b8677d6b5b77cd79baa891168a"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandler18NumberOfArgHandlerE" title="mp::NLHandler::NumberOfArgHandler">NumberOfArgHandler</a> <code class="descname">BeginNumberOf</code><span class="sig-paren">(</span>int <em>num_args</em>, <a class="reference internal" href="#_CPPv2N2mp9NLHandler11NumericExprE" title="mp::NLHandler::NumericExpr">NumericExpr</a> <em>arg0</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler13BeginNumberOfEi11NumericExpr" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHandler::BeginNumberOf__i.NumericExpr"></span><span class="target" id="mpclassmp_1_1NLHandler_1a840622b8677d6b5b77cd79baa891168a"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandler18NumberOfArgHandlerE" title="mp::NLHandler::NumberOfArgHandler">NumberOfArgHandler</a> <code class="descname">BeginNumberOf</code><span class="sig-paren">(</span>int <em>num_args</em>, <a class="reference internal" href="#_CPPv2N2mp9NLHandler11NumericExprE" title="mp::NLHandler::NumericExpr">NumericExpr</a> <em>arg0</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler13BeginNumberOfEi11NumericExpr" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>Receives notification of the beginning of a <a class="reference internal" href="common.html#_CPPv2N2mp4expr8NUMBEROFE" title="mp::expr::NUMBEROF"><code class="xref cpp cpp-any docutils literal"><span class="pre">numberof</span> <span class="pre">expression</span></code></a>.</p>
  </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv2N2mp9NLHandler11EndNumberOfE18NumberOfArgHandler">
-<span id="mp::NLHandler::EndNumberOf__NumberOfArgHandler"></span><span class="target" id="project0classmp_1_1NLHandler_1afc23ca52214d8960bd374ece4cc231cd"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandler11NumericExprE" title="mp::NLHandler::NumericExpr">NumericExpr</a> <code class="descname">EndNumberOf</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv2N2mp9NLHandler18NumberOfArgHandlerE" title="mp::NLHandler::NumberOfArgHandler">NumberOfArgHandler</a> <em>handler</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler11EndNumberOfE18NumberOfArgHandler" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHandler::EndNumberOf__NumberOfArgHandler"></span><span class="target" id="mpclassmp_1_1NLHandler_1afc23ca52214d8960bd374ece4cc231cd"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandler11NumericExprE" title="mp::NLHandler::NumericExpr">NumericExpr</a> <code class="descname">EndNumberOf</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv2N2mp9NLHandler18NumberOfArgHandlerE" title="mp::NLHandler::NumberOfArgHandler">NumberOfArgHandler</a> <em>handler</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler11EndNumberOfE18NumberOfArgHandler" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>Receives notification of the end of a <a class="reference internal" href="common.html#_CPPv2N2mp4expr8NUMBEROFE" title="mp::expr::NUMBEROF"><code class="xref cpp cpp-any docutils literal"><span class="pre">numberof</span> <span class="pre">expression</span></code></a>.</p>
  </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv2N2mp9NLHandler21BeginSymbolicNumberOfEi4Expr">
-<span id="mp::NLHandler::BeginSymbolicNumberOf__i.Expr"></span><span class="target" id="project0classmp_1_1NLHandler_1a8f242e06e8d4912411cb5635990daa9e"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandler18SymbolicArgHandlerE" title="mp::NLHandler::SymbolicArgHandler">SymbolicArgHandler</a> <code class="descname">BeginSymbolicNumberOf</code><span class="sig-paren">(</span>int <em>num_args</em>, <a class="reference internal" href="#_CPPv2N2mp9NLHandler4ExprE" title="mp::NLHandler::Expr">Expr</a> <em>arg0</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler21BeginSymbolicNumberOfEi4Expr" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHandler::BeginSymbolicNumberOf__i.Expr"></span><span class="target" id="mpclassmp_1_1NLHandler_1a8f242e06e8d4912411cb5635990daa9e"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandler18SymbolicArgHandlerE" title="mp::NLHandler::SymbolicArgHandler">SymbolicArgHandler</a> <code class="descname">BeginSymbolicNumberOf</code><span class="sig-paren">(</span>int <em>num_args</em>, <a class="reference internal" href="#_CPPv2N2mp9NLHandler4ExprE" title="mp::NLHandler::Expr">Expr</a> <em>arg0</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler21BeginSymbolicNumberOfEi4Expr" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>Receives notification of the beginning of a <a class="reference internal" href="common.html#_CPPv2N2mp4expr12NUMBEROF_SYME" title="mp::expr::NUMBEROF_SYM"><code class="xref cpp cpp-any docutils literal"><span class="pre">symbolic</span> <span class="pre">numberof</span>
 <span class="pre">expression</span></code></a>.</p>
  </p>
@@ -621,56 +621,56 @@ nonlinear expression.</p>
 
 <dl class="function">
 <dt id="_CPPv2N2mp9NLHandler19EndSymbolicNumberOfE18SymbolicArgHandler">
-<span id="mp::NLHandler::EndSymbolicNumberOf__SymbolicArgHandler"></span><span class="target" id="project0classmp_1_1NLHandler_1aa4537be5c3fb9986aa23511e083e731c"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandler11NumericExprE" title="mp::NLHandler::NumericExpr">NumericExpr</a> <code class="descname">EndSymbolicNumberOf</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv2N2mp9NLHandler18SymbolicArgHandlerE" title="mp::NLHandler::SymbolicArgHandler">SymbolicArgHandler</a> <em>handler</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler19EndSymbolicNumberOfE18SymbolicArgHandler" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHandler::EndSymbolicNumberOf__SymbolicArgHandler"></span><span class="target" id="mpclassmp_1_1NLHandler_1aa4537be5c3fb9986aa23511e083e731c"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandler11NumericExprE" title="mp::NLHandler::NumericExpr">NumericExpr</a> <code class="descname">EndSymbolicNumberOf</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv2N2mp9NLHandler18SymbolicArgHandlerE" title="mp::NLHandler::SymbolicArgHandler">SymbolicArgHandler</a> <em>handler</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler19EndSymbolicNumberOfE18SymbolicArgHandler" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>Receives notification of the end of a <a class="reference internal" href="common.html#_CPPv2N2mp4expr12NUMBEROF_SYME" title="mp::expr::NUMBEROF_SYM"><code class="xref cpp cpp-any docutils literal"><span class="pre">symbolic</span> <span class="pre">numberof</span> <span class="pre">expression</span></code></a>.</p>
  </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv2N2mp9NLHandler6OnBoolEb">
-<span id="mp::NLHandler::OnBool__b"></span><span class="target" id="project0classmp_1_1NLHandler_1a20a9c5f34101564bd891b7c8ab55644d"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandler11LogicalExprE" title="mp::NLHandler::LogicalExpr">LogicalExpr</a> <code class="descname">OnBool</code><span class="sig-paren">(</span>bool <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler6OnBoolEb" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHandler::OnBool__b"></span><span class="target" id="mpclassmp_1_1NLHandler_1a20a9c5f34101564bd891b7c8ab55644d"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandler11LogicalExprE" title="mp::NLHandler::LogicalExpr">LogicalExpr</a> <code class="descname">OnBool</code><span class="sig-paren">(</span>bool <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler6OnBoolEb" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>Receives notification of a <a class="reference internal" href="common.html#_CPPv2N2mp4expr4BOOLE" title="mp::expr::BOOL"><code class="xref cpp cpp-any docutils literal"><span class="pre">Boolean</span> <span class="pre">value</span></code></a>.</p>
  </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv2N2mp9NLHandler5OnNotE11LogicalExpr">
-<span id="mp::NLHandler::OnNot__LogicalExpr"></span><span class="target" id="project0classmp_1_1NLHandler_1a2a259922639032ebce8db0d9e897732e"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandler11LogicalExprE" title="mp::NLHandler::LogicalExpr">LogicalExpr</a> <code class="descname">OnNot</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv2N2mp9NLHandler11LogicalExprE" title="mp::NLHandler::LogicalExpr">LogicalExpr</a> <em>arg</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler5OnNotE11LogicalExpr" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHandler::OnNot__LogicalExpr"></span><span class="target" id="mpclassmp_1_1NLHandler_1a2a259922639032ebce8db0d9e897732e"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandler11LogicalExprE" title="mp::NLHandler::LogicalExpr">LogicalExpr</a> <code class="descname">OnNot</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv2N2mp9NLHandler11LogicalExprE" title="mp::NLHandler::LogicalExpr">LogicalExpr</a> <em>arg</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler5OnNotE11LogicalExpr" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>Receives notification of a <a class="reference internal" href="common.html#_CPPv2N2mp4expr3NOTE" title="mp::expr::NOT"><code class="xref cpp cpp-any docutils literal"><span class="pre">logical</span> <span class="pre">not</span></code></a>.</p>
  </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv2N2mp9NLHandler15OnBinaryLogicalEN4expr4KindE11LogicalExpr11LogicalExpr">
-<span id="mp::NLHandler::OnBinaryLogical__expr::Kind.LogicalExpr.LogicalExpr"></span><span class="target" id="project0classmp_1_1NLHandler_1a527d7630c14a1f8404df317797ece578"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandler11LogicalExprE" title="mp::NLHandler::LogicalExpr">LogicalExpr</a> <code class="descname">OnBinaryLogical</code><span class="sig-paren">(</span>expr::<a class="reference internal" href="common.html#_CPPv2N2mp4expr4KindE" title="mp::expr::Kind">Kind</a> <em>kind</em>, <a class="reference internal" href="#_CPPv2N2mp9NLHandler11LogicalExprE" title="mp::NLHandler::LogicalExpr">LogicalExpr</a> <em>lhs</em>, <a class="reference internal" href="#_CPPv2N2mp9NLHandler11LogicalExprE" title="mp::NLHandler::LogicalExpr">LogicalExpr</a> <em>rhs</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler15OnBinaryLogicalEN4expr4KindE11LogicalExpr11LogicalExpr" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHandler::OnBinaryLogical__expr::Kind.LogicalExpr.LogicalExpr"></span><span class="target" id="mpclassmp_1_1NLHandler_1a527d7630c14a1f8404df317797ece578"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandler11LogicalExprE" title="mp::NLHandler::LogicalExpr">LogicalExpr</a> <code class="descname">OnBinaryLogical</code><span class="sig-paren">(</span>expr::<a class="reference internal" href="common.html#_CPPv2N2mp4expr4KindE" title="mp::expr::Kind">Kind</a> <em>kind</em>, <a class="reference internal" href="#_CPPv2N2mp9NLHandler11LogicalExprE" title="mp::NLHandler::LogicalExpr">LogicalExpr</a> <em>lhs</em>, <a class="reference internal" href="#_CPPv2N2mp9NLHandler11LogicalExprE" title="mp::NLHandler::LogicalExpr">LogicalExpr</a> <em>rhs</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler15OnBinaryLogicalEN4expr4KindE11LogicalExpr11LogicalExpr" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>Receives notification of a <a class="reference internal" href="common.html#_CPPv2N2mp4expr20FIRST_BINARY_LOGICALE" title="mp::expr::FIRST_BINARY_LOGICAL"><code class="xref cpp cpp-any docutils literal"><span class="pre">binary</span> <span class="pre">logical</span> <span class="pre">expression</span></code></a>.</p>
  </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv2N2mp9NLHandler12OnRelationalEN4expr4KindE11NumericExpr11NumericExpr">
-<span id="mp::NLHandler::OnRelational__expr::Kind.NumericExpr.NumericExpr"></span><span class="target" id="project0classmp_1_1NLHandler_1a1f77d571bf5192bcd94c69739b854124"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandler11LogicalExprE" title="mp::NLHandler::LogicalExpr">LogicalExpr</a> <code class="descname">OnRelational</code><span class="sig-paren">(</span>expr::<a class="reference internal" href="common.html#_CPPv2N2mp4expr4KindE" title="mp::expr::Kind">Kind</a> <em>kind</em>, <a class="reference internal" href="#_CPPv2N2mp9NLHandler11NumericExprE" title="mp::NLHandler::NumericExpr">NumericExpr</a> <em>lhs</em>, <a class="reference internal" href="#_CPPv2N2mp9NLHandler11NumericExprE" title="mp::NLHandler::NumericExpr">NumericExpr</a> <em>rhs</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler12OnRelationalEN4expr4KindE11NumericExpr11NumericExpr" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHandler::OnRelational__expr::Kind.NumericExpr.NumericExpr"></span><span class="target" id="mpclassmp_1_1NLHandler_1a1f77d571bf5192bcd94c69739b854124"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandler11LogicalExprE" title="mp::NLHandler::LogicalExpr">LogicalExpr</a> <code class="descname">OnRelational</code><span class="sig-paren">(</span>expr::<a class="reference internal" href="common.html#_CPPv2N2mp4expr4KindE" title="mp::expr::Kind">Kind</a> <em>kind</em>, <a class="reference internal" href="#_CPPv2N2mp9NLHandler11NumericExprE" title="mp::NLHandler::NumericExpr">NumericExpr</a> <em>lhs</em>, <a class="reference internal" href="#_CPPv2N2mp9NLHandler11NumericExprE" title="mp::NLHandler::NumericExpr">NumericExpr</a> <em>rhs</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler12OnRelationalEN4expr4KindE11NumericExpr11NumericExpr" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>Receives notification of a <a class="reference internal" href="common.html#_CPPv2N2mp4expr16FIRST_RELATIONALE" title="mp::expr::FIRST_RELATIONAL"><code class="xref cpp cpp-any docutils literal"><span class="pre">relational</span> <span class="pre">expression</span></code></a>.</p>
  </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv2N2mp9NLHandler14OnLogicalCountEN4expr4KindE11NumericExpr9CountExpr">
-<span id="mp::NLHandler::OnLogicalCount__expr::Kind.NumericExpr.CountExpr"></span><span class="target" id="project0classmp_1_1NLHandler_1ace3eb6a2c23160d28dc43b657ab54aca"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandler11LogicalExprE" title="mp::NLHandler::LogicalExpr">LogicalExpr</a> <code class="descname">OnLogicalCount</code><span class="sig-paren">(</span>expr::<a class="reference internal" href="common.html#_CPPv2N2mp4expr4KindE" title="mp::expr::Kind">Kind</a> <em>kind</em>, <a class="reference internal" href="#_CPPv2N2mp9NLHandler11NumericExprE" title="mp::NLHandler::NumericExpr">NumericExpr</a> <em>lhs</em>, <a class="reference internal" href="#_CPPv2N2mp9NLHandler9CountExprE" title="mp::NLHandler::CountExpr">CountExpr</a> <em>rhs</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler14OnLogicalCountEN4expr4KindE11NumericExpr9CountExpr" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHandler::OnLogicalCount__expr::Kind.NumericExpr.CountExpr"></span><span class="target" id="mpclassmp_1_1NLHandler_1ace3eb6a2c23160d28dc43b657ab54aca"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandler11LogicalExprE" title="mp::NLHandler::LogicalExpr">LogicalExpr</a> <code class="descname">OnLogicalCount</code><span class="sig-paren">(</span>expr::<a class="reference internal" href="common.html#_CPPv2N2mp4expr4KindE" title="mp::expr::Kind">Kind</a> <em>kind</em>, <a class="reference internal" href="#_CPPv2N2mp9NLHandler11NumericExprE" title="mp::NLHandler::NumericExpr">NumericExpr</a> <em>lhs</em>, <a class="reference internal" href="#_CPPv2N2mp9NLHandler9CountExprE" title="mp::NLHandler::CountExpr">CountExpr</a> <em>rhs</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler14OnLogicalCountEN4expr4KindE11NumericExpr9CountExpr" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>Receives notification of a <a class="reference internal" href="common.html#_CPPv2N2mp4expr19FIRST_LOGICAL_COUNTE" title="mp::expr::FIRST_LOGICAL_COUNT"><code class="xref cpp cpp-any docutils literal"><span class="pre">logical</span> <span class="pre">count</span> <span class="pre">expression</span></code></a>.</p>
  </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv2N2mp9NLHandler13OnImplicationE11LogicalExpr11LogicalExpr11LogicalExpr">
-<span id="mp::NLHandler::OnImplication__LogicalExpr.LogicalExpr.LogicalExpr"></span><span class="target" id="project0classmp_1_1NLHandler_1a20bc7654b5d1fac0f09c74dedfae434b"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandler11LogicalExprE" title="mp::NLHandler::LogicalExpr">LogicalExpr</a> <code class="descname">OnImplication</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv2N2mp9NLHandler11LogicalExprE" title="mp::NLHandler::LogicalExpr">LogicalExpr</a> <em>condition</em>, <a class="reference internal" href="#_CPPv2N2mp9NLHandler11LogicalExprE" title="mp::NLHandler::LogicalExpr">LogicalExpr</a> <em>then_expr</em>, <a class="reference internal" href="#_CPPv2N2mp9NLHandler11LogicalExprE" title="mp::NLHandler::LogicalExpr">LogicalExpr</a> <em>else_expr</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler13OnImplicationE11LogicalExpr11LogicalExpr11LogicalExpr" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHandler::OnImplication__LogicalExpr.LogicalExpr.LogicalExpr"></span><span class="target" id="mpclassmp_1_1NLHandler_1a20bc7654b5d1fac0f09c74dedfae434b"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandler11LogicalExprE" title="mp::NLHandler::LogicalExpr">LogicalExpr</a> <code class="descname">OnImplication</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv2N2mp9NLHandler11LogicalExprE" title="mp::NLHandler::LogicalExpr">LogicalExpr</a> <em>condition</em>, <a class="reference internal" href="#_CPPv2N2mp9NLHandler11LogicalExprE" title="mp::NLHandler::LogicalExpr">LogicalExpr</a> <em>then_expr</em>, <a class="reference internal" href="#_CPPv2N2mp9NLHandler11LogicalExprE" title="mp::NLHandler::LogicalExpr">LogicalExpr</a> <em>else_expr</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler13OnImplicationE11LogicalExpr11LogicalExpr11LogicalExpr" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>Receives notification of an <a class="reference internal" href="common.html#_CPPv2N2mp4expr11IMPLICATIONE" title="mp::expr::IMPLICATION"><code class="xref cpp cpp-any docutils literal"><span class="pre">implication</span> <span class="pre">expression</span></code></a>.</p>
  </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv2N2mp9NLHandler20BeginIteratedLogicalEN4expr4KindEi">
-<span id="mp::NLHandler::BeginIteratedLogical__expr::Kind.i"></span><span class="target" id="project0classmp_1_1NLHandler_1a7af8e642120c4bd33656e18ff6d82739"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandler17LogicalArgHandlerE" title="mp::NLHandler::LogicalArgHandler">LogicalArgHandler</a> <code class="descname">BeginIteratedLogical</code><span class="sig-paren">(</span>expr::<a class="reference internal" href="common.html#_CPPv2N2mp4expr4KindE" title="mp::expr::Kind">Kind</a> <em>kind</em>, int <em>num_args</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler20BeginIteratedLogicalEN4expr4KindEi" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHandler::BeginIteratedLogical__expr::Kind.i"></span><span class="target" id="mpclassmp_1_1NLHandler_1a7af8e642120c4bd33656e18ff6d82739"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandler17LogicalArgHandlerE" title="mp::NLHandler::LogicalArgHandler">LogicalArgHandler</a> <code class="descname">BeginIteratedLogical</code><span class="sig-paren">(</span>expr::<a class="reference internal" href="common.html#_CPPv2N2mp4expr4KindE" title="mp::expr::Kind">Kind</a> <em>kind</em>, int <em>num_args</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler20BeginIteratedLogicalEN4expr4KindEi" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>Receives notification of the beginning of an <a class="reference internal" href="common.html#_CPPv2N2mp4expr22FIRST_ITERATED_LOGICALE" title="mp::expr::FIRST_ITERATED_LOGICAL"><code class="xref cpp cpp-any docutils literal"><span class="pre">iterated</span> <span class="pre">logical</span>
 <span class="pre">expression</span></code></a>.</p>
  </p>
@@ -678,28 +678,28 @@ nonlinear expression.</p>
 
 <dl class="function">
 <dt id="_CPPv2N2mp9NLHandler18EndIteratedLogicalE17LogicalArgHandler">
-<span id="mp::NLHandler::EndIteratedLogical__LogicalArgHandler"></span><span class="target" id="project0classmp_1_1NLHandler_1a74be24712f71d1fb9a6a54a3fb508903"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandler11LogicalExprE" title="mp::NLHandler::LogicalExpr">LogicalExpr</a> <code class="descname">EndIteratedLogical</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv2N2mp9NLHandler17LogicalArgHandlerE" title="mp::NLHandler::LogicalArgHandler">LogicalArgHandler</a> <em>handler</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler18EndIteratedLogicalE17LogicalArgHandler" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHandler::EndIteratedLogical__LogicalArgHandler"></span><span class="target" id="mpclassmp_1_1NLHandler_1a74be24712f71d1fb9a6a54a3fb508903"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandler11LogicalExprE" title="mp::NLHandler::LogicalExpr">LogicalExpr</a> <code class="descname">EndIteratedLogical</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv2N2mp9NLHandler17LogicalArgHandlerE" title="mp::NLHandler::LogicalArgHandler">LogicalArgHandler</a> <em>handler</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler18EndIteratedLogicalE17LogicalArgHandler" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>Receives notification of the end of an <a class="reference internal" href="common.html#_CPPv2N2mp4expr22FIRST_ITERATED_LOGICALE" title="mp::expr::FIRST_ITERATED_LOGICAL"><code class="xref cpp cpp-any docutils literal"><span class="pre">iterated</span> <span class="pre">logical</span> <span class="pre">expression</span></code></a>.</p>
  </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv2N2mp9NLHandler13BeginPairwiseEN4expr4KindEi">
-<span id="mp::NLHandler::BeginPairwise__expr::Kind.i"></span><span class="target" id="project0classmp_1_1NLHandler_1abc44f6f77a866c5ab70014dcdcf5a775"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandler18PairwiseArgHandlerE" title="mp::NLHandler::PairwiseArgHandler">PairwiseArgHandler</a> <code class="descname">BeginPairwise</code><span class="sig-paren">(</span>expr::<a class="reference internal" href="common.html#_CPPv2N2mp4expr4KindE" title="mp::expr::Kind">Kind</a> <em>kind</em>, int <em>num_args</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler13BeginPairwiseEN4expr4KindEi" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHandler::BeginPairwise__expr::Kind.i"></span><span class="target" id="mpclassmp_1_1NLHandler_1abc44f6f77a866c5ab70014dcdcf5a775"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandler18PairwiseArgHandlerE" title="mp::NLHandler::PairwiseArgHandler">PairwiseArgHandler</a> <code class="descname">BeginPairwise</code><span class="sig-paren">(</span>expr::<a class="reference internal" href="common.html#_CPPv2N2mp4expr4KindE" title="mp::expr::Kind">Kind</a> <em>kind</em>, int <em>num_args</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler13BeginPairwiseEN4expr4KindEi" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>Receives notification of the beginning of a <a class="reference internal" href="common.html#_CPPv2N2mp4expr14FIRST_PAIRWISEE" title="mp::expr::FIRST_PAIRWISE"><code class="xref cpp cpp-any docutils literal"><span class="pre">pairwise</span> <span class="pre">expression</span></code></a>.</p>
  </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv2N2mp9NLHandler11EndPairwiseE18PairwiseArgHandler">
-<span id="mp::NLHandler::EndPairwise__PairwiseArgHandler"></span><span class="target" id="project0classmp_1_1NLHandler_1a20dacb6db280b41d4d94730a404ae21c"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandler11LogicalExprE" title="mp::NLHandler::LogicalExpr">LogicalExpr</a> <code class="descname">EndPairwise</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv2N2mp9NLHandler18PairwiseArgHandlerE" title="mp::NLHandler::PairwiseArgHandler">PairwiseArgHandler</a> <em>handler</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler11EndPairwiseE18PairwiseArgHandler" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHandler::EndPairwise__PairwiseArgHandler"></span><span class="target" id="mpclassmp_1_1NLHandler_1a20dacb6db280b41d4d94730a404ae21c"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandler11LogicalExprE" title="mp::NLHandler::LogicalExpr">LogicalExpr</a> <code class="descname">EndPairwise</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv2N2mp9NLHandler18PairwiseArgHandlerE" title="mp::NLHandler::PairwiseArgHandler">PairwiseArgHandler</a> <em>handler</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler11EndPairwiseE18PairwiseArgHandler" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>Receives notification of the end of a <a class="reference internal" href="common.html#_CPPv2N2mp4expr14FIRST_PAIRWISEE" title="mp::expr::FIRST_PAIRWISE"><code class="xref cpp cpp-any docutils literal"><span class="pre">pairwise</span> <span class="pre">expression</span></code></a>.</p>
  </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv2N2mp9NLHandler8OnStringEN3fmt9StringRefE">
-<span id="mp::NLHandler::OnString__fmt::StringRef"></span><span class="target" id="project0classmp_1_1NLHandler_1a94ce46319d0cc02290a158778b2c3fe2"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandler4ExprE" title="mp::NLHandler::Expr">Expr</a> <code class="descname">OnString</code><span class="sig-paren">(</span>fmt::StringRef <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler8OnStringEN3fmt9StringRefE" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHandler::OnString__fmt::StringRef"></span><span class="target" id="mpclassmp_1_1NLHandler_1a94ce46319d0cc02290a158778b2c3fe2"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandler4ExprE" title="mp::NLHandler::Expr">Expr</a> <code class="descname">OnString</code><span class="sig-paren">(</span>fmt::StringRef <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler8OnStringEN3fmt9StringRefE" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>Receives notification of a <a class="reference internal" href="common.html#_CPPv2N2mp4expr6STRINGE" title="mp::expr::STRING"><code class="xref cpp cpp-any docutils literal"><span class="pre">string</span></code></a>.
 The <em>value</em> argument is a string value and it is not null-terminated.</p>
  </p>
@@ -707,21 +707,21 @@ The <em>value</em> argument is a string value and it is not null-terminated.</p>
 
 <dl class="function">
 <dt id="_CPPv2N2mp9NLHandler12OnSymbolicIfE11LogicalExpr4Expr4Expr">
-<span id="mp::NLHandler::OnSymbolicIf__LogicalExpr.Expr.Expr"></span><span class="target" id="project0classmp_1_1NLHandler_1a65454aef178b4d11609fdd9bde0321a2"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandler4ExprE" title="mp::NLHandler::Expr">Expr</a> <code class="descname">OnSymbolicIf</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv2N2mp9NLHandler11LogicalExprE" title="mp::NLHandler::LogicalExpr">LogicalExpr</a> <em>condition</em>, <a class="reference internal" href="#_CPPv2N2mp9NLHandler4ExprE" title="mp::NLHandler::Expr">Expr</a> <em>then_expr</em>, <a class="reference internal" href="#_CPPv2N2mp9NLHandler4ExprE" title="mp::NLHandler::Expr">Expr</a> <em>else_expr</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler12OnSymbolicIfE11LogicalExpr4Expr4Expr" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHandler::OnSymbolicIf__LogicalExpr.Expr.Expr"></span><span class="target" id="mpclassmp_1_1NLHandler_1a65454aef178b4d11609fdd9bde0321a2"></span><a class="reference internal" href="#_CPPv2N2mp9NLHandler4ExprE" title="mp::NLHandler::Expr">Expr</a> <code class="descname">OnSymbolicIf</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv2N2mp9NLHandler11LogicalExprE" title="mp::NLHandler::LogicalExpr">LogicalExpr</a> <em>condition</em>, <a class="reference internal" href="#_CPPv2N2mp9NLHandler4ExprE" title="mp::NLHandler::Expr">Expr</a> <em>then_expr</em>, <a class="reference internal" href="#_CPPv2N2mp9NLHandler4ExprE" title="mp::NLHandler::Expr">Expr</a> <em>else_expr</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler12OnSymbolicIfE11LogicalExpr4Expr4Expr" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>Receives notification of a <a class="reference internal" href="common.html#_CPPv2N2mp4expr5IFSYME" title="mp::expr::IFSYM"><code class="xref cpp cpp-any docutils literal"><span class="pre">symbolic</span> <span class="pre">if</span> <span class="pre">expression</span></code></a>.</p>
  </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv2N2mp9NLHandler8EndInputEv">
-<span id="mp::NLHandler::EndInput"></span><span class="target" id="project0classmp_1_1NLHandler_1a14018ecc925e046cb127a414990f7183"></span>void <code class="descname">EndInput</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler8EndInputEv" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHandler::EndInput"></span><span class="target" id="mpclassmp_1_1NLHandler_1a14018ecc925e046cb127a414990f7183"></span>void <code class="descname">EndInput</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandler8EndInputEv" title="Permalink to this definition">¶</a></dt>
 <dd><p>Receives notification of the end of the input. </p>
 </dd></dl>
 
 </div>
 <dl class="class">
 <dt id="_CPPv2N2mp9NLHandler10ArgHandlerE">
-<span id="mp::NLHandler::ArgHandler"></span><span class="target" id="project0structmp_1_1NLHandler_1_1ArgHandler"></span><em class="property">struct </em><code class="descname">ArgHandler</code><a class="headerlink" href="#_CPPv2N2mp9NLHandler10ArgHandlerE" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHandler::ArgHandler"></span><span class="target" id="mpstructmp_1_1NLHandler_1_1ArgHandler"></span><em class="property">struct </em><code class="descname">ArgHandler</code><a class="headerlink" href="#_CPPv2N2mp9NLHandler10ArgHandlerE" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>A class (struct) that receives notifications of expression arguments.
 All argument handlers in <a class="reference internal" href="#_CPPv2N2mp9NLHandlerE" title="mp::NLHandler"><code class="xref cpp cpp-any docutils literal"><span class="pre">mp::NLHandler</span></code></a> are typedefs of this class, but
 subclasses of <a class="reference internal" href="#_CPPv2N2mp9NLHandlerE" title="mp::NLHandler"><code class="xref cpp cpp-any docutils literal"><span class="pre">mp::NLHandler</span></code></a> may define them as different classes.</p>
@@ -730,7 +730,7 @@ subclasses of <a class="reference internal" href="#_CPPv2N2mp9NLHandlerE" title=
 <p class="breathe-sectiondef-title rubric">Public Functions</p>
 <dl class="function">
 <dt id="_CPPv2N2mp9NLHandlerI4Impl8ExprTypeE10ArgHandler6AddArgE4Expr">
-<span id="mp::NLHandler:Impl.ExprType:::ArgHandler::AddArg__Expr"></span><span class="target" id="project0structmp_1_1NLHandler_1_1ArgHandler_1a4f1a7f62463b1e10a722f82c909ccd08"></span>void <code class="descname">AddArg</code><span class="sig-paren">(</span>Expr <em>arg</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandlerI4Impl8ExprTypeE10ArgHandler6AddArgE4Expr" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHandler:Impl.ExprType:::ArgHandler::AddArg__Expr"></span><span class="target" id="mpstructmp_1_1NLHandler_1_1ArgHandler_1a4f1a7f62463b1e10a722f82c909ccd08"></span>void <code class="descname">AddArg</code><span class="sig-paren">(</span>Expr <em>arg</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandlerI4Impl8ExprTypeE10ArgHandler6AddArgE4Expr" title="Permalink to this definition">¶</a></dt>
 <dd><p>Receives notification of an argument. </p>
 </dd></dl>
 
@@ -739,13 +739,13 @@ subclasses of <a class="reference internal" href="#_CPPv2N2mp9NLHandlerE" title=
 
 <dl class="class">
 <dt id="_CPPv2N2mp9NLHandler17ColumnSizeHandlerE">
-<span id="mp::NLHandler::ColumnSizeHandler"></span><span class="target" id="project0structmp_1_1NLHandler_1_1ColumnSizeHandler"></span><em class="property">struct </em><code class="descname">ColumnSizeHandler</code><a class="headerlink" href="#_CPPv2N2mp9NLHandler17ColumnSizeHandlerE" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHandler::ColumnSizeHandler"></span><span class="target" id="mpstructmp_1_1NLHandler_1_1ColumnSizeHandler"></span><em class="property">struct </em><code class="descname">ColumnSizeHandler</code><a class="headerlink" href="#_CPPv2N2mp9NLHandler17ColumnSizeHandlerE" title="Permalink to this definition">¶</a></dt>
 <dd><p>A class (struct) that receives notifications of Jacobian column sizes. </p>
 <div class="breathe-sectiondef container">
 <p class="breathe-sectiondef-title rubric">Public Functions</p>
 <dl class="function">
 <dt id="_CPPv2N2mp9NLHandlerI4Impl8ExprTypeE17ColumnSizeHandler3AddEi">
-<span id="mp::NLHandler:Impl.ExprType:::ColumnSizeHandler::Add__i"></span><span class="target" id="project0structmp_1_1NLHandler_1_1ColumnSizeHandler_1ab4df436da6b06761c0c88f8c31d38404"></span>void <code class="descname">Add</code><span class="sig-paren">(</span>int <em>size</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandlerI4Impl8ExprTypeE17ColumnSizeHandler3AddEi" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHandler:Impl.ExprType:::ColumnSizeHandler::Add__i"></span><span class="target" id="mpstructmp_1_1NLHandler_1_1ColumnSizeHandler_1ab4df436da6b06761c0c88f8c31d38404"></span>void <code class="descname">Add</code><span class="sig-paren">(</span>int <em>size</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandlerI4Impl8ExprTypeE17ColumnSizeHandler3AddEi" title="Permalink to this definition">¶</a></dt>
 <dd><p>Receives notification of a Jacobian column size. </p>
 </dd></dl>
 
@@ -754,13 +754,13 @@ subclasses of <a class="reference internal" href="#_CPPv2N2mp9NLHandlerE" title=
 
 <dl class="class">
 <dt id="_CPPv2N2mp9NLHandler16DblSuffixHandlerE">
-<span id="mp::NLHandler::DblSuffixHandler"></span><span class="target" id="project0structmp_1_1NLHandler_1_1DblSuffixHandler"></span><em class="property">struct </em><code class="descname">DblSuffixHandler</code><a class="headerlink" href="#_CPPv2N2mp9NLHandler16DblSuffixHandlerE" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHandler::DblSuffixHandler"></span><span class="target" id="mpstructmp_1_1NLHandler_1_1DblSuffixHandler"></span><em class="property">struct </em><code class="descname">DblSuffixHandler</code><a class="headerlink" href="#_CPPv2N2mp9NLHandler16DblSuffixHandlerE" title="Permalink to this definition">¶</a></dt>
 <dd><p>A class (struct) that receives notifications of double suffix values. </p>
 <div class="breathe-sectiondef container">
 <p class="breathe-sectiondef-title rubric">Public Functions</p>
 <dl class="function">
 <dt id="_CPPv2N2mp9NLHandlerI4Impl8ExprTypeE16DblSuffixHandler8SetValueEid">
-<span id="mp::NLHandler:Impl.ExprType:::DblSuffixHandler::SetValue__i.double"></span><span class="target" id="project0structmp_1_1NLHandler_1_1DblSuffixHandler_1a612f0a79f868c4ff8e09e8dc098b99c5"></span>void <code class="descname">SetValue</code><span class="sig-paren">(</span>int <em>index</em>, double <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandlerI4Impl8ExprTypeE16DblSuffixHandler8SetValueEid" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHandler:Impl.ExprType:::DblSuffixHandler::SetValue__i.double"></span><span class="target" id="mpstructmp_1_1NLHandler_1_1DblSuffixHandler_1a612f0a79f868c4ff8e09e8dc098b99c5"></span>void <code class="descname">SetValue</code><span class="sig-paren">(</span>int <em>index</em>, double <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandlerI4Impl8ExprTypeE16DblSuffixHandler8SetValueEid" title="Permalink to this definition">¶</a></dt>
 <dd><p>Receives notification of a suffix value. </p>
 </dd></dl>
 
@@ -769,13 +769,13 @@ subclasses of <a class="reference internal" href="#_CPPv2N2mp9NLHandlerE" title=
 
 <dl class="class">
 <dt id="_CPPv2N2mp9NLHandler16IntSuffixHandlerE">
-<span id="mp::NLHandler::IntSuffixHandler"></span><span class="target" id="project0structmp_1_1NLHandler_1_1IntSuffixHandler"></span><em class="property">struct </em><code class="descname">IntSuffixHandler</code><a class="headerlink" href="#_CPPv2N2mp9NLHandler16IntSuffixHandlerE" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHandler::IntSuffixHandler"></span><span class="target" id="mpstructmp_1_1NLHandler_1_1IntSuffixHandler"></span><em class="property">struct </em><code class="descname">IntSuffixHandler</code><a class="headerlink" href="#_CPPv2N2mp9NLHandler16IntSuffixHandlerE" title="Permalink to this definition">¶</a></dt>
 <dd><p>A class (struct) that receives notifications of integer suffix values. </p>
 <div class="breathe-sectiondef container">
 <p class="breathe-sectiondef-title rubric">Public Functions</p>
 <dl class="function">
 <dt id="_CPPv2N2mp9NLHandlerI4Impl8ExprTypeE16IntSuffixHandler8SetValueEii">
-<span id="mp::NLHandler:Impl.ExprType:::IntSuffixHandler::SetValue__i.i"></span><span class="target" id="project0structmp_1_1NLHandler_1_1IntSuffixHandler_1a011223e7d214646218d5a1426bbb06bb"></span>void <code class="descname">SetValue</code><span class="sig-paren">(</span>int <em>index</em>, int <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandlerI4Impl8ExprTypeE16IntSuffixHandler8SetValueEii" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHandler:Impl.ExprType:::IntSuffixHandler::SetValue__i.i"></span><span class="target" id="mpstructmp_1_1NLHandler_1_1IntSuffixHandler_1a011223e7d214646218d5a1426bbb06bb"></span>void <code class="descname">SetValue</code><span class="sig-paren">(</span>int <em>index</em>, int <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandlerI4Impl8ExprTypeE16IntSuffixHandler8SetValueEii" title="Permalink to this definition">¶</a></dt>
 <dd><p>Receives notification of a suffix value. </p>
 </dd></dl>
 
@@ -784,13 +784,13 @@ subclasses of <a class="reference internal" href="#_CPPv2N2mp9NLHandlerE" title=
 
 <dl class="class">
 <dt id="_CPPv2N2mp9NLHandler17LinearExprHandlerE">
-<span id="mp::NLHandler::LinearExprHandler"></span><span class="target" id="project0structmp_1_1NLHandler_1_1LinearExprHandler"></span><em class="property">struct </em><code class="descname">LinearExprHandler</code><a class="headerlink" href="#_CPPv2N2mp9NLHandler17LinearExprHandlerE" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHandler::LinearExprHandler"></span><span class="target" id="mpstructmp_1_1NLHandler_1_1LinearExprHandler"></span><em class="property">struct </em><code class="descname">LinearExprHandler</code><a class="headerlink" href="#_CPPv2N2mp9NLHandler17LinearExprHandlerE" title="Permalink to this definition">¶</a></dt>
 <dd><p>A class (struct) that receives notifications of terms in the linear part of a common expression. </p>
 <div class="breathe-sectiondef container">
 <p class="breathe-sectiondef-title rubric">Public Functions</p>
 <dl class="function">
 <dt id="_CPPv2N2mp9NLHandlerI4Impl8ExprTypeE17LinearExprHandler7AddTermEid">
-<span id="mp::NLHandler:Impl.ExprType:::LinearExprHandler::AddTerm__i.double"></span><span class="target" id="project0structmp_1_1NLHandler_1_1LinearExprHandler_1aafba6a6344fd08431d111b32a70e50c5"></span>void <code class="descname">AddTerm</code><span class="sig-paren">(</span>int <em>var_index</em>, double <em>coef</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandlerI4Impl8ExprTypeE17LinearExprHandler7AddTermEid" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHandler:Impl.ExprType:::LinearExprHandler::AddTerm__i.double"></span><span class="target" id="mpstructmp_1_1NLHandler_1_1LinearExprHandler_1aafba6a6344fd08431d111b32a70e50c5"></span>void <code class="descname">AddTerm</code><span class="sig-paren">(</span>int <em>var_index</em>, double <em>coef</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandlerI4Impl8ExprTypeE17LinearExprHandler7AddTermEid" title="Permalink to this definition">¶</a></dt>
 <dd><p>Receives notification of a term in the linear expression. </p>
 </dd></dl>
 
@@ -799,7 +799,7 @@ subclasses of <a class="reference internal" href="#_CPPv2N2mp9NLHandlerE" title=
 
 <dl class="class">
 <dt id="_CPPv2N2mp9NLHandler13PLTermHandlerE">
-<span id="mp::NLHandler::PLTermHandler"></span><span class="target" id="project0structmp_1_1NLHandler_1_1PLTermHandler"></span><em class="property">struct </em><code class="descname">PLTermHandler</code><a class="headerlink" href="#_CPPv2N2mp9NLHandler13PLTermHandlerE" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHandler::PLTermHandler"></span><span class="target" id="mpstructmp_1_1NLHandler_1_1PLTermHandler"></span><em class="property">struct </em><code class="descname">PLTermHandler</code><a class="headerlink" href="#_CPPv2N2mp9NLHandler13PLTermHandlerE" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>A class (struct) that receives notifications of slopes and breakpoints in a
 <a class="reference internal" href="common.html#_CPPv2N2mp4expr6PLTERME" title="mp::expr::PLTERM"><code class="xref cpp cpp-any docutils literal"><span class="pre">piecewise-linear</span> <span class="pre">term</span></code></a>.</p>
  </p>
@@ -807,13 +807,13 @@ subclasses of <a class="reference internal" href="#_CPPv2N2mp9NLHandlerE" title=
 <p class="breathe-sectiondef-title rubric">Public Functions</p>
 <dl class="function">
 <dt id="_CPPv2N2mp9NLHandlerI4Impl8ExprTypeE13PLTermHandler8AddSlopeEd">
-<span id="mp::NLHandler:Impl.ExprType:::PLTermHandler::AddSlope__double"></span><span class="target" id="project0structmp_1_1NLHandler_1_1PLTermHandler_1abfa28f1752e1eccf32d822423a23b2e5"></span>void <code class="descname">AddSlope</code><span class="sig-paren">(</span>double <em>slope</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandlerI4Impl8ExprTypeE13PLTermHandler8AddSlopeEd" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHandler:Impl.ExprType:::PLTermHandler::AddSlope__double"></span><span class="target" id="mpstructmp_1_1NLHandler_1_1PLTermHandler_1abfa28f1752e1eccf32d822423a23b2e5"></span>void <code class="descname">AddSlope</code><span class="sig-paren">(</span>double <em>slope</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandlerI4Impl8ExprTypeE13PLTermHandler8AddSlopeEd" title="Permalink to this definition">¶</a></dt>
 <dd><p>Receives notification of a slope. </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv2N2mp9NLHandlerI4Impl8ExprTypeE13PLTermHandler13AddBreakpointEd">
-<span id="mp::NLHandler:Impl.ExprType:::PLTermHandler::AddBreakpoint__double"></span><span class="target" id="project0structmp_1_1NLHandler_1_1PLTermHandler_1af1c2f340f6d63dcd1fc9932d0e380022"></span>void <code class="descname">AddBreakpoint</code><span class="sig-paren">(</span>double <em>breakpoint</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandlerI4Impl8ExprTypeE13PLTermHandler13AddBreakpointEd" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHandler:Impl.ExprType:::PLTermHandler::AddBreakpoint__double"></span><span class="target" id="mpstructmp_1_1NLHandler_1_1PLTermHandler_1af1c2f340f6d63dcd1fc9932d0e380022"></span>void <code class="descname">AddBreakpoint</code><span class="sig-paren">(</span>double <em>breakpoint</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9NLHandlerI4Impl8ExprTypeE13PLTermHandler13AddBreakpointEd" title="Permalink to this definition">¶</a></dt>
 <dd><p>Receives notification of a breakpoint. </p>
 </dd></dl>
 
@@ -824,7 +824,7 @@ subclasses of <a class="reference internal" href="#_CPPv2N2mp9NLHandlerE" title=
 
 <dl class="class">
 <dt>
-<span class="target" id="project0classmp_1_1NullNLHandler"></span>template &lt;typename <em>ExprType</em>&gt;</dt>
+<span class="target" id="mpclassmp_1_1NullNLHandler"></span><em class="property">template </em>&lt;typename <em>ExprType</em>&gt;</dt>
 <dt id="_CPPv2N2mp13NullNLHandlerE">
 <span id="mp::NullNLHandler"></span><em class="property">class </em><code class="descclassname">mp::</code><code class="descname">NullNLHandler</code><a class="headerlink" href="#_CPPv2N2mp13NullNLHandlerE" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>An NL handler that ignores all input.</p>
@@ -839,7 +839,7 @@ it can be any default-constructible type.</p>
 <p class="breathe-sectiondef-title rubric">Public Functions</p>
 <dl class="function">
 <dt id="_CPPv2N2mp13NullNLHandler11OnUnhandledEPKc">
-<span id="mp::NullNLHandler::OnUnhandled__cCP"></span><span class="target" id="project0classmp_1_1NullNLHandler_1a58403ef15ebacb02494d384c2db8be77"></span>void <code class="descname">OnUnhandled</code><span class="sig-paren">(</span><em class="property">const</em> char *<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp13NullNLHandler11OnUnhandledEPKc" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NullNLHandler::OnUnhandled__cCP"></span><span class="target" id="mpclassmp_1_1NullNLHandler_1a58403ef15ebacb02494d384c2db8be77"></span>void <code class="descname">OnUnhandled</code><span class="sig-paren">(</span><em class="property">const</em> char *<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp13NullNLHandler11OnUnhandledEPKc" title="Permalink to this definition">¶</a></dt>
 <dd><p>Receives notification of an unhandled construct and ignores it. </p>
 </dd></dl>
 
@@ -848,7 +848,7 @@ it can be any default-constructible type.</p>
 
 <dl class="class">
 <dt id="_CPPv2N2mp8NLHeaderE">
-<span id="mp::NLHeader"></span><span class="target" id="project0structmp_1_1NLHeader"></span><em class="property">struct </em><code class="descclassname">mp::</code><code class="descname">NLHeader</code><a class="headerlink" href="#_CPPv2N2mp8NLHeaderE" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHeader"></span><span class="target" id="mpstructmp_1_1NLHeader"></span><em class="property">struct </em><code class="descclassname">mp::</code><code class="descname">NLHeader</code><a class="headerlink" href="#_CPPv2N2mp8NLHeaderE" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>An NL <a class="reference external" href="http://en.wikipedia.org/wiki/Header_(computing)">header</a>
 which contains information about problem dimensions, such as the number of
 variables and constraints, and the input format.</p>
@@ -858,19 +858,19 @@ variables and constraints, and the input format.</p>
 <p class="breathe-sectiondef-title rubric">Public Types</p>
 <dl class="type">
 <dt id="_CPPv2N2mp8NLHeader6FormatE">
-<span id="mp::NLHeader::Format"></span><span class="target" id="project0structmp_1_1NLHeader_1aa4af347bb776d9d1d54c3f8a1fddb482"></span><em class="property">enum </em><code class="descname">Format</code><a class="headerlink" href="#_CPPv2N2mp8NLHeader6FormatE" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHeader::Format"></span><span class="target" id="mpstructmp_1_1NLHeader_1aa4af347bb776d9d1d54c3f8a1fddb482"></span><em class="property">enum </em><code class="descname">Format</code><a class="headerlink" href="#_CPPv2N2mp8NLHeader6FormatE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Input/output format. </p>
 <p><em>Values:</em></p>
 <dl class="member">
 <dt id="_CPPv2N2mp8NLHeader4TEXTE">
-<span id="mp::NLHeader::TEXT"></span><span class="target" id="project0structmp_1_1NLHeader_1aa4af347bb776d9d1d54c3f8a1fddb482aa9ccbcce28eace3530b8e523e5adb7ab"></span><code class="descname">TEXT</code> = 0<a class="headerlink" href="#_CPPv2N2mp8NLHeader4TEXTE" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHeader::TEXT"></span><span class="target" id="mpstructmp_1_1NLHeader_1aa4af347bb776d9d1d54c3f8a1fddb482aa9ccbcce28eace3530b8e523e5adb7ab"></span><code class="descname">TEXT</code> = 0<a class="headerlink" href="#_CPPv2N2mp8NLHeader4TEXTE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Text format. </p>
 <p>The text format is fully portable meaning that an .nl file can be written on a machine of one architecture and then read on a machine of a different architecture. </p>
 </dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp8NLHeader6BINARYE">
-<span id="mp::NLHeader::BINARY"></span><span class="target" id="project0structmp_1_1NLHeader_1aa4af347bb776d9d1d54c3f8a1fddb482acbbba20afce75f03be9b8e5137bf1ebb"></span><code class="descname">BINARY</code> = 1<a class="headerlink" href="#_CPPv2N2mp8NLHeader6BINARYE" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHeader::BINARY"></span><span class="target" id="mpstructmp_1_1NLHeader_1aa4af347bb776d9d1d54c3f8a1fddb482acbbba20afce75f03be9b8e5137bf1ebb"></span><code class="descname">BINARY</code> = 1<a class="headerlink" href="#_CPPv2N2mp8NLHeader6BINARYE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Binary format. </p>
 <p>The binary format is not generally portable and should normally be used on a single machine. </p>
 </dd></dl>
@@ -879,12 +879,12 @@ variables and constraints, and the input format.</p>
 
 <dl class="type">
 <dt id="_CPPv2N2mp8NLHeader12__anonymous6E">
-<span id="mp::NLHeader::__anonymous6"></span><span class="target" id="project0structmp_1_1NLHeader_1a5d041f58eea89bc3d5bf61b08609037f"></span><em class="property">enum </em><code class="descname"><strong>[anonymous]</strong></code><a class="headerlink" href="#_CPPv2N2mp8NLHeader12__anonymous6E" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHeader::__anonymous6"></span><span class="target" id="mpstructmp_1_1NLHeader_1a5d041f58eea89bc3d5bf61b08609037f"></span><em class="property">enum </em><code class="descname"><strong>[anonymous]</strong></code><a class="headerlink" href="#_CPPv2N2mp8NLHeader12__anonymous6E" title="Permalink to this definition">¶</a></dt>
 <dd><p>Flags. </p>
 <p><em>Values:</em></p>
 <dl class="member">
 <dt id="_CPPv2N2mp8NLHeader20WANT_OUTPUT_SUFFIXESE">
-<span id="mp::NLHeader::WANT_OUTPUT_SUFFIXES"></span><span class="target" id="project0structmp_1_1NLHeader_1a5d041f58eea89bc3d5bf61b08609037fa27d99b679177cbf4e7254d59aec0d12d"></span><code class="descname">WANT_OUTPUT_SUFFIXES</code> = 1<a class="headerlink" href="#_CPPv2N2mp8NLHeader20WANT_OUTPUT_SUFFIXESE" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHeader::WANT_OUTPUT_SUFFIXES"></span><span class="target" id="mpstructmp_1_1NLHeader_1a5d041f58eea89bc3d5bf61b08609037fa27d99b679177cbf4e7254d59aec0d12d"></span><code class="descname">WANT_OUTPUT_SUFFIXES</code> = 1<a class="headerlink" href="#_CPPv2N2mp8NLHeader20WANT_OUTPUT_SUFFIXESE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Flag that specifies whether to write output suffixes to a .sol file. </p>
 </dd></dl>
 
@@ -895,33 +895,33 @@ variables and constraints, and the input format.</p>
 <p class="breathe-sectiondef-title rubric">Public Members</p>
 <dl class="member">
 <dt id="_CPPv2N2mp8NLHeader6formatE">
-<span id="mp::NLHeader::format__Format"></span><span class="target" id="project0structmp_1_1NLHeader_1a9ae700144d5ee431e3d6ae4534c0b108"></span><a class="reference internal" href="#_CPPv2N2mp8NLHeader6FormatE" title="mp::NLHeader::Format">Format</a> <code class="descname">format</code><a class="headerlink" href="#_CPPv2N2mp8NLHeader6formatE" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHeader::format__Format"></span><span class="target" id="mpstructmp_1_1NLHeader_1a9ae700144d5ee431e3d6ae4534c0b108"></span><a class="reference internal" href="#_CPPv2N2mp8NLHeader6FormatE" title="mp::NLHeader::Format">Format</a> <code class="descname">format</code><a class="headerlink" href="#_CPPv2N2mp8NLHeader6formatE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Input/output format. </p>
 </dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp8NLHeader16num_ampl_optionsE">
-<span id="mp::NLHeader::num_ampl_options__i"></span><span class="target" id="project0structmp_1_1NLHeader_1a39e2a35508651026e01d3522e6161cf1"></span>int <code class="descname">num_ampl_options</code><a class="headerlink" href="#_CPPv2N2mp8NLHeader16num_ampl_optionsE" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHeader::num_ampl_options__i"></span><span class="target" id="mpstructmp_1_1NLHeader_1a39e2a35508651026e01d3522e6161cf1"></span>int <code class="descname">num_ampl_options</code><a class="headerlink" href="#_CPPv2N2mp8NLHeader16num_ampl_optionsE" title="Permalink to this definition">¶</a></dt>
 <dd><p>The number of options reserved for AMPL use. </p>
 </dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp8NLHeader12ampl_optionsE">
-<span id="mp::NLHeader::ampl_options__iA"></span><span class="target" id="project0structmp_1_1NLHeader_1a512c1d466c4ea801a99c765fc59d3137"></span>int <code class="descname">ampl_options</code>[MAX_AMPL_OPTIONS]<a class="headerlink" href="#_CPPv2N2mp8NLHeader12ampl_optionsE" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHeader::ampl_options__iA"></span><span class="target" id="mpstructmp_1_1NLHeader_1a512c1d466c4ea801a99c765fc59d3137"></span>int <code class="descname">ampl_options</code>[MAX_AMPL_OPTIONS]<a class="headerlink" href="#_CPPv2N2mp8NLHeader12ampl_optionsE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Values of options reserved for AMPL use. </p>
 <p>Leave the default values if not using AMPL. </p>
 </dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp8NLHeader10ampl_vbtolE">
-<span id="mp::NLHeader::ampl_vbtol__double"></span><span class="target" id="project0structmp_1_1NLHeader_1a3d562baa1fec7f2c8cdf769997b6b3ad"></span>double <code class="descname">ampl_vbtol</code><a class="headerlink" href="#_CPPv2N2mp8NLHeader10ampl_vbtolE" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHeader::ampl_vbtol__double"></span><span class="target" id="mpstructmp_1_1NLHeader_1a3d562baa1fec7f2c8cdf769997b6b3ad"></span>double <code class="descname">ampl_vbtol</code><a class="headerlink" href="#_CPPv2N2mp8NLHeader10ampl_vbtolE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Extra info for writing a solution reserved for AMPL use. </p>
 <p>Leave the default value if not using AMPL. </p>
 </dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp8NLHeader10arith_kindE">
-<span id="mp::NLHeader::arith_kind__arith::Kind"></span><span class="target" id="project0structmp_1_1NLHeader_1a82056ec5aec07a862967bf3c218205fe"></span>arith::<a class="reference internal" href="#_CPPv2N2mp5arith4KindE" title="mp::arith::Kind">Kind</a> <code class="descname">arith_kind</code><a class="headerlink" href="#_CPPv2N2mp8NLHeader10arith_kindE" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHeader::arith_kind__arith::Kind"></span><span class="target" id="mpstructmp_1_1NLHeader_1a82056ec5aec07a862967bf3c218205fe"></span>arith::<a class="reference internal" href="#_CPPv2N2mp5arith4KindE" title="mp::arith::Kind">Kind</a> <code class="descname">arith_kind</code><a class="headerlink" href="#_CPPv2N2mp8NLHeader10arith_kindE" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>Floating-point arithmetic kind used with binary format to check
 if an .nl file is written using a compatible representation of
 floating-point numbers. It is not used with the text format and normally
@@ -931,7 +931,7 @@ set to <a class="reference internal" href="#_CPPv2N2mp5arith7UNKNOWNE" title="mp
 
 <dl class="member">
 <dt id="_CPPv2N2mp8NLHeader5flagsE">
-<span id="mp::NLHeader::flags__i"></span><span class="target" id="project0structmp_1_1NLHeader_1a35feeaf6ccf91aa8982c145ec5ae86c8"></span>int <code class="descname">flags</code><a class="headerlink" href="#_CPPv2N2mp8NLHeader5flagsE" title="Permalink to this definition">¶</a></dt>
+<span id="mp::NLHeader::flags__i"></span><span class="target" id="mpstructmp_1_1NLHeader_1a35feeaf6ccf91aa8982c145ec5ae86c8"></span>int <code class="descname">flags</code><a class="headerlink" href="#_CPPv2N2mp8NLHeader5flagsE" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>Flags. Can be either 0 or <a class="reference internal" href="#_CPPv2N2mp8NLHeader20WANT_OUTPUT_SUFFIXESE" title="mp::NLHeader::WANT_OUTPUT_SUFFIXES"><code class="xref cpp cpp-any docutils literal"><span class="pre">mp::NLHeader::WANT_OUTPUT_SUFFIXES</span></code></a>.</p>
  </p>
 </dd></dl>
@@ -941,37 +941,37 @@ set to <a class="reference internal" href="#_CPPv2N2mp5arith7UNKNOWNE" title="mp
 
 <dl class="class">
 <dt id="_CPPv2N2mp9ReadErrorE">
-<span id="mp::ReadError"></span><span class="target" id="project0classmp_1_1ReadError"></span><em class="property">class </em><code class="descclassname">mp::</code><code class="descname">ReadError</code><a class="headerlink" href="#_CPPv2N2mp9ReadErrorE" title="Permalink to this definition">¶</a></dt>
+<span id="mp::ReadError"></span><span class="target" id="mpclassmp_1_1ReadError"></span><em class="property">class </em><code class="descclassname">mp::</code><code class="descname">ReadError</code><a class="headerlink" href="#_CPPv2N2mp9ReadErrorE" title="Permalink to this definition">¶</a></dt>
 <dd><p>A read error with location information. </p>
 <div class="breathe-sectiondef container">
 <p class="breathe-sectiondef-title rubric">Public Functions</p>
 <dl class="function">
 <dt id="_CPPv2N2mp9ReadError9ReadErrorEN3fmt10CStringRefEiiN3fmt10CStringRefEN3fmt7ArgListE">
-<span id="mp::ReadError::ReadError__fmt::CStringRef.i.i.fmt::CStringRef.fmt::ArgList"></span><span class="target" id="project0classmp_1_1ReadError_1a5c6ac21363139b94663f4c1f30d63ae0"></span><code class="descname">ReadError</code><span class="sig-paren">(</span>fmt::CStringRef <em>filename</em>, int <em>line</em>, int <em>column</em>, fmt::CStringRef <em>format_str</em>, fmt::ArgList <em>args</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9ReadError9ReadErrorEN3fmt10CStringRefEiiN3fmt10CStringRefEN3fmt7ArgListE" title="Permalink to this definition">¶</a></dt>
+<span id="mp::ReadError::ReadError__fmt::CStringRef.i.i.fmt::CStringRef.fmt::ArgList"></span><span class="target" id="mpclassmp_1_1ReadError_1a5c6ac21363139b94663f4c1f30d63ae0"></span><code class="descname">ReadError</code><span class="sig-paren">(</span>fmt::CStringRef <em>filename</em>, int <em>line</em>, int <em>column</em>, fmt::CStringRef <em>format_str</em>, fmt::ArgList <em>args</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9ReadError9ReadErrorEN3fmt10CStringRefEiiN3fmt10CStringRefEN3fmt7ArgListE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Constructs the exception object. </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv2N2mp9ReadErrorD0Ev">
-<span id="mp::ReadError::~ReadError"></span><span class="target" id="project0classmp_1_1ReadError_1ae1704a854922e69c13225eb074b25d99"></span><code class="descname">~ReadError</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9ReadErrorD0Ev" title="Permalink to this definition">¶</a></dt>
+<span id="mp::ReadError::~ReadError"></span><span class="target" id="mpclassmp_1_1ReadError_1ae1704a854922e69c13225eb074b25d99"></span><code class="descname">~ReadError</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp9ReadErrorD0Ev" title="Permalink to this definition">¶</a></dt>
 <dd><p>Destructs the exception object. </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv2N2mp9ReadError8filenameEv">
-<span id="mp::ReadError::filename"></span><span class="target" id="project0classmp_1_1ReadError_1ab53f54f74bf73ba56ee236696ec4a962"></span><em class="property">const</em> std::string &amp;<code class="descname">filename</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N2mp9ReadError8filenameEv" title="Permalink to this definition">¶</a></dt>
+<span id="mp::ReadError::filename"></span><span class="target" id="mpclassmp_1_1ReadError_1ab53f54f74bf73ba56ee236696ec4a962"></span><em class="property">const</em> std::string &amp;<code class="descname">filename</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N2mp9ReadError8filenameEv" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the name of the file where error occurred. </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv2N2mp9ReadError4lineEv">
-<span id="mp::ReadError::line"></span><span class="target" id="project0classmp_1_1ReadError_1ad9c57b117bcf7b5fdc65685dfb41e65b"></span>int <code class="descname">line</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N2mp9ReadError4lineEv" title="Permalink to this definition">¶</a></dt>
+<span id="mp::ReadError::line"></span><span class="target" id="mpclassmp_1_1ReadError_1ad9c57b117bcf7b5fdc65685dfb41e65b"></span>int <code class="descname">line</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N2mp9ReadError4lineEv" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the line number where error occurred, starting from 1. </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv2N2mp9ReadError6columnEv">
-<span id="mp::ReadError::column"></span><span class="target" id="project0classmp_1_1ReadError_1a5d19e0fcda3a7e22f76ce074d1cdd7c8"></span>int <code class="descname">column</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N2mp9ReadError6columnEv" title="Permalink to this definition">¶</a></dt>
+<span id="mp::ReadError::column"></span><span class="target" id="mpclassmp_1_1ReadError_1a5d19e0fcda3a7e22f76ce074d1cdd7c8"></span>int <code class="descname">column</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N2mp9ReadError6columnEv" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the column number where error occurred, starting from 1. </p>
 </dd></dl>
 
@@ -980,31 +980,31 @@ set to <a class="reference internal" href="#_CPPv2N2mp5arith7UNKNOWNE" title="mp
 
 <dl class="class">
 <dt id="_CPPv2N2mp15BinaryReadErrorE">
-<span id="mp::BinaryReadError"></span><span class="target" id="project0classmp_1_1BinaryReadError"></span><em class="property">class </em><code class="descclassname">mp::</code><code class="descname">BinaryReadError</code><a class="headerlink" href="#_CPPv2N2mp15BinaryReadErrorE" title="Permalink to this definition">¶</a></dt>
+<span id="mp::BinaryReadError"></span><span class="target" id="mpclassmp_1_1BinaryReadError"></span><em class="property">class </em><code class="descclassname">mp::</code><code class="descname">BinaryReadError</code><a class="headerlink" href="#_CPPv2N2mp15BinaryReadErrorE" title="Permalink to this definition">¶</a></dt>
 <dd><p>A read error with information about offset in a binary input. </p>
 <div class="breathe-sectiondef container">
 <p class="breathe-sectiondef-title rubric">Public Functions</p>
 <dl class="function">
 <dt id="_CPPv2N2mp15BinaryReadError15BinaryReadErrorERKNSt6stringENSt6size_tEN3fmt10CStringRefE">
-<span id="mp::BinaryReadError::BinaryReadError__ssCR.std::s.fmt::CStringRef"></span><span class="target" id="project0classmp_1_1BinaryReadError_1ae2987996241f9b76bc51ae71eb9ffc61"></span><code class="descname">BinaryReadError</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>filename</em>, std::size_t <em>offset</em>, fmt::CStringRef <em>message</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp15BinaryReadError15BinaryReadErrorERKNSt6stringENSt6size_tEN3fmt10CStringRefE" title="Permalink to this definition">¶</a></dt>
+<span id="mp::BinaryReadError::BinaryReadError__ssCR.std::s.fmt::CStringRef"></span><span class="target" id="mpclassmp_1_1BinaryReadError_1ae2987996241f9b76bc51ae71eb9ffc61"></span><code class="descname">BinaryReadError</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>filename</em>, std::size_t <em>offset</em>, fmt::CStringRef <em>message</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp15BinaryReadError15BinaryReadErrorERKNSt6stringENSt6size_tEN3fmt10CStringRefE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Constructs the exception object. </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv2N2mp15BinaryReadErrorD0Ev">
-<span id="mp::BinaryReadError::~BinaryReadError"></span><span class="target" id="project0classmp_1_1BinaryReadError_1a59e17f7e390fa9b8e763888c68aaddee"></span><code class="descname">~BinaryReadError</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp15BinaryReadErrorD0Ev" title="Permalink to this definition">¶</a></dt>
+<span id="mp::BinaryReadError::~BinaryReadError"></span><span class="target" id="mpclassmp_1_1BinaryReadError_1a59e17f7e390fa9b8e763888c68aaddee"></span><code class="descname">~BinaryReadError</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp15BinaryReadErrorD0Ev" title="Permalink to this definition">¶</a></dt>
 <dd><p>Destructs the exception object. </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv2N2mp15BinaryReadError8filenameEv">
-<span id="mp::BinaryReadError::filename"></span><span class="target" id="project0classmp_1_1BinaryReadError_1a228623434f06a7c74e485708154d8349"></span><em class="property">const</em> std::string &amp;<code class="descname">filename</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N2mp15BinaryReadError8filenameEv" title="Permalink to this definition">¶</a></dt>
+<span id="mp::BinaryReadError::filename"></span><span class="target" id="mpclassmp_1_1BinaryReadError_1a228623434f06a7c74e485708154d8349"></span><em class="property">const</em> std::string &amp;<code class="descname">filename</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N2mp15BinaryReadError8filenameEv" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the name of the file where error occurred. </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv2N2mp15BinaryReadError6offsetEv">
-<span id="mp::BinaryReadError::offset"></span><span class="target" id="project0classmp_1_1BinaryReadError_1ada05af6d7010818d40721f50cc0a315e"></span>std::size_t <code class="descname">offset</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N2mp15BinaryReadError6offsetEv" title="Permalink to this definition">¶</a></dt>
+<span id="mp::BinaryReadError::offset"></span><span class="target" id="mpclassmp_1_1BinaryReadError_1ada05af6d7010818d40721f50cc0a315e"></span>std::size_t <code class="descname">offset</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N2mp15BinaryReadError6offsetEv" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the offset in chars to the error location. </p>
 </dd></dl>
 
@@ -1013,50 +1013,50 @@ set to <a class="reference internal" href="#_CPPv2N2mp5arith7UNKNOWNE" title="mp
 
 <dl class="type">
 <dt id="_CPPv2N2mp5arith4KindE">
-<span id="mp::arith::Kind"></span><span class="target" id="project0namespacemp_1_1arith_1ae61163c11b0581390bfb3fedb8643b91"></span><em class="property">enum </em><code class="descclassname">mp::arith::</code><code class="descname">Kind</code><a class="headerlink" href="#_CPPv2N2mp5arith4KindE" title="Permalink to this definition">¶</a></dt>
+<span id="mp::arith::Kind"></span><span class="target" id="mpnamespacemp_1_1arith_1ae61163c11b0581390bfb3fedb8643b91"></span><em class="property">enum </em><code class="descclassname">mp::arith::</code><code class="descname">Kind</code><a class="headerlink" href="#_CPPv2N2mp5arith4KindE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Floating-point arithmetic kind. </p>
 <p><em>Values:</em></p>
 <dl class="member">
 <dt id="_CPPv2N2mp5arith7UNKNOWNE">
-<span id="mp::arith::UNKNOWN"></span><span class="target" id="project0namespacemp_1_1arith_1ae61163c11b0581390bfb3fedb8643b91a4cd8473f81eac317306e6f391b8a81cd"></span><code class="descname">UNKNOWN</code> = 0<a class="headerlink" href="#_CPPv2N2mp5arith7UNKNOWNE" title="Permalink to this definition">¶</a></dt>
+<span id="mp::arith::UNKNOWN"></span><span class="target" id="mpnamespacemp_1_1arith_1ae61163c11b0581390bfb3fedb8643b91a4cd8473f81eac317306e6f391b8a81cd"></span><code class="descname">UNKNOWN</code> = 0<a class="headerlink" href="#_CPPv2N2mp5arith7UNKNOWNE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Unknown floating-point arithmetic. </p>
 </dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp5arith18IEEE_LITTLE_ENDIANE">
-<span id="mp::arith::IEEE_LITTLE_ENDIAN"></span><span class="target" id="project0namespacemp_1_1arith_1ae61163c11b0581390bfb3fedb8643b91a5a0f6653547a6e3ed768ecaa76016ef6"></span><code class="descname">IEEE_LITTLE_ENDIAN</code> = 1<a class="headerlink" href="#_CPPv2N2mp5arith18IEEE_LITTLE_ENDIANE" title="Permalink to this definition">¶</a></dt>
+<span id="mp::arith::IEEE_LITTLE_ENDIAN"></span><span class="target" id="mpnamespacemp_1_1arith_1ae61163c11b0581390bfb3fedb8643b91a5a0f6653547a6e3ed768ecaa76016ef6"></span><code class="descname">IEEE_LITTLE_ENDIAN</code> = 1<a class="headerlink" href="#_CPPv2N2mp5arith18IEEE_LITTLE_ENDIANE" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>Standard <a class="reference external" href="http://en.wikipedia.org/wiki/IEEE_floating_point">IEEE-754 floating point</a> - little endian.</p>
  </p>
 </dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp5arith15IEEE_BIG_ENDIANE">
-<span id="mp::arith::IEEE_BIG_ENDIAN"></span><span class="target" id="project0namespacemp_1_1arith_1ae61163c11b0581390bfb3fedb8643b91ab2dd2d879aa0898751303fed687b72cb"></span><code class="descname">IEEE_BIG_ENDIAN</code> = 2<a class="headerlink" href="#_CPPv2N2mp5arith15IEEE_BIG_ENDIANE" title="Permalink to this definition">¶</a></dt>
+<span id="mp::arith::IEEE_BIG_ENDIAN"></span><span class="target" id="mpnamespacemp_1_1arith_1ae61163c11b0581390bfb3fedb8643b91ab2dd2d879aa0898751303fed687b72cb"></span><code class="descname">IEEE_BIG_ENDIAN</code> = 2<a class="headerlink" href="#_CPPv2N2mp5arith15IEEE_BIG_ENDIANE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Standard IEEE-754 floating point - big endian. </p>
 </dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp5arith3IBME">
-<span id="mp::arith::IBM"></span><span class="target" id="project0namespacemp_1_1arith_1ae61163c11b0581390bfb3fedb8643b91abad5302fbcefc54e9eca73a77d84b746"></span><code class="descname">IBM</code> = 3<a class="headerlink" href="#_CPPv2N2mp5arith3IBME" title="Permalink to this definition">¶</a></dt>
+<span id="mp::arith::IBM"></span><span class="target" id="mpnamespacemp_1_1arith_1ae61163c11b0581390bfb3fedb8643b91abad5302fbcefc54e9eca73a77d84b746"></span><code class="descname">IBM</code> = 3<a class="headerlink" href="#_CPPv2N2mp5arith3IBME" title="Permalink to this definition">¶</a></dt>
 <dd><p><p><a class="reference external" href="http://en.wikipedia.org/wiki/IBM_Floating_Point_Architecture">IBM floating point</a>.</p>
  </p>
 </dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp5arith3VAXE">
-<span id="mp::arith::VAX"></span><span class="target" id="project0namespacemp_1_1arith_1ae61163c11b0581390bfb3fedb8643b91aafbf75b1fcc99f64477535db65dd9af0"></span><code class="descname">VAX</code> = 4<a class="headerlink" href="#_CPPv2N2mp5arith3VAXE" title="Permalink to this definition">¶</a></dt>
+<span id="mp::arith::VAX"></span><span class="target" id="mpnamespacemp_1_1arith_1ae61163c11b0581390bfb3fedb8643b91aafbf75b1fcc99f64477535db65dd9af0"></span><code class="descname">VAX</code> = 4<a class="headerlink" href="#_CPPv2N2mp5arith3VAXE" title="Permalink to this definition">¶</a></dt>
 <dd><p>VAX floating point (legacy). </p>
 </dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp5arith4CRAYE">
-<span id="mp::arith::CRAY"></span><span class="target" id="project0namespacemp_1_1arith_1ae61163c11b0581390bfb3fedb8643b91a0005dc7b9f9e8a8dfe29125e5f2a58ea"></span><code class="descname">CRAY</code> = 5<a class="headerlink" href="#_CPPv2N2mp5arith4CRAYE" title="Permalink to this definition">¶</a></dt>
+<span id="mp::arith::CRAY"></span><span class="target" id="mpnamespacemp_1_1arith_1ae61163c11b0581390bfb3fedb8643b91a0005dc7b9f9e8a8dfe29125e5f2a58ea"></span><code class="descname">CRAY</code> = 5<a class="headerlink" href="#_CPPv2N2mp5arith4CRAYE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Cray floating point. </p>
 </dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp5arith4LASTE">
-<span id="mp::arith::LAST"></span><span class="target" id="project0namespacemp_1_1arith_1ae61163c11b0581390bfb3fedb8643b91a17ba978bb022947e14819dea1a579726"></span><code class="descname">LAST</code> = CRAY<a class="headerlink" href="#_CPPv2N2mp5arith4LASTE" title="Permalink to this definition">¶</a></dt>
+<span id="mp::arith::LAST"></span><span class="target" id="mpnamespacemp_1_1arith_1ae61163c11b0581390bfb3fedb8643b91a17ba978bb022947e14819dea1a579726"></span><code class="descname">LAST</code> = CRAY<a class="headerlink" href="#_CPPv2N2mp5arith4LASTE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Last floating point. </p>
 </dd></dl>
 
@@ -1064,13 +1064,13 @@ set to <a class="reference internal" href="#_CPPv2N2mp5arith7UNKNOWNE" title="mp
 
 <dl class="member">
 <dt id="_CPPv2N2mp17READ_BOUNDS_FIRSTE">
-<span id="mp::READ_BOUNDS_FIRST"></span><span class="target" id="project0namespacemp_1a7263a2e14cae0fd4e4617b23d6b01cd4a4582915cbbea987e173ca1bc2d8b7c41"></span><code class="descclassname">mp::</code><code class="descname">READ_BOUNDS_FIRST</code> = 1<a class="headerlink" href="#_CPPv2N2mp17READ_BOUNDS_FIRSTE" title="Permalink to this definition">¶</a></dt>
+<span id="mp::READ_BOUNDS_FIRST"></span><span class="target" id="mpnamespacemp_1a7263a2e14cae0fd4e4617b23d6b01cd4a4582915cbbea987e173ca1bc2d8b7c41"></span><code class="descclassname">mp::</code><code class="descname">READ_BOUNDS_FIRST</code> = 1<a class="headerlink" href="#_CPPv2N2mp17READ_BOUNDS_FIRSTE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Read variable bounds before anything else. </p>
 </dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N2mp16MAX_AMPL_OPTIONSE">
-<span id="mp::MAX_AMPL_OPTIONS"></span><span class="target" id="project0namespacemp_1a08a0b3a7cfbd471ff6b13b04af92681caf8883a8b7a0f8c3ee66f17d7d7187b83"></span><code class="descclassname">mp::</code><code class="descname">MAX_AMPL_OPTIONS</code> = 9<a class="headerlink" href="#_CPPv2N2mp16MAX_AMPL_OPTIONSE" title="Permalink to this definition">¶</a></dt>
+<span id="mp::MAX_AMPL_OPTIONS"></span><span class="target" id="mpnamespacemp_1a08a0b3a7cfbd471ff6b13b04af92681caf8883a8b7a0f8c3ee66f17d7d7187b83"></span><code class="descclassname">mp::</code><code class="descname">MAX_AMPL_OPTIONS</code> = 9<a class="headerlink" href="#_CPPv2N2mp16MAX_AMPL_OPTIONSE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Maximum number of options reserved for AMPL use in NL and SOL formats. </p>
 </dd></dl>
 
