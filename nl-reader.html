@@ -114,7 +114,7 @@ gives a few examples of how to use the NL reader.</p>
 <dt>
 <em class="property">template </em>&lt;<em class="property">typename</em> Handler&gt;</dt>
 <dt id="_CPPv2N2mp10ReadNLFileEN3fmt10CStringRefER7Handleri">
-<span id="mp::ReadNLFile__fmt::CStringRef.HandlerR.i"></span><span class="target" id="mpnamespacemp_1a0add09a6269093f88c5414f3cb243630"></span>void <code class="descclassname">mp::</code><code class="descname">ReadNLFile</code><span class="sig-paren">(</span>fmt::CStringRef <em>filename</em>, Handler &amp;<em>handler</em>, int <em>flags</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp10ReadNLFileEN3fmt10CStringRefER7Handleri" title="Permalink to this definition">¶</a></dt>
+<span id="mp::ReadNLFile__fmt::CStringRef.HandlerR.i"></span><span class="target" id="mpnamespacemp_1a0add09a6269093f88c5414f3cb243630"></span>void <code class="descclassname">mp::</code><code class="descname">ReadNLFile</code><span class="sig-paren">(</span>fmt::CStringRef <em>filename</em>, Handler &amp;<em>handler</em>, int <em>flags</em> = 0<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp10ReadNLFileEN3fmt10CStringRefER7Handleri" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>Reads an optimization problem in the NL format from the file <em>filename</em>
 and sends notifications of the problem components to the <em>handler</em> object.
 The handler class can be one of the following</p>
@@ -150,7 +150,7 @@ nonlinear expressions.</p>
 <dt>
 <em class="property">template </em>&lt;<em class="property">typename</em> Handler&gt;</dt>
 <dt id="_CPPv2N2mp12ReadNLStringE11NLStringRefR7HandlerN3fmt10CStringRefEi">
-<span id="mp::ReadNLString__NLStringRef.HandlerR.fmt::CStringRef.i"></span><span class="target" id="mpnamespacemp_1a380b0b97c9e77dfa2a07dd9f81e5e885"></span>void <code class="descclassname">mp::</code><code class="descname">ReadNLString</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv2N2mp11NLStringRefE" title="mp::NLStringRef">NLStringRef</a> <em>str</em>, Handler &amp;<em>handler</em>, fmt::CStringRef <em>name</em>, int <em>flags</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp12ReadNLStringE11NLStringRefR7HandlerN3fmt10CStringRefEi" title="Permalink to this definition">¶</a></dt>
+<span id="mp::ReadNLString__NLStringRef.HandlerR.fmt::CStringRef.i"></span><span class="target" id="mpnamespacemp_1a380b0b97c9e77dfa2a07dd9f81e5e885"></span>void <code class="descclassname">mp::</code><code class="descname">ReadNLString</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv2N2mp11NLStringRefE" title="mp::NLStringRef">NLStringRef</a> <em>str</em>, Handler &amp;<em>handler</em>, fmt::CStringRef <em>name</em> = &quot;(input)&quot;, int <em>flags</em> = 0<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp12ReadNLStringE11NLStringRefR7HandlerN3fmt10CStringRefEi" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>Reads an optimization problem in the NL format from the string <em>str</em>
 and sends notifications of the problem components to the <em>handler</em> object.
 The handler class can be one of the following</p>
@@ -835,6 +835,7 @@ reported.</p>
 <a class="reference internal" href="#_CPPv2N2mp9NLHandler7OnUnaryEN4expr4KindE11NumericExpr" title="mp::NLHandler::OnUnary"><code class="xref cpp cpp-any docutils literal"><span class="pre">OnUnary</span></code></a> useful for building expression objects. If not used
 it can be any default-constructible type.</p>
  </p>
+<p>Inherits from <a class="reference internal" href="#mpclassmp_1_1NLHandler"><span>mp::NLHandler&lt; NullNLHandler&lt; ExprType &gt;, ExprType &gt;</span></a></p>
 <div class="breathe-sectiondef container">
 <p class="breathe-sectiondef-title rubric">Public Functions</p>
 <dl class="function">
@@ -854,6 +855,7 @@ which contains information about problem dimensions, such as the number of
 variables and constraints, and the input format.</p>
 <p>Base class: <a class="reference internal" href="common.html#_CPPv2N2mp11ProblemInfoE" title="mp::ProblemInfo"><code class="xref cpp cpp-any docutils literal"><span class="pre">mp::ProblemInfo</span></code></a></p>
  </p>
+<p>Inherits from <a class="reference internal" href="common.html#mpstructmp_1_1ProblemInfo"><span>mp::ProblemInfo</span></a></p>
 <div class="breathe-sectiondef container">
 <p class="breathe-sectiondef-title rubric">Public Types</p>
 <dl class="type">
@@ -943,6 +945,7 @@ set to <a class="reference internal" href="#_CPPv2N2mp5arith7UNKNOWNE" title="mp
 <dt id="_CPPv2N2mp9ReadErrorE">
 <span id="mp::ReadError"></span><span class="target" id="mpclassmp_1_1ReadError"></span><em class="property">class </em><code class="descclassname">mp::</code><code class="descname">ReadError</code><a class="headerlink" href="#_CPPv2N2mp9ReadErrorE" title="Permalink to this definition">¶</a></dt>
 <dd><p>A read error with location information. </p>
+<p>Inherits from Error</p>
 <div class="breathe-sectiondef container">
 <p class="breathe-sectiondef-title rubric">Public Functions</p>
 <dl class="function">
@@ -982,6 +985,7 @@ set to <a class="reference internal" href="#_CPPv2N2mp5arith7UNKNOWNE" title="mp
 <dt id="_CPPv2N2mp15BinaryReadErrorE">
 <span id="mp::BinaryReadError"></span><span class="target" id="mpclassmp_1_1BinaryReadError"></span><em class="property">class </em><code class="descclassname">mp::</code><code class="descname">BinaryReadError</code><a class="headerlink" href="#_CPPv2N2mp15BinaryReadErrorE" title="Permalink to this definition">¶</a></dt>
 <dd><p>A read error with information about offset in a binary input. </p>
+<p>Inherits from Error</p>
 <div class="breathe-sectiondef container">
 <p class="breathe-sectiondef-title rubric">Public Functions</p>
 <dl class="function">
