@@ -86,25 +86,25 @@
 <p class="breathe-sectiondef-title rubric">Public Types</p>
 <dl class="type">
 <dt id="_CPPv2N2mp12BasicProblem8VarRangeE">
-<span id="mp::BasicProblem::VarRange"></span><span class="target" id="mpclassmp_1_1BasicProblem_1a457c010c6b041eb17931cfad469f7888"></span><em class="property">typedef </em>Range&lt;Variable&gt; <code class="descname">VarRange</code><a class="headerlink" href="#_CPPv2N2mp12BasicProblem8VarRangeE" title="Permalink to this definition">¶</a></dt>
+<span id="mp::BasicProblem::VarRange"></span><span class="target" id="mpclassmp_1_1BasicProblem_1a457c010c6b041eb17931cfad469f7888"></span><em class="property">typedef </em><a class="reference internal" href="#_CPPv2N2mp12BasicProblem5RangeE" title="mp::BasicProblem::Range">Range</a>&lt;Variable&gt; <code class="descname">VarRange</code><a class="headerlink" href="#_CPPv2N2mp12BasicProblem8VarRangeE" title="Permalink to this definition">¶</a></dt>
 <dd><p>A range of variables. </p>
 </dd></dl>
 
 <dl class="type">
 <dt id="_CPPv2N2mp12BasicProblem8ObjRangeE">
-<span id="mp::BasicProblem::ObjRange"></span><span class="target" id="mpclassmp_1_1BasicProblem_1aa702522c332d5462fbb4a9a4428397b7"></span><em class="property">typedef </em>Range&lt;Objective&gt; <code class="descname">ObjRange</code><a class="headerlink" href="#_CPPv2N2mp12BasicProblem8ObjRangeE" title="Permalink to this definition">¶</a></dt>
+<span id="mp::BasicProblem::ObjRange"></span><span class="target" id="mpclassmp_1_1BasicProblem_1aa702522c332d5462fbb4a9a4428397b7"></span><em class="property">typedef </em><a class="reference internal" href="#_CPPv2N2mp12BasicProblem5RangeE" title="mp::BasicProblem::Range">Range</a>&lt;Objective&gt; <code class="descname">ObjRange</code><a class="headerlink" href="#_CPPv2N2mp12BasicProblem8ObjRangeE" title="Permalink to this definition">¶</a></dt>
 <dd><p>A range of objectives. </p>
 </dd></dl>
 
 <dl class="type">
 <dt id="_CPPv2N2mp12BasicProblem17AlgebraicConRangeE">
-<span id="mp::BasicProblem::AlgebraicConRange"></span><span class="target" id="mpclassmp_1_1BasicProblem_1a68093a572c9b65dca5fa4e59e3014b19"></span><em class="property">typedef </em>Range&lt;AlgebraicCon&gt; <code class="descname">AlgebraicConRange</code><a class="headerlink" href="#_CPPv2N2mp12BasicProblem17AlgebraicConRangeE" title="Permalink to this definition">¶</a></dt>
+<span id="mp::BasicProblem::AlgebraicConRange"></span><span class="target" id="mpclassmp_1_1BasicProblem_1a68093a572c9b65dca5fa4e59e3014b19"></span><em class="property">typedef </em><a class="reference internal" href="#_CPPv2N2mp12BasicProblem5RangeE" title="mp::BasicProblem::Range">Range</a>&lt;AlgebraicCon&gt; <code class="descname">AlgebraicConRange</code><a class="headerlink" href="#_CPPv2N2mp12BasicProblem17AlgebraicConRangeE" title="Permalink to this definition">¶</a></dt>
 <dd><p>A range of algebraic constraints. </p>
 </dd></dl>
 
 <dl class="type">
 <dt id="_CPPv2N2mp12BasicProblem15LogicalConRangeE">
-<span id="mp::BasicProblem::LogicalConRange"></span><span class="target" id="mpclassmp_1_1BasicProblem_1aaa4b8f299e7a05e26e7c27ccc9846f46"></span><em class="property">typedef </em>Range&lt;LogicalCon&gt; <code class="descname">LogicalConRange</code><a class="headerlink" href="#_CPPv2N2mp12BasicProblem15LogicalConRangeE" title="Permalink to this definition">¶</a></dt>
+<span id="mp::BasicProblem::LogicalConRange"></span><span class="target" id="mpclassmp_1_1BasicProblem_1aaa4b8f299e7a05e26e7c27ccc9846f46"></span><em class="property">typedef </em><a class="reference internal" href="#_CPPv2N2mp12BasicProblem5RangeE" title="mp::BasicProblem::Range">Range</a>&lt;LogicalCon&gt; <code class="descname">LogicalConRange</code><a class="headerlink" href="#_CPPv2N2mp12BasicProblem15LogicalConRangeE" title="Permalink to this definition">¶</a></dt>
 <dd><p>A range of logical constraints. </p>
 </dd></dl>
 
@@ -240,6 +240,36 @@ constraints:</p>
 <dt id="_CPPv2N2mp12BasicProblem11MutVariableE">
 <span id="mp::BasicProblem::MutVariable"></span><span class="target" id="mpclassmp_1_1BasicProblem_1_1MutVariable"></span><em class="property">class </em><code class="descname">MutVariable</code><a class="headerlink" href="#_CPPv2N2mp12BasicProblem11MutVariableE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Inherits from mp::BasicProblem&lt; MutProblemItem &gt;::BasicVariable</p>
+</dd></dl>
+
+<dl class="class">
+<dt>
+<span class="target" id="mpclassmp_1_1BasicProblem_1_1Range"></span><em class="property">template </em>&lt;<em class="property">typename</em> T&gt;</dt>
+<dt id="_CPPv2N2mp12BasicProblem5RangeE">
+<span id="mp::BasicProblem::Range"></span><em class="property">class </em><code class="descname">Range</code><a class="headerlink" href="#_CPPv2N2mp12BasicProblem5RangeE" title="Permalink to this definition">¶</a></dt>
+<dd><p>A pair of iterators to problem elements. </p>
+<div class="breathe-sectiondef container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv2N2mp12BasicProblemI5AllocE5Range5beginEv">
+<span id="mp::BasicProblem:Alloc:::Range::begin"></span><span class="target" id="mpclassmp_1_1BasicProblem_1_1Range_1a2ae41825782d805108870c43d555b48c"></span>iterator <code class="descname">begin</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N2mp12BasicProblemI5AllocE5Range5beginEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an iterator to the first element in the range. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N2mp12BasicProblemI5AllocE5Range3endEv">
+<span id="mp::BasicProblem:Alloc:::Range::end"></span><span class="target" id="mpclassmp_1_1BasicProblem_1_1Range_1ab87a09d4788eb9ca20ca377c888d2def"></span>iterator <code class="descname">end</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N2mp12BasicProblemI5AllocE5Range3endEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an iterator to the element following the last element in the range. </p>
+<p>An attempt to access this element will result in assertion failure if assertions are enabled and undefined behavoir otherwise. </p>
+</dd></dl>
+
+</div>
+<dl class="class">
+<dt id="_CPPv2N2mp12BasicProblem5Range8iteratorE">
+<span id="mp::BasicProblem::Range::iterator"></span><span class="target" id="mpclassmp_1_1BasicProblem_1_1Range_1_1iterator"></span><em class="property">class </em><code class="descname">iterator</code><a class="headerlink" href="#_CPPv2N2mp12BasicProblem5Range8iteratorE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Inherits from std::iterator&lt; std::forward_iterator_tag, T &gt;</p>
+</dd></dl>
+
 </dd></dl>
 
 </dd></dl>
