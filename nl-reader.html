@@ -75,7 +75,7 @@
             
   <div class="section" id="nl-reader">
 <h1>NL Reader<a class="headerlink" href="#nl-reader" title="Permalink to this headline">¶</a></h1>
-<p>Header: <code class="file docutils literal"><span class="pre">mp/nl-reader.h</span></code></p>
+<p>Headers: <code class="file docutils literal"><span class="pre">mp/nl.h</span></code> and <code class="file docutils literal"><span class="pre">mp/nl-reader.h</span></code></p>
 <p><a class="reference external" href="https://en.wikipedia.org/wiki/Nl_(format)">NL</a> is a format for representing
 optimization problems in discrete or continuous variables. It is described in
 the technical report <a class="reference external" href="nlwrite.pdf">Writing .nl Files</a>.</p>
@@ -110,6 +110,19 @@ AMPL Solver Library</li>
 </ul>
 <p><a class="reference external" href="https://github.com/ampl/mp/blob/master/src/nl-example.cc">nl-example.cc</a>
 gives a few examples of how to use the NL reader.</p>
+<p>The <code class="docutils literal"><span class="pre">mp/nl.h</span></code> header only contains declarations of <a class="reference internal" href="#_CPPv2N2mp12ReadNLStringE11NLStringRefR7HandlerN3fmt10CStringRefEi" title="mp::ReadNLString"><code class="xref cpp cpp-any docutils literal"><span class="pre">mp::ReadNLString</span></code></a> and
+<a class="reference internal" href="#_CPPv2N2mp10ReadNLFileEN3fmt10CStringRefER7Handleri" title="mp::ReadNLFile"><code class="xref cpp cpp-any docutils literal"><span class="pre">mp::ReadNLFile</span></code></a>, and can be used to read standard optimization problem objects,
+for example:</p>
+<div class="highlight-c++"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;mp/nl.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;mp/problem.h&quot;</span><span class="cp"></span>
+
+<span class="n">mp</span><span class="o">::</span><span class="n">Problem</span> <span class="n">p</span><span class="p">;</span>
+<span class="n">ReadNLProblem</span><span class="p">(</span><span class="s">&quot;diet.nl&quot;</span><span class="p">,</span> <span class="n">p</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>If you want to provide a custom NL handler, include <code class="docutils literal"><span class="pre">mp/nl-reader.h</span></code> instead.
+Note that <code class="docutils literal"><span class="pre">mp/nl.h</span></code> is a much smaller header than <code class="docutils literal"><span class="pre">mp/nl-reader.h</span></code> so prefer
+it unless you need access to the full NL reader API.</p>
 <dl class="function">
 <dt>
 <em class="property">template </em>&lt;<em class="property">typename</em> Handler&gt;</dt>
@@ -150,7 +163,7 @@ nonlinear expressions.</p>
 <dt>
 <em class="property">template </em>&lt;<em class="property">typename</em> Handler&gt;</dt>
 <dt id="_CPPv2N2mp12ReadNLStringE11NLStringRefR7HandlerN3fmt10CStringRefEi">
-<span id="mp::ReadNLString__NLStringRef.HandlerR.fmt::CStringRef.i"></span><span class="target" id="mpnamespacemp_1a380b0b97c9e77dfa2a07dd9f81e5e885"></span>void <code class="descclassname">mp::</code><code class="descname">ReadNLString</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv2N2mp11NLStringRefE" title="mp::NLStringRef">NLStringRef</a> <em>str</em>, Handler &amp;<em>handler</em>, fmt::CStringRef <em>name</em> = &quot;(input)&quot;, int <em>flags</em> = 0<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp12ReadNLStringE11NLStringRefR7HandlerN3fmt10CStringRefEi" title="Permalink to this definition">¶</a></dt>
+<span id="mp::ReadNLString__NLStringRef.HandlerR.fmt::CStringRef.i"></span><span class="target" id="mpnamespacemp_1a87bc5d784051391d1dda66f9f07a5444"></span>void <code class="descclassname">mp::</code><code class="descname">ReadNLString</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv2N2mp11NLStringRefE" title="mp::NLStringRef">NLStringRef</a> <em>str</em>, Handler &amp;<em>handler</em>, fmt::CStringRef <em>name</em> = &quot;(input)&quot;, int <em>flags</em> = 0<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2mp12ReadNLStringE11NLStringRefR7HandlerN3fmt10CStringRefEi" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>Reads an optimization problem in the NL format from the string <em>str</em>
 and sends notifications of the problem components to the <em>handler</em> object.
 The handler class can be one of the following</p>
