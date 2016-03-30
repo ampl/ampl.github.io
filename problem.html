@@ -83,6 +83,27 @@
 <dd><p>An optimization problem. </p>
 <p>Inherits from ExprFactory, SuffixManager</p>
 <div class="breathe-sectiondef container">
+<p class="breathe-sectiondef-title rubric">Public Types</p>
+<dl class="type">
+<dt id="_CPPv2N2mp12BasicProblem8VarRangeE">
+<span id="mp::BasicProblem::VarRange"></span><span class="target" id="mpclassmp_1_1BasicProblem_1a457c010c6b041eb17931cfad469f7888"></span><em class="property">typedef </em>Range&lt;Variable&gt; <code class="descname">VarRange</code><a class="headerlink" href="#_CPPv2N2mp12BasicProblem8VarRangeE" title="Permalink to this definition">¶</a></dt>
+<dd><p>A range of variables. </p>
+</dd></dl>
+
+<dl class="type">
+<dt id="_CPPv2N2mp12BasicProblem17AlgebraicConRangeE">
+<span id="mp::BasicProblem::AlgebraicConRange"></span><span class="target" id="mpclassmp_1_1BasicProblem_1a68093a572c9b65dca5fa4e59e3014b19"></span><em class="property">typedef </em>Range&lt;AlgebraicCon&gt; <code class="descname">AlgebraicConRange</code><a class="headerlink" href="#_CPPv2N2mp12BasicProblem17AlgebraicConRangeE" title="Permalink to this definition">¶</a></dt>
+<dd><p>A range of algebraic constraints. </p>
+</dd></dl>
+
+<dl class="type">
+<dt id="_CPPv2N2mp12BasicProblem15LogicalConRangeE">
+<span id="mp::BasicProblem::LogicalConRange"></span><span class="target" id="mpclassmp_1_1BasicProblem_1aaa4b8f299e7a05e26e7c27ccc9846f46"></span><em class="property">typedef </em>Range&lt;LogicalCon&gt; <code class="descname">LogicalConRange</code><a class="headerlink" href="#_CPPv2N2mp12BasicProblem15LogicalConRangeE" title="Permalink to this definition">¶</a></dt>
+<dd><p>A range of logical constraints. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef container">
 <p class="breathe-sectiondef-title rubric">Public Functions</p>
 <dl class="function">
 <dt id="_CPPv2N2mp12BasicProblem8num_varsEv">
@@ -112,6 +133,60 @@
 <dt id="_CPPv2N2mp12BasicProblem16num_common_exprsEv">
 <span id="mp::BasicProblem::num_common_exprs"></span><span class="target" id="mpclassmp_1_1BasicProblem_1a6ca2e27644bda4fc8da5b3a6d4428ba4"></span>int <code class="descname">num_common_exprs</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N2mp12BasicProblem16num_common_exprsEv" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the number of common expressions. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N2mp12BasicProblem4varsEv">
+<span id="mp::BasicProblem::vars"></span><span class="target" id="mpclassmp_1_1BasicProblem_1ac2f88b59bcf862d82512009ed359ebb8"></span><a class="reference internal" href="#_CPPv2N2mp12BasicProblem8VarRangeE" title="mp::BasicProblem::VarRange">VarRange</a> <code class="descname">vars</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N2mp12BasicProblem4varsEv" title="Permalink to this definition">¶</a></dt>
+<dd><p><p>Returns a range representing all variables in this optimization problem.
+It can be used for iterating over variables:</p>
+<div class="highlight-c++"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">var</span><span class="p">:</span> <span class="n">problem</span><span class="p">.</span><span class="n">vars</span><span class="p">())</span> <span class="p">{</span>
+  <span class="p">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+ </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N2mp12BasicProblem4objsEv">
+<span id="mp::BasicProblem::objs"></span><span class="target" id="mpclassmp_1_1BasicProblem_1aa29dc561cca5c80affbc747e5923c1ba"></span>ObjRange <code class="descname">objs</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N2mp12BasicProblem4objsEv" title="Permalink to this definition">¶</a></dt>
+<dd><p><p>Returns a range representing all objectives in this optimization problem.
+It can be used for iterating over objectives:</p>
+<div class="highlight-c++"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">obj</span><span class="p">:</span> <span class="n">problem</span><span class="p">.</span><span class="n">objs</span><span class="p">())</span> <span class="p">{</span>
+  <span class="p">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+ </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N2mp12BasicProblem14algebraic_consEv">
+<span id="mp::BasicProblem::algebraic_cons"></span><span class="target" id="mpclassmp_1_1BasicProblem_1ac7d4d23b4426d91609a9eabe23ac6c74"></span><a class="reference internal" href="#_CPPv2N2mp12BasicProblem17AlgebraicConRangeE" title="mp::BasicProblem::AlgebraicConRange">AlgebraicConRange</a> <code class="descname">algebraic_cons</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N2mp12BasicProblem14algebraic_consEv" title="Permalink to this definition">¶</a></dt>
+<dd><p><p>Returns a range representing all algebraic constraints in this
+optimization problem. It can be used for iterating over algebraic
+constraints:</p>
+<div class="highlight-c++"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">con</span><span class="p">:</span> <span class="n">problem</span><span class="p">.</span><span class="n">algebraic_cons</span><span class="p">())</span> <span class="p">{</span>
+  <span class="p">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+ </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N2mp12BasicProblem12logical_consEv">
+<span id="mp::BasicProblem::logical_cons"></span><span class="target" id="mpclassmp_1_1BasicProblem_1a5e1429c7089dfbfcb8fb4096ac1deede"></span><a class="reference internal" href="#_CPPv2N2mp12BasicProblem15LogicalConRangeE" title="mp::BasicProblem::LogicalConRange">LogicalConRange</a> <code class="descname">logical_cons</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N2mp12BasicProblem12logical_consEv" title="Permalink to this definition">¶</a></dt>
+<dd><p><p>Returns a range representing all logical constraints in this
+optimization problem. It can be used for iterating over logical
+constraints:</p>
+<div class="highlight-c++"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">con</span><span class="p">:</span> <span class="n">problem</span><span class="p">.</span><span class="n">logical_cons</span><span class="p">())</span> <span class="p">{</span>
+  <span class="p">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+ </p>
 </dd></dl>
 
 </div>
