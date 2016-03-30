@@ -91,6 +91,12 @@
 </dd></dl>
 
 <dl class="type">
+<dt id="_CPPv2N2mp12BasicProblem8ObjRangeE">
+<span id="mp::BasicProblem::ObjRange"></span><span class="target" id="mpclassmp_1_1BasicProblem_1aa702522c332d5462fbb4a9a4428397b7"></span><em class="property">typedef </em>Range&lt;Objective&gt; <code class="descname">ObjRange</code><a class="headerlink" href="#_CPPv2N2mp12BasicProblem8ObjRangeE" title="Permalink to this definition">¶</a></dt>
+<dd><p>A range of objectives. </p>
+</dd></dl>
+
+<dl class="type">
 <dt id="_CPPv2N2mp12BasicProblem17AlgebraicConRangeE">
 <span id="mp::BasicProblem::AlgebraicConRange"></span><span class="target" id="mpclassmp_1_1BasicProblem_1a68093a572c9b65dca5fa4e59e3014b19"></span><em class="property">typedef </em>Range&lt;AlgebraicCon&gt; <code class="descname">AlgebraicConRange</code><a class="headerlink" href="#_CPPv2N2mp12BasicProblem17AlgebraicConRangeE" title="Permalink to this definition">¶</a></dt>
 <dd><p>A range of algebraic constraints. </p>
@@ -150,7 +156,7 @@ It can be used for iterating over variables:</p>
 
 <dl class="function">
 <dt id="_CPPv2N2mp12BasicProblem4objsEv">
-<span id="mp::BasicProblem::objs"></span><span class="target" id="mpclassmp_1_1BasicProblem_1aa29dc561cca5c80affbc747e5923c1ba"></span>ObjRange <code class="descname">objs</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N2mp12BasicProblem4objsEv" title="Permalink to this definition">¶</a></dt>
+<span id="mp::BasicProblem::objs"></span><span class="target" id="mpclassmp_1_1BasicProblem_1aa29dc561cca5c80affbc747e5923c1ba"></span><a class="reference internal" href="#_CPPv2N2mp12BasicProblem8ObjRangeE" title="mp::BasicProblem::ObjRange">ObjRange</a> <code class="descname">objs</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N2mp12BasicProblem4objsEv" title="Permalink to this definition">¶</a></dt>
 <dd><p><p>Returns a range representing all objectives in this optimization problem.
 It can be used for iterating over objectives:</p>
 <div class="highlight-c++"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">obj</span><span class="p">:</span> <span class="n">problem</span><span class="p">.</span><span class="n">objs</span><span class="p">())</span> <span class="p">{</span>
