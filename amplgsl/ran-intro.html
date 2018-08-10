@@ -1,35 +1,24 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>Introduction &mdash; MP 3.1.0 documentation</title>
-    
+    <title>Introduction &#8212; MP 3.1.0 documentation</title>
     <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
-        VERSION:     '20121105',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
-      };
-    </script>
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="MP 3.1.0 documentation" href="../index.html" />
-    <link rel="up" title="Random Number Distributions" href="randist.html" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="The Gaussian Distribution" href="ran-gaussian.html" />
     <link rel="prev" title="Random Number Distributions" href="randist.html" /> 
-  </head>
-  <body role="document">
+  </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -42,9 +31,9 @@
         <li class="right" >
           <a href="randist.html" title="Random Number Distributions"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">MP</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="index.html" >AMPL Bindings for the GNU Scientific Library</a> &raquo;</li>
-          <li class="nav-item nav-item-2"><a href="randist.html" accesskey="U">Random Number Distributions</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">MP</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >AMPL Bindings for the GNU Scientific Library</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="randist.html" accesskey="U">Random Number Distributions</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -79,39 +68,39 @@
   <div class="section" id="introduction">
 <h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
 <p>Continuous random number distributions are defined by a probability
-density function, <span class="math">\(p(x)\)</span>, such that the probability of <span class="math">\(x\)</span> occurring
-in the infinitesimal range <span class="math">\(x\)</span> to <span class="math">\(x+dx\)</span> is <span class="math">\(p dx\)</span>.</p>
-<p>The cumulative distribution function for the lower tail <span class="math">\(P(x)\)</span> is defined
+density function, <span class="math notranslate nohighlight">\(p(x)\)</span>, such that the probability of <span class="math notranslate nohighlight">\(x\)</span> occurring
+in the infinitesimal range <span class="math notranslate nohighlight">\(x\)</span> to <span class="math notranslate nohighlight">\(x+dx\)</span> is <span class="math notranslate nohighlight">\(p dx\)</span>.</p>
+<p>The cumulative distribution function for the lower tail <span class="math notranslate nohighlight">\(P(x)\)</span> is defined
 by the integral,</p>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[P(x) = \int_{-\infty}^{x} dx' p(x')\]</div>
-<p>and gives the probability of a variate taking a value less than <span class="math">\(x\)</span>.</p>
-<p>The cumulative distribution function for the upper tail <span class="math">\(Q(x)\)</span> is defined
+<p>and gives the probability of a variate taking a value less than <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<p>The cumulative distribution function for the upper tail <span class="math notranslate nohighlight">\(Q(x)\)</span> is defined
 by the integral,</p>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[Q(x) = \int_{x}^{+\infty} dx' p(x')\]</div>
-<p>and gives the probability of a variate taking a value greater than <span class="math">\(x\)</span>.</p>
+<p>and gives the probability of a variate taking a value greater than <span class="math notranslate nohighlight">\(x\)</span>.</p>
 <p>The upper and lower cumulative distribution functions are related by
-<span class="math">\(P(x) + Q(x) = 1\)</span> and satisfy <span class="math">\(0 \leq P(x) \leq 1, 0 \leq Q(x) \leq 1\)</span>.</p>
-<p>The inverse cumulative distributions, <span class="math">\(x=P^{-1}(P)\)</span> and <span class="math">\(x=Q^{-1}(Q)\)</span>
-give the values of <span class="math">\(x\)</span> which correspond to a specific value of <span class="math">\(P\)</span> or <span class="math">\(Q\)</span>.
+<span class="math notranslate nohighlight">\(P(x) + Q(x) = 1\)</span> and satisfy <span class="math notranslate nohighlight">\(0 \leq P(x) \leq 1, 0 \leq Q(x) \leq 1\)</span>.</p>
+<p>The inverse cumulative distributions, <span class="math notranslate nohighlight">\(x=P^{-1}(P)\)</span> and <span class="math notranslate nohighlight">\(x=Q^{-1}(Q)\)</span>
+give the values of <span class="math notranslate nohighlight">\(x\)</span> which correspond to a specific value of <span class="math notranslate nohighlight">\(P\)</span> or <span class="math notranslate nohighlight">\(Q\)</span>.
 They can be used to find confidence limits from probability values.</p>
 <p>For discrete distributions the probability of sampling the integer
-value <span class="math">\(k\)</span> is given by <span class="math">\(p(k)\)</span>, where <span class="math">\(\sum_k p(k) = 1\)</span>. The cumulative
-distribution for the lower tail <span class="math">\(P(k)\)</span> of a discrete distribution is
+value <span class="math notranslate nohighlight">\(k\)</span> is given by <span class="math notranslate nohighlight">\(p(k)\)</span>, where <span class="math notranslate nohighlight">\(\sum_k p(k) = 1\)</span>. The cumulative
+distribution for the lower tail <span class="math notranslate nohighlight">\(P(k)\)</span> of a discrete distribution is
 defined as,</p>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[P(k) = \sum_{i \leq k} p(i)\]</div>
 <p>where the sum is over the allowed range of the distribution less than
-or equal to <span class="math">\(k\)</span>.</p>
+or equal to <span class="math notranslate nohighlight">\(k\)</span>.</p>
 <p>The cumulative distribution for the upper tail of a discrete distribution
-<span class="math">\(Q(k)\)</span> is defined as</p>
-<div class="math">
-\[\begin{split}Q(k) = \sum_{i &gt; k} p(i)\end{split}\]</div>
-<p>giving the sum of probabilities for all values greater than <span class="math">\(k\)</span>.
-These two definitions satisfy the identity <span class="math">\(P(k)+Q(k)=1\)</span>.</p>
-<p>If the range of the distribution is <span class="math">\(1\)</span> to <span class="math">\(n\)</span> inclusive then
-<span class="math">\(P(n)=1, Q(n)=0\)</span> while <span class="math">\(P(1) = p(1), Q(1)=1-p(1)\)</span>.</p>
+<span class="math notranslate nohighlight">\(Q(k)\)</span> is defined as</p>
+<div class="math notranslate nohighlight">
+\[Q(k) = \sum_{i &gt; k} p(i)\]</div>
+<p>giving the sum of probabilities for all values greater than <span class="math notranslate nohighlight">\(k\)</span>.
+These two definitions satisfy the identity <span class="math notranslate nohighlight">\(P(k)+Q(k)=1\)</span>.</p>
+<p>If the range of the distribution is <span class="math notranslate nohighlight">\(1\)</span> to <span class="math notranslate nohighlight">\(n\)</span> inclusive then
+<span class="math notranslate nohighlight">\(P(n)=1, Q(n)=0\)</span> while <span class="math notranslate nohighlight">\(P(1) = p(1), Q(1)=1-p(1)\)</span>.</p>
 </div>
 
 
@@ -132,15 +121,15 @@ These two definitions satisfy the identity <span class="math">\(P(k)+Q(k)=1\)</s
         <li class="right" >
           <a href="randist.html" title="Random Number Distributions"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">MP</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="index.html" >AMPL Bindings for the GNU Scientific Library</a> &raquo;</li>
-          <li class="nav-item nav-item-2"><a href="randist.html" >Random Number Distributions</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">MP</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >AMPL Bindings for the GNU Scientific Library</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="randist.html" >Random Number Distributions</a> &#187;</li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2015 AMPL Optimization, Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+        &#169; Copyright 2015 AMPL Optimization, Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.
     </div>
 <!-- Google Analytics -->
 <script>

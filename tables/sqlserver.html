@@ -1,34 +1,23 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>Connecting AMPL to SQL Server &mdash; MP 3.1.0 documentation</title>
-    
+    <title>Connecting AMPL to SQL Server &#8212; MP 3.1.0 documentation</title>
     <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
-        VERSION:     '20121105',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
-      };
-    </script>
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="MP 3.1.0 documentation" href="../index.html" />
-    <link rel="up" title="Database and spreadsheet connection guide" href="index.html" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
     <link rel="prev" title="Connecting AMPL to Oracle" href="oracle.html" /> 
-  </head>
-  <body role="document">
+  </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -38,8 +27,8 @@
         <li class="right" >
           <a href="oracle.html" title="Connecting AMPL to Oracle"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">MP</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Database and spreadsheet connection guide</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">MP</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Database and spreadsheet connection guide</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -98,7 +87,7 @@ local or remote.</p>
 <h3>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h3>
 <p>The ODBC driver for MS SQL Server often comes installed by default on modern versions
 of Windows. You can check if the driver is installed by running the ODBC Data Source
-Administrator, <code class="docutils literal"><span class="pre">odbcad32.exe</span></code>, and looking for SQL Server in the <code class="docutils literal"><span class="pre">Drivers</span></code> tab.</p>
+Administrator, <code class="docutils literal notranslate"><span class="pre">odbcad32.exe</span></code>, and looking for SQL Server in the <code class="docutils literal notranslate"><span class="pre">Drivers</span></code> tab.</p>
 <img alt="../_images/odbcad32-sqlserver.png" src="../_images/odbcad32-sqlserver.png" />
 <p>If the driver is missing, follow the instructions in
 <a class="reference external" href="http://msdn.microsoft.com/en-us/library/jj730315.aspx">Microsoft ODBC Driver for SQL Server: System Requirements, Installation, and Driver Files</a> to install it.</p>
@@ -106,61 +95,61 @@ Administrator, <code class="docutils literal"><span class="pre">odbcad32.exe</sp
 </div>
 <div class="section" id="usage">
 <span id="sqlserver-usage"></span><h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
-<p>We&#8217;ll demonstrate usage of MS SQL Server with AMPL on a small example.
+<p>We’ll demonstrate usage of MS SQL Server with AMPL on a small example.
 For this example we use the diet problem, which finds a combination of foods
 that satisfies certain nutritional requirements. It is described in
 <a class="reference external" href="http://www.ampl.com/BOOK/CHAPTERS/05-tut2.pdf">Chapter 2 of the AMPL book</a>.</p>
-<p>We assume that you&#8217;ve already installed the MS SQL Server ODBC driver using
+<p>We assume that you’ve already installed the MS SQL Server ODBC driver using
 the instructions above and have access to a local SQL Server database.</p>
 <p>First download the data for the diet problem <a class="reference external" href="../models/tables/diet.xls">diet.xls</a> and import it using the <a class="reference external" href="http://msdn.microsoft.com/en-us/library/ms141209.aspx">SQL Server Import and
 Export Wizard</a>
 which can be run from the Start menu -&gt; All Programs -&gt; Microsoft SQL Server
 -&gt; Import and Export Data. Skip the Welcome page, if any, by clicking Next,
-then choose <code class="docutils literal"><span class="pre">Microsoft</span> <span class="pre">Excel</span></code> as a Data source and specify the path to
-the downloaded <code class="docutils literal"><span class="pre">diet.xls</span></code> file in Excel file path:</p>
+then choose <code class="docutils literal notranslate"><span class="pre">Microsoft</span> <span class="pre">Excel</span></code> as a Data source and specify the path to
+the downloaded <code class="docutils literal notranslate"><span class="pre">diet.xls</span></code> file in Excel file path:</p>
 <img alt="../_images/sql-server-import-source.png" src="../_images/sql-server-import-source.png" />
 <p>Click Next and on the following page provide the connection settings for the
 SQL Server database you are going to use:</p>
 <img alt="../_images/sql-server-import-destination.png" src="../_images/sql-server-import-destination.png" />
-<p>Click Next, select <code class="docutils literal"><span class="pre">Copy</span> <span class="pre">data</span> <span class="pre">from</span> <span class="pre">one</span> <span class="pre">or</span> <span class="pre">more</span> <span class="pre">tables</span> <span class="pre">or</span> <span class="pre">views</span></code> on the next
+<p>Click Next, select <code class="docutils literal notranslate"><span class="pre">Copy</span> <span class="pre">data</span> <span class="pre">from</span> <span class="pre">one</span> <span class="pre">or</span> <span class="pre">more</span> <span class="pre">tables</span> <span class="pre">or</span> <span class="pre">views</span></code> on the next
 page and click Next again.</p>
-<p>Select tables <code class="docutils literal"><span class="pre">Amounts</span></code>, <code class="docutils literal"><span class="pre">Foods</span></code> and <code class="docutils literal"><span class="pre">Nutrients</span></code> for import and click
+<p>Select tables <code class="docutils literal notranslate"><span class="pre">Amounts</span></code>, <code class="docutils literal notranslate"><span class="pre">Foods</span></code> and <code class="docutils literal notranslate"><span class="pre">Nutrients</span></code> for import and click
 Next:</p>
 <img alt="../_images/sql-server-import-tables.png" src="../_images/sql-server-import-tables.png" />
-<p>Select <code class="docutils literal"><span class="pre">Run</span> <span class="pre">immediately</span></code> and click Finish on the next page and the one that
+<p>Select <code class="docutils literal notranslate"><span class="pre">Run</span> <span class="pre">immediately</span></code> and click Finish on the next page and the one that
 follows.</p>
 <p>Once import is complete, download the model file <a class="reference external" href="../models/tables/diet.mod">diet.mod</a> and the script file <a class="reference external" href="../models/tables/diet-sqlserver.run">diet-sqlserver.run</a>.</p>
 <p>The script file first reads the model:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>model diet.mod;
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>model diet.mod;
 </pre></div>
 </div>
 <p>Then it defines a parameter to hold a connection string. Since the connection
 parameters are the same for all table declarations in our example, we
 avoid unnecessary duplication. In this case we specify all the connection
 parameters explicitly. Alternatively, you could use a DSN file name or
-<code class="docutils literal"><span class="pre">&quot;DSN=&lt;dsn-name&gt;&quot;</span></code> as a connection string.</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>param ConnectionStr symbolic = &quot;DRIVER={SQL Server}; SERVER=(local);&quot;;
+<code class="docutils literal notranslate"><span class="pre">&quot;DSN=&lt;dsn-name&gt;&quot;</span></code> as a connection string.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>param ConnectionStr symbolic = &quot;DRIVER={SQL Server}; SERVER=(local);&quot;;
 </pre></div>
 </div>
-<p>If you are using Linux and have chosen a driver name other than <code class="docutils literal"><span class="pre">SQL</span> <span class="pre">Server</span></code>,
-you will have to specify this name instead of <code class="docutils literal"><span class="pre">SQL</span> <span class="pre">Server</span></code> in the
-<code class="docutils literal"><span class="pre">DRIVER={SQL</span> <span class="pre">Server}</span></code> attribute in the connection string.</p>
+<p>If you are using Linux and have chosen a driver name other than <code class="docutils literal notranslate"><span class="pre">SQL</span> <span class="pre">Server</span></code>,
+you will have to specify this name instead of <code class="docutils literal notranslate"><span class="pre">SQL</span> <span class="pre">Server</span></code> in the
+<code class="docutils literal notranslate"><span class="pre">DRIVER={SQL</span> <span class="pre">Server}</span></code> attribute in the connection string.</p>
 <p>You can use a different version of the ODBC driver for SQL Server on Windows
 as well. The driver name is chosen automatically during installation on Windows,
 so if you are using this OS, you will have to find the driver name and
-specify it instead of <code class="docutils literal"><span class="pre">SQL</span> <span class="pre">Server</span></code> in the connection string.
+specify it instead of <code class="docutils literal notranslate"><span class="pre">SQL</span> <span class="pre">Server</span></code> in the connection string.
 To discover the driver name on Windows, run the ODBC Data Source
-Administrator, <code class="docutils literal"><span class="pre">odbcad32.exe</span></code>.  Go to the <code class="docutils literal"><span class="pre">Drivers</span></code> tab where all the
-installed drivers are listed and look for the one containing <code class="docutils literal"><span class="pre">SQL</span> <span class="pre">Server</span></code>:</p>
+Administrator, <code class="docutils literal notranslate"><span class="pre">odbcad32.exe</span></code>.  Go to the <code class="docutils literal notranslate"><span class="pre">Drivers</span></code> tab where all the
+installed drivers are listed and look for the one containing <code class="docutils literal notranslate"><span class="pre">SQL</span> <span class="pre">Server</span></code>:</p>
 <img alt="../_images/odbcad32-sqlserver.png" src="../_images/odbcad32-sqlserver.png" />
-<p>A driver name containing a semicolon (<code class="docutils literal"><span class="pre">;</span></code>) should be surrounded with
-<code class="docutils literal"><span class="pre">{</span></code> and <code class="docutils literal"><span class="pre">}</span></code> in a connection string, for example:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>param ConnectionStr symbolic = &quot;DRIVER={SQL Server; version 11.0};&quot;;
+<p>A driver name containing a semicolon (<code class="docutils literal notranslate"><span class="pre">;</span></code>) should be surrounded with
+<code class="docutils literal notranslate"><span class="pre">{</span></code> and <code class="docutils literal notranslate"><span class="pre">}</span></code> in a connection string, for example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>param ConnectionStr symbolic = &quot;DRIVER={SQL Server; version 11.0};&quot;;
 </pre></div>
 </div>
-<p>Next there are several table declarations that use the <code class="docutils literal"><span class="pre">ConnectionStr</span></code>
+<p>Next there are several table declarations that use the <code class="docutils literal notranslate"><span class="pre">ConnectionStr</span></code>
 parameter defined previously:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>table dietFoods &quot;ODBC&quot; (ConnectionStr) &quot;Foods&quot;:
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>table dietFoods &quot;ODBC&quot; (ConnectionStr) &quot;Foods&quot;:
    FOOD &lt;- [FOOD], cost IN, f_min IN, f_max IN,
    Buy OUT, Buy.rc ~ BuyRC OUT, {j in FOOD} Buy[j]/f_max[j] ~ BuyFrac;
 
@@ -169,25 +158,25 @@ table dietAmts IN &quot;ODBC&quot; (ConnectionStr) &quot;Amounts&quot;: [NUTR, F
 </pre></div>
 </div>
 <p>Finally the script reads the data from the tables</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>read table dietFoods;
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>read table dietFoods;
 read table dietNutrs;
 read table dietAmts;
 </pre></div>
 </div>
 <p>solves the problem</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>solve;
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>solve;
 </pre></div>
 </div>
 <p>and writes the solution back to the database:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>write table dietFoods;
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>write table dietFoods;
 </pre></div>
 </div>
-<p>Note that the same table <code class="docutils literal"><span class="pre">dietFoods</span></code> is used both for input and output.</p>
-<p>Running the <code class="docutils literal"><span class="pre">diet-sqlserver.run</span></code> script with ampl shows that data connection
+<p>Note that the same table <code class="docutils literal notranslate"><span class="pre">dietFoods</span></code> is used both for input and output.</p>
+<p>Running the <code class="docutils literal notranslate"><span class="pre">diet-sqlserver.run</span></code> script with ampl shows that data connection
 is working properly and the problem is easily solved:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>&gt; ampl diet-sqlserver.run
-MINOS 5.51: optimal solution found.
-<span class="m">13</span> iterations, objective 118.0594032
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt; ampl diet-sqlserver.run
+MINOS <span class="m">5</span>.51: optimal solution found.
+<span class="m">13</span> iterations, objective <span class="m">118</span>.0594032
 </pre></div>
 </div>
 <p>You can use various database tools such as <a class="reference external" href="http://msdn.microsoft.com/en-us/library/hh213248.aspx">SQL Server Management Studio</a> to view the data
@@ -197,12 +186,12 @@ exported to the database from the AMPL script:</p>
 <div class="section" id="sql-statements">
 <h2>SQL statements<a class="headerlink" href="#sql-statements" title="Permalink to this headline">¶</a></h2>
 <p>The default <a class="reference external" href="http://msdn.microsoft.com/en-us/library/ms174393.aspx">identifier quote character in SQL Server</a>
-is the double quotation mark (<code class="docutils literal"><span class="pre">&quot;</span></code>). AMPL&#8217;s ODBC table handler detects the
+is the double quotation mark (<code class="docutils literal notranslate"><span class="pre">&quot;</span></code>). AMPL’s ODBC table handler detects the
 quote character automatically and uses it when necessary. However,
 user-supplied SQL statements are passed to the ODBC driver for SQL Server
 as is and should use the correct quotation.</p>
 <p>Example:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>table Foods &#39;ODBC&#39; &#39;DRIVER={SQL Server};&#39;
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>table Foods &#39;ODBC&#39; &#39;DRIVER={SQL Server};&#39;
    &#39;SQL=SELECT &quot;FOOD&quot;, &quot;cost&quot; FROM &quot;Foods&quot;;&#39;: [FOOD], cost;
 </pre></div>
 </div>
@@ -211,9 +200,9 @@ as is and should use the correct quotation.</p>
 <h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h2>
 <p>This section lists common problems with possible solutions.</p>
 <p>The first thing to do in case of an error is to get additional information.
-Add the option <code class="docutils literal"><span class="pre">&quot;verbose&quot;</span></code> to the table declaration that causes the error,
+Add the option <code class="docutils literal notranslate"><span class="pre">&quot;verbose&quot;</span></code> to the table declaration that causes the error,
 for example:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>table dietFoods &quot;ODBC&quot; (ConnectionStr) &quot;Foods&quot; &quot;verbose&quot;:
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>table dietFoods &quot;ODBC&quot; (ConnectionStr) &quot;Foods&quot; &quot;verbose&quot;:
   ...
 </pre></div>
 </div>
@@ -236,14 +225,14 @@ for example:</p>
         <li class="right" >
           <a href="oracle.html" title="Connecting AMPL to Oracle"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">MP</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="index.html" >Database and spreadsheet connection guide</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">MP</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Database and spreadsheet connection guide</a> &#187;</li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2015 AMPL Optimization, Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+        &#169; Copyright 2015 AMPL Optimization, Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.
     </div>
 <!-- Google Analytics -->
 <script>

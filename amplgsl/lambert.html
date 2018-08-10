@@ -1,35 +1,24 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>Lambert W Functions &mdash; MP 3.1.0 documentation</title>
-    
+    <title>Lambert W Functions &#8212; MP 3.1.0 documentation</title>
     <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
-        VERSION:     '20121105',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
-      };
-    </script>
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="MP 3.1.0 documentation" href="../index.html" />
-    <link rel="up" title="Special Functions" href="special.html" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Legendre Functions and Spherical Harmonics" href="legendre.html" />
     <link rel="prev" title="Laguerre Functions" href="laguerre.html" /> 
-  </head>
-  <body role="document">
+  </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -42,9 +31,9 @@
         <li class="right" >
           <a href="laguerre.html" title="Laguerre Functions"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">MP</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="index.html" >AMPL Bindings for the GNU Scientific Library</a> &raquo;</li>
-          <li class="nav-item nav-item-2"><a href="special.html" accesskey="U">Special Functions</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">MP</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >AMPL Bindings for the GNU Scientific Library</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="special.html" accesskey="U">Special Functions</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -78,23 +67,23 @@
             
   <div class="section" id="lambert-w-functions">
 <h1>Lambert W Functions<a class="headerlink" href="#lambert-w-functions" title="Permalink to this headline">¶</a></h1>
-<p>Lambert&#8217;s <span class="math">\(W\)</span> functions, <span class="math">\(W(x)\)</span>, are defined to be solutions of the
-equation <span class="math">\(W(x) \exp(W(x)) = x\)</span>. This function has multiple branches
-for <span class="math">\(x &lt; 0\)</span>; however, it has only two real-valued branches. We define
-<span class="math">\(W_0(x)\)</span> to be the principal branch, where <span class="math">\(W &gt; -1\)</span> for <span class="math">\(x &lt; 0\)</span>, and
-<span class="math">\(W_{-1}(x)\)</span> to be the other real branch, where <span class="math">\(W &lt; -1\)</span> for <span class="math">\(x &lt; 0\)</span>.</p>
+<p>Lambert’s <span class="math notranslate nohighlight">\(W\)</span> functions, <span class="math notranslate nohighlight">\(W(x)\)</span>, are defined to be solutions of the
+equation <span class="math notranslate nohighlight">\(W(x) \exp(W(x)) = x\)</span>. This function has multiple branches
+for <span class="math notranslate nohighlight">\(x &lt; 0\)</span>; however, it has only two real-valued branches. We define
+<span class="math notranslate nohighlight">\(W_0(x)\)</span> to be the principal branch, where <span class="math notranslate nohighlight">\(W &gt; -1\)</span> for <span class="math notranslate nohighlight">\(x &lt; 0\)</span>, and
+<span class="math notranslate nohighlight">\(W_{-1}(x)\)</span> to be the other real branch, where <span class="math notranslate nohighlight">\(W &lt; -1\)</span> for <span class="math notranslate nohighlight">\(x &lt; 0\)</span>.</p>
 <span class="target" id="index-0"></span><dl class="function">
-<dt id="_CPPv217gsl_sf_lambert_W01x">
-<span id="gsl_sf_lambert_W0__x"></span><code class="descclassname"></code><code class="descname">gsl_sf_lambert_W0</code><span class="sig-paren">(</span>x<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv217gsl_sf_lambert_W01x" title="Permalink to this definition">¶</a></dt>
-<dd><p>This routine computes the principal branch of the Lambert <span class="math">\(W\)</span> function,
-<span class="math">\(W_0(x)\)</span>.</p>
+<dt id="_CPPv317gsl_sf_lambert_W01x">
+<span id="_CPPv217gsl_sf_lambert_W01x"></span><span id="gsl_sf_lambert_W0__x"></span><code class="descname">gsl_sf_lambert_W0</code><span class="sig-paren">(</span>x<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv317gsl_sf_lambert_W01x" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>This routine computes the principal branch of the Lambert <span class="math notranslate nohighlight">\(W\)</span> function,
+<span class="math notranslate nohighlight">\(W_0(x)\)</span>.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv218gsl_sf_lambert_Wm11x">
-<span id="gsl_sf_lambert_Wm1__x"></span><code class="descclassname"></code><code class="descname">gsl_sf_lambert_Wm1</code><span class="sig-paren">(</span>x<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv218gsl_sf_lambert_Wm11x" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv318gsl_sf_lambert_Wm11x">
+<span id="_CPPv218gsl_sf_lambert_Wm11x"></span><span id="gsl_sf_lambert_Wm1__x"></span><code class="descname">gsl_sf_lambert_Wm1</code><span class="sig-paren">(</span>x<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv318gsl_sf_lambert_Wm11x" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>This routine computes the secondary real-valued branch of the Lambert
-<span class="math">\(W\)</span> function, <span class="math">\(W_{-1}(x)\)</span>.</p>
+<span class="math notranslate nohighlight">\(W\)</span> function, <span class="math notranslate nohighlight">\(W_{-1}(x)\)</span>.</p>
 </dd></dl>
 
 </div>
@@ -117,15 +106,15 @@ for <span class="math">\(x &lt; 0\)</span>; however, it has only two real-valued
         <li class="right" >
           <a href="laguerre.html" title="Laguerre Functions"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">MP</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="index.html" >AMPL Bindings for the GNU Scientific Library</a> &raquo;</li>
-          <li class="nav-item nav-item-2"><a href="special.html" >Special Functions</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">MP</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >AMPL Bindings for the GNU Scientific Library</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="special.html" >Special Functions</a> &#187;</li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2015 AMPL Optimization, Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+        &#169; Copyright 2015 AMPL Optimization, Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.
     </div>
 <!-- Google Analytics -->
 <script>

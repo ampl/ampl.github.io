@@ -1,35 +1,24 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>The Hypergeometric Distribution &mdash; MP 3.1.0 documentation</title>
-    
+    <title>The Hypergeometric Distribution &#8212; MP 3.1.0 documentation</title>
     <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
-        VERSION:     '20121105',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
-      };
-    </script>
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="MP 3.1.0 documentation" href="../index.html" />
-    <link rel="up" title="Random Number Distributions" href="randist.html" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="The Logarithmic Distribution" href="ran-logarithmic.html" />
     <link rel="prev" title="The Geometric Distribution" href="ran-geometric.html" /> 
-  </head>
-  <body role="document">
+  </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -42,9 +31,9 @@
         <li class="right" >
           <a href="ran-geometric.html" title="The Geometric Distribution"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">MP</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="index.html" >AMPL Bindings for the GNU Scientific Library</a> &raquo;</li>
-          <li class="nav-item nav-item-2"><a href="randist.html" accesskey="U">Random Number Distributions</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">MP</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >AMPL Bindings for the GNU Scientific Library</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="randist.html" accesskey="U">Random Number Distributions</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -79,40 +68,40 @@
   <div class="section" id="the-hypergeometric-distribution">
 <h1>The Hypergeometric Distribution<a class="headerlink" href="#the-hypergeometric-distribution" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
-<dt id="_CPPv222gsl_ran_hypergeometric1p2n12n21t">
-<span id="gsl_ran_hypergeometric__p.n1.n2.t"></span><code class="descclassname"></code><code class="descname">gsl_ran_hypergeometric</code><span class="sig-paren">(</span>p, n1, n2, t<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv222gsl_ran_hypergeometric1p2n12n21t" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv322gsl_ran_hypergeometric1p2n12n21t">
+<span id="_CPPv222gsl_ran_hypergeometric1p2n12n21t"></span><span id="gsl_ran_hypergeometric__p.n1.n2.t"></span><code class="descname">gsl_ran_hypergeometric</code><span class="sig-paren">(</span>p, n1, n2, t<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv322gsl_ran_hypergeometric1p2n12n21t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>This function returns a random integer from the <span class="target" id="index-0"></span>hypergeometric
 distribution. The probability distribution for hypergeometric
 random variates is,</p>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[p(k) =  C(n_1, k) C(n_2, t - k) / C(n_1 + n_2, t)\]</div>
-<p>where <span class="math">\(C(a,b) = a!/(b!(a-b)!)\)</span> and <span class="math">\(t \leq n_1 + n_2\)</span>. The domain
-of <span class="math">\(k\)</span> is <span class="math">\(\max(0,t-n_2), ..., \min(t,n_1)\)</span>.</p>
-<p>If a population contains <span class="math">\(n_1\)</span> elements of &#8220;type 1&#8221; and <span class="math">\(n_2\)</span>
-elements of &#8220;type 2&#8221; then the hypergeometric distribution gives
-the probability of obtaining <span class="math">\(k\)</span> elements of &#8220;type 1&#8221; in <span class="math">\(t\)</span>
+<p>where <span class="math notranslate nohighlight">\(C(a,b) = a!/(b!(a-b)!)\)</span> and <span class="math notranslate nohighlight">\(t \leq n_1 + n_2\)</span>. The domain
+of <span class="math notranslate nohighlight">\(k\)</span> is <span class="math notranslate nohighlight">\(\max(0,t-n_2), ..., \min(t,n_1)\)</span>.</p>
+<p>If a population contains <span class="math notranslate nohighlight">\(n_1\)</span> elements of “type 1” and <span class="math notranslate nohighlight">\(n_2\)</span>
+elements of “type 2” then the hypergeometric distribution gives
+the probability of obtaining <span class="math notranslate nohighlight">\(k\)</span> elements of “type 1” in <span class="math notranslate nohighlight">\(t\)</span>
 samples from the population without replacement.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv226gsl_ran_hypergeometric_pdf1k2n12n21t">
-<span id="gsl_ran_hypergeometric_pdf__k.n1.n2.t"></span><code class="descclassname"></code><code class="descname">gsl_ran_hypergeometric_pdf</code><span class="sig-paren">(</span>k, n1, n2, t<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv226gsl_ran_hypergeometric_pdf1k2n12n21t" title="Permalink to this definition">¶</a></dt>
-<dd><p>This function computes the probability <span class="math">\(p(k)\)</span> of obtaining <span class="math">\(k\)</span> from
-a hypergeometric distribution with parameters <code class="docutils literal"><span class="pre">n1</span></code>, <code class="docutils literal"><span class="pre">n2</span></code>, <code class="docutils literal"><span class="pre">t</span></code>,
+<dt id="_CPPv326gsl_ran_hypergeometric_pdf1k2n12n21t">
+<span id="_CPPv226gsl_ran_hypergeometric_pdf1k2n12n21t"></span><span id="gsl_ran_hypergeometric_pdf__k.n1.n2.t"></span><code class="descname">gsl_ran_hypergeometric_pdf</code><span class="sig-paren">(</span>k, n1, n2, t<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv326gsl_ran_hypergeometric_pdf1k2n12n21t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>This function computes the probability <span class="math notranslate nohighlight">\(p(k)\)</span> of obtaining <span class="math notranslate nohighlight">\(k\)</span> from
+a hypergeometric distribution with parameters <code class="docutils literal notranslate"><span class="pre">n1</span></code>, <code class="docutils literal notranslate"><span class="pre">n2</span></code>, <code class="docutils literal notranslate"><span class="pre">t</span></code>,
 using the formula given above.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv224gsl_cdf_hypergeometric_P1k2n12n21t">
-<span id="gsl_cdf_hypergeometric_P__k.n1.n2.t"></span><code class="descclassname"></code><code class="descname">gsl_cdf_hypergeometric_P</code><span class="sig-paren">(</span>k, n1, n2, t<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv224gsl_cdf_hypergeometric_P1k2n12n21t" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv324gsl_cdf_hypergeometric_P1k2n12n21t">
+<span id="_CPPv224gsl_cdf_hypergeometric_P1k2n12n21t"></span><span id="gsl_cdf_hypergeometric_P__k.n1.n2.t"></span><code class="descname">gsl_cdf_hypergeometric_P</code><span class="sig-paren">(</span>k, n1, n2, t<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv324gsl_cdf_hypergeometric_P1k2n12n21t" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="_CPPv224gsl_cdf_hypergeometric_Q1k2n12n21t">
-<span id="gsl_cdf_hypergeometric_Q__k.n1.n2.t"></span><code class="descclassname"></code><code class="descname">gsl_cdf_hypergeometric_Q</code><span class="sig-paren">(</span>k, n1, n2, t<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv224gsl_cdf_hypergeometric_Q1k2n12n21t" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv324gsl_cdf_hypergeometric_Q1k2n12n21t">
+<span id="_CPPv224gsl_cdf_hypergeometric_Q1k2n12n21t"></span><span id="gsl_cdf_hypergeometric_Q__k.n1.n2.t"></span><code class="descname">gsl_cdf_hypergeometric_Q</code><span class="sig-paren">(</span>k, n1, n2, t<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv324gsl_cdf_hypergeometric_Q1k2n12n21t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>These functions compute the cumulative distribution functions
-<span class="math">\(P(k), Q(k)\)</span> for the hypergeometric distribution with parameters
-<code class="docutils literal"><span class="pre">n1</span></code>, <code class="docutils literal"><span class="pre">n2</span></code> and <code class="docutils literal"><span class="pre">t</span></code>.</p>
+<span class="math notranslate nohighlight">\(P(k), Q(k)\)</span> for the hypergeometric distribution with parameters
+<code class="docutils literal notranslate"><span class="pre">n1</span></code>, <code class="docutils literal notranslate"><span class="pre">n2</span></code> and <code class="docutils literal notranslate"><span class="pre">t</span></code>.</p>
 </dd></dl>
 
 </div>
@@ -135,15 +124,15 @@ using the formula given above.</p>
         <li class="right" >
           <a href="ran-geometric.html" title="The Geometric Distribution"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">MP</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="index.html" >AMPL Bindings for the GNU Scientific Library</a> &raquo;</li>
-          <li class="nav-item nav-item-2"><a href="randist.html" >Random Number Distributions</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">MP</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >AMPL Bindings for the GNU Scientific Library</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="randist.html" >Random Number Distributions</a> &#187;</li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2015 AMPL Optimization, Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+        &#169; Copyright 2015 AMPL Optimization, Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.
     </div>
 <!-- Google Analytics -->
 <script>

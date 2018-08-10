@@ -1,35 +1,24 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>The Rayleigh Distribution &mdash; MP 3.1.0 documentation</title>
-    
+    <title>The Rayleigh Distribution &#8212; MP 3.1.0 documentation</title>
     <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
-        VERSION:     '20121105',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
-      };
-    </script>
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="MP 3.1.0 documentation" href="../index.html" />
-    <link rel="up" title="Random Number Distributions" href="randist.html" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="The Rayleigh Tail Distribution" href="ran-rayleigh-tail.html" />
     <link rel="prev" title="The Cauchy Distribution" href="ran-cauchy.html" /> 
-  </head>
-  <body role="document">
+  </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -42,9 +31,9 @@
         <li class="right" >
           <a href="ran-cauchy.html" title="The Cauchy Distribution"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">MP</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="index.html" >AMPL Bindings for the GNU Scientific Library</a> &raquo;</li>
-          <li class="nav-item nav-item-2"><a href="randist.html" accesskey="U">Random Number Distributions</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">MP</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >AMPL Bindings for the GNU Scientific Library</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="randist.html" accesskey="U">Random Number Distributions</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -79,45 +68,45 @@
   <div class="section" id="the-rayleigh-distribution">
 <h1>The Rayleigh Distribution<a class="headerlink" href="#the-rayleigh-distribution" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
-<dt id="_CPPv216gsl_ran_rayleigh5sigma">
-<span id="gsl_ran_rayleigh__sigma"></span><code class="descclassname"></code><code class="descname">gsl_ran_rayleigh</code><span class="sig-paren">(</span>sigma<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv216gsl_ran_rayleigh5sigma" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv316gsl_ran_rayleigh5sigma">
+<span id="_CPPv216gsl_ran_rayleigh5sigma"></span><span id="gsl_ran_rayleigh__sigma"></span><code class="descname">gsl_ran_rayleigh</code><span class="sig-paren">(</span>sigma<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv316gsl_ran_rayleigh5sigma" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>This function returns a random variate from the <span class="target" id="index-0"></span>Rayleigh
-distribution with scale parameter <code class="docutils literal"><span class="pre">sigma</span></code>.
+distribution with scale parameter <code class="docutils literal notranslate"><span class="pre">sigma</span></code>.
 The distribution is,</p>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[p(x) dx = {x \over \sigma^2} \exp(- x^2/(2 \sigma^2)) dx\]</div>
-<p>for <span class="math">\(x &gt; 0\)</span>.</p>
+<p>for <span class="math notranslate nohighlight">\(x &gt; 0\)</span>.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv220gsl_ran_rayleigh_pdf1x5sigma">
-<span id="gsl_ran_rayleigh_pdf__x.sigma"></span><code class="descclassname"></code><code class="descname">gsl_ran_rayleigh_pdf</code><span class="sig-paren">(</span>x, sigma<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv220gsl_ran_rayleigh_pdf1x5sigma" title="Permalink to this definition">¶</a></dt>
-<dd><p>This function computes the probability density <span class="math">\(p(x)\)</span> at <span class="math">\(x\)</span> for a
-Rayleigh distribution with scale parameter <code class="docutils literal"><span class="pre">sigma</span></code>, using the formula
+<dt id="_CPPv320gsl_ran_rayleigh_pdf1x5sigma">
+<span id="_CPPv220gsl_ran_rayleigh_pdf1x5sigma"></span><span id="gsl_ran_rayleigh_pdf__x.sigma"></span><code class="descname">gsl_ran_rayleigh_pdf</code><span class="sig-paren">(</span>x, sigma<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv320gsl_ran_rayleigh_pdf1x5sigma" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>This function computes the probability density <span class="math notranslate nohighlight">\(p(x)\)</span> at <span class="math notranslate nohighlight">\(x\)</span> for a
+Rayleigh distribution with scale parameter <code class="docutils literal notranslate"><span class="pre">sigma</span></code>, using the formula
 given above.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv218gsl_ran_rayleigh_P1x5sigma">
-<span id="gsl_ran_rayleigh_P__x.sigma"></span><code class="descclassname"></code><code class="descname">gsl_ran_rayleigh_P</code><span class="sig-paren">(</span>x, sigma<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv218gsl_ran_rayleigh_P1x5sigma" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv318gsl_ran_rayleigh_P1x5sigma">
+<span id="_CPPv218gsl_ran_rayleigh_P1x5sigma"></span><span id="gsl_ran_rayleigh_P__x.sigma"></span><code class="descname">gsl_ran_rayleigh_P</code><span class="sig-paren">(</span>x, sigma<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv318gsl_ran_rayleigh_P1x5sigma" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="_CPPv218gsl_ran_rayleigh_Q1x5sigma">
-<span id="gsl_ran_rayleigh_Q__x.sigma"></span><code class="descclassname"></code><code class="descname">gsl_ran_rayleigh_Q</code><span class="sig-paren">(</span>x, sigma<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv218gsl_ran_rayleigh_Q1x5sigma" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv318gsl_ran_rayleigh_Q1x5sigma">
+<span id="_CPPv218gsl_ran_rayleigh_Q1x5sigma"></span><span id="gsl_ran_rayleigh_Q__x.sigma"></span><code class="descname">gsl_ran_rayleigh_Q</code><span class="sig-paren">(</span>x, sigma<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv318gsl_ran_rayleigh_Q1x5sigma" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="_CPPv221gsl_ran_rayleigh_Pinv1P5sigma">
-<span id="gsl_ran_rayleigh_Pinv__P.sigma"></span><code class="descclassname"></code><code class="descname">gsl_ran_rayleigh_Pinv</code><span class="sig-paren">(</span>P, sigma<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv221gsl_ran_rayleigh_Pinv1P5sigma" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv321gsl_ran_rayleigh_Pinv1P5sigma">
+<span id="_CPPv221gsl_ran_rayleigh_Pinv1P5sigma"></span><span id="gsl_ran_rayleigh_Pinv__P.sigma"></span><code class="descname">gsl_ran_rayleigh_Pinv</code><span class="sig-paren">(</span>P, sigma<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv321gsl_ran_rayleigh_Pinv1P5sigma" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="_CPPv221gsl_ran_rayleigh_Qinv1Q5sigma">
-<span id="gsl_ran_rayleigh_Qinv__Q.sigma"></span><code class="descclassname"></code><code class="descname">gsl_ran_rayleigh_Qinv</code><span class="sig-paren">(</span>Q, sigma<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv221gsl_ran_rayleigh_Qinv1Q5sigma" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv321gsl_ran_rayleigh_Qinv1Q5sigma">
+<span id="_CPPv221gsl_ran_rayleigh_Qinv1Q5sigma"></span><span id="gsl_ran_rayleigh_Qinv__Q.sigma"></span><code class="descname">gsl_ran_rayleigh_Qinv</code><span class="sig-paren">(</span>Q, sigma<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv321gsl_ran_rayleigh_Qinv1Q5sigma" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>These functions compute the cumulative distribution functions
-<span class="math">\(P(x), Q(x)\)</span> and their inverses for the Rayleigh distribution with
-scale parameter <code class="docutils literal"><span class="pre">sigma</span></code>.</p>
+<span class="math notranslate nohighlight">\(P(x), Q(x)\)</span> and their inverses for the Rayleigh distribution with
+scale parameter <code class="docutils literal notranslate"><span class="pre">sigma</span></code>.</p>
 </dd></dl>
 
 </div>
@@ -140,15 +129,15 @@ scale parameter <code class="docutils literal"><span class="pre">sigma</span></c
         <li class="right" >
           <a href="ran-cauchy.html" title="The Cauchy Distribution"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">MP</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="index.html" >AMPL Bindings for the GNU Scientific Library</a> &raquo;</li>
-          <li class="nav-item nav-item-2"><a href="randist.html" >Random Number Distributions</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">MP</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >AMPL Bindings for the GNU Scientific Library</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="randist.html" >Random Number Distributions</a> &#187;</li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2015 AMPL Optimization, Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+        &#169; Copyright 2015 AMPL Optimization, Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.
     </div>
 <!-- Google Analytics -->
 <script>

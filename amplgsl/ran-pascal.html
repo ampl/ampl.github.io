@@ -1,35 +1,24 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>The Pascal Distribution &mdash; MP 3.1.0 documentation</title>
-    
+    <title>The Pascal Distribution &#8212; MP 3.1.0 documentation</title>
     <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
-        VERSION:     '20121105',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
-      };
-    </script>
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="MP 3.1.0 documentation" href="../index.html" />
-    <link rel="up" title="Random Number Distributions" href="randist.html" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="The Geometric Distribution" href="ran-geometric.html" />
     <link rel="prev" title="The Negative Binomial Distribution" href="ran-negative-binomial.html" /> 
-  </head>
-  <body role="document">
+  </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -42,9 +31,9 @@
         <li class="right" >
           <a href="ran-negative-binomial.html" title="The Negative Binomial Distribution"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">MP</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="index.html" >AMPL Bindings for the GNU Scientific Library</a> &raquo;</li>
-          <li class="nav-item nav-item-2"><a href="randist.html" accesskey="U">Random Number Distributions</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">MP</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >AMPL Bindings for the GNU Scientific Library</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="randist.html" accesskey="U">Random Number Distributions</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -79,35 +68,35 @@
   <div class="section" id="the-pascal-distribution">
 <h1>The Pascal Distribution<a class="headerlink" href="#the-pascal-distribution" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
-<dt id="_CPPv214gsl_ran_pascal1p1n">
-<span id="gsl_ran_pascal__p.n"></span><code class="descclassname"></code><code class="descname">gsl_ran_pascal</code><span class="sig-paren">(</span>p, n<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv214gsl_ran_pascal1p1n" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv314gsl_ran_pascal1p1n">
+<span id="_CPPv214gsl_ran_pascal1p1n"></span><span id="gsl_ran_pascal__p.n"></span><code class="descname">gsl_ran_pascal</code><span class="sig-paren">(</span>p, n<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv314gsl_ran_pascal1p1n" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>This function returns a random integer from the <span class="target" id="index-0"></span>Pascal
 distribution. The Pascal distribution is simply a negative
-binomial distribution with an integer value of <code class="docutils literal"><span class="pre">n</span></code>.</p>
-<div class="math">
+binomial distribution with an integer value of <code class="docutils literal notranslate"><span class="pre">n</span></code>.</p>
+<div class="math notranslate nohighlight">
 \[p(k) = {(n + k - 1)! \over k! (n - 1)! } p^n (1-p)^k\]</div>
-<p>for <span class="math">\(k \geq 0\)</span></p>
+<p>for <span class="math notranslate nohighlight">\(k \geq 0\)</span></p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv218gsl_ran_pascal_pdf1k1p1n">
-<span id="gsl_ran_pascal_pdf__k.p.n"></span><code class="descclassname"></code><code class="descname">gsl_ran_pascal_pdf</code><span class="sig-paren">(</span>k, p, n<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv218gsl_ran_pascal_pdf1k1p1n" title="Permalink to this definition">¶</a></dt>
-<dd><p>This function computes the probability <span class="math">\(p(k)\)</span> of obtaining <span class="math">\(k\)</span> from
-a Pascal distribution with parameters <code class="docutils literal"><span class="pre">p</span></code> and <code class="docutils literal"><span class="pre">n</span></code>, using the
+<dt id="_CPPv318gsl_ran_pascal_pdf1k1p1n">
+<span id="_CPPv218gsl_ran_pascal_pdf1k1p1n"></span><span id="gsl_ran_pascal_pdf__k.p.n"></span><code class="descname">gsl_ran_pascal_pdf</code><span class="sig-paren">(</span>k, p, n<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv318gsl_ran_pascal_pdf1k1p1n" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>This function computes the probability <span class="math notranslate nohighlight">\(p(k)\)</span> of obtaining <span class="math notranslate nohighlight">\(k\)</span> from
+a Pascal distribution with parameters <code class="docutils literal notranslate"><span class="pre">p</span></code> and <code class="docutils literal notranslate"><span class="pre">n</span></code>, using the
 formula given above.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv216gsl_cdf_pascal_P1k1p1n">
-<span id="gsl_cdf_pascal_P__k.p.n"></span><code class="descclassname"></code><code class="descname">gsl_cdf_pascal_P</code><span class="sig-paren">(</span>k, p, n<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv216gsl_cdf_pascal_P1k1p1n" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv316gsl_cdf_pascal_P1k1p1n">
+<span id="_CPPv216gsl_cdf_pascal_P1k1p1n"></span><span id="gsl_cdf_pascal_P__k.p.n"></span><code class="descname">gsl_cdf_pascal_P</code><span class="sig-paren">(</span>k, p, n<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv316gsl_cdf_pascal_P1k1p1n" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="_CPPv216gsl_cdf_pascal_Q1k1p1n">
-<span id="gsl_cdf_pascal_Q__k.p.n"></span><code class="descclassname"></code><code class="descname">gsl_cdf_pascal_Q</code><span class="sig-paren">(</span>k, p, n<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv216gsl_cdf_pascal_Q1k1p1n" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv316gsl_cdf_pascal_Q1k1p1n">
+<span id="_CPPv216gsl_cdf_pascal_Q1k1p1n"></span><span id="gsl_cdf_pascal_Q__k.p.n"></span><code class="descname">gsl_cdf_pascal_Q</code><span class="sig-paren">(</span>k, p, n<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv316gsl_cdf_pascal_Q1k1p1n" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>These functions compute the cumulative distribution functions
-<span class="math">\(P(k), Q(k)\)</span> for the Pascal distribution with parameters <code class="docutils literal"><span class="pre">p</span></code>
-and <code class="docutils literal"><span class="pre">n</span></code>.</p>
+<span class="math notranslate nohighlight">\(P(k), Q(k)\)</span> for the Pascal distribution with parameters <code class="docutils literal notranslate"><span class="pre">p</span></code>
+and <code class="docutils literal notranslate"><span class="pre">n</span></code>.</p>
 </dd></dl>
 
 </div>
@@ -130,15 +119,15 @@ and <code class="docutils literal"><span class="pre">n</span></code>.</p>
         <li class="right" >
           <a href="ran-negative-binomial.html" title="The Negative Binomial Distribution"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">MP</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="index.html" >AMPL Bindings for the GNU Scientific Library</a> &raquo;</li>
-          <li class="nav-item nav-item-2"><a href="randist.html" >Random Number Distributions</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">MP</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >AMPL Bindings for the GNU Scientific Library</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="randist.html" >Random Number Distributions</a> &#187;</li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2015 AMPL Optimization, Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+        &#169; Copyright 2015 AMPL Optimization, Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.
     </div>
 <!-- Google Analytics -->
 <script>

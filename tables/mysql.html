@@ -1,35 +1,24 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>Connecting AMPL to MySQL &mdash; MP 3.1.0 documentation</title>
-    
+    <title>Connecting AMPL to MySQL &#8212; MP 3.1.0 documentation</title>
     <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
-        VERSION:     '20121105',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
-      };
-    </script>
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="MP 3.1.0 documentation" href="../index.html" />
-    <link rel="up" title="Database and spreadsheet connection guide" href="index.html" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Connecting AMPL to Oracle" href="oracle.html" />
     <link rel="prev" title="Database and spreadsheet connection guide" href="index.html" /> 
-  </head>
-  <body role="document">
+  </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -42,8 +31,8 @@
         <li class="right" >
           <a href="index.html" title="Database and spreadsheet connection guide"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">MP</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Database and spreadsheet connection guide</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">MP</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Database and spreadsheet connection guide</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -66,7 +55,7 @@
 <li><a class="reference internal" href="#sql-statements">SQL statements</a></li>
 <li><a class="reference internal" href="#troubleshooting">Troubleshooting</a><ul>
 <li><a class="reference internal" href="#data-source-name-not-found">Data source name not found</a></li>
-<li><a class="reference internal" href="#can-t-connect-through-socket">Can&#8217;t connect through socket</a></li>
+<li><a class="reference internal" href="#can-t-connect-through-socket">Can’t connect through socket</a></li>
 </ul>
 </li>
 </ul>
@@ -117,44 +106,44 @@ for various platforms from <a class="reference external" href="http://dev.mysql.
 and Debian-based Linux distributions such as <a class="reference external" href="http://www.ubuntu.com/">Ubuntu</a> and <a class="reference external" href="http://linuxmint.com/">Mint</a>.</p>
 <ol class="arabic">
 <li><p class="first">Install the MySQL ODBC driver:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ sudo apt-get install libmyodbc
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo apt-get install libmyodbc
 </pre></div>
 </div>
 </li>
 <li><p class="first">Register the driver:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ sudo odbcinst -i -d -f /usr/share/libmyodbc/odbcinst.ini
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo odbcinst -i -d -f /usr/share/libmyodbc/odbcinst.ini
 </pre></div>
 </div>
 </li>
 </ol>
-<p>Go to <a class="reference internal" href="#mysql-usage"><span>Usage</span></a>.</p>
+<p>Go to <a class="reference internal" href="#mysql-usage"><span class="std std-ref">Usage</span></a>.</p>
 </div>
 <div class="section" id="suse-linux">
 <h4>SUSE Linux<a class="headerlink" href="#suse-linux" title="Permalink to this headline">¶</a></h4>
 <ol class="arabic">
 <li><p class="first">Install the MySQL ODBC driver:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ sudo zypper install MyODBC-unixODBC
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo zypper install MyODBC-unixODBC
 </pre></div>
 </div>
 </li>
 <li><p class="first">Register the ODBC driver. The easiest way to register the driver
-is by using the <code class="docutils literal"><span class="pre">myodbc-installer</span></code> utility included in the
-<code class="docutils literal"><span class="pre">MyODBC-unixODBC</span></code> package, for example:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ sudo myodbc-installer -d -a -n <span class="s2">&quot;MySQL&quot;</span> <span class="se">\</span>
+is by using the <code class="docutils literal notranslate"><span class="pre">myodbc-installer</span></code> utility included in the
+<code class="docutils literal notranslate"><span class="pre">MyODBC-unixODBC</span></code> package, for example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo myodbc-installer -d -a -n <span class="s2">&quot;MySQL&quot;</span> <span class="se">\</span>
     -t <span class="s2">&quot;DRIVER=/usr/lib/libmyodbc5.so&quot;</span>
 </pre></div>
 </div>
-<p><code class="docutils literal"><span class="pre">/usr/lib/libmyodbc5.so</span></code> is the path to the driver library
+<p><code class="docutils literal notranslate"><span class="pre">/usr/lib/libmyodbc5.so</span></code> is the path to the driver library
 that you installed in the previous step. You might need to change it
 if you have a different version of the driver.</p>
 <p>Note that the MySQL ODBC/Connector distribution does not include a
-setup library. If you invoke <code class="docutils literal"><span class="pre">myodbc-installer</span> <span class="pre">--help</span></code>, you may see an
-outdated example with a <code class="docutils literal"><span class="pre">SETUP</span></code> attribute specifying a setup library.
+setup library. If you invoke <code class="docutils literal notranslate"><span class="pre">myodbc-installer</span> <span class="pre">--help</span></code>, you may see an
+outdated example with a <code class="docutils literal notranslate"><span class="pre">SETUP</span></code> attribute specifying a setup library.
 Omit this attribute during the driver registration unless you have
 installed a setup library from some other source.</p>
 </li>
 </ol>
-<p>Go to <a class="reference internal" href="#mysql-usage"><span>Usage</span></a>.</p>
+<p>Go to <a class="reference internal" href="#mysql-usage"><span class="std std-ref">Usage</span></a>.</p>
 </div>
 <div class="section" id="other-distributions">
 <h4>Other distributions<a class="headerlink" href="#other-distributions" title="Permalink to this headline">¶</a></h4>
@@ -167,25 +156,25 @@ Make sure that you use compatible versions of the ODBC driver
 library will not load and any connection attempt will fail.</p>
 </li>
 <li><p class="first">Register the ODBC driver. The easiest way to register the driver is
-by using the <code class="docutils literal"><span class="pre">myodbc-installer</span></code> utility included in the distribution,
+by using the <code class="docutils literal notranslate"><span class="pre">myodbc-installer</span></code> utility included in the distribution,
 for example:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ sudo myodbc-installer -d -a -n <span class="s2">&quot;MySQL&quot;</span> <span class="se">\</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo myodbc-installer -d -a -n <span class="s2">&quot;MySQL&quot;</span> <span class="se">\</span>
     -t <span class="s2">&quot;DRIVER=/usr/local/lib/libmyodbc5a.so&quot;</span>
 </pre></div>
 </div>
-<p><code class="docutils literal"><span class="pre">/usr/local/lib/libmyodbc5a.so</span></code> is the path to the driver library
+<p><code class="docutils literal notranslate"><span class="pre">/usr/local/lib/libmyodbc5a.so</span></code> is the path to the driver library
 that you installed in the previous step. You might need to change it
 if you have a different version of the driver or installed it in a
-different location. See the name of the <code class="docutils literal"><span class="pre">.so</span></code> file in the <code class="docutils literal"><span class="pre">lib</span></code>
+different location. See the name of the <code class="docutils literal notranslate"><span class="pre">.so</span></code> file in the <code class="docutils literal notranslate"><span class="pre">lib</span></code>
 directory of the installation package.</p>
 <p>Note that the MySQL ODBC/Connector distribution does not include a
-setup library. If you invoke <code class="docutils literal"><span class="pre">myodbc-installer</span> <span class="pre">--help</span></code>, you may see an
-outdated example with a <code class="docutils literal"><span class="pre">SETUP</span></code> attribute specifying a setup library.
+setup library. If you invoke <code class="docutils literal notranslate"><span class="pre">myodbc-installer</span> <span class="pre">--help</span></code>, you may see an
+outdated example with a <code class="docutils literal notranslate"><span class="pre">SETUP</span></code> attribute specifying a setup library.
 Omit this attribute during the driver registration unless you have
 installed a setup library from some other source.</p>
 </li>
 </ol>
-<p>Go to <a class="reference internal" href="#mysql-usage"><span>Usage</span></a>.</p>
+<p>Go to <a class="reference internal" href="#mysql-usage"><span class="std std-ref">Usage</span></a>.</p>
 </div>
 </div>
 <div class="section" id="macos-x">
@@ -196,21 +185,21 @@ installer available for download as a DMG archive from the
 <p>Alternatively you can install the MySQL Connector/ODBC as described <a class="reference external" href="http://dev.mysql.com/doc/refman/5.1/en/connector-odbc-installation.html#connector-odbc-installation-binary-macosx">here</a>,
 skipping the outdated last step (driver registration) and then register
 the driver with the following command:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ sudo myodbc-installer -d -a -n <span class="s2">&quot;MySQL&quot;</span> <span class="se">\</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo myodbc-installer -d -a -n <span class="s2">&quot;MySQL&quot;</span> <span class="se">\</span>
     -t <span class="s2">&quot;DRIVER=/usr/local/lib/libmyodbc5w.so&quot;</span>
 </pre></div>
 </div>
-<p><code class="docutils literal"><span class="pre">/usr/local/lib/libmyodbc5w.so</span></code> is the path to the driver library
+<p><code class="docutils literal notranslate"><span class="pre">/usr/local/lib/libmyodbc5w.so</span></code> is the path to the driver library
 that you installed in the previous step. You might need to change it
 if you have a different version of the driver or installed it in a
-different location. See the name of the <code class="docutils literal"><span class="pre">.so</span></code> file in the <code class="docutils literal"><span class="pre">lib</span></code>
+different location. See the name of the <code class="docutils literal notranslate"><span class="pre">.so</span></code> file in the <code class="docutils literal notranslate"><span class="pre">lib</span></code>
 directory of the installation package.</p>
 <p>Note that the MySQL ODBC/Connector distribution does not include a
-setup library. If you invoke <code class="docutils literal"><span class="pre">myodbc-installer</span> <span class="pre">--help</span></code>, you may see an
-outdated example with a <code class="docutils literal"><span class="pre">SETUP</span></code> attribute specifying a setup library.
+setup library. If you invoke <code class="docutils literal notranslate"><span class="pre">myodbc-installer</span> <span class="pre">--help</span></code>, you may see an
+outdated example with a <code class="docutils literal notranslate"><span class="pre">SETUP</span></code> attribute specifying a setup library.
 Omit this attribute during the driver registration unless you have
 installed a setup library from some other source.</p>
-<p>Go to <a class="reference internal" href="#mysql-usage"><span>Usage</span></a>.</p>
+<p>Go to <a class="reference internal" href="#mysql-usage"><span class="std std-ref">Usage</span></a>.</p>
 </div>
 <div class="section" id="windows">
 <h3>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h3>
@@ -219,50 +208,50 @@ installed a setup library from some other source.</p>
 </div>
 <div class="section" id="usage">
 <span id="mysql-usage"></span><h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
-<p>We&#8217;ll demonstrate usage of MySQL with AMPL on a small example.
+<p>We’ll demonstrate usage of MySQL with AMPL on a small example.
 For this example we use the diet problem, which finds a combination of foods
 that satisfies certain nutritional requirements. It is described in
 <a class="reference external" href="http://www.ampl.com/BOOK/CHAPTERS/05-tut2.pdf">Chapter 2 of the AMPL book</a>.</p>
-<p>We assume that you&#8217;ve already installed the MySQL ODBC driver using
-the instructions above and have access to the MySQL <code class="docutils literal"><span class="pre">test</span></code> database.</p>
+<p>We assume that you’ve already installed the MySQL ODBC driver using
+the instructions above and have access to the MySQL <code class="docutils literal notranslate"><span class="pre">test</span></code> database.</p>
 <p>First download the data for the diet problem <a class="reference external" href="http://ampl.github.io/models/tables/diet-mysql.sql">diet-mysql.sql</a>
 and import it to MySQL:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ mysql <span class="nb">test</span> &lt; diet-mysql.sql
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ mysql <span class="nb">test</span> &lt; diet-mysql.sql
 </pre></div>
 </div>
 <p>Then download the model file <a class="reference external" href="http://ampl.github.io/models/tables/diet.mod">diet.mod</a>
 and the script file <a class="reference external" href="http://ampl.github.io/models/tables/diet-mysql.run">diet-mysql.run</a>.</p>
 <p>The script file first reads the model:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>model diet.mod;
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>model diet.mod;
 </pre></div>
 </div>
 <p>Then it defines a parameter to hold a connection string. Since the connection
 parameters are the same for all table declarations in our example, we
 avoid unnecessary duplication. In this case we specify all the connection
 parameters explicitly. Alternatively, you could use a DSN file name or
-<code class="docutils literal"><span class="pre">&quot;DSN=&lt;dsn-name&gt;&quot;</span></code> as a connection string.</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>param ConnectionStr symbolic = &quot;DRIVER=MySQL; DATABASE=test;&quot;;
+<code class="docutils literal notranslate"><span class="pre">&quot;DSN=&lt;dsn-name&gt;&quot;</span></code> as a connection string.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>param ConnectionStr symbolic = &quot;DRIVER=MySQL; DATABASE=test;&quot;;
 </pre></div>
 </div>
 <p>If you are using Linux or MacOS X and have chosen a driver name other
-than <code class="docutils literal"><span class="pre">MySQL</span></code>, you will have to specify this name instead of <code class="docutils literal"><span class="pre">MySQL</span></code>
-in the <code class="docutils literal"><span class="pre">DRIVER=MySQL</span></code> attribute in the connection string.</p>
+than <code class="docutils literal notranslate"><span class="pre">MySQL</span></code>, you will have to specify this name instead of <code class="docutils literal notranslate"><span class="pre">MySQL</span></code>
+in the <code class="docutils literal notranslate"><span class="pre">DRIVER=MySQL</span></code> attribute in the connection string.</p>
 <p>A driver name is chosen automatically during installation on Windows,
 so if you are using this OS, you will have to find the driver name and
-specify it instead of <code class="docutils literal"><span class="pre">MySQL</span></code> in the connection string.
+specify it instead of <code class="docutils literal notranslate"><span class="pre">MySQL</span></code> in the connection string.
 To discover the driver name on Windows, run the ODBC Data Source
-Administrator, <code class="docutils literal"><span class="pre">odbcad32.exe</span></code>.  Go to the <code class="docutils literal"><span class="pre">Drivers</span></code> tab where all the
-installed drivers are listed and look for the one containing <code class="docutils literal"><span class="pre">MySQL</span></code>:</p>
+Administrator, <code class="docutils literal notranslate"><span class="pre">odbcad32.exe</span></code>.  Go to the <code class="docutils literal notranslate"><span class="pre">Drivers</span></code> tab where all the
+installed drivers are listed and look for the one containing <code class="docutils literal notranslate"><span class="pre">MySQL</span></code>:</p>
 <img alt="../_images/odbcad32.png" src="../_images/odbcad32.png" />
-<p>A driver name containing a semicolon (<code class="docutils literal"><span class="pre">;</span></code>) should be surrounded with
-<code class="docutils literal"><span class="pre">{</span></code> and <code class="docutils literal"><span class="pre">}</span></code> in a connection string, for example:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>param ConnectionStr symbolic =
+<p>A driver name containing a semicolon (<code class="docutils literal notranslate"><span class="pre">;</span></code>) should be surrounded with
+<code class="docutils literal notranslate"><span class="pre">{</span></code> and <code class="docutils literal notranslate"><span class="pre">}</span></code> in a connection string, for example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>param ConnectionStr symbolic =
   &quot;DRIVER={MySQL ODBC Driver; version 5.2}; DATABASE=test;&quot;;
 </pre></div>
 </div>
-<p>Next there are several table declarations that use the <code class="docutils literal"><span class="pre">ConnectionStr</span></code>
+<p>Next there are several table declarations that use the <code class="docutils literal notranslate"><span class="pre">ConnectionStr</span></code>
 parameter defined previously:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>table dietFoods &quot;ODBC&quot; (ConnectionStr) &quot;Foods&quot;:
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>table dietFoods &quot;ODBC&quot; (ConnectionStr) &quot;Foods&quot;:
    FOOD &lt;- [FOOD], cost IN, f_min IN, f_max IN,
    Buy OUT, Buy.rc ~ BuyRC OUT, {j in FOOD} Buy[j]/f_max[j] ~ BuyFrac;
 
@@ -271,25 +260,25 @@ table dietAmts IN &quot;ODBC&quot; (ConnectionStr) &quot;Amounts&quot;: [NUTR, F
 </pre></div>
 </div>
 <p>Finally the script reads the data from the tables</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>read table dietFoods;
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>read table dietFoods;
 read table dietNutrs;
 read table dietAmts;
 </pre></div>
 </div>
 <p>solves the problem</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>solve;
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>solve;
 </pre></div>
 </div>
 <p>and writes the solution back to the database:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>write table dietFoods;
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>write table dietFoods;
 </pre></div>
 </div>
-<p>Note that the same table <code class="docutils literal"><span class="pre">dietFoods</span></code> is used both for input and output.</p>
-<p>Running the <code class="docutils literal"><span class="pre">diet-mysql.run</span></code> script with ampl shows that data connection
+<p>Note that the same table <code class="docutils literal notranslate"><span class="pre">dietFoods</span></code> is used both for input and output.</p>
+<p>Running the <code class="docutils literal notranslate"><span class="pre">diet-mysql.run</span></code> script with ampl shows that data connection
 is working properly and the problem is easily solved:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ ampl diet-mysql.run
-MINOS 5.51: optimal solution found.
-<span class="m">13</span> iterations, objective 118.0594032
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ampl diet-mysql.run
+MINOS <span class="m">5</span>.51: optimal solution found.
+<span class="m">13</span> iterations, objective <span class="m">118</span>.0594032
 </pre></div>
 </div>
 <p>You can use various database tools such as <a class="reference external" href="https://www.mysql.com/products/workbench/">MySQL workbench</a> or <a class="reference external" href="http://dev.mysql.com/doc/refman/5.5/en/mysql.html">MySQL command-line tool</a> to view the data
@@ -299,14 +288,14 @@ exported to the database from the AMPL script:</p>
 <div class="section" id="sql-statements">
 <h2>SQL statements<a class="headerlink" href="#sql-statements" title="Permalink to this headline">¶</a></h2>
 <p>The default <a class="reference external" href="http://dev.mysql.com/doc/refman/5.0/en/identifiers.html">identifier quote character in MySQL</a>
-is the backquote (<code class="docutils literal"><span class="pre">`</span></code>). AMPL&#8217;s ODBC table handler detects the quote
+is the backquote (<code class="docutils literal notranslate"><span class="pre">`</span></code>). AMPL’s ODBC table handler detects the quote
 character automatically and uses it when necessary. However,
 user-supplied SQL statements are passed to the MySQL ODBC driver as is
 and should use the correct quotation. It is possible to enable support for
-the ANSI standard quote character (<code class="docutils literal"><span class="pre">&quot;</span></code>) in MySQL by setting the SQL mode to
+the ANSI standard quote character (<code class="docutils literal notranslate"><span class="pre">&quot;</span></code>) in MySQL by setting the SQL mode to
 <a class="reference external" href="http://dev.mysql.com/doc/refman/5.1/en/server-sql-mode.html#sqlmode_ansi_quotes">ANSI_QUOTES</a>.</p>
 <p>Example:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>table Foods &quot;ODBC&quot; &quot;DRIVER=MySQL; DATABASE=test;&quot;
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>table Foods &quot;ODBC&quot; &quot;DRIVER=MySQL; DATABASE=test;&quot;
    &quot;SQL=SELECT `FOOD`, `cost` FROM `Foods`;&quot;: [FOOD], cost;
 </pre></div>
 </div>
@@ -315,9 +304,9 @@ the ANSI standard quote character (<code class="docutils literal"><span class="p
 <h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h2>
 <p>This section lists common problems with possible solutions.</p>
 <p>The first thing to do in case of an error is to get additional information.
-Add the option <code class="docutils literal"><span class="pre">&quot;verbose&quot;</span></code> to the table declaration that causes the error,
+Add the option <code class="docutils literal notranslate"><span class="pre">&quot;verbose&quot;</span></code> to the table declaration that causes the error,
 for example:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>table dietFoods &quot;ODBC&quot; (ConnectionStr) &quot;Foods&quot; &quot;verbose&quot;:
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>table dietFoods &quot;ODBC&quot; (ConnectionStr) &quot;Foods&quot; &quot;verbose&quot;:
   ...
 </pre></div>
 </div>
@@ -325,7 +314,7 @@ for example:</p>
 <div class="section" id="data-source-name-not-found">
 <h3>Data source name not found<a class="headerlink" href="#data-source-name-not-found" title="Permalink to this headline">¶</a></h3>
 <p>Verbose error:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>SQLDriverConnect returned -1
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>SQLDriverConnect returned -1
 sqlstate = &quot;IM002&quot;
 errmsg = &quot;[unixODBC][Driver Manager]Data source name not found, and no default driver specified&quot;
 native_errno = 0
@@ -335,24 +324,24 @@ native_errno = 0
 if it is spelled correctly in the connection string. If you are not using a
 DSN, check the driver name instead. On a Unix-based system you can get the
 list of installed ODBC drivers using one of the following commands:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ myodbc-installer -d -l
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ myodbc-installer -d -l
 </pre></div>
 </div>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ odbcinst -d -q
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ odbcinst -d -q
 </pre></div>
 </div>
-<p>On Windows use the ODBC Data Source Administrator (see <a class="reference internal" href="#mysql-usage"><span>Usage</span></a>).</p>
-<p>If the driver name contains a semicolon (<code class="docutils literal"><span class="pre">;</span></code>), check that the name is
-surrounded with <code class="docutils literal"><span class="pre">{</span></code> and <code class="docutils literal"><span class="pre">}</span></code> in the connection string, for example:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>table Foods &quot;ODBC&quot; &quot;DRIVER={MySQL ODBC Driver; version 5.2}; DATABASE=test;&quot;:
+<p>On Windows use the ODBC Data Source Administrator (see <a class="reference internal" href="#mysql-usage"><span class="std std-ref">Usage</span></a>).</p>
+<p>If the driver name contains a semicolon (<code class="docutils literal notranslate"><span class="pre">;</span></code>), check that the name is
+surrounded with <code class="docutils literal notranslate"><span class="pre">{</span></code> and <code class="docutils literal notranslate"><span class="pre">}</span></code> in the connection string, for example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>table Foods &quot;ODBC&quot; &quot;DRIVER={MySQL ODBC Driver; version 5.2}; DATABASE=test;&quot;:
   ...
 </pre></div>
 </div>
 </div>
 <div class="section" id="can-t-connect-through-socket">
-<h3>Can&#8217;t connect through socket<a class="headerlink" href="#can-t-connect-through-socket" title="Permalink to this headline">¶</a></h3>
+<h3>Can’t connect through socket<a class="headerlink" href="#can-t-connect-through-socket" title="Permalink to this headline">¶</a></h3>
 <p>Verbose error:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>SQLDriverConnect returned -1
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>SQLDriverConnect returned -1
 sqlstate = &quot;08S01&quot;
 errmsg = &quot;[unixODBC][MySQL][ODBC 5.2(a) Driver]Can&#39;t connect to local MySQL server through socket &#39;/tmp/mysql.sock&#39; (2)&quot;
 native_errno = 2002
@@ -361,17 +350,17 @@ native_errno = 2002
 <p>First check that the MySQL server is running. If it is running then
 it is likely that the Unix socket file that is used for communication
 between the server and the client is in a different location.
-To find the location of the socket file open <code class="docutils literal"><span class="pre">/etc/my.cnf</span></code> or
-<code class="docutils literal"><span class="pre">/etc/mysql/my.cnf</span></code> and search for lines of the form</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>[mysqld]
+To find the location of the socket file open <code class="docutils literal notranslate"><span class="pre">/etc/my.cnf</span></code> or
+<code class="docutils literal notranslate"><span class="pre">/etc/mysql/my.cnf</span></code> and search for lines of the form</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[mysqld]
 ...
 socket          = /var/run/mysqld/mysqld.sock
 </pre></div>
 </div>
-<p>The <code class="docutils literal"><span class="pre">socket</span> <span class="pre">=</span> <span class="pre">&lt;path&gt;</span></code> line specifies the path to the socket file.
-You can either create a link from <code class="docutils literal"><span class="pre">/tmp/mysql.sock</span></code> to the socket file
+<p>The <code class="docutils literal notranslate"><span class="pre">socket</span> <span class="pre">=</span> <span class="pre">&lt;path&gt;</span></code> line specifies the path to the socket file.
+You can either create a link from <code class="docutils literal notranslate"><span class="pre">/tmp/mysql.sock</span></code> to the socket file
 or specify the socket explicitly in the connection string:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>table Foods &quot;ODBC&quot;
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>table Foods &quot;ODBC&quot;
   &quot;DRIVER=MySQL; DATABASE=test; SOCKET=/var/run/mysqld/mysqld.sock;&quot;:
    ...
 </pre></div>
@@ -398,14 +387,14 @@ or specify the socket explicitly in the connection string:</p>
         <li class="right" >
           <a href="index.html" title="Database and spreadsheet connection guide"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">MP</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="index.html" >Database and spreadsheet connection guide</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">MP</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Database and spreadsheet connection guide</a> &#187;</li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2015 AMPL Optimization, Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+        &#169; Copyright 2015 AMPL Optimization, Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.
     </div>
 <!-- Google Analytics -->
 <script>
