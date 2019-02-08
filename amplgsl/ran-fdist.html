@@ -13,7 +13,8 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="The t-distribution" href="ran-tdist.html" />
@@ -74,8 +75,8 @@ then the ratio,</p>
 \[X = { (Y_1 / \nu_1) \over (Y_2 / \nu_2) }\]</div>
 <p>has an F-distribution <span class="math notranslate nohighlight">\(F(x;\nu_1,\nu_2)\)</span>.</p>
 <dl class="function">
-<dt id="_CPPv313gsl_ran_fdist3nu13nu2">
-<span id="_CPPv213gsl_ran_fdist3nu13nu2"></span><span id="gsl_ran_fdist__nu1.nu2"></span><code class="descname">gsl_ran_fdist</code><span class="sig-paren">(</span>nu1, nu2<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv313gsl_ran_fdist3nu13nu2" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv413gsl_ran_fdist3nu13nu2">
+<span id="_CPPv313gsl_ran_fdist3nu13nu2"></span><span id="_CPPv213gsl_ran_fdist3nu13nu2"></span><span id="gsl_ran_fdist__nu1.nu2"></span><code class="descname">gsl_ran_fdist</code><span class="sig-paren">(</span>nu1, nu2<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv413gsl_ran_fdist3nu13nu2" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>This function returns a random variate from the F-distribution with
 degrees of freedom <code class="docutils literal notranslate"><span class="pre">nu1</span></code> and <code class="docutils literal notranslate"><span class="pre">nu2</span></code>. The distribution function is,</p>
 <div class="math notranslate nohighlight">
@@ -88,31 +89,31 @@ degrees of freedom <code class="docutils literal notranslate"><span class="pre">
 
 <p>for <span class="math notranslate nohighlight">\(x \geq 0\)</span>.</p>
 <dl class="function">
-<dt id="_CPPv317gsl_ran_fdist_pdf1x3nu13nu2">
-<span id="_CPPv217gsl_ran_fdist_pdf1x3nu13nu2"></span><span id="gsl_ran_fdist_pdf__x.nu1.nu2"></span><code class="descname">gsl_ran_fdist_pdf</code><span class="sig-paren">(</span>x, nu1, nu2<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv317gsl_ran_fdist_pdf1x3nu13nu2" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv417gsl_ran_fdist_pdf1x3nu13nu2">
+<span id="_CPPv317gsl_ran_fdist_pdf1x3nu13nu2"></span><span id="_CPPv217gsl_ran_fdist_pdf1x3nu13nu2"></span><span id="gsl_ran_fdist_pdf__x.nu1.nu2"></span><code class="descname">gsl_ran_fdist_pdf</code><span class="sig-paren">(</span>x, nu1, nu2<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv417gsl_ran_fdist_pdf1x3nu13nu2" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>This function computes the probability density <span class="math notranslate nohighlight">\(p(x)\)</span> at <span class="math notranslate nohighlight">\(x\)</span> for an
 F-distribution with <code class="docutils literal notranslate"><span class="pre">nu1</span></code> and <code class="docutils literal notranslate"><span class="pre">nu2</span></code> degrees of freedom, using
 the formula given above.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv315gsl_cdf_fdist_P1x3nu13nu2">
-<span id="_CPPv215gsl_cdf_fdist_P1x3nu13nu2"></span><span id="gsl_cdf_fdist_P__x.nu1.nu2"></span><code class="descname">gsl_cdf_fdist_P</code><span class="sig-paren">(</span>x, nu1, nu2<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv315gsl_cdf_fdist_P1x3nu13nu2" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv415gsl_cdf_fdist_P1x3nu13nu2">
+<span id="_CPPv315gsl_cdf_fdist_P1x3nu13nu2"></span><span id="_CPPv215gsl_cdf_fdist_P1x3nu13nu2"></span><span id="gsl_cdf_fdist_P__x.nu1.nu2"></span><code class="descname">gsl_cdf_fdist_P</code><span class="sig-paren">(</span>x, nu1, nu2<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv415gsl_cdf_fdist_P1x3nu13nu2" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="_CPPv315gsl_cdf_fdist_Q1x3nu13nu2">
-<span id="_CPPv215gsl_cdf_fdist_Q1x3nu13nu2"></span><span id="gsl_cdf_fdist_Q__x.nu1.nu2"></span><code class="descname">gsl_cdf_fdist_Q</code><span class="sig-paren">(</span>x, nu1, nu2<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv315gsl_cdf_fdist_Q1x3nu13nu2" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv415gsl_cdf_fdist_Q1x3nu13nu2">
+<span id="_CPPv315gsl_cdf_fdist_Q1x3nu13nu2"></span><span id="_CPPv215gsl_cdf_fdist_Q1x3nu13nu2"></span><span id="gsl_cdf_fdist_Q__x.nu1.nu2"></span><code class="descname">gsl_cdf_fdist_Q</code><span class="sig-paren">(</span>x, nu1, nu2<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv415gsl_cdf_fdist_Q1x3nu13nu2" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="_CPPv318gsl_cdf_fdist_Pinv1P3nu13nu2">
-<span id="_CPPv218gsl_cdf_fdist_Pinv1P3nu13nu2"></span><span id="gsl_cdf_fdist_Pinv__P.nu1.nu2"></span><code class="descname">gsl_cdf_fdist_Pinv</code><span class="sig-paren">(</span>P, nu1, nu2<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv318gsl_cdf_fdist_Pinv1P3nu13nu2" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv418gsl_cdf_fdist_Pinv1P3nu13nu2">
+<span id="_CPPv318gsl_cdf_fdist_Pinv1P3nu13nu2"></span><span id="_CPPv218gsl_cdf_fdist_Pinv1P3nu13nu2"></span><span id="gsl_cdf_fdist_Pinv__P.nu1.nu2"></span><code class="descname">gsl_cdf_fdist_Pinv</code><span class="sig-paren">(</span>P, nu1, nu2<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv418gsl_cdf_fdist_Pinv1P3nu13nu2" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="_CPPv318gsl_cdf_fdist_Qinv1Q3nu13nu2">
-<span id="_CPPv218gsl_cdf_fdist_Qinv1Q3nu13nu2"></span><span id="gsl_cdf_fdist_Qinv__Q.nu1.nu2"></span><code class="descname">gsl_cdf_fdist_Qinv</code><span class="sig-paren">(</span>Q, nu1, nu2<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv318gsl_cdf_fdist_Qinv1Q3nu13nu2" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv418gsl_cdf_fdist_Qinv1Q3nu13nu2">
+<span id="_CPPv318gsl_cdf_fdist_Qinv1Q3nu13nu2"></span><span id="_CPPv218gsl_cdf_fdist_Qinv1Q3nu13nu2"></span><span id="gsl_cdf_fdist_Qinv__Q.nu1.nu2"></span><code class="descname">gsl_cdf_fdist_Qinv</code><span class="sig-paren">(</span>Q, nu1, nu2<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv418gsl_cdf_fdist_Qinv1Q3nu13nu2" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>These functions compute the cumulative distribution functions
 <span class="math notranslate nohighlight">\(P(x), Q(x)\)</span> and their inverses for the F-distribution with
 <code class="docutils literal notranslate"><span class="pre">nu1</span></code> and <code class="docutils literal notranslate"><span class="pre">nu2</span></code> degrees of freedom.</p>
@@ -146,7 +147,7 @@ the formula given above.</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2015 AMPL Optimization, Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.4.
     </div>
 <!-- Google Analytics -->
 <script>

@@ -13,7 +13,8 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Gegenbauer Functions" href="gegenpoly.html" />
@@ -90,8 +91,8 @@ full and incomplete forms.</p>
 positive integer <span class="math notranslate nohighlight">\(n\)</span>. Further information on the Gamma function can
 be found in Abramowitz &amp; Stegun, Chapter 6.</p>
 <dl class="function">
-<dt id="_CPPv312gsl_sf_gamma1x">
-<span id="_CPPv212gsl_sf_gamma1x"></span><span id="gsl_sf_gamma__x"></span><code class="descname">gsl_sf_gamma</code><span class="sig-paren">(</span>x<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv312gsl_sf_gamma1x" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv412gsl_sf_gamma1x">
+<span id="_CPPv312gsl_sf_gamma1x"></span><span id="_CPPv212gsl_sf_gamma1x"></span><span id="gsl_sf_gamma__x"></span><code class="descname">gsl_sf_gamma</code><span class="sig-paren">(</span>x<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv412gsl_sf_gamma1x" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>This routine computes the Gamma function <span class="math notranslate nohighlight">\(\Gamma(x)\)</span>, subject to <span class="math notranslate nohighlight">\(x\)</span>
 not being a negative integer or zero. The function is computed using
 the real Lanczos method. The maximum value of <span class="math notranslate nohighlight">\(x\)</span> such that <span class="math notranslate nohighlight">\(\Gamma(x)\)</span>
@@ -99,8 +100,8 @@ is not considered an overflow is 171.0.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv314gsl_sf_lngamma1x">
-<span id="_CPPv214gsl_sf_lngamma1x"></span><span id="gsl_sf_lngamma__x"></span><code class="descname">gsl_sf_lngamma</code><span class="sig-paren">(</span>x<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv314gsl_sf_lngamma1x" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv414gsl_sf_lngamma1x">
+<span id="_CPPv314gsl_sf_lngamma1x"></span><span id="_CPPv214gsl_sf_lngamma1x"></span><span id="gsl_sf_lngamma__x"></span><code class="descname">gsl_sf_lngamma</code><span class="sig-paren">(</span>x<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv414gsl_sf_lngamma1x" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>This routine computes the logarithm of the Gamma function,
 <span class="math notranslate nohighlight">\(\log(\Gamma(x))\)</span>, subject to <span class="math notranslate nohighlight">\(x\)</span> not being a negative integer or zero.
 For <span class="math notranslate nohighlight">\(x&lt;0\)</span> the real part of <span class="math notranslate nohighlight">\(\log(\Gamma(x))\)</span> is returned, which is
@@ -109,8 +110,8 @@ real Lanczos method.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv316gsl_sf_gammastar1x">
-<span id="_CPPv216gsl_sf_gammastar1x"></span><span id="gsl_sf_gammastar__x"></span><code class="descname">gsl_sf_gammastar</code><span class="sig-paren">(</span>x<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv316gsl_sf_gammastar1x" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv416gsl_sf_gammastar1x">
+<span id="_CPPv316gsl_sf_gammastar1x"></span><span id="_CPPv216gsl_sf_gammastar1x"></span><span id="gsl_sf_gammastar__x"></span><code class="descname">gsl_sf_gammastar</code><span class="sig-paren">(</span>x<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv416gsl_sf_gammastar1x" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>This routine computes the regulated Gamma Function <span class="math notranslate nohighlight">\(\Gamma^*(x)\)</span> for
 <span class="math notranslate nohighlight">\(x &gt; 0\)</span>. The regulated gamma function is given by,</p>
 <div class="math notranslate nohighlight">
@@ -120,8 +121,8 @@ real Lanczos method.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv315gsl_sf_gammainv1x">
-<span id="_CPPv215gsl_sf_gammainv1x"></span><span id="gsl_sf_gammainv__x"></span><code class="descname">gsl_sf_gammainv</code><span class="sig-paren">(</span>x<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv315gsl_sf_gammainv1x" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv415gsl_sf_gammainv1x">
+<span id="_CPPv315gsl_sf_gammainv1x"></span><span id="_CPPv215gsl_sf_gammainv1x"></span><span id="gsl_sf_gammainv__x"></span><code class="descname">gsl_sf_gammainv</code><span class="sig-paren">(</span>x<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv415gsl_sf_gammainv1x" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>This routine computes the reciprocal of the gamma function,
 <span class="math notranslate nohighlight">\(1/\Gamma(x)\)</span> using the real Lanczos method.</p>
 </dd></dl>
@@ -130,8 +131,8 @@ real Lanczos method.</p>
 <div class="section" id="pochhammer-symbol">
 <h2>Pochhammer Symbol<a class="headerlink" href="#pochhammer-symbol" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
-<dt id="_CPPv311gsl_sf_poch1a1x">
-<span id="_CPPv211gsl_sf_poch1a1x"></span><span id="gsl_sf_poch__a.x"></span><code class="descname">gsl_sf_poch</code><span class="sig-paren">(</span>a, x<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv311gsl_sf_poch1a1x" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv411gsl_sf_poch1a1x">
+<span id="_CPPv311gsl_sf_poch1a1x"></span><span id="_CPPv211gsl_sf_poch1a1x"></span><span id="gsl_sf_poch__a.x"></span><code class="descname">gsl_sf_poch</code><span class="sig-paren">(</span>a, x<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv411gsl_sf_poch1a1x" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>This routine computes the <span class="target" id="index-1"></span>Pochhammer symbol
 <span class="math notranslate nohighlight">\((a)_x = \Gamma(a + x)/\Gamma(a)\)</span>. The Pochhammer symbol is also
 known as the Apell symbol and sometimes written as <span class="math notranslate nohighlight">\((a,x)\)</span>.
@@ -140,15 +141,15 @@ value of the ratio is returned.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv313gsl_sf_lnpoch1a1x">
-<span id="_CPPv213gsl_sf_lnpoch1a1x"></span><span id="gsl_sf_lnpoch__a.x"></span><code class="descname">gsl_sf_lnpoch</code><span class="sig-paren">(</span>a, x<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv313gsl_sf_lnpoch1a1x" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv413gsl_sf_lnpoch1a1x">
+<span id="_CPPv313gsl_sf_lnpoch1a1x"></span><span id="_CPPv213gsl_sf_lnpoch1a1x"></span><span id="gsl_sf_lnpoch__a.x"></span><code class="descname">gsl_sf_lnpoch</code><span class="sig-paren">(</span>a, x<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv413gsl_sf_lnpoch1a1x" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>This routine computes the logarithm of the Pochhammer symbol,
 <span class="math notranslate nohighlight">\(\log((a)_x) = \log(\Gamma(a + x)/\Gamma(a))\)</span>.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv314gsl_sf_pochrel1a1x">
-<span id="_CPPv214gsl_sf_pochrel1a1x"></span><span id="gsl_sf_pochrel__a.x"></span><code class="descname">gsl_sf_pochrel</code><span class="sig-paren">(</span>a, x<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv314gsl_sf_pochrel1a1x" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv414gsl_sf_pochrel1a1x">
+<span id="_CPPv314gsl_sf_pochrel1a1x"></span><span id="_CPPv214gsl_sf_pochrel1a1x"></span><span id="gsl_sf_pochrel__a.x"></span><code class="descname">gsl_sf_pochrel</code><span class="sig-paren">(</span>a, x<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv414gsl_sf_pochrel1a1x" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>This routine computes the relative Pochhammer symbol
 <span class="math notranslate nohighlight">\(((a)_x - 1)/x\)</span> where <span class="math notranslate nohighlight">\((a)_x = \Gamma(a + x)/\Gamma(a)\)</span>.</p>
 </dd></dl>
@@ -157,24 +158,24 @@ value of the ratio is returned.</p>
 <div class="section" id="incomplete-gamma-functions">
 <h2>Incomplete Gamma Functions<a class="headerlink" href="#incomplete-gamma-functions" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
-<dt id="_CPPv316gsl_sf_gamma_inc1a1x">
-<span id="_CPPv216gsl_sf_gamma_inc1a1x"></span><span id="gsl_sf_gamma_inc__a.x"></span><code class="descname">gsl_sf_gamma_inc</code><span class="sig-paren">(</span>a, x<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv316gsl_sf_gamma_inc1a1x" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv416gsl_sf_gamma_inc1a1x">
+<span id="_CPPv316gsl_sf_gamma_inc1a1x"></span><span id="_CPPv216gsl_sf_gamma_inc1a1x"></span><span id="gsl_sf_gamma_inc__a.x"></span><code class="descname">gsl_sf_gamma_inc</code><span class="sig-paren">(</span>a, x<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv416gsl_sf_gamma_inc1a1x" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>This routine computes the unnormalized incomplete <span class="target" id="index-2"></span>Gamma Function
 <span class="math notranslate nohighlight">\(\Gamma(a,x) = \int_x^\infty t^{a-1} \exp(-t) dt\)</span> for a real and
 <span class="math notranslate nohighlight">\(x \geq 0\)</span>.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv318gsl_sf_gamma_inc_Q1a1x">
-<span id="_CPPv218gsl_sf_gamma_inc_Q1a1x"></span><span id="gsl_sf_gamma_inc_Q__a.x"></span><code class="descname">gsl_sf_gamma_inc_Q</code><span class="sig-paren">(</span>a, x<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv318gsl_sf_gamma_inc_Q1a1x" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv418gsl_sf_gamma_inc_Q1a1x">
+<span id="_CPPv318gsl_sf_gamma_inc_Q1a1x"></span><span id="_CPPv218gsl_sf_gamma_inc_Q1a1x"></span><span id="gsl_sf_gamma_inc_Q__a.x"></span><code class="descname">gsl_sf_gamma_inc_Q</code><span class="sig-paren">(</span>a, x<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv418gsl_sf_gamma_inc_Q1a1x" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>This routine computes the normalized incomplete Gamma Function
 <span class="math notranslate nohighlight">\(Q(a,x) = 1/\Gamma(a) \int_x^\infty t^{a-1} \exp(-t) dt\)</span> for
 <span class="math notranslate nohighlight">\(a &gt; 0\)</span>, <span class="math notranslate nohighlight">\(x \geq 0\)</span>.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv318gsl_sf_gamma_inc_P1a1x">
-<span id="_CPPv218gsl_sf_gamma_inc_P1a1x"></span><span id="gsl_sf_gamma_inc_P__a.x"></span><code class="descname">gsl_sf_gamma_inc_P</code><span class="sig-paren">(</span>a, x<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv318gsl_sf_gamma_inc_P1a1x" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv418gsl_sf_gamma_inc_P1a1x">
+<span id="_CPPv318gsl_sf_gamma_inc_P1a1x"></span><span id="_CPPv218gsl_sf_gamma_inc_P1a1x"></span><span id="gsl_sf_gamma_inc_P__a.x"></span><code class="descname">gsl_sf_gamma_inc_P</code><span class="sig-paren">(</span>a, x<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv418gsl_sf_gamma_inc_P1a1x" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>This routine computes the complementary normalized incomplete
 Gamma Function</p>
 <div class="math notranslate nohighlight">
@@ -188,16 +189,16 @@ function (section 6.5).</p>
 <div class="section" id="beta-functions">
 <h2>Beta Functions<a class="headerlink" href="#beta-functions" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
-<dt id="_CPPv311gsl_sf_beta1a1b">
-<span id="_CPPv211gsl_sf_beta1a1b"></span><span id="gsl_sf_beta__a.b"></span><code class="descname">gsl_sf_beta</code><span class="sig-paren">(</span>a, b<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv311gsl_sf_beta1a1b" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv411gsl_sf_beta1a1b">
+<span id="_CPPv311gsl_sf_beta1a1b"></span><span id="_CPPv211gsl_sf_beta1a1b"></span><span id="gsl_sf_beta__a.b"></span><code class="descname">gsl_sf_beta</code><span class="sig-paren">(</span>a, b<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv411gsl_sf_beta1a1b" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>This routine computes the <span class="target" id="index-3"></span>Beta Function,
 <span class="math notranslate nohighlight">\(\operatorname{B}(a,b) = \Gamma(a)\Gamma(b)/\Gamma(a+b)\)</span>
 subject to <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> not being negative integers.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv313gsl_sf_lnbeta1a1b">
-<span id="_CPPv213gsl_sf_lnbeta1a1b"></span><span id="gsl_sf_lnbeta__a.b"></span><code class="descname">gsl_sf_lnbeta</code><span class="sig-paren">(</span>a, b<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv313gsl_sf_lnbeta1a1b" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv413gsl_sf_lnbeta1a1b">
+<span id="_CPPv313gsl_sf_lnbeta1a1b"></span><span id="_CPPv213gsl_sf_lnbeta1a1b"></span><span id="gsl_sf_lnbeta__a.b"></span><code class="descname">gsl_sf_lnbeta</code><span class="sig-paren">(</span>a, b<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv413gsl_sf_lnbeta1a1b" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>This routine computes the logarithm of the Beta Function,
 <span class="math notranslate nohighlight">\(\log(\operatorname{B}(a,b))\)</span> subject to <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> not being
 negative integers.</p>
@@ -207,8 +208,8 @@ negative integers.</p>
 <div class="section" id="incomplete-beta-function">
 <h2>Incomplete Beta Function<a class="headerlink" href="#incomplete-beta-function" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
-<dt id="_CPPv315gsl_sf_beta_inc1a1b1x">
-<span id="_CPPv215gsl_sf_beta_inc1a1b1x"></span><span id="gsl_sf_beta_inc__a.b.x"></span><code class="descname">gsl_sf_beta_inc</code><span class="sig-paren">(</span>a, b, x<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv315gsl_sf_beta_inc1a1b1x" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv415gsl_sf_beta_inc1a1b1x">
+<span id="_CPPv315gsl_sf_beta_inc1a1b1x"></span><span id="_CPPv215gsl_sf_beta_inc1a1b1x"></span><span id="gsl_sf_beta_inc__a.b.x"></span><code class="descname">gsl_sf_beta_inc</code><span class="sig-paren">(</span>a, b, x<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv415gsl_sf_beta_inc1a1b1x" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>This routine computes the normalized incomplete Beta function
 <span class="math notranslate nohighlight">\(I_x(a,b) = \operatorname{B}_x(a,b)/\operatorname{B}(a,b)\)</span> where
 <span class="math notranslate nohighlight">\(\operatorname{B}_x(a,b) = \int_0^x t^{a-1} (1-t)^{b-1} dt\)</span> for
@@ -248,7 +249,7 @@ using the relation</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2015 AMPL Optimization, Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.4.
     </div>
 <!-- Google Analytics -->
 <script>

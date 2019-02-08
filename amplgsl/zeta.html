@@ -13,7 +13,8 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="References and Further Reading" href="sf-refs.html" />
@@ -85,15 +86,15 @@ Section 23.2.</p>
 <p>The Riemann zeta function is defined by the infinite sum
 <span class="math notranslate nohighlight">\(\zeta(s) = \sum_{k=1}^\infty k^{-s}\)</span>.</p>
 <dl class="function">
-<dt id="_CPPv315gsl_sf_zeta_int1n">
-<span id="_CPPv215gsl_sf_zeta_int1n"></span><span id="gsl_sf_zeta_int__n"></span><code class="descname">gsl_sf_zeta_int</code><span class="sig-paren">(</span>n<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv315gsl_sf_zeta_int1n" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv415gsl_sf_zeta_int1n">
+<span id="_CPPv315gsl_sf_zeta_int1n"></span><span id="_CPPv215gsl_sf_zeta_int1n"></span><span id="gsl_sf_zeta_int__n"></span><code class="descname">gsl_sf_zeta_int</code><span class="sig-paren">(</span>n<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv415gsl_sf_zeta_int1n" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>This routine computes the Riemann zeta function <span class="math notranslate nohighlight">\(\zeta(n)\)</span> for integer
 <span class="math notranslate nohighlight">\(n, n \ne 1\)</span>.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv311gsl_sf_zeta1s">
-<span id="_CPPv211gsl_sf_zeta1s"></span><span id="gsl_sf_zeta__s"></span><code class="descname">gsl_sf_zeta</code><span class="sig-paren">(</span>s<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv311gsl_sf_zeta1s" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv411gsl_sf_zeta1s">
+<span id="_CPPv311gsl_sf_zeta1s"></span><span id="_CPPv211gsl_sf_zeta1s"></span><span id="gsl_sf_zeta__s"></span><code class="descname">gsl_sf_zeta</code><span class="sig-paren">(</span>s<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv411gsl_sf_zeta1s" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>This routine computes the Riemann zeta function <span class="math notranslate nohighlight">\(\zeta(s)\)</span> for arbitrary
 <span class="math notranslate nohighlight">\(s, s \ne 1\)</span>.</p>
 </dd></dl>
@@ -105,14 +106,14 @@ Section 23.2.</p>
 In this region the fractional part is interesting, and therefore we need
 a function to evaluate it explicitly.</p>
 <dl class="function">
-<dt id="_CPPv317gsl_sf_zetam1_int1n">
-<span id="_CPPv217gsl_sf_zetam1_int1n"></span><span id="gsl_sf_zetam1_int__n"></span><code class="descname">gsl_sf_zetam1_int</code><span class="sig-paren">(</span>n<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv317gsl_sf_zetam1_int1n" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv417gsl_sf_zetam1_int1n">
+<span id="_CPPv317gsl_sf_zetam1_int1n"></span><span id="_CPPv217gsl_sf_zetam1_int1n"></span><span id="gsl_sf_zetam1_int__n"></span><code class="descname">gsl_sf_zetam1_int</code><span class="sig-paren">(</span>n<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv417gsl_sf_zetam1_int1n" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>This routine computes <span class="math notranslate nohighlight">\(\zeta(n) - 1\)</span> for integer <span class="math notranslate nohighlight">\(n, n \ne 1\)</span>.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv313gsl_sf_zetam11s">
-<span id="_CPPv213gsl_sf_zetam11s"></span><span id="gsl_sf_zetam1__s"></span><code class="descname">gsl_sf_zetam1</code><span class="sig-paren">(</span>s<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv313gsl_sf_zetam11s" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv413gsl_sf_zetam11s">
+<span id="_CPPv313gsl_sf_zetam11s"></span><span id="_CPPv213gsl_sf_zetam11s"></span><span id="gsl_sf_zetam1__s"></span><code class="descname">gsl_sf_zetam1</code><span class="sig-paren">(</span>s<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv413gsl_sf_zetam11s" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>This routine computes <span class="math notranslate nohighlight">\(\zeta(s) - 1\)</span> for arbitrary <span class="math notranslate nohighlight">\(s, s \ne 1.\)</span>.</p>
 </dd></dl>
 
@@ -122,8 +123,8 @@ a function to evaluate it explicitly.</p>
 <p>The <span class="target" id="index-2"></span>Hurwitz zeta function is defined by
 <span class="math notranslate nohighlight">\(\zeta(s,q) = \sum_0^\infty (k+q)^{-s}\)</span>.</p>
 <dl class="function">
-<dt id="_CPPv312gsl_sf_hzeta1s1q">
-<span id="_CPPv212gsl_sf_hzeta1s1q"></span><span id="gsl_sf_hzeta__s.q"></span><code class="descname">gsl_sf_hzeta</code><span class="sig-paren">(</span>s, q<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv312gsl_sf_hzeta1s1q" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv412gsl_sf_hzeta1s1q">
+<span id="_CPPv312gsl_sf_hzeta1s1q"></span><span id="_CPPv212gsl_sf_hzeta1s1q"></span><span id="gsl_sf_hzeta__s.q"></span><code class="descname">gsl_sf_hzeta</code><span class="sig-paren">(</span>s, q<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv412gsl_sf_hzeta1s1q" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>This routine computes the Hurwitz zeta function <span class="math notranslate nohighlight">\(\zeta(s,q)\)</span> for
 <span class="math notranslate nohighlight">\(s &gt; 1, q &gt; 0\)</span>.</p>
 </dd></dl>
@@ -133,14 +134,14 @@ a function to evaluate it explicitly.</p>
 <h2>Eta Function<a class="headerlink" href="#eta-function" title="Permalink to this headline">¶</a></h2>
 <p>The <span class="target" id="index-3"></span>eta function is defined by <span class="math notranslate nohighlight">\(\eta(s) = (1-2^{1-s}) \zeta(s)\)</span>.</p>
 <dl class="function">
-<dt id="_CPPv314gsl_sf_eta_int1n">
-<span id="_CPPv214gsl_sf_eta_int1n"></span><span id="gsl_sf_eta_int__n"></span><code class="descname">gsl_sf_eta_int</code><span class="sig-paren">(</span>n<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv314gsl_sf_eta_int1n" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv414gsl_sf_eta_int1n">
+<span id="_CPPv314gsl_sf_eta_int1n"></span><span id="_CPPv214gsl_sf_eta_int1n"></span><span id="gsl_sf_eta_int__n"></span><code class="descname">gsl_sf_eta_int</code><span class="sig-paren">(</span>n<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv414gsl_sf_eta_int1n" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>This routine computes the eta function <span class="math notranslate nohighlight">\(\eta(n)\)</span> for integer <span class="math notranslate nohighlight">\(n\)</span>.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv310gsl_sf_eta1s">
-<span id="_CPPv210gsl_sf_eta1s"></span><span id="gsl_sf_eta__s"></span><code class="descname">gsl_sf_eta</code><span class="sig-paren">(</span>s<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv310gsl_sf_eta1s" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv410gsl_sf_eta1s">
+<span id="_CPPv310gsl_sf_eta1s"></span><span id="_CPPv210gsl_sf_eta1s"></span><span id="gsl_sf_eta__s"></span><code class="descname">gsl_sf_eta</code><span class="sig-paren">(</span>s<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv410gsl_sf_eta1s" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>This routine computes the eta function <span class="math notranslate nohighlight">\(\eta(s)\)</span> for arbitrary <span class="math notranslate nohighlight">\(s\)</span>.</p>
 </dd></dl>
 
@@ -173,7 +174,7 @@ a function to evaluate it explicitly.</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2015 AMPL Optimization, Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.4.
     </div>
 <!-- Google Analytics -->
 <script>

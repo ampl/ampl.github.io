@@ -13,7 +13,8 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="AMPL Bindings for the GNU Scientific Library" href="amplgsl/index.html" />
@@ -66,32 +67,32 @@
   <div class="section" id="optimization-problem">
 <h1>Optimization Problem<a class="headerlink" href="#optimization-problem" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
-<dt id="_CPPv3N2mp12BasicProblemE">
-<span id="_CPPv2N2mp12BasicProblemE"></span><span id="mp::BasicProblem"></span><span class="target" id="classmp_1_1BasicProblem"></span><em class="property">template </em>&lt;<em class="property">typename</em> Alloc&gt;<br /><em class="property">class </em><code class="descname">BasicProblem</code> : <em class="property">public</em> ExprFactory, <em class="property">public</em> SuffixManager<a class="headerlink" href="#_CPPv3N2mp12BasicProblemE" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv4N2mp12BasicProblemE">
+<span id="_CPPv3N2mp12BasicProblemE"></span><span id="_CPPv2N2mp12BasicProblemE"></span><span id="mp::BasicProblem"></span><span class="target" id="classmp_1_1BasicProblem"></span><em class="property">template </em>&lt;<em class="property">typename</em> Alloc&gt;<br /><em class="property">class </em><code class="descname">BasicProblem</code> : <em class="property">public</em> ExprFactory, <em class="property">public</em> SuffixManager<a class="headerlink" href="#_CPPv4N2mp12BasicProblemE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>An optimization problem. </p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Public Types</p>
 <dl class="type">
-<dt id="_CPPv3N2mp12BasicProblem8VarRangeE">
-<span id="_CPPv2N2mp12BasicProblem8VarRangeE"></span><span id="mp::BasicProblem::VarRange"></span><span class="target" id="classmp_1_1BasicProblem_1a457c010c6b041eb17931cfad469f7888"></span><em class="property">typedef </em><a class="reference internal" href="#_CPPv3N2mp12BasicProblem5RangeE" title="mp::BasicProblem::Range">Range</a>&lt;Variable&gt; <code class="descname">VarRange</code><a class="headerlink" href="#_CPPv3N2mp12BasicProblem8VarRangeE" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv4N2mp12BasicProblem8VarRangeE">
+<span id="_CPPv3N2mp12BasicProblem8VarRangeE"></span><span id="_CPPv2N2mp12BasicProblem8VarRangeE"></span><span id="mp::BasicProblem::VarRange"></span><span class="target" id="classmp_1_1BasicProblem_1a457c010c6b041eb17931cfad469f7888"></span><em class="property">typedef </em><a class="reference internal" href="#_CPPv4N2mp12BasicProblem5RangeE" title="mp::BasicProblem::Range">Range</a>&lt;Variable&gt; <code class="descname">VarRange</code><a class="headerlink" href="#_CPPv4N2mp12BasicProblem8VarRangeE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>A range of variables. </p>
 </dd></dl>
 
 <dl class="type">
-<dt id="_CPPv3N2mp12BasicProblem8ObjRangeE">
-<span id="_CPPv2N2mp12BasicProblem8ObjRangeE"></span><span id="mp::BasicProblem::ObjRange"></span><span class="target" id="classmp_1_1BasicProblem_1aa702522c332d5462fbb4a9a4428397b7"></span><em class="property">typedef </em><a class="reference internal" href="#_CPPv3N2mp12BasicProblem5RangeE" title="mp::BasicProblem::Range">Range</a>&lt;Objective&gt; <code class="descname">ObjRange</code><a class="headerlink" href="#_CPPv3N2mp12BasicProblem8ObjRangeE" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv4N2mp12BasicProblem8ObjRangeE">
+<span id="_CPPv3N2mp12BasicProblem8ObjRangeE"></span><span id="_CPPv2N2mp12BasicProblem8ObjRangeE"></span><span id="mp::BasicProblem::ObjRange"></span><span class="target" id="classmp_1_1BasicProblem_1aa702522c332d5462fbb4a9a4428397b7"></span><em class="property">typedef </em><a class="reference internal" href="#_CPPv4N2mp12BasicProblem5RangeE" title="mp::BasicProblem::Range">Range</a>&lt;Objective&gt; <code class="descname">ObjRange</code><a class="headerlink" href="#_CPPv4N2mp12BasicProblem8ObjRangeE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>A range of objectives. </p>
 </dd></dl>
 
 <dl class="type">
-<dt id="_CPPv3N2mp12BasicProblem17AlgebraicConRangeE">
-<span id="_CPPv2N2mp12BasicProblem17AlgebraicConRangeE"></span><span id="mp::BasicProblem::AlgebraicConRange"></span><span class="target" id="classmp_1_1BasicProblem_1a68093a572c9b65dca5fa4e59e3014b19"></span><em class="property">typedef </em><a class="reference internal" href="#_CPPv3N2mp12BasicProblem5RangeE" title="mp::BasicProblem::Range">Range</a>&lt;AlgebraicCon&gt; <code class="descname">AlgebraicConRange</code><a class="headerlink" href="#_CPPv3N2mp12BasicProblem17AlgebraicConRangeE" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv4N2mp12BasicProblem17AlgebraicConRangeE">
+<span id="_CPPv3N2mp12BasicProblem17AlgebraicConRangeE"></span><span id="_CPPv2N2mp12BasicProblem17AlgebraicConRangeE"></span><span id="mp::BasicProblem::AlgebraicConRange"></span><span class="target" id="classmp_1_1BasicProblem_1a68093a572c9b65dca5fa4e59e3014b19"></span><em class="property">typedef </em><a class="reference internal" href="#_CPPv4N2mp12BasicProblem5RangeE" title="mp::BasicProblem::Range">Range</a>&lt;AlgebraicCon&gt; <code class="descname">AlgebraicConRange</code><a class="headerlink" href="#_CPPv4N2mp12BasicProblem17AlgebraicConRangeE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>A range of algebraic constraints. </p>
 </dd></dl>
 
 <dl class="type">
-<dt id="_CPPv3N2mp12BasicProblem15LogicalConRangeE">
-<span id="_CPPv2N2mp12BasicProblem15LogicalConRangeE"></span><span id="mp::BasicProblem::LogicalConRange"></span><span class="target" id="classmp_1_1BasicProblem_1aaa4b8f299e7a05e26e7c27ccc9846f46"></span><em class="property">typedef </em><a class="reference internal" href="#_CPPv3N2mp12BasicProblem5RangeE" title="mp::BasicProblem::Range">Range</a>&lt;LogicalCon&gt; <code class="descname">LogicalConRange</code><a class="headerlink" href="#_CPPv3N2mp12BasicProblem15LogicalConRangeE" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv4N2mp12BasicProblem15LogicalConRangeE">
+<span id="_CPPv3N2mp12BasicProblem15LogicalConRangeE"></span><span id="_CPPv2N2mp12BasicProblem15LogicalConRangeE"></span><span id="mp::BasicProblem::LogicalConRange"></span><span class="target" id="classmp_1_1BasicProblem_1aaa4b8f299e7a05e26e7c27ccc9846f46"></span><em class="property">typedef </em><a class="reference internal" href="#_CPPv4N2mp12BasicProblem5RangeE" title="mp::BasicProblem::Range">Range</a>&lt;LogicalCon&gt; <code class="descname">LogicalConRange</code><a class="headerlink" href="#_CPPv4N2mp12BasicProblem15LogicalConRangeE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>A range of logical constraints. </p>
 </dd></dl>
 
@@ -99,44 +100,44 @@
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Public Functions</p>
 <dl class="function">
-<dt id="_CPPv3N2mp12BasicProblem12BasicProblemEv">
-<span id="_CPPv2N2mp12BasicProblem12BasicProblemEv"></span><span id="mp::BasicProblem::BasicProblem"></span><span class="target" id="classmp_1_1BasicProblem_1a84171916784e47d57e2ccdd921a037a5"></span><code class="descname">BasicProblem</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N2mp12BasicProblem12BasicProblemEv" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv4N2mp12BasicProblem12BasicProblemEv">
+<span id="_CPPv3N2mp12BasicProblem12BasicProblemEv"></span><span id="_CPPv2N2mp12BasicProblem12BasicProblemEv"></span><span id="mp::BasicProblem::BasicProblem"></span><span class="target" id="classmp_1_1BasicProblem_1a84171916784e47d57e2ccdd921a037a5"></span><code class="descname">BasicProblem</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2mp12BasicProblem12BasicProblemEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Constructs an empty optimization problem. </p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv3NK2mp12BasicProblem8num_varsEv">
-<span id="_CPPv2NK2mp12BasicProblem8num_varsEv"></span><span id="mp::BasicProblem::num_varsC"></span><span class="target" id="classmp_1_1BasicProblem_1aca9c981e2b983697ab4b81afcb612b1f"></span>int <code class="descname">num_vars</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK2mp12BasicProblem8num_varsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv4NK2mp12BasicProblem8num_varsEv">
+<span id="_CPPv3NK2mp12BasicProblem8num_varsEv"></span><span id="_CPPv2NK2mp12BasicProblem8num_varsEv"></span><span id="mp::BasicProblem::num_varsC"></span><span class="target" id="classmp_1_1BasicProblem_1aca9c981e2b983697ab4b81afcb612b1f"></span>int <code class="descname">num_vars</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK2mp12BasicProblem8num_varsEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Returns the number of variables. </p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv3NK2mp12BasicProblem8num_objsEv">
-<span id="_CPPv2NK2mp12BasicProblem8num_objsEv"></span><span id="mp::BasicProblem::num_objsC"></span><span class="target" id="classmp_1_1BasicProblem_1a126f8b3af51bbc4565a69939ae14d1d6"></span>int <code class="descname">num_objs</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK2mp12BasicProblem8num_objsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv4NK2mp12BasicProblem8num_objsEv">
+<span id="_CPPv3NK2mp12BasicProblem8num_objsEv"></span><span id="_CPPv2NK2mp12BasicProblem8num_objsEv"></span><span id="mp::BasicProblem::num_objsC"></span><span class="target" id="classmp_1_1BasicProblem_1a126f8b3af51bbc4565a69939ae14d1d6"></span>int <code class="descname">num_objs</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK2mp12BasicProblem8num_objsEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Returns the number of objectives. </p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv3NK2mp12BasicProblem18num_algebraic_consEv">
-<span id="_CPPv2NK2mp12BasicProblem18num_algebraic_consEv"></span><span id="mp::BasicProblem::num_algebraic_consC"></span><span class="target" id="classmp_1_1BasicProblem_1acc2aebe76b464d568652e6fd1c775adc"></span>int <code class="descname">num_algebraic_cons</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK2mp12BasicProblem18num_algebraic_consEv" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv4NK2mp12BasicProblem18num_algebraic_consEv">
+<span id="_CPPv3NK2mp12BasicProblem18num_algebraic_consEv"></span><span id="_CPPv2NK2mp12BasicProblem18num_algebraic_consEv"></span><span id="mp::BasicProblem::num_algebraic_consC"></span><span class="target" id="classmp_1_1BasicProblem_1acc2aebe76b464d568652e6fd1c775adc"></span>int <code class="descname">num_algebraic_cons</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK2mp12BasicProblem18num_algebraic_consEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Returns the number of algebraic constraints. </p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv3NK2mp12BasicProblem16num_logical_consEv">
-<span id="_CPPv2NK2mp12BasicProblem16num_logical_consEv"></span><span id="mp::BasicProblem::num_logical_consC"></span><span class="target" id="classmp_1_1BasicProblem_1a0b74f23ed2d9fd03a7b4dc1f40cac483"></span>int <code class="descname">num_logical_cons</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK2mp12BasicProblem16num_logical_consEv" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv4NK2mp12BasicProblem16num_logical_consEv">
+<span id="_CPPv3NK2mp12BasicProblem16num_logical_consEv"></span><span id="_CPPv2NK2mp12BasicProblem16num_logical_consEv"></span><span id="mp::BasicProblem::num_logical_consC"></span><span class="target" id="classmp_1_1BasicProblem_1a0b74f23ed2d9fd03a7b4dc1f40cac483"></span>int <code class="descname">num_logical_cons</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK2mp12BasicProblem16num_logical_consEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Returns the number of logical constraints. </p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv3NK2mp12BasicProblem16num_common_exprsEv">
-<span id="_CPPv2NK2mp12BasicProblem16num_common_exprsEv"></span><span id="mp::BasicProblem::num_common_exprsC"></span><span class="target" id="classmp_1_1BasicProblem_1a6ca2e27644bda4fc8da5b3a6d4428ba4"></span>int <code class="descname">num_common_exprs</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK2mp12BasicProblem16num_common_exprsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv4NK2mp12BasicProblem16num_common_exprsEv">
+<span id="_CPPv3NK2mp12BasicProblem16num_common_exprsEv"></span><span id="_CPPv2NK2mp12BasicProblem16num_common_exprsEv"></span><span id="mp::BasicProblem::num_common_exprsC"></span><span class="target" id="classmp_1_1BasicProblem_1a6ca2e27644bda4fc8da5b3a6d4428ba4"></span>int <code class="descname">num_common_exprs</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK2mp12BasicProblem16num_common_exprsEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Returns the number of common expressions. </p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv3NK2mp12BasicProblem4varsEv">
-<span id="_CPPv2NK2mp12BasicProblem4varsEv"></span><span id="mp::BasicProblem::varsC"></span><span class="target" id="classmp_1_1BasicProblem_1ac2f88b59bcf862d82512009ed359ebb8"></span><a class="reference internal" href="#_CPPv3N2mp12BasicProblem8VarRangeE" title="mp::BasicProblem::VarRange">VarRange</a> <code class="descname">vars</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK2mp12BasicProblem4varsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv4NK2mp12BasicProblem4varsEv">
+<span id="_CPPv3NK2mp12BasicProblem4varsEv"></span><span id="_CPPv2NK2mp12BasicProblem4varsEv"></span><span id="mp::BasicProblem::varsC"></span><span class="target" id="classmp_1_1BasicProblem_1ac2f88b59bcf862d82512009ed359ebb8"></span><a class="reference internal" href="#_CPPv4N2mp12BasicProblem8VarRangeE" title="mp::BasicProblem::VarRange">VarRange</a> <code class="descname">vars</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK2mp12BasicProblem4varsEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p><p>Returns a range representing all variables in this optimization problem.
 It can be used for iterating over variables:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">var</span><span class="p">:</span> <span class="n">problem</span><span class="p">.</span><span class="n">vars</span><span class="p">())</span> <span class="p">{</span>
@@ -148,8 +149,8 @@ It can be used for iterating over variables:</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv3NK2mp12BasicProblem4objsEv">
-<span id="_CPPv2NK2mp12BasicProblem4objsEv"></span><span id="mp::BasicProblem::objsC"></span><span class="target" id="classmp_1_1BasicProblem_1aa29dc561cca5c80affbc747e5923c1ba"></span><a class="reference internal" href="#_CPPv3N2mp12BasicProblem8ObjRangeE" title="mp::BasicProblem::ObjRange">ObjRange</a> <code class="descname">objs</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK2mp12BasicProblem4objsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv4NK2mp12BasicProblem4objsEv">
+<span id="_CPPv3NK2mp12BasicProblem4objsEv"></span><span id="_CPPv2NK2mp12BasicProblem4objsEv"></span><span id="mp::BasicProblem::objsC"></span><span class="target" id="classmp_1_1BasicProblem_1aa29dc561cca5c80affbc747e5923c1ba"></span><a class="reference internal" href="#_CPPv4N2mp12BasicProblem8ObjRangeE" title="mp::BasicProblem::ObjRange">ObjRange</a> <code class="descname">objs</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK2mp12BasicProblem4objsEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p><p>Returns a range representing all objectives in this optimization problem.
 It can be used for iterating over objectives:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">obj</span><span class="p">:</span> <span class="n">problem</span><span class="p">.</span><span class="n">objs</span><span class="p">())</span> <span class="p">{</span>
@@ -161,8 +162,8 @@ It can be used for iterating over objectives:</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv3NK2mp12BasicProblem14algebraic_consEv">
-<span id="_CPPv2NK2mp12BasicProblem14algebraic_consEv"></span><span id="mp::BasicProblem::algebraic_consC"></span><span class="target" id="classmp_1_1BasicProblem_1ac7d4d23b4426d91609a9eabe23ac6c74"></span><a class="reference internal" href="#_CPPv3N2mp12BasicProblem17AlgebraicConRangeE" title="mp::BasicProblem::AlgebraicConRange">AlgebraicConRange</a> <code class="descname">algebraic_cons</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK2mp12BasicProblem14algebraic_consEv" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv4NK2mp12BasicProblem14algebraic_consEv">
+<span id="_CPPv3NK2mp12BasicProblem14algebraic_consEv"></span><span id="_CPPv2NK2mp12BasicProblem14algebraic_consEv"></span><span id="mp::BasicProblem::algebraic_consC"></span><span class="target" id="classmp_1_1BasicProblem_1ac7d4d23b4426d91609a9eabe23ac6c74"></span><a class="reference internal" href="#_CPPv4N2mp12BasicProblem17AlgebraicConRangeE" title="mp::BasicProblem::AlgebraicConRange">AlgebraicConRange</a> <code class="descname">algebraic_cons</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK2mp12BasicProblem14algebraic_consEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p><p>Returns a range representing all algebraic constraints in this
 optimization problem. It can be used for iterating over algebraic
 constraints:</p>
@@ -175,8 +176,8 @@ constraints:</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv3NK2mp12BasicProblem12logical_consEv">
-<span id="_CPPv2NK2mp12BasicProblem12logical_consEv"></span><span id="mp::BasicProblem::logical_consC"></span><span class="target" id="classmp_1_1BasicProblem_1a5e1429c7089dfbfcb8fb4096ac1deede"></span><a class="reference internal" href="#_CPPv3N2mp12BasicProblem15LogicalConRangeE" title="mp::BasicProblem::LogicalConRange">LogicalConRange</a> <code class="descname">logical_cons</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK2mp12BasicProblem12logical_consEv" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv4NK2mp12BasicProblem12logical_consEv">
+<span id="_CPPv3NK2mp12BasicProblem12logical_consEv"></span><span id="_CPPv2NK2mp12BasicProblem12logical_consEv"></span><span id="mp::BasicProblem::logical_consC"></span><span class="target" id="classmp_1_1BasicProblem_1a5e1429c7089dfbfcb8fb4096ac1deede"></span><a class="reference internal" href="#_CPPv4N2mp12BasicProblem15LogicalConRangeE" title="mp::BasicProblem::LogicalConRange">LogicalConRange</a> <code class="descname">logical_cons</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK2mp12BasicProblem12logical_consEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p><p>Returns a range representing all logical constraints in this
 optimization problem. It can be used for iterating over logical
 constraints:</p>
@@ -190,20 +191,20 @@ constraints:</p>
 
 </div>
 <dl class="class">
-<dt id="_CPPv3N2mp12BasicProblem5RangeE">
-<span id="_CPPv2N2mp12BasicProblem5RangeE"></span><span id="mp::BasicProblem::Range"></span><span class="target" id="classmp_1_1BasicProblem_1_1Range"></span><em class="property">template </em>&lt;<em class="property">typename</em> T&gt;<br /><em class="property">class </em><code class="descname">Range</code><a class="headerlink" href="#_CPPv3N2mp12BasicProblem5RangeE" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv4N2mp12BasicProblem5RangeE">
+<span id="_CPPv3N2mp12BasicProblem5RangeE"></span><span id="_CPPv2N2mp12BasicProblem5RangeE"></span><span id="mp::BasicProblem::Range"></span><span class="target" id="classmp_1_1BasicProblem_1_1Range"></span><em class="property">template </em>&lt;<em class="property">typename</em> T&gt;<br /><em class="property">class </em><code class="descname">Range</code><a class="headerlink" href="#_CPPv4N2mp12BasicProblem5RangeE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>A pair of iterators to problem elements. </p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Public Functions</p>
 <dl class="function">
-<dt id="_CPPv3IENK2mp12BasicProblemI5AllocE5Range5beginEv">
-<span id="_CPPv2IENK2mp12BasicProblemI5AllocE5Range5beginEv"></span><span class="target" id="classmp_1_1BasicProblem_1_1Range_1a2ae41825782d805108870c43d555b48c"></span>template&lt;&gt;<br />iterator <code class="descname">begin</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3IENK2mp12BasicProblemI5AllocE5Range5beginEv" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv4IENK2mp12BasicProblemI5AllocE5Range5beginE8iteratorv">
+<span id="_CPPv3IENK2mp12BasicProblemI5AllocE5Range5beginEv"></span><span id="_CPPv2IENK2mp12BasicProblemI5AllocE5Range5beginEv"></span><span class="target" id="classmp_1_1BasicProblem_1_1Range_1a2ae41825782d805108870c43d555b48c"></span>template&lt;&gt;<br />iterator <code class="descname">begin</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4IENK2mp12BasicProblemI5AllocE5Range5beginE8iteratorv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Returns an iterator to the first element in the range. </p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv3IENK2mp12BasicProblemI5AllocE5Range3endEv">
-<span id="_CPPv2IENK2mp12BasicProblemI5AllocE5Range3endEv"></span><span class="target" id="classmp_1_1BasicProblem_1_1Range_1ab87a09d4788eb9ca20ca377c888d2def"></span>template&lt;&gt;<br />iterator <code class="descname">end</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3IENK2mp12BasicProblemI5AllocE5Range3endEv" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv4IENK2mp12BasicProblemI5AllocE5Range3endE8iteratorv">
+<span id="_CPPv3IENK2mp12BasicProblemI5AllocE5Range3endEv"></span><span id="_CPPv2IENK2mp12BasicProblemI5AllocE5Range3endEv"></span><span class="target" id="classmp_1_1BasicProblem_1_1Range_1ab87a09d4788eb9ca20ca377c888d2def"></span>template&lt;&gt;<br />iterator <code class="descname">end</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4IENK2mp12BasicProblemI5AllocE5Range3endE8iteratorv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Returns an iterator to the element following the last element in the range. </p>
 <p>An attempt to access this element will result in assertion failure if assertions are enabled and undefined behavior otherwise. </p>
 </dd></dl>
@@ -239,7 +240,7 @@ constraints:</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2015 AMPL Optimization, Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.4.
     </div>
 <!-- Google Analytics -->
 <script>

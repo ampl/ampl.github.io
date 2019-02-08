@@ -13,7 +13,8 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="The Hypergeometric Distribution" href="ran-hypergeometric.html" />
@@ -68,8 +69,8 @@
   <div class="section" id="the-geometric-distribution">
 <h1>The Geometric Distribution<a class="headerlink" href="#the-geometric-distribution" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
-<dt id="_CPPv317gsl_ran_geometric1p">
-<span id="_CPPv217gsl_ran_geometric1p"></span><span id="gsl_ran_geometric__p"></span><code class="descname">gsl_ran_geometric</code><span class="sig-paren">(</span>p<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv317gsl_ran_geometric1p" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv417gsl_ran_geometric1p">
+<span id="_CPPv317gsl_ran_geometric1p"></span><span id="_CPPv217gsl_ran_geometric1p"></span><span id="gsl_ran_geometric__p"></span><code class="descname">gsl_ran_geometric</code><span class="sig-paren">(</span>p<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv417gsl_ran_geometric1p" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>This function returns a random integer from the <span class="target" id="index-0"></span>geometric
 distribution, the number of independent trials with
 probability <code class="docutils literal notranslate"><span class="pre">p</span></code> until the first success. The probability
@@ -82,21 +83,21 @@ replaced by <span class="math notranslate nohighlight">\(k\)</span>.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv321gsl_ran_geometric_pdf1k1p">
-<span id="_CPPv221gsl_ran_geometric_pdf1k1p"></span><span id="gsl_ran_geometric_pdf__k.p"></span><code class="descname">gsl_ran_geometric_pdf</code><span class="sig-paren">(</span>k, p<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv321gsl_ran_geometric_pdf1k1p" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv421gsl_ran_geometric_pdf1k1p">
+<span id="_CPPv321gsl_ran_geometric_pdf1k1p"></span><span id="_CPPv221gsl_ran_geometric_pdf1k1p"></span><span id="gsl_ran_geometric_pdf__k.p"></span><code class="descname">gsl_ran_geometric_pdf</code><span class="sig-paren">(</span>k, p<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv421gsl_ran_geometric_pdf1k1p" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>This function computes the probability <span class="math notranslate nohighlight">\(p(k)\)</span> of obtaining <span class="math notranslate nohighlight">\(k\)</span> from
 a geometric distribution with probability parameter <code class="docutils literal notranslate"><span class="pre">p</span></code>, using the
 formula given above.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv319gsl_cdf_geometric_P1k1p">
-<span id="_CPPv219gsl_cdf_geometric_P1k1p"></span><span id="gsl_cdf_geometric_P__k.p"></span><code class="descname">gsl_cdf_geometric_P</code><span class="sig-paren">(</span>k, p<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv319gsl_cdf_geometric_P1k1p" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv419gsl_cdf_geometric_P1k1p">
+<span id="_CPPv319gsl_cdf_geometric_P1k1p"></span><span id="_CPPv219gsl_cdf_geometric_P1k1p"></span><span id="gsl_cdf_geometric_P__k.p"></span><code class="descname">gsl_cdf_geometric_P</code><span class="sig-paren">(</span>k, p<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv419gsl_cdf_geometric_P1k1p" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="_CPPv319gsl_cdf_geometric_Q1k1p">
-<span id="_CPPv219gsl_cdf_geometric_Q1k1p"></span><span id="gsl_cdf_geometric_Q__k.p"></span><code class="descname">gsl_cdf_geometric_Q</code><span class="sig-paren">(</span>k, p<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv319gsl_cdf_geometric_Q1k1p" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv419gsl_cdf_geometric_Q1k1p">
+<span id="_CPPv319gsl_cdf_geometric_Q1k1p"></span><span id="_CPPv219gsl_cdf_geometric_Q1k1p"></span><span id="gsl_cdf_geometric_Q__k.p"></span><code class="descname">gsl_cdf_geometric_Q</code><span class="sig-paren">(</span>k, p<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv419gsl_cdf_geometric_Q1k1p" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>These functions compute the cumulative distribution functions
 <span class="math notranslate nohighlight">\(P(k), Q(k)\)</span> for the geometric distribution with parameter <code class="docutils literal notranslate"><span class="pre">p</span></code>.</p>
 </dd></dl>
@@ -129,7 +130,7 @@ formula given above.</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2015 AMPL Optimization, Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.4.
     </div>
 <!-- Google Analytics -->
 <script>

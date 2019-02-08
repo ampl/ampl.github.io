@@ -13,7 +13,8 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Special Functions" href="special.html" />
@@ -67,32 +68,32 @@
   <div class="section" id="elementary-functions">
 <h1>Elementary Functions<a class="headerlink" href="#elementary-functions" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
-<dt id="_CPPv39gsl_log1p1x">
-<span id="_CPPv29gsl_log1p1x"></span><span id="gsl_log1p__x"></span><code class="descname">gsl_log1p</code><span class="sig-paren">(</span>x<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv39gsl_log1p1x" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv49gsl_log1p1x">
+<span id="_CPPv39gsl_log1p1x"></span><span id="_CPPv29gsl_log1p1x"></span><span id="gsl_log1p__x"></span><code class="descname">gsl_log1p</code><span class="sig-paren">(</span>x<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv49gsl_log1p1x" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>This function computes the value of <span class="math notranslate nohighlight">\(\log(1+x)\)</span> in a way that is
 accurate for small <span class="math notranslate nohighlight">\(x\)</span>. It provides an alternative to the BSD math
 function <code class="docutils literal notranslate"><span class="pre">log1p(x)</span></code>.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv39gsl_expm11x">
-<span id="_CPPv29gsl_expm11x"></span><span id="gsl_expm1__x"></span><code class="descname">gsl_expm1</code><span class="sig-paren">(</span>x<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv39gsl_expm11x" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv49gsl_expm11x">
+<span id="_CPPv39gsl_expm11x"></span><span id="_CPPv29gsl_expm11x"></span><span id="gsl_expm1__x"></span><code class="descname">gsl_expm1</code><span class="sig-paren">(</span>x<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv49gsl_expm11x" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>This function computes the value of <span class="math notranslate nohighlight">\(\exp(x)-1\)</span> in a way that is
 accurate for small <span class="math notranslate nohighlight">\(x\)</span>. It provides an alternative to the BSD math
 function <code class="docutils literal notranslate"><span class="pre">expm1(x)</span></code>.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv39gsl_hypot1x1y">
-<span id="_CPPv29gsl_hypot1x1y"></span><span id="gsl_hypot__x.y"></span><code class="descname">gsl_hypot</code><span class="sig-paren">(</span>x, y<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv39gsl_hypot1x1y" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv49gsl_hypot1x1y">
+<span id="_CPPv39gsl_hypot1x1y"></span><span id="_CPPv29gsl_hypot1x1y"></span><span id="gsl_hypot__x.y"></span><code class="descname">gsl_hypot</code><span class="sig-paren">(</span>x, y<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv49gsl_hypot1x1y" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>This function computes the value of <span class="math notranslate nohighlight">\(\sqrt{x^2 + y^2}\)</span> in a way that
 avoids overflow. It provides an alternative to the BSD math function
 <code class="docutils literal notranslate"><span class="pre">hypot(x,y)</span></code>.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv310gsl_hypot31x1y1z">
-<span id="_CPPv210gsl_hypot31x1y1z"></span><span id="gsl_hypot3__x.y.z"></span><code class="descname">gsl_hypot3</code><span class="sig-paren">(</span>x, y, z<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv310gsl_hypot31x1y1z" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv410gsl_hypot31x1y1z">
+<span id="_CPPv310gsl_hypot31x1y1z"></span><span id="_CPPv210gsl_hypot31x1y1z"></span><span id="gsl_hypot3__x.y.z"></span><code class="descname">gsl_hypot3</code><span class="sig-paren">(</span>x, y, z<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv410gsl_hypot31x1y1z" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>This function computes the value of <span class="math notranslate nohighlight">\(\sqrt{x^2 + y^2 + z^2}\)</span> in a way
 that avoids overflow.</p>
 </dd></dl>
@@ -124,7 +125,7 @@ that avoids overflow.</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2015 AMPL Optimization, Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.4.
     </div>
 <!-- Google Analytics -->
 <script>

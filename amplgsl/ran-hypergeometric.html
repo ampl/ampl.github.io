@@ -13,7 +13,8 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="The Logarithmic Distribution" href="ran-logarithmic.html" />
@@ -68,8 +69,8 @@
   <div class="section" id="the-hypergeometric-distribution">
 <h1>The Hypergeometric Distribution<a class="headerlink" href="#the-hypergeometric-distribution" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
-<dt id="_CPPv322gsl_ran_hypergeometric1p2n12n21t">
-<span id="_CPPv222gsl_ran_hypergeometric1p2n12n21t"></span><span id="gsl_ran_hypergeometric__p.n1.n2.t"></span><code class="descname">gsl_ran_hypergeometric</code><span class="sig-paren">(</span>p, n1, n2, t<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv322gsl_ran_hypergeometric1p2n12n21t" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv422gsl_ran_hypergeometric1p2n12n21t">
+<span id="_CPPv322gsl_ran_hypergeometric1p2n12n21t"></span><span id="_CPPv222gsl_ran_hypergeometric1p2n12n21t"></span><span id="gsl_ran_hypergeometric__p.n1.n2.t"></span><code class="descname">gsl_ran_hypergeometric</code><span class="sig-paren">(</span>p, n1, n2, t<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv422gsl_ran_hypergeometric1p2n12n21t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>This function returns a random integer from the <span class="target" id="index-0"></span>hypergeometric
 distribution. The probability distribution for hypergeometric
 random variates is,</p>
@@ -84,21 +85,21 @@ samples from the population without replacement.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv326gsl_ran_hypergeometric_pdf1k2n12n21t">
-<span id="_CPPv226gsl_ran_hypergeometric_pdf1k2n12n21t"></span><span id="gsl_ran_hypergeometric_pdf__k.n1.n2.t"></span><code class="descname">gsl_ran_hypergeometric_pdf</code><span class="sig-paren">(</span>k, n1, n2, t<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv326gsl_ran_hypergeometric_pdf1k2n12n21t" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv426gsl_ran_hypergeometric_pdf1k2n12n21t">
+<span id="_CPPv326gsl_ran_hypergeometric_pdf1k2n12n21t"></span><span id="_CPPv226gsl_ran_hypergeometric_pdf1k2n12n21t"></span><span id="gsl_ran_hypergeometric_pdf__k.n1.n2.t"></span><code class="descname">gsl_ran_hypergeometric_pdf</code><span class="sig-paren">(</span>k, n1, n2, t<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv426gsl_ran_hypergeometric_pdf1k2n12n21t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>This function computes the probability <span class="math notranslate nohighlight">\(p(k)\)</span> of obtaining <span class="math notranslate nohighlight">\(k\)</span> from
 a hypergeometric distribution with parameters <code class="docutils literal notranslate"><span class="pre">n1</span></code>, <code class="docutils literal notranslate"><span class="pre">n2</span></code>, <code class="docutils literal notranslate"><span class="pre">t</span></code>,
 using the formula given above.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv324gsl_cdf_hypergeometric_P1k2n12n21t">
-<span id="_CPPv224gsl_cdf_hypergeometric_P1k2n12n21t"></span><span id="gsl_cdf_hypergeometric_P__k.n1.n2.t"></span><code class="descname">gsl_cdf_hypergeometric_P</code><span class="sig-paren">(</span>k, n1, n2, t<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv324gsl_cdf_hypergeometric_P1k2n12n21t" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv424gsl_cdf_hypergeometric_P1k2n12n21t">
+<span id="_CPPv324gsl_cdf_hypergeometric_P1k2n12n21t"></span><span id="_CPPv224gsl_cdf_hypergeometric_P1k2n12n21t"></span><span id="gsl_cdf_hypergeometric_P__k.n1.n2.t"></span><code class="descname">gsl_cdf_hypergeometric_P</code><span class="sig-paren">(</span>k, n1, n2, t<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv424gsl_cdf_hypergeometric_P1k2n12n21t" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="_CPPv324gsl_cdf_hypergeometric_Q1k2n12n21t">
-<span id="_CPPv224gsl_cdf_hypergeometric_Q1k2n12n21t"></span><span id="gsl_cdf_hypergeometric_Q__k.n1.n2.t"></span><code class="descname">gsl_cdf_hypergeometric_Q</code><span class="sig-paren">(</span>k, n1, n2, t<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv324gsl_cdf_hypergeometric_Q1k2n12n21t" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv424gsl_cdf_hypergeometric_Q1k2n12n21t">
+<span id="_CPPv324gsl_cdf_hypergeometric_Q1k2n12n21t"></span><span id="_CPPv224gsl_cdf_hypergeometric_Q1k2n12n21t"></span><span id="gsl_cdf_hypergeometric_Q__k.n1.n2.t"></span><code class="descname">gsl_cdf_hypergeometric_Q</code><span class="sig-paren">(</span>k, n1, n2, t<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv424gsl_cdf_hypergeometric_Q1k2n12n21t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>These functions compute the cumulative distribution functions
 <span class="math notranslate nohighlight">\(P(k), Q(k)\)</span> for the hypergeometric distribution with parameters
 <code class="docutils literal notranslate"><span class="pre">n1</span></code>, <code class="docutils literal notranslate"><span class="pre">n2</span></code> and <code class="docutils literal notranslate"><span class="pre">t</span></code>.</p>
@@ -132,7 +133,7 @@ using the formula given above.</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2015 AMPL Optimization, Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.4.
     </div>
 <!-- Google Analytics -->
 <script>

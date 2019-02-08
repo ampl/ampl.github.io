@@ -13,7 +13,8 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="The Gaussian Tail Distribution" href="ran-gaussian-tail.html" />
@@ -68,8 +69,8 @@
   <div class="section" id="the-gaussian-distribution">
 <h1>The Gaussian Distribution<a class="headerlink" href="#the-gaussian-distribution" title="Permalink to this headline">¶</a></h1>
 <span class="target" id="index-0"></span><dl class="function">
-<dt id="_CPPv316gsl_ran_gaussian5sigma">
-<span id="_CPPv216gsl_ran_gaussian5sigma"></span><span id="gsl_ran_gaussian__sigma"></span><code class="descname">gsl_ran_gaussian</code><span class="sig-paren">(</span>sigma<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv316gsl_ran_gaussian5sigma" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv416gsl_ran_gaussian5sigma">
+<span id="_CPPv316gsl_ran_gaussian5sigma"></span><span id="_CPPv216gsl_ran_gaussian5sigma"></span><span id="gsl_ran_gaussian__sigma"></span><code class="descname">gsl_ran_gaussian</code><span class="sig-paren">(</span>sigma<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv416gsl_ran_gaussian5sigma" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>This function returns a <span class="target" id="index-1"></span>Gaussian random variate, with mean
 zero and standard deviation <code class="docutils literal notranslate"><span class="pre">sigma</span></code>. The probability distribution
 for Gaussian random variates is,</p>
@@ -83,85 +84,85 @@ generator.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv320gsl_ran_gaussian_pdf1x5sigma">
-<span id="_CPPv220gsl_ran_gaussian_pdf1x5sigma"></span><span id="gsl_ran_gaussian_pdf__x.sigma"></span><code class="descname">gsl_ran_gaussian_pdf</code><span class="sig-paren">(</span>x, sigma<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv320gsl_ran_gaussian_pdf1x5sigma" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv420gsl_ran_gaussian_pdf1x5sigma">
+<span id="_CPPv320gsl_ran_gaussian_pdf1x5sigma"></span><span id="_CPPv220gsl_ran_gaussian_pdf1x5sigma"></span><span id="gsl_ran_gaussian_pdf__x.sigma"></span><code class="descname">gsl_ran_gaussian_pdf</code><span class="sig-paren">(</span>x, sigma<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv420gsl_ran_gaussian_pdf1x5sigma" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>This function computes the probability density <span class="math notranslate nohighlight">\(p(x)\)</span> at <span class="math notranslate nohighlight">\(x\)</span> for a
 Gaussian distribution with standard deviation <code class="docutils literal notranslate"><span class="pre">sigma</span></code>, using the formula
 given above.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv325gsl_ran_gaussian_ziggurat5sigma">
-<span id="_CPPv225gsl_ran_gaussian_ziggurat5sigma"></span><span id="gsl_ran_gaussian_ziggurat__sigma"></span><code class="descname">gsl_ran_gaussian_ziggurat</code><span class="sig-paren">(</span>sigma<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv325gsl_ran_gaussian_ziggurat5sigma" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv425gsl_ran_gaussian_ziggurat5sigma">
+<span id="_CPPv325gsl_ran_gaussian_ziggurat5sigma"></span><span id="_CPPv225gsl_ran_gaussian_ziggurat5sigma"></span><span id="gsl_ran_gaussian_ziggurat__sigma"></span><code class="descname">gsl_ran_gaussian_ziggurat</code><span class="sig-paren">(</span>sigma<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv425gsl_ran_gaussian_ziggurat5sigma" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="_CPPv329gsl_ran_gaussian_ratio_method5sigma">
-<span id="_CPPv229gsl_ran_gaussian_ratio_method5sigma"></span><span id="gsl_ran_gaussian_ratio_method__sigma"></span><code class="descname">gsl_ran_gaussian_ratio_method</code><span class="sig-paren">(</span>sigma<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv329gsl_ran_gaussian_ratio_method5sigma" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv429gsl_ran_gaussian_ratio_method5sigma">
+<span id="_CPPv329gsl_ran_gaussian_ratio_method5sigma"></span><span id="_CPPv229gsl_ran_gaussian_ratio_method5sigma"></span><span id="gsl_ran_gaussian_ratio_method__sigma"></span><code class="descname">gsl_ran_gaussian_ratio_method</code><span class="sig-paren">(</span>sigma<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv429gsl_ran_gaussian_ratio_method5sigma" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>These functions compute a Gaussian random variate using the alternative
 Marsaglia-Tsang ziggurat and Kinderman-Monahan-Leva ratio methods.
 The Ziggurat algorithm is the fastest available algorithm in most cases.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv317gsl_ran_ugaussianv">
-<span id="_CPPv217gsl_ran_ugaussianv"></span><span id="gsl_ran_ugaussian"></span><code class="descname">gsl_ran_ugaussian</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv317gsl_ran_ugaussianv" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv417gsl_ran_ugaussianv">
+<span id="_CPPv317gsl_ran_ugaussianv"></span><span id="_CPPv217gsl_ran_ugaussianv"></span><span id="gsl_ran_ugaussian"></span><code class="descname">gsl_ran_ugaussian</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv417gsl_ran_ugaussianv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="_CPPv321gsl_ran_ugaussian_pdf1x">
-<span id="_CPPv221gsl_ran_ugaussian_pdf1x"></span><span id="gsl_ran_ugaussian_pdf__x"></span><code class="descname">gsl_ran_ugaussian_pdf</code><span class="sig-paren">(</span>x<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv321gsl_ran_ugaussian_pdf1x" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv421gsl_ran_ugaussian_pdf1x">
+<span id="_CPPv321gsl_ran_ugaussian_pdf1x"></span><span id="_CPPv221gsl_ran_ugaussian_pdf1x"></span><span id="gsl_ran_ugaussian_pdf__x"></span><code class="descname">gsl_ran_ugaussian_pdf</code><span class="sig-paren">(</span>x<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv421gsl_ran_ugaussian_pdf1x" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="_CPPv330gsl_ran_ugaussian_ratio_methodv">
-<span id="_CPPv230gsl_ran_ugaussian_ratio_methodv"></span><span id="gsl_ran_ugaussian_ratio_method"></span><code class="descname">gsl_ran_ugaussian_ratio_method</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv330gsl_ran_ugaussian_ratio_methodv" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv430gsl_ran_ugaussian_ratio_methodv">
+<span id="_CPPv330gsl_ran_ugaussian_ratio_methodv"></span><span id="_CPPv230gsl_ran_ugaussian_ratio_methodv"></span><span id="gsl_ran_ugaussian_ratio_method"></span><code class="descname">gsl_ran_ugaussian_ratio_method</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv430gsl_ran_ugaussian_ratio_methodv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>These functions compute results for the unit Gaussian distribution.
 They are equivalent to the functions above with a standard deviation
 of one, <code class="docutils literal notranslate"><span class="pre">sigma</span></code> = 1.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv318gsl_cdf_gaussian_P1x5sigma">
-<span id="_CPPv218gsl_cdf_gaussian_P1x5sigma"></span><span id="gsl_cdf_gaussian_P__x.sigma"></span><code class="descname">gsl_cdf_gaussian_P</code><span class="sig-paren">(</span>x, sigma<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv318gsl_cdf_gaussian_P1x5sigma" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv418gsl_cdf_gaussian_P1x5sigma">
+<span id="_CPPv318gsl_cdf_gaussian_P1x5sigma"></span><span id="_CPPv218gsl_cdf_gaussian_P1x5sigma"></span><span id="gsl_cdf_gaussian_P__x.sigma"></span><code class="descname">gsl_cdf_gaussian_P</code><span class="sig-paren">(</span>x, sigma<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv418gsl_cdf_gaussian_P1x5sigma" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="_CPPv318gsl_cdf_gaussian_Q1x5sigma">
-<span id="_CPPv218gsl_cdf_gaussian_Q1x5sigma"></span><span id="gsl_cdf_gaussian_Q__x.sigma"></span><code class="descname">gsl_cdf_gaussian_Q</code><span class="sig-paren">(</span>x, sigma<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv318gsl_cdf_gaussian_Q1x5sigma" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv418gsl_cdf_gaussian_Q1x5sigma">
+<span id="_CPPv318gsl_cdf_gaussian_Q1x5sigma"></span><span id="_CPPv218gsl_cdf_gaussian_Q1x5sigma"></span><span id="gsl_cdf_gaussian_Q__x.sigma"></span><code class="descname">gsl_cdf_gaussian_Q</code><span class="sig-paren">(</span>x, sigma<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv418gsl_cdf_gaussian_Q1x5sigma" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="_CPPv321gsl_cdf_gaussian_Pinv1P5sigma">
-<span id="_CPPv221gsl_cdf_gaussian_Pinv1P5sigma"></span><span id="gsl_cdf_gaussian_Pinv__P.sigma"></span><code class="descname">gsl_cdf_gaussian_Pinv</code><span class="sig-paren">(</span>P, sigma<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv321gsl_cdf_gaussian_Pinv1P5sigma" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv421gsl_cdf_gaussian_Pinv1P5sigma">
+<span id="_CPPv321gsl_cdf_gaussian_Pinv1P5sigma"></span><span id="_CPPv221gsl_cdf_gaussian_Pinv1P5sigma"></span><span id="gsl_cdf_gaussian_Pinv__P.sigma"></span><code class="descname">gsl_cdf_gaussian_Pinv</code><span class="sig-paren">(</span>P, sigma<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv421gsl_cdf_gaussian_Pinv1P5sigma" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="_CPPv321gsl_cdf_gaussian_Qinv1Q5sigma">
-<span id="_CPPv221gsl_cdf_gaussian_Qinv1Q5sigma"></span><span id="gsl_cdf_gaussian_Qinv__Q.sigma"></span><code class="descname">gsl_cdf_gaussian_Qinv</code><span class="sig-paren">(</span>Q, sigma<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv321gsl_cdf_gaussian_Qinv1Q5sigma" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv421gsl_cdf_gaussian_Qinv1Q5sigma">
+<span id="_CPPv321gsl_cdf_gaussian_Qinv1Q5sigma"></span><span id="_CPPv221gsl_cdf_gaussian_Qinv1Q5sigma"></span><span id="gsl_cdf_gaussian_Qinv__Q.sigma"></span><code class="descname">gsl_cdf_gaussian_Qinv</code><span class="sig-paren">(</span>Q, sigma<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv421gsl_cdf_gaussian_Qinv1Q5sigma" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>These functions compute the cumulative distribution functions
 <span class="math notranslate nohighlight">\(P(x), Q(x)\)</span> and their inverses for the Gaussian distribution with
 standard deviation <code class="docutils literal notranslate"><span class="pre">sigma</span></code>.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv319gsl_cdf_ugaussian_P1x">
-<span id="_CPPv219gsl_cdf_ugaussian_P1x"></span><span id="gsl_cdf_ugaussian_P__x"></span><code class="descname">gsl_cdf_ugaussian_P</code><span class="sig-paren">(</span>x<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv319gsl_cdf_ugaussian_P1x" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv419gsl_cdf_ugaussian_P1x">
+<span id="_CPPv319gsl_cdf_ugaussian_P1x"></span><span id="_CPPv219gsl_cdf_ugaussian_P1x"></span><span id="gsl_cdf_ugaussian_P__x"></span><code class="descname">gsl_cdf_ugaussian_P</code><span class="sig-paren">(</span>x<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv419gsl_cdf_ugaussian_P1x" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="_CPPv319gsl_cdf_ugaussian_Q1x">
-<span id="_CPPv219gsl_cdf_ugaussian_Q1x"></span><span id="gsl_cdf_ugaussian_Q__x"></span><code class="descname">gsl_cdf_ugaussian_Q</code><span class="sig-paren">(</span>x<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv319gsl_cdf_ugaussian_Q1x" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv419gsl_cdf_ugaussian_Q1x">
+<span id="_CPPv319gsl_cdf_ugaussian_Q1x"></span><span id="_CPPv219gsl_cdf_ugaussian_Q1x"></span><span id="gsl_cdf_ugaussian_Q__x"></span><code class="descname">gsl_cdf_ugaussian_Q</code><span class="sig-paren">(</span>x<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv419gsl_cdf_ugaussian_Q1x" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="_CPPv322gsl_cdf_ugaussian_Pinv1P">
-<span id="_CPPv222gsl_cdf_ugaussian_Pinv1P"></span><span id="gsl_cdf_ugaussian_Pinv__P"></span><code class="descname">gsl_cdf_ugaussian_Pinv</code><span class="sig-paren">(</span>P<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv322gsl_cdf_ugaussian_Pinv1P" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv422gsl_cdf_ugaussian_Pinv1P">
+<span id="_CPPv322gsl_cdf_ugaussian_Pinv1P"></span><span id="_CPPv222gsl_cdf_ugaussian_Pinv1P"></span><span id="gsl_cdf_ugaussian_Pinv__P"></span><code class="descname">gsl_cdf_ugaussian_Pinv</code><span class="sig-paren">(</span>P<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv422gsl_cdf_ugaussian_Pinv1P" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="_CPPv322gsl_cdf_ugaussian_Qinv1Q">
-<span id="_CPPv222gsl_cdf_ugaussian_Qinv1Q"></span><span id="gsl_cdf_ugaussian_Qinv__Q"></span><code class="descname">gsl_cdf_ugaussian_Qinv</code><span class="sig-paren">(</span>Q<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv322gsl_cdf_ugaussian_Qinv1Q" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv422gsl_cdf_ugaussian_Qinv1Q">
+<span id="_CPPv322gsl_cdf_ugaussian_Qinv1Q"></span><span id="_CPPv222gsl_cdf_ugaussian_Qinv1Q"></span><span id="gsl_cdf_ugaussian_Qinv__Q"></span><code class="descname">gsl_cdf_ugaussian_Qinv</code><span class="sig-paren">(</span>Q<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv422gsl_cdf_ugaussian_Qinv1Q" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>These functions compute the cumulative distribution functions
 <span class="math notranslate nohighlight">\(P(x), Q(x)\)</span> and their inverses for the unit Gaussian distribution.</p>
 </dd></dl>
@@ -194,7 +195,7 @@ standard deviation <code class="docutils literal notranslate"><span class="pre">
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2015 AMPL Optimization, Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.4.
     </div>
 <!-- Google Analytics -->
 <script>

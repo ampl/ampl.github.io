@@ -13,7 +13,8 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Exponential Integrals" href="expint.html" />
@@ -78,16 +79,16 @@
 <p>The <span class="target" id="index-0"></span>error function is described in Abramowitz &amp; Stegun,
 Chapter 7.</p>
 <dl class="function">
-<dt id="_CPPv310gsl_sf_erf1x">
-<span id="_CPPv210gsl_sf_erf1x"></span><span id="gsl_sf_erf__x"></span><code class="descname">gsl_sf_erf</code><span class="sig-paren">(</span>x<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv310gsl_sf_erf1x" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv410gsl_sf_erf1x">
+<span id="_CPPv310gsl_sf_erf1x"></span><span id="_CPPv210gsl_sf_erf1x"></span><span id="gsl_sf_erf__x"></span><code class="descname">gsl_sf_erf</code><span class="sig-paren">(</span>x<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv410gsl_sf_erf1x" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>This routine computes the error function <span class="math notranslate nohighlight">\(\operatorname{erf}(x)\)</span>, where</p>
 <div class="math notranslate nohighlight">
 \[\operatorname{erf}(x) = (2/\sqrt{\pi}) \int_0^x \exp(-t^2) dt.\]</div>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv311gsl_sf_erfc1x">
-<span id="_CPPv211gsl_sf_erfc1x"></span><span id="gsl_sf_erfc__x"></span><code class="descname">gsl_sf_erfc</code><span class="sig-paren">(</span>x<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv311gsl_sf_erfc1x" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv411gsl_sf_erfc1x">
+<span id="_CPPv311gsl_sf_erfc1x"></span><span id="_CPPv211gsl_sf_erfc1x"></span><span id="gsl_sf_erfc__x"></span><code class="descname">gsl_sf_erfc</code><span class="sig-paren">(</span>x<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv411gsl_sf_erfc1x" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>This routine computes the complementary error function</p>
 <div class="math notranslate nohighlight">
 \[\operatorname{erfc}(x) = 1 - \operatorname{erf}(x) =
@@ -95,8 +96,8 @@ Chapter 7.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv315gsl_sf_log_erfc1x">
-<span id="_CPPv215gsl_sf_log_erfc1x"></span><span id="gsl_sf_log_erfc__x"></span><code class="descname">gsl_sf_log_erfc</code><span class="sig-paren">(</span>x<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv315gsl_sf_log_erfc1x" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv415gsl_sf_log_erfc1x">
+<span id="_CPPv315gsl_sf_log_erfc1x"></span><span id="_CPPv215gsl_sf_log_erfc1x"></span><span id="gsl_sf_log_erfc__x"></span><code class="descname">gsl_sf_log_erfc</code><span class="sig-paren">(</span>x<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv415gsl_sf_log_erfc1x" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>This routine computes the logarithm of the complementary error function
 <span class="math notranslate nohighlight">\(\log(\operatorname{erfc}(x))\)</span>.</p>
 </dd></dl>
@@ -106,15 +107,15 @@ Chapter 7.</p>
 <p>The probability functions for the Normal or Gaussian distribution are
 described in Abramowitz &amp; Stegun, Section 26.2.</p>
 <dl class="function">
-<dt id="_CPPv312gsl_sf_erf_Z1x">
-<span id="_CPPv212gsl_sf_erf_Z1x"></span><span id="gsl_sf_erf_Z__x"></span><code class="descname">gsl_sf_erf_Z</code><span class="sig-paren">(</span>x<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv312gsl_sf_erf_Z1x" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv412gsl_sf_erf_Z1x">
+<span id="_CPPv312gsl_sf_erf_Z1x"></span><span id="_CPPv212gsl_sf_erf_Z1x"></span><span id="gsl_sf_erf_Z__x"></span><code class="descname">gsl_sf_erf_Z</code><span class="sig-paren">(</span>x<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv412gsl_sf_erf_Z1x" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>This routine computes the Gaussian probability density function
 <span class="math notranslate nohighlight">\(Z(x) = (1/\sqrt{2\pi}) \exp(-x^2/2)\)</span>.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv312gsl_sf_erf_Q1x">
-<span id="_CPPv212gsl_sf_erf_Q1x"></span><span id="gsl_sf_erf_Q__x"></span><code class="descname">gsl_sf_erf_Q</code><span class="sig-paren">(</span>x<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv312gsl_sf_erf_Q1x" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv412gsl_sf_erf_Q1x">
+<span id="_CPPv312gsl_sf_erf_Q1x"></span><span id="_CPPv212gsl_sf_erf_Q1x"></span><span id="gsl_sf_erf_Q__x"></span><code class="descname">gsl_sf_erf_Q</code><span class="sig-paren">(</span>x<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv412gsl_sf_erf_Q1x" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>This routine computes the upper tail of the Gaussian probability
 function <span class="math notranslate nohighlight">\(Q(x) = (1/\sqrt{2\pi}) \int_x^\infty \exp(-t^2/2) dt\)</span>.</p>
 </dd></dl>
@@ -127,8 +128,8 @@ inverse Mills’ ratio, is defined as,</p>
 <p>It decreases rapidly as <span class="math notranslate nohighlight">\(x\)</span> approaches <span class="math notranslate nohighlight">\(-\infty\)</span> and asymptotes
 to <span class="math notranslate nohighlight">\(h(x) \sim x\)</span> as <span class="math notranslate nohighlight">\(x\)</span> approaches <span class="math notranslate nohighlight">\(+\infty\)</span>.</p>
 <dl class="function">
-<dt id="_CPPv313gsl_sf_hazard1x">
-<span id="_CPPv213gsl_sf_hazard1x"></span><span id="gsl_sf_hazard__x"></span><code class="descname">gsl_sf_hazard</code><span class="sig-paren">(</span>x<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv313gsl_sf_hazard1x" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv413gsl_sf_hazard1x">
+<span id="_CPPv313gsl_sf_hazard1x"></span><span id="_CPPv213gsl_sf_hazard1x"></span><span id="gsl_sf_hazard__x"></span><code class="descname">gsl_sf_hazard</code><span class="sig-paren">(</span>x<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv413gsl_sf_hazard1x" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>This routine computes the hazard function for the normal distribution.</p>
 </dd></dl>
 
@@ -161,7 +162,7 @@ to <span class="math notranslate nohighlight">\(h(x) \sim x\)</span> as <span cl
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2015 AMPL Optimization, Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.4.
     </div>
 <!-- Google Analytics -->
 <script>

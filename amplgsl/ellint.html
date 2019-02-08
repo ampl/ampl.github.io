@@ -13,7 +13,8 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Error Functions" href="erf.html" />
@@ -113,24 +114,24 @@ RJ(x,y,z,p) = 3/2 \int_0^\infty
 <div class="section" id="legendre-form-of-complete-elliptic-integrals">
 <h2>Legendre Form of Complete Elliptic Integrals<a class="headerlink" href="#legendre-form-of-complete-elliptic-integrals" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
-<dt id="_CPPv319gsl_sf_ellint_Kcomp1k">
-<span id="_CPPv219gsl_sf_ellint_Kcomp1k"></span><span id="gsl_sf_ellint_Kcomp__k"></span><code class="descname">gsl_sf_ellint_Kcomp</code><span class="sig-paren">(</span>k<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv319gsl_sf_ellint_Kcomp1k" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv419gsl_sf_ellint_Kcomp1k">
+<span id="_CPPv319gsl_sf_ellint_Kcomp1k"></span><span id="_CPPv219gsl_sf_ellint_Kcomp1k"></span><span id="gsl_sf_ellint_Kcomp__k"></span><code class="descname">gsl_sf_ellint_Kcomp</code><span class="sig-paren">(</span>k<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv419gsl_sf_ellint_Kcomp1k" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>This routine computes the complete elliptic integral <span class="math notranslate nohighlight">\(K(k)\)</span>.
 Note that Abramowitz &amp; Stegun define this function in terms
 of the parameter <span class="math notranslate nohighlight">\(m = k^2\)</span>.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv319gsl_sf_ellint_Ecomp1k">
-<span id="_CPPv219gsl_sf_ellint_Ecomp1k"></span><span id="gsl_sf_ellint_Ecomp__k"></span><code class="descname">gsl_sf_ellint_Ecomp</code><span class="sig-paren">(</span>k<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv319gsl_sf_ellint_Ecomp1k" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv419gsl_sf_ellint_Ecomp1k">
+<span id="_CPPv319gsl_sf_ellint_Ecomp1k"></span><span id="_CPPv219gsl_sf_ellint_Ecomp1k"></span><span id="gsl_sf_ellint_Ecomp__k"></span><code class="descname">gsl_sf_ellint_Ecomp</code><span class="sig-paren">(</span>k<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv419gsl_sf_ellint_Ecomp1k" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>This routine computes the complete elliptic integral <span class="math notranslate nohighlight">\(E(k)\)</span>.
 Note that Abramowitz &amp; Stegun define this function in terms
 of the parameter <span class="math notranslate nohighlight">\(m = k^2\)</span>.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv319gsl_sf_ellint_Pcomp1k1n">
-<span id="_CPPv219gsl_sf_ellint_Pcomp1k1n"></span><span id="gsl_sf_ellint_Pcomp__k.n"></span><code class="descname">gsl_sf_ellint_Pcomp</code><span class="sig-paren">(</span>k, n<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv319gsl_sf_ellint_Pcomp1k1n" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv419gsl_sf_ellint_Pcomp1k1n">
+<span id="_CPPv319gsl_sf_ellint_Pcomp1k1n"></span><span id="_CPPv219gsl_sf_ellint_Pcomp1k1n"></span><span id="gsl_sf_ellint_Pcomp__k.n"></span><code class="descname">gsl_sf_ellint_Pcomp</code><span class="sig-paren">(</span>k, n<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv419gsl_sf_ellint_Pcomp1k1n" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>This routine computes the complete elliptic integral <span class="math notranslate nohighlight">\(\Pi(k,n)\)</span>.
 Note that Abramowitz &amp; Stegun define this function in terms
 of the parameters <span class="math notranslate nohighlight">\(m = k^2\)</span> and <span class="math notranslate nohighlight">\(\sin^2(\alpha) = k^2\)</span>, with the
@@ -141,24 +142,24 @@ change of sign <span class="math notranslate nohighlight">\(n \to -n\)</span>.</
 <div class="section" id="legendre-form-of-incomplete-elliptic-integrals">
 <h2>Legendre Form of Incomplete Elliptic Integrals<a class="headerlink" href="#legendre-form-of-incomplete-elliptic-integrals" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
-<dt id="_CPPv315gsl_sf_ellint_F3phi1k">
-<span id="_CPPv215gsl_sf_ellint_F3phi1k"></span><span id="gsl_sf_ellint_F__phi.k"></span><code class="descname">gsl_sf_ellint_F</code><span class="sig-paren">(</span>phi, k<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv315gsl_sf_ellint_F3phi1k" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv415gsl_sf_ellint_F3phi1k">
+<span id="_CPPv315gsl_sf_ellint_F3phi1k"></span><span id="_CPPv215gsl_sf_ellint_F3phi1k"></span><span id="gsl_sf_ellint_F__phi.k"></span><code class="descname">gsl_sf_ellint_F</code><span class="sig-paren">(</span>phi, k<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv415gsl_sf_ellint_F3phi1k" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>This routine computes the incomplete elliptic integral <span class="math notranslate nohighlight">\(F(\phi,k)\)</span>.
 Note that Abramowitz &amp; Stegun define this function in terms of the
 parameter <span class="math notranslate nohighlight">\(m = k^2\)</span>.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv315gsl_sf_ellint_E3phi1k">
-<span id="_CPPv215gsl_sf_ellint_E3phi1k"></span><span id="gsl_sf_ellint_E__phi.k"></span><code class="descname">gsl_sf_ellint_E</code><span class="sig-paren">(</span>phi, k<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv315gsl_sf_ellint_E3phi1k" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv415gsl_sf_ellint_E3phi1k">
+<span id="_CPPv315gsl_sf_ellint_E3phi1k"></span><span id="_CPPv215gsl_sf_ellint_E3phi1k"></span><span id="gsl_sf_ellint_E__phi.k"></span><code class="descname">gsl_sf_ellint_E</code><span class="sig-paren">(</span>phi, k<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv415gsl_sf_ellint_E3phi1k" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>This routine computes the incomplete elliptic integral <span class="math notranslate nohighlight">\(E(\phi,k)\)</span>.
 Note that Abramowitz &amp; Stegun define this function in terms of the
 parameter <span class="math notranslate nohighlight">\(m = k^2\)</span>.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv315gsl_sf_ellint_P3phi1k1n">
-<span id="_CPPv215gsl_sf_ellint_P3phi1k1n"></span><span id="gsl_sf_ellint_P__phi.k.n"></span><code class="descname">gsl_sf_ellint_P</code><span class="sig-paren">(</span>phi, k, n<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv315gsl_sf_ellint_P3phi1k1n" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv415gsl_sf_ellint_P3phi1k1n">
+<span id="_CPPv315gsl_sf_ellint_P3phi1k1n"></span><span id="_CPPv215gsl_sf_ellint_P3phi1k1n"></span><span id="gsl_sf_ellint_P__phi.k.n"></span><code class="descname">gsl_sf_ellint_P</code><span class="sig-paren">(</span>phi, k, n<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv415gsl_sf_ellint_P3phi1k1n" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>This routine computes the incomplete elliptic integral <span class="math notranslate nohighlight">\(\Pi(\phi,k,n)\)</span>.
 Note that Abramowitz &amp; Stegun define this function in terms of the
 parameters <span class="math notranslate nohighlight">\(m = k^2\)</span> and <span class="math notranslate nohighlight">\(\sin^2(\alpha) = k^2\)</span>, with the change of
@@ -166,8 +167,8 @@ sign <span class="math notranslate nohighlight">\(n \to -n\)</span>.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv315gsl_sf_ellint_D3phi1k">
-<span id="_CPPv215gsl_sf_ellint_D3phi1k"></span><span id="gsl_sf_ellint_D__phi.k"></span><code class="descname">gsl_sf_ellint_D</code><span class="sig-paren">(</span>phi, k<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv315gsl_sf_ellint_D3phi1k" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv415gsl_sf_ellint_D3phi1k">
+<span id="_CPPv315gsl_sf_ellint_D3phi1k"></span><span id="_CPPv215gsl_sf_ellint_D3phi1k"></span><span id="gsl_sf_ellint_D__phi.k"></span><code class="descname">gsl_sf_ellint_D</code><span class="sig-paren">(</span>phi, k<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv415gsl_sf_ellint_D3phi1k" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>This routine computes the incomplete elliptic integral <span class="math notranslate nohighlight">\(D(\phi,k)\)</span>
 which is defined through the Carlson form <span class="math notranslate nohighlight">\(RD(x,y,z)\)</span> by the following
 relation,</p>
@@ -180,26 +181,26 @@ relation,</p>
 <div class="section" id="carlson-forms">
 <h2>Carlson Forms<a class="headerlink" href="#carlson-forms" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
-<dt id="_CPPv316gsl_sf_ellint_RC1x1y">
-<span id="_CPPv216gsl_sf_ellint_RC1x1y"></span><span id="gsl_sf_ellint_RC__x.y"></span><code class="descname">gsl_sf_ellint_RC</code><span class="sig-paren">(</span>x, y<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv316gsl_sf_ellint_RC1x1y" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv416gsl_sf_ellint_RC1x1y">
+<span id="_CPPv316gsl_sf_ellint_RC1x1y"></span><span id="_CPPv216gsl_sf_ellint_RC1x1y"></span><span id="gsl_sf_ellint_RC__x.y"></span><code class="descname">gsl_sf_ellint_RC</code><span class="sig-paren">(</span>x, y<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv416gsl_sf_ellint_RC1x1y" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>This routine computes the incomplete elliptic integral <span class="math notranslate nohighlight">\(RC(x,y)\)</span>.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv316gsl_sf_ellint_RD1x1y1z">
-<span id="_CPPv216gsl_sf_ellint_RD1x1y1z"></span><span id="gsl_sf_ellint_RD__x.y.z"></span><code class="descname">gsl_sf_ellint_RD</code><span class="sig-paren">(</span>x, y, z<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv316gsl_sf_ellint_RD1x1y1z" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv416gsl_sf_ellint_RD1x1y1z">
+<span id="_CPPv316gsl_sf_ellint_RD1x1y1z"></span><span id="_CPPv216gsl_sf_ellint_RD1x1y1z"></span><span id="gsl_sf_ellint_RD__x.y.z"></span><code class="descname">gsl_sf_ellint_RD</code><span class="sig-paren">(</span>x, y, z<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv416gsl_sf_ellint_RD1x1y1z" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>This routine computes the incomplete elliptic integral <span class="math notranslate nohighlight">\(RD(x,y,z)\)</span>.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv316gsl_sf_ellint_RF1x1y1z">
-<span id="_CPPv216gsl_sf_ellint_RF1x1y1z"></span><span id="gsl_sf_ellint_RF__x.y.z"></span><code class="descname">gsl_sf_ellint_RF</code><span class="sig-paren">(</span>x, y, z<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv316gsl_sf_ellint_RF1x1y1z" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv416gsl_sf_ellint_RF1x1y1z">
+<span id="_CPPv316gsl_sf_ellint_RF1x1y1z"></span><span id="_CPPv216gsl_sf_ellint_RF1x1y1z"></span><span id="gsl_sf_ellint_RF__x.y.z"></span><code class="descname">gsl_sf_ellint_RF</code><span class="sig-paren">(</span>x, y, z<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv416gsl_sf_ellint_RF1x1y1z" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>This routine computes the incomplete elliptic integral <span class="math notranslate nohighlight">\(RF(x,y,z)\)</span>.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv316gsl_sf_ellint_RJ1x1y1z1p">
-<span id="_CPPv216gsl_sf_ellint_RJ1x1y1z1p"></span><span id="gsl_sf_ellint_RJ__x.y.z.p"></span><code class="descname">gsl_sf_ellint_RJ</code><span class="sig-paren">(</span>x, y, z, p<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv316gsl_sf_ellint_RJ1x1y1z1p" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv416gsl_sf_ellint_RJ1x1y1z1p">
+<span id="_CPPv316gsl_sf_ellint_RJ1x1y1z1p"></span><span id="_CPPv216gsl_sf_ellint_RJ1x1y1z1p"></span><span id="gsl_sf_ellint_RJ__x.y.z.p"></span><code class="descname">gsl_sf_ellint_RJ</code><span class="sig-paren">(</span>x, y, z, p<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv416gsl_sf_ellint_RJ1x1y1z1p" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>This routine computes the incomplete elliptic integral <span class="math notranslate nohighlight">\(RJ(x,y,z,p)\)</span>.</p>
 </dd></dl>
 
@@ -232,7 +233,7 @@ relation,</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2015 AMPL Optimization, Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.4.
     </div>
 <!-- Google Analytics -->
 <script>

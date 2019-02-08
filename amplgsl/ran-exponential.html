@@ -13,7 +13,8 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="The Laplace Distribution" href="ran-laplace.html" />
@@ -68,8 +69,8 @@
   <div class="section" id="the-exponential-distribution">
 <h1>The Exponential Distribution<a class="headerlink" href="#the-exponential-distribution" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
-<dt id="_CPPv319gsl_ran_exponential2mu">
-<span id="_CPPv219gsl_ran_exponential2mu"></span><span id="gsl_ran_exponential__mu"></span><code class="descname">gsl_ran_exponential</code><span class="sig-paren">(</span>mu<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv319gsl_ran_exponential2mu" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv419gsl_ran_exponential2mu">
+<span id="_CPPv319gsl_ran_exponential2mu"></span><span id="_CPPv219gsl_ran_exponential2mu"></span><span id="gsl_ran_exponential__mu"></span><code class="descname">gsl_ran_exponential</code><span class="sig-paren">(</span>mu<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv419gsl_ran_exponential2mu" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>This function returns a random variate from the <span class="target" id="index-0"></span>exponential
 distribution with mean <code class="docutils literal notranslate"><span class="pre">mu</span></code>. The distribution is,</p>
 <div class="math notranslate nohighlight">
@@ -78,30 +79,30 @@ distribution with mean <code class="docutils literal notranslate"><span class="p
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv323gsl_ran_exponential_pdf1x2mu">
-<span id="_CPPv223gsl_ran_exponential_pdf1x2mu"></span><span id="gsl_ran_exponential_pdf__x.mu"></span><code class="descname">gsl_ran_exponential_pdf</code><span class="sig-paren">(</span>x, mu<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv323gsl_ran_exponential_pdf1x2mu" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv423gsl_ran_exponential_pdf1x2mu">
+<span id="_CPPv323gsl_ran_exponential_pdf1x2mu"></span><span id="_CPPv223gsl_ran_exponential_pdf1x2mu"></span><span id="gsl_ran_exponential_pdf__x.mu"></span><code class="descname">gsl_ran_exponential_pdf</code><span class="sig-paren">(</span>x, mu<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv423gsl_ran_exponential_pdf1x2mu" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>This function computes the probability density <span class="math notranslate nohighlight">\(p(x)\)</span> at <span class="math notranslate nohighlight">\(x\)</span> for an
 exponential distribution with mean <code class="docutils literal notranslate"><span class="pre">mu</span></code>, using the formula given above.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv321gsl_cdf_exponential_P1x2mu">
-<span id="_CPPv221gsl_cdf_exponential_P1x2mu"></span><span id="gsl_cdf_exponential_P__x.mu"></span><code class="descname">gsl_cdf_exponential_P</code><span class="sig-paren">(</span>x, mu<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv321gsl_cdf_exponential_P1x2mu" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv421gsl_cdf_exponential_P1x2mu">
+<span id="_CPPv321gsl_cdf_exponential_P1x2mu"></span><span id="_CPPv221gsl_cdf_exponential_P1x2mu"></span><span id="gsl_cdf_exponential_P__x.mu"></span><code class="descname">gsl_cdf_exponential_P</code><span class="sig-paren">(</span>x, mu<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv421gsl_cdf_exponential_P1x2mu" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="_CPPv321gsl_cdf_exponential_Q1x2mu">
-<span id="_CPPv221gsl_cdf_exponential_Q1x2mu"></span><span id="gsl_cdf_exponential_Q__x.mu"></span><code class="descname">gsl_cdf_exponential_Q</code><span class="sig-paren">(</span>x, mu<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv321gsl_cdf_exponential_Q1x2mu" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv421gsl_cdf_exponential_Q1x2mu">
+<span id="_CPPv321gsl_cdf_exponential_Q1x2mu"></span><span id="_CPPv221gsl_cdf_exponential_Q1x2mu"></span><span id="gsl_cdf_exponential_Q__x.mu"></span><code class="descname">gsl_cdf_exponential_Q</code><span class="sig-paren">(</span>x, mu<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv421gsl_cdf_exponential_Q1x2mu" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="_CPPv324gsl_cdf_exponential_Pinv1P2mu">
-<span id="_CPPv224gsl_cdf_exponential_Pinv1P2mu"></span><span id="gsl_cdf_exponential_Pinv__P.mu"></span><code class="descname">gsl_cdf_exponential_Pinv</code><span class="sig-paren">(</span>P, mu<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv324gsl_cdf_exponential_Pinv1P2mu" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv424gsl_cdf_exponential_Pinv1P2mu">
+<span id="_CPPv324gsl_cdf_exponential_Pinv1P2mu"></span><span id="_CPPv224gsl_cdf_exponential_Pinv1P2mu"></span><span id="gsl_cdf_exponential_Pinv__P.mu"></span><code class="descname">gsl_cdf_exponential_Pinv</code><span class="sig-paren">(</span>P, mu<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv424gsl_cdf_exponential_Pinv1P2mu" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="_CPPv324gsl_cdf_exponential_Qinv1Q2mu">
-<span id="_CPPv224gsl_cdf_exponential_Qinv1Q2mu"></span><span id="gsl_cdf_exponential_Qinv__Q.mu"></span><code class="descname">gsl_cdf_exponential_Qinv</code><span class="sig-paren">(</span>Q, mu<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv324gsl_cdf_exponential_Qinv1Q2mu" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv424gsl_cdf_exponential_Qinv1Q2mu">
+<span id="_CPPv324gsl_cdf_exponential_Qinv1Q2mu"></span><span id="_CPPv224gsl_cdf_exponential_Qinv1Q2mu"></span><span id="gsl_cdf_exponential_Qinv__Q.mu"></span><code class="descname">gsl_cdf_exponential_Qinv</code><span class="sig-paren">(</span>Q, mu<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv424gsl_cdf_exponential_Qinv1Q2mu" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>These functions compute the cumulative distribution functions
 <span class="math notranslate nohighlight">\(P(x), Q(x)\)</span> and their inverses for the exponential distribution
 with mean <code class="docutils literal notranslate"><span class="pre">mu</span></code>.</p>
@@ -135,7 +136,7 @@ with mean <code class="docutils literal notranslate"><span class="pre">mu</span>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2015 AMPL Optimization, Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.4.
     </div>
 <!-- Google Analytics -->
 <script>
