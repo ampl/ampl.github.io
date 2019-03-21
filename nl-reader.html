@@ -101,8 +101,8 @@ AMPL Solver Library</li>
 </ul>
 <p><a class="reference external" href="https://github.com/ampl/mp/blob/master/src/nl-example.cc">nl-example.cc</a>
 gives a few examples of how to use the NL reader.</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">mp/nl.h</span></code> header only contains declarations of <a class="reference internal" href="#_CPPv4N2mp12ReadNLStringE11NLStringRefR7HandlerN3fmt10CStringRefEi" title="mp::ReadNLString"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">mp::ReadNLString()</span></code></a> and
-<a class="reference internal" href="#_CPPv4N2mp10ReadNLFileEN3fmt10CStringRefER7Handleri" title="mp::ReadNLFile"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">mp::ReadNLFile()</span></code></a>, and can be used to read standard optimization problem objects,
+<p>The <code class="docutils literal notranslate"><span class="pre">mp/nl.h</span></code> header only contains declarations of <a class="reference internal" href="#_CPPv4I0EN2mp12ReadNLStringEv11NLStringRefR7HandlerN3fmt10CStringRefEi" title="mp::ReadNLString"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">mp::ReadNLString()</span></code></a> and
+<a class="reference internal" href="#_CPPv4I0EN2mp10ReadNLFileEvN3fmt10CStringRefER7Handleri" title="mp::ReadNLFile"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">mp::ReadNLFile()</span></code></a>, and can be used to read standard optimization problem objects,
 for example:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;mp/nl.h&quot;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&quot;mp/problem.h&quot;</span><span class="cp"></span>
@@ -115,13 +115,13 @@ for example:</p>
 Note that <code class="docutils literal notranslate"><span class="pre">mp/nl.h</span></code> is a much smaller header than <code class="docutils literal notranslate"><span class="pre">mp/nl-reader.h</span></code> so prefer
 it unless you need access to the full NL reader API.</p>
 <dl class="function">
-<dt id="_CPPv4N2mp10ReadNLFileEN3fmt10CStringRefER7Handleri">
-<span id="_CPPv3N2mp10ReadNLFileEN3fmt10CStringRefER7Handleri"></span><span id="_CPPv2N2mp10ReadNLFileEN3fmt10CStringRefER7Handleri"></span><span id="mp::ReadNLFile__fmt::CStringRef.HandlerR.i"></span><em class="property">template </em>&lt;<em class="property">typename</em> Handler&gt;<br /><span class="target" id="namespacemp_1a0add09a6269093f88c5414f3cb243630"></span>void <code class="descclassname">mp<code class="descclassname">::</code></code><code class="descname">ReadNLFile</code><span class="sig-paren">(</span>fmt::CStringRef <em>filename</em>, Handler &amp;<em>handler</em>, int <em>flags</em> = 0<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2mp10ReadNLFileEN3fmt10CStringRefER7Handleri" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv4I0EN2mp10ReadNLFileEvN3fmt10CStringRefER7Handleri">
+<span id="_CPPv3I0EN2mp10ReadNLFileEN3fmt10CStringRefER7Handleri"></span><span id="_CPPv2I0EN2mp10ReadNLFileEN3fmt10CStringRefER7Handleri"></span><span class="target" id="namespacemp_1a0add09a6269093f88c5414f3cb243630"></span>template&lt;typename <code class="descname">Handler</code>&gt;<br />void <code class="descclassname">mp<code class="descclassname">::</code></code><code class="descname">ReadNLFile</code><span class="sig-paren">(</span>fmt::CStringRef <em>filename</em>, <a class="reference internal" href="#_CPPv4I0EN2mp10ReadNLFileEvN3fmt10CStringRefER7Handleri" title="mp::ReadNLFile::Handler">Handler</a> &amp;<em>handler</em>, int <em>flags</em> = 0<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN2mp10ReadNLFileEvN3fmt10CStringRefER7Handleri" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p><p>Reads an optimization problem in the NL format from the file <em>filename</em>
 and sends notifications of the problem components to the <em>handler</em> object.
 The handler class can be one of the following</p>
 <ul class="simple">
-<li>derived from <a class="reference internal" href="#_CPPv4N2mp9NLHandlerE" title="mp::NLHandler"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">mp::NLHandler</span></code></a> or <a class="reference internal" href="#_CPPv4N2mp13NullNLHandlerE" title="mp::NullNLHandler"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">mp::NullNLHandler</span></code></a>,</li>
+<li>derived from <code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">mp::NLHandler</span></code> or <code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">mp::NullNLHandler</span></code>,</li>
 <li><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">mp::Problem</span></code>,</li>
 <li>provide an interface compatible with one of the above.</li>
 </ul>
@@ -149,13 +149,13 @@ nonlinear expressions.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv4N2mp12ReadNLStringE11NLStringRefR7HandlerN3fmt10CStringRefEi">
-<span id="_CPPv3N2mp12ReadNLStringE11NLStringRefR7HandlerN3fmt10CStringRefEi"></span><span id="_CPPv2N2mp12ReadNLStringE11NLStringRefR7HandlerN3fmt10CStringRefEi"></span><span id="mp::ReadNLString__NLStringRef.HandlerR.fmt::CStringRef.i"></span><em class="property">template </em>&lt;<em class="property">typename</em> Handler&gt;<br /><span class="target" id="namespacemp_1a87bc5d784051391d1dda66f9f07a5444"></span>void <code class="descclassname">mp<code class="descclassname">::</code></code><code class="descname">ReadNLString</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N2mp11NLStringRefE" title="mp::NLStringRef">NLStringRef</a> <em>str</em>, Handler &amp;<em>handler</em>, fmt::CStringRef <em>name</em> = &quot;(input)&quot;, int <em>flags</em> = 0<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2mp12ReadNLStringE11NLStringRefR7HandlerN3fmt10CStringRefEi" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv4I0EN2mp12ReadNLStringEv11NLStringRefR7HandlerN3fmt10CStringRefEi">
+<span id="_CPPv3I0EN2mp12ReadNLStringE11NLStringRefR7HandlerN3fmt10CStringRefEi"></span><span id="_CPPv2I0EN2mp12ReadNLStringE11NLStringRefR7HandlerN3fmt10CStringRefEi"></span><span class="target" id="namespacemp_1a87bc5d784051391d1dda66f9f07a5444"></span>template&lt;typename <code class="descname">Handler</code>&gt;<br />void <code class="descclassname">mp<code class="descclassname">::</code></code><code class="descname">ReadNLString</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N2mp11NLStringRefE" title="mp::NLStringRef">NLStringRef</a> <em>str</em>, <a class="reference internal" href="#_CPPv4I0EN2mp12ReadNLStringEv11NLStringRefR7HandlerN3fmt10CStringRefEi" title="mp::ReadNLString::Handler">Handler</a> &amp;<em>handler</em>, fmt::CStringRef <em>name</em> = &quot;(input)&quot;, int <em>flags</em> = 0<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN2mp12ReadNLStringEv11NLStringRefR7HandlerN3fmt10CStringRefEi" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p><p>Reads an optimization problem in the NL format from the string <em>str</em>
 and sends notifications of the problem components to the <em>handler</em> object.
 The handler class can be one of the following</p>
 <ul class="simple">
-<li>derived from <a class="reference internal" href="#_CPPv4N2mp9NLHandlerE" title="mp::NLHandler"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">mp::NLHandler</span></code></a> or <a class="reference internal" href="#_CPPv4N2mp13NullNLHandlerE" title="mp::NullNLHandler"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">mp::NullNLHandler</span></code></a>,</li>
+<li>derived from <code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">mp::NLHandler</span></code> or <code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">mp::NullNLHandler</span></code>,</li>
 <li><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">mp::Problem</span></code>,</li>
 <li>provide an interface compatible with one of the above.</li>
 </ul>
@@ -211,13 +211,13 @@ the size with <code class="docutils literal notranslate"><span class="pre">std::
 </dd></dl>
 
 <dl class="class">
-<dt id="_CPPv4N2mp9NLHandlerE">
-<span id="_CPPv3N2mp9NLHandlerE"></span><span id="_CPPv2N2mp9NLHandlerE"></span><span id="mp::NLHandler"></span><span class="target" id="classmp_1_1NLHandler"></span><em class="property">template </em>&lt;typename <em>Impl</em>, typename <em>ExprType</em>&gt;<br /><em class="property">class </em><code class="descname">NLHandler</code><a class="headerlink" href="#_CPPv4N2mp9NLHandlerE" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv4I00EN2mp9NLHandlerE">
+<span id="_CPPv3I00EN2mp9NLHandlerE"></span><span id="_CPPv2I00EN2mp9NLHandlerE"></span><span class="target" id="classmp_1_1NLHandler"></span>template&lt;typename <code class="descname">Impl</code>, typename <code class="descname">ExprType</code>&gt;<br /><em class="property">class </em><code class="descname">NLHandler</code><a class="headerlink" href="#_CPPv4I00EN2mp9NLHandlerE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p><p>An NL handler.</p>
-<p><a class="reference internal" href="#_CPPv4N2mp9NLHandlerE" title="mp::NLHandler"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">NLHandler</span></code></a> can be used as a base class for other handlers. Subclasses
+<p><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">NLHandler</span></code> can be used as a base class for other handlers. Subclasses
 only need to redefine methods that handle constructs they are interested
 in and, possibly, the types used by these methods.</p>
-<p><em>Impl</em> is a type derived from <a class="reference internal" href="#_CPPv4N2mp9NLHandlerE" title="mp::NLHandler"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">NLHandler</span></code></a> that will receive notifications
+<p><em>Impl</em> is a type derived from <code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">NLHandler</span></code> that will receive notifications
 of unhandled constructs via <a class="reference internal" href="#_CPPv4N2mp9NLHandler11OnUnhandledEPKc" title="mp::NLHandler::OnUnhandled"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">OnUnhandled()</span></code></a>.</p>
 <p><em>ExprType</em> is a return type of expression handler methods such as
 <a class="reference internal" href="#_CPPv4N2mp9NLHandler7OnUnaryEN4expr4KindE11NumericExpr" title="mp::NLHandler::OnUnary"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">OnUnary()</span></code></a> useful for building expression objects. If not used
@@ -722,8 +722,8 @@ The <em>value</em> argument is a string value and it is not null-terminated.</p>
 <dt id="_CPPv4N2mp9NLHandler10ArgHandlerE">
 <span id="_CPPv3N2mp9NLHandler10ArgHandlerE"></span><span id="_CPPv2N2mp9NLHandler10ArgHandlerE"></span><span id="mp::NLHandler::ArgHandler"></span><span class="target" id="structmp_1_1NLHandler_1_1ArgHandler"></span><em class="property">struct </em><code class="descname">ArgHandler</code><a class="headerlink" href="#_CPPv4N2mp9NLHandler10ArgHandlerE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p><p>A class (struct) that receives notifications of expression arguments.
-All argument handlers in <a class="reference internal" href="#_CPPv4N2mp9NLHandlerE" title="mp::NLHandler"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">mp::NLHandler</span></code></a> are typedefs of this class, but
-subclasses of <a class="reference internal" href="#_CPPv4N2mp9NLHandlerE" title="mp::NLHandler"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">mp::NLHandler</span></code></a> may define them as different classes.</p>
+All argument handlers in <code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">mp::NLHandler</span></code> are typedefs of this class, but
+subclasses of <code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">mp::NLHandler</span></code> may define them as different classes.</p>
  </p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Public Functions</p>
@@ -822,10 +822,10 @@ subclasses of <a class="reference internal" href="#_CPPv4N2mp9NLHandlerE" title=
 </dd></dl>
 
 <dl class="class">
-<dt id="_CPPv4N2mp13NullNLHandlerE">
-<span id="_CPPv3N2mp13NullNLHandlerE"></span><span id="_CPPv2N2mp13NullNLHandlerE"></span><span id="mp::NullNLHandler"></span><span class="target" id="classmp_1_1NullNLHandler"></span><em class="property">template </em>&lt;typename <em>ExprType</em>&gt;<br /><em class="property">class </em><code class="descname">NullNLHandler</code> : <em class="property">public</em> mp::<a class="reference internal" href="#_CPPv4N2mp9NLHandlerE" title="mp::NLHandler">NLHandler</a>&lt;<a class="reference internal" href="#_CPPv4N2mp13NullNLHandlerE" title="mp::NullNLHandler">NullNLHandler</a>&lt;ExprType&gt;, ExprType&gt;<a class="headerlink" href="#_CPPv4N2mp13NullNLHandlerE" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv4I0EN2mp13NullNLHandlerE">
+<span id="_CPPv3I0EN2mp13NullNLHandlerE"></span><span id="_CPPv2I0EN2mp13NullNLHandlerE"></span><span class="target" id="classmp_1_1NullNLHandler"></span>template&lt;typename <code class="descname">ExprType</code>&gt;<br /><em class="property">class </em><code class="descname">NullNLHandler</code> : <em class="property">public</em> mp::NLHandler&lt;<a class="reference internal" href="#_CPPv4I0EN2mp13NullNLHandlerE" title="mp::NullNLHandler">NullNLHandler</a>&lt;<a class="reference internal" href="#_CPPv4I0EN2mp13NullNLHandlerE" title="mp::NullNLHandler::ExprType">ExprType</a>&gt;, <a class="reference internal" href="#_CPPv4I0EN2mp13NullNLHandlerE" title="mp::NullNLHandler::ExprType">ExprType</a>&gt;<a class="headerlink" href="#_CPPv4I0EN2mp13NullNLHandlerE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p><p>An NL handler that ignores all input.</p>
-<p><a class="reference internal" href="#_CPPv4N2mp13NullNLHandlerE" title="mp::NullNLHandler"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">NullNLHandler</span></code></a> can be used as a base class when only a subset of
+<p><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">NullNLHandler</span></code> can be used as a base class when only a subset of
 constructs needs to be handled. Unhandled constructs will be ignored, not
 reported.</p>
 <p><em>ExprType</em> is a return type of expression handler methods such as
@@ -853,9 +853,9 @@ variables and constraints, and the input format.</p>
  </p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Public Types</p>
-<dl class="type">
+<dl class="enum">
 <dt id="_CPPv4N2mp8NLHeader6FormatE">
-<span id="_CPPv3N2mp8NLHeader6FormatE"></span><span id="_CPPv2N2mp8NLHeader6FormatE"></span><span id="mp::NLHeader::Format"></span><span class="target" id="structmp_1_1NLHeader_1aa4af347bb776d9d1d54c3f8a1fddb482"></span><em class="property">enum </em><code class="descname">Format</code><a class="headerlink" href="#_CPPv4N2mp8NLHeader6FormatE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2mp8NLHeader6FormatE"></span><span id="_CPPv2N2mp8NLHeader6FormatE"></span><span class="target" id="structmp_1_1NLHeader_1aa4af347bb776d9d1d54c3f8a1fddb482"></span><em class="property">enum </em><code class="descname">Format</code><a class="headerlink" href="#_CPPv4N2mp8NLHeader6FormatE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Input/output format. </p>
 <p><em>Values:</em></p>
 <dl class="enumerator">
@@ -874,9 +874,9 @@ variables and constraints, and the input format.</p>
 
 </dd></dl>
 
-<dl class="type">
-<dt id="_CPPv4N2mp8NLHeader12__anonymous6E">
-<span id="_CPPv3N2mp8NLHeader12__anonymous6E"></span><span id="_CPPv2N2mp8NLHeader12__anonymous6E"></span><span id="mp::NLHeader::__anonymous6"></span><span class="target" id="structmp_1_1NLHeader_1a5d041f58eea89bc3d5bf61b08609037f"></span><em class="property">enum </em><code class="descname"><strong>[anonymous]</strong></code><a class="headerlink" href="#_CPPv4N2mp8NLHeader12__anonymous6E" title="Permalink to this definition">¶</a><br /></dt>
+<dl class="enum">
+<dt id="_CPPv4N2mp8NLHeaderUt6_anon_6E">
+<span id="_CPPv3N2mp8NLHeaderUt6_anon_6E"></span><span class="target" id="structmp_1_1NLHeader_1a5d041f58eea89bc3d5bf61b08609037f"></span><em class="property">enum </em><strong>[anonymous]</strong><a class="headerlink" href="#_CPPv4N2mp8NLHeaderUt6_anon_6E" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Flags. </p>
 <p><em>Values:</em></p>
 <dl class="enumerator">
@@ -1008,9 +1008,9 @@ set to <a class="reference internal" href="#_CPPv4N2mp5arith7UNKNOWNE" title="mp
 </div>
 </dd></dl>
 
-<dl class="type">
+<dl class="enum">
 <dt id="_CPPv4N2mp5arith4KindE">
-<span id="_CPPv3N2mp5arith4KindE"></span><span id="_CPPv2N2mp5arith4KindE"></span><span id="mp::arith::Kind"></span><span class="target" id="namespacemp_1_1arith_1ae61163c11b0581390bfb3fedb8643b91"></span><em class="property">enum </em><code class="descclassname">mp::arith<code class="descclassname">::</code></code><code class="descname">Kind</code><a class="headerlink" href="#_CPPv4N2mp5arith4KindE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2mp5arith4KindE"></span><span id="_CPPv2N2mp5arith4KindE"></span><span class="target" id="namespacemp_1_1arith_1ae61163c11b0581390bfb3fedb8643b91"></span><em class="property">enum </em><code class="descclassname">mp::arith<code class="descclassname">::</code></code><code class="descname">Kind</code><a class="headerlink" href="#_CPPv4N2mp5arith4KindE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Floating-point arithmetic kind. </p>
 <p><em>Values:</em></p>
 <dl class="enumerator">
@@ -1053,7 +1053,7 @@ set to <a class="reference internal" href="#_CPPv4N2mp5arith7UNKNOWNE" title="mp
 
 <dl class="enumerator">
 <dt id="_CPPv4N2mp5arith4LASTE">
-<span id="_CPPv3N2mp5arith4LASTE"></span><span id="_CPPv2N2mp5arith4LASTE"></span><span class="target" id="namespacemp_1_1arith_1ae61163c11b0581390bfb3fedb8643b91a17ba978bb022947e14819dea1a579726"></span><code class="descname">LAST</code> = CRAY<a class="headerlink" href="#_CPPv4N2mp5arith4LASTE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2mp5arith4LASTE"></span><span id="_CPPv2N2mp5arith4LASTE"></span><span class="target" id="namespacemp_1_1arith_1ae61163c11b0581390bfb3fedb8643b91a17ba978bb022947e14819dea1a579726"></span><code class="descname">LAST</code> = <a class="reference internal" href="#_CPPv4N2mp5arith4CRAYE" title="mp::arith::CRAY">CRAY</a><a class="headerlink" href="#_CPPv4N2mp5arith4LASTE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Last floating point. </p>
 </dd></dl>
 
@@ -1097,7 +1097,7 @@ set to <a class="reference internal" href="#_CPPv4N2mp5arith7UNKNOWNE" title="mp
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2015 AMPL Optimization, Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.4.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.5.
     </div>
 <!-- Google Analytics -->
 <script>
