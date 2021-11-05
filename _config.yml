@@ -26,7 +26,10 @@ medium_username: ''
 markdown: kramdown
 # theme: phantom # Uncomment once published to RubyGems
 plugins:
-  - jekyll-paginate-v2
+  - jekyll-paginate
+
+paginate: 10
+paginate_path: "/page:num/"
 
 ############################################################
 # Site configuration for the Jekyll 3 Pagination Gem
