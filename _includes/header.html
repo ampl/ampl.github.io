@@ -9,6 +9,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta content="yes" name="apple-mobile-web-app-capable">
   <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <script type="text/javascript">
+      if (location.href.indexOf('.github.io') != -1 && location.protocol == 'http:') {
+        location.href = location.href.replace(/^http:/, 'https:');
+      }
+  </script>
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
   <!-- RSS -->
