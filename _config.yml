@@ -100,6 +100,9 @@ enable_contact: false
 
 #### Phantom Navigation menu
 enable_nav: true
-nav_item:
-  - { url: 'https://ampl.com', text: 'ampl.com' }
-  - { url: 'https://github.com/ampl/', text: 'GitHub' }
+# nav_item:
+#   - { url: 'https://ampl.com', text: 'ampl.com' }
+#   - { url: 'https://github.com/ampl/', text: 'GitHub' }
+nav_icon_links:
+  - { url: 'https://github.com/ampl/', text: 'GitHub', icon: 'fa fa-github fa-fw' }
+  - { url: 'https://ampl.com', text: 'AMPL.com', icon: 'fa fa-home' }

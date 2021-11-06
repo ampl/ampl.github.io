@@ -26,7 +26,7 @@
   <!-- Fonts -->
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,400italic,700|Merriweather:400,300,300italic,400italic,700' rel='stylesheet' type='text/css'>
 
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <script src="https://kit.fontawesome.com/2d4dcf6d3a.js" crossorigin="anonymous"></script>
 
   <!-- Styles -->
   <link rel="stylesheet" href="{{ "/css/animate.min.css" | prepend: site.baseurl }}">
@@ -48,13 +48,18 @@
                 <span class="icon-bar"></span>
               </button>
               <a class="navbar-brand" href="/">
-                <span><img src="{{ site.url }}/img/logo-inline-web-v4.png" style="width:70px; margin-right: 10px"></span> {{ site.admin_name }}</a>
+                <span style="color: #326E83"><img src="{{ site.url }}/img/logo-inline-web-v4.png" style="width: auto; height: 30px; padding-bottom: 4px;"> {{ site.admin_name }} <i class="fa fa-code"></i></span></a>
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
               {% for item in site.nav_item %}
                 <li>
                   <a href="{{ item.url }}" target="_blank">{{ item.text }}</a>
+                </li>
+              {% endfor %}
+              {% for item in site.nav_icon_links %}
+                <li>
+                  <a href="{{ item.url }}" target="_blank"><i class="{{item.icon}}"></i> {{ item.text }}</a>
                 </li>
               {% endfor %}
             </ul>
