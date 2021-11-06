@@ -7,7 +7,9 @@
   <a href="{{ post.github_link }}" class="project-link" target="_blank"><button class="btn btn-default btn-lg"><i class="fa fa-github fa-lg"></i>GitHub</button></a>
   {% endif %}
   {% if post.documentation_link != empty %}
-  <a href="{{ post.documentation_link }}" class="project-link" target="_blank"><button class="btn btn-default btn-lg"><i class="fa fa-book fa-lg"></i>Documentation</button></a>
+  <a href="{{ post.documentation_link }}" class="project-link" target="{{ post.documentation_target | default: '_blank' }}">
+    <button class="btn btn-default btn-lg"><i class="fa fa-book fa-lg"></i>Documentation</button>
+  </a>
   {% endif %}
   {% if post.project_link != empty %}
   <a href="{{ post.project_link }}" class="project-link" target="_blank"><button class="btn btn-default btn-lg"><i class="fa fa-{{post.button_icon}} fa-lg"></i>{{post.button_text}}</button></a>
