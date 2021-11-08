@@ -13,7 +13,7 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: "AMPL Developer Documentation"
+title: "AMPL Projects"
 email: 'support@ampl.com'
 description: ""
 baseurl: "" # the subpath of your site, e.g. /blog
@@ -94,7 +94,7 @@ pagination:
 ### Phantom settings
 footer_text: '© AMPL Optimization Inc.'
 footer_url: 'https://ampl.com'
-admin_name: 'GitHub Projects'
+admin_name: 'Projects'
 google_analytics: "UA-9999999-99" # Update with your own tracking ID
 enable_contact: false
 
@@ -105,4 +105,5 @@ enable_nav: true
 #   - { url: 'https://github.com/ampl/', text: 'GitHub' }
 nav_icon_links:
   - { url: 'https://github.com/ampl/', text: 'GitHub', icon: 'fa fa-github fa-fw' }
-  - { url: 'https://ampl.com', text: 'AMPL.com', icon: 'fa fa-home' }
+  - { url: 'https://portal.ampl.com', text: 'AMPL Portal', icon: 'fa fa-sign-in-alt', target: '_self' }
+  - { url: 'https://ampl.com', text: 'AMPL.com', icon: 'fa fa-home', target: '_self' }

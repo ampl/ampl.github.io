@@ -48,7 +48,7 @@
                 <span class="icon-bar"></span>
               </button>
               <a class="navbar-brand" href="/">
-                <span style="color: #326E83"><img src="{{ site.url }}/img/logo-inline-web-v4.png" style="width: auto; height: 30px; padding-bottom: 4px;"> {{ site.admin_name }} <i class="fa fa-code"></i></span></a>
+                <span style="color: #326E83"><img src="{{ site.url }}/img/logo-inline-web-v4.png" style="width: auto; height: 30px; padding-bottom: 4px;"> {{ site.admin_name }} <i class="fa fa-project-diagram"></i></span></a>
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
@@ -59,7 +59,7 @@
               {% endfor %}
               {% for item in site.nav_icon_links %}
                 <li>
-                  <a href="{{ item.url }}" target="_blank"><i class="{{item.icon}}"></i> {{ item.text }}</a>
+                  <a href="{{ item.url }}" target="{{ item.target | default: '_blank' }}"><i class="{{item.icon}}"></i> {{ item.text }}</a>
                 </li>
               {% endfor %}
             </ul>
