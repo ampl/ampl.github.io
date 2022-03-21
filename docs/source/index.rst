@@ -1,6 +1,6 @@
 
-AMPL Development Resources
-==========================
+AMPL Resources
+==============
 
 .. toctree::
     :maxdepth: 2
