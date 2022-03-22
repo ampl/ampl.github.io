@@ -1,74 +1,45 @@
-# Open-Source Projects
+## AMPL Open-Source Projects
 
-## amplpy
+### amplpy
 
-AMPL Python API.
+AMPL Python API. [[Documentation](https://amplpy.readthedocs.io/)] [[GitHub](https://github.com/ampl/amplpy)]
 
-- [Documentation](https://amplpy.readthedocs.io/)
-- [GitHub](https://github.com/ampl/amplpy)
+### amplpyfinance
 
-## amplpyfinance
+Financial Portfolio Optimization with amplpy. [[Documentation](https://amplpyfinance.readthedocs.io/)] [[GitHub](https://github.com/ampl/amplpyfinance)]
 
-Financial Portfolio Optimization with amplpy.
+### rAMPL
 
-- [Documentation](https://amplpyfinance.readthedocs.io/)
-- [GitHub](https://github.com/ampl/amplpyfinance)
+AMPL R API. [[Documentation](https://rAMPL.readthedocs.io/)] [[GitHub](https://github.com/ampl/rAMPL)]
 
-## rAMPL
+### AMPL Model Colaboratory
 
-AMPL R API.
+Jupyter notebooks ready to run on various cloud platforms. [[Documentation](https://amplcolab.readthedocs.io/)] [[GitHub](https://github.com/ampl/amplcolab)]
 
-- [Documentation](https://rAMPL.readthedocs.io/)
-- [GitHub](https://github.com/ampl/rAMPL)
+### Solver Callbacks
 
-## AMPL Model Colaboratory
+AMPL solver libraries with callbacks. [[Documentation](https://ampls.readthedocs.io/)] [[GitHub](https://github.com/ampl/ampls-api)]
 
-Jupyter notebooks ready to run on various cloud platforms.
+### MP: Solver Interface Framework
 
-- [Documentation](https://amplcolab.readthedocs.io/)
-- [GitHub](https://github.com/ampl/amplcolab)
+Expression-based solver interface. [[Documentation](https://amplmp.readthedocs.io/)] [[GitHub](https://github.com/ampl/mp)]
 
-## Solver Callbacks
+### AMPL GSL
 
-AMPL solver libraries with callbacks.
+AMPL Bindings for the GNU Scientific Library. [[Documentation](https://amplgsl.readthedocs.io/)] [[GitHub](https://github.com/ampl/gsl)]
 
-- [Documentation](https://ampls.readthedocs.io/)
-- [GitHub](https://github.com/ampl/ampls-api)
+### GoKestrel
 
-## MP: Solver Interface Framework
+Kestrel AMPL client for all platforms. [[GitHub](https://github.com/ampl/gokestrel)]
 
-Expression-based solver interface.
+### Plugins
 
-- [Documentation](https://amplmp.readthedocs.io/)
-- [GitHub](https://github.com/ampl/mp)
+Table handlers and user defined functions. [[Documentation](https://amplplugins.readthedocs.io/)] [[GitHub](https://github.com/ampl/plugins)]
 
-## AMPL GSL
+### COIN-OR solvers with AMPL interface
 
-AMPL Bindings for the GNU Scientific Library.
+COIN-OR solvers with CMake build support and AMPL interface. [[GitHub](https://github.com/ampl/coin)]
 
-- [Documentation](https://amplgsl.readthedocs.io/)
-- [GitHub](https://github.com/ampl/gsl)
+### ASL: AMPL Solver Library
 
-## GoKestrel
-
-Kestrel AMPL client for all platforms.
-
-- [GitHub](https://github.com/ampl/gokestrel)
-
-## Plugins
-
-- [Documentation](https://amplplugins.readthedocs.io/)
-- [GitHub](https://github.com/ampl/plugins)
-
-## COIN-OR solvers with AMPL interface
-
-COIN-OR solvers with CMake build support and AMPL interface.
-
-- [GitHub](https://github.com/ampl/coin)
-
-## ASL: AMPL Solver Library
-
-AMPL Solver Library to create solver drivers. It is an alternative to MP.
-
-- [GitHub](https://github.com/ampl/asl)
-
+AMPL Solver Library to create solver drivers. It is an alternative to MP. [[GitHub](https://github.com/ampl/asl)]
