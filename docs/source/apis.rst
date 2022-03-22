@@ -70,3 +70,10 @@ MATLAB
 
 - Documentation: https://ampl.com/api/latest/matlab/
 
+Solver Callbacks
+----------------
+
+AMPL solver libraries with callbacks.
+
+- Documentation: https://ampls.readthedocs.io/
+- GitHub: https://github.com/ampl/ampls-api
