@@ -17,3 +17,4 @@ Solver Options
     solver_options/snopt_options
     solver_options/x-gurobi_options
     solver_options/xpress_options
+    solver_options/cbc_options
