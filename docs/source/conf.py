@@ -115,10 +115,11 @@ html_theme_options = {
     "external_links": [
         # {"name": "ampl.github.io", "url": "https://ampl.github.io"},
     ],
+    "logo_text": "Development",
 }
-html_context = {
-    "theme_logo_text": "Development",
-}
+##html_context = {
+#    "theme_logo_text": "Development",
+# }
 
 
 # Add any paths that contain custom themes here, relative to this directory.
