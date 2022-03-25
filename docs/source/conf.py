@@ -78,7 +78,7 @@ pygments_style = "sphinx"
 # a list of builtin themes.
 # html_theme = 'sphinxdoc'
 # html_theme = 'alabaster'
-html_theme = "pydata_sphinx_theme"
+html_theme = "ampl_sphinx_theme"
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -148,9 +148,9 @@ html_favicon = "_static/cropped-favicon-raw-192x192.png"
 html_static_path = ["_static"]
 
 # Add custom css file
-html_css_files = [
-    "css/custom.css",
-]
+# html_css_files = [
+#    "css/custom.css",
+# ]
 
 # If not '', a 'Last updated on:' timestamp is inserted at every page bottom,
 # using the given strftime format.
