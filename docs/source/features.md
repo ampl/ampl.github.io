@@ -91,6 +91,17 @@ FISH   0
 ```
 The snapshot feature is not finished and it is still being perfected. If you encounter any issues, please let us know.
 
+## Enhanced Gurobi driver (x-gurobi)
+
+We have released `x-gurobi`, the beta version of our enhanced AMPL-Gurobi interface.
+It has the following features:
+
+- Full support of logical expressions and constraints, as described in the AMPL page on Logic and Constraint Programming Extensions.
+- Algebraic expressions beyond linear and quadratic.
+- Choice between conversions in the driver vs. native solver support.
+
+[[Modeling Guide](https://amplmp.readthedocs.io/en/latest/rst/model-guide.html)] [[x-gurobi options](solver_options/x-gurobi_options.md)]
+
 ## Using AMPL in docker containers
 
 We do not provide a base docker image as we give the user total freedom about which base image to use.
