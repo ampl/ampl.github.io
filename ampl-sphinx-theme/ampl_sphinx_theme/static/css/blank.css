@@ -12,6 +12,18 @@ parent theme via theme.conf. The parent style we import directly in theme.css */
     padding-left: 16px;
 }
 
+.navbar {
+    font-size: 15px;
+}
+
+code {
+    font-size: 90%;
+}
+
+/*.nav-link {
+    font-weight: 400;
+}*/
+
 :root {
     /* From https://systemfontstack.com/ */
     --pst-font-family-base: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif;
