@@ -43,3 +43,7 @@ COIN-OR solvers with CMake build support and AMPL interface. [[GitHub](https://g
 ### ASL: AMPL Solver Library
 
 AMPL Solver Library to create solver drivers. It is an alternative to MP. [[GitHub](https://github.com/ampl/asl)]
+
+### Awesome AMPL
+
+A curated list of awesome stuff made by the AMPL community. [[GitHub](https://github.com/ampl/awesome-ampl)]
