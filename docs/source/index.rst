@@ -9,7 +9,7 @@ AMPL Resources
     ampl_options
     solver_options
     apis
-    AMPL Book <https://ampl.github.io/ampl-book.pdf>
+    book
 
 GitHub Projects
 ---------------
