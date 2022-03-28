@@ -1,49 +1,49 @@
-## AMPL Open-Source Projects
+# AMPL Open-Source Projects
 
-### amplpy
+## amplpy
 
 AMPL Python API. [[Documentation](https://amplpy.readthedocs.io/)] [[GitHub](https://github.com/ampl/amplpy)]
 
-### amplpyfinance
+## amplpyfinance
 
 Financial Portfolio Optimization with amplpy. [[Documentation](https://amplpyfinance.readthedocs.io/)] [[GitHub](https://github.com/ampl/amplpyfinance)]
 
-### rAMPL
+## rAMPL
 
 AMPL R API. [[Documentation](https://rAMPL.readthedocs.io/)] [[GitHub](https://github.com/ampl/rAMPL)]
 
-### AMPL Model Colaboratory
+## AMPL Model Colaboratory
 
 Jupyter notebooks ready to run on various cloud platforms. [[Documentation](https://amplcolab.readthedocs.io/)] [[GitHub](https://github.com/ampl/amplcolab)]
 
-### Solver Callbacks
+## Solver Callbacks
 
 AMPL solver libraries with callbacks. [[Documentation](https://ampls.readthedocs.io/)] [[GitHub](https://github.com/ampl/ampls-api)]
 
-### MP: Solver Interface Framework
+## MP: Solver Interface Framework
 
 Expression-based solver interface. [[Documentation](https://amplmp.readthedocs.io/)] [[GitHub](https://github.com/ampl/mp)]
 
-### AMPL GSL
+## AMPL GSL
 
 AMPL Bindings for the GNU Scientific Library. [[Documentation](https://amplgsl.readthedocs.io/)] [[GitHub](https://github.com/ampl/gsl)]
 
-### GoKestrel
+## GoKestrel
 
 Kestrel AMPL client for all platforms. [[GitHub](https://github.com/ampl/gokestrel)]
 
-### Plugins
+## Plugins
 
 Table handlers and user defined functions. [[Documentation](https://amplplugins.readthedocs.io/)] [[GitHub](https://github.com/ampl/plugins)]
 
-### COIN-OR solvers with AMPL interface
+## COIN-OR solvers with AMPL interface
 
 COIN-OR solvers with CMake build support and AMPL interface. [[GitHub](https://github.com/ampl/coin)]
 
-### ASL: AMPL Solver Library
+## ASL: AMPL Solver Library
 
 AMPL Solver Library to create solver drivers. It is an alternative to MP. [[GitHub](https://github.com/ampl/asl)]
 
-### Awesome AMPL
+## Awesome AMPL
 
 A curated list of awesome stuff made by the AMPL community. [[GitHub](https://github.com/ampl/awesome-ampl)]

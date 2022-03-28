@@ -13,7 +13,7 @@ In your AMPL bundle you should find `x-ampl`, the development version of AMPL wh
 
 ### Example using it with amplpy
 
-You need to be using at least amplpy 0.8.0 (you can install it with `python -m pip install amplpy==0.8.0`). With this version of  amplpy it is possible to pass an additional argument to Environment (https://amplpy.readthedocs.io/en/stable/classes/environment.html) that allows specifing the executable name as follows:
+You need to be using at least amplpy 0.8.0 (you can install it with `python -m pip install amplpy==0.8.0`). With this version of  amplpy it is possible to pass an additional argument to [Environment](https://amplpy.readthedocs.io/en/stable/classes/environment.html) that allows specifing the executable name as follows:
 
 ```python
 ampl = AMPL(Environment('', 'x-ampl'))
@@ -155,3 +155,36 @@ With the information obtained in the fingerprint we are able to count for any gi
 If a license is exceeding its limitations for long periods of time users are then contacted to figure out what happened and eventually upgrade the license limits to the customer needs. Since we just log the lease request and each lease lasts 5 minutes, exceeding license limits for short-periods of time is expected for instance when containers are being created and destroyed quickly.
 
 Even though this mechanism was designed with Docker containers in mind, it also works natively on Windows and macOS virtual and physical machines too. The only requirement is an internet connection.
+
+## Using remote solvers from NEOS with gokestrel
+
+To simplify the work of comparing and testing solvers, we have made AMPL and solver resources available online in collaboration with the [NEOS Server](http://www.neos-server.org/) project, under the auspices of the [Wisconsin Institutes for Discovery](http://www.discovery.wisc.edu/) at the University of Wisconsin, Madison. 
+
+Thanks to [gokestrel](https://github.com/ampl/gokestrel), our new Kestrel driver, instead of specifying a solver installed on your computer or local network, you invoke Kestrel, a "client" program that sends your problem to a solver running on one of the NEOS Server's remote computers. The results from the NEOS Server are eventually returned through Kestrel to AMPL, where you can view and manipulate them locally in the usual way.
+
+Important options:
+- `email`: your e-mail address (it is required by NEOS).
+- `kestrel_options`: allows you to specify among other things, the solver to use
+
+As an example, here is how you might invoke Kestrel from a local AMPL session, using CPLEX as your remote solver:
+```
+ampl: model diet.mod;
+ampl: data diet.dat;
+ampl: option solver kestrel;
+ampl: option email "***@***.***";
+ampl: option kestrel_options "solver=cplex";
+ampl: option cplex_options "display=2";
+ampl: solve;
+Connecting to: neos-server.org:3333
+Job XXXX submitted to NEOS, password='xxxx'
+Check the following URL for progress report:
+https://neos-server.org/neos/cgi-bin/nph-neos-solver.cgi?admin=results&jobnumber=XXXX&pass=xxxx
+Job XXXX dispatched
+password: xxxx
+---------- Begin Solver Output -----------
+Condor submit: 'neos.submit'
+Condor submit: 'watchdog.submit'
+Job submitted to NEOS HTCondor pool.
+CPLEX 20.1.0.0: optimal solution; objective 88.2
+1 dual simplex iterations (0 in phase I)
+```
