@@ -1,4 +1,4 @@
-# AMPL Open-Source Projects
+# Open-Source Projects
 
 ## amplpy
 

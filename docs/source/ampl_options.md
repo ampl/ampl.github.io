@@ -12,7 +12,7 @@ how many characters wide the output produced by the display command may be.
 The option command displays and sets option values. If option is followed by a list of option
 names, AMPL replies with their current values:
 
-```
+```ampl
 ampl: option print_separator, display_width;
 option print_separator ' ';
 option display_width 79;
@@ -20,7 +20,7 @@ ampl:
 ```
 A * in an option name is a “wild card” that matches any sequence of characters:
 
-```
+```ampl
 ampl: option print*;
 option print_precision 0;
 option print_round '';
@@ -33,7 +33,7 @@ When option is followed by a name and a value, it resets the named option to the
 value. In the following example we change the display width and the print separator, and then
 verify that the latter has been changed:
 
-```
+```ampl
 ampl: option display_width 60, print_separator ', ';
 ampl: print {i in 1..5} i;
 1, 2, 3, 4,  5 
@@ -50,7 +50,7 @@ option is initialized to ' ' (a space), for instance, so that by default the out
 space-separated. The display_width option has a default value of 79. Other options, especially
 ones that pertain to particular solvers, are initially unset:
 
-```
+```ampl
 ampl: option knitro_options;
 option knitro_options ''; #not defined
 ```
@@ -60,7 +60,7 @@ AMPL maintains no master list of valid options, but rather accepts any new optio
 Thus if you mis-type an option name, you will most likely define a new option by mistake, as the
 following example demonstrates:
 
-```
+```ampl
 ampl: option display_wdith 60;
 ampl: option display_w*;
 option display_wdith 60;

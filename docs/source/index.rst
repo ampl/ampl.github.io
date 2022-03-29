@@ -6,6 +6,7 @@ AMPL Resources
     :maxdepth: 2
 
     features
+    faq
     ampl_options
     solver_options
     apis
