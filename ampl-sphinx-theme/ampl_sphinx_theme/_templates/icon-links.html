@@ -18,6 +18,29 @@
         {{ icon_link_nav_item(theme_twitter_url, "fab fa-twitter-square", "Twitter") -}}
         {% endblock -%}
         {%- for icon_link in theme_icon_links -%}
-        {{ icon_link_nav_item(icon_link["url"], icon_link["icon"], icon_link["name"], icon_link.get("target", "_blank")) -}}
+          {%- if icon_link["name"] != "AMPL.com" and icon_link["name"] != "AMPL Portal"  %}
+          {{ icon_link_nav_item(icon_link["url"], icon_link["icon"], icon_link["name"], icon_link.get("target", "_blank")) -}}
+          {%- endif -%}
         {%- endfor %}
+        <li class="nav-item dropdown">
+              <a class="nav-link" href="#" id="projects_dropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="AMPL Pages">
+              <span class="d-none d-sm-block"><i class="fab fa-connectdevelop"><span style="font-size:7px;">&#9660;<span></i></span>
+              <span class="d-block d-sm-none"><i class="fab fa-connectdevelop"></i> AMPL Pages &#9660;</span>
+              <label class="sr-only d-block d-sm-none">AMPL Pages</label>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="projects_dropdown">
+              <a class="dropdown-item" href='https://ampl.com'>AMPL.com</a>
+              <a class="dropdown-item" href='https://dev.ampl.com'>AMPL Resources</a>
+              <a class="dropdown-item" href='https://portal.ampl.com'>AMPL License Portal</a>
+              <a class="dropdown-item" href='https://colab.ampl.com'>AMPL Model Colaboratory</a>
+              <h6 class="dropdown-header">Open Source Projects</h6>
+              <a class="dropdown-item" href='https://amplgsl.readthedocs.io/'>AMPL GSL</a>
+              <a class="dropdown-item" href='https://amplplugins.readthedocs.io/'>AMPL Plugins</a>
+              <a class="dropdown-item" href='https://amplpy.readthedocs.io/'>amplpy: Python API</a>
+              <a class="dropdown-item" href='https://rAMPL.readthedocs.io/'>rAMPL: R API</a>
+              <a class="dropdown-item" href='https://amplpyfinance.readthedocs.io/'>amplpyfinance</a>
+              <a class="dropdown-item" href='https://ampls.readthedocs.io/'>Solver Callbacks</a>
+              <a class="dropdown-item" href='https://amplmp.readthedocs.io/'>MP: Solver Interface Framework</a>
+              </div>
+        </li>
       </ul>
