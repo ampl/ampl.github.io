@@ -22,7 +22,7 @@ parent theme via theme.conf. The parent style we import directly in theme.css */
 }
 
 code {
-    font-size: 90%;
+    font-size: 100%;
 }
 
 /*.nav-link {
