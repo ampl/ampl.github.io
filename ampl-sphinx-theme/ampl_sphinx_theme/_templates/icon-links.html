@@ -2,8 +2,8 @@
   {%- if url | length > 2 %}
         <li class="nav-item">
           <a class="nav-link" href="{{ url }}" rel="noopener" target="{{ target }}" title="{{ _(name) }}">
-            <span class="d-none d-sm-block"><i class="{{ icon }}"></i></span>
-            <span class="d-block d-sm-none"><i class="{{ icon }}"></i> {{ _(name) }}</span>
+            <span class="d-none d-sm-block"><i class="{{ icon }} fa-fw"></i></span>
+            <span class="d-block d-sm-none"><i class="{{ icon }} fa-fw"></i> {{ _(name) }}</span>
             <label class="sr-only d-block d-sm-none">{{ _(name) }}</label>
           </a>
         </li>
