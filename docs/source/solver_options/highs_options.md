@@ -1,11 +1,11 @@
 
-# Highs for AMPL Options
+# HiGHS for AMPL Options
 
 Obtained with `$ highs -=`.
 
 ```
 
-HIGHS Optimizer Options for AMPL
+HiGHS Optimizer Options for AMPL
 --------------------------------------------
 
 To set these options, assign a string specifying their values to the AMPL
