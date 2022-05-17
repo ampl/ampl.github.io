@@ -10,6 +10,7 @@ Solver Options
     solver_options/copt_options
     solver_options/cplex_options
     solver_options/gurobi_options
+    solver_options/highs_options
     solver_options/knitro_options
     solver_options/lindoglobal_options
     solver_options/loqo_options
