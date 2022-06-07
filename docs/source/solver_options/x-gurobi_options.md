@@ -4,8 +4,8 @@
 Obtained with `$ x-gurobi -=`.
 
 ```
-Gurobi Optimizer Options for AMPL
----------------------------------
+x-Gurobi Optimizer Options for AMPL
+-----------------------------------
 
 To set these options, assign a string specifying their values to the AMPL
 option "gurobi_options". For example:
@@ -30,8 +30,9 @@ acc:and
 acc:ind:eq (acc:ind_eq)
       Acceptance level for 'implied-equal' expression, default 2.
 
-acc:ind:le (acc:ind_le)
-      Acceptance level for 'implied-less-equal' expression, default 2.
+acc:ind:le (acc:ind_le, acc:ind:ge, acc:ind_ge)
+      Acceptance level for 'implied-less-equal' and 'implied-greater-equal'
+      expressions, default 2.
 
 acc:max
       Acceptance level for 'max' expression, default 2.
@@ -317,12 +318,12 @@ cut:submip (submipcuts)
 cut:zerohalf (zerohalfcuts)
       Zero-half cuts: overrides "cuts"; choices as for "cuts".
 
-cvt:mip:eps
+cvt:mip:eps (cvt:cmp:eps)
       Tolerance for strict comparison of continuous variables for MIP. Ensure
       larger than the solver's feasibility tolerance.
 
 cvt:pre:all
-      0/1*: Set to 0 to disable all presolve in the flat converter.
+      0/1*: Set to 0 to disable most presolve in the flat converter.
 
 cvt:pre:eqbinary
       0/1*: Preprocess reified equality comparison with a binary variable.
@@ -920,6 +921,11 @@ tech:distmip (pool_distmip, distmip)
 
       See also "tech:concurrentmip", "tech:pooljobs".
 
+tech:exportfile (writeprob, writemodel, exportfile)
+      Specifies the name of a file where to export the model before solving
+      it. This file name can have extension ".lp", ".mps", etc. Default = ""
+      (don't export the model).
+
 tech:logfile (logfile)
       Log file name.
 
@@ -1018,7 +1024,7 @@ tech:server_router (server_router)
 
 tech:server_timeout (server_timeout)
       Report job as rejected by Gurobi Compute Server if the job is not
-      started within server_timeout seconds. Default = -1 (no limit).
+      started within server_timeout seconds. Default = 10.
 
 tech:threads (threads)
       How many threads to use when using the barrier algorithm or solving MIP
@@ -1093,11 +1099,6 @@ tech:workerpool (pool_servers)
       node and you want to use the same cluster for the distributed workers.
 
       You can provide a comma-separated list of machines for added robustness.
-
-tech:writeprob (writeprob, exportfile)
-      Specifies the name of a file where to export the model before solving
-      it. This file name can have extension ".lp", ".mps", etc. Default = ""
-      (don't export the model).
 
 ```
 

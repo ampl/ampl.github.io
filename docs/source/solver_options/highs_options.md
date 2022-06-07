@@ -1,11 +1,10 @@
 
-# HiGHS for AMPL Options
+# HiGHS Options
 
 Obtained with `$ highs -=`.
 
 ```
-
-HiGHS Optimizer Options for AMPL
+HIGHS Optimizer Options for AMPL
 --------------------------------------------
 
 To set these options, assign a string specifying their values to the AMPL
@@ -112,7 +111,7 @@ cvt:mip:eps (cvt:cmp:eps)
       larger than the solver's feasibility tolerance.
 
 cvt:pre:all
-      0/1*: Set to 0 to disable all presolve in the flat converter.
+      0/1*: Set to 0 to disable most presolve in the flat converter.
 
 cvt:pre:eqbinary
       0/1*: Preprocess reified equality comparison with a binary variable.
@@ -221,10 +220,13 @@ tech:debug (debug)
       0*/1: whether to assist testing & debugging, e.g., by outputting
       auxiliary information.
 
-tech:exportfile (writeprob)
+tech:exportfile (writeprob, writemodel)
       Specifies the name of a file where to export the model before solving
       it. This file name can have extension ".lp()", ".mps", etc. Default = ""
       (don't export the model).
+
+tech:logfile (logfile)
+      Log file name.
 
 tech:miploglev (miploglev, mip_report_level)
       0/1*/2: MIP solver report level
@@ -254,3 +256,6 @@ tech:wantsol (wantsol)
       2 - Primal variables to stdout
       4 - Dual variables to stdout
       8 - Suppress solution message.
+
+```
+

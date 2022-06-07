@@ -4,47 +4,342 @@
 Obtained with `$ copt -=`.
 
 ```
-barhomogeneous    whether to use homogeneous self-dual form in barrier
-bariterlimit      iteration limit of the barrier solver
-barthreads        number of threads used by barrier
-basis             whether to use or return a basis
-bestbound         whether to return bestbound suffix
-conflictanalysis  whether to perform conflict analysis
-crossoverthreads  number of threads used by crossover
-cutlevel          the cutting planes generation level
-divingheurlevel   level of diving heuristics
-dualize           whether to dualize a problem before solving it
-dualperturb       whether to allow the objective function perturbation
-dualprice         specifies the dual simplex pricing algorithm
-dualtol           the tolerance for dual solutions and reduced cost
-feastol           the feasibility tolerance
-heurlevel         the heuristics level
-inttol            the integrality tolerance
-logging           whether to print solving logs
-lpmethod          method to solve the LP problem
-matrixtol         input matrix coefficient tolerance
-mipstart          whether to use initial guesses in MIP problem
-miptasks          number of MIP tasks in parallel
-nodecutrounds     rounds of cutting-planes generation of tree node
-nodelimit         node limit of the optimization
-objno             objective number to solve
-poolsolutions     number of alternative MIP solutions written
-poolstub          name prefix for alternative MIP solutions written
-presolve          whether to perform persolving before solving a problem
-relgap            the relative MIP gap
-retmipgap         whether to return relmipgap and absmipgap suffix
-rootcutlevel      level of cutting-planes generation of root node
-rootcutrounds     rounds of cutting-planes generation of root node
-scaling           whether to perform scaling before solving a problem
-simplexthreads    number of threads used by dual simplex
-sos               whether to recognize suffixes '.sosno' and '.ref'
-sos2              whether to use SOS2 sets from nonconvex PWL terms
-strongbranching   level of strong branching
-submipheurlevel   level of Sub-MIP heuristics
-threads           number of threads to use
-timelimit         time limit of the optimization
-treecutlevel      level of cutting-planes generation of search tree
-wantsol           whether to write .sol file
+COPT Optimizer Options for AMPL
+--------------------------------------------
+
+To set these options, assign a string specifying their values to the AMPL
+option "copt_options". For example:
+
+   ampl: option copt_options 'mipgap=1e-6';
+
+Options:
+
+alg:basis (basis)
+      Whether to use or return a basis:
+
+      0 - No
+      1 - Use incoming basis (if provided)
+      2 - Return final basis
+      3 - Both (1 + 2 = default.)
+
+alg:dualfeastol (dualfeastol)
+      Tolerance for dual solutions and reduced cost (default 1e-6).
+
+alg:feastol (feastol)
+      Primal feasibility tolerance (default 1e-6).
+
+alg:iisfind (iisfind, iis)
+      Whether to find and export the IIS. Default = 0 (don't export).
+
+alg:matrixtol (matrixtol)
+      nput matrix coefficient tolerance (default 1e-10).
+
+alg:relax (relax)
+      0*/1: Whether to relax integrality of variables.
+
+cvt:mip:eps (cvt:cmp:eps)
+      Tolerance for strict comparison of continuous variables for MIP. Ensure
+      larger than the solver's feasibility tolerance.
+
+cvt:pre:all
+      0/1*: Set to 0 to disable most presolve in the flat converter.
+
+cvt:pre:eqbinary
+      0/1*: Preprocess reified equality comparison with a binary variable.
+
+cvt:pre:eqresult
+      0/1*: Preprocess reified equality comparison's boolean result bounds.
+
+cvt:sos (sos)
+      0/1*: Whether to honor declared suffixes .sosno and .ref describing SOS
+      sets. Each distinct nonzero .sosno value designates an SOS set, of type
+      1 for positive .sosno values and of type 2 for negative values. The .ref
+      suffix contains corresponding reference values used to order the
+      variables.
+
+cvt:sos2 (sos2)
+      0/1*: Whether to honor SOS2 constraints for nonconvex piecewise-linear
+      terms, using suffixes .sos and .sosref provided by AMPL.
+
+lim:time (timelim, timelimit)
+      limit on solve time (in seconds; default: no limit).
+
+lp:barhomogeneous (barhomogeneous)
+      Whether to use homogeneous self-dual form in barrier:
+
+      -1 - Automatic choice (default)
+      0  - No
+      1  - Yes.
+
+lp:barorder (barorder)
+      Barrier ordering algorithm:
+
+      -1 - Choose automatically (default)
+      0  - Approximate Minimum Degree (AMD)
+      1  - Nested Dissection (ND)
+
+lp:dualperturb (dualperturb)
+      Whether to allow the objective function perturbation when using the dual
+      simplex method:
+
+      -1 - Automatic choice (default)
+      0  - No
+      1  - Yes.
+
+lp:dualprice (dualprice)
+      Specifies the dual simplex pricing algorithm:
+
+      -1 - Choose automatically (default)
+      0  - Use Devex pricing algorithm
+      1  - Using dual steepest-edge pricing algorithm
+
+lp:method (method, lpmethod)
+      Which algorithm to use for non-MIP problems:
+
+      -1 - Automatic (default)
+      1  - Dual simplex
+      2  - Barrier
+      3  - Crossover
+      4  - Concurrent (simplex and barrier simultaneously)
+
+mip:bestbound (bestbound, return_bound)
+      Whether to return suffix .bestbound for the best known MIP dual bound on
+      the objective value:
+
+      0 - No (default)
+      1 - Yes.
+
+      The suffix is on the objective and problem and is -Infinity for
+      minimization problems and +Infinity for maximization problems if there
+      are no integer variables or if a dual bound is not available.
+
+mip:conflictanalysis (conflictanalysis)
+      Whether to perform conflict analysis:
+
+      -1 - Automatic choice (default)
+      0  - No
+      1  - Yes.
+
+mip:cutlevel (cutlevel)
+      Level of cutting-planes generation:
+
+      -1 - Automatic (default)
+      0  - Off
+      1  - Fast
+      2  - Normal
+      3  - Aggressive
+
+mip:divingheurlevel (divingheurlevel)
+      Level of diving heuristics:
+
+      -1 - Automatic (default)
+      0  - Off
+      1  - Fast
+      2  - Normal
+      3  - Aggressive
+
+mip:gap (mipgap)
+      Relative optimality gap, default 1e-4.
+
+mip:heurlevel (heurlevel)
+      Level of heuristics:
+
+      -1 - Automatic (default)
+      0  - Off
+      1  - Fast
+      2  - Normal
+      3  - Aggressive
+
+mip:intfeastol (intfeastol)
+      Feasibility tolerance for integer variables (default 1e-05).
+
+mip:lazy (lazy)
+      Whether to recognize suffix .lazy on constraints: sum of
+
+      1 - Accept .lazy>0 values (true lazy constraints, if supported)
+      2 - Accept .lazy<0 values (user cuts, if supported)
+
+      Default lazy = 3 ==> accept both.
+
+mip:nodecutrounds (nodecutrounds)
+      Rounds of cutting-planes generation of search tree node;
+      default -1 ==> automatic.
+
+mip:return_gap (return_mipgap)
+      Whether to return mipgap suffixes or include mipgap values (|objectve -
+      .bestbound|) in the solve_message: sum of
+
+      1 - Return .relmipgap suffix (relative to |obj|)
+      2 - Return .absmipgap suffix (absolute mipgap)
+      4 - Suppress mipgap values in solve_message.
+
+      Default = 0. The suffixes are on the objective and problem. Returned
+      suffix values are +Infinity if no integer-feasible solution has been
+      found, in which case no mipgap values are reported in the solve_message.
+
+mip:rootcutlevel (rootcutlevel)
+      Level of cutting-planes generation of root node:
+
+      -1 - Automatic (default)
+      0  - Off
+      1  - Fast
+      2  - Normal
+      3  - Aggressive
+
+mip:rootcutrounds (rootcutrounds)
+      Rounds of cutting-planes generation of root node;
+      default -1 ==> automatic.
+
+mip:round (round)
+      Whether to round integer variables to integral values before returning
+      the solution, and whether to report that the solver returned noninteger
+      values for integer values: sum of
+
+      1 ==> Round nonintegral integer variables
+      2 ==> Modify solve_result
+      4 ==> Modify solve_message
+
+      Default = 0. Modifications that were or would be made are reported in
+      solve_result and solve_message only if the maximum deviation from
+      integrality exceeded mip:round_reptol.
+
+mip:round_reptol (round_reptol)
+      Tolerance for reporting rounding of integer variables to integer values;
+      see "mip:round". Default = 1e-9.
+
+mip:roundingheurlevel (roundingheurlevel)
+      Level of rounding heuristics:
+
+      -1 - Automatic (default)
+      0  - Off
+      1  - Fast
+      2  - Normal
+      3  - Aggressive
+
+mip:strongbranching (strongbranching)
+      Level of strong branching:
+
+      -1 - Automatic (default)
+      0  - Off
+      1  - Fast
+      2  - Normal
+      3  - Aggressive
+
+mip:submipheurlevel (submipheurlevel)
+      Level of Sub-MIP heuristics:
+
+      -1 - Automatic (default)
+      0  - Off
+      1  - Fast
+      2  - Normal
+      3  - Aggressive
+
+mip:treecutlevel (treecutlevel)
+      Level of cutting-planes generation of search tree:
+
+      -1 - Automatic (default)
+      0  - Off
+      1  - Fast
+      2  - Normal
+      3  - Aggressive
+
+obj:no (objno)
+      Objective to optimize:
+
+      0 - None
+      1 - First (default, if available)
+      2 - Second (if available), etc.
+
+pre:dualize (dualize)
+      Whether to dualize the problem before solving it:
+
+      -1 - Automatic choice (default)
+      0  - No
+      1  - Yes.
+
+pre:scale (scale)
+      Whether to scale the problem:
+
+      -1 - Automatic choice (default)
+      0  - No
+      1  - Yes.
+
+      Scaling typically reduces solution times, but it may lead to larger
+      constraint violations in the original, unscaled model. Choosing a
+      different scaling option can sometimes improve performance for
+      particularly numerically difficult models.
+
+pre:solve (presolve)
+      Whether to perform presolving before solving the problem:
+
+      -1 - Automatic choice (default)
+      0  - No
+      1  - Yes.
+
+sol:count (countsolutions)
+      0*/1: Whether to count the number of solutions and return it in the
+      ".nsol" problem suffix.
+
+sol:stub (solstub, solutionstub)
+      Stub for solution files. If "solutionstub" is specified, found solutions
+      are written to files ("solutionstub & '1' & '.sol'") ... ("solutionstub
+      & Current.nsol & '.sol'"), where "Current.nsol" holds the number of
+      returned solutions. That is, file names are obtained by appending 1, 2,
+      ... "Current.nsol" to "solutionstub".
+
+tech:barrierthreads (barthreads)
+      Number of threads used by the barrier algorithm;
+      default -1 ==> use value in tech:threads.
+
+tech:crossoverthreads (crossoverthreads)
+      Number of threads used by crossover;
+      default -1 ==> use value in tech:threads.
+
+tech:debug (debug)
+      0*/1: whether to assist testing & debugging, e.g., by outputting
+      auxiliary information.
+
+tech:exportfile (writeprob, writemodel)
+      Specifies the name of a file where to export the model before solving
+      it. This file name can have extension ".lp()", ".mps", etc. Default = ""
+      (don't export the model).
+
+tech:logfile (logfile)
+      Log file name.
+
+tech:miptasks (miptasks)
+      Number of MIP tasks in parallel;
+      default -1 ==> automatic.
+
+tech:optionfile (optionfile, option:file)
+      Name of solver option file. Lines that start with # are ignored.
+      Otherwise, each nonempty line should contain "name=value".
+
+tech:outlev (outlev)
+      0-1: output logging verbosity. Default = 0 (no logging).
+
+tech:simplexthreads (simplexthreads)
+      Number of threads used by dual simplex;
+      default -1 ==> use value in tech:threads.
+
+tech:threads (threads)
+      Number of threads to use;
+      default -1 ==> automatic.
+
+tech:timing (timing)
+      0*/1: Whether to display timings for the run.
+
+tech:version (version)
+      Single-word phrase: report version details before solving the problem.
+
+tech:wantsol (wantsol)
+      In a stand-alone invocation (no "-AMPL" on the command line), what
+      solution information to write. Sum of
+
+      1 - Write ".sol" file
+      2 - Primal variables to stdout
+      4 - Dual variables to stdout
+      8 - Suppress solution message.
 
 ```
 

@@ -105,7 +105,7 @@ The drivers have the following features:
 - Algebraic expressions beyond linear and quadratic.
 - Choice between conversions in the driver vs. native solver support.
 
-[[Modeling Guide](https://amplmp.readthedocs.io/en/latest/rst/model-guide.html)] [[x-gurobi options](solver_options/x-gurobi_options.md)]
+[[Modeling Guide](https://amplmp.readthedocs.io/en/latest/rst/model-guide.html)] [[x-gurobi options](solver_options/x-gurobi_options.md)] [[copt options](solver_options/copt_options.md)]  [[highs options](solver_options/highs_options.md)]
 
 ## Using remote solvers from NEOS with gokestrel
 

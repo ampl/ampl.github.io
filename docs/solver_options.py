@@ -13,6 +13,7 @@ SOLVERS = {
     "XPRESS": "xpress",
     "COPT": "copt",
     "x-GUROBI": "x-gurobi",
+    "HiGHS": "highs",
 }
 
 
