@@ -91,10 +91,15 @@ FISH   0
 ```
 The snapshot feature is not finished and it is still being perfected. If you encounter any issues, please let us know.
 
-## Enhanced Gurobi driver (x-gurobi)
+## Enhanced solver drivers: x-gurobi, copt, highs
 
-We have released `x-gurobi`, the beta version of our enhanced AMPL-Gurobi interface.
-It has the following features:
+We have released `x-gurobi`, the enhanced
+[AMPL-Gurobi](https://ampl.com/products/solvers/solvers-we-sell/gurobi/)
+interface, `copt`, an interface to [Cardinal Optimizer](https://www.shanshu.ai/copt),
+and `highs`, an interface to [HiGHS](https://highs.dev/).
+They are included in the [AMPL distribution bundle](https://portal.ampl.com).
+
+The drivers have the following features:
 
 - Full support of logical expressions and constraints, as described in the AMPL page on Logic and Constraint Programming Extensions.
 - Algebraic expressions beyond linear and quadratic.
