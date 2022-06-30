@@ -37,14 +37,34 @@ You can check the status of AMPL cloud services at <https://status.ampl.com/>.
 We do not provide a base docker image as we give the user total freedom about which base image to use.
 In this example, we use the image [`python:3.9-slim-bullseye`](https://hub.docker.com/_/python) as base image. We then use `curl` and `tar` for downloading and installing some [modules](https://ampl.com/dl/modules) that you may need.
 
-In the Dockerfile example below, we install AMPL, Gurobi, and COIN-OR solvers. We also install amplpy so that the Python API for AMPL is also ready to be used.
+In the Dockefile below, we install the complete bundle with AMPL and all modules. This is the easiest approach if you are not concerned about image size or if you want to try all solvers we provide. We also install amplpy so that the Python API for AMPL is also ready to be used.
 
 ```Dockerfile
 # Use any image as base image
 FROM python:3.9-slim-bullseye
 # Install curl in order to download the modules necessary
 RUN apt-get update && apt-get install -y curl
-# Build arguments
+
+# Install full bundle (includes AMPL and all solvers)
+RUN cd /opt/ && curl -O https://portal.ampl.com/dl/amplce/ampl.linux64.tgz && \
+    tar oxzvf ampl.linux64.tgz && rm ampl.linux64.tgz
+
+# Add installation directory to the environment variable PATH
+ENV PATH="/opt/ampl.linux-intel64/:${PATH}"
+
+# Install amplpy
+RUN pip3 install amplpy --no-cache-dir
+```
+
+In the Dockerfile example below, we install the modules for AMPL, Gurobi, COPT, COIN-OR solvers, and HiGHS. This is the recommended approach if image size is something is you concerned about.
+
+```Dockerfile
+# Use any image as base image
+FROM python:3.9-slim-bullseye
+# Install curl in order to download the modules necessary
+RUN apt-get update && apt-get install -y curl
+
+# Install individual modules (alternative to installing the full bundle)
 ARG MODULES_URL=https://ampl.com/dl/modules
 # Download ampl-module.linux64.tgz
 RUN cd /opt/ && curl -O ${MODULES_URL}/ampl-module.linux64.tgz && \
@@ -52,9 +72,15 @@ RUN cd /opt/ && curl -O ${MODULES_URL}/ampl-module.linux64.tgz && \
 # Download gurobi-module.linux64.tgz
 RUN cd /opt/ && curl -O ${MODULES_URL}/gurobi-module.linux64.tgz && \
     tar oxzvf gurobi-module.linux64.tgz && rm gurobi-module.linux64.tgz
+# Download copt-module.linux64.tgz
+RUN cd /opt/ && curl -O ${MODULES_URL}/copt-module.linux64.tgz && \
+    tar oxzvf copt-module.linux64.tgz && rm copt-module.linux64.tgz
 # Download coin-module.linux64.tgz
 RUN cd /opt/ && curl -O ${MODULES_URL}/coin-module.linux64.tgz && \
     tar oxzvf coin-module.linux64.tgz && rm coin-module.linux64.tgz
+# Download highs-module.linux64.tgz
+RUN cd /opt/ && curl -O ${MODULES_URL}/highs-module.linux64.tgz && \
+    tar oxzvf highs-module.linux64.tgz && rm highs-module.linux64.tgz
 
 # Add installation directory to the environment variable PATH
 ENV PATH="/opt/ampl.linux-intel64/:${PATH}"
@@ -73,7 +99,8 @@ In order to make the Docker image smaller, you may want to do a [multi-stage bui
 FROM python:3.9-slim-bullseye
 # Install curl in order to download the modules necessary
 RUN apt-get update && apt-get install -y curl
-# Build arguments
+
+# Install individual modules (alternative to installing the full bundle)
 ARG MODULES_URL=https://ampl.com/dl/modules
 # Download ampl-module.linux64.tgz
 RUN cd /opt/ && curl -O ${MODULES_URL}/ampl-module.linux64.tgz && \
@@ -81,9 +108,15 @@ RUN cd /opt/ && curl -O ${MODULES_URL}/ampl-module.linux64.tgz && \
 # Download gurobi-module.linux64.tgz
 RUN cd /opt/ && curl -O ${MODULES_URL}/gurobi-module.linux64.tgz && \
     tar oxzvf gurobi-module.linux64.tgz && rm gurobi-module.linux64.tgz
+# Download copt-module.linux64.tgz
+RUN cd /opt/ && curl -O ${MODULES_URL}/copt-module.linux64.tgz && \
+    tar oxzvf copt-module.linux64.tgz && rm copt-module.linux64.tgz
 # Download coin-module.linux64.tgz
 RUN cd /opt/ && curl -O ${MODULES_URL}/coin-module.linux64.tgz && \
     tar oxzvf coin-module.linux64.tgz && rm coin-module.linux64.tgz
+# Download highs-module.linux64.tgz
+RUN cd /opt/ && curl -O ${MODULES_URL}/highs-module.linux64.tgz && \
+    tar oxzvf highs-module.linux64.tgz && rm highs-module.linux64.tgz
 
 # Start a second stage copying just ampl.linux-intel64
 FROM python:3.9-slim-bullseye
@@ -105,7 +138,8 @@ This is necessary if the non-root user can't write to `/opt/ampl.linux-intel64`.
 FROM python:3.9-slim-bullseye
 # Install curl in order to download the modules necessary
 RUN apt-get update && apt-get install -y curl
-# Build arguments
+
+# Install individual modules (alternative to installing the full bundle)
 ARG MODULES_URL=https://ampl.com/dl/modules
 # Download ampl-module.linux64.tgz
 RUN cd /opt/ && curl -O ${MODULES_URL}/ampl-module.linux64.tgz && \
@@ -113,9 +147,15 @@ RUN cd /opt/ && curl -O ${MODULES_URL}/ampl-module.linux64.tgz && \
 # Download gurobi-module.linux64.tgz
 RUN cd /opt/ && curl -O ${MODULES_URL}/gurobi-module.linux64.tgz && \
     tar oxzvf gurobi-module.linux64.tgz && rm gurobi-module.linux64.tgz
+# Download copt-module.linux64.tgz
+RUN cd /opt/ && curl -O ${MODULES_URL}/copt-module.linux64.tgz && \
+    tar oxzvf copt-module.linux64.tgz && rm copt-module.linux64.tgz
 # Download coin-module.linux64.tgz
 RUN cd /opt/ && curl -O ${MODULES_URL}/coin-module.linux64.tgz && \
     tar oxzvf coin-module.linux64.tgz && rm coin-module.linux64.tgz
+# Download highs-module.linux64.tgz
+RUN cd /opt/ && curl -O ${MODULES_URL}/highs-module.linux64.tgz && \
+    tar oxzvf highs-module.linux64.tgz && rm highs-module.linux64.tgz
 
 # Start a second stage copying just ampl.linux-intel64
 FROM python:3.9-slim-bullseye
