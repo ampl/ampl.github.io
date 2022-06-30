@@ -8,7 +8,7 @@ These leases are stored in a `ampl.lic` file that is replaced every time the lea
 
 In order to renew a lease, the current license file and a fingerprint are sent to one of our REST API endpoints hosted across multiple cloud providers such as AWS and Azure.
 
-If everything is ok with the request, a new lease is returned in the response and the ampl.lic file is replaced. There is no automatic enforcement of license limits as we just log the renewal.
+If everything is ok with the request, a new lease is returned in the response and AMPL.lic file is replaced. There is no automatic enforcement of license limits as we just log the renewal.
 
 Even though this mechanism was designed with Docker containers in mind, it also works natively on Windows and macOS virtual and physical machines too. The only requirement is an internet connection.
 
@@ -210,5 +210,38 @@ Using license file "/tmp/ampl/ampl.lic".\
 >>>
 ```
 
+## How to add AMPL installation directory to PATH/Path?
+
+### Windows
+
+On Windows, you can add the path to AMPL installation directory (e.g., `"C:\ampl.mswin64\"`)
+to the environment variable `Path` as described in
+<https://www.computerhope.com/issues/ch000549.htm>.
+
+### Linux
+
+On Linux, you can add the path to AMPL installation directory (e.g., `"/opt/ampl.linux-intel64/"`) to the environment variable `PATH` with:
+```bash
+export PATH="/complete/path/to/ampl.linux-intel64/":$PATH
+```
+You can add this line to `~/.profile` or `~/.bashrc`.
+
+### macOS
+
+On macOS, you can add the path to AMPL installation directory (e.g., `"/Users/username/bin/ampl.macos64/"`) to the environment variable `PATH` with:
+```bash
+export PATH="/complete/path/to/ampl.macos64/":$PATH
+```
+You can add this line to `~/.zshrc`.
 
 
+### Python
+
+On any python script you can add the path to AMPL installation directory to the environment variable `PATH`/`Path` as follows:
+
+```python
+import os
+os.environ["PATH"] += os.pathsep + "/complete/path/to/ampl/installation/directory/"
+```
+
+Note: on Windows you should replace `"PATH"` by `"Path"`.
