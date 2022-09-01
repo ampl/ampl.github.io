@@ -107,6 +107,64 @@ The drivers have the following features:
 
 [[Modeling Guide](https://amplmp.readthedocs.io/en/latest/rst/model-guide.html)] [[x-gurobi options](solver_options/x-gurobi_options.md)] [[copt options](solver_options/copt_options.md)]  [[highs options](solver_options/highs_options.md)]
 
+## New AMPL-solver interface library
+
+We're rolling out a new AMPL-solver interface library that significantly
+expands the range of model expressions that can be used with popular
+solvers. Initially, the new library is being used to implement AMPL
+interfaces to two notable new solvers, [COPT](https://ampl.com/products/solvers/solvers-we-sell/copt/) and [HiGHS](https://ampl.com/products/solvers/open-source/), and to provide
+greatly enhanced support for [Gurobi's](https://ampl.com/products/solvers/solvers-we-sell/gurobi/) generalized constraints. Extensions to
+other solvers will be released soon.
+
+### NEW SOLVER INTERFACE
+
+Modeling languages aim to let you describe
+optimization models to a computer in much the same way that you describe
+models to other people. The newly extended ["MP" interface](https://github.com/ampl/mp)
+brings AMPL closer to this goal, by allowing expanded use of a variety of convenient
+expressions in objectives and constraints. Notable examples include:
+
+- Conditional operators: `if-then-else`; `==>`, `<==`, `<==>`
+- Logical operators: `or`, `and`, `not`; `exists`, `forall`
+- Piecewise linear functions: `abs`; `min`, `max`; `<<breakpoints;slopes>>`
+- Counting operators: `count`; `atmost`, `atleast`, `exactly`; `numberof`
+- Comparison operators: `>`, `<`, `!=`; `alldiff`
+
+These operators can be applied to general forms of AMPL expressions, and
+thus can be used together in objective and constraint specifications. The
+new interface also helps solvers to accept nonlinear operators (`*`, `/`, `^`) in
+a broader variety of circumstances.
+
+A public [MP Library repository](https://github.com/ampl/mp) on GitHub links to a [modeling guide](https://amplmp.readthedocs.io/en/latest/rst/model-guide.html) and
+documentation of the source code. See also the slides from our presentation
+of the new interface at this summer's [EURO and ICCOPT conferences](https://ampl.com/MEETINGS/TALKS/2022_07_Bethlehem_Fourer.pdf), or attend
+updated presentations at the [INFORMS Annual Meeting, October 15-19](https://ampl.com/resources/informs-annual-2022/).
+
+### NEW SOLVERS
+
+The first implementations using the MP interface library are
+now available in our regular distributions through the [AMPL Portal](https://portal.ampl.com/).
+
+An entirely new MP-based interface greatly expands the variety of AMPL
+expressions that can be used with the [Gurobi](https://ampl.com/products/solvers/solvers-we-sell/gurobi/) solver. The new implementation
+-- distributed as `x-gurobi` -- uses the solver's native "generalized
+constraints" where possible, but can be switched to use alternative
+transformations built into MP. Common univariate nonlinear functions (`exp`,
+`log`; `sin`, `cos`, `tan`) are also supported, using Gurobi's native
+piecewise-linear approximation facilities.
+
+Two relatively new linear/quadratic MIP solvers -- [COPT](https://ampl.com/products/solvers/solvers-we-sell/copt/) and [HiGHS](https://ampl.com/products/solvers/open-source/) -- are now
+also supported by AMPL, exclusively through the MP interface. Both are in
+active development and appear in recent benchmark listings. COPT, a product
+of Cardinal Operations, has joined the lineup of commercial solvers that we
+distribute. HiGHS, a free open-source solver, has evolved from a project at
+the University of Edinburgh. They appear as "copt" and "highs" in AMPL
+distributions.
+
+Currently supported MIP solvers such as [Xpress](https://ampl.com/products/solvers/solvers-we-sell/xpress/) and [CPLEX](https://ampl.com/products/solvers/solvers-we-sell/cplex/) are also planned to
+have versions with the new interface. Also we will soon be distributing the
+*MOSEK* solver with an MP interface.
+
 ## Using remote solvers from NEOS with gokestrel
 
 To simplify the work of comparing and testing solvers, we have made AMPL and solver resources available online in collaboration with the [NEOS Server](http://www.neos-server.org/) project, under the auspices of the [Wisconsin Institutes for Discovery](http://www.discovery.wisc.edu/) at the University of Wisconsin, Madison. 
