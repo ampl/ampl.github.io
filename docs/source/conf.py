@@ -85,7 +85,8 @@ html_theme = "ampl_sphinx_theme"
 # documentation.
 # html_theme_options = {}
 html_theme_options = {
-    "logo_link": "index",
+    "logo" : {
+        "link": "index" },
     "icon_links": [
         {
             "name": "GitHub",
@@ -243,8 +244,8 @@ latex_documents = [
 man_pages = [
     (
         "index",
-        "AMPL Development Resoureces",
-        "AMPL Development Resoureces",
+        "AMPL Development Resources",
+        "AMPL Development Resources",
         ["Filipe Brandão"],
         1,
     )

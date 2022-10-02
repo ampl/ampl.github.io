@@ -76,9 +76,8 @@ alg:feasrelax (feasrelax)
       subject to the violation objective being minimized.
 
       Weights are given by suffixes .lbpen and .ubpen on variables and .rhspen
-      on constraints (when nonnegative), else by keywords alg:lbpen,
-      alg:ubpen, and alg:rhspen, respectively (default values = 1). Weights <
-      0 are treated as Infinity, allowing no violation.
+      on constraints (when nonnegative, default values = 0), else by keywords alg:lbpen, alg:ubpen, and alg:rhspen, respectively (default values = 1). 
+      Weights < 0 are treated as Infinity, allowing no violation. 
 
 alg:feasrelaxbigm (feasrelaxbigm)
       Value of "big-M" sometimes used with constraints when doing a
