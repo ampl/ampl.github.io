@@ -12,36 +12,133 @@ option "gurobi_options". For example:
 
    ampl: option gurobi_options 'opttol=1e-6';
 
-Options:
+ Options:
 
 acc:abs
-      Acceptance level for 'abs' expression, default 2:
+      Solver acceptance level for 'AbsConstraint', default 2:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
       2 - Accepted natively and preferred
 
-      It is advisable to experiment with the acceptance levels to find
-      best-performing settings.
+acc:and (acc:forall)
+      Solver acceptance level for 'AndConstraint', default 2:
 
-acc:and
-      Acceptance level for 'and'/'forall' expressions, default 2.
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
 
-acc:ind:eq (acc:ind_eq)
-      Acceptance level for 'implied-equal' expression, default 2.
+acc:cos
+      Solver acceptance level for 'CosConstraint', default 2:
 
-acc:ind:le (acc:ind_le, acc:ind:ge, acc:ind_ge)
-      Acceptance level for 'implied-less-equal' and 'implied-greater-equal'
-      expressions, default 2.
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+acc:exp
+      Solver acceptance level for 'ExpConstraint', default 2:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+acc:expa (acc:expA)
+      Solver acceptance level for 'ExpAConstraint', default 2:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+acc:indeq (acc:indlineq)
+      Solver acceptance level for 'IndicatorConstraintLinEQ', default 2:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+acc:indge (acc:indlinge)
+      Solver acceptance level for 'IndicatorConstraintLinGE', default 2:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+acc:indle (acc:indlinle)
+      Solver acceptance level for 'IndicatorConstraintLinLE', default 2:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+acc:log
+      Solver acceptance level for 'LogConstraint', default 2:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+acc:loga (acc:logA)
+      Solver acceptance level for 'LogAConstraint', default 2:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
 
 acc:max
-      Acceptance level for 'max' expression, default 2.
+      Solver acceptance level for 'MaxConstraint', default 2:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
 
 acc:min
-      Acceptance level for 'min' expression, default 2.
+      Solver acceptance level for 'MinConstraint', default 2:
 
-acc:or
-      Acceptance level for 'or'/'exists' expressions, default 2.
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+acc:or (acc:exists)
+      Solver acceptance level for 'OrConstraint', default 2:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+acc:pl (acc:pwl, acc:piecewise)
+      Solver acceptance level for 'PLConstraint', default 2:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+acc:pow
+      Solver acceptance level for 'PowConstraint', default 2:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+acc:sin
+      Solver acceptance level for 'SinConstraint', default 2:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+acc:sos2
+      Solver acceptance level for 'SOS2Constraint', default 2:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+acc:tan
+      Solver acceptance level for 'TanConstraint', default 2:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
 
 alg:basis (basis)
       Whether to use or return a basis:
@@ -76,8 +173,9 @@ alg:feasrelax (feasrelax)
       subject to the violation objective being minimized.
 
       Weights are given by suffixes .lbpen and .ubpen on variables and .rhspen
-      on constraints (when nonnegative, default values = 0), else by keywords alg:lbpen, alg:ubpen, and alg:rhspen, respectively (default values = 1). 
-      Weights < 0 are treated as Infinity, allowing no violation. 
+      on constraints (when nonnegative, default values = 0), else by keywords
+      alg:lbpen, alg:ubpen, and alg:rhspen, respectively (default values = 1).
+      Weights < 0 are treated as Infinity, allowing no violation.
 
 alg:feasrelaxbigm (feasrelaxbigm)
       Value of "big-M" sometimes used with constraints when doing a
@@ -87,7 +185,18 @@ alg:feastol (feastol)
       Primal feasibility tolerance (default 1e-6).
 
 alg:iisfind (iisfind, iis)
-      Whether to find and export the IIS. Default = 0 (don't export).
+      Whether to find and export an IIS. Default = 0 (don't export).
+
+alg:iisforce (iisforce)
+      0/1*: whether to consider the .iis(lb/ub)force suffixes on variables and
+      range constraints, as well as .iisforce on other constraints. Suffix
+      values mean the following (ATTENTION: different to Gurobi IIS...Force
+      attribute!):
+
+      0 - No influence on this bound or constraint (default)
+      -1 - This model item never to be in an IIS (careful, the remaining
+      constraints can be feasible)
+      1 - This model item always to be in the computed IIS.
 
 alg:iismethod (iismethod)
       Which method to use when finding an IIS (irreducible infeasible set of
@@ -142,16 +251,27 @@ alg:rhspen (rhspen)
 
 alg:sens (sens, solnsens, sensitivity)
       Whether to return suffixes for solution sensitivities, i.e., ranges of
-      values for which the optimal basis remains optimal:
+      values for which the optimal basis remains optimal (note that the
+      variable and objective values can change):
 
       0 - No (default)
-      1 - Yes: suffixes return on variables are
+      1 - Yes: suffixes returned on variables are
       .sensobjlo = smallest objective coefficient
       .sensobjhi = greatest objective coefficient
       .senslblo = smallest variable lower bound
       .senslbhi = greatest variable lower bound
       .sensublo = smallest variable upper bound
-      .sensubhi = greatest variable upper bound; suffixes for constraints are
+      .sensubhi = greatest variable upper bound;
+
+      suffixes for all constraints are
+
+      .senslblo = smallest constraint lower bound
+      .senslbhi = greatest constraint lower bound
+      .sensublo = smallest constraint upper bound
+      .sensubhi = greatest constraint upper bound;
+
+      suffixes for one-sided constraints only:
+
       .sensrhslo = smallest right-hand side value
       .sensrhshi = greatest right-hand side value.
 
@@ -316,6 +436,11 @@ cut:submip (submipcuts)
 
 cut:zerohalf (zerohalfcuts)
       Zero-half cuts: overrides "cuts"; choices as for "cuts".
+
+cvt:mip:bigM (cvt:mip:bigm, cvt:bigM, cvt:bigm)
+      Default value of big-M for linearization of logical constraints. Not
+      used by default. Use with care (prefer tight bounds). Should be smaller
+      than (1.0 / [integrality tolerance])
 
 cvt:mip:eps (cvt:cmp:eps)
       Tolerance for strict comparison of continuous variables for MIP. Ensure
@@ -762,6 +887,46 @@ pre:dualreductions (dualreductions)
       0 - No
       1 - Yes (default.)
 
+pre:funcpieceerror (funcpieceerror)
+      For 'funcpieces=-1' or -2, this option provides the maximum allowed
+      error (absolute for -1, relative for -2) in the piecewise-linear
+      approximation.
+
+      The value can be overridden by suffix .funcpieceerror of the individual
+      constraints.
+
+pre:funcpiecelength (funcpiecelength)
+      If 'funcpieces=1', this option or suffix provide the length of each
+      piece of the piecewise-linear approximation.
+
+pre:funcpieceratio (funcpieceratio)
+      This option (and suffix) control whether the piecewise-linear
+      approximation of a function constraint is an underestimate of the
+      function, an overestimate, or somewhere in between. A value of 0.0 will
+      always underestimate, while a value of 1.0 will always overestimate. A
+      value in between will interpolate between the underestimate and the
+      overestimate. A special value of -1 chooses points that are on the
+      original function.
+
+pre:funcpieces (funcpieces)
+      This option (and suffix) set the strategy used for performing a
+      piecewise-linear approximation of a function constraint. They have the
+      following meaning:
+
+      0 - Automatic choice (default)
+      >=2 - Sets the number of pieces; pieces are equal width
+      1 - Uses a fixed width for each piece; the actual width is provided in
+      the 'funcpiecelength' option/suffix
+      -1 - Bounds the absolute error of the approximation; the error bound is
+      provided in the 'funcpieceerror' option/suffix
+      -2 - Bounds the relative error of the approximation; the error bound is
+      provided in the 'funcpieceerror' option/suffix.
+
+pre:funcpiecesuf (funcpiecesuf, funcpiecesuffixes)
+      0/1*: whether to consider the individual .funcpiece... suffixes in
+      objectives and constraints, which impact Gurobi's approximation quality
+      of nonlinear constraints, beyond the corresponding global options
+
 pre:miqcpform (premiqcpform)
       For mixed-integer quadratically constrained (MIQCP) problems, how Gurobi
       should transform quadratic constraints:
@@ -819,6 +984,21 @@ pre:sos1bigm (presos1bigm)
 
       Large values (e.g., 1e8) may cause numeric trouble.
 
+pre:sos1enc (presos1enc)
+      Encoding used for SOS1 reformulation:
+
+      -1 - Automatic choice (default)
+      0 - Multiple choice model, produces an LP relaxation that is easy to
+      solve
+      1 - Incremental model, reduces the amount of branching
+      2 - Formulation whose LP relaxation is easier to solve
+      3 - Formulation with better branching behavior, requires sum of the
+      variables == 1.
+
+      Options 0 and 1 produce reformulations that are linear in size; options
+      2 and 3 use reformulation logarithmic in size. Option 2 and 3 apply only
+      when all the variables are >=0.
+
 pre:sos2bigm (presos2bigm)
       Big-M for converting SOS2 constraints to binary form:
 
@@ -826,6 +1006,9 @@ pre:sos2bigm (presos2bigm)
       0 - No conversion
 
       Large values (e.g., 1e8) may cause numeric trouble.
+
+pre:sos2enc (presos2enc)
+      Encoding used for SOS2 reformulation, see presos1enc.
 
 pre:sparsify (presparsify)
       Whether Gurobi's presolve should use its "sparsify reduction", which
@@ -920,11 +1103,6 @@ tech:distmip (pool_distmip, distmip)
 
       See also "tech:concurrentmip", "tech:pooljobs".
 
-tech:exportfile (writeprob, writemodel, exportfile)
-      Specifies the name of a file where to export the model before solving
-      it. This file name can have extension ".lp", ".mps", etc. Default = ""
-      (don't export the model).
-
 tech:logfile (logfile)
       Log file name.
 
@@ -940,7 +1118,8 @@ tech:nodefilestart (nodefilestart)
       limit, i.e., no node files written).
 
 tech:optionfile (optionfile, option:file)
-      Name of solver option file. Lines that start with # are ignored.
+      Name of solver option file. (surrounded by 'single' or "double" quotes
+      if the name contains blanks). Lines that start with # are ignored.
       Otherwise, each nonempty line should contain "name=value".
 
 tech:outlev (outlev)
@@ -1098,6 +1277,14 @@ tech:workerpool (pool_servers)
       node and you want to use the same cluster for the distributed workers.
 
       You can provide a comma-separated list of machines for added robustness.
+
+tech:writegraph (writegraph, exportgraph)
+      File to export conversion graph. Format: JSON Lines.
+
+tech:writeprob (writeprob, writemodel, exportfile)
+      Specifies the name of a file where to export the model before solving
+      it. This file name can have extension ".lp", ".mps", etc. Default = ""
+      (don't export the model).
 
 ```
 

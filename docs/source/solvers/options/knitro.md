@@ -32,6 +32,7 @@ bar_linsys_storage       Barrier linear system storage
 bar_maxcorrectors        Maximum number of corrector steps
 bar_maxcrossit           Maximum number of crossover iterations
 bar_maxrefactor          Maximum number of KKT refactorizations allowed
+bar_mpec_heuristic       Whether to enable barrier MPEC heuristic
 bar_murule               Rule for updating the barrier parameter
 bar_penaltycons          Apply penalty method to constraints
 bar_penaltyrule          Rule for updating the penalty parameter
@@ -65,6 +66,8 @@ feasmodetol              Tolerance for entering feasible mode
 feastol                  Feasibility stopping tolerance
 feastol_abs              Absolute feasibility tolerance
 feastolabs               Absolute feasibility tolerance
+findiff_estnoise         Noise estimate for finite-difference gradients
+findiff_numthreads       Number of threads for finite-difference gradients
 findiff_relstepsize      Relative stepsize for finite-difference gradients
 findiff_terminate        Termination for finite-difference gradients
 fstopval                 Stop based on obj. function value
@@ -115,6 +118,7 @@ mip_heuristic_diving     MIP diving heuristic
 mip_heuristic_feaspump   MIP feasibility pump heuristic
 mip_heuristic_lns        MIP LNS heuristic
 mip_heuristic_maxit      MIP heuristic iteration limit
+mip_heuristic_misqp      MIP MISQP heuristic
 mip_heuristic_mpec       MIP MPEC heuristic
 mip_heuristic_strategy   MIP heuristic strategy
 mip_heuristic_terminate  MIP heuristic termination
@@ -143,6 +147,7 @@ mip_outlevel             MIP output level
 mip_outsub               Enable MIP subproblem output
 mip_pseudoinit           Pseudo-cost initialization
 mip_relaxable            Are integer variables relaxable?
+mip_restart              Enable MIP restart
 mip_rootalg              Root node relaxation algorithm
 mip_rounding             MIP rounding rule
 mip_selectdir            MIP node selection direction

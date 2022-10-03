@@ -20,7 +20,7 @@ SOLVERS = {
 for label, solver in SOLVERS.items():
     output = subprocess.check_output([solver, "-="]).decode()
 
-    with open(f"source/solver_options/{solver}_options.md", "w") as f:
+    with open(f"source/solvers/options/{solver}.md", "w") as f:
         print(
             f"""
 # {label} Options

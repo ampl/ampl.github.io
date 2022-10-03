@@ -303,7 +303,7 @@ lazy             Whether to honor suffix .lazy on linear constraints in
 
 lbpen            See feasrelax.
 
-liftprojectcuts  Wether to generate lift-and-project cuts:
+liftprojectcuts  Whether to generate lift-and-project cuts:
                         -1 = automatic choice (default)
                          0 = no
                          1 = moderate cut generation
@@ -421,6 +421,11 @@ multprice_norm   Choice of norm used in multiple pricing:
                                 much better than the automatic choice.
 
 networkcuts      Network cuts:  Overrides "cuts"; choices as for "cuts".
+
+nlpheur          Controls the NLP heuristic, affecting non-convex quadratic
+                 problems:
+                         0 = Do not apply heuristic
+                         1 = Apply heuristic (default).
 
 nodefiledir      Directory where MIP tree nodes are written after memory
                  for them exceeds nodefilestart; default "."

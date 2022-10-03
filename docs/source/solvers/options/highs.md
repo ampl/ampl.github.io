@@ -12,7 +12,14 @@ option "highs_options". For example:
 
    ampl: option highs_options 'relgaptol=1e-6';
 
-Options:
+ Options:
+
+acc:linrange (acc:linrng)
+      Solver acceptance level for 'LinConRange', default 2:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
 
 alg:basis (basis)
       Whether to use or return a basis:
@@ -105,6 +112,11 @@ alg:simplexscale (simplexscale, simplex_scale_strategy)
 alg:zerocoeff (zerocoeff, small_matrix_value)
       Lower limit on |matrix entries|: values smaller than this will be
       treated as zero (default: 1e-9).
+
+cvt:mip:bigM (cvt:mip:bigm, cvt:bigM, cvt:bigm)
+      Default value of big-M for linearization of logical constraints. Not
+      used by default. Use with care (prefer tight bounds). Should be smaller
+      than (1.0 / [integrality tolerance])
 
 cvt:mip:eps (cvt:cmp:eps)
       Tolerance for strict comparison of continuous variables for MIP. Ensure
@@ -232,7 +244,8 @@ tech:miploglev (miploglev, mip_report_level)
       0/1*/2: MIP solver report level
 
 tech:optionfile (optionfile, option:file)
-      Name of solver option file. Lines that start with # are ignored.
+      Name of solver option file. (surrounded by 'single' or "double" quotes
+      if the name contains blanks). Lines that start with # are ignored.
       Otherwise, each nonempty line should contain "name=value".
 
 tech:outlev (outlev)
@@ -256,6 +269,9 @@ tech:wantsol (wantsol)
       2 - Primal variables to stdout
       4 - Dual variables to stdout
       8 - Suppress solution message.
+
+tech:writegraph (writegraph, exportgraph)
+      File to export conversion graph. Format: JSON Lines.
 
 ```
 

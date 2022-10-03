@@ -8,7 +8,7 @@ AMPL Resources
     features
     faq
     ampl_options
-    solvers
+    solvers/index
     apis
     book
 
