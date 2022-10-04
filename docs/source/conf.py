@@ -85,8 +85,7 @@ html_theme = "ampl_sphinx_theme"
 # documentation.
 # html_theme_options = {}
 html_theme_options = {
-    "logo" : {
-        "link": "index" },
+    "logo_link": "index",
     "icon_links": [
         {
             "name": "GitHub",

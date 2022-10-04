@@ -12,7 +12,42 @@ option "copt_options". For example:
 
    ampl: option copt_options 'mipgap=1e-6';
 
-Options:
+ Options:
+
+acc:indeq (acc:indlineq)
+      Solver acceptance level for 'IndicatorConstraintLinEQ', default 1:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+acc:indge (acc:indlinge)
+      Solver acceptance level for 'IndicatorConstraintLinGE', default 1:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+acc:indle (acc:indlinle)
+      Solver acceptance level for 'IndicatorConstraintLinLE', default 1:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+acc:linrange (acc:linrng)
+      Solver acceptance level for 'LinConRange', default 2:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+acc:sos2
+      Solver acceptance level for 'SOS2Constraint', default 2:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
 
 alg:basis (basis)
       Whether to use or return a basis:
@@ -25,17 +60,61 @@ alg:basis (basis)
 alg:dualfeastol (dualfeastol)
       Tolerance for dual solutions and reduced cost (default 1e-6).
 
+alg:feasrelax (feasrelax)
+      Whether to modify the problem into a feasibility relaxation problem:
+
+      0 = No (default)
+      1 = Yes, minimizing the weighted sum of violations
+      2 = Yes, minimizing the weighted sum of squared violations
+      3 = Yes, minimizing the weighted count of violations
+      4-6 = Same objective as 1-3, but also optimize the original objective,
+      subject to the violation objective being minimized.
+
+      Weights are given by suffixes .lbpen and .ubpen on variables and .rhspen
+      on constraints (when nonnegative), else by keywords alg:lbpen,
+      alg:ubpen, and alg:rhspen, respectively (default values = 1). Weights <
+      0 are treated as Infinity, allowing no violation.
+
 alg:feastol (feastol)
       Primal feasibility tolerance (default 1e-6).
 
 alg:iisfind (iisfind, iis)
-      Whether to find and export the IIS. Default = 0 (don't export).
+      Whether to find and export an IIS. Default = 0 (don't export).
+
+alg:iismethod (iismethod)
+      Which method to use when finding an IIS (irreducible infeasible set of
+      constraints, including variable bounds):
+
+      -1 - Automatic choice (default)
+      0  - Find smaller IIS
+      1  - Find IIS quickly
+
+alg:lbpen (lbpen)
+      See alg:feasrelax.
 
 alg:matrixtol (matrixtol)
       nput matrix coefficient tolerance (default 1e-10).
 
 alg:relax (relax)
       0*/1: Whether to relax integrality of variables.
+
+alg:rhspen (rhspen)
+      See alg:feasrelax.
+
+alg:ubpen (ubpen)
+      See alg:feasrelax.
+
+bar:crossover (crossover)
+      Execute crossover to transform a barrier solution to a basic one
+      (default 1).
+
+bar:iterlim (BarIterLimit)
+      Limit on the number of barrier iterations (default 500).
+
+cvt:mip:bigM (cvt:mip:bigm, cvt:bigM, cvt:bigm)
+      Default value of big-M for linearization of logical constraints. Not
+      used by default. Use with care (prefer tight bounds). Should be smaller
+      than (1.0 / [integrality tolerance])
 
 cvt:mip:eps (cvt:cmp:eps)
       Tolerance for strict comparison of continuous variables for MIP. Ensure
@@ -60,6 +139,9 @@ cvt:sos (sos)
 cvt:sos2 (sos2)
       0/1*: Whether to honor SOS2 constraints for nonconvex piecewise-linear
       terms, using suffixes .sos and .sosref provided by AMPL.
+
+lim:nodes (nodelim, nodelimit)
+      Maximum MIP nodes to explore (default: no limit).
 
 lim:time (timelim, timelimit)
       limit on solve time (in seconds; default: no limit).
@@ -150,16 +232,8 @@ mip:heurlevel (heurlevel)
       2  - Normal
       3  - Aggressive
 
-mip:intfeastol (intfeastol)
-      Feasibility tolerance for integer variables (default 1e-05).
-
-mip:lazy (lazy)
-      Whether to recognize suffix .lazy on constraints: sum of
-
-      1 - Accept .lazy>0 values (true lazy constraints, if supported)
-      2 - Accept .lazy<0 values (user cuts, if supported)
-
-      Default lazy = 3 ==> accept both.
+mip:intfeastol (intfeastol, inttol)
+      Feasibility tolerance for integer variables (default 1e-06).
 
 mip:nodecutrounds (nodecutrounds)
       Rounds of cutting-planes generation of search tree node;
@@ -312,7 +386,8 @@ tech:miptasks (miptasks)
       default -1 ==> automatic.
 
 tech:optionfile (optionfile, option:file)
-      Name of solver option file. Lines that start with # are ignored.
+      Name of solver option file. (surrounded by 'single' or "double" quotes
+      if the name contains blanks). Lines that start with # are ignored.
       Otherwise, each nonempty line should contain "name=value".
 
 tech:outlev (outlev)
@@ -340,6 +415,9 @@ tech:wantsol (wantsol)
       2 - Primal variables to stdout
       4 - Dual variables to stdout
       8 - Suppress solution message.
+
+tech:writegraph (writegraph, exportgraph)
+      File to export conversion graph. Format: JSON Lines.
 
 ```
 
