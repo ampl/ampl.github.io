@@ -62,6 +62,7 @@ found [here](https://amplmp.readthedocs.io/en/latest/rst/model-guide.html#modeli
 
 ## Solver options
 
+Full list of solver options:
 ```{toctree}
 options/x-gurobi
 ```
