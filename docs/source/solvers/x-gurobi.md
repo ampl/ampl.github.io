@@ -1,10 +1,5 @@
 # x-GUROBI Solver
 
-```{toctree}
-:hidden:
-options/x-gurobi
-```
-
 Gurobi is a powerful commercial suite of optimization products, which includes simplex and parallel barrier solvers to handle linear programming (LP) and quadratic progermming (QP), also quadratically constrained (QCP) and the mixed-integer variations thereof (MIP, MIQP, MIQCP). It also supports some types of general constraints.
 The framework used by the drivers supports automatic reformulation for many expression types; the relative guide can be
 found [here](https://amplmp.readthedocs.io/en/latest/rst/model-guide.html#modeling-guide).
@@ -66,6 +61,10 @@ found [here](https://amplmp.readthedocs.io/en/latest/rst/model-guide.html#modeli
       
 
 ## Solver options
+
+```{toctree}
+options/x-gurobi
+```
 
 Many solver parameters can be changed directly from AMPL, by specifying them as a space separated string in the option `gurobi_options`. 
 A list of all supported options is available [here](options/x-gurobi) or can be obtained by executing the solver driver with the `-=` command line parameter:
