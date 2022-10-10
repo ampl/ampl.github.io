@@ -6,10 +6,10 @@ Linear
 ------
 
 .. toctree::
-    :maxdepth: 1
+    :maxdepth: 2
 
     x-gurobi
-    options/x-gurobi
+    kestrel
     options/copt
     options/cplex
     options/gurobi
@@ -22,7 +22,7 @@ NonLinear
 ---------
 
 .. toctree:: 
-    :maxdepth: 1
+    :maxdepth: 2
 
     options/conopt
     options/knitro
@@ -34,7 +34,7 @@ Global
 ------
 
 .. toctree:: 
-    :maxdepth: 1
+    :maxdepth: 2
 
     options/baron
     options/lindoglobal
