@@ -245,3 +245,9 @@ os.environ["PATH"] += os.pathsep + "/complete/path/to/ampl/installation/director
 ```
 
 Note: on Windows you should replace `"PATH"` by `"Path"`.
+
+## Other help resources
+
+```{toctree}
+help/index
+```
