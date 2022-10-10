@@ -1,7 +1,6 @@
 Solvers
 =======
 
-
 Linear
 ------
 
@@ -9,7 +8,6 @@ Linear
     :maxdepth: 2
 
     x-gurobi
-    kestrel
     options/copt
     options/cplex
     options/gurobi
@@ -30,6 +28,7 @@ NonLinear
     options/minos
     options/snopt
 
+
 Global
 ------
 
@@ -38,3 +37,12 @@ Global
 
     options/baron
     options/lindoglobal
+
+
+NEOS
+----
+
+.. toctree::
+    :maxdepth: 2
+
+    kestrel
