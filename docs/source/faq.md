@@ -12,9 +12,11 @@
 
 ## How to install AMPL?
 
-```{toctree}
-help/install-ampl
-```
+After downloading your AMPL & Solvers bundle from the [AMPL Portal](https://portal.ampl.com),
+please follow the instructions below that correspond to your operating system:
+- [Windows](help/install-ampl.md#windows)
+- [Linux](help/install-ampl.md#linux)
+- [macOS](help/install-ampl.md#macos)
 
 ## How do cloud licenses work?
 
