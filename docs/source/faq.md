@@ -1,5 +1,21 @@
 # FAQs
 
+## What is AMPL?
+
+1. AMPL is a modelling language for describing production, distribution, blending, scheduling and many other kinds of problems known generally as large-scale optimization or mathematical programming.
+
+2. AMPL’s familiar algebraic notation and interactive command environment are designed to help formulate models, **communicate with a wide variety of solvers (e.g., Gurobi, CPLEX, etc.)**, and examine solutions. **AMPL connects to most open-source and commercial solvers and allows you to switch easily between them.**
+
+3. **AMPL has [APIs](apis.md) for several popular programming languages (e.g., Python, R, etc.)** and it allows you to only model once in AMPL and interact with it using an API for a language you are familiar with, and possibly deploy to a completely different language with minimal effort since the model remains the same.
+
+4. **You can use AMPL for free and forever** with open-source solvers with a [Community Edition License](https://ampl.com/ce/) including for commercial purposes. You can also start 30-day trials for individual commercial solvers. We also offer a few other free licenses for you to [start for free now](https://ampl.com/start-free-now/).
+
+## How to install AMPL?
+
+```{toctree}
+help/install-ampl
+```
+
 ## How do cloud licenses work?
 
 Instead of using long term licenses that require static hardware we use short-term leases which give the flexibility of moving the license between different machines or containers.
