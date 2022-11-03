@@ -3,11 +3,11 @@
 After downloading your AMPL & Solvers bundle from the [AMPL Portal](https://portal.ampl.com),
 please follow the instructions below that correspond to your operating system:
 
-- [Microsoft Windows](install-ampl.md#microsoft-windows)
+- [Windows](install-ampl.md#windows)
 - [Linux](install-ampl.md#linux)
 - [macOS](install-ampl.md#macos)
 
-## Microsoft Windows
+## Windows
 
 1. **To install:**
 
