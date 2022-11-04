@@ -64,7 +64,7 @@ FROM python:3.9-slim-bullseye
 RUN apt-get update && apt-get install -y curl
 
 # Install full bundle (includes AMPL and all solvers)
-RUN cd /opt/ && curl -O https://portal.ampl.com/dl/amplce/ampl.linux64.tgz && \
+RUN cd /opt/ && curl -OL https://ampl.com/dl/amplce/ampl.linux64.tgz && \
     tar oxzvf ampl.linux64.tgz && rm ampl.linux64.tgz
 
 # Add installation directory to the environment variable PATH
@@ -85,19 +85,19 @@ RUN apt-get update && apt-get install -y curl
 # Install individual modules (alternative to installing the full bundle)
 ARG MODULES_URL=https://ampl.com/dl/modules
 # Download ampl-module.linux64.tgz
-RUN cd /opt/ && curl -O ${MODULES_URL}/ampl-module.linux64.tgz && \
+RUN cd /opt/ && curl -OL ${MODULES_URL}/ampl-module.linux64.tgz && \
     tar oxzvf ampl-module.linux64.tgz && rm ampl-module.linux64.tgz
 # Download gurobi-module.linux64.tgz
-RUN cd /opt/ && curl -O ${MODULES_URL}/gurobi-module.linux64.tgz && \
+RUN cd /opt/ && curl -OL ${MODULES_URL}/gurobi-module.linux64.tgz && \
     tar oxzvf gurobi-module.linux64.tgz && rm gurobi-module.linux64.tgz
 # Download copt-module.linux64.tgz
-RUN cd /opt/ && curl -O ${MODULES_URL}/copt-module.linux64.tgz && \
+RUN cd /opt/ && curl -OL ${MODULES_URL}/copt-module.linux64.tgz && \
     tar oxzvf copt-module.linux64.tgz && rm copt-module.linux64.tgz
 # Download coin-module.linux64.tgz
-RUN cd /opt/ && curl -O ${MODULES_URL}/coin-module.linux64.tgz && \
+RUN cd /opt/ && curl -OL ${MODULES_URL}/coin-module.linux64.tgz && \
     tar oxzvf coin-module.linux64.tgz && rm coin-module.linux64.tgz
 # Download highs-module.linux64.tgz
-RUN cd /opt/ && curl -O ${MODULES_URL}/highs-module.linux64.tgz && \
+RUN cd /opt/ && curl -OL ${MODULES_URL}/highs-module.linux64.tgz && \
     tar oxzvf highs-module.linux64.tgz && rm highs-module.linux64.tgz
 
 # Add installation directory to the environment variable PATH
@@ -121,19 +121,19 @@ RUN apt-get update && apt-get install -y curl
 # Install individual modules (alternative to installing the full bundle)
 ARG MODULES_URL=https://ampl.com/dl/modules
 # Download ampl-module.linux64.tgz
-RUN cd /opt/ && curl -O ${MODULES_URL}/ampl-module.linux64.tgz && \
+RUN cd /opt/ && curl -OL ${MODULES_URL}/ampl-module.linux64.tgz && \
     tar oxzvf ampl-module.linux64.tgz && rm ampl-module.linux64.tgz
 # Download gurobi-module.linux64.tgz
-RUN cd /opt/ && curl -O ${MODULES_URL}/gurobi-module.linux64.tgz && \
+RUN cd /opt/ && curl -OL ${MODULES_URL}/gurobi-module.linux64.tgz && \
     tar oxzvf gurobi-module.linux64.tgz && rm gurobi-module.linux64.tgz
 # Download copt-module.linux64.tgz
-RUN cd /opt/ && curl -O ${MODULES_URL}/copt-module.linux64.tgz && \
+RUN cd /opt/ && curl -OL ${MODULES_URL}/copt-module.linux64.tgz && \
     tar oxzvf copt-module.linux64.tgz && rm copt-module.linux64.tgz
 # Download coin-module.linux64.tgz
-RUN cd /opt/ && curl -O ${MODULES_URL}/coin-module.linux64.tgz && \
+RUN cd /opt/ && curl -OL ${MODULES_URL}/coin-module.linux64.tgz && \
     tar oxzvf coin-module.linux64.tgz && rm coin-module.linux64.tgz
 # Download highs-module.linux64.tgz
-RUN cd /opt/ && curl -O ${MODULES_URL}/highs-module.linux64.tgz && \
+RUN cd /opt/ && curl -OL ${MODULES_URL}/highs-module.linux64.tgz && \
     tar oxzvf highs-module.linux64.tgz && rm highs-module.linux64.tgz
 
 # Start a second stage copying just ampl.linux-intel64
@@ -160,19 +160,19 @@ RUN apt-get update && apt-get install -y curl
 # Install individual modules (alternative to installing the full bundle)
 ARG MODULES_URL=https://ampl.com/dl/modules
 # Download ampl-module.linux64.tgz
-RUN cd /opt/ && curl -O ${MODULES_URL}/ampl-module.linux64.tgz && \
+RUN cd /opt/ && curl -OL ${MODULES_URL}/ampl-module.linux64.tgz && \
     tar oxzvf ampl-module.linux64.tgz && rm ampl-module.linux64.tgz
 # Download gurobi-module.linux64.tgz
-RUN cd /opt/ && curl -O ${MODULES_URL}/gurobi-module.linux64.tgz && \
+RUN cd /opt/ && curl -OL ${MODULES_URL}/gurobi-module.linux64.tgz && \
     tar oxzvf gurobi-module.linux64.tgz && rm gurobi-module.linux64.tgz
 # Download copt-module.linux64.tgz
-RUN cd /opt/ && curl -O ${MODULES_URL}/copt-module.linux64.tgz && \
+RUN cd /opt/ && curl -OL ${MODULES_URL}/copt-module.linux64.tgz && \
     tar oxzvf copt-module.linux64.tgz && rm copt-module.linux64.tgz
 # Download coin-module.linux64.tgz
-RUN cd /opt/ && curl -O ${MODULES_URL}/coin-module.linux64.tgz && \
+RUN cd /opt/ && curl -OL ${MODULES_URL}/coin-module.linux64.tgz && \
     tar oxzvf coin-module.linux64.tgz && rm coin-module.linux64.tgz
 # Download highs-module.linux64.tgz
-RUN cd /opt/ && curl -O ${MODULES_URL}/highs-module.linux64.tgz && \
+RUN cd /opt/ && curl -OL ${MODULES_URL}/highs-module.linux64.tgz && \
     tar oxzvf highs-module.linux64.tgz && rm highs-module.linux64.tgz
 
 # Start a second stage copying just ampl.linux-intel64
