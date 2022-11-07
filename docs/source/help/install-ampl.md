@@ -21,6 +21,14 @@ please follow the instructions below that correspond to your operating system:
 
     Inside your AMPL folder, double-click the `sw.exe` icon and type `ampl` at the prompt in the window that appears. Then you will see an `ampl:` prompt and can proceed to type AMPL commands.
 
+```{note}
+If you use cloud licenses (e.g., [AMPL Community Edition](https://ampl.com/ce/) licenses), **the AMPL folder cannot be read-only** (e.g., `"C:\Program Files\ampl.mswin64"`). If really you want to have AMPL installed on a read-only folder, you need to set the environment
+variables `AMPL_LICFILE` to a location where you store `ampl.lic` and where you have permissions to write, and `AMPLKEY_RUNTIME_DIR` to a temporary folder.
+
+**If you install AMPL somewhere in your home folder you should not need
+to worry about this.**
+```
+
 ## Linux
 
 1. **To install:**
@@ -34,6 +42,13 @@ please follow the instructions below that correspond to your operating system:
 3. **To run via the command line:**
 
     In a command window, use cd to go to your AMPL directory, then type `./ampl` at the system prompt. Then you will see an `ampl:` prompt and can proceed to type AMPL commands.
+
+```{note}
+If you use cloud licenses (e.g., [AMPL Community Edition](https://ampl.com/ce/) licenses), **the AMPL directory cannot be read-only**. If really you want to have AMPL installed on a read-only directory, you need to set the environment
+variables `AMPL_LICFILE` to a location where you store `ampl.lic` and where you have permissions to write, and `AMPLKEY_RUNTIME_DIR` to a temporary directory.
+
+**If you install AMPL somewhere in your home directory you should not need to worry about this.**
+```
 
 ## macOS
 
@@ -55,3 +70,9 @@ please follow the instructions below that correspond to your operating system:
 
     In your AMPL folder, double-click `ampl`. You should see an `ampl:` prompt appear and can now proceed to enter AMPL commands.
 
+```{note}
+If you use cloud licenses (e.g., [AMPL Community Edition](https://ampl.com/ce/) licenses), **the AMPL directory cannot be read-only**. If really you want to have AMPL installed on a read-only directory, you need to set the environment
+variables `AMPL_LICFILE` to a location where you store `ampl.lic` and where you have permissions to write, and `AMPLKEY_RUNTIME_DIR` to a temporary directory.
+
+**If you install AMPL somewhere in your home directory you should not need to worry about this.**
+```
