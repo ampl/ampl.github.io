@@ -7,10 +7,10 @@ Linear
 .. toctree::
     :maxdepth: 2
 
-    x-gurobi
+    gurobi
     options/copt
     options/cplex
-    options/gurobi
+    options/gurobiasl
     options/highs
     options/xpress
     options/cbc

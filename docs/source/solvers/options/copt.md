@@ -42,6 +42,27 @@ acc:linrange (acc:linrng)
       1 - Accepted but automatic redefinition will be used where possible
       2 - Accepted natively and preferred
 
+acc:quadeq
+      Solver acceptance level for 'QuadConEQ', default 2:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+acc:quadge
+      Solver acceptance level for 'QuadConGE', default 2:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+acc:quadle
+      Solver acceptance level for 'QuadConLE', default 2:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
 acc:sos2
       Solver acceptance level for 'SOS2Constraint', default 2:
 
@@ -128,6 +149,14 @@ cvt:pre:eqbinary
 
 cvt:pre:eqresult
       0/1*: Preprocess reified equality comparison's boolean result bounds.
+
+cvt:quadcon (passquadcon)
+      0/1*: Multiply out and pass quadratic constraint terms to the solver,
+      vs. linear approximation.
+
+cvt:quadobj (passquadobj)
+      0/1*: Multiply out and pass quadratic objective terms to the solver, vs.
+      linear approximation.
 
 cvt:sos (sos)
       0/1*: Whether to honor declared suffixes .sosno and .ref describing SOS

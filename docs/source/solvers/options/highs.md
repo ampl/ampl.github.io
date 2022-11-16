@@ -131,6 +131,14 @@ cvt:pre:eqbinary
 cvt:pre:eqresult
       0/1*: Preprocess reified equality comparison's boolean result bounds.
 
+cvt:quadcon (passquadcon)
+      0*/1: Multiply out and pass quadratic constraint terms to the solver,
+      vs. linear approximation.
+
+cvt:quadobj (passquadobj)
+      0/1*: Multiply out and pass quadratic objective terms to the solver, vs.
+      linear approximation.
+
 cvt:sos (sos)
       0/1*: Whether to honor declared suffixes .sosno and .ref describing SOS
       sets. Each distinct nonzero .sosno value designates an SOS set, of type
@@ -168,13 +176,24 @@ mip:absgaptol (absgaptol, mip_abs_gap)
       tolerance on absolute gap of MIP, |ub-lb|, to determine whether
       optimality has been reached for a MIP instance (default 1e-06).
 
+mip:bestbound (bestbound, return_bound)
+      Whether to return suffix .bestbound for the best known MIP dual bound on
+      the objective value:
+
+      0 - No (default)
+      1 - Yes.
+
+      The suffix is on the objective and problem and is -Infinity for
+      minimization problems and +Infinity for maximization problems if there
+      are no integer variables or if a dual bound is not available.
+
 mip:detsimmetry (detsimmetry, mip_detect_symmetry)
       Whether symmetry should be detected (default 1)
 
 mip:heureff (heureff, mip_heuristic_effort)
       Fraction of time to spend in MIP heuristics (default 0.05).
 
-mip:intfeastol (intfeastol, mip_feasibility_tolerance)
+mip:intfeastol (intfeastol, inttol, mip_feasibility_tolerance)
       Feasibility tolerance for integer variables (default 1e-06).
 
 mip:lpagelimit (lpagelimit, mip_lp_age_limit)
@@ -196,6 +215,18 @@ mip:pscostreliability (pscostreliability, mip_pscost_minreliable)
 mip:relgaptol (relgaptol, mip_rel_gap)
       tolerance on relative gap, | ub - lb|/|ub | , to determine whether
       optimality has been reached for a MIP instance (default 1e-04).
+
+mip:return_gap (return_mipgap)
+      Whether to return mipgap suffixes or include mipgap values (|objectve -
+      .bestbound|) in the solve_message: sum of
+
+      1 - Return .relmipgap suffix (relative to |obj|)
+      2 - Return .absmipgap suffix (absolute mipgap)
+      4 - Suppress mipgap values in solve_message.
+
+      Default = 0. The suffixes are on the objective and problem. Returned
+      suffix values are +Infinity if no integer-feasible solution has been
+      found, in which case no mipgap values are reported in the solve_message.
 
 mip:round (round)
       Whether to round integer variables to integral values before returning

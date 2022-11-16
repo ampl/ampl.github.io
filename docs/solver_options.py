@@ -12,7 +12,7 @@ SOLVERS = {
     "SNOPT": "snopt",
     "XPRESS": "xpress",
     "COPT": "copt",
-    "x-GUROBI": "x-gurobi",
+    "GUROBIASL": "gurobiasl",
     "HiGHS": "highs",
 }
 
