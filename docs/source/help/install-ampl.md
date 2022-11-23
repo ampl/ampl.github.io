@@ -21,6 +21,11 @@ please follow the instructions below that correspond to your operating system:
 
     Inside your AMPL folder, double-click the `sw.exe` icon and type `ampl` at the prompt in the window that appears. Then you will see an `ampl:` prompt and can proceed to type AMPL commands.
 
+```{warning}
+If your bundle is not a time-limited bundle, you need to activate your license in order to remove size-limits.
+You can do that by running inside your AMPL session `shell "amplkey activate --uuid <license-uuid>";` (replacing `<license-uuid>` but the UUID of your license) and then closing and reopening AMPL to start using the new license.
+```
+
 ```{note}
 **If you install AMPL somewhere in your home directory or use a static license, you do not need to worry about the following.**
 
@@ -41,6 +46,11 @@ variables `AMPL_LICFILE` to a location where you store `ampl.lic` and where you 
 3. **To run via the command line:**
 
     In a command window, use cd to go to your AMPL directory, then type `./ampl` at the system prompt. Then you will see an `ampl:` prompt and can proceed to type AMPL commands.
+
+```{warning}
+If your bundle is not a time-limited bundle, you need to activate your license in order to remove size-limits.
+You can do that by running inside your AMPL session `shell "amplkey activate --uuid <license-uuid>";` (replacing `<license-uuid>` but the UUID of your license) and then closing and reopening AMPL to start using the new license.
+```
 
 ```{note}
 **If you install AMPL somewhere in your home directory or use a static license, you do not need to worry about the following.**
@@ -68,6 +78,11 @@ variables `AMPL_LICFILE` to a location where you store `ampl.lic` and where you 
 3. **To run via the command line:**
 
     In your AMPL folder, double-click `ampl`. You should see an `ampl:` prompt appear and can now proceed to enter AMPL commands.
+
+```{warning}
+If your bundle is not a time-limited bundle, you need to activate your license in order to remove size-limits.
+You can do that by running inside your AMPL session `shell "amplkey activate --uuid <license-uuid>";` (replacing `<license-uuid>` but the UUID of your license) and then closing and reopening AMPL to start using the new license.
+```
 
 ```{note}
 **If you install AMPL somewhere in your home directory or use a static license, you do not need to worry about the following.**
