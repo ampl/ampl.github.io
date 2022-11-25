@@ -8,6 +8,7 @@ SOLVERS = {
     "KNITRO": "knitro",
     "Lindo Global": "lindoglobal",
     "LOQO": "loqo",
+    "LGO": "lgo",
     "MINOS": "minos",
     "SNOPT": "snopt",
     "XPRESS": "xpress",
@@ -25,7 +26,13 @@ for label, solver in SOLVERS.items():
             f"""
 # {label} Options
 
-Obtained with `$ {solver} -=`.
+```ampl
+ampl: option solver {solver}; # change the solver
+ampl: option {solver}_options 'option1=value1 option2=value2'; # specify options
+ampl: solve; # solve the problem
+```
+
+Solver options obtained with `$ {solver} -=`.
 
 ```
 {output}

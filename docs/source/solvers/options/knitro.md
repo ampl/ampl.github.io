@@ -1,7 +1,13 @@
 
 # KNITRO Options
 
-Obtained with `$ knitro -=`.
+```ampl
+ampl: option solver knitro; # change the solver
+ampl: option knitro_options 'option1=value1 option2=value2'; # specify options
+ampl: solve; # solve the problem
+```
+
+Solver options obtained with `$ knitro -=`.
 
 ```
 act_lpalg                LP algorithm used in Active or SQP subproblems:

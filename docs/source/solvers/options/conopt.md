@@ -1,7 +1,13 @@
 
 # CONOPT Options
 
-Obtained with `$ conopt -=`.
+```ampl
+ampl: option solver conopt; # change the solver
+ampl: option conopt_options 'option1=value1 option2=value2'; # specify options
+ampl: solve; # solve the problem
+```
+
+Solver options obtained with `$ conopt -=`.
 
 ```
 debug        when to use finite differences to check derivatives:

@@ -1,8 +1,24 @@
-# GUROBI Solver
+# GUROBI
 
 Gurobi is a powerful commercial suite of optimization products, which includes simplex and parallel barrier solvers to handle linear programming (LP) and quadratic progermming (QP), also quadratically constrained (QCP) and the mixed-integer variations thereof (MIP, MIQP, MIQCP). It also supports some types of general constraints.
 The framework used by the drivers supports automatic reformulation for many expression types; the relative guide can be
 found [here](https://amplmp.readthedocs.io/en/latest/rst/model-guide.html#modeling-guide).
+
+[[Read More](https://ampl.com/products/solvers/solvers-we-sell/gurobi/)]
+[[Options](options/gurobi)]
+[[Download](https://portal.ampl.com)]
+
+```{note}
+Our enhanced Gurobi driver (previously know as x-gurobi) is now the default Gurobi driver. The new driver provides significantly extended modeling support for logical and nonlinear operators natively through Gurobi’s built-in “general constraints” and through linearizations performed by the [MP library](https://amplmp.readthedocs.io/). There are two binaries in this package: `gurobi` [[options](options/gurobi)] is the new version, `gurobiasl` [[options](options/gurobiasl)] is the legacy version. If you are upgrading an existing installation and encounter any issues with the new version please report them to [support@ampl.com](mailto:support@ampl.com).
+```
+
+## How to use it
+
+```ampl
+ampl: option solver gurobi; # change the solver
+ampl: option gurobi_options 'option1=value1 option2=value2'; # specify options
+ampl: solve; # solve the problem
+```
 
 ## At a glance
 
@@ -66,9 +82,13 @@ Full list of solver options:
 ```{toctree}
 options/gurobi
 ```
+```{toctree}
+:hidden:
+options/gurobiasl
+```
 
 Many solver parameters can be changed directly from AMPL, by specifying them as a space separated string in the option `gurobi_options`. 
-A list of all supported options is available [here](options/x-gurobi) or can be obtained by executing the solver driver with the `-=` command line parameter:
+A list of all supported options is available [here](options/gurobi) or can be obtained by executing the solver driver with the `-=` command line parameter:
 
 ```
 gurobi -=
@@ -99,7 +119,7 @@ gurobi -=lim:
 
 ## Specifying solver options and solving a model
 
-After formulating the model in AMPL, execute the following to select x-gurobi as solver and pass the two options:
+After formulating the model in AMPL, execute the following to select gurobi as solver and pass the two options:
 `return_mipgap=3` and `outlev=1`.
 
 ```ampl

@@ -1,7 +1,13 @@
 
 # Lindo Global Options
 
-Obtained with `$ lindoglobal -=`.
+```ampl
+ampl: option solver lindoglobal; # change the solver
+ampl: option lindoglobal_options 'option1=value1 option2=value2'; # specify options
+ampl: solve; # solve the problem
+```
+
+Solver options obtained with `$ lindoglobal -=`.
 
 ```
 epsa           Absolute convergence tolerance (default 1e-6).

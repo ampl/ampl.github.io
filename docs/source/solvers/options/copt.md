@@ -1,7 +1,13 @@
 
 # COPT Options
 
-Obtained with `$ copt -=`.
+```ampl
+ampl: option solver copt; # change the solver
+ampl: option copt_options 'option1=value1 option2=value2'; # specify options
+ampl: solve; # solve the problem
+```
+
+Solver options obtained with `$ copt -=`.
 
 ```
 COPT Optimizer Options for AMPL

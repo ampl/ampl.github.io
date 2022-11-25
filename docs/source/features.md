@@ -91,9 +91,9 @@ FISH   0
 ```
 The snapshot feature is not finished and it is still being perfected. If you encounter any issues, please let us know.
 
-## Enhanced solver drivers: x-gurobi, copt, highs
+## Enhanced solver drivers: gurobi, copt, highs
 
-We have released `x-gurobi`, the enhanced
+We have released `gurobi`, the enhanced
 [AMPL-Gurobi](https://ampl.com/products/solvers/solvers-we-sell/gurobi/)
 interface, `copt`, an interface to [Cardinal Optimizer](https://www.shanshu.ai/copt),
 and `highs`, an interface to [HiGHS](https://highs.dev/).
@@ -105,7 +105,7 @@ The drivers have the following features:
 - Algebraic expressions beyond linear and quadratic.
 - Choice between conversions in the driver vs. native solver support.
 
-[[Modeling Guide](https://amplmp.readthedocs.io/en/latest/rst/model-guide.html)] [[x-gurobi options](solvers/options/x-gurobi.md)] [[copt options](solvers/options/copt.md)]  [[highs options](solvers/options/highs.md)]
+[[Modeling Guide](https://amplmp.readthedocs.io/en/latest/rst/model-guide.html)] [[gurobi options](solvers/options/gurobi.md)] [[copt options](solvers/options/copt.md)]  [[highs options](solvers/options/highs.md)]
 
 ## New AMPL-solver interface library
 
@@ -146,8 +146,7 @@ The first implementations using the MP interface library are
 now available in our regular distributions through the [AMPL Portal](https://portal.ampl.com/).
 
 An entirely new MP-based interface greatly expands the variety of AMPL
-expressions that can be used with the [Gurobi](https://ampl.com/products/solvers/solvers-we-sell/gurobi/) solver. The new implementation
--- distributed as `x-gurobi` -- uses the solver's native "generalized
+expressions that can be used with the [Gurobi](https://ampl.com/products/solvers/solvers-we-sell/gurobi/) solver. The new implementation uses the solver's native "generalized
 constraints" where possible, but can be switched to use alternative
 transformations built into MP. Common univariate nonlinear functions (`exp`,
 `log`; `sin`, `cos`, `tan`) are also supported, using Gurobi's native

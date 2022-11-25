@@ -1,7 +1,13 @@
 
 # BARON Options
 
-Obtained with `$ baron -=`.
+```ampl
+ampl: option solver baron; # change the solver
+ampl: option baron_options 'option1=value1 option2=value2'; # specify options
+ampl: solve; # solve the problem
+```
+
+Solver options obtained with `$ baron -=`.
 
 ```
 barstats   Report detailed Baron statistics.  No is value expected.

@@ -1,7 +1,13 @@
 
 # GUROBIASL Options
 
-Obtained with `$ gurobiasl -=`.
+```ampl
+ampl: option solver gurobiasl; # change the solver
+ampl: option gurobiasl_options 'option1=value1 option2=value2'; # specify options
+ampl: solve; # solve the problem
+```
+
+Solver options obtained with `$ gurobiasl -=`.
 
 ```
 aggfill          Amount of fill allowed during aggregation during

@@ -7,6 +7,17 @@ To simplify the work of comparing and testing solvers, we have made AMPL and sol
     
 These services are available free of charge through any Internet connection. They are intended mainly for testing, prototyping, and instructional purposes, however; pursuant to the posted [terms of use](http://www.neos-server.org/neos/termofuse.html), there are no guarantees of performance or confidentiality.
 
+[[Read More](https://ampl.com/products/ampl/run-ampl-on-neos/)]
+[[Download](https://portal.ampl.com)]
+
+## How to use it
+
+```ampl
+ampl: option solver kestrel; # change the solver
+ampl: option kestrel_options 'option1=value1 option2=value2'; # specify options
+ampl: solve; # solve the problem
+```
+
 ## Local AMPL with remote solvers
 
 In this mode of operation, you run your own copy of AMPL on your local computer. But instead of specifying a solver installed on your computer or local network, you invoke _Kestrel,_ a “client” program that sends your problem to a solver running on one of the NEOS Server’s remote computers. The results from the NEOS Server are eventually returned through Kestrel to AMPL, where you can view and manipulate them locally in the usual way. Thus you get all the benefits of using AMPL environment, without having to first obtain and install each solver you want to try.

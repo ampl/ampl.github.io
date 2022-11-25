@@ -1,7 +1,13 @@
 
 # MINOS Options
 
-Obtained with `$ minos -=`.
+```ampl
+ampl: option solver minos; # change the solver
+ampl: option minos_options 'option1=value1 option2=value2'; # specify options
+ampl: solve; # solve the problem
+```
+
+Solver options obtained with `$ minos -=`.
 
 ```
 ftimes   report function eval. times

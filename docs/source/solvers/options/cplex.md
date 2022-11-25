@@ -1,7 +1,13 @@
 
 # CPLEX Options
 
-Obtained with `$ cplex -=`.
+```ampl
+ampl: option solver cplex; # change the solver
+ampl: option cplex_options 'option1=value1 option2=value2'; # specify options
+ampl: solve; # solve the problem
+```
+
+Solver options obtained with `$ cplex -=`.
 
 ```
 absmipgap              Absolute mixed-integer optimality gap tolerance

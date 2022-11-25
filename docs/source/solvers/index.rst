@@ -8,12 +8,11 @@ Linear
     :maxdepth: 2
 
     gurobi
-    options/copt
-    options/cplex
-    options/gurobiasl
-    options/highs
-    options/xpress
-    options/cbc
+    copt
+    cplex
+    highs
+    xpress
+    cbc
 
 
 NonLinear
@@ -22,11 +21,11 @@ NonLinear
 .. toctree:: 
     :maxdepth: 2
 
-    options/conopt
-    options/knitro
-    options/loqo
-    options/minos
-    options/snopt
+    conopt
+    knitro
+    loqo
+    minos
+    snopt
 
 
 Global
@@ -35,8 +34,10 @@ Global
 .. toctree:: 
     :maxdepth: 2
 
-    options/baron
-    options/lindoglobal
+    baron
+    lgo
+    lindoglobal
+    octeract
 
 
 NEOS

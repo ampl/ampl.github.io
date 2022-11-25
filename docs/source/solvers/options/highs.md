@@ -1,7 +1,13 @@
 
 # HiGHS Options
 
-Obtained with `$ highs -=`.
+```ampl
+ampl: option solver highs; # change the solver
+ampl: option highs_options 'option1=value1 option2=value2'; # specify options
+ampl: solve; # solve the problem
+```
+
+Solver options obtained with `$ highs -=`.
 
 ```
 HIGHS Optimizer Options for AMPL
