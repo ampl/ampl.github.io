@@ -1,4 +1,4 @@
-# IBM CPLPEX
+# IBM CPLEX
 
 IBM ILOG CPLEX has been a well known and widely used large-scale solver for over three decades. Its efficiency and robustness have been demonstrated through varied applications in thousands of commercial installations worldwide.
 
