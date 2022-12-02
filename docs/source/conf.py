@@ -128,6 +128,7 @@ html_theme_options = {
 redirects = {
     "ampl_options": "ampl/options.html",
     "help/install_ampl": "../ampl/install.html",
+    "help/install-ampl": "../ampl/install.html",
     "apis": "ampl/apis.html",
     "book": "ampl/book.html",
 }
