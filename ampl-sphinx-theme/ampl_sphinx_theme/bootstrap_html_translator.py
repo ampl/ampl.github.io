@@ -37,10 +37,7 @@ class BootstrapHTML5Translator(HTML5Translator):
         if LooseVersion(sphinx.__version__) < LooseVersion("4.0"):
             self.generate_targets_for_table(node)
 
-        if LooseVersion(sphinx.__version__) < LooseVersion("4.3"):
-            self._table_row_index = 0
-        else:
-            self._table_row_indices.append(0)
+        self._table_row_index = 0
 
         classes = [cls.strip(" \t\n") for cls in self.settings.table_style.split(",")]
 
