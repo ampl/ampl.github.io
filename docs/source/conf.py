@@ -19,6 +19,7 @@ extensions = [
     "sphinx.ext.mathjax",
     "sphinx.ext.autodoc",
     "myst_parser",
+    "sphinx_reredirects",
 ]
 
 # Generate anchors for markdown files
@@ -124,6 +125,12 @@ html_theme_options = {
 #    "theme_logo_text": "Development",
 # }
 
+redirects = {
+    "ampl_options": "ampl/options.html",
+    "help/install_ampl": "../ampl/install.html",
+    "apis": "ampl/apis.html",
+    "book": "ampl/book.html",
+}
 
 # Add any paths that contain custom themes here, relative to this directory.
 # html_theme_path = []

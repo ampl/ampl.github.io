@@ -1,3 +1,4 @@
+(faq)=
 # FAQs
 
 ## What is AMPL?
@@ -6,7 +7,7 @@
 
 2. AMPL’s familiar algebraic notation and interactive command environment are designed to help formulate models, **communicate with a wide variety of solvers (e.g., Gurobi, CPLEX, etc.)**, and examine solutions. **AMPL connects to most open-source and commercial solvers and allows you to switch easily between them.**
 
-3. **AMPL has [APIs](apis.md) for several popular programming languages (e.g., Python, R, etc.)** and it allows you to only model once in AMPL and interact with it using an API for a language you are familiar with, and possibly deploy to a completely different language with minimal effort since the model remains the same.
+3. **AMPL has [APIs](ampl/apis.md) for several popular programming languages (e.g., Python, R, etc.)** and it allows you to only model once in AMPL and interact with it using an API for a language you are familiar with, and possibly deploy to a completely different language with minimal effort since the model remains the same.
 
 4. **You can use AMPL for free and forever** with open-source solvers with a [Community Edition License](https://ampl.com/ce/) including for commercial purposes. You can also start 30-day trials for individual commercial solvers. We also offer a few other free licenses for you to [start for free now](https://ampl.com/start-free-now/).
 
@@ -14,9 +15,9 @@
 
 After downloading your AMPL & Solvers bundle from the [AMPL Portal](https://portal.ampl.com),
 please follow the instructions below that correspond to your operating system:
-- [Windows](help/install-ampl.md#windows)
-- [Linux](help/install-ampl.md#linux)
-- [macOS](help/install-ampl.md#macos)
+- [Windows](ampl/install.md#windows)
+- [Linux](ampl/install.md#linux)
+- [macOS](ampl/install.md#macos)
 
 ## How do cloud licenses work?
 

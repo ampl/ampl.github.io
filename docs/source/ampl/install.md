@@ -1,11 +1,11 @@
-# AMPL installation instructions
+# How to install AMPL
 
 After downloading your AMPL & Solvers bundle from the [AMPL Portal](https://portal.ampl.com),
 please follow the instructions below that correspond to your operating system:
 
-- [Windows](install-ampl.md#windows)
-- [Linux](install-ampl.md#linux)
-- [macOS](install-ampl.md#macos)
+- [Windows](#windows)
+- [Linux](#linux)
+- [macOS](#macos)
 
 ## Windows
 

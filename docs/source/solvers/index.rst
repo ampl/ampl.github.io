@@ -1,8 +1,13 @@
+.. _solvers:
+
 Solvers
 =======
 
-Linear
-------
+AMPL connects with most commercial and open-source solvers and provides
+an easy way to switch between them.
+
+Linear Solvers
+--------------
 
 .. toctree::
     :maxdepth: 2
@@ -15,8 +20,8 @@ Linear
     cbc
 
 
-NonLinear
----------
+Non-linear Solvers
+------------------
 
 .. toctree:: 
     :maxdepth: 2
@@ -28,8 +33,8 @@ NonLinear
     snopt
 
 
-Global
-------
+Global Solvers
+--------------
 
 .. toctree:: 
     :maxdepth: 2
@@ -40,8 +45,8 @@ Global
     octeract
 
 
-NEOS
-----
+NEOS Server
+-----------
 
 .. toctree::
     :maxdepth: 2

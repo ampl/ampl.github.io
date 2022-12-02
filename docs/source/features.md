@@ -1,3 +1,4 @@
+(what_is_new)=
 # What's new?
 
 ## Using AMPL in Google Colab, Kaggle, and similar platforms

@@ -1,5 +1,9 @@
+.. _apis:
+
 AMPL APIs
 =========
+
+.. _apis_python:
 
 Python
 ------
@@ -12,6 +16,8 @@ Python
 
 - Documentation: http://amplpy.readthedocs.org/
 - GitHub: https://github.com/ampl/amplpy
+
+.. _apis_r:
 
 R
 -

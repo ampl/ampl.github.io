@@ -1,3 +1,4 @@
+(book)=
 # AMPL Book
 
 [[Download PDF](https://ampl.github.io/ampl-book.pdf)]
