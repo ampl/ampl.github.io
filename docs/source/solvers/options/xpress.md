@@ -10,1421 +10,1731 @@ ampl: solve; # solve the problem
 Solver options obtained with `$ xpress -=`.
 
 ```
-advance            whether to use an initial basis, if available:
-                        0 = no, overriding mipstartstatus;
-                        1 = yes (default), subject to mipstartstatus.
-                   In an AMPL session, "option send_statuses 0;" is preferable
-                   to "option xpress_options '... advance=0 ...';".
-
-algaftercrossover  algorithm for final cleanup after running the barrier
-                   algorithm:
-                        1 = automatic choice (default)
-                        2 = dual simplex
-                        3 = primal simplex
-                        4 = concurrent
-
-algafternetwork    algorithm for final cleanup after the network simplex
-                   algorithm:
-                        1 = automatic choice (default)
-                        2 = dual simplex
-                        3 = primal simplex
-
-archconsistent     whether to force the same execution path to be
-                   independent of the platform architecture:
-                        0 = no (default)
-                        1 = yes
-
-autocutting        whether to automatically decide if to generate cutting
-                   planes at local nodes (overriden by cutfreq):
-                        -1 = automatic (default)
-                         0 = disabled
-                         1 = enabled
-
-autoperturb        whether to introduce perturbations when the simplex method
-                   encounters too many degenerate pivots:
-                        1 = yes (default); 0 = no
-
-autoscaling        whether the Optimizer should automatically select between
-                   different scaling algorithms:
-                       -1 = automatic (default)
-                        0 = disabled
-                        1 = cautious strategy.  Non-standard scaling will only
-                            be selected if it appears to be clearly superior
-                        2 = moderate strategy
-                        3 = aggressive strategy.  Standard scaling will only be
-                            selected if it appears to be clearly superior
-
-backtrack          choice of next node when solving MIP problems:
-                        -1 = automatic choice (default)
-                         1 = withdrawn; formerly choice 2 until a feasible
-                                integer solution has been found, then
-                                Forrest-Hirst-Tomlin choice
-                         2 = node with best estimated solution
-                         3 = node with best bound on the solution (default)
-                         4 = deepest node (depth-first search)
-                         5 = highest node (breadth-first search)
-                         6 = earliest-created node
-                         7 = most recently created node
-                         8 = random choice
-                         9 = node with fewest LP relaxation infeasibilities
-                        10 = combination of 2 and 9
-                        11 = combination of 2 and 4
-
-backtracktie       how to break ties for the next MIP node:  same choices as
-                   for "backtrack"
-
-baralg             which barrier algorithm to use with "barrier":
-                        -1 = automatic choice (default with just "barrier")
-                         1 = infeasible-start barrier algorithm
-                         2 = homogeneous self-dual barrier algorithm
-                         3 = start with 2 and maybe switch to 1 while solving
-
-barcores           if positive, number of CPU cores to assume present when
-                   using the barrier algorithm.  Default = -1, which means
-                   automatic choice.
-
-barcrash           choice of crash procedure for crossover:
-                        0 = no crash
-                        1-6 = available strategies (default 4):
-                        1 = most conservative, 6 = most aggressive
-
-bardualstop        barrier method convergence tolerance on
-                   dual infeasibilities; default = 0 (automatic choice)
-
-bargapstop         barrier method convergence tolerance on the relative
-                   duality gap; default = 0
-
-bargaptarget       barrier algorithm target tolerance for the relative duality
-                   gap.  If not satisfied and no further progress is possible
-                   but barstopgap is satisfied, then the current solution is
-                   considered optimal.
-
-barindeflimit      maximum indefinite factorizations to allow in the barrier
-                   algorithm for solving a QP: stop when the limit is hit;
-                   default = 15
-
-bariterlimit       maximum number of Newton Barrier iterations; default = 500
-
-barkernel          how the barrier algorithm weights centrality:
-                        >= +1.0 ==> more emphasis on centrality
-                        <= -1.0 ==> each iteration, adaptively select a value
-                                from [+1, -barkernel].
-                   Default = 1.
-
-barobjperturb      defines how the barrier perturbs the objective (default
-                   1e-6); values >0 let the optimizer decide if to perturb the
-                   objective, values <0 force the perturbation:
-                        n > 0 = automatic decison, scale n
-                            0 = turn off perturbation
-                        n < 0 = force perturbation by abs(n)
-
-barobjscale        how the barrier algorithm scales the objective:
-                         -1 = automatic chocie (default)
-                          0 = scale by the geometric mean of the objective
-                              coefficients
-                        > 0 = scale so the argest objective coefficient in
-                              absolute value is <= barobjscale.
-                   When the objective is quadratic, the quadratic diagonal
-                   is used in determining the scale.
-
-barorder           Cholesky factorization pivot order for barrier algorithm:
-                        0 = automatic choice (default)
-                        1 = minimum degree
-                        2 = minimum local fill
-                        3 = nested dissection
-
-barorderthreads    number of threads to use when choosing a pivot order for
-                   Cholesky factorization; default 0 ==> automatic choice.
-
-baroutput          amount of output for the barrier method:
-                        0 = no output
-                        1 = each iteration (default)
-
-barpresolve        level of barrier-specific presolve effort:
-                        0 = use standard presolve (default)
-                        1 = use more effort
-                        2 = do full matrix eliminations for size reduction
-
-barprimalstop      barrier method convergence tolerance on
-                   primal infeasibilities; default = 0 (automatic choice)
-
-barrefiter         maximum number of refinement iterations, helpful when the
-                   the solution is near to the optimum using barrier or crossover:
-                            0 = default
-                        n > 0 = perform n refinement iterations
-
-barreg             regularization to use with "barrier":
-                        -1 = automatic choice (default with just "barrier")
-                        Values >= 0 are the sum of:
-                        1 = use "standard" regularization
-                        2 = use "reduced" regularization: less perturbation
-                                than "standard" regularization
-                        4 = keep dependent rows in the KKT system
-                        8 = keep degenerate rows in the KKT system
-
-barrier            [no assignment] use the Newton Barrier algorithm
-
-barstart           choice of starting point for barrier method:
-                        -1 = use incoming solution for warm start
-                         0 = automatic choice (default)
-                         1 = heuristics based on magnitudes of matrix entries
-                         2 = use pseudoinverse of constraint matrix
-                         3 = unit starting point for homogeneous self-dual
-                            barrier algorithm.
-
-barstepstop        barrier method convergence tolerance: stop when
-                   step size <= barstepstop; default = 1e-10
-
-barthreads         number of threads used in the Newton Barrier algorithm;
-                   default = -1 (determined by "threads")
-
-basisin            load initial basis from specified file
-
-basisout           save final basis to specified file
-
-bestbound          [no assignment] return suffix .bestbound for the best known
-                   bound on the objective value.  The suffix is on the problem
-                   and objective and is +Infinity for minimization problems and
-                   -Infinity for maximization problems if there are no integer
-                   variables or if an integer feasible solution has not yet
-                   been found.
-
-bigm               infeasibility penalty; default = 1024
-
-bigmmethod         0 = phase I/II, 1 = BigM method (default)
-
-branchchoice       whether to explore branch with min. or max. estimate first:
-                        0 = explore branch with min. estimate first (default)
-                        1 = explore branch with max. estimate first
-                        2 = if an incumbent solution exists, first explore
-                                the branch satisfied by the incumbent;
-                                otherwise use choice 0 (min. est. first)
-                        3 (default) = explore the first branch that moves the
-                                branching variable away from its value at the
-                                root node; if the branching entity is not a
-                                simple variable, assume branchchoice=0
-
-branchdisj         whether to branch on general split disjunctions while
-                   solving MIPs:
-                        -1 = automatic choice (default)
-                         0 = disabled
-                         1 = cautious strategy: create branches only for
-                                general integers with a wide range
-                         2 = moderate strategy
-                         3 = aggressive strategy:  create disjunctive branches
-                                for both binary and integer variables
-
-branchstruct       whether to search for special structure during branch and
-                   bound:
-                        -1 = automatic choice (default)
-                         0 = no
-                         1 = yes
-
-breadthfirst       number of MIP nodes included in best-first search
-                   (default 11) before switching to local-first search
-
-cachesize          cache size in Kbytes -- relevant to Newton Barrier:
-                        -1 = determined automatically
-                   default = system-dependent (-1 for Intel)
-
-choleskyalg        type of Cholesky factorization used for barrier: sum of
-                          1 ==> manual matrix blocking
-                          2 ==> single pass with manual blocking
-                          4 ==> nonseparable QP relaxation
-                          8 ==> manual corrector weight (honor "16" bit)
-                         16 ==> manual corrector weight "on"
-                         32 ==> manual refinement
-                         64 ==> use preconditioned conjugate gradients
-                        128 ==> refine with QMR (quasi-minimal residual)
-                        default = -1 (automatic choice)
-
-choleskytol        zero tolerance for Cholesky pivots in the
-                   Newton Barrier algorithm; default = 1e-15
-
-clamping           control adjustements of the returned solution values
-                    such that they are always within bounds:
-                        -1 ==> determined automatically
-                         0 ==> adjust primal solution to be within
-                               primal bounds (default)
-                         1 ==> adjust primal slack values to be within
-                               primal bounds
-                         2 ==> adjust dual solution to be within dual
-                               bounds
-                         3 ==> adjust reduced costs to be within dual
-                               bounds
-
-concurrentthreads  synonym for lpthreads
-
-conedecomp         whether to decompose regular and rotated cone constraints
-                   having more than two elements and to use the result in an
-                   outer approximation:
-                        -1 = automatic choice (default)
-                         0 = no
-                         1 = yes, unless the cone variable is fixed by XPRESS's
-                                presolve
-                         2 = yes, even if the cone variable is fixed
-                         3 = yes, but only for outer approximations
-
-convexitychk       whether to check convexity before solving:
-                        0 = no
-                        1 = yes (default)
-
-corespercpu        number of cores to assume per cpu; default = -1 ==> number
-                   detected; barrier cache = cachesize / corespercpu
-
-covercuts          for MIPS, the number of rounds of lifted-cover inequalities
-                   at the top node; default = -1 ==> automatic choice
-
-cpuplatform        whether the Newton Barrier method should use AVX or SSE2
-                   instructions on platforms that offer both:
-                        -2 = highest supported [Generic, SSE2, AVX, or AVX2]
-                        -1 = highest deterministic support (default; no AVX2)
-                         0 = use generic code: neither AVX nor SSE2
-                         1 = use SSE2
-                         2 = use AVX
-                         3 = use AVX2
-
-cputime            which times to report when logfile is specified:
-                        0 = elapsed time (default)
-                        1 = CPU time
-                        2 = process time
-                   You may need to experiment to see how cputime=1 and
-                   cputime=2 differ (if they do) on your system.
-
-crash              type of simplex crash:
-                        0 = none
-                        1 = one-pass search for singletons
-                        2 = multi-pass search for singletons (default)
-                        3 = multi-pass search including slacks
-                        4 = at most 10 passes, only considering slacks
-                            at the end
-                        n = (for n > 10) like 4, but at most n-10 passes
-
-crossover          whether to find a simplex basis after the barrier alg.:
-                        -1 = automatic choice (default)
-                         0 = no crossover
-                         1 = primal crossover first
-                         2 = dual crossover first
-
-crossoveritlim     limit on crossover iterations after the barrier
-                   algorithm; default = 2147483645
-
-crossoverops       bit vector affecting crossover after the barrier
-                   algorithm:  sum of
-                        1 = return the barrier solution (rather than the last
-                            intermediate solution) when crossover stop early
-                        2 = skip the second crossover stage
-                        4 = skip pivots that are "less numerically reliable"
-                        8 = do a slower but more numerically stable crossover
-
-crossoverthreads   limit on threads used during crossover;
-                   default not specified in the Release 8.2 documentation
-
-crossovertol       tolerance (default 1e-6) for deciding whether to adjust the
-                   relative pivot tolerance during crossover when a new basis
-                   factorization is necessary.  Errors in the recalculated
-                   basic solution above this tolerance cause the pivot
-                   tolerance to be adjusted.
-
-cutdepth           maximum MIP tree depth at which to generate cuts:
-                        0  = no cuts
-                        -1 = automatic choice (default)
-
-cutfactor          limit on number of cuts and cut coefficients added
-                   while solving MIPs:
-                        -1 = automatic choice (default)
-                         0 = do not add cuts
-                         > 0 ==> multiple of number of original constraints
-
-cutfreq            MIP cuts are only generated at tree depths that are integer
-                   multiples of cutfreq; -1 = automatic choice (default)
-
-cutselect          detailed control of cuts at MIP root node:  sum of
-                            32 = clique cuts
-                            64 = mixed-integer founding (MIR) cuts
-                           128 = lifted cover cuts
-                          2048 = flow path cuts
-                          4096 = implication cuts
-                          8192 = automatic lift-and-project strategy
-                         16384 = disable cutting from cut rows
-                         32768 = lifted GUB cover cuts
-                         65536 = zero-half cuts
-                        131072 = indicator-constraint cuts
-                            -1 = all available cuts (default)
-
-cutstrategy        how aggressively to generate MIP cuts; more ==> fewer nodes
-                   but more time per node:
-                        -1 = automatic choice (default)
-                         0 = no cuts
-                         1 = conservative strategy
-                         2 = moderate strategy
-                         3 = aggressive strategy
-
-defaultalg         algorithm to use when none of "barrier", "dual", or "primal"
-                   is specified:
-                        1 = automatic choice (default)
-                        2 = dual simplex
-                        3 = primal simplex
-                        4 = Newton Barrier
-
-densecollimit      number of nonzeros above which a column is treated as dense
-                   in the barrier algorithm's Cholesky factorization:
-                        0 = automatic choice (default)
-
-deterministic      whether a MIP search should be deterministic:
-                        0 = no
-                        1 = yes (default)
-                        2 = yes, with opportunistic root LP solve
-
-dual               [no assignment] use the dual simplex algorithm
-
-dualgradient       dual simplex pricing strategy:
-                        -1 = automatic choice
-                         0 = Devex
-                         1 = steepest edge
-
-dualize            whether to convert the primal problem to its dual and solve
-                   the converted problem:
-                        -1 = automatic choice (default)
-                         0 = no: solve primal problem
-                         1 = yes: solve dual problem
-
-dualizeops         when solving the dual problem after deriving it from the
-                   primal, whether to use primal simplex if dual simplex was
-                   specified and vice versa:
-                        0 = no
-                        1 = yes (default)
-
-dualperturb        Factor by which to possibly perturb the problem in the
-                   dual simplex algorithm.  If >= 0, overrides "perturb".
-                   Default -1 ==> automatic choice; 0 ==> no perturbatation.
-
-dualstrategy       how to remove infeasibilities when re-optimizing
-                   with the dual algorithm during MIP solves:
-                        0 = use primal algorithm
-                        1 = use dual algorithm (default)
-
-dualthreads        limit on number of threads used by parallel dual simplex,
-                   overriding "threads"; default -1 ==> use "threads"
-
-eigenvaltol        regard the matrix in a quadratic form as indefinite if its
-                   smallest eigvenalue is < -eigevnaltol; default = 1e-6
-
-elimfillin         maximum fillins allowed for a presolve elimination;
-                   default = 10.
-
-elimtol            Markowitz tolerance for the elimination phase of
-                   XPRESS's presolve; default = 0.001
-
-etatol             zero tolerance on eta elements; default varies with XPRESS
-                   version; default = 1e-12 or 1e-13 with some versions.
-                   Use etatol=? to see the current value.
-
-feaspump           whether to run the Feasibility Pump heuristic at the top
-                   node during branch-and-bound:  one of
-                        0 = no (default)
-                        1 = yes
-                        2 = only if other heurstics found no integer solution
-
-feastol            zero tolerance on RHS; default = 1e-6
-
-feastol_perturb    how much a feasible primal basic solution is allowed to
-                   be perturbed when performing basis changes.  The tolerance
-                   specified by "feastol" is always considered as an upper
-                   limit for the perturbations; default = 1.0E-06
-
-feastol_target     feasibility tolerance on constraints for solution refiner
-                   (see refineops):  if feastol_target > 0 is specified, it is
-                   used instead of feastol
-
-globalfilemax      maximum megabytes for temporary files storing the global
-                   search tree:  a new file is started if globalfilemax
-                   megabytes would be exceeded
-
-globalloginterval  seconds between additions to the logfile about, additions
-                   to the "global file", a temporary file written during a
-                   global search.  Default = 60.
-
-gomcuts            gomory cuts at root: -1 = automatic choice (default)
-
-hdive_rand         value between 0 and 1 inclusive affecting randomization
-                   in the diving heuristic:  0 (default) ==> none;
-                        1 ==> full;
-                        intermediate values ==> intermediate behavior
-
-hdive_rounding     whether to use soft rounding in the MIP diving heuristic
-                   (to push variables to their bounds via the objective rather
-                   than fixing them):
-                        -1 = automatic choice (default)
-                         0 = no soft rounding
-                         1 = cautious soft rounding
-                         2 = aggressive soft rounding
-
-hdive_speed        controls tradeoff between speed and solution quality
-                   in the diving heuristic:  an integer between -2 and 3:
-                        -2 = automatic bias toward quality
-                        -1 = automatic bias toward speed (default)
-                         0 = emphasize quality
-                         4 = emphasize speed
-                         1-3 = intermediate emphasis
-
-hdive_strategy     strategy for diving heuristic:  integer between -1 and 10:
-                        -1 = automatic choice (default)
-                         0 = do not use the diving heursistic
-                        1-10 = preset strategies for diving
-
-heurdepth          deprecated:  no longer has any effect:
-                   maximum depth of branch-and-bound tree search at which to
-                   apply heuristics; 0 = no heuristics; default = -1
-
-heureffort         factor affecting how much work local search heuristics
-                   should expend.  Default = 1; higher values cause more
-                   local searches over larger neighborhoods.
-
-heuremphasis       epmphasis for the heuristic search for branch and
-                   bound.  Setting it to 1 gets a gap quicker at the
-                   expense of time to optimality:
-                        -1 = default strategy
-                         0 = disable heuristics
-                         1 = focus on reducing the gap early
-                         2 = extremely aggressive heuristics
-
-heurforcespecobj   whether to use special objective heuristics on large
-                   problems and even if an incumbant exists:
-                        0 = no (default)
-                        1 = yes.
-
-heurfreq           during branch and bound, heuristics are applied at nodes
-                   whose depth from the root is zero modulo heurfreq;
-                   default = -1 (automatic choice)
-
-heurmaxsol         deprecated:  no longer has any effect:
-                   maximum number of heuristic solutions to find during branch-
-                   and-bound tree search; default = -1 (automatic choice)
-
-heurnodes          deprecated:  no longer has any effect:
-                   maximum nodes at which to use heuristics during
-                   branch-and-bound tree search; default = 1000
-
-heurroot           bit vector controlling local search heuristics to apply at
-                   the root node:  sum of
-                          1 = large-neighborhood search: may be slow, but may
-                                find solutions far from the incumbent
-                          2 = small-neighborhood search about node LP solution
-                          4 = small-neighborhood search about integer solutions
-                          8 = local search near multiple integer solutions
-                         16 = no effect
-                         32 = local search without an objective; may only be
-                                done when no feasible solution is available
-                         64 = local search with an auxiliary objective; may
-                                be done when no feasible solution is available
-                   default = 117
-
-heurrootcutfreq    how often to run the local search heuristic while
-                   cutting at the root node:
-                        -1 ==> automatic choice (default)
-                         0 ==> never
-                         n > 0 ==> do n cutting rounds between runs of the
-                                local search heuristic
-
-heursearch         how often the local search heurstic should be run during
-                   branch-and-bound:
-                        -1 = automatic choice (default)
-                         0 = never
-                         n > 0 ==> every n nodes
-
-heurstrategy       deprecated, use heuremphasis:
-                   heuristic strategy for branch and bound: one of
-                        -1 = automatic choice (default)
-                         0 = no heuristics
-                         1 = basic heuristics
-                         2 = enhanced heuristics
-                         3 = extensive heuristics
-
-heurthreads        number of threads for the root node of
-                   branch-and-bound:
-                        -1 = determined from "threads" keyword
-                         0 = no separate threads (default)
-                         n > 0 ==> use n threads
-
-heurtree           heuristics to apply during tree search:  sum of
-                   the same values as for heurroot; default 17
-
-iis                [no assignment] if the problem is infeasible, find an
-                   Irreducible Independent Set of infeasible constraints
-                   and return it in suffix .iis.  If changing the bounds
-                   on just one constraint or variable could remove the
-                   infeasibility, return suffix .iso with value 1 for
-                   each such constraint or variable.
-
-indlinbigm         largest "big M" value to use in converting indicator
-                   constraints to regular constraints; default = 1e5.
-
-indprelinbigm      largest "big M" value to use in converting indicator
-                   constraints to regular constraints during XPRESS
-                   presolve; default = 100.0
-
-inputtol           tolerance on input elements (default 0.0); any value v where
-                   abs(v) <= inputtol is treated as 0
-
-invertfreq         maximum simplex iterations before refactoring the basis:
-                   -1 = automatic choice (default)
-
-invertmin          minimum simplex iterations before refactoring the basis:
-                   default = 3
-
-keepbasis          basis choice for the next LP iteration:
-                        0 = ignore previous basis
-                        1 = use previous basis (default)
-                        2 = use previous basis only if the number of basic
-                                variables == number of constraints
-
-keepnrows          1 (default) if unconstrained rows are to be kept, else 0
-
-lazy               whether to regard constraints with nonzero .lazy suffix
-                   values as lazy (i.e., delayed) constraints if the problem
-                   is a MIP:
-                        0 = no
-                        1 = yes (default)
-
-lnpbest            number of global infeasible entities for which to create
-                   lift-and-project cuts during each round of Gomory cuts
-                   at the top node; default = 50
-
-lnpiterlimit       maximum iterations for each lift-and-project cut;
-                   default = -1 (automatic choice)
-
-localchoice        when to backtrack between two child nodes
-                   during a "dive":
-                        1 = never backtrack from the first child unless it
-                                is dropped (i.e., is infeasible or cut off)
-                        2 = always solve both nodes first
-                        3 = automatic choice (default)
-
-logfile            name of log file; default = no log file
-
-lpfolding          whether to attempt exploiting symmetries by "LP Folding":
-                        -1 = automatic choice (default)
-                         0 = no
-                         1 = yes.
-
-lpiterlimit        simplex iteration limit; default = 2147483647 = 2^31 - 1
-
-lplog              frequency of printing simplex iteration log; default = 100
-
-lpref_itlim        limit on simplex iterations used by the solution refiner
-                   (see refineops); default = -1 ==> automatic choice
-
-lpthreads          number of threads in concurrent LP solves:
-                        -1 = determine from "threads" keyword (default)
-                        n > 0 ==> use n threads
-
-markowitztol       Markowitz tolerance used when factoring the basis matrix
-                   default = 0.01
-
-matrixtol          zero tolerance on matrix elements; default = 1e-9
-
-maxcuttime         maximum time (CPU seconds) to spend generating cuts
-                   and reoptimizing; default = 0 ==> no limit
-
-maxiis             maximum number of Irreducible Infeasible Sets to find:
-                        -1 = no limit (default)
-                         0 = none
-
-maxim              [no assignment] force maximization of the objective
-
-maximise           [no assignment] force maximization of the objective
-
-maximize           [no assignment] force maximization of the objective
-
-maximpliedbound    when preprocessing MIP problems, only use computed bounds
-                   at most maximpliedbound (default 1e8) in absolute value
-
-maxlocalbt         max height above current node to look for a local backtrack
-                   candidate node; default = 1
-
-maxlogscale        max log2 of factors used in scaling; must be >= 0 and
-                   <= 64; default 64
-
-maxmemory          limit (integer number of megabytes) on memory used:
-                        -1 = automatic choice (default)
-                        >0 = target megabytes of memory to use
-
-maxmemoryhard      hard limit (integer number of megabytes) on memory
-                   allocated, causing early termination if exceeded
-                        0 (default) = no limit
-
-maxmipsol          maximum number of integer solutions to find:
-                        0 = no limit (default)
-
-maxmiptasks        maximum tasks to run in parallel during a MIP solve:
-                           -1 ==> use mipthreads
-                        n > 0 ==> at most n tasks running at once
-                   For maxmiptasks > 0, branch-and-bound nodes are solved in a
-                   deterministic way, but the barrier algorithm (if used) may
-                   cause a nondeterministic MIP solve unless barthreads = 1.
-
-maxnode            maximum number of MIP nodes to explore; default = 2147483647
-
-maxpagelines       maximum output lines between page breaks in logfile;
-                   default = 23
-
-maxstalltime       maximum time in seconds that the Optimizer will continue to
-                   search for improving solution after finding a new incumbent:
-                            0 ==> no limit (default)
-                        n > 0 ==> stop after n seconds without a
-                                  new incumbent (no effet before
-                                  the first has been found
-
-maxtime            limit on solution time:  for maxtime=n (an integer),
-                        n < 0 ==> stop LP or MIP search after -n seconds
-                        n = 0 ==> no time limit (default)
-                        n > 0 ==> for MIP problems, stop after n seconds
-                                  if a feasible solution has been found;
-                                  otherwise continue until a feasible
-                                  solution has been found.
-
-minim              [no assignment] force minimization of the objective
-
-minimise           [no assignment] force minimization of the objective
-
-minimize           [no assignment] force minimization of the objective
-
-mipabscutoff       initial MIP cutoff:  ignore MIP nodes with objective values
-                   worse than mipabscutoff; default = 1e40 for minimization,
-                   -1e40 for maximization
-
-mipabsstop         stop MIP search if abs(MIPOBJVAL - BESTBOUND) <= mipabsstop
-                   default = 0
-
-mipaddcutoff       amount to add to the objective function of the best integer
-                   solution found to give the new MIP cutoff; default -1e-5
-
-mipcomponents      determines whether disconnected components in a MIP should
-                   be solved as separate MIPs:
-                        -1 ==> automatic (default)
-                         0 ==> disable
-                         1 ==> enable
-
-mipconcurnodes     node limit to choose the winning solve when concurrent
-                   solves are enabled:
-                           -1 ==> automatic (default)
-                        n > 0 ==> number of nodes to complete
-
-mipconcursolves    select the number of concurrent solves to start for a MIP:
-                           -1 ==> enabled, the number of concurrent solves
-                                  depends on mipthreads
-                         0, 1 ==> disabled (default)
-                        n > 1 ==> number of concurrent solves = n
-
-mipdualreductions  kinds of dual reductions allowed during branch and bound:
-                        0 ==> none
-                        1 ==> all (default)
-                        2 ==> restrict dual reductions to continuous variables.
-                   If poolnbest > 1 is specified, specifying
-                   mipdualreductions = 2 might be prudent.
-
-mipkappafreq       during branch-and-bound, how often to compute
-                   basis condition numbers:
-                        0 ==> never (default)
-                        1 ==> every node
-                        n > 1 ==> once per node at level n of the
-                                branch-and-bound tree.
-                   When mipkappafreq > 0, a final summary shows the number of
-                   sampled nodes that are
-                        "stable": kappa < 10^7
-                        "suspicious": 10^7 <= kappa < 10^10
-                        "unstable": 10^10 <= kappa < 10^13
-                        "ill-posed": 10^13 <= kappa.
-                   A "Kappa attention level" between 0 and 1 is also reported.
-                   Condition numbers use the Frobenius norms of the basis
-                   and its inverse.
-
-miplog             MIP printing level to logfile (default -100):
-                        -n = print summary line every n MIP nodes
-                         0 = no MIP summary lines
-                         1 = only print a summary at the end
-                         2 = log each solution found
-                         3 = log each node
-
-mipops             MIP solver options:  one of
-                        0 = traditional primal first phase (default)
-                        1 = Big M primal first phase
-                        2 = traditional dual first
-                        3 = Big M dual first
-                        4 = always use artificial bounds in dual
-                        5 = use original basis only when warmstarting
-                        6 = skip primal bound flips for ranged primals
-                        7 = also do single-pivot crash
-                        8 = suppress aggressive dual perturbations
-
-mippresolve        MIP presolve done at each node: sum of
-                            1 = reduced-cost fixing
-                            2 = logical preprocessing of binary variables
-                            4 = ignored; replaced by "preprobing"
-                            8 = allow changing continuous-variable bounds
-                           16 = allow dual reductions
-                           32 = allow global tightening of the problem
-                           64 = use objective function
-                          128 = allow restarting
-                          256 = allow use of symmetry
-                   default = -1 (automatic choice)
-
-miprampup          whether to limit the number of parallel tasks
-                   during the ramp-up phase of the parallel MIP algorithm:
-                        -1 = automatic choice (default)
-                         0 = no: use as many tasks as possible
-                         1 = yes, until finished with initial dives
-
-miprefiterlim      max. simplex iterations per reoptimization in MIP refiner
-                   when refineops is 2 or 3; default -1 ==> automatic choice
-
-miprelcutoff       fraction of best integer solution found to add to MIP
-                   cutoff; default 1e-4
-
-miprelstop         stop MIP search if
-                   abs(MIPOBJVAL - BESTBOUND) < miprelstop * abs(BESTBOUND);
-                   default = 0.0001
-
-miprestart         MIP: control strategy for in-tree restarts:
-                   -1 = determined automatically (default)
-                    0 = disable in-tree restarts
-                    1 = normal aggressiveness
-                    2 = higher aggressiveness
-
-miprestartfactor   MIP: fine tune initial conditions to trigger an in-tree
-                   restart; values > 1 increase the aggressiveness, < 1
-                   decrease it (default 1.0)
-
-miprestartgaptol   MIP: initial gap threshold to delay in-tree restart;
-                   the restart is delayed if the relative gap is below the
-                   threshold (default 0.02)
-
-mipstart           synonym for mipstartvalue
-
-mipstartstatus     whether to use incoming statuses on MIP problems;
-                   default 1 ==> yes
-
-mipstartvalue      whether to use the specified initial guess (if supplied)
-                   when solving a MIP problem:
-                        0 = no
-                        1 = yes (default)
-
-mipstop            how to stop a MIP solve when a time or node limit is
-                   reached:
-                        0 = stop tasks as soon as possible (default)
-                        1 = let currently running tasks finish, but do not
-                                start new ones
-
-mipthreads         number of threads to use solving mixed-integer
-                   programming problems:
-                        -1 = use "threads" keyword (default)
-                        n > 0 ==> use n threads
-
-miptol             integer feasibility tolerance; default = 5e-6
-
-miptoltarget       value of miptol used for refining equalities on MIP
-                   problems when refineops is 2 or 3; default = 0
-
-miqcpalg           algorithm for solving mixed-integer problems with quadratic
-                   or second-order cone constraints:
-                        -1 = automatic choice (default)
-                         0 = barrier algorithm during branch and bound
-                         1 = outer approximations during branch and bound
-
-netstalllimit      limit the number of degenerate pivots of the network
-                   simplex algorithmm before switching to primal or dual:
-                           -1 ==> automatic
-                            0 ==> no limit
-                        n > 0 ==> limit to n iterations
-
-network            [no assignment] try to find and exploit an embedded network
-
-nodefilebias       deprecated and ignored:
-                   a value between 0 and 1 (inclusive) that influences
-                   operations when "treememlimit" (on how much of the
-                   branch-and-bound tree should be kept in memory) has
-                   been exceeded:
-                          0 ==> compress every node before writing anything to
-                                the "nodefile";
-                          1 ==> write nodes to the "nodefile" immediately;
-                   values between 0 and 1 give intermediate behavior;
-                   default = 0.5
-
-nodeprobingeffort  effort put into probing during branch and bound; the
-                   number is used as a multiplier on the default amount of
-                   work.  Set to 0 to disable node probing; default 1.
-
-nodeselection      next MIP node control:
-                        1 = local first:  choose among descendant and sibling
-                            nodes if available, else from all outstanding nodes
-                        2 = best first of all outstanding nodes
-                        3 = local depth first:  choose among descendant and
-                            sibling nodes if available, else from deepest nodes
-                        4 = best first for breadthfirst nodes, then local first
-                        5 = pure depth first:  choose among deepest nodes.
-                   The default is determined from matrix characteristics.
-
-objno              objective number (0=none, 1=first...)
-
-objrep             Whether to replace
-                        minimize obj: v;
-                   with
-                        minimize obj: f(x)
-                   when variable v appears linearly in exactly one
-                   constraint of the form
-                        s.t. c: v >= f(x);
-                   or
-                        s.t. c: v == f(x);
-                   Possible objrep values:
-                        0 = no
-                        1 = yes for v >= f(x)
-                        2 = yes for v == f(x) (default)
-                        3 = yes in both cases
-                   For a maximization problem, "<=" replaces ">=".
-
-objscalefactor     Power of 2 (default 0) by which the objective is scaled.
-                   Nonzero objscalfactor values override automatic global
-                   objective scaling.
-
-optimalitytol      tolerance on reduced cost; default = 1e-6
-
-opttol_target      feasibility tolerance on reduced costs for solution refiner
-                   (see refineops):  default = 0; if opttol_target > 0 is
-                   specified, it is used instead of optimalitytol.
-
-outlev             message level:
-                        1 = all
-                        2 = information
-                        3 = warnings & errors only (default)
-                        4 = errors
-                        5 = none
-
-outputtol          zero tolerance on print values; default 1e-5
-
-param              Used with syntax "param=name=value" (no spaces), where
-                   "name" is the name of an XPRESS control parameter and
-                   "value" is to be assigned to that parameter.  If value is
-                   ?, report the current value of the parameter.  If name is
-                   a string control, value can be a quoted string or a
-                   sequence of nonblank characters other than comma.  This
-                   facility provides a way to modify control parameters,
-                   identified by name or number, that have not (yet) been
-                   assigned a keyword.  As a special case, "param=?" requests
-                   a list of all control parameters and their current values.
-
-penalty            minimum absolute penalty variable coefficient;
-                   default = automatic choice
-
-permuteseed        seed for the random-number generator used by prepermute;
-                   default = 1
-
-perturb            perturbation factor if autoperturb is set to 1;
-                   0 = default = automatic choice.
-                   Deprecated; overridden by primalperturb and dualperturb,
-                   which should be used instead of perturb.
-
-pivottol           zero tolerance for pivots; default = 1e-9
-
-pooldualred        Whether to suppress removal of dominated solutions (via
-                   "dual reductions") when poolstub is specified:
-                        0 = yes (default, which can be expensive)
-                        1 = no
-                        2 = honor presolveops bit 3 (2^3 = 8)
-
-pooldupcol         Whether to suppress duplicate variable removal when
-                   poolstub is specified:
-                        0 = yes (default, which can be expensive)
-                        1 = no
-                        2 = honor presolveops bit 5 (2^5 = 32)
-
-pooldups           How poolstub should handle duplicate solutions:
-                        0 = retain all duplicates
-                        1 = discard exact matches
-                        2 = discard exact matches of continuous variables
-                                and matches of rounded values of discrete
-                                variables
-                        3 = default: discard matches of rounded values of
-                                discrete variables
-                   Rounding of discrete variables is affected by poolmiptol
-                   and poolfeastol.
-
-poolfeastol        Zero tolerance for discrete variables in the solution
-                   pool (see poolstub); default = 1e-6.
-
-poolmiptol         Error (nonintegrality) allowed in discrete variables
-                   in the solution pool (see poolstub); default = 5e-6.
-
-poolnbest          Whether the solution pool (see poolstub) should contain
-                   inferior solutions.  When poolnbest = n > 1, the
-                   solution pool is allowed to keep the n best solutions.
-
-poolstub           Stub for solution files in the MIP solution pool.
-                   Ignored unless some variables are integer or binary.
-                   A pool of alternate MIP solutions is computed if
-                   poolstub is specified, and the solutions in this pool
-                   are written to files
-
-                      (poolstub & '1') ... (poolstub & |solution pool|),
-
-                   where |solution pool| is the number of solutions in the
-                   solution pool.  That is, file names are obtained by
-                   appending 1, 2, ... |solution pool| to poolstub.  The
-                   value of |solution pool| is returned in suffix npool
-                   on the objective and problem.
-
-ppfactor           partial-pricing candidate-list size factor; default = 1.0
-
-preanalyticcenter  whether to compute and use analytic centers while solving
-                   MIP problems:
-                        -1 = automatic choice (default)
-                         0 = no
-                         1 = yes, but only for variable fixing
-                         2 = yes, but only for computing reduced costs
-                         3 = yes, for both variable fixing and reduced costs.
-
-prebasisred        whether XPRESS's presolve should try to use a lattice basis
-                   reduction algorithm:
-                        -1 = automatic choice (default)
-                         0 = no
-                         1 = yes.
-
-prebndredcone      for MIP problems, whether to use cone constraints to
-                   reduce bounds on variables:
-                         0 = no
-                         1 = yes
-                        -1 = default (undocumented)
-
-prebndredquad      for MIP problems, whether to use convex quadratic
-                   constraints to reduce bounds on variables:
-                         0 = no
-                         1 = yes
-                        -1 = default (undocumented)
-
-precoefelim        whether XPRESS's presolve should recombine constraints:
-                        0 = no,
-                        1 = yes, as many as possible
-                        2 = yes, cautiously (default)
-
-precomponents      whether XPRESS's presolve should detect and separately
-                   solve independent MIP subproblems:
-                        -1 = automatic choice (default)
-                         0 = no
-                         1 = yes
-
-preconvertsep      How to reformulate problems with nondiagonal quadratic
-                   objectives or constraints:
-                        -1 = automatic choice (default)
-                         0 = no reformulation
-                         1 = reformulate to diagonal constraints
-                         2 = also allow reduction to second-order cones
-                         3 = also convert the objective to a constraint.
-
-predomcol          whether XPRESS's presolve should remove variables
-                   when solving MIP problems:
-                        -1 = automatic choice (default)
-                         0 = no
-                         1 = yes, cautiously
-                         2 = yes, check all candidates
-
-predomrow          whether XPRESS's presolve should remove constraints
-                   when solving MIP problems:
-                        -1 = automatic choice (default)
-                         0 = no
-                         1 = yes, cautiously
-                         2 = yes, medium strategy
-                         3 = yes, check all candidates
-
-preduprow          how XPRESS's presolve should deal with duplicate rows
-                   in MIP problems:
-                        -1 = automatic choice (default)
-                         0 = do not remove duplicate rows (constraints)
-                         1 = remove duplicate rows identical in all variables
-                         2 = like 1 but allowing simple penalty variables
-                         3 = like 1 but allowing more complex penalty variables
-
-prefolding         choose if folding aggregate continuous column in an
-                   equitable partition:
-                        -1 = automatic choiche (default)
-                         0 = disabled
-                         1 = enabled
-
-preimplications    whether XPRESS's presolve should use implication
-                   structures to remove redundant rows:
-                        -1 = automatic choice (default)
-                         0 = no
-                         1 = yes
-
-prelindep          whether to check for and remove linearly dependent
-                   equality constraints:
-                        -1 = automatic choice (default)
-                         0 = no
-                         1 = yes
-
-preobjcutdetect    on MIP problems, whether to check for constraints
-                   that are (nearly) parallel to a linear objective function
-                   and can be removed safely:
-                        0 = no
-                        1 = yes (default)
-
-prepermute         whether to randomly permute variables or constraints before
-                   applying XPRESS's presolve:  sum of
-                        1 ==> permute constraints
-                        2 ==> permute variables
-                        4 ==> permute global MIP information
-                   default = 0; see permuteseed
-
-preprobing         how much probing on binary variables to do during XPRESS's
-                   presolve:
-                        -1 = automatic choice (default)
-                         0 = none
-                         1 = light probing
-                         2 = full probing
-                         3 = repeated full probing
-
-presolve           whether to use XPRESS's presolver:
-                        0 = no
-                        1 = yes, removing redundant bounds (default)
-                        2 = yes, retaining redundant bounds
-
-presolvemaxgrow    factor by which the number of nonzero coefficients
-                   may grow during XPRESS's presolve; default = 0.1
-
-presolveops        reductions to use in XPRESS's presolve:  sum of
-                            1 = 2^0  = remove singleton columns
-                            2 = 2^1  = remove singleton constraints (rows)
-                            4 = 2^2  = forcing row removal (whatever that is)
-                            8 = 2^3  = dual reductions
-                           16 = 2^4  = redundant constraint (row) removal
-                           32 = 2^5  = duplicate variable removal
-                           64 = 2^6  = duplicate constraint removal
-                          128 = 2^7  = strong dual reductions
-                          256 = 2^8  = variable eliminations
-                          512 = 2^9  = no IP reductions
-                         1024 = 2^10 = no semicontinuous variable detection
-                         2048 = 2^11 = no advanced IP reductions
-                        16384 = 2^14 = remove linearly dependent constraints
-                        32768 = 2^15 = no integer variable and SOS detection
-                   default = 511 (bits 0-8 set).
-
-presolvepasses     Number of rounds to use in the XPRESS presolve algorithm;
-                   default = 1.
-
-pricingalg         primal simplex pricing method:
-                        -1 = partial pricing
-                         0 = automatic choice (default)
-                         1 = Devex pricing
-
-primal             [no assignment] use the primal simplex algorithm
-
-primalperturb      Factor by which to possibly perturb the problem in the
-                   dual primal algorithm.  If >= 0, overrides "perturb".
-                   Default -1 ==> automatic choice; 0 ==> no perturbatation.
-
-primalunshift      whether the primal alg. calls the dual to unshift:
-                        0 = yes (default)
-                        1 = no
-
-pseudocost         default pseudo-cost assumed for forcing an integer variable
-                   to an integer value; default = 0.01
-
-pseudocost_ud      how to update pseudocosts during branch-and-bound:
-                        -1 = automatic choice (default)
-                         0 = no updates
-                         1 = use only regular branches
-                         2 = use regular and strong branch results
-                         3 = use results from all nodes
-
-qccuts             when using miqcpalg=1 to solve a mixed-integer problem that
-                   has quadratic constraints or second-order cone constraints,
-                   the number of rounds of outer approximation cuts at the top
-                   node:  default = -1 means automatic choice.
-
-qcrootalg          when using miqcpalg=1 to solve a mixed-integer problem that
-                   has quadratic constraints or second-order cone constraints,
-                   the algorithm for solving the root node:
-                        -1 = automatic choice (default)
-                         0 = barrier algorithm
-                         1 = dual simplex on outer approximations
-
-quadunshift        whether quadratic simplex should do an extra
-                        purification after finding a solution:
-                        -1 = automatic choice (default)
-                         0 = no
-                         1 = yes
-
-ray                whether to return a ray of unboundedness in suffix .unbdd:
-                        0 ==> no (default)
-                        1 ==> yes, after suppressing XPRESS's presolve
-                        2 ==> yes, without suppressing XPRESS's presolve
-                   The last setting (ray=2) may give wrong results when
-                   XPRESS's presolve detects infeasibility.  Both ray=1 and
-                   ray=2 cause reoptimization with primal simplex if some other
-                   algorithm was used.  No ray is returned for MIP problems.
-
-refineops          whether refine equalities -- to reduce infeasibilities
-                   in constraints that should hold as equalities: sum of
-                         1 ==> refine LP solutions
-                         2 ==> refine MIP solutions;
-                         4 ==> refine the final MIP solution found
-                         8 ==> refine each node of the search tree
-                        16 ==> refine non-global solutions
-                        32 ==> refine all solutions
-                        64 ==> use higher precision during iterative refinement
-                       128 ==> use the primal simplex algorithm for refining
-                       256 ==> use the dual simplex algorithm for refining
-                       512 ==> refine MIP solutions such that rounding them
-                                keeps the problem feasible when reoptimized
-                      1024 ==> attempt to refine MIP solutions such that
-                                rounding them keeps the problem feasible when
-                                reoptimized, but accept integers solutions
-                                even if refinement fails.
-                   default = 1 + 2 + 16 = 19.
-
-relax              [no assignment] ignore integrality
-
-relaxtreemem       fraction of memory limit by which to relax "treememlimit"
-                   when too much structural data appears; default 0.1
-
-relpivottol        relative pivot tolerance default = 1e-6
-
-repairindefq       whether to repair indefinite quadratic forms:
-                        0 = yes
-                        1 = no (default)
-
-resourcestrategy   whether to allow nondeterministic decisions to cope with
-                   low memory (affected by maxmemory and maxmemoryhard):
-                        0 = no (default)
-                        1 = yes
-
-rootpresolve       whether to presolve after root cutting and heuristics:
-                        -1 = automatic choice (default)
-                         0 = no
-                         1 = yes
-
-round              whether to round integer variables to integral values before
-                   returning the solution, and whether to report that XPRESS
-                   returned noninteger values for integer values:  sum of
-                         1 ==> round nonintegral integer variables
-                         2 ==> do not modify solve_result
-                         4 ==> do not modify solve_message
-                         8 ==> report modifications even if maxerr < 1e-9
-                   Modifications take place only if XPRESS assigned nonintegral
-                   values to one or more integer variables, and (for round < 8)
-                   are reported if the maximum deviation from integrality
-                   exceeded 1e-9.  Default = 1.
-
-sbbest             For MIP problems, the number of infeasible
-                   global entities on which to perform strong branching;
-                   default -1 ==> automatic choice.
-
-sbeffort           multiplier on strong-branching controls that
-                   are set to "automatic"; default = 1.0
-
-sbestimate         how to compute pseudo costs from the local node
-                   when selecting an infeasible entity to branch on:
-                        -1 = automatic choice (default)
-                        1-6 = particular strategies (not described)
-
-sbiterlimit        Number of dual iterations to perform the strong branching;
-                   0 ==> none; default = -1 (automatic choice)
-
-sbselect           size of candidate list for strong branching:
-                        -2 = low-effort automatic choice (default)
-                        -1 = high-effort automatic choice
-                        n >= 0 ==> include max(n, sbbest) candidates
-
-scaling            how to scale the constraint matrix before optimizing: sum of
-                            1 = 2^0 = row scaling
-                            2 = 2^1 = column scaling
-                            4 = 2^2 = row scaling again
-                            8 = 2^3 = maximum scaling
-                           16 = 2^4 = Curtis-Reid
-                           32 = 2^5 = scale by maximum element (rather
-                                        than by geometric mean)
-                           64 = 2^6 = no special handing for big-M constraints
-                          128 = 2^7 = objective-function scaling
-                          256 = 2^8 = excluding quadratic part of constraint
-                                        when calculating scaling factors
-                          512 = 2^9 = scale before presolve
-                         1024 = 2^10 = do not scale constraints (rows) up
-                         2048 = 2^11 = do not scale variables down
-                         4096 = 2^12 = do global objective function scaling
-                         8192 = 2^13 = do right-hand side scaling
-                        16384 = 2^14 = disable aggressive quadratic scaling
-                        32768 = 2^15 = disable explicit slack scaling.
-                   Default = 163.
-
-sifting            when using dual simplex, whether to enable sifting,
-                   which can speed up the solve when there are many more
-                   variables than constraints:
-                        -1 = automatic choice (default)
-                         0 = no
-                         1 = yes
-
-siftpasses         how quickly we allow the worker problems to grow during the
-                   sifting algorithm; large values might reduce the number of
-                   iterations but increase the solve time for each.  Default 4.
-
-siftpresolveops    presolve operations for solving the subproblems during
-                   sifting:
-                         -1 = use presolveops value (default)
-                        > 0 = use this value
-
-siftswitch         determines which algoorithm to use during sifting
-                           -1 ==> dual simplex
-                            0 ==> barrier
-                        n > 0 ==> barrier if the number of dual
-                                  infeasibilities > n else dual simplex
-
-sleeponthreadwait  whether threads should sleep while awaiting work:
-                        0 = no (busy-wait)
-                        1 = yes (sleep; may add overhead)
-                   default = -1 (automatic choice)
-
-sos                whether to use explicit SOS information; default 1 ==> yes
-
-sos2               whether to tell XPRESS about SOS2 constraints for
-                   nonconvex piecewise-linear terms; default 1 ==> yes
-
-sosreftol          minimum relative gap between reference row entries;
-                   default = 1e-6
-
-symmetry           amount of effort to detect symmetry in MIP problems:
-                        0 = none: do not attempt symmetry detection
-                        1 = modest effort (default)
-                        2 = aggressive effort
-
-threads            default number of threads to use:
-                        -1 = automatic choice (based on hardware)
-                         n > 0 ==> use n threads
-
-timing             [no assignment] give timing statistics
-
-trace              whether to explain infeasibility:
-                        0 = no (default)
-                        1 = yes
-
-treecompress       level of effort at data compression when branch-and-bound
-                   memory exceeds "treememlimit":  higher ==> greater effort
-                   (taking more time); default = 2
-
-treecovercuts      number of rounds of lifted-cover inequalities at MIP nodes
-                   other than the top node (cf covercuts);
-                   default = -1 (automatic choice)
-
-treecuts           cuts to generate at nodes during tree search:  sum of
-                            32 = 2^5  = clique cuts
-                            64 = 2^6  = mixed-integer rounding (MIR) cuts
-                            64 = 2^7  = lifted-cover cuts
-                          2048 = 2^11 = flow-path cuts
-                          4096 = 2^12 = implication cuts
-                          8192 = 2^13 = lift-and-project cuts
-                         16384 = 2^14 = disable cutting from row cuts
-                         32768 = 2^15 = lifted GUB cover cuts
-                         65536 = 2^16 = zero-half cuts
-                        131072 = 2^17 = indicator cuts.
-                   Default = 259839 (same effect as -2305).
-
-treegomcuts        number of rounds of Gomory cuts to generate at MIP nodes
-                   other than the top node (cf covercuts);
-                   default = -1 (automatic choice)
-
-treememlimit       an integer: soft limit in megabytes on memory to use for
-                   branch-and-bound trees.  Default = 0 ==> automatic choice.
-
-treememtarget      fraction of "treememlimit" to try to recover by compression
-                   or writing to nodefile when  "treememlimit" is exceeded.
-                   Default = 0.2
-
-treeoutlev         how much to report about branch-and-bound trees
-                   (if allowed by outlev):  sum of
-                        1 = regular summaries
-                        2 = report tree compression and output to nodefile
-                   default = 3
-
-tunerdir           directory for tuner results; specifying tunerdir causes
-                   the XPRESS tuner to solve the problem several times
-                   to find good settings for solving similar problems.
-                   Results are stored in tunerdir and its subdirectories.
-
-tunerhistory       when tunerdir is specified, whether to reuse previous
-                   tuner results and/or to augment them:
-                        0 = discard previous tuner results
-                        1 = ignore previous tuner results,
-                                but add new results to them
-                        2 = reuse previous tuner results and add
-                                new results to them (default).
-
-tunermaxtime       maximum seconds to run the tuner when tunerdir is
-                   specified.  Default 0 ==> no limit.  Use "maxtime" to limit
-                   the time the tuner uses for each problem solved.
-
-tunermethod        method for tuning when tunerdir is specified:
-                        -1 = automatic choice (default)
-                         0 = default LP tuner
-                         1 = default MIP tuner
-                         2 = more elaborate MIP tuner
-                         3 = root-focused MIP tuner
-                         4 = tree-focused MIP tuner
-                         5 = simple MIP tuner
-                         6 = default SLP tuner
-                         7 = default MISLP tuner
-                         8 = MIP tuner using primal heuristics.
-
-tunermethodfile    name of a file that can be read to specify the
-                   method for tuning (overriding tunermethod) when tunerdir
-                   is specified.
-
-tunerpermute       when running the XPRESS tuner and tunerpermute = n > 0,
-                   solve the original problem and n permutations thereof.
-
-tunertarget        what to measure to compare two problem solutions
-                   when running the XPRESS tuner (what to measure):
-                        -1 = automatic choice (default)
-                         0 = solution time, then integrality gap
-                         1 = solution time, then best bound
-                         2 = solution time, then best integer solution
-                         3 = the "primal dual integral", whatever that is
-                         4 = just solution time (default for LPs)
-                         5 = just objective value
-                         6 = validation number (probably not relevant)
-                         7 = integrality gap only
-                         8 = best bound only
-                         9 = best integer solution only.
-
-tunerthreads       number of tuner threads to run in parallel:
-                   default -1 ==> automatic choice.
-                   "threads" controls the number of threads for each solve.
-                   The product of threads and tunerthreads should not exceed
-                   the number of threads the system can run in parallel.
-
-varselection       how to score the integer variables at a MIP node, for
-                        branching on a variable with minimum score:
-                        -1 = automatic choice (default)
-                         1 = minimum of the 'up' and 'down' pseudo-costs
-                         2 = 'up' pseudo-cost + 'down' pseudo-cost
-                         3 = maximum of the 'up' and 'down' pseudo-costs plus
-                             twice their minimum
-                         4 = maximum of the 'up' and 'down' pseudo-costs
-                         5 = the 'down' pseudo-cost
-                         6 = the 'up' pseudo-cost
-
-version            Report version details before solving the problem.  This is
-                   a single-word "phrase" that does not accept a value
-                   assignment.
-
-wantsol            solution report without -AMPL: sum of
-                        1 = write .sol file
-                        2 = print primal variable values
-                        4 = print dual variable values
-                        8 = do not print solution message
-
-writeprob          Name of file to which the problem is written
-                   in a format determined by the name's suffix:
-                        .mps = MPS file;
-                        .lp = LP file.
+acc:abs
+      Solver acceptance level for 'AbsConstraint', default 2:
 
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+acc:and (acc:forall)
+      Solver acceptance level for 'AndConstraint', default 2:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+acc:indeq (acc:indlineq)
+      Solver acceptance level for 'IndicatorConstraintLinEQ', default 2:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+acc:indge (acc:indlinge)
+      Solver acceptance level for 'IndicatorConstraintLinGE', default 2:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+acc:indle (acc:indlinle)
+      Solver acceptance level for 'IndicatorConstraintLinLE', default 2:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+acc:max
+      Solver acceptance level for 'MaxConstraint', default 2:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+acc:min
+      Solver acceptance level for 'MinConstraint', default 2:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+acc:or (acc:exists)
+      Solver acceptance level for 'OrConstraint', default 2:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+acc:quadeq
+      Solver acceptance level for 'QuadConEQ', default 2:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+acc:quadge
+      Solver acceptance level for 'QuadConGE', default 2:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+acc:quadle
+      Solver acceptance level for 'QuadConLE', default 2:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+acc:sos2
+      Solver acceptance level for 'SOS2Constraint', default 2:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+alg:addcutoff (addcutoff, mipaddcutoff)
+      Amount to add to the objective function of the best integer
+
+      solution found to give the new MIP cutoff; default -1e-5.
+
+alg:basis (basis)
+      Whether to use or return a basis:
+
+      0 - No
+      1 - Use incoming basis (if provided)
+      2 - Return final basis
+      3 - Both (1 + 2 = default)
+
+alg:clamping (clamping)
+      Control adjustements of the returned solution values such that they are
+      always within bounds:
+
+      -1 - Determined automatically
+      0  - Adjust primal solution to always be within primal bounds (default)
+      1  - Adjust primal slack values to always be within constraint bounds
+      2  - Adjust dual solution to always be within the dual bounds implied
+           by the slacks
+      3  - Adjust reduced costs to always be within dual bounds implied by
+           the primal solution
+
+alg:cutoff (cutoff)
+      If the optimal objective value is worse than cutoff, report "objective
+      cutoff" and do not return a solution. Default: 1.0E+40 for minimizing,
+      -1.0E+40 for maximizing.
+
+alg:feastol (feastol)
+      Primal feasibility tolerance (default 1e-6).
+
+alg:feastolperturb (feastolperturb)
+      How much a feasible primal basic solution is allowed to be perturbed
+      when performing basis changes. The tolerance specified by "alg:feastol"
+      is always considered as an upper limit for the perturbations; default =
+      1.0E-06
+
+alg:feastoltarget (feastoltarget)
+      Specifies the target feasibility tolerance for the solution refiner.
+      Default = 0 (use the value of "alg:feastol")
+
+alg:iisfind (iisfind, iis)
+      Whether to find and export an IIS. Default = 0 (don't export).
+
+alg:indlinbigm (indlinbigm)
+      Largest "big M" value to use in converting indicator constraints to
+      regular constraints, default = 1e5
+
+alg:lpfolding (lpfolding)
+      Simplex and barrier: whether to fold an LP problem before solving it:
+      .. value-table:
+
+alg:maxiis (maxiis)
+      Maximum number of IIS to find; default=-1 (no limit)
+
+alg:method (method, lpmethod, defaultalg)
+      Which algorithm to use for non-MIP problems or for the root node of MIP
+      problems:
+
+      1 - Automatic choice (default)
+      2 - Dual simplex
+      3 - Primal simplex
+      4 - Netwon Barrier
+
+alg:randomseed (randomseed)
+      Sets the initial seed to use for the pseudo-random number generator in
+      the Optimizer; default=1
+
+alg:refactor (refactor)
+      Whether the optimization should restart using the current representation
+      of the factorization in memory:
+
+      -1 - Automatic choice (default)
+      0  - No
+      1  - Yes.
+
+alg:refineops (refineops)
+      Bit vector: specifies wmhen the solution refiner should be executed to
+      reduce solution infeasibilities. The refiner will attempt to satisfy the
+      target tolerances for all original linear constraints before presolve or
+      scaling has been applied:
+
+      1    - refine optimal LP solutions
+      2    - refine MIP solutions
+      8    - refine each node of the search tree
+      16   - refine non-global solutions
+      32   - apply the iterative refiner to refine the solution
+      64   - use higher precision in the iterative refinement
+      128  - iterative refiner will use the primal simplex algorithm
+      256  - iterative refiner will use the dual simplex algorithm
+      512  - refine MIP solutions such that rounding them keeps the problem
+             feasible when reoptimized
+      1024 - ttempt to refine MIP solutions such that rounding them keeps the
+             problem feasible when reoptimized, but accept integers solutions
+             even if refinement fails
+
+alg:relax (relax)
+      0*/1: Whether to relax integrality of variables.
+
+alg:relcutoff (relcutoff, miprelcutoff)
+      If the optimal objective value is (relatively) worse than relcutoff,
+      report "objective cutoff" and do not return a solution. Default: 1.0E-4.
+
+alg:resourcestrategy (resourcestrategy)
+      Wether to allow nondeterministic decisions to cope with low memory
+      (affected by maxmemory and maxmemoryhard):
+
+      0 - No (default)
+      1 - Yes.
+
+alg:start (warmstart)
+      Whether to use incoming primal (and dual, for LP) variable values in a
+      warmstart:
+
+      0 - No
+      1 - Yes (for LP: if there is no incoming alg:basis) (default)
+      2 - Yes (for LP: ignoring the incoming alg:basis, if any.)
+
+alg:zerotol (matrixtol)
+      The zero tolerance on matrix elements. If the value of a matrix element
+      is less than or equal to this in absolute value, it is treated as zero,
+      default=1e-9.
+
+bar:alg (baralg)
+      Which barrier algorithm to use
+
+bar:cachesize (cachesize)
+      Newton Barrier: L2 or L3 (see notes) cache size in kB (kilobytes) of the
+      CPU (default -1). On Intel (or compatible) platforms a value of -1 may
+      be used to determine the cache size automatically.
+
+bar:choleskyalg (choleskyalg)
+      Type of Cholesky factorization used for barrier, sum of:
+      :
+
+bar:choleskytol (choleskytol)
+      Zero tolerance for Cholesky pivots in the
+
+      Newton Barrier algorithm; default = 1e-15
+
+bar:cores (barcores)
+      If positive, number of CPU cores to assume present when using the
+      barrier algorithm. Default = -1, which means automatic choice
+
+bar:corespercpu (corespercpu)
+      Newton Barrier: number of cores to assume per cpu. Barrier cache =
+      cachesize/corespercpu. Default -1 = automatic.
+
+bar:cpuplatform (cpuplatform)
+      Which instruction are allowed to the Newton barrier method:
+      :
+
+bar:crash (barcrash)
+      Choice of crash procedure for crossover, higher number means more
+      aggressive procedure:
+
+bar:crossover (crossover)
+      How to transform a barrier solution to a basic one:
+
+      -1 - automatic choice (default)
+      0  - none: return an interior solution
+      1  - primal crossover first
+      2  - dual crossover first
+
+bar:crossoverops (crossoverops)
+      Bit vector affecting crossover after the barrier algorithm; sum of:
+
+      1 - return the barrier solution (rather than the last intermediate
+          solution) when crossover stop early
+      2 - skip the second crossover stage
+      4 - skip pivots that are "less numerically reliable"
+      8 - do a slower but more numerically stable crossover
+
+bar:crossoverthreads (crossoverthreads)
+      Limit on threads used during crossover; default -1 (determined by
+      bar:threads).
+
+bar:crossovertol (crossovertol, crossoveraccuracytol)
+      Tolerance (default 1e-6) for deciding whether to adjust the relative
+      pivot tolerance during crossover when a new basis factorization is
+      necessary. Errors in the recalculated basic solution above this
+      tolerance cause the pivot tolerance to be adjusted.
+
+bar:densecollimit (densecollimit)
+      Number of nonzeros above which a column is treated as dense in the
+      barrier algorithm's Cholesky factorization. Default=0 (automatic).
+
+bar:dualstop (bardualstop)
+      Barrier method convergence tolerance on dual infeasibilities; default =
+      0 (automatic choice)
+
+bar:gap (bargaptarget)
+      Barrier algorithm target tolerance for the relative duality gap.If not
+      satisfied and no further progress is possible but barstopgap is
+      satisfied, then the current solution is considered optimal.
+
+bar:gapstop (bargapstop)
+      Barrier method convergence tolerance on the relative duality gap;
+      default = 0
+
+bar:indeflimit (barindeflimit)
+      Maximum indefinite factorizations to allow in the barrier algorithm for
+      solving a QP: stop when the limit is hit default = 15
+
+bar:kernel (barkernel)
+      How the barrier algorithm weights centrality:
+
+      >= +1.0 - More emphasis on centrality (default 1.0)
+      <= -1.0 - Each iteration, adaptively select a value from [+1,
+                -barkernel]
+
+bar:l1cache (l1cache)
+      Newton barrier: L1 cache size in kB (kilo bytes) of the CPU. On Intel
+      (or compatible) platforms a value of -1 may be used to determine the
+      cache size automatically.
+
+bar:objperturb (barobjperturb)
+      Defines how the barrier perturbs the objective (default 1e-6); values >
+      0 let the optimizer decide if to perturb the objective, values < 0 force
+      the perturbation:
+
+      n > 0 - automatic decison, scale n
+      n = 0 - turn off perturbation
+      n < 0 - force perturbation by abs(n)
+
+bar:objscale (barobjscale)
+      How the barrier algorithm scales the objective; when the objective is
+      quadratic, the quadratic diagonal is used in determining the scale:
+
+      -1  - Automatic choice (default)
+      0   - Scale by the geometric mean of the objective coefficients
+      > 0 - Scale so the argest objective coefficient in absolute value is <=
+            barobjscale.
+
+bar:order (barorder)
+      Cholesky factorization pivot order for barrier algorithm:
+
+      0 - automatic choice(default)
+      1 - minimum degree
+      2 - minimum local fill
+      3 - nested dissection
+
+bar:orderthreads (barorderthreads)
+      Number of threads to use when choosing a pivot order for Cholesky
+      factorization; default 0 (automatic choice).
+
+bar:output (baroutput)
+      Amount of output for the barrier method:
+
+      0 - no output
+      1 - each iteration (default)
+
+bar:presolve (barpresolve)
+      Level of barrier-specific presolve effort:
+
+      0 - no output
+      1 - each iteration (default)
+
+bar:primalstop (barprimalstop)
+      Barrier method convergence tolerance on primal infeasibilities; default
+      = 0 (automatic choice)
+
+bar:refiter (barrefiter)
+      Maximum number of refinement iterations, helpful when the the solution
+      is near to the optimum using barrier or crossover:
+
+      0     - default
+      n > 0 - perform n refinement iterations
+
+bar:regularize (barreg, barrregularize)
+      Regularization to use with "barrier. Default=-1 (automatic choice), else
+      sum of:
+
+      1 - use "standard" regularization
+      2 - use "reduced" regularization: less perturbation than "standard"
+          regularization
+      4 - keep dependent rows in the KKT system
+      8 - keep degenerate rows in the KKT system
+
+bar:start (barstart)
+      Choice of starting point for barrier method:
+
+      -1 - Use incoming solution for warm start
+      0  - Automatic choice (default)
+      1  - Heuristics based on magnitudes of matrix entries
+      2  - Use pseudoinverse of constraint matrix
+      3  - Unit starting point for homogeneous self - dual barrier algorithm.
+
+bar:stepstop (barstepstop)
+      Barrier method convergence tolerance: stop when step size <=
+      barstepstop; default = 1e-10
+
+bar:threads (threads)
+      number of threads used in the Newton Barrier algorithm;
+
+      default = -1 (determined by "threads")
+
+cut:cover (covercuts)
+      The number of rounds of lifted cover inequalities at the top
+      node.Default=-1, automatic.
+
+cut:depth (cutdepth)
+      Maximum MIP tree depth at which to generate cuts. Default -1
+      (automatic); a value of 0 will disable cuts generation.
+
+cut:factor (cutfactor)
+      Limit on number of cuts and cut coefficients added while solving MIPs.
+      Default=-1 (automatic); a value of 0 will disable cuts generation.
+
+cut:freq (cutfreq)
+      Cuts are only generated at tree depths that are integer
+
+      multiples of cutfreq. Default=-1 (automatic choice).
+
+cut:gomory (gomcuts)
+      The number of rounds of Gomory or lift-and-project cuts at the top
+      node.Default=-1, automatic.
+
+cut:lnpbest (lnpbest)
+      Number of infeasible global entities to create lift-and-project cuts for
+      during each round of Gomory cuts at the top node
+
+cut:lnpiterlimit (lnpiterlimit)
+      Number of iterations to perform in improving each lift-and-project cut;
+      default=-1 (automatic)
+
+cut:qccuts (qccuts)
+      when using miqcpalg=1 to solve a mixed-integer problem that has
+      quadratic constraints or second-order cone constraints, the number of
+      rounds of outer approximation cuts at the top node; default = -1
+      (automatic choice).
+
+cut:select (cutselect)
+      Detailed control of cuts at MIP root node; sum of:
+
+      32     - clique cuts
+      64     - mixed - integer founding(MIR) cuts
+      128    - lifted cover cuts
+      2048   - flow path cuts
+      4096   - implication cuts
+      8192   - automatic lift - and -project strategy
+      16384  - disable cutting from cut rows
+      32768  - lifted GUB cover cuts
+      65536  - zero - half cuts
+      131072 - indicator - constraint cuts
+      -1     - all available cuts(default)
+
+cut:strategy (cutstrategy)
+      How aggressively to generate MIP cuts; more ==> fewer nodes but more
+      time per node:
+
+      -1 - automatic (default)
+      0  - no cuts
+      1  - conservative strategy
+      2  - moderate strategy
+      3  - aggressive strategy
+
+cut:treecover (treecovercuts)
+      The number of rounds of lifted cover inequalities at MIP nodes other
+      than the top node. Default=-1 (automatic).
+
+cut:treegomory (treegomcuts)
+      The number of rounds of Gomory or lift-and-project cuts at MIP nodes
+      other than the top node. Default=-1 (automatic).
+
+cut:treeqccuts (treeqccuts)
+      when using miqcpalg=1 to solve a MIP that has quadratic constraints or
+      second-order cone constraints, the number of rounds of outer
+      approximation cuts during the tree search; default = -1 (automatic
+      choice).
+
+cut:treeselect (treecutselect)
+      Detailed control of cuts created during the tree search; sum of:
+
+      32     - clique cuts
+      64     - mixed - integer founding(MIR) cuts
+      128    - lifted cover cuts
+      2048   - flow path cuts
+      4096   - implication cuts
+      8192   - automatic lift - and -project strategy
+      16384  - disable cutting from cut rows
+      32768  - lifted GUB cover cuts
+      65536  - zero - half cuts
+      131072 - indicator - constraint cuts
+      -1     - all available cuts(default)
+
+cvt:bigM (cvt:bigm, cvt:mip:bigM, cvt:mip:bigm)
+      Default value of big-M for linearization of logical constraints. Not
+      used by default. Use with care (prefer tight bounds). Should be smaller
+      than (1.0 / [integrality tolerance])
+
+cvt:mip:eps (cvt:cmp:eps)
+      Tolerance for strict comparison of continuous variables for MIP. Ensure
+      larger than the solver's feasibility tolerance.
+
+cvt:plapprox:domain (plapprox:domain, plapproxdomain)
+      For piecewise-linear approximated functions, both arguments and result
+      are bounded to +-[pladomain]. Default 1e6.
+
+cvt:plapprox:reltol (plapprox:reltol, plapproxreltol)
+      Relative tolerance for piecewise-linear approximation. Default 0.01.
+
+cvt:pre:all
+      0/1*: Set to 0 to disable most presolve in the flat converter.
+
+cvt:pre:eqbinary
+      0/1*: Preprocess reified equality comparison with a binary variable.
+
+cvt:pre:eqresult
+      0/1*: Preprocess reified equality comparison's boolean result bounds.
+
+cvt:quadcon (passquadcon)
+      0/1*: Multiply out and pass quadratic constraint terms to the solver,
+      vs. linear approximation.
+
+cvt:quadobj (passquadobj)
+      0/1*: Multiply out and pass quadratic objective terms to the solver, vs.
+      linear approximation.
+
+cvt:sos (sos)
+      0/1*: Whether to honor declared suffixes .sosno and .ref describing SOS
+      sets. Each distinct nonzero .sosno value designates an SOS set, of type
+      1 for positive .sosno values and of type 2 for negative values. The .ref
+      suffix contains corresponding reference values used to order the
+      variables.
+
+cvt:sos2 (sos2)
+      0/1*: Whether to honor SOS2 constraints for nonconvex piecewise-linear
+      terms, using suffixes .sos and .sosref provided by AMPL.
+
+lim:bariterlim (bar:iterlim, bariterlim)
+      Limit on the number of barrier iterations (default 500).
+
+lim:crossoveriterlim (bar:crossoveriterlim, crossoveriterlim, crossoveritlim)
+      Limit on crossover iterations after the barrier algorithm; default =
+      2147483645
+
+lim:heurdiveiterlimit (heurdepth, mip:heurdiveiterlimit)
+      Simplex iteration limit for reoptimizing during the diving heuristic;
+      default = -1 (automatic selection); a value of 0 implies no iteration
+      limit
+
+lim:lpiterlimit (lpiterlimit)
+      The maximum number of iterations that will be performed by primal
+      simplex or dual simplex before the optimization process terminates. For
+      MIP problems, this is the maximum total number of iterations over all
+      nodes.
+
+lim:lprefineiterlimit (lprefineiterlimit)
+      This specifies the simplex iteration limit the solution refiner can
+      spend in attempting to increase the accuracy of an LP solution;
+      default=-1 (automatic).
+
+lim:maxcuttime (maxcuttime)
+      The maximum amount of time allowed for generation of cutting planes and
+      reoptimization;default=0 (no time limit)
+
+lim:maxmipsol (maxmipsol)
+      Limit on the number of MIP solutions to be found (default no limit).
+
+lim:maxstalltime (maxstalltime)
+      Maximum time in seconds that the MIP Optimizer will continue to search
+      for improving solution after finding a new incumbent, default=0 (no
+      limit)
+
+lim:mem (memlimit, maxmemoryhard)
+      Hard limit (integer number of MB) on memory allocated, causing early
+      termination if exceeded; default = 0 (no limit)
+
+lim:nodes (nodelim, nodelimit, maxnode)
+      Maximum MIP nodes to explore (default: 2147483647).
+
+lim:softmem (softmemlimit, maxmemorysoft)
+      Soft limit (integer number of MB) on memory allocated; default = 0 (no
+      limit)
+
+lim:soltime (soltimelim, soltimelimit)
+      Limit on solve time (in seconds; default: no limit) to be applied only
+      after a solution has been found.
+
+lim:time (timelim, timelimit)
+      Limit on solve time (in seconds; default: no limit).
+
+lp:bigm (bigm, bigmpenalty)
+      Infeasibility penalty to be used if "BigM" method is used; default =
+      1024
+
+lp:bigmmethod (bigmmethod)
+      Simplex: This specifies whether to use the "Big M" method, or the
+      standard phase I (achieving feasibility) and phase II (achieving
+      optimality). the "Big M" method, the objective coefficients of the
+      variables are considered during the feasibility phase, possibly leading
+      to an initial feasible basis which is closer to optimal. The
+      side-effects involve possible round-off errors.
+
+      0 - phase I / II
+      1 - bigM method (default)
+
+lp:crash (crash)
+      Simplex: This determines the type of crash used when the algorithm
+      begins.For primal simplex, the choices are listed below; for dual
+      simplex the choices follow and are interpreted a bit-vector:
+
+      0        - none
+      1        - one-pass search for singletons
+      2        - multi-pass search for singletons
+      3        - multi-pass search including slacks
+      4        - at most 10 passes, only considering slacks at the end
+      n>10     - like 4, but at most n-10 passes
+      0 (dual) - perform standard crash.
+      1 (dual) - perform additional numerical checks during crash
+      2 (dual) - extend the set of column candidates for crash
+      3 (dual) - extend the set of row candidates for crash
+      4 (dual) - force crash
+
+lp:dualforceparallel (forceparalleldual, dualforceparallel)
+      Specifies whether the dual simplex solver should always use the parallel
+      simplex algorithm
+
+lp:dualgradient (dualgradient)
+      dual simplex pricing strategy:
+
+      -1 - automatic (default)
+      0  - devex
+      1  - steepest edge
+      2  - direct steepest edge
+      3  - sparse devex
+
+lp:dualize (dualize)
+      Whether to convert the primal problem to its dual and solve the
+      converted problem:
+
+      -1 - automatic (default)
+      0  - solve the primal problem
+      1  - solve the dual problem
+
+lp:dualizeops (dualizeops)
+      When solving the dual problem after deriving it from the primal, whether
+      to use primal simplex if dual simplex was specified and vice versa:
+
+      0 - No
+      1 - Yes (default)
+
+lp:dualperturb (dualperturb)
+      Factor by which the problem will be perturbed prior to optimization by
+      dual simplex. Default -1 (automatic); note that a value of 0 implies no
+      perturbation
+
+lp:dualstrategy (dualstrategy)
+      Bit vector controlling the dual simplex strategy (default 1):
+
+      1  - switch to primal when dual infeasible
+      2  - stop the solve instead of switching to primal
+      4  - use aggressive cut-off in MIP search
+      8  - use dual simplex to remove cost perturbations
+      16 - aggressive dual pivoting
+      32 - keep using dual simplex even when numerically unstable
+
+lp:dualthreads (dualthreads)
+      Limit on threads used by parallel dual simplex; default -1 (determined
+      by tech:threads).
+
+lp:etatol (etatol)
+      Zero tolerance on eta elements, elements of eta vectors whose absolute
+      value is smaller than etatol are taken to be zero.
+
+lp:invertfreq (invertfreq)
+      Maximum simplex iterations before refactoring the basis; default -1
+      (automatic)
+
+lp:invertmin (invertmin)
+      Minimum simplex iterations before refactoring the basis; default = 3
+
+lp:keepbasis (keepbasis)
+      Basis choice for the next LP iteration:
+
+      0 - ignore previous basis
+      1 - use previous basis (default)
+      2 - use previous basis only if the number of basic variables == number
+          of constraints
+
+lp:keepnrows (keepnrows)
+      Status for nonbinding rows:
+
+      -1 - delete N type rows from the matrix (default)
+      0  - delete elements from N type rows leaving empty N type rows in the
+           matrix
+      1  - keep N type rows
+
+lp:log (lplog)
+      Frequency of printing simplex iteration log; default = 100.Values n < 0
+      display detailed outputs every -n iterations.
+
+lp:netstalllimit (netstalllimit)
+      Limit the number of degenerate pivots of the network simplex algorithmm
+      before switching to primal or dual:
+
+      -1    - automatic (default)
+      0     - no limit
+      n > 0 - limit to n network simplex iterations
+
+lp:optimalitytol (optimalitytol)
+      This is the zero tolerance for reduced costs. On each iteration, the
+      simplex method searches for a variable to enter the basis which has a
+      negative reduced cost. The candidates are only those variables which
+      have reduced costs less than the negative value of optimalitytol;
+      default=1e-6
+
+lp:optimalitytoltarget (optimalitytoltarget)
+      Target optimality tolerance for the solution refiner; default=0 (use the
+      value specified by lp:optimalitytol)
+
+lp:penalty (penalty)
+      Minimum absolute penalty variable coefficient; default = automatic
+      choice
+
+lp:pivtol (pivtol, markowitztol)
+      Markowitz pivot tolerance (default = 0.01)
+
+lp:pricingalg (pricingalg)
+      Primal simplex pricing method:
+
+      -1 - partial pricing
+      0  - automatic choice (default)
+      1  - devex pricing
+      2  - steepest edge
+      3  - steepest edge with initial weights
+
+lp:primalunshift (primalunshift)
+      Whether the primal alg. calls the dual to unshift:
+
+      0 - No
+      1 - Yes (default)
+
+lp:relpivottol (relpivottol)
+      Relative pivot tolerance; default = 1e-6
+
+lp:sifting (sifting)
+      When using dual simplex, whether to enable sifting, which can speed up
+      the solve when there are many more variables than constraints:
+
+      -1 - Automatic choice (default)
+      0  - No
+      1  - Yes.
+
+lp:siftpasses (siftpasses)
+      Determines how quickly we allow to grow the worker problems during the
+      sifting algorithm; default 4.
+
+lp:siftpresolveops (siftpresolveops)
+      Presolve operations for solving the subproblems during sifting:
+
+      -1  - use the "presolveops" setting specified for the original problem
+      >=0 - use the value (see "presolveops" for its semantic)
+
+lp:siftswitch (siftswitch)
+      Determines which algorithm to use for solving the subproblems during
+      sifting:
+
+      -1 - dual simplex
+      0  - barrier
+      >0 - use the barrier algorithm while the number of dual infeasibilities
+           is larger than this value, otherwise use dual simplex
+
+mip:basis (fixmodel, mip:fix)
+      Whether to compute duals / basis / sensitivity for MIP models:
+
+      0 - No (default)
+      1 - Yes.
+
+mip:bestbound (bestbound, return_bound)
+      Whether to return suffix .bestbound for the best known MIP dual bound on
+      the objective value:
+
+      0 - No (default)
+      1 - Yes.
+
+      The suffix is on the objective and problem and is -Infinity for
+      minimization problems and +Infinity for maximization problems if there
+      are no integer variables or if a dual bound is not available.
+
+mip:branchchoice (branchchoice)
+      Control the choice of branching when solving a MIP problem:
+
+      0 - explore branch with min.estimate first(default)
+      1 - explore branch with max.estimate first
+      2 - if an incumbent solution exists, first explore the branch satisfied
+          by the incumbent; otherwise use choice 0 (min.est.first).
+      3 - (default) explore the first branch that moves the branching
+          variable away from its value at the root node; if the branching
+          entity is not a simple variable, assume branchchoice=0.
+
+mip:branchdisj (branchdisj)
+      Whether to branch on general split disjunctions while solving MIPs:
+
+      -1 - automatic choice (default)
+      0  - disabled
+      1  - cautious strategy : create branches only for general integers with
+           a wide range
+      2  - moderate strategy
+      3  - aggressive strategy : create disjunctive branches for both
+           binaryand integer variables
+
+mip:branchstructural (branchstructural, branchstruct)
+      Whether to search for special structure during branch and bound:
+
+      -1 - Automatic choice (default)
+      0  - No
+      1  - Yes.
+
+mip:breadthfirst (breadthfirst)
+      Number of MIP nodes included in best-first search before switching to
+      local-first search; default=11.
+
+mip:components (mipcomponents)
+      Determines whether disconnected components in a MIP should
+
+      be solved as separate MIPs:
+
+      -1 - Automatic choice (default)
+      0  - No
+      1  - Yes.
+
+mip:concurrentnodes (mipconcurrentnodes)
+      Node limit to choose the winning solve when concurrent
+
+      solves are enabled:
+
+      -1    - automatic (default)
+      n > 0 - number of nodes to complete
+
+mip:concurrentsolves (mipconcurrentsolves)
+      Select the number of concurrent solves to start for a MIP:
+
+      -1    - enabled, the number of concurrent solves depends on mipthreads
+      0     - disabled (default)
+      1     - disabled (default)
+      n > 1 - number of concurrent solves = n
+
+mip:deterministic (deterministic)
+      Whether a MIP search should be deterministic:
+
+mip:dualreductions (mipdualreductions)
+      Kinds of dual reductions allowed during branch and bound:
+
+      0 - none
+      1 - all (default)
+      2 - restrict dual reductions to continuous variables
+
+      If poolnbest > 1 is specified, specifying mipdualreductions = 2 might be
+      prudent.
+
+mip:feasibilityjump (feasibilityjump)
+      Decides whether to run the Feasibility Jump heuristic at the top node
+      during branch-and-bound:
+
+      0 - No
+      1 - Yes (default)
+
+mip:feasibilitypump (feasibilitypump)
+      Decides whether to run the Feasibility Pump heuristic at the top node
+      during branch-and-bound:
+
+      -1 - automatic (default)
+      0  - turned off
+      1  - always run
+      2  - run if other heuristics have failed to find an integer solution
+
+mip:gap (mipgap)
+      Max. relative MIP optimality gap (default 1e-4).
+
+mip:gapabs (mipgapabs)
+      Max. absolute MIP optimality gap (default 0).
+
+mip:heurbeforelp (heurbeforelp)
+      Whether primal heuristics should be run before the initial LP relaxation
+      has been solved:
+
+      -1 - Automatic choice (default)
+      0  - No
+      1  - Yes.
+
+mip:heurdiverandomize (hdive_rand, heurdiverandomize)
+      The level of randomization to apply in the diving heuristic; values
+      range from 0.0=none to 1.0=full.
+
+mip:heurdivesoftrounding (hdive_rounding, heurdivesoftrounding)
+      Whether to use soft rounding in the MIP diving heuristic (to push
+      variables to their bounds via the objective rather than fixing them):
+
+      -1 - automatic (default)
+      0  - do not use soft rounding
+      1  - cautious use
+      2  - aggressing use
+
+mip:heurdivespeedup (hdive_speed, heurdivespeedup)
+      Controls tradeoff between speed and solution quality in the diving
+      heuristic:
+      .. value-table:
+
+mip:heurdivestrategy (hdive_strategy, heurdivestrategy)
+      Chooses the strategy for the diving heuristic:
+
+      -1   - automatic selection (default)
+      0    - disable heuristics
+      1-18 - available pre-set strategies for rounding infeasible global
+             entities
+
+mip:heuremphasis (heuremphasis)
+      Chooses the strategy for the diving heuristic:
+
+      -1 - default strategy (default)
+      0  - disable heuristics
+      1  - focus on reducing the gap early
+      2  - extremely aggressive heuristics
+
+mip:heurforcespecialobj (heurforcespecobj, heurforcespecialobj)
+      Whether to use special objective heuristics on large problems and even
+      if an incumbant exists:
+
+      0 - No (default)
+      1 - Yes.
+
+mip:heurfreq (heurfreq)
+      During branch and bound, heuristics are applied at nodes whose depth
+      from the root is zero modulo "heurfreq"; default -1 (automatic).
+
+mip:heursearcheffort (heursearcheffort)
+      Adjusts the overall level of the local search heuristics; default 1.0
+      (normal level).
+
+mip:heursearchfreq (heurfreq, heursearchfreq)
+      Specifies how often the local search heuristic should be run in the
+      tree:
+
+      -1  - automatic (default)
+      0   - disabled in the tree
+      n>0 - number of nodes between each run
+
+mip:heursearchrootcutfreq (heurrootcutfreq, heursearchrootcutfreq)
+      How often to run the local search heuristic while cutting at the root
+      node:
+
+      -1  - automatic (default)
+      0   - disabled during cutting
+      n>0 - number cutting rounds between each run
+
+mip:heursearchrootselect (heursearchrootselect)
+      A bit vector control for selecting which local search heuristics to
+      apply on the root node of a global solve; default 117:
+
+      1  - local search with a large neighborhood. Potentially slow but is
+           good for finding solutions that differs significantly from the
+           incumbent
+      2  - local search with a small neighborhood centered around a node LP
+           solution
+      4  - local search with a small neighborhood centered around an integer
+           solution. This heuristic will often provide smaller, incremental
+           improvements to an incumbent solution
+      8  - local search with a neighborhood set up through the combination of
+           multiple integer solutions.
+      32 - local search without an objective function
+      64 - local search with an auxiliary objective function
+
+mip:heursearchtreeselect (heursearchtreeselect)
+      A bit vector control for selecting which local search heuristics to
+      apply during the tree search of a global solve, default 17:
+
+      1  - local search with a large neighborhood. Potentially slow but is
+           good for finding solutions that differs significantly from the
+           incumbent
+      2  - local search with a small neighborhood centered around a node LP
+           solution
+      4  - local search with a small neighborhood centered around an integer
+           solution. This heuristic will often provide smaller, incremental
+           improvements to an incumbent solution
+      8  - local search with a neighborhood set up through the combination of
+           multiple integer solutions.
+      32 - local search without an objective function
+      64 - local search with an auxiliary objective function
+
+mip:heurthreads (heurtreads)
+      Number of threads to dedicate to running heuristics on the root node:
+
+mip:historycosts (historycosts)
+      How to update the pseudo cost for a global entity when a strong branch
+      or a regular branch is applied:
+
+mip:intfeastol (intfeastol)
+      Feasibility tolerance for integer variables (default 5e-06).
+
+mip:kappafreq (mipkappafreq)
+      During branch-and-bound, how often to compute basis condition numbers:
+
+      0     - never (default)
+      1     - every node
+      n > 1 - once per node at level n of the branch-and-bound tree
+
+      When mipkappafreq > 0, a final summary shows the number of sampled nodes
+      that are:
+
+      "stable": kappa < 10^7
+
+      "suspicious": 10^7 <= kappa < 10^10
+
+      "unstable": 10^10 <= kappa < 10^13
+
+      "ill-posed": 10^13 <= kappa.
+      A "Kappa attention level" between 0 and 1 is also reported. Condition
+      numbers use the Frobenius norms of the basis and its inverse.
+
+mip:localchoice (localchoice)
+      when to backtrack between two child nodes during a "dive":
+
+      1 - never backtrack from the first child unless it is dropped (i.e., is
+          infeasible or cut off) (default)
+      2 - always solve both child nodes before deciding which child to
+          continue with
+      3 - automatically determined
+
+mip:log (miplog)
+      Frequency of printing MIP iteration log; default = -100.Values n < 0
+      display detailed outputs every -n iterations.
+
+mip:maxlocalbacktrack (maxlocalbacktrack, maxlocalbt)
+      Max height above current node to look for a local backtrack candidate
+      node; default=-1(automatic)
+
+mip:maxtasks (maxmiptasks)
+      Maximum tasks to run in parallel during a MIP solve; default = -1 (use
+      mip:threads).For mip:maxtasks > 0, branch-and-bound nodes are solved in
+      a deterministic way, but the barrier algorithm (if used) may cause a
+      nondeterministic MIP solve unless bar:threads = 1.
+
+mip:miprefineiterlimit (miprefiterlim, miprefineiterlimit)
+      Max. simplex iterations per reoptimization in MIP refiner when refineops
+      is 2 or 3; default -1 (automatic).
+
+mip:nodeprobingeffort (nodeprobingeffort)
+      Multiplier on the default amount of work node probing should do. Setting
+      the control to zero disables node probing.
+
+mip:nodeselection (nodeselection)
+      Determines which nodes will be considered for solution once the current
+      node has been solved:
+
+      1 - local first: choose between descendant and sibling nodes if
+          available; choose from all outstanding nodes otherwise
+      2 - best first: choose from all outstanding nodes
+      3 - local depth first: choose between descendant and sibling nodes if
+          available; choose from the deepest nodes otherwise
+      4 - best first, then local first: best first is used for the first
+          BREADTHFIRST nodes, after which local first is used
+      5 - pure depth first: choose from the deepest outstanding nodes
+
+mip:presolve (mippresolve)
+      Type of integer processing to be performed. If set to 0, no processing
+      will be performed (default automatic):
+
+      1   - reduced-cost fixing at each node
+      2   - primal reductions will be performed at each node
+      8   - allow changing continuous-variable bounds
+      16  - allow dual reductions
+      32  - allow global tightening of the problem
+      64  - use objective function
+      128 - allow restarting
+      256 - allow use of symmetry
+
+mip:pseudocost (pseudocost)
+      Default pseudo-cost assumed for forcing an integer variable
+
+      to an integer value; default = 0.01
+
+mip:qcrootalg (qcrootalg)
+      when using miqcpalg = 1 to solve a mixed - integer problem that has
+      quadratic constraints or second - order cone constraints, the algorithm
+      for solving the root node:
+
+      -1 - automatic (default)
+      0  - use barrier
+      1  - use dual simplex on outer approximation
+
+mip:rampup (miprampup)
+      Whether to limit the number of parallel tasks
+
+      during the ramp-up phase of the parallel MIP algorithm:
+
+      -1 - automatic choice (default)
+      0  - no: use as many tasks as possible
+      1  - yes, until finished with initial dives
+
+mip:relaxtreememorylimit (relaxtreemem, relaxtreememorylimit)
+      Fraction of memory limit by which to relax "treememlimit" when too much
+      structural data appears; default 0.1. Set to 0 to never relax the memory
+      limit in this way.
+
+mip:restart (miprestart)
+      Control strategy for in-tree restarts:
+
+      -1 - automatic choice (default)
+      0  - disable in-tree restarts
+      1  - normal aggressiveness
+      2  - higher aggressiveness
+
+mip:restartfactor (miprestartfactor)
+      Fine tune initial conditions to trigger an in-tree restart; values > 1
+      increase the aggressiveness, < 1 decrease it (default 1.0)
+
+mip:restartgapthreshold (miprestartgapthreshold)
+      Initial gap threshold to delay in-tree restart; the restart is delayed
+      if the relative gap is below the threshold (default 0.02)
+
+mip:return_gap (return_mipgap)
+      Whether to return mipgap suffixes or include mipgap values (|objectve -
+      .bestbound|) in the solve_message: sum of
+
+      1 - Return .relmipgap suffix (relative to |obj|)
+      2 - Return .absmipgap suffix (absolute mipgap)
+      4 - Suppress mipgap values in solve_message.
+
+      Default = 0. The suffixes are on the objective and problem. Returned
+      suffix values are +Infinity if no integer-feasible solution has been
+      found, in which case no mipgap values are reported in the solve_message.
+
+mip:round (round)
+      Whether to round integer variables to integral values before returning
+      the solution, and whether to report that the solver returned noninteger
+      values for integer values: sum of
+
+      1 ==> Round nonintegral integer variables
+      2 ==> Modify solve_result
+      4 ==> Modify solve_message
+
+      Default = 0. Modifications that were or would be made are reported in
+      solve_result and solve_message only if the maximum deviation from
+      integrality exceeded mip:round_reptol.
+
+mip:round_reptol (round_reptol)
+      Tolerance for reporting rounding of integer variables to integer values;
+      see "mip:round". Default = 1e-9.
+
+mip:sbbest (sbbest)
+      Number of infeasible global entities to initialize pseudo costs for on
+      each node:
+
+      -1    - automatic (default)
+      0     - disable strong branching
+      n > 1 - perform strong branching on up to n entities at each node
+
+mip:sbeffort (sbeffort)
+      Adjusts the overall amount of effort when using strong branching to
+      select an infeasible global entity to branch on; default = 1.
+
+mip:sbestimate (sbestimate)
+      How to compute pseudo costs from the local node when selecting an
+      infeasible entity to branch on:
+
+      -1  - automatic (default)
+      1-6 - different variants of local pseudo costs.
+
+mip:sbiterlimit (sbiterlimit)
+      Number of dual iterations to perform the strong branching; 0=none,
+      default = -1 (automatic choice)
+
+mip:sbselect (sbselect)
+      size of candidate list for strong branching:
+
+      -2    - automatic - low effort (default)
+      -1    - automatic - high effort
+      n > 0 - include max(n, sbbest) candidates
+
+mip:symmetry (symmetry)
+      Amount of effort to detect symmetry in MIP problems:
+
+      0 - no simmetry detection
+      1 - conservative effort
+      2 - intensive effort
+
+mip:symselect (symselect)
+      Adjusts the overall amount of effort for symmetry detection:
+
+      0 - search the whole matrix (otherwise the 0, 1 and -1 coefficients
+          only)
+      1 - search all entities(otherwise binaries only)
+
+mip:threads (mipthreads)
+      Determines the number of threads implemented to run the parallel MIP
+      code; default -1: alg:threads will determine the number of threads.
+
+mip:toltarget (miptoltarget)
+      Value of miptol used for refining equalities on MIP problems when
+      refineops is 2 or 3; default = 0.
+
+mip:varselection (varselection)
+      How to score the integer variables at a MIP node, for branching on a
+      variable with minimum score:
+
+      - 1 - automatic choice(default)
+      1   - minimum of the 'up' and 'down' pseudo - costs
+      2   - 'up' pseudo - cost + 'down' pseudo - cost
+      3   - maximum of the 'up' and 'down' pseudo - costs plus twice their
+            minimum
+      4   - maximum of the 'up' and 'down' pseudo - costs
+      5   - the 'down' pseudo - cost
+      6   - the 'up' pseudo - cost
+      7   - weighted combination of the 'up' and 'down' pseudo costs
+      8   - product of 'up' and 'down' pseudo costs
+
+obj:multi (multiobj)
+      0*/1: Whether to use multi-objective optimization. If set to 1
+      multi-objective optimization is performed using lexicographic method
+      with the first objective treated as the most important, then the second
+      objective and so on.
+
+obj:no (objno)
+      Objective to optimize:
+
+      0 - None
+      1 - First (default, if available)
+      2 - Second (if available), etc.
+
+pre:basisred (prebasisred)
+      Determines if a lattice basis reduction algorithm should be attempted as
+      part of presolve:
+
+      -1 - Automatic choice (default)
+      0  - No
+      1  - Yes.
+
+pre:bndredcone (prebndredcone)
+      Determines if second order cone constraints should be used for inferring
+      bound reductions on variables when solving a MIP:
+
+      -1 - Automatic choice (default)
+      0  - No
+      1  - Yes.
+
+pre:bndredquad (prebndredquad)
+      Determines if convex quadratic contraints should be used for inferring
+      bound reductions on variables when solving a MIP
+
+pre:cliquestrategy (precliquestrategy)
+      Determines how much effort to spend on clique covers in presolve;
+      default=-1.
+
+pre:coefelim (precoefelim)
+      Specifies whether the optimizer should attempt to recombine constraints:
+
+      0 - disabled
+      1 - remove as many coefficients as possible
+      2 - cautious eliminations
+
+pre:components (precomponents)
+      Determines whether small independent components should be detected and
+      solved as individual subproblems during root node processing:
+
+      -1 - Automatic choice (default)
+      0  - No
+      1  - Yes.
+
+pre:componentseffort (precomponentseffort)
+      adjusts the overall effort for the independent component presolver;
+      default = 1.0.
+
+pre:configuration (preconfiguration)
+      Whether to reformulate binary rows with very few coefficients:
+
+      0 - No
+      1 - Yes (default)
+
+pre:convertseparable (preconvertseparable)
+      Reformulate problem with non-diagonal quadratic objective and/or
+      constraints as diagonal quadratic or second-order conic constraints:
+
+      -1 - automatic (default)
+      0  - disable
+      1  - enable reformulation to diagonal quadratic constraints.
+      2  - 1, plus reduction to second-order cones
+      3  - 2, plus the objective function is converted to a constraint and
+           treated as a quadratic constraint
+
+pre:domcol (predomcol)
+      Whether presolve should remove variables when solving MIP problems:
+
+      -1 - automatic (default)
+      0  - disable
+      1  - cautious
+      2  - aggressive: all candidate will be checked
+
+pre:domrow (predomrow)
+      Whether presolve should remove constraints when solving MIP problems:
+
+      -1 - automatic choice (default)
+      0  - disabled
+      1  - cautious
+      2  - medium
+      3  - aggressive
+
+pre:duprow (preduprow)
+      How presolve should deal with duplicate rows in MIP problems:
+
+      -1 - automatic (default)
+      0  - disable
+      1  - eliminate only rows that are identical in all variables
+      2  - 1 plus eliminate duplicate rows with simple penalty variable
+           expressions
+      3  - 2 plus eliminate duplicate rows with more complex penalty variable
+           expressions
+
+pre:elimfillin (elimfillin)
+      Maximum fillins allowed for a presolve elimination; default = 10
+
+pre:elimquad (preelimquad)
+      Allows for elimination of quadratic variables via doubleton rows:
+
+      -1 - Automatic choice (default)
+      0  - No
+      1  - Yes.
+
+pre:elimtol (elimtol)
+      The Markowitz tolerance for the elimination phase of the presolve;
+      default=0.001
+
+pre:folding (prefolding)
+      Determines if a folding procedure should be used to aggregate continuous
+      columns in an equitable partition:
+
+      -1 - Automatic choice (default)
+      0  - No
+      1  - Yes.
+
+pre:genconsdualreductions (genconsdualreductions)
+      Whether dual reductions should be applied to reduce the number of
+      columns and rows added when transforming general constraints to MIP
+      structs:
+
+      0 - No
+      1 - Yes (default)
+
+pre:implications (preimplications)
+      Determines whether to use implication structures to remove redundant
+      rows:
+
+      -1 - Automatic choice (default)
+      0  - No
+      1  - Yes.
+
+pre:indlinbigm (indprelinbigm)
+      Largest "big M" value to use in converting indicator constraints to
+      regular constraints during XPRESS presolve; default = 100.0
+
+pre:lindep (prelindep)
+      Determines whether to check for and remove linearly dependent equality
+      constraints when presolving a problem:
+
+      -1 - Automatic choice (default)
+      0  - No
+      1  - Yes.
+
+pre:maxgrow (presolvemaxgrow)
+      Limit on how much the number of non-zero coefficients is allowed to grow
+      during presolve, specified as a ratio of the number of non-zero
+      coefficients in the original problem; default=0.1
+
+pre:maximpliedbound (maximpliedbound)
+      When preprocessing MIP problems, only use computed bounds at most
+      maximpliedbound (default 1e8) in absolute value
+
+pre:maxscalefactor (maxscalefactor)
+      Maximum log2 factor that can be applied during scaling, must be >=0 and
+      <=64; default=64.
+
+pre:objcutdetect (preobjcutdetect)
+      MIP: Determines whether to check for constraints that are parallel or
+      near parallel to a linear objective function, and which can safely be
+      removed:
+
+      0 - No
+      1 - Yes (default)
+
+pre:objscalefactor (objscalefactor)
+      Power of 2 (default 0) by which the objective is scaled. Nonzero
+      objscalfactor values override automatic global objective scaling
+
+pre:ops (presolveops)
+      Reductions to use in XPRESS's presolve, sum of:
+
+      1 = 2^0          - Remove singleton columns
+      2 = 2^1          - Remove singleton constraints (rows)
+      4 = 2^2          - Forcing row removal
+      8 = 2^3          - Dual reductions
+      16 = 2^4         - Redundant row removal
+      32 = 2^5         - Duplicate column removal
+      64 = 2^6         - Duplicate row removal
+      128 = 2^7        - Strong dual reductions
+      256 = 2^8        - Variable eliminations
+      512 = 2^9        - No IP reductions
+      1024 = 2^10      - No semi-continuous variable detection
+      2048 = 2^11      - No advanced IP reductions
+      4096 = 2^12      - No eliminations on integers
+      16384 = 2^14     - Linearly dependant row removal
+      32768 = 2^15     - No integer variable and SOS detection
+      536870912 = 2^29 - No dual reduction on globals
+
+      (default 511 = bits 0-8 set)
+
+pre:passes (presolvepasses)
+      Number of reduction rounds to be performed in presolve; default=1.
+
+pre:permute (prepermute)
+      Bit vector: specifies whether to randomly permute rows, columns and
+      global information when starting the presolve (default 0):
+
+      1 - permute rows
+      2 - permute columns
+      4 - permute global information (for MIP)
+
+pre:permuteseed (prepermuteseed)
+      Sets the seed for the pseudo-random number generator for permuting;
+      default=0
+
+pre:probing (preprobing)
+      Amount of probing to perform on binary variables during presolve. This
+      is done by fixing a binary to each of its values in turn and analyzing
+      the implications:
+
+      -1 - automatic choice (default)
+      0  - disabled
+      1  - cautious
+      2  - medium
+      3  - aggressive
+
+pre:protectdual (preprotectdual)
+      Specifies whether the presolver should protect a given dual solution by
+      maintaining the same level of dual feasibility:
+      .. value-table:
+
+pre:pwldualreductions (pwldualreductions)
+      Whether dual reductions should be applied to reduce the number of
+      columns, rows and SOS-constraints added when transforming piecewise
+      linear objectives and constraints to MIP structs:
+
+      0 - No
+      1 - Yes (default)
+
+pre:pwlnonconvextransformation (pwlnonconvextransformation)
+      Reformulation method for piecewise linear constraints at the beginning
+      of the search:
+
+      -1 - automatic (default)
+      0  - use a formulation based on SOS2-constraints
+      1  - use a formulation based on binary variables
+
+pre:rootpresolve (rootpresolve)
+      Whether to presolve after root cutting and heuristics:
+
+      -1 - Automatic choice (default)
+      0  - No
+      1  - Yes.
+
+pre:scaling (scaling)
+      Bit vector determining how to scale the constraint matrix before
+      optimizing:
+
+      1     - row scaling
+      2     - column scaling
+      4     - row scaling again
+      8     - maximum
+      16    - Curtis-Red
+      32    - 0->geometric mean, 1->maximum element
+      64    - no special handling for BigM rows
+      128   - scale objective function for the simplex method
+      256   - exclude the quadratic part of constraints when calculating
+              scaling factors
+      512   - scale before presolve
+      1024  - do not scale constraints up
+      2048  - do not scale variables down
+      4096  - do not apply automatic global objective scaling
+      8192  - RHS scaling
+      16384 - disable aggressive quadratic scaling
+      32768 - explicit linear slack scaling
+
+pre:solve (presolve)
+      Whether to use Xpress' presolve:
+
+      0 - No
+      1 - Yes, removing redundant bounds (default)
+      2 - Yes, retaining redundant bounds
+
+pre:sosreftol (sosreftol)
+      Minimum relative gap between the ordering values of elements in a
+      special ordered set; default=1e-6.
+
+pre:trace (trace)
+      Display the infeasibility diagnosis during presolve:
+
+      0 - No (default)
+      1 - Yes.
+
+qp:eigenvaluetol (eigenvaluetol)
+      Regard the matrix in a quadratic form as indefinite if its smallest
+      eigvenalue is < -eigevnaltol; default = 1e-6
+
+qp:miqcpalg (miqcpalg)
+      Which algorithm is to be used to solve mixed integer quadratic
+      constrained and mixed integer second order cone problems:
+
+      -1 - automatic (default)
+      0  - barrier
+      1  - outer approximations
+
+qp:nonconvex (nonconvex)
+      Determines if the convexity of the problem is checked before
+      optimization:
+
+      0 - No
+      1 - Yes (default)
+
+qp:repairindefiniteq (repairindefq, repairindefiniteq)
+      whether to repair indefinite quadratic forms:
+
+      0 - yes
+      1 - no (default)
+
+qp:simplexops (qsimplexops)
+      Bit vector, controls the behavior of the quadratic simplex solvers:
+
+      1   - traditional primal first phase (default)
+      2   - force Big M primal first phase
+      4   - force traditional dual first phase
+      8   - force BigM dual first phase
+      16  - always use artificial bounds in dual
+      32  - use original problem basis only when warmstarting the KKT
+      64  - skip the primal bound flips for ranged primals (might cause more
+            trouble than good if the bounds are very large)
+      128 - also do the single pivot crash
+      256 - do not apply aggressive perturbation in dual
+
+qp:unshift (quadunshift, quadraticunshift)
+      whether quadratic simplex should do an extra purification after finding
+      a solution:
+
+      -1 - Automatic choice (default)
+      0  - No
+      1  - Yes.
+
+sol:count (countsolutions)
+      0*/1: Whether to count the number of solutions and return it in the
+      ".nsol" problem suffix.
+
+sol:pooldualred (pooldualred)
+      Whether to suppress removal of dominated solutions(via "dual
+      reductions") when poolstub is specified:
+
+      0 - Yes (default, can be expensive)
+      1 - No
+      2 - Honor presolveops bit 3 (2^3 = 8)
+
+sol:pooldupcol (pooldupcol)
+      Whether to suppress duplicate variable removal when poolstub is
+      specified:
+
+      0 - Yes (default, can be expensive)
+      1 - No
+      2 - Honor presolveops bit 3 (2^3 = 8)
+
+sol:pooldups (poold/ups)
+      How poolstub should handle duplicate solutions:
+
+      0 - Retain all duplicates
+      1 - Discard exact matches
+      2 - Discard exact matches of continuous variables and matches of
+          rounded values of discrete variables
+      3 - Discard matches of rounded values of discrete variables (default)
+
+      Rounding of discrete variables is affected bypoolmiptol and poolfeastol
+
+sol:poolfeastol (poolfeastol)
+      Zero tolerance for discrete variables in the solution pool (default
+      1e-6)
+
+sol:poolmiptol (poolmiptol)
+      Error (nonintegrality) allowed in discrete variables in the solution
+      pool (default 5e-6)
+
+sol:poolnbest (poolnbest, poollimit)
+      Whether the solution pool (see poolstub) should contain inferior
+      solutions. When poolnbest = n > 1, the solution pool is allowed to keep
+      the n best solutions.
+
+sol:stub (ams_stub, solstub, solutionstub)
+      Stub for solution files. If "solutionstub" is specified, found solutions
+      are written to files ("solutionstub & '1' & '.sol'") ... ("solutionstub
+      & Current.nsol & '.sol'"), where "Current.nsol" holds the number of
+      returned solutions. That is, file names are obtained by appending 1, 2,
+      ... "Current.nsol" to "solutionstub".
+
+tech:cputime (cputime)
+      How time should be measured when timings are reported in the log and
+      when checking against time limits :
+
+      -1 - disable the timer
+      0  - use elapsed time (default)
+      1  - use process time
+
+tech:debug (debug)
+      0*/1: whether to assist testing & debugging, e.g., by outputting
+      auxiliary information.
+
+tech:exportfile (writeprob, writemodel)
+      Specifies the name of a file where to export the model before solving
+      it. This file name can have extension ".lp()", ".mps", etc. Default = ""
+      (don't export the model).
+
+tech:globalfileloginterval (globalfileloginterval)
+      Seconds between additions to the logfile about, additions to the "global
+      file", a temporary file written during a global search. Default = 60.
+
+tech:globalfilemax (globalfilemax)
+      Maximum megabytes for temporary files storing the global search tree: a
+      new file is started if globalfilemax megabytes would be exceeded.
+
+tech:justexportfile (justwriteprob, justwritemodel)
+      Specifies the name of a file where to export the model, do not solve
+      it.This file name can have extension ".lp()", ".mps", etc. Default = ""
+      (don't export the model).
+
+tech:optionfile (optionfile, option:file)
+      Name of solver option file. (surrounded by 'single' or "double" quotes
+      if the name contains blanks). Lines that start with # are ignored.
+      Otherwise, each nonempty line should contain "name=value".
+
+tech:outlev (outlev)
+      Whether to write xpress log lines (chatter) to stdout and to file:
+
+      0 - none
+      1 - all
+      2 - information
+      3 - warnings & errors only (default)
+      4 - errors
+      5 - none
+
+tech:sleeponthreadwait (sleeponthreadwait)
+      Whether threads should sleep while awaiting work:
+
+      -1 - automatically determined
+      0  - no (busy-wait)
+      >0 - yes (sleep, might add overhead)
+
+tech:threads (threads)
+      The default number of threads used during optimization.;default - 1 ==>
+      automatic choice.
+
+tech:timing (timing)
+      0*/1: Whether to display timings for the run.
+
+tech:tunebase (tunerdir, tunebase)
+      Base name for results of running XPRESS's search for best parameter
+      settings. The search is run only when tunebase is specified. This
+      control only defines the root path for the tuner output. For each
+      problem, the tuner result will be output to a subfolder underneath this
+      path. For example, by default, the tuner result for a problem called
+      prob will be located at tuneroutput/prob/
+
+tech:tunename (tunesessionname)
+      Set problem name within the tuner "tunebase" is specified.
+
+tech:tuneoutput (tuneroutput, tuneoutput)
+      Output tuner results and logs to the file system when "tunebase" is
+      specified:
+
+      0 - No
+      1 - Yes (default)
+
+tech:tunerhistory (tunerhistory)
+      Reuse and append to previous tuner results of the same problem:
+
+      0 - Discard any previous result
+      1 - Append new results but do not reuse them
+      2 - Reuse and append new results
+
+tech:tunermethod (tunermethod)
+      Method for tuning when "tunebase" is specified:
+
+      - 1 - automatic choice(default)
+      0   - default LP tuner
+      1   - default MIP tuner
+      2   - more elaborate MIP tuner
+      3   - root - focused MIP tuner
+      4   - tree - focused MIP tuner
+      5   - simple MIP tuner
+      6   - default SLP tuner
+      7   - default MISLP tuner
+      8   - MIP tuner using primal heuristics
+
+tech:tunertarget (tunertarget)
+      What to measure to compare two problem solutions when running the XPRESS
+      tuner:
+
+      - 1 - automatic choice(default)
+      0   - solution time, then integrality gap
+      1   - solution time, then best bound
+      2   - solution time, then best integer solution
+      3   - the "primal dual integral", whatever that is
+      4   - just solution time (default for LPs)
+      5   - just objective value
+      6   - validation number (probably not relevant)
+      7   - gap only
+      8   - best bound only
+      9   - best integer solution only
+      10  - best primal integral - only for individual instances
+
+tech:tunerthreads (tunerthreads)
+      Number of tuner threads to run in parallel; default=-1 (automatic)
+
+tech:tunerverbose (tunerverbose)
+      whether the tuner should prints detailed information for each run:
+
+      0 - No
+      1 - Yes (default)
+
+tech:tunetimelim (tunermaxtime, tunetimelim, lim:tunetime)
+      Time limit (in seconds) on tuning when "tunebase" is specified; default
+      0 (no time limit).
+
+tech:version (version)
+      Single-word phrase: report version details before solving the problem.
+
+tech:wantsol (wantsol)
+      In a stand-alone invocation (no "-AMPL" on the command line), what
+      solution information to write. Sum of
+
+      1 - Write ".sol" file
+      2 - Primal variables to stdout
+      4 - Dual variables to stdout
+      8 - Suppress solution message.
+
+tech:writegraph (writegraph, exportgraph)
+      File to export conversion graph. Format: JSON Lines.
 
 ```
 
