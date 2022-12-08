@@ -3,11 +3,11 @@
 
 ```ampl
 ampl: option solver xpressasl; # change the solver
-ampl: option xpress_options 'option1=value1 option2=value2'; # specify options
+ampl: option xpressasl_options 'option1=value1 option2=value2'; # specify options
 ampl: solve; # solve the problem
 ```
 
-Solver options obtained with `$ xpress -=`.
+Solver options obtained with `$ xpressasl -=`.
 
 ```
 advance            whether to use an initial basis, if available:

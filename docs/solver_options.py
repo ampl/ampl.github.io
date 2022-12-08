@@ -14,7 +14,9 @@ SOLVERS = {
     "XPRESS": "xpress",
     "COPT": "copt",
     "GUROBIASL": "gurobiasl",
+    "XPRESSASL": "xpressasl",
     "HiGHS": "highs",
+    "CBC": "cbc",
 }
 
 

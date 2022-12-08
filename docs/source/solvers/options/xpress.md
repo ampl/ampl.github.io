@@ -10,6 +10,16 @@ ampl: solve; # solve the problem
 Solver options obtained with `$ xpress -=`.
 
 ```
+XPRESSMP Optimizer Options for AMPL
+--------------------------------------------
+
+To set these options, assign a string specifying their values to the AMPL
+option "xpressmp_options". For example:
+
+   ampl: option xpressmp_options 'mipgap=1e-6';
+
+ Options:
+
 acc:abs
       Solver acceptance level for 'AbsConstraint', default 2:
 

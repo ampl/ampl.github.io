@@ -1,6 +1,41 @@
+
 # CBC Options
 
+```ampl
+ampl: option solver cbc; # change the solver
+ampl: option cbc_options 'option1=value1 option2=value2'; # specify options
+ampl: solve; # solve the problem
 ```
+
+Solver options obtained with `$ cbc -=`.
+
+```
+CBCMP Optimizer Options for AMPL
+--------------------------------------------
+
+To set these options, assign a string specifying their values to the AMPL
+option "cbcmp_options". For example:
+
+   ampl: option cbcmp_options 'mipgap=1e-6';
+
+ Options:
+
+:cplexUse (cplexUse)
+      Whether to use Cplex!
+
+      off - Turn off
+      on  - Turn on
+
+:mixedIntegerRoundingCuts (mixedIntegerRoundingCuts)
+      Whether to use Mixed Integer Rounding cuts
+
+      off      - disabled
+      on       - enabled
+      root     - enabled only on root node
+      ifmove   - enabled in the tree if it moves the objective value
+      forceOn  - enabled at every node
+      onglobal - 
+
 acc:sos2
       Solver acceptance level for 'SOS2Constraint', default 2:
 
@@ -28,24 +63,24 @@ alg:relax (relax)
 bar:bscale (bscale)
       Whether to scale in barrier (and ordering speed)
 
-      off  -
-      on   -
-      off1 -
-      on1  -
-      off2 -
-      on2  -
+      off  - 
+      on   - 
+      off1 - 
+      on1  - 
+      off2 - 
+      on2  - 
 
 bar:cholesky (cholesky)
       Which cholesky algorithm
 
-      native                    -
-      dense                     -
-      fudgeLong_dummy           -
-      wssmp_dummy               -
-      UniversityOfFlorida_dummy -
-      Taucs_dummy               -
-      Mumps_dummy               -
-      Pardiso_dummy             -
+      native                    - 
+      dense                     - 
+      fudgeLong_dummy           - 
+      wssmp_dummy               - 
+      UniversityOfFlorida_dummy - 
+      Taucs_dummy               - 
+      Mumps_dummy               - 
+      Pardiso_dummy             - 
 
 bar:crash (crash)
       Whether to create basis for problem
@@ -57,21 +92,21 @@ bar:crossover (crossover)
       Whether to get a basic solution with the simplex algorithm after the
       barrier algorithm finished
 
-      on       -
-      off      -
-      maybe    -
-      presolve -
+      on       - 
+      off      - 
+      maybe    - 
+      presolve - 
 
 bar:gammadelta (gamma(Delta))
       Whether to regularize barrier
 
-      off         -
-      on          -
-      gamma       -
-      delta       -
-      onstrong    -
-      gammastrong -
-      deltastrong -
+      off         - 
+      on          - 
+      gamma       - 
+      delta       - 
+      onstrong    - 
+      gammastrong - 
+      deltastrong - 
 
 bar:kkt (KKT)
       Whether to use KKT factorization in barrier
@@ -87,7 +122,7 @@ cut:cliqueCuts (cliqueCuts)
       root     - enabled only on root node
       ifmove   - enabled in the tree if it moves the objective value
       forceOn  - enabled at every node
-      onglobal -
+      onglobal - 
 
 cut:cut (cutsOnOff)
       Switches all cut generators on or off
@@ -106,83 +141,83 @@ cut:flowcovercuts (flowCoverCuts)
       root     - enabled only on root node
       ifmove   - enabled in the tree if it moves the objective value
       forceOn  - enabled at every node
-      onglobal -
+      onglobal - 
 
 cut:gmicuts (GMICuts)
       Whether to use alternative Gomory cuts
 
-      off         -
-      on          -
-      root        -
-      ifmove      -
-      forceOn     -
-      endonly     -
-      long        -
-      longroot    -
-      longifmove  -
-      forceLongOn -
-      longendonly -
+      off         - 
+      on          - 
+      root        - 
+      ifmove      - 
+      forceOn     - 
+      endonly     - 
+      long        - 
+      longroot    - 
+      longifmove  - 
+      forceLongOn - 
+      longendonly - 
 
 cut:gomorycuts (gomoryCuts)
       Whether to use Gomory cuts
 
-      off            -
-      on             -
-      root           -
-      ifmove         -
-      forceOn        -
-      onglobal       -
-      forceandglobal -
-      forceLongOn    -
-      long           -
+      off            - 
+      on             - 
+      root           - 
+      ifmove         - 
+      forceOn        - 
+      onglobal       - 
+      forceandglobal - 
+      forceLongOn    - 
+      long           - 
 
 cut:knapsackcuts (knapsackCuts)
       Whether to use Knapsack cuts
 
-      off            -
-      on             -
-      root           -
-      ifmove         -
-      forceOn        -
-      onglobal       -
-      forceandglobal -
+      off            - 
+      on             - 
+      root           - 
+      ifmove         - 
+      forceOn        - 
+      onglobal       - 
+      forceandglobal - 
 
 cut:lagomorycuts (lagomoryCuts)
       Whether to use Lagrangean Gomory cuts
 
-      off             -
-      endonlyroot     -
-      endcleanroot    -
-      root            -
-      endonly         -
-      endclean        -
-      endboth         -
-      onlyaswell      -
-      cleanaswell     -
-      bothaswell      -
-      onlyinstead     -
-      cleaninstead    -
-      bothinstead     -
-      onlyaswellroot  -
-      cleanaswellroot -
-      bothaswellroot  -
+      off             - 
+      endonlyroot     - 
+      endcleanroot    - 
+      root            - 
+      endonly         - 
+      endclean        - 
+      endboth         - 
+      onlyaswell      - 
+      cleanaswell     - 
+      bothaswell      - 
+      onlyinstead     - 
+      cleaninstead    - 
+      bothinstead     - 
+      onlyaswellroot  - 
+      cleanaswellroot - 
+      bothaswellroot  - 
 
 cut:latwomircuts (latwomirCuts)
       Whether to use Lagrangean TwoMir cuts
 
-      off          -
-      endonlyroot  -
-      endcleanroot -
-      endbothroot  -
-      endonly      -
-      endclean     -
-      endboth      -
-      onlyaswell   -
-      cleanaswell  -
-      bothaswell   -
-      onlyinstead  -
-      cleaninstead -
-      bothinstead  -
+      off          - 
+      endonlyroot  - 
+      endcleanroot - 
+      endbothroot  - 
+      endonly      - 
+      endclean     - 
+      endboth      - 
+      onlyaswell   - 
+      cleanaswell  - 
+      bothaswell   - 
+      onlyinstead  - 
+      cleaninstead - 
+      bothinstead  - 
 
 cut:liftandprojectcuts (liftAndProjectCuts)
       Whether to use Lift and Project cuts
@@ -196,26 +231,26 @@ cut:liftandprojectcuts (liftAndProjectCuts)
 cut:probingCuts (probingCuts)
       Whether to use Probing cuts
 
-      off              -
-      on               -
-      root             -
-      ifmove           -
-      forceOn          -
-      onglobal         -
-      forceonglobal    -
-      forceOnBut       -
-      forceOnStrong    -
-      forceOnButStrong -
-      strongRoot       -
+      off              - 
+      on               - 
+      root             - 
+      ifmove           - 
+      forceOn          - 
+      onglobal         - 
+      forceonglobal    - 
+      forceOnBut       - 
+      forceOnStrong    - 
+      forceOnButStrong - 
+      strongRoot       - 
 
 cut:reduce2andsplitcts (reduce2AndSplitCuts)
       Whether to use Reduce-and-Split cuts - style 2
 
-      off      -
-      on       -
-      root     -
-      longOn   -
-      longRoot -
+      off      - 
+      on       - 
+      root     - 
+      longOn   - 
+      longRoot - 
 
 cut:reduceandsplitcuts (reduceAndSplitCuts)
       Whether to use Reduce-and-Split cuts
@@ -238,14 +273,14 @@ cut:residualcapacitycuts (residualCapacityCuts)
 cut:twomircuts (twoMirCuts)
       Whether to use Two phase Mixed Integer Rounding cuts
 
-      off            -
-      on             -
-      root           -
-      ifmove         -
-      forceOn        -
-      onglobal       -
-      forceandglobal -
-      forceLongOn    -
+      off            - 
+      on             - 
+      root           - 
+      ifmove         - 
+      forceOn        - 
+      onglobal       - 
+      forceandglobal - 
+      forceLongOn    - 
 
 cut:zeroHalfCuts (zeroHalfCuts)
       Whether to use zero half cuts
@@ -255,7 +290,7 @@ cut:zeroHalfCuts (zeroHalfCuts)
       root     - enabled only on root node
       ifmove   - enabled in the tree if it moves the objective value
       forceOn  - enabled at every node
-      onglobal -
+      onglobal - 
 
 cvt:bigM (cvt:bigm, cvt:mip:bigM, cvt:mip:bigm)
       Default value of big-M for linearization of logical constraints. Not
@@ -568,12 +603,12 @@ lim:time (timelim, timelimit)
 lp:dualpivot (dualPivot)
       Dual pivot choice algorithm
 
-      automatic  -
-      dantzig    -
-      partial    -
-      steepest   -
-      PEsteepest -
-      PEdantzig  -
+      automatic  - 
+      dantzig    - 
+      partial    - 
+      steepest   - 
+      PEsteepest - 
+      PEdantzig  - 
 
 lp:pfi (PFI)
       Whether to use Product Form of Inverse in simplex
@@ -584,145 +619,145 @@ lp:pfi (PFI)
 lp:primalpivot (primalPivot)
       Primal pivot choice algorithm
 
-      auto!matic -
-      exact      -
-      dantzig    -
-      partial    -
-      steepest   -
-      change     -
-      sprint     -
-      PEsteepest -
-      PEdantzig  -
+      auto!matic - 
+      exact      - 
+      dantzig    - 
+      partial    - 
+      steepest   - 
+      change     - 
+      sprint     - 
+      PEsteepest - 
+      PEdantzig  - 
 
 mip:combine2Solutions (combine2Solutions)
       Whether to use crossover solution heuristic
 
       off    - disabled
       on     - use every node in the tree
-      both   -
-      before -
+      both   - 
+      before - 
 
 mip:combineSolutions (combineSolutions)
       Whether to use combine solution heuristic
 
-      off         -
-      on          -
-      both        -
-      before      -
-      onquick     -
-      bothquick   -
-      beforequick -
+      off         - 
+      on          - 
+      both        - 
+      before      - 
+      onquick     - 
+      bothquick   - 
+      beforequick - 
 
 mip:constraintfromCutoff (constraintfromCutoff)
       Whether to use cutoff as constraint
 
-      off           -
-      on            -
-      variable      -
-      forcevariable -
-      conflict      -
+      off           - 
+      on            - 
+      variable      - 
+      forcevariable - 
+      conflict      - 
 
 mip:costStrategy (costStrategy)
       How to use costs for branching priorities
 
-      off          -
-      priorities   -
-      columnOrder  -
-      01first      -
-      01last       -
-      length       -
-      singletons   -
-      nonzero      -
-      generalForce -
+      off          - 
+      priorities   - 
+      columnOrder  - 
+      01first      - 
+      01last       - 
+      length       - 
+      singletons   - 
+      nonzero      - 
+      generalForce - 
 
 mip:dins (Dins)
       Whether to try Distance Induced Neighborhood Search
 
-      off    -
-      on     -
-      both   -
-      before -
-      often  -
+      off    - 
+      on     - 
+      both   - 
+      before - 
+      often  - 
 
 mip:divingcoefficient (DivingCoefficient)
       Whether to try Coefficient diving heuristic
 
       off    - disabled
       on     - use every node in the tree
-      both   -
-      before -
+      both   - 
+      before - 
 
 mip:divingfractional (DivingFractional)
       Whether to try Fractional diving heuristic
 
       off    - disabled
       on     - use every node in the tree
-      both   -
-      before -
+      both   - 
+      before - 
 
 mip:divingguided (DivingGuided)
       Whether to try Guided diving heuristic
 
       off    - disabled
       on     - use every node in the tree
-      both   -
-      before -
+      both   - 
+      before - 
 
 mip:divinglinesearch (DivingLineSearch)
       Whether to try Linesearch diving heuristic
 
       off    - disabled
       on     - use every node in the tree
-      both   -
-      before -
+      both   - 
+      before - 
 
 mip:divingpseudocost (DivingPseudoCost)
       Whether to try Pseudocost diving heuristic
 
       off    - disabled
       on     - use every node in the tree
-      both   -
-      before -
+      both   - 
+      before - 
 
 mip:divingsome (DivingSome)
       Whether to try Diving heuristics
 
       off    - disabled
       on     - use every node in the tree
-      both   -
-      before -
+      both   - 
+      before - 
 
 mip:divingvectorlength (DivingVectorLength)
       Whether to try Vectorlength diving heuristic
 
       off    - disabled
       on     - use every node in the tree
-      both   -
-      before -
+      both   - 
+      before - 
 
 mip:dwHeuristic (dwHeuristic)
       Whether to try Dantzig Wolfe heuristic
 
       off    - disabled
       on     - use every node in the tree
-      both   -
-      before -
+      both   - 
+      before - 
 
 mip:feasibilitypumpfeasibilityPump
       Whether to try the Feasibility Pump heuristic
 
       off    - disabled
       on     - use every node in the tree
-      both   -
-      before -
+      both   - 
+      before - 
 
 mip:greedyheuristic (greedyHeuristic)
       Whether to use a greedy heuristic
 
       off    - disabled
       on     - use every node in the tree
-      both   -
-      before -
+      both   - 
+      before - 
 
 mip:heuristics (heuristicsOnOff)
       Switches most primal heuristics on or off
@@ -741,78 +776,78 @@ mip:naiveheuristics (naiveHeuristics)
 
       off    - disabled
       on     - use every node in the tree
-      both   -
-      before -
+      both   - 
+      before - 
 
 mip:nodestrategy (nodeStrategy)
       What strategy to use to select the next node from the branch and cut
       tree
 
-      hybrid     -
-      fewest     -
-      depth      -
-      upfewest   -
-      downfewest -
-      updepth    -
-      downdepth  -
+      hybrid     - 
+      fewest     - 
+      depth      - 
+      upfewest   - 
+      downfewest - 
+      updepth    - 
+      downdepth  - 
 
 mip:pivotandcomplement (pivotAndComplement)
       Whether to try Pivot and Complement heuristic
 
       off    - disabled
       on     - use every node in the tree
-      both   -
-      before -
+      both   - 
+      before - 
 
 mip:pivotandfix (pivotAndFix)
       Whether to try Pivot and Fix heuristic
 
       off    - disabled
       on     - use every node in the tree
-      both   -
-      before -
+      both   - 
+      before - 
 
 mip:proximitysearch (proximitySearch)
       Whether to do proximity search heuristic
 
-      off    -
-      on     -
-      both   -
-      before -
-      10     -
-      100    -
-      300    -
+      off    - 
+      on     - 
+      both   - 
+      before - 
+      10     - 
+      100    - 
+      300    - 
 
 mip:randomizedrounding (randomizedRounding)
       Whether to try randomized rounding heuristic
 
       off    - disabled
       on     - use every node in the tree
-      both   -
-      before -
+      both   - 
+      before - 
 
 mip:rens (Rens)
       Whether to try Relaxation Enforced Neighborhood Search
 
-      off         -
-      on          -
-      both        -
-      before      -
-      200         -
-      1000        -
-      10000       -
-      dj          -
-      djbefore    -
-      usesolution -
+      off         - 
+      on          - 
+      both        - 
+      before      - 
+      200         - 
+      1000        - 
+      10000       - 
+      dj          - 
+      djbefore    - 
+      usesolution - 
 
 mip:rins (Rins)
       Whether to try Relaxed Induced Neighborhood Search
 
-      off    -
-      on     -
-      both   -
-      before -
-      often  -
+      off    - 
+      on     - 
+      both   - 
+      before - 
+      often  - 
 
 mip:round (round)
       Whether to round integer variables to integral values before returning
@@ -836,17 +871,17 @@ mip:roundingheuristic (roundingHeuristic)
 
       off    - disabled
       on     - use every node in the tree
-      both   -
-      before -
+      both   - 
+      before - 
 
 mip:vndvariableneighborhoodsearch (VndVariableNeighborhoodSearch)
       Whether to try Variable Neighborhood Search
 
-      off    -
-      on     -
-      both   -
-      before -
-      intree -
+      off    - 
+      on     - 
+      both   - 
+      before - 
+      intree - 
 
 obj:no (objno)
       Objective to optimize:
@@ -864,51 +899,51 @@ pre:autoScale
 pre:biasLU
       Whether factorization biased towards U:
 
-      UU -
-      UX -
-      LX -
-      LL -
+      UU - 
+      UX - 
+      LX - 
+      LL - 
 
 pre:factorization (factorization)
       Which factorization to use
 
-      normal -
-      dense  -
-      simple -
-      osl    -
+      normal - 
+      dense  - 
+      simple - 
+      osl    - 
 
 pre:preprocess (preprocess)
       Whether to use integer preprocessing
 
-      off             -
-      on              -
-      save            -
-      equal           -
-      sos             -
-      trysos          -
-      equalall        -
-      strategy        -
-      aggregate       -
-      forcesos        -
-      stopaftersaving -
+      off             - 
+      on              - 
+      save            - 
+      equal           - 
+      sos             - 
+      trysos          - 
+      equalall        - 
+      strategy        - 
+      aggregate       - 
+      forcesos        - 
+      stopaftersaving - 
 
 pre:presolve (presolve)
       Whether to presolve problem
 
-      on   -
-      off  -
-      more -
-      file -
+      on   - 
+      off  - 
+      more - 
+      file - 
 
 pre:scaling (scaling)
       Whether to scale problem
 
-      off         -
-      equilibrium -
-      geometric   -
-      automatic   -
-      dynamic     -
-      rowsonly    -
+      off         - 
+      equilibrium - 
+      geometric   - 
+      automatic   - 
+      dynamic     - 
+      rowsonly    - 
 
 pre:sparsefactor (sparseFactor)
       Whether factorization treated as sparse
@@ -961,5 +996,6 @@ tech:wantsol (wantsol)
 
 tech:writegraph (writegraph, exportgraph)
       File to export conversion graph. Format: JSON Lines.
+
 ```
 
