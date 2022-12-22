@@ -10,13 +10,13 @@ ampl: solve; # solve the problem
 Solver options obtained with `$ xpress -=`.
 
 ```
-XPRESSMP Optimizer Options for AMPL
+XPRESS Optimizer Options for AMPL
 --------------------------------------------
 
 To set these options, assign a string specifying their values to the AMPL
-option "xpressmp_options". For example:
+option "xpress_options". For example:
 
-   ampl: option xpressmp_options 'mipgap=1e-6';
+   ampl: option xpress_options 'mipgap=1e-6';
 
  Options:
 

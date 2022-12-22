@@ -113,11 +113,13 @@ maxit                    Maximum number of iterations
 maxtime_cpu              Maximum CPU time in seconds, per start point
 maxtime_real             Maximum real time in seconds, per start point
 mip_branchrule           MIP branching rule
-mip_clique               Add clique cuts (0=none, 1=root, 2=tree, 3=root+tree)
+mip_clique               Add clique cuts
+mip_cut_strategy         Global MIP cut strategy
 mip_cutfactor            Limit on the number of cuts allowed in node subproblem (maximum number of cuts is mip_cutfactor times number of constraints in model)
 mip_cutoff               MIP objective cutoff value
 mip_cutting_plane        When to perform cutting plane procedure
 mip_debug                MIP debugging level (0=none, 1=all)
+mip_gomory               Add gomory cuts (0=none, 1=root)
 mip_gub_branch           Branch on GUBs (0=no, 1=yes)
 mip_heuristic            MIP heuristic search (deprecated, use mip_heuristic_strategy)
 mip_heuristic_diving     MIP diving heuristic
@@ -133,8 +135,8 @@ mip_integer_tol          Threshold for deciding integrality
 mip_integral_gap_abs     deprecated, use 'mip_opt_gap_abs'
 mip_integral_gap_rel     deprecated, use 'mip_opt_gap_rel'
 mip_intvar_strategy      Treatment of integer variables
-mip_knapsack             Add knapsack cuts (0=none, 1=ineqs, 2=lifted, 3=all)
-mip_liftproject          Add lift and project cuts (0=none, 1=root)
+mip_knapsack             Add knapsack cuts
+mip_liftproject          Add lift and project cuts
 mip_lpalg                LP subproblem algorithm
 mip_maxnodes             Maximum nodes explored
 mip_maxsepcons           Maximum constraints to consider for the cut separation
@@ -163,7 +165,7 @@ mip_strong_candlim       Strong branching candidate limit
 mip_strong_level         Strong branching tree level limit
 mip_strong_maxit         Strong branching iteration limit
 mip_terminate            Termination condition for MIP
-mip_zerohalf             Add zero half cuts (0=no, 1=root, 2=tree, 3=all)
+mip_zerohalf             Add zero half cuts
 ms_deterministic         Use deterministic multistart
 ms_enable                Enable multistart
 ms_maxbndrange           Maximum unbounded variable range for multistart
@@ -218,14 +220,13 @@ par_lsnumthreads         Number of parallel threads for linear solver
 par_msnumthreads         Number of parallel threads for multi-start
 par_numthreads           Number of parallel threads
 pivot                    deprecated, use 'linsolver_pivottol'
-pre_improvecoefficients  Improve Coefficinets
-pre_redundancylevel      Constraint redundancy detection level
 presolve                 Enable Knitro presolver
 presolve_dbg             Knitro presolver debugging level
 presolve_initpt          Knitro presolver initial point handling
 presolve_level           Knitro presolver level
 presolve_passes          Knitro presolver pass limit
 presolve_tol             Knitro presolver tolerance
+presolveop_redundant     Constraint redundancy detection level
 presolveop_tighten       Knitro presolve tightening operations
 qpcheck                  whether to check for a QP: deprecated
 relax                    whether to ignore integrality: 0 (default) = no, 1 = yes

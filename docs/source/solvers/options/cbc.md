@@ -977,7 +977,7 @@ tech:optionfile (optionfile, option:file)
       Otherwise, each nonempty line should contain "name=value".
 
 tech:outlev (outlev)
-      0*/1: Whether to write log lines (chatter) to stdout and to file.
+      0*-4: Whether to write log lines (chatter) to stdout and to file.
 
 tech:timing (timing)
       0*/1: Whether to display timings for the run.

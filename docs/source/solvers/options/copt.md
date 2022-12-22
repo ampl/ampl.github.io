@@ -82,7 +82,7 @@ alg:basis (basis)
       0 - No
       1 - Use incoming basis (if provided)
       2 - Return final basis
-      3 - Both (1 + 2 = default.)
+      3 - Both (1 + 2 = default)
 
 alg:dualfeastol (dualfeastol)
       Tolerance for dual solutions and reduced cost (default 1e-6).
@@ -138,7 +138,7 @@ bar:crossover (crossover)
 bar:iterlim (BarIterLimit)
       Limit on the number of barrier iterations (default 500).
 
-cvt:mip:bigM (cvt:mip:bigm, cvt:bigM, cvt:bigm)
+cvt:bigM (cvt:bigm, cvt:mip:bigM, cvt:mip:bigm)
       Default value of big-M for linearization of logical constraints. Not
       used by default. Use with care (prefer tight bounds). Should be smaller
       than (1.0 / [integrality tolerance])
@@ -146,6 +146,13 @@ cvt:mip:bigM (cvt:mip:bigm, cvt:bigM, cvt:bigm)
 cvt:mip:eps (cvt:cmp:eps)
       Tolerance for strict comparison of continuous variables for MIP. Ensure
       larger than the solver's feasibility tolerance.
+
+cvt:plapprox:domain (plapprox:domain, plapproxdomain)
+      For piecewise-linear approximated functions, both arguments and result
+      are bounded to +-[pladomain]. Default 1e6.
+
+cvt:plapprox:reltol (plapprox:reltol, plapproxreltol)
+      Relative tolerance for piecewise-linear approximation. Default 0.01.
 
 cvt:pre:all
       0/1*: Set to 0 to disable most presolve in the flat converter.
@@ -411,6 +418,11 @@ tech:debug (debug)
 tech:exportfile (writeprob, writemodel)
       Specifies the name of a file where to export the model before solving
       it. This file name can have extension ".lp()", ".mps", etc. Default = ""
+      (don't export the model).
+
+tech:justexportfile (justwriteprob, justwritemodel)
+      Specifies the name of a file where to export the model, do not solve
+      it.This file name can have extension ".lp()", ".mps", etc. Default = ""
       (don't export the model).
 
 tech:logfile (logfile)
