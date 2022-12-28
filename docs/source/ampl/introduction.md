@@ -85,18 +85,18 @@ subject to budget_constraint:
 ## AMPL Scripting
 
 Here are some examples of the most important AMPL scripting commands:
-- `model model.mod;`: specifies the location of the model file
-- `data data.dat;`: specifies the location of the data file
+- `model model_file.mod;`: specifies the location of the model file
+- `data data_file.dat;`: specifies the location of the data file
 - `option option_name option_value;`: specifies options for the solver
 - `solve;`: solves the optimization model
 - `display expression;`: displays the values of the decision variables, objective function, and constraints
-- `let name := value;`: assigns a value to a parameter or a decision variable
+- `let name := value;`: assigns a value to a declared parameter or a decision variable
 
 Here is an example of a simple AMPL script:
 ```ampl
 # specify the model and data files
-model model.mod;
-data data.dat;
+model model_file.mod;
+data data_file.dat;
 
 # specify the solver options
 option solver highs;
