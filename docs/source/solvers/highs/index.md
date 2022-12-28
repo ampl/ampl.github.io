@@ -3,7 +3,7 @@
 A leading free solver that has evolved from a large-scale optimization project at the University of Edinburgh. HiGHS is open-source software to solve linear programming, mixed-integer programming, and convex quadratic programming models.
 
 [[Read More](https://ampl.com/products/solvers/open-source-solvers/)]
-[[Options](options/highs)]
+[[Options](options.md)]
 [[Download](https://portal.ampl.com)]
 
 ## How to use it
@@ -18,5 +18,5 @@ ampl: solve; # solve the problem
 
 Full list of solver options:
 ```{toctree}
-options/highs
+options.md
 ```

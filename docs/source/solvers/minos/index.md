@@ -3,7 +3,7 @@
 MINOS is an established choice for both linear and nonlinear optimization problems. It incorporates proven methods for large-scale sparse nonlinear constraints, and its methods are especially effective for nonlinear objectives subject to linear and near-linear constraints.
 
 [[Read More](https://ampl.com/products/solvers/solvers-we-sell/minos/)]
-[[Options](options/minos)]
+[[Options](options.md)]
 [[Download](https://portal.ampl.com)]
 
 ## How to use it
@@ -18,5 +18,5 @@ ampl: solve; # solve the problem
 
 Full list of solver options:
 ```{toctree}
-options/minos
+options.md
 ```

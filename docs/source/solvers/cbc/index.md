@@ -3,7 +3,7 @@
 The COIN Branch and Cut solver (CBC) is an open-source mixed-integer program (MIP) solver written in C++.
 
 [[Read More](https://ampl.com/products/solvers/open-source-solvers/)]
-[[Options](options/cbc)]
+[[Options](options.md)]
 [[Download](https://portal.ampl.com)]
 
 ## How to use it
@@ -18,5 +18,5 @@ ampl: solve; # solve the problem
 
 Full list of solver options:
 ```{toctree}
-options/cbc
+options.md
 ```

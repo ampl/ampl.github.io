@@ -23,7 +23,10 @@ SOLVERS = {
 for label, solver in SOLVERS.items():
     output = subprocess.check_output([solver, "-="]).decode()
 
-    with open(f"source/solvers/options/{solver}.md", "w") as f:
+    fname = f"source/solvers/{solver}/options.md"
+    if solver.endswith("asl"):
+        fname = f"source/solvers/{solver.replace('asl', '')}/{solver}.md"
+    with open(fname, "w") as f:
         print(
             f"""
 # {label} Options

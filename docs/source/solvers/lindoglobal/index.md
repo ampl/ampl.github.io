@@ -3,7 +3,7 @@
 LINDO Global is a versatile nonlinear optimizer that supports global optimization in continuous and discrete variables. It accepts a variety of objective and constraint functions, including many that are nonconvex and nonsmooth.
 
 [[Read More](https://ampl.com/products/solvers/solvers-we-sell/lindoglobal/)]
-[[Options](options/lindoglobal)]
+[[Options](options.md)]
 [[Download](https://portal.ampl.com)]
 
 ## How to use it
@@ -18,5 +18,5 @@ ampl: solve; # solve the problem
 
 Full list of solver options:
 ```{toctree}
-options/lindoglobal
+options.md
 ```

@@ -3,7 +3,7 @@
 Artelys Knitro is an especially powerful nonlinear solver, offering a range of state-of-the-art algorithms and options for working with smooth objective and constraint functions in continuous and integer variables. It is designed for local optimization of large-scale problems with up to hundreds of thousands of variables.
 
 [[Read More](https://ampl.com/products/solvers/solvers-we-sell/knitro/)]
-[[Options](options/knitro)]
+[[Options](options.md)]
 [[Download](https://portal.ampl.com)]
 
 ## How to use it
@@ -18,5 +18,5 @@ ampl: solve; # solve the problem
 
 Full list of solver options:
 ```{toctree}
-options/knitro
+options.md
 ```

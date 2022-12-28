@@ -106,7 +106,7 @@ The drivers have the following features:
 - Algebraic expressions beyond linear and quadratic.
 - Choice between conversions in the driver vs. native solver support.
 
-[[Modeling Guide](https://amplmp.readthedocs.io/en/latest/rst/model-guide.html)] [[gurobi options](solvers/options/gurobi.md)] [[copt options](solvers/options/copt.md)]  [[highs options](solvers/options/highs.md)]
+[[Modeling Guide](https://amplmp.readthedocs.io/en/latest/rst/model-guide.html)] [[gurobi options](solvers/gurobi/options.md)] [[copt options](solvers/copt/options.md)]  [[highs options](solvers/highs/options.md)]
 
 ## New AMPL-solver interface library
 

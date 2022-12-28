@@ -5,11 +5,11 @@ The framework used by the drivers supports automatic reformulation for many expr
 found [here](https://amplmp.readthedocs.io/en/latest/rst/model-guide.html#modeling-guide).
 
 [[Read More](https://ampl.com/products/solvers/solvers-we-sell/gurobi/)]
-[[Options](options/gurobi)]
+[[Options](options.md)]
 [[Download](https://portal.ampl.com)]
 
 ```{note}
-Our enhanced Gurobi driver (previously know as x-gurobi) is now the default Gurobi driver. The new driver provides significantly extended modeling support for logical and nonlinear operators natively through Gurobi’s built-in “general constraints” and through linearizations performed by the [MP library](https://amplmp.readthedocs.io/). There are two binaries in this package: `gurobi` [[options](options/gurobi)] is the new version, `gurobiasl` [[options](options/gurobiasl)] is the legacy version. If you are upgrading an existing installation and encounter any issues with the new version please report them to [support@ampl.com](mailto:support@ampl.com).
+Our enhanced Gurobi driver (previously know as x-gurobi) is now the default Gurobi driver. The new driver provides significantly extended modeling support for logical and nonlinear operators natively through Gurobi’s built-in “general constraints” and through linearizations performed by the [MP library](https://amplmp.readthedocs.io/). There are two binaries in this package: `gurobi` [[options](options.md)] is the new version, `gurobiasl` [[options](gurobiasl)] is the legacy version. If you are upgrading an existing installation and encounter any issues with the new version please report them to [support@ampl.com](mailto:support@ampl.com).
 ```
 
 ## How to use it
@@ -25,7 +25,7 @@ ampl: solve; # solve the problem
 ### Resources
 
 * [Driver sources](https://github.com/ampl/mp/tree/develop/solvers/gurobi)
-* [Full list of solver options](options/gurobi)
+* [Full list of solver options](options.md)
 
 ### Features
 
@@ -80,15 +80,15 @@ ampl: solve; # solve the problem
 
 Full list of solver options:
 ```{toctree}
-options/gurobi
+options.md
 ```
 ```{toctree}
 :hidden:
-options/gurobiasl
+gurobiasl.md
 ```
 
 Many solver parameters can be changed directly from AMPL, by specifying them as a space separated string in the option `gurobi_options`. 
-A list of all supported options is available [here](options/gurobi) or can be obtained by executing the solver driver with the `-=` command line parameter:
+A list of all supported options is available [here](options.md) or can be obtained by executing the solver driver with the `-=` command line parameter:
 
 ```
 gurobi -=

@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import datetime
+import os
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
@@ -132,6 +133,12 @@ redirects = {
     "apis": "ampl/apis.html",
     "book": "ampl/book.html",
 }
+solvers_dir = os.path.join(os.path.dirname(__file__), "solvers")
+for solver in os.listdir(solvers_dir):
+    if solver.startswith("."):
+        continue
+    if os.path.isdir(os.path.join(solvers_dir, solver)):
+        redirects[f"solvers/{solver}"] = f"{solver}/index.html"
 
 # Add any paths that contain custom themes here, relative to this directory.
 # html_theme_path = []

@@ -12,12 +12,12 @@ Linear Solvers
 .. toctree::
     :maxdepth: 2
 
-    gurobi
-    copt
-    cplex
-    highs
-    xpress
-    cbc
+    gurobi/index
+    copt/index
+    cplex/index
+    highs/index
+    xpress/index
+    cbc/index
 
 
 Non-linear Solvers
@@ -26,11 +26,11 @@ Non-linear Solvers
 .. toctree:: 
     :maxdepth: 2
 
-    conopt
-    knitro
-    loqo
-    minos
-    snopt
+    conopt/index
+    knitro/index
+    loqo/index
+    minos/index
+    snopt/index
 
 
 Global Solvers
@@ -39,10 +39,10 @@ Global Solvers
 .. toctree:: 
     :maxdepth: 2
 
-    baron
-    lgo
-    lindoglobal
-    octeract
+    baron/index
+    lgo/index
+    lindoglobal/index
+    octeract/index
 
 
 NEOS Server
@@ -51,4 +51,4 @@ NEOS Server
 .. toctree::
     :maxdepth: 2
 
-    kestrel
+    kestrel/index

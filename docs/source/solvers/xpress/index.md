@@ -5,11 +5,11 @@ The framework used by the drivers supports automatic reformulation for many expr
 found [here](https://amplmp.readthedocs.io/en/latest/rst/model-guide.html#modeling-guide).
 
 [[Read More](https://ampl.com/products/solvers/solvers-we-sell/xpress/)]
-[[Options](options/xpress)]
+[[Options](options.md)]
 [[Download](https://portal.ampl.com)]
 
 ```{note}
-This package contains an all-new Xpress driver, that provides significantly extended modeling support for logical and nonlinear operators through linearizations performed by the [MP library](https://amplmp.readthedocs.io/). For compatibility, there are two binaries in this package: `xpress` [[options](options/xpress)] is the new version, `xpressasl` [[options](options/xpressasl)] is the legacy version. If you are upgrading an existing installation and encounter any issues with the new version please report them to [support@ampl.com](mailto:support@ampl.com).
+This package contains an all-new Xpress driver, that provides significantly extended modeling support for logical and nonlinear operators through linearizations performed by the [MP library](https://amplmp.readthedocs.io/). For compatibility, there are two binaries in this package: `xpress` [[options](options.md)] is the new version, `xpressasl` [[options](xpressasl.md)] is the legacy version. If you are upgrading an existing installation and encounter any issues with the new version please report them to [support@ampl.com](mailto:support@ampl.com).
 ```
 
 ## How to use it
@@ -25,7 +25,7 @@ ampl: solve; # solve the problem
 ### Resources
 
 * [Driver sources](https://github.com/ampl/mp/tree/develop/solvers/xpress)
-* [Full list of solver options](options/xpress)
+* [Full list of solver options](options.md)
 
 ### Features
 
@@ -68,15 +68,15 @@ ampl: solve; # solve the problem
 
 Full list of solver options:
 ```{toctree}
-options/xpress
+options.md
 ```
 ```{toctree}
 :hidden:
-options/xpressasl
+xpressasl.md
 ```
 
 Many solver parameters can be changed directly from AMPL, by specifying them as a space separated string in the option `xpress_options`. 
-A list of all supported options is available [here](options/xpress) or can be obtained by executing the solver driver with the `-=` command line parameter:
+A list of all supported options is available [here](options.md) or can be obtained by executing the solver driver with the `-=` command line parameter:
 
 ```
 xpress -=
