@@ -2,7 +2,7 @@
 
 AMPL (A Mathematical Programming Language) is a high-level language for expressing optimization models. It is widely used in academia and industry to model and solve linear, nonlinear, and integer optimization problems.
 
-To use AMPL, you will need to install a solver, such as CPLEX, Gurobi, or XPRESS. You can
+To use AMPL, you will need to install a solver, such as [HiGHS](https://ampl.com/products/solvers/open-source-solvers/), [Gurobi](https://ampl.com/products/solvers/solvers-we-sell/gurobi/), [CPLEX](https://ampl.com/products/solvers/solvers-we-sell/cplex/), or [XPRESS](https://ampl.com/products/solvers/solvers-we-sell/xpress/). You can
 use AMPL through a command-line interface or via an [API](apis.md).
 
 ## AMPL Syntax
@@ -99,7 +99,7 @@ model model.mod;
 data data.dat;
 
 # specify the solver options
-option solver cplex;
+option solver highs;
 
 # solve the model
 solve;

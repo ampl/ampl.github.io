@@ -3,9 +3,10 @@
 After downloading your AMPL & Solvers bundle from the [AMPL Portal](https://portal.ampl.com),
 please follow the instructions below that correspond to your operating system:
 
-- [Windows](#windows)
-- [Linux](#linux)
-- [macOS](#macos)
+- [How to install AMPL](#how-to-install-ampl)
+  - [Windows](#windows)
+  - [Linux](#linux)
+  - [macOS](#macos)
 
 ## Windows
 
@@ -21,9 +22,18 @@ please follow the instructions below that correspond to your operating system:
 
     Inside your AMPL folder, double-click the `sw.exe` icon and type `ampl` at the prompt in the window that appears. Then you will see an `ampl:` prompt and can proceed to type AMPL commands.
 
+4. **Activate your license if you received a license UUID (e.g., [AMPL CE](https://ampl.com/ce) licenses):**
+
+    Run this command in AMPL to activate your license:
+    ```
+    ampl: shell "amplkey activate --uuid <license-uuid>";
+          # replace <license-uuid> by the license UUID
+    ```
+    Note: you need to restart AMPL in order to start using the new license.
+
 ```{warning}
 If your bundle is not a time-limited bundle, you need to activate your license in order to remove size-limits.
-You can do that by running inside your AMPL session `shell "amplkey activate --uuid <license-uuid>";` (replacing `<license-uuid>` but the UUID of your license) and then closing and reopening AMPL to start using the new license.
+You can do that by running inside your AMPL session `shell "amplkey activate --uuid <license-uuid>";` (replacing `<license-uuid>` by the UUID of your license) and then closing and reopening AMPL to start using the new license.
 ```
 
 ```{note}
@@ -47,9 +57,18 @@ variables `AMPL_LICFILE` to a location where you store `ampl.lic` and where you 
 
     In a command window, use cd to go to your AMPL directory, then type `./ampl` at the system prompt. Then you will see an `ampl:` prompt and can proceed to type AMPL commands.
 
+4. **Activate your license if you received a license UUID (e.g., [AMPL CE](https://ampl.com/ce) licenses):**
+
+    Run this command in AMPL to activate your license:
+    ```
+    ampl: shell "amplkey activate --uuid <license-uuid>";
+          # replace <license-uuid> by the license UUID
+    ```
+    Note: you need to restart AMPL in order to start using the new license.
+
 ```{warning}
 If your bundle is not a time-limited bundle, you need to activate your license in order to remove size-limits.
-You can do that by running inside your AMPL session `shell "amplkey activate --uuid <license-uuid>";` (replacing `<license-uuid>` but the UUID of your license) and then closing and reopening AMPL to start using the new license.
+You can do that by running inside your AMPL session `shell "amplkey activate --uuid <license-uuid>";` (replacing `<license-uuid>` by the UUID of your license) and then closing and reopening AMPL to start using the new license.
 ```
 
 ```{note}
@@ -79,9 +98,18 @@ variables `AMPL_LICFILE` to a location where you store `ampl.lic` and where you 
 
     In your AMPL folder, double-click `ampl`. You should see an `ampl:` prompt appear and can now proceed to enter AMPL commands.
 
+4. **Activate your license if you received a license UUID (e.g., [AMPL CE](https://ampl.com/ce) licenses):**
+
+    Run this command in AMPL to activate your license:
+    ```
+    ampl: shell "amplkey activate --uuid <license-uuid>";
+          # replace <license-uuid> by the license UUID
+    ```
+    Note: you need to restart AMPL in order to start using the new license.
+
 ```{warning}
 If your bundle is not a time-limited bundle, you need to activate your license in order to remove size-limits.
-You can do that by running inside your AMPL session `shell "amplkey activate --uuid <license-uuid>";` (replacing `<license-uuid>` but the UUID of your license) and then closing and reopening AMPL to start using the new license.
+You can do that by running inside your AMPL session `shell "amplkey activate --uuid <license-uuid>";` (replacing `<license-uuid>` by the UUID of your license) and then closing and reopening AMPL to start using the new license.
 ```
 
 ```{note}
