@@ -139,7 +139,7 @@ for solver in os.listdir(solvers_dir):
         continue
     if os.path.isdir(os.path.join(solvers_dir, solver)):
         redirects[f"solvers/{solver}"] = f"{solver}/index.html"
-        redirects[f"options/{solver}"] = f"{solver}/options.html"
+        redirects[f"solvers/options/{solver}"] = f"../{solver}/options.html"
 
 # Add any paths that contain custom themes here, relative to this directory.
 # html_theme_path = []
