@@ -21,7 +21,7 @@ def ls_dir(base_dir):
 
 setup(
     name="ampl_sphinx_theme",
-    version="0.0.0a22",
+    version="0.0.0a23",
     description="AMPL Sphinx Theme",
     long_description=__doc__,
     license="BSD-3",
