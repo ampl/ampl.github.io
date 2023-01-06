@@ -31,11 +31,6 @@ please follow the instructions below that correspond to your operating system:
     ```
     Note: you need to restart AMPL in order to start using the new license.
 
-```{warning}
-If your bundle is not a time-limited bundle, you need to activate your license in order to remove size-limits.
-You can do that by running inside your AMPL session `shell "amplkey activate --uuid <license-uuid>";` (replacing `<license-uuid>` by the UUID of your license) and then closing and reopening AMPL to start using the new license.
-```
-
 ```{note}
 **If you install AMPL somewhere in your home directory or use a static license, you do not need to worry about the following.**
 
@@ -65,11 +60,6 @@ variables `AMPL_LICFILE` to a location where you store `ampl.lic` and where you 
           # replace <license-uuid> by the license UUID
     ```
     Note: you need to restart AMPL in order to start using the new license.
-
-```{warning}
-If your bundle is not a time-limited bundle, you need to activate your license in order to remove size-limits.
-You can do that by running inside your AMPL session `shell "amplkey activate --uuid <license-uuid>";` (replacing `<license-uuid>` by the UUID of your license) and then closing and reopening AMPL to start using the new license.
-```
 
 ```{note}
 **If you install AMPL somewhere in your home directory or use a static license, you do not need to worry about the following.**
@@ -106,11 +96,6 @@ variables `AMPL_LICFILE` to a location where you store `ampl.lic` and where you 
           # replace <license-uuid> by the license UUID
     ```
     Note: you need to restart AMPL in order to start using the new license.
-
-```{warning}
-If your bundle is not a time-limited bundle, you need to activate your license in order to remove size-limits.
-You can do that by running inside your AMPL session `shell "amplkey activate --uuid <license-uuid>";` (replacing `<license-uuid>` by the UUID of your license) and then closing and reopening AMPL to start using the new license.
-```
 
 ```{note}
 **If you install AMPL somewhere in your home directory or use a static license, you do not need to worry about the following.**
