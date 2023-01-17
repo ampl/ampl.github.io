@@ -82,11 +82,7 @@ variables `AMPL_LICFILE` to a location where you store `ampl.lic` and where you 
 
     1. Download and extract your bundle. This will be your AMPL folder. Rename it if you like and move it to any convenient location on your computer.
 
-    ```{warning}
-    Please make sure you place AMPL in a **directory where you have write permissions** such as your home directory. Otherwise, please see the note at the end.
-    ```
-
-    1. Next, you will need to tell macOS that your AMPL software is safe to run. Double-click your AMPL folder to open it and then follow these steps:
+    2. Next, you will need to tell macOS that your AMPL software is safe to run. Double-click your AMPL folder to open it and then follow these steps:
 
         - Control-click the `ampl.command` file and select **'Open'** in the context menu.
         - If a warning message (**"macOS cannot verify the developer..."**) pops up, click **'Open'**.
