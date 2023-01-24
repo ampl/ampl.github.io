@@ -117,7 +117,9 @@ Demo license with maintenance expiring 20240131.
 ampl:
 ```
 
-### All of this is also available from Python programatically
+## Programmatically
+
+All of this is also available from Python programmatically:
 
 ```python
 >>> from amplpy import modules
@@ -133,7 +135,9 @@ ampl:
 ['base', 'gurobi', 'highs']
 ```
 
-### This also makes AMPL really simple to use with Docker containers
+## Docker containers
+
+This also makes AMPL really simple to use with Docker containers:
 
 ```Dockerfile
 # Use any image as base image
