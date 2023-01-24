@@ -12,3 +12,4 @@ AMPL Resoures
     apis
     options
     book
+    python
