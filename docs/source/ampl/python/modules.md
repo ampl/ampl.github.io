@@ -134,14 +134,3 @@ All of this is also available from Python programmatically:
 >>> modules.installed()
 ['base', 'gurobi', 'highs']
 ```
-
-## Docker containers
-
-This also makes AMPL really simple to use with Docker containers:
-
-```Dockerfile
-# Use any image as base image
-FROM python:3.9-slim-bullseye
-RUN python -m pip install amplpy # Install amplpy
-RUN python -m amplpy.modules install highs gurobi  # Install modules
-```

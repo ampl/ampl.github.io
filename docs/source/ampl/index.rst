@@ -12,4 +12,4 @@ AMPL Resoures
     apis
     options
     book
-    python
+    python/index
