@@ -16,12 +16,14 @@ needs_sphinx = "4.2.0"
 # Add any Sphinx extension module names here, as strings. They can be extensions
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
 extensions = [
+    "myst_parser",
+    "sphinx_design",
     "sphinx.ext.ifconfig",
     "sphinx.ext.mathjax",
     "sphinx.ext.autodoc",
-    "myst_parser",
     "sphinx_reredirects",
 ]
+myst_enable_extensions = ["colon_fence"]
 
 # Generate anchors for markdown files
 myst_heading_anchors = 3

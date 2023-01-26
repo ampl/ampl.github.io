@@ -1,6 +1,6 @@
 # AMPL on Streamlit
 
-Since AMPL and all Solvers are now available as [Python Packages](modules.md). To use them in [streamlit](https://streamlit.io) you just need to list the modules in the requirements.txt file as follows:
+Since AMPL and all Solvers are now available as [Python Packages](modules.md). To use them in [streamlit](https://streamlit.io) you just need to list the modules in the [requirements.txt](https://github.com/fdabrandao/streamlit-nqueens/blob/master/requirements.txt) file as follows:
 
 ```
 --index-url https://pypi.ampl.com # AMPL's Python Package Index
@@ -11,7 +11,7 @@ ampl_module_gurobi # Gurobi solver
 amplpy # Python API for AMPL
 ```
 
-and load them in [streamlit_app.py](streamlit_app.py):
+and load them in [streamlit_app.py](https://github.com/fdabrandao/streamlit-nqueens/blob/master/streamlit_app.py):
 ```python
 from amplpy import AMPL, modules
 modules.load()
