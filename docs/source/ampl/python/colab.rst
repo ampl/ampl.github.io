@@ -25,10 +25,10 @@ Full list of AMPL modules available: ``amplgsl``, ``baron``, ``cbc``, ``coin``, 
 
 .. raw:: html
 
-    <a href="https://colab.research.google.com/github/ampl/amplcolab/blob/master/authors/glebbelov/miscellaneous/nqueens.ipynb" target="_blank">
+    <a href="https://colab.ampl.com" target="_blank">
         <video width="100%" autoplay loop muted poster="https://ampl.com/upload/videos/nqueens_poster.jpg">
             <source src="https://ampl.com/upload/videos/nqueens.mp4" type="video/mp4" />
         </video>
     </a>
 
-[`AMPL Model Colaboratory <https://colab.ampl.com>`_]
+[`AMPL Model Colaboratory <https://colab.ampl.com>`_] [`N-Queens notebook <https://colab.research.google.com/github/ampl/amplcolab/blob/master/authors/glebbelov/miscellaneous/nqueens.ipynb>`_]

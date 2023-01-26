@@ -23,12 +23,16 @@ $ python
 
 ## Commands
 
-### List usage instructions
+### usage
+
+List usage instructions:
 ```
 $ python -m amplpy.modules usage
 ```
 
-### Install modules
+### install
+
+Install modules:
 ```bash
 $ python -m amplpy.modules install <solver 1> <solver 2> ...
 ```
@@ -37,7 +41,9 @@ Example:
 $ python -m amplpy.modules install highs gurobi
 ```
 
-### Uninstall modules
+### uninstall
+
+Uninstall modules:
 ```bash
 $ python -m amplpy.modules uninstall <solver 1> <solver 2> ...
 ```
@@ -46,7 +52,8 @@ Example:
 $ python -m amplpy.modules uninstall gurobi highs
 ```
 
-### List installed modules
+### installed
+List installed modules:
 ```bash
 $ python -m amplpy.modules installed
 ```
@@ -59,7 +66,8 @@ You have the following modules installed:
 	highs
 ```
 
-### List modules available to be installed
+### available
+List modules available to be installed:
 ```bash
 $ python -m amplpy.modules available
 You can install any of the following modules:
@@ -86,7 +94,8 @@ You can install any of the following modules:
 	xpress
 ```
 
-### Value to append to the environment variable PATH to access modules
+### path
+Value to append to the environment variable PATH to access modules:
 ```bash
 $ python -m amplpy.modules path
 ```
@@ -95,7 +104,8 @@ Example:
 export PATH=$PATH:`python -m amplpy.modules path`
 ```
 
-### Generate `requirements.txt` for the modules currently installed
+### requirements
+Generate `requirements.txt` for the modules currently installed:
 ```bash    
 $ python -m amplpy.modules requirements
 --index-url https://pypi.ampl.com
@@ -105,7 +115,8 @@ ampl_module_gurobi==20221228
 ampl_module_highs==20221228
 ```
 
-### Run command in the same environment as the modules
+### run
+Run command in the same environment as the modules
 ```bash
 $ python -m amplpy.modules run <command>
 ```

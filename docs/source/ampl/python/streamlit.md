@@ -5,7 +5,7 @@ Since AMPL and all Solvers are now available as [Python Packages](modules.md). T
 ```
 --index-url https://pypi.ampl.com # AMPL's Python Package Index
 --extra-index-url https://pypi.org/simple
-ampl_module_base # AMPL and base tools
+ampl_module_base # AMPL
 ampl_module_highs # HiGHS solver
 ampl_module_gurobi # Gurobi solver
 amplpy # Python API for AMPL
@@ -15,6 +15,7 @@ and load them in [streamlit_app.py](streamlit_app.py):
 ```python
 from amplpy import AMPL, modules
 modules.load()
+ampl = AMPL()
 ```
 
 - [Python API documentation](https://amplpy.readthedocs.io)
@@ -22,8 +23,15 @@ modules.load()
 
 ## N-Queens using AMPL and HiGHS
 
-Running on [Streamlit Cloud](https://share.streamlit.io/fdabrandao/streamlit-nqueens/).
-Project GitHub: <https://github.com/fdabrandao/streamlit-nqueens>
+- Running on Streamlit Cloud: [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/fdabrandao/streamlit-nqueens/)
+- Project GitHub: <https://github.com/fdabrandao/streamlit-nqueens>
+
+
+<a href="https://share.streamlit.io/fdabrandao/streamlit-nqueens/" target="_blank">
+    <video width="100%" autoplay loop muted poster="https://ampl.com/upload/videos/nqueens_streamlit_poster.jpg">
+        <source src="https://ampl.com/upload/videos/nqueens_streamlit.mp4" type="video/mp4" />
+    </video>
+</a>
 
 Run it locally:
 ```bash
@@ -36,4 +44,3 @@ $ streamlit run streamlit_app.py
 ```
 
 Deploy to [Streamlit Cloud](https://streamlit.io/) for free!
-
