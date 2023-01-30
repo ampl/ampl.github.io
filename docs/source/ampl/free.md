@@ -9,7 +9,7 @@ for commercial, academic and personal use with the following open-source solvers
 - Ipopt: `option solver ipopt; solve;`
 - Couenne: `option solver couenne; solve;`
 - Bonmin: `option solver bonmin; solve;`
-- Any solver available on the NEOS server via [Kestrel](../solvers/kestrel/index.md)
+- Any solver, including commercial solvers, available on the NEOS server via [Kestrel](../solvers/kestrel/index.md)
 
 **At any point you can start commercial solver trials with a single click.**
 
