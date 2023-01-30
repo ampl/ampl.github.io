@@ -9,7 +9,8 @@ AMPL Resoures
 
     introduction
     install
+    free
     apis
-    options
     book
+    options
     python/index

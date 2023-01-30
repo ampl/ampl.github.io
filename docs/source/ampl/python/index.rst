@@ -1,4 +1,6 @@
 
+.. _python_integration:
+
 AMPL integration with Python
 ============================
 

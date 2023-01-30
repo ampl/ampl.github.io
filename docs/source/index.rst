@@ -7,6 +7,7 @@ AMPL has :ref:`APIs <apis>` for several popular programming languages (e.g., :re
 
 **Useful links:**
 :ref:`FAQs <faq>` |
+:ref:`Python Integration <python_integration>` |
 :ref:`What's new? <what_is_new>` |
 :ref:`AMPL APIs <apis>` |
 :ref:`AMPL Book <book>` |
