@@ -88,7 +88,7 @@ mosek -=lim:
 
 ## Specifying solver options and solving a model
 
-After formulating the model in AMPL, execute the following to select gurobi as solver and pass the two options:
+After formulating the model in AMPL, execute the following to select Mosek as solver and pass the two options:
 `return_mipgap=3` and `outlev=1`.
 
 ```ampl
