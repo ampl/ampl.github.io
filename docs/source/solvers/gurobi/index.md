@@ -1,4 +1,4 @@
-# GUROBI
+# Gurobi
 
 Gurobi is a powerful commercial suite of optimization products, which includes simplex and parallel barrier solvers to handle linear programming (LP) and quadratic progermming (QP), also quadratically constrained (QCP) and the mixed-integer variations thereof (MIP, MIQP, MIQCP). It also supports some types of general constraints.
 The framework used by the drivers supports automatic reformulation for many expression types; the relative guide can be

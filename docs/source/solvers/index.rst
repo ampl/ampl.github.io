@@ -16,6 +16,7 @@ Linear Solvers
     copt/index
     cplex/index
     highs/index
+    mosek/index
     xpress/index
     cbc/index
 
