@@ -14,3 +14,4 @@ AMPL Resoures
     book
     options
     python/index
+    docker/index

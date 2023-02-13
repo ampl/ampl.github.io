@@ -133,6 +133,7 @@ redirects = {
     "help/install_ampl": "../ampl/install.html",
     "help/install-ampl": "../ampl/install.html",
     "ampl/python": "../ampl/python/index.html",
+    "ampl/python/docker": "../../ampl/docker/index.html",
     "apis": "ampl/apis.html",
     "book": "ampl/book.html",
 }

@@ -19,4 +19,3 @@ AMPL integration with Python
     modules
     colab
     streamlit
-    docker
