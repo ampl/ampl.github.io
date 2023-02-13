@@ -19,6 +19,7 @@ please follow the instructions below that correspond to your operating system:
 - [Linux](ampl/install.md#linux)
 - [macOS](ampl/install.md#macos)
 
+(cloud_licenses)=
 ## How do cloud licenses work?
 
 Instead of using long term licenses that require static hardware we use short-term leases which give the flexibility of moving the license between different machines or containers.
@@ -52,8 +53,6 @@ If a license is exceeding its limitations for long periods of time users are the
 You can check the status of AMPL cloud services at <https://status.ampl.com/>.
 
 ## How to use AMPL with Docker containers?
-
-# AMPL on Docker Containers
 
 AMPL can be easily used on [Docker containers](https://www.docker.com/):
 

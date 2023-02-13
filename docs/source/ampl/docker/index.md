@@ -32,9 +32,9 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>>
 ```
 
-## Docker containers for other languages
+## Other Docker containers
 
-We do not provide a base docker image as we give the user total freedom about which base image to use.
+AMPL and solvers are also easy to use with Docke containers for languages other than Python.
 In this example, we use the image [`debian:stable-slim`](https://hub.docker.com/_/debian) as base image. We then use `curl` and `tar` for downloading and installing some [modules](https://ampl.com/dl/modules) that you may need.
 
 In the Dockefile below, we install the complete bundle with AMPL and all modules. This is the easiest approach if you are not concerned about image size or if you want to try all solvers we provide. We also install amplpy so that the Python API for AMPL is also ready to be used.

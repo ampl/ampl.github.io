@@ -32,6 +32,8 @@ R
 - Documentation: http://rAMPL.readthedocs.org/
 - GitHub: https://github.com/ampl/rAMPL
 
+.. _apis_java:
+
 Java
 ----
 
@@ -42,6 +44,8 @@ Java
     - `API bundle for macOS <https://portal.ampl.com/dl/modules/amplapi-module.macos64.tgz>`_
 
 - Documentation: https://ampl.com/api/latest/java/
+
+.. _apis_csharp:
 
 C#
 --
@@ -54,6 +58,8 @@ C#
 
 - Documentation: https://ampl.com/api/latest/dotnet/
 
+.. _apis_cpp:
+
 C++
 ---
 
@@ -64,6 +70,8 @@ C++
     - `API bundle for macOS <https://portal.ampl.com/dl/modules/amplapi-module.macos64.tgz>`_
 
 - Documentation: https://ampl.com/api/latest/cpp/
+
+.. _apis_matlab:
 
 MATLAB
 ------

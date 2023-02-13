@@ -1,12 +1,42 @@
 (what_is_new)=
 # What's new?
 
+## AMPL Community Edition
+
+**Free, full-powered AMPL for commercial, academic and personal use**.
+
+-   License never expires
+-   Unlimited variables & constraints
+
+**Solvers permanently available:**
+
+-   Open-source solvers: **HiGHS, CBC, Couenne, Ipopt, Bonmin.**
+-   [NEOS solvers](https://portal.ampl.com/external/?url=https://ampl.com/products/ampl/run-ampl-on-neos/) (including commercial solvers), directly in AMPL through the [kestrel interface](https://portal.ampl.com/external/?url=https://dev.ampl.com/solvers/kestrel.html).
+
+**Commercial solver trials readily available (30 days each):**
+
+-   Linear: [Gurobi](https://portal.ampl.com/external/?url=https://ampl.com/products/solvers/solvers-we-sell/gurobi/), [CPLEX](https://portal.ampl.com/external/?url=https://ampl.com/products/solvers/solvers-we-sell/cplex/), [Xpress](https://portal.ampl.com/external/?url=https://ampl.com/products/solvers/solvers-we-sell/xpress/), [COPT](https://portal.ampl.com/external/?url=https://ampl.com/products/solvers/solvers-we-sell/copt/)
+-   Nonlinear: [Artleys Knitro](https://portal.ampl.com/external/?url=https://ampl.com/products/solvers/solvers-we-sell/knitro/), [CONOPT](https://portal.ampl.com/external/?url=https://ampl.com/products/solvers/solvers-we-sell/conopt/), [LOQO](https://portal.ampl.com/external/?url=https://ampl.com/products/solvers/solvers-we-sell/loqo/), [MINOS](https://portal.ampl.com/external/?url=https://ampl.com/products/solvers/solvers-we-sell/minos/), [SNOPT](https://portal.ampl.com/external/?url=https://ampl.com/products/solvers/solvers-we-sell/snopt/)
+-   Global: [BARON](https://portal.ampl.com/external/?url=https://ampl.com/products/solvers/solvers-we-sell/baron/), [LGO](https://portal.ampl.com/external/?url=https://ampl.com/products/solvers/solvers-we-sell/lgo/), [LINDO Global](https://portal.ampl.com/external/?url=https://ampl.com/products/solvers/solvers-we-sell/lindoglobal/), [OCTERACT](https://portal.ampl.com/external/?url=https://ampl.com/products/solvers/solvers-we-sell/octeract/)
+
+**APIs included:**
+
+[![](https://portal.ampl.com/static/img/apis/PythonLogo.svg)](https://portal.ampl.com/external/?url=https://amplpy.readthedocs.io/) [![](https://portal.ampl.com/static/img/apis/RLogo.svg)](https://portal.ampl.com/external/?url=https://rampl.readthedocs.io/) [![](https://portal.ampl.com/static/img/apis/CppLogo.svg)](https://portal.ampl.com/external/?url=https://portal.ampl.com/docs/api/latest/cpp/) [![](https://portal.ampl.com/static/img/apis/CSharpLogo.svg)](https://portal.ampl.com/external/?url=https://portal.ampl.com/docs/api/latest/dotnet/) [![](https://portal.ampl.com/static/img/apis/MatlabLogo.svg)](https://portal.ampl.com/external/?url=https://portal.ampl.com/docs/api/latest/matlab/) [![](https://portal.ampl.com/static/img/apis/JavaLogo.svg)](https://portal.ampl.com/external/?url=https://portal.ampl.com/docs/api/latest/java/)
+
+**What else is included?**
+
+-   [AMPL Model Colaboratory](https://portal.ampl.com/external/?url=https://colab.ampl.com/) powered by our [Python API](https://portal.ampl.com/external/?url=https://amplpy.readthedocs.io/)!
+-   [Enhanced solver interfaces (e.g., Gurobi, COPT, XPRESS, HiGHS)](https://portal.ampl.com/external/?url=https://amplmp.readthedocs.io/en/latest/rst/model-guide.html)
+-   [Data Connectors (e.g., .xlsx, .csv, ODBC)](https://portal.ampl.com/external/?url=https://ampl.com/products/ampl/data-connectors/) and [Function Libraries (e.g., GSL)](https://portal.ampl.com/external/?url=https://amplgsl.readthedocs.io/)
+-   [It works with Docker Containers and Cloud Functions (e.g., AWS Lambda, Azure Functions, etc.)](ampl_docker)
+-   Since it is a [cloud license](cloud_licenses) it can be used on continuous integration and continuous delivery (CI/CD) platforms.
+
 ## Using AMPL in Google Colab, Kaggle, and similar platforms
 
 We have a set of Jupyter Notebooks available on our [Model Colaboratory](https://colab.ampl.com).
 
 You can use our template (<https://colab.ampl.com/en/latest/tag-template.html>)
-as a starting point. Our cloud licenses, include AMPL CE licenses, work on all cloud platforms.
+as a starting point. Our cloud licenses, including AMPL CE licenses, work on all cloud platforms.
 
 ## Snapshot feature (save and restore AMPL sessions)
 
