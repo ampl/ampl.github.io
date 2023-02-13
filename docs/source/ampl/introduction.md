@@ -7,7 +7,47 @@ use AMPL through a command-line interface or via an [API](apis.md).
 
 ## AMPL Syntax
 
+AMPL syntax matches naturally the mathematical description of the traditional algebraic descriptions
+of models as you can see in the following example:
+
+- Traditional informal algebraic description of a model:
+
+```{eval-rst}
+.. math::
+  \begin{equation*}
+  \begin{aligned}
+  & R: \text{a set of raw materials}\\
+  & P: \text{a set of products}\\
+  & a_{ij}, i \in R, j \in P: \text{input-output coefficients}\\
+  & b_i, i \in R: \text{units available}\\
+  & c_j, j \in P: \text{profit per unit}\\
+  & u_j, j \in P: \text{production limit}\\
+  & x_j, j \in P, 0 \leq x_j \leq u_j: \text{units of j produced}\\
+  & \text{Maximize} \sum_{j \in P} c_j x_j: \text{total profit}\\
+  & \text{Subject to} \sum_{j \in P} a_{ij} x_j \leq b_i, i \in R: \text{limited availability of material}\\
+  \end{aligned}
+  \end{equation*}
+```
+
+- Corresponding AMPL model:
+
+  ```ampl
+  set R; # raw materials
+  set P; # products
+  param a {R, P} >= 0; # input-output coefficients
+  param b {R} > 0; # units available
+  param c {P} > 0; # profit per unit
+  param u {P} > 0; # production limit
+  var x {j in P} >= 0, <= u[j]; # units of j produced
+  maximize total:
+      sum {j in P} c[j] * x[j]; # total profit
+  subj to supply {i in R}:
+      sum {j in P} a[i,j] * x[j] <= b[i]; # limited availability of material
+  ```
+
 To get started with AMPL, you will need to learn the syntax of the language. You can find a reference manual and examples on the AMPL website ([http://www.ampl.com/](http://www.ampl.com/)) or in the AMPL book ([https://ampl.com/learn/ampl-book/](https://ampl.com/learn/ampl-book/)). There are also online resources and courses available to help you learn AMPL.
+
+## AMPL Entities
 
 Here are some simple examples of the basic elements of an AMPL model:
 
