@@ -8,6 +8,8 @@
 -   License never expires
 -   Unlimited variables & constraints
 
+Get your free license at: **<https://ampl.com/ce>**
+
 **Solvers permanently available:**
 
 -   Open-source solvers: **HiGHS, CBC, Couenne, Ipopt, Bonmin.**
