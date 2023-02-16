@@ -15,6 +15,7 @@ of models as you can see in the following example:
 ```{eval-rst}
 .. math::
   \def\entity#1{{\color{##bb60d5}{#1}}}
+  \def\index#1{{\color{darkblue}{#1}}}
   \def\comment#1{{\color{##408090}{\text{#1}}}}
   \def\statement#1{{\color{##007020}{\text{#1}}}}
   \begin{equation*}
@@ -22,14 +23,14 @@ of models as you can see in the following example:
   & \entity{R}: \comment{a set of raw materials}\\
   & \entity{P}: \comment{a set of products}\\
   & \\
-  & \entity{a}_{ij}, i \in \entity{R}, j \in \entity{P}: \comment{input-output coefficients}\\
-  & \entity{b}_i, i \in \entity{R}: \comment{units available}\\
-  & \entity{c}_j, j \in \entity{P}: \comment{profit per unit}\\
-  & \entity{u}_j, j \in \entity{P}: \comment{production limit}\\
-  & \entity{x}_j, j \in \entity{P}, 0 \leq \entity{x}_j \leq \entity{u}_j: \comment{units of j produced}\\
+  & \entity{a}_\index{ij}, \index{i} \in \entity{R}, \index{j} \in \entity{P}: \comment{input-output coefficients}\\
+  & \entity{b}_\index{i}, \index{i} \in \entity{R}: \comment{units available}\\
+  & \entity{c}_\index{j}, \index{j} \in \entity{P}: \comment{profit per unit}\\
+  & \entity{u}_\index{j}, \index{j} \in \entity{P}: \comment{production limit}\\
+  & \entity{x}_\index{j}, \index{j} \in \entity{P}, 0 \leq \entity{x}_\index{j} \leq \entity{u}_\index{j}: \comment{units of j produced}\\
   & \\
-  & \statement{Maximize} \sum_{j \in \entity{P}} \entity{c}_j \entity{x}_j: \comment{total profit}\\
-  & \statement{Subject to} \sum_{j \in \entity{P}} \entity{a}_{ij} \entity{x}_j \leq \entity{b}_i, i \in \entity{R}: \comment{limited availability of material}\\
+  & \statement{Maximize} \sum_{\index{j} \in \entity{P}} \entity{c}_\index{j} \entity{x}_\index{j}: \comment{total profit}\\
+  & \statement{Subject to} \sum_{\index{j} \in \entity{P}} \entity{a}_\index{ij} \entity{x}_\index{j} \leq \entity{b}_\index{i}, \index{i} \in \entity{R}: \comment{limited availability of material}\\
   \end{aligned}
   \end{equation*}
 ```
