@@ -29,8 +29,8 @@ of models as you can see in the following example:
   & \entity{u}_\index{j}, \index{j} \in \entity{P}: \comment{production limit}\\
   & \entity{x}_\index{j}, \index{j} \in \entity{P}, 0 \leq \entity{x}_\index{j} \leq \entity{u}_\index{j}: \comment{units of j produced}\\
   & \\
-  & \statement{Maximize} \sum_{\index{j} \in \entity{P}} \entity{c}_\index{j} \entity{x}_\index{j}: \comment{total profit}\\
-  & \statement{Subject to} \sum_{\index{j} \in \entity{P}} \entity{a}_\index{ij} \entity{x}_\index{j} \leq \entity{b}_\index{i}, \index{i} \in \entity{R}: \comment{limited availability of material}\\
+  & \statement{maximize} \sum_{\index{j} \in \entity{P}} \entity{c}_\index{j} \entity{x}_\index{j}: \comment{total profit}\\
+  & \statement{subject to} \sum_{\index{j} \in \entity{P}} \entity{a}_\index{ij} \entity{x}_\index{j} \leq \entity{b}_\index{i}, \index{i} \in \entity{R}: \comment{limited availability of material}\\
   \end{aligned}
   \end{equation*}
 ```
