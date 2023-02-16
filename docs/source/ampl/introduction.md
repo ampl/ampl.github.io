@@ -14,17 +14,22 @@ of models as you can see in the following example:
 
 ```{eval-rst}
 .. math::
+  \def\entity#1{{\color{##bb60d5}{#1}}}
+  \def\comment#1{{\color{##408090}{\text{#1}}}}
+  \def\statement#1{{\color{##007020}{\text{#1}}}}
   \begin{equation*}
   \begin{aligned}
-  & R: \text{a set of raw materials}\\
-  & P: \text{a set of products}\\
-  & a_{ij}, i \in R, j \in P: \text{input-output coefficients}\\
-  & b_i, i \in R: \text{units available}\\
-  & c_j, j \in P: \text{profit per unit}\\
-  & u_j, j \in P: \text{production limit}\\
-  & x_j, j \in P, 0 \leq x_j \leq u_j: \text{units of j produced}\\
-  & \text{Maximize} \sum_{j \in P} c_j x_j: \text{total profit}\\
-  & \text{Subject to} \sum_{j \in P} a_{ij} x_j \leq b_i, i \in R: \text{limited availability of material}\\
+  & \entity{R}: \comment{a set of raw materials}\\
+  & \entity{P}: \comment{a set of products}\\
+  & \\
+  & \entity{a}_{ij}, i \in \entity{R}, j \in \entity{P}: \comment{input-output coefficients}\\
+  & \entity{b}_i, i \in \entity{R}: \comment{units available}\\
+  & \entity{c}_j, j \in \entity{P}: \comment{profit per unit}\\
+  & \entity{u}_j, j \in \entity{P}: \comment{production limit}\\
+  & \entity{x}_j, j \in \entity{P}, 0 \leq \entity{x}_j \leq \entity{u}_j: \comment{units of j produced}\\
+  & \\
+  & \statement{Maximize} \sum_{j \in \entity{P}} \entity{c}_j \entity{x}_j: \comment{total profit}\\
+  & \statement{Subject to} \sum_{j \in \entity{P}} \entity{a}_{ij} \entity{x}_j \leq \entity{b}_i, i \in \entity{R}: \comment{limited availability of material}\\
   \end{aligned}
   \end{equation*}
 ```
@@ -32,18 +37,22 @@ of models as you can see in the following example:
 - Corresponding AMPL model:
 
   ```ampl
-  set R; # raw materials
-  set P; # products
+  set R; # a set of raw materials
+  set P; # a set of products
+  
   param a {R, P} >= 0; # input-output coefficients
   param b {R} > 0; # units available
   param c {P} > 0; # profit per unit
   param u {P} > 0; # production limit
+
   var x {j in P} >= 0, <= u[j]; # units of j produced
-  maximize total:
+
+  maximize total_profit:
       sum {j in P} c[j] * x[j]; # total profit
-  subj to supply {i in R}:
+  subject to supply {i in R}:
       sum {j in P} a[i,j] * x[j] <= b[i]; # limited availability of material
   ```
+  Single-letter names for illustration purposes only! With AMPL you can use meaningful names for better model maintainability!
 
 To get started with AMPL, you will need to learn the syntax of the language. You can find a reference manual and examples on the AMPL website ([http://www.ampl.com/](http://www.ampl.com/)) or in the AMPL book ([https://ampl.com/learn/ampl-book/](https://ampl.com/learn/ampl-book/)). There are also online resources and courses available to help you learn AMPL.
 
