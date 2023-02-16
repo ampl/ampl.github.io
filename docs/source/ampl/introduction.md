@@ -15,7 +15,7 @@ of models as you can see in the following example:
 ```{eval-rst}
 .. math::
   \def\entity#1{{\color{##bb60d5}{#1}}}
-  \def\index#1{{\color{darkblue}{#1}}}
+  \def\index#1{{\color{##307090}{#1}}}
   \def\comment#1{{\color{##408090}{\text{#1}}}}
   \def\statement#1{{\color{##007020}{\text{#1}}}}
   \begin{equation*}
