@@ -14,24 +14,24 @@ of models as you can see in the following example:
 
 ```{eval-rst}
 .. math::
-  \def\entity#1{{\color{##7E78D3}{\textbf{#1}}}}
-  \def\index#1{{\color{##307090}{\textbf{#1}}}}
-  \def\comment#1{:\; {\color{##7A8596}{\textbf{#1}}}&}
-  \def\statement#1{{\color{##7FA492}{\textbf{#1}}}}
+  \def\entity#1{{\color{##7E78D3}{#1}}}
+  \def\index#1{{\color{##307090}{#1}}}
+  \def\comment#1{: {\color{##7A8596}{\text{#1}}}&}
+  \def\statement#1{{\color{##7FA492}{\text{#1}}}}
   \begin{align}
-  & \entity{R} \;\comment{a set of raw materials}\\
-  & \entity{P} \;\comment{a set of products}\\
+  & \entity{R} \comment{a set of raw materials}\\
+  & \entity{P} \comment{a set of products}\\
   & \\
-  & \entity{a}_\index{ij}, \;\index{i} \in \entity{R}, \;\index{j} \in \entity{P}  &&\comment{input-output coefficients}\\
-  & \entity{b}_\index{i}, \;\index{i} \in \entity{R}  &&\comment{units available}\\
-  & \entity{c}_\index{j}, \;\index{j} \in \entity{P}  &&\comment{profit per unit}\\
-  & \entity{u}_\index{j}, \;\index{j} \in \entity{P}  &&\comment{production limit}\\
+  & \entity{a}_\index{ij}, \index{i} \in \entity{R}, \index{j} \in \entity{P}  \comment{input-output coefficients}\\
+  & \entity{b}_\index{i}, \index{i} \in \entity{R}  \comment{units available}\\
+  & \entity{c}_\index{j}, \index{j} \in \entity{P}  \comment{profit per unit}\\
+  & \entity{u}_\index{j}, \index{j} \in \entity{P}  \comment{production limit}\\
   & \\
-  & \entity{x}_\index{j}, \;\index{j} \in \entity{P}, \;0 \leq \entity{x}_\index{j} \leq \entity{u}_\index{j}   &&\comment{units of j produced}\\
+  & \entity{x}_\index{j}, \index{j} \in \entity{P}, 0 \leq \entity{x}_\index{j} \leq \entity{u}_\index{j}   \comment{units of j produced}\\
   & \\
-  & \statement{maximize  } \sum_{\index{j} \in \entity{P}}\; \entity{c}_\index{j}\entity{x}_\index{j} &&\comment{total profit}\\
+  & \statement{maximize  } \sum_{\index{j} \in \entity{P}} \entity{c}_\index{j}\entity{x}_\index{j} \comment{total profit}\\
   & \\
-  & \statement{subject to  } \sum_{\index{j} \in \entity{P}}\; \entity{a}_\index{ij}\entity{x}_\index{j} \;\leq\; \entity{b}_\index{i}, \;\index{i} \in \entity{R}  &&\comment{limited availability of material}\\
+  & \statement{subject to  } \sum_{\index{j} \in \entity{P}} \entity{a}_\index{ij}\entity{x}_\index{j} \leq \entity{b}_\index{i}, \index{i} \in \entity{R}  \comment{limited availability of material}\\
   \end{align}
 ```
 
