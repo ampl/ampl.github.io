@@ -122,6 +122,15 @@ alg:lbpen (lbpen)
 alg:matrixtol (matrixtol)
       nput matrix coefficient tolerance (default 1e-10).
 
+alg:rays (rays)
+      Whether to return suffix .unbdd if the objective is unbounded or suffix
+      .dunbdd if the constraints are infeasible:
+
+      0 - Neither
+      1 - Just .unbdd
+      2 - Just .dunbdd
+      3 - Both (default)
+
 alg:relax (relax)
       0*/1: Whether to relax integrality of variables.
 
@@ -225,6 +234,7 @@ lp:method (method, lpmethod)
       2  - Barrier
       3  - Crossover
       4  - Concurrent (simplex and barrier simultaneously)
+      5  - Choose between simplex and barrier automatically
 
 mip:bestbound (bestbound, return_bound)
       Whether to return suffix .bestbound for the best known MIP dual bound on
@@ -386,11 +396,13 @@ pre:scale (scale)
       particularly numerically difficult models.
 
 pre:solve (presolve)
-      Whether to perform presolving before solving the problem:
+      Level of presolving to perform before solving the problem:
 
-      -1 - Automatic choice (default)
-      0  - No
-      1  - Yes.
+      -1 - Automatic (default)
+      0  - Off
+      1  - Fast
+      2  - Normal
+      3  - Aggressive
 
 sol:count (countsolutions)
       0*/1: Whether to count the number of solutions and return it in the

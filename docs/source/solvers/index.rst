@@ -15,6 +15,7 @@ Linear Solvers
     gurobi/index
     copt/index
     cplex/index
+    ilogcp/index
     highs/index
     mosek/index
     xpress/index

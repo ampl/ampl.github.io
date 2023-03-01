@@ -4,6 +4,7 @@ SOLVERS = {
     "BARON": "baron",
     "CONOPT": "conopt",
     "CPLEX": "cplex",
+    "ILOGCP": "ilogcp",
     "GUROBI": "gurobi",
     "KNITRO": "knitro",
     "Lindo Global": "lindoglobal",

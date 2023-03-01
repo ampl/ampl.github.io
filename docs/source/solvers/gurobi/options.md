@@ -1179,7 +1179,8 @@ tech:justexportfile (justwriteprob, justwritemodel)
       (don't export the model).
 
 tech:logfile (logfile)
-      Log file name.
+      Log file name; note that the solver log will be written to the log
+      regardless of the value of tech:outlev.
 
 tech:logfreq (logfreq, outfreq)
       Interval in seconds between log lines (default 5).
@@ -1198,7 +1199,7 @@ tech:optionfile (optionfile, option:file)
       Otherwise, each nonempty line should contain "name=value".
 
 tech:outlev (outlev)
-      0*/1: Whether to write gurobi log lines (chatter) to stdout and to file.
+      0*/1: Whether to write gurobi log lines (chatter) to stdout.
 
 tech:param (param)
       General way to specify values of both documented and undocumented Gurobi

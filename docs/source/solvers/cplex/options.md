@@ -945,11 +945,6 @@ polishafter_timedet    Start polishing integer solutions after finding
                        polishafter_time "ticks" seeking integer solutions.
                        Default 1e75.
 
-polishtime             New in CPLEX 10.0:  seconds to spend "polishing"
-                       integer solutions.  Default 0.
-                       Deprecated in CPLEX 11.2 (in favor of the polishafter
-                       keywords above).
-
 poolagap               Solutions with objective worse in absolute value by
                        poolgap than the best solution are not kept in the
                        solution pool; see poolstub.  Default 1e75.
