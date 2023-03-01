@@ -82,11 +82,15 @@ variables `AMPL_LICFILE` to a location where you store `ampl.lic` and where you 
 
     1. Download and extract your bundle. This will be your AMPL folder. Rename it if you like and move it to any convenient location on your computer.
 
-    2. Next, you will need to tell macOS that your AMPL software is safe to run. Double-click your AMPL folder to open it and then follow these steps:
+    2. Next, **you will need to tell macOS that your AMPL software is safe to run**. Double-click your AMPL folder to open it and then follow these steps:
 
         - Control-click the `ampl.command` file and select **'Open'** in the context menu.
         - If a warning message (**"macOS cannot verify the developer..."**) pops up, click **'Open'**.
         - A Terminal window will appear. After a few seconds, you will see `ampl:` in the last line in the window. You can now close the window. (If a warning message saying **"Do you want to terminate running processes in this window?"** pops up, click **'Terminate'**.)
+
+        ```{warning}
+        If this step is skipped, you will get errors such as: **"Amplide" is damaged and can't be opened.** You need to run ``ampl.command`` to tell macOS that your AMPL software is safe to run.
+        ```
 
 2. **To run via IDE:**
 
