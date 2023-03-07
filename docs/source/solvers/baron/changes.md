@@ -1,4 +1,5 @@
-# BARON ChangelogAll notable changes to this project will be documented in this file.
+# BARON Changelog
+All notable changes to this project will be documented in this file.
 
 ## 20220118
 - Update to find xpress version 39.01.02

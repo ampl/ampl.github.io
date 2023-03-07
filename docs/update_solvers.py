@@ -39,7 +39,7 @@ for label, solver in SOLVERS.items():
             content = content[content.find("==") :]
             content = content[content.find("\n") + 1 :]
         content = re.sub(r"###+ (\d+)", r"## \g<1>", content)
-        content = f"# {label} Changelog" + content
+        content = f"# {label} Changelog\n" + content
         dst = f"source/solvers/{solver}/changes.md"
         if solver.endswith("asl"):
             dst = f"source/solvers/{solver[:-3]}/changesasl.md"

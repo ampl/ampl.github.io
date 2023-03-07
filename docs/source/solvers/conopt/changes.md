@@ -1,4 +1,5 @@
 # CONOPT Changelog
+
 ## 20211109
 - Relinked with ASL 20211109, which allows the use of functions with output arguments in the AMPL session.
 

@@ -1,4 +1,5 @@
 # Lindo Global Changelog
+
 ## 20210406.1
 - Possible problem in the licencing routines for computer with many MAC addresses.
 

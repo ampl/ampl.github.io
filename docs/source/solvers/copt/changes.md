@@ -1,5 +1,6 @@
 # COPT Changelog
 
+
 ## 20230207
 - *Changes in the MP library*
 - Updated to Copt 6.0.4, which includes bugfixes

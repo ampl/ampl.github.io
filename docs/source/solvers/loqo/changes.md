@@ -1,4 +1,5 @@
 # LOQO Changelog
+
 ## 20210410.1
 - Fixed a possible problem in the licencing routines for computer with many MAC addresses.
 

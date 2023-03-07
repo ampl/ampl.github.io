@@ -1,4 +1,5 @@
 # KNITRO Changelog
+
 ## 20221213
 - Updated to Knitro 13.2, changes include:
    - Improved cuts and cut selection strategies for branch-and-bound

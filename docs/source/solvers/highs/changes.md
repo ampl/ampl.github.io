@@ -1,5 +1,6 @@
 # HiGHS Changelog
 
+
 ## 20230227
 - Fixed a problem when retrieving basis status
 - Implemented retrieval of MIP gap so that if optimality is reached via presolving,

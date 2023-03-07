@@ -1,4 +1,5 @@
 # SNOPT Changelog
+
 ## Sun May 11 18:35:33 EDT 1997
 Tweak things to reflect changes to SNOPT since 19970318.
 

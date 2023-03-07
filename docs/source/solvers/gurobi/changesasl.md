@@ -1,5 +1,6 @@
 # GUROBIASL Changelog
 
+
 ## 20221113
 - Relinked with Gurobi 10.0.0
 - Added controls *networkalg*, *obbt* and *softmemlimit*
