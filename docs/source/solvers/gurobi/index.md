@@ -6,10 +6,11 @@ found [here](https://amplmp.readthedocs.io/en/latest/rst/model-guide.html#modeli
 
 [[Read More](https://ampl.com/products/solvers/solvers-we-sell/gurobi/)]
 [[Options](options.md)]
+[[Changes](changes.md)]
 [[Download](https://portal.ampl.com)]
 
 ```{note}
-Our enhanced Gurobi driver (previously know as x-gurobi) is now the default Gurobi driver. The new driver provides significantly extended modeling support for logical and nonlinear operators natively through Gurobi’s built-in “general constraints” and through linearizations performed by the [MP library](https://amplmp.readthedocs.io/). There are two binaries in this package: `gurobi` [[options](options.md)] is the new version, `gurobiasl` [[options](gurobiasl)] is the legacy version. If you are upgrading an existing installation and encounter any issues with the new version please report them to [support@ampl.com](mailto:support@ampl.com).
+Our enhanced Gurobi driver (previously know as x-gurobi) is now the default Gurobi driver. The new driver provides significantly extended modeling support for logical and nonlinear operators natively through Gurobi’s built-in “general constraints” and through linearizations performed by the [MP library](https://amplmp.readthedocs.io/). There are two binaries in this package: `gurobi` [[options](options.md)] is the new version, `gurobiasl` [[gurobiasl options](gurobiasl)] [[gurobiasl changes](changesasl)] is the legacy version. If you are upgrading an existing installation and encounter any issues with the new version please report them to [support@ampl.com](mailto:support@ampl.com).
 ```
 
 ## How to use it
@@ -169,4 +170,14 @@ solve;
 # Solve with gurobi instant cloud
 option gurobi_options "tech:cloudid=mygurobiid tech:cloudkey=myprivatekey";
 solve;
+```
+
+## Changelog
+
+```{toctree}
+changes.md
+```
+```{toctree}
+:hidden:
+changesasl.md
 ```

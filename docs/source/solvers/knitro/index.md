@@ -4,6 +4,7 @@ Artelys Knitro is an especially powerful nonlinear solver, offering a range of s
 
 [[Read More](https://ampl.com/products/solvers/solvers-we-sell/knitro/)]
 [[Options](options.md)]
+[[Changes](changes.md)]
 [[Download](https://portal.ampl.com)]
 
 ## How to use it
@@ -19,4 +20,10 @@ ampl: solve; # solve the problem
 Full list of solver options:
 ```{toctree}
 options.md
+```
+
+## Changelog
+
+```{toctree}
+changes.md
 ```

@@ -4,6 +4,7 @@ A leading free solver that has evolved from a large-scale optimization project a
 
 [[Read More](https://ampl.com/products/solvers/open-source-solvers/)]
 [[Options](options.md)]
+[[Changes](changes.md)]
 [[Download](https://portal.ampl.com)]
 
 ## How to use it
@@ -19,4 +20,10 @@ ampl: solve; # solve the problem
 Full list of solver options:
 ```{toctree}
 options.md
+```
+
+## Changelog
+
+```{toctree}
+changes.md
 ```

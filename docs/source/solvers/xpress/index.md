@@ -6,6 +6,7 @@ found [here](https://amplmp.readthedocs.io/en/latest/rst/model-guide.html#modeli
 
 [[Read More](https://ampl.com/products/solvers/solvers-we-sell/xpress/)]
 [[Options](options.md)]
+[[Changes](changes.md)]
 [[Download](https://portal.ampl.com)]
 
 ```{note}
@@ -131,3 +132,9 @@ display solve_result_num, solve_result;
 
 When a model is unfeasible, one usedful information is finding the irreducible inconsistent sets, which are subsets of constraints that are
 incompatible. This is supported by the framework, see the description [here](https://amplmp.readthedocs.io/en/latest/rst/features-guide.html#irreducible-inconsistent-set-iis).
+
+## Changelog
+
+```{toctree}
+changes.md
+```

@@ -1,4 +1,5 @@
 import subprocess
+import os
 
 SOLVERS = {
     "BARON": "baron",
@@ -23,6 +24,26 @@ SOLVERS = {
 
 for label, solver in SOLVERS.items():
     output = subprocess.check_output([solver, "-="]).decode()
+
+    exec_location = subprocess.check_output(["which", solver]).decode()
+    changes = os.path.join(
+        os.path.dirname(exec_location), "docs", f"CHANGES.{solver}.md"
+    )
+    if os.path.exists(changes):
+        content = open(changes, "r").read().strip()
+        if content.startswith("#"):
+            content = content[content.find("#") :]
+            content = content[content.find("\n") + 1 :]
+        else:
+            content = content[content.find("==") :]
+            content = content[content.find("\n") + 1 :]
+        content = f"# {label} Changelog" + content
+        dst = f"source/solvers/{solver}/changes.md"
+        if solver.endswith("asl"):
+            dst = f"source/solvers/{solver[:-3]}/changesasl.md"
+        open(dst, "w").write(content)
+    else:
+        print(f"No changelog for {solver}.")
 
     fname = f"source/solvers/{solver}/options.md"
     if solver.endswith("asl"):

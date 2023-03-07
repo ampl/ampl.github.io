@@ -4,6 +4,7 @@ Mosek is a versatile linear, quadratic, quadratically constrained and semidefini
 
 [[Read More](https://ampl.com/products/solvers/solvers-we-sell/mosek/)]
 [[Options](options.md)]
+[[Changes](changes.md)]
 [[Download](https://portal.ampl.com)]
 
 ## How to use it
@@ -105,6 +106,3 @@ The outcome of the last optimization is stored in the AMPL parameter `solve_resu
 ```ampl
 display solve_result_num, solve_result;
 ```
-
-
-

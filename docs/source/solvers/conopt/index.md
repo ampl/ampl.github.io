@@ -4,6 +4,7 @@ A proven choice for highly nonlinear problems, CONOPT’s efficient and reliable
 
 [[Read More](https://ampl.com/products/solvers/solvers-we-sell/conopt/)]
 [[Options](options.md)]
+[[Changes](changes.md)]
 [[Download](https://portal.ampl.com)]
 
 ## How to use it
@@ -19,4 +20,10 @@ ampl: solve; # solve the problem
 Full list of solver options:
 ```{toctree}
 options.md
+```
+
+## Changelog
+
+```{toctree}
+changes.md
 ```
