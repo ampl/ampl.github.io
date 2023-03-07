@@ -2,18 +2,90 @@
 
 ## 20230124
 
-  Show error context in blockmode (invocations of "ampl -b ...").
+  Show error context in blockmode (invocations of "`ampl -b ...`").
 
 ## 20221013
 
   Fix a bug, introduced in version 20220505, in handling data sections.
-Example:
-	set A := 1..2; param p{A}; param q{A};
-	data;
-	param: p q :=
-	[*] 1 2.5 3	# erroneously complained about "."
-	    2 4 5.6;
-	display p, q;
+  Example:
+```ampl
+set A := 1..2; param p{A}; param q{A};
+data;
+param: p q :=
+[*] 1 2.5 3	# erroneously complained about "."
+    2 4 5.6;
+display p, q;
+```
+
+## 20221008
+  Fix a configuration bug in the 64-bit ARM binary that caused a wrong
+value for some things, such as `Normal01()`, to be computed.  With
+today's 64-bit ARM binary, "`ampl -vvq`" will report version 20221008.
+
+
+## 20220927
+  Fix error a couple of error messages caused by inappropriate uses
+of variables.  Previously the (silly) example
+
+```ampl
+var x >= 0 integer; var y >= 0 integer;
+subj to con: x + y in {0,3,5};
+solve;
+```
+
+got the surprising error message
+
+```
+presolve, constraint con:
+    Logical constraint is always false.
+Infeasible constraints determined by presolve.
+```
+
+Now the second line elicits the error message
+
+```
+Cannot test whether a variable expression is in a set expression.
+context:  subj to con: x + y in  >>> {0,3,5}; <<< 
+```
+
+This example can be restated as
+
+```ampl
+var x >= 0 integer; var y >= 0 integer;
+var z in {0,3,5};
+s.t. con: x + y == z;
+```
+
+Previously the second line of the little example
+
+```ampl
+var x >= 0;
+subj to con: x in {0,3,5};
+```
+
+elicited the surprising error message
+
+```text
+continuous variable in tuple
+context:  subj to con: x in  >>> {0,3,5}; <<< 
+```
+
+Not it gets
+
+```text
+Cannot test whether a variable is in a set expression.
+context:  subj to con: x in  >>> {0,3,5}; <<< 
+```
+
+The example can be rewritten (without complaint) as
+
+```ampl
+var x in {0,3,5};
+```
+
+For a "`var x in set_expr`" declaration, AMPL quietly generates binary
+variables related by an SOS1 condition and a constraint defining x.
+
 
 ## 20220812
 
@@ -21,22 +93,28 @@ Fix a bug in the changes of 20220730 that caused a fault with some uses of defin
 
 ## 20220730
 
-Fix a bug with defined variables: if a defined variable used a problem variable nonlinearly, another defined variable used the first one linearly, no other use was made of the problem variable, and the second defined variable was used nonlinearly, then derivatives with respect to the problem variable were not computed. Example:  
-          set I = 1..3; var x{i in I} := i;  
-          var v1 = x\[1\] + x\[2\]^2<;  
-          var v2 = v1 + x\[3\]^3;  
-          minimize obj: v2^2;  
-Derivatives with respect to x\[2\] were not computed because of an error in the .nl file.
+Fix a bug with defined variables: if a defined variable used a problem variable nonlinearly, another defined variable used the first one linearly, no other use was made of the problem variable, and the second defined variable was used nonlinearly, then derivatives with respect to the problem variable were not computed. Example: 
+```ampl
+set I = 1..3; var x{i in I} := i;  
+var v1 = x[1] + x[2]^2;  
+var v2 = v1 + x[3]^3;
+minimize obj: v2^2;
+```
+Derivatives with respect to `x[2]` were not computed because of an error in the .nl file.
 
 ## 20220703
 
-Fix a glitch introduced in version 20220505: in data sections, an unquoted "-" in the subscript of a subscripted set gave an error message. Example:  
-          set S; set T{S}; data;  
-          set S := 2022-06-26\_03;  
-          set T\[2022-06-26\_03\] := a b c;  
-          display T;  
+Fix a glitch introduced in version 20220505: in data sections, an unquoted "-" in the subscript of a subscripted set gave an error message. Example: 
+```ampl
+set S; set T{S}; data;  
+set S := 2022-06-26_03;  
+set T[2022-06-26_03] := a b c;  
+display T;
+```
 Changing the third line to  
-          set T\['2022-06-26\_03'\] := a b c;  
+```ampl
+set T['2022-06-26_03'] := a b c;
+```
 was a work-around.
 
 ## 20220621
@@ -49,140 +127,172 @@ Increase the longest line that can be recalled correctly with history and the up
 
 In data sections, when x is a variable, treat x.val as x when x does not yet have a current value, and similarly for c and c.dual when c is a constraint.  
   
-In the little example  
-          var x; data; var x.dual := 3;  
-change the error message from "dual is not a suffix" to "dual is not an assignable suffix." (When x is a defined variable, declared with "var x = expression;", x.dual is the value of the dual variable for the implied constraint "x = expression". Defined variables are substituted out of the problem, so the solver does not see them, but sometimes it is desirable to see dual variable values for them.)
+In the little example 
+```ampl 
+var x; data; var x.dual := 3;  
+```
+change the error message from "dual is not a suffix" to "dual is not an assignable suffix." (When x is a defined variable, declared with "`var x = expression;`", x.dual is the value of the dual variable for the implied constraint "x = expression". Defined variables are substituted out of the problem, so the solver does not see them, but sometimes it is desirable to see dual variable values for them.)
 
 ## 20220505
 
-Fix a bug in the "show" command, which did not print default (dual) values for constraints. Example:  
-          var x; s.t. cx default 1: x <= 4;  
-          show cx;  
-Allow suffixes (on variables, constraints, objectives, problems) to appear in data sections. As usual for data sections, the name of a constraint, objective, or problem can be introduced with "param" or "var". For example,  
-          var x;  
-          minimize o: (x-3)^2;  
-          suffix foo;  
-          data;  
-          var o.foo 3.2; # or "var o := 3.2"; the ":=" is optional here.  
-          # or "param o.foo 3.2", etc.  
+Fix a bug in the "`show`" command, which did not print default (dual) values for constraints. Example:
+```ampl  
+var x; s.t. cx default 1: x <= 4;  
+show cx;
+```
+Allow suffixes (on variables, constraints, objectives, problems) to appear in data sections. As usual for data sections, the name of a constraint, objective, or problem can be introduced with "param" or "var". For example,
+```ampl
+var x;  
+minimize o: (x-3)^2;  
+suffix foo;  
+data;  
+var o.foo 3.2; # or "var o := 3.2"; the ":=" is optional here.  
+# or "param o.foo 3.2", etc.  
+```
 This is meant to make "snapshots" more efficient; there is no checking whether suffix values are replaced.  
   
-When "option show\_write\_files 2" is specified and no variables remain used after presolve, print "# No .nl file written: no variables used."  
-  
-Quietly reduce absurdly large precisions in printf formats. For example, "%.410g" faulted. Now it works and "%.500g" is quietly reduced to "%.415g".
+When `"option show_write_files 2"` is specified and no variables remain used after presolve, print "# No .nl file written: no variables used."  
+
+Quietly reduce absurdly large precisions in printf formats. For example, `"%.410g"` faulted. Now it works and `"%.500g"` is quietly reduced to `"%.415g"`.
 
 ## 20220323
 
-Make option bad\_subscripts apply in more cases. For example,  
-          set S; var x{S}; data; set S := a b;  
-          var x := b 2.1 a 1.1 c 3.1; display x;  
+Make option `bad_subscripts` apply in more cases. For example,
+```ampl
+set S; var x{S}; data; set S := a b;  
+var x := b 2.1 a 1.1 c 3.1; display x;
+```
 now gives  
-          Error executing "display" command:  
-          error processing var x:  
-                    invalid subscript x\['c'\] discarded.  
-          x \[\*\] :=  
-          a 1.1  
-          b 2.1  
-          ;  
-Inserting "option bad\_subscripts 0;" before the display command suppresses the error message. The default $bad\_subscripts is still 3.  
+```text
+Error executing "display" command:  
+error processing var x:  
+          invalid subscript x['c'] discarded.  
+x [*] :=  
+a 1.1  
+b 2.1  
+;
+```
+Inserting `"option bad_subscripts 0;"` before the display command suppresses the error message. The default `$bad_subscripts` is still 3.  
   
 Fix a bug in displaying several items indexed over a cross-product of sets, some ordered, some not. A fault was sometimes possible. Example:  
-          set A ordered; set B;  
-          param x{A, B};  
-          param y{A, A};  
-          data; set A := 1; set B := 0;  
-          param x 1 0 1.1; param y 1 1 2.2;  
-          display x, y; # The 64-bit binaries faulted; 32-bit did not,  
-          # nor did "display y, x;".  
+```ampl
+set A ordered; set B;  
+param x{A, B};  
+param y{A, A};  
+data; set A := 1; set B := 0;  
+param x 1 0 1.1; param y 1 1 2.2;  
+display x, y; # The 64-bit binaries faulted; 32-bit did not,  
+# nor did "display y, x;".
+```
 
 ## 20220310
 
-Fix more error-message bugs. If foo1 said "include foo2" and foo2 said "model diet.mod data diet.dat" and the current directory contained diet.mod but not diet.dat, then invoking ampl and typing "include foo1" gave a fault. After changing foo2 by moving "data diet.dat" to a second line, invoking ampl and typing "include foo1" gave  
-     foo2, line 2 (offset 159431244):  
-          Can't find file "diet.dat"  
-     context: data >>> diet.dat <<< ;  
+Fix more error-message bugs. If foo1 said "`include foo2`" and foo2 said "`model diet.mod data diet.dat`" and the current directory contained diet.mod but not diet.dat, then invoking ampl and typing "`include foo1`" gave a fault. After changing foo2 by moving "`data diet.dat`" to a second line, invoking ampl and typing "`include foo1`" gave
+```text
+foo2, line 2 (offset 159431244):  
+     Can't find file "diet.dat"  
+context: data >>> diet.dat <<< ;  
        
-     include stack...  
-          -, line 1 includes  
-          foo1, line 1 includes  
-          foo2  
+include stack...  
+     -, line 1 includes  
+     foo1, line 1 includes  
+     foo2  
+```
 with an erroneous offset.
+
 
 ## 20220224
 
-Fix an off-by-one error in line numbers on some error messages. For example, if "foo1" said "include foo2", foo2 said "model diet.mod" and the current directory did not have a file named diet.mod, then invoking ampl and typing "include foo1" gave  
-     foo2, line 1 (offset 6):  
-          Can't find file "diet.mod"  
-     context: model >>> diet.mod <<<  
+Fix an off-by-one error in line numbers on some error messages. For example, if "foo1" said "`include foo2`", foo2 said "`model diet.mod`" and the current directory did not have a file named diet.mod, then invoking ampl and typing "`include foo1`" gave
+```text
+foo2, line 1 (offset 6):  
+     Can't find file "diet.mod"  
+context: model >>> diet.mod <<<  
+
+include stack...  
+    -, line 0 includes  
+      foo1, line 0 includes  
+      foo2
+```
+rather than
+```text
+foo2, line 1 (offset 6):  
+     Can't find file "diet.mod"  
+context: model >>> diet.mod <<<  
   
-     include stack...  
-          -, line 0 includes  
-          foo1, line 0 includes  
-          foo2  
-rather than  
-     foo2, line 1 (offset 6):  
-          Can't find file "diet.mod"  
-     context: model >>> diet.mod <<<  
-  
-     include stack...  
-          -, line 1 includes  
-          foo1, line 1 includes  
-          foo2  
+include stack...  
+     -, line 1 includes  
+     foo1, line 1 includes  
+     foo2
+```  
 
 ## 20220219
 
-Fix a bug with "data filename;" in a compound statement. If a second such statement appeared in the compound statement with the same filename after the file was recreated after the first "data filename;", wrong data was read unless an explicit "close filename;" appeared before the file was recreated. Example (under Linux):  
-     set A;  
-     if (1 < 2) then {  
-          shell 'echo "set A := a b c;"' >foo;  
-          data foo  
-     #     close foo;     # uncomment to bypass bug  
-          display A;  
-          shell 'echo "set A := x y z;"' >foo;  
-          update data A;  
-          data foo  
-          display A;  
-          }  
-For MS Windows, it is necessary to omit the double quotes in the shell commands and to add "close foo;" immediately after them. Then the example runs correctly.  
-Fix an obscure fault with an input file without a final newline that is directly accessed by "include" at the command prompt. For example, if file foo contains just "param/" without a newline character, then "ampl foo" correctly said  
-     foo, line 1 (offset 5):  
-          unexpected end of file  
-     context: >>> / <<<  
-but (in an interactive AMPL session)  
-     ampl: include foo  
+Fix a bug with "`data filename;`" in a compound statement. If a second such statement appeared in the compound statement with the same filename after the file was recreated after the first "`data filename;`", wrong data was read unless an explicit "`close filename;`" appeared before the file was recreated. Example (under Linux):
+```ampl
+set A;  
+if (1 < 2) then {  
+     shell 'echo "set A := a b c;"' >foo;  
+     data foo  
+     # close foo; # uncomment to bypass bug  
+     display A;  
+     shell 'echo "set A := x y z;"' >foo;  
+     update data A;  
+     data foo  
+     display A;  
+     }
+```
+For MS Windows, it is necessary to omit the double quotes in the shell commands and to add "`close foo;`" immediately after them. Then the example runs correctly.  
+Fix an obscure fault with an input file without a final newline that is directly accessed by "include" at the command prompt. For example, if file foo contains just "param/" without a newline character, then "ampl foo" correctly said
+```text
+foo, line 1 (offset 5):  
+     unexpected end of file  
+context: >>> / <<<
+```
+but (in an interactive AMPL session)
+```ampl
+ampl: include foo
+```
 faulted.  
 
 ## 20220119
 
 Restore some error-handling behavior prior to 20220110. The changes of 20220110 sometimes resulted in several error messages per statement.  
-Fix a parsing bug in error handling (infinite loop, introduced 20220110) seen with  
-     set A dimen 2; data; set A := (1,a) (2,b);  
-     for{i in 1..2}  
-          for{j in {'a','b'}}  
-               print {k in U\[j\]} i,j,k; # U was not declared  
+Fix a parsing bug in error handling (infinite loop, introduced 20220110) seen with
+```ampl
+set A dimen 2; data; set A := (1,a) (2,b);  
+for{i in 1..2}  
+    for{j in {'a','b'}}  
+        print {k in U[j]} i,j,k; # U was not declared
+```
 
 ## 20220110
 
-Fix a rarely seen bug with deducing bounds on variables, illustrated by  
-     var x >= 0; display x.ub; # correctly showed x.ub = Infinity  
-     var y = max{i in {0}} x;# logically the same as "var y = x;"  
-     display x.ub;# incorrectly showed x.ub = 0  
-Specifying "option presolve 0;" bypassed the bug. Fix a bug with handling certain errors. Example:  
-     ampl: param p {i in 1..10} := j;  
+Fix a rarely seen bug with deducing bounds on variables, illustrated by
+```ampl
+var x >= 0; display x.ub; # correctly showed x.ub = Infinity  
+var y = max{i in {0}} x;# logically the same as "var y = x;"  
+display x.ub;# incorrectly showed x.ub = 0
+```
+Specifying `"option presolve 0;"` bypassed the bug. Fix a bug with handling certain errors. Example:
+```ampl
+ampl: param p {i in 1..10} := j;  
    
-     j is not defined  
-     context: param p {i in 1..10} := >>> j; <<<  
-     ampl: redeclare param p {i in 1..10} := i;  
-   
-     Ignoring redeclaration of p:  
-         system parameters may not be redeclared.  
-     context: redeclare param p {i in 1..10} := >>> i; <<<  
-     ampl: display p;  
-     Segmentation fault (core dumped)  
-Fix a bug with redeclare:  
-     set X; data; set X := 1;  
-     redeclare set X ordered;  
-     update data X; data; set X := 1 2; # faulted  
+j is not defined  
+context: param p {i in 1..10} := >>> j; <<<  
+ampl: redeclare param p {i in 1..10} := i;  
+Ignoring redeclaration of p:  
+    system parameters may not be redeclared.  
+context: redeclare param p {i in 1..10} := >>> i; <<<  
+ampl: display p;  
+Segmentation fault (core dumped)  
+```
+Fix a bug with redeclare:
+```ampl
+set X; data; set X := 1;  
+redeclare set X ordered;  
+update data X; data; set X := 1 2; # faulted
+```
 
 ## 20211222
 
