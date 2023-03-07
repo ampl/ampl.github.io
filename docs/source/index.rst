@@ -43,4 +43,8 @@ AMPL has :ref:`APIs <apis>` for several popular programming languages (e.g., :re
     faq
     projects
 
+.. toctree::
+    :hidden:
+
+    releases/index
 

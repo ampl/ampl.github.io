@@ -1124,7 +1124,9 @@ Fix a bug with models having both "var in set" declarations and logical constrai
      var x{1..2} integer in {11, 22};  
      s.t. c: alldiff{i in 1..2} x\[i\]; solexpand; #fault
 
-## 20160609, 20160614
+## 20160614
+
+## 20160609
 
 Fix a rarely seen bug in which the right-hand side of a "let" command involved a defined variable whose value was miscomputed.
 

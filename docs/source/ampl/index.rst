@@ -15,5 +15,4 @@ AMPL Resoures
     options
     python/index
     docker/index
-    changes
 
