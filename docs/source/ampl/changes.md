@@ -1,5 +1,20 @@
 # AMPL Changelog
 
+## 20230124
+
+  Show error context in blockmode (invocations of "ampl -b ...").
+
+## 20221013
+
+  Fix a bug, introduced in version 20220505, in handling data sections.
+Example:
+	set A := 1..2; param p{A}; param q{A};
+	data;
+	param: p q :=
+	[*] 1 2.5 3	# erroneously complained about "."
+	    2 4 5.6;
+	display p, q;
+
 ## 20220812
 
 Fix a bug in the changes of 20220730 that caused a fault with some uses of defined variables -- only when the changes of 20220730 were relevant.
