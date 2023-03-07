@@ -1,5 +1,6 @@
 import subprocess
 import os
+import re
 
 SOLVERS = {
     "BARON": "baron",
@@ -37,6 +38,7 @@ for label, solver in SOLVERS.items():
         else:
             content = content[content.find("==") :]
             content = content[content.find("\n") + 1 :]
+        content = re.sub(r"###+ (\d+)", r"## \g<1>", content)
         content = f"# {label} Changelog" + content
         dst = f"source/solvers/{solver}/changes.md"
         if solver.endswith("asl"):

@@ -55,9 +55,9 @@
     default value of big-M
 
 
-### 20220603
+## 20220603
 - Fixed an issue with passing/retrieving basis information
 
 
-### 20220524
+## 20220524
 - First release of HiGHS for AMPL
