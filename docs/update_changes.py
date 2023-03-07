@@ -122,6 +122,8 @@ ampl.md
 
 for date in sorted(released_on, reverse=True):
     print(f"## {date}", file=changes)
-    for item in released_on[date]:
+    if len(released_on[date]) != len(set(released_on[date])):
+        print(date, released_on[date])
+    for item in sorted(set(released_on[date])):
         label, fname = releases[item]["label"], releases[item]["file"]
         print(f"- [{label}](../{fname}#{date})", file=changes)
