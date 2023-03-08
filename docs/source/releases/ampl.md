@@ -2498,3 +2498,10 @@ Add warning that variables in subscripts are not yet allowed.
 ## 20110112
 
 Fix a rarely seen bug (fault) that bit under the "right" conditions when making adjustments for new suffixes.
+
+# Older changes
+
+Two logs of changes and fixes are available from the [AMPL netlib directory](http://www.ampl.com/netlib/ampl/index.html):
+
+-   **[Changes and recent bug fixes](http://www.ampl.com/netlib/ampl/changes):** A summary of all changes and extensions to AMPL since publication of the AMPL book, plus the last several months’ bug fixes.
+-   **[Complete changes and bug fixes](http://www.ampl.com/netlib/ampl/fixlog):** A listing of all changes and bug fixes since 30 November 1992.
