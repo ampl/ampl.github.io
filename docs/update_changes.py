@@ -96,17 +96,20 @@ print(
     """
 # Release History
 
-- [AMPL Changelog](ampl.md)""",
+""",
     file=changes,
 )
 
 changelogs = {
-    releases[item]["label"]: releases[item]["file"]
-    for item in releases
-    if item != "ampl"
+    (releases[item]["label"], item): releases[item]["file"] for item in releases
 }
-for label in sorted(changelogs):
-    print(f"- [{label} Changelog](../{changelogs[label]})", file=changes)
+for label, item in sorted(changelogs):
+    latest = max(releases[item]["versions"])
+    fname = changelogs[label, item]
+    print(
+        f"- [**{label}** Changelog (latest: **{latest}**)](../{fname})",
+        file=changes,
+    )
 
 print(
     """

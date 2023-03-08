@@ -1,23 +1,24 @@
 
 # Release History
 
-- [AMPL Changelog](ampl.md)
-- [BARON Changelog](../solvers/baron/changes.md)
-- [CBC Changelog](../solvers/cbc/changes.md)
-- [CONOPT Changelog](../solvers/conopt/changes.md)
-- [COPT Changelog](../solvers/copt/changes.md)
-- [CPLEX Changelog](../solvers/cplex/changes.md)
-- [GUROBI Changelog](../solvers/gurobi/changes.md)
-- [GUROBIASL Changelog](../solvers/gurobi/changesasl.md)
-- [HiGHS Changelog](../solvers/highs/changes.md)
-- [ILOGCP Changelog](../solvers/ilogcp/changes.md)
-- [KNITRO Changelog](../solvers/knitro/changes.md)
-- [LOQO Changelog](../solvers/loqo/changes.md)
-- [Lindo Global Changelog](../solvers/lindoglobal/changes.md)
-- [MINOS Changelog](../solvers/minos/changes.md)
-- [SNOPT Changelog](../solvers/snopt/changes.md)
-- [XPRESS Changelog](../solvers/xpress/changes.md)
-- [XPRESSASL Changelog](../solvers/xpress/changesasl.md)
+
+- [**AMPL** Changelog (latest: **20230124**)](../releases/ampl.md)
+- [**BARON** Changelog (latest: **20220118**)](../solvers/baron/changes.md)
+- [**CBC** Changelog (latest: **20230207**)](../solvers/cbc/changes.md)
+- [**CONOPT** Changelog (latest: **20211109**)](../solvers/conopt/changes.md)
+- [**COPT** Changelog (latest: **20230207**)](../solvers/copt/changes.md)
+- [**CPLEX** Changelog (latest: **20230228**)](../solvers/cplex/changes.md)
+- [**GUROBI** Changelog (latest: **20230207**)](../solvers/gurobi/changes.md)
+- [**GUROBIASL** Changelog (latest: **20221113**)](../solvers/gurobi/changesasl.md)
+- [**HiGHS** Changelog (latest: **20230227**)](../solvers/highs/changes.md)
+- [**ILOGCP** Changelog (latest: **20230228**)](../solvers/ilogcp/changes.md)
+- [**KNITRO** Changelog (latest: **20221213**)](../solvers/knitro/changes.md)
+- [**LOQO** Changelog (latest: **20210410**)](../solvers/loqo/changes.md)
+- [**Lindo Global** Changelog (latest: **20210406**)](../solvers/lindoglobal/changes.md)
+- [**MINOS** Changelog (latest: **20211109**)](../solvers/minos/changes.md)
+- [**SNOPT** Changelog (latest: **20211109**)](../solvers/snopt/changes.md)
+- [**XPRESS** Changelog (latest: **20230227**)](../solvers/xpress/changes.md)
+- [**XPRESSASL** Changelog (latest: **20220112**)](../solvers/xpress/changesasl.md)
 
 ```{toctree}
 :hidden:
