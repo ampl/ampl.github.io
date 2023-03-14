@@ -10,7 +10,7 @@ $ python -m pip install amplpy --upgrade
 $ python -m amplpy.modules install highs gurobi 
 
 # Activate your license (e.g., free https://ampl.com/ce license):
-$ python -m amplpy.modules activate --uuid <license-uuid>
+$ python -m amplpy.modules activate <license-uuid>
 
 # Import, load, and instantiate in Python:
 $ python
