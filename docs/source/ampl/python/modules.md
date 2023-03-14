@@ -3,16 +3,16 @@
 AMPL and all Solvers are now available as Python Packages:
 
 ```bash
-# Install Python API for AMPL:
+# Install Python API for AMPL
 $ python -m pip install amplpy --upgrade
 
 # Install solvers (e.g., HiGHS and Gurobi)
 $ python -m amplpy.modules install highs gurobi 
 
-# Activate your license (e.g., free https://ampl.com/ce license):
+# Activate your license (e.g., free https://ampl.com/ce license)
 $ python -m amplpy.modules activate <license-uuid>
 
-# Import, load, and instantiate in Python:
+# Import in Python
 $ python
 >>> from amplpy import AMPL
 >>> ampl = AMPL() # instantiate AMPL object
