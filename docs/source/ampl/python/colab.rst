@@ -9,16 +9,18 @@ at the beginning of your notebook:
 
 .. code-block:: bash
 
-   # Install dependencies
-   !pip install -q amplpy
+    # Install dependencies
+    !pip install -q amplpy
 
 
 .. code-block:: python
 
-   # Google Colab & Kaggle integration
-   MODULES, LICENSE_UUID = ["coin", "highs", "gokestrel"], None
-   from amplpy import tools
-   ampl = tools.ampl_notebook(modules=MODULES, license_uuid=LICENSE_UUID, g=globals()) # instantiate AMPL object and register magics
+    # Google Colab & Kaggle integration
+    from amplpy import AMPL, tools
+    ampl = tools.ampl_notebook(
+        modules=["coin", "highs", "gokestrel"], # modules to install
+        license_uuid="default", # license to use
+        g=globals()) # instantiate AMPL object and register magics
 
 In the list ``MODULES`` you can specify the AMPL solvers you want to use in your notebook.
 Full list of AMPL modules available: ``amplgsl``, ``baron``, ``cbc``, ``coin``, ``conopt``, ``copt``, ``cplex``, ``gokestrel``, ``gurobi``, ``highs``, ``knitro``, ``lgo``, ``lindoglobal``, ``loqo``, ``minos``, ``octeract``, ``open``, ``plugins``, ``snopt``, ``xpress``.

@@ -13,8 +13,7 @@ amplpy # Python API for AMPL
 
 and load them in [streamlit_app.py](https://github.com/fdabrandao/streamlit-nqueens/blob/master/streamlit_app.py):
 ```python
-from amplpy import AMPL, modules
-modules.load()
+from amplpy import AMPL
 ampl = AMPL()
 ```
 
