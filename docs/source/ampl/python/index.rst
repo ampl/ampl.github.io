@@ -9,6 +9,9 @@ AMPL integration with Python
   :target: https://ampl.com/python
   :alt: AMPL' All-New Python ecosystem
 
+:ref:`AMPL and all solvers are now available as python packages <amplpy.modules>` for Windows, Linux, and macOS. For instance, to install AMPL with HiGHS, CBC and Gurobi,
+you just need the following:
+
 .. code-block:: bash
 
     # Install Python API for AMPL

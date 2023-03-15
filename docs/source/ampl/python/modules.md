@@ -1,3 +1,4 @@
+(amplpy.modules)=
 # AMPL Modules for Python
 
 AMPL and all Solvers are now available as Python Packages:
