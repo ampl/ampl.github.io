@@ -9,14 +9,23 @@ AMPL integration with Python
   :target: https://ampl.com/python
   :alt: AMPL' All-New Python ecosystem
 
-- Python API:
+.. code-block:: bash
 
-    .. code-block:: bash
+    # Install Python API for AMPL
+    $ python -m pip install amplpy --upgrade
 
-        $ python -m pip install amplpy
+    # Install solver modules (e.g., HiGHS, CBC, Gurobi)
+    $ python -m amplpy.modules install highs cbc gurobi
 
-- Documentation: http://amplpy.readthedocs.org/
-- GitHub: https://github.com/ampl/amplpy
+    # Activate your license (e.g., free https://ampl.com/ce license)
+    $ python -m amplpy.modules activate <license-uuid>
+
+    # Import in Python
+    $ python
+    >>> from amplpy import AMPL
+    >>> ampl = AMPL() # instantiate AMPL object
+
+[`Python API <http://amplpy.readthedocs.io>`_] [`Available on Google Colab <http://colab.ampl.com>`_] [`GitHub <https://github.com/ampl/amplpy>`_] [`AMPL Community Edition <https://ampl.com/ce>`_]
 
 .. toctree::
     :maxdepth: 2
