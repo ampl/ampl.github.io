@@ -106,3 +106,9 @@ The outcome of the last optimization is stored in the AMPL parameter `solve_resu
 ```ampl
 display solve_result_num, solve_result;
 ```
+
+## Changelog
+
+```{toctree}
+changes.md
+```

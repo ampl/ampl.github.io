@@ -1,5 +1,8 @@
 # GUROBIASL Changelog
 
+## 20230310
+- Adjusted to account for the fact that suf_sos() may change
+  the number of range constraints
 
 ## 20221113
 - Relinked with Gurobi 10.0.0
@@ -21,7 +24,7 @@
 ## 20220124
 - Fix for *poolignore* not being considered for certain combinations of the parameter *ams_mode*
 
-## 20220104
+## 20220124
 - Minor changes to *-=* output
 - New suffixes *sensrhshi2* and *sensrhslo2* to capture solution sensitivity information for range constraints
 - Improved basis handling in multiple solves 
@@ -29,11 +32,9 @@
 
 ## 20211209
 - Update to Gurobi 9.5.
-  - New keywords: *presos1enc*, *presos2enc*, *nlpheur*, *worklimit*, *memlimit*, *liftprojectcuts*, 
-    *lpwarmstart* 
-  - New input suffixes on variables: *poolignore*, *iisforce*
-  - New input suffixes on constraints: *iisforce*
-  - New output suffixes on problem: *concurrentwinmethod*, *maxvio*, *work*, enabled by corresponding keywords
+  - New keywords: *cloudhost*, *presos1enc*, *presos2enc*, *nlpheur*, *worklimit*, *memlimit*, *liftprojectcuts*, *lpwarmstart*
+  - New input suffixes: *poolignore*, *iisforce*, *iisforcelb*, *iisforceub*, *iisforce*
+  - New output suffixes on problem: *concurrentwinmethod*, *maxvio*, *work*, *sensrhshi2*, *sensrhslo2*
 
 ## 20211001
 - A bug that caused an incoming basis to be ignored when no constraints were in the basis.

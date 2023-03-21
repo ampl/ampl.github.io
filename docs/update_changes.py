@@ -21,6 +21,7 @@ SOLVERS = {
     "XPRESSASL": "xpressasl",
     "HiGHS": "highs",
     "CBC": "cbc",
+    "MOSEK": "mosek",
 }
 
 releases = {}

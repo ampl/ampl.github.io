@@ -1,5 +1,11 @@
 # BARON Changelog
-All notable changes to this project will be documented in this file.
+
+## 20230321
+- Updated to baron version 20230311; In addition to bug fixes, 
+  this version comes with significant improvements in BARON's CPLEX, 
+  CBC and IPOPT interfaces, better treatment of convex and quadratic 
+  problems, improved cutting, reduction and branching strategies, 
+  and much improved continuous and integer presolve algorithms.
 
 ## 20220118
 - Update to find xpress version 39.01.02

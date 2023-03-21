@@ -1,21 +1,22 @@
-(releases)=
+
 # Release History
 
 
 - [**AMPL** Changelog (latest: **20230124**)](../releases/ampl.md)
-- [**BARON** Changelog (latest: **20220118**)](../solvers/baron/changes.md)
+- [**BARON** Changelog (latest: **20230321**)](../solvers/baron/changes.md)
 - [**CBC** Changelog (latest: **20230207**)](../solvers/cbc/changes.md)
 - [**CONOPT** Changelog (latest: **20211109**)](../solvers/conopt/changes.md)
 - [**COPT** Changelog (latest: **20230207**)](../solvers/copt/changes.md)
 - [**CPLEX** Changelog (latest: **20230228**)](../solvers/cplex/changes.md)
-- [**GUROBI** Changelog (latest: **20230207**)](../solvers/gurobi/changes.md)
-- [**GUROBIASL** Changelog (latest: **20221113**)](../solvers/gurobi/changesasl.md)
+- [**GUROBI** Changelog (latest: **20230321**)](../solvers/gurobi/changes.md)
+- [**GUROBIASL** Changelog (latest: **20230310**)](../solvers/gurobi/changesasl.md)
 - [**HiGHS** Changelog (latest: **20230227**)](../solvers/highs/changes.md)
 - [**ILOGCP** Changelog (latest: **20230228**)](../solvers/ilogcp/changes.md)
 - [**KNITRO** Changelog (latest: **20221213**)](../solvers/knitro/changes.md)
 - [**LOQO** Changelog (latest: **20210410**)](../solvers/loqo/changes.md)
 - [**Lindo Global** Changelog (latest: **20210406**)](../solvers/lindoglobal/changes.md)
 - [**MINOS** Changelog (latest: **20211109**)](../solvers/minos/changes.md)
+- [**MOSEK** Changelog (latest: **20230321**)](../solvers/mosek/changes.md)
 - [**SNOPT** Changelog (latest: **20211109**)](../solvers/snopt/changes.md)
 - [**XPRESS** Changelog (latest: **20230227**)](../solvers/xpress/changes.md)
 - [**XPRESSASL** Changelog (latest: **20220112**)](../solvers/xpress/changesasl.md)
@@ -27,6 +28,12 @@ ampl.md
 ```
 
 
+## 20230321
+- [BARON](../solvers/baron/changes.md#20230321)
+- [GUROBI](../solvers/gurobi/changes.md#20230321)
+- [MOSEK](../solvers/mosek/changes.md#20230321)
+## 20230310
+- [GUROBIASL](../solvers/gurobi/changesasl.md#20230310)
 ## 20230228
 - [CPLEX](../solvers/cplex/changes.md#20230228)
 - [ILOGCP](../solvers/ilogcp/changes.md#20230228)
@@ -131,6 +138,8 @@ ampl.md
 - [AMPL](../releases/ampl.md#20220505)
 ## 20220423
 - [GUROBIASL](../solvers/gurobi/changesasl.md#20220423)
+## 20220420
+- [MOSEK](../solvers/mosek/changes.md#20220420)
 ## 20220411
 - [COPT](../solvers/copt/changes.md#20220411)
 ## 20220408
@@ -171,7 +180,6 @@ ampl.md
 ## 20220105
 - [BARON](../solvers/baron/changes.md#20220105)
 ## 20220104
-- [GUROBIASL](../solvers/gurobi/changesasl.md#20220104)
 - [KNITRO](../solvers/knitro/changes.md#20220104)
 ## 20211222
 - [AMPL](../releases/ampl.md#20211222)

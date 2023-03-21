@@ -426,7 +426,7 @@ multprice_norm   Choice of norm used in multiple pricing:
                                 but sometimes a specific choice will perform
                                 much better than the automatic choice.
 
-networkalg       Contrrols whether to use network simplex, if an LP is a
+networkalg       Controls whether to use network simplex, if an LP is a
                  network problem:
                         -1 = automatic choice (default)
                          0 = do not use network simplex
@@ -778,8 +778,9 @@ siftmethod       Algorithm to use for sifting with the dual simplex method:
 
 simplex          Synonym for method.
 
-softmemlimit     Maximum amount of memory available to Gurobi (in GB, default
-                 no limit). The solution will be returned if more memory is needed.
+softmemlimit     Maximum amount of memory available to Gurobi (in GB; default
+                 = no limit). The solution is returned even if more memory
+                 could be used.
 
 solnlimit        maximum MIP solutions to find (default 2e9)
 

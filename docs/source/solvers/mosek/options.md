@@ -1,5 +1,5 @@
 
-# Mosek Options
+# MOSEK Options
 
 ```ampl
 ampl: option solver mosek; # change the solver
@@ -22,6 +22,13 @@ option "mosek_options". For example:
 
 acc:linrange (acc:linrng)
       Solver acceptance level for 'LinConRange', default 2:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+acc:quadcone
+      Solver acceptance level for 'QuadraticConeConstraint', default 2:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
@@ -50,6 +57,13 @@ acc:quadle
 
 acc:quadrange (acc:quadrng)
       Solver acceptance level for 'QuadConRange', default 2:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+acc:rotatedquadcone
+      Solver acceptance level for 'RotatedQuadraticConeConstraint', default 2:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
@@ -153,6 +167,9 @@ cvt:quadcon (passquadcon)
 cvt:quadobj (passquadobj)
       0/1*: Multiply out and pass quadratic objective terms to the solver, vs.
       linear approximation.
+
+cvt:socp (passsocp, socp)
+      0/1*: Recognize quadratic cones.
 
 cvt:sos (sos)
       0/1*: Whether to honor declared suffixes .sosno and .ref describing SOS
@@ -280,7 +297,6 @@ tech:wantsol (wantsol)
 
 tech:writegraph (writegraph, exportgraph)
       File to export conversion graph. Format: JSON Lines.
-
 
 ```
 
