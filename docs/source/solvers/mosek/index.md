@@ -1,6 +1,6 @@
 # Mosek
 
-Mosek is a versatile linear, quadratic, quadratically constrained and semidefinite optimizer that supports continuous and discrete variables. 
+Mosek is a versatile linear, quadratic, quadratically constrained and conic optimizer that supports continuous and discrete variables.
 
 [[Read More](https://ampl.com/products/solvers/solvers-we-sell/mosek/)]
 [[Options](options.md)]
@@ -27,7 +27,7 @@ ampl: solve; # solve the problem
 * Problem types: 
 
   * LP, QP, QCP
-  * MIP, MIQP, MIQCP
+  * MIP, MIQP, MIQCP, (MI)SOCP
 
 * Features for all models:
     * Problem input
