@@ -169,7 +169,8 @@ cvt:quadobj (passquadobj)
       linear approximation.
 
 cvt:socp (passsocp, socp)
-      0/1*: Recognize quadratic cones.
+      0/1*: Recognize quadratic cones vs passing them as pure quadratic
+      constraints.
 
 cvt:sos (sos)
       0/1*: Whether to honor declared suffixes .sosno and .ref describing SOS

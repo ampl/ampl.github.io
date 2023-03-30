@@ -1,6 +1,10 @@
 # GUROBI Changelog
 
 
+## 20230330
+- Fixed the outlev option.
+
+
 ## 20230321
 - Recognition of second-order conic constraints
   from algebraic representations and conversion into
