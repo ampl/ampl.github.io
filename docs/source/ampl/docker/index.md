@@ -49,6 +49,10 @@ RUN groupadd --gid $USER_GID $USERNAME \
 USER ${USERNAME}
 ```
 
+```{note}
+ **Contact us at <support@ampl.com> for free deployment support.** You can also any questions you have on our [Discourse Forum](https://discuss.ampl.com).
+```
+
 ## Other Docker containers
 
 AMPL and solvers are also easy to use with Docke containers for languages other than Python.

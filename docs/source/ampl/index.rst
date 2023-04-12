@@ -15,4 +15,5 @@ AMPL Resoures
     options
     python/index
     docker/index
+    cicd/index
 
