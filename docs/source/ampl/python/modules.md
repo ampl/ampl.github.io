@@ -21,6 +21,18 @@ $ python
 
 [Python API (amplpy) Documentation](https://amplpy.readthedocs.io/)
 
+## Modules available
+
+List of modules available:
+
+- [Open-source solvers](https://ampl.com/products/solvers/open-source-solvers/): `highs`, `cbc`, `coin` (includes: CBC, Couenne, Ipopt, Bonmin), `open` (includes all open-source solvers)
+
+-  [NEOS Server](http://www.neos-server.org/): `gokestrel` ([kestrel client](https://dev.ampl.com/solvers/kestrel.html))
+
+-   Commercial solvers: [`baron`](https://ampl.com/products/solvers/solvers-we-sell/baron/), [`conopt`](https://ampl.com/products/solvers/solvers-we-sell/conopt/), [`copt`](https://ampl.com/products/solvers/solvers-we-sell/copt/), [`cplex`](https://ampl.com/products/solvers/solvers-we-sell/cplex/), [`gurobi`](https://ampl.com/products/solvers/solvers-we-sell/gurobi/), [`knitro`](https://ampl.com/products/solvers/solvers-we-sell/knitro/), [`lgo`](https://ampl.com/products/solvers/solvers-we-sell/lgo/), [`lindoglobal`](https://ampl.com/products/solvers/solvers-we-sell/lindoglobal/), [`loqo`](https://ampl.com/products/solvers/solvers-we-sell/loqo/), [`minos`](https://ampl.com/products/solvers/solvers-we-sell/minos/), [`mosek`](https://ampl.com/products/solvers/solvers-we-sell/mosek/), [`octeract`](https://ampl.com/products/solvers/solvers-we-sell/octeract/), [`snopt`](https://ampl.com/products/solvers/solvers-we-sell/snopt/), [`xpress`](https://ampl.com/products/solvers/solvers-we-sell/xpress/)
+
+-   AMPL Plugins: `amplgsl` ([amplgsl docs](https://amplgsl.readthedocs.io/)), `plugins` ([amplplugins docs](https://amplplugins.readthedocs.io/))
+
 ## Commands
 
 ### usage
