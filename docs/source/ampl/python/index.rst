@@ -34,6 +34,36 @@ you just need the following:
   You can use a free `Community Edition license <https://ampl.com/ce>`_, which allows **free
   and perpetual use of AMPL with Open-Source solvers**.
 
+.. code-block:: python
+
+    # Minimal example:
+    from amplpy import AMPL
+    import pandas as pd
+    ampl = AMPL()
+    ampl.eval(r"""
+        set A ordered;
+        param S{A, A};
+        param lb default 0;
+        param ub default 1;
+        var w{A} >= lb <= ub;
+        minimize portfolio_variance:
+            sum {i in A, j in A} w[i] * S[i, j] * w[j];
+        s.t. portfolio_weights:
+            sum {i in A} w[i] = 1;
+    """)
+    tickers, cov_matrix = # ... pre-process data in Python
+    ampl.set["A"] = tickers
+    ampl.param["S"] = pd.DataFrame(
+        cov_matrix, index=tickers, columns=tickers
+    ).unstack()
+    ampl.option["solver"] = "gurobi"
+    ampl.option["gurobi_options"] = "outlev=1"
+    ampl.solve()
+    assert ampl.get_value("solve_result") == "solved"
+    sigma = ampl.get_value("sqrt(sum {i in A, j in A} w[i] * S[i, j] * w[j])")
+    print(f"Volatility: {sigma*100:.1f}%")
+    # ... post-process solution in Python
+
 [`Python API <http://amplpy.readthedocs.io>`_] [`GitHub <https://github.com/ampl/amplpy>`_]
 
 On Google Colab
