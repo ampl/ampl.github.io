@@ -6,7 +6,7 @@ AMPL integration with Python
 
 .. image:: https://portal.ampl.com/dl/ads/python_ecosystem_horizontal.png
   :width: 100 %
-  :target: #
+  :target: https://amplopt.streamlit.app
   :alt: AMPL' All-New Python ecosystem
 
 [`Model Colaboratory <http://colab.ampl.com>`_] [`AMPL on Streamlit <http://ampl.com/streamlit>`_] [`AMPL Community Edition <https://ampl.com/ce>`_]
@@ -69,7 +69,7 @@ you just need the following:
 On Google Colab
 ~~~~~~~~~~~~~~~
 
-You can also install AMPL on `Google Colab <colab>`_ (`where it is free by default <https://colab.ampl.com/getting-started.html#ampl-is-free-on-colab>`_) as follows:
+You can also install AMPL on :ref:`Google Colab <colab>` (`where it is free by default <https://colab.ampl.com/getting-started.html#ampl-is-free-on-colab>`_) as follows:
 
 .. code-block:: bash
 

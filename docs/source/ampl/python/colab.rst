@@ -1,3 +1,5 @@
+.. _colab:
+
 AMPL on Google Colab 
 --------------------
 
