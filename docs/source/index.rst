@@ -4,12 +4,12 @@ AMPL Development
 AMPL is the most powerful and intuitive tool for developing and deploying complex optimization solutions in business & scientific applications.
 AMPL connects to most :ref:`commercial and open-source solvers <solvers>` and allows you to switch easily between them.
 
-AMPL has :ref:`APIs <apis>` for several popular programming languages (e.g., :ref:`Python <apis_python>`, :ref:`R <apis_r>`, etc.) which allow you to only model once in AMPL and interact with it using an API for a language you are familiar with.
+**AMPL is best used integrated with other languages** (specially `Python <https://amplpy.readthedocs.io/>`_ and :ref:`R <apis_r>`):
 
 |python| |rlang| |cpp| |csharp| |matlab| |java|
 
 .. |python| image:: https://portal.ampl.com/static/img/apis/PythonLogo.svg
-   :target: ampl/apis.html#python
+   :target: https://amplpy.readthedocs.io/
    :height: 50px
 .. |rlang| image:: https://portal.ampl.com/static/img/apis/RLogo.svg
    :target: ampl/apis.html#r
