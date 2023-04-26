@@ -1,5 +1,8 @@
 # BARON Changelog
 
+## 20230405
+- Fixed baron bundle packaging
+
 ## 20230321
 - Updated to baron version 20230311; In addition to bug fixes, 
   this version comes with significant improvements in BARON's CPLEX, 

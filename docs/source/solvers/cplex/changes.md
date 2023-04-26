@@ -9,7 +9,7 @@
 ## 20210614
 - Relink with ASL version 20210613 to fix a fault with indicator constraints.
 
-## 20210412
+## 20210726
 - Added options presos1reformulations, presos2reformulations and 
   prereformulations_desc that control various aspects of reformulations.
 - Renamed submipstart to submipstartalg

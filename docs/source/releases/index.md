@@ -1,14 +1,14 @@
-(releases)=
+
 # Release History
 
 
 - [**AMPL** Changelog (latest: **20230124**)](../releases/ampl.md)
-- [**BARON** Changelog (latest: **20230321**)](../solvers/baron/changes.md)
+- [**BARON** Changelog (latest: **20230405**)](../solvers/baron/changes.md)
 - [**CBC** Changelog (latest: **20230207**)](../solvers/cbc/changes.md)
 - [**CONOPT** Changelog (latest: **20211109**)](../solvers/conopt/changes.md)
 - [**COPT** Changelog (latest: **20230330**)](../solvers/copt/changes.md)
 - [**CPLEX** Changelog (latest: **20230228**)](../solvers/cplex/changes.md)
-- [**GUROBI** Changelog (latest: **20230330**)](../solvers/gurobi/changes.md)
+- [**GUROBI** Changelog (latest: **20230426**)](../solvers/gurobi/changes.md)
 - [**GUROBIASL** Changelog (latest: **20230310**)](../solvers/gurobi/changesasl.md)
 - [**HiGHS** Changelog (latest: **20230227**)](../solvers/highs/changes.md)
 - [**ILOGCP** Changelog (latest: **20230228**)](../solvers/ilogcp/changes.md)
@@ -28,6 +28,10 @@ ampl.md
 ```
 
 
+## 20230426
+- [GUROBI](../solvers/gurobi/changes.md#20230426)
+## 20230405
+- [BARON](../solvers/baron/changes.md#20230405)
 ## 20230330
 - [COPT](../solvers/copt/changes.md#20230330)
 - [GUROBI](../solvers/gurobi/changes.md#20230330)
@@ -210,6 +214,8 @@ ampl.md
 - [AMPL](../releases/ampl.md#20210810)
 ## 20210731
 - [AMPL](../releases/ampl.md#20210731)
+## 20210726
+- [CPLEX](../solvers/cplex/changes.md#20210726)
 ## 20210714
 - [AMPL](../releases/ampl.md#20210714)
 ## 20210705
@@ -232,8 +238,6 @@ ampl.md
 - [AMPL](../releases/ampl.md#20210505)
 ## 20210414
 - [AMPL](../releases/ampl.md#20210414)
-## 20210412
-- [CPLEX](../solvers/cplex/changes.md#20210412)
 ## 20210410
 - [CONOPT](../solvers/conopt/changes.md#20210410)
 - [KNITRO](../solvers/knitro/changes.md#20210410)

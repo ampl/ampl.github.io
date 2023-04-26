@@ -785,7 +785,7 @@ miprestart         MIP: control strategy for in-tree restarts:
                     2 = higher aggressiveness
 
 miprestartfactor   MIP: fine tune initial conditions to trigger an in-tree
-                   restart; values > 1 increase the aggsressiveness, < 1
+                   restart; values > 1 increase the aggressiveness, < 1
                    decrease it (default 1.0)
 
 miprestartgaptol   MIP: initial gap threshold to delay in-tree restart;
