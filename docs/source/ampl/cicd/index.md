@@ -23,7 +23,7 @@ export PATH=$PATH:$(python -m amplpy.modules path)
 Below we have examples for two popular CI/CD platforms: [GitHub Actions](https://github.com/features/actions) and [Azure Pipelines](https://azure.microsoft.com/en-us/products/devops/pipelines). The setup is very similar for others.
 
 ```{note}
- **Contact us at <support@ampl.com> for free support setting up AMPL in your CI/CD platform.** You can also any questions you have on our [Discourse Forum](https://discuss.ampl.com).
+ **Contact us at <support@ampl.com> for free support setting up AMPL in your CI/CD platform.** You can also ask any questions you may have on our [Support Forum](https://discuss.ampl.com).
 ```
 
 ## GitHub Actions

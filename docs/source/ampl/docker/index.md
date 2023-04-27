@@ -50,7 +50,7 @@ USER ${USERNAME}
 ```
 
 ```{note}
- **Contact us at <support@ampl.com> for free deployment support.** You can also any questions you have on our [Discourse Forum](https://discuss.ampl.com).
+ **Contact us at <support@ampl.com> for free deployment support.** You can also ask any questions you may have on our [Support Forum](https://discuss.ampl.com).
 ```
 
 ## Other Docker containers

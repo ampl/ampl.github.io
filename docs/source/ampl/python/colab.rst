@@ -64,7 +64,7 @@ Full list of AMPL modules available: ``amplgsl``, ``baron``, ``cbc``, ``coin``, 
             :target: https://studiolab.sagemaker.aws/import/github/ampl/amplcolab/blob/master/authors/fdabrandao/chatgpt/christmas.ipynb
             :alt: Open In SageMaker Studio Lab
 
-        | BTW: you can even ask `ChatGPT <https://chat.openai.com/>`_ to write models for you! If it makes mistakes you can ask for help in our new `Discourse Forum <https://discuss.ampl.com>`_!
+        | BTW: you can even ask `ChatGPT <https://chat.openai.com/>`_ to write models for you! If it makes mistakes you can ask for help in our new `Support Forum <https://discuss.ampl.com>`_!
 
     .. grid-item-card::
         :margin: 0
