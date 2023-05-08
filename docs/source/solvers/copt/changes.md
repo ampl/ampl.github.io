@@ -1,5 +1,9 @@
 # COPT Changelog
 
+## 20230424
+- *Changes in the MP library*: added variable names support
+  and removed spurious starting solution
+  
 
 ## 20230330
 - Recognition of second-order conic constraints

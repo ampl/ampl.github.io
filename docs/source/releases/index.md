@@ -6,7 +6,7 @@
 - [**BARON** Changelog (latest: **20230405**)](../solvers/baron/changes.md)
 - [**CBC** Changelog (latest: **20230207**)](../solvers/cbc/changes.md)
 - [**CONOPT** Changelog (latest: **20211109**)](../solvers/conopt/changes.md)
-- [**COPT** Changelog (latest: **20230330**)](../solvers/copt/changes.md)
+- [**COPT** Changelog (latest: **20230424**)](../solvers/copt/changes.md)
 - [**CPLEX** Changelog (latest: **20230228**)](../solvers/cplex/changes.md)
 - [**GUROBI** Changelog (latest: **20230426**)](../solvers/gurobi/changes.md)
 - [**GUROBIASL** Changelog (latest: **20230310**)](../solvers/gurobi/changesasl.md)
@@ -33,6 +33,7 @@ ampl.md
 ## 20230426
 - [GUROBI](../solvers/gurobi/changes.md#20230426)
 ## 20230424
+- [COPT](../solvers/copt/changes.md#20230424)
 - [MOSEK](../solvers/mosek/changes.md#20230424)
 ## 20230405
 - [BARON](../solvers/baron/changes.md#20230405)

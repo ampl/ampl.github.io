@@ -137,6 +137,14 @@ alg:relax (relax)
 alg:rhspen (rhspen)
       See alg:feasrelax.
 
+alg:start (warmstart)
+      Whether to use incoming primal (and dual, for LP) variable values in a
+      warmstart:
+
+      0 - No
+      1 - Yes (for LP: if there is no incoming alg:basis) (default)
+      2 - Yes (for LP: ignoring the incoming alg:basis, if any.)
+
 alg:ubpen (ubpen)
       See alg:feasrelax.
 
