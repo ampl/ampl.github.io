@@ -20,6 +20,27 @@ option "mosek_options". For example:
 
  Options:
 
+acc:indeq (acc:indlineq)
+      Solver acceptance level for 'IndicatorConstraintLinEQ', default 2:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+acc:indge (acc:indlinge)
+      Solver acceptance level for 'IndicatorConstraintLinGE', default 2:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+acc:indle (acc:indlinle)
+      Solver acceptance level for 'IndicatorConstraintLinLE', default 2:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
 acc:linrange (acc:linrng)
       Solver acceptance level for 'LinConRange', default 2:
 
