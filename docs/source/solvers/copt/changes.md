@@ -1,5 +1,10 @@
 # COPT Changelog
 
+## 20230428
+- Updated to Copt 6.5.2, which includes performance improvements and
+  fixes for issues with MIP problems
+
+
 ## 20230424
 - *Changes in the MP library*: added variable names support
   and removed spurious starting solution
