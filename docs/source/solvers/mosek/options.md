@@ -161,6 +161,9 @@ cvt:bigM (cvt:bigm, cvt:mip:bigM, cvt:mip:bigm)
       used by default. Use with care (prefer tight bounds). Should be smaller
       than (1.0 / [integrality tolerance])
 
+cvt:expcones (expcones)
+      0/1*: Recognize exponential cones.
+
 cvt:mip:eps (cvt:cmp:eps)
       Tolerance for strict comparison of continuous variables for MIP. Ensure
       larger than the solver's feasibility tolerance.

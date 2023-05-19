@@ -94,7 +94,8 @@ for item in releases:
 
 changes = open("source/releases/index.md", "w")
 print(
-    """
+    """(releases)=
+
 # Release History
 
 """,
