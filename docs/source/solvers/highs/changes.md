@@ -4,6 +4,7 @@
 - Fixed solution status reporting to AMPL
 - Fixed basis input with obj offset or missing data
 - Added warm start for LP problems
+- Reading column names from *col* file is present
 
 ## 20230424
 - *Changes in the MP library*: added variable names support
