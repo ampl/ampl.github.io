@@ -533,6 +533,10 @@ lim:nodes (nodelim, nodelimit)
 lim:softmem (softmemlimit, maxmemorysoft)
       Soft limit (number of MB) on memory allocated; default = 0 (no limit)
 
+lim:sol (sollimit, solutionlimit)
+      Limit the number of feasible MIP solutions found, causing early
+      termination if exceeded; default = 2e9
+
 lim:startnodes (startnodelimit, startnodes)
       Limit on how many branch-and-bound nodes to explore when doing a partial
       MIP start:
@@ -1123,6 +1127,12 @@ sol:poollimit (ams_limit, poollimit, solnlimit)
 sol:poolmode (ams_mode, poolmode)
       Search mode for MIP solutions when sol:stub/sol:count are specified to
       request finding several alternative solutions:
+
+      0 - Just collect solutions during normal solve, and sort them
+          best-first
+      1 - Make some effort at finding additional solutions
+      2 - Seek "poollimit" best solutions (default).'Best solutions' are
+          defined by the poolgap(abs) parameters.
 
 sol:stub (ams_stub, solstub, solutionstub)
       Stub for alternative MIP solutions, written to files with names obtained

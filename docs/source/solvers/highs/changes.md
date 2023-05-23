@@ -1,5 +1,14 @@
 # HiGHS Changelog
 
+## 20230522
+- Fixed solution status reporting to AMPL
+- Fixed basis input with obj offset or missing data
+- Added warm start for LP problems
+
+## 20230424
+- *Changes in the MP library*: added variable names support
+  and removed spurious starting solution
+  
 
 ## 20230227
 - Fixed a problem when retrieving basis status

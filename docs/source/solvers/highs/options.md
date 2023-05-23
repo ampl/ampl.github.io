@@ -115,6 +115,14 @@ alg:simplexscale (simplexscale, simplex_scale_strategy)
       4 - Max value 0
       5 - Max value 1
 
+alg:start (warmstart)
+      Whether to use incoming primal (and dual, for LP) variable values in a
+      warmstart:
+
+      0 - No
+      1 - Yes (for LP: if there is no incoming alg:basis) (default)
+      2 - Yes (for LP: ignoring the incoming alg:basis, if any.)
+
 alg:zerocoeff (zerocoeff, small_matrix_value)
       Lower limit on |matrix entries|: values smaller than this will be
       treated as zero (default: 1e-9).

@@ -1,5 +1,8 @@
 # GUROBI Changelog
 
+## 20230522
+- Added option 'lim:sol' to set a limit on the number of solutions found
+
 
 ## 20230426
 - Fixed partial MIP start.
