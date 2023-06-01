@@ -22,6 +22,8 @@ SOLVERS = {
     "HiGHS": "highs",
     "CBC": "cbc",
     "MOSEK": "mosek",
+    "SCIP": "scip",
+    "GCG": "gcg",
 }
 
 releases = {}

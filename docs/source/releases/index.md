@@ -9,6 +9,7 @@
 - [**CONOPT** Changelog (latest: **20211109**)](../solvers/conopt/changes.md)
 - [**COPT** Changelog (latest: **20230424**)](../solvers/copt/changes.md)
 - [**CPLEX** Changelog (latest: **20230228**)](../solvers/cplex/changes.md)
+- [**GCG** Changelog (latest: **20230531**)](../solvers/gcg/changes.md)
 - [**GUROBI** Changelog (latest: **20230531**)](../solvers/gurobi/changes.md)
 - [**GUROBIASL** Changelog (latest: **20230310**)](../solvers/gurobi/changesasl.md)
 - [**HiGHS** Changelog (latest: **20230531**)](../solvers/highs/changes.md)
@@ -18,6 +19,7 @@
 - [**Lindo Global** Changelog (latest: **20210406**)](../solvers/lindoglobal/changes.md)
 - [**MINOS** Changelog (latest: **20211109**)](../solvers/minos/changes.md)
 - [**MOSEK** Changelog (latest: **20230531**)](../solvers/mosek/changes.md)
+- [**SCIP** Changelog (latest: **20230531**)](../solvers/scip/changes.md)
 - [**SNOPT** Changelog (latest: **20211109**)](../solvers/snopt/changes.md)
 - [**XPRESS** Changelog (latest: **20230227**)](../solvers/xpress/changes.md)
 - [**XPRESSASL** Changelog (latest: **20220112**)](../solvers/xpress/changesasl.md)
@@ -30,9 +32,11 @@ ampl.md
 
 
 ## 20230531
+- [GCG](../solvers/gcg/changes.md#20230531)
 - [GUROBI](../solvers/gurobi/changes.md#20230531)
 - [HiGHS](../solvers/highs/changes.md#20230531)
 - [MOSEK](../solvers/mosek/changes.md#20230531)
+- [SCIP](../solvers/scip/changes.md#20230531)
 ## 20230522
 - [GUROBI](../solvers/gurobi/changes.md#20230522)
 - [HiGHS](../solvers/highs/changes.md#20230522)
