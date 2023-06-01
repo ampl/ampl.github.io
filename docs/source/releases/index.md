@@ -7,17 +7,17 @@
 - [**BARON** Changelog (latest: **20230405**)](../solvers/baron/changes.md)
 - [**CBC** Changelog (latest: **20230207**)](../solvers/cbc/changes.md)
 - [**CONOPT** Changelog (latest: **20211109**)](../solvers/conopt/changes.md)
-- [**COPT** Changelog (latest: **20230428**)](../solvers/copt/changes.md)
+- [**COPT** Changelog (latest: **20230424**)](../solvers/copt/changes.md)
 - [**CPLEX** Changelog (latest: **20230228**)](../solvers/cplex/changes.md)
-- [**GUROBI** Changelog (latest: **20230522**)](../solvers/gurobi/changes.md)
+- [**GUROBI** Changelog (latest: **20230531**)](../solvers/gurobi/changes.md)
 - [**GUROBIASL** Changelog (latest: **20230310**)](../solvers/gurobi/changesasl.md)
-- [**HiGHS** Changelog (latest: **20230522**)](../solvers/highs/changes.md)
+- [**HiGHS** Changelog (latest: **20230531**)](../solvers/highs/changes.md)
 - [**ILOGCP** Changelog (latest: **20230228**)](../solvers/ilogcp/changes.md)
 - [**KNITRO** Changelog (latest: **20221213**)](../solvers/knitro/changes.md)
 - [**LOQO** Changelog (latest: **20210410**)](../solvers/loqo/changes.md)
 - [**Lindo Global** Changelog (latest: **20210406**)](../solvers/lindoglobal/changes.md)
 - [**MINOS** Changelog (latest: **20211109**)](../solvers/minos/changes.md)
-- [**MOSEK** Changelog (latest: **20230515**)](../solvers/mosek/changes.md)
+- [**MOSEK** Changelog (latest: **20230531**)](../solvers/mosek/changes.md)
 - [**SNOPT** Changelog (latest: **20211109**)](../solvers/snopt/changes.md)
 - [**XPRESS** Changelog (latest: **20230227**)](../solvers/xpress/changes.md)
 - [**XPRESSASL** Changelog (latest: **20220112**)](../solvers/xpress/changesasl.md)
@@ -29,6 +29,10 @@ ampl.md
 ```
 
 
+## 20230531
+- [GUROBI](../solvers/gurobi/changes.md#20230531)
+- [HiGHS](../solvers/highs/changes.md#20230531)
+- [MOSEK](../solvers/mosek/changes.md#20230531)
 ## 20230522
 - [GUROBI](../solvers/gurobi/changes.md#20230522)
 - [HiGHS](../solvers/highs/changes.md#20230522)
@@ -36,8 +40,6 @@ ampl.md
 - [MOSEK](../solvers/mosek/changes.md#20230515)
 ## 20230505
 - [MOSEK](../solvers/mosek/changes.md#20230505)
-## 20230428
-- [COPT](../solvers/copt/changes.md#20230428)
 ## 20230426
 - [GUROBI](../solvers/gurobi/changes.md#20230426)
 ## 20230424

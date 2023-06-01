@@ -693,9 +693,6 @@ mip:impstartnodes (impstartnodes)
       improving the best bound to finding better feasible solutions (default
       Infinity).
 
-mip:intfeastol (intfeastol)
-      Feasibility tolerance for integer variables (default 1e-05).
-
 mip:intfocus (integralityfocus, intfocus)
       Setting this parameter to 1 requests the solver to work harder at
       finding solutions that are still (nearly) feasible when all integer
@@ -704,6 +701,9 @@ mip:intfocus (integralityfocus, intfocus)
 
       0 - No (default)
       1 - Yes.
+
+mip:inttol (inttol, intfeastol)
+      Feasibility tolerance for integer variables (default 1e-05).
 
 mip:lazy (lazy)
       Whether to recognize suffix .lazy on constraints: sum of
