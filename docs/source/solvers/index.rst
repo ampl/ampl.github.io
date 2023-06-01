@@ -20,6 +20,8 @@ Linear Solvers
     mosek/index
     xpress/index
     cbc/index
+    scip/index
+    gcg/index
 
 
 Non-linear Solvers
