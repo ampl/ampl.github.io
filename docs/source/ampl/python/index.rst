@@ -79,8 +79,7 @@ You can also install AMPL on :ref:`Google Colab <colab>` (`where it is free by d
     from amplpy import AMPL, tools
     ampl = tools.ampl_notebook(
         modules=["coin", "highs", "gokestrel"], # modules to install
-        license_uuid="default", # license to use
-        g=globals()) # instantiate AMPL object and register magics
+        license_uuid="default") # license to use
 
 
 .. note::

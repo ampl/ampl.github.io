@@ -98,17 +98,22 @@ You can install any of the following modules:
 	conopt
 	copt
 	cplex
+	gcg
+	gecode
 	gokestrel
 	gurobi
 	highs
+	ilogcp
 	knitro
 	lgo
 	lindoglobal
 	loqo
 	minos
+	mosek
 	octeract
 	open
 	plugins
+	scip
 	snopt
 	xpress
 ```
@@ -121,6 +126,16 @@ $ python -m amplpy.modules path
 Example: 
 ```
 export PATH=$PATH:`python -m amplpy.modules path`
+```
+
+### find
+Find the path to a file in any module:
+```bash
+$ python -m amplpy.modules find <file name>
+```
+Example:
+```
+$ python -m amplpy.modules find gurobi
 ```
 
 ### requirements
@@ -163,4 +178,66 @@ All of this is also available from Python programmatically:
 >>> modules.uninstall('cplex')
 >>> modules.installed()
 ['base', 'gurobi', 'highs']
+```
+
+## How to use modules
+
+### Install modules
+
+```bash
+# Install Python API for AMPL
+$ python -m pip install amplpy --upgrade
+
+# Install solvers (e.g., HiGHS, Gurobi, COIN-OR)
+$ python -m amplpy.modules install highs gurobi coin
+
+# Activate your license (e.g., free https://ampl.com/ce license)
+$ python -m amplpy.modules activate <license-uuid>
+```
+
+### Using from AMPL
+
+Installed modules are loaded by default when [amplpy](https://amplpy.readthedocs.org) is loaded.
+
+```python
+from amplpy import AMPL
+ampl = AMPL()  # instantiate AMPL object
+ampl.option["solver"] = "highs"  # use the solver highs
+```
+
+In case you have another AMPL installation and want to ensure that modules
+are used, you can do that as follows:
+
+```python
+from amplpy import AMPL, modules
+modules.load()  # load all modules
+ampl = AMPL()  # instantiate AMPL object
+```
+
+### Using from Pyomo
+
+Even though the [NL format](https://en.wikipedia.org/wiki/Nl_(format))
+was invented for connecting solvers to AMPL, it has been adopted by other systems
+such as Pyomo. [Pyomo](https://pyomo.readthedocs.io/) is an open-source modeling tool written in Python 
+that is compatible with AMPL's ASL interface, which means it works with all
+AMPL solvers. Note, however, that Pyomo is typically substantially slower than AMPL
+due to being written in Python, and that is may also not be able to take advantage
+of all functionalities of our solver drivers (especially the ones built with the new [MP interface](https://amplmp.readthedocs.io/)). Nevertheless, you can use AMPL solvers with Pyomo as follows:
+
+```python
+from amplpy import modules
+import pyomo.environ as pyo
+solver = pyo.SolverFactory(modules.find("highs"), solve_io="nl")  # use the solver highs
+```
+
+For other modeling tools, it may just be necessary to load all modules with `modules.load()`.
+```python
+from amplpy import modules
+modules.load()  # load all modules
+```
+
+Or, it may be necessary to really specify the full path to the solver executable with `modules.find()`.:
+```python
+from amplpy import modules
+path_to_highs = modules.find("highs")
 ```
