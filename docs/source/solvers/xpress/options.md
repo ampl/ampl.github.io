@@ -1633,6 +1633,9 @@ tech:justexportfile (justwriteprob, justwritemodel)
       it.This file name can have extension ".lp()", ".mps", etc. Default = ""
       (don't export the model).
 
+tech:logfile (logfile)
+      Log file name; default=no file
+
 tech:optionfile (optionfile, option:file)
       Name of solver option file. (surrounded by 'single' or "double" quotes
       if the name contains blanks). Lines that start with # are ignored.

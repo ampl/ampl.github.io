@@ -1,6 +1,21 @@
 # XPRESS Changelog
 
 
+## 20230607
+- Amended detection and display of licensing errors
+- Licensing allows now usage of an XPRESS license from an AMPL-based
+  deployment
+
+
+## 20230603
+- Added option 'tech:logfile' to enable output to a log file
+
+
+## 20230424
+- *Changes in the MP library*: added variable names support
+  and removed spurious starting solution
+
+  
 ## 20230227
 - Eliminated warning message when a non feasible solution is added as a starting
   point for the MIP search
