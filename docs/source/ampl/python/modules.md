@@ -218,11 +218,9 @@ ampl = AMPL()  # instantiate AMPL object
 
 Even though the [NL format](https://en.wikipedia.org/wiki/Nl_(format))
 was invented for connecting solvers to AMPL, it has been adopted by other systems
-such as Pyomo. [Pyomo](https://pyomo.readthedocs.io/) is an open-source modeling tool written in Python 
-that is compatible with AMPL's ASL interface, which means it works with all
-AMPL solvers. Note, however, that Pyomo is typically substantially slower than AMPL
-due to being written in Python, and that is may also not be able to take advantage
-of all functionalities of our solver drivers (especially the ones built with the new [MP interface](https://amplmp.readthedocs.io/)). Nevertheless, you can use AMPL solvers with Pyomo as follows:
+such as Pyomo. [Pyomo](http://www.pyomo.org/) is an open-source modeling tool written in Python
+that is compatible with solvers that read .nl files, which means it works with all
+[AMPL solvers](solvers). You can use AMPL solvers with Pyomo as follows:
 
 ```python
 from amplpy import modules
@@ -230,14 +228,13 @@ import pyomo.environ as pyo
 solver = pyo.SolverFactory(modules.find("highs"), solve_io="nl")  # use the solver highs
 ```
 
-For other modeling tools, it may just be necessary to load all modules with `modules.load()`.
-```python
-from amplpy import modules
-modules.load()  # load all modules
+Note that Pyomo is typically substantially slower than AMPL
+due to being written completely in Python (e.g., not performing the model instantiation using heavly optimized C code like AMPL does), and that it may also not be able to take advantage
+of all functionalities of our solver drivers (especially the ones built with the new [MP interface](https://amplmp.readthedocs.io/)). Nevertheless, if you have a project built with it fell free to use
+any of our solvers.
+
+```{note}
+**Pyomo is an independent open-source project. It is not developed or maintained by AMPL.** We can just provide support related to deployment using our [solver drivers](solvers). For any Pyomo issues not related to our solvers
+please check the support channels at <http://www.pyomo.org/>.
 ```
 
-Or, it may be necessary to really specify the full path to the solver executable with `modules.find()`.:
-```python
-from amplpy import modules
-path_to_highs = modules.find("highs")
-```
