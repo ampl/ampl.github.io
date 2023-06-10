@@ -229,8 +229,10 @@ solver = pyo.SolverFactory(modules.find("highs"), solve_io="nl")  # use the solv
 ```
 
 Note that Pyomo is typically substantially slower than AMPL
-due to being written completely in Python (e.g., not performing the model instantiation using heavly optimized C code like AMPL does), and that it may also not be able to take advantage
-of all functionalities of our solver drivers (especially the ones built with the new [MP interface](https://amplmp.readthedocs.io/)). Nevertheless, feel free to use any of our solvers.
+due to being written completely in Python (e.g., not performing the model instantiation using heavily optimized C code like AMPL does), and that it may also not be able to take advantage
+of all functionalities of our solver drivers (especially the ones built with the new [MP interface](https://amplmp.readthedocs.io/)); the solver performance when used from AMPL also tends to be superior
+due to AMPL's presolver that is typically able to reduce model sizes substantially.
+Nevertheless, feel free to use any of our solvers with other modeling tools.
 
 ```{note}
 **Pyomo is an independent open-source project. It is not developed or maintained by AMPL.** We can just provide support related to deployment using our [solver drivers](solvers). For any Pyomo issues not related to our solvers
