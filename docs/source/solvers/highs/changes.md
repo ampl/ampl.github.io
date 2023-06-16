@@ -1,10 +1,13 @@
 # HiGHS Changelog
 
+## 20230616
+- Imitate partial MIP start.
+- Changes in MP.
+
+
 ## 20230531
 - *MIP start*.
   HiGHS 1.5 supports complete MIP starts only.
-  For partial MIP start, user solve with fixed known
-  variables first (Modeling Tip #7).
 - Wrong solver options are gracefully reported via
   solve_message.
 
