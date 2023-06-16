@@ -1,5 +1,90 @@
 # AMPL Changelog
 
+## 20230430
+
+* Change the error message for
+```
+    display intersection{i in 1 .. 0} {i};
+```
+from "empty iterated intersection" to "empty iterator in iterated intersection".
+
+* Make integer[1,10] equivalent to 1..10 instead of (erroneously) giving an error message.
+
+* Fix a possible fault with "display _var;" on some systems. (If it does not fault, then there is not a problem here.)
+
+* Fix a little off-by-one formatting bug in displaying some numeric values, as in
+```
+        display {a in 0..1, b in 0..1} (a, b, if a and b then 1 else 0);
+```
+which gave
+```
+:      a     b   if a && b then 1    :=
+0 0   0     0            0
+0 1   0     1            0
+1 0   1     0            0
+1 1   1     1            1
+;
+```
+rather than
+```
+:     a   b  if a && b then 1    :=
+0 0   0   0          0
+0 1   0   1          0
+1 0   1   0          0
+1 1   1   1          1
+;
+```
+
+* Fix a bug in generated names for piecewise-linear terms and unions
+of intervals: when more than one set of constraints was generated,
+the same names were used. Now the generation number is appended,
+except for the first set. Also, change the character separating
+components of generated names from '+' to '@'.  Example:
+```
+        set S := 1 .. 2; var x{S};
+        minimize zot: sum{i in S} <<i;-1,1>> x[i];
+        solexpand;
+```
+produced
+```
+        minimize zot:
+                -(zot+x[1]+s)[0] + (zot+x[1]+s)[1] - (zot+x[2]+s)[0]
+                + (zot+x[2]+s)[1];
+```
+
+Now it produces
+```
+        minimize zot:
+                -(zot@x[1]@s)[0] + (zot@x[1]@s)[1] - (zot@x[2]@s_2)[0] +
+                (zot@x[2]@s_2)[1];
+```
+
+* Fix trouble with ord(a), next(a), and prev(a) when a runs over a subscripted set with subscripts involving dummy variables of a "for"
+loop. Example:
+```
+        set A; set B{A} ordered;
+        data; set A := a b;
+        set B[a] := c d;
+        set B[b] := e f;
+        for{a in A, b in B[a]} print a, b, ord(b); #faulted
+```
+
+* New logical function alldistinct(...), true when ... are all different sets and false otherwise. Order is ignored, so alldistinct({'a','b'}, {'b','a'}) is false.  New logical function alldisjoint(...) is true if ... are all disjoint sets and false otherwise.
+
+
+* Fix a bug that prevented suffixes on logical constraints from being conveyed to the .nl file (except in the special case of no algebraic constraints, in which case the first suffix on a logical constraint was conveyed).
+
+* Only print one "not within" error message (instead possibly of several).  Example:
+```
+        set S; set A;
+        set B{S} within A;
+        data; set S := a b;
+        set A := d e f g;
+        set B[a] := h i;
+        set B[b] := k l;
+        display B;
+```
+
 ## 20230124
 
   Show error context in blockmode (invocations of "`ampl -b ...`").

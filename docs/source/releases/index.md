@@ -3,7 +3,7 @@
 # Release History
 
 
-- [**AMPL** Changelog (latest: **20230124**)](../releases/ampl.md)
+- [**AMPL** Changelog (latest: **20230430**)](../releases/ampl.md)
 - [**BARON** Changelog (latest: **20230405**)](../solvers/baron/changes.md)
 - [**CBC** Changelog (latest: **20230207**)](../solvers/cbc/changes.md)
 - [**CONOPT** Changelog (latest: **20211109**)](../solvers/conopt/changes.md)
@@ -48,6 +48,8 @@ ampl.md
 - [MOSEK](../solvers/mosek/changes.md#20230515)
 ## 20230505
 - [MOSEK](../solvers/mosek/changes.md#20230505)
+## 20230430
+- [AMPL](../releases/ampl.md#20230430)
 ## 20230426
 - [GUROBI](../solvers/gurobi/changes.md#20230426)
 ## 20230424
