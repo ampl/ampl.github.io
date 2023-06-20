@@ -21,7 +21,7 @@
 - [**MOSEK** Changelog (latest: **20230531**)](../solvers/mosek/changes.md)
 - [**SCIP** Changelog (latest: **20230531**)](../solvers/scip/changes.md)
 - [**SNOPT** Changelog (latest: **20211109**)](../solvers/snopt/changes.md)
-- [**XPRESS** Changelog (latest: **20230607**)](../solvers/xpress/changes.md)
+- [**XPRESS** Changelog (latest: **20230616**)](../solvers/xpress/changes.md)
 - [**XPRESSASL** Changelog (latest: **20220112**)](../solvers/xpress/changesasl.md)
 
 ```{toctree}
@@ -33,6 +33,7 @@ ampl.md
 
 ## 20230616
 - [HiGHS](../solvers/highs/changes.md#20230616)
+- [XPRESS](../solvers/xpress/changes.md#20230616)
 ## 20230607
 - [XPRESS](../solvers/xpress/changes.md#20230607)
 ## 20230603
