@@ -344,12 +344,10 @@ while .lb, .ub give whichever bounds were sent to the solver.
 
 These options govern solve and related commands for sending problem instances to solvers.
 
-### auxfiles s (default "")
+### auxfiles s, (solver)_auxfiles s (default "")
 
 List of auxiliary (additional) files of variable or constraint names, to be written when a problem
 instance is generated. These files have names of the form _stub.ext,_ where _stub_ matches the name of
-
-
 the problem ( _stub_ .nl) and solution ( _stub_ .sol) files that AMPL uses for communicating with the
 solver. Each letter in _s_ specifies a content of the file and choice of _ext,_ as follows:
 ```
@@ -362,6 +360,10 @@ r .row AMPL names of constraints and objectives the solver sees
 s .slc constraints eliminated from the problem
 u .unv unused variables
 ```
+Option ``auxfiles`` affects the subsequent ``write`` command.
+Option ``(solver)_auxfiles`` affects the subsequent ``solve;`` using that ``(solver)``.
+
+
 ### dual_initial_guesses b (default 1)
 
 Whether to send to the solver the current dual values for the constraints. Dual values are sent when
