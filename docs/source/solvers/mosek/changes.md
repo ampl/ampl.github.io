@@ -1,5 +1,13 @@
 # MOSEK Changelog
 
+## 20230621
+- Fix quadratic objective with repeated subexpressions.
+
+
+## 20230616
+- Changes in MP.
+
+
 ## 20230531
 - Cones: recognize (affine_expr) >= y * exp(z/y)
   as exponential cone.

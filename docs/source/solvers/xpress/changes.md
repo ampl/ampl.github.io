@@ -1,5 +1,9 @@
 # XPRESS Changelog
 
+## 20230621
+- Fix quadratic objective with repeated subexpressions.
+- Fix reformulation of ==> / else.
+
 
 ## 20230616
 - Changes in MP.

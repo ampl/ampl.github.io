@@ -1,5 +1,13 @@
 # GUROBI Changelog
 
+## 20230621
+- Fix quadratic objective with repeated subexpressions.
+
+
+## 20230616
+- Changes in MP.
+
+
 ## 20230531
 - Wrong solver options are gracefully reported via
   solve_message.

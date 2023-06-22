@@ -480,6 +480,15 @@ cvt:mip:eps (cvt:cmp:eps)
       Tolerance for strict comparison of continuous variables for MIP. Ensure
       larger than the solver's feasibility tolerance.
 
+cvt:names (names, modelnames)
+      Whether to read or generate variable / constraint / objective names:
+
+      0 - No names
+      1 - Only provide names if at least one of .col / .row name files was
+          written by AMPL (AMPL options auxfiles, <solver>_auxfiles)
+      2 - Read names from AMPL, but provide generic names otherwise
+      3 - Provide generic names.
+
 cvt:plapprox:domain (plapprox:domain, plapproxdomain)
       For piecewise-linear approximated functions, both arguments and result
       are bounded to +-[pladomain]. Default 1e6.

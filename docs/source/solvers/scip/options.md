@@ -254,6 +254,15 @@ cvt:mip:eps (cvt:cmp:eps)
       Tolerance for strict comparison of continuous variables for MIP. Ensure
       larger than the solver's feasibility tolerance.
 
+cvt:names (names, modelnames)
+      Whether to read or generate variable / constraint / objective names:
+
+      0 - No names
+      1 - Only provide names if at least one of .col / .row name files was
+          written by AMPL (AMPL options auxfiles, <solver>_auxfiles)
+      2 - Read names from AMPL, but provide generic names otherwise
+      3 - Provide generic names.
+
 cvt:plapprox:domain (plapprox:domain, plapproxdomain)
       For piecewise-linear approximated functions, both arguments and result
       are bounded to +-[pladomain]. Default 1e6.
@@ -648,6 +657,17 @@ ran:permutevars (permutevars)
 ran:randomseedshift (randomseedshift)
       Global shift of all random seeds in the plugins and the LP random seed
       (default: 0)
+
+sol:count (countsolutions)
+      0*/1: Whether to count the number of solutions and return it in the
+      ".nsol" problem suffix.
+
+sol:stub (solstub, solutionstub)
+      Stub for solution files. If "solutionstub" is specified, found solutions
+      are written to files ("solutionstub & '1' & '.sol'") ... ("solutionstub
+      & Current.nsol & '.sol'"), where "Current.nsol" holds the number of
+      returned solutions. That is, file names are obtained by appending 1, 2,
+      ... "Current.nsol" to "solutionstub".
 
 tech:debug (debug)
       0*/1: whether to assist testing & debugging, e.g., by outputting
