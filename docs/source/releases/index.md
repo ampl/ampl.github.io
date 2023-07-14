@@ -5,7 +5,7 @@
 
 - [**AMPL** Changelog (latest: **20230430**)](../releases/ampl.md)
 - [**BARON** Changelog (latest: **20230405**)](../solvers/baron/changes.md)
-- [**CBC** Changelog (latest: **20230207**)](../solvers/cbc/changes.md)
+- [**CBC** Changelog (latest: **20230713**)](../solvers/cbc/changes.md)
 - [**CONOPT** Changelog (latest: **20211109**)](../solvers/conopt/changes.md)
 - [**COPT** Changelog (latest: **20230621**)](../solvers/copt/changes.md)
 - [**CPLEX** Changelog (latest: **20230228**)](../solvers/cplex/changes.md)
@@ -21,7 +21,7 @@
 - [**MOSEK** Changelog (latest: **20230621**)](../solvers/mosek/changes.md)
 - [**SCIP** Changelog (latest: **20230622**)](../solvers/scip/changes.md)
 - [**SNOPT** Changelog (latest: **20211109**)](../solvers/snopt/changes.md)
-- [**XPRESS** Changelog (latest: **20230621**)](../solvers/xpress/changes.md)
+- [**XPRESS** Changelog (latest: **20230714**)](../solvers/xpress/changes.md)
 - [**XPRESSASL** Changelog (latest: **20220112**)](../solvers/xpress/changesasl.md)
 
 ```{toctree}
@@ -31,6 +31,10 @@ ampl.md
 ```
 
 
+## 20230714
+- [XPRESS](../solvers/xpress/changes.md#20230714)
+## 20230713
+- [CBC](../solvers/cbc/changes.md#20230713)
 ## 20230622
 - [SCIP](../solvers/scip/changes.md#20230622)
 ## 20230621
@@ -43,6 +47,7 @@ ampl.md
 ## 20230619
 - [SCIP](../solvers/scip/changes.md#20230619)
 ## 20230616
+- [CBC](../solvers/cbc/changes.md#20230616)
 - [COPT](../solvers/copt/changes.md#20230616)
 - [GUROBI](../solvers/gurobi/changes.md#20230616)
 - [HiGHS](../solvers/highs/changes.md#20230616)
@@ -73,6 +78,7 @@ ampl.md
 ## 20230426
 - [GUROBI](../solvers/gurobi/changes.md#20230426)
 ## 20230424
+- [CBC](../solvers/cbc/changes.md#20230424)
 - [COPT](../solvers/copt/changes.md#20230424)
 - [HiGHS](../solvers/highs/changes.md#20230424)
 - [MOSEK](../solvers/mosek/changes.md#20230424)

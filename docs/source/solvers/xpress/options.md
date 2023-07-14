@@ -109,6 +109,9 @@ alg:addcutoff (addcutoff, mipaddcutoff)
 
       solution found to give the new MIP cutoff; default -1e-5.
 
+alg:barrier (barrier)
+      Solve (MIP node) LPs by barrier method.
+
 alg:basis (basis)
       Whether to use or return a basis:
 
@@ -133,6 +136,9 @@ alg:cutoff (cutoff)
       If the optimal objective value is worse than cutoff, report "objective
       cutoff" and do not return a solution. Default: 1.0E+40 for minimizing,
       -1.0E+40 for maximizing.
+
+alg:dual (dual)
+      Solve (MIP node) LPs by dual simplex method.
 
 alg:feastol (feastol)
       Primal feasibility tolerance (default 1e-6).
@@ -162,13 +168,19 @@ alg:maxiis (maxiis)
       Maximum number of IIS to find; default=-1 (no limit)
 
 alg:method (method, lpmethod, defaultalg)
-      Which algorithm to use for non-MIP problems or for the root node of MIP
-      problems:
+      Which algorithm to use for non-MIP problems or for node relaxations of
+      MIP problems, unless barrier/primal/dual/network specified:
 
       1 - Automatic choice (default)
       2 - Dual simplex
       3 - Primal simplex
       4 - Netwon Barrier
+
+alg:network (network)
+      Solve (substructure of) (MIP node) LPs by network simplex method.
+
+alg:primal (primal)
+      Solve (MIP node) LPs by primal simplex method.
 
 alg:randomseed (randomseed)
       Sets the initial seed to use for the pseudo-random number generator in

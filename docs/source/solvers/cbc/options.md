@@ -60,6 +60,14 @@ alg:perturbation (perturbation)
 alg:relax (relax)
       0*/1: Whether to relax integrality of variables.
 
+alg:start (warmstart)
+      Whether to use incoming primal (and dual, for LP) variable values in a
+      warmstart:
+
+      0 - No
+      1 - Yes (for LP: if there is no incoming alg:basis) (default)
+      2 - Yes (for LP: ignoring the incoming alg:basis, if any.)
+
 bar:bscale (bscale)
       Whether to scale in barrier (and ordering speed)
 
@@ -300,6 +308,15 @@ cvt:bigM (cvt:bigm, cvt:mip:bigM, cvt:mip:bigm)
 cvt:mip:eps (cvt:cmp:eps)
       Tolerance for strict comparison of continuous variables for MIP. Ensure
       larger than the solver's feasibility tolerance.
+
+cvt:names (names, modelnames)
+      Whether to read or generate variable / constraint / objective names:
+
+      0 - No names
+      1 - Only provide names if at least one of .col / .row name files was
+          written by AMPL (AMPL options auxfiles, <solver>_auxfiles)
+      2 - Read names from AMPL, but provide generic names otherwise
+      3 - Provide generic names.
 
 cvt:plapprox:domain (plapprox:domain, plapproxdomain)
       For piecewise-linear approximated functions, both arguments and result

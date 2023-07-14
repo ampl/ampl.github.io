@@ -1,16 +1,31 @@
 # CBC Changelog
 
 
+## 20230713
+- Fixed how certain options are passed to the underlying CBC library
+
+- Fixed returning of constraint duals
+
+
+## 20230616
+- Changes in MP.
+
+
+## 20230424
+- *Changes in the MP library*: added variable names support
+  and removed spurious starting solution
+
+  
 ## 20230207
 - *Changes in the MP library*
 
 
 ## 20221228
-- Changes in MP
+- *Changes in the MP library*
 
 
 ## 20221222
-- Bug fixes in MP
+- *Changes in the MP library*
 
 
 ## 20221211
