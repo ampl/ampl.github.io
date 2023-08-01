@@ -1,5 +1,24 @@
 # XPRESS Changelog
 
+## 20230728
+- Option 'tech:writesolution'
+
+
+## 20230727
+- Fixed a memory leak #217
+- Fixed quadratic constraints
+
+
+## 20230726
+- MP: fixed inequalities of integer expressions with
+  non-integer constants, see test_int_non_int.mod.
+
+
+## 20230724
+- Option [solver_]auxfiles rc; transfers names
+	of variables and linear constraints into the model;
+	(solver)_options 'cvt:names=0-3' controls names.
+
 
 ## 20230714
 - Options barrier/primal/dual/network like in ASL.

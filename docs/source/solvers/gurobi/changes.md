@@ -1,5 +1,27 @@
 # GUROBI Changelog
 
+## 20230728
+- Option 'tech:writesolution' #218
+- Option 'writeprob' ('tech:writemodel') ASL-compatible
+
+
+## 20230726
+- Fixed inequalities of integer expressions with
+  non-integer constants, see test_int_non_int.mod.
+- Option 'writesol=filename' to export
+  solutions/results.
+
+
+## 20230724
+- Option [solver_]auxfiles rc; transfers names
+	of variables and constraints into the model;
+	(solver)_options 'cvt:names=0-3' controls names.
+
+
+## 20230625
+- Updated to Gurobi libraries 10.0.2, which include many bugfixes.
+
+
 ## 20230621
 - Fix quadratic objective with repeated subexpressions.
 

@@ -1,5 +1,20 @@
 # HiGHS Changelog
 
+## 20230728
+- Option 'tech:writesolution'
+
+
+## 20230726
+- Fixed inequalities of integer expressions with
+  non-integer constants, see test_int_non_int.mod.
+
+
+## 20230724
+- option [solver_]auxfiles rc; transfers names
+	of variables and linear constraints into the model;
+	(solver)_options 'cvt:names=0-3' controls names.
+
+
 ## 20230621
 - Fix quadratic objective with repeated subexpressions.
 - Fix Hessian API.

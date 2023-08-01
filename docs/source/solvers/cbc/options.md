@@ -313,10 +313,10 @@ cvt:names (names, modelnames)
       Whether to read or generate variable / constraint / objective names:
 
       0 - No names
-      1 - Only provide names if at least one of .col / .row name files was
-          written by AMPL (AMPL options auxfiles, <solver>_auxfiles)
-      2 - Read names from AMPL, but provide generic names otherwise
-      3 - Provide generic names.
+      1 - (Default) Only provide names if at least one of .col / .row name
+          files was written by AMPL (AMPL: `option [<solver>_]auxfiles rc;`) 
+      2 - Read names from AMPL, but create generic names if not provided
+      3 - Create generic names.
 
 cvt:plapprox:domain (plapprox:domain, plapproxdomain)
       For piecewise-linear approximated functions, both arguments and result
@@ -972,16 +972,6 @@ tech:debug (debug)
       0*/1: whether to assist testing & debugging, e.g., by outputting
       auxiliary information.
 
-tech:exportfile (writeprob, writemodel)
-      Specifies the name of a file where to export the model before solving
-      it. This file name can have extension ".lp()", ".mps", etc. Default = ""
-      (don't export the model).
-
-tech:justexportfile (justwriteprob, justwritemodel)
-      Specifies the name of a file where to export the model, do not solve
-      it.This file name can have extension ".lp()", ".mps", etc. Default = ""
-      (don't export the model).
-
 tech:messages (messages)
       Controls if Clpnnnn is printed
 
@@ -1013,6 +1003,15 @@ tech:wantsol (wantsol)
 
 tech:writegraph (writegraph, exportgraph)
       File to export conversion graph. Format: JSON Lines.
+
+tech:writemodel (writeprob, writemodel, tech:exportfile)
+      Specifies files where to export the model before solving (repeat the
+      option for several files.) File name extensions can be ".lp[.7z]",
+      ".mps", etc.
+
+tech:writemodelonly (justwriteprob, justwritemodel)
+      Specifies files where to export the model, no solving (option can be
+      repeated.) File extensions can be ".dlp", ".mps", etc.
 
 ```
 

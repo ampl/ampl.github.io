@@ -97,6 +97,13 @@ acc:pow
       1 - Accepted but automatic redefinition will be used where possible
       2 - Accepted natively and preferred
 
+acc:quadcone
+      Solver acceptance level for 'QuadraticConeConstraint', default 1:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
 acc:quadeq
       Solver acceptance level for 'QuadConEQ', default 2:
 
@@ -258,10 +265,10 @@ cvt:names (names, modelnames)
       Whether to read or generate variable / constraint / objective names:
 
       0 - No names
-      1 - Only provide names if at least one of .col / .row name files was
-          written by AMPL (AMPL options auxfiles, <solver>_auxfiles)
-      2 - Read names from AMPL, but provide generic names otherwise
-      3 - Provide generic names.
+      1 - (Default) Only provide names if at least one of .col / .row name
+          files was written by AMPL (AMPL: `option [<solver>_]auxfiles rc;`) 
+      2 - Read names from AMPL, but create generic names if not provided
+      3 - Create generic names.
 
 cvt:plapprox:domain (plapprox:domain, plapproxdomain)
       For piecewise-linear approximated functions, both arguments and result
@@ -286,6 +293,10 @@ cvt:quadcon (passquadcon)
 cvt:quadobj (passquadobj)
       0*/1: Multiply out and pass quadratic objective terms to the solver, vs.
       linear approximation.
+
+cvt:socp (passsocp, socp)
+      0*/1: Recognize quadratic cones vs passing them as pure quadratic
+      constraints.
 
 cvt:sos (sos)
       0/1*: Whether to honor declared suffixes .sosno and .ref describing SOS

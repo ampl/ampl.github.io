@@ -5,23 +5,23 @@
 
 - [**AMPL** Changelog (latest: **20230430**)](../releases/ampl.md)
 - [**BARON** Changelog (latest: **20230405**)](../solvers/baron/changes.md)
-- [**CBC** Changelog (latest: **20230713**)](../solvers/cbc/changes.md)
+- [**CBC** Changelog (latest: **20230726**)](../solvers/cbc/changes.md)
 - [**CONOPT** Changelog (latest: **20211109**)](../solvers/conopt/changes.md)
-- [**COPT** Changelog (latest: **20230621**)](../solvers/copt/changes.md)
+- [**COPT** Changelog (latest: **20230726**)](../solvers/copt/changes.md)
 - [**CPLEX** Changelog (latest: **20230228**)](../solvers/cplex/changes.md)
-- [**GCG** Changelog (latest: **20230531**)](../solvers/gcg/changes.md)
-- [**GUROBI** Changelog (latest: **20230621**)](../solvers/gurobi/changes.md)
+- [**GCG** Changelog (latest: **20230726**)](../solvers/gcg/changes.md)
+- [**GUROBI** Changelog (latest: **20230728**)](../solvers/gurobi/changes.md)
 - [**GUROBIASL** Changelog (latest: **20230310**)](../solvers/gurobi/changesasl.md)
-- [**HiGHS** Changelog (latest: **20230621**)](../solvers/highs/changes.md)
+- [**HiGHS** Changelog (latest: **20230728**)](../solvers/highs/changes.md)
 - [**ILOGCP** Changelog (latest: **20230228**)](../solvers/ilogcp/changes.md)
 - [**KNITRO** Changelog (latest: **20221213**)](../solvers/knitro/changes.md)
 - [**LOQO** Changelog (latest: **20210410**)](../solvers/loqo/changes.md)
 - [**Lindo Global** Changelog (latest: **20210406**)](../solvers/lindoglobal/changes.md)
 - [**MINOS** Changelog (latest: **20211109**)](../solvers/minos/changes.md)
-- [**MOSEK** Changelog (latest: **20230621**)](../solvers/mosek/changes.md)
-- [**SCIP** Changelog (latest: **20230622**)](../solvers/scip/changes.md)
+- [**MOSEK** Changelog (latest: **20230726**)](../solvers/mosek/changes.md)
+- [**SCIP** Changelog (latest: **20230726**)](../solvers/scip/changes.md)
 - [**SNOPT** Changelog (latest: **20211109**)](../solvers/snopt/changes.md)
-- [**XPRESS** Changelog (latest: **20230714**)](../solvers/xpress/changes.md)
+- [**XPRESS** Changelog (latest: **20230728**)](../solvers/xpress/changes.md)
 - [**XPRESSASL** Changelog (latest: **20220112**)](../solvers/xpress/changesasl.md)
 
 ```{toctree}
@@ -31,10 +31,36 @@ ampl.md
 ```
 
 
+## 20230728
+- [GUROBI](../solvers/gurobi/changes.md#20230728)
+- [HiGHS](../solvers/highs/changes.md#20230728)
+- [XPRESS](../solvers/xpress/changes.md#20230728)
+## 20230727
+- [XPRESS](../solvers/xpress/changes.md#20230727)
+## 20230726
+- [CBC](../solvers/cbc/changes.md#20230726)
+- [COPT](../solvers/copt/changes.md#20230726)
+- [GCG](../solvers/gcg/changes.md#20230726)
+- [GUROBI](../solvers/gurobi/changes.md#20230726)
+- [HiGHS](../solvers/highs/changes.md#20230726)
+- [MOSEK](../solvers/mosek/changes.md#20230726)
+- [SCIP](../solvers/scip/changes.md#20230726)
+- [XPRESS](../solvers/xpress/changes.md#20230726)
+## 20230724
+- [COPT](../solvers/copt/changes.md#20230724)
+- [GUROBI](../solvers/gurobi/changes.md#20230724)
+- [HiGHS](../solvers/highs/changes.md#20230724)
+- [MOSEK](../solvers/mosek/changes.md#20230724)
+- [XPRESS](../solvers/xpress/changes.md#20230724)
 ## 20230714
 - [XPRESS](../solvers/xpress/changes.md#20230714)
 ## 20230713
 - [CBC](../solvers/cbc/changes.md#20230713)
+## 20230625
+- [GUROBI](../solvers/gurobi/changes.md#20230625)
+- [SCIP](../solvers/scip/changes.md#20230625)
+## 20230623
+- [SCIP](../solvers/scip/changes.md#20230623)
 ## 20230622
 - [SCIP](../solvers/scip/changes.md#20230622)
 ## 20230621
@@ -45,10 +71,12 @@ ampl.md
 - [SCIP](../solvers/scip/changes.md#20230621)
 - [XPRESS](../solvers/xpress/changes.md#20230621)
 ## 20230619
+- [GCG](../solvers/gcg/changes.md#20230619)
 - [SCIP](../solvers/scip/changes.md#20230619)
 ## 20230616
 - [CBC](../solvers/cbc/changes.md#20230616)
 - [COPT](../solvers/copt/changes.md#20230616)
+- [GCG](../solvers/gcg/changes.md#20230616)
 - [GUROBI](../solvers/gurobi/changes.md#20230616)
 - [HiGHS](../solvers/highs/changes.md#20230616)
 - [MOSEK](../solvers/mosek/changes.md#20230616)
@@ -59,7 +87,6 @@ ampl.md
 ## 20230603
 - [XPRESS](../solvers/xpress/changes.md#20230603)
 ## 20230531
-- [GCG](../solvers/gcg/changes.md#20230531)
 - [GUROBI](../solvers/gurobi/changes.md#20230531)
 - [HiGHS](../solvers/highs/changes.md#20230531)
 - [MOSEK](../solvers/mosek/changes.md#20230531)
@@ -67,6 +94,7 @@ ampl.md
 - [GUROBI](../solvers/gurobi/changes.md#20230522)
 - [HiGHS](../solvers/highs/changes.md#20230522)
 ## 20230515
+- [GCG](../solvers/gcg/changes.md#20230515)
 - [MOSEK](../solvers/mosek/changes.md#20230515)
 - [SCIP](../solvers/scip/changes.md#20230515)
 ## 20230505
