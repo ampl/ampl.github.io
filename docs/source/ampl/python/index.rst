@@ -32,7 +32,7 @@ you just need the following:
 
 .. note::
   You can use a free `Community Edition license <https://ampl.com/ce>`_, which allows **free
-  and perpetual use of AMPL with Open-Source solvers**.
+  and perpetual use of AMPL with Open-Source solvers for personal, academic or commercial prototyping use**.
 
 .. code-block:: python
 
@@ -82,8 +82,8 @@ You can also install AMPL on :ref:`Google Colab <colab>` (`where it is free by d
 
 .. note::
     On Google Colab there is a default `AMPL Community
-    Edition license <https://ampl.com/ce/>`_ that gives you **unlimited access to AMPL
-    with open-source solvers** (e.g., HiGHS, CBC, Couenne, Ipopt, Bonmin)
+    Edition license <https://ampl.com/ce/>`_ that gives you **access to AMPL
+    with open-source solvers for personal, academic or commercial prototyping use** (e.g., HiGHS, CBC, Couenne, Ipopt, Bonmin)
     or with commercial solvers from the `NEOS Server <http://www.neos-server.org/>`_ as described in `Kestrel documentation <https://dev.ampl.com/solvers/kestrel.html>`_.
 
     In the list ``modules`` you need to include

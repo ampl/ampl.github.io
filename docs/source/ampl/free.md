@@ -3,7 +3,7 @@
 ## AMPL Community Edtion
 
 With [AMPL Community Edition](https://ampl.com/ce), AMPL is **free forever
-for commercial, academic and personal use with the following open-source solvers**:
+for commercial prototyping, academic and personal use with the following open-source solvers**:
 - [HiGHS](../solvers/highs/index.md): `option solver highs; solve;`
 - [CBC](../solvers/cbc/index.md): `option solver cbc; solve;`
 - Ipopt: `option solver ipopt; solve;`
