@@ -3,7 +3,7 @@
 
 ## AMPL Community Edition
 
-**Free, full-powered AMPL for commercial prototyping, academic and personal use**.
+**Free, full-powered AMPL for personal, academic, or commercial prototyping purposes using [AMPL APIs](ampl/apis.md)**.
 
 -   License never expires
 -   Unlimited variables & constraints

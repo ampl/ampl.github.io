@@ -32,7 +32,7 @@ you just need the following:
 
 .. note::
   You can use a free `Community Edition license <https://ampl.com/ce>`_, which allows **free
-  and perpetual use of AMPL with Open-Source solvers for personal, academic or commercial prototyping use**.
+  and perpetual use of AMPL with Open-Source solvers** for personal, academic, or commercial prototyping purposes using :ref:`AMPL APIs <apis>`.
 
 .. code-block:: python
 
