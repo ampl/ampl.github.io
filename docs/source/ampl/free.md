@@ -9,6 +9,8 @@ with the following open-source solvers** for personal, academic, or commercial p
 - Ipopt: `option solver ipopt; solve;`
 - Couenne: `option solver couenne; solve;`
 - Bonmin: `option solver bonmin; solve;`
+- SCIP: `option solver scip; solve;`
+- GCG: `option solver gcg; solve;`
 - Any solver, including commercial solvers, available on the NEOS server via [Kestrel](../solvers/kestrel/index.md)
 
 **At any point you can start commercial solver trials with a single click.**
