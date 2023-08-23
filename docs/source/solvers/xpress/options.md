@@ -450,6 +450,13 @@ cut:qccuts (qccuts)
       rounds of outer approximation cuts at the top node; default = -1
       (automatic choice).
 
+cut:rltcuts (rltcuts)
+      Determines whether RLT cuts should be separated in the global solver:
+
+      -1 - Automatic choice (default)
+      0  - No
+      1  - Yes.
+
 cut:select (cutselect)
       Detailed control of cuts at MIP root node; sum of:
 
@@ -509,9 +516,11 @@ cvt:bigM (cvt:bigm, cvt:mip:bigM, cvt:mip:bigm)
       used by default. Use with care (prefer tight bounds). Should be smaller
       than (1.0 / [integrality tolerance])
 
-cvt:mip:eps (cvt:cmp:eps)
-      Tolerance for strict comparison of continuous variables for MIP. Ensure
-      larger than the solver's feasibility tolerance.
+cvt:mip:eps (cvt:cmp:eps, cmp:eps)
+      Tolerance for strict comparison of continuous variables for MIP. Applies
+      to <, >, and != operators. Also applies to negation of conditional
+      comparisons: b==1 <==> x<=5 means that with b==0, x>=5+eps. Default:
+      1e-4.
 
 cvt:names (names, modelnames)
       Whether to read or generate variable / constraint / objective names:
@@ -557,10 +566,10 @@ cvt:sos2 (sos2)
       0/1*: Whether to honor SOS2 constraints for nonconvex piecewise-linear
       terms, using suffixes .sos and .sosref provided by AMPL.
 
-lim:bariterlim (bar:iterlim, bariterlim)
+lim:bariter (bar:iterlim, bariterlim)
       Limit on the number of barrier iterations (default 500).
 
-lim:crossoveriterlim (bar:crossoveriterlim, crossoveriterlim, crossoveritlim)
+lim:crossoveriter (bar:crossoveriterlim, crossoveriterlim, crossoveritlim)
       Limit on crossover iterations after the barrier algorithm; default =
       2147483645
 
@@ -569,13 +578,13 @@ lim:heurdiveiterlimit (heurdepth, mip:heurdiveiterlimit)
       default = -1 (automatic selection); a value of 0 implies no iteration
       limit
 
-lim:lpiterlimit (lpiterlimit)
+lim:iter (lpiterlimit, iterlim)
       The maximum number of iterations that will be performed by primal
       simplex or dual simplex before the optimization process terminates. For
       MIP problems, this is the maximum total number of iterations over all
       nodes.
 
-lim:lprefineiterlimit (lprefineiterlimit)
+lim:lprefineiter (lprefineiterlimit)
       This specifies the simplex iteration limit the solution refiner can
       spend in attempting to increase the accuracy of an LP solution;
       default=-1 (automatic).
@@ -584,17 +593,12 @@ lim:maxcuttime (maxcuttime)
       The maximum amount of time allowed for generation of cutting planes and
       reoptimization;default=0 (no time limit)
 
-lim:maxmipsol (maxmipsol)
-      Limit on the number of MIP solutions to be found (default no limit).
-
-lim:maxstalltime (maxstalltime)
-      Maximum time in seconds that the MIP Optimizer will continue to search
-      for improving solution after finding a new incumbent, default=0 (no
-      limit)
-
 lim:mem (memlimit, maxmemoryhard)
       Hard limit (integer number of MB) on memory allocated, causing early
       termination if exceeded; default = 0 (no limit)
+
+lim:mipsol (maxmipsol)
+      Limit on the number of MIP solutions to be found (default no limit).
 
 lim:nodes (nodelim, nodelimit, maxnode)
       Maximum MIP nodes to explore (default: 2147483647).
@@ -606,6 +610,11 @@ lim:softmem (softmemlimit, maxmemorysoft)
 lim:soltime (soltimelim, soltimelimit)
       Limit on solve time (in seconds; default: no limit) to be applied only
       after a solution has been found.
+
+lim:stalltime (maxstalltime)
+      Maximum time in seconds that the MIP Optimizer will continue to search
+      for improving solution after finding a new incumbent, default=0 (no
+      limit)
 
 lim:time (timelim, timelimit)
       Limit on solve time (in seconds; default: no limit).
@@ -883,8 +892,11 @@ mip:feasibilityjump (feasibilityjump)
       Decides whether to run the Feasibility Jump heuristic at the top node
       during branch-and-bound:
 
-      0 - No
-      1 - Yes (default)
+      -1 - automatic
+      0  - off
+      1  - run on models with all integer variables
+      2  - run if all non-integer variables have bounds [0, 1]
+      3  - run if all non-integer variables have integer bounds
 
 mip:feasibilitypump (feasibilitypump)
       Decides whether to run the Feasibility Pump heuristic at the top node
@@ -1007,6 +1019,14 @@ mip:heursearchtreeselect (heursearchtreeselect)
            multiple integer solutions.
       32 - local search without an objective function
       64 - local search with an auxiliary objective function
+
+mip:heurshiftprop (heurshiftprop)
+      Determines whether the Shift-and-propagate primal heuristic should be
+      executed immediately after presolve:
+
+      -1 - Automatic choice (default)
+      0  - No
+      1  - Yes.
 
 mip:heurthreads (heurtreads)
       Number of threads to dedicate to running heuristics on the root node:
@@ -1623,6 +1643,15 @@ sol:stub (ams_stub, solstub, solutionstub)
       & Current.nsol & '.sol'"), where "Current.nsol" holds the number of
       returned solutions. That is, file names are obtained by appending 1, 2,
       ... "Current.nsol" to "solutionstub".
+
+tech:backgroundselect (backgroundselect)
+      Select which tasks to run in background jobs;default - 1 ==> automatic
+      choice. Set to 0 to not to run any task in the background or to 1 to run
+      the feasibility jump heuristic in the background.
+
+tech:backgroundthreads (backgroundmaxthreads, backgroundthreads)
+      Limits the number of threads that Xpress will use for jobs in the
+      background;default - 1 ==> automatic choice.
 
 tech:cputime (cputime)
       How time should be measured when timings are reported in the log and

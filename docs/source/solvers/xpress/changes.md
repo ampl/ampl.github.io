@@ -1,7 +1,27 @@
 # XPRESS Changelog
 
+## 20230817
+- Alternative solutions: solve status equal to that
+  of the final solution.
+- Fixed a bug causing repeated names for
+  auxiliary variables and constraints.
+- Option values can be assigned without '='.
+- Fixed a bug where equivalent conditional
+  comparisons were not unified.
+
+
+## 20230808
+- Updates for Xpress 9.2 (42.01.01), which include many performance
+  improvements in the MIP solver. 
+- Non-convex quadratic problems are now solved to global optimality 
+  by default.
+- Added options 'mip:heurshiftprop', 'tech:backgroundthreads' and
+ 'tech:backgroundselect'.
+- The range of the control 'mip:feasibilityjump' was extended.
+
+
 ## 20230728
-- Option 'tech:writesolution'
+- Option 'tech:writesolution'.
 
 
 ## 20230727

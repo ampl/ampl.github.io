@@ -160,9 +160,11 @@ cvt:bigM (cvt:bigm, cvt:mip:bigM, cvt:mip:bigm)
       used by default. Use with care (prefer tight bounds). Should be smaller
       than (1.0 / [integrality tolerance])
 
-cvt:mip:eps (cvt:cmp:eps)
-      Tolerance for strict comparison of continuous variables for MIP. Ensure
-      larger than the solver's feasibility tolerance.
+cvt:mip:eps (cvt:cmp:eps, cmp:eps)
+      Tolerance for strict comparison of continuous variables for MIP. Applies
+      to <, >, and != operators. Also applies to negation of conditional
+      comparisons: b==1 <==> x<=5 means that with b==0, x>=5+eps. Default:
+      1e-4.
 
 cvt:names (names, modelnames)
       Whether to read or generate variable / constraint / objective names:

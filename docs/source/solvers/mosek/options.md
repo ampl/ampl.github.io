@@ -164,9 +164,11 @@ cvt:bigM (cvt:bigm, cvt:mip:bigM, cvt:mip:bigm)
 cvt:expcones (expcones)
       0/1*: Recognize exponential cones.
 
-cvt:mip:eps (cvt:cmp:eps)
-      Tolerance for strict comparison of continuous variables for MIP. Ensure
-      larger than the solver's feasibility tolerance.
+cvt:mip:eps (cvt:cmp:eps, cmp:eps)
+      Tolerance for strict comparison of continuous variables for MIP. Applies
+      to <, >, and != operators. Also applies to negation of conditional
+      comparisons: b==1 <==> x<=5 means that with b==0, x>=5+eps. Default:
+      1e-4.
 
 cvt:names (names, modelnames)
       Whether to read or generate variable / constraint / objective names:
@@ -322,15 +324,14 @@ tech:wantsol (wantsol)
 tech:writegraph (writegraph, exportgraph)
       File to export conversion graph. Format: JSON Lines.
 
-tech:writemodel (writeprob, writemodel)
-      Specifies the name of a file where to export the model before solving
-      it. This file name can have extension ".lp[.7zip]", ".mps", etc. Default
-      = "" (don't export the model).
+tech:writemodel (writeprob, writemodel, tech:exportfile)
+      Specifies files where to export the model before solving (repeat the
+      option for several files.) File name extensions can be ".lp[.7z]",
+      ".mps", etc.
 
 tech:writemodelonly (justwriteprob, justwritemodel)
-      Specifies the name of a file where to export the model, do not solve it.
-      This file name can have extension ".dlp", ".mps", etc. Default = ""
-      (don't export the model).
+      Specifies files where to export the model, no solving (option can be
+      repeated.) File extensions can be ".dlp", ".mps", etc.
 
 ```
 

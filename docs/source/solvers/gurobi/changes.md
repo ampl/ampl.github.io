@@ -1,5 +1,15 @@
 # GUROBI Changelog
 
+## 20230817
+- Alternative solutions: solve status equal to that
+  of the final solution.
+- Fixed a bug causing repeated names for
+  auxiliary variables and constraints.
+- Option values can be assigned without '='.
+- Fixed a bug where equivalent conditional
+  comparisons were not unified.
+
+
 ## 20230728
 - Option 'tech:writesolution' #218
 - Option 'writeprob' ('tech:writemodel') ASL-compatible
