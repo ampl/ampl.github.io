@@ -289,6 +289,40 @@ obj:no (objno)
       1 - First (default, if available)
       2 - Second (if available), etc.
 
+sol:chk:fail (chk:fail, checkfail)
+      Fail on constraint violations.
+
+sol:chk:feastol (sol:chk:eps, sol:eps, chk:eps)
+      Solution checking tolerance for objective values, variable and
+      constraint bounds. Default 1e-6.
+
+sol:chk:inttol (sol:chk:inteps, sol:inteps, chk:inteps)
+      Solution checking tolerance for variables' integrality. Default 1e-5.
+
+sol:chk:mode (solcheck, checkmode, chk:mode)
+      Solution checking mode. Sum of a subset of the following bits:
+
+      1 - Check variable bounds and integrality.
+      2 - Check original model constraints, as well as any non-linear
+      expression values reported by the solver.
+      4 - Check intermediate auxiliary constraints (i.e., those which were
+      reformulated further).
+      8 - Check final auxiliary constraints sent to solver.
+      16 - Check objective values.
+      32, 64, 128, 256, 512 - similar, but non-linear expressions are
+      recomputed (vs using their values reported by the solver.)
+      *Experimental.* This is an idealistic check, because it does not
+      consider possible tolerances applied by the solver when computing
+      expression values.
+
+      Default: 1+2+16+512.
+
+sol:chk:noprec (chk:noprec, chk:no_solution_precision)
+      Don't use AMPL solution_precision option when checking.
+
+sol:chk:noround (chk:noround, chk:no_solution_round)
+      Don't use AMPL solution_round option when checking.
+
 tech:debug (debug)
       0*/1: whether to assist testing & debugging, e.g., by outputting
       auxiliary information.

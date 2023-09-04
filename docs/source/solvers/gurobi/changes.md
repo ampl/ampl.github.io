@@ -1,5 +1,10 @@
 # GUROBI Changelog
 
+## 20230831
+- Solution checking, options sol:chk:* (experimental).
+- Preprocess And/Or constraints.
+
+
 ## 20230817
 - Alternative solutions: solve status equal to that
   of the final solution.
