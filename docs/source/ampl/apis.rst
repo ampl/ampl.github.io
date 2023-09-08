@@ -14,7 +14,7 @@ Python
 
         $ python -m pip install amplpy
 
-- Documentation: http://amplpy.readthedocs.org/
+- Documentation: https://amplpy.readthedocs.org/
 - GitHub: https://github.com/ampl/amplpy
 
 .. _apis_r:
@@ -29,7 +29,7 @@ R
         install.packages("Rcpp", type="source")
         install.packages("https://ampl.com/dl/API/rAMPL.tar.gz", repos=NULL)
 
-- Documentation: http://rAMPL.readthedocs.org/
+- Documentation: https://rAMPL.readthedocs.org/
 - GitHub: https://github.com/ampl/rAMPL
 
 .. _apis_java:

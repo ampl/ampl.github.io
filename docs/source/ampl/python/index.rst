@@ -9,7 +9,7 @@ AMPL integration with Python
   :target: https://amplopt.streamlit.app
   :alt: AMPL' All-New Python ecosystem
 
-[`Model Colaboratory <http://colab.ampl.com>`_] [`AMPL on Streamlit <http://ampl.com/streamlit>`_] [`AMPL Community Edition <https://ampl.com/ce>`_]
+[`Model Colaboratory <https://colab.ampl.com>`_] [`AMPL on Streamlit <https://ampl.com/streamlit>`_] [`AMPL Community Edition <https://ampl.com/ce>`_]
 
 :ref:`AMPL and all solvers are now available as python packages <amplpy.modules>` for **Windows, Linux (X86_64, aarch64, ppc64le), and macOS**. For instance, to install AMPL with HiGHS, CBC and Gurobi,
 you just need the following:
@@ -62,7 +62,7 @@ you just need the following:
     print(f"Volatility: {sigma*100:.1f}%")
     # ... post-process solution in Python
 
-[`Python API <http://amplpy.readthedocs.io>`_] [`GitHub <https://github.com/ampl/amplpy>`_]
+[`Python API <https://amplpy.readthedocs.io>`_] [`GitHub <https://github.com/ampl/amplpy>`_]
 
 On Google Colab
 ~~~~~~~~~~~~~~~
@@ -84,7 +84,7 @@ You can also install AMPL on :ref:`Google Colab <colab>` (`where it is free by d
     On Google Colab there is a default `AMPL Community
     Edition license <https://ampl.com/ce/>`_ that gives you **access to AMPL
     with open-source solvers for personal, academic or commercial prototyping use** (e.g., HiGHS, CBC, Couenne, Ipopt, Bonmin)
-    or with commercial solvers from the `NEOS Server <http://www.neos-server.org/>`_ as described in `Kestrel documentation <https://dev.ampl.com/solvers/kestrel.html>`_.
+    or with commercial solvers from the `NEOS Server <https://www.neos-server.org/>`_ as described in `Kestrel documentation <https://dev.ampl.com/solvers/kestrel.html>`_.
 
     In the list ``modules`` you need to include
     ``"gokestrel"`` to use the `kestrel <https://dev.ampl.com/solvers/kestrel.html>`_ driver;
@@ -92,7 +92,7 @@ You can also install AMPL on :ref:`Google Colab <colab>` (`where it is free by d
     ``"coin"`` for the `COIN-OR <https://www.coin-or.org/>`_ solvers.
     To use other commercial solvers, your license needs to include the commercial solver (e.g., an AMPL CE commercial solver trial).
 
-[`Model Colaboratory <http://colab.ampl.com>`_]
+[`Model Colaboratory <https://colab.ampl.com>`_]
 
 On Streamlit Cloud
 ~~~~~~~~~~~~~~~~~~
@@ -103,13 +103,13 @@ applications.
 Check it out on Streamlit Cloud: |RunOnStreamlit|
 
 .. |RunOnStreamlit| image:: https://static.streamlit.io/badges/streamlit_badge_black_white.svg
-   :target: http://ampl.com/streamlit
+   :target: https://ampl.com/streamlit
 
-- `💡 Modeling tips on Streamlit <http://ampl.com/streamlit/Modeling_Tips>`_
-- `👑 M-Queens Problem <http://ampl.com/streamlit/N-Queens>`_
-- `📈 Risk Return (Prescriptive Analytics example) <http://ampl.com/streamlit/Risk_Return>`_
+- `💡 Modeling tips on Streamlit <https://ampl.com/streamlit/Modeling_Tips>`_
+- `👑 M-Queens Problem <https://ampl.com/streamlit/N-Queens>`_
+- `📈 Risk Return (Prescriptive Analytics example) <https://ampl.com/streamlit/Risk_Return>`_
 
-[`AMPL on Streamlit <http://ampl.com/streamlit>`_]
+[`AMPL on Streamlit <https://ampl.com/streamlit>`_]
 
 See more
 ~~~~~~~~

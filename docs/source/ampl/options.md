@@ -233,7 +233,7 @@ constraints that can be dropped.
 ### constraint_drop_tol r (default 0)
 
 Whether to change presolve behavior to avoid a subtle issue apparently caused by roundoff error.
-A complete description is given in [http://www.netlib.org/ampl/fixlog](http://www.netlib.org/ampl/fixlog).
+A complete description is given in [https://www.netlib.org/ampl/fixlog](https://www.netlib.org/ampl/fixlog).
 
 ### infeas_clear n (default 1)
 
@@ -868,7 +868,7 @@ sequence to be restarted.
 ### table_debug_template s (default "%.dbtab")
 
 Instructions for writing and reading AMPL text-format database tables, for use in debugging
-table statements. A complete description is given in [http://www.netlib.org/ampl/fixlog](http://www.netlib.org/ampl/fixlog).
+table statements. A complete description is given in [https://www.netlib.org/ampl/fixlog](https://www.netlib.org/ampl/fixlog).
 
 ### table_errbreak n (default 0)
 

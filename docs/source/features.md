@@ -199,7 +199,7 @@ have versions with the new interface. Also we will soon be distributing the
 
 ## Using remote solvers from NEOS with gokestrel
 
-To simplify the work of comparing and testing solvers, we have made AMPL and solver resources available online in collaboration with the [NEOS Server](http://www.neos-server.org/) project, under the auspices of the [Wisconsin Institutes for Discovery](http://www.discovery.wisc.edu/) at the University of Wisconsin, Madison. 
+To simplify the work of comparing and testing solvers, we have made AMPL and solver resources available online in collaboration with the [NEOS Server](https://www.neos-server.org/) project, under the auspices of the [Wisconsin Institutes for Discovery](https://www.discovery.wisc.edu/) at the University of Wisconsin, Madison. 
 
 Thanks to [gokestrel](https://github.com/ampl/gokestrel), our new Kestrel driver, instead of specifying a solver installed on your computer or local network, you invoke Kestrel, a "client" program that sends your problem to a solver running on one of the NEOS Server's remote computers. The results from the NEOS Server are eventually returned through Kestrel to AMPL, where you can view and manipulate them locally in the usual way.
 

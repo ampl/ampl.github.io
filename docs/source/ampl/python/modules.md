@@ -27,7 +27,7 @@ List of modules available:
 
 - [Open-source solvers](https://ampl.com/products/solvers/open-source-solvers/): `highs`, `cbc`, `coin` (includes: CBC, Couenne, Ipopt, Bonmin), `open` (includes all open-source solvers)
 
--  [NEOS Server](http://www.neos-server.org/): `gokestrel` ([kestrel client](https://dev.ampl.com/solvers/kestrel.html))
+-  [NEOS Server](https://www.neos-server.org/): `gokestrel` ([kestrel client](https://dev.ampl.com/solvers/kestrel.html))
 
 -   Commercial solvers: [`baron`](https://ampl.com/products/solvers/solvers-we-sell/baron/), [`conopt`](https://ampl.com/products/solvers/solvers-we-sell/conopt/), [`copt`](https://ampl.com/products/solvers/solvers-we-sell/copt/), [`cplex`](https://ampl.com/products/solvers/solvers-we-sell/cplex/), [`gurobi`](https://ampl.com/products/solvers/solvers-we-sell/gurobi/), [`knitro`](https://ampl.com/products/solvers/solvers-we-sell/knitro/), [`lgo`](https://ampl.com/products/solvers/solvers-we-sell/lgo/), [`lindoglobal`](https://ampl.com/products/solvers/solvers-we-sell/lindoglobal/), [`loqo`](https://ampl.com/products/solvers/solvers-we-sell/loqo/), [`minos`](https://ampl.com/products/solvers/solvers-we-sell/minos/), [`mosek`](https://ampl.com/products/solvers/solvers-we-sell/mosek/), [`octeract`](https://ampl.com/products/solvers/solvers-we-sell/octeract/), [`snopt`](https://ampl.com/products/solvers/solvers-we-sell/snopt/), [`xpress`](https://ampl.com/products/solvers/solvers-we-sell/xpress/)
 
@@ -218,7 +218,7 @@ ampl = AMPL()  # instantiate AMPL object
 
 Even though the [NL format](https://en.wikipedia.org/wiki/Nl_(format))
 was invented for connecting solvers to AMPL, it has been adopted by other systems
-such as Pyomo. [Pyomo](http://www.pyomo.org/) is an open-source modeling tool written in Python
+such as Pyomo. [Pyomo](https://www.pyomo.org/) is an open-source modeling tool written in Python
 that is compatible with solvers that read .nl files, which means it works with all
 [AMPL solvers](solvers). You can use AMPL solvers with Pyomo as follows:
 
@@ -236,6 +236,6 @@ Nevertheless, feel free to use any of our solvers with other modeling tools.
 
 ```{note}
 **Pyomo is an independent open-source project. It is not developed or maintained by AMPL.** We can just provide support related to deployment using our [solver drivers](solvers). For any Pyomo issues not related to our solvers
-please check the support channels at <http://www.pyomo.org/>.
+please check the support channels at <https://www.pyomo.org/>.
 ```
 

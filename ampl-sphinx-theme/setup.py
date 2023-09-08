@@ -30,7 +30,7 @@ setup(
     author_email="fdabrandao@gmail.com",
     maintainer="Filipe Brandão",
     maintainer_email="fdabrandao@ampl.com",
-    url="http://ampl.com/",
+    url="https://ampl.com/",
     download_url="https://github.com/ampl/ampl.github.io/ampl-sphinx-theme",
     classifiers=[
         "Development Status :: 4 - Beta",
