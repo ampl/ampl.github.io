@@ -1594,13 +1594,17 @@ qp:unshift (quadunshift, quadraticunshift)
       1  - Yes.
 
 sol:chk:fail (chk:fail, checkfail)
-      Fail on constraint violations.
+      Fail on solution checking violations.
 
-sol:chk:feastol (sol:chk:eps, sol:eps, chk:eps)
-      Solution checking tolerance for objective values, variable and
-      constraint bounds. Default 1e-6.
+sol:chk:feastol (sol:chk:eps, chk:eps, chk:feastol)
+      Absolute tolerance to check objective values, variable and constraint
+      bounds. Default 1e-6.
 
-sol:chk:inttol (sol:chk:inteps, sol:inteps, chk:inteps)
+sol:chk:feastolrel (sol:chk:epsrel, chk:epsrel, chk:feastolrel)
+      Relative tolerance to check objective values, variable and constraint
+      bounds. Default 1e-6.
+
+sol:chk:inttol (sol:chk:inteps, sol:inteps, chk:inttol)
       Solution checking tolerance for variables' integrality. Default 1e-5.
 
 sol:chk:mode (solcheck, checkmode, chk:mode)
@@ -1621,11 +1625,13 @@ sol:chk:mode (solcheck, checkmode, chk:mode)
 
       Default: 1+2+16+512.
 
-sol:chk:noprec (chk:noprec, chk:no_solution_precision)
-      Don't use AMPL solution_precision option when checking.
+sol:chk:prec (chk:prec, chk:precision)
+      AMPL solution_precision option when checking: number of significant
+      digits.
 
-sol:chk:noround (chk:noround, chk:no_solution_round)
-      Don't use AMPL solution_round option when checking.
+sol:chk:round (chk:round, chk:rnd)
+      AMPL solution_round option when checking: round to this number of
+      decimals after comma (before comma if negative.)
 
 sol:count (countsolutions)
       0*/1: Whether to count the number of solutions and return it in the
