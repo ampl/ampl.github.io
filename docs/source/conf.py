@@ -128,6 +128,8 @@ html_theme_options = {
 #    "theme_logo_text": "Development",
 # }
 
+html_baseurl = "https://dev.ampl.com"
+
 redirects = {
     "ampl_options": "ampl/options.html",
     "help/install_ampl": "../ampl/install.html",
@@ -235,7 +237,7 @@ latex_elements = {
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-    ("index", "ampldoc.tex", "AMPL Resources", "Filipe Brandão", "manual"),
+    ("index", "ampldoc.tex", "AMPL Resources", "AMPL Optimization Inc.", "manual"),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -268,7 +270,7 @@ man_pages = [
         "index",
         "AMPL Development Resources",
         "AMPL Development Resources",
-        ["Filipe Brandão"],
+        ["AMPL Optimization Inc."],
         1,
     )
 ]
@@ -287,7 +289,7 @@ texinfo_documents = [
         "index",
         "AMPL",
         "AMPL Resources",
-        "Filipe Brandão",
+        "AMPL Optimization Inc.",
         "AMPL",
         "AMPL Resources",
         "Miscellaneous",
