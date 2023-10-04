@@ -143,9 +143,16 @@ solvers_dir = os.path.join(os.path.dirname(__file__), "solvers")
 for solver in os.listdir(solvers_dir):
     if solver.startswith("."):
         continue
+    redirects["solvers/x-gurobi"] = f"gurobi/index.html"
+    redirects["solver_options/x-gurobi_options"] = f"../solvers/gurobi/options.html"
+    redirects["solvers/options/gurobiasl.html"] = "../gurobi/gurobiasl.html"
+    redirects["solvers/options/xpressasl.html"] = "../xpress/xpressasl.html"
     if os.path.isdir(os.path.join(solvers_dir, solver)):
         redirects[f"solvers/{solver}"] = f"{solver}/index.html"
         redirects[f"solvers/options/{solver}"] = f"../{solver}/options.html"
+        redirects[f"solver_options/{solver}_options"] = f"../solvers/{solver}/options.html"
+redirects["ampl/python/colab/index.html"] = "../colab.html"
+
 
 # Add any paths that contain custom themes here, relative to this directory.
 # html_theme_path = []
