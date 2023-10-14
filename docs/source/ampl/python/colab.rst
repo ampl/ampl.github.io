@@ -12,7 +12,7 @@ at the beginning of your notebook:
 .. code-block:: bash
 
     # Install dependencies
-    !pip install -q amplpy
+    %pip install -q amplpy
 
 
 .. code-block:: python
@@ -20,7 +20,7 @@ at the beginning of your notebook:
     # Google Colab & Kaggle integration
     from amplpy import AMPL, tools
     ampl = tools.ampl_notebook(
-        modules=["coin", "highs", "gokestrel"], # modules to install
+        modules=["gurobi", "coin", "highs", "gokestrel"], # modules to install
         license_uuid="default") # license to use
 
 In the list ``MODULES`` you can specify the AMPL solvers you want to use in your notebook.

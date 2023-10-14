@@ -72,11 +72,11 @@ You can also install AMPL on :ref:`Google Colab <colab>` (`where it is free by d
 .. code-block:: bash
 
     # Install dependencies
-    !pip install -q amplpy
+    %pip install -q amplpy
     # Google Colab & Kaggle integration
     from amplpy import AMPL, tools
     ampl = tools.ampl_notebook(
-        modules=["coin", "highs", "gokestrel"], # modules to install
+        modules=["gurobi", "coin", "highs", "gokestrel"], # modules to install
         license_uuid="default") # license to use
 
 
