@@ -40,6 +40,7 @@ AMPL connects to most :ref:`commercial and open-source solvers <solvers>` and al
 
     ampl/index
     solvers/index
+    social
     faq
     features
     projects
