@@ -42,6 +42,10 @@ Note that if c is a logical constraint, then c.val and c should be treated alike
 
 * Fix a rarely seen memory-overwrite bug with multiple declared problems.
 
+## 20230516
+
+* Fix bugs introduced 20230426 in some "let" statements for an entity declared with a side condition, such as a >= expression.
+
 ## 20230430
 
 * Change the error message for
