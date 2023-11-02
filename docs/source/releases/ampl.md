@@ -1,5 +1,47 @@
 # AMPL Changelog
 
+## 20231012
+
+* Fix a glitch in reading values in solution (.sol) files for suffixes on logical constraints.
+
+* Fix a bug with a new problem after solving a problem with a "var ... in set_expr" declaration when the new problem does not involve that variable.  Constraints and variables used to implement the "in set_expr" phrase were erroneously included in the new problem.
+
+## 20230918
+
+* Fix a fault with reading suffix values in a data section.  Example:
+```
+	var x{i in 1 .. 2};
+	minimize zot{j in 1 .. 3} : sum{i in 1 .. 2} (x[i] - (i + j))^2;
+	data;
+	param: x.sstatus_num :=
+		1 2;
+	var x :=
+	 1 2
+	 2 3;
+```
+
+* Fix a fault simplifying logical expressions involving <==>.  The bug only bit when the <==> had to be retained but its right-hand side could be simplified.
+
+* Make the $AMPLFUNC found at startup the $$AMPLFUNC value, so it survives a "reset option;" command.
+
+* New debugging option -w causes AMPL to give return code 0 when exiting after producing various error messages.
+
+* Fix a glitch (fault) illustrated by
+```
+	var x{i in 1..2} integer := i;
+	c: x[1] < x[2]; # logical constraint
+	print c; #faulted
+```
+Note that if c is a logical constraint, then c.val and c should be treated alike, but changing "print c;" to "print c.val;" in the above example avoided the fault.
+
+* When 'e' appears in ($solver & '_auxfiles'), so that a .env file containing the current environment is written by the solve command, remove the .env file at the end of the solve, like other temporary files, such as the .nl file.  When 'e' appears in $auxfiles, have the write command write a .env file.
+
+## 20230816
+
+* Fix a couple of bugs with debugging options -G and -O.  (If you do not know what they do, you do not need them.)
+
+* Fix a rarely seen memory-overwrite bug with multiple declared problems.
+
 ## 20230430
 
 * Change the error message for
