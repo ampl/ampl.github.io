@@ -1245,9 +1245,9 @@ tech:nodefilestart (nodefilestart)
       limit, i.e., no node files written).
 
 tech:optionfile (optionfile, option:file)
-      Name of solver option file. (surrounded by 'single' or "double" quotes
-      if the name contains blanks). Lines that start with # are ignored.
-      Otherwise, each nonempty line should contain "name=value".
+      Name of solver option file to read (surrounded by 'single' or "double"
+      quotes if the name contains blanks). Lines that start with # are
+      ignored. Otherwise, each nonempty line should contain "name=value".
 
 tech:outlev (outlev)
       0*/1: Whether to write gurobi log lines (chatter) to stdout.

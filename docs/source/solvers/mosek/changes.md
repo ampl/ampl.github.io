@@ -1,5 +1,17 @@
 # MOSEK Changelog
 
+## 20231103
+- Improved translation of logical constraints:
+  inlining of nested disjunctions and conjunctions;
+  fewer auxiliary binary variables.
+
+
+## 20231017
+- Fixed a bug in NL reader on Windows.
+- Print a warning when not all quadratic constraints
+    have been converted to cones.
+
+
 ## 20230919
 - *mp_options*.
 	Receive mp_options from AMPL (for all MP solvers).

@@ -1,5 +1,15 @@
 # GUROBI Changelog
 
+## 20231103
+- Improved translation of logical constraints:
+  inlining of nested disjunctions and conjunctions;
+  fewer auxiliary binary variables.
+
+
+## 20231017
+- Fixed a bug in NL reader on Windows.
+
+
 ## 20230920
 - Updated to Gurobi libraries 10.0.3, which include many bugfixes.
 
