@@ -2,8 +2,8 @@
   {%- if url | length > 2 %}
         <li class="nav-item">
           <a class="nav-link" href="{{ url }}" rel="noopener" target="{{ target }}" title="{{ _(name) }}">
-            <span class="d-none d-sm-block"><i class="{{ icon }} fa-fw"></i></span>
-            <span class="d-block d-sm-none"><i class="{{ icon }} fa-fw"></i> {{ _(name) }}</span>
+            <span class="d-none d-lg-block d-xl-block"><i class="{{ icon }} fa-fw"></i></span>
+            <span class="d-block d-lg-none d-xl-none"><i class="{{ icon }} fa-fw"></i> {{ _(name) }}</span>
             <label class="sr-only d-block d-sm-none">{{ _(name) }}</label>
           </a>
         </li>
@@ -24,28 +24,13 @@
         {%- endfor %}
         {{ icon_link_nav_item("https://portal.ampl.com", "fas fa-user fa-fw", "AMPL Portal", "_self") -}}
         {{ icon_link_nav_item("https://discuss.ampl.com", "fab fa-discourse fa-fw", "Discourse", "_blank") -}}
-        <li class="nav-item dropdown">
-              <a class="nav-link" href="#" id="projects_dropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="AMPL Pages">
-              <span class="d-none d-sm-block"><i class="bi bi-grid-3x3-gap-fill fas fa-fw"></i></span>
-              <span class="d-block d-sm-none"><i class="bi bi-grid-3x3-gap-fill fas fa-fw"></i> AMPL Pages &#9660;</span>
-              <label class="sr-only d-block d-sm-none">AMPL Pages</label>
+        <li class="nav-item dropdown d-block d-lg-none d-xl-none">
+              <a class="nav-link" href="#" id="ampl_pages" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="AMPL Pages">
+              <i class="bi bi-grid-3x3-gap-fill fas fa-fw"></i> AMPL Pages</span>
+              <label class="sr-only">AMPL Pages</label>
               </a>
-              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="projects_dropdown">
-              <a class="dropdown-item" href='https://ampl.com'>AMPL.com</a>
-              <a class="dropdown-item" href='https://portal.ampl.com'>AMPL Portal</a>
-              <a class="dropdown-item" href='https://discuss.ampl.com'>AMPL Forum</a>
-              <a class="dropdown-item" href='https://dev.ampl.com'>AMPL Resources</a>
-              <a class="dropdown-item" href='https://mo-book.ampl.com'>MO Book With AMPL</a>
-              <a class="dropdown-item" href='https://colab.ampl.com'>AMPL Model Colaboratory</a>
-              <a class="dropdown-item" href='https://ampl.com/ce'>AMPL Community Edition</a>
-              <div class="dropdown-header">Open Source Projects</div>
-              <a class="dropdown-item" href='https://gsl.ampl.com/'>AMPL GSL</a>
-              <a class="dropdown-item" href='https://plugins.ampl.com/'>AMPL Plugins</a>
-              <a class="dropdown-item" href='https://amplpy.ampl.com/'>amplpy: Python API</a>
-              <a class="dropdown-item" href='https://rAMPL.ampl.com/'>rAMPL: R API</a>
-              <a class="dropdown-item" href='https://amplpyfinance.ampl.com/'>amplpyfinance</a>
-              <a class="dropdown-item" href='https://ampls.ampl.com/'>Solver Callbacks</a>
-              <a class="dropdown-item" href='https://mp.ampl.com/'>MP: Solver Interface Framework</a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="ampl_pages">
+              {%- include "ampl-pages.html" with context -%}
               </div>
         </li>
       </ul>

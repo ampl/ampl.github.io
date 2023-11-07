@@ -8,6 +8,15 @@
   <img src="{{ pathto('_static/' + logo, 1) }}" class="logo" alt="logo">
 </a>
 {% else %}
+<ul class="navbar-nav" style="display: inline-block">
+  <li class="nav-item dropdown d-none d-lg-block d-xl-block">
+        <a class="nav-link" href="#" id="ampl_pages_left" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="AMPL Pages">
+        <i class="bi bi-grid-3x3-gap-fill fas fa-fw"></i>
+        </a>
+        <div class="dropdown-menu dropdown-menu-left" aria-labelledby="ampl_pages_left">
+        {%- include "ampl-pages.html" with context -%}
+  </li>
+</ul>
 <a class="navbar-brand" href="{{ pathto(theme_logo_link) }}" style="padding-top: 15px">
   {% if not theme_logo_text %}
     <img src="{{ pathto('_static/' + logo, 1) }}" class="logo" alt="logo">
