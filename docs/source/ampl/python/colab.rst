@@ -18,8 +18,8 @@ at the beginning of your notebook:
 .. code-block:: python
 
     # Google Colab & Kaggle integration
-    from amplpy import AMPL, tools
-    ampl = tools.ampl_notebook(
+    from amplpy import AMPL, ampl_notebook
+    ampl = ampl_notebook(
         modules=["gurobi", "coin", "highs", "gokestrel"], # modules to install
         license_uuid="default") # license to use
 
