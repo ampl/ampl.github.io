@@ -1,5 +1,19 @@
 # HiGHS Changelog
 
+## 20231117
+- MP update: fixed graceful exit on Ctrl-C from AMPL in Linux
+  and fixed issue with reading text-format NL files
+
+
+## 20231109
+- *Updated* to HiGHS 1.6.0
+
+## 20231103
+- Improved translation of logical constraints:
+  inlining of nested disjunctions and conjunctions;
+  fewer auxiliary binary variables.
+
+
 ## 20231017
 - Fixed a bug in NL reader on Windows.
 - Don't return basis for MIPs.

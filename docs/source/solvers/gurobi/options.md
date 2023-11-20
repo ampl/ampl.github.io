@@ -565,6 +565,10 @@ lim:submipnodes (submipnodes, maxmipsub)
 lim:time (timelim, timelimit)
       Limit on solve time (in seconds; default: no limit).
 
+lim:work (worklim, worklimit)
+      Limit on work units. Roughly corresponds to seconds per thread but
+      deterministic. Default: no limit).
+
 lim:zeroobjnodes (zeroobjnodes)
       Number of nodes to explore in the zero objective heuristic. Note that
       this heuristic is only applied at the end of the MIP root, and only when

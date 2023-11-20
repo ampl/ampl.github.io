@@ -1,5 +1,10 @@
 # CBC Changelog
 
+## 20231117
+- MP update: fixed graceful exit on Ctrl-C from AMPL in Linux
+  and fixed issue with reading text-format NL files
+
+
 ## 20231103
 - Improved translation of logical constraints:
   inlining of nested disjunctions and conjunctions;

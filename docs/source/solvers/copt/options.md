@@ -213,6 +213,10 @@ cvt:sos2 (sos2)
 lim:nodes (nodelim, nodelimit)
       Maximum MIP nodes to explore (default: no limit).
 
+lim:soltime (soltimelim, soltimelimit)
+      Time limit if a primal feasible solution has been found (in seconds;
+      default: no limit).
+
 lim:time (timelim, timelimit)
       limit on solve time (in seconds; default: no limit).
 

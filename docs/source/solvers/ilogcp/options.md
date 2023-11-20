@@ -225,9 +225,9 @@ tech:debug (debug)
       auxiliary information.
 
 tech:optionfile (optionfile, option:file)
-      Name of solver option file. (surrounded by 'single' or "double" quotes
-      if the name contains blanks). Lines that start with # are ignored.
-      Otherwise, each nonempty line should contain "name=value".
+      Name of solver option file to read (surrounded by 'single' or "double"
+      quotes if the name contains blanks). Lines that start with # are
+      ignored. Otherwise, each nonempty line should contain "name=value".
 
 tech:timing (timing)
       0*/1: Whether to display timings for the run.
