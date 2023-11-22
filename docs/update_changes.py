@@ -7,6 +7,7 @@ SOLVERS = {
     "BARON": "baron",
     "CONOPT": "conopt",
     "CPLEX": "cplex",
+    "CPLEXMP": "cplexmp",
     "ILOGCP": "ilogcp",
     "GUROBI": "gurobi",
     "KNITRO": "knitro",
@@ -47,6 +48,8 @@ for label, solver in SOLVERS.items():
         fname = f"solvers/{solver}/changes.md"
         if solver.endswith("asl"):
             fname = f"solvers/{solver[:-3]}/changesasl.md"
+        elif solver.endswith("mp"):
+            fname = f"solvers/{solver[:-2]}/changesmp.md"
         releases[solver] = {
             "label": label,
             "file": fname,
@@ -56,9 +59,13 @@ for label, solver in SOLVERS.items():
     else:
         print(f"No changelog for {solver}.")
 
-    fname = f"source/solvers/{solver}/options.md"
     if solver.endswith("asl"):
         fname = f"source/solvers/{solver.replace('asl', '')}/{solver}.md"
+    elif solver.endswith("mp"):
+        fname = f"source/solvers/{solver.replace('mp', '')}/{solver}.md"
+    else:
+        fname = f"source/solvers/{solver}/options.md"
+
     with open(fname, "w") as f:
         print(
             f"""

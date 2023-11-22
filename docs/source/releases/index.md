@@ -9,6 +9,7 @@
 - [**CONOPT** Changelog (latest: **20211109**)](../solvers/conopt/changes.md)
 - [**COPT** Changelog (latest: **20231117**)](../solvers/copt/changes.md)
 - [**CPLEX** Changelog (latest: **20230228**)](../solvers/cplex/changes.md)
+- [**CPLEXMP** Changelog (latest: **20231122**)](../solvers/cplex/changesmp.md)
 - [**GCG** Changelog (latest: **20230919**)](../solvers/gcg/changes.md)
 - [**GUROBI** Changelog (latest: **20231117**)](../solvers/gurobi/changes.md)
 - [**GUROBIASL** Changelog (latest: **20230310**)](../solvers/gurobi/changesasl.md)
@@ -31,9 +32,12 @@ ampl.md
 ```
 
 
+## 20231122
+- [CPLEXMP](../solvers/cplex/changesmp.md#20231122)
 ## 20231117
 - [CBC](../solvers/cbc/changes.md#20231117)
 - [COPT](../solvers/copt/changes.md#20231117)
+- [CPLEXMP](../solvers/cplex/changesmp.md#20231117)
 - [GUROBI](../solvers/gurobi/changes.md#20231117)
 - [HiGHS](../solvers/highs/changes.md#20231117)
 - [MOSEK](../solvers/mosek/changes.md#20231117)
@@ -91,6 +95,8 @@ ampl.md
 - [XPRESS](../solvers/xpress/changes.md#20230817)
 ## 20230816
 - [AMPL](../releases/ampl.md#20230816)
+## 20230815
+- [CPLEXMP](../solvers/cplex/changesmp.md#20230815)
 ## 20230808
 - [XPRESS](../solvers/xpress/changes.md#20230808)
 ## 20230728
