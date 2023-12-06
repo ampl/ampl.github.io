@@ -150,6 +150,8 @@ ampl.md
 - [MOSEK](../solvers/mosek/changes.md#20230616)
 - [SCIP](../solvers/scip/changes.md#20230616)
 - [XPRESS](../solvers/xpress/changes.md#20230616)
+## 20230612
+- [GUROBI](../solvers/gurobi/changes.md#20230612)
 ## 20230607
 - [XPRESS](../solvers/xpress/changes.md#20230607)
 ## 20230603

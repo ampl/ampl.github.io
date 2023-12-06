@@ -1,6 +1,14 @@
 (what_is_new)=
 # What's new?
 
+## New book: Hands-On Mathematical Optimization with AMPL in Python
+
+```{eval-rst}
+.. image:: https://portal.ampl.com/dl/ads/mo_book_big.png
+  :alt: Hands-On Mathematical Optimization with AMPL in Python
+  :target: https://ampl.com/mo-book/
+```
+
 ## AMPL Community Edition
 
 **Free, full-powered AMPL for personal, academic, or commercial prototyping purposes using [AMPL APIs](ampl/apis.md)**.

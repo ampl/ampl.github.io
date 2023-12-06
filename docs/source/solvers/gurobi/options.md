@@ -184,6 +184,15 @@ alg:basis (basis)
       alg:basis=0 is assumed quietly unless mip:basis=1 or qcp:dual=1 is
       specified, respectively.
 
+alg:concurrentmethod (concurrentmethod)
+      Controls the methods used by the concurrent continuous solver:
+
+      -1 - Automatic (default)
+      0  - Barrier, dual, primal simplex
+      1  - Barrier and dual simplex
+      2  - Barrier and primal simplex
+      3  - Dual and primal simplex
+
 alg:cutoff (cutoff)
       If the optimal objective value is worse than cutoff, report "objective
       cutoff" and do not return a solution. Default: Infinity for minimizing,
@@ -312,6 +321,13 @@ alg:sens (sens, solnsens, sensitivity)
       For problems with integer variables or quadratic constraints, alg:sens=0
       is assumed quietly.
 
+alg:solutiontarget (solutiontarget)
+      Specifies the solution targetfor linear programs (LP):
+
+      -1 - Automatic (default)
+      0  - Primal and dual optimal and basic
+      1  - primal and dual optimal
+
 alg:start (warmstart)
       Whether to use incoming primal (and dual, for LP) variable values in a
       warmstart:
@@ -438,6 +454,14 @@ cut:mipsep (mipsep)
 cut:mir (mircuts)
       MIR cuts: overrides "cuts"; choices as for "cuts".
 
+cut:mixingcuts
+      Mixing cuts: overrides "cuts"
+
+      -1 - Automatic choice (default)
+      0  - No cuts
+      1  - Conservative cut generation
+      2  - Aggressive cut generation.
+
 cut:modk (modkcuts)
       Mod-k cuts: overrides "cuts"; choices as for "cuts".
 
@@ -507,6 +531,9 @@ cvt:pre:eqbinary
 cvt:pre:eqresult
       0/1*: Preprocess reified equality comparison's boolean result bounds.
 
+cvt:pre:unnest
+      0/1*: Inline nested expressions, currently Ands/Ors.
+
 cvt:quadcon (passquadcon)
       0/1*: Multiply out and pass quadratic constraint terms to the solver,
       vs. linear approximation.
@@ -525,6 +552,17 @@ cvt:sos (sos)
 cvt:sos2 (sos2)
       0/1*: Whether to honor SOS2 constraints for nonconvex piecewise-linear
       terms, using suffixes .sos and .sosref provided by AMPL.
+
+cvt:uenc:negctx:max (uenc:negctx:max, uenc:negctx)
+      If cvt:uenc:ratio applies, max number of constants in comparisons
+      x==const in negative context (equivalently, x!=const in positive
+      context) to skip UEnc(x). Default 1.
+
+cvt:uenc:ratio (uenc:ratio)
+      Min ratio (ub-lb)/Nvalues to skip unary encoding for a variable x, where
+      Nvalues is the number of constants used in conditional comparisons
+      x==const. Instead, indicator constraints (or big-Ms) are used, if
+      uenc:negctx also applies. Default 0.
 
 lim:iter (iterlim, iterlimit)
       Iteration limit (default: no limit).
@@ -971,6 +1009,14 @@ pre:dualreductions (dualreductions)
       0 - No
       1 - Yes (default)
 
+pre:funcnonlinear (funcnonlinear)
+      This attribute controls how general functions with their constraint's or
+      objective's .funcnonlinear suffix set to -1 are treated:
+
+      -1 - Default (Gurobi 11: piecewise-linear approximation)
+      0  - Piecewise-linear approximation
+      1  - Treated as nonlinear functions
+
 pre:funcpieceerror (funcpieceerror)
       For 'funcpieces=-1' or -2, this option provides the maximum allowed
       error (absolute for -1, relative for -2) in the piecewise-linear
@@ -1112,7 +1158,7 @@ qcp:dual (qcpdual)
 qp:nonconvex (nonconvex)
       How to handle non-convex quadratic objectives and constraints:
 
-      -1 - Default choice (currently the same as 1)
+      -1 - Default choice (currently almost the same as 2)
       0  - Complain about nonquadratic terms
       1  - Complain if Gurobi's presolve cannot discard or eliminate
            nonquadratic terms
@@ -1124,7 +1170,7 @@ qp:psdtol (psdtol)
       objectives (default 1e-6).
 
 sol:chk:fail (chk:fail, checkfail)
-      Fail on solution checking violations.
+      Fail on solution checking violations, with solve result 570.
 
 sol:chk:feastol (sol:chk:eps, chk:eps, chk:feastol)
       Absolute tolerance to check objective values, variable and constraint
@@ -1133,6 +1179,9 @@ sol:chk:feastol (sol:chk:eps, chk:eps, chk:feastol)
 sol:chk:feastolrel (sol:chk:epsrel, chk:epsrel, chk:feastolrel)
       Relative tolerance to check objective values, variable and constraint
       bounds. Default 1e-6.
+
+sol:chk:infeas (chk:infeas, checkinfeas)
+      Check even infeasible solution condidates, whenever solver reports them.
 
 sol:chk:inttol (sol:chk:inteps, sol:inteps, chk:inttol)
       Solution checking tolerance for variables' integrality. Default 1e-5.
@@ -1351,6 +1400,12 @@ tech:tunebase (tunebase)
       ".prm". The file with _1_ inserted is the best set and the solve results
       returned are for this set. In a subsequent "solve;", you can use
       "tech:param:read=..." to apply the settings in results file ... .
+
+tech:tunedynamicjobs (pool_tunedynamicjobs, tunedynamicjobs)
+      Enables distributed parallel tuning, which can significantly increase
+      the performance of the tuning tool. A value of n causes the tuning tool
+      to use a dynamic set of up to n workers in parallel. A value of -1
+      allows the solver to use an unlimited number of workers. Default = 0.
 
 tech:tunejobs (pool_tunejobs, tunejobs)
       Enables distributed parallel tuning, which can significantly increase
