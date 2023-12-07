@@ -2,7 +2,7 @@
 
 Xpress offers proven optimization technology for large-scale applications, with out-of-the-box high performance on a wide range of model types.  Its ultra-efficient sparse matrix handling and on-the-fly data compression address the largest problems, with reliable performance even on numerically difficult or unstable problems.
 The framework used by the drivers supports automatic reformulation for many expression types; the relative guide can be
-found [here](https://amplmp.readthedocs.io/en/latest/rst/model-guide.html#modeling-guide).
+found [here](https://mp.ampl.com/model-guide.html#modeling-guide).
 
 [[Read More](https://ampl.com/products/solvers/solvers-we-sell/xpress/)]
 [[Options](options.md)]
@@ -10,7 +10,7 @@ found [here](https://amplmp.readthedocs.io/en/latest/rst/model-guide.html#modeli
 [[Download](https://portal.ampl.com)]
 
 ```{note}
-This package contains an all-new Xpress driver, that provides significantly extended modeling support for logical and nonlinear operators through linearizations performed by the [MP library](https://amplmp.readthedocs.io/). For compatibility, there are two binaries in this package: `xpress` [[options](options.md)] is the new version, `xpressasl` [[options](xpressasl.md)] is the legacy version. If you are upgrading an existing installation and encounter any issues with the new version please report them to [support@ampl.com](mailto:support@ampl.com).
+This package contains an all-new Xpress driver, that provides significantly extended modeling support for logical and nonlinear operators through linearizations performed by the [MP library](https://mp.ampl.com/). For compatibility, there are two binaries in this package: `xpress` [[options](options.md)] is the new version, `xpressasl` [[options](xpressasl.md)] is the legacy version. If you are upgrading an existing installation and encounter any issues with the new version please report them to [support@ampl.com](mailto:support@ampl.com).
 ```
 
 ## How to use it
@@ -44,25 +44,25 @@ ampl: solve; # solve the problem
 
 * Features for all models:
     * Problem input
-        * [Basis IO](https://amplmp.readthedocs.io/en/latest/rst/features-guide.html#input-and-output-basis)
-        * [Warm start](https://amplmp.readthedocs.io/en/latest/rst/features-guide.html#warm-start)
-        * [Multiple objectives](https://amplmp.readthedocs.io/en/latest/rst/features-guide.html#multiple-objectives)
+        * [Basis IO](https://mp.ampl.com/features-guide.html#input-and-output-basis)
+        * [Warm start](https://mp.ampl.com/features-guide.html#warm-start)
+        * [Multiple objectives](https://mp.ampl.com/features-guide.html#multiple-objectives)
 
     * Model investigation
 
-        * [Multiple solutions](https://amplmp.readthedocs.io/en/latest/rst/features-guide.html#multiple-solutions)
+        * [Multiple solutions](https://mp.ampl.com/features-guide.html#multiple-solutions)
 
     * Dealing with infeasibility/unboundedness
     
-        * [IIS](https://amplmp.readthedocs.io/en/latest/rst/features-guide.html#irreducible-inconsistent-subset-iis)
+        * [IIS](https://mp.ampl.com/features-guide.html#irreducible-inconsistent-subset-iis)
 
 
 
 * Features for MIP models:
     * Model investigation
-      * [Return MIP gap](https://amplmp.readthedocs.io/en/latest/rst/features-guide.html#return-mip-gap)
-      * [Return best dual bound](https://amplmp.readthedocs.io/en/latest/rst/features-guide.html#return-best-dual-bound)
-      * [Fixed model](https://amplmp.readthedocs.io/en/latest/rst/features-guide.html#fixed-model-return-basis-for-mip)
+      * [Return MIP gap](https://mp.ampl.com/features-guide.html#return-mip-gap)
+      * [Return best dual bound](https://mp.ampl.com/features-guide.html#return-best-dual-bound)
+      * [Fixed model](https://mp.ampl.com/features-guide.html#fixed-model-return-basis-for-mip)
 
 
 ## Solver options
@@ -131,7 +131,7 @@ display solve_result_num, solve_result;
 ### IIS
 
 When a model is unfeasible, one usedful information is finding the irreducible inconsistent sets, which are subsets of constraints that are
-incompatible. This is supported by the framework, see the description [here](https://amplmp.readthedocs.io/en/latest/rst/features-guide.html#irreducible-inconsistent-set-iis).
+incompatible. This is supported by the framework, see the description [here](https://mp.ampl.com/features-guide.html#irreducible-inconsistent-set-iis).
 
 ## Changelog
 

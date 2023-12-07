@@ -14,7 +14,7 @@ Python
 
         $ python -m pip install amplpy
 
-- Documentation: https://amplpy.readthedocs.org/
+- Documentation: https://amplpy.ampl.com/
 - GitHub: https://github.com/ampl/amplpy
 
 .. _apis_r:
@@ -29,7 +29,7 @@ R
         install.packages("Rcpp", type="source")
         install.packages("https://ampl.com/dl/API/rAMPL.tar.gz", repos=NULL)
 
-- Documentation: https://rAMPL.readthedocs.org/
+- Documentation: https://rAMPL.ampl.com/
 - GitHub: https://github.com/ampl/rAMPL
 
 .. _apis_java:
@@ -89,5 +89,5 @@ Solver Callbacks
 
 AMPL solver libraries with callbacks.
 
-- Documentation: https://ampls.readthedocs.io/
+- Documentation: https://ampls.ampl.com/
 - GitHub: https://github.com/ampl/ampls-api

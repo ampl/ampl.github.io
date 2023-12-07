@@ -4,7 +4,7 @@
 AMPL can be easily used in [Continuous Integration/Continuous Delivery (CI/CD)](https://en.wikipedia.org/wiki/CI/CD) platforms in order to test your optimization applications before deploying to production.
 
 The most convenient way is by using the [Python modules](../python/modules.md), even if your optimization application is built using another [AMPL API](../apis).
-Since AMPL and all solvers are now available as [Python Packages](../python/modules.md). It is only necessary to have a step which installs [amplpy](https://amplpy.readthedocs.io) and the modules needed by your application:
+Since AMPL and all solvers are now available as [Python Packages](../python/modules.md). It is only necessary to have a step which installs [amplpy](https://amplpy.ampl.com) and the modules needed by your application:
 
 ```bash
 python -m pip install amplpy
@@ -13,7 +13,7 @@ python -m amplpy.activate <license-uuid> # activate your license
 ```
 
 In order to then be able to access AMPL and solvers when using
-[AMPL APIs](../apis) other than [amplpy](https://amplpy.readthedocs.io) the
+[AMPL APIs](../apis) other than [amplpy](https://amplpy.ampl.com) the
 only additional step is to add to the environment variable path the paths to the modules installed:
 
 ```bash

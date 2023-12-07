@@ -19,7 +19,7 @@ $ python
 >>> ampl = AMPL() # instantiate AMPL object
 ```
 
-[Python API (amplpy) Documentation](https://amplpy.readthedocs.io/)
+[Python API (amplpy) Documentation](https://amplpy.ampl.com/)
 
 ## Modules available
 
@@ -31,7 +31,7 @@ List of modules available:
 
 -   Commercial solvers: [`baron`](https://ampl.com/products/solvers/solvers-we-sell/baron/), [`conopt`](https://ampl.com/products/solvers/solvers-we-sell/conopt/), [`copt`](https://ampl.com/products/solvers/solvers-we-sell/copt/), [`cplex`](https://ampl.com/products/solvers/solvers-we-sell/cplex/), [`gurobi`](https://ampl.com/products/solvers/solvers-we-sell/gurobi/), [`knitro`](https://ampl.com/products/solvers/solvers-we-sell/knitro/), [`lgo`](https://ampl.com/products/solvers/solvers-we-sell/lgo/), [`lindoglobal`](https://ampl.com/products/solvers/solvers-we-sell/lindoglobal/), [`loqo`](https://ampl.com/products/solvers/solvers-we-sell/loqo/), [`minos`](https://ampl.com/products/solvers/solvers-we-sell/minos/), [`mosek`](https://ampl.com/products/solvers/solvers-we-sell/mosek/), [`octeract`](https://ampl.com/products/solvers/solvers-we-sell/octeract/), [`snopt`](https://ampl.com/products/solvers/solvers-we-sell/snopt/), [`xpress`](https://ampl.com/products/solvers/solvers-we-sell/xpress/)
 
--   AMPL Plugins: `amplgsl` ([amplgsl docs](https://amplgsl.readthedocs.io/)), `plugins` ([amplplugins docs](https://amplplugins.readthedocs.io/))
+-   AMPL Plugins: `amplgsl` ([amplgsl docs](https://gsl.ampl.com/)), `plugins` ([amplplugins docs](https://plugins.ampl.com/))
 
 ## Commands
 
@@ -197,7 +197,7 @@ $ python -m amplpy.modules activate <license-uuid>
 
 ### Using from AMPL
 
-Installed modules are loaded by default when [amplpy](https://amplpy.readthedocs.org) is loaded.
+Installed modules are loaded by default when [amplpy](https://amplpy.ampl.com) is loaded.
 
 ```python
 from amplpy import AMPL
@@ -230,7 +230,7 @@ solver = pyo.SolverFactory(modules.find("highs"), solve_io="nl")  # use the solv
 
 Note that Pyomo is typically substantially slower than AMPL
 due to being written completely in Python (e.g., not performing the model instantiation using heavily optimized C code like AMPL does), and that it may also not be able to take advantage
-of all functionalities of our solver drivers (especially the ones built with the new [MP interface](https://amplmp.readthedocs.io/)); the solver performance when used from AMPL also tends to be superior
+of all functionalities of our solver drivers (especially the ones built with the new [MP interface](https://mp.ampl.com/)); the solver performance when used from AMPL also tends to be superior
 due to AMPL's presolver that is typically able to reduce model sizes substantially.
 Nevertheless, feel free to use any of our solvers with other modeling tools.
 

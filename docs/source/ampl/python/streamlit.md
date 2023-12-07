@@ -17,7 +17,7 @@ from amplpy import AMPL
 ampl = AMPL()
 ```
 
-- [Python API documentation](https://amplpy.readthedocs.io)
+- [Python API documentation](https://amplpy.ampl.com)
 - [Python modules documentation](modules.md)
 
 ## N-Queens using AMPL and HiGHS

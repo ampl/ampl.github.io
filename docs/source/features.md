@@ -21,23 +21,23 @@ Get your free license at: **<https://ampl.com/ce>**
 **Solvers permanently available:**
 
 -   Open-source solvers: **HiGHS, CBC, Couenne, Ipopt, Bonmin.**
--   [NEOS solvers](https://portal.ampl.com/external/?url=https://ampl.com/products/ampl/run-ampl-on-neos/) (including commercial solvers), directly in AMPL through the [kestrel interface](https://portal.ampl.com/external/?url=https://dev.ampl.com/solvers/kestrel.html).
+-   [NEOS solvers](https://ampl.com/products/ampl/run-ampl-on-neos/) (including commercial solvers), directly in AMPL through the [kestrel interface](https://dev.ampl.com/solvers/kestrel.html).
 
 **Commercial solver trials readily available (30 days each):**
 
--   Linear: [Gurobi](https://portal.ampl.com/external/?url=https://ampl.com/products/solvers/solvers-we-sell/gurobi/), [CPLEX](https://portal.ampl.com/external/?url=https://ampl.com/products/solvers/solvers-we-sell/cplex/), [Xpress](https://portal.ampl.com/external/?url=https://ampl.com/products/solvers/solvers-we-sell/xpress/), [COPT](https://portal.ampl.com/external/?url=https://ampl.com/products/solvers/solvers-we-sell/copt/)
--   Nonlinear: [Artleys Knitro](https://portal.ampl.com/external/?url=https://ampl.com/products/solvers/solvers-we-sell/knitro/), [CONOPT](https://portal.ampl.com/external/?url=https://ampl.com/products/solvers/solvers-we-sell/conopt/), [LOQO](https://portal.ampl.com/external/?url=https://ampl.com/products/solvers/solvers-we-sell/loqo/), [MINOS](https://portal.ampl.com/external/?url=https://ampl.com/products/solvers/solvers-we-sell/minos/), [SNOPT](https://portal.ampl.com/external/?url=https://ampl.com/products/solvers/solvers-we-sell/snopt/)
--   Global: [BARON](https://portal.ampl.com/external/?url=https://ampl.com/products/solvers/solvers-we-sell/baron/), [LGO](https://portal.ampl.com/external/?url=https://ampl.com/products/solvers/solvers-we-sell/lgo/), [LINDO Global](https://portal.ampl.com/external/?url=https://ampl.com/products/solvers/solvers-we-sell/lindoglobal/), [OCTERACT](https://portal.ampl.com/external/?url=https://ampl.com/products/solvers/solvers-we-sell/octeract/)
+-   Linear: [Gurobi](https://ampl.com/products/solvers/solvers-we-sell/gurobi/), [CPLEX](https://ampl.com/products/solvers/solvers-we-sell/cplex/), [Xpress](https://ampl.com/products/solvers/solvers-we-sell/xpress/), [COPT](https://ampl.com/products/solvers/solvers-we-sell/copt/)
+-   Nonlinear: [Artleys Knitro](https://ampl.com/products/solvers/solvers-we-sell/knitro/), [CONOPT](https://ampl.com/products/solvers/solvers-we-sell/conopt/), [LOQO](https://ampl.com/products/solvers/solvers-we-sell/loqo/), [MINOS](https://ampl.com/products/solvers/solvers-we-sell/minos/), [SNOPT](https://ampl.com/products/solvers/solvers-we-sell/snopt/)
+-   Global: [BARON](https://ampl.com/products/solvers/solvers-we-sell/baron/), [LGO](https://ampl.com/products/solvers/solvers-we-sell/lgo/), [LINDO Global](https://ampl.com/products/solvers/solvers-we-sell/lindoglobal/), [OCTERACT](https://ampl.com/products/solvers/solvers-we-sell/octeract/)
 
 **APIs included:**
 
-[![](https://portal.ampl.com/static/img/apis/PythonLogo.svg)](https://portal.ampl.com/external/?url=https://amplpy.readthedocs.io/) [![](https://portal.ampl.com/static/img/apis/RLogo.svg)](https://portal.ampl.com/external/?url=https://rampl.readthedocs.io/) [![](https://portal.ampl.com/static/img/apis/CppLogo.svg)](https://portal.ampl.com/external/?url=https://portal.ampl.com/docs/api/latest/cpp/) [![](https://portal.ampl.com/static/img/apis/CSharpLogo.svg)](https://portal.ampl.com/external/?url=https://portal.ampl.com/docs/api/latest/dotnet/) [![](https://portal.ampl.com/static/img/apis/MatlabLogo.svg)](https://portal.ampl.com/external/?url=https://portal.ampl.com/docs/api/latest/matlab/) [![](https://portal.ampl.com/static/img/apis/JavaLogo.svg)](https://portal.ampl.com/external/?url=https://portal.ampl.com/docs/api/latest/java/)
+[![](https://portal.ampl.com/static/img/apis/PythonLogo.svg)](https://amplpy.ampl.com/) [![](https://portal.ampl.com/static/img/apis/RLogo.svg)](https://rampl.ampl.com/) [![](https://portal.ampl.com/static/img/apis/CppLogo.svg)](https://ampl.com/api/latest/cpp/) [![](https://portal.ampl.com/static/img/apis/CSharpLogo.svg)](https://ampl.com/api/latest/dotnet/) [![](https://portal.ampl.com/static/img/apis/MatlabLogo.svg)](https://ampl.com/api/latest/matlab/) [![](https://portal.ampl.com/static/img/apis/JavaLogo.svg)](https://ampl.com/api/latest/java/)
 
 **What else is included?**
 
--   [AMPL Model Colaboratory](https://portal.ampl.com/external/?url=https://colab.ampl.com/) powered by our [Python API](https://portal.ampl.com/external/?url=https://amplpy.readthedocs.io/)!
--   [Enhanced solver interfaces (e.g., Gurobi, COPT, XPRESS, HiGHS)](https://portal.ampl.com/external/?url=https://amplmp.readthedocs.io/en/latest/rst/model-guide.html)
--   [Data Connectors (e.g., .xlsx, .csv, ODBC)](https://portal.ampl.com/external/?url=https://ampl.com/products/ampl/data-connectors/) and [Function Libraries (e.g., GSL)](https://portal.ampl.com/external/?url=https://amplgsl.readthedocs.io/)
+-   [AMPL Model Colaboratory](https://colab.ampl.com/) powered by our [Python API](https://amplpy.ampl.com/)!
+-   [Enhanced solver interfaces (e.g., Gurobi, COPT, XPRESS, HiGHS)](https://mp.ampl.com/model-guide.html)
+-   [Data Connectors (e.g., .xlsx, .csv, ODBC)](https://ampl.com/products/ampl/data-connectors/) and [Function Libraries (e.g., GSL)](https://gsl.ampl.com/)
 -   [It works with Docker Containers and Cloud Functions (e.g., AWS Lambda, Azure Functions, etc.)](ampl_docker)
 -   Since it is a [cloud license](cloud_licenses) it can be used on continuous integration and continuous delivery (CI/CD) platforms.
 
@@ -45,7 +45,7 @@ Get your free license at: **<https://ampl.com/ce>**
 
 We have a set of Jupyter Notebooks available on our [Model Colaboratory](https://colab.ampl.com).
 
-You can use our template (<https://colab.ampl.com/en/latest/tag-template.html>)
+You can use our template (<https://colab.ampl.com/tags/template.html>)
 as a starting point. Our cloud licenses, including AMPL CE licenses, work on all cloud platforms.
 
 ## Snapshot feature (save and restore AMPL sessions)
@@ -54,7 +54,7 @@ In your AMPL bundle you should find `x-ampl`, the development version of AMPL wh
 
 ### Example using it with amplpy
 
-You need to be using at least amplpy 0.8.0 (you can install it with `python -m pip install amplpy==0.8.0`). With this version of  amplpy it is possible to pass an additional argument to [Environment](https://amplpy.readthedocs.io/en/stable/classes/environment.html) that allows specifing the executable name as follows:
+You need to be using at least amplpy 0.8.0 (you can install it with `python -m pip install amplpy==0.8.0`). With this version of  amplpy it is possible to pass an additional argument to [Environment](https://amplpy.ampl.com/en/stable/classes/environment.html) that allows specifying the executable name as follows:
 
 ```python
 ampl = AMPL(Environment('', 'x-ampl'))
@@ -146,7 +146,7 @@ The drivers have the following features:
 - Algebraic expressions beyond linear and quadratic.
 - Choice between conversions in the driver vs. native solver support.
 
-[[Modeling Guide](https://amplmp.readthedocs.io/en/latest/rst/model-guide.html)] [[gurobi options](solvers/gurobi/options.md)] [[copt options](solvers/copt/options.md)]  [[highs options](solvers/highs/options.md)]
+[[Modeling Guide](https://mp.ampl.com/model-guide.html)] [[gurobi options](solvers/gurobi/options.md)] [[copt options](solvers/copt/options.md)]  [[highs options](solvers/highs/options.md)]
 
 ## New AMPL-solver interface library
 
@@ -176,7 +176,7 @@ thus can be used together in objective and constraint specifications. The
 new interface also helps solvers to accept nonlinear operators (`*`, `/`, `^`) in
 a broader variety of circumstances.
 
-A public [MP Library repository](https://github.com/ampl/mp) on GitHub links to a [modeling guide](https://amplmp.readthedocs.io/en/latest/rst/model-guide.html) and
+A public [MP Library repository](https://github.com/ampl/mp) on GitHub links to a [modeling guide](https://mp.ampl.com/model-guide.html) and
 documentation of the source code. See also the slides from our presentation
 of the new interface at this summer's [EURO and ICCOPT conferences](https://ampl.com/MEETINGS/TALKS/2022_07_Bethlehem_Fourer.pdf), or attend
 updated presentations at the [INFORMS Annual Meeting, October 15-19](https://ampl.com/resources/informs-annual-2022/).

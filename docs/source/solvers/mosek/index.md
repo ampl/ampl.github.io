@@ -31,23 +31,23 @@ ampl: solve; # solve the problem
 
 * Features for all models:
     * Problem input
-        * [Basis IO](https://amplmp.readthedocs.io/en/latest/rst/features-guide.html#input-and-output-basis)
-        * [Warm start](https://amplmp.readthedocs.io/en/latest/rst/features-guide.html#warm-start)
+        * [Basis IO](https://mp.ampl.com/features-guide.html#input-and-output-basis)
+        * [Warm start](https://mp.ampl.com/features-guide.html#warm-start)
 
     * Model investigation
 
-        * [Sensitivity analysis](https://amplmp.readthedocs.io/en/latest/rst/features-guide.html#sensitivity-analysis)
+        * [Sensitivity analysis](https://mp.ampl.com/features-guide.html#sensitivity-analysis)
 
     * Dealing with infeasibility/unboundedness
     
-        * [Unbounded rays](https://amplmp.readthedocs.io/en/latest/rst/features-guide.html#unbounded-rays)
+        * [Unbounded rays](https://mp.ampl.com/features-guide.html#unbounded-rays)
 
 
 
 * Features for MIP models:
     * Model investigation
-      * [Return MIP gap](https://amplmp.readthedocs.io/en/latest/rst/features-guide.html#return-mip-gap)
-      * [Return best dual bound](https://amplmp.readthedocs.io/en/latest/rst/features-guide.html#return-best-dual-bound)
+      * [Return MIP gap](https://mp.ampl.com/features-guide.html#return-mip-gap)
+      * [Return best dual bound](https://mp.ampl.com/features-guide.html#return-best-dual-bound)
       
 
 ## Solver options

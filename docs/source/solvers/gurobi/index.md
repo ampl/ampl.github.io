@@ -2,7 +2,7 @@
 
 Gurobi is a powerful commercial suite of optimization products, which includes simplex and parallel barrier solvers to handle linear programming (LP) and quadratic progermming (QP), also quadratically constrained (QCP) and the mixed-integer variations thereof (MIP, MIQP, MIQCP). It also supports some types of general constraints.
 The framework used by the drivers supports automatic reformulation for many expression types; the relative guide can be
-found [here](https://amplmp.readthedocs.io/en/latest/rst/model-guide.html#modeling-guide).
+found [here](https://mp.ampl.com/model-guide.html#modeling-guide).
 
 [[Read More](https://ampl.com/products/solvers/solvers-we-sell/gurobi/)]
 [[Options](options.md)]
@@ -10,7 +10,7 @@ found [here](https://amplmp.readthedocs.io/en/latest/rst/model-guide.html#modeli
 [[Download](https://portal.ampl.com)]
 
 ```{note}
-Our enhanced Gurobi driver (previously know as x-gurobi) is now the default Gurobi driver. The new driver provides significantly extended modeling support for logical and nonlinear operators natively through Gurobi’s built-in “general constraints” and through linearizations performed by the [MP library](https://amplmp.readthedocs.io/). There are two binaries in this package: `gurobi` [[options](options.md)] is the new version, `gurobiasl` [[options](gurobiasl)] is the legacy version. If you are upgrading an existing installation and encounter any issues with the new version please report them to [support@ampl.com](mailto:support@ampl.com).
+Our enhanced Gurobi driver (previously know as x-gurobi) is now the default Gurobi driver. The new driver provides significantly extended modeling support for logical and nonlinear operators natively through Gurobi’s built-in “general constraints” and through linearizations performed by the [MP library](https://mp.ampl.com/). There are two binaries in this package: `gurobi` [[options](options.md)] is the new version, `gurobiasl` [[options](gurobiasl)] is the legacy version. If you are upgrading an existing installation and encounter any issues with the new version please report them to [support@ampl.com](mailto:support@ampl.com).
 ```
 
 ## How to use it
@@ -49,32 +49,32 @@ ampl: solve; # solve the problem
 
 * Features for all models:
     * Problem input
-        * [Basis IO](https://amplmp.readthedocs.io/en/latest/rst/features-guide.html#input-and-output-basis)
-        * [Warm start](https://amplmp.readthedocs.io/en/latest/rst/features-guide.html#warm-start)
-        * [Multiple objectives](https://amplmp.readthedocs.io/en/latest/rst/features-guide.html#multiple-objectives)
+        * [Basis IO](https://mp.ampl.com/features-guide.html#input-and-output-basis)
+        * [Warm start](https://mp.ampl.com/features-guide.html#warm-start)
+        * [Multiple objectives](https://mp.ampl.com/features-guide.html#multiple-objectives)
 
     * Model investigation
 
-        * [Condition number](https://amplmp.readthedocs.io/en/latest/rst/features-guide.html#kappa)
-        * [Multiple solutions](https://amplmp.readthedocs.io/en/latest/rst/features-guide.html#multiple-solutions)
-        * [Sensitivity analysis](https://amplmp.readthedocs.io/en/latest/rst/features-guide.html#sensitivity-analysis)
+        * [Condition number](https://mp.ampl.com/features-guide.html#kappa)
+        * [Multiple solutions](https://mp.ampl.com/features-guide.html#multiple-solutions)
+        * [Sensitivity analysis](https://mp.ampl.com/features-guide.html#sensitivity-analysis)
 
     * Dealing with infeasibility/unboundedness
     
-        * [Feasibility relaxation](https://amplmp.readthedocs.io/en/latest/rst/features-guide.html#feasibility-relaxation)
-        * [IIS](https://amplmp.readthedocs.io/en/latest/rst/features-guide.html#irreducible-inconsistent-subset-iis)
-        * [Unbounded rays](https://amplmp.readthedocs.io/en/latest/rst/features-guide.html#unbounded-rays)
+        * [Feasibility relaxation](https://mp.ampl.com/eatures-guide.html#feasibility-relaxation)
+        * [IIS](https://mp.ampl.com/features-guide.html#irreducible-inconsistent-subset-iis)
+        * [Unbounded rays](https://mp.ampl.com/features-guide.html#unbounded-rays)
 
 
 
 * Features for MIP models:
     * Model investigation
-      * [Return MIP gap](https://amplmp.readthedocs.io/en/latest/rst/features-guide.html#return-mip-gap)
-      * [Return best dual bound](https://amplmp.readthedocs.io/en/latest/rst/features-guide.html#return-best-dual-bound)
-      * [Fixed model](https://amplmp.readthedocs.io/en/latest/rst/features-guide.html#fixed-model-return-basis-for-mip)
+      * [Return MIP gap](https://mp.ampl.com/features-guide.html#return-mip-gap)
+      * [Return best dual bound](https://mp.ampl.com/features-guide.html#return-best-dual-bound)
+      * [Fixed model](https://mp.ampl.com/features-guide.html#fixed-model-return-basis-for-mip)
     * Solution process:
-      * [Lazy constraints and user cuts](https://amplmp.readthedocs.io/en/latest/rst/features-guide.html#lazy-constraints-and-user-cuts)
-      * [Branching variable priorites](https://amplmp.readthedocs.io/en/latest/rst/features-guide.html#variable-priorities)
+      * [Lazy constraints and user cuts](https://mp.ampl.com/features-guide.html#lazy-constraints-and-user-cuts)
+      * [Branching variable priorites](https://mp.ampl.com/features-guide.html#variable-priorities)
       
 
 ## Solver options
@@ -143,13 +143,13 @@ display solve_result_num, solve_result;
 ### IIS
 
 When a model is unfeasible, one usedful information is finding the irreducible inconsistent sets, which are subsets of constraints that are
-incompatible. This is supported by the framework, see the description [here](https://amplmp.readthedocs.io/en/latest/rst/features-guide.html#irreducible-inconsistent-set-iis).
+incompatible. This is supported by the framework, see the description [here](https://mp.ampl.com/features-guide.html#irreducible-inconsistent-set-iis).
 
 
 ### Feasibility Relaxation
 
 Another approach to tackle infeasibilities is to use feasibility relaxation to find a solution which only penalizes infeasibilities. 
-This is supported via the framework, see the description  [here](https://amplmp.readthedocs.io/en/latest/rst/features-guide.html#feasibiliyrelaxation).
+This is supported via the framework, see the description  [here](https://mp.ampl.com/features-guide.html#feasibiliyrelaxation).
 
 
 ## Gurobi compute server and Gurobi cloud

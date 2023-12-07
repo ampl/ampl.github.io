@@ -62,7 +62,7 @@ you just need the following:
     print(f"Volatility: {sigma*100:.1f}%")
     # ... post-process solution in Python
 
-[`Python API <https://amplpy.readthedocs.io>`_] [`GitHub <https://github.com/ampl/amplpy>`_]
+[`Python API <https://amplpy.ampl.com>`_] [`GitHub <https://github.com/ampl/amplpy>`_]
 
 On Google Colab
 ~~~~~~~~~~~~~~~
