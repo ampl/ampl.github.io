@@ -13,6 +13,7 @@ AMPL Resoures
     apis
     book
     options
+    suffixes
     python/index
     docker/index
     cicd/index
