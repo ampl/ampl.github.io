@@ -24,6 +24,7 @@ The following section shows all built-in suffixes of AMPL.
 | .lrc | Reduced costs at lower bounds |
 | .lslack | Slacks at lower bounds (val - lb) |
 | .rc | Reduced cost (at the nearer bound) |
+| .relax | Ignore integrality restriction if positive |
 | .slack | Bound slack (the lesser of lslack and uslack) |
 | .sstatus | Solver status (basis status of variable) |
 | .status | AMPL status if not "in", otherwise solver status |
