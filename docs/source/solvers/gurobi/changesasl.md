@@ -1,5 +1,9 @@
 # GUROBIASL Changelog
 
+## 20231208
+- Relinked with Gurobi 11.0
+- Added control *solutiontarget*
+
 ## 20230310
 - Adjusted to account for the fact that suf_sos() may change
   the number of range constraints

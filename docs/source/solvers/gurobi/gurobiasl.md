@@ -811,6 +811,11 @@ solnsens         Whether to return suffixes for solution sensitivities, i.e.,
                  For problems with integer variables and quadratic constraints,
                  solnsens = 0 is quietly assumed.
 
+solutiontarget   Specifies the solution targetfor linear programs (LP):
+                        -1 = automatic (default)
+                        0 = primal and dual optimal and basic
+                        1 = primal and dual optimal.
+
 sos              whether to honor declared suffixes .sosno and .ref describing
                  SOS sets:
                         0 = no
