@@ -547,6 +547,9 @@ cvt:pre:eqbinary
 cvt:pre:eqresult
       0/1*: Preprocess reified equality comparison's boolean result bounds.
 
+cvt:pre:unnest
+      0/1*: Inline nested expressions, currently Ands/Ors.
+
 cvt:quadcon (passquadcon)
       0/1*: Multiply out and pass quadratic constraint terms to the solver,
       vs. linear approximation.
@@ -565,6 +568,17 @@ cvt:sos (sos)
 cvt:sos2 (sos2)
       0/1*: Whether to honor SOS2 constraints for nonconvex piecewise-linear
       terms, using suffixes .sos and .sosref provided by AMPL.
+
+cvt:uenc:negctx:max (uenc:negctx:max, uenc:negctx)
+      If cvt:uenc:ratio applies, max number of constants in comparisons
+      x==const in negative context (equivalently, x!=const in positive
+      context) to skip UEnc(x). Default 1.
+
+cvt:uenc:ratio (uenc:ratio)
+      Min ratio (ub-lb)/Nvalues to skip unary encoding for a variable x, where
+      Nvalues is the number of constants used in conditional comparisons
+      x==const. Instead, indicator constraints (or big-Ms) are used, if
+      uenc:negctx also applies. Default 0.
 
 lim:bariter (bar:iterlim, bariterlim)
       Limit on the number of barrier iterations (default 500).
@@ -1594,7 +1608,7 @@ qp:unshift (quadunshift, quadraticunshift)
       1  - Yes.
 
 sol:chk:fail (chk:fail, checkfail)
-      Fail on solution checking violations.
+      Fail on solution checking violations, with solve result 520.
 
 sol:chk:feastol (sol:chk:eps, chk:eps, chk:feastol)
       Absolute tolerance to check objective values, variable and constraint
@@ -1603,6 +1617,9 @@ sol:chk:feastol (sol:chk:eps, chk:eps, chk:feastol)
 sol:chk:feastolrel (sol:chk:epsrel, chk:epsrel, chk:feastolrel)
       Relative tolerance to check objective values, variable and constraint
       bounds. Default 1e-6.
+
+sol:chk:infeas (chk:infeas, checkinfeas)
+      Check even infeasible solution condidates, whenever solver reports them.
 
 sol:chk:inttol (sol:chk:inteps, sol:inteps, chk:inttol)
       Solution checking tolerance for variables' integrality. Default 1e-5.

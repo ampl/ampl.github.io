@@ -220,6 +220,9 @@ alg:feasrelaxbigm (feasrelaxbigm)
 alg:feastol (feastol)
       Primal feasibility tolerance (default 1e-6).
 
+alg:global (global)
+      Synonym for pre:funcnonlinear.
+
 alg:iisfind (iisfind, iis)
       Whether to find and export an IIS. Default = 0 (don't export).
 
@@ -229,9 +232,9 @@ alg:iisforce (iisforce)
       values mean the following (ATTENTION: different to Gurobi IIS...Force
       attribute!):
 
-      0 - No influence on this bound or constraint (default)
       -1 - This model item never to be in an IIS (careful, the remaining
       constraints can be feasible)
+      0 - No influence on this bound or constraint (default)
       1 - This model item always to be in the computed IIS.
 
 alg:iismethod (iismethod)
@@ -1009,13 +1012,17 @@ pre:dualreductions (dualreductions)
       0 - No
       1 - Yes (default)
 
-pre:funcnonlinear (funcnonlinear)
-      This attribute controls how general functions with their constraint's or
-      objective's .funcnonlinear suffix set to -1 are treated:
+pre:funcnonlinear (funcnonlinear, global)
+      Controls how general functions with their constraint's or objective's
+      suffix .funcnonlinear or, if not available, .global unset (or set to 0)
+      are treated (ATTENTION: different meaning than Gurobi FuncNonLinear
+      parameter and attribute):
 
-      -1 - Default (Gurobi 11: piecewise-linear approximation)
-      0  - Piecewise-linear approximation
+      -1 - Piecewise-linear approximation
+      0  - Automatic (default)
       1  - Treated as nonlinear functions
+
+      Suffix values mean the same.
 
 pre:funcpieceerror (funcpieceerror)
       For 'funcpieces=-1' or -2, this option provides the maximum allowed
@@ -1170,7 +1177,7 @@ qp:psdtol (psdtol)
       objectives (default 1e-6).
 
 sol:chk:fail (chk:fail, checkfail)
-      Fail on solution checking violations, with solve result 570.
+      Fail on solution checking violations, with solve result 520.
 
 sol:chk:feastol (sol:chk:eps, chk:eps, chk:feastol)
       Absolute tolerance to check objective values, variable and constraint
