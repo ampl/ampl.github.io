@@ -38,7 +38,7 @@ AMPL connects to most :ref:`commercial and open-source solvers <solvers>` and al
 
         .. raw:: html
 
-            <iframe width="315" height="315"
+            <iframe width="315" height="400"
                 src="https://www.youtube.com/embed/QWWanzp8c-0"
                 title="YouTube video player" frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media;
