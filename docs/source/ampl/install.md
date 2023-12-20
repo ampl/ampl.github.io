@@ -10,6 +10,10 @@ please follow the instructions below that correspond to your operating system:
 
 ## Windows
 
+**For Windows we have an installer available that we strongly recommend using instead
+of following the old manual procedure with zip packages.** In case you want to install
+according to the old procedure, the instructions are the following:
+
 1. **To install:**
 
     Download and extract your bundle. This will be your AMPL folder. Rename it if you like and move it to any convenient location on your computer.
@@ -74,9 +78,28 @@ variables `AMPL_LICFILE` to a location where you store `ampl.lic` and where you 
 
 If you use cloud licenses (e.g., [AMPL Community Edition](https://ampl.com/ce/) licenses), **the AMPL directory cannot be read-only**. If really you want to have AMPL installed on a read-only directory, you need to set the environment
 variables `AMPL_LICFILE` to a location where you store `ampl.lic` and where you have permissions to write, and set `AMPLKEY_RUNTIME_DIR` to a temporary directory.
+
+For instance, assuming that you want to install AMPL on a Linux system in the `/opt` directory, which is not writeable by normal users. To install AMPL and dynamic licenses, you need to do the following:
+
+1. Unpack the AMPL tarball into `/opt` as root user. The executables should then be at
+`/opt/ampl.linux-intel64/`.
+2. For each user that wants to use this AMPL installation with his own license:
+    1. Define environment variables to point to a writeable directory in the user home directory:
+        ```bash
+            export AMPL_LICFILE=$HOME/.ampl/ampl.lic
+            export AMPLKEY_RUNTIME_DIR=$HOME/.ampl
+            export PATH=/opt/ampl.linux-intel64/:$PATH
+        ```
+        and add those definitions to the `.bash_profile` or `.bashrc` of each user.
+    2. Start a new terminal in order to load the new environment variable definitions.
+    3. Run the `amplkey activate --uuid <license-uuid>` command in the terminal.
 ```
 
 ## macOS
+
+**For macOS we have an installer available that we strongly recommend using instead
+of following the old manual procedure with tgz packages.** In case you want to install
+according to the old procedure, the instructions are the following:
 
 1. **To install:**
 
