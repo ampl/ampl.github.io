@@ -47,6 +47,7 @@ Global Solvers
     lgo/index
     lindoglobal/index
     octeract/index
+    raposa/index
 
 
 NEOS Server
