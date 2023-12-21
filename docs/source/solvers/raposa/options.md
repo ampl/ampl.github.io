@@ -15,10 +15,10 @@ V                   Print the version of RAPOSa.
 boundtightening     Type of bound tightening used (if the problem has integer
                     variables, 'INT' prefix means that the OBBT solves
                     the mixed-integer relaxation aswell):
-                        NoBT ==> Donot perform bound tightening
+                        NoBT ==> Do not perform bound tightening
                         OBBT ==> Perform OBBT at root node
                         FBBT ==> Perform FBBT at each node
-                        OBBT+FBBT ==> Perform OBBT atrootnode and FBBT at each node
+                        OBBT+FBBT ==> Perform OBBT at root node and FBBT at each node
                         SOCPOBBT ==> Perform SOCPOBBT at root node
                         SOCPOBBT+FBBT ==> Perform SOCP OBBT at root node and FBBT
                             at each node
