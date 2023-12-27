@@ -117,8 +117,8 @@ In case `amplpy.bundle` is not available, please upgrade amplpy to the latest ve
 
 ## Licensing
 
-In most situations you will not want to include your own license in the bundle
-for distribution. There are two recommend ways of dealing with that.
+In most situations you will not want to include your own AMPL license in the bundle
+for distribution. There are two recommend ways of dealing with that:
 
 - a) Specify the location of the license file for instance in the user home directory:
 
