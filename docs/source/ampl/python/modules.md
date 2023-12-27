@@ -124,7 +124,7 @@ Value to append to the environment variable PATH to access modules:
 $ python -m amplpy.modules path
 ```
 Example: 
-```
+```bash
 export PATH=$PATH:`python -m amplpy.modules path`
 ```
 
@@ -134,7 +134,7 @@ Find the path to a file in any module:
 $ python -m amplpy.modules find <file name>
 ```
 Example:
-```
+```bash
 $ python -m amplpy.modules find gurobi
 ```
 
