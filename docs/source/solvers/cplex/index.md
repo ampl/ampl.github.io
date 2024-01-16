@@ -16,6 +16,11 @@ ampl: option cplex_options 'single-word-option option1=value1 option2 value2'; #
 ampl: solve; # solve the problem
 ```
 
+## Resources
+
+* [Full list of solver options](options.md)
+* [Using with callbacks](https://ampls.ampl.com/)
+
 ## Options
 
 Full list of solver options:

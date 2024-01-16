@@ -1,10 +1,11 @@
 # FICO XPRESS
 
 Xpress offers proven optimization technology for large-scale applications, with out-of-the-box high performance on a wide range of model types.  Its ultra-efficient sparse matrix handling and on-the-fly data compression address the largest problems, with reliable performance even on numerically difficult or unstable problems.
-The framework used by the drivers supports automatic reformulation for many expression types; the relative guide can be
-found [here](https://mp.ampl.com/model-guide.html#modeling-guide).
+The framework used by the drivers supports automatic reformulation for many expression types; the modeling guide can be
+found [here](https://mp.ampl.com/model-guide.html).
 
 [[Read More](https://ampl.com/products/solvers/solvers-we-sell/xpress/)]
+[[Modeling guide](https://mp.ampl.com/model-guide.html)]
 [[Options](options.md)]
 [[Changes](changes.md)]
 [[Download](https://portal.ampl.com)]
@@ -26,14 +27,16 @@ ampl: solve; # solve the problem
 ### Resources
 
 * [Driver sources](https://github.com/ampl/mp/tree/develop/solvers/xpress)
+* [Modeling guide](https://mp.ampl.com/model-guide.html)
 * [Full list of solver options](options.md)
+* [Using with callbacks](https://ampls.ampl.com/)
 
 ### Features
 
 * Problem types: 
 
-  * LP, QP, QCP
-  * MIP, MIQP, MIQCP
+  * LP, QP, QCP, SOCP
+  * MIP, MIQP, MIQCP, MISOCP
   * <details>
     <summary>General constraints</summary>  
 

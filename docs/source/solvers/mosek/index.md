@@ -1,8 +1,11 @@
 # Mosek
 
 Mosek is a versatile linear, quadratic, quadratically constrained and conic optimizer that supports continuous and discrete variables.
+The framework used by the driver supports automatic reformulation for many expression types; the modeling guide can be
+found [here](https://mp.ampl.com/model-guide.html).
 
 [[Read More](https://ampl.com/products/solvers/solvers-we-sell/mosek/)]
+[[Modeling guide](https://mp.ampl.com/model-guide.html)]
 [[Options](options.md)]
 [[Changes](changes.md)]
 [[Download](https://portal.ampl.com)]
@@ -20,14 +23,15 @@ ampl: solve; # solve the problem
 ### Resources
 
 * [Driver sources](https://github.com/ampl/mp/tree/develop/solvers/mosek)
+* [Modeling guide](https://mp.ampl.com/model-guide.html)
 * [Full list of solver options](options.md)
 
 ### Features
 
 * Problem types: 
 
-  * LP, QP, QCP
-  * MIP, MIQP, MIQCP, (MI)SOCP
+  * LP, QP, QCP, conic programs (SOCP, exponential cones)
+  * MIP, MIQP, MIQCP, mixed-integer conic programs
 
 * Features for all models:
     * Problem input

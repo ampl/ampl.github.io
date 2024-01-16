@@ -1,8 +1,14 @@
 # SCIP
 
-SCIP is currently one of the fastest non-commercial solvers for mixed integer programming (MIP) and mixed integer nonlinear programming (MINLP). It is also a framework for constraint integer programming and branch-cut-and-price. It allows for total control of the solution process and the access of detailed information down to the guts of the solver.
+SCIP is currently one of the fastest non-commercial solvers for mixed integer programming (MIP)
+and mixed integer nonlinear programming (MINLP). It is also a framework for constraint integer
+programming and branch-cut-and-price. It allows for total control of the solution process and
+the access of detailed information down to the guts of the solver.
+The framework used by the driver supports automatic reformulation for many expression types; the modeling guide can be
+found [here](https://mp.ampl.com/model-guide.html).
 
 [[Read More](https://ampl.com/products/solvers/open-source-solvers/)]
+[[Modeling guide](https://mp.ampl.com/model-guide.html)]
 [[Options](options.md)]
 [[Changes](changes.md)]
 [[Download](https://portal.ampl.com)]

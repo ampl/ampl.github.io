@@ -1,8 +1,13 @@
 # GCG
 
-GCG is a generic decomposition solver for mixed-integer programs (MIPs). It automatically performs a Dantzig-Wolfe reformulation and runs a full-fledged branch-price-and-cut algorithm to solve it to optimality. Alternatively, GCG is able to automatically apply a Benders decomposition. No user interaction is necessary, thus GCG provides decomposition-based MIP solving technology to everyone.
+GCG is a generic decomposition solver for mixed-integer programs (MIPs).
+It automatically performs a Dantzig-Wolfe reformulation and runs a full-fledged
+branch-price-and-cut algorithm to solve it to optimality. Alternatively,
+GCG is able to automatically apply a Benders decomposition.
+No user interaction is necessary, thus GCG provides decomposition-based MIP solving technology to everyone.
 
 [[Read More](https://ampl.com/products/solvers/open-source-solvers/)]
+[[Modeling guide](https://mp.ampl.com/model-guide.html)]
 [[Options](options.md)]
 [[Changes](changes.md)]
 [[Download](https://portal.ampl.com)]
