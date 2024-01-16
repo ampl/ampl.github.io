@@ -83,6 +83,9 @@ acc:sos2
       1 - Accepted but automatic redefinition will be used where possible
       2 - Accepted natively and preferred
 
+alg:barrier (barrier)
+      Solve (MIP root) LPs by barrier method.
+
 alg:basis (basis)
       Whether to use or return a basis:
 
@@ -90,6 +93,9 @@ alg:basis (basis)
       1 - Use incoming basis (if provided)
       2 - Return final basis
       3 - Both (1 + 2 = default)
+
+alg:dual (dual)
+      Solve (MIP root) LPs by dual simplex method.
 
 alg:feasrelax (feasrelax)
       Whether to modify the problem into a feasibility relaxation problem:
@@ -112,6 +118,24 @@ alg:iisfind (iisfind, iis)
 alg:lbpen (lbpen)
       See alg:feasrelax.
 
+alg:method (method, lpmethod, simplex)
+      Which algorithm to use for non-MIP problems or for the root node of MIP
+      problems, unlessprimal/dual/barrier/network/sifting flags are specified:
+
+      -1 - Automatic (default)
+      0  - Primal simplex
+      1  - Dual simplex
+      2  - Barrier
+      3  - Nondeterministic concurrent (several solves in parallel)
+      4  - Network simplex
+      5  - Sifting
+
+alg:network (network)
+      Solve (substructure of) (MIP node) LPs by network simplex method.
+
+alg:primal (primal)
+      Solve (MIP root) LPs by primal simplex method.
+
 alg:rays (rays)
       Whether to return suffix .unbdd if the objective is unbounded or suffix
       .dunbdd if the constraints are infeasible:
@@ -127,6 +151,9 @@ alg:relax (relax)
 alg:rhspen (rhspen)
       See alg:feasrelax.
 
+alg:sifting (sifting)
+      Solve (MIP root) LPs by sifting method.
+
 alg:start (warmstart)
       Whether to use incoming primal (and dual, for LP) variable values in a
       warmstart:
@@ -138,10 +165,21 @@ alg:start (warmstart)
 alg:ubpen (ubpen)
       See alg:feasrelax.
 
+bar:crossover (crossover, mipcrossover)
+      How to transform a barrier solution to a basic one:
+
+      -1 - No crossover
+      0  - Automatic (default)
+      1  - Primal crossover
+      2  - Dual crossover
+
 cvt:bigM (cvt:bigm, cvt:mip:bigM, cvt:mip:bigm)
       Default value of big-M for linearization of logical constraints. Not
       used by default. Use with care (prefer tight bounds). Should be smaller
       than (1.0 / [integrality tolerance])
+
+cvt:expcones (expcones)
+      0*/1: Recognize exponential cones.
 
 cvt:mip:eps (cvt:cmp:eps, cmp:eps)
       Tolerance for strict comparison of continuous variables for MIP. Applies
@@ -174,6 +212,9 @@ cvt:pre:eqbinary
 cvt:pre:eqresult
       0/1*: Preprocess reified equality comparison's boolean result bounds.
 
+cvt:pre:unnest
+      0/1*: Inline nested expressions, currently Ands/Ors.
+
 cvt:quadcon (passquadcon)
       0/1*: Multiply out and pass quadratic constraint terms to the solver,
       vs. linear approximation.
@@ -181,6 +222,29 @@ cvt:quadcon (passquadcon)
 cvt:quadobj (passquadobj)
       0/1*: Multiply out and pass quadratic objective terms to the solver, vs.
       linear approximation.
+
+cvt:socp (socpmode, socp)
+      Second-Order Cone recognition mode:
+
+      0 - Do not recognize SOCP forms
+      1 - Recognize from non-quadratic expressions only (sqrt, abs)
+      2 - Recognize from quadratic and non-quadratic SOCP forms
+
+      Recognized SOCP forms can be further converted to (SOCP-standardized)
+      quadratic constraints, see cvt:socp2qc. Default: 2.
+
+cvt:socp2qc (socp2qcmode, socp2qc)
+      Mode to convert recognized SOCP forms to SOCP-standardized quadratic
+      constraints:
+
+      0 - Do not convert
+      1 - Convert if no other cone types found, and not all original
+          quadratics could be recognized as SOC, in particular if the
+          objective is quadratic
+      2 - Always convert
+
+      Such conversion can be necessary if the solver does not accept a mix of
+      conic and quadratic constraints/objectives. Default: 2.
 
 cvt:sos (sos)
       0/1*: Whether to honor declared suffixes .sosno and .ref describing SOS
@@ -193,8 +257,32 @@ cvt:sos2 (sos2)
       0/1*: Whether to honor SOS2 constraints for nonconvex piecewise-linear
       terms, using suffixes .sos and .sosref provided by AMPL.
 
+cvt:uenc:negctx:max (uenc:negctx:max, uenc:negctx)
+      If cvt:uenc:ratio applies, max number of constants in comparisons
+      x==const in negative context (equivalently, x!=const in positive
+      context) to skip UEnc(x). Default 1.
+
+cvt:uenc:ratio (uenc:ratio)
+      Min ratio (ub-lb)/Nvalues to skip unary encoding for a variable x, where
+      Nvalues is the number of constants used in conditional comparisons
+      x==const. Instead, indicator constraints (or big-Ms) are used, if
+      uenc:negctx also applies. Default 0.
+
 lim:time (timelim, timelimit)
       limit on solve time (in seconds; default: no limit).
+
+lp:solutiontype (solutiontype)
+      Whether to seek a basic solution when solving an LP:
+
+      0 - Automatic - seeks a solution with basis (default)
+      1 - Yes (equivalent to 0)
+      2 - No
+
+mip:basis (fixmodel, mip:fix)
+      Whether to compute duals / basis / sensitivity for MIP models:
+
+      0 - No (default)
+      1 - Yes.
 
 mip:bestbound (bestbound, return_bound)
       Whether to return suffix .bestbound for the best known MIP dual bound on
@@ -209,6 +297,19 @@ mip:bestbound (bestbound, return_bound)
 
 mip:gap (mipgap)
       Relative optimality gap |bestbound-bestinteger|/(1e-10+|bestinteger|).
+
+mip:nodemethod (nodemethod)
+      Algorithm used to solve relaxed MIP node problems; for MIQP problems
+      (quadratic objective, linear constraints), settings other than 3 and 5
+      are treated as 0. For MIQCP problems (quadratic objective and
+      constraints), only 0 is permitted.
+
+      0 - Automatic (default)
+      1 - Primal simplex
+      2 - Dual simplex
+      3 - Network simplex
+      4 - Barrier
+      5 - Sifting
 
 mip:return_gap (return_mipgap)
       Whether to return mipgap suffixes or include mipgap values (|objectve -
@@ -269,7 +370,7 @@ qp:target (optimalitytarget)
       Type of solution to compute for a QP problem
 
 sol:chk:fail (chk:fail, checkfail)
-      Fail on solution checking violations.
+      Fail on MP solution check violations, with solve result 150.
 
 sol:chk:feastol (sol:chk:eps, chk:eps, chk:feastol)
       Absolute tolerance to check objective values, variable and constraint
@@ -301,7 +402,7 @@ sol:chk:mode (solcheck, checkmode, chk:mode)
       consider possible tolerances applied by the solver when computing
       expression values.
 
-      Default: 1+2+16+512.
+      Default: 1+2+512.
 
 sol:chk:prec (chk:prec, chk:precision)
       AMPL solution_precision option when checking: number of significant

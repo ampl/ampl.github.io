@@ -503,6 +503,9 @@ cvt:bigM (cvt:bigm, cvt:mip:bigM, cvt:mip:bigm)
       used by default. Use with care (prefer tight bounds). Should be smaller
       than (1.0 / [integrality tolerance])
 
+cvt:expcones (expcones)
+      0*/1: Recognize exponential cones.
+
 cvt:mip:eps (cvt:cmp:eps, cmp:eps)
       Tolerance for strict comparison of continuous variables for MIP. Applies
       to <, >, and != operators. Also applies to negation of conditional
@@ -544,6 +547,29 @@ cvt:quadcon (passquadcon)
 cvt:quadobj (passquadobj)
       0/1*: Multiply out and pass quadratic objective terms to the solver, vs.
       linear approximation.
+
+cvt:socp (socpmode, socp)
+      Second-Order Cone recognition mode:
+
+      0 - Do not recognize SOCP forms
+      1 - Recognize from non-quadratic expressions only (sqrt, abs)
+      2 - Recognize from quadratic and non-quadratic SOCP forms
+
+      Recognized SOCP forms can be further converted to (SOCP-standardized)
+      quadratic constraints, see cvt:socp2qc. Default: 1.
+
+cvt:socp2qc (socp2qcmode, socp2qc)
+      Mode to convert recognized SOCP forms to SOCP-standardized quadratic
+      constraints:
+
+      0 - Do not convert
+      1 - Convert if no other cone types found, and not all original
+          quadratics could be recognized as SOC, in particular if the
+          objective is quadratic
+      2 - Always convert
+
+      Such conversion can be necessary if the solver does not accept a mix of
+      conic and quadratic constraints/objectives. Default: 2.
 
 cvt:sos (sos)
       0/1*: Whether to honor declared suffixes .sosno and .ref describing SOS
@@ -1177,7 +1203,7 @@ qp:psdtol (psdtol)
       objectives (default 1e-6).
 
 sol:chk:fail (chk:fail, checkfail)
-      Fail on solution checking violations, with solve result 520.
+      Fail on MP solution check violations, with solve result 150.
 
 sol:chk:feastol (sol:chk:eps, chk:eps, chk:feastol)
       Absolute tolerance to check objective values, variable and constraint
@@ -1209,7 +1235,7 @@ sol:chk:mode (solcheck, checkmode, chk:mode)
       consider possible tolerances applied by the solver when computing
       expression values.
 
-      Default: 1+2+16+512.
+      Default: 1+2+512.
 
 sol:chk:prec (chk:prec, chk:precision)
       AMPL solution_precision option when checking: number of significant
