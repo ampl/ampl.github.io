@@ -5,7 +5,7 @@ BARON is a general nonlinear optimizer capable of solving nonconvex optimization
 [[Read More](https://ampl.com/products/solvers/solvers-we-sell/baron/)]
 [[Options](options.md)]
 [[Changes](changes.md)]
-[[Download](https://portal.ampl.com)]
+[[Download BARON](https://portal.ampl.com/user/ampl/download/baron)]
 
 ## How to use it
 

@@ -5,7 +5,7 @@ LOQO is a powerful solver for smooth constrained optimization problems, based on
 [[Read More](https://ampl.com/products/solvers/solvers-we-sell/loqo/)]
 [[Options](options.md)]
 [[Changes](changes.md)]
-[[Download](https://portal.ampl.com)]
+[[Download LOQO](https://portal.ampl.com/user/ampl/download/loqo)]
 
 ## How to use it
 

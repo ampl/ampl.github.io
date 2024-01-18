@@ -5,7 +5,7 @@ LINDO Global is a versatile nonlinear optimizer that supports global optimizatio
 [[Read More](https://ampl.com/products/solvers/solvers-we-sell/lindoglobal/)]
 [[Options](options.md)]
 [[Changes](changes.md)]
-[[Download](https://portal.ampl.com)]
+[[Download LINDO Global](https://portal.ampl.com/user/ampl/download/lindoglobal)]
 
 ## How to use it
 

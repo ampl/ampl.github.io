@@ -5,7 +5,7 @@ IBM ILOG CPLEX has been a well known and widely used large-scale solver for over
 [[Read More](https://ampl.com/products/solvers/solvers-we-sell/cplex/)]
 [[Options](options.md)]
 [[Changes](changes.md)]
-[[Download](https://portal.ampl.com)]
+[[Download CPLEX](https://portal.ampl.com/user/ampl/download/cplex)]
 
 ## How to use it
 CPLEX options consist of a single-word option, or an option followed by an = sign and a value; a space may be used as a separator in place of the =.

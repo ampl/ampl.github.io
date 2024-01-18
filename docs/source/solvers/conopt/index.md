@@ -5,7 +5,7 @@ A proven choice for highly nonlinear problems, CONOPT’s efficient and reliable
 [[Read More](https://ampl.com/products/solvers/solvers-we-sell/conopt/)]
 [[Options](options.md)]
 [[Changes](changes.md)]
-[[Download](https://portal.ampl.com)]
+[[Download CONOPT](https://portal.ampl.com/user/ampl/download/conopt)]
 
 ## How to use it
 

@@ -10,7 +10,7 @@ No user interaction is necessary, thus GCG provides decomposition-based MIP solv
 [[Modeling guide](https://mp.ampl.com/model-guide.html)]
 [[Options](options.md)]
 [[Changes](changes.md)]
-[[Download](https://portal.ampl.com)]
+[[Download GCG](https://portal.ampl.com/user/ampl/download/gcg)]
 
 ## How to use it
 

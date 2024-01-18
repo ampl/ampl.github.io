@@ -5,7 +5,7 @@ Artelys Knitro is an especially powerful nonlinear solver, offering a range of s
 [[Read More](https://ampl.com/products/solvers/solvers-we-sell/knitro/)]
 [[Options](options.md)]
 [[Changes](changes.md)]
-[[Download](https://portal.ampl.com)]
+[[Download Knitro](https://portal.ampl.com/user/ampl/download/knitro)]
 
 ## How to use it
 

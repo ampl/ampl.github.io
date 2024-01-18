@@ -10,7 +10,7 @@ found [here](https://mp.ampl.com/model-guide.html).
 [[Modeling guide](https://mp.ampl.com/model-guide.html)]
 [[Options](options.md)]
 [[Changes](changes.md)]
-[[Download](https://portal.ampl.com)]
+[[Download HiGHS](https://portal.ampl.com/user/ampl/download/highs)]
 
 ## How to use it
 

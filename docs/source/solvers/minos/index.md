@@ -5,7 +5,7 @@ MINOS is an established choice for both linear and nonlinear optimization proble
 [[Read More](https://ampl.com/products/solvers/solvers-we-sell/minos/)]
 [[Options](options.md)]
 [[Changes](changes.md)]
-[[Download](https://portal.ampl.com)]
+[[Download MINOS](https://portal.ampl.com/user/ampl/download/minos)]
 
 ## How to use it
 
