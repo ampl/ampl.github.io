@@ -370,9 +370,25 @@ tech:debug (debug)
       auxiliary information.
 
 tech:optionfile (optionfile, option:file)
-      Name of solver option file to read (surrounded by 'single' or "double"
-      quotes if the name contains blanks). Lines that start with # are
-      ignored. Otherwise, each nonempty line should contain "name=value".
+      Name of an AMPL solver option file to read (surrounded by 'single' or
+      "double" quotes if the name contains blanks). Lines that start with #
+      are ignored. Otherwise, each nonempty line should contain "name=value",
+      e.g., "lim:iter=500".
+
+tech:optionnative (optionnative, optnative, tech:param)
+      General way to specify values of both documented and undocumented Mosek
+      parameters; value should be a quoted string (delimited by ' or ")
+      containing a parameter name, a space, and the value to be assigned to
+      the parameter. Can appear more than once. Cannot be used to query
+      current parameter values.
+
+tech:optionnativeread (optionnativeread, tech:param:read, param:read)
+      Name of Mosek parameter file (surrounded by 'single' or "double" quotes
+      if the name contains blanks) to be read.
+
+tech:optionnativewrite (optionnativewrite, tech:param:write, param:write)
+      Name of Mosek parameter file (surrounded by 'single' or "double" quotes
+      if the name contains blanks) to be written.
 
 tech:outlev (outlev)
       0*/1: Whether to write mosek log lines to stdout.

@@ -1064,9 +1064,10 @@ tech:messages (messages)
       on  - Turn on
 
 tech:optionfile (optionfile, option:file)
-      Name of solver option file to read (surrounded by 'single' or "double"
-      quotes if the name contains blanks). Lines that start with # are
-      ignored. Otherwise, each nonempty line should contain "name=value".
+      Name of an AMPL solver option file to read (surrounded by 'single' or
+      "double" quotes if the name contains blanks). Lines that start with #
+      are ignored. Otherwise, each nonempty line should contain "name=value",
+      e.g., "lim:iter=500".
 
 tech:outlev (outlev)
       0*-4: Whether to write log lines (chatter) to stdout and to file.

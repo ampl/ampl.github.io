@@ -1331,21 +1331,19 @@ tech:nodefilestart (nodefilestart)
       limit, i.e., no node files written).
 
 tech:optionfile (optionfile, option:file)
-      Name of solver option file to read (surrounded by 'single' or "double"
-      quotes if the name contains blanks). Lines that start with # are
-      ignored. Otherwise, each nonempty line should contain "name=value".
+      Name of an AMPL solver option file to read (surrounded by 'single' or
+      "double" quotes if the name contains blanks). Lines that start with #
+      are ignored. Otherwise, each nonempty line should contain "name=value",
+      e.g., "lim:iter=500".
 
-tech:outlev (outlev)
-      0*/1: Whether to write gurobi log lines (chatter) to stdout.
-
-tech:param (param)
+tech:optionnative (optionnative, optnative, tech:param)
       General way to specify values of both documented and undocumented Gurobi
       parameters; value should be a quoted string (delimited by ' or ")
       containing a parameter name, a space, and the value to be assigned to
       the parameter. Can appear more than once. Cannot be used to query
       current parameter values.
 
-tech:param:read (param:read, paramfile)
+tech:optionnativeread (optionnativeread, tech:param:read, param:read)
       Name of Gurobi parameter file (surrounded by 'single' or "double" quotes
       if the name contains blanks). The suffix on a parameter file should be
       .prm, optionally followed by .zip, .gz, .bz2, or .7z.
@@ -1353,9 +1351,12 @@ tech:param:read (param:read, paramfile)
       Lines that start with # are ignored. Otherwise, each nonempty line
       should contain a name and a value, separated by a space.
 
-tech:param:write (param:write)
+tech:optionnativewrite (optionnativewrite, tech:param:write, param:write)
       Name of Gurobi parameter file (surrounded by 'single' or "double" quotes
       if the name contains blanks) to be written.
+
+tech:outlev (outlev)
+      0*/1: Whether to write gurobi log lines (chatter) to stdout.
 
 tech:pooljobs (pool_jobs, pooljobs)
       Enables distributed concurrent optimization, which can be used to solve
@@ -1381,7 +1382,8 @@ tech:resultfile (resultfile)
       .mps, .rew, .lp, or .rlp - To capture the original model.
 
       The file suffix may optionally be followed by .gz, .bz2, or .7z, which
-      produces a compressed result.
+      produces a compressed result. Use tech:writesolution to write several
+      files.
 
 tech:seed (seed)
       Random number seed (default 0), affecting perturbations that may

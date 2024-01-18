@@ -1,6 +1,13 @@
 # MOSEK Changelog
 
 
+## 20240118
+- *Native Mosek options*
+  - Use tech:optionnative, tech:optionnative(read/write)
+    to read/write native options inline or to/from files.
+    See mp.ampl.com/features-guide.html#solver-options.
+
+
 ## 20240115
 - *Solve result codes*
   - List codes by running (solver) -!

@@ -1760,9 +1760,10 @@ tech:logfile (logfile)
       Log file name; default=no file
 
 tech:optionfile (optionfile, option:file)
-      Name of solver option file to read (surrounded by 'single' or "double"
-      quotes if the name contains blanks). Lines that start with # are
-      ignored. Otherwise, each nonempty line should contain "name=value".
+      Name of an AMPL solver option file to read (surrounded by 'single' or
+      "double" quotes if the name contains blanks). Lines that start with #
+      are ignored. Otherwise, each nonempty line should contain "name=value",
+      e.g., "lim:iter=500".
 
 tech:outlev (outlev)
       Whether to write xpress log lines (chatter) to stdout and to file:
