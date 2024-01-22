@@ -22,9 +22,9 @@ ampl: solve; # solve the problem
 
 ### Resources
 
-* [Driver sources](https://github.com/ampl/mp/tree/develop/solvers/mosek)
 * [Modeling guide](https://mp.ampl.com/model-guide.html)
 * [Full list of solver options](options.md)
+* [Driver sources](https://github.com/ampl/mp/tree/develop/solvers/mosek)
 
 ### Features
 

@@ -3,7 +3,7 @@
 Gurobi is a powerful commercial suite of optimization products, which includes simplex
 and parallel barrier solvers to handle linear programming (LP) and quadratic programming (QP),
 also quadratically constrained (QCP, SOCP) and the mixed-integer variations thereof (MIP, MIQP, MIQCP, MISOCP).
-It also supports some types of general constraints.
+It also supports some types of general constraints, this addressing MINLP.
 The framework used by the driver supports automatic reformulation for many expression types; the modeling guide can be
 found [here](https://mp.ampl.com/model-guide.html).
 
@@ -29,9 +29,9 @@ ampl: solve; # solve the problem
 
 ### Resources
 
-* [Driver sources](https://github.com/ampl/mp/tree/develop/solvers/gurobi)
 * [Modeling guide](https://mp.ampl.com/model-guide.html)
 * [Full list of solver options](options.md)
+* [Driver sources](https://github.com/ampl/mp/tree/develop/solvers/gurobi)
 * [Using with callbacks](https://ampls.ampl.com/)
 
 ### Features
@@ -39,7 +39,7 @@ ampl: solve; # solve the problem
 * Problem types: 
 
   * LP, QP, QCP, SOCP
-  * MIP, MIQP, MIQCP, ISOCP
+  * MIP, MIQP, MIQCP, MISOCP, MINLP
   * <details>
     <summary>General constraints</summary>  
 

@@ -22,6 +22,11 @@ ampl: option copt_options 'option1=value1 option2=value2'; # specify options
 ampl: solve; # solve the problem
 ```
 
+## Resources
+
+* [Modeling guide](https://mp.ampl.com/model-guide.html)
+* [Driver sources](https://github.com/ampl/mp/tree/develop/solvers/copt)
+
 ## Options
 
 Full list of solver options:
