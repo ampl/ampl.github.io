@@ -8,7 +8,7 @@ found [here](https://mp.ampl.com/model-guide.html).
 
 [[Read More](https://ampl.com/products/solvers/open-source-solvers/)]
 [[Modeling guide](https://mp.ampl.com/model-guide.html)]
-[[Options](options.md)]
+[[Options](#solver-options)]
 [[Changes](changes.md)]
 [[Download HiGHS](https://portal.ampl.com/user/ampl/download/highs)]
 
@@ -26,7 +26,7 @@ ampl: solve; # solve the problem
 * [Driver sources](https://github.com/ampl/mp/tree/develop/solvers/highsmp)
 
 
-## Options
+## Solver options
 
 Full list of solver options:
 ```{toctree}

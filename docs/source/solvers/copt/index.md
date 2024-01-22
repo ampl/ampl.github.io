@@ -10,7 +10,7 @@ found [here](https://mp.ampl.com/model-guide.html).
 
 [[Read More](https://ampl.com/products/solvers/solvers-we-sell/copt/)]
 [[Modeling guide](https://mp.ampl.com/model-guide.html)]
-[[Options](options.md)]
+[[Options](#solver-options)]
 [[Changes](changes.md)]
 [[Download COPT](https://portal.ampl.com/user/ampl/download/copt)]
 
@@ -27,7 +27,7 @@ ampl: solve; # solve the problem
 * [Modeling guide](https://mp.ampl.com/model-guide.html)
 * [Driver sources](https://github.com/ampl/mp/tree/develop/solvers/copt)
 
-## Options
+## Solver options
 
 Full list of solver options:
 ```{toctree}

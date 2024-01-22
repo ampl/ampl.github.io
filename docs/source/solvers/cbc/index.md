@@ -6,7 +6,7 @@ found [here](https://mp.ampl.com/model-guide.html).
 
 [[Read More](https://ampl.com/products/solvers/open-source-solvers/)]
 [[Modeling guide](https://mp.ampl.com/model-guide.html)]
-[[Options](options.md)]
+[[Options](#solver-options)]
 [[Changes](changes.md)]
 [[Download CBC](https://portal.ampl.com/user/ampl/download/cbc)]
 
@@ -23,7 +23,7 @@ ampl: solve; # solve the problem
 * [Modeling guide](https://mp.ampl.com/model-guide.html)
 * [Driver sources](https://github.com/ampl/mp/tree/develop/solvers/cbcmp)
 
-## Options
+## Solver options
 
 Full list of solver options:
 ```{toctree}

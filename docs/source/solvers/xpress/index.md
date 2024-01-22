@@ -6,7 +6,7 @@ found [here](https://mp.ampl.com/model-guide.html).
 
 [[Read More](https://ampl.com/products/solvers/solvers-we-sell/xpress/)]
 [[Modeling guide](https://mp.ampl.com/model-guide.html)]
-[[Options](options.md)]
+[[Options](#solver-options)]
 [[Changes](changes.md)]
 [[Download Xpress](https://portal.ampl.com/user/ampl/download/xpress)]
 
@@ -27,7 +27,7 @@ ampl: solve; # solve the problem
 ### Resources
 
 * [Modeling guide](https://mp.ampl.com/model-guide.html)
-* [Full list of solver options](options.md)
+* [Solver options](#solver-options)
 * [Driver sources](https://github.com/ampl/mp/tree/develop/solvers/xpress)
 * [Using with callbacks](https://ampls.ampl.com/)
 

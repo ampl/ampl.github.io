@@ -8,7 +8,7 @@ No user interaction is necessary, thus GCG provides decomposition-based MIP solv
 
 [[Read More](https://ampl.com/products/solvers/open-source-solvers/)]
 [[Modeling guide](https://mp.ampl.com/model-guide.html)]
-[[Options](options.md)]
+[[Options](#solver-options)]
 [[Changes](changes.md)]
 [[Download GCG](https://portal.ampl.com/user/ampl/download/gcg)]
 
@@ -25,7 +25,7 @@ ampl: solve; # solve the problem
 * [Modeling guide](https://mp.ampl.com/model-guide.html)
 * [Driver sources](https://github.com/ampl/mp/tree/develop/solvers/gcgmp)
 
-## Options
+## Solver options
 
 Full list of solver options:
 ```{toctree}
