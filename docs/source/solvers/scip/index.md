@@ -33,6 +33,9 @@ Full list of solver options:
 options.md
 ```
 
+More details on solver options: [Features guide](https://mp.ampl.com/features-guide.html).
+
+
 ## Changelog
 
 ```{toctree}

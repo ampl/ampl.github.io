@@ -91,6 +91,9 @@ run:
 mosek -=lim:
 ```
 
+More details on solver options: [Features guide](https://mp.ampl.com/features-guide.html).
+
+
 ## Specifying solver options and solving a model
 
 After formulating the model in AMPL, execute the following to select Mosek as solver and pass the two options:
