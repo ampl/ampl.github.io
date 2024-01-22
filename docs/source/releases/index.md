@@ -20,7 +20,7 @@
 - [**Lindo Global** Changelog (latest: **20210406**)](../solvers/lindoglobal/changes.md)
 - [**MINOS** Changelog (latest: **20211109**)](../solvers/minos/changes.md)
 - [**MOSEK** Changelog (latest: **20240118**)](../solvers/mosek/changes.md)
-- [**SCIP** Changelog (latest: **20240115**)](../solvers/scip/changes.md)
+- [**SCIP** Changelog (latest: **20240121**)](../solvers/scip/changes.md)
 - [**SNOPT** Changelog (latest: **20211109**)](../solvers/snopt/changes.md)
 - [**XPRESS** Changelog (latest: **20240115**)](../solvers/xpress/changes.md)
 - [**XPRESSASL** Changelog (latest: **20220112**)](../solvers/xpress/changesasl.md)
@@ -32,6 +32,8 @@ ampl.md
 ```
 
 
+## 20240121
+- [SCIP](../solvers/scip/changes.md#20240121)
 ## 20240118
 - [MOSEK](../solvers/mosek/changes.md#20240118)
 ## 20240115

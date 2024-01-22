@@ -1,6 +1,10 @@
 # SCIP Changelog
 
 
+## 20240121
+- Updated to SCIP 8.1.0
+
+
 ## 20240115
 - *Solve result codes*
   - List codes by running (solver) -!

@@ -774,9 +774,14 @@ tech:logfile (logfile)
       Log file name.
 
 tech:optionfile (optionfile, option:file)
-      Name of solver option file to read (surrounded by 'single' or "double"
-      quotes if the name contains blanks). Lines that start with # are
-      ignored. Otherwise, each nonempty line should contain "name=value".
+      Name of an AMPL solver option file to read (surrounded by 'single' or
+      "double" quotes if the name contains blanks). Lines that start with #
+      are ignored. Otherwise, each nonempty line should contain "name=value",
+      e.g., "lim:iter=500".
+
+tech:optionnativeread (optionnativeread, tech:param:read, param:read)
+      Filename of SCIP parameter file (as path).The suffix on a parameter file
+      should be .set.
 
 tech:outlev (outlev)
       0*/1: Whether to write SCIP log lines (chatter) to stdout and to file.
@@ -784,10 +789,6 @@ tech:outlev (outlev)
 tech:outlev-native (outlev-native)
       0*/1/2/3/4/5: Whether to write SCIP log lines (chatter) to stdout and to
       file (native output level of SCIP).
-
-tech:param:read (param:read, paramfile)
-      Filename of SCIP parameter file (as path).The suffix on a parameter file
-      should be .set.
 
 tech:timing (timing)
       0*/1: Whether to display timings for the run.
