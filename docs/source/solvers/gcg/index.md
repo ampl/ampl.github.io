@@ -7,7 +7,7 @@ GCG is able to automatically apply a Benders decomposition.
 No user interaction is necessary, thus GCG provides decomposition-based MIP solving technology to everyone.
 
 [[Read More](https://ampl.com/products/solvers/open-source-solvers/)]
-[[Modeling guide](https://mp.ampl.com/model-guide.html)]
+[[GCG modeling guide](#gcg-modeling-guide)]
 [[Options](#solver-options)]
 [[Changes](changes.md)]
 [[Download GCG](https://portal.ampl.com/user/ampl/download/gcg)]
@@ -22,10 +22,20 @@ ampl: solve; # solve the problem
 
 ## Resources
 
-* [Modeling guide](https://mp.ampl.com/model-guide.html)
+* [GCG modeling guide](#gcg-modeling-guide)
 * [Solver options](#solver-options)
 * [Solve result codes](#retrieving-solutions)
 * [Driver sources](https://github.com/ampl/mp/tree/develop/solvers/gcgmp)
+
+## GCG modeling guide
+
+GCG can apply Dantzig-Wolfe or Benders decomposition,
+either automatically or user-controlled,
+see `AMPL/GCG Colab examples <https://colab.ampl.com/tags/gcg.html#tag-gcg>`_.
+
+Moreover, AMPL logical and some nonlinear expressions can be
+automatically linearized by the driver,
+see `MP modeling guide <https://mp.ampl.com/model-guide.html>`_
 
 ## Solver options
 
