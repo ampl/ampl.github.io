@@ -31,11 +31,11 @@ ampl: solve; # solve the problem
 
 GCG can apply Dantzig-Wolfe or Benders decomposition,
 either automatically or user-controlled,
-see `AMPL/GCG Colab examples <https://colab.ampl.com/tags/gcg.html#tag-gcg>`_.
+see [AMPL/GCG Colab examples](https://colab.ampl.com/tags/gcg.html#tag-gcg).
 
 Moreover, AMPL logical and some nonlinear expressions can be
 automatically linearized by the driver,
-see `MP modeling guide <https://mp.ampl.com/model-guide.html>`_
+see [MP modeling guide](https://mp.ampl.com/model-guide.html).
 
 ## Solver options
 
