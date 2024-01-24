@@ -1,6 +1,6 @@
 # SCIP
 
-SCIP is currently one of the fastest non-commercial solvers for mixed integer programming (MIP)
+[SCIP](http://scipopt.org/) is currently one of the fastest non-commercial solvers for mixed integer programming (MIP)
 and mixed integer nonlinear programming (MINLP). It is also a framework for constraint integer
 programming and branch-cut-and-price. It allows for total control of the solution process and
 the access of detailed information down to the guts of the solver.

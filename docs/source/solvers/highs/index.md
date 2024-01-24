@@ -1,7 +1,7 @@
 # HiGHS
 
 A leading free solver that has evolved from a large-scale optimization project
-at the University of Edinburgh. HiGHS is open-source software to solve
+at the University of Edinburgh. [HiGHS](https://highs.dev/) is open-source software to solve
 linear programming, mixed-integer programming, and convex quadratic programming models.
 The framework used by the driver supports automatic reformulation for many expression types; the modeling guide can be
 found [here](https://mp.ampl.com/model-guide.html).

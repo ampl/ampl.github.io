@@ -1,6 +1,6 @@
 # CBC
 
-The COIN Branch and Cut solver (CBC) is an open-source mixed-integer program (MIP) solver written in C++.
+The [COIN Branch and Cut solver (CBC)](https://github.com/coin-or/Cbc) is an open-source mixed-integer program (MIP) solver written in C++.
 The framework used by the driver supports automatic reformulation for many expression types; the modeling guide can be
 found [here](https://mp.ampl.com/model-guide.html).
 
