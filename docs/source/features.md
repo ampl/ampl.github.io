@@ -54,15 +54,13 @@ In your AMPL bundle you should find `x-ampl`, the development version of AMPL wh
 
 ### Example using it with amplpy
 
-You need to be using at least amplpy 0.8.0 (you can install it with `python -m pip install amplpy==0.8.0`). With this version of  amplpy it is possible to pass an additional argument to [Environment](https://amplpy.ampl.com/en/stable/classes/environment.html) that allows specifying the executable name as follows:
+You need to be using at least amplpy 0.12.0 (you can install it with `python -m pip install amplpy>=0.12.0`).
 
+You can then use [`AMPL.snapshot`](https://amplpy.ampl.com/en/latest/classes/ampl.html#amplpy.AMPL.snapshot) to retrieve a session snapshot as a string. The string returned is a compact representation of the AMPL state (model declaration, data, solution loaded, options, etc.)
 ```python
-ampl = AMPL(Environment('', 'x-ampl'))
-```
-
-You can then use `AMPL.get_output` to retrieve the output of the new command "snapshot;" as a string. The string returned is a compact representation of the AMPL state (model declaration, data, solution loaded, options, etc.)
-```python
-snapshot = ampl.get_output('snapshot;')
+ampl = AMPL()
+...
+snapshot = ampl.snapshot()
 print(snapshot)
 ```
 This string can then be passed to another AMPL object using `AMPL.eval`. The following example produces the output below:
@@ -70,31 +68,30 @@ This string can then be passed to another AMPL object using `AMPL.eval`. The fol
 from amplpy import AMPL, Environment
 
 print('First object:')
-ampl = AMPL(Environment('', 'x-ampl'))
+ampl = AMPL()
 ampl.read('diet.mod')
 ampl.read_data('diet.dat')
 ampl.option['solver'] = 'gurobi'
 ampl.solve()
+ampl.snapshot("snapshot.run")  # save the session snapshot to a file
 
 print('Second object:')
-ampl2 = AMPL(Environment('', 'x-ampl'))
-snapshot = ampl.get_output('snapshot;')
-print(snapshot, file=open('snapshot.run', 'w'))
-ampl2.eval(snapshot)
+ampl2 = AMPL()
+ampl2.read("snapshot.run")  # load the snapshot from the snapshot.run file 
 ampl2.display('Buy')
 
 print('Third object:')
-ampl3 = AMPL(Environment('', 'x-ampl'))
-ampl3.eval(ampl2.get_output('snapshot;'))
+ampl3 = AMPL()
+snapshot = ampl2.snapshot()  # return a string with the session snapshot
+ampl3.eval(snapshot)  # load the snapshot from the string
 ampl3.display('_VARS;')
 ampl3.eval('option solver;')
-
 ```
 
 
 ```
 First object:
-Gurobi 9.1.2: optimal solution; objective 88.2
+Gurobi 11.0.0: optimal solution; objective 88.2
 1 simplex iterations
 Second object:
 Buy [*] :=
@@ -114,7 +111,7 @@ set _VARS := Buy;
 option solver gurobi;
 ```
 
-One thing that may also be useful: In the example, there is the line `print(snapshot, file=open('snapshot.run', 'w'))` that writes the snapshot to a file called `snapshot.run`. This file can be loaded into AMPL (e.g., for debugging) as follows:
+One thing that may also be useful: In the example, there is the line `ampl.snapshot("snapshot.run")` that writes the snapshot to a file called `snapshot.run`. This file can be loaded into AMPL (e.g., for debugging) as follows:
 ```
 $ ampl
 ampl: include "snapshot.run";
