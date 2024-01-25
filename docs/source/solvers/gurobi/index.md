@@ -13,16 +13,45 @@ found [here](https://mp.ampl.com/model-guide.html).
 [[Changes](changes.md)]
 [[Download Gurobi](https://portal.ampl.com/user/ampl/download/gurobi)]
 
-```{note}
 Our enhanced Gurobi driver (previously know as x-gurobi) is now the default Gurobi driver. The new driver provides significantly extended modeling support for logical and nonlinear operators natively through Gurobi’s built-in “general constraints” and through linearizations performed by the [MP library](https://mp.ampl.com/). There are two binaries in this package: `gurobi` [[options](options.md)] is the new version, `gurobiasl` [[options](gurobiasl)] is the legacy version. If you are upgrading an existing installation and encounter any issues with the new version please report them to [support@ampl.com](mailto:support@ampl.com).
-```
 
 ## How to use it
 
-```ampl
-ampl: option solver gurobi; # change the solver
-ampl: option gurobi_options 'option1=value1 option2=value2'; # specify options
-ampl: solve; # solve the problem
+```{eval-rst}
+
+.. tabs::
+
+   .. tab:: AMPL
+
+        .. code-block:: ampl
+
+            ampl: option solver gurobi; # change the solver
+            ampl: option gurobi_options 'option1=value1 option2=value2'; # specify options
+            ampl: solve; # solve the problem
+
+   .. tab:: Python
+   
+        How to install using `amplpy <https://amplpy.ampl.com>`_:
+
+        .. code-block:: bash
+
+            # Install Python API for AMPL:
+            $ python -m pip install amplpy --upgrade
+
+            # Install AMPL & solver modules:
+            $ python -m amplpy.modules install gurobi # install Gurobi
+
+            # Activate your license (e.g., free ampl.com/ce or ampl.com/courses licenses):
+            $ python -m amplpy.modules activate <your-license-uuid>
+
+        How to use:
+
+        .. code-block:: python
+
+            from amplpy import AMPL
+            ampl = AMPL()
+            ...
+            ampl.solve(solver="gurobi", gurobi_options="option1=value1 option2=value2")
 ```
 
 ## At a glance

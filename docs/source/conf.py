@@ -22,6 +22,7 @@ extensions = [
     "sphinx.ext.mathjax",
     "sphinx.ext.autodoc",
     "sphinx_reredirects",
+    "sphinx_tabs.tabs",
 ]
 myst_enable_extensions = ["colon_fence"]
 

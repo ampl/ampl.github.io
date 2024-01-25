@@ -9,10 +9,41 @@ A proven choice for highly nonlinear problems, CONOPT’s efficient and reliable
 
 ## How to use it
 
-```ampl
-ampl: option solver conopt; # change the solver
-ampl: option conopt_options 'option1=value1 option2=value2'; # specify options
-ampl: solve; # solve the problem
+```{eval-rst}
+
+.. tabs::
+
+   .. tab:: AMPL
+
+        .. code-block:: ampl
+
+            ampl: option solver conopt; # change the solver
+            ampl: option conopt_options 'option1=value1 option2=value2'; # specify options
+            ampl: solve; # solve the problem
+
+   .. tab:: Python
+   
+        How to install using `amplpy <https://amplpy.ampl.com>`_:
+
+        .. code-block:: bash
+
+            # Install Python API for AMPL:
+            $ python -m pip install amplpy --upgrade
+
+            # Install AMPL & solver modules:
+            $ python -m amplpy.modules install conopt # install CONOPT
+
+            # Activate your license (e.g., free ampl.com/ce or ampl.com/courses licenses):
+            $ python -m amplpy.modules activate <your-license-uuid>
+
+        How to use:
+
+        .. code-block:: python
+
+            from amplpy import AMPL
+            ampl = AMPL()
+            ...
+            ampl.solve(solver="conopt", conopt_options="option1=value1 option2=value2")
 ```
 
 ## Options

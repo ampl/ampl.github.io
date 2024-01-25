@@ -14,18 +14,52 @@ No user interaction is necessary, thus GCG provides decomposition-based MIP solv
 
 ## How to use it
 
-```ampl
-ampl: option solver gcg; # change the solver
-ampl: option highs_options 'option1=value1 option2=value2'; # specify options
-ampl: solve; # solve the problem
+```{eval-rst}
+
+.. tabs::
+
+   .. tab:: AMPL
+
+        .. code-block:: ampl
+
+            ampl: option solver gcg; # change the solver
+            ampl: option gcg_options 'option1=value1 option2=value2'; # specify options
+            ampl: solve; # solve the problem
+
+   .. tab:: Python
+   
+        How to install using `amplpy <https://amplpy.ampl.com>`_:
+
+        .. code-block:: bash
+
+            # Install Python API for AMPL:
+            $ python -m pip install amplpy --upgrade
+
+            # Install AMPL & solver modules:
+            $ python -m amplpy.modules install gcg # install GCG
+
+            # Activate your license (e.g., free ampl.com/ce or ampl.com/courses licenses):
+            $ python -m amplpy.modules activate <your-license-uuid>
+
+        How to use:
+
+        .. code-block:: python
+
+            from amplpy import AMPL
+            ampl = AMPL()
+            ...
+            ampl.solve(solver="gcg", gcg_options="option1=value1 option2=value2")
 ```
 
 ## Resources
 
-* [GCG modeling guide](#gcg-modeling-guide)
-* [Solver options](#solver-options)
-* [Solve result codes](#retrieving-solutions)
-* [Driver sources](https://github.com/ampl/mp/tree/develop/solvers/gcgmp)
+- [GCG](#gcg)
+  - [How to use it](#how-to-use-it)
+  - [Resources](#resources)
+  - [GCG modeling guide](#gcg-modeling-guide)
+  - [Solver options](#solver-options)
+  - [Retrieving solutions](#retrieving-solutions)
+  - [Changelog](#changelog)
 
 ## GCG modeling guide
 

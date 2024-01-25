@@ -8,12 +8,44 @@ IBM ILOG CPLEX has been a well known and widely used large-scale solver for over
 [[Download CPLEX](https://portal.ampl.com/user/ampl/download/cplex)]
 
 ## How to use it
-CPLEX options consist of a single-word option, or an option followed by an = sign and a value; a space may be used as a separator in place of the =.
 
-```ampl
-ampl: option solver cplex; # change the solver
-ampl: option cplex_options 'single-word-option option1=value1 option2 value2'; # specify options
-ampl: solve; # solve the problem
+```{eval-rst}
+
+.. tabs::
+
+   .. tab:: AMPL
+
+        CPLEX options consist of a single-word option, or an option followed by an = sign and a value; a space may be used as a separator in place of the =.
+
+        .. code-block:: ampl
+
+            ampl: option solver cplex; # change the solver
+            ampl: option cplex_options 'option1=value1 option2=value2'; # specify options
+            ampl: solve; # solve the problem
+
+   .. tab:: Python
+   
+        How to install using `amplpy <https://amplpy.ampl.com>`_:
+
+        .. code-block:: bash
+
+            # Install Python API for AMPL:
+            $ python -m pip install amplpy --upgrade
+
+            # Install AMPL & solver modules:
+            $ python -m amplpy.modules install cplex # install CPLEX
+
+            # Activate your license (e.g., free ampl.com/ce or ampl.com/courses licenses):
+            $ python -m amplpy.modules activate <your-license-uuid>
+
+        How to use:
+
+        .. code-block:: python
+
+            from amplpy import AMPL
+            ampl = AMPL()
+            ...
+            ampl.solve(solver="cplex", cplex_options="option1=value1 option2=value2")
 ```
 
 ## Resources

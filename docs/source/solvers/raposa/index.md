@@ -8,10 +8,26 @@ RAPOSa is a global optimization solver, specifically designed for mixed-integer 
 
 ## How to use it
 
-```ampl
-ampl: option solver raposa; # change the solver
-ampl: option raposa_options 'option1=value1 option2=value2'; # specify options
-ampl: solve; # solve the problem
+```{eval-rst}
+
+.. tabs::
+
+   .. tab:: AMPL
+
+        .. code-block:: ampl
+
+            ampl: option solver raposa; # change the solver
+            ampl: option raposa_options 'option1=value1 option2=value2'; # specify options
+            ampl: solve; # solve the problem
+
+   .. tab:: Python
+
+        .. code-block:: python
+
+            from amplpy import AMPL
+            ampl = AMPL()
+            ...
+            ampl.solve(solver="raposa", raposa_options="option1=value1 option2=value2")
 ```
 
 ## Options
