@@ -65,7 +65,9 @@ No user interaction is necessary, thus GCG provides decomposition-based MIP solv
 
 GCG can apply Dantzig-Wolfe or Benders decomposition,
 either automatically or user-controlled,
-see [GCG website](https://gcg.or.rwth-aachen.de/) and
+see
+[types of structures GCG can detect](https://gcg.or.rwth-aachen.de/doc/structure-types.html)
+and
 [AMPL/GCG Colab examples](https://colab.ampl.com/tags/gcg.html#tag-gcg).
 
 Moreover, AMPL logical and some nonlinear expressions can be
