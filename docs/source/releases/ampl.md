@@ -1,5 +1,62 @@
 # AMPL Changelog
 
+## 20240116
+
+* Fix a glitch in the new `tableindexarity` function that depended on whether a table's name was an even or odd member of _TABLES, illustrated by
+```
+	set A = 1..3; param p{A};
+	table test1{A} IN: [index] p;
+	table test2{A,A} IN: [index] p;
+	display tableindexarity('test1');	# gave 0 rather than 1
+	display tableindexarity('test2');
+```
+
+* New builtin function `environindexarity`, analogous to `indexarity` and `tableindexarity`, but for environments. Example:
+```
+	environ foo;
+	set A;
+	environ goo{A};
+	environ zoo{A,A,A};
+	display environindexarity('foo'), environindexarity('goo'),
+		environindexarity('zoo');
+	# environindexarity('foo') = 0
+	# environindexarity('goo') = 1
+	# environindexarity('zoo') = 3
+```
+
+## 20240110
+ 
+* New builtin function `tableindexarity('foo')`, analogous to `indexarity('foo')`, but relevant to table declations, since tables have their own name space.  Thus the script
+```
+	set A = 1..3; param p{A};
+	table test IN: [A], p;
+	table test2{a in A} IN: [index] p;
+	display indexarity('test'),
+		indexarity('test2'),
+		tableindexarity('test'),
+		tableindexarity('test2');
+	param test{A,A,A};
+	display indexarity('test');
+```
+gives output
+```
+	indexarity('test') = -1
+	indexarity('test2') = -1
+	tableindexarity('test') = 0
+	tableindexarity('test2') = 1
+
+	indexarity('test') = 3
+```
+
+## 20240105
+
+* Fix a fault with ord applied to some dummy variables.  Example:
+```
+	set I ordered := 1..10;
+	for {i in I, j in I:  ord(i) < ord(j)}
+		display i, j;
+```
+
 ## 20231012
 
 * Fix a glitch in reading values in solution (.sol) files for suffixes on logical constraints.
