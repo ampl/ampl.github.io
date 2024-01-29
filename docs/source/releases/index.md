@@ -2,8 +2,7 @@
 
 # Release History
 
-
-- [**AMPL** Changelog (latest: **20231012**)](../releases/ampl.md)
+- [**AMPL** Changelog (latest: **20240116**)](../releases/ampl.md)
 - [**BARON** Changelog (latest: **20230405**)](../solvers/baron/changes.md)
 - [**CBC** Changelog (latest: **20240115**)](../solvers/cbc/changes.md)
 - [**CONOPT** Changelog (latest: **20211109**)](../solvers/conopt/changes.md)
@@ -31,11 +30,12 @@
 ampl.md
 ```
 
-
 ## 20240121
 - [SCIP](../solvers/scip/changes.md#20240121)
 ## 20240118
 - [MOSEK](../solvers/mosek/changes.md#20240118)
+## 20240116
+- [AMPL](../releases/ampl.md#20240116)
 ## 20240115
 - [CBC](../solvers/cbc/changes.md#20240115)
 - [COPT](../solvers/copt/changes.md#20240115)
@@ -45,6 +45,10 @@ ampl.md
 - [MOSEK](../solvers/mosek/changes.md#20240115)
 - [SCIP](../solvers/scip/changes.md#20240115)
 - [XPRESS](../solvers/xpress/changes.md#20240115)
+## 20240110
+- [AMPL](../releases/ampl.md#20240110)
+## 20240105
+- [AMPL](../releases/ampl.md#20240105)
 ## 20239021
 - [SCIP](../solvers/scip/changes.md#20239021)
 ## 20231208
