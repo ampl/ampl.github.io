@@ -1,5 +1,21 @@
 # KNITRO Changelog
 
+## 20240201
+- Updated to Knitro 14.0, changes include:
+    - Significant performance improvements on mixed-integer problems: new probing and flow cover 
+      cuts (*mip_cut_probing* and *mip_cut_flowcover*). In addition, new local search heuristics 
+      were added (controlled by *mip_heuristic_localsearch*)
+    - Several improvements related to the presolver, including new presolve operations 
+      related to substitution of variables (*presolveop_substitution*, *presolveop_substitution_tol*),
+      and improvements to the presolve operations for detecting duplicate or dependent constraints 
+      (*presolveop_redundant*).
+- New options: *bar_globalize*, *bar_maxmu*, *linsolver_nodeamalg*, *linsolver_nodeamalg*,
+               *linsolver_nodeamalg*, *linsolver_nodeamalg*, *mip_cut_probing*,
+               *mip_heuristic_localsearch*, *mip_heuristic_localsearch*, *presolveop_substitution*,
+               *presolveop_substitution_tol*, *presolveop_substitution_zero_tol*, *presolveop_tighten*,
+               *presolveop_varbnd_abs_max_val*, *presolveop_varbnd_rel_min_change*, *scale_vars*
+
+
 ## 20221213
 - Updated to Knitro 13.2, changes include:
    - Improved cuts and cut selection strategies for branch-and-bound
@@ -7,7 +23,7 @@
    - Added Gomory cuts, controlled by the keyword: *mip_gomory*
    - Updated settings values for *mip_clique*, *mip_knapsack*, *mip_liftproject*,
      *mip_zerohalf* and *mip_mir*
-   - Many buggixes
+   - Many bug fixes
 
 ## 20221123
 - Relinked with ASL 20221115, which fixes a rare memory (de)allocation problem

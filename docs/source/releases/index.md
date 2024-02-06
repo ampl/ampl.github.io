@@ -2,6 +2,7 @@
 
 # Release History
 
+
 - [**AMPL** Changelog (latest: **20240116**)](../releases/ampl.md)
 - [**BARON** Changelog (latest: **20230405**)](../solvers/baron/changes.md)
 - [**CBC** Changelog (latest: **20240115**)](../solvers/cbc/changes.md)
@@ -14,7 +15,7 @@
 - [**GUROBIASL** Changelog (latest: **20231208**)](../solvers/gurobi/changesasl.md)
 - [**HiGHS** Changelog (latest: **20240115**)](../solvers/highs/changes.md)
 - [**ILOGCP** Changelog (latest: **20230228**)](../solvers/ilogcp/changes.md)
-- [**KNITRO** Changelog (latest: **20221213**)](../solvers/knitro/changes.md)
+- [**KNITRO** Changelog (latest: **20240201**)](../solvers/knitro/changes.md)
 - [**LOQO** Changelog (latest: **20210410**)](../solvers/loqo/changes.md)
 - [**Lindo Global** Changelog (latest: **20210406**)](../solvers/lindoglobal/changes.md)
 - [**MINOS** Changelog (latest: **20211109**)](../solvers/minos/changes.md)
@@ -30,6 +31,9 @@
 ampl.md
 ```
 
+
+## 20240201
+- [KNITRO](../solvers/knitro/changes.md#20240201)
 ## 20240121
 - [SCIP](../solvers/scip/changes.md#20240121)
 ## 20240118
