@@ -15,7 +15,7 @@
 - [**GUROBIASL** Changelog (latest: **20231208**)](../solvers/gurobi/changesasl.md)
 - [**HiGHS** Changelog (latest: **20240115**)](../solvers/highs/changes.md)
 - [**ILOGCP** Changelog (latest: **20230228**)](../solvers/ilogcp/changes.md)
-- [**KNITRO** Changelog (latest: **20240201**)](../solvers/knitro/changes.md)
+- [**KNITRO** Changelog (latest: **20240209**)](../solvers/knitro/changes.md)
 - [**LOQO** Changelog (latest: **20210410**)](../solvers/loqo/changes.md)
 - [**Lindo Global** Changelog (latest: **20210406**)](../solvers/lindoglobal/changes.md)
 - [**MINOS** Changelog (latest: **20211109**)](../solvers/minos/changes.md)
@@ -32,6 +32,8 @@ ampl.md
 ```
 
 
+## 20240209
+- [KNITRO](../solvers/knitro/changes.md#20240209)
 ## 20240201
 - [KNITRO](../solvers/knitro/changes.md#20240201)
 ## 20240121

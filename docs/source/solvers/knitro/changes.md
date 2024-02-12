@@ -1,5 +1,9 @@
 # KNITRO Changelog
 
+## 20240209
+- Fixed a bug with multithreading on MacOS
+
+
 ## 20240201
 - Updated to Knitro 14.0, changes include:
     - Significant performance improvements on mixed-integer problems: new probing and flow cover 
