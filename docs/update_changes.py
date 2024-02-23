@@ -25,6 +25,8 @@ SOLVERS = {
     "MOSEK": "mosek",
     "SCIP": "scip",
     "GCG": "gcg",
+    "SCIP-CPX": "scip-cpx",
+    "GCG-CPX": "gcg-cpx",
 }
 
 releases = {}
@@ -63,6 +65,8 @@ for label, solver in SOLVERS.items():
         fname = f"source/solvers/{solver.replace('asl', '')}/{solver}.md"
     elif solver.endswith("mp"):
         fname = f"source/solvers/{solver.replace('mp', '')}/{solver}.md"
+    elif solver.endswith("-cpx"):
+        fname = f"source/solvers/{solver.replace('-cpx', '')}/{solver}.md"
     else:
         fname = f"source/solvers/{solver}/options.md"
 
@@ -73,7 +77,7 @@ for label, solver in SOLVERS.items():
 
 ```ampl
 ampl: option solver {solver}; # change the solver
-ampl: option {solver}_options 'option1=value1 option2=value2'; # specify options
+ampl: option {solver.replace('-cpx', '')}_options 'option1=value1 option2=value2'; # specify options
 ampl: solve; # solve the problem
 ```
 

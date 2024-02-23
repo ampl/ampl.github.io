@@ -1,5 +1,40 @@
 # GCG Changelog
 
+## 20240115
+- *Solve result codes*.
+  - List codes by running (solver) -!
+  - [BREAKING] Standardized codes. Major changes:
+    - 100-199 (solved?) means solution candidate
+      provided, but can be suboptimal/infeasible
+    - 300-349 means unbounded problem but
+      feasible solution returned
+    - 400-449 means limit/interrupt but feasible
+  - [BREAKING] sol:chk:fail returns code 150 (solved?)
+- Improved translation of *SOCP constraints*.
+  - Options cvt:socp, cvt:socp2qc.
+- Compact solution check warnings
+- Fixed presolve of the power function #226.
+
+
+## 20231117
+- MP update: fixed graceful exit on Ctrl-C from AMPL in Linux
+  and fixed issue with reading text-format NL files
+
+
+## 20231103
+- Improved translation of logical constraints:
+  inlining of nested disjunctions and conjunctions;
+  fewer auxiliary binary variables.
+
+
+## 20231017
+- Fixed a bug in NL reader on Windows.
+
+
+## 20231012
+- Fixed bug in option tech:logfile (logfile).
+
+
 ## 20230919
 - *mp_options*.
 	Receive mp_options from AMPL (for all MP solvers).

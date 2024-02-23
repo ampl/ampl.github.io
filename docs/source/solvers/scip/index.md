@@ -78,6 +78,10 @@ Full list of solver options:
 ```{toctree}
 options.md
 ```
+```{toctree}
+:hidden:
+scip-cpx.md
+```
 
 More details on solver options: [Features guide](https://mp.ampl.com/features-guide.html).
 

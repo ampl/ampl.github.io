@@ -1,24 +1,73 @@
 
-# GCG Options
+# SCIP-CPX Options
 
 ```ampl
-ampl: option solver gcg; # change the solver
-ampl: option gcg_options 'option1=value1 option2=value2'; # specify options
+ampl: option solver scip-cpx; # change the solver
+ampl: option scip_options 'option1=value1 option2=value2'; # specify options
 ampl: solve; # solve the problem
 ```
 
-Solver options obtained with `$ gcg -=`.
+Solver options obtained with `$ scip-cpx -=`.
 
 ```
-GCG Optimizer Options for AMPL
+SCIP Optimizer Options for AMPL
 --------------------------------------------
 
 To set these options, assign a string specifying their values to the AMPL
-option "gcg_options". For example:
+option "scip_options". For example:
 
-   ampl: option gcg_options 'mipgap=1e-6';
+   ampl: option scip_options 'mipgap=1e-6';
 
  Options:
+
+acc:abs
+      Solver acceptance level for 'AbsConstraint', default 2:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+acc:and (acc:forall)
+      Solver acceptance level for 'AndConstraint', default 1:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+acc:cos
+      Solver acceptance level for 'CosConstraint', default 1:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+acc:exp
+      Solver acceptance level for 'ExpConstraint', default 2:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+acc:indeq (acc:indlineq)
+      Solver acceptance level for 'IndicatorConstraintLinEQ', default 1:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+acc:indge (acc:indlinge)
+      Solver acceptance level for 'IndicatorConstraintLinGE', default 1:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+acc:indle (acc:indlinle)
+      Solver acceptance level for 'IndicatorConstraintLinLE', default 1:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
 
 acc:linrange (acc:linrng)
       Solver acceptance level for 'LinConRange', default 2:
@@ -27,13 +76,82 @@ acc:linrange (acc:linrng)
       1 - Accepted but automatic redefinition will be used where possible
       2 - Accepted natively and preferred
 
-alg:basis (basis)
-      Whether to use or return a basis:
+acc:log
+      Solver acceptance level for 'LogConstraint', default 2:
 
-      0 - No
-      1 - Use incoming basis (if provided)
-      2 - Return final basis
-      3 - Both (1 + 2 = default)
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+acc:or (acc:exists)
+      Solver acceptance level for 'OrConstraint', default 2:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+acc:pow
+      Solver acceptance level for 'PowConstraint', default 2:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+acc:quadcone
+      Solver acceptance level for 'QuadraticConeConstraint', default 1:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+acc:quadeq
+      Solver acceptance level for 'QuadConEQ', default 2:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+acc:quadge
+      Solver acceptance level for 'QuadConGE', default 2:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+acc:quadle
+      Solver acceptance level for 'QuadConLE', default 2:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+acc:quadrange (acc:quadrng)
+      Solver acceptance level for 'QuadConRange', default 2:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+acc:sin
+      Solver acceptance level for 'SinConstraint', default 2:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+acc:sos2
+      Solver acceptance level for 'SOS2Constraint', default 1:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+alg:concurrent (concurrent)
+      0/1: whether to solve the problem using concurrent solvers
+
+      0 - No concurrent solvers are used to solve the problem (default)
+
+      1 - Concurrent solvers are used to solve the problem.
 
 alg:method (method, lpmethod)
       LP algorithm for solving initial LP relaxations:
@@ -79,7 +197,7 @@ cut:maxcuts (maxcuts)
 
 cut:maxcutsroot (maxcutsroot)
       Maximal number of separated cuts at the root node (0: disable root node
-      separation; default: 2000)
+      separation; default: 5000)
 
 cut:maxrounds
       Maximal number of separation rounds per node (default: -1: unlimited)
@@ -177,7 +295,7 @@ cvt:pre:unnest
       0/1*: Inline nested expressions, currently Ands/Ors.
 
 cvt:quadcon (passquadcon)
-      0*/1: Multiply out and pass quadratic constraint terms to the solver,
+      0/1*: Multiply out and pass quadratic constraint terms to the solver,
       vs. linear approximation.
 
 cvt:quadobj (passquadobj)
@@ -192,7 +310,7 @@ cvt:socp (socpmode, socp)
       2 - Recognize from quadratic and non-quadratic SOCP forms
 
       Recognized SOCP forms can be further converted to (SOCP-standardized)
-      quadratic constraints, see cvt:socp2qc. Default: 0.
+      quadratic constraints, see cvt:socp2qc. Default: 2.
 
 cvt:socp2qc (socp2qcmode, socp2qc)
       Mode to convert recognized SOCP forms to SOCP-standardized quadratic
@@ -205,7 +323,7 @@ cvt:socp2qc (socp2qcmode, socp2qc)
       2 - Always convert
 
       Such conversion can be necessary if the solver does not accept a mix of
-      conic and quadratic constraints/objectives. Default: 2.
+      conic and quadratic constraints/objectives. Default: 1.
 
 cvt:sos (sos)
       0/1*: Whether to honor declared suffixes .sosno and .ref describing SOS
@@ -229,135 +347,28 @@ cvt:uenc:ratio (uenc:ratio)
       x==const. Instead, indicator constraints (or big-Ms) are used, if
       uenc:negctx also applies. Default 0.
 
-det:benders-enabled (benders-enabled)
-      0/1: whether benders detection should be enabled?
+est:completiontype
+      Approximation of search tree completion:
 
-      0 - Benders detection not enabled (default)
+      a - auto (default)
+      g - gap
+      w - tree weight
+      m - monotone regression
+      r - regression forest
+      s - ssg
 
-      1 - Benders detection enabled.
+est:method
+      Tree size estimation method:
 
-det:benders-onlybinmaster (benders-onlybinmaster)
-      0/1: whether only decomposition with only binary variables in the master
-      are searched?
-
-      0 - Not only decomposition with only binary variables in the master are
-      searched (default)
-
-      1 - Only decomposition with only binary variables in the master are
-      searched.
-
-det:benders-onlycontsubpr (benders-onlycontsubpr)
-      0/1: whether only decomposition with only continiuous variables in the
-      subproblems are searched?
-
-      0 - Not only decomposition with only continiuous variables in the
-      subproblems are searched (default)
-
-      1 - Only decomposition with only continiuous variables in the
-      subproblems are searched.
-
-det:classification-enabled (classification-enabled)
-      0/1: whether classification should be enabled?
-
-      0 - Classification not enabled
-
-      1 - Classification enabled (default).
-
-det:enabled
-      0/1: whether detection should be enabled?
-
-      0 - Detection not enabled
-
-      1 - Detection enabled (default).
-
-det:maxnclassesperpartition (maxnclassesperpartition)
-      Maximum number of classes per partition (default: 9)
-
-det:maxnclassesperpartitionforlargeprobs (maxnclassesperpartitionforlargeprobs)
-      Maximum number of classes per partition for large problems (nconss +
-      nvars >= 50000) (default: 5)
-
-det:maxrounds
-      Maximum number of detection loop rounds (default: 1)
-
-det:maxtime
-      Maximum detection time in seconds (default: 600)
-
-det:origprob-classificationenabled (origprob-classificationenabled)
-      0/1: whether classification for the original problem should be enabled?
-
-      0 - Classification for the original problem not enabled
-
-      1 - Classification for the original problem enabled (default).
-
-det:origprob-enabled (origprob-enabled)
-      0/1: whether detection for the original problem should be enabled?
-
-      0 - Detection for the original problem not enabled
-
-      1 - Detection for the original problem enabled (default).
-
-det:postprocess (postprocess)
-      0/1: whether postprocessing of complete decompositions should be
-      enabled?
-
-      0 - Postprocessing of complete decompositions not enabled
-
-      1 - Postprocessing of complete decompositions enabled (default).
-
-det:scoretype (scoretype)
-      Score calculation for comparing (partial) decompositions:
-
-      maxwhi - max white
-      border - border area
-      classi - classic
-      forswh - max foreseeing white
-      spfwh  - ppc-max-white (default)
-      fawh   - max foreseeing white with aggregation info
-      spfawh - ppc-max-white with aggregation info
-      bender - experimental benders score
-      strong - strong decomposition score
-
-gcg:aggregation
-      0/1: whether identical blocks should be aggregated (only for
-      discretization approach)?
-
-      0 - Identical blocks should not be aggregated (only for discretization
-      approach)
-
-      1 - Identical blocks should be aggregated (only for discretization
-      approach) (default).
-
-gcg:bliss-enabled (bliss-enabled)
-      0/1: whether bliss should be used to check for identical blocks?
-
-      0 - Bliss should not be used to check for identical blocks
-
-      1 - Bliss should be used to check for identical blocks (default).
-
-gcg:discretization (discretization)
-      0/1: whether discretization (TRUE) or convexification (FALSE) approach
-      should be used?
-
-      0 - convexification approach should be used
-
-      1 - discretization approach should be used (default).
-
-gcg:mipdiscretization (mipdiscretization)
-      0/1: whether discretization (TRUE) or convexification (FALSE) approach
-      should be used in mixed-integer programs?
-
-      0 - convexification approach should be used in mixed-integer programs
-
-      1 - discretization approach should be used in mixed-integer programs
-      (default).
-
-gcg:mode (mode)
-      The decomposition mode that GCG will use:
-
-      0 - Dantzig-Wolfe (default)
-      1 - Benders' decomposition
-      2 - No decomposition
+      c - completion
+      e - ensemble
+      g - time series forecasts on either gap
+      l - leaf frequency
+      o - open nodes
+      w - tree weight (default)
+      s - ssg
+      t - tree profile
+      b - wbe 
 
 heu:settings
       0/1/2/3: sets heuristics settings
@@ -370,7 +381,7 @@ heu:settings
 
       3 - Sets heuristics off.
 
-lim:absgap (absgap)
+lim:absgap (absgap, mip:gapabs, mipgapabs)
       Solving stops, if the absolute gap = |primalbound - dualbound| is below
       the given value (default: 0.0)
 
@@ -382,7 +393,7 @@ lim:bestsol
       Solving stops, if the given number of solution improvements were found
       (default: -1: no limit)
 
-lim:gap (gap)
+lim:gap (gap, mip:gap, mipgap)
       Solving stops, if the relative gap = |primal -
       dual|/MIN(|dual|,|primal|) is below the given value, the gap is
       'Infinity', if primal and dual bound have opposite signs (default: 0.0)
@@ -405,6 +416,10 @@ lim:nodes
 lim:restarts
       Solving stops, if the given number of restarts was triggered (default:
       -1: no limit)
+
+lim:softtime (softtime)
+      Soft time limit which should be applied after first solution was found
+      (default: -1.0: disabled)
 
 lim:solutions
       Solving stops, if the given number of solutions were found (default: -1:
@@ -454,7 +469,7 @@ lp:solvedepth
 
 lp:solvefreq
       Frequency for solving LP at the nodes (-1: never; 0: only root LP;
-      default: 0)
+      default: 1)
 
 lp:threads
       Number of threads used for solving the LP (default: 0: automatic)
@@ -528,6 +543,14 @@ misc:scaleobj (scaleobj)
 
       1 - The objective function should be scaled so that it is always integer
       (default).
+
+nlp:disable
+      0/1: whether the NLP relaxation should be always disabled (also for
+      NLPs/MINLPs)
+
+      0 - NLP relaxation should not be always disabled (default)
+
+      1 - NLP relaxation should be always disabled.
 
 nod:childsel
       Child selection rule:
@@ -757,14 +780,14 @@ tech:optionfile (optionfile, option:file)
       e.g., "lim:iter=500".
 
 tech:optionnativeread (optionnativeread, tech:param:read, param:read)
-      Filename of GCG parameter file (as path).The suffix on a parameter file
+      Filename of SCIP parameter file (as path).The suffix on a parameter file
       should be .set.
 
 tech:outlev (outlev)
-      0*/1: Whether to write GCG log lines (chatter) to stdout and to file.
+      0*/1: Whether to write SCIP log lines (chatter) to stdout and to file.
 
 tech:outlev-native (outlev-native)
-      0*/1/2/3/4/5: Whether to write GCG log lines (chatter) to stdout and to
+      0*/1/2/3/4/5: Whether to write SCIP log lines (chatter) to stdout and to
       file (native output level of SCIP).
 
 tech:timing (timing)
