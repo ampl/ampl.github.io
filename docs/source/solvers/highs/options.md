@@ -54,14 +54,14 @@ alg:infinitecost (infinitecost, infinite_cost)
       infinite (default: 1e20).
 
 alg:ipmopttol (ipmopttol, ipm_optimality_tolerance)
-      IMP optimality tolerance (default 1e-8).
+      IPM optimality tolerance (default 1e-8).
 
 alg:method (method, lpmethod)
       Which algorithm to use :
 
       choose  - Automatic (default)
       simplex - Simplex
-      ipm     - Interior point method
+      ipm     - Interior Point Method
 
 alg:parallel (parallel)
       Parallel option :
@@ -78,12 +78,12 @@ alg:simplex (simplex, simplex_strategy)
 
       0 - Choose automatically (default)
       1 - Dual (serial)
-      2 - Dual (PAMI)
-      3 - Dual (SIP)
+      2 - Dual ('PAMI' - Parallelization Across Multiple Iterations)
+      3 - Dual ('SIP' - Single Iteration Parallelism)
       4 - Primal
 
 alg:simplexcrash (simplexcrash, simplex_crash_strategy)
-      Simplex crah strategy :
+      Simplex crash strategy :
 
       0 - Off (default)
       1 - LTSSF
@@ -248,7 +248,7 @@ lim:time (timelim, timelimit, time_limit)
       Limit on solve time (in seconds; default: no limit).
 
 mip:absgaptol (absgaptol, mip_abs_gap)
-      tolerance on absolute gap of MIP, |ub-lb|, to determine whether
+      Tolerance on absolute gap of MIP, |ub-lb|, to determine whether
       optimality has been reached for a MIP instance (default 1e-06).
 
 mip:bestbound (bestbound, return_bound)
@@ -288,7 +288,7 @@ mip:pscostreliability (pscostreliability, mip_pscost_minreliable)
       reliable(default 8)
 
 mip:relgaptol (relgaptol, mip_rel_gap)
-      tolerance on relative gap, | ub - lb|/|ub | , to determine whether
+      Tolerance on relative gap, | ub - lb|/|ub | , to determine whether
       optimality has been reached for a MIP instance (default 1e-04).
 
 mip:return_gap (return_mipgap)
