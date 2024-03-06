@@ -566,10 +566,11 @@ cvt:socp (socpmode, socp)
 
       0 - Do not recognize SOCP forms
       1 - Recognize from non-quadratic expressions only (sqrt, abs)
-      2 - Recognize from quadratic and non-quadratic SOCP forms
+      2 - Recognize from quadratic and non-quadratic SOCP forms. Helpful if
+          the solver does not recognize non-standard forms
 
       Recognized SOCP forms can be further converted to (SOCP-standardized)
-      quadratic constraints, see cvt:socp2qc. Default: 2.
+      quadratic constraints, see cvt:socp2qc. Default: 1.
 
 cvt:socp2qc (socp2qcmode, socp2qc)
       Mode to convert recognized SOCP forms to SOCP-standardized quadratic

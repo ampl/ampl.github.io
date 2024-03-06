@@ -1,6 +1,12 @@
 # XPRESS Changelog
 
 
+## 20240306
+- *Xpress Global Solver*
+  - Apply global (MI)NLP solver for non-convex
+    non-linear models.
+
+
 ## 20240115
 - *Solve result codes*
   - List codes by running (solver) -!
