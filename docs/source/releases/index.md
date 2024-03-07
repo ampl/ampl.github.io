@@ -3,7 +3,7 @@
 # Release History
 
 
-- [**AMPL** Changelog (latest: **20240116**)](../releases/ampl.md)
+- [**AMPL** Changelog (latest: **20240224**)](../releases/ampl.md)
 - [**BARON** Changelog (latest: **20230405**)](../solvers/baron/changes.md)
 - [**CBC** Changelog (latest: **20240115**)](../solvers/cbc/changes.md)
 - [**CONOPT** Changelog (latest: **20211109**)](../solvers/conopt/changes.md)
@@ -34,8 +34,12 @@ ampl.md
 
 ## 20240306
 - [XPRESS](../solvers/xpress/changes.md#20240306)
+## 20240224
+- [AMPL](../releases/ampl.md#20240224)
 ## 20240209
 - [KNITRO](../solvers/knitro/changes.md#20240209)
+## 20240208
+- [AMPL](../releases/ampl.md#20240208)
 ## 20240201
 - [KNITRO](../solvers/knitro/changes.md#20240201)
 ## 20240121
@@ -65,6 +69,8 @@ ampl.md
 - [GUROBIASL](../solvers/gurobi/changesasl.md#20231208)
 ## 20231206
 - [GUROBI](../solvers/gurobi/changes.md#20231206)
+## 20231129
+- [AMPL](../releases/ampl.md#20231129)
 ## 20231122
 - [CPLEXMP](../solvers/cplex/changesmp.md#20231122)
 ## 20231117

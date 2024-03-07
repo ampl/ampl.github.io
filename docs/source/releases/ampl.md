@@ -1,5 +1,31 @@
 # AMPL Changelog
 
+## 20240224
+
+* Fix a glitch introduced in version 20231129 seen under `option presolve 0` (often a bad idea) in problems having complementarity constraints.
+
+## 20240208
+
+* Fix a glitch in converting `0x1.fffffffffffffp-1023` to binary. (This is very unlikely to affect any real problems.) The little test script
+```
+	param p;
+	data;
+	param p := 0x1.fffffffffffffp-1023;
+	display p, 0x1.fffffffffffffp-1023;
+```
+gave
+```
+	p = 0
+	0 = 0
+```
+rather than
+```
+	p = 2.22507e-308
+	2.2250738585072014e-308 = 2.22507e-308
+```
+
+* Fix a bug, introduced in 20240105, with problems having logical constraints and an objective.  After a "solve" or "solution" command, a further "write" without changes omitted "G" segments in the .nl file.
+
 ## 20240116
 
 * Fix a glitch in the new `tableindexarity` function that depended on whether a table's name was an even or odd member of _TABLES, illustrated by
@@ -50,12 +76,90 @@ gives output
 
 ## 20240105
 
+* Fix a bug, introduced in version 20231129, in writing .row files for problems containing logical constraints.  (Most problems do not involve such constraints, and .row files are not written by default). For example, in the (silly) script
+```
+	set I = 1..9;
+	var x{I};
+	function myfunc;
+	var t{i in 1..3} = x[i]^2 + 1 + sum{j in 8..9} (i+j)*x[j];
+	var u{i in 1..2} = x[7+i]^2 + 2 + sinh(x[1] + 2*t[2] + 6*x[6]);
+	maximize zip: if t[2] >= 0 then -t[2]^3 else -t[2]^2;
+	minimize zap: sin(t[1]) + cos(2*t[2]) + 4*x[4] + 5*x[5] + x[6]^2 + x[7]^2;
+	minimize zot: cosh(<<1,2;3,4,5>>x[6]);
+	c1: t[2] + sin(t[3]) <= 4;
+	c2: x[5] + cos(x[6]) >= 3;
+	c3: sum{i in 3..7} i*x[i] = 1;
+	c4: 4.3 <= x[5] + myfunc(t[2], x[3]*x[6], 'some string') <= 15.5;
+	b45{i in 4..5}: x[i] >= i;
+	b1: x[1] <= 3.5;
+	b2: -1 <= x[2] <= 2;
+	b3{i in 8..9}: 0 <= x[i] <= 0.1*i;
+	lc{i in 1..2}: x[6] + x[7] >= 2.5 ==> (x[5] + x[6]^2)^2 + u[i] <= 35;
+	suffix zork;
+	let{i in 2.._nvars} _var[i].zork := i;
+	option nl_comments 1, auxfiles rc;
+	write gsilly;
+```
+
+the resulting `silly.row` file contained `=u[1]` and `=t[1]` rather than `lc[1]` and `lc[2]`. Adjust the third integer in lines that start with V in g format .nl files to accord with the description in https://ampl.github.io/nlwrite.pdf. Whether that integer is 0 or nonzero is all that really matters and is not affected by this change.
+
+* Fix a bug (fault) with `display _slogcon;` added to the end of the above example.
+
 * Fix a fault with ord applied to some dummy variables.  Example:
 ```
 	set I ordered := 1..10;
 	for {i in I, j in I:  ord(i) < ord(j)}
 		display i, j;
 ```
+
+## 20231129
+
+* Fix a small performance bug in logical constraints that allowed, e.g., "|| 0" to creep into the .nl file in unusual cases. An example is complicated.
+
+* Fix a bug (seen in a complicated example) in the ordering of `_sconnames`; entities should be in declare order.
+
+* When expanding logical constraints by `expand` or `solexpand` commands, force the constraint body onto a new line.
+
+* Do not show the solver logical constraints that are always true.
+
+* New builtin suffix `.lno` for constraints is positive for logical constraints seen by solvers, 0 for algebraic constraints seen by solvers, whereas `.sno` is now 0 for logical constraints seen by solvers and positive for algebraic constraints seen by solvers.  Thus if `c` is declared a logical constraint, `c.lno + c.sno > 0` if the constraint is seen by solvers. If presolve turns `c` into an algebraic constraint, then `c.sno > 0`.  If `c.lno > 0`, then `_slogcon[c.lno]` is the logical constraint presented to solvers, and if `c.sno > 0`, then `_scon[c.sno]` is the algebraic constraint presented to solvers.
+
+* Fix a solexpand bug with logical constraints converted by presolve to algebraic constraints.  Example:
+```
+	var x{1..3} >= 0;
+	c1: x[1] = .5;
+	c2: x[1] > .4 ==> x[1]^2 + x[2]^2 >= 1;
+	minimize zot: 2*x[2] + 3*x[3];
+	solexpand; # said subject to c2:x[2]^2 + 0.75;
+	# rather than
+	#subject to c2:
+	#	x[2]^2 >= 0.75;
+```
+
+In the example just given, `display c2.lno, c2.sno;` now shows
+```
+	c2.lno = 0
+	c2.sno = 1
+```
+
+* New builtin suffix .domain for variables to indicate the kind of values a variable can take:
+```
+	0 ==> floating-point (double precision)
+	1 ==> integer
+	2 ==> in a discrete set
+	3 ==> in a union of intervals
+```
+
+* The default `.domain` is 0, but a variable's declaration can specify the other possibilities.  Specifying a variable's domain to be a single interval gives `.domain` 0 and has the same effect as giving explicit lower and upper bounds.  Integer variables can have nonintegral values, e.g., due to a "let" command or a "solve" command, and can have a nonzero .relax suffix to indicate that solvers should view them as continuous.  Binary variables are integer variables with lower bound 0 and upper bound 1.
+
+* Additional feature:  it seems we neglected to describe the count operator in the AMPL book. It has one of the forms
+```
+	count(list_of_expressions)
+	count {indexing} (list_of_expressions)
+```
+
+In the second form, dummies from the indexing can be used in the list_of_expressions. Both forms return the number of expressions that are true (if logical) or nonzero (if arithmetic).
+
 
 ## 20231012
 
