@@ -56,12 +56,13 @@ alg:infinitecost (infinitecost, infinite_cost)
 alg:ipmopttol (ipmopttol, ipm_optimality_tolerance)
       IPM optimality tolerance (default 1e-8).
 
-alg:method (method, lpmethod)
+alg:method (method, lpmethod, solver)
       Which algorithm to use :
 
       choose  - Automatic (default)
       simplex - Simplex
       ipm     - Interior Point Method
+      pdlp    - cuPDLP-c solver
 
 alg:parallel (parallel)
       Parallel option :
@@ -69,6 +70,9 @@ alg:parallel (parallel)
       choose - Automatic (default)
       off    - Off
       on     - On
+
+alg:pdlpdgaptol (pdlpdgaptol, pdlp_d_gap_tol)
+      Duality gap tolerance for PDLP solver (default 1e-4).
 
 alg:relax (relax)
       0*/1: Whether to relax integrality of variables.
@@ -79,7 +83,7 @@ alg:simplex (simplex, simplex_strategy)
       0 - Choose automatically (default)
       1 - Dual (serial)
       2 - Dual ('PAMI' - Parallelization Across Multiple Iterations)
-      3 - Dual ('SIP' - Single Iteration Parallelism)
+      3 - Dual ('SIP' - Single Iteration Parallelism
       4 - Primal
 
 alg:simplexcrash (simplexcrash, simplex_crash_strategy)
@@ -185,7 +189,8 @@ cvt:socp (socpmode, socp)
 
       0 - Do not recognize SOCP forms
       1 - Recognize from non-quadratic expressions only (sqrt, abs)
-      2 - Recognize from quadratic and non-quadratic SOCP forms
+      2 - Recognize from quadratic and non-quadratic SOCP forms. Helpful if
+          the solver does not recognize non-standard forms
 
       Recognized SOCP forms can be further converted to (SOCP-standardized)
       quadratic constraints, see cvt:socp2qc. Default: 0.
@@ -236,6 +241,22 @@ lim:leavenodes (leaveslim, mip_max_leaves)
 
 lim:nodes (nodelim, nodelimit, mip_max_nodes)
       Maximum MIP nodes to explore (default: no limit).
+
+lim:objectivebound (objective_bound, objectivebound)
+      Objective bound for termination of the dual simplex solver (default: no
+      limit).
+
+lim:objectivetarget (objective_target, objectivetarget)
+      Objective target for termination of the MIP solver (default: no limit).
+
+lim:pdlpiterationlimit (pdlpiterationlimit, pdlp_iteration_limit)
+      Iteration limit for PDLP solver (default: no limit).
+
+lim:pdlpnativetermination (pdlp_native_termination, pdlpnativetermination)
+      Use native termination for PDLP solver:
+
+      0 - No (default)
+      1 - Yes.
 
 lim:simplexiterationlimit (simplexiterationlimit, simplex_iteration_limit)
       Limit on simplex iterations (default: no limit).
@@ -327,12 +348,38 @@ obj:no (objno)
       1 - First (default, if available)
       2 - Second (if available), etc.
 
+pre:centring (run_centring, centring)
+      Perform centring steps or not:
+
+      0 - No (default)
+      1 - Yes.
+
+pre:centringratiotolerance (centring_ratio_tolerance, centringratiotolerance)
+      Centring stops when the ratio max(x_j*s_j) / min(x_j*s_j) is below this
+      tolerance (default 100).
+
+pre:maxcentringsteps (max_centring_steps, maxcentringsteps)
+      Maximum number of steps to use when computing the analytic centre
+      (default 5).
+
+pre:pdlpscaling (pdlp_scaling, pdlpscaling)
+      Scaling option for PDLP solver:
+
+      0 - No
+      1 - Yes (default)
+
 pre:solve (presolve)
       Whether to use presolve:
 
       choose - Automatic (default)
       off    - Off
       on     - On
+
+pre:userboundscale (user_bound_scale, userboundscale)
+      Exponent of power-of-two bound scaling for model (default 0).
+
+pre:usercostscale (user_cost_scale, usercostscale)
+      Exponent of power-of-two cost scaling for model (default 0).
 
 sol:chk:fail (chk:fail, checkfail)
       Fail on MP solution check violations, with solve result 150.

@@ -1,5 +1,15 @@
 # HiGHS Changelog
 
+## 20240307
+- *Updated* to HiGHS 1.7.0
+- Added solver pdlp (use option `alg:method` to specify it and
+  `alg:pdlpdgaptol`, `lim:pdlpnativetermination`, `pre:pdlpscaling` 
+  and `lim:pdlpiterationlimit`).
+- Added optional pre centring steps (see options `pre:centring`,
+  `pre:maxcentringsteps` and `pre:centringratiotolerance`).
+- Added options `pre:userboundscale`, `pre:usercostscale`, 
+  `lim:objectivebound` and `lim:objectivetarget`.
+
 
 ## 20240115
 - *Solve result codes*

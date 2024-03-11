@@ -1,6 +1,11 @@
 # GUROBI Changelog
 
 
+## 20240310
+- Updated to Gurobi libraries 11.0.1, which include many 
+  bug fixes.
+
+
 ## 20240115
 - *Solve result codes*
   - List codes by running (solver) -!
