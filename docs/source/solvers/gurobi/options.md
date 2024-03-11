@@ -1372,6 +1372,11 @@ tech:pooljobs (pool_jobs, pooljobs)
 
       See also "tech:concurrentmip", "tech:distmip".
 
+tech:reportwork (reportwork, work)
+      0*/1: Whether to report the work spent in the optimization in the
+      problem suffix `work`. Gurobi's work units are deterministic, and
+      roughly equivalent to one second on a single thread.
+
 tech:resultfile (resultfile)
       Name of a file of extra information written after completion of
       optimization. The name's suffix determines what is written:

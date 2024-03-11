@@ -1,6 +1,12 @@
 # GUROBI Changelog
 
 
+## 20240311
+- Added option `tech:reportwork` to display or return in the 
+  problem suffix `work` the work units spent while solving 
+  the problem.
+
+
 ## 20240310
 - Updated to Gurobi libraries 11.0.1, which include many 
   bug fixes.
@@ -23,9 +29,9 @@
 
 
 ## 20231208
-- Option 'global' and suffix '.global` synonyms for
-  'funcnonlinear'
-- Changed values for 'global' / 'funcnonlinear' options
+- Option `global` and suffix `.global` synonyms for
+  `funcnonlinear`
+- Changed values for `global` / `funcnonlinear` options
   and suffixes: default 0 (Gurobi automatic),
   -1 (static PL approximation), 1 (global solving).
 
