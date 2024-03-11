@@ -9,7 +9,7 @@
   * c1 = number of defined variables just used in one constraint;
   * o1 =  number of defined variables just used in one objective.
 
-* Fix a glitch with printing of expressions involving "prev". Note that prev(S,n) is rendered as next(S,-n).  Example:
+* Fix a glitch with printing of expressions involving "prev". Note that `prev(S,n)` is rendered as `next(S,-n)`.  Example:
 ```
 	set S := {1, 2, 3, 4, 5} ordered;
 	var x{S} >= 0, integer;
