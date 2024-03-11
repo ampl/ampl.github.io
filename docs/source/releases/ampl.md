@@ -1,5 +1,34 @@
 # AMPL Changelog
 
+## 20240308
+
+* Add the possibility of $auxfiles containing 'd', which is treated like 'c' to cause write commands to emit a .col file that has the names of defined variables used in the .nl file to appear at the end of the .col file in the order b, c, o, c1, o1, where
+  * b = number of defined variables used in both a constraint and an objective;
+  * c = number of defined variables used in two or more constraints but no objectives;
+  * o = number of defined variables used in two or more objectives but no constraints;
+  * c1 = number of defined variables just used in one constraint;
+  * o1 =  number of defined variables just used in one objective.
+
+* Fix a glitch with printing of expressions involving "prev". Note that prev(S,n) is rendered as next(S,-n).  Example:
+```
+	set S := {1, 2, 3, 4, 5} ordered;
+	var x{S} >= 0, integer;
+	s.t. con{i in S: i > 2}: x[prev(i,2)] <= x[i];
+	param p := prev(3, S, 2);
+	show con;
+	show p;
+```
+should print
+```
+	subject to con{i in S: i > 2} : x[next(i, S, -2)] <= x[i];
+	param p = next(3, S, -2);
+```
+rather than
+```
+	subject to con{i in S: i > 2} : x[next(i, S, 2)] <= x[i];
+	param p = next(3, S, 2);
+```
+
 ## 20240224
 
 * Fix a glitch introduced in version 20231129 seen under `option presolve 0` (often a bad idea) in problems having complementarity constraints.

@@ -3,7 +3,7 @@
 # Release History
 
 
-- [**AMPL** Changelog (latest: **20240224**)](../releases/ampl.md)
+- [**AMPL** Changelog (latest: **20240308**)](../releases/ampl.md)
 - [**BARON** Changelog (latest: **20230405**)](../solvers/baron/changes.md)
 - [**CBC** Changelog (latest: **20240115**)](../solvers/cbc/changes.md)
 - [**CONOPT** Changelog (latest: **20211109**)](../solvers/conopt/changes.md)
@@ -36,6 +36,8 @@ ampl.md
 - [GUROBI](../solvers/gurobi/changes.md#20240311)
 ## 20240310
 - [GUROBI](../solvers/gurobi/changes.md#20240310)
+## 20240308
+- [AMPL](../releases/ampl.md#20240308)
 ## 20240307
 - [HiGHS](../solvers/highs/changes.md#20240307)
 ## 20240306
