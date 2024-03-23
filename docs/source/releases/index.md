@@ -7,13 +7,13 @@
 - [**BARON** Changelog (latest: **20230405**)](../solvers/baron/changes.md)
 - [**CBC** Changelog (latest: **20240115**)](../solvers/cbc/changes.md)
 - [**CONOPT** Changelog (latest: **20211109**)](../solvers/conopt/changes.md)
-- [**COPT** Changelog (latest: **20240115**)](../solvers/copt/changes.md)
+- [**COPT** Changelog (latest: **20240320**)](../solvers/copt/changes.md)
 - [**CPLEX** Changelog (latest: **20230228**)](../solvers/cplex/changes.md)
-- [**CPLEXMP** Changelog (latest: **20240115**)](../solvers/cplex/changesmp.md)
+- [**CPLEXMP** Changelog (latest: **20240320**)](../solvers/cplex/changesmp.md)
 - [**GCG** Changelog (latest: **20240115**)](../solvers/gcg/changes.md)
-- [**GUROBI** Changelog (latest: **20240311**)](../solvers/gurobi/changes.md)
+- [**GUROBI** Changelog (latest: **20240320**)](../solvers/gurobi/changes.md)
 - [**GUROBIASL** Changelog (latest: **20231208**)](../solvers/gurobi/changesasl.md)
-- [**HiGHS** Changelog (latest: **20240307**)](../solvers/highs/changes.md)
+- [**HiGHS** Changelog (latest: **20240320**)](../solvers/highs/changes.md)
 - [**ILOGCP** Changelog (latest: **20230228**)](../solvers/ilogcp/changes.md)
 - [**KNITRO** Changelog (latest: **20240209**)](../solvers/knitro/changes.md)
 - [**LOQO** Changelog (latest: **20210410**)](../solvers/loqo/changes.md)
@@ -22,7 +22,7 @@
 - [**MOSEK** Changelog (latest: **20240118**)](../solvers/mosek/changes.md)
 - [**SCIP** Changelog (latest: **20240121**)](../solvers/scip/changes.md)
 - [**SNOPT** Changelog (latest: **20211109**)](../solvers/snopt/changes.md)
-- [**XPRESS** Changelog (latest: **20240306**)](../solvers/xpress/changes.md)
+- [**XPRESS** Changelog (latest: **20240320**)](../solvers/xpress/changes.md)
 - [**XPRESSASL** Changelog (latest: **20220112**)](../solvers/xpress/changesasl.md)
 
 ```{toctree}
@@ -32,6 +32,14 @@ ampl.md
 ```
 
 
+## 20240320
+- [COPT](../solvers/copt/changes.md#20240320)
+- [CPLEXMP](../solvers/cplex/changesmp.md#20240320)
+- [GUROBI](../solvers/gurobi/changes.md#20240320)
+- [HiGHS](../solvers/highs/changes.md#20240320)
+- [XPRESS](../solvers/xpress/changes.md#20240320)
+## 20240312
+- [XPRESS](../solvers/xpress/changes.md#20240312)
 ## 20240311
 - [GUROBI](../solvers/gurobi/changes.md#20240311)
 ## 20240310

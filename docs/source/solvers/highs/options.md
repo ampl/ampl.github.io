@@ -20,6 +20,27 @@ option "highs_options". For example:
 
  Options:
 
+acc:lineq
+      Solver acceptance level for 'LinConEQ', default 2:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+acc:linge
+      Solver acceptance level for 'LinConGE', default 2:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+acc:linle
+      Solver acceptance level for 'LinConLE', default 2:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
 acc:linrange (acc:linrng)
       Solver acceptance level for 'LinConRange', default 2:
 
@@ -177,8 +198,9 @@ cvt:pre:unnest
       0/1*: Inline nested expressions, currently Ands/Ors.
 
 cvt:quadcon (passquadcon)
-      0*/1: Multiply out and pass quadratic constraint terms to the solver,
-      vs. linear approximation.
+      Convenience option. Set to 0 to disable quadratic constraints. Synonym
+      for acc:quad..=0. Currently this disables out-multiplication of
+      quadratic terms, then they are linearized.
 
 cvt:quadobj (passquadobj)
       0/1*: Multiply out and pass quadratic objective terms to the solver, vs.
@@ -443,6 +465,12 @@ tech:optionfile (optionfile, option:file)
 tech:outlev (outlev)
       0*/1: Whether to write HighS log lines (chatter) to stdout and to file.
 
+tech:reporttimes (reporttimes, report_times)
+      0*/1: Set to 1 to return the solution times in the problem suffixes
+      'time_solver', 'time_setup' and 'time' and in the solver message.
+      'time'= 'time_solver'+'time_setup' is a measure of the total time spent
+      in the solver driver; all times are wall times.
+
 tech:threads (threads)
       How many threads to use when using the barrier algorithm or solving MIP
       problems; default 0 ==> automatic choice.
@@ -462,7 +490,7 @@ tech:wantsol (wantsol)
       4 - Dual variables to stdout
       8 - Suppress solution message.
 
-tech:writegraph (writegraph, exportgraph)
+tech:writegraph (cvt:writegraph, writegraph, exportgraph)
       File to export conversion graph. Format: JSON Lines.
 
 tech:writemodel (writeprob, writemodel, tech:exportfile)

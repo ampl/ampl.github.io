@@ -76,6 +76,27 @@ acc:indle (acc:indlinle)
       1 - Accepted but automatic redefinition will be used where possible
       2 - Accepted natively and preferred
 
+acc:lineq
+      Solver acceptance level for 'LinConEQ', default 2:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+acc:linge
+      Solver acceptance level for 'LinConGE', default 2:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+acc:linle
+      Solver acceptance level for 'LinConLE', default 2:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
 acc:log
       Solver acceptance level for 'LogConstraint', default 2:
 
@@ -148,6 +169,13 @@ acc:quadle
 
 acc:sin
       Solver acceptance level for 'SinConstraint', default 2:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+acc:sos1
+      Solver acceptance level for 'SOS1Constraint', default 2:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
@@ -541,8 +569,9 @@ cvt:pre:unnest
       0/1*: Inline nested expressions, currently Ands/Ors.
 
 cvt:quadcon (passquadcon)
-      0/1*: Multiply out and pass quadratic constraint terms to the solver,
-      vs. linear approximation.
+      Convenience option. Set to 0 to disable quadratic constraints. Synonym
+      for acc:quad..=0. Currently this disables out-multiplication of
+      quadratic terms, then they are linearized.
 
 cvt:quadobj (passquadobj)
       0/1*: Multiply out and pass quadratic objective terms to the solver, vs.
@@ -1372,6 +1401,12 @@ tech:pooljobs (pool_jobs, pooljobs)
 
       See also "tech:concurrentmip", "tech:distmip".
 
+tech:reporttimes (reporttimes, report_times)
+      0*/1: Set to 1 to return the solution times in the problem suffixes
+      'time_solver', 'time_setup' and 'time' and in the solver message.
+      'time'= 'time_solver'+'time_setup' is a measure of the total time spent
+      in the solver driver; all times are wall times.
+
 tech:reportwork (reportwork, work)
       0*/1: Whether to report the work spent in the optimization in the
       problem suffix `work`. Gurobi's work units are deterministic, and
@@ -1505,7 +1540,7 @@ tech:workerpool (pool_servers)
 
       You can provide a comma-separated list of machines for added robustness.
 
-tech:writegraph (writegraph, exportgraph)
+tech:writegraph (cvt:writegraph, writegraph, exportgraph)
       File to export conversion graph. Format: JSON Lines.
 
 tech:writemodel (writeprob, writemodel, tech:exportfile)

@@ -27,8 +27,85 @@ acc:abs
       1 - Accepted but automatic redefinition will be used where possible
       2 - Accepted natively and preferred
 
+acc:acos
+      Solver acceptance level for 'AcosConstraint', default 1:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+acc:acosh
+      Solver acceptance level for 'AcoshConstraint', default 1:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
 acc:and (acc:forall)
       Solver acceptance level for 'AndConstraint', default 2:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+acc:asin
+      Solver acceptance level for 'AsinConstraint', default 1:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+acc:asinh
+      Solver acceptance level for 'AsinhConstraint', default 1:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+acc:atan
+      Solver acceptance level for 'AtanConstraint', default 1:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+acc:atanh
+      Solver acceptance level for 'AtanhConstraint', default 1:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+acc:cos
+      Solver acceptance level for 'CosConstraint', default 1:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+acc:cosh
+      Solver acceptance level for 'CoshConstraint', default 1:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+acc:div
+      Solver acceptance level for 'DivConstraint', default 1:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+acc:exp
+      Solver acceptance level for 'ExpConstraint', default 1:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+acc:expa (acc:expA)
+      Solver acceptance level for 'ExpAConstraint', default 1:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
@@ -55,6 +132,34 @@ acc:indle (acc:indlinle)
       1 - Accepted but automatic redefinition will be used where possible
       2 - Accepted natively and preferred
 
+acc:lineq
+      Solver acceptance level for 'LinConEQ', default 2:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+acc:linge
+      Solver acceptance level for 'LinConGE', default 2:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+acc:linle
+      Solver acceptance level for 'LinConLE', default 2:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+acc:log
+      Solver acceptance level for 'LogConstraint', default 1:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
 acc:max
       Solver acceptance level for 'MaxConstraint', default 2:
 
@@ -71,6 +176,13 @@ acc:min
 
 acc:or (acc:exists)
       Solver acceptance level for 'OrConstraint', default 2:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+acc:pow
+      Solver acceptance level for 'PowConstraint', default 1:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
@@ -97,8 +209,43 @@ acc:quadle
       1 - Accepted but automatic redefinition will be used where possible
       2 - Accepted natively and preferred
 
+acc:sin
+      Solver acceptance level for 'SinConstraint', default 1:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+acc:sinh
+      Solver acceptance level for 'SinhConstraint', default 1:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+acc:sos1
+      Solver acceptance level for 'SOS1Constraint', default 2:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
 acc:sos2
       Solver acceptance level for 'SOS2Constraint', default 2:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+acc:tan
+      Solver acceptance level for 'TanConstraint', default 1:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+acc:tanh
+      Solver acceptance level for 'TanhConstraint', default 1:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
@@ -554,8 +701,9 @@ cvt:pre:unnest
       0/1*: Inline nested expressions, currently Ands/Ors.
 
 cvt:quadcon (passquadcon)
-      0/1*: Multiply out and pass quadratic constraint terms to the solver,
-      vs. linear approximation.
+      Convenience option. Set to 0 to disable quadratic constraints. Synonym
+      for acc:quad..=0. Currently this disables out-multiplication of
+      quadratic terms, then they are linearized.
 
 cvt:quadobj (passquadobj)
       0/1*: Multiply out and pass quadratic objective terms to the solver, vs.
@@ -1776,6 +1924,12 @@ tech:outlev (outlev)
       4 - errors
       5 - none
 
+tech:reporttimes (reporttimes, report_times)
+      0*/1: Set to 1 to return the solution times in the problem suffixes
+      'time_solver', 'time_setup' and 'time' and in the solver message.
+      'time'= 'time_solver'+'time_setup' is a measure of the total time spent
+      in the solver driver; all times are wall times.
+
 tech:sleeponthreadwait (sleeponthreadwait)
       Whether threads should sleep while awaiting work:
 
@@ -1871,7 +2025,7 @@ tech:wantsol (wantsol)
       4 - Dual variables to stdout
       8 - Suppress solution message.
 
-tech:writegraph (writegraph, exportgraph)
+tech:writegraph (cvt:writegraph, writegraph, exportgraph)
       File to export conversion graph. Format: JSON Lines.
 
 tech:writemodel (writeprob, writemodel, tech:exportfile)
