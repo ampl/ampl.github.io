@@ -1,5 +1,10 @@
 # GUROBI Changelog
 
+## 20240327
+- Added support for Web License Server parameters, via options
+  `wls_licenseid`, `wls_accessid`, `wls_secret`, `wls_token`, 
+  `wls_tokenduration` and `wls_tokenrefresh`.
+
 
 ## 20240320
 - *SOS constraints*.

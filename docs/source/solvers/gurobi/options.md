@@ -1526,6 +1526,26 @@ tech:wantsol (wantsol)
       4 - Dual variables to stdout
       8 - Suppress solution message.
 
+tech:wls_accessid (wls_accessid)
+      Web License Manager access ID
+
+tech:wls_licenseid (wls_licenseid, licenseid)
+      Web License Manager license ID.
+
+tech:wls_secret (wls_secret)
+      Web License Manager secret key
+
+tech:wls_token (wls_token)
+      Web License Manager token retrieved with the REST API. If specified, all
+      other WSL-related parameters are ignored.
+
+tech:wls_tokenduration (wls_tokenduration)
+      Token duration (in minutes). Default = 0 (automatic)
+
+tech:wls_tokenrefresh (wls_tokenrefresh)
+      Fraction of the token duration after which a token refresh is triggered.
+      The minimum refresh interval is 4 minutes. Default = 0.9
+
 tech:workerpassword (pool_password)
       Password for the worker pool (if needed).
 
