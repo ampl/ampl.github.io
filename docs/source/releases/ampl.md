@@ -1,5 +1,20 @@
 # AMPL Changelog
 
+## 20240313
+
+* Fix a fault with write commands when $auxfiles contains "d" and a defined variable is split into linear and nonlinear parts.  In the .col file, nonlinear parts are now indicated by a ".nl" suffix. In the following silly example
+```
+	var x;  var y;
+	var z = 4*y + y^4 - 6.38;
+	var w = 8*x + abs(y) + 18.635;
+	minimize O: 5*x + 8*z + 15;
+	s.t. C: -200 <= 205*x -17*x^3 - 3.8*w <= 403.2869;
+	solexpand;
+	option auxfiles rd;
+	write gfoo1;
+```
+the nonlinear part of `z` is `y^4` and is denoted by `z.nl`, and the nonlinear part of `w` is `abs(y)` and is denoted by `w.nl` in the solexpand output and in `foo1.col`.
+
 ## 20240308
 
 * Add the possibility of $auxfiles containing 'd', which is treated like 'c' to cause write commands to emit a .col file that has the names of defined variables used in the .nl file to appear at the end of the .col file in the order b, c, o, c1, o1, where
