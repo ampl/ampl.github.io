@@ -328,6 +328,22 @@ lp:method (method, lpmethod)
       3  - Crossover
       4  - Concurrent (simplex and barrier simultaneously)
       5  - Choose between simplex and barrier automatically
+      6  - First-order method (PDLP)
+
+lp:pdlpgpudevice (pdlpgpudevice, gpudevide)
+      Specify devide ID of GPU to use in case of multiple GPUs (default -1,
+      choose automatically)
+
+lp:pdlpgpumode (pdlpgpumode, gpumode)
+      Wether to use GPU or CPU for PDLP method. Note that CUDA GPU mode is
+      only supported on Windows:
+
+      -1 - Automatic (default)
+      0  - Force the use of CPU mode
+      1  - Utilize NVIDA GPU
+
+lp:pdlptol (pdlptol)
+      Convergence tolerance for PDLP (default 1e-6)
 
 mip:bestbound (bestbound, return_bound)
       Whether to return suffix .bestbound for the best known MIP dual bound on

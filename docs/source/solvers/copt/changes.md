@@ -1,6 +1,15 @@
 # COPT Changelog
 
 
+## 20240410
+- Updated to Copt 7.1.1, with support for first-order 
+  method (PDLP). On Windows this can be used with GPU
+  supporting CUDA.
+  It can be controlled setting `lp:method` to the new 
+  value `6` (PDLP) and with options `lp:pdlpgpumode`, 
+  `lp:pdlpgpudevice` and `lp:pdlptol`
+
+
 ## 20240320
 - *SOS constraints*.
   - Fixed handling of SOS2 constraints created by AMPL
