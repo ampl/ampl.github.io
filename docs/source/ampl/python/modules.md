@@ -222,10 +222,24 @@ such as Pyomo. [Pyomo](https://www.pyomo.org/) is an open-source modeling tool w
 that is compatible with solvers that read .nl files, which means it works with all
 [AMPL solvers](solvers). You can use AMPL solvers with Pyomo as follows:
 
+Install modules for HiGHS, CBC, Couenne, Bonmin, Ipopt, SCIP, and GCG:
+```python
+!pip install amplpy pyomo -q
+!python -m amplpy.modules install coin highs scip gcg -q  # Install HiGHS, CBC, Couenne, Bonmin, Ipopt, SCIP, and GCG
+```
+
+Use the solver modules from Pyomo:
 ```python
 from amplpy import modules
 import pyomo.environ as pyo
-solver = pyo.SolverFactory(modules.find("highs"), solve_io="nl")  # use the solver highs
+solver_name = "highs"  # "highs", "cbc",  "couenne", "bonmin", "ipopt", "scip", or "gcg".
+solver = pyo.SolverFactory(solver_name+"nl", executable=modules.find(solver_name), solve_io="nl")
+
+model = pyo.ConcreteModel()
+model.x = pyo.Var([1,2], domain=pyo.NonNegativeReals)
+model.OBJ = pyo.Objective(expr = 2*model.x[1] + 3*model.x[2])
+model.Constraint1 = pyo.Constraint(expr = 3*model.x[1] + 4*model.x[2] >= 1)
+solver.solve(model, tee=True)
 ```
 
 Note that Pyomo is typically substantially slower than AMPL
