@@ -36,8 +36,38 @@ option "cbcmp_options". For example:
       forceOn  - enabled at every node
       onglobal - 
 
+acc:lineq
+      Solver acceptance level for 'LinConEQ' as flat constraint, default 2:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+acc:linge
+      Solver acceptance level for 'LinConGE' as flat constraint, default 2:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+acc:linle
+      Solver acceptance level for 'LinConLE' as flat constraint, default 2:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+acc:sos1
+      Solver acceptance level for 'SOS1Constraint' as flat constraint, default
+      2:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
 acc:sos2
-      Solver acceptance level for 'SOS2Constraint', default 2:
+      Solver acceptance level for 'SOS2Constraint' as flat constraint, default
+      2:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
@@ -343,8 +373,9 @@ cvt:pre:unnest
       0/1*: Inline nested expressions, currently Ands/Ors.
 
 cvt:quadcon (passquadcon)
-      0*/1: Multiply out and pass quadratic constraint terms to the solver,
-      vs. linear approximation.
+      Convenience option. Set to 0 to disable quadratic constraints. Synonym
+      for acc:quad..=0. Currently this disables out-multiplication of
+      quadratic terms, then they are linearized.
 
 cvt:quadobj (passquadobj)
       0*/1: Multiply out and pass quadratic objective terms to the solver, vs.
@@ -355,7 +386,8 @@ cvt:socp (socpmode, socp)
 
       0 - Do not recognize SOCP forms
       1 - Recognize from non-quadratic expressions only (sqrt, abs)
-      2 - Recognize from quadratic and non-quadratic SOCP forms
+      2 - Recognize from quadratic and non-quadratic SOCP forms. Helpful if
+          the solver does not recognize non-standard forms
 
       Recognized SOCP forms can be further converted to (SOCP-standardized)
       quadratic constraints, see cvt:socp2qc. Default: 0.
@@ -1072,8 +1104,13 @@ tech:optionfile (optionfile, option:file)
 tech:outlev (outlev)
       0*-4: Whether to write log lines (chatter) to stdout and to file.
 
-tech:timing (timing)
-      0*/1: Whether to display timings for the run.
+tech:timing (timing, tech:reporttimes, reporttimes)
+      0*/1/2: Whether to print and return timings for the run, all times are
+      wall times. If set to 1, return the solution times in the problem
+      suffixes 'time_solver', 'time_setup' and 'time', 'time'=
+      time_solver+time_setup+time_output is a measure of the total time spent
+      in the solver driver. If set to 2, return more granular times, including
+      'time_read', 'time_conversion' and 'time_output'.
 
 tech:version (version)
       Single-word phrase: report version details before solving the problem.
@@ -1087,7 +1124,7 @@ tech:wantsol (wantsol)
       4 - Dual variables to stdout
       8 - Suppress solution message.
 
-tech:writegraph (writegraph, exportgraph)
+tech:writegraph (cvt:writegraph, writegraph, exportgraph)
       File to export conversion graph. Format: JSON Lines.
 
 tech:writemodel (writeprob, writemodel, tech:exportfile)

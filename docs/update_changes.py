@@ -31,7 +31,7 @@ SOLVERS = {
 
 releases = {}
 for label, solver in SOLVERS.items():
-    output = subprocess.check_output([solver, "-="]).decode()
+    output = subprocess.check_output([solver, "-="]).decode()  # (errors="ignore")
 
     exec_location = subprocess.check_output(["which", solver]).decode()
     changes = os.path.join(

@@ -127,6 +127,9 @@ prtime     Report progress every prtime seconds (default 30).
 scratch    Directory for temporary files; will be removed unless keepsol
            is specified.
 
+seed       Initial seed for the random number generator. Must be
+           a positive integer (default 19631963).
+
 sumfile    Name of summary file; default = none (not written).
 
 threads    Maximum threads to use (default 1) when there are integer variables.

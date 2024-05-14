@@ -20,127 +20,181 @@ option "scip_options". For example:
 
  Options:
 
+acc:_expr
+      Solver acceptance level for all expressions, default 1:
+
+      0 - Not accepted, all expressions will be treated as flat constraints,
+          or redefined
+      1 - Accepted. See the individual acc:... options
+
 acc:abs
-      Solver acceptance level for 'AbsConstraint', default 2:
+      Solver acceptance level for 'AbsConstraint' as flat constraint, default
+      2:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
       2 - Accepted natively and preferred
 
 acc:and (acc:forall)
-      Solver acceptance level for 'AndConstraint', default 1:
+      Solver acceptance level for 'AndConstraint' as flat constraint, default
+      1:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
       2 - Accepted natively and preferred
 
 acc:cos
-      Solver acceptance level for 'CosConstraint', default 1:
+      Solver acceptance level for 'CosConstraint' as flat constraint, default
+      1:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
       2 - Accepted natively and preferred
 
 acc:exp
-      Solver acceptance level for 'ExpConstraint', default 2:
+      Solver acceptance level for 'ExpConstraint' as either constraint or
+      expression, default 4:
 
       0 - Not accepted natively, automatic redefinition will be attempted
-      1 - Accepted but automatic redefinition will be used where possible
-      2 - Accepted natively and preferred
+      1 - Accepted as constraint but automatic redefinition will be used
+          where possible
+      2 - Accepted as constraint natively and preferred
+      3 - Accepted as expression but automatic redefinition will be used
+          where possible
+      4 - Accepted as expression natively and preferred
 
 acc:indeq (acc:indlineq)
-      Solver acceptance level for 'IndicatorConstraintLinEQ', default 1:
+      Solver acceptance level for 'IndicatorConstraintLinEQ' as flat
+      constraint, default 1:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
       2 - Accepted natively and preferred
 
 acc:indge (acc:indlinge)
-      Solver acceptance level for 'IndicatorConstraintLinGE', default 1:
+      Solver acceptance level for 'IndicatorConstraintLinGE' as flat
+      constraint, default 1:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
       2 - Accepted natively and preferred
 
 acc:indle (acc:indlinle)
-      Solver acceptance level for 'IndicatorConstraintLinLE', default 1:
+      Solver acceptance level for 'IndicatorConstraintLinLE' as flat
+      constraint, default 1:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+acc:lineq
+      Solver acceptance level for 'LinConEQ' as flat constraint, default 2:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+acc:linge
+      Solver acceptance level for 'LinConGE' as flat constraint, default 2:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+acc:linle
+      Solver acceptance level for 'LinConLE' as flat constraint, default 2:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
       2 - Accepted natively and preferred
 
 acc:linrange (acc:linrng)
-      Solver acceptance level for 'LinConRange', default 2:
+      Solver acceptance level for 'LinConRange' as flat constraint, default 2:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
       2 - Accepted natively and preferred
 
 acc:log
-      Solver acceptance level for 'LogConstraint', default 2:
+      Solver acceptance level for 'LogConstraint' as flat constraint, default
+      2:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
       2 - Accepted natively and preferred
 
 acc:or (acc:exists)
-      Solver acceptance level for 'OrConstraint', default 2:
+      Solver acceptance level for 'OrConstraint' as flat constraint, default
+      2:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
       2 - Accepted natively and preferred
 
 acc:pow
-      Solver acceptance level for 'PowConstraint', default 2:
+      Solver acceptance level for 'PowConstraint' as flat constraint, default
+      2:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
       2 - Accepted natively and preferred
 
 acc:quadcone
-      Solver acceptance level for 'QuadraticConeConstraint', default 1:
+      Solver acceptance level for 'QuadraticConeConstraint' as flat
+      constraint, default 1:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
       2 - Accepted natively and preferred
 
 acc:quadeq
-      Solver acceptance level for 'QuadConEQ', default 2:
+      Solver acceptance level for 'QuadConEQ' as flat constraint, default 2:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
       2 - Accepted natively and preferred
 
 acc:quadge
-      Solver acceptance level for 'QuadConGE', default 2:
+      Solver acceptance level for 'QuadConGE' as flat constraint, default 2:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
       2 - Accepted natively and preferred
 
 acc:quadle
-      Solver acceptance level for 'QuadConLE', default 2:
+      Solver acceptance level for 'QuadConLE' as flat constraint, default 2:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
       2 - Accepted natively and preferred
 
 acc:quadrange (acc:quadrng)
-      Solver acceptance level for 'QuadConRange', default 2:
+      Solver acceptance level for 'QuadConRange' as flat constraint, default
+      2:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
       2 - Accepted natively and preferred
 
 acc:sin
-      Solver acceptance level for 'SinConstraint', default 2:
+      Solver acceptance level for 'SinConstraint' as flat constraint, default
+      2:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+acc:sos1
+      Solver acceptance level for 'SOS1Constraint' as flat constraint, default
+      2:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
       2 - Accepted natively and preferred
 
 acc:sos2
-      Solver acceptance level for 'SOS2Constraint', default 1:
+      Solver acceptance level for 'SOS2Constraint' as flat constraint, default
+      1:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
@@ -295,8 +349,9 @@ cvt:pre:unnest
       0/1*: Inline nested expressions, currently Ands/Ors.
 
 cvt:quadcon (passquadcon)
-      0/1*: Multiply out and pass quadratic constraint terms to the solver,
-      vs. linear approximation.
+      Convenience option. Set to 0 to disable quadratic constraints. Synonym
+      for acc:quad..=0. Currently this disables out-multiplication of
+      quadratic terms, then they are linearized.
 
 cvt:quadobj (passquadobj)
       0*/1: Multiply out and pass quadratic objective terms to the solver, vs.
@@ -307,7 +362,8 @@ cvt:socp (socpmode, socp)
 
       0 - Do not recognize SOCP forms
       1 - Recognize from non-quadratic expressions only (sqrt, abs)
-      2 - Recognize from quadratic and non-quadratic SOCP forms
+      2 - Recognize from quadratic and non-quadratic SOCP forms. Helpful if
+          the solver does not recognize non-standard forms
 
       Recognized SOCP forms can be further converted to (SOCP-standardized)
       quadratic constraints, see cvt:socp2qc. Default: 2.
@@ -790,8 +846,13 @@ tech:outlev-native (outlev-native)
       0*/1/2/3/4/5: Whether to write SCIP log lines (chatter) to stdout and to
       file (native output level of SCIP).
 
-tech:timing (timing)
-      0*/1: Whether to display timings for the run.
+tech:timing (timing, tech:reporttimes, reporttimes)
+      0*/1/2: Whether to print and return timings for the run, all times are
+      wall times. If set to 1, return the solution times in the problem
+      suffixes 'time_solver', 'time_setup' and 'time', 'time'=
+      time_solver+time_setup+time_output is a measure of the total time spent
+      in the solver driver. If set to 2, return more granular times, including
+      'time_read', 'time_conversion' and 'time_output'.
 
 tech:version (version)
       Single-word phrase: report version details before solving the problem.
@@ -805,7 +866,7 @@ tech:wantsol (wantsol)
       4 - Dual variables to stdout
       8 - Suppress solution message.
 
-tech:writegraph (writegraph, exportgraph)
+tech:writegraph (cvt:writegraph, writegraph, exportgraph)
       File to export conversion graph. Format: JSON Lines.
 
 ```

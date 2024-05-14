@@ -21,28 +21,28 @@ option "highs_options". For example:
  Options:
 
 acc:lineq
-      Solver acceptance level for 'LinConEQ', default 2:
+      Solver acceptance level for 'LinConEQ' as flat constraint, default 2:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
       2 - Accepted natively and preferred
 
 acc:linge
-      Solver acceptance level for 'LinConGE', default 2:
+      Solver acceptance level for 'LinConGE' as flat constraint, default 2:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
       2 - Accepted natively and preferred
 
 acc:linle
-      Solver acceptance level for 'LinConLE', default 2:
+      Solver acceptance level for 'LinConLE' as flat constraint, default 2:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
       2 - Accepted natively and preferred
 
 acc:linrange (acc:linrng)
-      Solver acceptance level for 'LinConRange', default 2:
+      Solver acceptance level for 'LinConRange' as flat constraint, default 2:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
@@ -465,18 +465,17 @@ tech:optionfile (optionfile, option:file)
 tech:outlev (outlev)
       0*/1: Whether to write HighS log lines (chatter) to stdout and to file.
 
-tech:reporttimes (reporttimes, report_times)
-      0*/1: Set to 1 to return the solution times in the problem suffixes
-      'time_solver', 'time_setup' and 'time' and in the solver message.
-      'time'= 'time_solver'+'time_setup' is a measure of the total time spent
-      in the solver driver; all times are wall times.
-
 tech:threads (threads)
       How many threads to use when using the barrier algorithm or solving MIP
       problems; default 0 ==> automatic choice.
 
-tech:timing (timing)
-      0*/1: Whether to display timings for the run.
+tech:timing (timing, tech:reporttimes, reporttimes)
+      0*/1/2: Whether to print and return timings for the run, all times are
+      wall times. If set to 1, return the solution times in the problem
+      suffixes 'time_solver', 'time_setup' and 'time', 'time'=
+      time_solver+time_setup+time_output is a measure of the total time spent
+      in the solver driver. If set to 2, return more granular times, including
+      'time_read', 'time_conversion' and 'time_output'.
 
 tech:version (version)
       Single-word phrase: report version details before solving the problem.

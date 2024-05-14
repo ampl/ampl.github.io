@@ -1,6 +1,12 @@
 # XPRESS Changelog
 
 
+## 20240429
+- [BREAKING] Merged `report_times` and `timing`; they 
+  are now aliases, set the value to 1 to have basic info,
+  to 2 to have more detailed info.
+
+  
 ## 20240320
 - *SOS constraints*.
   - Fixed handling of SOS2 constraints created by AMPL

@@ -1,5 +1,11 @@
 # GUROBI Changelog
 
+## 20240429
+- [BREAKING] Merged `report_times` and `timing`; they 
+  are now aliases, set the value to 1 to have basic info,
+  to 2 to have more detailed info.
+
+  
 ## 20240327
 - Added support for Web License Server parameters, via options
   `wls_licenseid`, `wls_accessid`, `wls_secret`, `wls_token`, 
@@ -17,7 +23,7 @@
 - *Native handling of POW(x, INT)*.
   - Power expressions with positive integer exponent
     are passed natively vs previously quadratic or linear 
-  - reformulation. For best performance, global solving capability
+    reformulation. For best performance, global solving capability
     might be needed (`global=1`).
 - *Option `report_times`* 
 - *Unused `acc:` options*.

@@ -1,5 +1,19 @@
 # BARON Changelog
 
+## 20240508
+- Updated to baron 24.05.08, that includes improvements in convexity identification, 
+  facilities for handling quadratic programs, scaling numerically challenging 
+  problems, and range reduction via Fourier-Motzkin elimination
+- Added option `seed` to specify the seed for BARON’s random number generator. 
+  Changing the value of this option is likely to change the outcome of BARON’s 
+  randomized search steps, including starting points and solutions obtained 
+  from local search heuristics.
+
+## 20240130
+- Updated to baron 24.01.30; In addition to bug fixes, this version comes with a 
+  large number of improved algorithms for NLPs, MIQPs, and MINLPs, including local search, 
+  reformulations, relaxations, cutting planes, and presolve.
+
 ## 20230405
 - Fixed baron bundle packaging
 

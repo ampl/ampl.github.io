@@ -21,91 +21,97 @@ option "cplex_options". For example:
  Options:
 
 acc:indeq (acc:indlineq)
-      Solver acceptance level for 'IndicatorConstraintLinEQ', default 1:
+      Solver acceptance level for 'IndicatorConstraintLinEQ' as flat
+      constraint, default 1:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
       2 - Accepted natively and preferred
 
 acc:indge (acc:indlinge)
-      Solver acceptance level for 'IndicatorConstraintLinGE', default 1:
+      Solver acceptance level for 'IndicatorConstraintLinGE' as flat
+      constraint, default 1:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
       2 - Accepted natively and preferred
 
 acc:indle (acc:indlinle)
-      Solver acceptance level for 'IndicatorConstraintLinLE', default 1:
+      Solver acceptance level for 'IndicatorConstraintLinLE' as flat
+      constraint, default 1:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
       2 - Accepted natively and preferred
 
 acc:lineq
-      Solver acceptance level for 'LinConEQ', default 2:
+      Solver acceptance level for 'LinConEQ' as flat constraint, default 2:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
       2 - Accepted natively and preferred
 
 acc:linge
-      Solver acceptance level for 'LinConGE', default 2:
+      Solver acceptance level for 'LinConGE' as flat constraint, default 2:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
       2 - Accepted natively and preferred
 
 acc:linle
-      Solver acceptance level for 'LinConLE', default 2:
+      Solver acceptance level for 'LinConLE' as flat constraint, default 2:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
       2 - Accepted natively and preferred
 
 acc:linrange (acc:linrng)
-      Solver acceptance level for 'LinConRange', default 2:
+      Solver acceptance level for 'LinConRange' as flat constraint, default 2:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
       2 - Accepted natively and preferred
 
 acc:pl (acc:pwl, acc:piecewise)
-      Solver acceptance level for 'PLConstraint', default 2:
+      Solver acceptance level for 'PLConstraint' as flat constraint, default
+      2:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
       2 - Accepted natively and preferred
 
 acc:quadeq
-      Solver acceptance level for 'QuadConEQ', default 2:
+      Solver acceptance level for 'QuadConEQ' as flat constraint, default 2:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
       2 - Accepted natively and preferred
 
 acc:quadge
-      Solver acceptance level for 'QuadConGE', default 2:
+      Solver acceptance level for 'QuadConGE' as flat constraint, default 2:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
       2 - Accepted natively and preferred
 
 acc:quadle
-      Solver acceptance level for 'QuadConLE', default 2:
+      Solver acceptance level for 'QuadConLE' as flat constraint, default 2:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
       2 - Accepted natively and preferred
 
 acc:sos1
-      Solver acceptance level for 'SOS1Constraint', default 2:
+      Solver acceptance level for 'SOS1Constraint' as flat constraint, default
+      2:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
       2 - Accepted natively and preferred
 
 acc:sos2
-      Solver acceptance level for 'SOS2Constraint', default 2:
+      Solver acceptance level for 'SOS2Constraint' as flat constraint, default
+      2:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
@@ -562,18 +568,17 @@ tech:outlev (outlev)
       1 - equivalent to "bardisplay"=1, "display"=1, "mipdisplay"=3
       2 - equivalent to "bardisplay"=2, "display"=2, "mipdisplay"=5
 
-tech:reporttimes (reporttimes, report_times)
-      0*/1: Set to 1 to return the solution times in the problem suffixes
-      'time_solver', 'time_setup' and 'time' and in the solver message.
-      'time'= 'time_solver'+'time_setup' is a measure of the total time spent
-      in the solver driver; all times are wall times.
-
 tech:threads (threads)
       How many threads to use when using the barrier algorithm
       or solving MIP problems; default 0 ==> automatic choice.
 
-tech:timing (timing)
-      0*/1: Whether to display timings for the run.
+tech:timing (timing, tech:reporttimes, reporttimes)
+      0*/1/2: Whether to print and return timings for the run, all times are
+      wall times. If set to 1, return the solution times in the problem
+      suffixes 'time_solver', 'time_setup' and 'time', 'time'=
+      time_solver+time_setup+time_output is a measure of the total time spent
+      in the solver driver. If set to 2, return more granular times, including
+      'time_read', 'time_conversion' and 'time_output'.
 
 tech:version (version)
       Single-word phrase: report version details before solving the problem.
