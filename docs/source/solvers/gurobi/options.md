@@ -1009,17 +1009,32 @@ obj:*:weight (obj_*_weight)
       Weight for objective with index *
 
 obj:multi (multiobj)
-      0*/1: Whether to do multi-objective optimization.
+      0*/1: Whether to use multi-objective optimization.
+
       When obj:multi = 1 and several objectives are present, suffixes
       .objpriority, .objweight, .objreltol, and .objabstol on the objectives
       are relevant. Objectives with greater .objpriority values (integer
       values) have higher priority. Objectives with the same .objpriority are
-      weighted by .objweight. Objectives with positive .objabstol or
-      .objreltol are allowed to be degraded by lower priority objectives by
-      amounts not exceeding the .objabstol (absolute) and .objreltol
-      (relative) limits. The objectives must all be linear. Objective-specific
-      convergence tolerances and method values may be assigned via keywords of
-      the form obj_n_<name>, such as obj_1_method for the first objective.
+      weighted by .objweight, according to the option obj:multi:weight.
+
+      Objectives with positive .objabstol or .objreltol are allowed to be
+      degraded by lower priority objectives by amounts not exceeding the
+      .objabstol (absolute) and .objreltol (relative) limits.
+
+      The objectives must all be linear. Objective-specific convergence
+      tolerances and method values may be assigned via keywords of the form
+      obj_n_<name>, such as obj_1_method for the first objective.
+
+obj:multi:weight (multiobjweight, obj:multi:weights, multiobjweights)
+      How to interpret each objective's weight sign:
+
+      1 - relative to the sense of the 1st objective
+      2 - relative to its own sense (default)
+
+      With the 1st option (legacy behaviour), negative .objweight for
+      objective i would make objective i's sense the opposite of the model's
+      1st objective. Otherwise, it would make objective i's sense the opposite
+      to its sense defined in the model.
 
 obj:multiobjmethod (multiobjmethod)
       Choice of optimization algorithm for lower-priority objectives:
@@ -1477,7 +1492,7 @@ tech:threads (threads)
       How many threads to use when using the barrier algorithm or solving MIP
       problems; default 0 ==> automatic choice.
 
-tech:timing (timing, tech:reporttimes, reporttimes)
+tech:timing (timing, tech:report_times, report_times)
       0*/1/2: Whether to print and return timings for the run, all times are
       wall times. If set to 1, return the solution times in the problem
       suffixes 'time_solver', 'time_setup' and 'time', 'time'=

@@ -288,6 +288,10 @@ cvt:uenc:ratio (uenc:ratio)
       x==const. Instead, indicator constraints (or big-Ms) are used, if
       uenc:negctx also applies. Default 0.
 
+lim:sol (sollimit, solutionlimit)
+      Limit the number of feasible MIP solutions found, causing early
+      termination if exceeded; default -1 (no limit).
+
 lim:time (timelim, timelimit)
       Limit on solve time (in seconds; default: no limit).
 
@@ -352,12 +356,53 @@ mip:round_reptol (round_reptol)
       Tolerance for reporting rounding of integer variables to integer values;
       see "mip:round". Default = 1e-9.
 
+mip:varselection (varselection)
+      Controls the variable selection strategy employed by the mixed-integer
+      optimizer:
+
+      0 - Automatic (default)
+      1 - Pseudocost variable selection
+      2 - Strong branching selection
+
+obj:multi (multiobj)
+      0*/1: Whether to use multi-objective optimization.
+
+      When obj:multi = 1 and several objectives are present, suffixes
+      .objpriority, .objweight, .objreltol, and .objabstol on the objectives
+      are relevant. Objectives with greater .objpriority values (integer
+      values) have higher priority. Objectives with the same .objpriority are
+      weighted by .objweight, according to the option obj:multi:weight.
+
+      Objectives with positive .objabstol or .objreltol are allowed to be
+      degraded by lower priority objectives by amounts not exceeding the
+      .objabstol (absolute) and .objreltol (relative) limits.
+
+obj:multi:weight (multiobjweight, obj:multi:weights, multiobjweights)
+      How to interpret each objective's weight sign:
+
+      1 - relative to the sense of the 1st objective
+      2 - relative to its own sense (default)
+
+      With the 1st option (legacy behaviour), negative .objweight for
+      objective i would make objective i's sense the opposite of the model's
+      1st objective. Otherwise, it would make objective i's sense the opposite
+      to its sense defined in the model.
+
 obj:no (objno)
       Objective to optimize:
 
       0 - None
       1 - First (default, if available)
       2 - Second (if available), etc.
+
+pre:dualray_analysis (dualrayanalysis)
+      Controls the amount of symmetry detection employed by the mixed-integer
+      optimizer in presolve:
+
+      -1 - Automatic (default)
+      0  - Disabled
+      1  - Low amount of analyis
+      2  - Higher amount of analysis
 
 sol:chk:fail (chk:fail, checkfail)
       Fail on MP solution check violations, with solve result 150.
@@ -437,12 +482,16 @@ tech:optionnativewrite (optionnativewrite, tech:param:write, param:write)
 tech:outlev (outlev)
       0*/1: Whether to write mosek log lines to stdout.
 
+tech:seed (seed)
+      Random number seed (default 42), used for randomization in the
+      mixed-integer optimizer, may influence the solution path.
+
 tech:threads (threads)
       Controls the number of threads employed by the optimizer. Default 0 ==>
       number of threads used will be equal to the number of cores detected on
       the machine.
 
-tech:timing (timing, tech:reporttimes, reporttimes)
+tech:timing (timing, tech:report_times, report_times)
       0*/1/2: Whether to print and return timings for the run, all times are
       wall times. If set to 1, return the solution times in the problem
       suffixes 'time_solver', 'time_setup' and 'time', 'time'=

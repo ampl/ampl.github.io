@@ -587,6 +587,30 @@ num:sumepsilon (sumepsilon)
       Absolute values of sums smaller than this are considered (default:
       1e-06)
 
+obj:multi (multiobj)
+      0*/1: Whether to use multi-objective optimization.
+
+      When obj:multi = 1 and several objectives are present, suffixes
+      .objpriority, .objweight, .objreltol, and .objabstol on the objectives
+      are relevant. Objectives with greater .objpriority values (integer
+      values) have higher priority. Objectives with the same .objpriority are
+      weighted by .objweight, according to the option obj:multi:weight.
+
+      Objectives with positive .objabstol or .objreltol are allowed to be
+      degraded by lower priority objectives by amounts not exceeding the
+      .objabstol (absolute) and .objreltol (relative) limits.
+
+obj:multi:weight (multiobjweight, obj:multi:weights, multiobjweights)
+      How to interpret each objective's weight sign:
+
+      1 - relative to the sense of the 1st objective
+      2 - relative to its own sense (default)
+
+      With the 1st option (legacy behaviour), negative .objweight for
+      objective i would make objective i's sense the opposite of the model's
+      1st objective. Otherwise, it would make objective i's sense the opposite
+      to its sense defined in the model.
+
 obj:no (objno)
       Objective to optimize:
 
@@ -790,7 +814,7 @@ tech:outlev-native (outlev-native)
       0*/1/2/3/4/5: Whether to write GCG log lines (chatter) to stdout and to
       file (native output level of SCIP).
 
-tech:timing (timing, tech:reporttimes, reporttimes)
+tech:timing (timing, tech:report_times, report_times)
       0*/1/2: Whether to print and return timings for the run, all times are
       wall times. If set to 1, return the solution times in the problem
       suffixes 'time_solver', 'time_setup' and 'time', 'time'=

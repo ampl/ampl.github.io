@@ -1,6 +1,21 @@
 # MOSEK Changelog
 
 
+## 20240531
+- Updated to MOSEK 10.2, which provides many bugfixes.
+- Added options `mip:varselection`, `pre:dualray_analysis` and 
+  `lim:sol`.
+
+
+## 20240529
+- *Multi-objective emulator*
+	- All flat MP solvers support multi-objective mode (obj:multi=1),
+		either natively, or via emulation.
+	- Suffixes .objpriority, .objweight, .objabstol, .objreltol.
+	- [BREAKING] Default intuitive handling of .objweight,
+		see option obj:multi:weight, even when natively supported.
+
+
 ## 20240429
 - [BREAKING] Merged `report_times` and `timing`; they 
   are now aliases, set the value to 1 to have basic info,
