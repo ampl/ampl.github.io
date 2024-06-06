@@ -1,6 +1,17 @@
 # XPRESS Changelog
 
 
+## 20240606
+- Fix mip:basis (post-solving as fixed MIP),
+	although fix + resolve from AMPL can be faster.
+- Fix reporting infeasibility with obj:multi=1.
+
+
+## 20240604
+- Presolve division by constant, resulting in fewer constraints
+- Fix no-solution case in multi-objective emulator
+
+
 ## 20240529
 - *Multi-objective emulator*
 	- All flat MP solvers support multi-objective mode (obj:multi=1),
