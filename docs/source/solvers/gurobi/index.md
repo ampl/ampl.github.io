@@ -191,40 +191,72 @@ display solve_result_num, solve_result;
 ```
 
 Gurobi solve result codes can be obtained by running `gurobi -!` or `ampl: shell "gurobi -!";`:
-```
-          0- 99 solved: optimal for an optimization problem, feasible for a satisfaction problem
-        100-199 solved? solution candidate returned but error likely
-            150 solved? MP solution check failed (option sol:chk:fail)
-        200-299 infeasible
-        300-349 unbounded, feasible solution returned
-        350-399 unbounded, no feasible solution returned
-        400-449 limit, feasible: stopped, e.g., on iterations or Ctrl-C
-            401 interrupted, feasible solution
-            402 time limit, feasible solution
-            403 iteration limit, feasible solution
-            404 node limit, feasible solution
-            405 bestobjstop or bestbndstop reached, feasible solution
-            408 solution limit
-            409 work limit, feasible solution
-            410 soft memory limit, feasible solution
-        450-469 limit, problem is either infeasible or unbounded
-        470-499 limit, no solution returned
-            471 interrupted, without a feasible solution
-            472 time limit, without a feasible solution
-            473 iteration limit, without a feasible soluton
-            474 node limit, without a feasible soluton
-            475 objective cutoff
-            477 bestbndstop reached, without a feasible solution
-            479 work limit, without a feasible solution
-            480 soft memory limit, without a feasible solution
-        500-999 failure, no solution returned
-            550 failure: numeric issue, no feasible solution
-            601 Could not talk to Gurobi Instant Cloud or Gurobi Server.
-            602 Job rejected by Gurobi Instant Cloud or Gurobi Server.
-            603 No license for specified Gurobi Instant Cloud or Gurobi Server.
-            604 Surprise failure while starting the cloud/server environment.
-            605 Bad value for cloudid or cloudkey, or Gurobi Cloud out of reach.
-```
+
+| Value | Message                                                     |
+|-------|-------------------------------------------------------------|
+| 0     | optimal solution                                            |
+| 1     | optimal solution with integer variables rounded to integers |
+| 2     | optimal solution with nonintegral "integer" variables       |
+| 100   | suboptimal: could not satisfy optimality tolerances        |
+| 101   | bestbndstop reached                                         |
+| 102   | bestobjstop reached                                         |
+| 103   | bestobjstop or bestbndstop reached                          |
+| 104   | bestobjstop or bestbndstop reached with no solution available |
+| 200   | infeasible [IIS computation not attempted]                  |
+| 201   | infeasible [IIS returned]                                   |
+| 202   | infeasible [IIS finder failed]                              |
+| 203   | infeasible; .dunbdd returned [IIS computation not attempted] |
+| 204   | infeasible; .dunbdd returned [IIS also returned]            |
+| 205   | infeasible; .dunbdd returned [IIS finder failed]            |
+| 300   | unbounded                                                   |
+| 301   | unbounded [unbounded or infeasible; IIS finder failed]      |
+| 302   | unbounded; .unbdd returned                                  |
+| 303   | unbounded; .unbdd returned [IIS finder failed]              |
+| 400   | objective cutoff                                            |
+| 401   | iteration limit with a feasible solution                    |
+| 402   | node limit with a feasible solution                         |
+| 403   | time limit with a feasible solution                         |
+| 404   | solution limit                                              |
+| 405   | interrupted with a feasible solution                        |
+| 411   | iteration limit without a feasible solution                 |
+| 412   | node limit without a feasible solution                      |
+| 413   | time limit without a feasible solution                      |
+| 415   | interrupted without a feasible solution                     |
+| 500   | Could not create the gurobi environment                     |
+| 501   | Gurobi call failed [message gives routine name]             |
+| 502   | misc. failure [message gives details]                       |
+| 503   | Bad `$gurobi_options`                                       |
+| 504   | Surprise VBasis[...] = ...                                  |
+| 505   | Surprise CBasis[...] = ...                                  |
+| 506   | Gurobi set/get parameter failed [message gives more  details] |
+| 510   | cannot open logfile (specified in $gurobi_options or command line) |
+| 511   | cannot open paramfile (specified in $gurobi_options or command line) |
+| 512   | missing value in paramfile                                  |
+| 513   | extra text in paramfile                                     |
+| 514   | invalid parameter name in paramfile                         |
+| 520   | numeric error                                               |
+| 521   | nonlinear objective                                         |
+| 522   | nonlinear constraint                                        |
+| 523   | quadratic objective involving division by 0                 |
+| 524   | indefinite quadratic objective or constraint                |
+| 525   | quadratic constraint involving division by 0                |
+| 530   | could not open serverlic file                               |
+| 531   | error in serverlic file                                     |
+| 532   | error while tuning                                          |
+| 540   | Gurobi Compute Server not reached or bad `pool_...` settings |
+| 541   | Rejected by Gurobi Compute Server                           |
+| 542   | Feature not supported by Gurobi Compute Server              |
+| 543   | Feature not supported                                       |
+| 563   | logical constraint is not an indicator constraint           |
+| 564   | bad suffixes for multiple objectives                        |
+| 565   | Error return from named routine                             |
+| 567   | complementarity constraint                                  |
+| 570   | solution found but not available                            |
+| 601   | could not talk to Gurobi compute server                     |
+| 602   | job rejected by Gurobi compute server                       |
+| 603   | no license for specified gurobi compute server              |
+| 604   | surprise return while trying to use Gurobi compute server   |
+| 605   | bad value for `cloudid` or `cloudkey`, or Gurobi Cloud out of reach |
 
 For general information, see [MP result codes guide](https://mp.ampl.com/features-guide.html#solve-result-codes).
 
