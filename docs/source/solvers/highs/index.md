@@ -1,3 +1,5 @@
+(highs)=
+
 # HiGHS
 
 A leading free solver that has evolved from a large-scale optimization project

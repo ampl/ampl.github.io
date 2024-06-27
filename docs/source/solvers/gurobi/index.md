@@ -1,3 +1,5 @@
+(gurobi)=
+
 # Gurobi
 
 Gurobi is a powerful commercial suite of optimization products, which includes simplex

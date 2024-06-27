@@ -1,3 +1,5 @@
+(scip)=
+
 # SCIP
 
 [SCIP](http://scipopt.org/) is currently one of the fastest non-commercial solvers for mixed integer programming (MIP)

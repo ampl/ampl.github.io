@@ -1,3 +1,5 @@
+(lgo)=
+
 # LGO
 
 LGO is capable of determining high-quality solutions to global optimization problems that have (possibly many) locally optimal solutions. Because LGO makes only limited assumptions as to problem structure and differentiability, it can be applied in a broad range of design and operational applications.

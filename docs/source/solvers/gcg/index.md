@@ -1,3 +1,5 @@
+(gcg)=
+
 # GCG
 
 [GCG](https://gcg.or.rwth-aachen.de/) is a generic decomposition solver for mixed-integer programs (MIPs).

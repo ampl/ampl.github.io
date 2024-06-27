@@ -1,0 +1,6 @@
+,LP,NLP,MILP,MINLP
+:ref:`conopt`,|y|,|y|,|n|,|n|
+:ref:`knitro`,|y|,|y|,|y|,|y|
+:ref:`loqo`,|y|,|y|,|n|,|n|
+:ref:`minos`,|y|,|y|,|n|,|n|
+:ref:`snopt`,|y|,|y|,|n|,|n|

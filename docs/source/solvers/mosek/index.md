@@ -1,3 +1,5 @@
+(mosek)=
+
 # Mosek
 
 Mosek is a versatile linear, quadratic, quadratically constrained and conic optimizer that supports continuous and discrete variables.

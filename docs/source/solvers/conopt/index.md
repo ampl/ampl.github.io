@@ -1,3 +1,5 @@
+(conopt)=
+
 # CONOPT
 
 A proven choice for highly nonlinear problems, CONOPT’s efficient and reliable multi-method architecture handles a broad range of models. Specialized techniques achieve feasibility quickly, while powerful preprocessing tools reduce problem size and suggest formulation improvements.

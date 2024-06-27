@@ -1,3 +1,5 @@
+(copt)=
+
 # COPT
 
 Cardinal Optimizer (COPT) incorporates a full suite of solvers for
