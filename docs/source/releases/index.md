@@ -13,7 +13,7 @@
 - [**GCG** Changelog (latest: **20240115**)](../solvers/gcg/changes.md)
 - [**GUROBI** Changelog (latest: **20240529**)](../solvers/gurobi/changes.md)
 - [**GUROBIASL** Changelog (latest: **20231208**)](../solvers/gurobi/changesasl.md)
-- [**HiGHS** Changelog (latest: **20240529**)](../solvers/highs/changes.md)
+- [**HiGHS** Changelog (latest: **20240627**)](../solvers/highs/changes.md)
 - [**ILOGCP** Changelog (latest: **20230228**)](../solvers/ilogcp/changes.md)
 - [**KNITRO** Changelog (latest: **20240209**)](../solvers/knitro/changes.md)
 - [**LOQO** Changelog (latest: **20210410**)](../solvers/loqo/changes.md)
@@ -32,9 +32,14 @@ ampl.md
 ```
 
 
+## 20240627
+- [HiGHS](../solvers/highs/changes.md#20240627)
+## 20240617
+- [HiGHS](../solvers/highs/changes.md#20240617)
 ## 20240606
 - [XPRESS](../solvers/xpress/changes.md#20240606)
 ## 20240604
+- [HiGHS](../solvers/highs/changes.md#20240604)
 - [XPRESS](../solvers/xpress/changes.md#20240604)
 ## 20240531
 - [COPT](../solvers/copt/changes.md#20240531)

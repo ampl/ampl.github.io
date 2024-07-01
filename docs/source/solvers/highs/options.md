@@ -364,9 +364,13 @@ mip:round_reptol (round_reptol)
       see "mip:round". Default = 1e-9.
 
 obj:multi (multiobj)
-      0*/1: Whether to use multi-objective optimization.
+      Whether to use multi-objective optimization:
 
-      When obj:multi = 1 and several objectives are present, suffixes
+      0 - Single objective, see option obj:no (default)
+      1 - Multi-objective, solver's native handling if available
+      2 - Multi-objective, force emulation
+
+      When obj:multi>0 and several objectives are present, suffixes
       .objpriority, .objweight, .objreltol, and .objabstol on the objectives
       are relevant. Objectives with greater .objpriority values (integer
       values) have higher priority. Objectives with the same .objpriority are
@@ -375,6 +379,11 @@ obj:multi (multiobj)
       Objectives with positive .objabstol or .objreltol are allowed to be
       degraded by lower priority objectives by amounts not exceeding the
       .objabstol (absolute) and .objreltol (relative) limits.
+
+      Note that with solver's native handling (when obj:multi=1 and
+      supported), some solvers might have special rules for the tolerances,
+      especially for LP, and not allow quadratic objectives. See the solver
+      documentation.
 
 obj:multi:weight (multiobjweight, obj:multi:weights, multiobjweights)
       How to interpret each objective's weight sign:
