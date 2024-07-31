@@ -20,6 +20,13 @@ option "gurobi_options". For example:
 
  Options:
 
+acc:_all
+      Solver acceptance level for all constraints and expressions. Value
+      meaning: as described in the specific acc:... options.
+
+      Can be useful to disable all reformulations (acc:_all=2), or force
+      linearization (acc:_all=0.)
+
 acc:abs
       Solver acceptance level for 'AbsConstraint' as flat constraint, default
       2:
@@ -587,6 +594,22 @@ cvt:pre:eqresult
 cvt:pre:unnest
       0/1*: Inline nested expressions, currently Ands/Ors.
 
+cvt:prod (cvt:pre:prod)
+      Product preprocessing flags. Sum of a subset of the following bits:
+
+      1 - Quadratize higher-order products in the following order: integer
+      terms first, then real-valued ones; in each group, smaller-range terms
+      first.
+      2 - Logicalize products of 2 binary terms. Logicalizing means that the
+      product is converted to a conjunction. If the solver does not support it
+      natively (see acc:and), the conjunction is linearized.
+      4 - Logicalize products of >=3 binary terms.
+
+      Default: 1+4. That is, 2-term binary products which are not part of a
+      higher-order binary product, are not logicalized by default.
+
+      Bits 2 or 4 imply bit 1.
+
 cvt:quadcon (passquadcon)
       Convenience option. Set to 0 to disable quadratic constraints. Synonym
       for acc:quad..=0. Currently this disables out-multiplication of
@@ -1009,9 +1032,13 @@ obj:*:weight (obj_*_weight)
       Weight for objective with index *
 
 obj:multi (multiobj)
-      0*/1: Whether to use multi-objective optimization.
+      Whether to use multi-objective optimization:
 
-      When obj:multi = 1 and several objectives are present, suffixes
+      0 - Single objective, see option obj:no (default)
+      1 - Multi-objective, solver's native handling if available
+      2 - Multi-objective, force emulation
+
+      When obj:multi>0 and several objectives are present, suffixes
       .objpriority, .objweight, .objreltol, and .objabstol on the objectives
       are relevant. Objectives with greater .objpriority values (integer
       values) have higher priority. Objectives with the same .objpriority are
@@ -1021,7 +1048,12 @@ obj:multi (multiobj)
       degraded by lower priority objectives by amounts not exceeding the
       .objabstol (absolute) and .objreltol (relative) limits.
 
-      The objectives must all be linear. Objective-specific convergence
+      Note that with solver's native handling (when obj:multi=1 and
+      supported), some solvers might have special rules for the tolerances,
+      especially for LP, and not allow quadratic objectives. See the solver
+      documentation.
+
+      For Gurobi's native handling (obj:multi=1), objective-specific
       tolerances and method values may be assigned via keywords of the form
       obj_n_<name>, such as obj_1_method for the first objective.
 

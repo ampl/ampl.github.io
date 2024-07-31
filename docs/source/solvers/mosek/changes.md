@@ -1,6 +1,28 @@
 # MOSEK Changelog
 
 
+## 20240724
+- Option *acc:_all*
+	- Useful to disable all reformulations (acc:_all=2),
+		or force linearization (acc:_all=0).
+- Option *cvt:prod*     
+  - Controls reformulation of binary products into logical 
+    constraints.
+- Faster input of quadratic expressions.
+
+
+## 20240617
+- *Multi-objective emulator*
+	- obj:multi=2 forces emulation, even if MO natively supported.
+	- Fixed a bug in the objective degradation suffixes
+		.objasbtol, .objreltol.
+
+
+## 20240604
+- Presolve division by constant, resulting in fewer constraints
+- Fix no-solution case in multi-objective emulator
+
+
 ## 20240531
 - Updated to MOSEK 10.2, which provides many bugfixes.
 - Added options `mip:varselection`, `pre:dualray_analysis` and 

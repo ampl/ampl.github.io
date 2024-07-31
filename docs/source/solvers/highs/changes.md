@@ -1,7 +1,20 @@
 # HiGHS Changelog
 
+
+## 20240724
+- Option *acc:_all*
+	- Useful to disable all reformulations (acc:_all=2),
+		or force linearization (acc:_all=0).
+- Option *cvt:prod*     
+  - Controls reformulation of binary products into logical 
+    constraints.
+- Faster input of quadratic expressions.
+
+
 ## 20240627
 - Updated to HiGHS 1.7.1
+- Added calculation of primal and dual rays.
+	See keyword `alg:rays`.
 
 
 ## 20240617

@@ -20,6 +20,13 @@ option "highs_options". For example:
 
  Options:
 
+acc:_all
+      Solver acceptance level for all constraints and expressions. Value
+      meaning: as described in the specific acc:... options.
+
+      Can be useful to disable all reformulations (acc:_all=2), or force
+      linearization (acc:_all=0.)
+
 acc:lineq
       Solver acceptance level for 'LinConEQ' as flat constraint, default 2:
 
@@ -94,6 +101,15 @@ alg:parallel (parallel)
 
 alg:pdlpdgaptol (pdlpdgaptol, pdlp_d_gap_tol)
       Duality gap tolerance for PDLP solver (default 1e-4).
+
+alg:rays (rays)
+      Whether to return suffix .unbdd if the objective is unbounded or suffix
+      .dunbdd if the constraints are infeasible:
+
+      0 - Neither
+      1 - Just .unbdd
+      2 - Just .dunbdd
+      3 - Both (default)
 
 alg:relax (relax)
       0*/1: Whether to relax integrality of variables.
@@ -196,6 +212,22 @@ cvt:pre:eqresult
 
 cvt:pre:unnest
       0/1*: Inline nested expressions, currently Ands/Ors.
+
+cvt:prod (cvt:pre:prod)
+      Product preprocessing flags. Sum of a subset of the following bits:
+
+      1 - Quadratize higher-order products in the following order: integer
+      terms first, then real-valued ones; in each group, smaller-range terms
+      first.
+      2 - Logicalize products of 2 binary terms. Logicalizing means that the
+      product is converted to a conjunction. If the solver does not support it
+      natively (see acc:and), the conjunction is linearized.
+      4 - Logicalize products of >=3 binary terms.
+
+      Default: 1+4. That is, 2-term binary products which are not part of a
+      higher-order binary product, are not logicalized by default.
+
+      Bits 2 or 4 imply bit 1.
 
 cvt:quadcon (passquadcon)
       Convenience option. Set to 0 to disable quadratic constraints. Synonym

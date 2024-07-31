@@ -1,6 +1,23 @@
 # XPRESS Changelog
 
 
+## 20240724
+- Option *acc:_all*
+	- Useful to disable all reformulations (acc:_all=2),
+		or force linearization (acc:_all=0).
+- Option *cvt:prod*     
+  - Controls reformulation of binary products into logical 
+    constraints.
+- Faster input of quadratic expressions.
+
+
+## 20240617
+- *Multi-objective emulator*
+	- obj:multi=2 forces emulation, even if MO natively supported.
+	- Fixed a bug in the objective degradation suffixes
+		.objasbtol, .objreltol.
+
+
 ## 20240606
 - Fix mip:basis (post-solving as fixed MIP),
 	although fix + resolve from AMPL can be faster.

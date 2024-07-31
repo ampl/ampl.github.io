@@ -20,6 +20,13 @@ option "gcg_options". For example:
 
  Options:
 
+acc:_all
+      Solver acceptance level for all constraints and expressions. Value
+      meaning: as described in the specific acc:... options.
+
+      Can be useful to disable all reformulations (acc:_all=2), or force
+      linearization (acc:_all=0.)
+
 acc:lineq
       Solver acceptance level for 'LinConEQ' as flat constraint, default 2:
 
@@ -196,6 +203,22 @@ cvt:pre:eqresult
 
 cvt:pre:unnest
       0/1*: Inline nested expressions, currently Ands/Ors.
+
+cvt:prod (cvt:pre:prod)
+      Product preprocessing flags. Sum of a subset of the following bits:
+
+      1 - Quadratize higher-order products in the following order: integer
+      terms first, then real-valued ones; in each group, smaller-range terms
+      first.
+      2 - Logicalize products of 2 binary terms. Logicalizing means that the
+      product is converted to a conjunction. If the solver does not support it
+      natively (see acc:and), the conjunction is linearized.
+      4 - Logicalize products of >=3 binary terms.
+
+      Default: 1+4. That is, 2-term binary products which are not part of a
+      higher-order binary product, are not logicalized by default.
+
+      Bits 2 or 4 imply bit 1.
 
 cvt:quadcon (passquadcon)
       Convenience option. Set to 0 to disable quadratic constraints. Synonym
@@ -588,9 +611,13 @@ num:sumepsilon (sumepsilon)
       1e-06)
 
 obj:multi (multiobj)
-      0*/1: Whether to use multi-objective optimization.
+      Whether to use multi-objective optimization:
 
-      When obj:multi = 1 and several objectives are present, suffixes
+      0 - Single objective, see option obj:no (default)
+      1 - Multi-objective, solver's native handling if available
+      2 - Multi-objective, force emulation
+
+      When obj:multi>0 and several objectives are present, suffixes
       .objpriority, .objweight, .objreltol, and .objabstol on the objectives
       are relevant. Objectives with greater .objpriority values (integer
       values) have higher priority. Objectives with the same .objpriority are
@@ -599,6 +626,11 @@ obj:multi (multiobj)
       Objectives with positive .objabstol or .objreltol are allowed to be
       degraded by lower priority objectives by amounts not exceeding the
       .objabstol (absolute) and .objreltol (relative) limits.
+
+      Note that with solver's native handling (when obj:multi=1 and
+      supported), some solvers might have special rules for the tolerances,
+      especially for LP, and not allow quadratic objectives. See the solver
+      documentation.
 
 obj:multi:weight (multiobjweight, obj:multi:weights, multiobjweights)
       How to interpret each objective's weight sign:
