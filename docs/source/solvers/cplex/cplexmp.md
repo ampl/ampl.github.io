@@ -278,8 +278,9 @@ cvt:quadcon (passquadcon)
       quadratic terms, then they are linearized.
 
 cvt:quadobj (passquadobj)
-      0/1*: Multiply out and pass quadratic objective terms to the solver, vs.
-      linear approximation.
+      0/1*: Pass quadratic objective terms to the solver. If the solver
+      accepts quadratic constraints, such a constraint will be created with
+      those, otherwise linearly approximated.
 
 cvt:socp (socpmode, socp)
       Second-Order Cone recognition mode:
@@ -451,6 +452,9 @@ obj:no (objno)
       0 - None
       1 - First (default, if available)
       2 - Second (if available), etc.
+
+pre:presolve
+      Whether to run presolve
 
 qp:target (optimalitytarget)
       Type of solution to compute for a QP problem

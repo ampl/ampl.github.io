@@ -1,6 +1,11 @@
 # CPLEXMP Changelog
 
 
+## 20240801
+- Fix a problem that occured when reporting IIS
+- Removed some noise from console output
+
+
 ## 20240724
 - Option *acc:_all*
 	- Useful to disable all reformulations (acc:_all=2),
