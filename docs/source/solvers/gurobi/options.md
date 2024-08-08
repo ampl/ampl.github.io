@@ -328,6 +328,13 @@ alg:networkalg (networkalg)
       0  - No
       1  - Yes.
 
+alg:nlpheur (nlpheur)
+      Use NLP heuristic to find feasible solutions to non-convex quadratic
+      models:
+
+      0 - No
+      1 - Yes (default)
+
 alg:numericfocus (numericfocus, numfocus)
       How much to try detecting and managing numerical issues:
 
@@ -616,8 +623,9 @@ cvt:quadcon (passquadcon)
       quadratic terms, then they are linearized.
 
 cvt:quadobj (passquadobj)
-      0/1*: Multiply out and pass quadratic objective terms to the solver, vs.
-      linear approximation.
+      0/1*: Pass quadratic objective terms to the solver. If the solver
+      accepts quadratic constraints, such a constraint will be created with
+      those, otherwise linearly approximated.
 
 cvt:socp (socpmode, socp)
       Second-Order Cone recognition mode:
