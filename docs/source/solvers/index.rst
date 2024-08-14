@@ -41,11 +41,12 @@ Linear Solvers
 .. [#] MINLP: Gurobi 11 requires the non-default setting `global=1`
 
 
-Non-linear Solvers
+Nonlinear Solvers
 ------------------
 
-"Nonlinear" solvers target convex problems;
-non-convex problems are accepted, but only locally optimal solutions can be returned.
+Nonlinear solvers traditionally target smooth problems with continuous variables.
+However, some solvers accept integer variables, and some target global optimality
+(vs returning only locally optimal solutions for non-convex problems.)
 
 .. csv-table::
    :file: _tables/slv_nonlin.csv
@@ -59,18 +60,6 @@ non-convex problems are accepted, but only locally optimal solutions can be retu
     loqo/index
     minos/index
     snopt/index
-
-
-Global Solvers
---------------
-
-.. csv-table::
-   :file: _tables/slv_glob.csv
-   :header-rows: 1
-
-.. toctree::
-    :hidden:
-
     baron/index
     lgo/index
     lindoglobal/index
