@@ -20,16 +20,15 @@ Linear Solvers
     :hidden:
 
     gurobi/index
-    copt/index
-    cplex/index
-    ilogcp/index
-    highs/index
-    mosek/index
     xpress/index
-    cbc/index
+    cplex/index
+    copt/index
+    mosek/index
+    highs/index
     scip/index
     gcg/index
-
+    cbc/index
+    ilogcp/index
 
 .. csv-table::
    :file: _tables/slv_lin.csv
@@ -55,12 +54,13 @@ However, some solvers accept integer variables, and some target global optimalit
 .. toctree::
     :hidden:
 
-    conopt/index
+    
     knitro/index
+    baron/index
+    snopt/index
     loqo/index
     minos/index
-    snopt/index
-    baron/index
+    conopt/index
     lgo/index
     lindoglobal/index
     octeract/index

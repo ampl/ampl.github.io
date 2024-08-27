@@ -1,10 +1,10 @@
-,(MI)LP,(MI)QP,(MI)QCP,(MI)QCP non-convex,Conic [#]_,MINLP [#]_
-:ref:`gurobi`,|y|,|y|,|y|,|y|,|y|,|y|
-:ref:`copt`,|y|,|y|,|y|,|n|,|y|,|n|
-:ref:`cplex`,|y|,|y|,|y|,|n|,|y|,|n|
-:ref:`highs`,|y|,|y|,|n|,,|n|,
-:ref:`mosek`,|y|,|y|,|y|,|n|,|y|,|n|
-:ref:`xpress`,|y|,|y|,|y|,|y|,|y|,|y|
-:ref:`cbc`,|y|,|y|,|n|,,|n|,
-:ref:`scip`,|y|,|n|,|y|,|y|,|y|,|y|
-:ref:`gcg`,|y|,|n|,|y|,|y|,|y|,|y|
+,LP,MILP,QP,MIQP,(MI)QCP,(MI)QCP non-convex,Conic [#]_,MINLP [#]_
+:ref:`gurobi`,|y|,|y|,|y|,|y|,|y|,|y|,|y|,|y|
+:ref:`xpress`,|y|,|y|,|y|,|y|,|y|,|y|,|y|,|y|
+:ref:`cplex`,|y|,|y|,|y|,|y|,|y|,|n|,|y|,|n|
+:ref:`copt`,|y|,|y|,|y|,|y|,|y|,|n|,|y|,|n|
+:ref:`mosek`,|y|,|y|,|y|,|y|,|y|,|n|,|y|,|n|
+:ref:`highs`,|y|,|y|,|y|,|n|,|n|,|n|,|n|,|n|
+:ref:`scip`,|y|,|y|,|n|,|n|,|y|,|y|,|y|,|y|
+:ref:`gcg`,|y|,|y|,|n|,|n|,|y|,|y|,|y|,|y|
+:ref:`cbc`,|y|,|y|,|n|,|n|,|n|,|n|,|n|,|n|

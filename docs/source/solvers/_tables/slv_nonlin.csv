@@ -1,11 +1,12 @@
-,LP,NLP,integer variables,global
-:ref:`conopt`,|y|,|y|,|n|,|n|
+,LP,NLP,Integer variables,Global
 :ref:`knitro`,|y|,|y|,|y|,|n|
-:ref:`loqo`,|y|,|y|,|n|,|n|
-:ref:`minos`,|y|,|y|,|n|,|n|
-:ref:`snopt`,|y|,|y|,|n|,|n|
 :ref:`baron`,|y|,|y|,|y|,|y|
-:ref:`lgo`,|y|,|y|,|n|,|y|
 :ref:`lindo-global-solver`,|y|,|y|,|y|,|y|
 :ref:`octeract`,|y|,|y|,|y|,|y|
 :ref:`raposa`,|y|,|y|,|y|,|y|
+:ref:`lgo`,|y|,|y|,|n|,|y|
+:ref:`conopt`,|y|,|y|,|n|,|n|
+:ref:`loqo`,|y|,|y|,|n|,|n|
+:ref:`minos`,|y|,|y|,|n|,|n|
+:ref:`snopt`,|y|,|y|,|n|,|n|
+
