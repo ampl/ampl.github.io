@@ -37,7 +37,7 @@ acc:abs
 
 acc:acos
       Solver acceptance level for 'AcosConstraint' as flat constraint, default
-      1:
+      2:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
@@ -45,7 +45,7 @@ acc:acos
 
 acc:acosh
       Solver acceptance level for 'AcoshConstraint' as flat constraint,
-      default 1:
+      default 2:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
@@ -61,7 +61,7 @@ acc:and (acc:forall)
 
 acc:asin
       Solver acceptance level for 'AsinConstraint' as flat constraint, default
-      1:
+      2:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
@@ -69,7 +69,7 @@ acc:asin
 
 acc:asinh
       Solver acceptance level for 'AsinhConstraint' as flat constraint,
-      default 1:
+      default 2:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
@@ -77,7 +77,7 @@ acc:asinh
 
 acc:atan
       Solver acceptance level for 'AtanConstraint' as flat constraint, default
-      1:
+      2:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
@@ -85,7 +85,7 @@ acc:atan
 
 acc:atanh
       Solver acceptance level for 'AtanhConstraint' as flat constraint,
-      default 1:
+      default 2:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
@@ -93,7 +93,7 @@ acc:atanh
 
 acc:cos
       Solver acceptance level for 'CosConstraint' as flat constraint, default
-      1:
+      2:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
@@ -101,7 +101,7 @@ acc:cos
 
 acc:cosh
       Solver acceptance level for 'CoshConstraint' as flat constraint, default
-      1:
+      2:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
@@ -109,7 +109,7 @@ acc:cosh
 
 acc:div
       Solver acceptance level for 'DivConstraint' as flat constraint, default
-      1:
+      2:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
@@ -117,7 +117,7 @@ acc:div
 
 acc:exp
       Solver acceptance level for 'ExpConstraint' as flat constraint, default
-      1:
+      2:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
@@ -125,7 +125,7 @@ acc:exp
 
 acc:expa (acc:expA)
       Solver acceptance level for 'ExpAConstraint' as flat constraint, default
-      1:
+      2:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
@@ -178,7 +178,7 @@ acc:linle
 
 acc:log
       Solver acceptance level for 'LogConstraint' as flat constraint, default
-      1:
+      2:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
@@ -210,7 +210,7 @@ acc:or (acc:exists)
 
 acc:pow
       Solver acceptance level for 'PowConstraint' as flat constraint, default
-      1:
+      2:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
@@ -239,7 +239,7 @@ acc:quadle
 
 acc:sin
       Solver acceptance level for 'SinConstraint' as flat constraint, default
-      1:
+      2:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
@@ -247,7 +247,7 @@ acc:sin
 
 acc:sinh
       Solver acceptance level for 'SinhConstraint' as flat constraint, default
-      1:
+      2:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
@@ -271,7 +271,7 @@ acc:sos2
 
 acc:tan
       Solver acceptance level for 'TanConstraint' as flat constraint, default
-      1:
+      2:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
@@ -279,7 +279,7 @@ acc:tan
 
 acc:tanh
       Solver acceptance level for 'TanhConstraint' as flat constraint, default
-      1:
+      2:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
@@ -498,6 +498,28 @@ bar:gap (bargaptarget)
 bar:gapstop (bargapstop)
       Barrier method convergence tolerance on the relative duality gap;
       default = 0
+
+bar:hgextrapolate (barhgextrapolate)
+      Extrapolation parameter for the hybrid gradient algorithm; default =
+      0.99
+
+bar:hgmaxrestarts (barhgmaxrestarts)
+      Maximum number of restarts in the hybrid gradient algorithm; default
+      =500
+
+bar:hgops (barhgops)
+      Control option for hybrid gradient (default = 8); sum of:
+
+      1  - use an asymmetric average for the primal averaging
+      2  - use the 1-norm of the coefficient matrix in normalizing the
+           initial solution
+      4  - use the 2-norm of the coefficient matrix in normalizing the
+           initial solution
+      8  - use the infinity norm of the coefficient matrix in normalizing the
+           initial solution
+      16 - take the square root of omega
+      32 - contract omega towards 1 if the infeasibility is small enough
+      64 - omega is based on the infeasibility
 
 bar:indeflimit (barindeflimit)
       Maximum indefinite factorizations to allow in the barrier algorithm for
@@ -756,8 +778,9 @@ cvt:quadcon (passquadcon)
       quadratic terms, then they are linearized.
 
 cvt:quadobj (passquadobj)
-      0/1*: Multiply out and pass quadratic objective terms to the solver, vs.
-      linear approximation.
+      0/1*: Pass quadratic objective terms to the solver. If the solver
+      accepts quadratic constraints, such a constraint will be created with
+      those, otherwise linearly approximated.
 
 cvt:socp (socpmode, socp)
       Second-Order Cone recognition mode:

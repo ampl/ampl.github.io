@@ -223,7 +223,7 @@ that is compatible with solvers that read .nl files, which means it works with a
 [AMPL solvers](solvers). You can use AMPL solvers with Pyomo as follows:
 
 Install modules for HiGHS, CBC, Couenne, Bonmin, Ipopt, SCIP, and GCG:
-```python
+```bash
 !pip install amplpy pyomo -q
 !python -m amplpy.modules install coin highs scip gcg -q  # Install HiGHS, CBC, Couenne, Bonmin, Ipopt, SCIP, and GCG
 ```

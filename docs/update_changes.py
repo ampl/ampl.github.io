@@ -7,7 +7,7 @@ SOLVERS = {
     "BARON": "baron",
     "CONOPT": "conopt",
     "CPLEX": "cplex",
-    "CPLEXMP": "cplexmp",
+    "CPLEXASL": "cplexasl",
     "ILOGCP": "ilogcp",
     "GUROBI": "gurobi",
     "KNITRO": "knitro",

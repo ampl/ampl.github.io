@@ -76,7 +76,7 @@ options.md
 ```
 ```{toctree}
 :hidden:
-cplexmp.md
+cplexasl.md
 ```
 
 ## Changelog
@@ -86,5 +86,5 @@ changes.md
 ```
 ```{toctree}
 :hidden:
-changesmp.md
+changesasl.md
 ```

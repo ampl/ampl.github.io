@@ -1,6 +1,13 @@
 # XPRESS Changelog
 
 
+## 20240823
+- Updated to Xpress 43.01.03
+- Added hybrid gradient algorithm (set *bar:alg* to 4)
+- Option *bar:cpuplatform* defaults to -2. To replicate the previous
+  versions behaviour, set to -1.
+
+
 ## 20240724
 - Option *acc:_all*
 	- Useful to disable all reformulations (acc:_all=2),

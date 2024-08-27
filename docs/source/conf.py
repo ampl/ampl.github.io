@@ -149,12 +149,13 @@ for solver in os.listdir(solvers_dir):
     redirects["solvers/options/x-gurobi.html"] = "../gurobi/options.html"
     redirects["solvers/options/gurobiasl.html"] = "../gurobi/gurobiasl.html"
     redirects["solvers/options/xpressasl.html"] = "../xpress/xpressasl.html"
+    redirects["solvers/cplex/cplexmp.html"] = "options.html"
     if os.path.isdir(os.path.join(solvers_dir, solver)):
         redirects[f"solvers/{solver}"] = f"{solver}/index.html"
         redirects[f"solvers/options/{solver}"] = f"../{solver}/options.html"
-        redirects[
-            f"solver_options/{solver}_options"
-        ] = f"../solvers/{solver}/options.html"
+        redirects[f"solver_options/{solver}_options"] = (
+            f"../solvers/{solver}/options.html"
+        )
 redirects["ampl/python/colab/index.html"] = "../colab.html"
 redirects["solvers/solver_options/cbc_options.html"] = "../cbc/options.html"
 redirects["solver_options.html"] = "solvers/index.html"
