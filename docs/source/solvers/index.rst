@@ -38,6 +38,7 @@ Linear Solvers
 
 .. [#] Conic programming: Mosek supports SOCP and exponential cones, other solvers only SOCP
 .. [#] MINLP: Gurobi 11 requires the non-default setting `global=1`
+.. [3] Capability added by automatic reformulations in the `MP Library <https://mp.ampl.com>`_.
 
 
 Nonlinear Solvers
