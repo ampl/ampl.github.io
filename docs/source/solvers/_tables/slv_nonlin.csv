@@ -9,4 +9,7 @@
 :ref:`loqo`,|y|,|y|,|n|,|n|
 :ref:`minos`,|y|,|y|,|n|,|n|
 :ref:`snopt`,|y|,|y|,|n|,|n|
+:ref:`ipopt`,|y|,|y|,|n|,|n|
+:ref:`bonmin`,|y|,|y|,|y|,|n|
+:ref:`couenne`,|y|,|y|,|y|,|y|
 

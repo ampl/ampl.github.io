@@ -66,6 +66,9 @@ However, some solvers accept integer variables, and some target global optimalit
     lindoglobal/index
     octeract/index
     raposa/index
+    ipopt/index
+    bonmin/index
+    couenne/index
 
 
 Constraint Programming solvers
