@@ -5,6 +5,6 @@
 :ref:`copt`,|y|,|y|,|y|,|y|,|y|,|n|,|y|,|n|
 :ref:`mosek`,|y|,|y|,|y|,|y|,|y|,|n|,|y|,|n|
 :ref:`highs`,|y|,|y|,|y|,|n|,|n|,|n|,|n|,|n|
-:ref:`scip`,|y|,|y|,|y| [3]_,|y| [3]_,|y|,|y|,|y|,|y|
-:ref:`gcg`,|y|,|y|,|y| [3]_,|y| [3]_,|y|,|y|,|y|,|y|
-:ref:`cbc`,|y|,|y|,|n|,|n|,|n|,|n|,|n|,|n|
+:ref:`scip`,|y|,|y|,|y|,|y|,|y|,|y|,|y|,|y|
+:ref:`gcg`,|y|,|y|,|y|,|y|,|y|,|y|,|y|,|y|
+:ref:`cbc`,|y|,|y|,|y|,|y|,|n|,|n|,|n|,|n|
