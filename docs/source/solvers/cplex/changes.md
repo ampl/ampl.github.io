@@ -1,5 +1,11 @@
 # CPLEX Changelog
 
+
+## 20240828
+- Options `primalopt`, `dualopt`, `baropt`, `siftopt`, `netopt`, `bendersopt` are now
+  flags (e.g. they have to be set without a value)
+
+
 ## 20240823
 - CPLEX MP driver is now the default. To use the previous ASL-based driver set:
   `option solver cplexasl;`

@@ -97,7 +97,5 @@ wantsol          solution report without -AMPL: sum of
                  8 ==> do not print solution message
 
 zero_initsol     start at the origin
-
-
 ```
 

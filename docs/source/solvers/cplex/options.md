@@ -197,7 +197,7 @@ alg:droptol (droptol)
       If droptol > 0 is specified, linear constraint and objective
       coefficients less than droptol in magnitude are treated as zero.
 
-alg:dual (dual)
+alg:dual (dual, dualopt)
       Solve (MIP root) LPs by dual simplex method.
 
 alg:feasrelax (feasrelax)
@@ -248,10 +248,10 @@ alg:method (method, lpmethod, simplex, mipstartalg)
       is treated as 0 and 6 as 4. For MIQCP problems(quadratic objective &
       constraints), all settings are treated as 4.
 
-alg:network (network)
+alg:network (network, netopt)
       Solve (substructure of) (MIP node) LPs by network simplex method.
 
-alg:primal (primal)
+alg:primal (primalopt)
       Solve (MIP root) LPs by primal simplex method.
 
 alg:rays (rays)
@@ -269,7 +269,7 @@ alg:relax (relax)
 alg:rhspen (rhspen)
       See alg:feasrelax.
 
-alg:sifting (sifting)
+alg:sifting (sifting, siftopt, siftingopt)
       Solve (MIP root) LPs by sifting method.
 
 alg:start (warmstart)
@@ -1167,13 +1167,20 @@ tech:writemipstart (writemipstart)
       The name of a file to which the MIP starting guess(if any) is written in
       ".mst" format.
 
-tech:writemodel (writeprob, writemodel, tech:exportfile)
+tech:writemodel (tech:writeprob, writeprob, writemodel, tech:exportfile)
       Specifies files where to export the model before solving (repeat the
       option for several files.) File name extensions can be ".lp[.7z]",
       ".mps", etc.
+      To write a model during iterative solve (e.g., with obj:multi=2), use
+      tech:writemodel:index.
 
       Cplex-specific file name extensions are ".sav", ".mps", ".lp", ".rmp",
       ".rew", ".rlp"
+
+tech:writemodel:index (tech:writeprob:index, writeprobindex, writemodelindex)
+      During iterative solve (e.g., with obj:multi=2), the iteration before
+      which to write solver model. 0 means before iteration is initialized;
+      positive value - before solving that iteration. Default 0.
 
 tech:writemodelonly (justwriteprob, justwritemodel)
       Specifies files where to export the model, no solving (option can be
@@ -1183,6 +1190,5 @@ tech:writesolution (writesol, writesolution)
       Specifies the names of files where to export the solution and/or other
       result files in solver's native formats. Option can be repeated. File
       name extensions can be ".sol[.tar.gz]", ".json", ".bas", ".ilp", etc.
-
 ```
 

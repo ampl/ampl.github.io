@@ -1528,7 +1528,5 @@ zerohalfcuts           Whether to generate zero-half cuts for MIP problems:
                                generating until new cuts are not helpful
                            1 = generate zero-half cuts moderately
                            2 = generate zero-half cuts aggressively.
-
-
 ```
 

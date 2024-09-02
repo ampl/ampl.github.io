@@ -143,7 +143,5 @@ wantsol    solution report without -AMPL: sum of
                 2 ==> print primal variable values
                 4 ==> print dual variable values
                 8 ==> do not print solution message
-
-
 ```
 

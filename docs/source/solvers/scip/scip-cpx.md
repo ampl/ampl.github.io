@@ -807,6 +807,5 @@ tech:wantsol (wantsol)
 
 tech:writegraph (writegraph, exportgraph)
       File to export conversion graph. Format: JSON Lines.
-
 ```
 

@@ -262,8 +262,9 @@ cvt:quadcon (passquadcon)
       quadratic terms, then they are linearized.
 
 cvt:quadobj (passquadobj)
-      0/1*: Multiply out and pass quadratic objective terms to the solver, vs.
-      linear approximation.
+      0/1*: Pass quadratic objective terms to the solver. If the solver
+      accepts quadratic constraints, such a constraint will be created with
+      those, otherwise linearly approximated.
 
 cvt:socp (socpmode, socp)
       Second-Order Cone recognition mode:
@@ -483,6 +484,10 @@ tech:debug (debug)
       0*/1: whether to assist testing & debugging, e.g., by outputting
       auxiliary information.
 
+tech:logfile (logfile)
+      Log file name. Note that if outlev is set to 0, there will be no output
+      written.
+
 tech:optionfile (optionfile, option:file)
       Name of an AMPL solver option file to read (surrounded by 'single' or
       "double" quotes if the name contains blanks). Lines that start with #
@@ -512,7 +517,7 @@ tech:optionnativewrite (optionnativewrite, tech:param:write, param:write)
       if the name contains blanks) to be written.
 
 tech:outlev (outlev)
-      0*/1: Whether to write mosek log lines to stdout.
+      0*/1: Whether to write mosek log lines to stdout and to the logfile.
 
 tech:seed (seed)
       Random number seed (default 42), used for randomization in the
@@ -546,14 +551,20 @@ tech:wantsol (wantsol)
 tech:writegraph (cvt:writegraph, writegraph, exportgraph)
       File to export conversion graph. Format: JSON Lines.
 
-tech:writemodel (writeprob, writemodel, tech:exportfile)
+tech:writemodel (tech:writeprob, writeprob, writemodel, tech:exportfile)
       Specifies files where to export the model before solving (repeat the
       option for several files.) File name extensions can be ".lp[.7z]",
       ".mps", etc.
+      To write a model during iterative solve (e.g., with obj:multi=2), use
+      tech:writemodel:index.
+
+tech:writemodel:index (tech:writeprob:index, writeprobindex, writemodelindex)
+      During iterative solve (e.g., with obj:multi=2), the iteration before
+      which to write solver model. 0 means before iteration is initialized;
+      positive value - before solving that iteration. Default 0.
 
 tech:writemodelonly (justwriteprob, justwritemodel)
       Specifies files where to export the model, no solving (option can be
       repeated.) File extensions can be ".dlp", ".mps", etc.
-
 ```
 

@@ -273,6 +273,5 @@ workers
       Number of workers to run in parallel to solve a problem. In addition to
       numeric values this option accepts the value "auto" since CP Optimizer
       version 12.3. Default = "auto".
-
 ```
 

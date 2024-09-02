@@ -273,6 +273,5 @@ wantsol                           Solution report without -AMPL: sum of
 xpresslibname                     Name of dynamic Xpress library
 xtol                              Stepsize stopping tolerance
 xtol_iters                        Stop based on small change in variables
-
 ```
 

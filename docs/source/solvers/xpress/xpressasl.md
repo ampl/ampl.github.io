@@ -1408,7 +1408,5 @@ writeprob          Name of file to which the problem is written
                    in a format determined by the name's suffix:
                         .mps = MPS file;
                         .lp = LP file.
-
-
 ```
 

@@ -70,3 +70,5 @@ warm_start_bound_push             Enables to specify how much should variables s
 warm_start_init_point             Enables to specify bound multiplier values
 warm_start_mult_bound_push        Enables to specify how much should bound multipliers should be pushed inside the feasible region
 watchdog_shortened_iter_trigger   Trigger counter for watchdog procedure
+```
+

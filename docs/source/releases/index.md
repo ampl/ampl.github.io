@@ -8,7 +8,7 @@
 - [**CBC** Changelog (latest: **20240724**)](../solvers/cbc/changes.md)
 - [**CONOPT** Changelog (latest: **20240201**)](../solvers/conopt/changes.md)
 - [**COPT** Changelog (latest: **20240724**)](../solvers/copt/changes.md)
-- [**CPLEX** Changelog (latest: **20240823**)](../solvers/cplex/changes.md)
+- [**CPLEX** Changelog (latest: **20240828**)](../solvers/cplex/changes.md)
 - [**CPLEXASL** Changelog (latest: **20230228**)](../solvers/cplex/changesasl.md)
 - [**GCG** Changelog (latest: **20240115**)](../solvers/gcg/changes.md)
 - [**GUROBI** Changelog (latest: **20240808**)](../solvers/gurobi/changes.md)
@@ -19,7 +19,7 @@
 - [**LOQO** Changelog (latest: **20210410**)](../solvers/loqo/changes.md)
 - [**Lindo Global** Changelog (latest: **20210406**)](../solvers/lindoglobal/changes.md)
 - [**MINOS** Changelog (latest: **20211109**)](../solvers/minos/changes.md)
-- [**MOSEK** Changelog (latest: **20240724**)](../solvers/mosek/changes.md)
+- [**MOSEK** Changelog (latest: **20240901**)](../solvers/mosek/changes.md)
 - [**SCIP** Changelog (latest: **20240121**)](../solvers/scip/changes.md)
 - [**SNOPT** Changelog (latest: **20211109**)](../solvers/snopt/changes.md)
 - [**XPRESS** Changelog (latest: **20240823**)](../solvers/xpress/changes.md)
@@ -32,6 +32,10 @@ ampl.md
 ```
 
 
+## 20240901
+- [MOSEK](../solvers/mosek/changes.md#20240901)
+## 20240828
+- [CPLEX](../solvers/cplex/changes.md#20240828)
 ## 20240823
 - [CPLEX](../solvers/cplex/changes.md#20240823)
 - [XPRESS](../solvers/xpress/changes.md#20240823)

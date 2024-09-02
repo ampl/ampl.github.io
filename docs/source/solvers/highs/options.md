@@ -570,6 +570,5 @@ tech:writesolution (writesol, writesolution)
       Specifies the names of files where to export the solution and/or other
       result files in solver's native formats. Option can be repeated. File
       name extensions can be ".sol[.tar.gz]", ".json", ".bas", ".ilp", etc.
-
 ```
 

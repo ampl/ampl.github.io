@@ -1,6 +1,10 @@
 # MOSEK Changelog
 
 
+## 20240901
+- Option *tech:logfile* to write Mosek's output to a log file
+
+
 ## 20240724
 - Option *acc:_all*
 	- Useful to disable all reformulations (acc:_all=2),

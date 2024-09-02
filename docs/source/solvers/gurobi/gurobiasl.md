@@ -944,7 +944,5 @@ zerohalfcuts     zero-half cuts:  Overrides "cuts"; choices as for "cuts".
 zeroobjnodes     Number of nodes to explore at the root MIP node if no other
                  heuristic has found a feasible solution.  Default = -1
                  (automatic choice).
-
-
 ```
 

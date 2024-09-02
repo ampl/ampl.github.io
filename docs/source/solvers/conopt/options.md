@@ -52,6 +52,5 @@ workfactor   if > 1, multiply memory allocation by this much
 workmeg      megabytes of memory CONOPT should allocate:
 		0 (default) ==> CONOPT estimates the memory it needs
 		> 0 ==> that many megabytes.
-
 ```
 
