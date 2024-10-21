@@ -1,0 +1,87 @@
+/* This file is intentionally left blank to override the stylesheet of the
+parent theme via theme.conf. The parent style we import directly in theme.css */
+
+.title {
+   color: #326E83;
+   font-weight: 600;
+}
+
+.navbar-expand-lg>.container,
+.navbar-expand-lg>.container-fluid,
+.navbar-expand-lg>.container-lg,
+.navbar-expand-lg>.container-md,
+.navbar-expand-lg>.container-sm,
+.navbar-expand-lg>.container-xl {
+   /* keep padding on mobile */
+   padding-right: 16px;
+   padding-left: 16px;
+}
+
+.navbar {
+   font-size: 15px;
+}
+
+code {
+   font-size: 100%;
+}
+
+/*.nav-link {
+   font-weight: 400;
+}*/
+
+:root {
+   /* From https://systemfontstack.com/ */
+   --pst-font-family-base: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif;
+   --pst-font-family-heading: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif;
+   --pst-font-family-monospace: Courier;
+   --pst-font-size-base: 16px;
+}
+
+body {
+   font-weight: 300;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+   font-weight: 600;
+}
+
+.dropdown-header {
+   margin-top: 0px;
+   padding-left: 10px;
+}
+
+.dropdown-item {
+   font-weight: 200;
+   padding: 1px 1.5rem;
+}
+
+/* make scrollbar visible */
+/* ::-webkit-scrollbar {
+   -webkit-appearance: none;
+   width: 7px;
+} 
+::-webkit-scrollbar-thumb {
+   border-radius: 4px;
+   background-color: rgba(0, 0, 0, .5);
+   box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+} */
+
+/* scrollable navbar on mobile */
+.navbar-collapse.collapse.show {
+   max-height: 90vh;
+   overflow-x: hidden;
+   overflow-y: scroll;
+   padding-bottom: 10px;
+}
+
+#navbar-icon-links i.bi {
+   vertical-align: middle;
+   font-style: normal;
+   font-size: 1.5rem;
+   line-height: 1.25;
+}
