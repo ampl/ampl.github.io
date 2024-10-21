@@ -1,2 +1,5 @@
-include README.md CHANGELOG.md LICENSE requirements.txt
-
+include LICENSE
+include README.md
+recursive-include ampl_sphinx_theme/static *
+recursive-include ampl_shinx_theme/_templates *
+include ampl_sphinx_theme/theme.conf

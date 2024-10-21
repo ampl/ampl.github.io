@@ -21,7 +21,7 @@ def ls_dir(base_dir):
 
 setup(
     name="ampl_sphinx_theme",
-    version="0.0.0a28",
+    version="0.0.0a29",
     description="AMPL Sphinx Theme",
     long_description=__doc__,
     license="BSD-3",
@@ -53,7 +53,9 @@ setup(
             "ampl_sphinx_theme = ampl_sphinx_theme",
         ]
     },
-    install_requires=open("requirements.txt").read().split("\n"),
+    install_requires=[
+        'pydata-sphinx-theme>=0.15.4',
+    ],
     packages=["ampl_sphinx_theme"],
     package_data={"": ls_dir("ampl_sphinx_theme/")},
 )
