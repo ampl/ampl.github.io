@@ -58,6 +58,7 @@ setup(
         "sphinx==8.1.3",
         "sphinx-tabs==3.4.7",
         "myst_parser==4.0.0",
+        "myst-nb==1.1.2",
         "sphinx-reredirects==0.1.5",
         "sphinx_design==0.6.1",
         "sphinx-autobuild==2024.10.3",
