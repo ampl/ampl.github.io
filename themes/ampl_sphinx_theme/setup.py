@@ -63,6 +63,7 @@ setup(
         "sphinx_design==0.6.1",
         "sphinx-autobuild==2024.10.3",
         "sphinxcontrib-googleanalytics==0.4",
+        "breathe==4.33.1",
     ],
     packages=["ampl_sphinx_theme"],
     package_data={"": ls_dir("ampl_sphinx_theme/")},
