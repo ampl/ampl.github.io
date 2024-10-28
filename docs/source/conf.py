@@ -23,8 +23,10 @@ extensions = [
     "sphinx.ext.autodoc",
     "sphinx_reredirects",
     "sphinx_tabs.tabs",
+    "sphinxcontrib.googleanalytics",
 ]
-myst_enable_extensions = ["colon_fence"]
+myst_enable_extensions = ["colon_fence", "dollarmath", "amsmath"]
+googleanalytics_id = "G-JSGJJG9WRM"
 
 # Generate anchors for markdown files
 myst_heading_anchors = 3
