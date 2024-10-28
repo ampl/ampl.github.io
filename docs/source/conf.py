@@ -11,7 +11,7 @@ import os
 # -- General configuration -----------------------------------------------------
 
 # If your documentation needs a minimal Sphinx version, state it here.
-needs_sphinx = "4.2.0"
+needs_sphinx = "8.1.3"
 
 # Add any Sphinx extension module names here, as strings. They can be extensions
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
@@ -93,41 +93,20 @@ html_theme = "ampl_sphinx_theme"
 # documentation.
 # html_theme_options = {}
 html_theme_options = {
-    "logo_link": "index",
     "icon_links": [
         {
             "name": "GitHub",
             "url": "https://github.com/ampl/",
             "icon": "fab fa-github fa-fw",
         },
-        # {
-        #     "name": "AMPL Projects",
-        #     "url": "https://ampl.github.io",
-        #     "icon": "fas fa-project-diagram fa-fw",
-        #     "target": "_self",
-        # },
-        {
-            "name": "AMPL Portal",
-            "url": "https://portal.ampl.com",
-            "icon": "fas fa-sign-in-alt fa-fw",
-            "target": "_self",
-        },
-        {
-            "name": "AMPL.com",
-            "url": "https://ampl.com",
-            "icon": "fas fa-home fa-fw",
-            "target": "_self",
-        },
     ],
     "collapse_navigation": True,
-    "external_links": [
-        # {"name": "ampl.github.io", "url": "https://ampl.github.io"},
-    ],
+    # "external_links": [
+    #     {"name": "ampl.github.io", "url": "https://ampl.github.io"},
+    # ],
     "logo_text": "Development",
 }
-##html_context = {
-#    "theme_logo_text": "Development",
-# }
+html_context = {"default_mode": "light"}
 
 html_baseurl = "https://dev.ampl.com"
 
