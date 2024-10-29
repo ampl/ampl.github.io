@@ -56,7 +56,6 @@ setup(
     install_requires=[
         "pydata-sphinx-theme==0.16.0",
         "sphinx==8.1.3",
-        "sphinx-tabs==3.4.7",
         "myst_parser==4.0.0",
         "myst-nb==1.1.2",
         "sphinx-reredirects==0.1.5",
