@@ -14,9 +14,9 @@ These services are available free of charge through any Internet connection. The
 
 ```{eval-rst}
 
-.. tabs::
+.. tab-set::
 
-   .. tab:: AMPL
+   .. tab-item:: AMPL
 
         .. code-block:: ampl
 
@@ -24,7 +24,7 @@ These services are available free of charge through any Internet connection. The
             ampl: option kestrel_options 'option1=value1 option2=value2'; # specify options
             ampl: solve; # solve the problem
 
-   .. tab:: Python
+   .. tab-item:: Python
    
         How to install using `amplpy <https://amplpy.ampl.com>`_:
 
@@ -50,7 +50,7 @@ These services are available free of charge through any Internet connection. The
 
         Learn more about what we have to offer to implement and deploy `Optimization in Python <https://ampl.com/python/>`_.
 
-   .. tab:: Other APIs
+   .. tab-item:: Other APIs
 
         `AMPL APIs <https://ampl.com/apis/>`_ are interfaces that allow developers to access the features of the AMPL interpreter from within a programming language. We have APIs available for:
 

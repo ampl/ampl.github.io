@@ -13,9 +13,9 @@ IBM ILOG CPLEX has been a well known and widely used large-scale solver for over
 
 ```{eval-rst}
 
-.. tabs::
+.. tab-set::
 
-   .. tab:: AMPL
+   .. tab-item:: AMPL
 
         CPLEX options consist of a single-word option, or an option followed by an = sign and a value; a space may be used as a separator in place of the =.
 
@@ -25,7 +25,7 @@ IBM ILOG CPLEX has been a well known and widely used large-scale solver for over
             ampl: option cplex_options 'option1=value1 option2=value2'; # specify options
             ampl: solve; # solve the problem
 
-   .. tab:: Python
+   .. tab-item:: Python
    
         How to install using `amplpy <https://amplpy.ampl.com>`_:
 
@@ -51,7 +51,7 @@ IBM ILOG CPLEX has been a well known and widely used large-scale solver for over
 
         Learn more about what we have to offer to implement and deploy `Optimization in Python <https://ampl.com/python/>`_.
 
-   .. tab:: Other APIs
+   .. tab-item:: Other APIs
 
         `AMPL APIs <https://ampl.com/apis/>`_ are interfaces that allow developers to access the features of the AMPL interpreter from within a programming language. We have APIs available for:
 

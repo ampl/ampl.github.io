@@ -13,9 +13,9 @@ Artelys Knitro is an especially powerful nonlinear solver, offering a range of s
 
 ```{eval-rst}
 
-.. tabs::
+.. tab-set::
 
-   .. tab:: AMPL
+   .. tab-item:: AMPL
 
         .. code-block:: ampl
 
@@ -23,7 +23,7 @@ Artelys Knitro is an especially powerful nonlinear solver, offering a range of s
             ampl: option knitro_options 'option1=value1 option2=value2'; # specify options
             ampl: solve; # solve the problem
 
-   .. tab:: Python
+   .. tab-item:: Python
    
         How to install using `amplpy <https://amplpy.ampl.com>`_:
 
@@ -49,7 +49,7 @@ Artelys Knitro is an especially powerful nonlinear solver, offering a range of s
 
         Learn more about what we have to offer to implement and deploy `Optimization in Python <https://ampl.com/python/>`_.
 
-   .. tab:: Other APIs
+   .. tab-item:: Other APIs
 
         `AMPL APIs <https://ampl.com/apis/>`_ are interfaces that allow developers to access the features of the AMPL interpreter from within a programming language. We have APIs available for:
 

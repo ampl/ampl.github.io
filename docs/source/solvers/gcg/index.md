@@ -18,9 +18,9 @@ No user interaction is necessary, thus GCG provides decomposition-based MIP solv
 
 ```{eval-rst}
 
-.. tabs::
+.. tab-set::
 
-   .. tab:: AMPL
+   .. tab-item:: AMPL
 
         .. code-block:: ampl
 
@@ -28,7 +28,7 @@ No user interaction is necessary, thus GCG provides decomposition-based MIP solv
             ampl: option gcg_options 'option1=value1 option2=value2'; # specify options
             ampl: solve; # solve the problem
 
-   .. tab:: Python
+   .. tab-item:: Python
    
         How to install using `amplpy <https://amplpy.ampl.com>`_:
 
@@ -54,7 +54,7 @@ No user interaction is necessary, thus GCG provides decomposition-based MIP solv
 
         Learn more about what we have to offer to implement and deploy `Optimization in Python <https://ampl.com/python/>`_.
 
-   .. tab:: Other APIs
+   .. tab-item:: Other APIs
 
         `AMPL APIs <https://ampl.com/apis/>`_ are interfaces that allow developers to access the features of the AMPL interpreter from within a programming language. We have APIs available for:
 

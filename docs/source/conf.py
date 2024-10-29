@@ -22,7 +22,6 @@ extensions = [
     "sphinx.ext.mathjax",
     "sphinx.ext.autodoc",
     "sphinx_reredirects",
-    "sphinx_tabs.tabs",
     "sphinxcontrib.googleanalytics",
 ]
 myst_enable_extensions = ["colon_fence", "dollarmath", "amsmath"]
