@@ -12,6 +12,13 @@ an easy way to switch between them.
 .. |n| unicode:: U+274C
    :trim:
 
+.. |mp| raw:: html
+
+   <a href="https://mp.ampl.com/model-guide.html" target="_blank">MP</a>
+
+.. |br| raw:: html
+
+   <br />
 
 Linear Solvers
 --------------
@@ -36,7 +43,6 @@ Linear Solvers
 .. rubric:: Footnotes
 
 .. [#] Conic programming: Mosek supports SOCP and exponential cones, other solvers only SOCP
-.. [#] MINLP: Gurobi 11 requires the non-default setting `global=1`
 
 Nonlinear Solvers
 ------------------
