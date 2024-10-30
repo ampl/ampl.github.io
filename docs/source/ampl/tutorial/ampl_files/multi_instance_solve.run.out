@@ -1,0 +1,19 @@
+
+cbc 2.10.7: cbc 2.10.7: optimal solution; objective 15
+0 simplex iterations
+
+Solution with: cbc
+make['lemonade'] = 6
+make['iced_tea'] = 8
+total_profit = $15.00
+
+
+HiGHS 1.5.1: HiGHS 1.5.1: optimal solution; objective 16.5
+1 simplex iterations
+1 branching nodes
+
+Solution with: highs
+make['mulled_wine'] = 4
+make['hot_tea'] = 7
+total_profit = $16.50
+

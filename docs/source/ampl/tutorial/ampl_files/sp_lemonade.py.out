@@ -1,0 +1,8 @@
+HiGHS 1.5.1: HiGHS 1.5.1: optimal solution; objective 15
+0 simplex iterations
+0 barrier iterations
+          value
+item           
+lemonade    6.0
+iced_tea    8.0
+profit     15.0

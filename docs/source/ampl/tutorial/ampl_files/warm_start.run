@@ -1,0 +1,33 @@
+# Load model
+model mulled_wine.mod;
+
+# Relax integrality and solve the problem as an LP
+option relax_integrality 1;
+option solver "highs";
+printf "LP solve:\n";
+solve;
+
+# Print solution
+printf "\nLP solution:\n";
+include print_solution.run
+
+# Warm start by assigning rounded values to non-integers
+for {i in 1.._nvars} {
+    if _var[i] != round(_var[i]) then {
+        let _var[i] := round(_var[i]);
+    }
+}
+
+# Display updated values
+printf "\nWARM START values:\n";
+display _varname, _var; 
+
+# Enforce integrality and solve the problem as an IP
+option relax_integrality 0;
+option solver "cbc";
+printf "\nIP solve:\n";
+solve;
+
+# Print solution
+printf "\nIP solution:\n";
+include print_solution.run

@@ -1,0 +1,25 @@
+model mulled_wine.mod;
+
+option relax_integrality 1;
+option solver "highs";
+
+solve;
+
+printf "\n\nLP solution:\n";
+include print_solution.run
+
+param my_guess{i in 1..2 } := if i == 1 then round(mulled_wine.val) else round(hot_tea.val);
+
+for {i in 1..2} {
+    let _var[i] := my_guess[i];
+}
+
+printf "\n\nUpdated values:\n";
+display _varname, _var; 
+
+option relax_integrality 0;
+option solver "cbc";
+solve;
+
+printf "\n\nIP solution:\n";
+include print_solution.run

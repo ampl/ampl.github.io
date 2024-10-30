@@ -9,6 +9,7 @@ AMPL Resoures
 
     introduction
     install
+    tutorial/index
     free
     apis
     book

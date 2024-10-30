@@ -1,0 +1,7 @@
+# Print solution
+printf "Solution with: %s\n", $solver; 
+for {i in 1 .. _nvars} {
+    print _varname[i], "=",  _var[i];
+}
+printf "%s = $%.2f\n", _objname[1], _obj[1];
+print;

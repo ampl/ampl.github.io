@@ -1,0 +1,5 @@
+# Set solver and solve
+print; # Add space for output formatting
+option solver cbc; 
+solve;
+print; # Add space for output formatting

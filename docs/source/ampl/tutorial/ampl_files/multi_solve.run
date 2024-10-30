@@ -1,0 +1,20 @@
+# Load model
+model lemonade.mod
+
+# Run scripts
+include cbc_solve.run
+include print_solution.run
+include highs_solve.run
+include print_solution.run
+
+# Reset for new model
+reset;
+
+# Load new model
+model mulled_wine.mod
+
+# Run scripts again
+include cbc_solve.run
+include print_solution.run
+include highs_solve.run
+include print_solution.run

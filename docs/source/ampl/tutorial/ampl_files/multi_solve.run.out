@@ -1,0 +1,13 @@
+
+cbc 2.10.7: cbc 2.10.7: optimal solution; objective 15
+0 simplex iterations
+
+Solution with: cbc
+lemonade = 6
+iced_tea = 8
+profit = $15.00
+
+
+HiGHS 1.5.1: error running highs:
+	termination code 139; core file written
+<BREAK>

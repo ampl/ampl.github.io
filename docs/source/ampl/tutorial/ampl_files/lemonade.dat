@@ -1,0 +1,26 @@
+# Products (columns of constraint matrix, cardinality equals number of variables)
+set PROD := lemonade iced_tea;
+
+# Ingredients (rows of constraint matrix, cardinality equals number of constraints)
+set INGR := 
+lemon 
+tea_bag 
+sugar;
+
+# Permit fee
+param fee := 2;
+
+# Objective function parameters
+param profit_per_product := lemonade 1.5 iced_tea 1.0;
+
+# Constraint right hand side values
+param limit := 
+lemon     10 
+tea_bag    8 
+sugar     20;
+
+# Constraint matrix values
+param usage:  lemonade      iced_tea :=
+lemon         1.0           0.0   
+tea_bag       0.0           1.0  
+sugar         2.0           1.0 ;

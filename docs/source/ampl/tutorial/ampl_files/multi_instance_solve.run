@@ -1,0 +1,19 @@
+# Load model
+model production.mod
+
+# Load lemonade data
+data lemonade.dat
+
+# Run scripts
+include cbc_solve.run
+include print_solution.run
+
+# Reset for new data
+reset data;
+
+# Load new data
+data mulled_wine.dat
+
+# Run scripts again
+include highs_solve.run
+include print_solution.run

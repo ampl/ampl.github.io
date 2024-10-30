@@ -1,0 +1,30 @@
+# Products (columns of coefficient matrix, cardinality equals number of variables)
+set PROD := mulled_wine hot_tea;
+
+# Ingredients (rows of coefficient matrix, cardinality equals number of constraints)
+set INGR := 
+spice 
+tea_bag 
+sugar
+wine;
+
+# Permit fee
+param fee := 2;
+
+# Objective function parameters
+param profit_per_product := mulled_wine 2.0 hot_tea 1.5;
+
+# Coefficient right hand side values
+param limit := 
+spice     12 
+tea_bag    8 
+sugar     30
+wine      15;
+   
+# Coefficient matrix values 
+param usage: mulled_wine   hot_tea   :=
+spice        2.0           0.0
+tea_bag      0.0           1.0 
+sugar        4.0           2.0
+wine         2.0           0.0;
+

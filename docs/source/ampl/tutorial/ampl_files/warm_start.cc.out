@@ -1,0 +1,36 @@
+LP solve:
+HiGHS 1.5.1: 
+
+HiGHS 1.5.1: optimal solution; objective 17
+1 simplex iterations
+0 barrier iterations
+
+
+LP solution:
+Solution with: highs
+mulled_wine = 3.5
+hot_tea = 8
+profit = $17.00
+
+
+WARM START values:
+:    _varname   _var    :=
+1   mulled_wine   4
+2   hot_tea       8
+;
+
+
+
+IP solve:
+cbc 2.10.7: 
+
+cbc 2.10.7: optimal solution; objective 16.5
+0 simplex iterations
+
+
+IP solution:
+Solution with: cbc
+mulled_wine = 4.00
+hot_tea = 7.00
+profit = $16.50
+
