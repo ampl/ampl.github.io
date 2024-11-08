@@ -101,10 +101,6 @@ html_theme_options = {
             "icon": "fab fa-github fa-fw",
         },
     ],
-    "collapse_navigation": True,
-    # "external_links": [
-    #     {"name": "ampl.github.io", "url": "https://ampl.github.io"},
-    # ],
     "logo_text": "Development",
 }
 html_context = {"default_mode": "light"}
