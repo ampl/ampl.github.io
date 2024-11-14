@@ -3,6 +3,39 @@
 AMPL APIs
 =========
 
+.. grid:: 1 2 2 3
+    :gutter: 1 1 1 2
+
+    .. grid-item-card:: Python API
+        :link: https://amplpy.ampl.com/
+
+        Explore the AMPL Python API Documentation for detailed guidance, examples, and references to integrate AMPL with Python.
+
+    .. grid-item-card:: R API
+        :link: https://rAMPL.ampl.com/
+
+        Explore the AMPL R API Documentation for detailed guidance, examples, and references to integrate AMPL with R.
+        
+    .. grid-item-card:: Java API
+        :link: https://ampl.com/api/latest/java/
+
+        Explore the AMPL Java API Documentation for detailed guidance, examples, and references to integrate AMPL with Java.
+
+    .. grid-item-card:: C# API
+        :link: https://ampl.com/api/latest/dotnet/
+
+        Explore the AMPL C# API Documentation for detailed guidance, examples, and references to integrate AMPL with C#.
+
+    .. grid-item-card:: C++ API
+        :link: https://ampl.com/api/latest/cpp/
+
+        Explore the AMPL C++ API Documentation for detailed guidance, examples, and references to integrate AMPL with C++.
+        
+    .. grid-item-card:: MATLAB API
+        :link: https://ampl.com/api/latest/matlab/
+
+        Explore the AMPL MATLAB API Documentation for detailed guidance, examples, and references to integrate AMPL with MATLAB.
+
 .. _apis_python:
 
 Python
