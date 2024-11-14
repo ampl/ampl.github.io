@@ -1,5 +1,14 @@
 # GUROBI Changelog
 
+## 20241114
+- Updated to Gurobi 12.0 which provides performance improvements 
+  across a variety of model families
+- Gurobi now supports nonlinear constraints of the form y=f(x),
+  where f is a multivariate function given by a closed-form expression.
+- Solve mixed-integer nonlinear programming (MINLP) problems 
+  to global optimality more efficiently via the new non-linear 
+  expression interface.
+
 
 ## 20240808
 - Added option *alg:nlpheur* to control an heuristic for
@@ -7,7 +16,7 @@
 
 
 ## 20240728
-- Updated to Gurobi libraries 11.0.3, which include many 
+- Updated to Gurobi libraries 11.0.3, which include many  
   bug fixes.
 
  

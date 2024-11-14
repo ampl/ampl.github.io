@@ -27,6 +27,13 @@ acc:_all
       Can be useful to disable all reformulations (acc:_all=2), or force
       linearization (acc:_all=0.)
 
+acc:_expr
+      Solver acceptance level for all expressions, default 1:
+
+      0 - Not accepted, all expressions will be treated as flat constraints,
+          or redefined
+      1 - Accepted. See the individual acc:... options
+
 acc:abs
       Solver acceptance level for 'AbsConstraint' as flat constraint, default
       2:
@@ -44,28 +51,47 @@ acc:and (acc:forall)
       2 - Accepted natively and preferred
 
 acc:cos
-      Solver acceptance level for 'CosConstraint' as flat constraint, default
-      2:
+      Solver acceptance level for 'CosConstraint' as either constraint or
+      expression, default 4:
 
       0 - Not accepted natively, automatic redefinition will be attempted
-      1 - Accepted but automatic redefinition will be used where possible
-      2 - Accepted natively and preferred
+      1 - Accepted as constraint but automatic redefinition will be used
+          where possible
+      2 - Accepted as constraint natively and preferred
+      3 - Accepted as expression but automatic redefinition will be used
+          where possible
+      4 - Accepted as expression natively and preferred
+
+acc:div
+      Solver acceptance level for 'DivConstraint' as expression, default 4:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      3 - Accepted but automatic redefinition will be used where possible
+      4 - Accepted natively and preferred
 
 acc:exp
-      Solver acceptance level for 'ExpConstraint' as flat constraint, default
-      2:
+      Solver acceptance level for 'ExpConstraint' as either constraint or
+      expression, default 4:
 
       0 - Not accepted natively, automatic redefinition will be attempted
-      1 - Accepted but automatic redefinition will be used where possible
-      2 - Accepted natively and preferred
+      1 - Accepted as constraint but automatic redefinition will be used
+          where possible
+      2 - Accepted as constraint natively and preferred
+      3 - Accepted as expression but automatic redefinition will be used
+          where possible
+      4 - Accepted as expression natively and preferred
 
 acc:expa (acc:expA)
-      Solver acceptance level for 'ExpAConstraint' as flat constraint, default
-      2:
+      Solver acceptance level for 'ExpAConstraint' as either constraint or
+      expression, default 4:
 
       0 - Not accepted natively, automatic redefinition will be attempted
-      1 - Accepted but automatic redefinition will be used where possible
-      2 - Accepted natively and preferred
+      1 - Accepted as constraint but automatic redefinition will be used
+          where possible
+      2 - Accepted as constraint natively and preferred
+      3 - Accepted as expression but automatic redefinition will be used
+          where possible
+      4 - Accepted as expression natively and preferred
 
 acc:indeq (acc:indlineq)
       Solver acceptance level for 'IndicatorConstraintLinEQ' as flat
@@ -98,6 +124,14 @@ acc:lineq
       1 - Accepted but automatic redefinition will be used where possible
       2 - Accepted natively and preferred
 
+acc:linfunccon
+      Solver acceptance level for 'LinearFunctionalConstraint' as expression,
+      default 4:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      3 - Accepted but automatic redefinition will be used where possible
+      4 - Accepted natively and preferred
+
 acc:linge
       Solver acceptance level for 'LinConGE' as flat constraint, default 2:
 
@@ -113,20 +147,28 @@ acc:linle
       2 - Accepted natively and preferred
 
 acc:log
-      Solver acceptance level for 'LogConstraint' as flat constraint, default
-      2:
+      Solver acceptance level for 'LogConstraint' as either constraint or
+      expression, default 4:
 
       0 - Not accepted natively, automatic redefinition will be attempted
-      1 - Accepted but automatic redefinition will be used where possible
-      2 - Accepted natively and preferred
+      1 - Accepted as constraint but automatic redefinition will be used
+          where possible
+      2 - Accepted as constraint natively and preferred
+      3 - Accepted as expression but automatic redefinition will be used
+          where possible
+      4 - Accepted as expression natively and preferred
 
 acc:loga (acc:logA)
-      Solver acceptance level for 'LogAConstraint' as flat constraint, default
-      2:
+      Solver acceptance level for 'LogAConstraint' as either constraint or
+      expression, default 4:
 
       0 - Not accepted natively, automatic redefinition will be attempted
-      1 - Accepted but automatic redefinition will be used where possible
-      2 - Accepted natively and preferred
+      1 - Accepted as constraint but automatic redefinition will be used
+          where possible
+      2 - Accepted as constraint natively and preferred
+      3 - Accepted as expression but automatic redefinition will be used
+          where possible
+      4 - Accepted as expression natively and preferred
 
 acc:max
       Solver acceptance level for 'MaxConstraint' as flat constraint, default
@@ -139,6 +181,27 @@ acc:max
 acc:min
       Solver acceptance level for 'MinConstraint' as flat constraint, default
       2:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+acc:nlassigneq
+      Solver acceptance level for 'NLAssignEQ' as flat constraint, default 2:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+acc:nlassignge
+      Solver acceptance level for 'NLAssignGE' as flat constraint, default 2:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+acc:nlassignle
+      Solver acceptance level for 'NLAssignLE' as flat constraint, default 2:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
@@ -161,12 +224,16 @@ acc:pl (acc:pwl, acc:piecewise)
       2 - Accepted natively and preferred
 
 acc:pow
-      Solver acceptance level for 'PowConstraint' as flat constraint, default
-      2:
+      Solver acceptance level for 'PowConstraint' as either constraint or
+      expression, default 4:
 
       0 - Not accepted natively, automatic redefinition will be attempted
-      1 - Accepted but automatic redefinition will be used where possible
-      2 - Accepted natively and preferred
+      1 - Accepted as constraint but automatic redefinition will be used
+          where possible
+      2 - Accepted as constraint natively and preferred
+      3 - Accepted as expression but automatic redefinition will be used
+          where possible
+      4 - Accepted as expression natively and preferred
 
 acc:quadeq
       Solver acceptance level for 'QuadConEQ' as flat constraint, default 2:
@@ -174,6 +241,14 @@ acc:quadeq
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
       2 - Accepted natively and preferred
+
+acc:quadfunccon
+      Solver acceptance level for 'QuadraticFunctionalConstraint' as
+      expression, default 4:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      3 - Accepted but automatic redefinition will be used where possible
+      4 - Accepted natively and preferred
 
 acc:quadge
       Solver acceptance level for 'QuadConGE' as flat constraint, default 2:
@@ -190,12 +265,16 @@ acc:quadle
       2 - Accepted natively and preferred
 
 acc:sin
-      Solver acceptance level for 'SinConstraint' as flat constraint, default
-      2:
+      Solver acceptance level for 'SinConstraint' as either constraint or
+      expression, default 4:
 
       0 - Not accepted natively, automatic redefinition will be attempted
-      1 - Accepted but automatic redefinition will be used where possible
-      2 - Accepted natively and preferred
+      1 - Accepted as constraint but automatic redefinition will be used
+          where possible
+      2 - Accepted as constraint natively and preferred
+      3 - Accepted as expression but automatic redefinition will be used
+          where possible
+      4 - Accepted as expression natively and preferred
 
 acc:sos1
       Solver acceptance level for 'SOS1Constraint' as flat constraint, default
@@ -300,6 +379,9 @@ alg:iismethod (iismethod)
       1  - Can find a smaller IIS than method 0
       2  - Ignore the bound constraints.
 
+alg:infunbdinfo (infunbdinfo, InfUnbdInfo)
+      Synonym for alg:rays.
+
 alg:kappa (kappa, basis_cond)
       Whether to return the estimated condition number (kappa) of the optimal
       basis (default 0): sum of 1 = report kappa in the result message; 2 =
@@ -342,13 +424,16 @@ alg:numericfocus (numericfocus, numfocus)
       1-3 - Increasing focus on more stable computations.
 
 alg:rays (rays)
-      Whether to return suffix .unbdd if the objective is unbounded or suffix
-      .dunbdd if the constraints are infeasible:
+      Whether to return suffix .unbdd (unbounded ray) if the objective is
+      unbounded or suffix .dunbdd (Farkas dual) if the constraints are
+      infeasible:
 
       0 - Neither
       1 - Just .unbdd
       2 - Just .dunbdd
       3 - Both (default)
+
+      Only applies to LP models.
 
 alg:relax (relax)
       0*/1: Whether to relax integrality of variables.
@@ -1636,10 +1721,17 @@ tech:workerpool (pool_servers)
 tech:writegraph (cvt:writegraph, writegraph, exportgraph)
       File to export conversion graph. Format: JSON Lines.
 
-tech:writemodel (writeprob, writemodel, tech:exportfile)
+tech:writemodel (tech:writeprob, writeprob, writemodel, tech:exportfile)
       Specifies files where to export the model before solving (repeat the
       option for several files.) File name extensions can be ".lp[.7z]",
       ".mps", etc.
+      To write a model during iterative solve (e.g., with obj:multi=2), use
+      tech:writemodel:index.
+
+tech:writemodel:index (tech:writeprob:index, writeprobindex, writemodelindex)
+      During iterative solve (e.g., with obj:multi=2), the iteration before
+      which to write solver model. 0 means before iteration is initialized;
+      positive value - before solving that iteration. Default 0.
 
 tech:writemodelonly (justwriteprob, justwritemodel)
       Specifies files where to export the model, no solving (option can be

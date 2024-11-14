@@ -11,7 +11,7 @@
 - [**CPLEX** Changelog (latest: **20240828**)](../solvers/cplex/changes.md)
 - [**CPLEXASL** Changelog (latest: **20230228**)](../solvers/cplex/changesasl.md)
 - [**GCG** Changelog (latest: **20240115**)](../solvers/gcg/changes.md)
-- [**GUROBI** Changelog (latest: **20240808**)](../solvers/gurobi/changes.md)
+- [**GUROBI** Changelog (latest: **20241114**)](../solvers/gurobi/changes.md)
 - [**GUROBIASL** Changelog (latest: **20231208**)](../solvers/gurobi/changesasl.md)
 - [**HiGHS** Changelog (latest: **20240724**)](../solvers/highs/changes.md)
 - [**ILOGCP** Changelog (latest: **20230228**)](../solvers/ilogcp/changes.md)
@@ -32,6 +32,8 @@ ampl.md
 ```
 
 
+## 20241114
+- [GUROBI](../solvers/gurobi/changes.md#20241114)
 ## 20240901
 - [MOSEK](../solvers/mosek/changes.md#20240901)
 ## 20240828
