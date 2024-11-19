@@ -1,5 +1,5 @@
 
-# BARON Options
+# BARONMP Options
 
 ```ampl
 ampl: option solver baronmp; # change the solver

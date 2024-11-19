@@ -5,7 +5,7 @@ import json
 
 SOLVERS = {
     "BARON": "baron",
-    "BARON": "baronmp",
+    "BARONMP": "baronmp",
     "CONOPT": "conopt",
     "CPLEX": "cplex",
     "CPLEXASL": "cplexasl",

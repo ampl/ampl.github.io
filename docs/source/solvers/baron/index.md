@@ -67,9 +67,17 @@ Full list of solver options:
 ```{toctree}
 options.md
 ```
+```{toctree}
+:hidden:
+baronmp.md
+```
 
 ## Changelog
 
 ```{toctree}
 changes.md
+```
+```{toctree}
+:hidden:
+changesmp.md
 ```
