@@ -223,9 +223,9 @@ acc:pl (acc:pwl, acc:piecewise)
       1 - Accepted but automatic redefinition will be used where possible
       2 - Accepted natively and preferred
 
-acc:pow
-      Solver acceptance level for 'PowConstraint' as either constraint or
-      expression, default 4:
+acc:powconstexp
+      Solver acceptance level for 'PowConstExpConstraint' as either constraint
+      or expression, default 4:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted as constraint but automatic redefinition will be used
@@ -1231,7 +1231,8 @@ pre:funcnonlinear (funcnonlinear, global)
       Controls how general functions with their constraint's or objective's
       suffix .funcnonlinear or, if not available, .global unset (or set to 0)
       are treated (ATTENTION: different meaning than Gurobi FuncNonLinear
-      parameter and attribute):
+      parameter and attribute; ATTENTION: also set acc:_expr=0 with
+      pre:funcnonlinear=-1 to use 'general constraints'):
 
       -1 - Piecewise-linear approximation
       0  - Automatic (default)

@@ -5,6 +5,7 @@ import json
 
 SOLVERS = {
     "BARON": "baron",
+    "BARON": "baronmp",
     "CONOPT": "conopt",
     "CPLEX": "cplex",
     "CPLEXASL": "cplexasl",
@@ -34,9 +35,9 @@ SOLVERS = {
 
 releases = {}
 for label, solver in SOLVERS.items():
-    output = (
-        subprocess.check_output([solver, "-="]).decode().strip()
-    )  # (errors="ignore")
+    output = subprocess.check_output([solver, "-="]).decode().strip()
+    # (errors="ignore")
+    # subprocess.check_output(f"{solver} -= || true", shell=True).decode().strip()
 
     exec_location = subprocess.check_output(["which", solver]).decode()
     changes = os.path.join(
