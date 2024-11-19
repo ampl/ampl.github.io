@@ -1,6 +1,6 @@
 ,LP,NLP,Integer variables,Global,|mp|
 :ref:`knitro`,|y|,|y|,|y|,|n|,|n|
-:ref:`baron`,|y|,|y|,|y|,|y|,|n|
+:ref:`baron`,|y|,|y|,|y|,|y|,|y|
 :ref:`lindo-global-solver`,|y|,|y|,|y|,|y|,|n|
 :ref:`octeract`,|y|,|y|,|y|,|y|,|n|
 :ref:`raposa`,|y|,|y|,|y|,|y|,|n|
