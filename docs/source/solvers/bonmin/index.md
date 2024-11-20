@@ -2,7 +2,7 @@
 
 # BONMIN
 
-The [COIN Bonmin solver (BONMIN)](https://coin-or.github.io/Bonmin/) Bonmin is an experimental open-source C++ code for solving general MINLP (Mixed Integer NonLinear Programming) problems of the form:
+The [COIN Bonmin solver (BONMIN)](https://coin-or.github.io/Bonmin/) is an experimental open-source C++ code for solving general MINLP (*Mixed Integer NonLinear Programming*) problems of the form:
 
 ```
    min     f(x)
@@ -13,6 +13,8 @@ s.t.       g_L <= g(x) <= g_U
            x_i in R for all i not in I.
 ```
 where `f(x): R^n --> R`, `g(x): R^n --> R^m` are twice continuously differentiable functions and `I` is a subset of `{1,..,n}`.
+
+The algorithms in Bonmin are exact when the functions `f` and `g` are convex; in the case where `f` or `g` or both are non-convex they are heuristics.
 
 [[Read More](https://ampl.com/products/solvers/open-source-solvers/)]
 [[Options](#solver-options)]

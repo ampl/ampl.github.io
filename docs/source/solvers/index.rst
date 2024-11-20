@@ -24,7 +24,7 @@ an easy way to switch between them.
 -----------------------------------------
 
 Traditional 'linear-quadratic' solvers are advancing into the
-nonlinear domain (MINLP,  Mixed Integer NonLinear Programming).
+nonlinear domain (MINLP,  *Mixed Integer NonLinear Programming*).
 
 .. toctree::
     :hidden:
