@@ -20,8 +20,11 @@ an easy way to switch between them.
 
    <br />
 
-Linear Solvers
---------------
+'Linear-Quadratic' Solvers
+-----------------------------------------
+
+Traditional 'linear-quadratic' solvers are advancing into the
+nonlinear domain (MINLP,  Mixed Integer NonLinear Programming).
 
 .. toctree::
     :hidden:
@@ -42,18 +45,25 @@ Linear Solvers
 
 .. rubric:: Footnotes
 
-.. [#] Conic programming: Mosek supports SOCP and exponential cones, other solvers only SOCP
+.. [#] Conic programming: Mosek supports SOCP and exponential cones, other solvers only SOCP.
+
 
 Nonlinear Solvers
 ------------------
 
 Nonlinear solvers traditionally target smooth problems with continuous variables.
-However, some solvers accept integer variables, and some target global optimality
+However, some solvers accept integer variables (MINLP), and some target global optimality
 (vs returning only locally optimal solutions for non-convex problems.)
 
 .. csv-table::
    :file: _tables/slv_nonlin.csv
    :header-rows: 1
+
+.. rubric:: Footnotes
+
+.. [#] Global optimality: while Knitro and Bonmin accept integer variables,
+   they only guarantee local optimum for non-convex models.
+
 
 .. toctree::
     :hidden:

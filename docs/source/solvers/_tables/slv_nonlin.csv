@@ -1,14 +1,14 @@
-,LP,NLP,Integer variables,Global,|mp|
-:ref:`knitro`,|y|,|y|,|y|,|n|,|n|
-:ref:`baron`,|y|,|y|,|y|,|y|,|y|
-:ref:`lindo-global-solver`,|y|,|y|,|y|,|y|,|n|
-:ref:`octeract`,|y|,|y|,|y|,|y|,|n|
-:ref:`raposa`,|y|,|y|,|y|,|y|,|n|
-:ref:`lgo`,|y|,|y|,|n|,|y|,|n|
-:ref:`conopt`,|y|,|y|,|n|,|n|,|n|
-:ref:`loqo`,|y|,|y|,|n|,|n|,|n|
-:ref:`minos`,|y|,|y|,|n|,|n|,|n|
-:ref:`snopt`,|y|,|y|,|n|,|n|,|n|
-:ref:`ipopt`,|y|,|y|,|n|,|n|,|n|
-:ref:`bonmin`,|y|,|y|,|y|,|n|,|n|
-:ref:`couenne`,|y|,|y|,|y|,|y|,|n|
+,NLP,MINLP,Global [#]_,|mp|
+:ref:`knitro`,|y|,|y|,|n|,|n|
+:ref:`baron`,|y|,|y|,|y|,|y|
+:ref:`lindo-global-solver`,|y|,|y|,|y|,|n|
+:ref:`octeract`,|y|,|y|,|y|,|n|
+:ref:`raposa`,|y|,|y|,|y|,|n|
+:ref:`lgo`,|y|,|n|,|y|,|n|
+:ref:`conopt`,|y|,|n|,|n|,|n|
+:ref:`loqo`,|y|,|n|,|n|,|n|
+:ref:`minos`,|y|,|n|,|n|,|n|
+:ref:`snopt`,|y|,|n|,|n|,|n|
+:ref:`ipopt`,|y|,|n|,|n|,|n|
+:ref:`bonmin`,|y|,|y|,|n|,|n|
+:ref:`couenne`,|y|,|y|,|y|,|n|

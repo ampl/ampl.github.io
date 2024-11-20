@@ -5,8 +5,8 @@
 Gurobi is a powerful commercial suite of optimization products, which includes simplex
 and parallel barrier solvers to handle linear programming (LP) and quadratic programming (QP),
 also quadratically constrained (QCP, SOCP) and the mixed-integer variations thereof (MIP, MIQP, MIQCP, MISOCP).
-It also supports some types of general constraints, this addressing MINLP.
-The framework used by the driver supports automatic reformulation for many expression types; the modeling guide can be
+It also supports some types of nonlinear expressions, this addressing MINLP.
+The MP framework used by the driver supports automatic reformulation for many expression types; the modeling guide can be
 found [here](https://mp.ampl.com/model-guide.html).
 
 [[Read More](https://ampl.com/products/solvers/solvers-we-sell/gurobi/)]
@@ -15,7 +15,7 @@ found [here](https://mp.ampl.com/model-guide.html).
 [[Changes](changes.md)]
 [[Download Gurobi](https://portal.ampl.com/user/ampl/download/gurobi)]
 
-Our enhanced Gurobi driver (previously know as x-gurobi) is now the default Gurobi driver. The new driver provides significantly extended modeling support for logical and nonlinear operators natively through Gurobi’s built-in “general constraints” and through linearizations performed by the [MP library](https://mp.ampl.com/). There are two binaries in this package: `gurobi` [[options](options.md)] is the new version, `gurobiasl` [[options](gurobiasl)] is the legacy version. If you are upgrading an existing installation and encounter any issues with the new version please report them to [support@ampl.com](mailto:support@ampl.com).
+Our enhanced Gurobi driver (previously know as x-gurobi) is now the default Gurobi driver. The new driver provides significantly extended modeling support for logical and nonlinear operators natively through Gurobi’s built-in nonlinear and “general constraints” and through linearizations performed by the [MP library](https://mp.ampl.com/). There are two binaries in this package: `gurobi` [[options](options.md)] is the new version, `gurobiasl` [[options](gurobiasl)] is the legacy version. If you are upgrading an existing installation and encounter any issues with the new version please report them to [support@ampl.com](mailto:support@ampl.com).
 
 ## How to use it
 
@@ -86,14 +86,14 @@ Our enhanced Gurobi driver (previously know as x-gurobi) is now the default Guro
   * LP, QP, QCP, SOCP
   * MIP, MIQP, MIQCP, MISOCP, MINLP
   * <details>
-    <summary>General constraints</summary>  
+    <summary>General constraints and nonlinear expressions</summary>  
 
     * log / exp
     * min / max
     * and / or
     * abs
     * sin/cos/tan
-    * norm
+    * pow
     </details>
 
 

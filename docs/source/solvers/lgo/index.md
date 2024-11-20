@@ -2,7 +2,7 @@
 
 # LGO
 
-LGO is capable of determining high-quality solutions to global optimization problems that have (possibly many) locally optimal solutions. Because LGO makes only limited assumptions as to problem structure and differentiability, it can be applied in a broad range of design and operational applications.
+LGO is capable of determining high-quality solutions to global optimization problems with continuous variables that have (possibly many) locally optimal solutions. Because LGO makes only limited assumptions as to problem structure and differentiability, it can be applied in a broad range of design and operational applications.
 
 [[Read More](https://ampl.com/products/solvers/solvers-we-sell/lgo/)]
 [[Options](options.md)]
