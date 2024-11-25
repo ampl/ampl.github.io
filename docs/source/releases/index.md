@@ -6,7 +6,7 @@
 - [**AMPL** Changelog (latest: **20241122**)](../releases/ampl.md)
 - [**BARON** Changelog (latest: **20240508**)](../solvers/baron/changes.md)
 - [**BARONMP** Changelog (latest: **20241119**)](../solvers/baron/changesmp.md)
-- [**CBC** Changelog (latest: **20240724**)](../solvers/cbc/changes.md)
+- [**CBC** Changelog (latest: **20241124**)](../solvers/cbc/changes.md)
 - [**CONOPT** Changelog (latest: **20240201**)](../solvers/conopt/changes.md)
 - [**COPT** Changelog (latest: **20240724**)](../solvers/copt/changes.md)
 - [**CPLEX** Changelog (latest: **20240828**)](../solvers/cplex/changes.md)
@@ -32,6 +32,9 @@
 ampl.md
 ```
 
+
+## 20241124
+- [CBC](../solvers/cbc/changes.md#20241124)
 ## 20241122
 - [AMPL](../releases/ampl.md#20241122)
 ## 20241119
