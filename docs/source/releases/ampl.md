@@ -1,5 +1,15 @@
 # AMPL Changelog
 
+## 20241122
+
+* Fix a bug message caused by the following snippet:
+```
+option presolve 0;
+var x >= 0;
+subject to c: x >= .5 <==> 1;
+solve;
+```
+
 ## 20240313
 
 * Fix a fault with write commands when $auxfiles contains "d" and a defined variable is split into linear and nonlinear parts.  In the .col file, nonlinear parts are now indicated by a ".nl" suffix. In the following silly example
