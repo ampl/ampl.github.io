@@ -5,7 +5,7 @@
 Gurobi is a powerful commercial suite of optimization products, which includes simplex
 and parallel barrier solvers to handle linear programming (LP) and quadratic programming (QP),
 also quadratically constrained (QCP, SOCP) and the mixed-integer variations thereof (MIP, MIQP, MIQCP, MISOCP).
-It also supports some types of nonlinear expressions, this addressing MINLP.
+It also supports some types of nonlinear expressions, thus addressing MINLP.
 The MP framework used by the driver supports automatic reformulation for many expression types; the modeling guide can be
 found [here](https://mp.ampl.com/model-guide.html).
 
