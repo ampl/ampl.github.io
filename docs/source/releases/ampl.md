@@ -1,5 +1,9 @@
 # AMPL Changelog
 
+## 20241203
+
+* Improve in handling logical literals when presolve is off.
+
 ## 20241122
 
 * Fix a bug message caused by the following snippet:
