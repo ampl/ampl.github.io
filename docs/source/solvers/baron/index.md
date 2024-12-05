@@ -85,6 +85,7 @@ display solve_result_num, solve_result;
 
 BARONMP solve result codes can be obtained by running `baronmp -!` or `ampl: shell "baronmp -!";`:
 ```
+Solve result table for BaronMP 24.10.10
           0- 99 solved: optimal for an optimization problem, feasible for a satisfaction problem
         100-199 solved? solution candidate returned but error likely
             150 solved? MP solution check failed (option sol:chk:fail)
@@ -99,6 +100,7 @@ BARONMP solve result codes can be obtained by running `baronmp -!` or `ampl: she
             401     iteration limit reached
             402     CPU time limit reached
         450-469 limit, problem is either infeasible or unbounded
+		Disable dual reductions or run IIS finder for definitive answer.
         470-499 limit, no solution returned
         500-999 failure, no solution returned
             500     licensing error
