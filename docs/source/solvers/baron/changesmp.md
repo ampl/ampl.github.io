@@ -1,5 +1,10 @@
 # BARONMP Changelog
 
+## 20241206
+- Fixed issue with variable and constraint names containing invalid
+  characters
+- Added solve results information
+
 
 ## 20241119
 - Beta release of MP driver for Baron, use with option `option solver baronmp;`,

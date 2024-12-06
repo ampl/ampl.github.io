@@ -5,11 +5,11 @@
 
 - [**AMPL** Changelog (latest: **20241203**)](../releases/ampl.md)
 - [**BARON** Changelog (latest: **20240508**)](../solvers/baron/changes.md)
-- [**BARONMP** Changelog (latest: **20241119**)](../solvers/baron/changesmp.md)
+- [**BARONMP** Changelog (latest: **20241206**)](../solvers/baron/changesmp.md)
 - [**CBC** Changelog (latest: **20241128**)](../solvers/cbc/changes.md)
 - [**CONOPT** Changelog (latest: **20240201**)](../solvers/conopt/changes.md)
 - [**COPT** Changelog (latest: **20240724**)](../solvers/copt/changes.md)
-- [**CPLEX** Changelog (latest: **20240828**)](../solvers/cplex/changes.md)
+- [**CPLEX** Changelog (latest: **20241206**)](../solvers/cplex/changes.md)
 - [**CPLEXASL** Changelog (latest: **20230228**)](../solvers/cplex/changesasl.md)
 - [**GCG** Changelog (latest: **20240115**)](../solvers/gcg/changes.md)
 - [**GUROBI** Changelog (latest: **20241119**)](../solvers/gurobi/changes.md)
@@ -32,6 +32,10 @@
 ampl.md
 ```
 
+
+## 20241206
+- [BARONMP](../solvers/baron/changesmp.md#20241206)
+- [CPLEX](../solvers/cplex/changes.md#20241206)
 ## 20241203
 - [AMPL](../releases/ampl.md#20241203)
 ## 20241128

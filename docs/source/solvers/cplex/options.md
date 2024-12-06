@@ -72,13 +72,6 @@ acc:linle
       1 - Accepted but automatic redefinition will be used where possible
       2 - Accepted natively and preferred
 
-acc:linrange (acc:linrng)
-      Solver acceptance level for 'LinConRange' as flat constraint, default 2:
-
-      0 - Not accepted natively, automatic redefinition will be attempted
-      1 - Accepted but automatic redefinition will be used where possible
-      2 - Accepted natively and preferred
-
 acc:pl (acc:pwl, acc:piecewise)
       Solver acceptance level for 'PLConstraint' as flat constraint, default
       2:
@@ -255,8 +248,9 @@ alg:primal (primalopt)
       Solve (MIP root) LPs by primal simplex method.
 
 alg:rays (rays)
-      Whether to return suffix .unbdd if the objective is unbounded or suffix
-      .dunbdd if the constraints are infeasible:
+      Whether to return suffix .unbdd (unbounded ray) if the objective is
+      unbounded or suffix .dunbdd (Farkas dual) if the constraints are
+      infeasible:
 
       0 - Neither
       1 - Just .unbdd
@@ -268,6 +262,32 @@ alg:relax (relax)
 
 alg:rhspen (rhspen)
       See alg:feasrelax.
+
+alg:sens (sens, solnsens, sensitivity)
+      Whether to return suffixes for solution sensitivities, i.e., ranges of
+      values for which the optimal basis remains optimal (note that the
+      variable and objective values can change):
+
+      0 - No (default)
+      1 - Yes: suffixes returned on variables are
+      .sensobjlo = smallest objective coefficient
+      .sensobjhi = greatest objective coefficient
+      .senslblo = smallest variable lower bound
+      .senslbhi = greatest variable lower bound
+      .sensublo = smallest variable upper bound
+      .sensubhi = greatest variable upper bound;
+
+      suffixes for all constraints are
+
+      .senslblo = smallest constraint lower bound
+      .senslbhi = greatest constraint lower bound
+      .sensublo = smallest constraint upper bound
+      .sensubhi = greatest constraint upper bound;
+
+      suffixes for one-sided constraints only:
+
+      .sensrhslo = smallest right-hand side value
+      .sensrhshi = greatest right-hand side value.
 
 alg:sifting (sifting, siftopt, siftingopt)
       Solve (MIP root) LPs by sifting method.
@@ -698,6 +718,14 @@ mip:inttol (inttol, intfeastol, integrality)
       Feasibility tolerance for integer variables (default 1e-05, must be in
       [0.0, 0.5])
 
+mip:nodefile (nodefile)
+      Whether to save node information in a temporary file:
+
+      0 - no
+      1 - compressed node file in memory (default)
+      2 - node file on disk
+      3 - compressed node file on disk
+
 mip:nodemethod (nodemethod, mipalg, mipalgorithm)
       Algorithm used to solve relaxed MIP node problems; for MIQP problems
       (quadratic objective, linear constraints), settings other than 3 and 5
@@ -749,6 +777,13 @@ mip:round (round)
 mip:round_reptol (round_reptol)
       Tolerance for reporting rounding of integer variables to integer values;
       see "mip:round". Default = 1e-9.
+
+mip:search (mipsearch)
+      Search strategy for mixed-integer problems:
+
+      0 - Automatic (default)
+      1 - Traditional branch and cut
+      2 - Dynamic search
 
 mip:submipalg (submipalg)
       Choice of algorithm used to solve the subproblems of a subMIP: not a
@@ -1159,6 +1194,13 @@ tech:wantsol (wantsol)
       2 - Primal variables to stdout
       4 - Dual variables to stdout
       8 - Suppress solution message.
+
+tech:workdir (nodefiledir, workfiledir, workdir)
+      Directory where CPLEX creates a temporary subdirectory for temporary
+      files, e.g., for node information and Cholesky factors.
+
+tech:workfilelim (workfilelim)
+      Maximum size in megabytes for in-core work "files". Default 2048.
 
 tech:writegraph (cvt:writegraph, writegraph, exportgraph)
       File to export conversion graph. Format: JSON Lines.
