@@ -1,5 +1,11 @@
 # BARONMP Changelog
 
+
+## 20241209
+- Removed spurious output from execution of local solves.
+- Fixed bug that made `outlev` ineffective.
+
+
 ## 20241206
 - Fixed issue with variable and constraint names containing invalid
   characters
