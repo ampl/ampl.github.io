@@ -17,15 +17,13 @@ In case you have AMPL already installed, activate your license if you received a
 Run this command in AMPL to activate your license:
 ```
 ampl: shell "amplkey activate --uuid <license-uuid>";
-        # replace <license-uuid> by the license UUID
+      # replace <license-uuid> by the license UUID
 ```
 Note: you need to restart AMPL in order to start using the new license.
 
 ```{note}
-**If you install AMPL somewhere in your home directory, you do not need to worry about the following.**
-
-If you use cloud licenses (e.g., [AMPL Community Edition](https://ampl.com/ce/) licenses), **the AMPL folder cannot be read-only** (e.g., `"C:\Program Files\ampl.mswin64"`). If really you want to have AMPL installed on a read-only folder, you need to set the environment
-variables `AMPL_LICFILE` to a location where you store `ampl.lic` and where you have permissions to write, and set `AMPLKEY_RUNTIME_DIR` to a temporary folder.
+**It is recommended to install AMPL in your home folder.**
+Otherwise, if you use dynamic cloud licenses, make sure the AMPL folder is not read-only (e.g., it will not work if installed at `"C:\Program Files\AMPL"`).
 ```
 
 ## macOS
@@ -37,16 +35,9 @@ In case you have AMPL already installed, activate your license if you received a
 Run this command in AMPL to activate your license:
 ```
 ampl: shell "amplkey activate --uuid <license-uuid>";
-        # replace <license-uuid> by the license UUID
+      # replace <license-uuid> by the license UUID
 ```
 Note: you need to restart AMPL in order to start using the new license.
-
-```{note}
-**If you install AMPL somewhere in your home directory, you do not need to worry about the following.**
-
-If you use cloud licenses (e.g., [AMPL Community Edition](https://ampl.com/ce/) licenses), **the AMPL directory cannot be read-only**. If really you want to have AMPL installed on a read-only directory, you need to set the environment
-variables `AMPL_LICFILE` to a location where you store `ampl.lic` and where you have permissions to write, and set `AMPLKEY_RUNTIME_DIR` to a temporary directory.
-```
 
 ## Linux
 
