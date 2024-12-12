@@ -69,7 +69,7 @@ Full list of AMPL modules available: ``amplgsl``, ``baron``, ``cbc``, ``coin``, 
         :margin: 0
         :padding: 0
 
-        .. figure:: https://colab.ampl.com/_images/3lines.png
+        .. figure:: https://ampl.com/colab/_images/3lines.png
             :alt: the only 3 lines you need to use AMPL on Colab
             :align: center
             :width: 100%

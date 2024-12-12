@@ -83,7 +83,7 @@ either automatically or user-controlled,
 see
 [types of structures GCG can detect](https://gcg.or.rwth-aachen.de/doc/structure-types.html)
 and
-[AMPL/GCG Colab examples](https://colab.ampl.com/tags/gcg.html#tag-gcg).
+[AMPL/GCG Colab examples](https://ampl.com/colab/tags/gcg.html#tag-gcg).
 
 Moreover, AMPL logical and some nonlinear expressions can be
 automatically linearized by the driver,

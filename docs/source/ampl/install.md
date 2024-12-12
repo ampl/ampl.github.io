@@ -4,9 +4,50 @@ After downloading your AMPL & Solvers bundle from the [AMPL Portal](https://port
 please follow the instructions below that correspond to your operating system:
 
 - [How to install AMPL](#how-to-install-ampl)
+  - [Google Colab](#google-colab)
+  - [Python](#python)
   - [Windows](#windows)
   - [macOS](#macos)
   - [Linux](#linux)
+
+## Google Colab
+
+[AMPL Model Colaboratory](https://ampl.com/colab/) is a collection of AMPL models in Jupyter Notebooks that run on platforms such as **Google Colab**, **Kaggle**, **Gradient**, and **AWS SageMaker**. In order to be use AMPL on these notebook platforms you just need to following two code blocks
+at the beginning of your notebook:
+
+```bash
+# Install dependencies
+%pip install -q amplpy
+```
+
+```python
+# Google Colab & Kaggle integration
+from amplpy import AMPL, ampl_notebook
+ampl = ampl_notebook(
+    modules=["gurobi", "cbc", "highs"], # modules to install
+    license_uuid="default") # license to use
+```
+
+## Python
+
+[AMPL and all solvers are now available as python packages](amplpy.modules) for **Windows, Linux (X86_64, aarch64, ppc64le), and macOS**. For instance, to install AMPL with HiGHS, CBC and Gurobi,
+you just need the following:
+
+```bash
+# Install Python API for AMPL
+$ python -m pip install amplpy --upgrade
+
+# Install solver modules (e.g., HiGHS, CBC, Gurobi)
+$ python -m amplpy.modules install highs cbc gurobi
+
+# Activate your license (e.g., free https://ampl.com/ce license)
+$ python -m amplpy.modules activate <license-uuid>
+
+# Import in Python
+$ python
+>>> from amplpy import AMPL
+>>> ampl = AMPL() # instantiate AMPL object
+```
 
 ## Windows
 

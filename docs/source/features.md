@@ -35,7 +35,7 @@ Get your free license at: **<https://ampl.com/ce>**
 
 **What else is included?**
 
--   [AMPL Model Colaboratory](https://colab.ampl.com/) powered by our [Python API](https://amplpy.ampl.com/)!
+-   [AMPL Model Colaboratory](https://ampl.com/colab/) powered by our [Python API](https://amplpy.ampl.com/)!
 -   [Enhanced solver interfaces (e.g., Gurobi, COPT, XPRESS, HiGHS)](https://mp.ampl.com/model-guide.html)
 -   [Data Connectors (e.g., .xlsx, .csv, ODBC)](https://ampl.com/products/ampl/data-connectors/) and [Function Libraries (e.g., GSL)](https://gsl.ampl.com/)
 -   [It works with Docker Containers and Cloud Functions (e.g., AWS Lambda, Azure Functions, etc.)](ampl_docker)
@@ -43,9 +43,9 @@ Get your free license at: **<https://ampl.com/ce>**
 
 ## Using AMPL in Google Colab, Kaggle, and similar platforms
 
-We have a set of Jupyter Notebooks available on our [Model Colaboratory](https://colab.ampl.com).
+We have a set of Jupyter Notebooks available on our [Model Colaboratory](https://ampl.com/colab/).
 
-You can use our template (<https://colab.ampl.com/tags/template.html>)
+You can use our template (<https://ampl.com/colab/tags/template.html>)
 as a starting point. Our cloud licenses, including AMPL CE licenses, work on all cloud platforms.
 
 ## Snapshot feature (save and restore AMPL sessions)

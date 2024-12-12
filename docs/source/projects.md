@@ -14,7 +14,7 @@ AMPL R API. [[Documentation](https://rampl.ampl.com/)] [[GitHub](https://github.
 
 ## AMPL Model Colaboratory
 
-Jupyter notebooks ready to run on various cloud platforms. [[Documentation](https://colab.ampl.com/)] [[GitHub](https://github.com/ampl/amplcolab)]
+Jupyter notebooks ready to run on various cloud platforms. [[Documentation](https://ampl.com/colab/)] [[GitHub](https://github.com/ampl/amplcolab)]
 
 ## Solver Callbacks
 
