@@ -60,6 +60,7 @@ setup(
         "myst-nb==1.1.2",
         "sphinx-reredirects==0.1.5",
         "sphinx_design==0.6.1",
+        "sphinx-copybutton==0.5.2",
         "sphinx-autobuild==2024.10.3",
         "sphinxcontrib-googleanalytics==0.4",
         "breathe==4.35.0",

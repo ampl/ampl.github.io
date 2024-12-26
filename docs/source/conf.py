@@ -18,6 +18,7 @@ needs_sphinx = "8.1.3"
 extensions = [
     "myst_parser",
     "sphinx_design",
+    "sphinx_copybutton",
     "sphinx.ext.ifconfig",
     "sphinx.ext.mathjax",
     "sphinx.ext.autodoc",
@@ -136,6 +137,7 @@ redirects["ampl/python/colab/index.html"] = "../colab.html"
 redirects["solvers/solver_options/cbc_options.html"] = "../cbc/options.html"
 redirects["solver_options.html"] = "solvers/index.html"
 redirects["social.html"] = "https://www.linkedin.com/company/ampl"
+redirects["ampl/book.html"] = "book/index.html"
 
 
 # Add any paths that contain custom themes here, relative to this directory.

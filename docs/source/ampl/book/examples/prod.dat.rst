@@ -1,0 +1,16 @@
+prod.dat
+========
+
+:download:`prod.dat <EXAMPLES/EXAMPLES2/prod.dat>`
+
+.. code-block:: ampl
+
+    data;
+    
+    set P := bands coils;
+    
+    param:     a     c     u  :=
+      bands   200   25   6000
+      coils   140   30   4000 ;
+    
+    param b := 40;

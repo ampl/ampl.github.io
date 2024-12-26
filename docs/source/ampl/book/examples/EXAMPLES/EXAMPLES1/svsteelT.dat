@@ -1,0 +1,20 @@
+data;
+
+param T := 4;
+set PROD := bands coils;
+
+param avail :=  1 40  2 40  3 32  4 40 ;
+
+param rate :=  bands 2000  coils 1400 ;
+param inv0 :=  bands  100  coils    0 ;
+
+param prodcost :=  bands 100  coils 110 ;
+param invcost  :=  bands  25  coils  30 ;
+
+param revenue:   1     2     3     4 :=
+      bands    250   260   270   270
+      coils    300   350   370   390 ;
+
+param market:     1     2     3     4 :=
+       bands  60000 60000 40000 65000
+       coils  40000 25000 35000 42000 ;
