@@ -71,9 +71,13 @@ Java
 ----
 
 - Installation:
-    - `API bundle for Windows <https://portal.ampl.com/dl/modules/amplapi-module.mswin64.zip>`_
-    - `API bundle for Linux <https://portal.ampl.com/dl/modules/amplapi-module.linux64.tgz>`_
-    - `API bundle for macOS <https://portal.ampl.com/dl/modules/amplapi-module.macos64.tgz>`_
+
+  - `API bundle for Windows <https://portal.ampl.com/dl/modules/amplapi-module.mswin64.zip>`_
+
+  - `API bundle for Linux <https://portal.ampl.com/dl/modules/amplapi-module.linux64.tgz>`_
+
+  - `API bundle for macOS <https://portal.ampl.com/dl/modules/amplapi-module.macos64.tgz>`_
+
 - Documentation: https://ampl.com/api/latest/java/
 
 .. _apis_csharp:
@@ -82,9 +86,13 @@ C#
 --
 
 - Installation:
-    - `API bundle for Windows <https://portal.ampl.com/dl/modules/amplapi-module.mswin64.zip>`_
-    - `API bundle for Linux <https://portal.ampl.com/dl/modules/amplapi-module.linux64.tgz>`_
-    - `API bundle for macOS <https://portal.ampl.com/dl/modules/amplapi-module.macos64.tgz>`_
+
+  - `API bundle for Windows <https://portal.ampl.com/dl/modules/amplapi-module.mswin64.zip>`_
+
+  - `API bundle for Linux <https://portal.ampl.com/dl/modules/amplapi-module.linux64.tgz>`_
+
+  - `API bundle for macOS <https://portal.ampl.com/dl/modules/amplapi-module.macos64.tgz>`_
+
 - Documentation: https://ampl.com/api/latest/dotnet/
 
 .. _apis_cpp:
@@ -93,9 +101,13 @@ C++
 ---
 
 - Installation:
-    - `API bundle for Windows <https://portal.ampl.com/dl/modules/amplapi-module.mswin64.zip>`_
-    - `API bundle for Linux <https://portal.ampl.com/dl/modules/amplapi-module.linux64.tgz>`_
-    - `API bundle for macOS <https://portal.ampl.com/dl/modules/amplapi-module.macos64.tgz>`_
+
+  - `API bundle for Windows <https://portal.ampl.com/dl/modules/amplapi-module.mswin64.zip>`_
+
+  - `API bundle for Linux <https://portal.ampl.com/dl/modules/amplapi-module.linux64.tgz>`_
+
+  - `API bundle for macOS <https://portal.ampl.com/dl/modules/amplapi-module.macos64.tgz>`_
+
 - Documentation: https://ampl.com/api/latest/cpp/
 
 .. _apis_matlab:
@@ -104,9 +116,12 @@ MATLAB
 ------
 
 - Installation:
-    - `API bundle for Windows <https://portal.ampl.com/dl/modules/amplapi-module.mswin64.zip>`_
-    - `API bundle for Linux <https://portal.ampl.com/dl/modules/amplapi-module.linux64.tgz>`_
-    - `API bundle for macOS <https://portal.ampl.com/dl/modules/amplapi-module.macos64.tgz>`_
+
+  - `API bundle for Windows <https://portal.ampl.com/dl/modules/amplapi-module.mswin64.zip>`_
+
+  - `API bundle for Linux <https://portal.ampl.com/dl/modules/amplapi-module.linux64.tgz>`_
+
+  - `API bundle for macOS <https://portal.ampl.com/dl/modules/amplapi-module.macos64.tgz>`_
 
 - Documentation: https://ampl.com/api/latest/matlab/
 
