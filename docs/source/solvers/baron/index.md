@@ -73,6 +73,15 @@ An experimental version of the driver, BARONMP, supports the extended modeling c
 * [BARONMP solve result codes](#retrieving-solutions)
 * [BARONMP sources](https://github.com/ampl/mp/tree/develop/solvers/baronmp)
 
+## Solver options
+
+Full list of solver options:
+```{toctree}
+options.md
+baronmp.md
+```
+
+More details on solver options: [Features guide](https://mp.ampl.com/features-guide.html).
 
 ## Retrieving solutions
 
