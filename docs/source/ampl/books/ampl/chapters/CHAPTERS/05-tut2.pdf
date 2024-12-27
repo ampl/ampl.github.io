@@ -1,0 +1,4400 @@
+%PDF-1.4%âãÏÓ
+1 0 obj<< /Type /Page /Parent 100 0 R /Resources 2 0 R /Contents 3 0 R /Rotate 0 /MediaBox [ 0 0 612 792 ] /CropBox [ 40.32001 126 571.67999 792 ] >> endobj2 0 obj<< /ProcSet [ /PDF /Text ] /Font << /F2 119 0 R /F3 125 0 R /F4 46 0 R /F5 47 0 R >> /ExtGState << /GS1 127 0 R >> >> endobj3 0 obj<< /Length 5516 >> stream
+BT
+/F3 1 Tf
+10 0 0 10 126 747.615 Tm
+0 g
+/GS1 gs
+0 Tc
+0 Tw
+(28)Tj
+7 0 0 7 154 747.615 Tm
+0.0098 Tw
+[(DIET AND OTHER INPUT MODELS: )-301.1(MINIMIZING )-10(COSTS )-15034.1(CHAPTER 2)]TJ
+/F2 1 Tf
+8 0 0 8 151 715.215 Tm
+0 Tw
+(BEEF)Tj
+10 0 0 10 185.7 715.215 Tm
+7.1691 Tw
+(beef $3.19)Tj
+8 0 0 8 151 703.215 Tm
+0 Tw
+(CHK)Tj
+10 0 0 10 185.7 703.215 Tm
+6.2801 Tw
+(chicken 2.59)Tj
+8 0 0 8 151 691.215 Tm
+0 Tw
+(FISH)Tj
+10 0 0 10 185.7 691.215 Tm
+7.89 Tw
+(fish 2.29)Tj
+8 0 0 8 151 679.215 Tm
+0 Tw
+(HAM)Tj
+10 0 0 10 185.7 679.215 Tm
+7.6681 Tw
+(ham 2.89)Tj
+8 0 0 8 151 667.215 Tm
+0 Tw
+(MCH)Tj
+10 0 0 10 185.7 667.215 Tm
+-0.0119 Tw
+[(macaroni & cheese )-1761.9(1.89)]TJ
+8 0 0 8 151 655.215 Tm
+0 Tw
+(MTL)Tj
+10 0 0 10 185.7 655.215 Tm
+-0.0089 Tw
+[(meat loaf )-5658.9(1.99)]TJ
+8 0 0 8 151 643.215 Tm
+0 Tw
+(SPG)Tj
+10 0 0 10 185.7 643.215 Tm
+5.7791 Tw
+(spaghetti 1.99)Tj
+8 0 0 8 151 631.215 Tm
+0 Tw
+(TUR)Tj
+10 0 0 10 185.7 631.215 Tm
+6.8351 Tw
+(turkey 2.49)Tj
+-5.97 -2.42 TD
+0.1849 Tw
+(These dinners provide the following percentages, per package, of the minimum daily)Tj
+0 -1.2 TD
+-0.001 Tw
+(requirements for vitamins A, C, B1 and B2:)Tj
+5.97 -2.42 TD
+2.361 Tw
+[(A C )-52(B1 )448(B2)]TJ
+8 0 0 8 151 552.815 Tm
+0 Tw
+(BEEF)Tj
+10 0 0 10 185.7 552.815 Tm
+1.246 Tw
+(60% 20% 10% 15%)Tj
+8 0 0 8 151 540.815 Tm
+0 Tw
+(CHK)Tj
+10 0 0 10 190.7 540.815 Tm
+2.08 Tw
+[(8 )-500(0 20 20)]TJ
+8 0 0 8 151 528.815 Tm
+0 Tw
+(FISH)Tj
+10 0 0 10 190.7 528.815 Tm
+2.08 Tw
+(8 10 15 10)Tj
+8 0 0 8 151 516.815 Tm
+0 Tw
+(HAM)Tj
+10 0 0 10 185.7 516.815 Tm
+2.08 Tw
+(40 40 35 10)Tj
+8 0 0 8 151 504.815 Tm
+0 Tw
+(MCH)Tj
+10 0 0 10 185.7 504.815 Tm
+2.08 Tw
+(15 35 15 15)Tj
+8 0 0 8 151 492.815 Tm
+0 Tw
+(MTL)Tj
+10 0 0 10 185.7 492.815 Tm
+2.08 Tw
+(70 30 15 15)Tj
+8 0 0 8 151 480.815 Tm
+0 Tw
+(SPG)Tj
+10 0 0 10 185.7 480.815 Tm
+2.08 Tw
+(25 50 25 15)Tj
+8 0 0 8 151 468.815 Tm
+0 Tw
+(TUR)Tj
+10 0 0 10 185.7 468.815 Tm
+2.08 Tw
+(60 20 15 10)Tj
+-5.97 -2.42 TD
+0.1473 Tw
+[(The problem is to find the cheapest combination )-7.9(of )-7.9(packages )-7.9(that )-7.9(will )-7.9(meet )-7.9(a )-7.9(week’s)]TJ
+0 -1.2 TD
+-0.004 Tw
+(requirements — that is, at least 700% of the daily requirement for each nutrient.)Tj
+1.44 -1.3 TD
+0.0465 Tw
+(Let us write)Tj
+/F4 1 Tf
+5.17 0 TD
+0 Tw
+(X)Tj
+7 0 0 7 199.3 417.615 Tm
+(BEEF)Tj
+/F2 1 Tf
+10 0 0 10 220.3 419.615 Tm
+0.0444 Tw
+(for the number of packages of beef dinner to be purchased,)Tj
+/F4 1 Tf
+24.33 0 TD
+0 Tw
+(X)Tj
+7 0 0 7 470.8 417.615 Tm
+(CHK)Tj
+/F2 1 Tf
+10 0 0 10 126 407.615 Tm
+0.0044 Tw
+[(for the number of packages of chicken dinner, and so forth. )-250.6(Then )-5.6(the )-5.6(total )5.9(cost )5.9(of )5.9(the )5.9(diet)]TJ
+0 -1.2 TD
+0.002 Tw
+(will be:)Tj
+2.88 -2.42 TD
+-0.0015 Tw
+(total cost =)Tj
+2.5 -1.2 TD
+0 Tw
+(3.19)Tj
+/F4 1 Tf
+2 0 TD
+(X)Tj
+7 0 0 7 207 357.415 Tm
+(BEEF)Tj
+/F2 1 Tf
+10 0 0 10 227.5 359.415 Tm
+-0.004 Tw
+(+ 2.59)Tj
+/F4 1 Tf
+2.81 0 TD
+0 Tw
+(X)Tj
+7 0 0 7 262.8 357.415 Tm
+(CHK)Tj
+/F2 1 Tf
+10 0 0 10 280.5 359.415 Tm
+-0.004 Tw
+(+ 2.29)Tj
+/F4 1 Tf
+2.81 0 TD
+0 Tw
+(X)Tj
+7 0 0 7 315.8 357.415 Tm
+(FISH)Tj
+/F2 1 Tf
+10 0 0 10 334.2 359.415 Tm
+-0.004 Tw
+(+ 2.89)Tj
+/F4 1 Tf
+2.81 0 TD
+0 Tw
+(X)Tj
+7 0 0 7 369.5 357.415 Tm
+(HAM)Tj
+/F2 1 Tf
+10 0 0 10 387.9 359.415 Tm
+(+)Tj
+-20.81 -1.2 TD
+(1.89)Tj
+/F4 1 Tf
+2 0 TD
+(X)Tj
+7 0 0 7 207 345.415 Tm
+(MCH)Tj
+/F2 1 Tf
+10 0 0 10 225.8 347.415 Tm
+-0.004 Tw
+(+ 1.99)Tj
+/F4 1 Tf
+2.81 0 TD
+0 Tw
+(X)Tj
+7 0 0 7 261.1 345.415 Tm
+(MTL)Tj
+/F2 1 Tf
+10 0 0 10 278 347.415 Tm
+-0.004 Tw
+(+ 1.99)Tj
+/F4 1 Tf
+2.81 0 TD
+0 Tw
+(X)Tj
+7 0 0 7 313.3 345.415 Tm
+(SPG)Tj
+/F2 1 Tf
+10 0 0 10 329.4 347.415 Tm
+-0.004 Tw
+(+ 2.49)Tj
+/F4 1 Tf
+2.81 0 TD
+0 Tw
+(X)Tj
+7 0 0 7 364.7 345.415 Tm
+(TUR)Tj
+/F2 1 Tf
+10 0 0 10 126 323.215 Tm
+0.0774 Tw
+[(The )16.4(total )16.4(percentage )16.4(of the vitamin A requirement is given by a similar formula, except)]TJ
+0 -1.2 TD
+0 Tw
+(that)Tj
+/F4 1 Tf
+1.86 0 TD
+(X)Tj
+7 0 0 7 151.8 309.215 Tm
+(BEEF)Tj
+/F2 1 Tf
+10 0 0 10 169.8 311.215 Tm
+(,)Tj
+/F4 1 Tf
+0.61 0 TD
+(X)Tj
+7 0 0 7 183.1 309.215 Tm
+(CHK)Tj
+/F2 1 Tf
+10 0 0 10 198.3 311.215 Tm
+0.0949 Tw
+(, and so forth are multiplied by the percentage per package instead of)Tj
+-7.23 -1.2 TD
+-0.008 Tw
+(the cost per package:)Tj
+2.88 -2.42 TD
+-0.0045 Tw
+(total percentage of vitamin A daily requirement met =)Tj
+2.5 -1.2 TD
+0 Tw
+(60)Tj
+/F4 1 Tf
+1.25 0 TD
+(X)Tj
+7 0 0 7 199.5 261.015 Tm
+(BEEF)Tj
+/F2 1 Tf
+10 0 0 10 220 263.015 Tm
+-0.004 Tw
+(+ 8)Tj
+/F4 1 Tf
+1.56 0 TD
+0 Tw
+(X)Tj
+7 0 0 7 242.8 261.015 Tm
+(CHK)Tj
+/F2 1 Tf
+10 0 0 10 260.5 263.015 Tm
+-0.004 Tw
+(+ 8)Tj
+/F4 1 Tf
+1.56 0 TD
+0 Tw
+(X)Tj
+7 0 0 7 283.3 261.015 Tm
+(FISH)Tj
+/F2 1 Tf
+10 0 0 10 301.7 263.015 Tm
+-0.004 Tw
+(+ 40)Tj
+/F4 1 Tf
+2.06 0 TD
+0 Tw
+(X)Tj
+7 0 0 7 329.5 261.015 Tm
+(HAM)Tj
+/F2 1 Tf
+10 0 0 10 347.9 263.015 Tm
+(+)Tj
+-16.81 -1.2 TD
+(15)Tj
+/F4 1 Tf
+1.25 0 TD
+(X)Tj
+7 0 0 7 199.5 249.015 Tm
+(MCH)Tj
+/F2 1 Tf
+10 0 0 10 218.3 251.015 Tm
+-0.004 Tw
+(+ 70)Tj
+/F4 1 Tf
+2.06 0 TD
+0 Tw
+(X)Tj
+7 0 0 7 246.1 249.015 Tm
+(MTL)Tj
+/F2 1 Tf
+10 0 0 10 263 251.015 Tm
+-0.004 Tw
+(+ 25)Tj
+/F4 1 Tf
+2.06 0 TD
+0 Tw
+(X)Tj
+7 0 0 7 290.8 249.015 Tm
+(SPG)Tj
+/F2 1 Tf
+10 0 0 10 306.9 251.015 Tm
+-0.004 Tw
+(+ 60)Tj
+/F4 1 Tf
+2.06 0 TD
+0 Tw
+(X)Tj
+7 0 0 7 334.7 249.015 Tm
+(TUR)Tj
+/F2 1 Tf
+10 0 0 10 126 226.815 Tm
+0.0359 Tw
+[(This amount needs to be greater than or equal to 700 percent. )-242.1(There )-12.9(is )-12.9(a )-12.9(similar )-12.9(formula)]TJ
+0 -1.2 TD
+-0.0044 Tw
+(for each of the other vitamins, and each of these also needs to be)Tj
+/F5 1 Tf
+26.02 0 TD
+0 Tw
+()Tj
+/F2 1 Tf
+0.8 0 TD
+(700.)Tj
+-25.38 -1.3 TD
+-0.0033 Tw
+(Putting these all together, we have the following linear program:)Tj
+ET
+endstreamendobj4 0 obj<< /Type /Page /Parent 100 0 R /Resources 5 0 R /Contents 6 0 R /Rotate 0 /MediaBox [ 0 0 612 792 ] /CropBox [ 40.32001 126 571.67999 792 ] >> endobj5 0 obj<< /ProcSet [ /PDF /Text ] /Font << /F2 119 0 R /F3 125 0 R /F4 46 0 R /F5 47 0 R /F6 48 0 R >> /ExtGState << /GS1 127 0 R >> >> endobj6 0 obj<< /Length 7938 >> stream
+BT
+/F3 1 Tf
+7 0 0 7 126 747.615 Tm
+0 g
+/GS1 gs
+0 Tc
+0.0123 Tw
+[(SECTION )-17.5(2.1 )-18528.4(A LINEAR PROGRAM FOR THE DIET PROBLEM)]TJ
+10 0 0 10 474.8 747.615 Tm
+0 Tw
+(29)Tj
+/F2 1 Tf
+-32 -3.24 TD
+(Minimize)Tj
+2.5 -1.2 TD
+(3.19)Tj
+/F4 1 Tf
+2 0 TD
+(X)Tj
+7 0 0 7 207 701.215 Tm
+(BEEF)Tj
+/F2 1 Tf
+10 0 0 10 227.5 703.215 Tm
+-0.004 Tw
+(+ 2.59)Tj
+/F4 1 Tf
+2.81 0 TD
+0 Tw
+(X)Tj
+7 0 0 7 262.8 701.215 Tm
+(CHK)Tj
+/F2 1 Tf
+10 0 0 10 280.5 703.215 Tm
+-0.004 Tw
+(+ 2.29)Tj
+/F4 1 Tf
+2.81 0 TD
+0 Tw
+(X)Tj
+7 0 0 7 315.8 701.215 Tm
+(FISH)Tj
+/F2 1 Tf
+10 0 0 10 334.2 703.215 Tm
+-0.004 Tw
+(+ 2.89)Tj
+/F4 1 Tf
+2.81 0 TD
+0 Tw
+(X)Tj
+7 0 0 7 369.5 701.215 Tm
+(HAM)Tj
+/F2 1 Tf
+10 0 0 10 387.9 703.215 Tm
+(+)Tj
+-20.81 -1.2 TD
+(1.89)Tj
+/F4 1 Tf
+2 0 TD
+(X)Tj
+7 0 0 7 207 689.215 Tm
+(MCH)Tj
+/F2 1 Tf
+10 0 0 10 225.8 691.215 Tm
+-0.004 Tw
+(+ 1.99)Tj
+/F4 1 Tf
+2.81 0 TD
+0 Tw
+(X)Tj
+7 0 0 7 261.1 689.215 Tm
+(MTL)Tj
+/F2 1 Tf
+10 0 0 10 278 691.215 Tm
+-0.004 Tw
+(+ 1.99)Tj
+/F4 1 Tf
+2.81 0 TD
+0 Tw
+(X)Tj
+7 0 0 7 313.3 689.215 Tm
+(SPG)Tj
+/F2 1 Tf
+10 0 0 10 329.4 691.215 Tm
+-0.004 Tw
+(+ 2.49)Tj
+/F4 1 Tf
+2.81 0 TD
+0 Tw
+(X)Tj
+7 0 0 7 364.7 689.215 Tm
+(TUR)Tj
+/F2 1 Tf
+10 0 0 10 154.8 670.015 Tm
+0.0021 Tw
+(Subject to)Tj
+2.5 -1.2 TD
+0 Tw
+(60)Tj
+/F4 1 Tf
+1.25 0 TD
+(X)Tj
+7 0 0 7 199.5 656.015 Tm
+(BEEF)Tj
+/F2 1 Tf
+10 0 0 10 220 658.015 Tm
+-0.004 Tw
+(+ 8)Tj
+/F4 1 Tf
+1.56 0 TD
+0 Tw
+(X)Tj
+7 0 0 7 242.8 656.015 Tm
+(CHK)Tj
+/F2 1 Tf
+10 0 0 10 260.5 658.015 Tm
+-0.004 Tw
+(+ 8)Tj
+/F4 1 Tf
+1.56 0 TD
+0 Tw
+(X)Tj
+7 0 0 7 283.3 656.015 Tm
+(FISH)Tj
+/F2 1 Tf
+10 0 0 10 301.7 658.015 Tm
+-0.004 Tw
+(+ 40)Tj
+/F4 1 Tf
+2.06 0 TD
+0 Tw
+(X)Tj
+7 0 0 7 329.5 656.015 Tm
+(HAM)Tj
+/F2 1 Tf
+10 0 0 10 347.9 658.015 Tm
+(+)Tj
+-16.81 -1.2 TD
+(15)Tj
+/F4 1 Tf
+1.25 0 TD
+(X)Tj
+7 0 0 7 199.5 644.015 Tm
+(MCH)Tj
+/F2 1 Tf
+10 0 0 10 218.3 646.015 Tm
+-0.004 Tw
+(+ 70)Tj
+/F4 1 Tf
+2.06 0 TD
+0 Tw
+(X)Tj
+7 0 0 7 246.1 644.015 Tm
+(MTL)Tj
+/F2 1 Tf
+10 0 0 10 263 646.015 Tm
+-0.004 Tw
+(+ 25)Tj
+/F4 1 Tf
+2.06 0 TD
+0 Tw
+(X)Tj
+7 0 0 7 290.8 644.015 Tm
+(SPG)Tj
+/F2 1 Tf
+10 0 0 10 306.9 646.015 Tm
+-0.004 Tw
+(+ 60)Tj
+/F4 1 Tf
+2.06 0 TD
+0 Tw
+(X)Tj
+7 0 0 7 334.7 644.015 Tm
+(TUR)Tj
+/F5 1 Tf
+10 0 0 10 351.2 646.015 Tm
+()Tj
+/F2 1 Tf
+0.8 0 TD
+(700)Tj
+-17.94 -2.12 TD
+(20)Tj
+/F4 1 Tf
+1.25 0 TD
+(X)Tj
+7 0 0 7 199.5 622.815 Tm
+(BEEF)Tj
+/F2 1 Tf
+10 0 0 10 220 624.815 Tm
+-0.004 Tw
+(+ 0)Tj
+/F4 1 Tf
+1.56 0 TD
+0 Tw
+(X)Tj
+7 0 0 7 242.8 622.815 Tm
+(CHK)Tj
+/F2 1 Tf
+10 0 0 10 260.5 624.815 Tm
+-0.004 Tw
+(+ 10)Tj
+/F4 1 Tf
+2.06 0 TD
+0 Tw
+(X)Tj
+7 0 0 7 288.3 622.815 Tm
+(FISH)Tj
+/F2 1 Tf
+10 0 0 10 306.7 624.815 Tm
+-0.004 Tw
+(+ 40)Tj
+/F4 1 Tf
+2.06 0 TD
+0 Tw
+(X)Tj
+7 0 0 7 334.5 622.815 Tm
+(HAM)Tj
+/F2 1 Tf
+10 0 0 10 352.9 624.815 Tm
+(+)Tj
+-17.31 -1.2 TD
+(35)Tj
+/F4 1 Tf
+1.25 0 TD
+(X)Tj
+7 0 0 7 199.5 610.815 Tm
+(MCH)Tj
+/F2 1 Tf
+10 0 0 10 218.3 612.815 Tm
+-0.004 Tw
+(+ 30)Tj
+/F4 1 Tf
+2.06 0 TD
+0 Tw
+(X)Tj
+7 0 0 7 246.1 610.815 Tm
+(MTL)Tj
+/F2 1 Tf
+10 0 0 10 263 612.815 Tm
+-0.004 Tw
+(+ 50)Tj
+/F4 1 Tf
+2.06 0 TD
+0 Tw
+(X)Tj
+7 0 0 7 290.8 610.815 Tm
+(SPG)Tj
+/F2 1 Tf
+10 0 0 10 306.9 612.815 Tm
+-0.004 Tw
+(+ 20)Tj
+/F4 1 Tf
+2.06 0 TD
+0 Tw
+(X)Tj
+7 0 0 7 334.7 610.815 Tm
+(TUR)Tj
+/F5 1 Tf
+10 0 0 10 351.2 612.815 Tm
+()Tj
+/F2 1 Tf
+0.8 0 TD
+(700)Tj
+-17.94 -2.12 TD
+(10)Tj
+/F4 1 Tf
+1.25 0 TD
+(X)Tj
+7 0 0 7 199.5 589.615 Tm
+(BEEF)Tj
+/F2 1 Tf
+10 0 0 10 220 591.615 Tm
+-0.004 Tw
+(+ 20)Tj
+/F4 1 Tf
+2.06 0 TD
+0 Tw
+(X)Tj
+7 0 0 7 247.8 589.615 Tm
+(CHK)Tj
+/F2 1 Tf
+10 0 0 10 265.5 591.615 Tm
+-0.004 Tw
+(+ 15)Tj
+/F4 1 Tf
+2.06 0 TD
+0 Tw
+(X)Tj
+7 0 0 7 293.3 589.615 Tm
+(FISH)Tj
+/F2 1 Tf
+10 0 0 10 311.7 591.615 Tm
+-0.004 Tw
+(+ 35)Tj
+/F4 1 Tf
+2.06 0 TD
+0 Tw
+(X)Tj
+7 0 0 7 339.5 589.615 Tm
+(HAM)Tj
+/F2 1 Tf
+10 0 0 10 357.9 591.615 Tm
+(+)Tj
+-17.81 -1.2 TD
+(15)Tj
+/F4 1 Tf
+1.25 0 TD
+(X)Tj
+7 0 0 7 199.5 577.615 Tm
+(MCH)Tj
+/F2 1 Tf
+10 0 0 10 218.3 579.615 Tm
+-0.004 Tw
+(+ 15)Tj
+/F4 1 Tf
+2.06 0 TD
+0 Tw
+(X)Tj
+7 0 0 7 246.1 577.615 Tm
+(MTL)Tj
+/F2 1 Tf
+10 0 0 10 263 579.615 Tm
+-0.004 Tw
+(+ 25)Tj
+/F4 1 Tf
+2.06 0 TD
+0 Tw
+(X)Tj
+7 0 0 7 290.8 577.615 Tm
+(SPG)Tj
+/F2 1 Tf
+10 0 0 10 306.9 579.615 Tm
+-0.004 Tw
+(+ 15)Tj
+/F4 1 Tf
+2.06 0 TD
+0 Tw
+(X)Tj
+7 0 0 7 334.7 577.615 Tm
+(TUR)Tj
+/F5 1 Tf
+10 0 0 10 351.2 579.615 Tm
+()Tj
+/F2 1 Tf
+0.8 0 TD
+(700)Tj
+-17.94 -2.12 TD
+(15)Tj
+/F4 1 Tf
+1.25 0 TD
+(X)Tj
+7 0 0 7 199.5 556.415 Tm
+(BEEF)Tj
+/F2 1 Tf
+10 0 0 10 220 558.415 Tm
+-0.004 Tw
+(+ 20)Tj
+/F4 1 Tf
+2.06 0 TD
+0 Tw
+(X)Tj
+7 0 0 7 247.8 556.415 Tm
+(CHK)Tj
+/F2 1 Tf
+10 0 0 10 265.5 558.415 Tm
+-0.004 Tw
+(+ 10)Tj
+/F4 1 Tf
+2.06 0 TD
+0 Tw
+(X)Tj
+7 0 0 7 293.3 556.415 Tm
+(FISH)Tj
+/F2 1 Tf
+10 0 0 10 311.7 558.415 Tm
+-0.004 Tw
+(+ 10)Tj
+/F4 1 Tf
+2.06 0 TD
+0 Tw
+(X)Tj
+7 0 0 7 339.5 556.415 Tm
+(HAM)Tj
+/F2 1 Tf
+10 0 0 10 357.9 558.415 Tm
+(+)Tj
+-17.81 -1.2 TD
+(15)Tj
+/F4 1 Tf
+1.25 0 TD
+(X)Tj
+7 0 0 7 199.5 544.415 Tm
+(MCH)Tj
+/F2 1 Tf
+10 0 0 10 218.3 546.415 Tm
+-0.004 Tw
+(+ 15)Tj
+/F4 1 Tf
+2.06 0 TD
+0 Tw
+(X)Tj
+7 0 0 7 246.1 544.415 Tm
+(MTL)Tj
+/F2 1 Tf
+10 0 0 10 263 546.415 Tm
+-0.004 Tw
+(+ 15)Tj
+/F4 1 Tf
+2.06 0 TD
+0 Tw
+(X)Tj
+7 0 0 7 290.8 544.415 Tm
+(SPG)Tj
+/F2 1 Tf
+10 0 0 10 306.9 546.415 Tm
+-0.004 Tw
+(+ 10)Tj
+/F4 1 Tf
+2.06 0 TD
+0 Tw
+(X)Tj
+7 0 0 7 334.7 544.415 Tm
+(TUR)Tj
+/F5 1 Tf
+10 0 0 10 351.2 546.415 Tm
+()Tj
+/F2 1 Tf
+0.8 0 TD
+(700)Tj
+/F4 1 Tf
+-17.94 -2.12 TD
+(X)Tj
+7 0 0 7 187 523.215 Tm
+(BEEF)Tj
+/F5 1 Tf
+10 0 0 10 207.5 525.215 Tm
+()Tj
+/F2 1 Tf
+0.8 0 TD
+(0,)Tj
+/F4 1 Tf
+1 0 TD
+(X)Tj
+7 0 0 7 232.7 523.215 Tm
+(CHK)Tj
+/F5 1 Tf
+10 0 0 10 250.4 525.215 Tm
+()Tj
+/F2 1 Tf
+0.8 0 TD
+(0,)Tj
+/F4 1 Tf
+1 0 TD
+(X)Tj
+7 0 0 7 275.6 523.215 Tm
+(FISH)Tj
+/F5 1 Tf
+10 0 0 10 294 525.215 Tm
+()Tj
+/F2 1 Tf
+0.8 0 TD
+(0,)Tj
+/F4 1 Tf
+1 0 TD
+(X)Tj
+7 0 0 7 319.2 523.215 Tm
+(HAM)Tj
+/F5 1 Tf
+10 0 0 10 337.6 525.215 Tm
+()Tj
+/F2 1 Tf
+0.8 0 TD
+(0,)Tj
+/F4 1 Tf
+-16.58 -1.2 TD
+(X)Tj
+7 0 0 7 187 511.215 Tm
+(MCH)Tj
+/F5 1 Tf
+10 0 0 10 205.8 513.215 Tm
+()Tj
+/F2 1 Tf
+0.8 0 TD
+(0,)Tj
+/F4 1 Tf
+1 0 TD
+(X)Tj
+7 0 0 7 231 511.215 Tm
+(MTL)Tj
+/F5 1 Tf
+10 0 0 10 247.9 513.215 Tm
+()Tj
+/F2 1 Tf
+0.8 0 TD
+(0,)Tj
+/F4 1 Tf
+1 0 TD
+(X)Tj
+7 0 0 7 273.1 511.215 Tm
+(SPG)Tj
+/F5 1 Tf
+10 0 0 10 289.2 513.215 Tm
+()Tj
+/F2 1 Tf
+0.8 0 TD
+(0,)Tj
+/F4 1 Tf
+1 0 TD
+(X)Tj
+7 0 0 7 314.4 511.215 Tm
+(TUR)Tj
+/F5 1 Tf
+10 0 0 10 330.9 513.215 Tm
+()Tj
+/F2 1 Tf
+0.8 0 TD
+(0)Tj
+-21.29 -2.12 TD
+0.0639 Tw
+[(At the end we have added the common-sense requirement that no fewer than zero )-5.1(pack-)]TJ
+0 -1.2 TD
+-0.0071 Tw
+(ages of a food can be purchased.)Tj
+1.44 -1.28 TD
+0.0764 Tw
+[(As )7.6(we )7.6(first )7.6(did )7.6(with )7.6(the production LP of Chapter 1, we can transcribe to a file, say)]TJ
+/F6 1 Tf
+-1.44 -1.2 TD
+0 Tw
+(diet0.mod)Tj
+/F2 1 Tf
+5.4 0 TD
+-0.004 Tw
+(, an)Tj
+9 0 0 9 196.9 455.215 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 224.4 455.215 Tm
+-0.0006 Tw
+(statement of the explicit diet LP:)Tj
+/F6 1 Tf
+9 0 0 9 154.8 436.015 Tm
+0 Tw
+(var Xbeef >= 0; var Xchk >= 0; var Xfish >= 0;)Tj
+0 -1.1111 TD
+[(var Xham >= 0; )-600(var Xmch >= 0; var Xmtl >= 0;)]TJ
+T*
+[(var Xspg >= 0; )-600(var Xtur >= 0;)]TJ
+0 -1.8 TD
+-0.0001 Tw
+(minimize cost:)Tj
+1.2 -1.1111 TD
+0 Tw
+(3.19*Xbeef + 2.59*Xchk + 2.29*Xfish + 2.89*Xham +)Tj
+T*
+[(1.89*Xmch )-599.9(+ 1.99*Xmtl + 1.99*Xspg )-600(+ 2.49*Xtur;)]TJ
+-1.2 -1.8 TD
+(subject to A:)Tj
+1.2 -1.1111 TD
+[(60*Xbeef + )-600(8*Xchk + )-600(8*Xfish + 40*Xham +)]TJ
+T*
+[(15*Xmch )-600(+ 70*Xmtl + 25*Xspg )-600(+ 60*Xtur >= 700;)]TJ
+-1.2 -1.8 TD
+(subject to C:)Tj
+1.2 -1.1111 TD
+[(20*Xbeef + )-600(0*Xchk + 10*Xfish + 40*Xham +)]TJ
+T*
+[(35*Xmch )-600(+ 30*Xmtl + 50*Xspg )-600(+ 20*Xtur >= 700;)]TJ
+-1.2 -1.8 TD
+(subject to B1:)Tj
+1.2 -1.1111 TD
+(10*Xbeef + 20*Xchk + 15*Xfish + 35*Xham +)Tj
+T*
+[(15*Xmch )-600(+ 15*Xmtl + 25*Xspg )-600(+ 15*Xtur >= 700;)]TJ
+-1.2 -1.8 TD
+(subject to B2:)Tj
+1.2 -1.1111 TD
+(15*Xbeef + 20*Xchk + 10*Xfish + 10*Xham +)Tj
+T*
+[(15*Xmch )-600(+ 15*Xmtl + 15*Xspg )-600(+ 10*Xtur >= 700;)]TJ
+/F2 1 Tf
+10 0 0 10 126 213.815 Tm
+0.0615 Tw
+(Again a few)Tj
+9 0 0 9 179.3 213.815 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 207.5 213.815 Tm
+0.0783 Tw
+[(commands )13.3(then )13.3(suffice )13.3(to )13.3(read )13.3(the )13.3(file, send the LP to a solver, and)]TJ
+-8.15 -1.2 TD
+-0.0074 Tw
+(retrieve the results:)Tj
+ET
+endstreamendobj7 0 obj<< /Type /Page /Parent 100 0 R /Resources 8 0 R /Contents 9 0 R /Rotate 0 /MediaBox [ 0 0 612 792 ] /CropBox [ 40.32001 126 571.67999 792 ] >> endobj8 0 obj<< /ProcSet [ /PDF /Text ] /Font << /F1 120 0 R /F2 119 0 R /F3 125 0 R /F4 46 0 R /F5 47 0 R /F6 48 0 R /F7 49 0 R >> /ExtGState << /GS1 127 0 R >> >> endobj9 0 obj<< /Length 4683 >> stream
+BT
+/F3 1 Tf
+10 0 0 10 126 747.615 Tm
+0 g
+/GS1 gs
+0 Tc
+0 Tw
+(30)Tj
+7 0 0 7 154 747.615 Tm
+0.0098 Tw
+[(DIET AND OTHER INPUT MODELS: )-301.1(MINIMIZING )-10(COSTS )-15034.1(CHAPTER 2)]TJ
+/F6 1 Tf
+9 0 0 9 154.8 717.215 Tm
+0 Tw
+(ampl:)Tj
+/F7 1 Tf
+3.6 0 TD
+-0.0001 Tw
+(model diet0.mod;)Tj
+/F6 1 Tf
+-3.6 -1.1111 TD
+0 Tw
+(ampl:)Tj
+/F7 1 Tf
+3.6 0 TD
+(solve;)Tj
+/F6 1 Tf
+-3.6 -1.1111 TD
+(MINOS 5.5: optimal solution found.)Tj
+T*
+-0.0001 Tw
+(6 iterations, objective 88.2)Tj
+T*
+0 Tw
+(ampl:)Tj
+/F7 1 Tf
+3.6 0 TD
+-0.0003 Tw
+(display Xbeef,Xchk,Xfish,Xham,Xmch,Xmtl,Xspg,Xtur;)Tj
+/F6 1 Tf
+-3.6 -1.1111 TD
+0 Tw
+(Xbeef = 0)Tj
+T*
+(Xchk = 0)Tj
+T*
+(Xfish = 0)Tj
+T*
+(Xham = 0)Tj
+T*
+(Xmch = 46.6667)Tj
+T*
+-0.0001 Tw
+(Xmtl = -3.69159e-18)Tj
+T*
+(Xspg = -4.05347e-16)Tj
+T*
+0 Tw
+(Xtur = 0)Tj
+/F2 1 Tf
+10 0 0 10 126 578.815 Tm
+0.1286 Tw
+[(The )5.5(optimal )5.5(solution is found quickly, but it is hardly what we might have hoped for.)]TJ
+0 -1.2 TD
+0.08 Tw
+[(The cost is minimized by a monotonous )11(diet )11(of )11(46)]TJ
+8 0 0 8 333.7 569.015 Tm
+0 Tw
+(2)Tj
+/F4 1 Tf
+10 0 0 10 337.5 566.815 Tm
+(/)Tj
+/F2 1 Tf
+8 0 0 8 339.9 566.515 Tm
+(3)Tj
+10 0 0 10 347.1 566.815 Tm
+0.0573 Tw
+(packages of macaroni and cheese!)Tj
+-22.11 -1.2 TD
+0.0258 Tw
+[(You can check that this )-10.6(neatly )-10.6(provides )-10.6(15%)]TJ
+/F5 1 Tf
+18.36 0 TD
+0 Tw
+(×)Tj
+/F2 1 Tf
+0.84 0 TD
+(46)Tj
+8 0 0 8 328 557.015 Tm
+(2)Tj
+/F4 1 Tf
+10 0 0 10 331.8 554.815 Tm
+(/)Tj
+/F2 1 Tf
+8 0 0 8 334.2 554.515 Tm
+(3)Tj
+10 0 0 10 341.1 554.815 Tm
+0.0345 Tw
+(= 700% of the requirement for vita-)Tj
+-21.51 -1.2 TD
+0.0991 Tw
+[(mins )-10.4(A, )-10.4(B1 )-10.4(and )-10.4(B2, )-10.4(and )-10.4(a )-10.4(lot )-10.4(more vitamin C than necessary; the cost is only $1.89)]TJ
+/F5 1 Tf
+35.45 0 TD
+0 Tw
+(×)Tj
+/F2 1 Tf
+-35.45 -1.2 TD
+(46)Tj
+8 0 0 8 136 533.015 Tm
+(2)Tj
+/F4 1 Tf
+10 0 0 10 139.8 530.815 Tm
+(/)Tj
+/F2 1 Tf
+8 0 0 8 142.2 530.515 Tm
+(3)Tj
+10 0 0 10 149.1 530.815 Tm
+0.0449 Tw
+[(= )8.8($88.20. )-237.1(\(The tiny negative values for meat loaf and spaghetti can be regarded as)]TJ
+-2.31 -1.2 TD
+-0.0022 Tw
+(zeros, like the tiny positive values we saw in Section 1.6.\))Tj
+1.44 -1.25 TD
+0.0177 Tw
+[(You might guess that a better solution would be generated by )-9.6(requiring )-9.6(the )-9.6(amount )-9.6(of)]TJ
+-1.44 -1.2 TD
+0.2157 Tw
+[(each )-9.7(vitamin )-9.7(to )-9.7(equal )-9.7(700% )-9.7(exactly. )-264.3(Such a requirement can easily be imposed by)]TJ
+T*
+0.0421 Tw
+(changing each)Tj
+/F6 1 Tf
+6.1 0 TD
+0 Tw
+(>=)Tj
+/F2 1 Tf
+1.51 0 TD
+(to)Tj
+/F6 1 Tf
+1.09 0 TD
+(=)Tj
+/F2 1 Tf
+0.91 0 TD
+0.06 Tw
+(in the)Tj
+9 0 0 9 248.3 482.315 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 276.4 482.315 Tm
+0.0656 Tw
+[(constraints. )-245.5(If you go ahead and solve the changed)]TJ
+-15.04 -1.2 TD
+-0.0054 Tw
+[(LP, )-16.2(you )-16.2(will )-16.2(find )-16.2(that )-16.2(the diet does indeed become more varied: approximately 19.5 pack-)]TJ
+T*
+0.0425 Tw
+[(ages of chicken, 16.3 of macaroni and cheese, )-14.3(and )-14.3(4.3 )-14.3(of )-14.3(meat )-14.3(loaf. )-272.5(But )-13.5(since )-13.5(equalities)]TJ
+T*
+-0.0032 Tw
+(are more restrictive than inequalities, the cost goes up to $89.99.)Tj
+/F1 1 Tf
+12 0 0 12 126 396.015 Tm
+0.0066 Tw
+[(2.2 )-284.1(An AMPL model for the diet problem)]TJ
+/F2 1 Tf
+10 0 0 10 140.4 377.615 Tm
+0.0559 Tw
+[(Clearly we will have to consider more )-10.3(extensive )-10.3(modifications )-10.3(to )-10.3(our )-10.3(linear )-10.3(program)]TJ
+-1.44 -1.2 TD
+0.1256 Tw
+[(in order to produce a diet that is even remotely acceptable. )-246.4(We will probably )6.6(want )6.6(to)]TJ
+T*
+0.0264 Tw
+[(change the sets of food and nutrients, as well )-10.5(as )-10.5(the )-10.5(nature )-10.5(of )-10.5(the )-10.5(constraints )-10.5(and )-10.5(bounds.)]TJ
+T*
+0.0073 Tw
+[(As )-9.7(in )-9.7(the )-9.7(production )-9.7(example )-9.7(of the previous chapter, this will be much easier to do if we)]TJ
+T*
+-0.0046 Tw
+(rely on a general model that can be coupled with a variety of specific data files.)Tj
+1.44 -1.25 TD
+0.1892 Tw
+[(This model deals with two things: nutrients and foods. )-250.8(Thus we begin )-6.8(an)]TJ
+9 0 0 9 461 317.115 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 126 305.115 Tm
+-0.0048 Tw
+(model by declaring sets of each:)Tj
+/F6 1 Tf
+9 0 0 9 154.8 288.715 Tm
+0 Tw
+(set NUTR;)Tj
+0 -1.1111 TD
+(set FOOD;)Tj
+/F2 1 Tf
+10 0 0 10 126 260.315 Tm
+0.1156 Tw
+[(Next we need to specify the numbers required by the model. )-262.5(Certainly )-13.8(a )-13.8(positive )-13.8(cost)]TJ
+0 -1.2 TD
+-0.0044 Tw
+(should be given for each food:)Tj
+/F6 1 Tf
+9 0 0 9 154.8 231.915 Tm
+0 Tw
+(param cost {FOOD} > 0;)Tj
+/F2 1 Tf
+10 0 0 10 126 213.515 Tm
+0.1352 Tw
+[(We also specify that for each food there are lower and upper limits on the number )-11.8(of)]TJ
+T*
+-0.0043 Tw
+(packages in the diet:)Tj
+ET
+endstreamendobj10 0 obj<< /Type /Page /Parent 100 0 R /Resources 11 0 R /Contents 12 0 R /Rotate 0 /MediaBox [ 0 0 612 792 ] /CropBox [ 40.32001 126 571.67999 792 ] >> endobj11 0 obj<< /ProcSet [ /PDF /Text ] /Font << /F2 119 0 R /F3 125 0 R /F6 48 0 R >> /ExtGState << /GS1 127 0 R >> >> endobj12 0 obj<< /Length 5234 >> stream
+BT
+/F3 1 Tf
+7 0 0 7 126 747.615 Tm
+0 g
+/GS1 gs
+0 Tc
+0.0123 Tw
+[(SECTION )-17.5(2.2 )-20306.4(AN AMPL MODEL FOR THE DIET PROBLEM)]TJ
+10 0 0 10 474.8 747.615 Tm
+0 Tw
+(31)Tj
+/F6 1 Tf
+9 0 0 9 154.8 717.215 Tm
+(param f_min {FOOD} >= 0;)Tj
+0 -1.1111 TD
+(param f_max {j in FOOD} >= f_min[j];)Tj
+/F2 1 Tf
+10 0 0 10 126 687.315 Tm
+0.0375 Tw
+[(Notice )13.5(that )13.5(we need a dummy index)]TJ
+/F6 1 Tf
+14.93 0 TD
+0 Tw
+(j)Tj
+/F2 1 Tf
+0.89 0 TD
+0.036 Tw
+(to run over)Tj
+/F6 1 Tf
+4.75 0 TD
+0 Tw
+(FOOD)Tj
+/F2 1 Tf
+2.69 0 TD
+0.0347 Tw
+(in the declaration of)Tj
+/F6 1 Tf
+8.42 0 TD
+0 Tw
+(f_max)Tj
+/F2 1 Tf
+3 0 TD
+0.042 Tw
+(, in)Tj
+-34.68 -1.2 TD
+0.0656 Tw
+[(order )-10.8(to )-10.8(say )-10.8(that the maximum for each food must be greater than or equal to the corre-)]TJ
+T*
+0.0131 Tw
+(sponding minimum.)Tj
+1.44 -1.27 TD
+0.0046 Tw
+[(To )6.3(make )6.3(this )6.3(model )6.3(somewhat more general than our examples so far, we also specify)]TJ
+-1.44 -1.2 TD
+-0.0016 Tw
+(similar lower and upper limits on the amount of each nutrient in the diet:)Tj
+/F6 1 Tf
+9 0 0 9 154.8 620.715 Tm
+0 Tw
+(param n_min {NUTR} >= 0;)Tj
+0 -1.1111 TD
+(param n_max {i in NUTR} >= n_min[i];)Tj
+/F2 1 Tf
+10 0 0 10 126 590.815 Tm
+0.0459 Tw
+[(Finally, for each combination of a nutrient and a food, we need a number )-7.1(that )-7.1(represents)]TJ
+0 -1.2 TD
+0.0963 Tw
+[(the amount of the nutrient in one package )8.9(of )8.9(the )8.9(food. )-241.7(You )10.9(may )10.9(recall )10.9(from )10.9(Chapter )10.9(1)]TJ
+T*
+-0.0011 Tw
+(that such a ‘‘product’’ of two sets is written by listing them both:)Tj
+/F6 1 Tf
+9 0 0 9 154.8 548.915 Tm
+0 Tw
+(param amt {NUTR,FOOD} >= 0;)Tj
+/F2 1 Tf
+10 0 0 10 126 529.015 Tm
+-0.0079 Tw
+[(References to this parameter require two indices. )-258.9(For example,)]TJ
+/F6 1 Tf
+25.55 0 TD
+0 Tw
+(amt[i,j])Tj
+/F2 1 Tf
+5.05 0 TD
+0.001 Tw
+[(is the )-9(amount)]TJ
+-30.6 -1.2 TD
+-0.0039 Tw
+(of nutrient)Tj
+/F6 1 Tf
+4.44 0 TD
+0 Tw
+(i)Tj
+/F2 1 Tf
+0.85 0 TD
+-0.006 Tw
+(in a package of food)Tj
+/F6 1 Tf
+8.39 0 TD
+0 Tw
+(j)Tj
+/F2 1 Tf
+0.6 0 TD
+(.)Tj
+-12.84 -1.27 TD
+-0.0047 Tw
+(The decision variables for this model are the numbers of packages to buy of the differ-)Tj
+-1.44 -1.2 TD
+-0.0019 Tw
+(ent foods:)Tj
+/F6 1 Tf
+9 0 0 9 154.8 474.415 Tm
+0 Tw
+(var Buy {j in FOOD} >= f_min[j], <= f_max[j];)Tj
+/F2 1 Tf
+10 0 0 10 126 454.515 Tm
+0.125 Tw
+[(The )14.9(number of packages of some food)]TJ
+/F6 1 Tf
+16.5 0 TD
+0 Tw
+(j)Tj
+/F2 1 Tf
+0.98 0 TD
+0.1284 Tw
+(to be bought will be called)Tj
+/F6 1 Tf
+11.66 0 TD
+0 Tw
+(Buy[j])Tj
+/F2 1 Tf
+3.6 0 TD
+0.13 Tw
+(; in any)Tj
+-32.74 -1.2 TD
+-0.0032 Tw
+(acceptable solution it will have to lie between)Tj
+/F6 1 Tf
+18.53 0 TD
+0 Tw
+(f_min[j])Tj
+/F2 1 Tf
+5.05 0 TD
+(and)Tj
+/F6 1 Tf
+1.69 0 TD
+(f_max[j])Tj
+/F2 1 Tf
+4.8 0 TD
+(.)Tj
+-28.63 -1.27 TD
+0.0482 Tw
+[(The total cost of buying a )-8.8(food)]TJ
+/F6 1 Tf
+12.94 0 TD
+0 Tw
+(j)Tj
+/F2 1 Tf
+0.91 0 TD
+0.0543 Tw
+(is the cost per package,)Tj
+/F6 1 Tf
+9.83 0 TD
+0 Tw
+(cost[j])Tj
+/F2 1 Tf
+4.2 0 TD
+0.06 Tw
+(, times the num-)Tj
+-29.32 -1.2 TD
+0.0075 Tw
+(ber of packages,)Tj
+/F6 1 Tf
+6.81 0 TD
+0 Tw
+(Buy[j])Tj
+/F2 1 Tf
+3.6 0 TD
+0.02 Tw
+[(. )-245(The objective to be minimized is the sum of this )16(product )16(over)]TJ
+-10.41 -1.2 TD
+-0.002 Tw
+(all foods)Tj
+/F6 1 Tf
+3.72 0 TD
+0 Tw
+(j)Tj
+/F2 1 Tf
+0.6 0 TD
+(:)Tj
+/F6 1 Tf
+9 0 0 9 154.8 387.915 Tm
+[(minimize Total_Cost: )-600(sum {j in FOOD} cost[j] * Buy[j];)]TJ
+/F2 1 Tf
+10 0 0 10 126 368.015 Tm
+(This)Tj
+/F6 1 Tf
+2.03 0 TD
+(minimize)Tj
+/F2 1 Tf
+5.05 0 TD
+-0.0067 Tw
+(declaration works the same as)Tj
+/F6 1 Tf
+12.22 0 TD
+0 Tw
+(maximize)Tj
+/F2 1 Tf
+5.05 0 TD
+-0.0006 Tw
+(did in Chapter 1.)Tj
+-22.91 -1.27 TD
+0.0194 Tw
+(Similarly, the amount of a nutrient)Tj
+/F6 1 Tf
+14.2 0 TD
+0 Tw
+(i)Tj
+/F2 1 Tf
+0.87 0 TD
+0.018 Tw
+(supplied by a food)Tj
+/F6 1 Tf
+7.74 0 TD
+0 Tw
+(j)Tj
+/F2 1 Tf
+0.87 0 TD
+0.0192 Tw
+(is the nutrient per package,)Tj
+/F6 1 Tf
+-25.12 -1.2 TD
+0 Tw
+(amt[i,j])Tj
+/F2 1 Tf
+4.8 0 TD
+0.0056 Tw
+(, times the number of packages)Tj
+/F6 1 Tf
+12.73 0 TD
+0 Tw
+(Buy[j])Tj
+/F2 1 Tf
+3.6 0 TD
+0.011 Tw
+[(. )-244(The total amount )13(of )13(nutrient)]TJ
+/F6 1 Tf
+12.3 0 TD
+0 Tw
+(i)Tj
+/F2 1 Tf
+0.85 0 TD
+(sup-)Tj
+-34.28 -1.2 TD
+-0.0009 Tw
+(plied is the sum of this product over all foods)Tj
+/F6 1 Tf
+18.38 0 TD
+0 Tw
+(j)Tj
+/F2 1 Tf
+0.6 0 TD
+(:)Tj
+/F6 1 Tf
+9 0 0 9 154.8 313.415 Tm
+(sum {j in FOOD} amt[i,j] * Buy[j])Tj
+/F2 1 Tf
+10 0 0 10 126 293.515 Tm
+0.0967 Tw
+(To complete the model, we need only specify that each such sum must lie between the)Tj
+0 -1.2 TD
+-0.0059 Tw
+[(appropriate )7(bounds. )-250.9(Our constraint declaration begins)]TJ
+/F6 1 Tf
+9 0 0 9 154.8 263.615 Tm
+0 Tw
+(subject to Diet {i in NUTR}:)Tj
+/F2 1 Tf
+10 0 0 10 126 243.715 Tm
+0.047 Tw
+(to say that a constraint named)Tj
+/F6 1 Tf
+12.45 0 TD
+0 Tw
+(Diet[i])Tj
+/F2 1 Tf
+4.5 0 TD
+0.046 Tw
+[(must be imposed for each )-7(member)]TJ
+/F6 1 Tf
+14.35 0 TD
+0 Tw
+(i)Tj
+/F2 1 Tf
+0.91 0 TD
+(of)Tj
+/F6 1 Tf
+1.14 0 TD
+(NUTR)Tj
+/F2 1 Tf
+2.4 0 TD
+(.)Tj
+-35.75 -1.2 TD
+0.0747 Tw
+[(The rest of the declaration gives the algebraic statement of the )8.3(constraint )8.3(for )8.3(nutrient)]TJ
+/F6 1 Tf
+35.12 0 TD
+0 Tw
+(i)Tj
+/F2 1 Tf
+0.6 0 TD
+(:)Tj
+-35.72 -1.2 TD
+-0.0026 Tw
+(the variables must satisfy)Tj
+/F6 1 Tf
+9 0 0 9 154.8 201.815 Tm
+0 Tw
+(n_min[i] <= sum {j in FOOD} amt[i,j] * Buy[j] <= n_max[i])Tj
+ET
+endstreamendobj13 0 obj<< /Type /Page /Parent 100 0 R /Resources 14 0 R /Contents 15 0 R /Rotate 0 /MediaBox [ 0 0 612 792 ] /CropBox [ 40.32001 126 571.67999 792 ] >> endobj14 0 obj<< /ProcSet [ /PDF /Text ] /Font << /F1 120 0 R /F2 119 0 R /F3 125 0 R /F6 48 0 R /F7 49 0 R /F8 50 0 R >> /ExtGState << /GS1 127 0 R >> >> endobj15 0 obj<< /Length 4616 >> stream
+BT
+/F3 1 Tf
+10 0 0 10 126 747.615 Tm
+0 g
+/GS1 gs
+0 Tc
+0 Tw
+(32)Tj
+7 0 0 7 154 747.615 Tm
+0.0098 Tw
+[(DIET AND OTHER INPUT MODELS: )-301.1(MINIMIZING )-10(COSTS )-15034.1(CHAPTER 2)]TJ
+/F2 1 Tf
+10 0 0 10 126 726.015 Tm
+0 Tw
+(________________________________________________________________________)Tj
+4 0 0 4 126 723.535 Tm
+(_______________________________________________________________________________________________________________________________)Tj
+63.499 0 TD
+(_____________________________________________________)Tj
+/F6 1 Tf
+9 0 0 9 154.8 706.515 Tm
+(set NUTR;)Tj
+0 -1.1111 TD
+(set FOOD;)Tj
+0 -1.6111 TD
+(param cost {FOOD} > 0;)Tj
+0 -1.1111 TD
+(param f_min {FOOD} >= 0;)Tj
+T*
+(param f_max {j in FOOD} >= f_min[j];)Tj
+0 -1.6111 TD
+(param n_min {NUTR} >= 0;)Tj
+0 -1.1111 TD
+(param n_max {i in NUTR} >= n_min[i];)Tj
+0 -1.6111 TD
+(param amt {NUTR,FOOD} >= 0;)Tj
+T*
+(var Buy {j in FOOD} >= f_min[j], <= f_max[j];)Tj
+T*
+[(minimize Total_Cost: )-600(sum {j in FOOD} cost[j] * Buy[j];)]TJ
+T*
+(subject to Diet {i in NUTR}:)Tj
+1.8 -1.1111 TD
+(n_min[i] <= sum {j in FOOD} amt[i,j] * Buy[j] <= n_max[i];)Tj
+/F8 1 Tf
+10 0 0 10 208.7 550.815 Tm
+-0.0089 Tw
+(Figure 2-1:)Tj
+/F2 1 Tf
+5.24 0 TD
+0 Tw
+(Diet model in)Tj
+9 0 0 9 318.6 550.815 Tm
+(AMPL)Tj
+10 0 0 10 346.1 550.815 Tm
+(\()Tj
+/F6 1 Tf
+0.33 0 TD
+(diet.mod)Tj
+/F2 1 Tf
+4.8 0 TD
+(\).)Tj
+4 0 0 4 126 542.435 Tm
+(_______________________________________________________________________________________________________________________________)Tj
+63.499 0 TD
+(_____________________________________________________)Tj
+10 0 0 10 126 540.915 Tm
+(________________________________________________________________________)Tj
+0 -2.62 TD
+-0.0021 Tw
+[(A ‘‘double inequality’’ like this is interpreted in the obvious way: )-260.1(the )-10.9(value )-10.9(of )-10.9(the )-10.9(sum )-10.9(in)]TJ
+0 -1.2 TD
+0.0183 Tw
+(the middle must lie between)Tj
+/F6 1 Tf
+11.62 0 TD
+0 Tw
+(n_min[i])Tj
+/F2 1 Tf
+5.07 0 TD
+(and)Tj
+/F6 1 Tf
+1.71 0 TD
+(n_max[i])Tj
+/F2 1 Tf
+4.8 0 TD
+0.009 Tw
+[(. )-256(The complete model is shown)]TJ
+-23.2 -1.2 TD
+-0.001 Tw
+(in Figure 2-1.)Tj
+/F1 1 Tf
+12 0 0 12 126 438.615 Tm
+0.0059 Tw
+[(2.3 )-289.8(Using the AMPL diet model)]TJ
+/F2 1 Tf
+10 0 0 10 140.4 419.915 Tm
+0.1044 Tw
+[(By specifying appropriate data, we can solve any of )-9(the )-9(linear )-9(programs )-9(that )-9(corre-)]TJ
+-1.44 -1.2 TD
+0.0075 Tw
+[(spond )-10.8(to )-10.8(the )-10.8(above )-10.8(model. )-257.5(Let’s )-11.1(begin )-11.1(by )-11.1(using )-11.1(the )-11.1(data from the beginning of this chap-)]TJ
+T*
+-0.0012 Tw
+(ter, which is shown in)Tj
+9 0 0 9 216.5 395.915 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 244 395.915 Tm
+-0.0026 Tw
+(format in Figure 2-2.)Tj
+-10.36 -1.26 TD
+0.0535 Tw
+(The values of)Tj
+/F6 1 Tf
+5.86 0 TD
+0 Tw
+(f_min)Tj
+/F2 1 Tf
+3.32 0 TD
+(and)Tj
+/F6 1 Tf
+1.76 0 TD
+(n_min)Tj
+/F2 1 Tf
+3.32 0 TD
+0.0658 Tw
+(are as given originally, while)Tj
+/F6 1 Tf
+12.22 0 TD
+0 Tw
+(f_max)Tj
+/F2 1 Tf
+3.32 0 TD
+(and)Tj
+/F6 1 Tf
+1.76 0 TD
+(n_max)Tj
+/F2 1 Tf
+-33 -1.2 TD
+0.0776 Tw
+[(are )-8.4(set, )-8.4(for )-8.4(the )-8.4(time )-8.4(being, to large values that won’t affect the optimal solution. )-249.4(In the)]TJ
+T*
+0.09 Tw
+(table for)Tj
+/F6 1 Tf
+3.8 0 TD
+0 Tw
+(amt)Tj
+/F2 1 Tf
+1.8 0 TD
+0.1 Tw
+(, the notation)Tj
+/F6 1 Tf
+5.81 0 TD
+0 Tw
+(\(tr\))Tj
+/F2 1 Tf
+2.76 0 TD
+0.1044 Tw
+(indicates that we have ‘‘transposed’’ the table so the)Tj
+-14.17 -1.2 TD
+0.1672 Tw
+[(columns correspond to the first index \(nutrients\), and the rows to the )14.7(second )14.7(\(foods\).)]TJ
+T*
+-0.0047 Tw
+(Alternatively, we could have changed the model to say)Tj
+/F6 1 Tf
+9 0 0 9 154.8 318.615 Tm
+-0.0001 Tw
+(param amt {FOOD,NUTR})Tj
+/F2 1 Tf
+10 0 0 10 126 299.915 Tm
+-0.0042 Tw
+(in which case we would have had to write)Tj
+/F6 1 Tf
+16.99 0 TD
+0 Tw
+(amt[j,i])Tj
+/F2 1 Tf
+5.05 0 TD
+-0.002 Tw
+(in the constraint.)Tj
+-20.6 -1.26 TD
+0.1971 Tw
+(Suppose that model and data are stored in the files)Tj
+/F6 1 Tf
+22.36 0 TD
+0 Tw
+(diet.mod)Tj
+/F2 1 Tf
+5.25 0 TD
+(and)Tj
+/F6 1 Tf
+1.9 0 TD
+(diet.dat)Tj
+/F2 1 Tf
+4.8 0 TD
+(,)Tj
+-35.75 -1.2 TD
+0.2831 Tw
+(respectively. Then)Tj
+9 0 0 9 205.7 275.315 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 233.7 275.315 Tm
+0.0478 Tw
+[(is used as follows to read these files and to solve the )7.7(resulting)]TJ
+-10.77 -1.2 TD
+-0.0129 Tw
+(linear program:)Tj
+/F6 1 Tf
+9 0 0 9 154.8 246.615 Tm
+0 Tw
+(ampl:)Tj
+/F7 1 Tf
+3.6 0 TD
+-0.0001 Tw
+(model diet.mod;)Tj
+/F6 1 Tf
+-3.6 -1.1111 TD
+0 Tw
+(ampl:)Tj
+/F7 1 Tf
+3.6 0 TD
+-0.0001 Tw
+(data diet.dat;)Tj
+/F6 1 Tf
+-3.6 -1.7333 TD
+0 Tw
+(ampl:)Tj
+/F7 1 Tf
+3.6 0 TD
+(solve;)Tj
+/F6 1 Tf
+-3.6 -1.1111 TD
+(MINOS 5.5: optimal solution found.)Tj
+T*
+-0.0001 Tw
+(6 iterations, objective 88.2)Tj
+ET
+endstreamendobj16 0 obj<< /Type /Page /Parent 100 0 R /Resources 17 0 R /Contents 18 0 R /Rotate 0 /MediaBox [ 0 0 612 792 ] /CropBox [ 40.32001 126 571.67999 792 ] >> endobj17 0 obj<< /ProcSet [ /PDF /Text ] /Font << /F2 119 0 R /F3 125 0 R /F6 48 0 R /F7 49 0 R /F8 50 0 R >> /ExtGState << /GS1 127 0 R >> >> endobj18 0 obj<< /Length 3406 >> stream
+BT
+/F3 1 Tf
+7 0 0 7 126 747.615 Tm
+0 g
+/GS1 gs
+0 Tc
+0.0113 Tw
+[(SECTION )-18.5(2.3 )-26115.1(USING THE AMPL DIET MODEL)]TJ
+10 0 0 10 474.8 747.615 Tm
+0 Tw
+(33)Tj
+/F2 1 Tf
+-34.88 -2.16 TD
+(________________________________________________________________________)Tj
+4 0 0 4 126 723.535 Tm
+(_______________________________________________________________________________________________________________________________)Tj
+63.499 0 TD
+(_____________________________________________________)Tj
+/F6 1 Tf
+9 0 0 9 154.8 706.815 Tm
+(set NUTR := A B1 B2 C ;)Tj
+0 -1.1111 TD
+(set FOOD := BEEF CHK FISH HAM MCH MTL SPG TUR ;)Tj
+0 -1.5889 TD
+0.6 Tw
+[(param: )-599.9(cost f_min f_max )600(:=)]TJ
+1.2 -1.1111 TD
+1.1999 Tw
+[(BEEF 3.19 )-600.1(0 )-1200.1(100)]TJ
+T*
+1.8 Tw
+[(CHK 2.59 0 )-600(100)]TJ
+T*
+1.1999 Tw
+[(FISH 2.29 )-600.1(0 )-1200.1(100)]TJ
+T*
+1.8 Tw
+[(HAM 2.89 0 )-600(100)]TJ
+T*
+[(MCH 1.89 0 )-600(100)]TJ
+T*
+[(MTL 1.99 0 )-600(100)]TJ
+T*
+[(SPG 1.99 0 )-600(100)]TJ
+T*
+[(TUR 2.49 0 )-600(100 )1800(;)]TJ
+-1.2 -1.5889 TD
+1.1999 Tw
+[(param: n_min )599.9(n_max )1199.9(:=)]TJ
+1.8 -1.1111 TD
+3 Tw
+[(A 700 )1800(10000)]TJ
+T*
+[(C 700 )1800(10000)]TJ
+T*
+2.4 Tw
+[(B1 700 )1200(10000)]TJ
+T*
+[(B2 700 )1200(10000 )2400(;)]TJ
+-1.8 -1.5889 TD
+0 Tw
+(param amt \(tr\):)Tj
+6.6 -1.1111 TD
+1.2 Tw
+[(A )-600(C B1 B2 )1200(:=)]TJ
+-4.8 -1.1111 TD
+(BEEF 60 20 10 15)Tj
+T*
+[(CHK )-1200(8 )-600(0 20 20)]TJ
+T*
+[(FISH )-600(8 10 15 10)]TJ
+T*
+[(HAM )-600(40 40 35 10)]TJ
+T*
+[(MCH )-600(15 35 15 15)]TJ
+T*
+[(MTL )-600(70 30 15 15)]TJ
+T*
+[(SPG )-600(25 50 25 15)]TJ
+T*
+[(TUR )-600(60 20 15 10 )1200(;)]TJ
+/F8 1 Tf
+10 0 0 10 211 425.515 Tm
+-0.0089 Tw
+(Figure 2-2:)Tj
+/F2 1 Tf
+5.24 0 TD
+-0.0042 Tw
+(Data for diet model \()Tj
+/F6 1 Tf
+8.37 0 TD
+0 Tw
+(diet.dat)Tj
+/F2 1 Tf
+4.8 0 TD
+(\).)Tj
+4 0 0 4 126 417.435 Tm
+(_______________________________________________________________________________________________________________________________)Tj
+63.499 0 TD
+(_____________________________________________________)Tj
+10 0 0 10 126 415.915 Tm
+(________________________________________________________________________)Tj
+/F6 1 Tf
+9 0 0 9 154.8 392.315 Tm
+(ampl:)Tj
+/F7 1 Tf
+3.6 0 TD
+-0.0001 Tw
+(display Buy;)Tj
+/F6 1 Tf
+-3.6 -1.1111 TD
+0 Tw
+(Buy [*] :=)Tj
+T*
+1.2 Tw
+(BEEF 0)Tj
+0.6 -1.1111 TD
+(CHK 0)Tj
+-0.6 -1.1111 TD
+(FISH 0)Tj
+0.6 -1.1111 TD
+(HAM 0)Tj
+T*
+0.5999 Tw
+(MCH 46.6667)Tj
+T*
+(MTL -1.07823e-16)Tj
+T*
+(SPG -1.32893e-16)Tj
+T*
+1.2 Tw
+(TUR 0)Tj
+-0.6 -1.1111 TD
+0 Tw
+(;)Tj
+/F2 1 Tf
+10 0 0 10 126 273.915 Tm
+-0.0045 Tw
+(Naturally, the result is the same as before.)Tj
+1.44 -1.25 TD
+0.006 Tw
+[(Now suppose that we want to make the following enhancements. )-253(To )-9.1(promote )-9.1(variety,)]TJ
+-1.44 -1.2 TD
+0.0955 Tw
+[(the weekly diet must contain between 2 and 10 packages of each food. )-249.5(The amount )8.5(of)]TJ
+T*
+0.0559 Tw
+[(sodium and calories in each package is also given; )-13.8(total )-13.8(sodium )-13.8(must )-13.8(not )-13.8(exceed )-13.8(40,000)]TJ
+T*
+0.0658 Tw
+[(mg, )-12.2(and total calories must be between 16,000 and 24,000. )-256.2(All of these changes can be)]TJ
+T*
+0.0564 Tw
+[(made through a few modifications to the data, as )-12.9(shown )-12.9(in )-12.9(Figure )-12.9(2-3. )-273.6(Putting )-13.1(this )-13.1(new)]TJ
+T*
+-0.0035 Tw
+(data in file)Tj
+/F6 1 Tf
+4.52 0 TD
+0 Tw
+(diet2.dat)Tj
+/F2 1 Tf
+5.4 0 TD
+-0.0056 Tw
+(, we can run)Tj
+9 0 0 9 276.4 201.415 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 303.9 201.415 Tm
+(again:)Tj
+ET
+endstreamendobj19 0 obj<< /Type /Page /Parent 100 0 R /Resources 20 0 R /Contents 21 0 R /Rotate 0 /MediaBox [ 0 0 612 792 ] /CropBox [ 40.32001 126 571.67999 792 ] >> endobj20 0 obj<< /ProcSet [ /PDF /Text ] /Font << /F2 119 0 R /F3 125 0 R /F6 48 0 R /F7 49 0 R /F8 50 0 R >> /ExtGState << /GS1 127 0 R >> >> endobj21 0 obj<< /Length 3713 >> stream
+BT
+/F3 1 Tf
+10 0 0 10 126 747.615 Tm
+0 g
+/GS1 gs
+0 Tc
+0 Tw
+(34)Tj
+7 0 0 7 154 747.615 Tm
+0.0098 Tw
+[(DIET AND OTHER INPUT MODELS: )-301.1(MINIMIZING )-10(COSTS )-15034.1(CHAPTER 2)]TJ
+/F2 1 Tf
+10 0 0 10 126 726.015 Tm
+0 Tw
+(________________________________________________________________________)Tj
+4 0 0 4 126 723.535 Tm
+(_______________________________________________________________________________________________________________________________)Tj
+63.499 0 TD
+(_____________________________________________________)Tj
+/F6 1 Tf
+9 0 0 9 154.8 704.315 Tm
+(set NUTR := A B1 B2 C NA CAL ;)Tj
+0 -1.1111 TD
+(set FOOD := BEEF CHK FISH HAM MCH MTL SPG TUR ;)Tj
+0 -1.7778 TD
+0.6 Tw
+[(param: )-599.9(cost f_min f_max )600(:=)]TJ
+1.2 -1.1111 TD
+1.1999 Tw
+[(BEEF 3.19 )-600.1(2 )-1200.1(10)]TJ
+T*
+1.8 Tw
+[(CHK 2.59 2 )-600(10)]TJ
+T*
+1.1999 Tw
+[(FISH 2.29 )-600.1(2 )-1200.1(10)]TJ
+T*
+1.8 Tw
+[(HAM 2.89 2 )-600(10)]TJ
+T*
+[(MCH 1.89 2 )-600(10)]TJ
+T*
+[(MTL 1.99 2 )-600(10)]TJ
+T*
+[(SPG 1.99 2 )-600(10)]TJ
+T*
+[(TUR 2.49 2 )-600(10 )1200(;)]TJ
+-1.2 -1.7778 TD
+1.1999 Tw
+[(param: n_min )599.9(n_max )1199.9(:=)]TJ
+1.8 -1.1111 TD
+3 Tw
+[(A 700 )1800(20000)]TJ
+T*
+[(C 700 )1800(20000)]TJ
+T*
+2.4 Tw
+[(B1 700 )1200(20000)]TJ
+T*
+[(B2 700 )1200(20000)]TJ
+T*
+3.6 Tw
+[(NA 0 )2400(40000)]TJ
+T*
+0.6 Tw
+[(CAL 16000 )-600(24000 )600(;)]TJ
+-1.8 -1.7778 TD
+0 Tw
+(param amt \(tr\):)Tj
+6.6 -1.1111 TD
+1.2 Tw
+[(A )-600(C B1 B2 )-600(NA CAL )1200(:=)]TJ
+-4.8 -1.1111 TD
+(BEEF 60 20 10 15 938 295)Tj
+T*
+[(CHK )-1200(8 )-600(0 20 20 )600(2180 770)]TJ
+T*
+[(FISH )-600(8 10 15 10 945 440)]TJ
+T*
+[(HAM )-600(40 40 35 10 278 430)]TJ
+T*
+[(MCH )-600(15 35 15 15 )600(1182 315)]TJ
+T*
+[(MTL )-600(70 30 15 15 896 400)]TJ
+T*
+[(SPG )-600(25 50 25 15 )600(1329 370)]TJ
+T*
+[(TUR )-600(60 20 15 10 )600(1397 450 )1200(;)]TJ
+/F8 1 Tf
+10 0 0 10 188 395.415 Tm
+-0.0089 Tw
+(Figure 2-3:)Tj
+/F2 1 Tf
+5.24 0 TD
+-0.0066 Tw
+(Data for enhanced diet model \()Tj
+/F6 1 Tf
+12.38 0 TD
+0 Tw
+(diet2.dat)Tj
+/F2 1 Tf
+5.4 0 TD
+(\).)Tj
+4 0 0 4 126 384.835 Tm
+(_______________________________________________________________________________________________________________________________)Tj
+63.499 0 TD
+(_____________________________________________________)Tj
+10 0 0 10 126 383.315 Tm
+(________________________________________________________________________)Tj
+/F6 1 Tf
+9 0 0 9 154.8 354.615 Tm
+(ampl:)Tj
+/F7 1 Tf
+3.6 0 TD
+-0.0001 Tw
+(model diet.mod;)Tj
+/F6 1 Tf
+-3.6 -1.1111 TD
+0 Tw
+(ampl:)Tj
+/F7 1 Tf
+3.6 0 TD
+-0.0001 Tw
+(data diet2.dat;)Tj
+/F6 1 Tf
+-3.6 -1.9333 TD
+0 Tw
+(ampl:)Tj
+/F7 1 Tf
+3.6 0 TD
+(solve;)Tj
+/F6 1 Tf
+-3.6 -1.1111 TD
+-0.0001 Tw
+(MINOS 5.5: infeasible problem.)Tj
+T*
+(9 iterations)Tj
+/F2 1 Tf
+10 0 0 10 126 286.315 Tm
+0.1671 Tw
+(The message)Tj
+/F6 1 Tf
+5.79 0 TD
+-0.1698 Tw
+(infeasible problem)Tj
+/F2 1 Tf
+11.06 0 TD
+0.1769 Tw
+[(tells us that we have constrained the diet )-15.1(too)]TJ
+-16.85 -1.2 TD
+-0.0021 Tw
+(tightly; there is no way that all of the restrictions can be satisfied.)Tj
+9 0 0 9 140.4 261.615 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 168.1 261.615 Tm
+0.0172 Tw
+[(lets us examine a variety of values produced by a solver as it attempts to )-10.3(find )-10.3(a)]TJ
+-4.21 -1.2 TD
+0.0275 Tw
+[(solution. )-266.6(In )-9.5(Chapter )-9.5(1, we used marginal \(or dual\) values to investigate the sensitivity of)]TJ
+T*
+0.1388 Tw
+[(an )4.4(optimum )4.4(solution )4.4(to changes in the constraints. )-238.2(Here there is no optimum, but the)]TJ
+T*
+0.199 Tw
+[(solver does return the last solution that it found )10.3(while )10.3(attempting )10.3(to )10.3(satisfy )10.3(the )10.3(con-)]TJ
+T*
+0.0078 Tw
+[(straints. )-245.3(We can look for the source of the infeasibility by displaying some )-6.2(values )-6.2(associ-)]TJ
+T*
+0.0034 Tw
+(ated with this solution:)Tj
+ET
+endstreamendobj22 0 obj<< /Type /Page /Parent 100 0 R /Resources 23 0 R /Contents 24 0 R /Rotate 0 /MediaBox [ 0 0 612 792 ] /CropBox [ 40.32001 126 571.67999 792 ] >> endobj23 0 obj<< /ProcSet [ /PDF /Text ] /Font << /F2 119 0 R /F3 125 0 R /F6 48 0 R /F7 49 0 R >> /ExtGState << /GS1 127 0 R >> >> endobj24 0 obj<< /Length 4081 >> stream
+BT
+/F3 1 Tf
+7 0 0 7 126 747.615 Tm
+0 g
+/GS1 gs
+0 Tc
+0.0113 Tw
+[(SECTION )-18.5(2.3 )-26115.1(USING THE AMPL DIET MODEL)]TJ
+10 0 0 10 474.8 747.615 Tm
+0 Tw
+(35)Tj
+/F6 1 Tf
+9 0 0 9 154.8 717.215 Tm
+(ampl:)Tj
+/F7 1 Tf
+3.6 0 TD
+-0.0001 Tw
+(display Diet.lb, Diet.body, Diet.ub;)Tj
+/F6 1 Tf
+-3.6 -1.1111 TD
+1.1999 Tw
+[(: Diet.lb Diet.body )1199.9(Diet.ub )-600.1(:=)]TJ
+T*
+1.8 Tw
+[(A )-1800(700 1993.09 20000)]TJ
+T*
+3 Tw
+[(B1 700 )600(841.091 )1800(20000)]TJ
+T*
+[(B2 700 )600(601.091 )1800(20000)]TJ
+T*
+1.8 Tw
+[(C )-1800(700 1272.55 20000)]TJ
+T*
+1.2 Tw
+[(CAL 16000 17222.9 )-1200(24000)]TJ
+T*
+4.2 Tw
+[(NA 0 )3000(40000 )600(40000)]TJ
+T*
+0 Tw
+(;)Tj
+/F2 1 Tf
+10 0 0 10 126 613.315 Tm
+0.114 Tw
+(For each nutrient,)Tj
+/F6 1 Tf
+7.68 0 TD
+0 Tw
+(Diet.body)Tj
+/F2 1 Tf
+5.77 0 TD
+0.1194 Tw
+(is the sum of the terms)Tj
+/F6 1 Tf
+10.05 0 TD
+-0.2299 Tw
+(amt[i,j] * Buy[j])Tj
+/F2 1 Tf
+10.12 0 TD
+0.13 Tw
+(in the)Tj
+-33.62 -1.2 TD
+0 Tw
+(constraint)Tj
+/F6 1 Tf
+4.22 0 TD
+(Diet[i])Tj
+/F2 1 Tf
+4.2 0 TD
+0.275 Tw
+(. The)Tj
+/F6 1 Tf
+2.61 0 TD
+0 Tw
+(Diet.lb)Tj
+/F2 1 Tf
+4.48 0 TD
+(and)Tj
+/F6 1 Tf
+1.72 0 TD
+(Diet.ub)Tj
+/F2 1 Tf
+4.48 0 TD
+0.02 Tw
+(values are the ‘‘lower bounds’’ and)Tj
+-21.71 -1.2 TD
+0.007 Tw
+(‘‘upper bounds’’ on the sum in)Tj
+/F6 1 Tf
+12.72 0 TD
+0 Tw
+(Diet[i])Tj
+/F2 1 Tf
+4.47 0 TD
+0.019 Tw
+(— in this case, just the values)Tj
+/F6 1 Tf
+12.3 0 TD
+0 Tw
+(n_min[i])Tj
+/F2 1 Tf
+5.07 0 TD
+(and)Tj
+/F6 1 Tf
+-34.56 -1.2 TD
+(n_max[i])Tj
+/F2 1 Tf
+4.8 0 TD
+0.0079 Tw
+[(. )-254.1(We can see that the diet returned by the solver does not supply enough vita-)]TJ
+-4.8 -1.2 TD
+0.0003 Tw
+(min B2, while the amount of sodium \()Tj
+/F6 1 Tf
+15.28 0 TD
+0 Tw
+(NA)Tj
+/F2 1 Tf
+1.2 0 TD
+-0.0054 Tw
+(\) has reached its upper bound.)Tj
+-15.04 -1.3 TD
+0.1174 Tw
+[(At this point, there are two obvious choices: we could require less B2 )-9(or )-9(we )-9(could)]TJ
+-1.44 -1.2 TD
+0.0182 Tw
+[(allow )-10.9(more )-10.9(sodium. )-255.8(If we try the latter, and relax the sodium limit to 50,000 mg, a feasi-)]TJ
+T*
+0.0001 Tw
+(ble solution becomes possible:)Tj
+/F6 1 Tf
+9 0 0 9 154.8 506.415 Tm
+0 Tw
+(ampl:)Tj
+/F7 1 Tf
+3.6 0 TD
+(let n_max["NA"] := 50000;)Tj
+/F6 1 Tf
+-3.6 -2.2111 TD
+(ampl:)Tj
+/F7 1 Tf
+3.6 0 TD
+(solve;)Tj
+/F6 1 Tf
+-3.6 -1.1111 TD
+(MINOS 5.5: optimal solution found.)Tj
+T*
+-0.0001 Tw
+(5 iterations, objective 118.0594032)Tj
+0 -2.2111 TD
+0 Tw
+(ampl:)Tj
+/F7 1 Tf
+3.6 0 TD
+-0.0001 Tw
+(display Buy;)Tj
+/F6 1 Tf
+-3.6 -1.1111 TD
+0 Tw
+(Buy [*] :=)Tj
+T*
+1.1999 Tw
+(BEEF 5.36061)Tj
+0.6 -1.1111 TD
+1.2 Tw
+(CHK 2)Tj
+-0.6 -1.1111 TD
+(FISH 2)Tj
+0.6 -1.1111 TD
+0.6 Tw
+(HAM 10)Tj
+T*
+(MCH 10)Tj
+T*
+(MTL 10)Tj
+T*
+1.1999 Tw
+(SPG 9.30605)Tj
+T*
+1.2 Tw
+(TUR 2)Tj
+-0.6 -1.1111 TD
+0 Tw
+(;)Tj
+/F2 1 Tf
+10 0 0 10 126 322.715 Tm
+0.0664 Tw
+[(This )7.4(is )7.4(at )7.4(least )7.4(a start toward a palatable diet, although we have to spend $118.06, com-)]TJ
+0 -1.2 TD
+0.0763 Tw
+[(pared to $88.20 for the original, less restricted case. )-249.7(Clearly it would be )9.3(easy, )9.3(now )9.3(that)]TJ
+T*
+0.1906 Tw
+[(the model is set up, to try many other possibilities. )-246.5(\(Section )6.1(11.3 )6.1(describes )-7.9(ways )-7.9(to)]TJ
+T*
+-0.0076 Tw
+(quickly change the data and re-solve.\))Tj
+1.44 -1.3 TD
+0.0594 Tw
+[(One still disappointing aspect of the solution is the need )-7.4(to )-7.4(buy )-7.4(5.36061 )-7.4(packages )-7.4(of)]TJ
+-1.44 -1.2 TD
+0.0888 Tw
+[(beef, )-6.5(and )-6.5(9.30605 )-6.5(of )-6.5(spaghetti. )-257.2(How can we find the best possible solution in terms of)]TJ
+T*
+0.1786 Tw
+[(whole )31.5(packages? )-239.4(You might think that we could simply round the optimal values to)]TJ
+T*
+0.0985 Tw
+[(whole )-6.2(numbers )-6.3(— )-6.2(or )-6.2(integers, )-6.2(as )-6.3(they’re )-6.3(often called in the context of optimization —)]TJ
+T*
+0.0275 Tw
+[(but it is not so easy to do so in a feasible way. )-253.5(Using)]TJ
+9 0 0 9 344.9 225.715 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 372.7 225.715 Tm
+0.0273 Tw
+(to modify the reported solu-)Tj
+-24.67 -1.2 TD
+0.1657 Tw
+[(tion, we can observe that rounding up to 6 packages of beef and )8.2(10 )8.2(of )8.2(spaghetti, )8.2(for)]TJ
+T*
+0.0018 Tw
+(example, will violate the sodium limit:)Tj
+ET
+endstreamendobj25 0 obj<< /Type /Page /Parent 100 0 R /Resources 26 0 R /Contents 27 0 R /Rotate 0 /MediaBox [ 0 0 612 792 ] /CropBox [ 40.32001 126 571.67999 792 ] >> endobj26 0 obj<< /ProcSet [ /PDF /Text ] /Font << /F2 119 0 R /F3 125 0 R /F6 48 0 R /F7 49 0 R >> /ExtGState << /GS1 127 0 R >> >> endobj27 0 obj<< /Length 3702 >> stream
+BT
+/F3 1 Tf
+10 0 0 10 126 747.615 Tm
+0 g
+/GS1 gs
+0 Tc
+0 Tw
+(36)Tj
+7 0 0 7 154 747.615 Tm
+0.0098 Tw
+[(DIET AND OTHER INPUT MODELS: )-301.1(MINIMIZING )-10(COSTS )-15034.1(CHAPTER 2)]TJ
+/F6 1 Tf
+9 0 0 9 154.8 717.215 Tm
+0 Tw
+(ampl:)Tj
+/F7 1 Tf
+3.6 0 TD
+(let Buy["BEEF"] := 6;)Tj
+/F6 1 Tf
+-3.6 -1.1111 TD
+(ampl:)Tj
+/F7 1 Tf
+3.6 0 TD
+(let Buy["SPG"] := 10;)Tj
+/F6 1 Tf
+-3.6 -2.0444 TD
+(ampl:)Tj
+/F7 1 Tf
+3.6 0 TD
+-0.0001 Tw
+(display Diet.lb, Diet.body, Diet.ub;)Tj
+/F6 1 Tf
+-3.6 -1.1111 TD
+0 Tw
+[(: )-1199.9(Diet.lb Diet.body Diet.ub )-1800(:=)]TJ
+T*
+3.6 Tw
+[(A 700 )1200(2012 )1800(20000)]TJ
+T*
+3 Tw
+[(B1 700 )600(1060 )1200(20000)]TJ
+T*
+[(B2 700 720 )1200(20000)]TJ
+T*
+3.6 Tw
+[(C 700 )1200(1730 )1800(20000)]TJ
+T*
+1.8 Tw
+[(CAL )600.1(16000 20240 24000)]TJ
+T*
+[(NA )-2400(0 51522 50000)]TJ
+T*
+0 Tw
+(;)Tj
+/F2 1 Tf
+10 0 0 10 126 586.715 Tm
+(\(The)Tj
+/F6 1 Tf
+2.21 0 TD
+(let)Tj
+/F2 1 Tf
+2.13 0 TD
+0.0774 Tw
+(statement, which permits modifications of data, is described in Section 11.3.\))Tj
+-4.34 -1.2 TD
+0.068 Tw
+[(You can similarly check that rounding the solution down )10.5(to )10.5(5 )10.5(of )10.5(beef )10.5(and )10.5(9 )10.5(of )10.5(spaghetti)]TJ
+T*
+0.0384 Tw
+[(will provide insufficient vitamin B2. )-256.7(Rounding one up and the other )-8(down )-8(doesn’t )-8(work)]TJ
+T*
+0.0963 Tw
+[(either. )-256.8(With )-9.7(enough experimenting you can find a nearby all-integer solution that does)]TJ
+T*
+0.1467 Tw
+[(satisfy )5.2(the )5.2(constraints, )5.2(but )5.2(still )5.2(you )5.2(will have no guarantee that it is the least-cost all-)]TJ
+T*
+0.0001 Tw
+(integer solution.)Tj
+9 0 0 9 140.4 513.915 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 168.6 513.915 Tm
+0.0688 Tw
+(does provide for putting the integrality restriction directly into the declaration)Tj
+-4.26 -1.2 TD
+-0.0065 Tw
+(of the variables:)Tj
+/F6 1 Tf
+9 0 0 9 154.8 481.815 Tm
+0 Tw
+(var Buy {j in FOOD} integer >= f_min[j], <= f_max[j];)Tj
+/F2 1 Tf
+10 0 0 10 126 459.715 Tm
+0.0268 Tw
+[(This )8.5(will )8.5(only )8.5(help, )8.5(however, if you use a solver that can deal with problems whose vari-)]TJ
+T*
+0.1267 Tw
+[(ables must be integers. )-254.3(For )-8.3(this, )8.4(we )8.3(turn )8.3(to)]TJ
+9 0 0 9 312.2 447.715 Tm
+0 Tw
+(CPLEX)Tj
+10 0 0 10 340.7 447.715 Tm
+0.1159 Tw
+(, a solver that can handle these so-)Tj
+-21.47 -1.2 TD
+0.1991 Tw
+[(called integer programs. )-254.9(If )-5.9(we )-5.9(add)]TJ
+/F6 1 Tf
+15.44 0 TD
+0 Tw
+(integer)Tj
+/F2 1 Tf
+4.66 0 TD
+0.213 Tw
+[(to )9.5(the )9.4(declaration of variable)]TJ
+/F6 1 Tf
+12.8 0 TD
+0 Tw
+(Buy)Tj
+/F2 1 Tf
+2.27 0 TD
+(as)Tj
+-35.17 -1.2 TD
+0.0272 Tw
+(above, save the resulting model in the file)Tj
+/F6 1 Tf
+17.19 0 TD
+0 Tw
+(dieti.mod)Tj
+/F2 1 Tf
+5.4 0 TD
+0.0267 Tw
+(, and add the higher sodium limit)Tj
+-22.59 -1.2 TD
+0 Tw
+(to)Tj
+/F6 1 Tf
+1.03 0 TD
+(diet2a.dat)Tj
+/F2 1 Tf
+6 0 TD
+-0.0046 Tw
+(, then we can re-solve as follows:)Tj
+/F6 1 Tf
+9 0 0 9 154.8 391.615 Tm
+0 Tw
+(ampl:)Tj
+/F7 1 Tf
+3.6 0 TD
+(reset;)Tj
+/F6 1 Tf
+-3.6 -1.1111 TD
+(ampl:)Tj
+/F7 1 Tf
+3.6 0 TD
+-0.0001 Tw
+(model dieti.mod;)Tj
+/F6 1 Tf
+-3.6 -1.1111 TD
+0 Tw
+(ampl:)Tj
+/F7 1 Tf
+3.6 0 TD
+-0.0001 Tw
+(data diet2a.dat;)Tj
+/F6 1 Tf
+-3.6 -1.1111 TD
+0 Tw
+(ampl:)Tj
+/F7 1 Tf
+3.6 0 TD
+-0.0001 Tw
+(option solver cplex;)Tj
+/F6 1 Tf
+-3.6 -1.1111 TD
+0 Tw
+(ampl:)Tj
+/F7 1 Tf
+3.6 0 TD
+(solve;)Tj
+/F6 1 Tf
+-3.6 -1.1111 TD
+(CPLEX 8.0.0: optimal integer solution; objective 119.3)Tj
+T*
+(11 MIP simplex iterations)Tj
+T*
+-0.0001 Tw
+(1 branch-and-bound nodes)Tj
+0 -2.2333 TD
+0 Tw
+(ampl:)Tj
+/F7 1 Tf
+3.6 0 TD
+-0.0001 Tw
+(display Buy;)Tj
+/F6 1 Tf
+-3.6 -1.1111 TD
+0 Tw
+(Buy [*] :=)Tj
+T*
+1.2 Tw
+(BEEF 9)Tj
+0.6 -1.1111 TD
+(CHK 2)Tj
+-0.6 -1.1111 TD
+(FISH 2)Tj
+0.6 -1.1111 TD
+(HAM 8)Tj
+T*
+0.6 Tw
+(MCH 10)Tj
+T*
+(MTL 10)Tj
+T*
+1.2 Tw
+(SPG 7)Tj
+T*
+(TUR 2)Tj
+-0.6 -1.1111 TD
+0 Tw
+(;)Tj
+ET
+endstreamendobj28 0 obj<< /Type /Page /Parent 102 0 R /Resources 29 0 R /Contents 30 0 R /Rotate 0 /MediaBox [ 0 0 612 792 ] /CropBox [ 40.32001 126 571.67999 792 ] >> endobj29 0 obj<< /ProcSet [ /PDF /Text ] /Font << /F1 120 0 R /F2 119 0 R /F3 125 0 R /F6 48 0 R >> /ExtGState << /GS1 127 0 R >> >> endobj30 0 obj<< /Length 6305 >> stream
+BT
+/F3 1 Tf
+7 0 0 7 126 747.615 Tm
+0 g
+/GS1 gs
+0 Tc
+0.0079 Tw
+[(SECTION )-21.9(2.4 )-8565.8(GENERALIZATIONS TO BLENDING, ECONOMICS AND SCHEDULING)]TJ
+10 0 0 10 474.8 747.615 Tm
+0 Tw
+(37)Tj
+/F2 1 Tf
+-34.88 -3.24 TD
+-0.0019 Tw
+[(Since integrality is an added constraint, it is no surprise that the best integer )-15.4(solution )-15.4(costs)]TJ
+0 -1.2 TD
+0.0662 Tw
+[(about $1.24 more than the best ‘‘continuous’’ one. )-258.8(But )5.9(the )5.9(difference )5.9(between )5.9(the )5.2(diets)]TJ
+T*
+0.0054 Tw
+[(is unexpected; the amounts of 3 foods change, each by two or more packages. )-261.6(In general,)]TJ
+T*
+0.0885 Tw
+(integrality and other ‘‘discrete’’ restrictions make solutions for a model much harder to)Tj
+T*
+0 Tw
+[(find. )-241(We discuss this at length in Chapter 20.)]TJ
+/F1 1 Tf
+12 0 0 12 126 617.915 Tm
+0.0081 Tw
+[(2.4 )-318.7(Generalizations to blending, economics and scheduling)]TJ
+/F2 1 Tf
+10 0 0 10 140.4 599.715 Tm
+0.0766 Tw
+[(Your )19.5(personal experience probably suggests that diet models are not widely used by)]TJ
+-1.44 -1.2 TD
+-0.0004 Tw
+[(people )-5.8(to )-5.8(choose )-5.8(their dinners. )-242.4(These models would be much better suited to situations in)]TJ
+T*
+0.0237 Tw
+[(which packaging and personal preferences don’t play such a prominent role — for )-7.3(exam-)]TJ
+T*
+-0.0037 Tw
+(ple, the blending of animal feed or perhaps food for college dining halls.)Tj
+1.44 -1.25 TD
+0.0865 Tw
+(The diet model is a convenient, intuitive example of a linear programming formula-)Tj
+-1.44 -1.2 TD
+0.0252 Tw
+[(tion )-12.2(that )-12.2(appears )-12.2(in )-12.2(many )-12.2(contexts. )-265.9(Suppose )-11.8(that )-11.8(we rewrite the model in a more general)]TJ
+T*
+0.037 Tw
+[(way, )9.4(as )9.4(shown )9.4(in )9.4(Figure )9.4(2-4. )-238(The objects that were called foods and nutrients in the diet)]TJ
+T*
+0.0612 Tw
+[(model are now referred to more generically )6.4(as )6.4(‘‘inputs’’ )6.4(and )6.4(‘‘outputs’’. )-249.8(For )5.2(each )5.2(input)]TJ
+/F6 1 Tf
+T*
+0 Tw
+(j)Tj
+/F2 1 Tf
+0.6 0 TD
+0.3793 Tw
+[(, )12.9(we )12.9(must )12.9(decide to use a quantity)]TJ
+/F6 1 Tf
+16.8 0 TD
+0 Tw
+(X[j])Tj
+/F2 1 Tf
+3.03 0 TD
+0.3745 Tw
+(that lies between)Tj
+/F6 1 Tf
+8.1 0 TD
+0 Tw
+(in_min[j])Tj
+/F2 1 Tf
+6.03 0 TD
+(and)Tj
+/F6 1 Tf
+-34.56 -1.2 TD
+(in_max[j])Tj
+/F2 1 Tf
+5.4 0 TD
+0.1664 Tw
+[(; as a result we incur a )8(cost )8(equal )8(to)]TJ
+/F6 1 Tf
+16.13 0 TD
+-0.1899 Tw
+(cost[j] * X[j])Tj
+/F2 1 Tf
+8.02 0 TD
+0.151 Tw
+(, and we create)Tj
+/F6 1 Tf
+-29.55 -1.2 TD
+0 Tw
+(io[i,j] )Tj
+4.48 0 TD
+(* )Tj
+0.88 0 TD
+(X[j])Tj
+/F2 1 Tf
+2.68 0 TD
+0.028 Tw
+(units of each output)Tj
+/F6 1 Tf
+8.28 0 TD
+0 Tw
+(i)Tj
+/F2 1 Tf
+0.6 0 TD
+0.03 Tw
+[(. )-245(Our goal is to find the )-6.6(least-cost )-6.6(combination)]TJ
+-16.92 -1.2 TD
+0.3765 Tw
+(of inputs that yields, for each output)Tj
+/F6 1 Tf
+17.35 0 TD
+0 Tw
+(i)Tj
+/F2 1 Tf
+0.6 0 TD
+0.3647 Tw
+(, an amount between)Tj
+/F6 1 Tf
+9.99 0 TD
+0 Tw
+(out_min[i])Tj
+/F2 1 Tf
+6.62 0 TD
+(and)Tj
+/F6 1 Tf
+-34.56 -1.2 TD
+(out_max[i])Tj
+/F2 1 Tf
+6 0 TD
+(.)Tj
+-4.56 -1.25 TD
+0.0171 Tw
+[(In one common class of applications for this model, the inputs are raw )-10.3(materials )-10.3(to )-10.3(be)]TJ
+-1.44 -1.2 TD
+[(mixed together. )-248(The outputs are qualities of )8.3(the )8.3(resulting )8.3(blend. )-238(The )12.6(raw )12.6(materials )12.6(could)]TJ
+T*
+0.026 Tw
+[(be )9.6(the )9.6(components )9.6(of )9.6(an )9.6(animal feed, but they could equally well be the crude oil deriva-)]TJ
+T*
+0.0962 Tw
+[(tives that are blended to make gasoline, or the different kinds )10(of )10(coal )10(that )10(are )10(mixed )10(as)]TJ
+T*
+0.0395 Tw
+[(input to a coke oven. )-245.5(The qualities can be amounts of something \(sodium or calories for)]TJ
+T*
+0.003 Tw
+(animal feed\), or more complex measures \(vapor pressure or octane rating for gasoline\), or)Tj
+T*
+-0.0045 Tw
+(even physical properties such as weight and volume.)Tj
+1.44 -1.25 TD
+0.0355 Tw
+[(In )9.4(another )9.4(well-known )9.4(application, )9.4(the )9.5(inputs are production activities of some sector)]TJ
+-1.44 -1.2 TD
+0.0259 Tw
+[(of an economy, and the outputs are various products. )-249.1(The)]TJ
+/F6 1 Tf
+23.73 0 TD
+0 Tw
+(in_min)Tj
+/F2 1 Tf
+3.87 0 TD
+(and)Tj
+/F6 1 Tf
+1.71 0 TD
+(in_max)Tj
+/F2 1 Tf
+3.87 0 TD
+(param-)Tj
+-33.18 -1.2 TD
+0.0877 Tw
+(eters are limits on the levels of the activities, while)Tj
+/F6 1 Tf
+21.46 0 TD
+0 Tw
+(out_min)Tj
+/F2 1 Tf
+4.54 0 TD
+(and)Tj
+/F6 1 Tf
+1.79 0 TD
+(out_max)Tj
+/F2 1 Tf
+4.55 0 TD
+0.0791 Tw
+(are regu-)Tj
+-32.34 -1.2 TD
+0.008 Tw
+[(lated )-7.6(by )-7.6(demands. )-262(Thus )-11.7(the )-11.7(goal )-11.7(is to find levels of the activities that meet demand at the)]TJ
+T*
+0.0769 Tw
+[(lowest )8.8(cost. )-245.1(This )12.2(interpretation )12.2(is )12.2(related to the concept of an economic equilibrium, as)]TJ
+T*
+-0.002 Tw
+(we will explain in Chapter 19.)Tj
+1.44 -1.25 TD
+0.0159 Tw
+[(In still another, quite different application, the inputs are work schedules, and )-12.6(the )-12.6(out-)]TJ
+-1.44 -1.2 TD
+0.1958 Tw
+[(puts )-9.5(correspond )-9.5(to )-9.5(hours )-9.5(worked on certain days of a month. )-255.2(For a particular work)]TJ
+T*
+0 Tw
+(schedule)Tj
+/F6 1 Tf
+3.87 0 TD
+(j)Tj
+/F2 1 Tf
+0.6 0 TD
+(,)Tj
+/F6 1 Tf
+0.63 0 TD
+(io[i,j])Tj
+/F2 1 Tf
+4.58 0 TD
+0.127 Tw
+(is the number of hours that a person following schedule)Tj
+/F6 1 Tf
+23.77 0 TD
+0 Tw
+(j)Tj
+/F2 1 Tf
+0.99 0 TD
+(will)Tj
+-34.44 -1.2 TD
+0.1355 Tw
+(work on day)Tj
+/F6 1 Tf
+5.66 0 TD
+0 Tw
+(i)Tj
+/F2 1 Tf
+0.99 0 TD
+0.129 Tw
+(\(zero if none\),)Tj
+/F6 1 Tf
+6.34 0 TD
+0 Tw
+(cost[j])Tj
+/F2 1 Tf
+4.59 0 TD
+0.1277 Tw
+(is the monthly salary for a person following)Tj
+-17.58 -1.2 TD
+0 Tw
+(schedule)Tj
+/F6 1 Tf
+3.76 0 TD
+(j)Tj
+/F2 1 Tf
+0.6 0 TD
+0.016 Tw
+(, and)Tj
+/F6 1 Tf
+2.23 0 TD
+0 Tw
+(X[j])Tj
+/F2 1 Tf
+2.67 0 TD
+0.0156 Tw
+[(is the number of workers assigned that schedule. )-255.4(Under )-13.9(this )-13.9(inter-)]TJ
+-9.26 -1.2 TD
+0.1765 Tw
+[(pretation, the objective becomes the total cost of the )8.1(monthly )8.1(payroll, )8.1(while )8.1(the )8.1(con-)]TJ
+T*
+0.0952 Tw
+(straints say that for each day)Tj
+/F6 1 Tf
+12.25 0 TD
+0 Tw
+(i)Tj
+/F2 1 Tf
+0.6 0 TD
+0.107 Tw
+(, the total number of workers assigned to work that day)Tj
+-12.85 -1.2 TD
+0.0855 Tw
+(must lie between the limits)Tj
+/F6 1 Tf
+11.45 0 TD
+0 Tw
+(out_min[i])Tj
+/F2 1 Tf
+6.33 0 TD
+(and)Tj
+/F6 1 Tf
+1.77 0 TD
+(out_max[i])Tj
+/F2 1 Tf
+6 0 TD
+0.0707 Tw
+[(. )-254.3(The same approach can)]TJ
+ET
+endstreamendobj31 0 obj<< /Type /Page /Parent 102 0 R /Resources 32 0 R /Contents 33 0 R /Rotate 0 /MediaBox [ 0 0 612 792 ] /CropBox [ 40.32001 126 571.67999 792 ] >> endobj32 0 obj<< /ProcSet [ /PDF /Text ] /Font << /F2 119 0 R /F3 125 0 R /F6 48 0 R /F8 50 0 R >> /ExtGState << /GS1 127 0 R >> >> endobj33 0 obj<< /Length 4657 >> stream
+BT
+/F3 1 Tf
+10 0 0 10 126 747.615 Tm
+0 g
+/GS1 gs
+0 Tc
+0 Tw
+(38)Tj
+7 0 0 7 154 747.615 Tm
+0.0098 Tw
+[(DIET AND OTHER INPUT MODELS: )-301.1(MINIMIZING )-10(COSTS )-15034.1(CHAPTER 2)]TJ
+/F2 1 Tf
+10 0 0 10 126 726.015 Tm
+0 Tw
+(________________________________________________________________________)Tj
+4 0 0 4 126 723.535 Tm
+(_______________________________________________________________________________________________________________________________)Tj
+63.499 0 TD
+(_____________________________________________________)Tj
+/F6 1 Tf
+9 0 0 9 147.6 705.615 Tm
+[(set INPUT; )-1800(# inputs)]TJ
+0 -1.1111 TD
+[(set OUTPUT; )-1200(# outputs)]TJ
+0 -1.6778 TD
+(param cost {INPUT} > 0;)Tj
+0 -1.1111 TD
+(param in_min {INPUT} >= 0;)Tj
+T*
+(param in_max {j in INPUT} >= in_min[j];)Tj
+0 -1.6778 TD
+(param out_min {OUTPUT} >= 0;)Tj
+0 -1.1111 TD
+(param out_max {i in OUTPUT} >= out_min[i];)Tj
+0 -1.6778 TD
+(param io {OUTPUT,INPUT} >= 0;)Tj
+T*
+(var X {j in INPUT} >= in_min[j], <= in_max[j];)Tj
+T*
+[(minimize Total_Cost: )-600(sum {j in INPUT} cost[j] * X[j];)]TJ
+T*
+(subject to Outputs {i in OUTPUT}:)Tj
+1.8 -1.1111 TD
+(out_min[i] <= sum {j in INPUT} io[i,j] * X[j] <= out_max[i];)Tj
+/F8 1 Tf
+10 0 0 10 201.2 545.415 Tm
+-0.0089 Tw
+(Figure 2-4:)Tj
+/F2 1 Tf
+5.24 0 TD
+-0.003 Tw
+(Least-cost input model \()Tj
+/F6 1 Tf
+9.74 0 TD
+0 Tw
+(blend.mod)Tj
+/F2 1 Tf
+5.4 0 TD
+(\).)Tj
+4 0 0 4 126 536.135 Tm
+(_______________________________________________________________________________________________________________________________)Tj
+63.499 0 TD
+(_____________________________________________________)Tj
+10 0 0 10 126 534.615 Tm
+(________________________________________________________________________)Tj
+0 -2.8 TD
+0.1161 Tw
+[(be )10.1(used )10.1(in )10.1(a )10.1(variety of other scheduling contexts, where the hours, days or months are)]TJ
+0 -1.2 TD
+-0.0054 Tw
+(replaced by other periods of time.)Tj
+1.44 -1.26 TD
+-0.0042 Tw
+[(Although linear programming can be very useful in )-10.9(applications )-10.9(like )-10.9(these, )-10.9(we )-10.9(need )-10.9(to)]TJ
+-1.44 -1.2 TD
+0.0995 Tw
+[(keep in mind the assumptions that underlie the LP model. )-242.5(We )10(have )10(already )11.4(mentioned)]TJ
+T*
+0.1437 Tw
+(the ‘‘continuity’’ assumption whereby)Tj
+/F6 1 Tf
+16.19 0 TD
+0 Tw
+(X[j])Tj
+/F2 1 Tf
+2.8 0 TD
+0.1487 Tw
+(is allowed to take on any value between)Tj
+/F6 1 Tf
+-18.99 -1.2 TD
+0 Tw
+(in_min[j])Tj
+/F2 1 Tf
+5.67 0 TD
+(and)Tj
+/F6 1 Tf
+1.71 0 TD
+(in_max[j])Tj
+/F2 1 Tf
+5.4 0 TD
+0.0155 Tw
+[(. )-256.5(This may be a lot more reasonable )9(for )9(blending )9(than )9(for)]TJ
+-12.78 -1.2 TD
+0 Tw
+(scheduling.)Tj
+1.44 -1.26 TD
+-0.0037 Tw
+(As another example, in writing the objective as)Tj
+/F6 1 Tf
+9 0 0 9 154.8 403.815 Tm
+0 Tw
+(sum {j in INPUT} cost[j] * X[j])Tj
+/F2 1 Tf
+10 0 0 10 126 384.215 Tm
+0.0673 Tw
+[(we are assuming ‘‘linearity of costs’’, that is, that the cost of an input )-13.1(is )-13.1(proportional )-13.1(to)]TJ
+0 -1.2 TD
+0.0792 Tw
+[(the amount of the input used, and that the total cost is the sum of the )6.1(inputs’ )6.1(individual)]TJ
+T*
+0 Tw
+(costs.)Tj
+1.44 -1.26 TD
+-0.0025 Tw
+(In writing the constraints as)Tj
+/F6 1 Tf
+9 0 0 9 154.8 330.015 Tm
+0 Tw
+(out_min[i] <= sum {j in INPUT} io[i,j] * X[j] <= out_max[i])Tj
+/F2 1 Tf
+10 0 0 10 126 310.415 Tm
+0.0369 Tw
+[(we are also assuming that the yield of an )-17.1(output)]TJ
+/F6 1 Tf
+19.73 0 TD
+0 Tw
+(i)Tj
+/F2 1 Tf
+0.9 0 TD
+0.0466 Tw
+(from a particular input is proportional)Tj
+-20.63 -1.2 TD
+0.0685 Tw
+(to the amount of the input used, and that the total yield of an output)Tj
+/F6 1 Tf
+28.24 0 TD
+0 Tw
+(i)Tj
+/F2 1 Tf
+0.91 0 TD
+0.0598 Tw
+(is the sum of the)Tj
+-29.15 -1.2 TD
+0.0073 Tw
+[(yields )6.3(from )6.3(the )6.3(individual )6.3(inputs. )-244.7(This ‘‘linearity of yield’’ assumption poses no problem)]TJ
+T*
+0.1269 Tw
+[(when )-8.5(the )-8.5(inputs )-8.5(are schedules, and the outputs are hours worked. )-258.1(But in the blending)]TJ
+T*
+0.047 Tw
+[(example, linearity is a physical assumption about the nature of )-8.4(the )-8.4(raw )-8.4(materials )-8.4(and )-8.4(the)]TJ
+T*
+0.0582 Tw
+[(qualities, which may or may not hold. )-248.8(In early applications to )14.7(refineries, )14.7(for )14.7(example, )14.7(it)]TJ
+T*
+0.0462 Tw
+[(was recognized that the addition of lead as an input had a )-9.2(nonlinear )-9.2(effect )-9.2(on )-9.2(the )-9.2(quality)]TJ
+T*
+-0.0028 Tw
+(known as octane rating in the resulting blend.)Tj
+9 0 0 9 140.4 213.815 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 168.5 213.815 Tm
+0.0654 Tw
+(makes it easy to express discrete or nonlinear models, but any departure from)Tj
+-4.25 -1.2 TD
+0.0093 Tw
+[(continuity or linearity is likely to make an optimal solution much harder to obtain. )-250.7(At the)]TJ
+ET
+endstreamendobj34 0 obj<< /Type /Page /Parent 102 0 R /Resources 35 0 R /Contents 36 0 R /Rotate 0 /MediaBox [ 0 0 612 792 ] /CropBox [ 40.32001 126 571.67999 792 ] >> endobj35 0 obj<< /ProcSet [ /PDF /Text ] /Font << /F1 120 0 R /F2 119 0 R /F3 125 0 R /F4 46 0 R /F8 50 0 R >> /ExtGState << /GS1 127 0 R >> >> endobj36 0 obj<< /Length 4416 >> stream
+BT
+/F3 1 Tf
+7 0 0 7 126 747.615 Tm
+0 g
+/GS1 gs
+0 Tc
+0.0079 Tw
+[(SECTION )-21.9(2.4 )-8565.8(GENERALIZATIONS TO BLENDING, ECONOMICS AND SCHEDULING)]TJ
+10 0 0 10 474.8 747.615 Tm
+0 Tw
+(39)Tj
+/F2 1 Tf
+-34.88 -3.24 TD
+0.1055 Tw
+[(least, it takes a more powerful solver )-12(to )-12(optimize )-12(the )-12(resulting )-12(mathematical )-12(programs.)]TJ
+0 -1.2 TD
+-0.0015 Tw
+(Chapters 17 through 20 discuss these issues in more detail.)Tj
+/F1 1 Tf
+11 0 0 11 126 645.915 Tm
+0 Tw
+(Bibliography)Tj
+/F2 1 Tf
+9 0 0 9 126 627.415 Tm
+0.1763 Tw
+[(George B. Dantzig, ‘‘The Diet Problem.’’ )-253.9(Interfaces)]TJ
+/F8 1 Tf
+22.7111 0 TD
+0 Tw
+(20)Tj
+/F2 1 Tf
+1 0 TD
+0.1869 Tw
+[(, 4 \(1990\) pp. 43–47. )-252.2(An entertaining)]TJ
+-23.7111 -1.2222 TD
+0.0067 Tw
+(account of the origins of the diet problem.)Tj
+0 -1.6445 TD
+0.0742 Tw
+[(Susan Garner Garille and Saul I. Gass, ‘‘Stigler’s Diet Problem Revisited.’’ )-254.4(Operations Research)]TJ
+/F8 1 Tf
+0 -1.2222 TD
+0 Tw
+(49)Tj
+/F2 1 Tf
+1 0 TD
+0.0738 Tw
+[(, 1 \(2001\) pp. 1–13. )-254.2(A review of the diet problem’s origins and its influence )12.2(over )12.2(the )12.2(years )12.2(on)]TJ
+-1 -1.2222 TD
+0.007 Tw
+(linear programming and on nutritionists.)Tj
+0 -1.6444 TD
+0.1404 Tw
+[(Said S. Hilal and Warren Erikson, ‘‘Matching Supplies to Save )-9.9(Lives: )-9.9(Linear )-9.9(Programming )-9.9(the)]TJ
+0 -1.2222 TD
+0.0861 Tw
+[(Production of Heart Valves.’’ )-255.2(Interfaces)]TJ
+/F8 1 Tf
+17.0111 0 TD
+0 Tw
+(11)Tj
+/F2 1 Tf
+1 0 TD
+0.0741 Tw
+[(, )-14.8(6 \(1981\) pp. 48–56. )-253.9(A less appetizing equivalent of)]TJ
+-18.0111 -1.2222 TD
+0.007 Tw
+(the diet problem, involving the choice of pig heart suppliers.)Tj
+/F1 1 Tf
+11 0 0 11 126 490.315 Tm
+0 Tw
+(Exercises)Tj
+10 0 0 10 126 471.815 Tm
+(2-1.)Tj
+/F2 1 Tf
+9 0 0 9 147.9 471.815 Tm
+0.186 Tw
+[(Suppose )13.8(the )13.8(foods )13.8(listed below have calories, protein, calcium, vitamin A, and costs per)]TJ
+-2.4333 -1.2222 TD
+0.2058 Tw
+[(pound )-13.8(as )-13.8(shown. )-266.7(In what amounts should these food be purchased to meet at least the daily)]TJ
+T*
+0.3063 Tw
+[(requirements )11(listed while minimizing the total cost? )-254.9(\(This problem comes from George B.)]TJ
+T*
+0.0424 Tw
+(Dantzig’s classic book,)Tj
+/F4 1 Tf
+9.6778 0 TD
+0.0389 Tw
+(Linear Programming and Extensions)Tj
+/F2 1 Tf
+15.0556 0 TD
+0.0278 Tw
+[(, )-17.1(page )-17.1(118. )-267.5(We )-11.2(will )-11.2(take his word on)]TJ
+-24.7333 -1.2222 TD
+0.0953 Tw
+[(nutritional values, and for nostalgic reasons have left the prices as they were when the book )-10.8(was)]TJ
+T*
+0.0083 Tw
+(published in 1963.\))Tj
+8 0 0 8 210.5 398.315 Tm
+1.8518 Tw
+[(bread )-158.3(meat potatoes cabbage )-289.2(milk )73.8(gelatin )446.2(required)]TJ
+-6.9625 -1.75 TD
+3.8026 Tw
+[(calories 1254 )1827.6(1457 )115.1(318 )-322.4(46 )1327.6(309 )1302.6(1725 )2115.1(3000)]TJ
+0 -1.375 TD
+2.975 Tw
+[(protein )-2104.6(39 73 )-1712.5(8 )-1650(4 16 )-525(43 )287.5(70 )2975(g.)]TJ
+T*
+4.2466 Tw
+[(calcium 418 )1271.6(41 )59.1(42 )621.6(141 )1771.6(536 )246.6(0 )2059.1(800 )4249.6(mg.)]TJ
+T*
+-0.0154 Tw
+[(vitamin A )-4415.4(0 )-3490.4(0 )-4202.9(70 )-3640.4(860 )-2490.4(720 )-4015.4(0 )-2202.9(500 )-10.4(I.U.)]TJ
+0 -1.75 TD
+1.725 Tw
+[(cost/pound )-548.6($0.30 $1.00 )-1212.5($0.05 )-1150($0.08 $0.23 )-525($0.48)]TJ
+/F1 1 Tf
+10 0 0 10 126 318.815 Tm
+0 Tw
+(2-2.)Tj
+/F2 1 Tf
+9 0 0 9 147.9 318.815 Tm
+0.096 Tw
+[(\(a\) You have been advised by your doctor to get more exercise, specifically, )-9.8(to )-9.8(burn )-9.8(off )-9.8(at)]TJ
+-2.4333 -1.2222 TD
+0.0505 Tw
+[(least 2000 extra calories per week by some combination )8(of )8(walking, )8(jogging, )8(swimming, )8(exercise-)]TJ
+T*
+0.086 Tw
+[(machine, collaborative indoor recreation, and pushing yourself )-9.8(away )-9.8(from )-9.8(the )-9.8(table )-9.8(at )-9.8(mealtimes.)]TJ
+T*
+0.1284 Tw
+[(You have a limited tolerance for each activity in hours/week; each )11.1(expends )11.1(a )11.1(certain )11.1(number )11.1(of)]TJ
+T*
+0.0072 Tw
+(calories per hour, as shown below:)Tj
+8 0 0 8 205.9 256.315 Tm
+1.8221 Tw
+[(walking jogging )-67.5(swimming )-90(machine )8.1(indoor )-13.5(pushback)]TJ
+-6.3875 -1.75 TD
+3.6671 Tw
+[(Calories 100 )204.6(200 )-370.4(300 )-545.4(150 )354.6(300 )129.6(500)]TJ
+0 -1.375 TD
+3.5021 Tw
+[(Tolerance 5 )-960.4(2 )-1535.4(3 )-1335.4(3.5 )-435.4(3 )-660.4(0.5)]TJ
+9 0 0 9 126 212.815 Tm
+0.0279 Tw
+(How should you divide your exercising among these activities to minimize the amount of time you)Tj
+0 -1.2222 TD
+0 Tw
+(spend?)Tj
+ET
+endstreamendobj37 0 obj<< /Type /Page /Parent 102 0 R /Resources 38 0 R /Contents 39 0 R /Rotate 0 /MediaBox [ 0 0 612 792 ] /CropBox [ 40.32001 126 571.67999 792 ] >> endobj38 0 obj<< /ProcSet [ /PDF /Text ] /Font << /F1 120 0 R /F2 119 0 R /F3 125 0 R /F6 48 0 R /F7 49 0 R >> /ExtGState << /GS1 127 0 R >> >> endobj39 0 obj<< /Length 4237 >> stream
+BT
+/F3 1 Tf
+10 0 0 10 126 747.615 Tm
+0 g
+/GS1 gs
+0 Tc
+0 Tw
+(40)Tj
+7 0 0 7 154 747.615 Tm
+0.0098 Tw
+[(DIET AND OTHER INPUT MODELS: )-301.1(MINIMIZING )-10(COSTS )-15034.1(CHAPTER 2)]TJ
+/F2 1 Tf
+9 0 0 9 126 716.215 Tm
+0.0836 Tw
+[(\(b\) Suppose that you should also have some variety in your exercise — you )-10.9(must )-10.9(do )-10.9(at )-10.9(least )-10.9(one)]TJ
+0 -1.2222 TD
+0.0516 Tw
+[(hour )-10(of )-10(each )-10(of )-10(the )-10(first four exercises, but no more than four hours total of walking, jogging, and)]TJ
+T*
+0.0067 Tw
+[(exercise-machine. )-262.6(Solve the problem in this form.)]TJ
+/F1 1 Tf
+10 0 0 10 126 675.915 Tm
+0 Tw
+(2-3.)Tj
+/F2 1 Tf
+9 0 0 9 147.9 675.915 Tm
+0.0172 Tw
+(\(a\) A manufacturer of soft drinks wishes to blend three sugars in approximately equal quanti-)Tj
+-2.4333 -1.2222 TD
+0.0618 Tw
+[(ties to ensure uniformity of taste in a product. )-254.6(Suppliers only provide )10.2(combinations )10.2(of )10.2(the )10.2(sugars,)]TJ
+T*
+0.0056 Tw
+(at varying costs/ton:)Tj
+7 0 0 7 258.4 635.015 Tm
+0 Tw
+(SUPPLIER)Tj
+8 0 0 8 154.8 624.015 Tm
+3.5825 Tw
+[(Sugar A )1237(B )1687(C )1717(D )1693.5(E )1601(F )1654.5(G)]TJ
+0 -1.75 TD
+1.5625 Tw
+[(Cane )-1862.1(10% 10 20 30 40 20 60)]TJ
+0 -1.375 TD
+[(Corn )-1917.1(30% 40 40 20 60 70 10)]TJ
+T*
+[(Beet )-2084.1(60% 50 40 50 )-500(0 10 30)]TJ
+0 -1.75 TD
+[(Cost/ton )-860.1($10 11 12 13 14 12 15)]TJ
+9 0 0 9 126 555.115 Tm
+0.0283 Tw
+(Formulate an)Tj
+8 0 0 8 176.5 555.115 Tm
+0 Tw
+(AMPL)Tj
+9 0 0 9 201.3 555.115 Tm
+0.0279 Tw
+[(model that minimizes the cost of supply while producing a blend )-11.1(that )-11.1(contains)]TJ
+-8.3667 -1.2222 TD
+0.007 Tw
+(52 tons of cane sugar, 56 tons of corn sugar, and 59 tons of beet sugar.)Tj
+0 -1.5111 TD
+0.0061 Tw
+[(\(b\) The manufacturer feels that to ensure good relations with suppliers it is necessary )-10.6(to )-10.6(buy )-10.6(at )-10.6(least)]TJ
+0 -1.2222 TD
+[(10 tons from each. )-255.4(How does this change the model and the minimum-cost solution?)]TJ
+0 -1.5111 TD
+0.0725 Tw
+[(\(c\) )11(Formulate )11(an )11(alternative )11(to )11(the )11(model )11(in \(a\) that finds the lowest-cost way to blend one ton of)]TJ
+0 -1.2222 TD
+0.0062 Tw
+(supplies so that the amount of each sugar is between 30 and 37 percent of the total.)Tj
+/F1 1 Tf
+10 0 0 10 126 476.615 Tm
+0 Tw
+(2-4.)Tj
+/F2 1 Tf
+9 0 0 9 147.9 476.615 Tm
+0.062 Tw
+[(At )11.7(the )11.7(end )11.7(of Chapter 1, we indicated how to interpret the marginal \(or dual\) values of con-)]TJ
+-2.4333 -1.2222 TD
+0.0174 Tw
+[(straints )-10.7(and the reduced costs of variables in a production model. )-255.4(The same ideas can be applied to)]TJ
+T*
+0.0077 Tw
+(this chapter’s diet model.)Tj
+0 -1.5111 TD
+0.0503 Tw
+[(\(a\) Going back to the diet problem that was successfully solved in Section )-13.3(2.3, )-13.3(we )-13.4(can )-13.4(display )-13.4(the)]TJ
+0 -1.2222 TD
+0.0059 Tw
+(marginal values as follows:)Tj
+/F6 1 Tf
+8 0 0 8 154.8 413.115 Tm
+0 Tw
+(ampl:)Tj
+/F7 1 Tf
+3.6 0 TD
+0.0003 Tw
+(display Diet.lb,Diet.body,Diet.ub,Diet;)Tj
+/F6 1 Tf
+-3.6 -1.125 TD
+1.2001 Tw
+[(: Diet.lb )600(Diet.body )1200(Diet.ub )-1799.9(Diet )-2999.9(:=)]TJ
+T*
+3.6 Tw
+[(A 700 )1799.9(1956.29 )2400(20000 )1800(0)]TJ
+T*
+3 Tw
+[(B1 700 )1199.9(1036.26 )1800(20000 )1200(0)]TJ
+T*
+[(B2 700 )600(700 20000 )1199.9(0.404585)]TJ
+T*
+3.6 Tw
+[(C 700 )1799.9(1682.51 )2400(20000 )1800(0)]TJ
+T*
+1.2001 Tw
+[(CAL 16000 19794.6 )-599.9(24000 )-599.9(0)]TJ
+T*
+4.2 Tw
+[(NA 0 )3000(50000 )1200(50000 )2999.9(-0.00306905)]TJ
+T*
+0 Tw
+(;)Tj
+/F2 1 Tf
+9 0 0 9 126 322.215 Tm
+0.0062 Tw
+(How can you interpret the two that are nonzero?)Tj
+0 -1.5111 TD
+(\(b\) For the same problem, this listing gives the reduced costs:)Tj
+/F6 1 Tf
+8 0 0 8 154.8 291.715 Tm
+0 Tw
+(ampl:)Tj
+/F7 1 Tf
+3.6 0 TD
+0.0003 Tw
+(display Buy.lb,Buy,Buy.ub,Buy.rc;)Tj
+/F6 1 Tf
+-3.6 -1.125 TD
+1.8001 Tw
+[(: Buy.lb )-599.9(Buy Buy.ub )-1200(Buy.rc )-1799.9(:=)]TJ
+T*
+1.8 Tw
+[(BEEF 2 )-1200.1(5.36061 10 )-600.1(8.88178e-16)]TJ
+T*
+2.4 Tw
+[(CHK 2 )-600(2 )-3000(10 1.18884)]TJ
+T*
+1.8 Tw
+[(FISH 2 )-1200(2 )-3600(10 )-600.1(1.14441)]TJ
+T*
+2.4 Tw
+[(HAM 2 10 )-3000(10 )599.9(-0.302651)]TJ
+T*
+[(MCH 2 10 )-3000(10 )599.9(-0.551151)]TJ
+T*
+[(MTL 2 10 )-3000(10 )599.9(-1.3289)]TJ
+T*
+[(SPG 2 )-600.1(9.30605 )600(10 0)]TJ
+T*
+[(TUR 2 )-600(2 )-3000(10 2.73162)]TJ
+T*
+0 Tw
+(;)Tj
+ET
+endstreamendobj40 0 obj<< /Type /Page /Parent 102 0 R /Resources 41 0 R /Contents 42 0 R /Rotate 0 /MediaBox [ 0 0 612 792 ] /CropBox [ 40.32001 126 571.67999 792 ] >> endobj41 0 obj<< /ProcSet [ /PDF /Text ] /Font << /F1 120 0 R /F2 119 0 R /F3 125 0 R >> /ExtGState << /GS1 127 0 R >> >> endobj42 0 obj<< /Length 4893 >> stream
+BT
+/F3 1 Tf
+7 0 0 7 126 747.615 Tm
+0 g
+/GS1 gs
+0 Tc
+0.0079 Tw
+[(SECTION )-21.9(2.4 )-8565.8(GENERALIZATIONS TO BLENDING, ECONOMICS AND SCHEDULING)]TJ
+10 0 0 10 474.8 747.615 Tm
+0 Tw
+(41)Tj
+/F2 1 Tf
+9 0 0 9 126 716.215 Tm
+0.106 Tw
+[(Based )10.7(on )10.7(this )10.7(information, )10.7(if )10.7(you )10.7(want )10.7(to save money by eating more than 10 packages of some)]TJ
+0 -1.2222 TD
+0.0065 Tw
+(food, which one is likely to be your best choice?)Tj
+/F1 1 Tf
+10 0 0 10 126 688.615 Tm
+0 Tw
+(2-5.)Tj
+/F2 1 Tf
+9 0 0 9 147.9 688.615 Tm
+0.0178 Tw
+[(A chain of fast-food restaurants operates 7 days a week, and requires the )-9.3(following )-9.3(minimum)]TJ
+-2.4333 -1.2222 TD
+0.1642 Tw
+[(number )-8.9(of kitchen employees from Monday through Sunday: 45, 45, 40, 50, 65, 35, 35. )-253.4(Each)]TJ
+T*
+0.1172 Tw
+[(employee is scheduled to work one weekend day \(Saturday or Sunday\) and four other days )-10.7(in )-10.7(a)]TJ
+T*
+0.0391 Tw
+[(week. )-273.6(The )-11.2(management )-11.2(wants )-11.2(to )-11.2(know the minimum total number of employees needed to satisfy)]TJ
+T*
+0.0077 Tw
+(the requirements on every day.)Tj
+0 -1.4444 TD
+0.0065 Tw
+(\(a\) Set up and solve this problem as a linear program.)Tj
+T*
+0.0846 Tw
+[(\(b\) )12.3(In )12.3(light )12.3(of )12.3(the )12.3(discussion )12.3(in Section 2.4, explain how this problem can be viewed as a special)]TJ
+0 -1.2222 TD
+0.0066 Tw
+(case of the blending model in Figure 2-4.)Tj
+/F1 1 Tf
+10 0 0 10 126 591.015 Tm
+0 Tw
+(2-6.)Tj
+/F2 1 Tf
+9 0 0 9 147.9 591.015 Tm
+0.0956 Tw
+[(The )12(output )12(of )12(a )12(paper )12(mill consists of standard rolls 110 inches \(110"\) wide, which are cut)]TJ
+-2.4333 -1.2222 TD
+0.0062 Tw
+[(into smaller rolls to meet orders. )-254.7(This week there are orders for rolls of the following widths:)]TJ
+8 0 0 8 156.1 563.915 Tm
+1.7416 Tw
+(Width Orders)Tj
+0.5375 -1.25 TD
+3.2295 Tw
+(20" 48)Tj
+T*
+(45" 35)Tj
+T*
+(50" 24)Tj
+T*
+(55" 10)Tj
+T*
+3.7295 Tw
+(75" 8)Tj
+9 0 0 9 126 496.815 Tm
+0.0168 Tw
+[(The )11(owner )11(of )11(the )11(mill )11(wants to know what cutting patterns to apply so as to fill the orders using the)]TJ
+0 -1.2222 TD
+0.0078 Tw
+(smallest number of 110" rolls.)Tj
+0 -1.4444 TD
+0.0176 Tw
+[(\(a\) )11.7(A )11.7(cutting )11.7(pattern )11.7(consists )11.7(of a certain number of rolls of each width, such as two of 45" and one)]TJ
+0 -1.2222 TD
+0.1076 Tw
+[(of 20", or one of 50" and one )10.8(of )10.8(55" )10.8(\(and )10.8(5" )10.8(of )10.8(waste\). )-247.8(Suppose, )12(to )12(start )12(with, )12(that )12(we )12(consider)]TJ
+T*
+0.0055 Tw
+(only the following six patterns:)Tj
+8 0 0 8 156.1 434.715 Tm
+1.5 Tw
+[(Width )-150(1 2 3 4 5 6)]TJ
+0.5375 -1.25 TD
+[(20" )-704.5(3 1 0 2 1 3)]TJ
+T*
+[(45" )-704.5(0 2 0 0 0 1)]TJ
+T*
+[(50" )-704.5(1 0 1 0 0 0)]TJ
+T*
+[(55" )-704.5(0 0 1 1 0 0)]TJ
+T*
+[(75" )-704.5(0 0 0 0 1 0)]TJ
+9 0 0 9 126 367.615 Tm
+0.1397 Tw
+[(How many rolls should be cut according to each pattern, to minimize )-11.1(the )-11.1(number )-11.1(of )-11.1(110" )-11.1(rolls)]TJ
+0 -1.2222 TD
+0.0507 Tw
+[(used? )-255.7(Formulate and solve this problem as a linear program, assuming that the number of )11.4(smaller)]TJ
+T*
+0.0066 Tw
+(rolls produced need only be greater than or equal to the number ordered.)Tj
+0 -1.4444 TD
+0.0729 Tw
+[(\(b\) Re-solve the problem, with the restriction that the number of rolls produced in )-10.9(each )-10.9(size )-10.9(must)]TJ
+0 -1.2222 TD
+0.0069 Tw
+(be between 10% under and 40% over the number ordered.)Tj
+0 -1.4444 TD
+0.0071 Tw
+(\(c\) Find another pattern that, when added to those above, improves the optimal solution.)Tj
+T*
+0.0394 Tw
+[(\(d\) )11.3(All )11.3(of )11.3(the solutions above use fractional numbers of rolls. )-255.1(Can you find solutions that also sat-)]TJ
+0 -1.2222 TD
+0.1173 Tw
+[(isfy the constraints, but that cut a whole number of rolls in each pattern? )-255.3(How much )11.4(does )11.4(your)]TJ
+T*
+0.0504 Tw
+[(whole-number solution cause the objective function value to go )-11.4(up )-11.4(in )-11.4(each )-11.4(case? )-267(\(See )-11(Chapter )-11(20)]TJ
+T*
+0.0073 Tw
+(for a discussion of how to find optimal whole-number, or integer, solutions.\))Tj
+/F1 1 Tf
+10 0 0 10 126 246.015 Tm
+0 Tw
+(2-7.)Tj
+/F2 1 Tf
+9 0 0 9 147.9 246.015 Tm
+0.0846 Tw
+[(In the refinery model of Exercise 1-6, the amount )-10.1(of )-10.1(premium )-10.1(gasoline )-10.1(to )-10.1(be )-10.1(produced )-10.1(is )-10.1(a)]TJ
+-2.4333 -1.2222 TD
+0.0838 Tw
+[(decision )-6.6(variable. )-254.9(Suppose instead that orders dictate a production )7.4(of )7.4(42,000 )7.4(barrels. )-244.5(The )10.5(octane)]TJ
+T*
+0.0061 Tw
+[(rating of the product is permitted to be in the range of 89 to 91, and the )-11.2(vapor )-11.2(pressure )-11.2(in )-11.2(a )-11.2(range )-11.2(of)]TJ
+T*
+0.0836 Tw
+[(11.7 )-19(to )-19(12.7. )-266.9(The )-11.6(five )-11.6(feedstocks )-11.6(that )-11.6(are )-11.6(blended to make premium gasoline have the following)]TJ
+T*
+0.0063 Tw
+(production and/or purchase costs:)Tj
+ET
+endstreamendobj43 0 obj<< /Type /Page /Parent 102 0 R /Resources 44 0 R /Contents 45 0 R /Rotate 0 /MediaBox [ 0 0 612 792 ] /CropBox [ 40.32001 126 571.67999 792 ] >> endobj44 0 obj<< /ProcSet [ /PDF /Text ] /Font << /F1 120 0 R /F2 119 0 R /F3 125 0 R /F4 46 0 R /F5 47 0 R /F6 48 0 R >> /ExtGState << /GS1 127 0 R >> >> endobj45 0 obj<< /Length 6131 >> stream
+BT
+/F3 1 Tf
+10 0 0 10 126 747.615 Tm
+0 g
+/GS1 gs
+0 Tc
+0 Tw
+(42)Tj
+7 0 0 7 154 747.615 Tm
+0.0098 Tw
+[(DIET AND OTHER INPUT MODELS: )-301.1(MINIMIZING )-10(COSTS )-15034.1(CHAPTER 2)]TJ
+/F6 1 Tf
+8 0 0 8 154.8 718.215 Tm
+0 Tw
+(SRG)Tj
+/F2 1 Tf
+5.3 0 TD
+(9.57)Tj
+/F6 1 Tf
+-5.3 -1.125 TD
+(N)Tj
+/F2 1 Tf
+5.3 0 TD
+(8.87)Tj
+/F6 1 Tf
+-5.3 -1.125 TD
+(RF)Tj
+/F2 1 Tf
+4.8 0 TD
+(11.69)Tj
+/F6 1 Tf
+-4.8 -1.125 TD
+(CG)Tj
+/F2 1 Tf
+4.8 0 TD
+(10.88)Tj
+/F6 1 Tf
+-4.8 -1.125 TD
+(B)Tj
+/F2 1 Tf
+5.3 0 TD
+(6.75)Tj
+9 0 0 9 126 665.215 Tm
+0.0508 Tw
+[(Other data are as in Exercise 1-6. )-254.6(Construct a blending model and data file to represent this prob-)]TJ
+0 -1.2222 TD
+0.0056 Tw
+[(lem. )-260.7(Run them through)]TJ
+8 0 0 8 214.3 654.215 Tm
+0 Tw
+(AMPL)Tj
+9 0 0 9 238.9 654.215 Tm
+0.0064 Tw
+(to determine the optimal composition of the blend.)Tj
+/F1 1 Tf
+10 0 0 10 126 637.715 Tm
+0 Tw
+(2-8.)Tj
+/F2 1 Tf
+9 0 0 9 147.9 637.715 Tm
+0.0836 Tw
+[(Recall that Figure 2-4 generalizes the diet model as a minimum-cost )-12.7(input )-12.7(selection )-12.7(model,)]TJ
+-2.4333 -1.2222 TD
+0.0069 Tw
+(with constraints on the outputs.)Tj
+0 -1.4444 TD
+0.018 Tw
+[(\(a\) In the same way, generalize the production model )-10.2(of )-10.2(Figure )-10.2(1-6a )-10.2(as )-10.2(a )-10.2(maximum-revenue )-10.2(output)]TJ
+0 -1.2222 TD
+0.0074 Tw
+(selection model, with constraints on the inputs.)Tj
+0 -1.4444 TD
+0.106 Tw
+[(\(b\) )10.8(The )10.8(concept )10.8(of )10.8(an )10.8(‘‘input-output’’ model was one of the first applications of linear program-)]TJ
+0 -1.2222 TD
+0.0729 Tw
+[(ming in economic analysis. )-254.9(Such a model can be described in terms of a set)]TJ
+/F4 1 Tf
+31.7889 0 TD
+0 Tw
+(A)Tj
+/F2 1 Tf
+0.9333 0 TD
+0.0615 Tw
+[(of )-11.1(activities and a)]TJ
+-32.7222 -1.2222 TD
+0 Tw
+(set)Tj
+/F4 1 Tf
+1.3667 0 TD
+(M)Tj
+/F2 1 Tf
+1.1 0 TD
+0.0173 Tw
+[(of )-5.9(materials. )-255.5(The decision variables are the levels)]TJ
+/F4 1 Tf
+20.4222 0 TD
+0 Tw
+(X)Tj
+6 0 0 6 338.5 565.915 Tm
+(j)Tj
+/F5 1 Tf
+9 0 0 9 343.8 567.715 Tm
+()Tj
+/F2 1 Tf
+0.8778 0 TD
+0.017 Tw
+(0 at which the activities are run; they)Tj
+-25.0778 -1.2222 TD
+0.0057 Tw
+(have lower limits)Tj
+/F4 1 Tf
+7.2111 0 TD
+0 Tw
+(u)Tj
+6 0 0 6 195.9 555.015 Tm
+(j)Tj
+/F5 1 Tf
+0 0.85 TD
+(Š)Tj
+/F2 1 Tf
+9 0 0 9 202.2 556.715 Tm
+0.0055 Tw
+(and upper limits)Tj
+/F4 1 Tf
+6.7667 0 TD
+0 Tw
+(u)Tj
+6 0 0 6 268.1 555.015 Tm
+(j)Tj
+/F5 1 Tf
+0 0.85 TD
+(+)Tj
+/F2 1 Tf
+9 0 0 9 272.1 556.715 Tm
+(.)Tj
+-16.2333 -1.4444 TD
+0.0843 Tw
+(Each activity)Tj
+/F4 1 Tf
+5.6667 0 TD
+0 Tw
+(j)Tj
+/F2 1 Tf
+0.6111 0 TD
+0.0951 Tw
+[(has )11(either )11(a revenue per unit)]TJ
+/F4 1 Tf
+12.1 0 TD
+0 Tw
+(c)Tj
+6 0 0 6 296.4 541.915 Tm
+(j)Tj
+/F5 1 Tf
+9 0 0 9 300.3 543.715 Tm
+(>)Tj
+/F2 1 Tf
+0.7222 0 TD
+0.0957 Tw
+(0, or a cost per unit represented by)Tj
+/F4 1 Tf
+14.8445 0 TD
+0 Tw
+(c)Tj
+6 0 0 6 445.4 541.915 Tm
+(j)Tj
+/F5 1 Tf
+9 0 0 9 449.3 543.715 Tm
+(<)Tj
+/F2 1 Tf
+0.7222 0 TD
+0.3555 Tw
+(0. Thus)Tj
+-36.6444 -1.2222 TD
+0.0056 Tw
+(total profit from all activities is)Tj
+/F5 1 Tf
+14 0 0 14 242.3 530.015 Tm
+0 Tw
+()Tj
+/F4 1 Tf
+6 0 0 6 253.1 528.215 Tm
+(j)Tj
+/F5 1 Tf
+0.4667 0 TD
+()Tj
+/F4 1 Tf
+0.8 0 TD
+(A)Tj
+9 0 0 9 265.8 532.715 Tm
+(c)Tj
+6 0 0 6 270.8 530.915 Tm
+(j)Tj
+9 0 0 9 273.9 532.715 Tm
+(X)Tj
+6 0 0 6 280.4 530.915 Tm
+(j)Tj
+/F2 1 Tf
+9 0 0 9 282.8 532.715 Tm
+0.0079 Tw
+(, which is to be maximized.)Tj
+-17.4222 -1.9444 TD
+0.0614 Tw
+(Each unit of activity)Tj
+/F4 1 Tf
+8.6333 0 TD
+0 Tw
+(j)Tj
+/F2 1 Tf
+0.5889 0 TD
+0.0617 Tw
+(produces an amount of material)Tj
+/F4 1 Tf
+13.2222 0 TD
+0 Tw
+(i)Tj
+/F2 1 Tf
+0.6 0 TD
+0.0724 Tw
+(given by)Tj
+/F4 1 Tf
+3.8667 0 TD
+0 Tw
+(a)Tj
+6 0 0 6 373.7 513.415 Tm
+-0.156 Tw
+(i j)Tj
+/F5 1 Tf
+9 0 0 9 381.2 515.215 Tm
+0 Tw
+()Tj
+/F2 1 Tf
+0.8778 0 TD
+0.0739 Tw
+(0, or consumes an amount)Tj
+-29.2333 -1.2222 TD
+0.04 Tw
+(of material)Tj
+/F4 1 Tf
+4.6778 0 TD
+0 Tw
+(i)Tj
+/F2 1 Tf
+0.5556 0 TD
+0.0298 Tw
+(represented by)Tj
+/F4 1 Tf
+6.1667 0 TD
+0 Tw
+(a)Tj
+6 0 0 6 234.1 502.415 Tm
+-0.156 Tw
+(i j)Tj
+/F5 1 Tf
+9 0 0 9 240.2 504.215 Tm
+0 Tw
+(<)Tj
+/F2 1 Tf
+0.7222 0 TD
+0.2889 Tw
+[(0. Thus )261(if)]TJ
+/F5 1 Tf
+14 0 0 14 288.3 501.515 Tm
+0 Tw
+()Tj
+/F4 1 Tf
+6 0 0 6 299.1 499.715 Tm
+(j)Tj
+/F5 1 Tf
+0.4667 0 TD
+()Tj
+/F4 1 Tf
+0.8 0 TD
+(A)Tj
+9 0 0 9 311.8 504.215 Tm
+(a)Tj
+6 0 0 6 317.3 502.415 Tm
+-0.156 Tw
+(i j)Tj
+9 0 0 9 322.6 504.215 Tm
+0 Tw
+(X)Tj
+6 0 0 6 329.1 502.415 Tm
+(j)Tj
+/F2 1 Tf
+9 0 0 9 334 504.215 Tm
+(is)Tj
+/F5 1 Tf
+0.9444 0 TD
+(>)Tj
+/F2 1 Tf
+0.8333 0 TD
+0.0279 Tw
+(0 it is the total production of material)Tj
+/F4 1 Tf
+-24.8889 -1.5222 TD
+0 Tw
+(i)Tj
+/F2 1 Tf
+0.5333 0 TD
+0.0055 Tw
+(by all activities; if)Tj
+/F5 1 Tf
+7.5222 0 TD
+0 Tw
+(<)Tj
+/F2 1 Tf
+0.8111 0 TD
+0.0063 Tw
+(0, it is the total consumption of material)Tj
+/F4 1 Tf
+16.3 0 TD
+0 Tw
+(i)Tj
+/F2 1 Tf
+0.5333 0 TD
+0.0084 Tw
+(by all activities.)Tj
+-25.7 -1.4444 TD
+0.0176 Tw
+(For each material)Tj
+/F4 1 Tf
+7.3 0 TD
+0 Tw
+(i)Tj
+/F2 1 Tf
+0.2778 0 TD
+0.0176 Tw
+[(, there is either an upper limit on the )-10.2(total )-10.2(production )-10.2(given )-10.2(by)]TJ
+/F4 1 Tf
+25.3889 0 TD
+0 Tw
+(b)Tj
+6 0 0 6 427.7 475.815 Tm
+(i)Tj
+/F5 1 Tf
+0 0.85 TD
+(+)Tj
+9 0 0 9 433.2 477.515 Tm
+(>)Tj
+/F2 1 Tf
+0.7222 0 TD
+0.0301 Tw
+(0, or a lower)Tj
+-34.8556 -1.2222 TD
+0.0609 Tw
+(limit on the total consumption given by)Tj
+/F4 1 Tf
+16.4556 0 TD
+0 Tw
+(b)Tj
+6 0 0 6 279.1 464.815 Tm
+(i)Tj
+/F5 1 Tf
+0 0.85 TD
+(+)Tj
+9 0 0 9 284.6 466.515 Tm
+(<)Tj
+/F2 1 Tf
+0.7222 0 TD
+0.0613 Tw
+[(0. )-265.7(Similarly, there is either a lower limit on the total)]TJ
+-18.3444 -1.2222 TD
+0.0058 Tw
+(production given by)Tj
+/F4 1 Tf
+8.3222 0 TD
+0 Tw
+(b)Tj
+6 0 0 6 205.9 453.815 Tm
+(i)Tj
+/F5 1 Tf
+0 0.85 TD
+(Š)Tj
+9 0 0 9 211.4 455.515 Tm
+(>)Tj
+/F2 1 Tf
+0.7222 0 TD
+0.0061 Tw
+(0, or an upper limit on the total consumption given by)Tj
+/F4 1 Tf
+21.9 0 TD
+0 Tw
+(b)Tj
+6 0 0 6 420 453.815 Tm
+(i)Tj
+/F5 1 Tf
+0 0.85 TD
+(Š)Tj
+9 0 0 9 425.5 455.515 Tm
+(<)Tj
+/F2 1 Tf
+0.7222 0 TD
+(0.)Tj
+-34 -1.4445 TD
+0.0056 Tw
+(Write out a formulation of this model in)Tj
+8 0 0 8 272.9 442.515 Tm
+0 Tw
+(AMPL)Tj
+9 0 0 9 295.2 442.515 Tm
+(.)Tj
+-18.8 -1.4444 TD
+0.0948 Tw
+(\(c\) Explain how the minimum-cost input selection model and maximum-revenue output-selection)Tj
+0 -1.2222 TD
+0.0065 Tw
+(model can be viewed as special cases of the input-output model.)Tj
+ET
+endstreamendobj46 0 obj<< /Type /Font /Subtype /Type1 /FirstChar 32 /LastChar 120 /Widths [ 250 333 420 500 500 833 778 214 333 333 500 675 250 333 250 278 500 500 500 500 500 500 500 500 500 500 333 333 675 675 675 500 920 611 611 667 722 611 611 722 722 333 444 667 556 833 667 722 611 722 611 500 556 722 611 833 611 556 556 389 278 389 422 500 333 500 500 444 500 444 278 500 500 278 278 444 278 722 500 500 500 500 389 389 278 500 444 667 444 ] /Encoding /WinAnsiEncoding /BaseFont /BNPMFC+Times-Italic /FontDescriptor 53 0 R >> endobj47 0 obj<< /Type /Font /Subtype /Type1 /FirstChar 1 /LastChar 215 /Widths [ 549 592 713 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 549 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 549 250 549 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 549 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 549 ] /Encoding 61 0 R /BaseFont /BNPMKN+Symbol /FontDescriptor 51 0 R /ToUnicode 62 0 R >> endobj48 0 obj<< /Type /Font /Subtype /Type1 /FirstChar 32 /LastChar 125 /Widths [ 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 ] /Encoding /WinAnsiEncoding /BaseFont /BNPOGG+Courier /FontDescriptor 55 0 R >> endobj49 0 obj<< /Type /Font /Subtype /Type1 /FirstChar 32 /LastChar 121 /Widths [ 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 ] /Encoding /WinAnsiEncoding /BaseFont /BOAAAC+Courier-BoldOblique /FontDescriptor 57 0 R >> endobj50 0 obj<< /Type /Font /Subtype /Type1 /FirstChar 32 /LastChar 117 /Widths [ 250 333 555 500 500 1000 833 278 333 333 500 570 250 333 250 278 500 500 500 500 500 500 500 500 500 500 333 333 570 570 570 500 930 722 667 722 722 667 611 778 778 389 500 778 667 944 722 778 611 778 722 556 667 722 722 1000 722 722 667 333 278 333 581 500 333 500 556 444 556 444 333 500 556 278 333 556 278 833 556 500 556 556 444 389 333 556 ] /Encoding /WinAnsiEncoding /BaseFont /BOAEBO+Times-Bold /FontDescriptor 59 0 R >> endobj51 0 obj<< /Type /FontDescriptor /Ascent 0 /CapHeight 0 /Descent 0 /Flags 4 /FontBBox [ -180 -293 1090 1010 ] /FontName /BNPMKN+Symbol /ItalicAngle 0 /StemV 95 /StemH 92 /CharSet (/greaterequal/multiply/minus/plus/greater/less/Sigma/element)/FontFile3 52 0 R >> endobj52 0 obj<< /Filter /FlateDecode /Length 580 /Subtype /Type1C >> stream
+H‰tOhAÆgLvµ¬ZºŠ›EbkEA"T)4„V!=XK+iºI[’n²IÕ$„¸BŒ¼iµÔ¢ôÔ6ø‡&Ş²"¥zR½x=oošÙƒ»¥W‡ù>¾ù=xïFÖ]cÌ_î¹Öííió%#CrØ$Çh¦‡¬ÔÑpu±jı{ı>=ûàæ~=0MëˆÃ˜4–'|£¡ˆ?¤Hş„¤H±	X
+Ki<qE&•ÑĞHBtN‰çÜ\§M?¿ínÓİgÅayH}ÉxBŠÄEÏx@V¢²b´>#Šá°¸İ!.*R\RntgCã4 9t9p?@ø!²·µ_¼ä{ûîÚmü	YÑIäB×QÕĞ_|§õVò†‚f]X–©½ ²¼yP5¦BÖÆCFÃ“èŒ¦Ï’kxvİ2)æXŠûlÓ;¡Ÿ2£Ix¸³éÀº…¾€Š ç ÅuÛh'ë×™Ñ$¼·ğ›.V1Án7°!°×lƒ£«¤~î6i3ŞfV%pæÙ Lr%›S]ÒÇ4Q¡ÓŸ¾ Áê¦ƒ_-ô¥fLê¥9BÛ­ÿ	ÉoÔºHÓB°ÌbLa1P‚AˆÙP9Æ^.³(Ä8şc¡íæÅ´¦Ÿô<t'y\y¾¼0g_Z^)½oµÆTâ¼ê	ÈøXv°ïH_qğÕXK`ş“gs§ê•–Fãséå{;u>5µå*²%òkÏŸ½´Ú´uBø'À õåh
+endstreamendobj53 0 obj<< /Type /FontDescriptor /Ascent 699 /CapHeight 653 /Descent -205 /Flags 98 /FontBBox [ -169 -217 1010 883 ] /FontName /BNPMFC+Times-Italic /ItalicAngle -15.5 /StemV 76 /XHeight 441 /StemH 76 /CharSet (/X/B/E/F/C/H/K/I/S/A/M/T/L/P/G/U/R/slash/i/n/e/a/r/space/o/g/m/d/x/t/s/j\/u/c/b)/FontFile3 54 0 R >> endobj54 0 obj<< /Filter /FlateDecode /Length 4020 /Subtype /Type1C >> stream
+H‰tUkTgf/5’‰DT´Z©î®VVÛ/koEïŠ Š\’†p57B®°Z¥rÕzÁz¿®²ÔÕÚ]ëöx¶[{Ô³ëvİmÏ;ñ‹Û€§ÇıÑ3s¾ßÌ¼Ïó|ïó>#ÀÂÃ0@ğÆ¢ÕkWıvñÌõª½JÍ¬åÚ´Uzh*'pÂé¯7ïÆM=½‡ö¾0¿ q(‚ÇöOKŒÃÂ‚š–Åyùµ*+[«˜ş–bNüü¹o‡Öw‡ÖøĞ?[‘˜‘·K©XgĞh•{5Šå¹éyêü<ušV™§P$æä(’C4Šd¥F©Öñ»C„*"M¡U§e(÷¦©÷(ò2+U¹yZC¾R‘¸L‘–›ñNZ¡â¿ÓîÒ¨2Tij•R÷b0ac0,&‹ÇŞÃæ`Ø/…X<†-
+Ç>À°lu¶NˆmÂ°)ü¡`á‰MÅœ‚†‡™Â^
+Ë…7ÂSÂÛñYx;1›è'IrùßˆòˆF$øËÈ¹#ÿ>jİ¨»£M‘á‘Ë#»EãEŒèeÔ¡àQè–8u½`—*„Á@œ$(z™€ß#8Q ¥ÚYÈìáfè9$ä~ÏJ>t›êJïÌânEèdĞVe…”5,¹ÍUân£zêÚé«€ãO´ 	¸Ãh7VQé¦TÍ@”B£Şî ªˆSÈê€KG¡¾ƒaÇq‹Kı—ø^åxè&Ä÷áxó&¼ùliÇ†äR|ïió—'¿¥€œÙ5™FuqÆÚaÍ¤ŠÌ…&-¢‚«‹V[7WHaÙuIóHl Å÷oWõWb":öµfo¤¦'/D“hñ½ÜİŞ>¹øÄpM’F—³ş²ìO½YËĞl4Ù:Ó)¹§¹ïzƒÎmõ
+N)é…-¸(7›Jsµ«[Ë-E(m…Ø¥±¾?Õ+/jÀ·nYºá24jıC˜ Óƒ¶ÂäZDå9ä¼ØNø´|!±ˆŸDI’ ‰Ëç-mælª¬2İZşº†s‘7aSƒO_²S‰Rd;û\ş`äğ®ÙnßL1VÆRL·˜oC±ÁU^X±¯Â(-Ì1U ¹¶ñ“A0â-‡çs¬uêfTÊØ†û{³ç“Ç~ñı€4ÄÄÌ,‡l™”aÿ^‹qˆ†!©Ä¶±’o³›%U4ÇqªÎéó¤o‚¯j>n;+kê´îĞ™µV£¼Éüg(1¸·Í±ÙÑB«tû#oó–¦÷”¬4ÚŒUÆ!üë†^èea°Ë¢wÂ8_ü„'±10C"şG±7–õ«ºæÉĞn´mB†GĞhº÷ôàñùYXÓ4Ğîºè’²¨™!/™[­¹“…åjim®ºl£½¿Æ|	óŸ¶İın7šP+÷[y\^÷­pTXa †ìqÒÜnÍ¦fIOoCóqÔG\‚Tÿà§în'ÑÆç,ífÕ«7^ïT±dª7×Ye¬ÑĞG¬@e†¤LË6ÿ¬%SÜYÎÆkÍF7İbgk#Dè¡xÜD!ou+Kìt«G©Vw‹§…†(nÍğ›<°!_§ö°È5\ÄØ!d†d¨â²Ùc-¢Ô¿IZ¶…FSbMÕça­ğœ»óçD¬,µm‰¨fÉ}>ªÁí«=Jß€¼š* ÑfÜ§kÛ¢¦
+u¶?Á‡Yr­§¼:ï,ZW¢á"è¼îî¶N·T¤°÷pÏB’„Ü´›6†ø¹#ã<ä5X¦÷à(vù¯­(R–¼ŞŞ_'¯íIuæ"xXŸáE”0ğ2Tq¾q+±3âh9¯¶ª¹HGU”å”¥Ó“‚»Q„~ÿöı¼šÍ,¹Ç‘á>Ny]­îfHnî"n;ñ&‚‹àÎáN‰ƒ»Œ©Ú¢¤WmJvë½T‹»ÙsàU|‹µÒ¡99Ñ]CñTõïI!60VrÂ|„cyú~>zFßûiJl!;0.ªÉn÷¢/B
+n>Ø`½#ƒ­WAô…\üf¢Õ;hTMÀ’%>—‡íAXGZ"ŠGRû¢’R‡SŠ
+öGÁ¼2ìG,¦ƒÆ!|ı÷âûÜ +Iq0İ%İq`‹†Éí—î< `
+J°gñ%ùL4µÚ2¨ÒŠlkÙğøò-Şj±•÷¢×È·¸Æîò¦¯€òfˆB÷q˜NˆŸ ÷Xâ÷º~wZvõ¦vnBæ{hJ~eµK#º¹`ç¸&?ë¿ùŒı[³_ü•ø!—ÍeKó¡¨%¥•Z™¾Ôãİ'÷4í²¸…ÌXá.M“‹¿êÌîÍI¢6eÇÏš³îÁ£šjwu­wàâ 
+ip?Qïò¶î:ŸõGHïüçé îØ;å¿úkiëê³ó—iñCˆtÆ$WËy±Ü?»ÜçÂ@d(­i(ÎoÁ!êÚ9;Œ—¡)ÁC†å;-Û-¼Ş“,™à.®ş„jp5Ö¦AÎ™ñËÄ'u1Œ¼i(>á^°‚çß
+½¶0DŸµÓ²ƒ2ÌGg+sèØ¼Íh¢eI	G]z
+·ëûåşÁïwÄĞ(]3·Ø²6MA§c)D€pıs˜u÷£B_ŒqÕ4»§]Ç…³‚Ü@‚009„“ÁÇ,ÍùTQyiy)¦¢ka¾Ÿ­l«£òö»i51äuklÚùb£Ñ/ĞÊä$}q^a‰)ßÁÀn–ÌÍªîbkY_ƒfBÂg(÷2.ƒ‘RélëCÿZŞÒ+kŠÿc³Ì£šºò8.â‹qTj¹¦#ïé{õtªµj=êÌàŞ±sì)3”ÖÂ2 ˆ1,†„„,B‰!!B $l!l‘}d•EªxpëeÑQÜ—¶S§£ó{ÎuÚyèü9ÿŞ{ÎïûùŞ{ßû»ø!/‚­zñz£Ã[à§í<ÍúUù—İáuCê@
+6f
+b¢å5•s¼ á	|gu0z+:BôFcVaâÕEµû(€Wã¯ğòdëºÔ32xü¦‹‰@
+UˆA&%•æ#]Í­c#4êx=×.xôRa·^¹b/M•Ò~Z» ¢ËÊåş{Ğx=cÁˆ p>„—D™k^üÀıš3G‹öŠiÜ ç¤¤F'Ñ§Ğxñk‘;[6)„Õ°¶Ãºë};Ö&¢MyºÕÄ)©ºm°-BÏÂ²„úğ.sS´­,ãö9q$÷}á§—‚‡¢b¿¢B’z&øvÀ{å•5£Tç!¥.MMMUy}ƒd „iÎóR0%¹ôâÜxcíwtPØÇ¾ëyëÀu¾œĞ»Û!æoÊb˜Õk‘â+ğ®UjÁ1Aä~¹TNee¸Ja>»­>c6É„Z¡^hà+g½5©—d§Ğûğz“‰¨ÊÕ7íæ&	¼ÿ¯sM1(}`¸f^{sæ]Ù	¹R)™^(9Ùt©÷J=í²‡]èñi¸ŠË¾°
+l‚‡mW'ÏR5EŠôl‡c÷3ö‘ 6|â^j˜çj¥­Òæfêó	ø½ç»[7Énqµ³»oÁ7n}ñãã'¥Å\åØ*xà†Ğ“Î*ÿÂ¡¦°rDtM¡ŸY1»BÂÓëìv%ƒ¦ì{,µówâYŸw¥µª˜Dé¾d1©pe:ttà‘l¹gp7øÀ’îÒ\D$ªÉ’ª:']âÌ-¡Ğ|{¬ÒX™SÁğĞ^ş:R½Vgä?õ˜ë:Zh«µ¹î8Uø,^WÎTèZ•Ñ$º]Ç6„¯ŠV6õ\éşÇd§+9æf\m/;£´Fè¥ÿx×3Ôà	vÆ&Ë3)¾°ÀáhÏw2`Ü8Hqúªƒ&¾jöP¡!IÙ‚ó¢ÈsLïp÷Ğù“4Zèeõ‚y3ª”M¢4©"!Á£¬i*m¨œÖÁ<¿Ìüb:®ßÑÎx«‡Ü	§xŞ(Ø¦| ¤tÚ¼"ÆQbv“n¹KŸ›Ñ£nzxn~ÛAÿ“]ó?„µªØi„æ<¢ÙhÓ+Ik¦AvTÈGáCı¿òçu½Êt6àLT©?ükòÎ„å&¡–W;` êà‘Ã
+*Óh-cÈyÜÍd»´îPĞ¦õ˜¿ƒ6Yg»gÊIv¦{ş¯‰HâÖ†!j%"Tšµ7‹Céw™d²¸EÄŒóÚÀ¯òrû‰Úë&÷Pösªâs|ìÈÇÜ¦ˆ²Ñ¾	~Ãµ”Ã­æ¿|+nL%5æ„ÎááÓ­´­€ğ{CL&n?v% /»oš7^rXN™4ƒâNüÌ]d§´ú/Ö`f{ÇvN³	÷j÷¾e;[¤U§Š1ÁéwÀâ’®SßòQÜpëè½>ªâ¸&ƒAŞÛ±1L¶$:ÛrêÊ Anö·Oİ¨½ãcì—¼ŒëôßáåzB^r¹²‚àËâÛ˜ÏèÓ}U1aïoÁ0/<©õøÕcˆ„YŒ®s§ÃÓçºçğïa}Ñ˜ÿ^8{şz¼®Âğm Ğ…jõ¡.ª¸Õ|¦Yâ’Šç‰˜l¹ÉÒ‘ÓVJ¢õ_ê¹°[‹©›J£ËIÌŠg6á‚áXWyüÁçú©‰ÚRô¼–	äx=QÊ+>_äô¶+NPÃOkÀ‡¹‹ı’ıö*±—ªwî²1¥¼J`/Û“¥L’—ESK5›Åz¾æ®"EªÈİ›TOºõoZ¥şİèÓ_ègÿ ØÌ«ÿÉRh²ëM:K®.×’-R*u)úÑ`6äåğÇxÄõD®J¢&“ê³*Ïœì<M- K¢ä”ÖPh·š-yV®Áîwx~ÚAa/üì,—{åş7`ëdE¡ì~îŞcR”öX±ÍUÒ}¼’¹	gˆí¼¸÷eÁÛùÈ–¼z•nt—X™ÇğËô¹µ„g†ë¸h×Ìî¨0'3©Ÿb[S¡n}4ïq•¶òPˆt£<0ƒT[â{jk¾IÈ¡=“0t}÷p|›*›Œìì2ğ$¥ÊãÓ)¹¾¦4—É©I„Åå¤ù*Ì÷Ò¨¦ª@YMUU”3È^-s(Â¢B6†ÑÚ!âA†Ú,£¥éR”—¯&
+V;U—¯Û™<C3Ğ‘ø×k$*)´'#£BFÉ23T\•´RESƒ£¸¢Œnnë<Ûwù·(´Ä¥ñR¯xãf®òWKË°¡2xà¶¾–æÏÖ8ÙĞ"ˆvòqr›VÌs&æ²Æ…¯V
+ş; /I
+endstreamendobj55 0 obj<< /Type /FontDescriptor /Ascent 629 /CapHeight 562 /Descent -157 /Flags 35 /FontBBox [ -28 -250 628 805 ] /FontName /BNPOGG+Courier /ItalicAngle 0 /StemV 51 /XHeight 426 /StemH 51 /CharSet (/d/i/e/t/zero/period/m/o/v/a/r/space/X/b/f/greater/equal/semicolon/c/h/k\/s/l/p/g/u/n/z/colon/three/one/nine/asterisk/plus/two/five/eight/four/j/\A/six/seven/C/B/M/I/N/O/S/comma/hyphen/U/T/R/F/D/braceleft/braceright/un\derscore/x/bracketleft/bracketright/y/less/parenleft/parenright/E/H/K/L/\P/G/numbersign)/FontFile3 56 0 R >> endobj56 0 obj<< /Filter /FlateDecode /Length 4808 /Subtype /Type1C >> stream
+H‰lUPWí¦§{@°iuÆšA]¿àuı °á« ÊOlu!
+¨hPg‰DS•¸âÌÆd·°`j]–@ñGKël@T"~%&ñKÔJ?÷™;÷–¥n¶¦Ş­Ûoî=ï¾óîyetNË²î¡óãbgÏöËYŸ·2#Ï1e&&–Ò‘¡nŞ9¸ã™ó³£<øºCªgİP™'–KËY[·2kÅ:Ÿ1ËÆúøÏœ1ÓÚ™“ú­¿OÈòœ·3|ò×e¬É÷‰zgYNŞÚœ¼ôuË'ø„¬^íÓŸšï“—‘Ÿ‘·N¾\aéÑ1Œ‹ÀxŠÌpgÆg¦pÌL†	d˜`†y‹aBİ™D“Ê1K&šîqb8æ¦‰yÂN`ãØUl![ÊŞtà”ätĞé'.‚ÛËµé"tåº.^àGó‘|&D0Û…vııBıeg/çiÎ:p~æìRìrqÀÄ}®Ó]­®İ®à&»vûÌíÙÀ´mâP1K<ïş;÷x÷OÜz˜<Š<:=‡x¾ëÙdXi¨1<–&JÅR›ôÈk¶W©(B‚
+ƒUÃsæèûŒúüyO¿½Jíµ7¾¤Né1dË%ÇƒN¤Nt>…Á¼ÔöP%”@.¯›0—÷yÍG'…+|€4ğæ(å':Ç«‚åi¿/uN'£ä§ı>‚øÌÉÊÂîVŸ9É1ãÑE#Š-è{j¢¹Qˆ.<ÀÛŞàñ5pæ{Z9ÈDF>u§|A4‚¾1wÌ©Â×È5¢zÑ;=b‘fGVö9ëõ>ÓÀ3I‘Á÷íq(Ê¾Ş×ÑûĞ¿Ç¾õïÇÑI;ÁŸOv¢?¶ñ"j,TjT’U2ÆâÂXˆqÄA²†É«Q›Xˆ‚é|
+¢‚›øá1l¢¹ml1s}P''³M/‚0œ#ú¹.kïŠYùµù55µ{ëÌb¡JêTö‰ªmÜh‘Ñs/]#‚÷B2x‚g.,À@ÌÅèi¶yß.H@*ÁÈIş›1½Ğk3Dß2‹ÛUÒI)ÚOë¾JI])`ªÿ?ÒaÚ%Ş¾#â«b¤ŞU®nk°Ï–ªJÎyK½dWÆcµ =€ø¯­şòøããßw£KTøŠäeæMÿÃòC·²&Æ¯KËZeÆzüœ5(Uaf ¶õ6©x²K®®³U3IÎÛÒb#Rü,Ê>½Ô{íBúÌÀÙ±ScË¿Xb±*|ÎÙ#Ö+¦'?~ºîEíá»-Òƒ“ûª6öNo?gášìEİU‰¤²İX5A¢<„
+¸ÃÀ'@•š¨Q'ÜíÕÛõªë‰ÄÛ%ÁQØqBTDöØ8 ­ c³~_!_u@-=lúñlTà˜ğ~ñ	eI–é|ö%µğ‚©ådé¡zKMm¹­Ùú©W‘IZ³ùOKÍT½¶Nƒ¥–³A•#[(ÍA&¢Ä²øâBˆ»y­\»5bÖâôåk-Û„åÀjÇœÛÚ–€Ÿ	¯á¯r[EkC‡©çHHø[JtÀ¤Ä»=±biRÙoUhQ¹oõšÔëĞ¢GÅŞÄ7@4ş­¡>S¡H5<´¥Ùàsj¤>é>ÙHÒåû“ÛÇ<w\ÔáymëÍÛôR_tArhUÕÃ„{÷6ƒhK¾]f.ÖK÷Ûön;c¤­=Hø(æä9ãù¶£mKÂ"æ-ÿ‹YêSt]©[z¬«§£±ËB;–:(`ûZ ÒÆİ+”¿ \` ”µä:$2yFº>ïÿ¨ıÔÁ£•–b¡(Á:^‰uK}§˜à;øUoS¢MA¼Øy©át÷~‡DÀï•L ë·:Áıºßjv½LúVÂ’ÿ#µƒ$”­'yôàÈjÙ¾³	»ÚõD¢â5k0Tc¯’î*q“SHŒ¦·Ç`ìO$ÁVöÍ?C‚e¢Ç ;»—Åm§ƒ§KoXøJ5ì€Ì ·12©,fÀö6Çİøx”™j¢€Yäï<æ)0RÀd{&¿@u„ ­4ß@€¯øb
+Šj€A°Ø¤Ç0H•§(pE ±ãì•ï—Yè‘’¦òú#§Œçv (7Í(àÀ=1Ùq±KÃ-8IÀräÀ0½ô¸
+|‹E|4Ã"hd«Zh­±ê›‰¥Vj•ªÉ&Ò&K§7l³nİ²£¸È\“œY:×„pÌdLÃi÷pÄ]ì®9Ôbyç Ÿµhşê ¦­`„Pp9×û¨+uµ4ìä¥²j‹öÿËXõqÅ/û¯©L*!î6sà¡Ê
+Ô	ÙÃ`,$"×ƒ.lRz˜*œ×tœ‹¹8Ò:Ï‚¦×)¦Á,õ‡Æ´FéÉNşLrƒ°æğöBå†=s
+}’~![ j±°‡ğØB·>+D…%gıÓÇ^¡±/Ñ¸Şğ…ŠCŞŒ¦¡£Ç÷¾@yƒ ê^PWÕL¼µôZé6\‚í²~8HoMYP˜`Âióa0ğ0çéÅŸ-Ò-[cG¾`æÌëÌH—Ğ©[oRo¢Ú+Ê£,Òíï¾©¨l·@P£ª­|Vƒjzó³ª¬@ºLë¯Æœ>É¼¬bºr¬å…/¼<ˆ}wü‡<Û‰³âGŸ	’	‘ıèı†ÿòY¥AQœix»›B2*í°	İ+A‰(¢ ¨Èázá…GViDƒ Š€"D‰r‰Ã%®I”pZT5Ä†N Ğ…¬·‚ ®WÔe=ÊÂ·­w²ì×šüØÚš©êéîo¾ï=çyü`•¹’ äë.I¸Š´óĞ@á¡„±}µ†XÉ\™–Û·Ô£UAà'!Ã:øQè]ñ²wù'ïw-ƒ\KF9+Ä×Æ‘¢’H‚T ıŠş@Ngß‡×.Ã#¢ıß£IÜ4Ú`Ú@…b«1„ä·KrPB²ig´ 
+ÈE± ²!ê/Z»ûÒjuë_eh“Ù8ÓFÍîa ÍVCÓrŞß(œ&Ş§Ù8cˆ›û% l$”ª†Zc	E*õ¥¤ì—ÌÎ7(æJœĞÓ…è9G¡:=ÁQà	O`8ñÆÕ6À^$ŠföI÷XdÈÅíÈCVe Ìà ©…‡'ˆ£ñ AC&‹dÊà˜<ËÁŸË/l†¡è#à1‘†á6ÀÓ›'¬Øéƒ¶Ú˜°»^‚}c®\s’Î]íÄxXÿ–~µ¦Ò£‡Y€•4‰9šPc‘ÁÜË¹Y÷Ì¶l708’Ç&±K¥™'İ“=}[TÂ´ğcØ‘;”³rBlY¬õƒªíuĞÔ«qÖkz{Ûôš:¶HÏnĞß‚‰ºÜğœğM¶Ñ©Q©Ñ¼”B±%úŠÌÜÃù\ö‘„}YBÌÙ†„*î%Põ0thuÈ)W`‹5~ÙnßuÙ¶´Vß»på«ÍGø¯£¡µ™³¹š¤Û›£O+Ê?wğ¤»_¿¢H½/q—Kş2?3E(ø"è`‡sGÎAX–\’&4'ßKh•àŠSxÂÈÙgïúáÓ¶f¼^se˜kú5lŠr€Ï¸‡Ş‰»kRÃR
+|	ö‡ˆğ“„Cú|éÃ¸´&‹R…1F2#fé:ÁàˆÑ!æEz9$¬Î½VñßŒw´ëø‹êÊ:n€w›Õç¯û	d]‘(¡A$×H¶õÒï&¦`1Ë¸Ó©%ä¹dOƒ„ƒ†Söêı—@:Å¶lEP—PT™ÇãäaÕNîi-j¤wZ‚€BàÂE:Ô¾Ó Ïoàóû[U*”›ºß´¨Áç]úˆÄÄ­5; t›ãĞJw­±[5N%˜'#YÿÜ 2¯„ÁU]QÂôœ9?n[ _°š*¬n:úw¹)ÆOcë\ò‚9/dí¶Æ­myWWó?Vól¼Œ\˜/tlM@ğôÏ½¹ÅËN\(=ú œ‹¯%&Ÿú{.÷j’Õ¹é5Ö@ËĞÓÀÆ«\ÓuçPÆ2ÂF;†­éÌ`¹ñÅ=,_X€íèn´æò×`!Ó8VO)éF'³×TÇÑ/_tŞzıæš÷^õloåäXë+ğ¢ŠmUÂ”º­©I	É\ê¾ôŒ¡8p}ş*­ĞÒq8XºÛÚvJşEˆ>M-öXOfëÿô:°ÿ¼îÜwÏ.dQluâé´ïöY”d”dó¿ç²WÍÅƒäRİ =jıD¥Y‡;Ò˜Ÿƒı+§qh=za/[ƒ¯Ğ,ï4Ÿ«?ÃgĞl¼ØInJƒÑñÙ"E,Æwºk-o^wú}æè1e´£×½§¦|Ü$pÍ®\T4Ä‚{®ŸåéÏ}ê\ÿ6EP&Ñéé‡Ú^G¤Ã£¶//­+~ØvüÄMŞ8Vên®Éuw¬pV™Œ“wÇZC´LüJ©¢ÕA„„2}#·üå™Úä¤Jm-–)ö©aÑì¼H2“¶,ó|Q#‚†Z¨|D–D¹ÈÀÈpSÚ(«h—‰5!»İ—ĞnbÍ¶_İ<«r‡ãIÉmşå–·N×V	Óh‡ù;fÌ
+Ì+ôå÷¬¤â/=İYÇÁ„ò‚q0lÑ=l¹ıëÓk^N®3gwö»ñÂ¤¢jÁ“Ô‚»ë5¤˜D	Î-%M”ä9ô…†Kg¹£«}Üæ¦rÊ2ÿØv-gÏ]·œ‡#O–ø<‡ê¯ƒ9X™f"!&O„±$½9¢â,álEË€ù@°š†V¦L•¸şÕ(›ÿÛ´ø0>g–¥LÂáAë²sƒù½"µ·ö|¢ÌKÙ‹VAû‡ÿ›ëÕäöGoŸÊÄ9mBObåÙ7‰2M¸.PŠ­d¦¨R¢T¥ø3—Î/	¾8‹Z!B4™Æ Ø@±
+L-õD½õc±/ŸcˆÆÒÉ˜fûÓ&ıº&Ãdõ;ÌmWª€¸¿š—ó¿_¾v]èÆH¾jç†ò`.8$jKœÀ¶Ÿ%Zy;}EX)ù~Bó}é‰ãeÜO…›<JôÃ
+™SÅ§*sõßˆV%-`>æj³ØÖRµn÷±³¯cêÈÍaşOÓ¼ç…®"P¼ÎôÛ¬©şCfòIÑ#ZvTı‘ÊVäcù†óFwÔÒØÓÓ²¡™÷¼#¼/ƒOú(=#NTé™I|ºóT¼w‘ƒÏIèK3èegš×İy¯=$ıòóy0O@İİ‚D¤Ú•¯pËÿ SÆ›ˆ[¡°–½~İ„++¨XI¸‚Õ´ø¨¾¸’++Ù½İ ÔfSuÉÁÅk¸©sÖLŸ*°×AC–¶ïP>“Rc­U…×AMet[Êæ+IP§K*M)+µ-È,0|Ë³ekTtZr2™{†áë5Q¹"ç‡7¹¢Æ$4îØãÓ÷.´?.nÑÔIå­‰| ßa9[3"·ÚÆ¤íHÚÁ³ÇkR©c9‡ò8CVZZ¦UW™ĞÈİ…Áİ`TÎœL-gøo“eÚTÄqÚ²oñƒ–¤¼ -¥'K!Aü¸¤IÁ°
+¹<–|ˆ¥—bh-–Xj‰{	–„ĞV
+	Ö„°ö¬ÚH¡V›Š^+ÔƒØD˜§SĞ}OË–]–Ù™ùÿœsïmÕúâj}/1xïp>}ã|Ğ¬›Ö"è¯dë&Ú‡Ø;LÓSŸF¿Ô?<ZZS¦“P·šÙ/D8`²³T°ÓÖ4İá–Ÿ´å”5ğÈSïÛß¨+ëÍáÃ‰iÂ.öYìà]Ê"şÀUûÅÑòšRSò4¹ebÓ?bb"’ò–$FÜ%½““±¯º°IR:¡IöŒĞ–Ôú4K‚xTÑ—ªXƒÂ‡ópCíEñ0òËtCœÆâ3´[ÂAğİıD «Ê^J‚Ìh3Y5´ÀIQsú-Ş–/Äa¤C_÷†ã{+áÖĞ5Â9zÅKàşv£Lğƒšà¸ÖËÚ çÍ¢|]ï;sâ
+;°Ota'o@ŞZ	´p0ü«]FâºØGÕğD(¥Di%UPm"àz¢pêç×mÂt«‰…HAY.ª†\/ç·g•ÿï4â¬@Šíéò¸Ï&: Pˆ/'”H"ÒwO+Œ
+ü+í: ®”s•´R¢¡t8·b]	‰bšœ×_Ïã™,œÏff$¸}¿‘9˜š¡JŞ3yòÏñ#ÚQí˜şıÄ_>aI
+endstreamendobj57 0 obj<< /Type /FontDescriptor /Ascent 626 /CapHeight 562 /Descent -142 /Flags 262243 /FontBBox [ -56 -250 868 801 ] /FontName /BOAAAC+Courier-BoldOblique /ItalicAngle -12 /StemV 106 /XHeight 439 /StemH 84 /CharSet (/m/o/d/e/l/space/i/t/zero/period/semicolon/s/v/p/a/y/X/b/f/comma/c/h/k/g\/u/r/B/two/D/n/underscore/x/bracketleft/quotedbl/N/A/bracketright/colon/\equal/five/E/F/six/S/P/G/one)/FontFile3 58 0 R >> endobj58 0 obj<< /Filter /FlateDecode /Length 3288 /Subtype /Type1C >> stream
+H‰l”	TGÇ«g¦{8ÔizÖ0¤{È@¼ĞˆñBXˆè9Ğ¹…%2u‘¬
+Êz ^¢ KÀ$«hÔ`¢²‹Šš×lôµö×¾bek Éº›}õ^½îúªşUßÿ÷UQH¥@Eé}½½½}Çù¦’‘’˜1Ş'=-!0.-eÅ'‰–ğTYOÉª"BvÒè07¼.~İBóUÔ@)_…œ]70ø]ªQÃ’a°sÄ_œìÿ¡E
+Š
+JğM7­ÌHI^–e?Æàî1İÃô{w7ƒwBz\¢!defVâÇ™¿åñé¦ôŒØ¬Ä„	ï´4ÃàÚLCFbfbF6üGDiH‰BÃ¡@:
+é)Ä#ô…\•è„ÜšŒB^ÍDh6B>Vh!BT(’B‰H,3ıP:z©‰T!uWá¤P˜-Ê‘ÊHe“ò•*Oõ¹J¦ëèæ]fãÏ´ªßQç«¿³ò´2[}o=Ãz™õë§6‘6õ6ÏmÃl÷h>Ô˜4mšíæØÙÛC-4Qàà „ñPË‚ÙM4~ŸhÜôÖ¯=VZæƒj¥ü.øpø#f<n¢gì  {dk!ÒØ¥z‡îHîèè8úÏVu†5†ñìÒ°°¤Á¾@”=EªhX´²:9¬¯ÇÀüêaèÁ)æàyx^
+ƒx u][ÀåÉ“-ØÅÇø˜M&ŸrˆáíKEyk;@¡ü›¼—kNçé~{å`{É[g©-sÜDm‹ÆHbŸ\ÒÉ~ğ‘ÁÏeØçÏ~uõÊVÇšªºZ{ÛNöK
+Šä?”jÔ[«/7Ë
+)2-æÃÃ'LÅ¶Ó­ì$H–úD
+(‰¤J+a
+Trû>ßy\³}q”×¢e¿]¾»:JˆM§>jÍ{ ‡WyÃ?¸mÿºÊ¼\ VìwÀWÔÄˆ’ÀF¤ƒ5D€J)ï’û¹bÆ™ÁãğZRÓ¯&Øõ|GfÍxêW”Ÿ&€CCç.0ê»lƒ{¸ˆ”èP¿¤KWÖñ§÷¶T·êÏ
+~[ @!Š‰ô÷¡bAbáÁã-ªÿj"e"eİ”…éÿò+şZËUqÔM9Z)ßãú£±BfU?}""„‹Ô*Øö*”«t°MôböuÒ°ŒÙB{¡B\Ààp9šÆ•F°ağ8,Ñş\„Ë\KcÎ"N"0¢¤Åí4û²Vx§ûVß¥Ô3aûVn8´»©Í±Ïëê(÷{°äÉ@0HØ2ÇNÄ§§¥Ø†1ª0ìKp8”2¿8QÀúÁ-$BÙ¢_VJ¢}!u¯ÿRaä|pÆsüÕÛ’#˜ó_ÇbëüB'	.;55bÙéNQû½b«4Jb˜÷ëäz†ı§’ê51dœzÕìs&£š=Š‚¦9jö,*s¦_1k ‰îß;´ÙPîƒ²`;¤ËöÓÁuk‰LÈ°oUzyók•Ò"Åâí^°‚vPTšÑ Š1#ö™ü-Ôsø¬ŒLa|laŠkƒzÈf67oü °O[î­öÚ&l	Ånš½[Ø¼¶¦ÎqÿæÆ­Gyç]4ûtm
+]½¤2L=±ÿOÃ^v‚…ûìÛî}5_
+>£A8n¹›nÙrª¨ı’X\	
+¶’å1^ÄR ŠFèüÃæBAÿ4RqrêEWÄ—J,&<a2áã@'kxR÷DìüXdÀï(¨ÿújÚ}l-àËo’˜£]¹#’MnÂL‹3³ål©4G{} Å“äêÍèôĞbD²#%u@’ïrŸ&ÑÕÑqQú°Ğü”X!!myÔG<&åw­á{V·ıq±c §9™gk]“ö5¯
+;0Ê§Ù”òÄòÄTGÓšÔOÓH”…šéÌ“EÇõ0ÿØ€ÑØ¾nl‰ÀŒÚèY~ÎñÒÊ¦Êb³6ğ›Â@UF¯iX{è#[Ş°ıXE#?T‘Ú
+Ø†‹¡¸rq.¬goË«ähîç÷3ó=ü>,âbã7èğtš}„Çâ`z–‘\²0¦P/FôR#¬g3x„Ğö®’ü™DA	yDäÍh$œ÷¯8È“°†ù¯hÉ&k÷:ç€ñˆÓT©üL9[)?;myË&*gEíò´g ò5‘›QØ©åã›ó±/ß:†>xêÆÎ6ı³ÒT“°iYĞ†t=vp÷"°§Ü>¼q¶º±™g¢!BÍÂ0ËZ1/v±ş÷‰;êş¼µõE[Ëºu‡„ÁÍHAE>!EPEp-ß®ƒ`rŸZÕñ-¹íz&½‚áÀŸc]xx^Jœ ™jSD³Ùe.÷7Óıîjö€w÷Ú™[·;BgÎ	^ä=Ëÿ|7oyèËÅ¢m3¾.Ï”c8ózsI_¹té$=6`;vÅ® ™c^;ŞŞ#÷Ò!³æÆë§{7<ùşVcwC{ÉŠ*¡"cúF ò‘lãêæÕu{”ŞZËÿœÃ ò°”\†i÷çª{(rònÊÛáãÊiÌ¨âÂw†ë±Îø>æ‰[x¸äÃÚ;w7·¿b XÀÄ±§|üƒfy_¸q»ãÜm¹u-Â‹ø%İoˆI¥¼&r©şÿn³ìc¢¶Ã8.h[o«İêÚÆ‘hŠ73%Ñ8½ì{qÈ0¢d:DwÁóqÓ©ps0ñ.ŒÑS3§Qaî2²cFGä`Q\PÃf¶*O“‡Ä=½S³?L›üúKÚßó’Ï÷ÛçÌe"†mì«“5‘İ×z ©&¢qÎ&Âæåß?sî†4BgãÏÎnñŸñ;eH›:¬Ú¶é·L(z´q¿[½p±#_ÄÉqŸá$9-Šk‹R´*¦Òh9Æ}ï¨»|¾«¬ô²Š¯w¨K­0¶Rr•ø±_0X(ö]/Aî¹ö@†Aã9Ş·‘;•öi]ªˆ!ÓqæÃ×!´­«®õ¤l±e¿±~İşãÈJpJKBòŠ·ã/õöy;û®]J´øåcğòñ’Bûø±Zí  AZÕ+¹“Ç/¶t‰çœ;âd\DÊ9¬.…DîQ|'N^“\d]'ÕÏP |/˜úPµ8A¡ß‚íéü#J^$0¡ÄŞ¾áOe·ƒàÓMÈ‚…õƒ)‘L‚‡Ôy,š`6ÃûÀècî¨èVúö°È®d ğŞ/ú8èÛ'ôò¸§t`&æ?„r„Ñ“|£Ç|ÏÏ˜Éû
+ô´ûÑfV`›šL’ƒO¸f§ëˆKtÕd[el#—M†Õ\K}ÓwGÅj×Éø,Q? }Â´å§Şß°±(;Kj*Lwfˆ™YÛ­Åò–÷µpÏÂ=mö@½jmNsä÷Ôì³[<Ïov~nEY¾Ää•åï*Ø1õ„X:¤é”ôê÷‚U€Yş§Î)†pYt…ßYÒÄÒ‡ú/Ü¾İŸ²h±9Åd2_ğo‘jƒ®:âíæÛpïÅHn©¨PæCÏñœl{i®Ì»sËòwn›zã•Á	y‡¼£æ9Şá¯"@,…H'iÀ°À·ÙÏ0Íö-?ÅŠËÒ×®–ù~ÌU`
+A¢h1*¾"õedØÛĞ ÖÕ–YuŸ{«@-ßj¦£¶Sİüm¹ï®Èdœg86ˆµÆ”ŒÓáåüûr¯ıü—ÖˆÍ)¥+ßü¼¡¥LÚ}ò•†Ï¬Î©ÊÚ±¹Â¶{“Ä»aÒ®J7SĞé)íÁÔşà4„ÌuÍ®’WTÆ~}"¢Õ[İqÕ]”w@räÀ”†?²³¶âlcDCUsU“ßí*„Ñìm à´o`®°~¾eëZÑ²½µ[†ê.î…0Æ03±•À-è6ï½îl ­7Ç8Hå|HåiWÉê`”!–oÃe\jzjN¦˜—TÓ#C3®V|¤ıù^3:;6’ø¢,°p¡®BQ{Á‰Níot‚“ÿ•¿K¹Œ$§r…‡Yó ‹¹¢ïî°°G˜Q¿¥B}rt€K dJhqĞÔÓDŸv¨X¢xØ…+şÆxôçf"Ëğÿb$˜U
+8Ô$vô÷Ñ¥L’ş¼ŠÅH00:TšA²C9„CùdÍEg¨X®œe1ã¢ 9¯oXˆAOÒ"—(ğP}ÆzÍ[¯†¨ÃÕ_±{ğ–cbS%'¹–¿ô8ÄğÇ¦í	ÕÆfüÂâh-
+endstreamendobj59 0 obj<< /Type /FontDescriptor /Ascent 699 /CapHeight 676 /Descent -205 /Flags 262178 /FontBBox [ -168 -218 1000 935 ] /FontName /BOAEBO+Times-Bold /ItalicAngle 0 /StemV 139 /XHeight 461 /StemH 139 /CharSet (/F/i/g/u/r/e/space/two/hyphen/one/colon/three/four/zero/nine)/FontFile3 60 0 R >> endobj60 0 obj<< /Filter /FlateDecode /Length 1521 /Subtype /Type1C >> stream
+H‰L“}PuÇw¹ãöL\ñÖ5İ£İTlD'KFT^T”@^Dğî<OƒİãUPB„Ó;;M87CD„œ°Áµ”Ô´±2«™2Çš¬?¥“-şÕüfßÌgæyù>/8¦ôÀp×„Ç†m
+]–dÊ4ˆËÃÍúiÊIZ\š«”|¼æ¡”õOñ?k=!w6œšó¹j–óÀqG}„9»P0÷[ø¥º7ù à5«¦í;¯lğ´äÃôæ½>±P´2E~k–Î,d›…t‹A¿‚çÃ22ø„é"Ÿ`BL_Â›D>·ézCfºp7ïã£MYfKa¶‹äÓ³ô+Ío’ıÄÜ½¢IoJLqÅÿD`¸ü0Ãæ(1Çü1l3†mÁ°(KÄ°æ-ËÇ˜'æƒå`Ø¿¸ïö`<’=®((ÅeÒªü'yR„ Æ¡R—à*‘*UäáöÉí¸V¬RÀ]è­eïVä±ù¥Æ}Úä¢[àÇA!ñØšÛ#ñh‹†ÑLíş-‚¹ÀÿÁ°Ê‘¨}— ªaI›k2 ‡m°T!msÑKËÚnsÒí"Õ Ü3‡¨u»ÏÔiûl{nŠ&b¬z¤¶³¢4“ m°@Š£à£0Ò¢*Ò\öÁB-Z¦‚·a…'¨ ·=ì`  Íî‰AãB>Û®ú¡÷ÆÉfí_gıÍè54ÍGo£0Î"½E%W¤;ßià,	5qM:G»œ=×'´Ô“ûİ{âƒ…”b®ˆ &æÀœt´€	JÎJac2G{0Ór únÖ·²ÀY@ÿ í^HG=lëkù†yñÉ2ôÚú è,Y18Ò¦|MC?À*ÁAK›Ö+‘—\ÏºUÈW<ÁNPCrçT,º	
+í‡*ĞÁ°g•ŠtäÁ¹¡œVø·MÓ
+ÀBõiçaFÏƒ/$A#·šB[hıv–ú…‚Ò0Qï´W;YêSgU]Ó±Å£;ıóÕà/UÓl7Ço8cĞ.Ë±ÖCìÑÙ‡´›=„E)†uàë4ßÃ:ªñû»´öş…}#Ã/Œ\6ô½ŸbÔ¥²T|¥œæ™÷Êü¢Ìõ©,	ÙZ`Ì]n¡Eó·<å-@¸¨?¨Çg'9zØÚ|+3U@ÄdX±Lµ›ªuU_2PB€ælxğÇ\ü"¨JÖoDŞUjê(&ê?¼
+¡mÑ~M¬vOİR‘?•ÜƒØ^x«o˜­€5ĞCënêí©rO²L[²=Cı7
+¢-û÷Äir_<±rP£ºj=á(\‹ˆÀåh)Úğ"ìÏoÇºs$ÚÛäK,¿{‰í(ÅÚ!c´¬SÓşs¼æƒRî¼vß#êY(õW©”'ùÒ£hA=+=«34jÑ‘!k#F¶Í'¨ßBÓ„é£™äîâ¡C¬‡&V3uLâ×ûÁæÀü6ùS âô{v–zQe÷³çØİÌùŞsÏm¶Sì½æîÏÆ™ë™œfe÷õS;èÏÚ‹‘Æ¦+ò­ºÕtª¶µ‘“ó7ÃKúfÍñ/m«S¬Ñqå×'X2Äæ’‚\`¥æ:¬DK€£‚ÃEë?<ÚÔÉHŞ(I$.–;ËS4L¤Ye¬G	*%K“òÄÓºL—Üİƒ¦´ÔÆt–üÉæ‚1X¼úG£KóXW#.z[õç8Cu@<q°IŞ¶ñ®q×´Wêú[]ÅW#£Rc3ò¸ã*ªöŠ‰ó•®Š]Ó	wåV<&'l HH)ù"£Yb]š/äQ²rà!ùLÜtª½´¾)´[$ÜÖöIŒ|#ˆ‚A0h“N´sğ+Š‰şrÇƒjˆîÍ/n_îoé`£ä;k¨³ÃìZ5YĞ0¹Æ‰ŠÎ¨ ñ£©Üj¢¤NÚqRëÔ(Ë.‰ğ¶Í`#
+_é5¸™v/R²Î…Iú¿ ÏÚØş
+endstreamendobj61 0 obj<< /Type /Encoding /Differences [ 1 /greaterequal /Sigma /element 43 /plus 60 /less 62 /greater 138 /minus 215 /multiply ] >> endobj62 0 obj<< /Filter /FlateDecode /Length 264 >> stream
+H‰T=o„0†÷ü
+WuHºŠÔr­ÄĞ•ëí!14R	Q€ß$ «:$züÚÖk›Võ¹¶fúáGÕà±Úã4.^!´ØmÔ¼GéWƒt@Cs³N3µíF(KB?Cršı
+‡—ã=»úî5zc{8\²¯kšÅ¹ĞÎÀ@ĞØZ½J÷&Ûş´ËêxŠ³İxÔ89©ĞKÛ#”,Pê“ ´ú[GÛ©oéÉVÉùÃQæYş˜GÎ“ÎŠÀ¼:ãOs•8¯"ãÆÏ™ê38ı|$øïNq’xÛRjñ>ì›n˜ÖŠ‹·3»ÑÅùã#¿ $Šyë
+endstreamendobj93 1 obj<< /Type /Metadata /Subtype /XML /Length 823 >> stream
+<?xpacket begin='' id='W5M0MpCehiHzreSzNTczkc9d' bytes='823'?>
+
+<rdf:RDF xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'
+ xmlns:iX='http://ns.adobe.com/iX/1.0/'>
+
+ <rdf:Description about=''
+  xmlns='http://ns.adobe.com/pdf/1.3/'
+  xmlns:pdf='http://ns.adobe.com/pdf/1.3/'>
+  <pdf:CreationDate>2002-08-29T19:17:20Z</pdf:CreationDate>
+  <pdf:ModDate>2002-08-29T15:29:27-03:00</pdf:ModDate>
+  <pdf:Producer>Acrobat Distiller 5.0 (Windows)</pdf:Producer>
+ </rdf:Description>
+
+ <rdf:Description about=''
+  xmlns='http://ns.adobe.com/xap/1.0/'
+  xmlns:xap='http://ns.adobe.com/xap/1.0/'>
+  <xap:CreateDate>2002-08-29T19:17:20Z</xap:CreateDate>
+  <xap:ModifyDate>2002-08-29T15:29:27-03:00</xap:ModifyDate>
+  <xap:MetadataDate>2002-08-29T15:29:27-03:00</xap:MetadataDate>
+ </rdf:Description>
+
+</rdf:RDF>
+<?xpacket end='r'?>endstreamendobj98 0 obj<< /S /D /St 27 >> endobj99 0 obj<< /Nums [ 0 98 0 R ] >> endobj100 0 obj<< /Type /Pages /Kids [ 117 0 R 1 0 R 4 0 R 7 0 R 10 0 R 13 0 R 16 0 R 19 0 R 22 0 R 25 0 R ] /Count 10 /Parent 101 0 R >> endobj101 0 obj<< /Type /Pages /Kids [ 100 0 R 102 0 R ] /Count 16 >> endobj102 0 obj<< /Type /Pages /Kids [ 28 0 R 31 0 R 34 0 R 37 0 R 40 0 R 43 0 R ] /Count 6 /Parent 101 0 R >> endobj103 0 obj<< /Dt (D:20020829151728)/JTM (Distiller)>> endobj104 0 obj/This endobj105 0 obj<< /CP (Distiller)/Fi 104 0 R >> endobj106 0 obj<< /R [ 2400 2400 ] >> endobj107 0 obj<< /JTF 0 /MB [ 0 0 612 792 ] /R 106 0 R /W [ 0 15 ] >> endobj108 0 obj<< /Fi [ 105 0 R ] /P [ 107 0 R ] >> endobj109 0 obj<< /Dm [ 612 792 612 792 ] >> endobj110 0 obj<< /Me 109 0 R >> endobj111 0 obj<< /D [ 108 0 R ] /MS 110 0 R /Type /JobTicketContents >> endobj112 0 obj<< /A [ 103 0 R ] /Cn [ 111 0 R ] /V 1.10001 >> endobj113 0 obj<< /CreationDate (D:20020829191720Z)/ModDate (D:20020829152927-03'00')/Producer (Acrobat Distiller 5.0 \(Windows\))>> endobj116 0 obj<< /Type /Catalog /Pages 101 0 R /Metadata 93 1 R /JT 112 0 R /PageLabels 99 0 R /FICL:Enfocus 132 0 R >> endobj117 0 obj<< /Type /Page /Parent 100 0 R /Resources 118 0 R /Contents 123 0 R /Rotate 0 /MediaBox [ 0 0 612 792 ] /CropBox [ 40.32001 126 571.67999 792 ] >> endobj118 0 obj<< /ProcSet [ /PDF /Text ] /Font << /F1 120 0 R /F2 119 0 R /F3 125 0 R >> /ExtGState << /GS1 127 0 R >> >> endobj119 0 obj<< /Type /Font /Subtype /Type1 /FirstChar 32 /LastChar 151 /Widths [ 250 333 408 500 500 833 778 180 333 333 500 564 250 333 250 278 500 500 500 500 500 500 500 500 500 500 278 278 564 564 564 444 921 722 667 667 722 611 556 722 722 333 389 722 611 889 722 722 556 722 667 556 611 722 722 944 722 722 611 333 278 333 469 500 333 444 500 444 500 444 333 500 500 278 278 500 278 778 500 500 500 500 333 389 278 500 500 722 500 500 444 480 200 480 541 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 333 333 0 0 0 500 1000 ] /Encoding /WinAnsiEncoding /BaseFont /BNPKDN+Times-Roman /FontDescriptor 122 0 R >> endobj120 0 obj<< /Type /Font /Subtype /Type1 /FirstChar 32 /LastChar 122 /Widths [ 278 333 474 556 556 889 722 238 333 333 389 584 278 333 278 278 556 556 556 556 556 556 556 556 556 556 333 333 584 584 584 611 975 722 722 722 722 667 611 778 722 278 556 722 611 833 722 778 667 778 722 667 611 722 667 944 667 667 611 333 278 333 584 556 333 556 611 556 611 556 333 611 611 278 278 556 278 889 611 611 611 611 389 556 333 611 556 778 556 556 500 ] /Encoding /WinAnsiEncoding /BaseFont /BNPKAK+Helvetica-Bold /FontDescriptor 121 0 R >> endobj121 0 obj<< /Type /FontDescriptor /Ascent 718 /CapHeight 718 /Descent -207 /Flags 262176 /FontBBox [ -170 -228 1003 962 ] /FontName /BNPKAK+Helvetica-Bold /ItalicAngle 0 /StemV 140 /XHeight 532 /StemH 140 /CharSet (/two/D/i/e/t/space/a/n/d/O/h/r/I/p/u/M/o/l/s/colon/m/z/g/C/period/one/A/\f/b/P/L/three/U/four/G/comma/c/B/y/E/x/hyphen/five/six/seven/eight)/FontFile3 126 0 R >> endobj122 0 obj<< /Type /FontDescriptor /Ascent 699 /CapHeight 662 /Descent -217 /Flags 34 /FontBBox [ -168 -218 1000 898 ] /FontName /BNPKDN+Times-Roman /ItalicAngle 0 /StemV 84 /XHeight 450 /StemH 84 /CharSet (/underscore/T/o/space/c/m/p/l/e/n/t/h/r/f/i/hyphen/a/x/z/g/d/s/C/one/com\ma/w/b/j/v/period/W/u/y/k/quoteleft/q/quoteright/A/S/M/P/L/colon/B/E/F/d\ollar/three/nine/H/K/two/five/I/eight/ampersand/G/U/R/four/six/zero/perc\ent/seven/emdash/equal/plus/exclam/Y/semicolon/parenleft/parenright/N/O/\D/question/X/endash/V/slash/quotedbl)/FontFile3 128 0 R >> endobj123 0 obj<< /Length 2887 >> stream
+BT
+/F1 1 Tf
+48 0 0 48 459.1 655.215 Tm
+0 g
+/GS1 gs
+0 Tc
+0 Tw
+(2)Tj
+/F2 1 Tf
+10 0 0 10 126 646.015 Tm
+(________________________________________________________________________)Tj
+30 0 0 30 126 645.615 Tm
+(________________________)Tj
+/F1 1 Tf
+24 0 0 24 158.4 608.215 Tm
+-0.0045 Tw
+(Diet and Other Input Models:)Tj
+5.4333 -1.25 TD
+-0.0064 Tw
+(Minimizing Costs)Tj
+/F2 1 Tf
+10 0 0 10 140.4 498.715 Tm
+0.0952 Tw
+[(To )7.5(complement )7.5(the )7.5(profit-maximizing )7.5(models )7.5(of Chapter 1, we now consider linear)]TJ
+-1.44 -1.2 TD
+0.0494 Tw
+[(programming )-8.9(models )-8.9(in )-8.9(which )-8.9(the objective is to minimize costs. )-235.6(Where the constraints)]TJ
+T*
+0.0498 Tw
+(of maximization models tend to be upper limits on the availability of resources, the con-)Tj
+T*
+0.0398 Tw
+[(straints in minimization models are more likely to be lower limits )13.4(on )13.4(the )13.4(amounts )13.4(of )13.4(cer-)]TJ
+T*
+-0.001 Tw
+(tain ‘‘qualities’’ in the solution.)Tj
+1.44 -1.28 TD
+0.0076 Tw
+(As an intuitive example of a cost-minimizing model, this chapter uses the well-known)Tj
+-1.44 -1.2 TD
+0.0163 Tw
+[(‘‘diet problem’’, which finds a mix of foods that satisfies requirements )7.3(on )7.3(the )7.3(amounts )7.3(of)]TJ
+T*
+0.0073 Tw
+[(various )6.2(vitamins. )-234.7(We )10.3(will )10.3(again )10.3(construct )10.3(a small, explicit linear program, and then show)]TJ
+T*
+0.0939 Tw
+[(how a general model can be formulated for all )6.9(linear )6.9(programs )6.9(of )6.9(that )6.9(kind. )-244.1(Since you)]TJ
+T*
+0.021 Tw
+[(are now more )-17(familiar )-17(with)]TJ
+9 0 0 9 239.5 389.915 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 264.5 389.915 Tm
+0.037 Tw
+(, however, we will spend more time on)Tj
+9 0 0 9 425.8 389.915 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 453.7 389.915 Tm
+0.036 Tw
+(and less)Tj
+-32.77 -1.2 TD
+-0.0054 Tw
+(with algebraic notation.)Tj
+1.44 -1.28 TD
+0.0977 Tw
+[(After formulating the diet model, we will discuss a )-9.7(few )-9.7(changes )-9.7(that )-9.7(might )-9.7(make )-9.7(it)]TJ
+-1.44 -1.2 TD
+0.0984 Tw
+[(more realistic. )-256.6(The )-8(full )-8(power )-8(of this model, however, derives from its applicability to)]TJ
+T*
+0.1328 Tw
+[(many situations that have nothing to )-8.2(do )-8.2(with )-8.2(diets. )-257.2(Thus we conclude this chapter by)]TJ
+T*
+0.1276 Tw
+[(rewriting )-9.9(the )-9.9(model )-9.9(in )-9.9(a more general way, and discussing its application to blending,)]TJ
+T*
+-0.0069 Tw
+(economics, and scheduling.)Tj
+/F1 1 Tf
+12 0 0 12 126 247.215 Tm
+0.0101 Tw
+[(2.1 )-283.3(A linear program for the diet problem)]TJ
+/F2 1 Tf
+10 0 0 10 140.4 225.615 Tm
+0.0648 Tw
+[(Consider )7.7(the problem of choosing prepared foods to meet certain nutritional require-)]TJ
+-1.44 -1.2 TD
+0.0855 Tw
+[(ments. )-256.6(Suppose that precooked dinners of the following kinds are available )9.5(for )9.5(the )9.5(fol-)]TJ
+T*
+-0.0089 Tw
+(lowing prices per package:)Tj
+/F3 1 Tf
+7 0 0 7 302.1 165.615 Tm
+0 Tw
+(27)Tj
+ET
+endstreamendobj124 0 obj<< /Type /FontDescriptor /Ascent 718 /CapHeight 718 /Descent -207 /Flags 32 /FontBBox [ -166 -225 1000 931 ] /FontName /BNPLAG+Helvetica /ItalicAngle 0 /StemV 88 /XHeight 523 /StemH 88 /CharSet (/two/seven/eight/D/I/E/T/space/A/N/O/H/R/P/U/M/L/S/colon/Z/G/C/period/on\e/F/B/nine/three/zero/four/five/six/comma)/FontFile3 129 0 R >> endobj125 0 obj<< /Type /Font /Subtype /Type1 /FirstChar 32 /LastChar 90 /Widths [ 278 278 355 556 556 889 667 191 333 333 389 584 278 333 278 278 556 556 556 556 556 556 556 556 556 556 278 278 584 584 584 556 1015 667 667 722 722 667 611 778 722 278 500 667 556 833 722 778 667 778 722 667 611 722 667 944 667 667 611 ] /Encoding /WinAnsiEncoding /BaseFont /BNPLAG+Helvetica /FontDescriptor 124 0 R >> endobj126 0 obj<< /Filter /FlateDecode /Length 3163 /Subtype /Type1C >> stream
+H‰\U	PWîa¦ß‡#ĞöX;ÓA$# ƒ(ŠÇADAE<32r8@¶L"p©±‚ºÃzU¨`Ä3²HÔX®FÙŠ1Wü›ü“ª}3›Úİ²zúUM¿÷şş®÷·ŒQ¸12™L» 91&q|‚%×n)Ê^c
+µæf8gI'“F)$?/ÎÂ’_ÿüë26„Ÿ6?µ¿/ã&“5xËZPjËÎÌ*ƒ×¼)§Mâ#]ã4ç8m¢“a5[ÄÅ¥…E–¼Bqnş«­Àj3Y2ÂD1&7WLqV(S,…›>ı/1»P4‰E6S†%ÏdË­kÅ¤ì|kQiEŒ™#šò3&Xmb6İ[¸Á\˜‘m²e[
+Ã^#ÃÈèÅŒpc|•ŒaÆ(˜`†10L¨Œ™(c¦0L¬Š™¯`Ë™47f•…Q0J&Œ‰gV1Ìw²ÙVYŸÛÛnur^#/—(f*Ê-¬?;…]Ì6°ÈXb!=Êe­ò‰j–Ê®zåá¾ÂİîşÀÃß#Û£ÃSæYêyÒ¼Â½J¼ö9’Ô®_5É:Á ‡uÄ£ƒ¾'‘æRK¹jYòá§m0R«vğÙAh–Ãßa€ÇfÔ@3y}»ã, ¢n´Ke0²Xï‚(¿)•ñ0ÓQâğrT’e•™³Q§+&êjğ–²ÀCvü .„YÒ*ş\M]÷€îFÓÒôé©™8*LÀ0Tl‰¨˜ª’JÁ¯¿´´7?éRİüêşUPk!™è—„3‹q£^]
+ÈAá{üĞ4­ºDTC ÷„ë‡lèä¹—×Ÿ|`˜±Ü²8tóG…šı	Ú aÓ7ğ¬´0bÚÛv}­’ëûò“¶¶ÛZ0 ÏéŒˆÁ?èACöWÿôô^Ã¼õf}`Òsıœ”Á2è A—\4°‡‡xè`kÉ†J”c´¬šR2N"¸ËÇâhA#ˆ`¼¯tÁŞIo%Uã }f‚@9¼-İãáx8´d¹C>[Ø3O×ìÑİiJLúcFJÂüÜc[	lv.Èu`i‡ğ~ˆD¯®ø{ézÁUy;(2íJ5ùœÖ¶€ÈµKuÒA¾üeGU_dE}œ¯ÃKq3êpö	L vû÷ı®{h6°8nFÖºõ%úªZöñÖÆŸÒ;`]S/ìÄ‹üøôŒÔ„Uïõ\h9ßÚ‘oÔ;½ÿ¼eàC)Hû‡ğJR‰Ş,‘…‰öMxDä¯4J±°öÆ•cáÄQ€ÍÔO55 ´èE-¤–5KQüÂÜS'Îµ¾Öv${ijÎÚ%7U˜É?¶´Í9D¸Ô´ÿÜíÀÌG8½±8bnÓÊ¯­zn™´êĞL­ázB¢’;@ì0p¿Üš›˜Ñvã^{ËÙï,HÓÓ˜Ó8Cù>×ÿŸinµ´Cñ¿„×S¿ƒi|SŠeŸÏ’C	óğ	9…Á,DÜ6lf1†àßÌ,„˜'çkIa1‘n¦Á‡%0‚&ÆÛ÷.Â”5GßùË]\"0îØş/Gì»pIûmÑ­I-zNjÚİñÙ öÎJpÃ8=¾$èâa1á~¹p¡0)Ö”+`‘Ö) špÒ¥É)éEÉÆÑ×•€FzŸàV•GKÅüĞ{Œ9:œcqÖcø#­	/i†'6	h “J¥OÕ!—
+*àaÕĞéÛà½7juƒà‚/­£ß…qp•Ö¤¨;	l¾6¿40c…€·(ôæ©Ó/ŞÁ,ô0ãHTDÔ©ÕÀÁzÎYD.½6óı¿™¥À9ÆĞ¹AàpÆK>D}¹¸;ì¡zÙ©^”äÂy¥zµKFç)›Npl.º•¯ÓÏÒœ'=»óJà¾:k´
+Ô¬g”m è°¢e”rª·‚‘ö†=×£/^o=*p›vÙçÒh<ïlköasñï"CÃof§éb5òa1…L'ì¿OHõ Áa¢e5„HKè¾	¢A[Àğ6ç’<‚£×Ø*‚é‹VZJ”úk	Œvô³0€Vêgkı ş‡ªô!¥m:òV@{¡ÎÜ×uÇ¡z±îxHÖ™±W¬ r¦»H® I‹ŠBrVèÕ©4 4f™.ŸPïÂ<Í,=S¯Ã‘=(Øí"'q
+ºÖSù¯cù³sª§£Bpæ†“^ËnSÅ8£#8ù„:òH„)-pö¢Öçzi-ı_ ¬}k÷¢c«Tq»t0H7,ÔeÏ'7Rƒ¾ŸÑ®“ş\‰ô¾äÇÃhôßM`‹0r£täóú†“·t‡¿®LÎ+xwC¥€¾%lxùÜeZ®İş¹òA_[kK³+©Ë«}ï#›
+Æ7’w¶•íº¦EÿG<×6/iÍüËîö“;ÏíĞwìØ»c×Ç*µXÊ pæ&ºØ÷
+ÅPFJ»»ù$Û›Æğ¬;÷îûáiOÓŒH=–Ié<m¥Ü&ª†¿’kÿ¦V¹ğĞU{‡Â»èÖ H
+èEw£iyö¡Š¨imxàútÂj#—|`o+œ÷F(;ºöşø£şzıß–lËRÁQå¨?©Ã„hz¢QqŠ¦7ştB/n^ê¬XæjÑ§r‹øQ9´ÁÔnÔ¡{€“0¨Eï¸ÚxùPK'¸ğ:Ü)­ï›î÷<İ7yÊ¿»¬ú˜(ë8~'÷<O^r3îØxè¹›gá&ò¢Æx“Ãœ³ 9(’(s N´xÄ¥"åğ°¦èJ^EPŠJ½ÂÙÛÊ«˜¼˜$ËhÙõ}Ø÷} ¹µgÏÏíö}ı¼|có×E¬*¹Û+SğŸ`Î¢o¥À;™(› \ÜV«8%äŞüõÌA«¦?ÎÃA|âóe¸çuÌÙ„E 8 dÂãËG2¬¯Ôv»ú¥¯‹£k­$”$òÉÓ7(è-fuŠ–,NL‡7óŸªçåÓÀñê¾]êVé©Ô\dÍö&ƒM0Ùp§t`„Şlàëw†
+*£NGÌ¿kk´NÑ<[)tïÎu¯Xh5åÏ°ŒwŸ>Ûj­©ä6	Ñyy‰1å'N1”Gî<ò2,’ á0„MZ)Š*x9l¡@°Ôıñ—×]ë£“^‹	%{X[tcMe'RúDE‰všEµkŸhÇ|oOHu¾Z&WB-ÚEÁÍœw]ü¥f£SÆ!V=“­S?bxÀeªØKÈÖ:s8¤3o°ÑYd{¨—Ùl¶Í-‘E$‰H`Ü³ƒÑ¯2$Ì¿– óg3e¬v>_\&_ÈËïˆ—Âœ›óËmæ‘ëÈrÁ0mÚİ|®¼úÙWdü~¹*ô?wålwqìƒ2mÿåxĞ£¹ça“Oæ¦î çÍÃİ‚¹ç„Æypaˆù‘©lŠ·ÑN‰i˜b$ØéoCšŒËı7(a¨Crgp°émY×¶A¦•§”B:‘exnå)ãÄÂRéÃâÍÖyöÍ±qûµŸhQpÊ€÷ú[G_ø^÷wH·È<Ãœ[rŠ©R«q¥`Q>PØ@ÍÃ}48ÉÛ4úwª+ëdX&¨j…´zÇ‹é…l–¿Mb `Úã™Õ•üa™Õí]/Ïê
+.xüN’	?ñ‰¼Áf"@Uk¼!å¸´İ.aÌ–à8«y
+3al "PÙï û"²èıº'x\ö6ä€¯4!ìrš‚ü9e<°õhç56T—·ı£ÎÜœÖ2l”Ì¬e_î¾ŠCü3-Yà+ã[ZTµÅêªöï¯ª6WÕ²‚ëÖtÔübì÷4	6‘Ì¹Õº†ã;>ô¹â¬ìÌwGe£ï¿JıûÚ7]ºdR‰]‰@]“'ô”B½¢oĞZ}Àm"8 Ã§ùH\¹
+VrÏCÖãFlã Ÿ„¨IŒâ`» 3&ETk÷Ñ>dIWğ¨÷1cãµ ÃyÈğ~Á%í-z+CÚW¡ªtš„ª¦¶ªF	LÇÚá¥~«	«	n0è›´l­@‹Ağ:nTÛ±C½–vÑIÜ8³µsê!´‡¶:0ÖŞçr³£,`vÉb0Áö¨ºÄ¤}e!†ı˜÷t
+endstreamendobj127 0 obj<< /Type /ExtGState /SA false /SM 0.02 /OP false /op false /OPM 1 /BG2 /Default /UCR2 /Default /TR2 /Default >> endobj128 0 obj<< /Filter /FlateDecode /Length 7282 /Subtype /Type1C >> stream
+H‰|SiTg­¢©n‚Ğj…P%U­‰W@‰‘E-‹"È°p§iºín("«- (²¸Â.
+"0Áw‘ŒÄÄ1œWø™3ÓfşäÏÌŸ÷ã}÷Şóî}ßÃ1SÇqrµ€¯§ÿÂ¥J¡[¤VÉãŞ·9Áy[S~¦…5rCqo“ßZ0J¦·ÏäR$˜	;ã¡ÖìÕ*£wê¥GÎ—::¯ødÑûúéŸÕù}uvÊ¢Ô
+iğ^^¡ÒI}â"ÕZZ+×+¢–H¥²ØXiĞ{4H¡Shãİ?'‘*uR¹T¯•G)Trí.©z‡ÔO§ÖïÕ(¤²5Ry\”½Z+Uyº=:e”R®U*tKşêÃ1Ü#ÌbÆb˜Ãf›a‹l™sg05†å`X1L€Xv_€?7©1ùY „
+’W½‚_LE¦¦Y¦ƒÄ*"™x \)Œş&
+ˆ^™M3Ë0{õÁş~2w7ïœâ8¥ÑÂÖÂßâ†¥•ešåS±“¸zê¬©†©ÃÓ\¦åMg¦Ÿ“XIæITÜL6Y-µ:`u‹*·¶µÖYÿ0#bF¹—ÍE›·¶ñ¶côº—±aR™û3cgşjmwÎî»;R±T¬Kûı>ŸmH€õÄ,ÀÈZ2 Á“²À.ó$Ñw,µc‘º-jÛY´á¨wa™]€ÖgK›ju•±q:}¬¢~_'îà= Ç¨5ôèá#RCNŞÃ,ü¶,kèj}Ib‚>E£.G–…!,Y†>¶ş_bC?Q-i+MxÓ Â‘-¥ä?ù•|6Ñöf¯c[šõ(ıDä"†É<éùOBGÃXÔ("Ç‡tş¶‡KFÖÂÏ«¯+_1NOD¿—<½"0ßFD°pÈÈìÈˆ/C&fÈg	õ·–ğú«tùÑ[ã'ÙF4N‘ã=Q»<é9.É1¬˜×ê ¨ád=ì¬¬¨“|7ÚÊŞAØ]E¶¥N.äE2ùYÍò®[3–#° ÿZ]Íï¢Zê¢7-÷Bœ“¯¡û‹Ö.çäğœŠªvE(>eB÷–'qä¿SK’RŠ·2È|²›7·çe †ÀşgÔ/Ë.Ì*a3J‹²š™®šÒâ/¹Üôú¢]häm„gT”şÌ·†aQß™}II=ÜÑÄ¼ÔÏidêŠÌ]£;ïë½¿–A\½¤õÅíp¼Jv@ßEİ8_yñR“rã
+Ç-š6ábBg;Í¯F3(/<Ÿ]© ı×;Ç)Ø°Ûú£ûÍnÖ¶ıBúµ­ºÜcsqL¹?«ØCø(¼?¤ÑŒ7»¿ƒ)=İ-¬ªöºÿÌDàù‡9r_ò	B¥KĞ‡2²uÃ%i\Ï#ƒá|oÕ›šoêò›˜‘ïĞêé÷W.×²­®K¯y™zoJ×37‡8±÷‚,„&.ª™ Ë&x/ã·ª+ü©ïı °X¯Il:PUpäğá<öp~Şá\¦  3-1i›Ü¨0¹"o,€öÉ²··G;Øs_{°‚û¼®Å´A« 7€ú5/‡şÁş—›. /
+ì_¼0.Ö6¦S?«èö¹xv’¬B¸©çĞ¨`áJY +†È²xĞôáÛ'€\h¦ÚÔHÓP÷!5h|„bi`+â%àĞL†?@³(²ìÿ»!Ãÿê>ëÁ›á 
+)?8Ô#KSA€ß ¦§£)k<uşìî*•J«İ¥hH2¦[Aü¤w_ ÅÃZ!Úû‡7q[(N©š”Tá/¡ø¥ ò&Y
+¬rQş·”¬U¤ıx;òÁŠ«2E~r”€Ì‘e+Òƒøµ‚,Á\	ÈJ'çS“6·†ÚR¡{Â‰vÌEkˆQy·ÁPÄ4vÇsï6Šd;rsŒ—>È9€Ãèc¯;jßÂ/*1{ƒ
+Á<‰¶¯NĞ`êxÛaÙâÍh¡Š-Ë$ºÊëG0¯´swtZÂ!oHìçi‘8¥‰½.{#Š~ò,†ÔÜÊÌ¦D³›1E2-íá¶„Ptoe’ôéêĞ'™àOa6Ø,o”ŸæÈG}—ª/uÑ5?#jíÒX4#’-Í"jJ[‡G™¦ÏÂìİ7;ÄÍB’ïM>0ARÔéÃd"IÔ>p»İzHøBƒˆ¼Œ\‡Dd"¸¾¡µ7)”.„4#r¡Ÿçÿ>‚W >ü}
+Â„'çq¥É©i©»¤" Ò³ó22€e×äD#±,x»AsÃ—‰4ÄˆşJ7KÁdlŸ¥Ö†wrı‹O¹–˜‰SjxÓ+~oƒüç>hÒB™Ñ*´m§Ñ×‹À¼›`Ù÷@¯œ¿?&„=âWÀ€wŠ@ÍÔDİ¼±5ÔÏ}í ¸]/¬(,ä**›50ââx~l ÿ‚—	ø“¨wBaÒöğN$:Ï®íe@%D›Ş½BØ99›0N3)®‘tz€úNÈ 9;¡—"ŸÈ¹U%£½¶Èı\¶ö±äØh{s}‹µ²Ï¦±FË90í¼Ñ/9r¨«ö~ëzp}">™»a®K‹ò¡ÌH\º&"Ö‰&‡îós¨öú«?5nYü¶«=ª‰3‹‡™ÑÓV+³á1é™¸>°«]ë£_Ô®ZWJë“öø¬
+>`!„„˜@ÂKÂğ‚á%Áøí²º.è²P­Z­nÏº]]×(ëôKw÷ã©»§ù'gN¾{÷Şßï÷İÙöY·½nöï¯³c5ä}›d¶{°ÿq>E¥•1°ƒ…ğé@¢qÈ?ù  °h4°=g«:œœI¯Mú“^·%Îƒ[–¯ÉÊæÒÕ›Òâ?O1W¿®ûÛm2¢5ÑXeX†P „ßM ˜ğ<z™ñÍ‡|_*Òg® ½4G™Ä§’74Û+n\boGW¨÷Åæ¼Í–uäÿ¼aÇo`fvŠñ/5 Ø¯^ö’Ì&b‹è/÷,(ÄúzŒ½›;"°ùö^ŸeÖë÷˜GÌÈ‡P¹ùNc×ïFÛÚõ²grêí\sòÒæÅ’_n+ÛÓÕT^oU¶Vq˜µ÷6u_³ÿzå~IÚ.a9©ÍL^Í2ÅehÁKWQf`Cœ›*³¸ß'Ü«ù†ÂÌò—‘I¼˜J¡­¿a×"URPŸ®Ï0Œæa½@«?1v—š‹)OÀ,”c:Y’y(>ƒİoØÆñp€ödawš`4j"ÇB¿Qà; »*:xÁHè\ó€fÚ¬î ù×yfÍBÖMGiÒCôøü]ši…¤jà:GÂO½S¥4á?/ÿK-,¼›ßá‚õè[ùı#ºìV%“r&ãt|‹XôZÎÒÓŠ:8Ñìk1™«¹2sA‚96ü„G¯H>Aù–A”éwÉ0>Âí#®‘ç@
+©¦âsãº”eöÙ
+´ /É¯!2ÁÂé0>¸ãMÊ´*r÷®ÅQhœù¡Wîb!MvíT:ºÏU÷(`Üá¼}å;Äo¤ZŸ¸D
+dÌ®Jè àüXA Bs@†ö+QÅXyúš¶<ûYŞÓdÌÏã˜]#È«ÂIğëKÜxŠûóŠúy!,r"ƒqy¬¦´_t¥8E't;à`'ÎòĞÖ:û|öù0©âw!O ‚7¬ÛÆ+Ğ/Œ%Ğ0CË`É¬ªƒ½**j_v2®s$Q­Æ³-Ê*&‘&Šiçé~]½öW¶HUÎrŒ-•;è±‹™sáEòuİŞäÅdlÅ8>½ ;-5L¦àø¶Ò¢Şøiü[?ÆÓì]‡‡oè¨ÂÔŠ/YH aŠşKC}vyHîifôWA[—ß Ä	¶62¢{<•£iÔ ®ÚÊ¢wéíKTï£·'	K¡¦öÿcF`Â™7VÖQ¹°L¡´ñºÜŸÚƒhòGáxĞ¶è³*#‡ØıPÁˆ0
+‚Î™•ğ)=Ührq^¡œvB‡ {ê‚>!øC‹@Eg—XØ}h½ /%DÂß"ĞŞ÷b4=\qèj	' ¾¢5ã£Õ¨Vÿô=®ß{~l²Qpû
+2 ]D•?ôÔBSrÙu)ØW¥—ñ¡¾õ?ŠyWïÅ÷ìÔë.Bœ…%uZ/èÙ¸=‰H6p°‰¾b.¿^Œwğô ®vÄóGHˆÛ0â"Må+éÆšM$[ãîOŞÅ¦¤VKj<'Ğ1úË¾@™Pˆ;zx¨¦ğÅA²Ğ^"I4`á$¾POyÇÊt¼ N"/¶Ñ§`™D¡€˜åyhš"4­ K)î¦o4”J]n~^…Ì)V¹÷)V,…~ë1¡ÑD¢õ<u%¯&ƒŸF#õŞù:O#Ğ‹
+ÕµYq’‰“çi¦ T¼Dš<«¨°,o‰˜TË‹T¯I}¼Q_Ò_ìíYÚ=ÛÎ7ÇÉw¯‘jxÌ¦¦\D³è®ö0b
+‰æóTW¥nCéYñ²Ä,6(^üÀsœ´ŠuŒ9RÔ_*%ÀÛĞ¿ÛeøJŒŠ€2å˜•Á qB°5†â'Fé(‚Q ,U¶û"bÊ·x[å¸ér1ñ(qÊlD(½¢«í‚ÉWşé‚ì+˜›•xŞ—÷—k¢¤™.6ªB´Ş‚#Mé–Ë,,£õõ‚¡^12På8¦´V:×Y|·0èõ³ˆã•‚ßDÉíå6'ëÑ$ôbÛÔ©&{æÛàh‡6)#F“%etOä›MÉU)‡Ñf(	ì-ÿz`Y˜Âjfs¨™bnòôĞ~KÎsZ«çIİ²	txQ¶ğ'ÖÑ}&ÈAH˜K1<±âyóÁÒ³ÈGAÀ4}ˆ§Åİs;dÃw ó!~„×f5µO¯S%$­j]©˜5ó#D½9°áŞj%L[Ã®ÚkÁÿ$Ï©(ÚAÖR•eÖÎv:îª&ŞÿF	›Ğİj˜Æş±·¥gd`V˜•k 1XüG·¬ºâ\Wó³Pq­ )Ôƒ¬xàsF5¥¡Q5ÊzJ‘¤ç¥E‘d=6õÚÃŒR|îÉ§æ«fJ4;NKSwŠnAöÄ?8	·´Ÿ¡½<5”WŸ>Euô¼ìø¬î“=1;#h‘”J¸,ÂÉ°á^Õ™÷a£¸H¯ÄkŞg*ŒıfzÄj¹v@¢U™ÄZY¥;‚p¯Âoâ©N}[şfV¾I¯åĞT¦Ã_IUošÃÂL}’m<}R_¥qÌƒçD …‚$ñœíªÙ|ª›ëmoÌâïçß‡J1±ÔZóÛò¶²êÜİ¹jG÷P |Gî=ª©µ²í'L-8d5OŸ5X´öP{XàÔ†&‹¯’ºCZ«™m¬.ù/ÛÕÅ•…eİ™KÖ#½ Ûêf£»jÔl¤¬¨	jVPÁ(Aå"*ÊK˜aFÆa0(4yoÄ‚>£»£€«èëÆŠ›İœN]·jïà–ù³Uı§«Î¹ßwïy}ç´™Xèåè¢¶,©uùñy/p×9¼Ø‘ (~z;ÜÇ1sÜée¼{GÀ¯¬»¼¬¿ÈñM3+ùeÃô_6ÚÉä2†NC#WÈR“8,ÁÜËŸ§mÇ˜æ:Ó ‰ ËÑ%mµş9ş€LÖ¥®x	ôü [ç&‡¬*mÉoeªZº«8˜óŸbwIyjG`“°Ïª#±¨BÁYYô0€FWR¦n>lÈ?_àökwıŠ4¥­vBÉriËq}B–æ &›')›çÃ~INinÕÆZo:c¿z›ÎtvB.8À¯A«u©ìõrZbRUÜbÈ$€ù>òï¶‚N‚ƒg8EİtQ‡gÑ¯t¡Èé€¸¦áig”9êê¢|@Fªáíi‰ê¾ŞÌòKªÚú6ádOlIŠFk0è8CÎ g5KqUùé¿õòNÕA›uÎ]Ö=€ùd&öÀL:Qw0!“Óæ$¨ÒØ˜¤–>"´Ú\€…‘Y‘tN¶JÎ&›šxFWŒ?àõ=vŒğŞ¥<šÜÒPUSÍki9^ÙÖÜ—íÅù!ê%^öùÒ=óŸÁ˜¡áó=m]œ—¥×PÉ–·˜ú	u«8ã,NÉœGl {DM-qŒ¾Xp½²•ıGçÜ}•$¼h¿wi¿LIÇ¼Ü7 ›.ƒÇãŸ· Âï¬ÚœzˆÓÃ°Tk–P¯ÂaYá*G%2–ÙSÆôDûmo‰’&‡ú;ÓÅ÷á#:dOL”»lİ8‘£ó´t·d$ñ…i…i)f·fsyU-S©jI¬æÊ÷G
+±,YBíÙãç÷&şz¤C„ö ±\üõ5ñÆIÙ¨øçs:67úÀÖ×ë,€Ù_õ_èë_˜§’`!n¤}´Æc'ñ:²s=gç:ÅµèWüjÚ›XÅâß.Â»à(˜#ëíêj$¢×OZ “PIç«Î”Ÿ­p$×¤V@õ#ÓÅEd5ˆIZïÁú~rÖäáº\²½³Ÿâwığ&üşø
+²Í½³[Jx|ÑÊ»‡Ù»%>á‡y¢3q^+ì°:üd›_ŠA4	Ò.Ëà0×gù¬—=V[ÚÔ¾½q+ö1âµ[ùñ÷ñé*E¯Ë„RıÙlh¸ÊÀpBN8é"üi|G:,¬‡½İ«³õfÒÏ+r§ÑJºS'İŸ-¡›+«[º8òÛ§®1~§sÕ÷ë#™ õÛñ[±ÀÒØ½éİµ“å˜INÓşeıÊ”oïrÔ}wøúİ½
+)3ÌEéÄĞ]Ø•VÇ®^glnßv9…§nW{xU
+&¹á`£Š£ÆÜCb#vŒ±íÏÃ'@bÍu·pÔÄ7˜.”$šÂók™c='™¹ÂNíQöÂOİ0m §J]Ë;‘ça‡^Çû¶ülÔ„¨èĞbµ…ÌÔpÔc€xæañ¡q¯Ó1ÿé9âü7!~Ö¨5òh	
+³È-w8„ÎèšØášh‡¡Urm˜–XÄ!'O<óÈ°şğÜùïÏ?¶Q/Éæ ¤ë
+´DkÊË–‡Èƒn™È\Zj.cË«ş<ÎD+‡6é8ÊõKñ?¤9ÈËâ;›kjš¬iµ‰q™ñd˜{â¤vqìèĞÔÑO¦‡Hz…qK(«¾ÅÊÓ3ScÎÈû€>ñ#¼Å‹Û6?Xœ¬tS"³ğ‹rUÀ¹ÿA¸/À«Œ<Ú}uçğ{ ¤2“d¯9­è¾D qx£ä¨¢8GÃ¨Tº\N	I‚tŸ9úpÈu¼‚\›%à¬ÕxpTê-ÊÍÎÉÍÎÌâwíñˆMĞ›]Å¥(T”¤Ê
+{]QÅ¦R¶»PÉ¿JG¹zŸlnê!¶3yf£ºªßƒlAº9_Qt‰¿›rÿÑî4å~ôW÷¡ò':\\Aü]J5ƒÎ“6Øhÿ~?›êŸü†öIÔï2XíPœi¯¹Ÿd9342XíËáD´!Ui/‘Tí4%ä3`Aí5í¤òn™üCx‹>WêC‹d¥˜%Û›škÈF³^Ìñôûâ@:×›Ğ»ÜéÏ!!;±M‘¡rT sQÉë8lœÊQ—Rõ°ó=xÛ¨Ó÷Óş™ª;xœ€‚ó³ÊÛhG]Ç[5³—+cıx¼­NÑÆØ-¢I2úÈ@0Ó»q›ÿî¸maÜİ)¸;v¸È)¸‚#oàÔVÑÃêĞôÊO½EcfvÀ31ûx.Ğ°è&ğÿ‚?.~ˆ]øŠW~4~;6¾¼öä1{ÏñÙÂ;áÄJØÜ*:
+9WœÇl6IMŒa:*/İWË)@[‰¼”Gˆ(Z‚âÛ¬Ù=,ğ_ƒ;éİn«ï{¬Ú–œÎëÍ’Ûè¡ù}¸<\iaq‰±˜íÈWìâ©	›>^xÁÚÉ‚“œŠ×,‘ïˆ8YkÇ®€-WÅYÖ<™sİ$(mD¿WÒ5Ñ©¥!,µ ÿsxá˜÷·Woö6Wğì'ÍJıLGˆe—¡È’Œ‚³é$ƒ
+4:Éü€6Ä•ÁrGM†BŸÉzD?}Â“3ßº=ñÔäl_çøá™ïÑœkÎã6êê¸ŞªÔ¨I 4
+1ï)a¨RHC­§ê8êj]I\[WVUß&«Ş³{Ì;â¿5—mL[eÇiØ½ÎY.Õro¼Í™ašˆ3N™‰ÉbÜ‡1£qC°Ûaƒí¨½ãå–¾Ø–Ş¾ĞÒ–¶÷–®¯PjÙ†2	S²è‚™&.FbLt‰/ŸË%ó)‰_Ï‡ÿ9çÉsÎï4Âo;¬›n½ğş@ëîÕ‰ş?‰Ê’-ääcYû…Ú¥õæ8ìŞh‹S“ğ6ü^EÀ§+IGÜ.‡}PŸ:Í8sôİ7V»ÖÏi¨©µ¢42êèw>ênìßZ¶°C$Õ‰šâ€šŠŒFcŒ¯0ß¿ÀÜúåË­oÎZ‹ªˆªn]çtŠL—W¯.p<i¶¯å=%ÅæHsd?ÆHØt°]'xSçG5&“Éi¡İ~·ßÃ.£ò™9ÃÒW×fæsìp”¶˜tL‹÷æçXş(mkQ~B¬ıa¾‰¿4>«Œ7TÇ!{…†÷ĞÁA°!¸šZ@Ğã°Ù?cM†^s/sÔ¾.jà]´ßŠBI8N£ Ø÷³q.¹(—ÙùyâàªÿÚÄâŠX£qò{’â¢|ªZ>_aŸ†'óŒıSúìÔÔı,Û #„;ì”bt>3šó³jáAÊ“rJ½WÜC|îXÍ™„$Â„"Ù©¨ÖÁs7C‰K3­qp™ƒ¯KŠôöKÕòm¬Ïƒœ+5b¤-Nƒµ}õ½{°—vF“ôt~t&ˆõOó`ÎuÌ"¢	µ©µ°îmH]¦Ù@¶’ı-ä…ğpª2èOu·´…˜±`´€›Ş¿#+qVô;ÂL80^Nh ÿ’fƒãéP½ğš€E£L1!·WÃÕ;ª€+fáiÎ>¢¯,2­}_çªƒ-ê_áp¼Xœ÷ÕKè &<YG[öæÙşéöo“t:ïOâ‚:x0ã‹yçšÿ@O«‰^ÕiÍ‚Á]ÏÃ¬Çy“‚&*¦Ç"ì]ø8ÂæËÿÊ‹R­(HÍÊŸTœáÉ’/aë§íÃ:›=Œú€c„;äHÄé©Ë¾¬§i7ƒ¸0éŠõAyÔ¢~ñyê@ìI–2ë“F+t:±)>ŸÕİøéêw^bñ}ñœ„™÷×+·¼E™.*V²V=¬Úk­ª–AF5 9õûÄ’0#7ú¸Ñn"I®„—î0%ÑÅ/?”P{}Ç—ÃÑ]­²û:Pn?¹ºÏï„îó8d·ˆˆ‡F/	¥ğŞÌ¢|bkĞÇ>Ù†{½vo>*»ëà¶ê?“Il®
+endstreamendobj129 0 obj<< /Filter /FlateDecode /Length 2283 /Subtype /Type1C >> stream
+H‰DUTg!™	E–ŒƒšØLP‹Š"(Ry–‚²‚¥"]Ÿ”D¢¥ÈC‚T·eİVTDìîÙ×µ«µµ(XŠâƒÚ³Ö®¶RÑ`”Ô€M7ÁòØû§7İöÑ3sşÿœ;÷¿ç»ßı¾XFîÃ°,˜¼8+#)mÆBãz‹Ñ\°F?”ˆ†%ãäd¢ÆbùÏ›ÇAE ìlšøÜ^ãÃ²{æ—”V–¬{Ó¬›¶fºnvLtÔÌ‘uŞè3²ÆDè’òKF]v¥Él,2éÒ‹×””•–”éÍÆüY:]ÒúõºÑ
+&]™Ñd,³Ğèÿqè
+L:½Î\¦Ï7éË
+u%kuÅ%æÊR£.)M§/Î/)ÓĞ³¦rƒ© ¿@_V`4ıraXú0Ï3L Ãú1“|™09)câfm‘3
+f:Ïla>¦-oa›|d>|É^”ıAÖ,sË³åÊ»997•ûw‘ëäÜüKüZş,? X¡°*†|Ã|s¼ÊÑ§¶>f{e=A—ùUUËõÕÚÕŠC»¾ßÕO&+hFÍègÈı™ÉÁƒ¼r£|ec]pÎ%#	ğHÄ”ÕÁ!!«‡!RZ‡Ÿ>mÆ­+Bò¡s171CÎ`!äBî(„­²ÁBª;@]ÁÂ—Ğ“-¦ò%¨XU…üï}@´·Ú¥PÖØÉi›êH_l/œt	]0üFlÛõü
+&h>MÉÏ)~%Oš•Ã	ÿ[š°C|I¹İ«âë6|ñørgÓø¡+öË RÃ¸é6Tj…®DŒ3c¥D›€`±©N:“=¾Ã¹Ğ%¸„'`†.±~ïÎzğÓÕÁ*ô‹ÍX:Çmzxc›ÁÛ{×à[y²åKH»2P¸VœOûPªUNï¹ôÙêÆŞÅ‰˜©GaŠÖÁ·Õıñ'Ôı5U™^š&	O6oÚ¹s³Dû‡D+YEûĞ+#‡ Q´N!«’xÇ»„‹‚«˜Ø‰ŠÙDkñZ(íVè°ÁtK¢)aHŸ^†İû¼µšûìDëG5=7—†D.Iˆ_üi÷Šgï¿µ?j ô$Ü…ñ¹{ÈgäYÌE£\³AŠ=í„‹N©!õ"LŞ‚Š–X®]e8+|OÔÙt)áB—©]Ówöhs£tşÒÁK·Ôê/¢f¬Xi,×n¯ånƒÅ µ\ùg-ÃË¢ı\‡ØQ™3sÒçMÉ½gtÜ}¶‘¼-k¤ÈÉ858Çânæøºù‹ğÄƒ¹£Ó·Ëû¶bÛa+ÛT§]œ°Ó™ê7©"ÅîÅ}ñ¹èŸœ~jåU³VH*Ê]¥.¨I¼µDûÆ•Û¿;£Ø[Àw¹âîÌ&Ipß÷·ãOÕÂ ÕáRñŞıLôyÙ¼•%ß_¹Şz½fì°Š‹²š¿ùüğu×ÀÇ™y‹V¬H¤uBº¾¶©Î:£{áÈ€0ûà]ñzÇ'íG¤Úíşº|Yìà¯oùn«É§µ ?ÄÀÖz¸}ørx)¼!œ–€•PçœAÚz›˜5o?h\íï~Ú¼ ¥9–ÕÒ¨ÑàËaUÏ Ğğ‹Ù„<R/ÿ¯ï–QÉì^ÏXÙ Fñ;4rÃ<Ö{úğxø™ëçï€‘ûÄ!‚nrµü0Şä”Ëjì°ÛìªÛn¸ëÎpÓ>="¤ğ¦Ù¸0rIÉ,	çó¡Ş9"\ãé÷ÈnZ" úÄªƒ’@lûoœS?Iµ£Z‹7y·W!›¦ÙV„Ä-["á^Y·ÑAî;Ø–~™ç%²CÿßÎ fjĞˆ*ÃxæÃ¼v(İ5Ia<Æ½…lQ†S_… H€×†CĞÍ!3ªJÊ:jı6;{ßMtı²ûAĞÄCUäC¬ALÂW%láİÑ"¤ó0Şé˜3UfQ¢jğJ¬Ã-#^‡è] ï‘Ş ”¼ìğzf Gy¥òiû_,›C¢9SŞ÷ŸÜ¼òêF{ÚípÈ¡:ßOŒN¡L€vÌüË›e,×ê_­z³WB(„@Öğ ˆ¶¡x\rñeÁéVTkğ`\ówa øL–Ö5^Í… Í“Z¾m“„Í‡gq_“±ø-eêuÀ…
+¶ËMÆPè­$Fô¡ô’1ØëöByª•‹ÇPÁ:)î,A[ãğøW°VKúOŒèGî%(j@Fª@ÁvºÈ6—ÌSä1 VyŞAn;z2È¡ôÌà"ñ|Ãvçu-¹Ş>î1İH?UÑÂíµ7^A‡ZB­ÎZ]DE/ÿ6ĞŠ´ ’.#ºjyÂz»8`=†°úF%q¦Ÿl£ª ELÃ êßˆ0 #OpÑ-"\4˜ í‚ğ0a6Ä 	Ã1¼MĞ İ`‚pí¨®Ø¡ÖN?öÓ™¨x9ïZqDhVá\	søh9Xxˆø¸~ğsà	­£ìÔÕìƒÏí°Í®êuÃ¿Üsú©Ê3á+ŞqïÔ¬Ò]Èî}C‚1ûø¢ı[ÿ²£é}_İo8`Øï+µm?3¬†™è×Œ~Z|0RÔ ‡­üùû[PüJeŠ„åT|í¤Ç®j£ÿxäLr	Bq“İ¢­ºB±NƒÉÉèƒr~ë\•S8á!ø•œúw ê ÿs@$û
+yE/!±÷0H—OÈTn«¿c÷÷÷2º÷>÷EÃ.¡Øûaºa•`ŸÈ÷òœÈÜçhû  vùá÷•ì™ù÷‡ıìù÷‡áüÛxáùwÚìøìø·ùbüZû0'b24,¶÷0øX*üsûŞû÷U÷Yç÷÷'øf ‹áø¶á¢øÉøàáüNøNø¸ßü¨5ø+üLü»:øÉxùbûjš÷*š÷¢–÷ı	˜ Cyÿ	×
+ãøÀùbiGîH
+endstreamendobj132 0 obj<< /PitStop 133 0 R >> endobj133 0 obj<< /CC 134 0 R >> endobj134 0 obj<< >> endobjxref0 136 0000000063 65535 f
+0000000016 00000 n
+0000000183 00000 n
+0000000321 00000 n
+0000005890 00000 n
+0000006057 00000 n
+0000006206 00000 n
+0000014197 00000 n
+0000014364 00000 n
+0000014537 00000 n
+0000019273 00000 n
+0000019443 00000 n
+0000019571 00000 n
+0000024859 00000 n
+0000025029 00000 n
+0000025191 00000 n
+0000029861 00000 n
+0000030031 00000 n
+0000030181 00000 n
+0000033641 00000 n
+0000033811 00000 n
+0000033961 00000 n
+0000037728 00000 n
+0000037898 00000 n
+0000038037 00000 n
+0000042172 00000 n
+0000042342 00000 n
+0000042481 00000 n
+0000046237 00000 n
+0000046407 00000 n
+0000046547 00000 n
+0000052906 00000 n
+0000053076 00000 n
+0000053215 00000 n
+0000057926 00000 n
+0000058096 00000 n
+0000058247 00000 n
+0000062717 00000 n
+0000062887 00000 n
+0000063038 00000 n
+0000067329 00000 n
+0000067499 00000 n
+0000067628 00000 n
+0000072575 00000 n
+0000072745 00000 n
+0000072907 00000 n
+0000079092 00000 n
+0000079634 00000 n
+0000080690 00000 n
+0000081247 00000 n
+0000081800 00000 n
+0000082330 00000 n
+0000082614 00000 n
+0000083285 00000 n
+0000083620 00000 n
+0000087732 00000 n
+0000088286 00000 n
+0000093186 00000 n
+0000093625 00000 n
+0000097005 00000 n
+0000097320 00000 n
+0000098933 00000 n
+0000099080 00000 n
+0000000064 00001 f
+0000000065 00001 f
+0000000066 00001 f
+0000000067 00001 f
+0000000068 00001 f
+0000000069 00001 f
+0000000070 00001 f
+0000000071 00001 f
+0000000072 00001 f
+0000000073 00001 f
+0000000074 00001 f
+0000000075 00001 f
+0000000076 00001 f
+0000000077 00001 f
+0000000078 00001 f
+0000000079 00001 f
+0000000080 00001 f
+0000000081 00001 f
+0000000082 00001 f
+0000000083 00001 f
+0000000084 00001 f
+0000000085 00001 f
+0000000086 00001 f
+0000000087 00001 f
+0000000088 00001 f
+0000000089 00001 f
+0000000090 00001 f
+0000000091 00001 f
+0000000092 00001 f
+0000000094 00001 f
+0000099418 00001 n
+0000000095 00001 f
+0000000096 00001 f
+0000000097 00001 f
+0000000114 00001 f
+0000100325 00000 n
+0000100364 00000 n
+0000100408 00000 n
+0000100555 00000 n
+0000100632 00000 n
+0000100751 00000 n
+0000100816 00000 n
+0000100840 00000 n
+0000100894 00000 n
+0000100937 00000 n
+0000101016 00000 n
+0000101074 00000 n
+0000101124 00000 n
+0000101162 00000 n
+0000101242 00000 n
+0000101312 00000 n
+0000000115 00001 f
+0000000130 00001 f
+0000101452 00000 n
+0000101583 00000 n
+0000101756 00000 n
+0000101886 00000 n
+0000102513 00000 n
+0000103067 00000 n
+0000103468 00000 n
+0000104052 00000 n
+0000106994 00000 n
+0000107359 00000 n
+0000107778 00000 n
+0000111034 00000 n
+0000111174 00000 n
+0000118549 00000 n
+0000000131 00001 f
+0000000135 00001 f
+0000120925 00000 n
+0000120968 00000 n
+0000121006 00000 n
+0000000000 00001 f
+trailer<</Size 136/Info 113 0 R /Root 116 0 R /ID[<9a25dc45925fbc5a3d4316d172f64cef><9a0c12711b1017e0062c0e633062a143>]>>startxref121032%%EOF93 1 obj<</Length 3292/Subtype/XML/Type/Metadata>>stream
+<?xpacket begin="ï»¿" id="W5M0MpCehiHzreSzNTczkc9d"?>
+<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.2-c001 63.139439, 2010/09/27-13:37:26        ">
+   <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <rdf:Description rdf:about=""
+            xmlns:pdf="http://ns.adobe.com/pdf/1.3/">
+         <pdf:Producer>Acrobat Distiller 5.0 (Windows)</pdf:Producer>
+      </rdf:Description>
+      <rdf:Description rdf:about=""
+            xmlns:xmp="http://ns.adobe.com/xap/1.0/">
+         <xmp:CreateDate>2002-08-29T19:17:20Z</xmp:CreateDate>
+         <xmp:ModifyDate>2012-08-28T13:49:49-05:00</xmp:ModifyDate>
+         <xmp:MetadataDate>2012-08-28T13:49:49-05:00</xmp:MetadataDate>
+      </rdf:Description>
+      <rdf:Description rdf:about=""
+            xmlns:dc="http://purl.org/dc/elements/1.1/">
+         <dc:format>application/pdf</dc:format>
+      </rdf:Description>
+      <rdf:Description rdf:about=""
+            xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/">
+         <xmpMM:DocumentID>uuid:3b3ddd31-2cc5-4860-a687-6d87895e9557</xmpMM:DocumentID>
+         <xmpMM:InstanceID>uuid:5fd27fb3-2c96-455a-86bb-6b6484b5d936</xmpMM:InstanceID>
+      </rdf:Description>
+   </rdf:RDF>
+</x:xmpmeta>
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                           
+<?xpacket end="w"?>
+endstreamendobj113 0 obj<</CreationDate(D:20020829191720Z)/ModDate(D:20120828134949-05'00')/Producer(Acrobat Distiller 5.0 \(Windows\))>>endobj116 0 obj<</AcroForm 138 0 R/FICL:Enfocus 132 0 R/JT 112 0 R/Metadata 93 1 R/PageLabels 99 0 R/Pages 101 0 R/Type/Catalog>>endobj117 0 obj<</Annots 139 0 R/Contents 123 0 R/CropBox[40.32001 126 571.67999 792]/MediaBox[0 0 612 792]/Parent 100 0 R/Resources 118 0 R/Rotate 0/Type/Page>>endobj136 0 obj<</BaseFont/Courier/Encoding 155 0 R/Name/Cour/Subtype/Type1/Type/Font>>endobj137 0 obj<</BaseFont/Times-Roman/Encoding 149 0 R/Name/TiRo/Subtype/Type1/Type/Font>>endobj138 0 obj<</DA(/Helv 0 Tf 0 g )/DR<</Encoding<</PDFDocEncoding 155 0 R>>/Font<</Cour 136 0 R/Helv 151 0 R/TiRo 152 0 R/ZaDb 153 0 R>>>>/Fields 150 0 R>>endobj139 0 obj[140 0 R 141 0 R 142 0 R]endobj140 0 obj<</AP<</N 148 0 R>>/BS 147 0 R/Contents(Copyright © 2003 by Robert Fourer, David M. Gay and Brian W. Kernighan)/CreationDate(D:20120828134924-05'00')/DA(12.25 TL /Cour 9 Tf)/DS(font: TiRo 9.0pt;font-stretch:Normal; text-align:left; color:#000000 )/F 4/IT/FreeTextTypewriter/M(D:20120828134935-05'00')/NM(faefafa9-1379-40c9-9f24-dff19f81f71f)/P 117 0 R/RC(<?xml version="1.0"?><body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:APIVersion="Acrobat:10.1.3" xfa:spec="2.0.2"  style="font-size:9.0pt;text-align:left;color:#000000;font-weight:normal;font-style:normal\;font-family:TiRo;font-stretch:normal"><p dir="ltr"><span style="line-height:12.3pt;font-family:Times">Copyright &#169; 2003 by Robert Fourer, David M. Gay and Brian W. Kernighan</span></p></body>)/Rect[280.81 767.264 557.861 779.264]/Subj(Typewritten Text)/Subtype/FreeText/T(Robert Fourer)/Type/Annot>>endobj141 0 obj<</AP<</N 146 0 R>>/BS 145 0 R/CreationDate(D:20120828134927-05'00')/DA(12.25 TL /Cour 9 Tf)/DS(font: Times 9.0pt; text-align:left; color:#000000 )/F 4/IT/FreeTextTypewriter/M(D:20120828134929-05'00')/NM(1d84ffe0-04ec-43bb-9906-e39bfbd02387)/P 117 0 R/Rect[228.053 744.264 242.453 756.264]/Subj(Typewritten Text)/Subtype/FreeText/T(Robert Fourer)/Type/Annot>>endobj142 0 obj<</AP<</N 144 0 R>>/BS 143 0 R/CreationDate(D:20120828134937-05'00')/DA(12.25 TL /Cour 9 Tf)/DS(font: Times 9.0pt; text-align:left; color:#000000 )/F 4/IT/FreeTextTypewriter/M(D:20120828134949-05'00')/NM(9a46b786-28d7-4c45-87ce-db5769afe95a)/P 117 0 R/Rect[364.364 712.431 378.764 724.431]/Subj(Typewritten Text)/Subtype/FreeText/T(Robert Fourer)/Type/Annot>>endobj143 0 obj<</W 0.0>>endobj144 0 obj<</BBox[364.364 712.431 378.764 724.431]/FormType 1/Length 93/Matrix[1.0 0.0 0.0 1.0 -364.364 -712.431]/Resources<</ProcSet[/PDF]>>/Subtype/Form/Type/XObject>>stream
+0 w
+364.3637 712.431 14.4 12 re
+n
+q
+1 0 0 1 0 0 cm
+364.3637 712.431 14.4 12 re
+W
+n
+0 g
+1 w
+Q
+
+endstreamendobj145 0 obj<</W 0.0>>endobj146 0 obj<</BBox[228.053 744.264 242.453 756.264]/FormType 1/Length 93/Matrix[1.0 0.0 0.0 1.0 -228.053 -744.264]/Resources<</ProcSet[/PDF]>>/Subtype/Form/Type/XObject>>stream
+0 w
+228.0531 744.264 14.4 12 re
+n
+q
+1 0 0 1 0 0 cm
+228.0531 744.264 14.4 12 re
+W
+n
+0 g
+1 w
+Q
+
+endstreamendobj147 0 obj<</W 0.0>>endobj148 0 obj<</BBox[256.81 767.264 533.861 779.264]/Filter[/FlateDecode]/FormType 1/Length 234/Matrix[1.0 0.0 0.0 1.0 -256.81 -767.264]/Resources<</Font<</TiRo 137 0 R>>/ProcSet[/PDF/Text]>>/Subtype/Form/Type/XObject>>stream
+H‰„MK1†ïùs´ ãdšÏkı:ˆK /[»Ö-˜Õ –ş{ÓİYÛ›†ğ¼¼ÏÀì[‡¢ï<²3ÀŞ#Yš¡´*«O¥êçËûUílkk¯I]¥nÙC„ô:Ğ¡¬Á{F&i£.®ûCé¶o_0ƒ´Só€Ş—³g®ßG¤„2Ñ|¤LÈVèú02­OlÙ¯Û"bvèÍÜõß¥-—’4ÑHrÓütáù¯ñˆ¢g´Äï›ii=…™M¶g‚Eéš,b>ã«“8Æ	>´%×›4yˆn“zR¿ º_Ï
+endstreamendobj149 0 obj<</Differences[24/breve/caron/circumflex/dotaccent/hungarumlaut/ogonek/ring/tilde 39/quotesingle 96/grave 128/bullet/dagger/daggerdbl/ellipsis/emdash/endash/florin/fraction/guilsinglleft/guilsinglright/minus/perthousand/quotedblbase/quotedblleft/quotedblright/quoteleft/quoteright/quotesinglbase/trademark/fi/fl/Lslash/OE/Scaron/Ydieresis/Zcaron/dotlessi/lslash/oe/scaron/zcaron 160/Euro 164/currency 166/brokenbar 168/dieresis/copyright/ordfeminine 172/logicalnot/.notdef/registered/macron/degree/plusminus/twosuperior/threesuperior/acute/mu 183/periodcentered/cedilla/onesuperior/ordmasculine 188/onequarter/onehalf/threequarters 192/Agrave/Aacute/Acircumflex/Atilde/Adieresis/Aring/AE/Ccedilla/Egrave/Eacute/Ecircumflex/Edieresis/Igrave/Iacute/Icircumflex/Idieresis/Eth/Ntilde/Ograve/Oacute/Ocircumflex/Otilde/Odieresis/multiply/Oslash/Ugrave/Uacute/Ucircumflex/Udieresis/Yacute/Thorn/germandbls/agrave/aacute/acircumflex/atilde/adieresis/aring/ae/ccedilla/egrave/eacute/ecircumflex/edieresis/igrave/iacute/icircumflex/idieresis/eth/ntilde/ograve/oacute/ocircumflex/otilde/odieresis/divide/oslash/ugrave/uacute/ucircumflex/udieresis/yacute/thorn/ydieresis]/Type/Encoding>>endobj150 0 obj[]endobj151 0 obj<</BaseFont/Helvetica/Encoding 155 0 R/Name/Helv/Subtype/Type1/Type/Font>>endobj152 0 obj<</BaseFont/Times-Roman/Encoding 154 0 R/Name/TiRo/Subtype/Type1/Type/Font>>endobj153 0 obj<</BaseFont/ZapfDingbats/Name/ZaDb/Subtype/Type1/Type/Font>>endobj154 0 obj<</Differences[24/breve/caron/circumflex/dotaccent/hungarumlaut/ogonek/ring/tilde 39/quotesingle 96/grave 128/bullet/dagger/daggerdbl/ellipsis/emdash/endash/florin/fraction/guilsinglleft/guilsinglright/minus/perthousand/quotedblbase/quotedblleft/quotedblright/quoteleft/quoteright/quotesinglbase/trademark/fi/fl/Lslash/OE/Scaron/Ydieresis/Zcaron/dotlessi/lslash/oe/scaron/zcaron 160/Euro 164/currency 166/brokenbar 168/dieresis/copyright/ordfeminine 172/logicalnot/.notdef/registered/macron/degree/plusminus/twosuperior/threesuperior/acute/mu 183/periodcentered/cedilla/onesuperior/ordmasculine 188/onequarter/onehalf/threequarters 192/Agrave/Aacute/Acircumflex/Atilde/Adieresis/Aring/AE/Ccedilla/Egrave/Eacute/Ecircumflex/Edieresis/Igrave/Iacute/Icircumflex/Idieresis/Eth/Ntilde/Ograve/Oacute/Ocircumflex/Otilde/Odieresis/multiply/Oslash/Ugrave/Uacute/Ucircumflex/Udieresis/Yacute/Thorn/germandbls/agrave/aacute/acircumflex/atilde/adieresis/aring/ae/ccedilla/egrave/eacute/ecircumflex/edieresis/igrave/iacute/icircumflex/idieresis/eth/ntilde/ograve/oacute/ocircumflex/otilde/odieresis/divide/oslash/ugrave/uacute/ucircumflex/udieresis/yacute/thorn/ydieresis]/Type/Encoding>>endobj155 0 obj<</Differences[24/breve/caron/circumflex/dotaccent/hungarumlaut/ogonek/ring/tilde 39/quotesingle 96/grave 128/bullet/dagger/daggerdbl/ellipsis/emdash/endash/florin/fraction/guilsinglleft/guilsinglright/minus/perthousand/quotedblbase/quotedblleft/quotedblright/quoteleft/quoteright/quotesinglbase/trademark/fi/fl/Lslash/OE/Scaron/Ydieresis/Zcaron/dotlessi/lslash/oe/scaron/zcaron 160/Euro 164/currency 166/brokenbar 168/dieresis/copyright/ordfeminine 172/logicalnot/.notdef/registered/macron/degree/plusminus/twosuperior/threesuperior/acute/mu 183/periodcentered/cedilla/onesuperior/ordmasculine 188/onequarter/onehalf/threequarters 192/Agrave/Aacute/Acircumflex/Atilde/Adieresis/Aring/AE/Ccedilla/Egrave/Eacute/Ecircumflex/Edieresis/Igrave/Iacute/Icircumflex/Idieresis/Eth/Ntilde/Ograve/Oacute/Ocircumflex/Otilde/Odieresis/multiply/Oslash/Ugrave/Uacute/Ucircumflex/Udieresis/Yacute/Thorn/germandbls/agrave/aacute/acircumflex/atilde/adieresis/aring/ae/ccedilla/egrave/eacute/ecircumflex/edieresis/igrave/iacute/icircumflex/idieresis/eth/ntilde/ograve/oacute/ocircumflex/otilde/odieresis/divide/oslash/ugrave/uacute/ucircumflex/udieresis/yacute/thorn/ydieresis]/Type/Encoding>>endobjxref
+0 1
+0000000000 65535 f
+93 1
+0000123915 00001 n
+113 1
+0000127285 00000 n
+116 2
+0000127416 00000 n
+0000127548 00000 n
+136 20
+0000127712 00000 n
+0000127802 00000 n
+0000127896 00000 n
+0000128057 00000 n
+0000128100 00000 n
+0000129034 00000 n
+0000129411 00000 n
+0000129788 00000 n
+0000129816 00000 n
+0000130105 00000 n
+0000130133 00000 n
+0000130422 00000 n
+0000130450 00000 n
+0000130927 00000 n
+0000132120 00000 n
+0000132140 00000 n
+0000132232 00000 n
+0000132326 00000 n
+0000132404 00000 n
+0000133597 00000 n
+trailer
+<</Size 156/Root 116 0 R/Info 113 0 R/ID[<9A25DC45925FBC5A3D4316D172F64CEF><F56F216B07C4D34CAE88E859E4A0294D>]/Prev 121032>>
+startxref
+134790
+%%EOF

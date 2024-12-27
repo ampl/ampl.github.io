@@ -1,0 +1,6837 @@
+%PDF-1.4%‚„œ”
+1 0 obj<< /Type /Page /Parent 106 0 R /Resources 2 0 R /Contents 3 0 R /Rotate 0 /MediaBox [ 0 0 612 792 ] /CropBox [ 40.32001 126 571.67999 792 ] >> endobj2 0 obj<< /ProcSet [ /PDF /Text ] /Font << /F1 129 0 R /F2 126 0 R /F4 134 0 R /F5 136 0 R >> /ExtGState << /GS1 137 0 R >> >> endobj3 0 obj<< /Length 4434 >> stream
+BT
+/F5 1 Tf
+10 0 0 10 126 747.615 Tm
+0 g
+/GS1 gs
+0 Tc
+0 Tw
+(110)Tj
+7 0 0 7 159.6 747.615 Tm
+0.0226 Tw
+[(PARAMETERS AND EXPRESSIONS )-23935.6(CHAPTER )13.8(7)]TJ
+/F1 1 Tf
+12 0 0 12 126 715.215 Tm
+0.3161 Tw
+[(7.1 Parameter )293.3(declarations)]TJ
+/F2 1 Tf
+10 0 0 10 140.4 694.015 Tm
+0.0022 Tw
+[(A parameter declaration describes certain data required by a model, and indicates )-15.8(how)]TJ
+-1.44 -1.2 TD
+-0.0035 Tw
+(the model will refer to data values in subsequent expressions.)Tj
+1.44 -1.28 TD
+-0.0058 Tw
+(The simplest parameter declaration consists of the keyword)Tj
+/F4 1 Tf
+24.01 0 TD
+0 Tw
+(param)Tj
+/F2 1 Tf
+3.25 0 TD
+-0.006 Tw
+(and a name:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 650.015 Tm
+0 Tw
+(param T;)Tj
+/F2 1 Tf
+10 0 0 10 126 628.815 Tm
+-0.004 Tw
+(At any point after this declaration,)Tj
+/F4 1 Tf
+13.95 0 TD
+0 Tw
+(T)Tj
+/F2 1 Tf
+0.85 0 TD
+-0.0058 Tw
+(can be used to refer to a numerical value.)Tj
+-13.36 -1.28 TD
+0.0938 Tw
+[(More )8(often, )8(the )8(name )8(in )8(a parameter declaration is followed by an indexing expres-)]TJ
+-1.44 -1.2 TD
+0 Tw
+(sion:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 584.815 Tm
+-0.0001 Tw
+(param avail {1..T};)Tj
+0 -1.1111 TD
+(param demand {DEST,PROD};)Tj
+T*
+0 Tw
+(param revenue {p in PROD, AREA[p], 1..T};)Tj
+/F2 1 Tf
+10 0 0 10 126 543.615 Tm
+0.1039 Tw
+(One parameter is defined for each member of the set specified by the indexing expres-)Tj
+0 -1.2 TD
+0.0864 Tw
+[(sion. )-256.7(Thus a parameter is uniquely determined by its name )9(and )9(its )9(associated )9(set )9(mem-)]TJ
+T*
+0.107 Tw
+[(ber; throughout the rest of the model, you would refer to this parameter by writing )-11(the)]TJ
+T*
+-0.0123 Tw
+(name and bracketed ëësubscriptsíí:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 488.415 Tm
+0 Tw
+(avail[i])Tj
+0 -1.1111 TD
+(demand[j,p])Tj
+T*
+(revenue[p,a,t])Tj
+/F2 1 Tf
+10 0 0 10 126 447.215 Tm
+0.0366 Tw
+[(If )8.7(the )8.7(indexing )8.7(is )8.7(over )8.7(a )8.7(simple )8.7(set )8.7(of objects as described in Chapter 5, there is one sub-)]TJ
+0 -1.2 TD
+0.0069 Tw
+[(script. )-255.1(If )-11.1(the )-11.1(indexing )-11.1(is )-11.1(over )-11.1(a )-11.1(set )-11.1(of pairs, triples, or longer tuples as described in Chap-)]TJ
+T*
+0.0662 Tw
+[(ter 6, there must be a corresponding pair, triple, or longer list of subscripts separated )-13.8(by)]TJ
+T*
+0.0473 Tw
+[(commas. )-244.8(The subscripts can be any expressions, so long )11.3(as )11.3(they )11.3(evaluate )11.3(to )11.3(members )11.3(of)]TJ
+T*
+-0.0026 Tw
+(the underlying index set.)Tj
+1.44 -1.28 TD
+0.0629 Tw
+[(An unindexed parameter is a scalar value, but a parameter indexed over )-16.5(a )-16.5(simple )-16.5(set)]TJ
+-1.44 -1.2 TD
+0.095 Tw
+[(has )-7.7(the )-7.7(characteristics )-7.7(of )-7.7(a )-7.7(vector )-7.7(or an array; when the indexing is over a sequence of)]TJ
+T*
+-0.0089 Tw
+(integers, say)Tj
+/F4 1 Tf
+9 0 0 9 154.8 343.215 Tm
+-0.0001 Tw
+(param avail {1..T};)Tj
+/F2 1 Tf
+10 0 0 10 126 322.015 Tm
+0.0223 Tw
+(the individual subscripted parameters are)Tj
+/F4 1 Tf
+16.81 0 TD
+0 Tw
+(avail[1])Tj
+/F2 1 Tf
+4.8 0 TD
+(,)Tj
+/F4 1 Tf
+0.53 0 TD
+(avail[2])Tj
+/F2 1 Tf
+4.8 0 TD
+-0.09 Tw
+[(, )-120(. . . ,)]TJ
+/F4 1 Tf
+2.29 0 TD
+0 Tw
+(avail[T])Tj
+/F2 1 Tf
+4.8 0 TD
+0.026 Tw
+(, and)Tj
+-34.03 -1.2 TD
+0.1056 Tw
+[(there is an obvious analogy to the vectors of linear algebra )11.6(or )11.6(the )11.6(arrays )11.6(of )11.6(a )11.6(program-)]TJ
+T*
+0.048 Tw
+(ming language like Fortran or C.)Tj
+9 0 0 9 264.6 298.015 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 289.6 298.015 Tm
+0.053 Tw
+(ís concept of a vector is more general, however,)Tj
+-16.36 -1.2 TD
+0.2254 Tw
+[(since parameters may also be indexed over sets of strings, which need not even )9.4(be)]TJ
+T*
+0.147 Tw
+[(ordered. )-234.1(Indexing over sets of strings is best suited for parameters )-9.4(that )-9.4(correspond )-9.4(to)]TJ
+T*
+-0.0031 Tw
+[(places, )-5.8(products )-5.8(and )-5.8(other entities for which no numbering is especially natural. )-248.2(Indexing)]TJ
+T*
+0.0523 Tw
+[(over )8.5(sequences )8.5(of )8.5(numbers )8.5(is more appropriate for parameters that correspond to weeks,)]TJ
+T*
+0.1343 Tw
+[(stages, )-12.9(and )-12.9(the )-12.9(like, )-12.9(which )-12.9(by )-12.9(their nature tend to be ordered and numbered; even for)]TJ
+T*
+-0.0037 Tw
+(these, you may prefer to use ordered sets of strings as described in Section 5.6.)Tj
+1.44 -1.28 TD
+0.0565 Tw
+[(A )26.4(parameter indexed over a set of pairs is like a two-dimensional array or matrix. )-247.5(If)]TJ
+-1.44 -1.2 TD
+-0.0015 Tw
+(the indexing is over all pairs from two sets, as in)Tj
+ET
+endstreamendobj4 0 obj<< /Type /Page /Parent 106 0 R /Resources 5 0 R /Contents 6 0 R /Rotate 0 /MediaBox [ 0 0 612 792 ] /CropBox [ 40.32001 126 571.67999 792 ] >> endobj5 0 obj<< /ProcSet [ /PDF /Text ] /Font << /F1 129 0 R /F2 126 0 R /F4 134 0 R /F5 136 0 R >> /ExtGState << /GS1 137 0 R >> >> endobj6 0 obj<< /Length 6493 >> stream
+BT
+/F5 1 Tf
+7 0 0 7 126 747.615 Tm
+0 g
+/GS1 gs
+0 Tc
+0.0298 Tw
+[(SECTION 7.2 )-26581.1(ARITHMETIC )-8.8(EXPRESSIONS)]TJ
+10 0 0 10 469.2 747.615 Tm
+0 Tw
+(111)Tj
+/F4 1 Tf
+9 0 0 9 154.8 717.215 Tm
+(set ORIG;)Tj
+0 -1.1111 TD
+(set DEST;)Tj
+T*
+-0.0001 Tw
+(param cost {ORIG,DEST};)Tj
+/F2 1 Tf
+10 0 0 10 126 677.115 Tm
+0.1425 Tw
+(then there is a parameter)Tj
+/F4 1 Tf
+10.8 0 TD
+0 Tw
+(cost[i,j])Tj
+/F2 1 Tf
+5.8 0 TD
+0.1434 Tw
+(for every combination of)Tj
+/F4 1 Tf
+10.8 0 TD
+0 Tw
+(i)Tj
+/F2 1 Tf
+1 0 TD
+(from)Tj
+/F4 1 Tf
+2.34 0 TD
+(ORIG)Tj
+/F2 1 Tf
+2.81 0 TD
+(and)Tj
+/F4 1 Tf
+1.85 0 TD
+(j)Tj
+/F2 1 Tf
+-35.4 -1.2 TD
+(from)Tj
+/F4 1 Tf
+2.24 0 TD
+(DEST)Tj
+/F2 1 Tf
+2.4 0 TD
+0.0382 Tw
+[(, )-7.8(and )-7.8(the )-7.8(analogy to a matrix is strongest ó although again the subscripts are)]TJ
+-4.64 -1.2 TD
+-0.0023 Tw
+[(more likely to be strings than numbers. )-246.3(If the indexing is over a subset of pairs, however:)]TJ
+/F4 1 Tf
+9 0 0 9 154.8 635.015 Tm
+0 Tw
+(set ORIG;)Tj
+0 -1.1111 TD
+(set DEST;)Tj
+T*
+-0.0001 Tw
+(set LINKS within {ORIG,DEST};)Tj
+T*
+(param cost {LINKS};)Tj
+/F2 1 Tf
+10 0 0 10 126 584.915 Tm
+0 Tw
+(then)Tj
+/F4 1 Tf
+1.98 0 TD
+(cost[i,j])Tj
+/F2 1 Tf
+5.66 0 TD
+0.009 Tw
+(exists only for those)Tj
+/F4 1 Tf
+8.37 0 TD
+0 Tw
+(i)Tj
+/F2 1 Tf
+0.86 0 TD
+(from)Tj
+/F4 1 Tf
+2.2 0 TD
+(ORIG)Tj
+/F2 1 Tf
+2.66 0 TD
+(and)Tj
+/F4 1 Tf
+1.7 0 TD
+(j)Tj
+/F2 1 Tf
+0.86 0 TD
+(from)Tj
+/F4 1 Tf
+2.2 0 TD
+(DEST)Tj
+/F2 1 Tf
+2.66 0 TD
+0.007 Tw
+(such that)Tj
+/F4 1 Tf
+3.85 0 TD
+0 Tw
+(\(i,j\))Tj
+/F2 1 Tf
+-33 -1.2 TD
+-0.0036 Tw
+(is a member of)Tj
+/F4 1 Tf
+6.21 0 TD
+0 Tw
+(LINKS)Tj
+/F2 1 Tf
+3 0 TD
+-0.0021 Tw
+[(. )-249.1(In this case, you can think of)]TJ
+/F4 1 Tf
+12.51 0 TD
+0 Tw
+(cost)Tj
+/F2 1 Tf
+2.65 0 TD
+-0.0077 Tw
+(as being a ëësparseíí matrix.)Tj
+-22.93 -1.27 TD
+0.0766 Tw
+(Similar comments apply to parameters indexed over triples and longer tuples, which)Tj
+-1.44 -1.2 TD
+-0.0055 Tw
+(resemble arrays of higher dimension in programming languages.)Tj
+/F1 1 Tf
+12 0 0 12 126 487.715 Tm
+0.3121 Tw
+[(7.2 Arithmetic )292.7(expressions)]TJ
+/F2 1 Tf
+10 0 0 10 140.4 467.615 Tm
+0.0666 Tw
+(Arithmetic expressions in)Tj
+9 0 0 9 247.7 467.615 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 275.9 467.615 Tm
+0.0748 Tw
+(are much the same as in other computer languages.)Tj
+-14.99 -1.2 TD
+0.0368 Tw
+[(Literal )-9.3(numbers )-9.3(consist of an optional sign preceding a sequence of digits, which may or)]TJ
+T*
+0.0262 Tw
+(may not include a decimal point \(for example,)Tj
+/F4 1 Tf
+18.96 0 TD
+0 Tw
+(-17)Tj
+/F2 1 Tf
+2.08 0 TD
+(or)Tj
+/F4 1 Tf
+1.11 0 TD
+(2.71828)Tj
+/F2 1 Tf
+4.48 0 TD
+(or)Tj
+/F4 1 Tf
+1.11 0 TD
+(+.3)Tj
+/F2 1 Tf
+1.8 0 TD
+0.0365 Tw
+[(\). )-240.5(At )8.5(the end of)]TJ
+-29.54 -1.2 TD
+0.1672 Tw
+[(a )-8.1(literal )-8.1(there )-8.1(may )-8.1(also be an exponent, consisting of the letter)]TJ
+/F4 1 Tf
+27.12 0 TD
+0 Tw
+(d)Tj
+/F2 1 Tf
+0.6 0 TD
+(,)Tj
+/F4 1 Tf
+0.67 0 TD
+(D)Tj
+/F2 1 Tf
+0.6 0 TD
+(,)Tj
+/F4 1 Tf
+0.67 0 TD
+(e)Tj
+/F2 1 Tf
+0.6 0 TD
+0.167 Tw
+(, or)Tj
+/F4 1 Tf
+1.92 0 TD
+0 Tw
+(E)Tj
+/F2 1 Tf
+1.02 0 TD
+0.162 Tw
+(and an)Tj
+-33.2 -1.2 TD
+0.0008 Tw
+(optional sign followed by digits \()Tj
+/F4 1 Tf
+13.31 0 TD
+0 Tw
+(1e30)Tj
+/F2 1 Tf
+2.65 0 TD
+(or)Tj
+/F4 1 Tf
+1.08 0 TD
+(7.66439D-07)Tj
+/F2 1 Tf
+6.6 0 TD
+(\).)Tj
+-22.2 -1.27 TD
+0.2025 Tw
+[(Literals, parameters, and variables are combined into expressions )-14.2(by )-14.2(the )-14.2(standard)]TJ
+-1.44 -1.2 TD
+0.0467 Tw
+(operations of addition \()Tj
+/F4 1 Tf
+9.5 0 TD
+0 Tw
+(+)Tj
+/F2 1 Tf
+0.6 0 TD
+0.045 Tw
+(\), subtraction \()Tj
+/F4 1 Tf
+5.95 0 TD
+0 Tw
+(-)Tj
+/F2 1 Tf
+0.6 0 TD
+0.0551 Tw
+[(\), multiplication )18.1(\()]TJ
+/F4 1 Tf
+7.12 0 TD
+0 Tw
+(*)Tj
+/F2 1 Tf
+0.6 0 TD
+0.0405 Tw
+(\), division \()Tj
+/F4 1 Tf
+4.72 0 TD
+0 Tw
+(/)Tj
+/F2 1 Tf
+0.6 0 TD
+0.031 Tw
+(\), and exponen-)Tj
+-29.69 -1.2 TD
+0.201 Tw
+(tiation \()Tj
+/F4 1 Tf
+3.34 0 TD
+0 Tw
+(à)Tj
+/F2 1 Tf
+0.6 0 TD
+0.196 Tw
+[(\). )-246(The familiar conventions of )-10.5(arithmetic )-10.6(apply. )-263.1(Exponentiation )-10(has )-10(higher)]TJ
+-3.94 -1.2 TD
+0.0348 Tw
+[(precedence )-6.9(than )-6.9(multiplication )-6.9(and division, which have higher precedence than addition)]TJ
+T*
+0.1132 Tw
+[(and )8.8(subtraction; )8.7(successive )8.8(operations )8.7(of )8.8(the same precedence group to the left, except)]TJ
+T*
+0.1378 Tw
+[(for exponentiation, which groups to the right. )-241.3(Parentheses may be used to change the)]TJ
+T*
+-0.0094 Tw
+(order of evaluation.)Tj
+1.44 -1.27 TD
+0.1266 Tw
+(Arithmetic expressions may also use the)Tj
+/F4 1 Tf
+17.15 0 TD
+0 Tw
+(div)Tj
+/F2 1 Tf
+2.18 0 TD
+0.1211 Tw
+(operator, which returns the truncated)Tj
+-20.77 -1.2 TD
+0.1087 Tw
+(quotient when its left operand is divided by its right operand; the)Tj
+/F4 1 Tf
+27.47 0 TD
+0 Tw
+(mod)Tj
+/F2 1 Tf
+2.16 0 TD
+0.0941 Tw
+(operator, which)Tj
+-29.63 -1.2 TD
+0.0443 Tw
+(computes the remainder; and the)Tj
+/F4 1 Tf
+13.53 0 TD
+0 Tw
+(less)Tj
+/F2 1 Tf
+2.7 0 TD
+0.0469 Tw
+(operator, which returns its left operand minus its)Tj
+-16.23 -1.2 TD
+0.0466 Tw
+[(right operand if the result is positive, or zero otherwise. )-254.4(For )16.3(purposes )16.3(of )16.3(precedence )16.3(and)]TJ
+T*
+0 Tw
+(grouping,)Tj
+9 0 0 9 167.1 274.215 Tm
+(AMPL)Tj
+10 0 0 10 194.6 274.215 Tm
+(treats)Tj
+/F4 1 Tf
+2.41 0 TD
+(div)Tj
+/F2 1 Tf
+2.05 0 TD
+(and)Tj
+/F4 1 Tf
+1.69 0 TD
+(mod)Tj
+/F2 1 Tf
+2.05 0 TD
+0.0015 Tw
+(like division, and)Tj
+/F4 1 Tf
+7.17 0 TD
+0 Tw
+(less)Tj
+/F2 1 Tf
+2.65 0 TD
+-0.0039 Tw
+(like subtraction.)Tj
+-23.44 -1.27 TD
+0.0563 Tw
+(A list of arithmetic operators \(and logical operators, to be described shortly\) is given)Tj
+-1.44 -1.2 TD
+-0.001 Tw
+[(in )-7(Table )-7(7-1. )-250(As much as possible,)]TJ
+9 0 0 9 269.4 249.515 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 296.9 249.515 Tm
+-0.0011 Tw
+(follows common programming languages in its)Tj
+-17.09 -1.2 TD
+0.1445 Tw
+[(choice of operator symbols, such )-12.5(as)]TJ
+/F4 1 Tf
+15.42 0 TD
+0 Tw
+(*)Tj
+/F2 1 Tf
+1.01 0 TD
+0.1591 Tw
+(for multiplication and)Tj
+/F4 1 Tf
+9.45 0 TD
+0 Tw
+(/)Tj
+/F2 1 Tf
+1.01 0 TD
+0.162 Tw
+[(for division. )-236(There is)]TJ
+-26.89 -1.2 TD
+0.1346 Tw
+[(sometimes )-13(more )-13(than one standard, however, as with exponentiation, where some lan-)]TJ
+T*
+0.1701 Tw
+(guages use)Tj
+/F4 1 Tf
+4.96 0 TD
+0 Tw
+(à)Tj
+/F2 1 Tf
+1.03 0 TD
+0.1741 Tw
+[(while others )-12.9(use)]TJ
+/F4 1 Tf
+7.3 0 TD
+0 Tw
+(**)Tj
+/F2 1 Tf
+1.2 0 TD
+0.1865 Tw
+[(. )-250.5(In this and other cases,)]TJ
+9 0 0 9 383.5 213.515 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 412.9 213.515 Tm
+0.1731 Tw
+(provides alternate)Tj
+-28.69 -1.2 TD
+0.0363 Tw
+[(forms. )-253.8(Table )-11.6(7-1 )-11.6(shows )-11.6(the )-11.6(more )-11.6(common )-11.6(forms to the left, and the alternatives \(if any\))]TJ
+ET
+endstreamendobj7 0 obj<< /Type /Page /Parent 106 0 R /Resources 8 0 R /Contents 9 0 R /Rotate 0 /MediaBox [ 0 0 612 792 ] /CropBox [ 40.32001 126 571.67999 792 ] >> endobj8 0 obj<< /ProcSet [ /PDF /Text ] /Font << /F2 126 0 R /F4 134 0 R /F5 136 0 R /F6 55 0 R /F7 56 0 R >> /ExtGState << /GS1 137 0 R >> >> endobj9 0 obj<< /Length 6010 >> stream
+BT
+/F5 1 Tf
+10 0 0 10 126 747.615 Tm
+0 g
+/GS1 gs
+0 Tc
+0 Tw
+(112)Tj
+7 0 0 7 159.6 747.615 Tm
+0.0226 Tw
+[(PARAMETERS AND EXPRESSIONS )-23935.6(CHAPTER )13.8(7)]TJ
+/F2 1 Tf
+10 0 0 10 126 726.015 Tm
+0 Tw
+(________________________________________________________________________)Tj
+4 0 0 4 126 723.535 Tm
+(_______________________________________________________________________________________________________________________________)Tj
+63.499 0 TD
+(_____________________________________________________)Tj
+9 0 0 9 151 702.015 Tm
+0.0059 Tw
+[(Usual )-8512.3(alternative )-8255.4(type of )-4111(type of)]TJ
+0.2556 -1.2222 TD
+8.9609 Tw
+[(style style )-979.1(operands )4955.1(result)]TJ
+/F6 1 Tf
+-0.2556 -0.8333 TD
+0 Tw
+(_ )Tj
+0.4441 0 TD
+(____________________________________________________________________)Tj
+/F4 1 Tf
+-0.4441 -1.8333 TD
+(if)Tj
+/F2 1 Tf
+1.2 0 TD
+(-)Tj
+/F4 1 Tf
+0.3333 0 TD
+(then)Tj
+/F2 1 Tf
+2.4 0 TD
+(-)Tj
+/F4 1 Tf
+0.3333 0 TD
+(else)Tj
+/F2 1 Tf
+17.3333 0 TD
+0.0118 Tw
+[(logical, arithmetic )-1238.7(arithmetic)]TJ
+/F4 1 Tf
+-21.6 -1.2222 TD
+9.3 Tw
+(or ||)Tj
+/F2 1 Tf
+23.8778 0 TD
+4.2059 Tw
+(logical logical)Tj
+/F4 1 Tf
+-23.8778 -1.2222 TD
+-0.0001 Tw
+(exists forall)Tj
+/F2 1 Tf
+23.8778 0 TD
+4.2059 Tw
+(logical logical)Tj
+/F4 1 Tf
+-23.8778 -1.2222 TD
+8.7 Tw
+(and &&)Tj
+/F2 1 Tf
+23.8778 0 TD
+4.2059 Tw
+(logical logical)Tj
+/F4 1 Tf
+-23.8778 -1.2222 TD
+0 Tw
+(not)Tj
+/F2 1 Tf
+2.4 0 TD
+(\(unary\))Tj
+/F4 1 Tf
+8.7 0 TD
+(!)Tj
+/F2 1 Tf
+12.7778 0 TD
+4.2059 Tw
+(logical logical)Tj
+/F4 1 Tf
+-23.8778 -1.2222 TD
+0 Tw
+[(< <= = <> > >= )-2100(< <= == != > >=)]TJ
+/F2 1 Tf
+23.2111 0 TD
+3.5396 Tw
+(arithmetic logical)Tj
+/F4 1 Tf
+-23.2111 -1.2222 TD
+0.6 Tw
+(in not )Tj
+4.5333 0 TD
+0 Tw
+(in)Tj
+/F2 1 Tf
+18.6778 0 TD
+0.0116 Tw
+[(object, set )-3516.4(logical)]TJ
+/F4 1 Tf
+-23.2111 -1.2222 TD
+0 Tw
+(+ - less)Tj
+/F2 1 Tf
+23.2111 0 TD
+2.8732 Tw
+(arithmetic arithmetic)Tj
+/F4 1 Tf
+-23.2111 -1.2222 TD
+0 Tw
+(sum prod min max)Tj
+/F2 1 Tf
+23.2111 0 TD
+2.8732 Tw
+(arithmetic arithmetic)Tj
+/F4 1 Tf
+-23.2111 -1.2222 TD
+0 Tw
+(* / div mod)Tj
+/F2 1 Tf
+23.2111 0 TD
+2.8732 Tw
+(arithmetic arithmetic)Tj
+/F4 1 Tf
+-23.2111 -1.2222 TD
+0 Tw
+(+ -)Tj
+/F2 1 Tf
+2.4 0 TD
+17.6186 Tw
+[(\(unary\) arithmetic )14745.9(arithmetic)]TJ
+/F4 1 Tf
+-2.4 -1.2222 TD
+9.9 Tw
+(à **)Tj
+/F2 1 Tf
+23.2111 0 TD
+2.8732 Tw
+(arithmetic arithmetic)Tj
+-23.2111 -2.3556 TD
+0.2283 Tw
+(Exponentiation and)Tj
+/F4 1 Tf
+8.5111 0 TD
+0 Tw
+(if)Tj
+/F2 1 Tf
+1.2 0 TD
+(-)Tj
+/F4 1 Tf
+0.3333 0 TD
+(then)Tj
+/F2 1 Tf
+2.4 0 TD
+(-)Tj
+/F4 1 Tf
+0.3333 0 TD
+(else)Tj
+/F2 1 Tf
+2.8889 0 TD
+0.2399 Tw
+(are right-associative; the other operators are)Tj
+-15.6667 -1.2222 TD
+0.1395 Tw
+[(left-associative. )-262.5(The logical operand of)]TJ
+/F4 1 Tf
+16.8444 0 TD
+0 Tw
+(if)Tj
+/F2 1 Tf
+1.2 0 TD
+(-)Tj
+/F4 1 Tf
+0.3333 0 TD
+(then)Tj
+/F2 1 Tf
+2.4 0 TD
+(-)Tj
+/F4 1 Tf
+0.3333 0 TD
+(else)Tj
+/F2 1 Tf
+2.7889 0 TD
+0.1417 Tw
+(appears after)Tj
+/F4 1 Tf
+5.6667 0 TD
+0 Tw
+(if)Tj
+/F2 1 Tf
+1.2 0 TD
+0.1309 Tw
+(, and the)Tj
+-30.7667 -1.2222 TD
+0.007 Tw
+(arithmetic operands after)Tj
+/F4 1 Tf
+10.2667 0 TD
+0 Tw
+(then)Tj
+/F2 1 Tf
+2.6556 0 TD
+0.0062 Tw
+(and \(optionally\))Tj
+/F4 1 Tf
+6.6778 0 TD
+0 Tw
+(else)Tj
+/F2 1 Tf
+2.4 0 TD
+(.)Tj
+/F7 1 Tf
+10 0 0 10 163.9 480.615 Tm
+-0.0009 Tw
+(Table 7-1:)Tj
+/F2 1 Tf
+4.86 0 TD
+-0.0091 Tw
+(Arithmetic and logical operators, in increasing precedence.)Tj
+4 0 0 4 126 468.735 Tm
+0 Tw
+(_______________________________________________________________________________________________________________________________)Tj
+63.499 0 TD
+(_____________________________________________________)Tj
+10 0 0 10 126 467.215 Tm
+(________________________________________________________________________)Tj
+0 -3.33 TD
+0.1098 Tw
+[(to the right; you can mix them as you like, but )-6.9(your )-6.8(models )-6.9(will )-6.9(be )-6.8(easier )-6.8(to )-6.8(read )-6.9(and)]TJ
+0 -1.2 TD
+-0.0042 Tw
+(understand if you are consistent in your choices.)Tj
+1.44 -1.29 TD
+0.0379 Tw
+[(Another )11.4(way )11.5(to )11.4(build )11.4(arithmetic )11.4(expressions is by applying functions to other expres-)]TJ
+-1.44 -1.2 TD
+0.0534 Tw
+[(sions. )-258.6(A function reference consists of a name followed by a parenthesized argument or)]TJ
+T*
+0.0134 Tw
+(comma-separated list of arguments; an arithmetic argument can be any arithmetic expres-)Tj
+T*
+0.0335 Tw
+[(sion. )-246.6(Here are a few examples, which compute )6(the )6(minimum, )6(absolute )6(value, )6(and )6(square)]TJ
+T*
+-0.0057 Tw
+(root of their arguments, respectively:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 340.815 Tm
+0 Tw
+(min\(T,20\))Tj
+0 -1.1111 TD
+(abs\(sum {i in ORIG} supply[i] - sum {j in DEST} demand[j]\))Tj
+T*
+(sqrt\(\(tan[j]-tan[k]\)à2\))Tj
+/F2 1 Tf
+10 0 0 10 126 298.615 Tm
+0.0085 Tw
+[(Table )9.5(7-2 )9.5(lists the built-in arithmetic functions that are typically found in models. )-244.5(Except)]TJ
+0 -1.2 TD
+0 Tw
+(for)Tj
+/F4 1 Tf
+1.42 0 TD
+(min)Tj
+/F2 1 Tf
+2.06 0 TD
+(and)Tj
+/F4 1 Tf
+1.69 0 TD
+(max)Tj
+/F2 1 Tf
+1.8 0 TD
+-0.0037 Tw
+(, the names of any of these functions may be redefined, but their original)Tj
+-6.97 -1.2 TD
+0.2218 Tw
+[(meanings )8.7(will )8.7(become )8.7(inaccessible. )-249.2(For )7.8(example, )7.8(a model may declare a parameter)]TJ
+T*
+0 Tw
+(named)Tj
+/F4 1 Tf
+3.06 0 TD
+(tan)Tj
+/F2 1 Tf
+2.2 0 TD
+0.1369 Tw
+[(as )-11.6(in )-11.6(the last example above, but then it cannot also refer to the function)]TJ
+/F4 1 Tf
+-5.26 -1.2 TD
+0 Tw
+(tan)Tj
+/F2 1 Tf
+1.8 0 TD
+(.)Tj
+-0.36 -1.29 TD
+0.006 Tw
+(The set functions)Tj
+/F4 1 Tf
+7.16 0 TD
+0 Tw
+(card)Tj
+/F2 1 Tf
+2.66 0 TD
+(and)Tj
+/F4 1 Tf
+1.7 0 TD
+(ord)Tj
+/F2 1 Tf
+1.8 0 TD
+0.0044 Tw
+[(, which were described in Chapter 5, also produce )-11.6(an)]TJ
+-14.76 -1.2 TD
+0.2031 Tw
+[(arithmetic result. )-253.9(In )-9(addition,)]TJ
+9 0 0 9 255.7 225.715 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 285.3 225.715 Tm
+0.199 Tw
+(provides several ëëroundingíí functions \(Section)Tj
+-15.93 -1.2 TD
+0.0745 Tw
+[(11.3\) and a variety of random-number functions \(Section )-12(7.6 )-12(below\). )-263.5(A )-10(mechanism )-10(for)]TJ
+T*
+-0.0039 Tw
+(ëëimportingíí functions defined by your own programs is described in Appendix A.22.)Tj
+ET
+endstreamendobj10 0 obj<< /Type /Page /Parent 106 0 R /Resources 11 0 R /Contents 12 0 R /Rotate 0 /MediaBox [ 0 0 612 792 ] /CropBox [ 40.32001 126 571.67999 792 ] >> endobj11 0 obj<< /ProcSet [ /PDF /Text ] /Font << /F2 126 0 R /F3 131 0 R /F4 134 0 R /F5 136 0 R /F6 55 0 R /F7 56 0 R >> /ExtGState << /GS1 137 0 R >> >> endobj12 0 obj<< /Length 8378 >> stream
+BT
+/F5 1 Tf
+7 0 0 7 126 747.615 Tm
+0 g
+/GS1 gs
+0 Tc
+0.0298 Tw
+[(SECTION 7.2 )-26581.1(ARITHMETIC )-8.8(EXPRESSIONS)]TJ
+10 0 0 10 469.2 747.615 Tm
+0 Tw
+(113)Tj
+/F2 1 Tf
+-34.32 -2.16 TD
+(________________________________________________________________________)Tj
+4 0 0 4 126 723.535 Tm
+(_______________________________________________________________________________________________________________________________)Tj
+63.499 0 TD
+(_____________________________________________________)Tj
+/F4 1 Tf
+9 0 0 9 199.5 705.015 Tm
+(abs\()Tj
+/F3 1 Tf
+2.4 0 TD
+(x)Tj
+/F4 1 Tf
+0.4444 0 TD
+(\))Tj
+/F2 1 Tf
+5.1222 0 TD
+0.0121 Tw
+(absolute value,)Tj
+/F6 1 Tf
+6.2667 -0.1667 TD
+0 Tw
+()Tj
+/F3 1 Tf
+0.5 0.1667 TD
+(x)Tj
+/F6 1 Tf
+0.4444 -0.1667 TD
+()Tj
+/F4 1 Tf
+-15.1778 -1.0556 TD
+(acos\()Tj
+/F3 1 Tf
+3 0 TD
+(x)Tj
+/F4 1 Tf
+0.4444 0 TD
+(\))Tj
+/F2 1 Tf
+4.5222 0 TD
+0.0092 Tw
+(inverse cosine, cos)Tj
+/F6 1 Tf
+6 0 0 6 340.1 697.615 Tm
+0 Tw
+(ä)Tj
+/F2 1 Tf
+0.7167 0 TD
+(1)Tj
+9 0 0 9 348.8 694.015 Tm
+(\()Tj
+/F3 1 Tf
+0.4111 0 TD
+(x)Tj
+/F2 1 Tf
+0.5222 0 TD
+(\))Tj
+/F4 1 Tf
+-17.5222 -1.2222 TD
+(acosh\()Tj
+/F3 1 Tf
+3.6 0 TD
+(x)Tj
+/F4 1 Tf
+0.4444 0 TD
+(\))Tj
+/F2 1 Tf
+3.9222 0 TD
+0.0082 Tw
+(inverse hyperbolic cosine, cosh)Tj
+/F6 1 Tf
+6 0 0 6 385.4 686.615 Tm
+0 Tw
+(ä)Tj
+/F2 1 Tf
+0.7167 0 TD
+(1)Tj
+9 0 0 9 394.1 683.015 Tm
+(\()Tj
+/F3 1 Tf
+0.4111 0 TD
+(x)Tj
+/F2 1 Tf
+0.5222 0 TD
+(\))Tj
+/F4 1 Tf
+-22.5556 -1.2222 TD
+(asin\()Tj
+/F3 1 Tf
+3 0 TD
+(x)Tj
+/F4 1 Tf
+0.4444 0 TD
+(\))Tj
+/F2 1 Tf
+4.5222 0 TD
+0.0086 Tw
+(inverse sine, sin)Tj
+/F6 1 Tf
+6 0 0 6 330.1 675.615 Tm
+0 Tw
+(ä)Tj
+/F2 1 Tf
+0.7167 0 TD
+(1)Tj
+9 0 0 9 338.8 672.015 Tm
+(\()Tj
+/F3 1 Tf
+0.4111 0 TD
+(x)Tj
+/F2 1 Tf
+0.5222 0 TD
+(\))Tj
+/F4 1 Tf
+-16.4111 -1.2222 TD
+(asinh\()Tj
+/F3 1 Tf
+3.6 0 TD
+(x)Tj
+/F4 1 Tf
+0.4444 0 TD
+(\))Tj
+/F2 1 Tf
+3.9222 0 TD
+0.0078 Tw
+(inverse hyperbolic sine, sinh)Tj
+/F6 1 Tf
+6 0 0 6 375.4 664.615 Tm
+0 Tw
+(ä)Tj
+/F2 1 Tf
+0.7167 0 TD
+(1)Tj
+9 0 0 9 384.1 661.015 Tm
+(\()Tj
+/F3 1 Tf
+0.4111 0 TD
+(x)Tj
+/F2 1 Tf
+0.5222 0 TD
+(\))Tj
+/F4 1 Tf
+-21.4444 -1.2222 TD
+(atan\()Tj
+/F3 1 Tf
+3 0 TD
+(x)Tj
+/F4 1 Tf
+0.4444 0 TD
+(\))Tj
+/F2 1 Tf
+4.5222 0 TD
+0.0091 Tw
+(inverse tangent, tan)Tj
+/F6 1 Tf
+6 0 0 6 342.6 653.615 Tm
+0 Tw
+(ä)Tj
+/F2 1 Tf
+0.7167 0 TD
+(1)Tj
+9 0 0 9 351.3 650.015 Tm
+(\()Tj
+/F3 1 Tf
+0.4111 0 TD
+(x)Tj
+/F2 1 Tf
+0.5222 0 TD
+(\))Tj
+/F4 1 Tf
+-17.8 -1.2222 TD
+(atan2\()Tj
+/F3 1 Tf
+3.6 0 TD
+(y)Tj
+/F2 1 Tf
+0.5222 0 TD
+(,)Tj
+/F3 1 Tf
+0.5778 0 TD
+(x)Tj
+/F4 1 Tf
+0.4444 0 TD
+(\))Tj
+/F2 1 Tf
+2.8222 0 TD
+0.0091 Tw
+(inverse tangent, tan)Tj
+/F6 1 Tf
+6 0 0 6 342.6 642.615 Tm
+0 Tw
+(ä)Tj
+/F2 1 Tf
+0.7167 0 TD
+(1)Tj
+9 0 0 9 351.3 639.015 Tm
+(\()Tj
+/F3 1 Tf
+0.4111 0 TD
+-0.1719 Tw
+(y / x)Tj
+/F2 1 Tf
+1.4 0 TD
+0 Tw
+(\))Tj
+/F4 1 Tf
+-18.6778 -1.2222 TD
+(atanh\()Tj
+/F3 1 Tf
+3.6 0 TD
+(x)Tj
+/F4 1 Tf
+0.4444 0 TD
+(\))Tj
+/F2 1 Tf
+3.9222 0 TD
+0.0081 Tw
+(inverse hyperbolic tangent, tanh)Tj
+/F6 1 Tf
+6 0 0 6 387.9 631.615 Tm
+0 Tw
+(ä)Tj
+/F2 1 Tf
+0.7167 0 TD
+(1)Tj
+9 0 0 9 396.6 628.015 Tm
+(\()Tj
+/F3 1 Tf
+0.4111 0 TD
+(x)Tj
+/F2 1 Tf
+0.5222 0 TD
+(\))Tj
+/F4 1 Tf
+-22.8333 -1.2222 TD
+(cos\()Tj
+/F3 1 Tf
+2.4 0 TD
+(x)Tj
+/F4 1 Tf
+0.4444 0 TD
+(\))Tj
+/F2 1 Tf
+5.1222 0 TD
+(cosine)Tj
+/F4 1 Tf
+-7.9667 -1.2222 TD
+(cosh\()Tj
+/F3 1 Tf
+3 0 TD
+(x)Tj
+/F4 1 Tf
+0.4444 0 TD
+(\))Tj
+/F2 1 Tf
+4.5222 0 TD
+0.0068 Tw
+(hyperbolic cosine)Tj
+/F4 1 Tf
+-7.9667 -1.2222 TD
+0 Tw
+(exp\()Tj
+/F3 1 Tf
+2.4 0 TD
+(x)Tj
+/F4 1 Tf
+0.4444 0 TD
+(\))Tj
+/F2 1 Tf
+5.1222 0 TD
+(exponential,)Tj
+/F3 1 Tf
+5.1778 0 TD
+(e)Tj
+6 0 0 6 322.8 598.615 Tm
+(x)Tj
+/F4 1 Tf
+9 0 0 9 199.5 584.015 Tm
+(log\()Tj
+/F3 1 Tf
+2.4 0 TD
+(x)Tj
+/F4 1 Tf
+0.4444 0 TD
+(\))Tj
+/F2 1 Tf
+5.1222 0 TD
+0.0085 Tw
+(natural logarithm, log)Tj
+/F3 1 Tf
+6 0 0 6 350.6 582.215 Tm
+0 Tw
+(e)Tj
+/F2 1 Tf
+9 0 0 9 354.6 584.015 Tm
+(\()Tj
+/F3 1 Tf
+0.4111 0 TD
+(x)Tj
+/F2 1 Tf
+0.5222 0 TD
+(\))Tj
+/F4 1 Tf
+-18.1667 -1.2222 TD
+(log10\()Tj
+/F3 1 Tf
+3.6 0 TD
+(x)Tj
+/F4 1 Tf
+0.4444 0 TD
+(\))Tj
+/F2 1 Tf
+3.9222 0 TD
+0.0081 Tw
+(common logarithm, log)Tj
+6 0 0 6 357.1 571.215 Tm
+0 Tw
+(10)Tj
+9 0 0 9 364.5 573.015 Tm
+(\()Tj
+/F3 1 Tf
+0.4111 0 TD
+(x)Tj
+/F2 1 Tf
+0.5222 0 TD
+(\))Tj
+/F4 1 Tf
+-19.2667 -1.2222 TD
+(max\()Tj
+/F3 1 Tf
+2.4 0 TD
+(x)Tj
+/F2 1 Tf
+0.5222 0 TD
+(,)Tj
+/F3 1 Tf
+0.5778 0 TD
+(y)Tj
+/F2 1 Tf
+0.5222 0 TD
+(,)Tj
+/F3 1 Tf
+0.5778 0 TD
+(...)Tj
+/F4 1 Tf
+0.7667 0 TD
+(\))Tj
+/F2 1 Tf
+2.6 0 TD
+0.006 Tw
+(maximum \(2 or more arguments\))Tj
+/F4 1 Tf
+-7.9667 -1.2222 TD
+0 Tw
+(min\()Tj
+/F3 1 Tf
+2.4 0 TD
+(x)Tj
+/F2 1 Tf
+0.5222 0 TD
+(,)Tj
+/F3 1 Tf
+0.5778 0 TD
+(y)Tj
+/F2 1 Tf
+0.5222 0 TD
+(,)Tj
+/F3 1 Tf
+0.5778 0 TD
+(...)Tj
+/F4 1 Tf
+0.7667 0 TD
+(\))Tj
+/F2 1 Tf
+2.6 0 TD
+0.0058 Tw
+(minimum \(2 or more arguments\))Tj
+/F4 1 Tf
+-7.9667 -1.2222 TD
+0 Tw
+(sin\()Tj
+/F3 1 Tf
+2.4 0 TD
+(x)Tj
+/F4 1 Tf
+0.4444 0 TD
+(\))Tj
+/F2 1 Tf
+5.1222 0 TD
+(sine)Tj
+/F4 1 Tf
+-7.9667 -1.2222 TD
+(sinh\()Tj
+/F3 1 Tf
+3 0 TD
+(x)Tj
+/F4 1 Tf
+0.4444 0 TD
+(\))Tj
+/F2 1 Tf
+4.5222 0 TD
+0.0064 Tw
+(hyperbolic sine)Tj
+/F4 1 Tf
+-7.9667 -1.2222 TD
+0 Tw
+(sqrt\()Tj
+/F3 1 Tf
+3 0 TD
+(x)Tj
+/F4 1 Tf
+0.4444 0 TD
+(\))Tj
+/F2 1 Tf
+4.5222 0 TD
+0.0067 Tw
+(square root)Tj
+/F4 1 Tf
+-7.9667 -1.2222 TD
+0 Tw
+(tan\()Tj
+/F3 1 Tf
+2.4 0 TD
+(x)Tj
+/F4 1 Tf
+0.4444 0 TD
+(\))Tj
+/F2 1 Tf
+5.1222 0 TD
+(tangent)Tj
+/F4 1 Tf
+-7.9667 -1.2222 TD
+(tanh\()Tj
+/F3 1 Tf
+3 0 TD
+(x)Tj
+/F4 1 Tf
+0.4444 0 TD
+(\))Tj
+/F2 1 Tf
+4.5222 0 TD
+0.0067 Tw
+(hyperbolic tangent)Tj
+/F7 1 Tf
+10 0 0 10 187.7 476.815 Tm
+-0.0009 Tw
+(Table 7-2:)Tj
+/F2 1 Tf
+4.86 0 TD
+-0.0008 Tw
+(Built-in arithmetic functions for use in models.)Tj
+4 0 0 4 126 467.935 Tm
+0 Tw
+(_______________________________________________________________________________________________________________________________)Tj
+63.499 0 TD
+(_____________________________________________________)Tj
+10 0 0 10 126 466.415 Tm
+(________________________________________________________________________)Tj
+1.44 -2.73 TD
+-0.0038 Tw
+(Finally, the indexed operators such as)Tj
+/F6 1 Tf
+15.34 0 TD
+0 Tw
+()Tj
+/F2 1 Tf
+0.84 0 TD
+(and)Tj
+/F6 1 Tf
+1.69 0 TD
+()Tj
+/F2 1 Tf
+1.02 0 TD
+-0.0117 Tw
+(from algebraic notation are generalized)Tj
+-20.33 -1.2 TD
+0 Tw
+(in)Tj
+9 0 0 9 136.7 427.115 Tm
+(AMPL)Tj
+10 0 0 10 164.6 427.115 Tm
+0.0338 Tw
+[(by expressions for iterating operations over sets. )-253.2(In particular, most large-scale)]TJ
+-3.86 -1.2 TD
+-0.0029 Tw
+(linear programming models contain iterated summations:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 397.915 Tm
+0 Tw
+(sum {i in ORIG} supply[i])Tj
+/F2 1 Tf
+10 0 0 10 126 378.715 Tm
+0.0761 Tw
+(The keyword)Tj
+/F4 1 Tf
+5.72 0 TD
+0 Tw
+(sum)Tj
+/F2 1 Tf
+2.14 0 TD
+0.0863 Tw
+[(may be followed by any indexing expression. )-248.7(The subsequent )-7.7(arith-)]TJ
+-7.86 -1.2 TD
+0.0167 Tw
+[(metic )-6.9(expression )-6.9(is )-6.9(evaluated )-6.9(once )-6.9(for each member of the index set, and all the resulting)]TJ
+T*
+0.006 Tw
+[(values )18(are )17.9(added. )-244(Thus )8.7(the )8.7(sum )8.7(above, )8.7(from the transportation model of Figure 3-1a, rep-)]TJ
+T*
+0.058 Tw
+[(resents the total supply available, at all origins. )-237(The)]TJ
+/F4 1 Tf
+21.61 0 TD
+0 Tw
+(sum)Tj
+/F2 1 Tf
+2.1 0 TD
+0.0337 Tw
+(operator has lower precedence)Tj
+-23.71 -1.2 TD
+0 Tw
+(than)Tj
+/F4 1 Tf
+1.97 0 TD
+(*)Tj
+/F2 1 Tf
+0.6 0 TD
+-0.0032 Tw
+(, so the objective of the same model can be written)Tj
+/F4 1 Tf
+9 0 0 9 154.8 313.515 Tm
+0 Tw
+(sum {i in ORIG, j in DEST} cost[i,j] * Trans[i,j])Tj
+/F2 1 Tf
+10 0 0 10 126 294.315 Tm
+0.076 Tw
+(to represent the total of)Tj
+/F4 1 Tf
+9.91 0 TD
+0 Tw
+(cost[i,j] )Tj
+5.73 0 TD
+(* )Tj
+0.9301 0 TD
+(Trans[i,j])Tj
+/F2 1 Tf
+6.3299 0 TD
+0.077 Tw
+[(over all combinations of )-15(origins)]TJ
+-22.9 -1.2 TD
+0.075 Tw
+[(and )-13.1(destinations. )-260(The precedence of)]TJ
+/F4 1 Tf
+15.27 0 TD
+0 Tw
+(sum)Tj
+/F2 1 Tf
+2.14 0 TD
+0.0784 Tw
+[(is )-9.6(higher than that of)]TJ
+/F4 1 Tf
+8.93 0 TD
+0 Tw
+(+)Tj
+/F2 1 Tf
+0.93 0 TD
+(or)Tj
+/F4 1 Tf
+1.16 0 TD
+(-)Tj
+/F2 1 Tf
+0.6 0 TD
+0.074 Tw
+(, however, so for)Tj
+-29.03 -1.2 TD
+-0.0017 Tw
+(the objective of the multiperiod production model in Figure 6-3 we must write)Tj
+/F4 1 Tf
+9 0 0 9 154.8 253.115 Tm
+0 Tw
+(sum {p in PROD, t in 1..T})Tj
+1.8 -1.1111 TD
+(\(sum {a in AREA[p]} revenue[p,a,t]*Sell[p,a,t] -)Tj
+1.8 -1.1111 TD
+-0.0001 Tw
+(prodcost[p]*Make[p,t] - invcost[p]*Inv[p,t]\);)Tj
+/F2 1 Tf
+10 0 0 10 126 213.915 Tm
+0.0248 Tw
+[(The outer sum applies to the entire parenthesized expression )-14.4(following )-14.4(it, )-14.4(while )-14.4(the )-14.4(inner)]TJ
+0 -1.2 TD
+-0.0002 Tw
+(sum applies only to the term)Tj
+/F4 1 Tf
+11.61 0 TD
+0 Tw
+(revenue[p,a,t] )Tj
+8.65 0 TD
+(* )Tj
+0.8501 0 TD
+(Sell[p,a,t])Tj
+/F2 1 Tf
+6.5999 0 TD
+(.)Tj
+ET
+endstreamendobj13 0 obj<< /Type /Page /Parent 106 0 R /Resources 14 0 R /Contents 15 0 R /Rotate 0 /MediaBox [ 0 0 612 792 ] /CropBox [ 40.32001 126 571.67999 792 ] >> endobj14 0 obj<< /ProcSet [ /PDF /Text ] /Font << /F1 129 0 R /F2 126 0 R /F4 134 0 R /F5 136 0 R >> /ExtGState << /GS1 137 0 R >> >> endobj15 0 obj<< /Length 5190 >> stream
+BT
+/F5 1 Tf
+10 0 0 10 126 747.615 Tm
+0 g
+/GS1 gs
+0 Tc
+0 Tw
+(114)Tj
+7 0 0 7 159.6 747.615 Tm
+0.0226 Tw
+[(PARAMETERS AND EXPRESSIONS )-23935.6(CHAPTER )13.8(7)]TJ
+/F2 1 Tf
+10 0 0 10 140.4 715.215 Tm
+0.121 Tw
+[(Other )16.9(iterated arithmetic operators are)]TJ
+/F4 1 Tf
+16.12 0 TD
+0 Tw
+(prod)Tj
+/F2 1 Tf
+2.78 0 TD
+0.1321 Tw
+(for multiplication,)Tj
+/F4 1 Tf
+7.79 0 TD
+0 Tw
+(min)Tj
+/F2 1 Tf
+2.18 0 TD
+0.1341 Tw
+(for minimum,)Tj
+-30.31 -1.2 TD
+0 Tw
+(and)Tj
+/F4 1 Tf
+1.69 0 TD
+(max)Tj
+/F2 1 Tf
+2.05 0 TD
+-0.0041 Tw
+[(for maximum. )-253.1(As an example, we could use)]TJ
+/F4 1 Tf
+9 0 0 9 154.8 686.8149 Tm
+0 Tw
+(max {i in ORIG} supply[i])Tj
+/F2 1 Tf
+10 0 0 10 126 668.415 Tm
+-0.0042 Tw
+(to describe the greatest supply available at any origin.)Tj
+1.44 -1.25 TD
+0.0684 Tw
+(Bear in mind that, while an)Tj
+9 0 0 9 255.9 655.915 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 284.1 655.915 Tm
+0.078 Tw
+[(arithmetic )15.6(function )15.6(or )15.6(operator may be applied to)]TJ
+-15.81 -1.2 TD
+-0.0032 Tw
+(variables as well as to parameters or to numeric members of sets, most operations on vari-)Tj
+T*
+0.033 Tw
+(ables are not linear.)Tj
+9 0 0 9 210.7 631.915 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 235.7 631.915 Tm
+0.0326 Tw
+[(ís requirements for arithmetic expressions )-13.2(in )-13.2(a )-13.2(linear )-13.2(program)]TJ
+-10.97 -1.2 TD
+0.1257 Tw
+[(are )-9.1(described )-9.1(in )-9.1(Section )-9.1(8.2. )-266.3(Some of the nonlinear functions of variables that can be)]TJ
+T*
+-0.0047 Tw
+(handled by certain solvers are discussed in Chapter 18.)Tj
+/F1 1 Tf
+12 0 0 12 126 557.715 Tm
+0.0116 Tw
+[(7.3 )-294.5(Logical and conditional expressions)]TJ
+/F2 1 Tf
+10 0 0 10 140.4 539.315 Tm
+0.0753 Tw
+[(The )11.7(values )11.7(of )11.7(arithmetic )11.7(expressions )11.7(can be tested against each other by comparison)]TJ
+-1.44 -1.2 TD
+0 Tw
+(operators:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 510.915 Tm
+(=)Tj
+/F2 1 Tf
+3.6 0 TD
+0.006 Tw
+(equal to)Tj
+/F4 1 Tf
+-3.6 -1.1111 TD
+0 Tw
+(<>)Tj
+/F2 1 Tf
+3.6 0 TD
+0.0056 Tw
+(not equal to)Tj
+/F4 1 Tf
+-3.6 -1.1111 TD
+0 Tw
+(<)Tj
+/F2 1 Tf
+3.6 0 TD
+0.0057 Tw
+(less than)Tj
+/F4 1 Tf
+-3.6 -1.1111 TD
+0 Tw
+(<=)Tj
+/F2 1 Tf
+3.6 0 TD
+0.0058 Tw
+(less than or equal to)Tj
+/F4 1 Tf
+-3.6 -1.1111 TD
+0 Tw
+(>)Tj
+/F2 1 Tf
+3.6 0 TD
+0.0075 Tw
+(greater than)Tj
+/F4 1 Tf
+-3.6 -1.1111 TD
+0 Tw
+(>=)Tj
+/F2 1 Tf
+3.6 0 TD
+0.0062 Tw
+(greater than or equal to)Tj
+10 0 0 10 126 442.515 Tm
+0.0129 Tw
+[(The )9.8(result of a comparison is either ëëtrueíí or ëëfalseíí. )-257.1(Thus)]TJ
+/F4 1 Tf
+25 0 TD
+0 Tw
+(T )Tj
+0.87 0 TD
+(> )Tj
+0.87 0 TD
+(1)Tj
+/F2 1 Tf
+0.87 0 TD
+0.0148 Tw
+(is true if the parame-)Tj
+-27.61 -1.2 TD
+0 Tw
+(ter)Tj
+/F4 1 Tf
+1.3 0 TD
+(T)Tj
+/F2 1 Tf
+0.85 0 TD
+-0.005 Tw
+(has a value greater than 1, and is false otherwise; and)Tj
+/F4 1 Tf
+9 0 0 9 154.8 414.115 Tm
+0 Tw
+(sum {i in ORIG} supply[i] = sum {j in DEST} demand[j])Tj
+/F2 1 Tf
+10 0 0 10 126 395.715 Tm
+-0.001 Tw
+(is true if and only if total supply equals total demand.)Tj
+1.44 -1.25 TD
+0.054 Tw
+(Comparisons are one example of)Tj
+9 0 0 9 277.4 383.215 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 302.4 383.215 Tm
+0.0652 Tw
+(ís logical expressions, which evaluate to true)Tj
+-17.64 -1.2 TD
+0.2004 Tw
+[(or )11.4(false. )-251.6(Set membership tests using)]TJ
+/F4 1 Tf
+16.08 0 TD
+0 Tw
+(in)Tj
+/F2 1 Tf
+1.65 0 TD
+(and)Tj
+/F4 1 Tf
+1.89 0 TD
+(within)Tj
+/F2 1 Tf
+3.6 0 TD
+0.1864 Tw
+[(, )-8.6(described )-8.6(in Section 5.4, are)]TJ
+-23.22 -1.2 TD
+0.0768 Tw
+[(another )23.7(example. )-247.2(More complex logical expressions can be built up with logical opera-)]TJ
+T*
+0.3651 Tw
+(tors. The)Tj
+/F4 1 Tf
+4.29 0 TD
+0 Tw
+(and)Tj
+/F2 1 Tf
+2.17 0 TD
+0.1076 Tw
+(operator returns true if and only if both its operands are true, while)Tj
+/F4 1 Tf
+28.34 0 TD
+0 Tw
+(or)Tj
+/F2 1 Tf
+-34.8 -1.2 TD
+0.1468 Tw
+[(returns )10.5(true )10.5(if )10.5(and )10.5(only if at least one of its operands is true; the unary operator)]TJ
+/F4 1 Tf
+34.2 0 TD
+0 Tw
+(not)Tj
+/F2 1 Tf
+-34.2 -1.2 TD
+-0.0064 Tw
+[(returns false for true and true for false. )-256.4(Thus the expression)]TJ
+/F4 1 Tf
+9 0 0 9 154.8 306.815 Tm
+0 Tw
+(T >= 0 and T <= 10)Tj
+/F2 1 Tf
+10 0 0 10 126 288.415 Tm
+-0.0003 Tw
+(is only true if)Tj
+/F4 1 Tf
+5.61 0 TD
+0 Tw
+(T)Tj
+/F2 1 Tf
+0.85 0 TD
+-0.0013 Tw
+[(lies in the interval [0, )91.7(10], while the following from Section 5.5,)]TJ
+/F4 1 Tf
+9 0 0 9 154.8 272.015 Tm
+0 Tw
+(i in MAXREQ or n_min[i] > 0)Tj
+/F2 1 Tf
+10 0 0 10 126 253.615 Tm
+0.0685 Tw
+(is true if)Tj
+/F4 1 Tf
+3.79 0 TD
+0 Tw
+(i)Tj
+/F2 1 Tf
+0.92 0 TD
+0.0664 Tw
+(is a member of)Tj
+/F4 1 Tf
+6.5 0 TD
+0 Tw
+(MAXREQ)Tj
+/F2 1 Tf
+3.6 0 TD
+0.077 Tw
+(, or)Tj
+/F4 1 Tf
+1.74 0 TD
+0 Tw
+(n_min[i])Tj
+/F2 1 Tf
+5.13 0 TD
+0.0817 Tw
+[(is positive, or both. )-233.3(Where )13.7(several)]TJ
+-21.68 -1.2 TD
+0.2348 Tw
+[(operators )6.7(are used together, any comparison, membership or arithmetic operator has)]TJ
+T*
+0.0506 Tw
+(higher precedence than the logical operators;)Tj
+/F4 1 Tf
+18.54 0 TD
+0 Tw
+(and)Tj
+/F2 1 Tf
+2.12 0 TD
+0.0577 Tw
+(has higher precedence than)Tj
+/F4 1 Tf
+11.35 0 TD
+0 Tw
+(or)Tj
+/F2 1 Tf
+1.2 0 TD
+0.068 Tw
+(, while)Tj
+/F4 1 Tf
+-33.21 -1.2 TD
+0 Tw
+(not)Tj
+/F2 1 Tf
+2.05 0 TD
+-0.011 Tw
+[(has higher precedence than either. )-261(Thus )-6.5(the )-6.5(expression)]TJ
+/F4 1 Tf
+9 0 0 9 154.8 201.215 Tm
+0 Tw
+(not i in MAXREQ or n_min[i] > 0 and n_min[i] <= 10)Tj
+ET
+endstreamendobj16 0 obj<< /Type /Page /Parent 106 0 R /Resources 17 0 R /Contents 18 0 R /Rotate 0 /MediaBox [ 0 0 612 792 ] /CropBox [ 40.32001 126 571.67999 792 ] >> endobj17 0 obj<< /ProcSet [ /PDF /Text ] /Font << /F2 126 0 R /F3 131 0 R /F4 134 0 R /F5 136 0 R >> /ExtGState << /GS1 137 0 R >> >> endobj18 0 obj<< /Length 5277 >> stream
+BT
+/F5 1 Tf
+7 0 0 7 126 747.615 Tm
+0 g
+/GS1 gs
+0 Tc
+0.0172 Tw
+[(SECTION )-12.6(7.3 )-18855.4(LOGICAL AND CONDITIONAL EXPRESSIONS)]TJ
+10 0 0 10 469.2 747.615 Tm
+0 Tw
+(115)Tj
+/F2 1 Tf
+-34.32 -3.24 TD
+-0.006 Tw
+(is interpreted as)Tj
+/F4 1 Tf
+9 0 0 9 154.8 698.315 Tm
+0 Tw
+(\(not \(i in MAXREQ\)\) or \(\(n_min[i] > 0\) and \(n_min[i] <= 10\)\))Tj
+/F2 1 Tf
+10 0 0 10 126 679.415 Tm
+-0.0089 Tw
+(Alternatively, the)Tj
+/F4 1 Tf
+7.24 0 TD
+0 Tw
+(not )Tj
+2.05 0 TD
+(in)Tj
+/F2 1 Tf
+1.45 0 TD
+-0.0063 Tw
+(operator could be used:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 662.515 Tm
+0 Tw
+(i not in MAXREQ or n_min[i] > 0 and n_min[i] <= 10)Tj
+/F2 1 Tf
+10 0 0 10 126 643.615 Tm
+-0.007 Tw
+(The precedences are summarized in Table 7-1, which also gives alternative forms.)Tj
+1.44 -1.26 TD
+0 Tw
+(Like)Tj
+/F4 1 Tf
+2.18 0 TD
+(+)Tj
+/F2 1 Tf
+0.95 0 TD
+(and)Tj
+/F4 1 Tf
+1.79 0 TD
+(*)Tj
+/F2 1 Tf
+0.6 0 TD
+0.0985 Tw
+(, the operators)Tj
+/F4 1 Tf
+6.25 0 TD
+0 Tw
+(or)Tj
+/F2 1 Tf
+1.56 0 TD
+(and)Tj
+/F4 1 Tf
+1.8 0 TD
+(and)Tj
+/F2 1 Tf
+2.16 0 TD
+0.1004 Tw
+[(have iterated versions. )-254.6(The iterated)]TJ
+/F4 1 Tf
+15.04 0 TD
+0 Tw
+(or)Tj
+/F2 1 Tf
+1.56 0 TD
+(is)Tj
+-35.33 -1.2 TD
+-0.0059 Tw
+(denoted by)Tj
+/F4 1 Tf
+4.66 0 TD
+0 Tw
+(exists)Tj
+/F2 1 Tf
+3.6 0 TD
+-0.005 Tw
+(, and the iterated)Tj
+/F4 1 Tf
+6.9 0 TD
+0 Tw
+(and)Tj
+/F2 1 Tf
+2.05 0 TD
+(by)Tj
+/F4 1 Tf
+1.25 0 TD
+(forall)Tj
+/F2 1 Tf
+3.6 0 TD
+-0.0056 Tw
+[(. )-256.6(For example, the expression)]TJ
+/F4 1 Tf
+9 0 0 9 154.8 602.115 Tm
+0 Tw
+(exists {i in ORIG} demand[i] > 10)Tj
+/F2 1 Tf
+10 0 0 10 126 583.215 Tm
+-0.0029 Tw
+(is true if and only if at least one origin has a demand greater than 10, while)Tj
+/F4 1 Tf
+9 0 0 9 154.8 566.315 Tm
+0 Tw
+(forall {i in ORIG} demand[i] > 10)Tj
+/F2 1 Tf
+10 0 0 10 126 547.415 Tm
+-0.0036 Tw
+(is true if and only if every origin has demand greater than 10.)Tj
+1.44 -1.26 TD
+0.0359 Tw
+[(Another use for a logical expression is as )-11.1(an )-11.1(operand )-11.1(to )-11.1(the )-11.1(conditional )-11.1(or)]TJ
+/F4 1 Tf
+30.3 0 TD
+0 Tw
+(if)Tj
+/F2 1 Tf
+1.2 0 TD
+(-)Tj
+/F4 1 Tf
+0.33 0 TD
+(then)Tj
+/F2 1 Tf
+2.4 0 TD
+(-)Tj
+/F4 1 Tf
+-35.67 -1.2 TD
+(else)Tj
+/F2 1 Tf
+2.94 0 TD
+0.2761 Tw
+(operator, which returns one of two different arithmetic values depending on)Tj
+-2.94 -1.2 TD
+0.035 Tw
+[(whether the logical expression is true or false. )-264.1(Consider )-12.8(the )-12.8(two )-12.8(collections )-12.8(of )-12.8(inventory)]TJ
+T*
+-0.0024 Tw
+(balance constraints in the multiperiod production model of Figure 5-3:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 481.915 Tm
+0 Tw
+(subject to Balance0 {p in PROD}:)Tj
+1.8 -1.1111 TD
+-0.0001 Tw
+(Make[p,first\(WEEKS\)] + inv0[p])Tj
+1.8 -1.1111 TD
+(= Sell[p,first\(WEEKS\)] + Inv[p,first\(WEEKS\)];)Tj
+-3.6 -1.7556 TD
+0 Tw
+(subject to Balance {p in PROD, t in WEEKS: ord\(t\) > 1}:)Tj
+1.8 -1.1111 TD
+(Make[p,t] + Inv[p,prev\(t\)] = Sell[p,t] + Inv[p,t];)Tj
+/F2 1 Tf
+10 0 0 10 126 417.215 Tm
+(The)Tj
+/F4 1 Tf
+2.14 0 TD
+(Balance0)Tj
+/F2 1 Tf
+5.39 0 TD
+0.3331 Tw
+(constraints are basically the)Tj
+/F4 1 Tf
+12.67 0 TD
+0 Tw
+(Balance)Tj
+/F2 1 Tf
+4.8 0 TD
+0.3491 Tw
+(constraints with)Tj
+/F4 1 Tf
+7.31 0 TD
+0 Tw
+(t)Tj
+/F2 1 Tf
+1.2 0 TD
+0.351 Tw
+(set to)Tj
+/F4 1 Tf
+-33.51 -1.2 TD
+0 Tw
+(first\(WEEKS\))Tj
+/F2 1 Tf
+7.2 0 TD
+0.0249 Tw
+[(. )-250.1(The only difference is in the second term, which represents )9.9(the )9.9(previ-)]TJ
+-7.2 -1.2 TD
+0.0284 Tw
+(ous weekís inventory; it is given as)Tj
+/F4 1 Tf
+14.56 0 TD
+0 Tw
+(inv0[p])Tj
+/F2 1 Tf
+4.48 0 TD
+0.0256 Tw
+(for the first week \(in the)Tj
+/F4 1 Tf
+10.1 0 TD
+0 Tw
+(Balance0)Tj
+/F2 1 Tf
+5.09 0 TD
+(con-)Tj
+-34.23 -1.2 TD
+0.032 Tw
+[(straints\) )-19.5(but )-19.5(is represented by the variable)]TJ
+/F4 1 Tf
+17.24 0 TD
+0 Tw
+(Inv[p,prev\(t\)])Tj
+/F2 1 Tf
+8.69 0 TD
+0.0334 Tw
+(for subsequent weeks \(in)Tj
+-25.93 -1.2 TD
+0 Tw
+(the)Tj
+/F4 1 Tf
+1.49 0 TD
+(Balance)Tj
+/F2 1 Tf
+4.47 0 TD
+0.0167 Tw
+[(constraints\). )-239.4(We would like to combine these constraints into one declara-)]TJ
+-5.96 -1.2 TD
+0.0488 Tw
+[(tion, by having a term )12(that )12(takes )12(the )12(value)]TJ
+/F4 1 Tf
+17.38 0 TD
+0 Tw
+(inv0[p])Tj
+/F2 1 Tf
+4.49 0 TD
+(when)Tj
+/F4 1 Tf
+2.45 0 TD
+(t)Tj
+/F2 1 Tf
+0.89 0 TD
+0.0362 Tw
+(is the first week, and takes)Tj
+-25.21 -1.2 TD
+-0.0079 Tw
+(the value)Tj
+/F4 1 Tf
+3.88 0 TD
+0 Tw
+(Inv[p,prev\(t\)])Tj
+/F2 1 Tf
+8.65 0 TD
+-0.001 Tw
+[(otherwise. )-243.1(Such a term is written in)]TJ
+9 0 0 9 398.1 345.215 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 425.6 345.215 Tm
+(as:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 328.315 Tm
+(if t = first\(WEEKS\) then inv0[p] else Inv[p,prev\(t\)])Tj
+/F2 1 Tf
+10 0 0 10 126 309.415 Tm
+-0.004 Tw
+(Placing this expression into the constraint declaration, we can write)Tj
+/F4 1 Tf
+9 0 0 9 154.8 292.515 Tm
+0 Tw
+(subject to Balance {p in PROD, t in WEEKS}:)Tj
+1.8 -1.1111 TD
+-0.0001 Tw
+(Make[p,t] +)Tj
+1.8 -1.1111 TD
+0 Tw
+(\(if t = first\(WEEKS\) then inv0[p] else Inv[p,prev\(t\)]\))Tj
+1.8 -1.1111 TD
+(= Sell[p,t] + Inv[p,t];)Tj
+/F2 1 Tf
+10 0 0 10 126 243.615 Tm
+0.1247 Tw
+[(This )9.1(form )9.1(communicates the inventory balance constraints more concisely and directly)]TJ
+0 -1.2 TD
+-0.0099 Tw
+(than two separate declarations.)Tj
+1.44 -1.26 TD
+-0.0047 Tw
+(The general form of a conditional expression is)Tj
+/F4 1 Tf
+9 0 0 9 154.8 202.115 Tm
+0 Tw
+(if)Tj
+/F3 1 Tf
+1.8 0 TD
+(a)Tj
+/F4 1 Tf
+1.1 0 TD
+(then)Tj
+/F3 1 Tf
+3 0 TD
+(b)Tj
+/F4 1 Tf
+1.1 0 TD
+(else)Tj
+/F3 1 Tf
+3 0 TD
+(c)Tj
+ET
+endstreamendobj19 0 obj<< /Type /Page /Parent 106 0 R /Resources 20 0 R /Contents 21 0 R /Rotate 0 /MediaBox [ 0 0 612 792 ] /CropBox [ 40.32001 126 571.67999 792 ] >> endobj20 0 obj<< /ProcSet [ /PDF /Text ] /Font << /F1 129 0 R /F2 126 0 R /F3 131 0 R /F4 134 0 R /F5 136 0 R >> /ExtGState << /GS1 137 0 R >> >> endobj21 0 obj<< /Length 5093 >> stream
+BT
+/F5 1 Tf
+10 0 0 10 126 747.615 Tm
+0 g
+/GS1 gs
+0 Tc
+0 Tw
+(116)Tj
+7 0 0 7 159.6 747.615 Tm
+0.0226 Tw
+[(PARAMETERS AND EXPRESSIONS )-23935.6(CHAPTER )13.8(7)]TJ
+/F2 1 Tf
+10 0 0 10 126 715.215 Tm
+0 Tw
+(where)Tj
+/F3 1 Tf
+2.68 0 TD
+(a)Tj
+/F2 1 Tf
+0.75 0 TD
+-0.0033 Tw
+[(is a logical expression. )-247.3(If)]TJ
+/F3 1 Tf
+10.51 0 TD
+0 Tw
+(a)Tj
+/F2 1 Tf
+0.75 0 TD
+-0.0046 Tw
+[(evaluates to true, the conditional expression takes )-12.6(the)]TJ
+-14.69 -1.2 TD
+0.041 Tw
+(value of)Tj
+/F3 1 Tf
+3.59 0 TD
+0 Tw
+(b)Tj
+/F2 1 Tf
+0.5 0 TD
+0.051 Tw
+(; if)Tj
+/F3 1 Tf
+1.49 0 TD
+0 Tw
+(a)Tj
+/F2 1 Tf
+0.8 0 TD
+0.036 Tw
+[(is )-9.4(false, )-9.4(the )-9.4(expression takes the value of)]TJ
+/F3 1 Tf
+16.9 0 TD
+0 Tw
+(c)Tj
+/F2 1 Tf
+0.44 0 TD
+0.284 Tw
+(. If)Tj
+/F3 1 Tf
+1.74 0 TD
+0 Tw
+(c)Tj
+/F2 1 Tf
+0.73 0 TD
+0.035 Tw
+(is zero, the)Tj
+/F4 1 Tf
+4.72 0 TD
+0 Tw
+(else)Tj
+/F3 1 Tf
+2.81 0 TD
+(c)Tj
+/F2 1 Tf
+0.73 0 TD
+(part)Tj
+-34.45 -1.2 TD
+-0.008 Tw
+[(can be dropped. )-262(Most often)]TJ
+/F3 1 Tf
+11.45 0 TD
+0 Tw
+(b)Tj
+/F2 1 Tf
+0.75 0 TD
+(and)Tj
+/F3 1 Tf
+1.69 0 TD
+(c)Tj
+/F2 1 Tf
+0.69 0 TD
+0.0073 Tw
+[(are )12.8(arithmetic )12.7(expressions, )12.8(but )12.7(they can also be string)]TJ
+-14.58 -1.2 TD
+0.0464 Tw
+[(or set expressions, so long as both are expressions of the same kind. )-231.6(Because)]TJ
+/F4 1 Tf
+31.87 0 TD
+0 Tw
+(then)Tj
+/F2 1 Tf
+2.69 0 TD
+(and)Tj
+/F4 1 Tf
+-34.56 -1.2 TD
+(else)Tj
+/F2 1 Tf
+2.69 0 TD
+0.0455 Tw
+[(have )17.5(lower )17.5(precedence )17.5(than )17.5(any other operators, a conditional expression needs to)]TJ
+-2.69 -1.2 TD
+-0.0047 Tw
+(be parenthesized \(as in the example above\) unless it occurs at the end of a statement.)Tj
+9 0 0 9 140.4 642.615 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 168 642.615 Tm
+0.006 Tw
+(also has an)Tj
+/F4 1 Tf
+4.66 0 TD
+0 Tw
+(if)Tj
+/F2 1 Tf
+1.2 0 TD
+(-)Tj
+/F4 1 Tf
+0.33 0 TD
+(then)Tj
+/F2 1 Tf
+2.4 0 TD
+(-)Tj
+/F4 1 Tf
+0.33 0 TD
+(else)Tj
+/F2 1 Tf
+2.66 0 TD
+0.0078 Tw
+[(for use in programming; like )-9.6(the )-9.6(conditional )-9.6(state-)]TJ
+-15.78 -1.2 TD
+0.1159 Tw
+[(ments in many programming languages, it executes one or another )8.2(block )8.2(of )8.2(statements)]TJ
+T*
+0.0375 Tw
+[(depending )13.4(on the truth of some logical expression. )-244.5(We describe it with other)]TJ
+9 0 0 9 441.5 618.615 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 469.4 618.615 Tm
+(pro-)Tj
+-34.34 -1.2 TD
+0.1125 Tw
+[(gramming features in Chapter 13. )-242.5(The)]TJ
+/F4 1 Tf
+16.44 0 TD
+0 Tw
+(if)Tj
+/F2 1 Tf
+1.2 0 TD
+(-)Tj
+/F4 1 Tf
+0.33 0 TD
+(then)Tj
+/F2 1 Tf
+2.4 0 TD
+(-)Tj
+/F4 1 Tf
+0.33 0 TD
+(else)Tj
+/F2 1 Tf
+2.76 0 TD
+0.1032 Tw
+(that we have described here is)Tj
+-23.46 -1.2 TD
+0.1753 Tw
+[(not )6.3(a )6.3(statement, )6.3(but rather an expression whose value is conditionally determined. )-253.7(It)]TJ
+T*
+0.0353 Tw
+[(therefore )5.2(belongs inside a declaration, in a place where an expression would normally be)]TJ
+T*
+0 Tw
+(evaluated.)Tj
+/F1 1 Tf
+12 0 0 12 126 512.015 Tm
+0.0114 Tw
+[(7.4 )-300(Restrictions on parameters)]TJ
+/F2 1 Tf
+10 0 0 10 140.4 492.215 Tm
+0 Tw
+(If)Tj
+/F4 1 Tf
+0.93 0 TD
+(T)Tj
+/F2 1 Tf
+0.87 0 TD
+0.0168 Tw
+[(is intended to represent the number of weeks in a multiperiod )-14(model, )-14(it )-14(should )-14(be)]TJ
+-3.24 -1.2 TD
+-0.0066 Tw
+[(an integer and greater than 1. )-259.6(By )-7.1(including )-7.1(these )-7.1(conditions )-7.1(in)]TJ
+/F4 1 Tf
+25.33 0 TD
+0 Tw
+(T)Tj
+/F2 1 Tf
+0.6 0 TD
+-0.0149 Tw
+(ís declaration,)Tj
+/F4 1 Tf
+9 0 0 9 154.8 462.415 Tm
+0 Tw
+(param T > 1 integer;)Tj
+/F2 1 Tf
+10 0 0 10 126 442.615 Tm
+0.0001 Tw
+(you instruct)Tj
+9 0 0 9 176 442.615 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 203.5 442.615 Tm
+-0.0038 Tw
+(to reject your data if you inadvertently set)Tj
+/F4 1 Tf
+16.97 0 TD
+0 Tw
+(T)Tj
+/F2 1 Tf
+0.85 0 TD
+0.004 Tw
+(to 1:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 424.815 Tm
+0 Tw
+(error processing param T:)Tj
+4.8 -1.1111 TD
+(failed check: param T = 1)Tj
+4.8 -1.1111 TD
+(is not > 1;)Tj
+/F2 1 Tf
+10 0 0 10 126 385.015 Tm
+0.0005 Tw
+(or to 2.5:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 367.215 Tm
+0 Tw
+(error processing param T:)Tj
+4.8 -1.1111 TD
+(failed check: param T = 2.5)Tj
+4.8 -1.1111 TD
+(is not an integer;)Tj
+/F2 1 Tf
+-12.8 -2.2 TD
+(AMPL)Tj
+10 0 0 10 154.2 327.415 Tm
+0.068 Tw
+[(will not send your problem instance to a solver as long as any )-10(errors )-10(of )-10(this )-10(kind)]TJ
+-2.82 -1.2 TD
+0 Tw
+(remain.)Tj
+1.44 -1.26 TD
+0.0435 Tw
+[(In the declaration of an indexed collection of parameters, a )-14.5(simple )-14.5(restriction )-14.5(such )-14.5(as)]TJ
+/F4 1 Tf
+-1.44 -1.2 TD
+0 Tw
+(integer)Tj
+/F2 1 Tf
+4.65 0 TD
+(or)Tj
+/F4 1 Tf
+1.27 0 TD
+-0.16 Tw
+(>= 0)Tj
+/F2 1 Tf
+2.68 0 TD
+0.1803 Tw
+[(applies to every parameter defined. )-254.7(Our )-7.2(examples )-7.2(often )-7.2(use )-7.2(this)]TJ
+-8.6 -1.2 TD
+-0.0055 Tw
+(option to specify that vectors and arrays are nonnegative:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 261.015 Tm
+0 Tw
+(param demand {DEST,PROD} >= 0;)Tj
+/F2 1 Tf
+10 0 0 10 126 241.215 Tm
+0.0577 Tw
+[(If )12.7(you )12.7(include dummy indices in the indexing expression, however, you can use them to)]TJ
+T*
+-0.0106 Tw
+(specify a different restriction for each parameter:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 211.415 Tm
+0 Tw
+(param f_min {FOOD} >= 0;)Tj
+0 -1.1111 TD
+(param f_max {j in FOOD} >= f_min[j];)Tj
+ET
+endstreamendobj22 0 obj<< /Type /Page /Parent 106 0 R /Resources 23 0 R /Contents 24 0 R /Rotate 0 /MediaBox [ 0 0 612 792 ] /CropBox [ 40.32001 126 571.67999 792 ] >> endobj23 0 obj<< /ProcSet [ /PDF /Text ] /Font << /F2 126 0 R /F4 134 0 R /F5 136 0 R >> /ExtGState << /GS1 137 0 R >> >> endobj24 0 obj<< /Length 5743 >> stream
+BT
+/F5 1 Tf
+7 0 0 7 126 747.615 Tm
+0 g
+/GS1 gs
+0 Tc
+0.0126 Tw
+[(SECTION )-17.2(7.4 )-23778.6(RESTRICTIONS ON PARAMETERS)]TJ
+10 0 0 10 469.2 747.615 Tm
+0 Tw
+(117)Tj
+/F2 1 Tf
+-34.32 -3.24 TD
+0.314 Tw
+[(The )11.6(effect )11.6(of )11.6(these )11.6(declarations )11.6(is to define a pair of parameters)]TJ
+/F4 1 Tf
+29.43 0 TD
+-0.0299 Tw
+(f_max[j] >=)Tj
+-29.43 -1.2 TD
+0 Tw
+(f_min[j])Tj
+/F2 1 Tf
+5.05 0 TD
+-0.0169 Tw
+(for every)Tj
+/F4 1 Tf
+3.87 0 TD
+0 Tw
+(j)Tj
+/F2 1 Tf
+0.85 0 TD
+-0.0005 Tw
+(in the set)Tj
+/F4 1 Tf
+3.86 0 TD
+0 Tw
+(FOOD)Tj
+/F2 1 Tf
+2.4 0 TD
+(.)Tj
+-14.59 -1.25 TD
+0.2633 Tw
+[(A )11.7(restriction )11.7(phrase for a parameter declaration may be the word)]TJ
+/F4 1 Tf
+29.01 0 TD
+0 Tw
+(integer)Tj
+/F2 1 Tf
+4.72 0 TD
+(or)Tj
+/F4 1 Tf
+-35.17 -1.2 TD
+(binary)Tj
+/F2 1 Tf
+4.24 0 TD
+0.3843 Tw
+[(or a comparison operator followed by an arithmetic expression. )-251.7(While)]TJ
+/F4 1 Tf
+-4.24 -1.2 TD
+0 Tw
+(integer)Tj
+/F2 1 Tf
+4.47 0 TD
+0.011 Tw
+(restricts a parameter to integral \(whole-number\) values,)Tj
+/F4 1 Tf
+22.59 0 TD
+0 Tw
+(binary)Tj
+/F2 1 Tf
+3.88 0 TD
+0.03 Tw
+(restricts it to)Tj
+-30.94 -1.2 TD
+0.2232 Tw
+[(zero or one. )-251.8(The arithmetic expression may refer to sets and parameters )5.1(previously)]TJ
+T*
+0.1203 Tw
+[(defined in the model, and to dummy indices defined by the current declaration. )-247.7(There)]TJ
+T*
+0.2349 Tw
+[(may )-9.1(be several restriction phrases in the same declaration, in which case they may)]TJ
+T*
+-0.0047 Tw
+(optionally be separated by commas.)Tj
+1.44 -1.25 TD
+0.2238 Tw
+[(In )16.2(special )16.2(circumstances, a restriction phrase may even refer to the parameter in)]TJ
+-1.44 -1.2 TD
+0.196 Tw
+[(whose )5.3(declaration )5.3(it )5.3(appears. )-256(Some multiperiod production models, for example, are)]TJ
+T*
+0.2732 Tw
+(defined in terms of a parameter)Tj
+/F4 1 Tf
+14.42 0 TD
+0 Tw
+(cumulative_market[p,t])Tj
+/F2 1 Tf
+13.74 0 TD
+0.282 Tw
+(that represents the)Tj
+-28.16 -1.2 TD
+0.0531 Tw
+(cumulative demand for product)Tj
+/F4 1 Tf
+13.05 0 TD
+0 Tw
+(p)Tj
+/F2 1 Tf
+0.91 0 TD
+0.0506 Tw
+(in weeks 1 through)Tj
+/F4 1 Tf
+8.09 0 TD
+0 Tw
+(t)Tj
+/F2 1 Tf
+0.6 0 TD
+0.0457 Tw
+[(. )-252.3(Since cumulative demand does)]TJ
+-22.65 -1.2 TD
+-0.0027 Tw
+(not decrease, you might try to write a restriction phrase like this:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 542.015 Tm
+0 Tw
+(param cumulative_market {p in PROD, t in 1..T})Tj
+1.8 -1.1111 TD
+-0.0001 Tw
+[(>= cumulative_market[p,t-1]; )-1200.1(# ERROR)]TJ
+/F2 1 Tf
+10 0 0 10 126 513.815 Tm
+0.0411 Tw
+(For the parameters)Tj
+/F4 1 Tf
+7.89 0 TD
+0 Tw
+(cumulative_market[p,1])Tj
+/F2 1 Tf
+13.2 0 TD
+0.0548 Tw
+(, however, the restriction phrase will)Tj
+-21.09 -1.2 TD
+-0.005 Tw
+(refer to)Tj
+/F4 1 Tf
+3.17 0 TD
+0 Tw
+(cumulative_market[p,0])Tj
+/F2 1 Tf
+13.2 0 TD
+0.0074 Tw
+(, which is undefined;)Tj
+9 0 0 9 376.4 501.815 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 404 501.815 Tm
+0.0027 Tw
+(will reject the decla-)Tj
+-27.8 -1.2 TD
+0.0551 Tw
+[(ration with an error message. )-248.9(What you need here again is a conditional expression )-14.9(that)]TJ
+T*
+-0.004 Tw
+(handles the first period specially:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 461.615 Tm
+0 Tw
+(param cumulative_market {p in PROD, t in 1..T})Tj
+1.8 -1.1111 TD
+(>= if t = 1 then 0 else cumulative_market[p,t-1];)Tj
+/F2 1 Tf
+10 0 0 10 126 433.415 Tm
+-0.0027 Tw
+(The same thing could be written a little more compactly as)Tj
+/F4 1 Tf
+9 0 0 9 154.8 417.215 Tm
+0 Tw
+(param cumulative_market {p in PROD, t in 1..T})Tj
+1.8 -1.1111 TD
+(>= if t > 1 then cumulative_market[p,t-1];)Tj
+/F2 1 Tf
+10 0 0 10 126 389.015 Tm
+0.029 Tw
+(since ëë)Tj
+/F4 1 Tf
+3 0 TD
+0 Tw
+(else )Tj
+2.69 0 TD
+(0)Tj
+/F2 1 Tf
+0.6 0 TD
+0.0474 Tw
+[(íí )10.9(is )10.9(assumed. )-247.6(Almost )14.4(always, some form of)]TJ
+/F4 1 Tf
+18.48 0 TD
+0 Tw
+(if)Tj
+/F2 1 Tf
+1.2 0 TD
+(-)Tj
+/F4 1 Tf
+0.33 0 TD
+(then)Tj
+/F2 1 Tf
+2.4 0 TD
+(-)Tj
+/F4 1 Tf
+0.33 0 TD
+(else)Tj
+/F2 1 Tf
+2.7 0 TD
+(expression)Tj
+-31.73 -1.2 TD
+-0.0053 Tw
+(is needed to make this kind of self-reference possible.)Tj
+1.44 -1.25 TD
+0.0005 Tw
+(As you might suspect from this last example, sometimes it is desirable to place a more)Tj
+-1.44 -1.2 TD
+0.1549 Tw
+[(complex )-10.7(restriction )-10.7(on the modelís data than can be expressed by a restriction phrase)]TJ
+T*
+0.0864 Tw
+[(within a declaration. )-255.6(This is the purpose )-11.1(of )-11.1(the)]TJ
+/F4 1 Tf
+19.9 0 TD
+0 Tw
+(check)Tj
+/F2 1 Tf
+3.35 0 TD
+0.0974 Tw
+[(statement. )-250.7(For example, in the)]TJ
+-23.25 -1.2 TD
+-0.0014 Tw
+(transportation model of Figure 3-1a, total supply must equal total demand:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 312.315 Tm
+0 Tw
+(check: sum {i in ORIG} supply[i] = sum {j in DEST} demand[j];)Tj
+/F2 1 Tf
+10 0 0 10 126 294.115 Tm
+0.0087 Tw
+(The multicommodity version, in Figure 4-1, uses an indexed)Tj
+/F4 1 Tf
+24.55 0 TD
+0 Tw
+(check)Tj
+/F2 1 Tf
+3.26 0 TD
+0.0198 Tw
+(to say that total sup-)Tj
+-27.81 -1.2 TD
+-0.0034 Tw
+(ply must equal total demand for each product:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 265.915 Tm
+0 Tw
+(check {p in PROD}:)Tj
+1.8 -1.1111 TD
+(sum {i in ORIG} supply[i,p] = sum {j in DEST} demand[j,p];)Tj
+/F2 1 Tf
+10 0 0 10 126 237.715 Tm
+0.0234 Tw
+(Here the restriction is tested once for each member)Tj
+/F4 1 Tf
+20.85 0 TD
+0 Tw
+(p)Tj
+/F2 1 Tf
+0.88 0 TD
+(of)Tj
+/F4 1 Tf
+1.11 0 TD
+(PROD)Tj
+/F2 1 Tf
+2.4 0 TD
+0.0348 Tw
+[(. )-249.2(If the check fails for any)]TJ
+-25.24 -1.2 TD
+0 Tw
+(member,)Tj
+9 0 0 9 163.5 225.715 Tm
+(AMPL)Tj
+10 0 0 10 191 225.715 Tm
+-0.0053 Tw
+(prints an error message and rejects all of the data.)Tj
+-5.06 -1.25 TD
+0.0273 Tw
+(You can think of the)Tj
+/F4 1 Tf
+8.61 0 TD
+0 Tw
+(check)Tj
+/F2 1 Tf
+3.28 0 TD
+0.0265 Tw
+[(statement as specifying a kind of constraint, )-14.9(but )-14.9(only )-14.9(on)]TJ
+-13.33 -1.2 TD
+0.1355 Tw
+[(the data. )-249.5(The restriction clause is a logical expression, which )8.2(may )8.2(use )8.2(any )8.2(previously)]TJ
+ET
+endstreamendobj25 0 obj<< /Type /Page /Parent 106 0 R /Resources 26 0 R /Contents 27 0 R /Rotate 0 /MediaBox [ 0 0 612 792 ] /CropBox [ 40.32001 126 571.67999 792 ] >> endobj26 0 obj<< /ProcSet [ /PDF /Text ] /Font << /F1 129 0 R /F2 126 0 R /F4 134 0 R /F5 136 0 R >> /ExtGState << /GS1 137 0 R >> >> endobj27 0 obj<< /Length 4707 >> stream
+BT
+/F5 1 Tf
+10 0 0 10 126 747.615 Tm
+0 g
+/GS1 gs
+0 Tc
+0 Tw
+(118)Tj
+7 0 0 7 159.6 747.615 Tm
+0.0226 Tw
+[(PARAMETERS AND EXPRESSIONS )-23935.6(CHAPTER )13.8(7)]TJ
+/F2 1 Tf
+10 0 0 10 126 715.215 Tm
+0.0058 Tw
+[(defined sets and parameters as well as dummy indices defined in the statementís )-14.3(indexing)]TJ
+0 -1.2 TD
+0.034 Tw
+[(expression. )-239.1(After the data values have been read, the )6.8(logical )6.8(expression )6.8(must )6.8(evaluate )6.8(to)]TJ
+T*
+0.0053 Tw
+[(true; if an indexing expression has been specified, the )-9.9(logical )-9.9(expression )-9.9(is )-9.9(evaluated )-9.9(sep-)]TJ
+T*
+0.0852 Tw
+[(arately for each assignment of set members to the )7(dummy )7(indices, )7(and )7(must )7(be )7(true )7(for)]TJ
+T*
+0 Tw
+(each.)Tj
+1.44 -1.27 TD
+0.0347 Tw
+(We strongly recommend the use of restriction phrases and)Tj
+/F4 1 Tf
+23.84 0 TD
+0 Tw
+(check)Tj
+/F2 1 Tf
+3.29 0 TD
+0.0485 Tw
+(statements to vali-)Tj
+-28.57 -1.2 TD
+0.0848 Tw
+[(date a modelís data. )-247.2(These features will help you to catch data errors )9.8(at )9.8(an )9.8(early )9.8(stage,)]TJ
+T*
+0.0249 Tw
+[(when )9.9(they )9.9(are )9.9(easy )9.9(to )9.9(fix. )-247.1(Data errors not caught will, at best, cause errors in the genera-)]TJ
+T*
+0.0087 Tw
+[(tion of the variables and constraints, so that you will get some kind of )17(error )17(message )17(from)]TJ
+9 0 0 9 126 606.515 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 151 606.515 Tm
+-0.0059 Tw
+[(. )-252.9(In other cases, data errors lead to the generation of )-7.7(an )-7.7(incorrect )-7.7(linear )-7.7(program. )-259.9(If)]TJ
+-2.5 -1.2 TD
+0.0876 Tw
+(you are fortunate, the incorrect LP will have a meaningless optimal solution, so that ó)Tj
+T*
+0.0167 Tw
+[(possibly )11.7(after )11.7(a )11.7(good )11.7(deal )11.7(of )11.7(effort ó you will be able to work backward to find the error)]TJ
+T*
+-0.0017 Tw
+[(in )-8.7(the )-8.7(data. )-261.7(At )-8(worst, )-8(the )-8(incorrect )-8(LP will have a plausible solution, and the error will go)]TJ
+T*
+0 Tw
+(undetected.)Tj
+/F1 1 Tf
+12 0 0 12 126 499.415 Tm
+0.2881 Tw
+[(7.5 Computed )265.4(parameters)]TJ
+/F2 1 Tf
+10 0 0 10 140.4 479.615 Tm
+0.0349 Tw
+[(It )6.7(is )6.7(seldom )6.7(possible )6.7(to )6.7(arrange )6.7(that the data values available to a model are precisely)]TJ
+-1.44 -1.2 TD
+0.0623 Tw
+[(the coefficient values required by the objective and constraints. )-252.7(Even in the simple pro-)]TJ
+T*
+-0.0039 Tw
+(duction model of Figure 1-4, for example, we wrote the constraint as)Tj
+/F4 1 Tf
+9 0 0 9 154.8 437.815 Tm
+0 Tw
+(sum {p in PROD} \(1/rate[p]\) * Make[p] <= avail;)Tj
+/F2 1 Tf
+10 0 0 10 126 418.015 Tm
+0.0439 Tw
+[(because production rates were given in tons per )-10.9(hour, )-10.9(while )-10.9(the )-10.9(coefficient )-10.9(of)]TJ
+/F4 1 Tf
+31.8 0 TD
+0 Tw
+(Make[p])Tj
+/F2 1 Tf
+-31.8 -1.2 TD
+0.0272 Tw
+[(had )-11(to )-11(be )-11(in )-11(hours )-11(per )-11(ton. )-260.8(Any )5.1(parameter expression may be used in the constraints and)]TJ
+T*
+0.0356 Tw
+[(objective, but the expressions are best kept simple. )-246.4(When more complex expressions are)]TJ
+T*
+0.2552 Tw
+(needed, the model is usually easier to understand if new, computed parameters are)Tj
+T*
+-0.0061 Tw
+(defined in terms of the data parameters.)Tj
+1.44 -1.27 TD
+0.0423 Tw
+[(The declaration of a computed parameter has an )-12(assignment )-12(phrase, )-12(which )-12(resembles)]TJ
+-1.44 -1.2 TD
+0.0151 Tw
+(the restriction phrase described in the previous section except for the use of an)Tj
+/F4 1 Tf
+31.82 0 TD
+0 Tw
+(=)Tj
+/F2 1 Tf
+0.86 0 TD
+(operator)Tj
+-32.68 -1.2 TD
+0.0061 Tw
+[(to indicate that the parameter is being set equal to a certain )-6.9(expression, )-6.9(rather )-6.9(than )-6.9(merely)]TJ
+T*
+0.1062 Tw
+[(being restricted by an inequality. )-252.8(As a first example, suppose that the data values )12.2(pro-)]TJ
+T*
+0.22 Tw
+[(vided to the multicommodity transportation model of Figure 4-1 consist )-9(of )-9(the )-9(total)]TJ
+T*
+0.0148 Tw
+[(demand )-6.3(for )-6.2(each )-6.2(product, )-6.2(together with each destinationís share of demand. )-250.2(The destina-)]TJ
+T*
+0.118 Tw
+[(tionsí )20.4(shares )20.4(are )20.4(percentages )20.4(between zero and 100, but their sum over all destinations)]TJ
+T*
+0.0247 Tw
+[(might )-23.4(not exactly equal 100%, because of rounding and approximation. )-255.3(Thus )6.2(we )6.2(declare)]TJ
+T*
+-0.006 Tw
+(data parameters to represent the shares, and a computed parameter equal to their sum:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 243.515 Tm
+0 Tw
+(param share {DEST} >= 0, <= 100;)Tj
+0 -1.1111 TD
+(param tot_sh = sum {j in DEST} share[j];)Tj
+/F2 1 Tf
+10 0 0 10 126 213.715 Tm
+0.0227 Tw
+(We can then declare a data parameter to represent total demands, and a computed param-)Tj
+0 -1.2 TD
+-0.0051 Tw
+(eter that equals demand at each destination:)Tj
+ET
+endstreamendobj28 0 obj<< /Type /Page /Parent 108 0 R /Resources 29 0 R /Contents 30 0 R /Rotate 0 /MediaBox [ 0 0 612 792 ] /CropBox [ 40.32001 126 571.67999 792 ] >> endobj29 0 obj<< /ProcSet [ /PDF /Text ] /Font << /F2 126 0 R /F4 134 0 R /F5 136 0 R >> /ExtGState << /GS1 137 0 R >> >> endobj30 0 obj<< /Length 5151 >> stream
+BT
+/F5 1 Tf
+7 0 0 7 126 747.615 Tm
+0 g
+/GS1 gs
+0 Tc
+0.0298 Tw
+[(SECTION 7.5 )-27270.1(COMPUTED )12.2(PARAMETERS)]TJ
+10 0 0 10 469.2 747.615 Tm
+0 Tw
+(119)Tj
+/F4 1 Tf
+9 0 0 9 154.8 717.215 Tm
+(param tot_dem {PROD} >= 0;)Tj
+0 -1.1111 TD
+(param demand {j in DEST, p in PROD})Tj
+4.8 -1.1111 TD
+(= share[j] * tot_dem[p] / tot_sh;)Tj
+/F2 1 Tf
+10 0 0 10 126 678.715 Tm
+0.061 Tw
+(The division by)Tj
+/F4 1 Tf
+6.71 0 TD
+0 Tw
+(tot_sh)Tj
+/F2 1 Tf
+3.91 0 TD
+0.052 Tw
+[(acts as a correction factor for a )-17.6(sum )-17.6(not )-17.6(equal )-17.6(to )-17.6(100%. )-258(Once)]TJ
+/F4 1 Tf
+-10.62 -1.2 TD
+0 Tw
+(demand)Tj
+/F2 1 Tf
+3.85 0 TD
+-0.0022 Tw
+(has been defined in this way, the model can use it as in Figure 4-1:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 650.215 Tm
+0 Tw
+(subject to Demand {j in DEST, p in PROD}:)Tj
+1.8 -1.1111 TD
+(sum {i in ORIG} Trans[i,j,p] = demand[j,p];)Tj
+/F2 1 Tf
+10 0 0 10 126 621.715 Tm
+0.2165 Tw
+[(We could avoid computed parameters by substituting )-9.2(the )-9.2(formulas )-9.2(for)]TJ
+/F4 1 Tf
+30.48 0 TD
+0 Tw
+(tot_sh)Tj
+/F2 1 Tf
+4.08 0 TD
+(and)Tj
+/F4 1 Tf
+-34.56 -1.2 TD
+(demand[j,p])Tj
+/F2 1 Tf
+6.85 0 TD
+0.0007 Tw
+(directly into this constraint:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 593.215 Tm
+0 Tw
+(subject to Demand {j in DEST, p in PROD}:)Tj
+1.8 -1.1111 TD
+(sum {i in ORIG} Trans[i,j,p])Tj
+1.8 -1.1111 TD
+(= share[j] * tot_dem[p] / sum {k in DEST} share[k];)Tj
+/F2 1 Tf
+10 0 0 10 126 554.715 Tm
+0.0583 Tw
+[(This )12.3(alternative )12.3(makes )12.3(the )12.3(model )12.3(a little shorter, but the computation of the demand and)]TJ
+0 -1.2 TD
+-0.0046 Tw
+(the structure of the constraint are both harder to follow.)Tj
+1.44 -1.25 TD
+0.005 Tw
+[(As another example, consider a scenario for the multiperiod production model )-11(\(Figure)]TJ
+-1.44 -1.2 TD
+0.0777 Tw
+[(4-4\) in which minimum inventories are computed. )-245.4(Specifically, suppose that the )12.7(inven-)]TJ
+T*
+0.0055 Tw
+(tory of product)Tj
+/F4 1 Tf
+6.27 0 TD
+0 Tw
+(p)Tj
+/F2 1 Tf
+0.86 0 TD
+-0.0059 Tw
+(for week)Tj
+/F4 1 Tf
+3.78 0 TD
+0 Tw
+(t)Tj
+/F2 1 Tf
+0.87 0 TD
+0.0155 Tw
+(must be at least a certain fraction of)Tj
+/F4 1 Tf
+14.68 0 TD
+0 Tw
+(market[p,t+1])Tj
+/F2 1 Tf
+7.8 0 TD
+0.018 Tw
+(, the)Tj
+-34.26 -1.2 TD
+0.0074 Tw
+[(maximum )-16.7(that can be sold in the following week. )-244.6(We thus use the following declarations)]TJ
+T*
+-0.0026 Tw
+(for the data to be supplied:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 465.715 Tm
+0 Tw
+(param frac > 0;)Tj
+0 -1.1111 TD
+(param market {PROD,1..T+1} >= 0;)Tj
+/F2 1 Tf
+10 0 0 10 126 437.215 Tm
+-0.0115 Tw
+(and then declare)Tj
+/F4 1 Tf
+9 0 0 9 154.8 420.715 Tm
+0 Tw
+(param mininv {p in PROD, t in 0..T} = frac * market[p,t+1];)Tj
+T*
+(var Inv {p in PROD, t in 0..T} >= mininv[p,t];)Tj
+/F2 1 Tf
+10 0 0 10 126 392.215 Tm
+0.112 Tw
+[(to )8.9(define and use parameters)]TJ
+/F4 1 Tf
+12.25 0 TD
+0 Tw
+(mininv[p,t])Tj
+/F2 1 Tf
+6.97 0 TD
+0.1174 Tw
+(that represent the minimum inventory of)Tj
+-19.22 -1.2 TD
+0 Tw
+(product)Tj
+/F4 1 Tf
+3.34 0 TD
+(p)Tj
+/F2 1 Tf
+0.89 0 TD
+0.0241 Tw
+(for week)Tj
+/F4 1 Tf
+3.84 0 TD
+0 Tw
+(t)Tj
+/F2 1 Tf
+0.6 0 TD
+(.)Tj
+9 0 0 9 220.2 380.215 Tm
+(AMPL)Tj
+10 0 0 10 248.1 380.215 Tm
+0.033 Tw
+(keeps all)Tj
+/F4 1 Tf
+3.85 0 TD
+0 Tw
+(=)Tj
+/F2 1 Tf
+0.89 0 TD
+0.0365 Tw
+(definitions of parameters up to date throughout)Tj
+-16.95 -1.2 TD
+0.1952 Tw
+[(a session. )-254.8(Thus for example if you change the value )-11.8(of)]TJ
+/F4 1 Tf
+24.48 0 TD
+0 Tw
+(frac)Tj
+/F2 1 Tf
+2.86 0 TD
+0.207 Tw
+(the values of all the)Tj
+/F4 1 Tf
+-27.34 -1.2 TD
+0 Tw
+(mininv)Tj
+/F2 1 Tf
+3.85 0 TD
+-0.0146 Tw
+(parameters automatically change accordingly.)Tj
+-2.41 -1.25 TD
+0.084 Tw
+[(If you define a computed parameter as in )-12.3(the )-12.3(examples )-12.3(above, )-12.3(then )-12.3(you )-12.3(cannot )-12.3(also)]TJ
+-1.44 -1.2 TD
+-0.0028 Tw
+[(specify a data value for it. )-250.8(An attempt to do so will result in an error message:)]TJ
+/F4 1 Tf
+9 0 0 9 154.8 315.215 Tm
+0 Tw
+(mininv was defined in the model)Tj
+0 -1.1111 TD
+0.6 Tw
+[(context: param >>> )600(mininv )600(<<< := bands )600(2 3000)]TJ
+/F2 1 Tf
+10 0 0 10 126 286.715 Tm
+0.005 Tw
+[(However, there is an alternative way in which you can define an initial value for )-7(a )-7(param-)]TJ
+0 -1.2 TD
+-0.0037 Tw
+(eter but allow it to be changed later.)Tj
+1.44 -1.25 TD
+-0.006 Tw
+(If you define a parameter using the)Tj
+/F4 1 Tf
+14.21 0 TD
+0 Tw
+(default)Tj
+/F2 1 Tf
+4.45 0 TD
+0.0024 Tw
+(operator in place of)Tj
+/F4 1 Tf
+8.07 0 TD
+0 Tw
+(=)Tj
+/F2 1 Tf
+0.6 0 TD
+0.0034 Tw
+(, then the parame-)Tj
+-28.77 -1.2 TD
+0.0158 Tw
+[(ter )-13.2(is )-13.2(initialized rather than defined. )-254.2(Its value is taken from the value of the expression to)]TJ
+T*
+0.108 Tw
+(the right of the)Tj
+/F4 1 Tf
+6.6 0 TD
+0 Tw
+(default)Tj
+/F2 1 Tf
+4.56 0 TD
+0.115 Tw
+[(operator, )11.5(but )11.5(does not change if the expressionís value later)]TJ
+-11.16 -1.2 TD
+0.2164 Tw
+[(changes. )-253.7(Initial )-8(values )-8(can )-8(be overridden by data statements, and they also may be)]TJ
+T*
+0.1473 Tw
+[(changed )12.6(by )12.6(subsequent )12.6(assignment statements. )-254.7(This feature is most useful for writing)]TJ
+9 0 0 9 126 202.215 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 153.5 202.215 Tm
+-0.004 Tw
+(scripts that update certain values repeatedly, as shown in Section 13.2.)Tj
+ET
+endstreamendobj31 0 obj<< /Type /Page /Parent 108 0 R /Resources 32 0 R /Contents 33 0 R /Rotate 0 /MediaBox [ 0 0 612 792 ] /CropBox [ 40.32001 126 571.67999 792 ] >> endobj32 0 obj<< /ProcSet [ /PDF /Text ] /Font << /F2 126 0 R /F4 134 0 R /F5 136 0 R >> /ExtGState << /GS1 137 0 R >> >> endobj33 0 obj<< /Length 4300 >> stream
+BT
+/F5 1 Tf
+10 0 0 10 126 747.615 Tm
+0 g
+/GS1 gs
+0 Tc
+0 Tw
+(120)Tj
+7 0 0 7 159.6 747.615 Tm
+0.0226 Tw
+[(PARAMETERS AND EXPRESSIONS )-23935.6(CHAPTER )13.8(7)]TJ
+/F2 1 Tf
+10 0 0 10 140.4 715.215 Tm
+0.1032 Tw
+(If you define a parameter using the operator)Tj
+/F4 1 Tf
+18.66 0 TD
+0 Tw
+(default)Tj
+/F2 1 Tf
+4.56 0 TD
+0.1045 Tw
+(in place of)Tj
+/F4 1 Tf
+4.79 0 TD
+0 Tw
+(=)Tj
+/F2 1 Tf
+0.6 0 TD
+0.116 Tw
+[(, )8(then you can)]TJ
+-30.05 -1.2 TD
+0.0362 Tw
+[(specify values in data statements to override the ones that would otherwise )10.2(be )10.2(computed.)]TJ
+T*
+-0.0056 Tw
+(For instance, by declaring)Tj
+/F4 1 Tf
+9 0 0 9 154.8 671.915 Tm
+0 Tw
+(param mininv {p in PROD, t in 0..T})Tj
+1.8 -1.1111 TD
+-0.0001 Tw
+(default frac * market[p,t+1];)Tj
+/F2 1 Tf
+10 0 0 10 126 640.615 Tm
+0.0564 Tw
+[(you )11(can )11(allow )11(a few exceptional minimum inventories to be specified as part of the data)]TJ
+0 -1.2 TD
+-0.0013 Tw
+(for the model, either in a list:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 609.315 Tm
+0 Tw
+(param mininv :=)Tj
+4.2 -1.1111 TD
+[(bands 2 )-600(3000)]TJ
+T*
+[(coils 2 )-600(2000)]TJ
+T*
+[(coils 3 )-600(2000 ;)]TJ
+/F2 1 Tf
+10 0 0 10 126 558.015 Tm
+-0.0023 Tw
+(or in a table:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 538.715 Tm
+2.4 Tw
+[(param )2400.1(market: 1 2 3 4 )2400(:=)]TJ
+4.2 -1.1111 TD
+[(bands )-600(. )1800(3000 . .)]TJ
+T*
+0.6 Tw
+[(coils )-2400(. 2000 2000 )-1800(. )600(;)]TJ
+/F2 1 Tf
+10 0 0 10 126 497.415 Tm
+0 Tw
+(\()Tj
+9 0 0 9 129.3 497.415 Tm
+(AMPL)Tj
+10 0 0 10 156.9 497.415 Tm
+0.002 Tw
+(uses ëë)Tj
+/F4 1 Tf
+2.64 0 TD
+0 Tw
+(.)Tj
+/F2 1 Tf
+0.6 0 TD
+0.0071 Tw
+[(íí in a data statement to indicate an omitted entry, as )-8.9(explained )-8.9(in )-8.9(Chapter)]TJ
+-6.33 -1.2 TD
+-0.0045 Tw
+(9 and A.12.2.\))Tj
+1.44 -1.28 TD
+0.035 Tw
+[(The expression that gives the default value of a parameter is evaluated only )-11(when )-11(the)]TJ
+-1.44 -1.2 TD
+0.1146 Tw
+[(parameterís value is first needed, such as when an objective or constraint that )6.6(uses )6.6(the)]TJ
+T*
+-0.008 Tw
+(parameter is processed by a)Tj
+/F4 1 Tf
+11.27 0 TD
+0 Tw
+(solve)Tj
+/F2 1 Tf
+3.25 0 TD
+(command.)Tj
+-13.08 -1.28 TD
+0.002 Tw
+(In most)Tj
+/F4 1 Tf
+3.28 0 TD
+0 Tw
+(=)Tj
+/F2 1 Tf
+0.85 0 TD
+(and)Tj
+/F4 1 Tf
+1.69 0 TD
+(default)Tj
+/F2 1 Tf
+4.45 0 TD
+-0.005 Tw
+[(phrases, the operator is followed by )-9.7(an )-9.7(arithmetic )-9.7(expression)]TJ
+-11.71 -1.2 TD
+0.2738 Tw
+[(in )-11.8(previously )-11.8(defined sets and parameters \(but not variables\) and currently defined)]TJ
+T*
+0.0555 Tw
+[(dummy )-5.6(indices. )-256.5(Some parameters in an indexed collection may be given a )-11(computed )-11(or)]TJ
+T*
+0.0158 Tw
+[(default )-8.7(value )-8.7(in terms of others in the same collection, however. )-253.2(As an example, you can)]TJ
+T*
+0.0999 Tw
+[(smooth out some of the variation in the minimum inventories by defining )-8.1(the)]TJ
+/F4 1 Tf
+32.4 0 TD
+0 Tw
+(mininv)Tj
+/F2 1 Tf
+-32.4 -1.2 TD
+-0.0053 Tw
+(parameter to be a running average like this:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 356.515 Tm
+0 Tw
+(param mininv {p in PROD, t in 0..T} =)Tj
+1.8 -1.1111 TD
+(if t = 0 then inv0[p])Tj
+1.8 -1.1111 TD
+(else 0.5 * \(mininv[p,t-1] + frac * market[p,t+1]\);)Tj
+/F2 1 Tf
+10 0 0 10 126 315.215 Tm
+0.0835 Tw
+(The values of)Tj
+/F4 1 Tf
+5.95 0 TD
+0 Tw
+(mininv)Tj
+/F2 1 Tf
+3.94 0 TD
+0.0863 Tw
+[(for week 0 are set explicitly to the )-13.2(initial )-13.2(inventories, )-13.2(while )-13.2(the)]TJ
+-9.89 -1.2 TD
+0.1008 Tw
+(values for each subsequent week)Tj
+/F4 1 Tf
+13.87 0 TD
+0 Tw
+(t)Tj
+/F2 1 Tf
+0.96 0 TD
+0.1052 Tw
+[(are defined in terms of the previous )13.7(weekís )13.7(values.)]TJ
+9 0 0 9 126 291.215 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 153.5 291.215 Tm
+0.0093 Tw
+[(permits )17.5(any )17.5(ëërecursiveíí )17.5(definition )17.5(of this kind, but will signal an error if it detects)]TJ
+-2.75 -1.2 TD
+0.1312 Tw
+(a circular reference that causes a parameterís value to depend directly or indirectly on)Tj
+T*
+0 Tw
+(itself.)Tj
+1.44 -1.28 TD
+0.0178 Tw
+[(You )14.4(can )14.4(use )14.4(the )14.4(phrases )14.4(defined in this section together with the restriction phrases of)]TJ
+-1.44 -1.2 TD
+0.024 Tw
+[(the previous section, to further check )8.4(the )8.4(values )8.4(that )8.4(are )8.4(computed. )-247(For )11(example )11(the )11(dec-)]TJ
+T*
+0 Tw
+(laration)Tj
+/F4 1 Tf
+9 0 0 9 154.8 211.115 Tm
+(param mininv {p in PROD, t in 0..T})Tj
+1.8 -1.1111 TD
+(= frac * market[p,t+1], >= 0;)Tj
+ET
+endstreamendobj34 0 obj<< /Type /Page /Parent 108 0 R /Resources 35 0 R /Contents 36 0 R /Rotate 0 /MediaBox [ 0 0 612 792 ] /CropBox [ 40.32001 126 571.67999 792 ] >> endobj35 0 obj<< /ProcSet [ /PDF /Text ] /Font << /F1 129 0 R /F2 126 0 R /F3 131 0 R /F4 134 0 R /F5 136 0 R >> /ExtGState << /GS1 137 0 R >> >> endobj36 0 obj<< /Length 4138 >> stream
+BT
+/F5 1 Tf
+7 0 0 7 126 747.615 Tm
+0 g
+/GS1 gs
+0 Tc
+0.0154 Tw
+[(SECTION )-14.4(7.6 )-20825.2(RANDOMLY GENERATED PARAMETERS)]TJ
+10 0 0 10 469.2 747.615 Tm
+0 Tw
+(121)Tj
+/F2 1 Tf
+-34.32 -3.24 TD
+-0.0043 Tw
+[(will cause an error to be signaled if )-10.9(the )-10.9(computed )-10.9(value )-10.9(of )-10.9(any )-10.9(of )-10.9(the)]TJ
+/F4 1 Tf
+27.77 0 TD
+0 Tw
+(mininv)Tj
+/F2 1 Tf
+3.86 0 TD
+(parameters)Tj
+-31.63 -1.2 TD
+0.122 Tw
+[(is )-13.1(negative. )-270(This check is triggered whenever an)]TJ
+9 0 0 9 333.9 703.215 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 362.7 703.215 Tm
+0.1291 Tw
+(session uses)Tj
+/F4 1 Tf
+5.37 0 TD
+0 Tw
+(mininv)Tj
+/F2 1 Tf
+3.98 0 TD
+0.12 Tw
+(for any)Tj
+-33.02 -1.2 TD
+0 Tw
+(purpose.)Tj
+/F1 1 Tf
+12 0 0 12 126 635.415 Tm
+0.0162 Tw
+[(7.6 )-281.9(Randomly generated parameters)]TJ
+/F2 1 Tf
+10 0 0 10 140.4 616.115 Tm
+0.0775 Tw
+[(When )25.4(youíre testing out a model, especially in the early stages of development, you)]TJ
+-1.44 -1.2 TD
+0.1963 Tw
+[(may )-11.4(find )-11.4(it )-11.4(convenient to let randomly generated data stand in for actual data to be)]TJ
+T*
+0.034 Tw
+[(obtained )14.9(later. )-259.1(Randomly generated parameters can also be useful in experimenting with)]TJ
+T*
+-0.0044 Tw
+(alternative model formulations or solvers.)Tj
+1.44 -1.26 TD
+0.102 Tw
+[(Randomly generated parameters are like the computed )-12(parameters )-12(introduced )-12(in )-12(the)]TJ
+-1.44 -1.2 TD
+0.2034 Tw
+[(preceding section, except that their defining expressions are made random )5.4(by )5.4(use )5.4(of)]TJ
+9 0 0 9 126 543.515 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 151 543.515 Tm
+0.0059 Tw
+[(ís )6.8(built-in )6.8(random number generation functions listed in Table A-3. )-253.1(As an example)]TJ
+-2.5 -1.2 TD
+0.1833 Tw
+[(of )-17.2(the )-17.2(simplest case, the individual parameter)]TJ
+/F4 1 Tf
+19.71 0 TD
+0 Tw
+(avail)Tj
+/F2 1 Tf
+3.44 0 TD
+0.1824 Tw
+(representing hours available in)Tj
+/F4 1 Tf
+-23.15 -1.2 TD
+0 Tw
+(steel.mod)Tj
+/F2 1 Tf
+5.65 0 TD
+-0.0041 Tw
+(may be defined to equal a random function:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 502.215 Tm
+0 Tw
+(param avail_mean > 0;)Tj
+0 -1.1111 TD
+(param avail_variance > 0, < avail_mean / 2;)Tj
+0 -1.7889 TD
+-0.0001 Tw
+(param avail = max\(Normal\(avail_mean, avail_variance\), 0\);)Tj
+/F2 1 Tf
+10 0 0 10 126 456.815 Tm
+-0.0006 Tw
+(Adding some indexing gives a multi-stage version of this model:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 439.515 Tm
+0 Tw
+(param avail {STAGE} =)Tj
+1.8 -1.1111 TD
+-0.0001 Tw
+(max\(Normal\(avail_mean, avail_variance\), 0\);)Tj
+/F2 1 Tf
+10 0 0 10 126 410.215 Tm
+0.029 Tw
+[(For each )-16(stage)]TJ
+/F4 1 Tf
+6.15 0 TD
+0 Tw
+(s)Tj
+/F2 1 Tf
+0.6 0 TD
+0.052 Tw
+(, this gives)Tj
+/F4 1 Tf
+4.71 0 TD
+0 Tw
+(avail[s])Tj
+/F2 1 Tf
+5.1 0 TD
+0.0438 Tw
+(a different random value from the same random)Tj
+-16.56 -1.2 TD
+0.0968 Tw
+[(distribution. )-270.3(To specify stage-dependent random distributions, you would add indexing)]TJ
+T*
+-0.0067 Tw
+(to the mean and variance parameters as well:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 368.915 Tm
+0 Tw
+(param avail_mean {STAGE} > 0;)Tj
+0 -1.1111 TD
+(param avail_variance {s in STAGE} > 0, < avail_mean[s] / 2;)Tj
+0 -1.7889 TD
+(param avail {s in STAGE} =)Tj
+1.8 -1.1111 TD
+-0.0001 Tw
+(max\(Normal\(avail_mean[s], avail_variance[s]\), 0\);)Tj
+/F2 1 Tf
+10 0 0 10 126 313.515 Tm
+0 Tw
+(The)Tj
+/F4 1 Tf
+1.8 0 TD
+(max\()Tj
+/F3 1 Tf
+2.4 0 TD
+(...)Tj
+/F4 1 Tf
+0.75 0 TD
+(,0\))Tj
+/F2 1 Tf
+2.05 0 TD
+-0.0055 Tw
+[(expression is included to handle the rare case )-14.3(in )-14.3(which )-14.3(the )-14.3(normal )-14.3(distri-)]TJ
+-7 -1.2 TD
+-0.0032 Tw
+(bution with a positive mean returns a negative value.)Tj
+1.44 -1.26 TD
+0.1038 Tw
+[(More )11.3(general )11.3(ways )11.3(of )11.3(randomly computing parameters arise naturally from the pre-)]TJ
+-1.44 -1.2 TD
+0.279 Tw
+[(ceding sectionís )5.9(examples. )-248(In the multicommodity transportation problem, you can)]TJ
+T*
+-0.0075 Tw
+(define random shares of demand:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 247.615 Tm
+0 Tw
+(param share {DEST} = Uniform\(0,100\);)Tj
+0 -1.1111 TD
+(param tot_sh = sum {j in DEST} share[j];)Tj
+0 -1.7889 TD
+(param tot_dem {PROD} >= 0;)Tj
+0 -1.1111 TD
+(param demand {j in DEST, p in PROD})Tj
+4.8 -1.1111 TD
+(= share[j] * tot_dem[p] / tot_sh;)Tj
+ET
+endstreamendobj37 0 obj<< /Type /Page /Parent 108 0 R /Resources 38 0 R /Contents 39 0 R /Rotate 0 /MediaBox [ 0 0 612 792 ] /CropBox [ 40.32001 126 571.67999 792 ] >> endobj38 0 obj<< /ProcSet [ /PDF /Text ] /Font << /F1 129 0 R /F2 126 0 R /F3 131 0 R /F4 134 0 R /F5 136 0 R >> /ExtGState << /GS1 137 0 R >> >> endobj39 0 obj<< /Length 4859 >> stream
+BT
+/F5 1 Tf
+10 0 0 10 126 747.615 Tm
+0 g
+/GS1 gs
+0 Tc
+0 Tw
+(122)Tj
+7 0 0 7 159.6 747.615 Tm
+0.0226 Tw
+[(PARAMETERS AND EXPRESSIONS )-23935.6(CHAPTER )13.8(7)]TJ
+/F2 1 Tf
+10 0 0 10 126 715.215 Tm
+0 Tw
+(Parameters)Tj
+/F4 1 Tf
+4.7 0 TD
+(tot_sh)Tj
+/F2 1 Tf
+3.88 0 TD
+(and)Tj
+/F4 1 Tf
+1.72 0 TD
+(demand)Tj
+/F2 1 Tf
+3.88 0 TD
+0.0234 Tw
+(then also become random, because they are defined in)Tj
+-14.18 -1.2 TD
+0.1253 Tw
+[(terms )-5.8(of )-5.8(random )-5.8(parameters. )-261.7(In )-14.2(the )-14.2(multiperiod )-14.3(production )-14.2(model, you can define the)]TJ
+T*
+0.0751 Tw
+(demand quantities)Tj
+/F4 1 Tf
+7.71 0 TD
+0 Tw
+(market[p,t])Tj
+/F2 1 Tf
+6.93 0 TD
+0.0779 Tw
+[(in terms of an initial value and a )-9.5(random )-9.5(amount )-9.5(of)]TJ
+-14.64 -1.2 TD
+-0.0129 Tw
+(increase per period:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 661.015 Tm
+0 Tw
+(param market1 {PROD} >= 0;)Tj
+0 -1.1111 TD
+(param max_incr {PROD} >= 0;)Tj
+0 -1.8667 TD
+(param market {p in PROD, t in 1..T+1} =)Tj
+1.8 -1.1111 TD
+(if t = 1 then market1[p])Tj
+1.8 -1.1111 TD
+-0.0001 Tw
+(else Uniform\(0,max_incr\) * market[p,t-1];)Tj
+/F2 1 Tf
+10 0 0 10 126 594.015 Tm
+0.0168 Tw
+[(A recursive definition of this kind provides a way )-7.6(of )-7.6(generating )-7.6(simple )-7.6(random )-7.6(processes)]TJ
+0 -1.2 TD
+-0.0049 Tw
+(over time.)Tj
+1.44 -1.27 TD
+0.0485 Tw
+(All of the)Tj
+9 0 0 9 182.7 569.315 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 210.7 569.315 Tm
+0.0547 Tw
+[(random )13(functions )13(are )13(based on a uniform random number generator)]TJ
+-8.47 -1.2 TD
+0.0176 Tw
+[(with a very long period. )-244.4(When you start)]TJ
+9 0 0 9 291.8 557.315 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 319.5 557.315 Tm
+0.015 Tw
+[(or give )9(a)]TJ
+/F4 1 Tf
+3.78 0 TD
+0 Tw
+(reset)Tj
+/F2 1 Tf
+3.26 0 TD
+0.0006 Tw
+(command, however, the)Tj
+-26.39 -1.2 TD
+0.033 Tw
+[(generator )15.9(is reset and the ëërandomíí values are the same as before. )-255(You can request dif-)]TJ
+T*
+0.1338 Tw
+(ferent values by changing the)Tj
+9 0 0 9 253 533.315 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 281.9 533.315 Tm
+(option)Tj
+/F4 1 Tf
+2.95 0 TD
+(randseed)Tj
+/F2 1 Tf
+5.18 0 TD
+0.1284 Tw
+(to some integer other than its)Tj
+-23.72 -1.2 TD
+-0.0026 Tw
+(default value of 1; the command for this purpose is)Tj
+/F4 1 Tf
+9 0 0 9 154.8 503.115 Tm
+-0.0001 Tw
+(option randseed)Tj
+/F3 1 Tf
+9.6 0 TD
+0 Tw
+(n)Tj
+/F4 1 Tf
+0.5 0 TD
+(;)Tj
+/F2 1 Tf
+10 0 0 10 126 482.915 Tm
+(where)Tj
+/F3 1 Tf
+2.86 0 TD
+(n)Tj
+/F2 1 Tf
+0.93 0 TD
+0.1745 Tw
+[(is some integer value. )-242.6(Nonzero values give sequences that repeat each time)]TJ
+9 0 0 9 126 470.915 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 154.1 470.915 Tm
+0.0558 Tw
+[(is reset. )-252.2(A value of 0 requests)]TJ
+9 0 0 9 280.9 470.915 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 308.9 470.915 Tm
+0.0455 Tw
+(to pick a seed based on the current value of)Tj
+-18.29 -1.2 TD
+-0.0061 Tw
+(the system clock, resulting \(for practical purposes\) in a different seed at each reset.)Tj
+9 0 0 9 140.4 446.215 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 165.4 446.215 Tm
+(ís)Tj
+/F4 1 Tf
+1.06 0 TD
+(reset )Tj
+3.34 0 TD
+(data)Tj
+/F2 1 Tf
+2.74 0 TD
+0.086 Tw
+[(command, when applied to a )-5.7(randomly )-5.7(computed )-5.7(parameter,)]TJ
+-11.08 -1.2 TD
+0.0553 Tw
+[(also causes a new sample of random values to be determined. )-249.7(The use )5.9(of )5.9(this )5.9(command)]TJ
+T*
+0.0005 Tw
+(is discussed in Section 11.3.)Tj
+/F1 1 Tf
+12 0 0 12 126 361.215 Tm
+0.3061 Tw
+[(7.7 Logical )283.4(parameters)]TJ
+/F2 1 Tf
+10 0 0 10 140.4 341.015 Tm
+0.0515 Tw
+[(Although parameters normally represent numeric values, )-15.9(they )-15.9(can )-15.9(optionally )-15.9(be )-15.9(used)]TJ
+-1.44 -1.2 TD
+-0.007 Tw
+(to stand for true-false values or for character strings.)Tj
+1.44 -1.27 TD
+-0.008 Tw
+(The current version of)Tj
+9 0 0 9 231.8 316.315 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 259.3 316.315 Tm
+-0.0058 Tw
+(does not support a full-fledged ëëlogicalíí type of param-)Tj
+-13.33 -1.2 TD
+0.0468 Tw
+[(eter that would stand for only the values true )12.1(and )12.1(false, )12.1(but )12.1(a )12.1(parameter )12.1(of )12.1(type)]TJ
+/F4 1 Tf
+32.4 0 TD
+0 Tw
+(binary)Tj
+/F2 1 Tf
+-32.4 -1.2 TD
+0.0334 Tw
+[(may )8.4(be )8.4(used )8.4(to )8.4(the )8.4(same )8.4(effect. )-245.6(As an illustration, we describe an application of the pre-)]TJ
+T*
+0.145 Tw
+[(ceding )-9.3(inventory )-9.3(example )-9.3(to )-9.3(consumer )-6(goods. )-251(Certain products in each week may be)]TJ
+T*
+0.0151 Tw
+[(specially promoted, in which case they require a higher inventory )-5(fraction. )-265.9(Using param-)]TJ
+T*
+-0.0065 Tw
+(eters of type)Tj
+/F4 1 Tf
+5.18 0 TD
+0 Tw
+(binary)Tj
+/F2 1 Tf
+3.6 0 TD
+-0.0033 Tw
+(, we can represent this situation by the following declarations:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 238.115 Tm
+0 Tw
+[(param fr_reg > 0; )-4200(# regular inventory fraction)]TJ
+0 -1.1111 TD
+[(param fr_pro > fr_reg; )-1200(# fraction for promoted items)]TJ
+0 -1.8667 TD
+-0.0001 Tw
+(param promote {PROD,1..T+1} binary;)Tj
+0 -1.1111 TD
+0 Tw
+(param market {PROD,1..T+1} >= 0;)Tj
+ET
+endstreamendobj40 0 obj<< /Type /Page /Parent 108 0 R /Resources 41 0 R /Contents 42 0 R /Rotate 0 /MediaBox [ 0 0 612 792 ] /CropBox [ 40.32001 126 571.67999 792 ] >> endobj41 0 obj<< /ProcSet [ /PDF /Text ] /Font << /F1 129 0 R /F2 126 0 R /F4 134 0 R /F5 136 0 R >> /ExtGState << /GS1 137 0 R >> >> endobj42 0 obj<< /Length 3767 >> stream
+BT
+/F5 1 Tf
+7 0 0 7 126 747.615 Tm
+0 g
+/GS1 gs
+0 Tc
+0.0298 Tw
+[(SECTION 7.8 )-27824.1(SYMBOLIC )12.2(PARAMETERS)]TJ
+10 0 0 10 469.2 747.615 Tm
+0 Tw
+(123)Tj
+/F2 1 Tf
+-34.32 -3.24 TD
+0.0616 Tw
+(The binary parameters)Tj
+/F4 1 Tf
+9.45 0 TD
+0 Tw
+(promote[p,t])Tj
+/F2 1 Tf
+7.53 0 TD
+0.0767 Tw
+(are 0 when there is no promotion, and 1 when)Tj
+-16.98 -1.2 TD
+0.085 Tw
+[(there is a promotion. )-255(Thus we can define the minimum-inventory parameters )7(by )7(use )7(of)]TJ
+T*
+0 Tw
+(an)Tj
+/F4 1 Tf
+1.19 0 TD
+(if)Tj
+/F2 1 Tf
+1.2 0 TD
+(-)Tj
+/F4 1 Tf
+0.33 0 TD
+(then)Tj
+/F2 1 Tf
+2.4 0 TD
+(-)Tj
+/F4 1 Tf
+0.33 0 TD
+(else)Tj
+/F2 1 Tf
+2.65 0 TD
+-0.0039 Tw
+(expression as follows:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 674.315 Tm
+0 Tw
+(param mininv {p in PROD, t in 0..T} =)Tj
+1.8 -1.1111 TD
+(\(if promote[p,t] = 1 then fr_pro else fr_reg\))Tj
+1.8 -1.1111 TD
+-0.0001 Tw
+(* market[p,t+1];)Tj
+/F2 1 Tf
+10 0 0 10 126 635.415 Tm
+-0.0041 Tw
+(We can also say the same thing more concisely:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 618.515 Tm
+0 Tw
+(param mininv {p in PROD, t in 0..T} =)Tj
+1.8 -1.1111 TD
+(\(if promote[p,t] then fr_pro else fr_reg\) * market[p,t+1];)Tj
+/F2 1 Tf
+10 0 0 10 126 589.615 Tm
+0.014 Tw
+(When an arithmetic expression like)Tj
+/F4 1 Tf
+14.5 0 TD
+0 Tw
+(promote[p,t])Tj
+/F2 1 Tf
+7.48 0 TD
+0.0201 Tw
+(appears where a logical expression)Tj
+-21.98 -1.2 TD
+0.0111 Tw
+(is required,)Tj
+9 0 0 9 173.8 577.615 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 201.5 577.615 Tm
+0.0134 Tw
+[(interprets any nonzero value as true, and zero as false. )-254.6(You do need to)]TJ
+-7.55 -1.2 TD
+0.0373 Tw
+[(exercise a little caution to avoid being )-13.1(tripped )-13.1(up )-13.1(by )-13.1(this )-13.1(implicit )-13.1(conversion. )-263.7(For exam-)]TJ
+T*
+-0.0025 Tw
+(ple, in Section 7.4 we used the expression)Tj
+/F4 1 Tf
+9 0 0 9 154.8 536.715 Tm
+0 Tw
+(if t = 1 then 0 else cumulative_market[p,t-1])Tj
+/F2 1 Tf
+10 0 0 10 126 517.815 Tm
+-0.0076 Tw
+(If you accidentally write)Tj
+/F4 1 Tf
+9 0 0 9 154.8 500.915 Tm
+0 Tw
+[(if t then 0 else cumulative_market[p,t-1] )-1800(# DIFFERENT)]TJ
+/F2 1 Tf
+10 0 0 10 126 482.015 Tm
+-0.0031 Tw
+(itís perfectly legal, but it doesnít mean what you intended.)Tj
+/F1 1 Tf
+12 0 0 12 126 428.515 Tm
+0.3111 Tw
+[(7.8 Symbolic )288.4(parameters)]TJ
+/F2 1 Tf
+10 0 0 10 140.4 409.615 Tm
+0.1533 Tw
+[(You may permit a parameter to represent character string values, by )-16.7(including )-16.7(the)]TJ
+-1.44 -1.2 TD
+0 Tw
+(keyword)Tj
+/F4 1 Tf
+3.77 0 TD
+(symbolic)Tj
+/F2 1 Tf
+5.07 0 TD
+0.0162 Tw
+[(in its declaration. )-251.8(A symbolic parameterís values may be strings or)]TJ
+-8.84 -1.2 TD
+-0.002 Tw
+(numbers, just like a setís members, but the string values may not participate in arithmetic.)Tj
+1.44 -1.26 TD
+0.0174 Tw
+[(A )12.4(major use of symbolic parameters is to designate individual set members that are to)]TJ
+-1.44 -1.2 TD
+0.1064 Tw
+[(be )6.3(treated )6.3(specially. )-254.6(For example, in a model of traffic flow, there is a set of )19.4(intersec-)]TJ
+T*
+0.0357 Tw
+[(tions, two of whose members are designated as the )-7.3(entrance )-7.3(and )-7.3(exit. )-270.4(Symbolic parame-)]TJ
+T*
+-0.0051 Tw
+(ters can be used to represent these two members:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 320.115 Tm
+-0.0001 Tw
+(set INTER;)Tj
+0 -1.7556 TD
+0 Tw
+(param entr symbolic in INTER;)Tj
+0 -1.1111 TD
+(param exit symbolic in INTER, <> entr;)Tj
+/F2 1 Tf
+10 0 0 10 126 275.415 Tm
+-0.0044 Tw
+(In the data statements, an appropriate string is assigned to each symbolic parameter:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 258.515 Tm
+0 Tw
+(set INTER := a b c d e f g ;)Tj
+0 -1.7556 TD
+(param entr := a ;)Tj
+0 -1.1111 TD
+(param exit := g ;)Tj
+/F2 1 Tf
+10 0 0 10 126 213.815 Tm
+0.1749 Tw
+(These parameters are subsequently used in defining the objective and constraints; the)Tj
+0 -1.2 TD
+-0.0018 Tw
+(complete model is developed in Section 15.2.)Tj
+ET
+endstreamendobj43 0 obj<< /Type /Page /Parent 108 0 R /Resources 44 0 R /Contents 45 0 R /Rotate 0 /MediaBox [ 0 0 612 792 ] /CropBox [ 40.32001 126 571.67999 792 ] >> endobj44 0 obj<< /ProcSet [ /PDF /Text ] /Font << /F1 129 0 R /F2 126 0 R /F4 134 0 R /F5 136 0 R >> /ExtGState << /GS1 137 0 R >> >> endobj45 0 obj<< /Length 5046 >> stream
+BT
+/F5 1 Tf
+10 0 0 10 126 747.615 Tm
+0 g
+/GS1 gs
+0 Tc
+0 Tw
+(124)Tj
+7 0 0 7 159.6 747.615 Tm
+0.0226 Tw
+[(PARAMETERS AND EXPRESSIONS )-23935.6(CHAPTER )13.8(7)]TJ
+/F2 1 Tf
+10 0 0 10 140.4 715.215 Tm
+0.0555 Tw
+[(Another use of symbolic parameters is to associate )-13.1(descriptive )-13.1(strings )-13.1(with )-13.1(set )-13.1(mem-)]TJ
+-1.44 -1.2 TD
+0.1268 Tw
+[(bers. )-246.3(Consider for example the set of ëëoriginsíí in the transportation model of Figure)]TJ
+T*
+0.0088 Tw
+[(3-1a. )-236.3(When we introduced this set at the beginning of Chapter 3, we described each orig-)]TJ
+T*
+0.1043 Tw
+[(inating city by means of a 4-character string and a longer descriptive string. )-240.7(The short)]TJ
+T*
+0.0852 Tw
+(strings became the members of the)Tj
+9 0 0 9 272.6 667.215 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 301 667.215 Tm
+(set)Tj
+/F4 1 Tf
+1.45 0 TD
+(ORIG)Tj
+/F2 1 Tf
+2.4 0 TD
+0.098 Tw
+[(, )10(while )10(the longer strings played no)]TJ
+-21.35 -1.2 TD
+-0.0065 Tw
+[(further )9.4(role. )-255.5(To make both available, we could declare)]TJ
+/F4 1 Tf
+9 0 0 9 154.8 639.115 Tm
+0 Tw
+(set ORIG;)Tj
+0 -1.1111 TD
+-0.0001 Tw
+(param orig_name {ORIG} symbolic;)Tj
+T*
+0 Tw
+(param supply {ORIG} >= 0;)Tj
+/F2 1 Tf
+10 0 0 10 126 601.015 Tm
+-0.0045 Tw
+(Then in the data we could specify)Tj
+/F4 1 Tf
+9 0 0 9 154.8 584.915 Tm
+0 Tw
+[(param: ORIG: )-1199.9(orig_name )-10800(supply :=)]TJ
+4.8 -1.1111 TD
+1.1999 Tw
+[(GARY "Gary, )1200(Indiana" )-6600.1(1400)]TJ
+T*
+[(CLEV "Cleveland, )1199.9(Ohio" )-5400.1(2600)]TJ
+T*
+[(PITT "Pittsburgh, )1200(Pennsylvania" 2900 )1199.9(;)]TJ
+/F2 1 Tf
+10 0 0 10 126 536.815 Tm
+0.059 Tw
+[(Since the long strings do not have the )-7.5(form )-7.5(of)]TJ
+9 0 0 9 317.7 536.815 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 345.9 536.815 Tm
+0.0669 Tw
+(names, they do need to be quoted.)Tj
+-21.99 -1.2 TD
+0.1774 Tw
+[(They )-13.6(still )-13.6(play no role in the model or the resulting linear program, but they can be)]TJ
+T*
+0.0324 Tw
+(retrieved for documentary purposes by the)Tj
+/F4 1 Tf
+17.42 0 TD
+0 Tw
+(display)Tj
+/F2 1 Tf
+4.49 0 TD
+(and)Tj
+/F4 1 Tf
+1.74 0 TD
+(printf)Tj
+/F2 1 Tf
+3.9 0 TD
+0.0351 Tw
+(commands described)Tj
+-27.55 -1.2 TD
+-0.002 Tw
+(in Chapter 12.)Tj
+1.44 -1.25 TD
+0.0239 Tw
+(Just as there are arithmetic and logical operators and functions, there are)Tj
+9 0 0 9 435.3 488.315 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 463.2 488.315 Tm
+(string)Tj
+-33.72 -1.2 TD
+0.0162 Tw
+[(operators and functions for working with string values. )-235.8(These )10.2(features )10.2(are )10.2(mostly )10.2(used )10.2(in)]TJ
+9 0 0 9 126 464.315 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 154.7 464.315 Tm
+0.1157 Tw
+[(command scripts rather than in models, so we defer )-13.1(their )-13.1(description )-13.1(to )-13.1(Section)]TJ
+-2.87 -1.2 TD
+0 Tw
+(13.7.)Tj
+/F1 1 Tf
+11 0 0 11 126 403.615 Tm
+(Exercises)Tj
+10 0 0 10 126 386.515 Tm
+(7-1.)Tj
+/F2 1 Tf
+9 0 0 9 147.9 386.515 Tm
+0.0277 Tw
+[(Show how the multicommodity transportation model of Figure )-11.3(4-1 )-11.3(could )-11.3(be )-11.3(modified )-11.3(so )-11.3(that)]TJ
+-2.4333 -1.2222 TD
+0.0507 Tw
+[(it applies the following restrictions to the data. )-255.4(Use either a restriction phrase in a)]TJ
+/F4 1 Tf
+33.7889 0 TD
+0 Tw
+(set)Tj
+/F2 1 Tf
+2.0889 0 TD
+(or)Tj
+/F4 1 Tf
+1.1222 0 TD
+(param)Tj
+/F2 1 Tf
+-37 -1.2222 TD
+0.0094 Tw
+(declaration, or a)Tj
+/F4 1 Tf
+6.7444 0 TD
+0 Tw
+(check)Tj
+/F2 1 Tf
+3.2556 0 TD
+0.0103 Tw
+(statement, whichever is appropriate.)Tj
+-9.2333 -1.4444 TD
+0.0057 Tw
+[(ñ )-144.5(No city is a member of both)]TJ
+/F4 1 Tf
+12.4111 0 TD
+0 Tw
+(ORIG)Tj
+/F2 1 Tf
+2.6556 0 TD
+(and)Tj
+/F4 1 Tf
+1.7 0 TD
+(DEST)Tj
+/F2 1 Tf
+2.4 0 TD
+(.)Tj
+-19.1667 -1.4444 TD
+0.0057 Tw
+[(ñ )-144.8(The number of cities in)]TJ
+/F4 1 Tf
+10.5111 0 TD
+0 Tw
+(DEST)Tj
+/F2 1 Tf
+2.6556 0 TD
+0.0059 Tw
+(must be greater than the number in)Tj
+/F4 1 Tf
+14.2333 0 TD
+0 Tw
+(ORIG)Tj
+/F2 1 Tf
+2.4 0 TD
+(.)Tj
+-29.8 -1.4445 TD
+0.0058 Tw
+[(ñ )-145.1(Demand does not exceed 1000 at any one city in)]TJ
+/F4 1 Tf
+20.6222 0 TD
+0 Tw
+(DEST)Tj
+/F2 1 Tf
+2.4 0 TD
+(.)Tj
+-23.0222 -1.4444 TD
+0.0391 Tw
+[(ñ )-111(Total )11(supply )11(for )11(each )11(product )11(at )11(all )11(origins must equal total demand for that product at all des-)]TJ
+0.9 -1.2222 TD
+0 Tw
+(tinations.)Tj
+-0.9 -1.4444 TD
+0.0391 Tw
+[(ñ )-111(Total )11.2(supply )11.2(for )11.2(all )11.2(products )11.2(at )11.2(all )11.2(origins must equal total demand for all products at all desti-)]TJ
+0.9 -1.2222 TD
+0 Tw
+(nations.)Tj
+-0.9 -1.4444 TD
+0.0614 Tw
+[(ñ )-88.7(Total )11.4(supply )11.4(of )11.4(all products at an origin must not exceed total capacity for all shipments from)]TJ
+0.9 -1.2222 TD
+0.011 Tw
+(that origin.)Tj
+-0.9 -1.4444 TD
+0.0503 Tw
+[(ñ )-99.8(Total demand for all products at a destination must not exceed )-11.1(total )-11.1(capacity )-11.1(for )-11.1(all )-11.1(shipments)]TJ
+0.9 -1.2222 TD
+0.0081 Tw
+(to that destination.)Tj
+/F1 1 Tf
+10 0 0 10 126 212.915 Tm
+0 Tw
+(7-2.)Tj
+/F2 1 Tf
+9 0 0 9 147.9 212.915 Tm
+0.2057 Tw
+[(Show )11.3(how )11.3(the )11.3(multiperiod production model of Figure 4-4 could be modified so that it)]TJ
+-2.4333 -1.2222 TD
+0.0067 Tw
+(applies the following restrictions to the data.)Tj
+ET
+endstreamendobj46 0 obj<< /Type /Page /Parent 108 0 R /Resources 47 0 R /Contents 48 0 R /Rotate 0 /MediaBox [ 0 0 612 792 ] /CropBox [ 40.32001 126 571.67999 792 ] >> endobj47 0 obj<< /ProcSet [ /PDF /Text ] /Font << /F1 129 0 R /F2 126 0 R /F4 134 0 R /F5 136 0 R >> /ExtGState << /GS1 137 0 R >> >> endobj48 0 obj<< /Length 5208 >> stream
+BT
+/F5 1 Tf
+7 0 0 7 126 747.615 Tm
+0 g
+/GS1 gs
+0 Tc
+0.0298 Tw
+[(SECTION 7.8 )-27824.1(SYMBOLIC )12.2(PARAMETERS)]TJ
+10 0 0 10 469.2 747.615 Tm
+0 Tw
+(125)Tj
+/F2 1 Tf
+9 0 0 9 132.9 716.215 Tm
+0.0065 Tw
+[(ñ )-144(The number of weeks is a positive integer greater than 1.)]TJ
+0 -1.4667 TD
+0.128 Tw
+[(ñ )-22.5(The initial inventory of a product does not exceed the total )-11.4(market )-11.4(demand )-11.4(for )-11.4(that )-11.4(product)]TJ
+0.9 -1.2222 TD
+0.0092 Tw
+(over all weeks.)Tj
+-0.9 -1.4667 TD
+0.0172 Tw
+[(ñ )-133.3(The inventory cost for a product is never more than 10% of the expected revenue for )-10.9(that )-10.9(prod-)]TJ
+0.9 -1.2222 TD
+0.0074 Tw
+(uct in any one week.)Tj
+-0.9 -1.4667 TD
+0.1173 Tw
+[(ñ )-33.2(The number of hours in a week is between 24 and 40, and does not change by more than 8)]TJ
+0.9 -1.2222 TD
+0.0069 Tw
+(hours from one week to the next.)Tj
+-0.9 -1.4667 TD
+0.0072 Tw
+[(ñ )-142.7(For each product, the expected revenue never decreases from one week to the next.)]TJ
+/F1 1 Tf
+10 0 0 10 126 613.415 Tm
+0 Tw
+(7-3.)Tj
+/F2 1 Tf
+9 0 0 9 147.9 613.415 Tm
+0.1171 Tw
+[(The )11.7(solutions )11.7(to )11.7(the following exercises involve the use of an)]TJ
+/F4 1 Tf
+26.0556 0 TD
+0 Tw
+(if)Tj
+/F2 1 Tf
+1.2 0 TD
+(-)Tj
+/F4 1 Tf
+0.3333 0 TD
+(then)Tj
+/F2 1 Tf
+2.4 0 TD
+(-)Tj
+/F4 1 Tf
+0.3333 0 TD
+(else)Tj
+/F2 1 Tf
+2.7667 0 TD
+0.1177 Tw
+(operator to)Tj
+-35.5222 -1.2222 TD
+0.0092 Tw
+(formulate a constraint.)Tj
+0 -1.4667 TD
+0.0061 Tw
+(\(a\) In the example of the constraint)Tj
+/F4 1 Tf
+14.3444 0 TD
+0 Tw
+(Balance)Tj
+/F2 1 Tf
+4.4556 0 TD
+0.0074 Tw
+(in Section 7.3, we used an expression beginning)Tj
+/F4 1 Tf
+8 0 0 8 154.8 573.615 Tm
+0 Tw
+(if t = first\(WEEKS\) then ...)Tj
+/F2 1 Tf
+9 0 0 9 126 556.015 Tm
+0.0058 Tw
+(Find an equivalent expression that uses the function)Tj
+/F4 1 Tf
+21.0444 0 TD
+0 Tw
+(ord\(t\))Tj
+/F2 1 Tf
+3.6 0 TD
+(.)Tj
+-24.6444 -1.4667 TD
+0.0502 Tw
+(\(b\) Combine the)Tj
+/F4 1 Tf
+6.9556 0 TD
+0 Tw
+(Diet_Min)Tj
+/F2 1 Tf
+5.1 0 TD
+(and)Tj
+/F4 1 Tf
+1.7444 0 TD
+(Diet_Max)Tj
+/F2 1 Tf
+5.1 0 TD
+0.0613 Tw
+(constraints of Figure 5-1ís diet model into one con-)Tj
+-18.9 -1.2222 TD
+0.0125 Tw
+(straint declaration.)Tj
+0 -1.4667 TD
+0.073 Tw
+[(\(c\) )11.7(In )11.7(the )11.7(multicommodity )11.7(transportation model of Figure 4-1, imagine that there is more demand)]TJ
+0 -1.2222 TD
+0.0504 Tw
+[(at the destinations than we can meet from the supply produced at )8.8(the )8.8(origins. )-244.1(To )11.2(make )11.2(up )11.2(the )11.2(dif-)]TJ
+T*
+0.0503 Tw
+(ference, a limited number of additional tons can be purchased \(rather than manufactured\) for ship-)Tj
+T*
+0.0078 Tw
+(ment at certain origins.)Tj
+0 -1.4667 TD
+0.0068 Tw
+(To model this situation, suppose that we declare a subset of origins,)Tj
+/F4 1 Tf
+8 0 0 8 154.8 456.815 Tm
+0.0001 Tw
+(set BUY_ORIG within ORIG;)Tj
+/F2 1 Tf
+9 0 0 9 126 439.215 Tm
+0.0508 Tw
+[(where )10.3(the additional tons can be bought. )-255.3(The relevant data values and decision variables could be)]TJ
+0 -1.2222 TD
+0.0057 Tw
+(indexed over this subset:)Tj
+/F4 1 Tf
+8 0 0 8 154.8 412.615 Tm
+0.0001 Tw
+[(param buy_supply {BUY_ORIG,PROD} >= 0; )-599.9(# available for purchase)]TJ
+0 -1.125 TD
+0 Tw
+[(param buy_cost {BUY_ORIG,PROD} > 0; )-2400(# purchase cost per ton)]TJ
+0 -1.7375 TD
+(var Buy {i in BUY_ORIG, p in PROD} >= 0, <= buy_supply[i,p];)Tj
+24 -1.125 TD
+(# amount to buy)Tj
+/F2 1 Tf
+9 0 0 9 126 363.115 Tm
+0.0399 Tw
+[(Revise the objective function to include the purchase costs. )-254.7(Revise the)]TJ
+/F4 1 Tf
+29.0778 0 TD
+0 Tw
+(Supply)Tj
+/F2 1 Tf
+3.8889 0 TD
+0.039 Tw
+[(constraints to )-11.3(say)]TJ
+-32.9667 -1.2222 TD
+0.0722 Tw
+[(that, )-13.7(for )-13.7(each )-13.7(origin )-13.7(and )-13.7(each )-13.7(product, total tons shipped out must equal tons of supply from pro-)]TJ
+T*
+0.0072 Tw
+(duction plus \(if applicable\) tons purchased.)Tj
+0 -1.4667 TD
+0.0953 Tw
+(\(d\) Formulate the same model as in \(c\), but with)Tj
+/F4 1 Tf
+20.5444 0 TD
+0 Tw
+(BUY_ORIG)Tj
+/F2 1 Tf
+5.1556 0 TD
+0.1059 Tw
+(being the set of pairs)Tj
+/F4 1 Tf
+9.1111 0 TD
+0 Tw
+(\(i,p\))Tj
+/F2 1 Tf
+3.3556 0 TD
+(such)Tj
+-38.1667 -1.2222 TD
+0.0061 Tw
+(that product)Tj
+/F4 1 Tf
+5.0667 0 TD
+0 Tw
+(p)Tj
+/F2 1 Tf
+0.8556 0 TD
+0.0058 Tw
+(can be bought at origin)Tj
+/F4 1 Tf
+9.5 0 TD
+0 Tw
+(i)Tj
+/F2 1 Tf
+0.6 0 TD
+(.)Tj
+/F1 1 Tf
+10 0 0 10 126 299.915 Tm
+(7-4.)Tj
+/F2 1 Tf
+9 0 0 9 147.9 299.915 Tm
+0.006 Tw
+(This exercise is concerned with the following sets and parameters from Figure 4-1:)Tj
+/F4 1 Tf
+8 0 0 8 154.8 284.315 Tm
+0.0001 Tw
+[(set ORIG; )-1199.9(# origins)]TJ
+0 -1.125 TD
+[(set DEST; )-1199.9(# destinations)]TJ
+T*
+[(set PROD; )-1199.9(# products)]TJ
+0 -1.7375 TD
+(param supply {ORIG,PROD} >= 0;)Tj
+0 -1.125 TD
+(param demand {DEST,PROD} >= 0;)Tj
+/F2 1 Tf
+9 0 0 9 126 225.815 Tm
+0.0963 Tw
+(\(a\) Write)Tj
+/F4 1 Tf
+4.0778 0 TD
+0 Tw
+(param)Tj
+/F2 1 Tf
+3.3444 0 TD
+0.0978 Tw
+(declarations, using the)Tj
+/F4 1 Tf
+9.5111 0 TD
+0 Tw
+(=)Tj
+/F2 1 Tf
+0.9444 0 TD
+0.0967 Tw
+[(operator, to compute parameters having )-8.9(the )-8.9(following)]TJ
+-17.8778 -1.2222 TD
+0 Tw
+(definitions:)Tj
+0.7667 -1.4667 TD
+(ñ)Tj
+/F4 1 Tf
+0.9 0 TD
+(prod_supply[p])Tj
+/F2 1 Tf
+8.6556 0 TD
+0.0056 Tw
+(is the total supply of product)Tj
+/F4 1 Tf
+11.7556 0 TD
+0 Tw
+(p)Tj
+/F2 1 Tf
+0.8556 0 TD
+0.0083 Tw
+(at all origins.)Tj
+ET
+endstreamendobj49 0 obj<< /Type /Page /Parent 108 0 R /Resources 50 0 R /Contents 51 0 R /Rotate 0 /MediaBox [ 0 0 612 792 ] /CropBox [ 40.32001 126 571.67999 792 ] >> endobj50 0 obj<< /ProcSet [ /PDF /Text ] /Font << /F1 129 0 R /F2 126 0 R /F3 131 0 R /F4 134 0 R /F5 136 0 R /F6 55 0 R >> /ExtGState << /GS1 137 0 R >> >> endobj51 0 obj<< /Length 9102 >> stream
+BT
+/F5 1 Tf
+10 0 0 10 126 747.615 Tm
+0 g
+/GS1 gs
+0 Tc
+0 Tw
+(126)Tj
+7 0 0 7 159.6 747.615 Tm
+0.0226 Tw
+[(PARAMETERS AND EXPRESSIONS )-23935.6(CHAPTER )13.8(7)]TJ
+/F2 1 Tf
+9 0 0 9 132.9 716.215 Tm
+0 Tw
+(ñ)Tj
+/F4 1 Tf
+0.9 0 TD
+(dest_demand[j])Tj
+/F2 1 Tf
+8.6556 0 TD
+0.0057 Tw
+(is the total demand for all products at destination)Tj
+/F4 1 Tf
+19.8556 0 TD
+0 Tw
+(j)Tj
+/F2 1 Tf
+0.6 0 TD
+(.)Tj
+-30.0111 -1.4445 TD
+(ñ)Tj
+/F4 1 Tf
+0.9 0 TD
+(true_limit[i,j,p])Tj
+/F2 1 Tf
+10.5222 0 TD
+0.0724 Tw
+[(is the largest quantity of )-11.5(product)]TJ
+/F4 1 Tf
+13.6778 0 TD
+0 Tw
+(p)Tj
+/F2 1 Tf
+0.9333 0 TD
+0.0838 Tw
+(that can be shipped from)Tj
+/F4 1 Tf
+10.5555 0 TD
+0 Tw
+(i)Tj
+/F2 1 Tf
+0.9333 0 TD
+(to)Tj
+/F4 1 Tf
+1.1111 0 TD
+(j)Tj
+/F2 1 Tf
+-37.7333 -1.2222 TD
+0.0398 Tw
+(ó that is, the largest value that does not exceed)Tj
+/F4 1 Tf
+19.7556 0 TD
+0 Tw
+(limit[i,j])Tj
+/F2 1 Tf
+6 0 TD
+0.0408 Tw
+[(, or the supply )12.7(of)]TJ
+/F4 1 Tf
+7.2333 0 TD
+0 Tw
+(p)Tj
+/F2 1 Tf
+0.8778 0 TD
+(at)Tj
+/F4 1 Tf
+1 0 TD
+(i)Tj
+/F2 1 Tf
+0.6 0 TD
+0.0308 Tw
+(, or the)Tj
+-35.4667 -1.2222 TD
+0.0068 Tw
+(demand for)Tj
+/F4 1 Tf
+4.8444 0 TD
+0 Tw
+(p)Tj
+/F2 1 Tf
+0.8556 0 TD
+(at)Tj
+/F4 1 Tf
+0.9778 0 TD
+(j)Tj
+/F2 1 Tf
+0.6 0 TD
+(.)Tj
+-8.1778 -1.4444 TD
+(ñ)Tj
+/F4 1 Tf
+0.9 0 TD
+(max_supply[p])Tj
+/F2 1 Tf
+8.0556 0 TD
+0.0058 Tw
+(is the largest supply of product)Tj
+/F4 1 Tf
+12.6444 0 TD
+0 Tw
+(p)Tj
+/F2 1 Tf
+0.8556 0 TD
+0.0079 Tw
+(available at any origin.)Tj
+-22.4556 -1.4444 TD
+0 Tw
+(ñ)Tj
+/F4 1 Tf
+0.9 0 TD
+(max_diff[p])Tj
+/F2 1 Tf
+7.0111 0 TD
+0.174 Tw
+[(is )12.6(the )12.6(largest difference, over all combinations of origins and destinations,)]TJ
+-7.0111 -1.2222 TD
+0.0061 Tw
+(between the supply and demand for product)Tj
+/F4 1 Tf
+17.8444 0 TD
+0 Tw
+(p)Tj
+/F2 1 Tf
+0.6 0 TD
+(.)Tj
+-20.1111 -1.4445 TD
+0.007 Tw
+(\(b\) Write)Tj
+/F4 1 Tf
+3.9556 0 TD
+0 Tw
+(set)Tj
+/F2 1 Tf
+2.0556 0 TD
+0.0089 Tw
+(declarations, using the)Tj
+/F4 1 Tf
+9.2444 0 TD
+0 Tw
+(=)Tj
+/F2 1 Tf
+0.8556 0 TD
+0.0074 Tw
+(operator, to compute these sets:)Tj
+-15.3444 -1.4444 TD
+0.15 Tw
+(ñ Products)Tj
+/F4 1 Tf
+4.6556 0 TD
+0 Tw
+(p)Tj
+/F2 1 Tf
+0.8556 0 TD
+0.0057 Tw
+(whose demand is at least 500 at some destination)Tj
+/F4 1 Tf
+19.9667 0 TD
+0 Tw
+(j)Tj
+/F2 1 Tf
+0.6 0 TD
+(.)Tj
+-26.0778 -1.4444 TD
+0.15 Tw
+(ñ Products)Tj
+/F4 1 Tf
+4.6556 0 TD
+0 Tw
+(p)Tj
+/F2 1 Tf
+0.8556 0 TD
+0.0057 Tw
+(whose demand is at least 250 at all destinations)Tj
+/F4 1 Tf
+19.2444 0 TD
+0 Tw
+(j)Tj
+/F2 1 Tf
+0.6 0 TD
+(.)Tj
+-25.3556 -1.4444 TD
+0.15 Tw
+(ñ Products)Tj
+/F4 1 Tf
+4.6556 0 TD
+0 Tw
+(p)Tj
+/F2 1 Tf
+0.8556 0 TD
+0.0057 Tw
+(whose demand is equal to 500 at some destination)Tj
+/F4 1 Tf
+20.3556 0 TD
+0 Tw
+(j)Tj
+/F2 1 Tf
+0.6 0 TD
+(.)Tj
+/F1 1 Tf
+10 0 0 10 126 575.715 Tm
+(7-5.)Tj
+/F2 1 Tf
+8 0 0 8 147.9 575.715 Tm
+(AMPL)Tj
+9 0 0 9 172.9 575.715 Tm
+0.062 Tw
+[(parameters )9.3(can be defined to contain many kinds of series, especially by using recur-)]TJ
+-5.2111 -1.2222 TD
+0.0305 Tw
+[(sive definitions. )-252.7(For example, we can make)]TJ
+/F4 1 Tf
+18.1 0 TD
+0 Tw
+(s[j])Tj
+/F2 1 Tf
+2.6778 0 TD
+0.028 Tw
+(equal the sum of the first)Tj
+/F4 1 Tf
+10.3889 0 TD
+0 Tw
+(j)Tj
+/F2 1 Tf
+0.8778 0 TD
+0.0346 Tw
+(integers, for)Tj
+/F4 1 Tf
+5.1444 0 TD
+0 Tw
+(j)Tj
+/F2 1 Tf
+0.8667 0 TD
+(from)Tj
+-38.0556 -1.2222 TD
+0.0053 Tw
+(1 to some given limit)Tj
+/F4 1 Tf
+8.7778 0 TD
+0 Tw
+(N)Tj
+/F2 1 Tf
+0.6 0 TD
+0.0083 Tw
+(, by writing)Tj
+/F4 1 Tf
+8 0 0 8 154.8 538.715 Tm
+0.0001 Tw
+(param N;)Tj
+0 -1.125 TD
+0 Tw
+(param s {j in 1..N} = sum {jj in 1..j} jj;)Tj
+/F2 1 Tf
+9 0 0 9 126 512.715 Tm
+0.0077 Tw
+(or, using a formula for the sum,)Tj
+/F4 1 Tf
+8 0 0 8 154.8 497.715 Tm
+0 Tw
+(param s {j in 1..N} = j * \(j+1\) / 2;)Tj
+/F2 1 Tf
+9 0 0 9 126 480.715 Tm
+0.0088 Tw
+(or, using a recursive definition,)Tj
+/F4 1 Tf
+8 0 0 8 154.8 465.715 Tm
+0 Tw
+(param s {j in 1..N} = if j = 1 then 1 else s[j-1] + j;)Tj
+/F2 1 Tf
+9 0 0 9 126 448.715 Tm
+0.0063 Tw
+(This exercise asks you to play with some other possibilities.)Tj
+0 -1.4444 TD
+0.0967 Tw
+(\(a\) Define)Tj
+/F4 1 Tf
+4.5222 0 TD
+0 Tw
+(fact[n])Tj
+/F2 1 Tf
+4.5444 0 TD
+0.0947 Tw
+(to be)Tj
+/F4 1 Tf
+2.4222 0 TD
+0 Tw
+(n)Tj
+/F2 1 Tf
+0.9556 0 TD
+0.1072 Tw
+(factorial, the product of the first)Tj
+/F4 1 Tf
+13.6667 0 TD
+0 Tw
+(n)Tj
+/F2 1 Tf
+0.9556 0 TD
+0.1062 Tw
+[(integers. )-261.5(Give both a recursive)]TJ
+-27.0667 -1.2222 TD
+0.0074 Tw
+(and a nonrecursive definition as above.)Tj
+0 -1.4444 TD
+0.1396 Tw
+[(\(b\) )11.2(The )11.2(Fibonacci )11.2(numbers are defined mathematically by)]TJ
+/F3 1 Tf
+24.5778 0 TD
+0 Tw
+(f)Tj
+/F2 1 Tf
+6 0 0 6 350.7 409.915 Tm
+(0)Tj
+/F6 1 Tf
+9 0 0 9 358.9 411.715 Tm
+(=)Tj
+/F3 1 Tf
+1.1444 0 TD
+(f)Tj
+/F2 1 Tf
+6 0 0 6 372.7 409.915 Tm
+(1)Tj
+/F6 1 Tf
+9 0 0 9 380.9 411.715 Tm
+(=)Tj
+/F2 1 Tf
+1.0556 0 TD
+0.1393 Tw
+(1 and)Tj
+/F3 1 Tf
+2.7222 0 TD
+0 Tw
+(f)Tj
+6 0 0 6 418.4 409.915 Tm
+(n)Tj
+/F6 1 Tf
+9 0 0 9 426.6 411.715 Tm
+(=)Tj
+/F3 1 Tf
+1.1444 0 TD
+(f)Tj
+6 0 0 6 440.4 409.915 Tm
+(n)Tj
+/F6 1 Tf
+0.75 0 TD
+(ä)Tj
+/F2 1 Tf
+0.7167 0 TD
+(1)Tj
+/F6 1 Tf
+9 0 0 9 457.4 411.715 Tm
+(+)Tj
+/F3 1 Tf
+1.1444 0 TD
+(f)Tj
+6 0 0 6 471.2 409.915 Tm
+(n)Tj
+/F6 1 Tf
+0.75 0 TD
+(ä)Tj
+/F2 1 Tf
+0.7167 0 TD
+(2)Tj
+9 0 0 9 483.7 411.715 Tm
+(.)Tj
+-39.7444 -1.2222 TD
+0.008 Tw
+(Using a recursive declaration, define)Tj
+/F4 1 Tf
+14.9778 0 TD
+0 Tw
+(fib[n])Tj
+/F2 1 Tf
+3.8556 0 TD
+(in)Tj
+8 0 0 8 304.8 400.715 Tm
+(AMPL)Tj
+9 0 0 9 329.4 400.715 Tm
+0.0059 Tw
+(to equal the)Tj
+/F4 1 Tf
+4.9333 0 TD
+0 Tw
+(n)Tj
+/F2 1 Tf
+0.6 0 TD
+0.0088 Tw
+(-th Fibonacci number.)Tj
+-28.1333 -1.4444 TD
+0.0737 Tw
+(Use another)Tj
+8 0 0 8 172.8 387.715 Tm
+0 Tw
+(AMPL)Tj
+9 0 0 9 198 387.715 Tm
+0.0728 Tw
+(declaration to verify that the)Tj
+/F3 1 Tf
+11.9444 0 TD
+0 Tw
+(n)Tj
+/F2 1 Tf
+0.6667 0 TD
+0.0838 Tw
+(-th Fibonacci number equals the closest integer)Tj
+-20.6111 -1.2778 TD
+0.0057 Tw
+(to \()Tj
+4.5 0 0 4.5 139 379.215 Tm
+0 Tw
+(1)Tj
+9 0 0 9 141.2499 376.215 Tm
+()Tj
+4.5 0 0 4.5 142.7529 376.215 Tm
+(2)Tj
+/F6 1 Tf
+9 0 0 9 147.3 376.215 Tm
+(+)Tj
+/F2 1 Tf
+4.5 0 0 4.5 153.8 379.215 Tm
+(1)Tj
+9 0 0 9 156.0499 376.215 Tm
+()Tj
+4.5 0 0 4.5 157.5529 376.215 Tm
+(2)Tj
+/F6 1 Tf
+9 0 0 9 161.21 376.215 Tm
+()Tj
+0.03 0 TD
+0.53 Tc
+( )Tj
+0.1722 0 TD
+0 Tc
+()Tj
+/F2 1 Tf
+0.4411 0 TD
+-0.0052 Tw
+(5 \))Tj
+/F3 1 Tf
+6 0 0 6 177.7 379.815 Tm
+0 Tw
+(n)Tj
+11 0 0 11 182.1 376.215 Tm
+(/)Tj
+/F6 1 Tf
+9 0 0 9 185.81 376.215 Tm
+()Tj
+0.03 0 TD
+0.53 Tc
+( )Tj
+0.1722 0 TD
+0 Tc
+()Tj
+/F2 1 Tf
+0.4411 0 TD
+-0.0778 Tw
+(5 .)Tj
+-7.2889 -1.4444 TD
+0.0076 Tw
+(\(c\) Hereís another recursive definition, called Ackermannís function, for positive integers)Tj
+/F3 1 Tf
+36.2667 0 TD
+0 Tw
+(i)Tj
+/F2 1 Tf
+0.5333 0 TD
+(and)Tj
+/F3 1 Tf
+1.7 0 TD
+(j)Tj
+/F2 1 Tf
+0.2778 0 TD
+(:)Tj
+/F3 1 Tf
+-30.5778 -1.8889 TD
+(A)Tj
+/F2 1 Tf
+0.6889 0 TD
+(\()Tj
+/F3 1 Tf
+0.4111 0 TD
+(i)Tj
+/F2 1 Tf
+0.3556 0 TD
+0.0778 Tw
+[(, 0 )249.7(\))]TJ
+/F6 1 Tf
+2.0778 0 TD
+0 Tw
+(=)Tj
+/F3 1 Tf
+1.0556 0 TD
+(i)Tj
+/F6 1 Tf
+0.6889 0 TD
+(+)Tj
+/F2 1 Tf
+0.9667 0 TD
+(1)Tj
+/F3 1 Tf
+-8.2111 -1.2222 TD
+(A)Tj
+/F2 1 Tf
+0.6889 0 TD
+-0.1693 Tw
+(\( 0 ,)Tj
+/F3 1 Tf
+1.6556 0 TD
+0 Tw
+(j)Tj
+/F6 1 Tf
+0.6889 0 TD
+(+)Tj
+/F2 1 Tf
+0.9667 0 TD
+-0.1719 Tw
+(1 \))Tj
+/F6 1 Tf
+1.5 0 TD
+0 Tw
+(=)Tj
+/F3 1 Tf
+1.0556 0 TD
+(A)Tj
+/F2 1 Tf
+0.6889 0 TD
+-0.1693 Tw
+(\( 1 ,)Tj
+/F3 1 Tf
+1.6556 0 TD
+0 Tw
+(j)Tj
+/F2 1 Tf
+0.3556 0 TD
+(\))Tj
+/F3 1 Tf
+-10.9111 -1.2222 TD
+(A)Tj
+/F2 1 Tf
+0.6889 0 TD
+(\()Tj
+/F3 1 Tf
+0.4111 0 TD
+(i)Tj
+/F6 1 Tf
+0.6889 0 TD
+(+)Tj
+/F2 1 Tf
+0.9667 0 TD
+-0.1667 Tw
+(1 ,)Tj
+/F3 1 Tf
+1.2444 0 TD
+0 Tw
+(j)Tj
+/F6 1 Tf
+0.6889 0 TD
+(+)Tj
+/F2 1 Tf
+0.9667 0 TD
+-0.1719 Tw
+(1 \))Tj
+/F6 1 Tf
+1.5 0 TD
+0 Tw
+(=)Tj
+/F3 1 Tf
+1.0556 0 TD
+(A)Tj
+/F2 1 Tf
+0.6889 0 TD
+(\()Tj
+/F3 1 Tf
+0.4111 0 TD
+(A)Tj
+/F2 1 Tf
+0.6889 0 TD
+(\()Tj
+/F3 1 Tf
+0.4111 0 TD
+(i)Tj
+/F2 1 Tf
+0.3556 0 TD
+(,)Tj
+/F3 1 Tf
+0.6667 0 TD
+(j)Tj
+/F6 1 Tf
+0.6889 0 TD
+(+)Tj
+/F2 1 Tf
+0.9667 0 TD
+-0.1719 Tw
+[(1 \) )-94.1(,)]TJ
+/F3 1 Tf
+1.7444 0 TD
+0 Tw
+(j)Tj
+/F2 1 Tf
+0.3556 0 TD
+(\))Tj
+-19.7667 -1.8889 TD
+0.2302 Tw
+(Using a recursive declaration, define)Tj
+/F4 1 Tf
+16.0889 0 TD
+0 Tw
+(ack[i,j])Tj
+/F2 1 Tf
+5.2778 0 TD
+(in)Tj
+8 0 0 8 329.6 307.215 Tm
+(AMPL)Tj
+9 0 0 9 356.2 307.215 Tm
+0.2277 Tw
+(so that it will equal)Tj
+/F3 1 Tf
+9.0556 0 TD
+0 Tw
+(A)Tj
+/F2 1 Tf
+0.6889 0 TD
+(\()Tj
+/F3 1 Tf
+0.4111 0 TD
+(i)Tj
+/F2 1 Tf
+0.3556 0 TD
+(,)Tj
+/F3 1 Tf
+0.6667 0 TD
+(j)Tj
+/F2 1 Tf
+0.3556 0 TD
+0.5009 Tw
+(\). Use)Tj
+/F4 1 Tf
+-37.1111 -1.2222 TD
+0 Tw
+(display)Tj
+/F2 1 Tf
+4.6222 0 TD
+0.1719 Tw
+(to print)Tj
+/F4 1 Tf
+3.5111 0 TD
+0 Tw
+(ack[0,0])Tj
+/F2 1 Tf
+4.8 0 TD
+(,)Tj
+/F4 1 Tf
+0.6778 0 TD
+(ack[1,1])Tj
+/F2 1 Tf
+4.8 0 TD
+(,)Tj
+/F4 1 Tf
+0.6778 0 TD
+(ack[2,2])Tj
+/F2 1 Tf
+5.2222 0 TD
+0.1744 Tw
+[(and so forth. )-254(What difficulty )13.3(do )13.3(you)]TJ
+-24.3111 -1.2222 TD
+0 Tw
+(encounter?)Tj
+0 -1.4444 TD
+0.0064 Tw
+(\(d\) What are the values)Tj
+/F4 1 Tf
+9.6111 0 TD
+0 Tw
+(odd[i])Tj
+/F2 1 Tf
+3.8556 0 TD
+0.0061 Tw
+(defined by the following odd declaration?)Tj
+/F4 1 Tf
+8 0 0 8 154.8 257.215 Tm
+0 Tw
+(param odd {i in 1..N} =)Tj
+1.8 -1.125 TD
+(if i = 1 then 3 else)Tj
+1.8 -1.125 TD
+(min {j in odd[i-1]+2 .. odd[i-1]*2 by 2:)Tj
+1.8 -1.125 TD
+(not exists {k in 1 .. i-1} j mod odd[k] = 0} j;)Tj
+/F2 1 Tf
+9 0 0 9 126 213.215 Tm
+0.0954 Tw
+[(Once youíve figured it out, create a simpler and more efficient declaration that gives a set )-11.5(rather)]TJ
+0 -1.2222 TD
+0.0074 Tw
+(than an array of these numbers.)Tj
+ET
+endstreamendobj52 0 obj<< /Type /Page /Parent 108 0 R /Resources 53 0 R /Contents 54 0 R /Rotate 0 /MediaBox [ 0 0 612 792 ] /CropBox [ 40.32001 126 571.67999 792 ] >> endobj53 0 obj<< /ProcSet [ /PDF /Text ] /Font << /F2 126 0 R /F4 134 0 R /F5 136 0 R >> /ExtGState << /GS1 137 0 R >> >> endobj54 0 obj<< /Length 19808 >> stream
+BT
+/F5 1 Tf
+7 0 0 7 126 747.615 Tm
+0 g
+/GS1 gs
+0 Tc
+0.0298 Tw
+[(SECTION 7.8 )-27824.1(SYMBOLIC )12.2(PARAMETERS)]TJ
+10 0 0 10 469.2 747.615 Tm
+0 Tw
+(127)Tj
+/F2 1 Tf
+9 0 0 9 126 716.215 Tm
+0.1173 Tw
+[(\(e\) A ëëtreeíí consists of a collection of )-12.2(nodes, )-12.3(one )-12.2(of )-12.2(which )-12.2(we )-12.2(designate )-12.2(as )-12.3(the )-12.2(ëërootíí. )-267(Each)]TJ
+0 -1.2222 TD
+0.0954 Tw
+[(node )-10.7(except )-10.7(the )-10.7(root )-10.7(has )-10.7(a unique predecessor node in the tree, such that if you work backwards)]TJ
+T*
+0.1744 Tw
+[(from )13.2(a )13.2(node )13.2(to )13.2(its predecessor, then to its predecessorís predecessor, and so forth, you always)]TJ
+T*
+0.0289 Tw
+[(eventually reach the root. )-254.6(A tree can be drawn like this, with the root at the left )11.6(and )11.6(an )11.6(arrow )11.6(from)]TJ
+T*
+0.006 Tw
+(each node to its successors:)Tj
+ET
+0 G
+1 J 0 j 0.45 w 10 M []0 d
+1 i 
+228.6 610.62 m
+228.6 612.607 226.987 614.22 225 614.22 c
+223.013 614.22 221.4 612.607 221.4 610.62 c
+221.4 608.633 223.013 607.02 225 607.02 c
+226.987 607.02 228.6 608.633 228.6 610.62 c
+282.6 632.22 m
+282.6 634.207 280.987 635.82 279 635.82 c
+277.013 635.82 275.4 634.207 275.4 632.22 c
+275.4 630.233 277.013 628.62 279 628.62 c
+280.987 628.62 282.6 630.233 282.6 632.22 c
+336.6 643.02 m
+336.6 645.007 334.987 646.62 333 646.62 c
+331.013 646.62 329.4 645.007 329.4 643.02 c
+329.4 641.033 331.013 639.42 333 639.42 c
+334.987 639.42 336.6 641.033 336.6 643.02 c
+390.6 653.82 m
+390.6 655.807 388.987 657.42 387 657.42 c
+385.013 657.42 383.4 655.807 383.4 653.82 c
+383.4 651.833 385.013 650.22 387 650.22 c
+388.987 650.22 390.6 651.833 390.6 653.82 c
+390.6 632.22 m
+390.6 634.207 388.987 635.82 387 635.82 c
+385.013 635.82 383.4 634.207 383.4 632.22 c
+383.4 630.233 385.013 628.62 387 628.62 c
+388.987 628.62 390.6 630.233 390.6 632.22 c
+336.6 621.42 m
+336.6 623.407 334.987 625.02 333 625.02 c
+331.013 625.02 329.4 623.407 329.4 621.42 c
+329.4 619.433 331.013 617.82 333 617.82 c
+334.987 617.82 336.6 619.433 336.6 621.42 c
+282.6 610.62 m
+282.6 612.607 280.987 614.22 279 614.22 c
+277.013 614.22 275.4 612.607 275.4 610.62 c
+275.4 608.633 277.013 607.02 279 607.02 c
+280.987 607.02 282.6 608.633 282.6 610.62 c
+282.6 589.02 m
+282.6 591.007 280.987 592.62 279 592.62 c
+277.013 592.62 275.4 591.007 275.4 589.02 c
+275.4 587.033 277.013 585.42 279 585.42 c
+280.987 585.42 282.6 587.033 282.6 589.02 c
+336.6 599.82 m
+336.6 601.807 334.987 603.42 333 603.42 c
+331.013 603.42 329.4 601.807 329.4 599.82 c
+329.4 597.833 331.013 596.22 333 596.22 c
+334.987 596.22 336.6 597.833 336.6 599.82 c
+390.6 610.62 m
+390.6 612.607 388.987 614.22 387 614.22 c
+385.013 614.22 383.4 612.607 383.4 610.62 c
+383.4 608.633 385.013 607.02 387 607.02 c
+388.987 607.02 390.6 608.633 390.6 610.62 c
+390.6 599.82 m
+390.6 601.807 388.987 603.42 387 603.42 c
+385.013 603.42 383.4 601.807 383.4 599.82 c
+383.4 597.833 385.013 596.22 387 596.22 c
+388.987 596.22 390.6 597.833 390.6 599.82 c
+390.6 589.02 m
+390.6 591.007 388.987 592.62 387 592.62 c
+385.013 592.62 383.4 591.007 383.4 589.02 c
+383.4 587.033 385.013 585.42 387 585.42 c
+388.987 585.42 390.6 587.033 390.6 589.02 c
+336.6 578.22 m
+336.6 580.207 334.987 581.82 333 581.82 c
+331.013 581.82 329.4 580.207 329.4 578.22 c
+329.4 576.233 331.013 574.62 333 574.62 c
+334.987 574.62 336.6 576.233 336.6 578.22 c
+228.3 612.015 m
+275.6 630.915 l
+271.1 627.615 m
+275.6 630.815 l
+271 627.815 m
+275.6 630.815 l
+270.9 628.015 m
+275.6 630.915 l
+270.8 628.115 m
+275.6 630.815 l
+270.7 628.315 m
+275.5 630.815 l
+270.6 628.515 m
+275.6 630.915 l
+270.5 628.615 m
+275.6 630.815 l
+270.5 628.915 m
+275.6 630.915 l
+270.4 629.015 m
+275.6 630.815 l
+270.3 629.215 m
+275.6 630.915 l
+270.2 629.415 m
+275.5 630.915 l
+270.2 629.615 m
+275.6 630.815 l
+270.2 629.815 m
+275.6 630.915 l
+270.1 629.915 m
+275.5 630.815 l
+270.1 630.215 m
+275.6 630.915 l
+282.5 633.015 m
+329.4 642.315 l
+324.4 640.015 m
+329.4 642.315 l
+324.3 640.215 m
+329.4 642.415 l
+324.2 640.315 m
+329.3 642.315 l
+324.2 640.515 m
+329.4 642.315 l
+324.1 640.715 m
+329.4 642.315 l
+324 640.915 m
+329.4 642.315 l
+324 641.015 m
+329.4 642.215 l
+324 641.215 m
+329.4 642.215 l
+324 641.515 m
+329.4 642.315 l
+323.9 641.615 m
+329.4 642.315 l
+323.9 641.815 m
+329.4 642.315 l
+323.9 642.015 m
+329.4 642.215 l
+323.9 642.215 m
+329.4 642.315 l
+323.9 642.415 m
+329.4 642.415 l
+323.9 642.615 m
+329.4 642.415 l
+S
+282.5 631.515 m
+329.4 622.215 l
+323.9 621.915 m
+329.4 622.115 l
+323.9 622.115 m
+329.4 622.115 l
+323.9 622.315 m
+329.4 622.215 l
+323.9 622.515 m
+329.4 622.315 l
+323.9 622.715 m
+329.4 622.215 l
+323.9 622.915 m
+329.4 622.215 l
+324 623.015 m
+329.4 622.215 l
+324 623.215 m
+329.4 622.215 l
+324 623.515 m
+329.4 622.315 l
+324 623.615 m
+329.4 622.215 l
+324.1 623.815 m
+329.4 622.215 l
+324.2 624.015 m
+329.4 622.215 l
+324.2 624.215 m
+329.3 622.215 l
+324.3 624.315 m
+329.4 622.115 l
+324.4 624.515 m
+329.4 622.215 l
+336.5 643.815 m
+383.4 653.115 l
+378.4 650.815 m
+383.4 653.115 l
+378.3 651.015 m
+383.4 653.215 l
+378.2 651.115 m
+383.3 653.115 l
+378.2 651.315 m
+383.4 653.115 l
+378.1 651.515 m
+383.4 653.115 l
+378 651.715 m
+383.4 653.115 l
+378 651.815 m
+383.4 653.015 l
+378 652.015 m
+383.4 653.015 l
+378 652.315 m
+383.4 653.115 l
+377.9 652.415 m
+383.4 653.115 l
+377.9 652.615 m
+383.4 653.115 l
+377.9 652.815 m
+383.4 653.015 l
+377.9 653.015 m
+383.4 653.115 l
+377.9 653.215 m
+383.4 653.215 l
+377.9 653.415 m
+383.4 653.215 l
+336.5 642.315 m
+383.4 633.015 l
+377.9 632.715 m
+383.4 632.915 l
+377.9 632.915 m
+383.4 632.915 l
+377.9 633.115 m
+383.4 633.015 l
+377.9 633.315 m
+383.4 633.115 l
+377.9 633.515 m
+383.4 633.015 l
+377.9 633.715 m
+383.4 633.015 l
+378 633.815 m
+383.4 633.015 l
+378 634.015 m
+383.4 633.015 l
+378 634.315 m
+383.4 633.115 l
+378 634.415 m
+383.4 633.015 l
+378.1 634.615 m
+383.4 633.015 l
+378.2 634.815 m
+383.4 633.015 l
+378.2 635.015 m
+383.3 633.015 l
+378.3 635.115 m
+383.4 632.915 l
+378.4 635.315 m
+383.4 633.015 l
+228.6 610.615 m
+275.4 610.615 l
+270 609.315 m
+275.4 610.615 l
+269.9 609.515 m
+275.3 610.615 l
+269.9 609.715 m
+275.3 610.615 l
+269.8 609.915 m
+275.3 610.615 l
+269.8 610.115 m
+275.3 610.615 l
+269.8 610.315 m
+275.3 610.615 l
+269.8 610.415 m
+275.3 610.615 l
+269.8 610.615 m
+275.3 610.615 l
+269.8 610.915 m
+275.3 610.715 l
+269.8 611.015 m
+275.3 610.715 l
+269.8 611.215 m
+275.3 610.715 l
+269.8 611.415 m
+275.3 610.715 l
+269.9 611.615 m
+275.3 610.715 l
+269.9 611.815 m
+275.3 610.715 l
+270 612.015 m
+275.4 610.715 l
+S
+228.3 609.315 m
+275.6 590.415 l
+270.1 591.115 m
+275.6 590.415 l
+270.1 591.415 m
+275.5 590.515 l
+270.2 591.515 m
+275.6 590.415 l
+270.2 591.715 m
+275.6 590.515 l
+270.2 591.915 m
+275.5 590.415 l
+270.3 592.115 m
+275.6 590.415 l
+270.4 592.315 m
+275.6 590.515 l
+270.5 592.415 m
+275.6 590.415 l
+270.5 592.615 m
+275.6 590.415 l
+270.6 592.815 m
+275.6 590.415 l
+270.7 593.015 m
+275.5 590.515 l
+270.8 593.215 m
+275.6 590.515 l
+270.9 593.315 m
+275.6 590.415 l
+271 593.515 m
+275.6 590.515 l
+271.1 593.715 m
+275.6 590.515 l
+282.5 589.815 m
+329.4 599.115 l
+324.4 596.815 m
+329.4 599.115 l
+324.3 597.015 m
+329.4 599.215 l
+324.2 597.115 m
+329.3 599.115 l
+324.2 597.315 m
+329.4 599.115 l
+324.1 597.515 m
+329.4 599.115 l
+324 597.715 m
+329.4 599.115 l
+324 597.815 m
+329.4 599.015 l
+324 598.015 m
+329.4 599.015 l
+324 598.315 m
+329.4 599.115 l
+323.9 598.415 m
+329.4 599.115 l
+323.9 598.615 m
+329.4 599.115 l
+323.9 598.815 m
+329.4 599.015 l
+323.9 599.015 m
+329.4 599.115 l
+323.9 599.215 m
+329.4 599.215 l
+323.9 599.415 m
+329.4 599.215 l
+282.5 588.315 m
+329.4 579.015 l
+323.9 578.715 m
+329.4 578.915 l
+323.9 578.915 m
+329.4 578.915 l
+323.9 579.115 m
+329.4 579.015 l
+323.9 579.315 m
+329.4 579.115 l
+323.9 579.515 m
+329.4 579.015 l
+323.9 579.715 m
+329.4 579.015 l
+324 579.815 m
+329.4 579.015 l
+324 580.015 m
+329.4 579.015 l
+324 580.315 m
+329.4 579.115 l
+324 580.415 m
+329.4 579.015 l
+324.1 580.615 m
+329.4 579.015 l
+324.2 580.815 m
+329.4 579.015 l
+324.2 581.015 m
+329.3 579.015 l
+324.3 581.115 m
+329.4 578.915 l
+324.4 581.315 m
+329.4 579.015 l
+336.5 600.615 m
+383.4 609.915 l
+378.4 607.615 m
+383.4 609.915 l
+378.3 607.815 m
+383.4 610.015 l
+378.2 607.915 m
+383.3 609.915 l
+378.2 608.115 m
+383.4 609.915 l
+378.1 608.315 m
+383.4 609.915 l
+378 608.515 m
+383.4 609.915 l
+378 608.615 m
+383.4 609.815 l
+378 608.815 m
+383.4 609.815 l
+378 609.115 m
+383.4 609.915 l
+377.9 609.215 m
+383.4 609.915 l
+377.9 609.415 m
+383.4 609.915 l
+377.9 609.615 m
+383.4 609.815 l
+377.9 609.815 m
+383.4 609.915 l
+377.9 610.015 m
+383.4 610.015 l
+377.9 610.215 m
+383.4 610.015 l
+S
+336.6 599.815 m
+383.4 599.815 l
+378 598.515 m
+383.4 599.815 l
+377.9 598.715 m
+383.3 599.815 l
+377.9 598.915 m
+383.3 599.815 l
+377.8 599.115 m
+383.3 599.815 l
+377.8 599.315 m
+383.3 599.815 l
+377.8 599.515 m
+383.3 599.815 l
+377.8 599.615 m
+383.3 599.815 l
+377.8 599.815 m
+383.3 599.815 l
+377.8 600.115 m
+383.3 599.915 l
+377.8 600.215 m
+383.3 599.915 l
+377.8 600.415 m
+383.3 599.915 l
+377.8 600.615 m
+383.3 599.915 l
+377.9 600.815 m
+383.3 599.915 l
+377.9 601.015 m
+383.3 599.915 l
+378 601.215 m
+383.4 599.915 l
+336.5 599.115 m
+383.4 589.815 l
+377.9 589.515 m
+383.4 589.715 l
+377.9 589.715 m
+383.4 589.715 l
+377.9 589.915 m
+383.4 589.815 l
+377.9 590.115 m
+383.4 589.915 l
+377.9 590.315 m
+383.4 589.815 l
+377.9 590.515 m
+383.4 589.815 l
+378 590.615 m
+383.4 589.815 l
+378 590.815 m
+383.4 589.815 l
+378 591.115 m
+383.4 589.915 l
+378 591.215 m
+383.4 589.815 l
+S
+378.1 591.415 m
+383.4 589.815 l
+378.2 591.615 m
+383.4 589.815 l
+378.2 591.815 m
+383.3 589.815 l
+378.3 591.915 m
+383.4 589.715 l
+378.4 592.115 m
+383.4 589.815 l
+S
+BT
+9 0 0 9 126 556.515 Tm
+0.0062 Tw
+(We can store the structure of a tree in)Tj
+8 0 0 8 263.7 556.515 Tm
+0 Tw
+(AMPL)Tj
+9 0 0 9 288.3 556.515 Tm
+0.0061 Tw
+(sets and parameters as follows:)Tj
+/F4 1 Tf
+8 0 0 8 154.8 541.515 Tm
+0.0001 Tw
+(set NODES;)Tj
+0 -1.125 TD
+(param Root symbolic in NODES;)Tj
+T*
+0 Tw
+(param pred {i in NODES diff {Root}} symbolic in NODES diff {i};)Tj
+/F2 1 Tf
+9 0 0 9 126 506.515 Tm
+0.0068 Tw
+(Every node)Tj
+/F4 1 Tf
+4.8444 0 TD
+0 Tw
+(i)Tj
+/F2 1 Tf
+0.6 0 TD
+0.0122 Tw
+(, except)Tj
+/F4 1 Tf
+3.3778 0 TD
+0 Tw
+(Root)Tj
+/F2 1 Tf
+2.4 0 TD
+0.0084 Tw
+(, has a predecessor)Tj
+/F4 1 Tf
+7.7778 0 TD
+0 Tw
+(pred[i])Tj
+/F2 1 Tf
+4.2 0 TD
+(.)Tj
+-23.2 -1.4444 TD
+0.0616 Tw
+[(The depth of a node is the number of predecessors that you encounter on tracing back to the )-10.5(root;)]TJ
+0 -1.2222 TD
+0.1176 Tw
+[(the )-10.6(depth of the root is 0. )-255(Give an)]TJ
+8 0 0 8 260.9 482.515 Tm
+0 Tw
+(AMPL)Tj
+9 0 0 9 286.5 482.515 Tm
+0.1172 Tw
+(definition for)Tj
+/F4 1 Tf
+5.7889 0 TD
+0 Tw
+(depth[i])Tj
+/F2 1 Tf
+5.1667 0 TD
+0.1173 Tw
+(that correctly computes the)Tj
+-28.7889 -1.2222 TD
+0.1508 Tw
+(depth of each node)Tj
+/F4 1 Tf
+8.4333 0 TD
+0 Tw
+(i)Tj
+/F2 1 Tf
+0.6 0 TD
+0.1623 Tw
+[(. )-248.9(To check your answer, apply your definition to)]TJ
+8 0 0 8 398.9 471.515 Tm
+0 Tw
+(AMPL)Tj
+9 0 0 9 424.9 471.515 Tm
+0.1619 Tw
+(data for the tree)Tj
+-33.2111 -1.2222 TD
+0.007 Tw
+(depicted above; after reading in the data, use)Tj
+/F4 1 Tf
+18.1889 0 TD
+0 Tw
+(display)Tj
+/F2 1 Tf
+4.4556 0 TD
+0.0063 Tw
+(to view the parameter)Tj
+/F4 1 Tf
+8.9667 0 TD
+0 Tw
+(depth)Tj
+/F2 1 Tf
+3 0 TD
+(.)Tj
+-34.6111 -1.4444 TD
+0.0064 Tw
+(An error in the data could give a tree plus a disconnected cycle, like this:)Tj
+ET
+228.6 385.92 m
+228.6 387.907 226.987 389.52 225 389.52 c
+223.013 389.52 221.4 387.907 221.4 385.92 c
+221.4 383.933 223.013 382.32 225 382.32 c
+226.987 382.32 228.6 383.933 228.6 385.92 c
+282.6 407.52 m
+282.6 409.507 280.987 411.12 279 411.12 c
+277.013 411.12 275.4 409.507 275.4 407.52 c
+275.4 405.533 277.013 403.92 279 403.92 c
+280.987 403.92 282.6 405.533 282.6 407.52 c
+336.6 418.32 m
+336.6 420.307 334.987 421.92 333 421.92 c
+331.013 421.92 329.4 420.307 329.4 418.32 c
+329.4 416.333 331.013 414.72 333 414.72 c
+334.987 414.72 336.6 416.333 336.6 418.32 c
+390.6 429.12 m
+390.6 431.107 388.987 432.72 387 432.72 c
+385.013 432.72 383.4 431.107 383.4 429.12 c
+383.4 427.133 385.013 425.52 387 425.52 c
+388.987 425.52 390.6 427.133 390.6 429.12 c
+390.6 407.52 m
+390.6 409.507 388.987 411.12 387 411.12 c
+385.013 411.12 383.4 409.507 383.4 407.52 c
+383.4 405.533 385.013 403.92 387 403.92 c
+388.987 403.92 390.6 405.533 390.6 407.52 c
+336.6 396.72 m
+336.6 398.707 334.987 400.32 333 400.32 c
+331.013 400.32 329.4 398.707 329.4 396.72 c
+329.4 394.733 331.013 393.12 333 393.12 c
+334.987 393.12 336.6 394.733 336.6 396.72 c
+282.6 385.92 m
+282.6 387.907 280.987 389.52 279 389.52 c
+277.013 389.52 275.4 387.907 275.4 385.92 c
+275.4 383.933 277.013 382.32 279 382.32 c
+280.987 382.32 282.6 383.933 282.6 385.92 c
+282.6 364.32 m
+282.6 366.307 280.987 367.92 279 367.92 c
+277.013 367.92 275.4 366.307 275.4 364.32 c
+275.4 362.333 277.013 360.72 279 360.72 c
+280.987 360.72 282.6 362.333 282.6 364.32 c
+336.6 375.12 m
+336.6 377.107 334.987 378.72 333 378.72 c
+331.013 378.72 329.4 377.107 329.4 375.12 c
+329.4 373.133 331.013 371.52 333 371.52 c
+334.987 371.52 336.6 373.133 336.6 375.12 c
+390.6 385.92 m
+390.6 387.907 388.987 389.52 387 389.52 c
+385.013 389.52 383.4 387.907 383.4 385.92 c
+383.4 383.933 385.013 382.32 387 382.32 c
+388.987 382.32 390.6 383.933 390.6 385.92 c
+390.6 375.12 m
+390.6 377.107 388.987 378.72 387 378.72 c
+385.013 378.72 383.4 377.107 383.4 375.12 c
+383.4 373.133 385.013 371.52 387 371.52 c
+388.987 371.52 390.6 373.133 390.6 375.12 c
+390.6 364.32 m
+390.6 366.307 388.987 367.92 387 367.92 c
+385.013 367.92 383.4 366.307 383.4 364.32 c
+383.4 362.333 385.013 360.72 387 360.72 c
+388.987 360.72 390.6 362.333 390.6 364.32 c
+336.6 353.52 m
+336.6 355.507 334.987 357.12 333 357.12 c
+331.013 357.12 329.4 355.507 329.4 353.52 c
+329.4 351.533 331.013 349.92 333 349.92 c
+334.987 349.92 336.6 351.533 336.6 353.52 c
+228.3 387.315 m
+275.6 406.215 l
+272.3 403.715 m
+275.6 406.115 l
+272.1 403.915 m
+275.5 406.215 l
+272 404.015 m
+275.5 406.215 l
+272 404.215 m
+275.6 406.215 l
+271.9 404.215 m
+275.5 406.115 l
+271.8 404.415 m
+275.5 406.215 l
+271.8 404.515 m
+275.6 406.115 l
+271.8 404.715 m
+275.6 406.215 l
+271.7 404.815 m
+275.6 406.215 l
+271.6 405.015 m
+275.5 406.215 l
+271.6 405.115 m
+275.6 406.215 l
+271.5 405.215 m
+275.5 406.215 l
+271.5 405.415 m
+275.6 406.215 l
+271.5 405.515 m
+275.6 406.215 l
+271.5 405.715 m
+275.6 406.215 l
+282.5 406.815 m
+329.4 397.515 l
+325.2 397.315 m
+329.3 397.515 l
+325.2 397.415 m
+329.3 397.415 l
+325.2 397.515 m
+329.3 397.515 l
+325.2 397.715 m
+329.3 397.515 l
+325.2 397.815 m
+329.3 397.515 l
+325.2 398.015 m
+329.3 397.515 l
+325.3 398.115 m
+329.4 397.515 l
+325.3 398.315 m
+329.4 397.615 l
+325.4 398.415 m
+329.4 397.515 l
+325.4 398.515 m
+329.4 397.515 l
+325.5 398.715 m
+329.4 397.515 l
+325.5 398.815 m
+329.4 397.515 l
+325.5 399.015 m
+329.3 397.515 l
+325.6 399.115 m
+329.4 397.515 l
+325.7 399.315 m
+329.4 397.515 l
+S
+336.5 419.115 m
+383.4 428.415 l
+379.7 426.615 m
+383.4 428.415 l
+379.6 426.815 m
+383.4 428.415 l
+379.5 426.915 m
+383.3 428.415 l
+379.5 427.115 m
+383.4 428.415 l
+379.5 427.215 m
+383.4 428.415 l
+379.4 427.315 m
+383.4 428.315 l
+379.4 427.515 m
+383.4 428.415 l
+379.3 427.615 m
+383.4 428.315 l
+379.3 427.815 m
+383.4 428.415 l
+379.2 427.915 m
+383.3 428.415 l
+379.2 428.115 m
+383.3 428.415 l
+379.2 428.215 m
+383.3 428.415 l
+379.2 428.415 m
+383.3 428.415 l
+379.2 428.515 m
+383.3 428.515 l
+379.2 428.615 m
+383.3 428.415 l
+387 425.515 m
+387 411.115 l
+385.9 415.215 m
+386.9 411.215 l
+386.1 415.315 m
+386.9 411.215 l
+386.2 415.315 m
+386.9 411.215 l
+386.4 415.315 m
+386.9 411.215 l
+386.5 415.315 m
+386.9 411.215 l
+386.7 415.315 m
+386.9 411.215 l
+386.8 415.315 m
+386.9 411.215 l
+387 415.315 m
+387 411.215 l
+387.1 415.315 m
+387 411.215 l
+387.2 415.315 m
+387 411.215 l
+387.4 415.315 m
+387 411.215 l
+387.5 415.315 m
+387 411.215 l
+387.7 415.315 m
+387 411.215 l
+387.8 415.315 m
+387 411.215 l
+388 415.215 m
+387 411.215 l
+383.4 408.315 m
+336.5 417.615 l
+340.7 417.815 m
+336.6 417.615 l
+340.7 417.715 m
+336.6 417.715 l
+340.7 417.615 m
+336.6 417.615 l
+340.7 417.415 m
+336.6 417.615 l
+340.7 417.315 m
+336.6 417.615 l
+340.7 417.115 m
+336.6 417.615 l
+340.6 417.015 m
+336.5 417.615 l
+340.6 416.815 m
+336.5 417.515 l
+340.5 416.715 m
+336.5 417.615 l
+340.5 416.515 m
+336.5 417.515 l
+340.4 416.415 m
+336.5 417.615 l
+340.4 416.315 m
+336.5 417.615 l
+340.4 416.115 m
+336.6 417.615 l
+340.3 416.015 m
+336.5 417.615 l
+340.2 415.815 m
+336.5 417.615 l
+228.6 385.915 m
+275.4 385.915 l
+271.3 384.915 m
+275.3 385.915 l
+271.2 385.115 m
+275.3 385.915 l
+271.2 385.215 m
+275.3 385.915 l
+271.2 385.415 m
+275.3 385.915 l
+271.2 385.515 m
+275.3 385.915 l
+271.2 385.715 m
+275.3 385.915 l
+271.2 385.815 m
+275.3 385.915 l
+271.2 385.915 m
+275.3 385.915 l
+271.2 386.115 m
+275.3 386.015 l
+271.2 386.215 m
+275.3 386.015 l
+271.2 386.415 m
+275.3 386.015 l
+271.2 386.515 m
+275.3 386.015 l
+271.2 386.715 m
+275.3 386.015 l
+271.2 386.815 m
+275.3 386.015 l
+271.3 387.015 m
+275.3 386.015 l
+S
+228.3 384.615 m
+275.6 365.715 l
+271.5 366.215 m
+275.6 365.715 l
+271.5 366.415 m
+275.6 365.715 l
+271.5 366.515 m
+275.6 365.715 l
+271.5 366.715 m
+275.5 365.715 l
+271.6 366.815 m
+275.6 365.715 l
+271.6 366.915 m
+275.5 365.715 l
+271.7 367.115 m
+275.6 365.715 l
+271.8 367.215 m
+275.6 365.715 l
+271.8 367.415 m
+275.6 365.815 l
+271.8 367.515 m
+275.5 365.715 l
+271.9 367.715 m
+275.5 365.815 l
+272 367.715 m
+275.6 365.715 l
+272 367.915 m
+275.5 365.715 l
+272.1 368.015 m
+275.5 365.715 l
+272.3 368.215 m
+275.6 365.815 l
+282.5 365.115 m
+329.4 374.415 l
+325.7 372.615 m
+329.4 374.415 l
+325.6 372.815 m
+329.4 374.415 l
+325.5 372.915 m
+329.3 374.415 l
+325.5 373.115 m
+329.4 374.415 l
+325.5 373.215 m
+329.4 374.415 l
+325.4 373.315 m
+329.4 374.315 l
+325.4 373.515 m
+329.4 374.415 l
+325.3 373.615 m
+329.4 374.315 l
+325.3 373.815 m
+329.4 374.415 l
+325.2 373.915 m
+329.3 374.415 l
+325.2 374.115 m
+329.3 374.415 l
+325.2 374.215 m
+329.3 374.415 l
+325.2 374.415 m
+329.3 374.415 l
+325.2 374.515 m
+329.3 374.515 l
+325.2 374.615 m
+329.3 374.415 l
+282.5 363.615 m
+329.4 354.315 l
+325.2 354.115 m
+329.3 354.315 l
+325.2 354.215 m
+329.3 354.215 l
+325.2 354.315 m
+329.3 354.315 l
+325.2 354.515 m
+329.3 354.315 l
+325.2 354.615 m
+329.3 354.315 l
+325.2 354.815 m
+329.3 354.315 l
+325.3 354.915 m
+329.4 354.315 l
+325.3 355.115 m
+329.4 354.415 l
+325.4 355.215 m
+329.4 354.315 l
+325.4 355.315 m
+329.4 354.315 l
+325.5 355.515 m
+329.4 354.315 l
+325.5 355.615 m
+329.4 354.315 l
+325.5 355.815 m
+329.3 354.315 l
+325.6 355.915 m
+329.4 354.315 l
+325.7 356.115 m
+329.4 354.315 l
+336.5 375.915 m
+383.4 385.215 l
+379.7 383.415 m
+383.4 385.215 l
+379.6 383.615 m
+383.4 385.215 l
+379.5 383.715 m
+383.3 385.215 l
+379.5 383.915 m
+383.4 385.215 l
+379.5 384.015 m
+383.4 385.215 l
+379.4 384.115 m
+383.4 385.115 l
+379.4 384.315 m
+383.4 385.215 l
+379.3 384.415 m
+383.4 385.115 l
+379.3 384.615 m
+383.4 385.215 l
+379.2 384.715 m
+383.3 385.215 l
+379.2 384.915 m
+383.3 385.215 l
+379.2 385.015 m
+383.3 385.215 l
+379.2 385.215 m
+383.3 385.215 l
+379.2 385.315 m
+383.3 385.315 l
+379.2 385.415 m
+383.3 385.215 l
+S
+336.6 375.115 m
+383.4 375.115 l
+379.3 374.115 m
+383.3 375.115 l
+379.2 374.315 m
+383.3 375.115 l
+379.2 374.415 m
+383.3 375.115 l
+379.2 374.615 m
+383.3 375.115 l
+379.2 374.715 m
+383.3 375.115 l
+379.2 374.915 m
+383.3 375.115 l
+379.2 375.015 m
+383.3 375.115 l
+379.2 375.115 m
+383.3 375.115 l
+379.2 375.315 m
+383.3 375.215 l
+379.2 375.415 m
+383.3 375.215 l
+379.2 375.615 m
+383.3 375.215 l
+379.2 375.715 m
+383.3 375.215 l
+379.2 375.915 m
+383.3 375.215 l
+379.2 376.015 m
+383.3 375.215 l
+379.3 376.215 m
+383.3 375.215 l
+336.5 374.415 m
+383.4 365.115 l
+379.2 364.915 m
+383.3 365.115 l
+379.2 365.015 m
+383.3 365.015 l
+379.2 365.115 m
+383.3 365.115 l
+379.2 365.315 m
+383.3 365.115 l
+379.2 365.415 m
+383.3 365.115 l
+379.2 365.615 m
+383.3 365.115 l
+379.3 365.715 m
+383.4 365.115 l
+379.3 365.915 m
+383.4 365.215 l
+379.4 366.015 m
+383.4 365.115 l
+379.4 366.115 m
+383.4 365.115 l
+S
+379.5 366.315 m
+383.4 365.115 l
+379.5 366.415 m
+383.4 365.115 l
+379.5 366.615 m
+383.3 365.115 l
+379.6 366.715 m
+383.4 365.115 l
+379.7 366.915 m
+383.4 365.115 l
+S
+BT
+9 0 0 9 126 331.815 Tm
+(If you enter such data, what will happen when you try to display)Tj
+/F4 1 Tf
+26.0778 0 TD
+0 Tw
+(depth)Tj
+/F2 1 Tf
+3 0 TD
+(?)Tj
+ET
+endstreamendobj55 0 obj<< /Type /Font /Subtype /Type1 /FirstChar 1 /LastChar 138 /Widths [ 494 592 768 549 500 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 549 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 549 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 500 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 549 ] /Encoding 61 0 R /BaseFont /BPDJBM+Symbol /FontDescriptor 57 0 R /ToUnicode 62 0 R >> endobj56 0 obj<< /Type /Font /Subtype /Type1 /FirstChar 32 /LastChar 108 /Widths [ 250 333 555 500 500 1000 833 278 333 333 500 570 250 333 250 278 500 500 500 500 500 500 500 500 500 500 333 333 570 570 570 500 930 722 667 722 722 667 611 778 778 389 500 778 667 944 722 778 611 778 722 556 667 722 722 1000 722 722 667 333 278 333 581 500 333 500 556 444 556 444 333 500 556 278 333 556 278 ] /Encoding /WinAnsiEncoding /BaseFont /BPDKEA+Times-Bold /FontDescriptor 59 0 R >> endobj57 0 obj<< /Type /FontDescriptor /Ascent 0 /CapHeight 0 /Descent 0 /Flags 4 /FontBBox [ -180 -293 1090 1010 ] /FontName /BPDJBM+Symbol /ItalicAngle 0 /StemV 95 /StemH 92 /CharSet (/underscore/space/braceex/minus/Sigma/Pi/equal/plus/radical/radicalex)/FontFile3 58 0 R >> endobj58 0 obj<< /Filter /FlateDecode /Length 571 /Subtype /Type1C >> stream
+Hâ\è_HSq«?∑{Ø®\”u+
+∂ªV∫ä"ñ)rFò∂äÇa˚s€F[w+]1lÆ∂à=îF8¡BD‘ˆÊ}≥Á≤¿ózää
+:?ÔÔJ›ôOùá/üÛ=á√˘bdl@cﬁÂ>›Ô:o˜d‚ÅD¨ÓXâà…N#±∂Ï†}¥™Æ®£\lÖÎ€`∞míºoG∆Ü∆∂]ñõw‹QO4˜À˛P4ËèIC[ê˝AIÍM$3r4Iã˚É‚Áq«Å∫vm™≥ÆŒ√bO(êDO&ïñ‚)ÒÏç`BN&dZ
+≈ûXL‹ºêe)%…∑twÎSΩ0jAœëÁÒ}t
+?¿\DM¢˝‡	∑g‡Í j÷¢d@6ty–ZCp+Ó¬gx˛‰E≈ E2+–aöÛBéÊ»CN°9ÊÙï¨Ç« +ê)Eõbıﬁ™ÄE¡dûÏ¥i/ôf©≈¯xË.ñâ˙2SnÓ|¸izΩæóºﬁ.ófÃ&wycÄ3U2‹ÃÚ®À¢›„ºëØ9ï≤NèãÈCÅ‘¯§’ÿˇ&¸HÒô≠báF,¬™@ÁÈ*C^±3Élg¸Zˆ‹Ze·.º†>c …˛òËìûX&ŸÿÌÀ€h©äIÅñÑ™ˆ–«Ò6ïY¿$≠vaÚ{A.c8˘éV3ƒ!|´A^+@ß⁄)Q”∆"ΩLˆQ[/√ã‡[2ÄØ[XRãX˛ˆƒ∫cú^y ~n˙⁄è∂ìÔ¬_ üÌ ı
+endstreamendobj59 0 obj<< /Type /FontDescriptor /Ascent 699 /CapHeight 676 /Descent -205 /Flags 262178 /FontBBox [ -168 -218 1000 935 ] /FontName /BPDKEA+Times-Bold /ItalicAngle 0 /StemV 139 /XHeight 461 /StemH 139 /CharSet (/T/a/b/l/e/space/seven/hyphen/one/colon/two)/FontFile3 60 0 R >> endobj60 0 obj<< /Filter /FlateDecode /Length 1006 /Subtype /Type1C >> stream
+HâLíoLw∆GÈ]ùÏ`îõ⁄cwÁñë…ÇôÑ¥L…" aà&"P{GiF{xWTò0pZWt≈Œ †¸+ÑL∂1ˆèÕds&íe…3Bˆ¬-À¢¯‚{Â◊Ñ_Ì˚‚yÒIæOû'yáÇH∂îΩz`üyGÖ√)©;-rÉ∏A9ç%¥îx-5·iºª÷Œ¨Ω¢w"¯û˙nÕïå‚"pµPnlVˆz∑ên{Q» À›ù±°9è5oCÛv	fQ>.	Ø7´n…©
+Øπl≤“(+V∑$f
+Çπ°A(ﬂpPÖrIïîì1˙8á‡P´‡V¨¢‰¥*orùPÏp…ÓÊFI0	Vó¯í¨éÿü⁄t\uà´‚ê‘ÃˇuàÅhîååh+b—ndAÖh?*A	±÷HáÙ(Bü†%"ââ˚q˚‚˙‚~hÅV° ƒg‡—¡u∏Œ`6Äá§}¡H∆)J!]ßïôÙ≥/⁄BÖ˝ò–ü†.ONv˜∞3æÖè2TâWƒÜNN’6S¥∂i%@-§Í4ÏåJ…g;∂≥x	{ S$æ_«LêÅßJˆ2úV~ä%ˇﬂÏfW˚“d¸~o≈{∞ôwkŸ=xR¡3ƒ≠Vßùà‰2—l≤+˙ryË+ﬂG,ÿH\Èˇ&iµÚ!ÚìÔAæqﬁ]&UÖÍÊæòÕÕJ3UGÌ∂jŒXãÒ\äÒpåO«∏XÕ—ìoD[ü ÷ë–é÷€é‡P,q≈®Nª4¬ò˝Í˘eì§ÓxVﬂ¿ŸÜ1Ú”Gˇ!Ω¯ò~åÄÏUˇ‚Ühê QœYﬁÂàPtÎ≠wµîâ‰xaÄ3ä∆köÛ”—°˜zΩÔ{ÿ&_=‘_/äu8©∏¥∏hﬁ◊˝MÔÙUn∆4ıÑ~È©;¬Y(£?[ãç∂ÁL7ÊÇã˛€∑9π+`]d?ØçÚ¯ÊÕVw£Éµü	çØ¸;6ÏÁi8⁄:°=?EAb	x»Å4›ïà¿ÑﬁÈ˜Tô¢è∫©ﬂæ◊WœŒΩ5ŒBﬁœêFÿbyÄ©˝v©πÖán\IA%æ√}ÿûeW∫∞©g’9X—ˆı(OØ¥.¡¡0dè#1o$Í ¶‡&á¬Sóï¶..‡ÙÓl0<¬Yå˚t}Mõ—ÙpŸÀÉüú˜∂Å[XLÌ⁄â”q¡CÛÉﬂoL‹ˇëß˜∆ˆg¿Î dƒéÒ1^˚ó´‘óÁ´⁄˘ËEJm∑€8ﬁ¶Ë”˝ë‹^‹“M¬‡≈h”™µG´º’=ÏÍ‘‘ $˘6qÉÖÕ[÷6øπ3Å÷º)a˛` '»…ˇ
+endstreamendobj61 0 obj<< /Type /Encoding /Differences [ 1 /braceex /Sigma /Pi /radical /radicalex 32 /space 43 /plus 61 /equal 95 /underscore 138 /minus ] >> endobj62 0 obj<< /Filter /FlateDecode /Length 275 >> stream
+HâTêMoÉ0ÜÔ¸
+;Ìê ‘ä‘µC‚∞çÆ˜êÜ4B‡¿ø_™N;$zløNÏóù™se˚ÿáuç3¥Ω5ßqÒ°¡Æ∑ê
+0ΩûoQºı†∞–\Ø”åCe€ä"aü°8Õ~Ö]˘Ù»ÄΩ{Éæ∑Ï.È◊5$Í≈π–Œ¿AJ0ÿ&ÏÙ™‹õµ˝Â.´C1Noè'ß4ze;ÑÇßäÉíÄ÷¸Ø%)ﬂZöV+ül“ÚPÓe`òg«å8€òÔëâÛ®…N.H#öçüg&rvú∑ëÛ20MDÔôÑ¡n–à‰€}[ΩxåàÊ∆}i”ﬁ‚›7:ZåNÚ+¿ z~Œ
+endstreamendobj99 1 obj<< /Type /Metadata /Subtype /XML /Length 823 >> stream
+<?xpacket begin='' id='W5M0MpCehiHzreSzNTczkc9d' bytes='823'?>
+
+<rdf:RDF xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'
+ xmlns:iX='http://ns.adobe.com/iX/1.0/'>
+
+ <rdf:Description about=''
+  xmlns='http://ns.adobe.com/pdf/1.3/'
+  xmlns:pdf='http://ns.adobe.com/pdf/1.3/'>
+  <pdf:CreationDate>2002-08-29T19:18:40Z</pdf:CreationDate>
+  <pdf:ModDate>2002-08-29T15:32:08-03:00</pdf:ModDate>
+  <pdf:Producer>Acrobat Distiller 5.0 (Windows)</pdf:Producer>
+ </rdf:Description>
+
+ <rdf:Description about=''
+  xmlns='http://ns.adobe.com/xap/1.0/'
+  xmlns:xap='http://ns.adobe.com/xap/1.0/'>
+  <xap:CreateDate>2002-08-29T19:18:40Z</xap:CreateDate>
+  <xap:ModifyDate>2002-08-29T15:32:08-03:00</xap:ModifyDate>
+  <xap:MetadataDate>2002-08-29T15:32:08-03:00</xap:MetadataDate>
+ </rdf:Description>
+
+</rdf:RDF>
+<?xpacket end='r'?>endstreamendobj104 0 obj<< /S /D /St 109 >> endobj105 0 obj<< /Nums [ 0 104 0 R ] >> endobj106 0 obj<< /Type /Pages /Kids [ 123 0 R 1 0 R 4 0 R 7 0 R 10 0 R 13 0 R 16 0 R 19 0 R 22 0 R 25 0 R ] /Count 10 /Parent 107 0 R >> endobj107 0 obj<< /Type /Pages /Kids [ 106 0 R 108 0 R ] /Count 19 >> endobj108 0 obj<< /Type /Pages /Kids [ 28 0 R 31 0 R 34 0 R 37 0 R 40 0 R 43 0 R 46 0 R 49 0 R 52 0 R ] /Count 9 /Parent 107 0 R >> endobj109 0 obj<< /Dt (D:20020829151849)/JTM (Distiller)>> endobj110 0 obj/This endobj111 0 obj<< /CP (Distiller)/Fi 110 0 R >> endobj112 0 obj<< /R [ 2400 2400 ] >> endobj113 0 obj<< /JTF 0 /MB [ 0 0 612 792 ] /R 112 0 R /W [ 0 18 ] >> endobj114 0 obj<< /Fi [ 111 0 R ] /P [ 113 0 R ] >> endobj115 0 obj<< /Dm [ 612 792 612 792 ] >> endobj116 0 obj<< /Me 115 0 R >> endobj117 0 obj<< /D [ 114 0 R ] /MS 116 0 R /Type /JobTicketContents >> endobj118 0 obj<< /A [ 109 0 R ] /Cn [ 117 0 R ] /V 1.10001 >> endobj119 0 obj<< /CreationDate (D:20020829191840Z)/ModDate (D:20020829153208-03'00')/Producer (Acrobat Distiller 5.0 \(Windows\))>> endobj122 0 obj<< /Type /Catalog /Pages 107 0 R /Metadata 99 1 R /JT 118 0 R /PageLabels 105 0 R /FICL:Enfocus 145 0 R >> endobj123 0 obj<< /Type /Page /Parent 106 0 R /Resources 124 0 R /Contents 130 0 R /Rotate 0 /MediaBox [ 0 0 612 792 ] /CropBox [ 40.32001 126 571.67999 792 ] >> endobj124 0 obj<< /ProcSet [ /PDF /Text ] /Font << /F1 129 0 R /F2 126 0 R /F3 131 0 R /F4 134 0 R /F5 136 0 R >> /ExtGState << /GS1 137 0 R >> >> endobj125 0 obj<< /Type /Encoding /BaseEncoding /WinAnsiEncoding /Differences [ 19 /Lslash /lslash /minus /fraction /breve /caron /dotlessi /dotaccent /hungarumlaut /ogonek /ring /fi /fl ] >> endobj126 0 obj<< /Type /Font /Subtype /Type1 /FirstChar 22 /LastChar 151 /Widths [ 167 0 0 0 0 0 0 0 0 0 250 333 408 500 500 833 778 180 333 333 500 564 250 333 250 278 500 500 500 500 500 500 500 500 500 500 278 278 564 564 564 444 921 722 667 667 722 611 556 722 722 333 389 722 611 889 722 722 556 722 667 556 611 722 722 944 722 722 611 333 278 333 469 500 333 444 500 444 500 444 333 500 500 278 278 500 278 778 500 500 500 500 333 389 278 500 500 722 500 500 444 480 200 480 541 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 333 333 0 0 0 500 1000 ] /Encoding 125 0 R /BaseFont /BPDCDG+Times-Roman /FontDescriptor 127 0 R >> endobj127 0 obj<< /Type /FontDescriptor /Ascent 699 /CapHeight 662 /Descent -217 /Flags 34 /FontBBox [ -168 -218 1000 898 ] /FontName /BPDCDG+Times-Roman /ItalicAngle 0 /StemV 84 /XHeight 450 /StemH 84 /CharSet (/underscore/A/space/l/a/r/g/e/o/p/t/i/m/z/n/d/v/b/y/u/s/c/period/w/h/x/f\/comma/M/P/L/C/nine/I/W/quoteleft/quoteright/T/S/seven/one/k/j/two/three\/hyphen/parenleft/parenright/eight/four/five/six/q/colon/O/semicolon/F/e\mdash/E/U/H/zero/B/bracketleft/bracketright/Y/D/percent/R/N/J/endash/G/f\raction/question)/FontFile3 139 0 R >> endobj128 0 obj<< /Type /FontDescriptor /Ascent 718 /CapHeight 718 /Descent -207 /Flags 262176 /FontBBox [ -170 -228 1003 962 ] /FontName /BPDBOO+Helvetica-Bold /ItalicAngle 0 /StemV 140 /XHeight 532 /StemH 140 /CharSet (/seven/P/a/r/m/e/t/s/space/n/d/E/x/p/i/o/period/one/c/l/two/A/h/three/L/\g/four/R/five/C/u/six/y/eight/S/b/hyphen)/FontFile3 138 0 R >> endobj129 0 obj<< /Type /Font /Subtype /Type1 /FirstChar 32 /LastChar 121 /Widths [ 278 333 474 556 556 889 722 238 333 333 389 584 278 333 278 278 556 556 556 556 556 556 556 556 556 556 333 333 584 584 584 611 975 722 722 722 722 667 611 778 722 278 556 722 611 833 722 778 667 778 722 667 611 722 667 944 667 667 611 333 278 333 584 556 333 556 611 556 611 556 333 611 611 278 278 556 278 889 611 611 611 611 389 556 333 611 556 778 556 556 ] /Encoding /WinAnsiEncoding /BaseFont /BPDBOO+Helvetica-Bold /FontDescriptor 128 0 R >> endobj130 0 obj<< /Length 4543 >> stream
+BT
+/F1 1 Tf
+48 0 0 48 459.1 655.215 Tm
+0 g
+/GS1 gs
+0 Tc
+0 Tw
+(7)Tj
+/F2 1 Tf
+10 0 0 10 126 646.015 Tm
+(________________________________________________________________________)Tj
+30 0 0 30 126 645.615 Tm
+(________________________)Tj
+/F1 1 Tf
+24 0 0 24 155.8 608.215 Tm
+0.0151 Tw
+(Parameters and Expressions)Tj
+/F2 1 Tf
+10 0 0 10 140.4 540.315 Tm
+0.2074 Tw
+[(A large optimization model invariably uses many )-5.7(numerical )-5.7(values. )-261.6(As )-5.6(we )-5.6(have)]TJ
+-1.44 -1.2 TD
+0.0757 Tw
+[(explained )-6.1(before, )-6.1(only )-6.1(a )-6.1(concise symbolic description of these values need appear in an)]TJ
+9 0 0 9 126 516.315 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 154.4 516.315 Tm
+0.0855 Tw
+[(model, while the explicit data values are given in separate data statements, )-13.5(to )-13.5(be)]TJ
+-2.84 -1.2 TD
+-0.0053 Tw
+(described in Chapter 9.)Tj
+1.44 -1.27 TD
+0 Tw
+(In)Tj
+9 0 0 9 153.2 491.615 Tm
+(AMPL)Tj
+10 0 0 10 182.7 491.615 Tm
+0.2063 Tw
+[(a )12.3(single )12.3(named )12.3(numerical value is called a)]TJ
+/F3 1 Tf
+18.78 0 TD
+0 Tw
+(parameter)Tj
+/F2 1 Tf
+4.24 0 TD
+0.4621 Tw
+[(. Although )253.1(some)]TJ
+-28.69 -1.2 TD
+0.0958 Tw
+[(parameters )13.7(are defined as individual scalar values, most occur in vectors or matrices or)]TJ
+T*
+0.0446 Tw
+[(other collections of numerical values indexed over sets. )-247.4(We )-8.1(will )-8.1(thus )-8.1(loosely )-9.1(refer )-9.1(to )-9.1(an)]TJ
+T*
+0.0416 Tw
+[(indexed collection of parameters as ëëa parameteríí when the meaning is clear. )-247.4(To begin)]TJ
+T*
+0.0636 Tw
+[(this )11.5(chapter, Section 7.1 describes the rules for declaring parameters and for referring to)]TJ
+T*
+-0.001 Tw
+(them in an)Tj
+9 0 0 9 170.7 431.615 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 198.2 431.615 Tm
+(model.)Tj
+-5.78 -1.27 TD
+0.0348 Tw
+[(Parameters and other numerical values are the building blocks of )-12.6(the )-12.6(expressions )-12.6(that)]TJ
+-1.44 -1.2 TD
+0.1259 Tw
+[(make up a modelís objective and constraints. )-255.2(Sections 7.2 and 7.3 describe )10.8(arithmetic)]TJ
+T*
+0.1339 Tw
+[(expressions, which have a numerical value, and logical expressions, )-11.5(which )-11.5(evaluate )-11.5(to)]TJ
+T*
+0.0845 Tw
+[(true or false. )-255.5(Along with the standard unary and binary operators of conventional )13.5(alge-)]TJ
+T*
+0.0731 Tw
+(braic notation,)Tj
+9 0 0 9 187.9 370.915 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 216.3 370.915 Tm
+0.0821 Tw
+(provides iterated operators like)Tj
+/F4 1 Tf
+13 0 TD
+0 Tw
+(sum)Tj
+/F2 1 Tf
+2.14 0 TD
+(and)Tj
+/F4 1 Tf
+1.78 0 TD
+(prod)Tj
+/F2 1 Tf
+2.4 0 TD
+0.0874 Tw
+(, and a conditional)Tj
+-28.35 -1.2 TD
+0 Tw
+(\()Tj
+/F4 1 Tf
+0.33 0 TD
+(if)Tj
+/F2 1 Tf
+1.2 0 TD
+(-)Tj
+/F4 1 Tf
+0.33 0 TD
+(then)Tj
+/F2 1 Tf
+2.4 0 TD
+(-)Tj
+/F4 1 Tf
+0.33 0 TD
+(else)Tj
+/F2 1 Tf
+2.4 0 TD
+0.0154 Tw
+(\) operator that chooses between two expressions, depending on the truth)Tj
+-6.99 -1.2 TD
+-0.0043 Tw
+(of a third expression.)Tj
+1.44 -1.27 TD
+0.1839 Tw
+[(The )8.4(expressions )8.4(in )8.4(objectives )8.4(and constraints necessarily involve variables, whose)]TJ
+-1.44 -1.2 TD
+0.0858 Tw
+[(declaration )-9.2(and )-9.2(use )-9.2(will )-9.2(be discussed in Chapter 8. )-242.2(There are several common uses for)]TJ
+T*
+0.0946 Tw
+[(expressions that involve only sets and parameters, however. )-265.4(Section )-11.1(7.4 )-11.1(describes )-11.1(how)]TJ
+T*
+0.0266 Tw
+[(logical expressions are used to test the validity of data, either directly )14.3(in )14.3(a )14.3(parameter )14.3(dec-)]TJ
+T*
+0.0147 Tw
+[(laration, )12.6(or separately in a)]TJ
+/F4 1 Tf
+10.73 0 TD
+0 Tw
+(check)Tj
+/F2 1 Tf
+3.27 0 TD
+0.014 Tw
+[(statement. )-253.1(Section 7.5 introduces features for defining)]TJ
+-14 -1.2 TD
+0.1838 Tw
+[(new )6.7(parameters through arithmetic expressions in previously declared parameters and)]TJ
+T*
+-0.0109 Tw
+(sets, and 7.6 describes randomly-generated parameters.)Tj
+1.44 -1.27 TD
+0.144 Tw
+[(Although )7.3(the )7.3(key )7.3(purpose of parameters is to represent numerical values, they can)]TJ
+-1.44 -1.2 TD
+0.0749 Tw
+[(also represent logical values or arbitrary strings. )-247.1(These possibilities are covered in Sec-)]TJ
+T*
+0.1173 Tw
+(tions 7.7 and 7.8, respectively.)Tj
+9 0 0 9 259.1 225.515 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 287.8 225.515 Tm
+0.1118 Tw
+[(provides a range of operators )-17.2(for )-17.2(strings, )-17.2(but )-17.2(as)]TJ
+-16.18 -1.2 TD
+0.0072 Tw
+(they are most often used in)Tj
+9 0 0 9 237 213.515 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 264.6 213.515 Tm
+0.0064 Tw
+[(commands and programming rather than in models, )12.4(we)]TJ
+-13.86 -1.2 TD
+-0.0028 Tw
+(defer their introduction to Section 13.7.)Tj
+/F5 1 Tf
+7 0 0 7 300.1 165.615 Tm
+0 Tw
+(109)Tj
+ET
+endstreamendobj131 0 obj<< /Type /Font /Subtype /Type1 /FirstChar 32 /LastChar 121 /Widths [ 250 333 420 500 500 833 778 214 333 333 500 675 250 333 250 278 500 500 500 500 500 500 500 500 500 500 333 333 675 675 675 500 920 611 611 667 722 611 611 722 722 333 444 667 556 833 667 722 611 722 611 500 556 722 611 833 611 556 556 389 278 389 422 500 333 500 500 444 500 444 278 500 500 278 278 444 278 722 500 500 500 500 389 389 278 500 444 667 444 444 ] /Encoding /WinAnsiEncoding /BaseFont /BPDCOL+Times-Italic /FontDescriptor 132 0 R >> endobj132 0 obj<< /Type /FontDescriptor /Ascent 699 /CapHeight 653 /Descent -205 /Flags 98 /FontBBox [ -169 -217 1010 883 ] /FontName /BPDCOL+Times-Italic /ItalicAngle -15.5 /StemV 76 /XHeight 441 /StemH 76 /CharSet (/p/a/r/m/e/t/x/y/space/slash/period/b/c/n/f/i/j/A)/FontFile3 141 0 R >> endobj133 0 obj<< /Type /FontDescriptor /Ascent 629 /CapHeight 562 /Descent -157 /Flags 35 /FontBBox [ -28 -250 628 805 ] /FontName /BPDDKA+Courier /ItalicAngle 0 /StemV 51 /XHeight 426 /StemH 51 /CharSet (/s/u/m/p/r/o/d/i/f/t/h/e/n/l/c/k/a/space/T/semicolon/v/braceleft/one/per\iod/braceright/D/E/S/comma/P/R/O/A/bracketleft/bracketright/j/two/I/G/L/\N/K/w/parenleft/parenright/hyphen/seven/eight/plus/three/zero/six/four/n\ine/asterisk/slash/circumflex/bar/x/ampersand/exclam/less/equal/greater/\b/y/q/g/M/X/Q/underscore/B/colon/W/five/F/numbersign/U/Y/quotedbl/C/V)/FontFile3 140 0 R >> endobj134 0 obj<< /Type /Font /Subtype /Type1 /FirstChar 32 /LastChar 136 /Widths [ 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 0 0 0 0 0 0 0 0 0 600 ] /Encoding /WinAnsiEncoding /BaseFont /BPDDKA+Courier /FontDescriptor 133 0 R >> endobj135 0 obj<< /Type /FontDescriptor /Ascent 718 /CapHeight 718 /Descent -207 /Flags 32 /FontBBox [ -166 -225 1000 931 ] /FontName /BPDEFP+Helvetica /ItalicAngle 0 /StemV 88 /XHeight 523 /StemH 88 /CharSet (/one/zero/nine/P/A/R/M/E/T/S/space/N/D/X/I/O/C/H/seven/period/two/three/\four/L/G/five/six/eight/U/Y/B)/FontFile3 142 0 R >> endobj136 0 obj<< /Type /Font /Subtype /Type1 /FirstChar 32 /LastChar 89 /Widths [ 278 278 355 556 556 889 667 191 333 333 389 584 278 333 278 278 556 556 556 556 556 556 556 556 556 556 278 278 584 584 584 556 1015 667 667 722 722 667 611 778 722 278 500 667 556 833 722 778 667 778 722 667 611 722 667 944 667 667 ] /Encoding /WinAnsiEncoding /BaseFont /BPDEFP+Helvetica /FontDescriptor 135 0 R >> endobj137 0 obj<< /Type /ExtGState /SA false /SM 0.02 /OP false /op false /OPM 1 /BG2 /Default /UCR2 /Default /TR2 /Default >> endobj138 0 obj<< /Filter /FlateDecode /Length 2798 /Subtype /Type1C >> stream
+Hâ\U{Tgü!…$PâÅq‚i3£PDjPD‘Ä®((¨¯@óVâêÚÑ∑[k]A@D›¢nÎ""G
+¯Ä¢∏“•>bïJ±Ì∫Re˚µæZkÀﬁ°œÓÁtˇËIÊÀ…|˜ª˜wÔÔwÔGSrä¶imtbLtBB`¨%´»R`M3G€≤Ã£;Ç§ß•	r…kúÁa…Øo¸∫Z€∆CãGß◊∏@O Ö¶kè-∞Âñ⁄≠È¢⁄T—0;<4ht[gèÆ≥gàQf[™EL*Õ/∞dÁãKr“lˆ\õ›T`1O≈®¨,q≈®á|qÖ%ﬂb/"oˇF¥Êã&±¿n2[≤MˆL—∂Qå∑Êÿ
+Js-b‘b—îcûn≥ãVr6ø05ﬂj∂öÏVK˛¥ﬂ%C—‰C©i SIM¶(_äÚ£®`ä2P‘LöäñS±.‘29ï$£÷“î)%ßîî@ÖSÎ©6:ê∂“ó\fπ§ª¸ îmñ5…Æ»]ÂŸÚÔÈäÀåÜ…b.(£îo(è+/®¸T™\5ÆÒÆó›h∑h7á€•NMæ¯dÇñnÑf\Åß6£ö≤U~Ù' É◊¡èGa ˙A £Æ+íOa|1oÅ(ª!98ò;‚ qx*ô’eÈQØ/f‘†ë2¿çn/H!Ü0OZœuWÓx™ÔkZï2'9'Lp wÃ˙s∏J*^e˛⁄“’¸∞Wu„Ô∑ØÅZæH›AØxú[åõyu	»!ÁGH πg#x°¥g!y%à®_ˆ!˚¨	«˛t˝·ŒÄ»uñ§‡mﬂû*+ËÕ†b∑|
+>?<∏œ>eﬂÀW)ŸGÌÔuv~°É Ù8Ñ≥åA¯2Z¶°‚˛„˛⁄•y”ÁÌ4ÒÏì¬—î¡ 48A†·„—\¥pòÉE‡TT1Öe(C£l⁄H)g2xp$FÅÓ–Ç¡p[9˚ yî§ç‰ù	|e'©üÉp—1ÎFt‡±CÒa„˘ √˙õMqÒÛÕ+bóeµ9w(2Ë≥K@¶KÑ<Å0◊¥(≥®4OÛº‰ÈEêLjÚ>ÒmëÌívKç‹÷9ÍÃßU'2"ﬁ…—„ÆR‹Üz\ÿÅ±ÑnÔG?√tÅZ
+úôÒz^	_^•x∞ßÓÁ˚˙Óc∂¥j· ^‰SÃ…±Î/ˆ^h˘Ë¨3«¿èrˇ9hh )H√Àπë2¶5
+b‚pm¡S*eﬁ%RäÜç}7UcÛá Ü l&|™	ã@á„eœ	eÕRóêuÆ£ªÂdOÁ)Î™‰Ãç+ˆ9îc:˜¿“π∏ï0pπ©°˚™ÓÈ‹Ôp
+j¢—}I”kól<˚©µ¡È∫Ä|	‚xHtÇxO@ﬂ‹:[|túπ≥Øø´Â_[æñW_!˙IÆ(¶ˇ6<O%‡œ¡{Ã9ÙW@É5√©
+åbpˇãTÑ0∞T˙à´bÒî„ıï–Joì.9¡≤a£TÃmü˛ò©«e¯
+N¿j¨o‰ 	b"Bô—$` 3≥Ùè)·zdìA¨:ˇhÍ#6‘
+ÍÍ
+`a9yÅ•o¡ôÙl8ïixë*u ;2ôÏ=üC†‰¡®◊TêËﬂC“ãEƒàa5hqòQWìºjAÈÑb ’cFPÀÅëÅU'!¸:L
+DA¿Å©§}%VNl_R~ﬂñ≥0≥b ıïä√p‹a%h<	h °Ö V∫•%ˇZa:≤À‘®öç±
+qò…¨≠8ˆãtôGèÒÏ/ümÔª≠ªñì0â«ˇ20opƒ[ÇÚÓªIñKÓ\íq	©˝†çh‡e"‘ÚÎN4Ov∞Ú∏êNÑC=ê{≤Ä3¥O= ≥˝∏‡å"{Ô´µót◊˚Í.√ƒ⁄˘ô’<Q◊›]â‰tÆp“y®rÖ˛R;x´Ù¬ñ$›¸»M18±¯V˚.^Ì¯1¥N2˘'aWÄ7["Ω-yq0ΩÎçH£¢ √6Û†gﬁØÆ=Ûô˛‰•≤ƒÏ‹∑
+ÀÙ,QÑl]≤⁄G«v¢Àø_ªÛ®ÛlK3œñÏŒÆ⁄æœÆÇ¿:fSç„`èΩø„ÿŒ•ÒiÀr-á∫úgtÔÁù˚Î˜|G•^„ •ﬂ3Ë'6{^%$Ì.i‚‚ÌS!7osÙ€«ÉMëa<:§é4=ªÖêÂ≠dª>≠R&¥^+rÍ!§óıÉxü{Ëj0≠≥
+Âåö¯Ü;cC÷6¿dô‰´9{˛‚òIÂ†tˆ÷ﬂΩÀ_Ø>≤≤&Cìàÿä¸È0=∆q<Q~É…h^sÇ/Ó~t‘£clòúUúà˚ ô÷BSóAèÆ>åGø^!ƒy≠Ó„V°ä é√;‚J“˙∫Èˆ‡„£°àÃà
+1ÿüˆ»–ﬁùÅt=qú=:>‘0É≥ºôVl÷£b˚ΩˆùÇD70∞_˘p2:
+—á6P.ÄÄ˚C0·è a‹g˚NtÙÍ;/ÊÖÓ#Ä1{(pÉûˇà‡ÓŸNóƒÏ)L:Œ±ëÂ õ“ú˛øA^˛,&|}¢ÌÉz°™\ßMO7FºŸÿ∏É« 5†J=⁄¡‚•R9¢¿#ƒhúßªøÏXùDR∏ÌNâO¶°ëÑ7”◊	7ØíãA:#…9pç∏Í3?¡ºæî/á}(*Ep2Á;ÆV-1ÛxD%π_…Ò„≈_Å÷Ûàoƒ#D°“q%;V……}+í.ô1√·ˇuYµ!MEaxCwFKGπ-a[w‚$√V©H+GIP2”#Õî˘c7£,G˝p.¢R÷,ùsô©e&DiQ¶f[·W˘√J»∆ªqîıﬁM‚p‹√ÂºÁyüÁπœ[ÃÚﬂs¡s.Hw"Éëª¿≤DQ√X·@Ëë*%œ¸£Î◊H)9a®eKÀ∫“öíÏ≤ZTçdÚ3ïsµ¿ÉåµåÃ4;Õ–è∏3.|{‡√”>√˛µkÊ˛≠±ÜQ‚˙r€Ÿ¨JL"Ò¨ü8$î∏˛ä∫°™B"m‚òˇƒ•ßû Ê®óLKıT2-®q…Ê@œ–∏-¨ÜÚ(è]≥/ À<ª&ÉA 3çêÉ¢˜)É/¢õ&1ˇn…f;B.
+∫™|‚=·Tæ ‚g]◊I’Ωæì?÷çÑÈÚí¶$ø»ÄƒÙBM5Çî}ÃrïxÜ±ˇ–M^Ÿ«Äß•±¡ @¨–b2YLäî ‹ú*ÆóﬂÁ©\(æ‰j~Jº∫√LÄWÒn‘’çø®Õ∞–8©ƒHQPç>"ÉÑ+tSßZA˜Â«ß™$ã¥ ¶GwÀŸe:L4mı#&°±7 ∫"”ê–≈eı"‰—Øô3ÚéÊánÊ∂ññﬂT·vÕ≥K¸)N5˛=úQ„tÒ„‘Mé8
+!íi%á≈‚PyÖÊ˙z≥Iëm∂ˆ®†ˇ€Rràı≤ÕŒu§ Hm? œxMè
+œ‹ùb`ﬂ	©“ùı{‚eÔ`/Én?5FèÀ6ñﬂ‚ÎÉp @6›K¥4i$	hÅtj£G©S ©díÁi≤ a≥+ ‹/f˘ÕæŒ0ﬂÆËvB˘+JA°ƒß–ùÚVû“Î™ØÊ).õ,Ü¬Öfª”‹¶ qk'ú¡˘ßÕ_‹Fãlêh%‡¥ÇËˆ*i2Ì∫⁄Ë@ƒâ f£%BÏ{!ıÔê˝n&˙
+endstreamendobj139 0 obj<< /Filter /FlateDecode /Length 6621 /Subtype /Type1C >> stream
+Hâ|TyPwÓûôûAîA¶iÑ”›∫—¨"ÇäëKT@î≠ÂÚB]`úap‰ê√q@1ú""áÄÄ\‚ÖÒàFÖ(1Ñ√®´1HJk+d„æû¸ÿ⁄Õ…VY[ø™˜«´˜Ω˜}Ø~ﬂ√1ë √qú\¥vÕZ«∞∏D•∆)Dï®Hzõfy9Œ;à¯Ÿ3ÏêJ˙uˇØv§ZC´MﬂÏŸF&¿Òc5kT…iÍ∏]±ZÓœQ∏%ÓnÀΩç+ﬁE˜∑—›ÖÛâVE*π–4çVô®·í¢TÍdïZ°UF/Ê8üÑ.‰m¢‘(’)ÊÏ;&\úÜSpZµ"Zô®PÔÊT1\`\íJõñ¨‰|¸9ER¥≥JÕ≈ôqöΩëö∏Ë8Ö:N©Y¸Gn~ò√,òï ≥ôéq6wÊ$¬ñ	17Û¿0/[Öaﬁr,
+√TVàaÅÊ≠`Bå¿Æ„‹O∆€ÒÎ¯3Å£@!Ë⁄7	/äfâ¸Dw	'"Å¯BºR|Z≤BR*·-R-~ú3m–RlhY>ùò3˝¬å3¨§V€≠>ïÆóvK«¨÷îı6ÎÒô3Oÿp6*õ+≤bRB*»[∂A∂≈‘2™éö∞ã∂˚v÷ÚYóÌ≈ˆIˆ_:Ñ;<¶7“UÙy˙=∆I9)ülhÅÚˆ„≠€Pﬂ"˚b‘˝√∞ßëºêer‰%¸	ŸŒÒkÒü ´1X¬üWóÏb+vS=-ª¬?ˆE¨Î√ÕìΩ7 Ù5´Ä®hq‚ÓHÂ
+˘Ê¥ 
+=K˛'´Rü^±Cé,¢>öˇ0ˆ"P#‡¸O÷‹ø∂†4øí9XUûﬂ-ø—TUQ«—‰øDüÿå€
+/®hmÕgOFa—@MÜ^ó=™+ ⁄G#ë'≤Ùd§ﬁÚòlÿËn2à¨}√˚R3∞ñ“«_”OÇ+¥Í¯˝QKé>\ƒ..:lîóî‰eÎÙP∞Rç…-Ô{&Ñ>ìÖúùù—B‰M#¶mÕï5LWËÄÔÁ	Â«Ì—*¿†ö§°‰’Ë–mÊ7l{&ÏBæ8ø|i^ã7L¸√áåÚf¿`ôLΩ=¨B∏©Ê—®ƒq•O#ÂÊñ"ón2‚	öCëµˇü(ÒG™∞È.ﬁáÑ›PJ¬°ª)óB|ÑB∞…2´Æ=[›yfOcb¢ZΩ[ŸÆØe•Èç&Y#^ˇ
+*^	°»ƒP`kD≈˛^Ö(Ÿ"€B»˛Óæä¡ñm°@JEñ»™i!{AV`©ÄT»JU¶f…qÊUY⁄Asïÿ;µ¨èÂ_Kråhùë.9u”`(ó∑ˆ§∞S[%>1Ö¡Öå‘0Ã◊·0˛L»´‡*„≠+àë£1x¡Z‚¬Âß„oh-πÔ≤ÃirLdjÛàßZÜ«Â`Ÿ‡º≈;bâÎb˘°`"ìß%“Ù~¸éæS>$Ä<°Ú:t˜‚À}‘¥w§◊b&Hysá\ØÕUm~ûWK`∆˜0Ï?>´8¡í8˙¸˙\ÚèàZ∑4Õäb™Úâ¶™ﬁ—q˘P«¶-Œﬁ€\íÃbAø·ú*+ÔÅ‹QR«'Äûö«Ô£Ø¶Çâ–.!/"œ	©œI	ZwèBπb»Ü	¬(ñ¶wÚ∑∆p‡Ö¿?¢`ã∏Ï√'El◊ãÏbVv÷9RäéπEè ÀﬂÌ»ïFRü–ıÃ∆‰/7»£Iv]÷å¡RºáYÕ◊ÿ†áN’ûï“Ù&^t	rè„ÌP¸Éê1yS(/≠BÎ—N≈L.KÎÄeﬂ ΩrxNhJf|S“Ä¸ö,P$Í¶ﬁ¥|Ù!"vlÙ^7^wJÎKKŸ˙ÜécÌriE
+?1Ñü‰}Ñ¸F”BjJ,÷Ôå¯∞:á∏÷v¢π_âb>5AÙã!÷4ó0≥1Iõd7á}á@ı lòúÄXËß» qÔMÙ°}∑+=vÙè0‰ƒx_wk#É\êµr¿f2Ê"è6]˚*ÂsDøb…ëÕèz_“√@ƒÚ˘Á{Ùƒ=ı1ó˙G&∏“‰»#~’◊z˝€ë≥√ñÖ∆(’ÃÆ∫•∑FiiM
+‰úÁEMxÀK»}-ºΩóÇí„0B ñOG ê5≤ÛDrpøÑ,Ä˛Ù˙âŒå±†:Ã¸ÈÛ¢‡6ò®¥ÇÃåÃæEZº|Œ^ò6¸∏n‚)8–Ê VÍe6°Ï;í0~züÂ»ZÑDÔ≥¢◊;Ô√œø5»Ï&ìˇıˆ4∑ïèı“OÉ S≤∂Ñ≈¥d¥˛œà˝˝ê.]|¸{m˛<Á˛RãÏ˛’~¿÷Wèæ$"_C∏Qïœ{>ªg—rˆ‚‡U˙Zv]r”¨	hë˚9EÃè+MÍi*´Øf;îÂßÈ∂´MΩ#mÎ˛•ÛKãbTàÉÈø ö<RäºÕCÎœTu4kí4⁄ekÜy(èj`Î9~y*^eÚö6’P;ã“ÀvÉå|ø}™EOeÍv&¨÷™“t˚
+ıá,t^#IŸnË-+™<R¡^ÇiTâœ9G”+‚ıtL¸°F«$SÊh‘DH·Æ°F◊	Ω=Pﬁ©´ë1	yì !œVõfQèÛ+3}Ë© …⁄Ã}+
+Õ¯Á≤‘'ÅÈ˙≈≥œık4^,˚˛ipFk*]‘&ÜpÙÇz’öw†ù%˜^”_âwßç¨≤Ç”ä;æRTe¸/€U’u∆'Û.≠â¶Ú^œ{VT‘§÷5Äƒb¢Fc∞Æ$&U¡Ä(Àÿ˜aòadg€†0Ï≤1¢îZà’∏·B5j[OZõd"ı{ì;6Ω<IœIœ˚Ôù{øﬂ∑¸æﬂ˜]c[jÃ´fî=WûxäÙÂFrØË$áím‚∑ù2‚ü‹1I‹° ÄXÖö:êy@Øâ›–ºò¡´…äÛé¡XÛ2,É∑ÓÉ´!èãØTDÑ‚iv√Sê6ôe>—¡uuüØÍc`⁄UˇôñâºÚÌ‚R¨OÏ"2e∏Ÿ⁄)º;¡bê·,◊R 
+›Ã.KO¿Î©â´rXe8â√™*Ωp‹}	{yS›r€∞Nø18µ®Öù
+E¢∫ª†§É†|eáä⁄ÊÔ'y§MR∆â_¬
+U$5Á˝]ÿï¡ÛÙy]‰!Xê{WgJ.˜˜¨Ö§*0-=öƒπ ¢®ñr}5Ú˙ƒ≈&ŒBi¡K·<N)€x4§©À~MÚmeL∆F‚[/∂£©Lòs·G‚⁄Ó	Øƒh"¥ƒ>ZùÁ«‡Ÿƒ~cQæÖÖ_˝‘˛›Ïøé¸RìVÁê‚7(H\˘"ÃŒΩ°´K/ÛÒ$9MÓÑ°JhÌtkJúÒxΩRtÏÇß*\O]“TÈ|i¸*
+]Û˛≠(`=Ç˜–?XÂÃ837‡WKeB®"ñäÃ>†…¸ËΩÊ9˛ªcRhè∆-˝Ôp+ØÄ<‚+F)¬d<o‰‡=t•ﬁ`Àg'Âî⁄ŸS;ÿÂÇ;XjEA∫pëÜΩ0Äw†’9±>íˇVM¸∑†+ÂGG
+Y[yt=€Hjå∑„ÿ˛”ˇ$˛â˚S£ıÇ„A».Øtá>ÅZcà.Ω%ªc)∫vÑ\Í„—›ˇÈòW…ênJÓø'óÌr∞ä}™Î∆≤[‰h'èF5Â…Å¥s⁄ëîÕ˛¡rÔÊ`Bü\òhéÁRÀ,)›Ã1¯ıÿŒMpÍÑ¯çTQÂ!8InÂ©â
+)€‰¿!^lEü¿ZEÖ=Ç6Ê‡˘åo|^''F†€ñ¢KR¬ûá!≥âïvπ„âd+ò¬áùú(x7O]œ©Œ\A;Á#<Iù¥JCRó*†µG‘5ﬂ“¢óÅ¡Ÿ£0RP$^Tú€(øî§œ˘±1?¶‰¶îí€uÖCÂ…P;fe!xKl ^«	0ï'ƒ8ûâç‰"ßRåU‡U<’i÷ÏÍ‚úõ˛0M¥Üﬂrˆ**ƒZ
+~÷î?T$êµÂ?m≤¬ºï@…·Y≤älx@$`¢ræ‰Û¡.8á¡ÏÎπ∂∞|ˆ_· µ€AæÛ¯–Ï≈XŒMÙOM'ÙIÒµâD<Véöâ^À*Kî†èÒ…ûx•!¡tçÜ(∑N–’1c√ï]=\ÖŸ÷uã&cBâ—èYWP∞9P’\ñ◊hÉ9πÿøÇi}à:.œ¿≥„]m–*!oR$Dá∑†⁄kàÆå=Ü˜B·Ù”•‡^4∞_ıb7P Q}ûe xŒPır)[çÚœO˛L√.4`Ä|AÀ(Âcg∞x_’PR‘ﬂZÏIòüÎ£#–¡${é.Ÿï˚ê¸ç\‹Jˆt5ïñ´ââå⁄÷Ú6≥h·VLÕ~ˇ—vºóô√ÇËm˚Ç¸1≥‹OÚl’à?T‘PÊ“äj∂ÒTÿ^ó˛˘ø«™`>˝ß”÷æ±·E~¨Ög∞¯ØnYU5ÑŸ!¨˙óæ‚NAÂs$U∏Dã≈gL>è'WsuT6¨T8/PŸx•¢éËsÕ1&3gùZjç6f°D≥^$U›&:Ÿ;<≥…“"ÖìxÍÛú∫Ñ4ÆEÀ”§ƒ≤Ô˙hÉ◊ÍÅÊ‡ö‘€∑•ﬁ&⁄9¢1¶ëûˇΩMˆ≤xîÎaÀåh¨¬t≥ò–Í^©ƒZY¡wK‰ﬂ˘JÊI[¥h[sˆ”ÍÃàL5ã]Ò#<æT$ùH≠©†€>6XâÂ*ıÎLŸÕæÕ~”g‡V<K|Q°9ö]a§Î´
+{‰D.èŒiåõ|;ºü‡ˆ”¯7.&
+à˛=Xˆ“ÍÂi¢a€8p6Oòçßä]∆õhºe/ë~›*9…S÷é‹‰¨‘¨4éTSçÁBî"„h¶PF∑‰},!5Û®7«§µ„˘‡Å7ØE´¥1Û§!>(†Ey)Wi¢w0‘óˇ›úﬂñÔ95/¥8J,≤á#r8„pUYpË≥Aµ,CªıùÂúc)2Í{ŸŒ¡äyˆPEA®cáF›GßÙ˚RπgKQ≤>b;ªˆ…Ù¢V.j±´™œ©›Ö∆ïì»£2GÁËƒ~‡îÌ 7!éÔ≈IÈ~ÎiﬂÛ)µñfSOghÈ·,çNßeu9Z].ìïUP"ò{/vìï,˝h‘Zù[˚√uwaÓ(ô$ù0M°MOb5·)±L»AÎI≤û¥î¿À},YNˆ®2“R“’ÃA}C;–ı_„y¨Ú1vy7p_by§µ^®©ÊJ4&mÌ®ln<ô¿nF 1Ï≥qiò7˝Êôê≥üˆw6∑≥›∫J∆lÕ;E\IoßÅØ…Áv˘ƒ=Téíó”’π¸· &ÊÔm≥¨Oƒ
+å¢è∂r>â™ê±C}∞iˇÌi ¸“™ÌÔƒd≥π)•1(îŒ‡Ñ›…¡).â(Ø∞T_»ÿÙÍ)⁄´¢¢Afπ)g¬B’Œ∞êüu#dâÛ~dmÔ/àè(Ê
+cc+◊<f°ñÆL±FT≥Ê®=¶PÜ,Ê.í.~∫·ŒËg=@ù%nü—õ≈üüp¸ÿ}àªßl˝/€’‘Tv∆ó≤…ag-Ïrç¬Ωˆ^∂>v¨:U⁄Ó,ª>vï]a´à/ﬁ/ÂM A Ñ$@BH /è‰Ü " ÅU| X◊+Ë*ö’j≠n›ÍnßÁvéùÈ	∂ˆüŒ‹ÓÃ˜}øÔúÔÒ˚¯óóÇÃ™¥¢}T¯ñÛp%\rÌÙ˘±”¬≠ëW°Aò∫Œ6LrWÄ'◊≥û\cÁs5ø…≠Ω9y÷
+ΩΩ¥•¿••Æô°°,#¯Fè»?wËdÎ©6|¨Î0øÇAØÓÎﬁ‹j,®3äS∂S·ü√/*xÖÀC«◊Pü¢˜"–vÙÀ[!¯ç∞Ï\r§âAw·j¡üZ]=ì‘ù¶∞¯≥3À}ÿ˜9º~t{√À\î ˘A˛êi|í3}6BŸ:-Ω…=ªQX˙b7"ºáÆÚ7Jî·Z-,¯µæˆ	ØB_‡ãÚˇ W‹⁄'Ç´∫aéÀ‰wLÁﬂ_	∆‹Óq3Aƒh–Ûug{«ë!ˇé)ÏuO5>3⁄”⁄$2jk2zá∆àüy¸CÃ§Lp°Ç´ÆŒ¡≠à<P¢˛|ÎÜ¬Gwh‚^ºqR‡⁄§ez≥±©%Ê,j”™xÙÓŒÅƒãÖq≥#x}]ÖÑ<p∏≤ßÇ&fÉb2ˆcåŸ‰óè·'Á!œQ>d¢âπÔê†ûóßã7tí∂„√6=]?®n°ŒˇËÇoùQRt2æ¯z®â◊ıæÈÜnbéì≤ÇÿFÖ	”W<8^ﬂE~;‚Ñ±YØ€—üvLö/±·Mâ_	¡fÖjØ
+_Z.‚Lb”mVÉS√.∂óö¥ßÖ1(l´„‘ÿ"¯Æ«¿~Õì•Éó˛ﬂæ¸»M¸ÎmÀˇ“®n√
+ÇC¥8F-	îΩ≈¢∑R≠áj#$$’€54pô˚^b´p–i∑˜:J:Û≤dBÃõÎQ˛ 7€21˙…|hËï$©€Kg*.•Pbë¨8„§x
+Ü_¿w.®—•—e—“@)–≥o∞à 	<˚!pÓ≥pã_⁄=7qªa¨`˘•:^éæƒ<L¬p¨Öh¥ç◊"iT™»ä
+M-ñ¡|ñ_†OkàπÇ÷¿®ÄﬁÙáî£Ó≈¢îr0bÆí+´‰≤r&5;rOfÆV¿˝‘‡â‚¢$QÂqØ'™Qg°\ı“$ÊïÏ≠“Ü…È˘ã¸á'ìÁnb®cî≥¸ùâ˘…=ùw·qèöwo˘ü{!ÿSVâ’+Ç˝[T„˛‹põÁ[∏Ñ8˝‡;AXû6µ◊Í ≤t9˙”$<
+L''Æè∑•Ö”(|U¨IÚåH1ˆÎr∑Hhˆ<y‘E∆0(¸^™ç≠∆XP®Á%7Ëúv,Ω¡L˘OK◊GÏ(—#Ú‹ëØ®Ω˚ÖIëÃ,P·dÁ%	≤Ñ
+	–õõ^◊a€|è.∂(&˝Ô∫a®õ8q˜± RVë‡œbA¥°ºµüÑ`Ëÿõì∫ÿû¡†t∞©Pù·±H√Õh¨d«HX†_hObdzVb}gÓ∂.iŒÿ¸N·‡Ç^Ωè°ı±7‘r)DÜ /‰á®«À† ÆûÜÃp˘öáh1”ˆ*BÄ√m3?MéÛ‰,6{-Kèa|Q^;‹Ÿ«˘∞ K˛≥nXÚÄòõ≈§òR#
+W”®n[§ÕX¨¬~á¸8ô0ÔÓ¿M˜Ç7&∆1Z=Ô&®∆i˛5^/âóyJÿÿT◊H5HRbŒ≠´?Ô§†Ø	}Tå6ØÁÏIÌÙ`∑¡]S‹˚éöRˇÆPÍ∆öÛ∑A`O+∂ƒPË˝ïËgàF´fCMMè8€ä‡«ñ¶¡â…≠ ©©Ãxäƒõ wêQ•·mF˜µ¬:i¥ÿGU&— ®‡¥gOÛÁ7ÁûÈBxA,¸€ÛÂ7˛∑‹ƒ‘-∑`∑T≥GÅ†bAå>€xù$,∞Ù}}¶ã&¶∫ö≤éR]÷C›˝•ŸÈŸ•°	åˆ—<◊ı∆ï∆ñ≈IÒYıçÕˇùDﬂ>Ö›$‚∂w*K˝œ^é∞¿ÏÈxq^ÉWDS¸OŒ'ú5µJ)…µ%SøJ	ﬂ˝˘d∆Â,ÜËπê√Î+≥	…]	“Ïï‚áÁ*i)üHGk-ÄËi¨7Z(ùcT|Ç∫27ÚRñ#Œ…NÙ÷^ÜΩ∫◊FÓpM~}B¥‹é'M1Œ-ËÛö∆<b∆<≤”àπŒ§¢3¢d%Èi>%%%’ï§FØ—◊“Á–ˇ√·Ç≥'«˙GªËäf^Öº¨DH≈‘]<¬@◊‡´∏PiÂY˝o∏·ó∏•Ò¶Ëå`áV€9H¬ÔQ∞Lkç¢Tí8Å*AéJ°¨¢K
+Ú Û®pÂe¸ÃΩÉVîß∂OªÉD&¡∑E√Ìßå.=: ˚Ëµ<B<÷vÃ:aıÒmq{YØC\í7WË·>F∆ÔÆµ+ã…ÃP¥6{Ω6Ú4Êj∂ÖÏ∂∫Ù4ãbd¿Vk´fÛCøG≤ÆÌ>)≠˙öF™°±≥ßôÅ·L◊≈Ü÷C ñü"xN7≤^ˇ¸ù7w«óÅ.µ≠¶à¨¨.ê§◊°Éü¬,Ö´õ€…ﬁnCø	«OñÅau≥jÒ÷¢¯ÄD∏0GIGß±”É&›ZsÖ-RËY@∂’§h†ÍMÕ|Ë∑°ÍœHŒÀ¥ÍUf llrµ2êÜ?∞C¶¶éÜ@‡5ù"Le^m‹~o8yS`T∑T Hë≤&◊≥»Y —Ë“/†Ö0&‡>\`∂8ù£∫@À@[mg≠àîW+#~Cã{˜Oµì›˙vúP™ÙÎZÍÜ#û¢eàèBÑâÂ⁄M†.«ÒDuÌZ¶Ÿ⁄QﬂHﬂÅ~ˇ+∞Åpﬂ¸„è›≥Ñf˛Hﬁ#‰“5l´{f7VH5’e7»Ÿ˛.˙Õ˛}"k«§ñŸ3§ñ≠ÎY‘¥&©ñ}FÁ“∂ÈEﬂŸ~wIÃÃŸ≠_#Uù¸[.\N∏†.gnÅtlgj+∞Q\∏({ÔµÌgøKÌìvtfÎÙΩí|è∫W˛êZ…¯ü¡¨Å·?É@Û≥Ô“¢ï˝¨∂’≠9ä“øÂÿæ/¸°…:Î˜{ˆéﬂ\¨sŸNÍ_{E˙ª€Ôy4Yk~[7Aì ~∫ï3˛∂˘—Œ¸˝>∞ÌÀˆ'ÚØÎ`?-v∏Õ˛Ωè%ÍG«væü‚`°_5`°_5@°⁄ô?µf˛.õ˙Ω∏õÌ˚¨…jzÿkg˛õ˙=n&«Ôºû≈ìøts.Á∫œ˝£C‰˚OQ hÇÏm
+endstreamendobj140 0 obj<< /Filter /FlateDecode /Length 5401 /Subtype /Type1C >> stream
+HâlU{Tgü…d&Da&∞âõ§z÷¯@mUXÅà— O1Ç†¥Q"ï¢Át{äm•]€≥ÖÚr."Â=Ö-OQ¥≤(u]≠J’›U‘ﬁèÛeÎNËÈiwª‹{Ó‹sﬂ˜˛æ!	©Ñ IrFp§¡∞.»;$=;só9”©“"â<•h¶´*N∫L∂—‡="›fz!%!!…»¯êÙ}πôª“vÓ◊œ€>_ÔªjÂ*ëØZ2≈}ıA;“∑ôı—πY˚Õ{≤Ùa{∑ßgÓKœLŸoﬁ±H¥{∑~ 5KüiŒ2gÊà ≥$ARÑå ‰*bC, ñ'à@ÇXM¡^ƒ	ëO1bÈÑÑ†àDÒòÃ!Oë7$ú‰UâQí"9,9!πK…©™ë˙á‘ ≠îˆ–∫îæŒ–ÃfcfZdøñΩ'ÎsÒrâuqôîØïÁ»;¶ë”"ßM_=˝Ñk¢k•Î7≠€^∑À,«˙≤F6ÖΩ4cŸå
+Jß®pwsOrﬂΩ_È≠åU^‡\πhÆ—√”#ôg¯u¸¯ïó*Gu÷ìÒT{Óı¸àeÛÄB˚¨J8πÀ]ÊW0ü:¥¿p∑óa~◊Èú”ßOóü©≥î[,ñúùZ∆ üÑ¯¡—A
+åË/|1Œß;ôb»ß{U?…,D	‡%(_má	·ÂÀ±)~S‰∑˛ÎãÊÆ!•Ö/ÇL§b÷a,a>/öÎ}*Ãaä É61˘8É÷ˇL∆ìh$Û6øôc˙ß®ŒkvF˘nJÊÜW†9¸wSzÜÕ≥•	*@vã≤œ˛âù;ÄJ°ä«2Ê`‘¡Î6.À¿èﬁ€¥ª≥I›÷X˙yS›õYµ⁄Í:∫zkbEåf›Ü≠kì>€~6^«µgƒ¨˜WØÍ7é∂÷¥÷kπÕh–b4Kg≈Á≈≈Mø˙+√µ‚8<ìœ»ﬁë£âL⁄ÑñˆR;)±íP—C!ı§ÑèXº{cVçŸnÏ›∑X€…ÅJ ®‘†Í≈ó@i®Ï° |ﬂÉnVÏFéx†M`æƒT'V`ï´∞¬àEÙÃJæ$=Ì∏†M<xo[ÄŸfÀP›¡™Ê”ÄÔ∆7œ„π±«¿óéeéa_<◊..-œFBïçÇ*Ùèç8nƒ·HDBº«ÉQ∆b©s˚a∞ÇÇèÅÂÉƒÖw3œß~–NN -5|,“⁄e‚u)H»ÖYíµÛi'wÓLÀ2õÎ≥ÍÍÍO6à}…≈æ‹aÇBaìr¸€–êìöÕPÉ@æ∞C≠ùz›<v?)fÑ¿ì/z∏g@ˆ«˛8ªkÌ™˚E
+pE8tâÔ!é=∞«!øßeﬂ–∞ò‰îÿ—Mq‹ªú‡˚i
+ºvùv«°&‰-‡Pô”™Ã¶ºoÉj{Ç¿=π¢‚∆—lòeZàkÓ	¡ÔÈ˙⁄3Á’œ_≈Ú0√Œ¯Ì⁄56Ÿﬂî5wﬁK[ºqr⁄Z‹àK≈ mP,¿~õ)ÏŸvnhtúØm∞ówh∏'WÌ…∆5Qõ|t¶j7~ÎZ *ˇµ∆Â∆Ë≤?%Í¨&:˝R´ıÜÊ≈∑óA:∫πﬂP°„û\®ÆÌPèØËZ¯z‹ÀfgCƒ	‰®¨6
+@4øÖ¯3∏–·GGAç÷ö†NXÙp\Êê	<d#é>Í‡ú ÄÛ6H`mPiß@<w…™ÛËösBqãÊ€Ka˛Û1>£J cuShÀu!Ôö¶˚Bqs£ÆÆæÃﬁ•ŸÚõòà›sË@íí·ú sÜm∞Aíñ≤CçùBÔàc`p4ñc7\≤Ò3ëﬂ‹ÖÈˇ
+π7˚∑[RvÏ”a
+;ÀÄ¥u∏Ùˆ7Åèﬂ¬ﬂÛΩÂ=ÌCö±÷ √jS∏ﬂíËác:∂<]»ØË®ØùıjÑ;–-√&«E∫ãÅ(d£økhÑO(îOÌ…v(7¡=FQ
+ˇxiˇ¸˘K◊-kYﬂõ≠="„&¬s„ÉcEº=çzÙËi∞ˆ¯k·%⁄£2ÓqoeKÔ†Z<zO~ÕÆ®Øˆ∂˜&Ü¨YcxOÀMò§#C	~øŸbÓÍ—âó
+IŒê›PeßÂÒ∑à9∏AIwÜ<KW‡ÈsØ˙>ÎÔkj´“e
+¢¨MFó»Ñ∑2¸æÁ7X#M·öÄ≠__oΩ˚ÖèüŒ	˘	@0ÚK·S“_¢
+éˇËÙ? ≠Çƒˇ¬&L6¢Lqqh7ÔÿÇ-H§ä6áƒ§"¨µ6òi#o¢Í&rÂ7°õÃÅç?H,
+¥íÉ¢ˇ 
+‰ë8D™HD[¿‚âV¸¿YAYflF˜q*§ä∞X	ØÛP…ÿùÔ˜Û9&H¢úÜ˛H„L¸Ü¡ÒéT:∆fa6=¢-~ãŒ“2ŒàÈò%x⁄‡ú=◊Œ=OÅ_fÇ∞Cón‹én	,—â+EÀ[˚‘W„Ü∞^ãœôÓ26à›*#,ë∆$É/apô“·˜ºº0â	<ÌÉï:6◊ÜﬁÚ¨uVec“’s=\- GΩ<7êsƒö˜Ó;ÖG¥uÒ©≈Î4xû∑'„◊·Ÿ˘’h]s∑nÔ9:mÛÜ›<;P<5É¸ ¯≥ë,˝H◊~åÊJﬁÆ/8ıguÕáÂÖg¶û©TB
+<Ï¢@!~&h` t^Å˘ç©1,◊·ã¶1gÀôˇ^≠QQYxªõÉÏ®”6QßW∫*†àã2 
+∏‚5∏klu—	è ÆúááÇÚP\÷ı®G∆wêf:ÍA◊7æ@PëƒW\%*«’€Êvé[∏ÍØ˝U›U∑n’˝Í~∑æ:›‡$L@Øî)ÚB“OÜ È'˚|;˚+´*äÅ´¶3a<•¶ä˜’rm˛™ÿ`¬⁄Ü}(<MB
+ï`ñäA@U®yÔÕ·ù7«ÆP&aüè≠âÈfr|˘ß	n`í‡`tÂµä´º‡;ˆ4¿zNo¸ÑIôï:É«Ä©–(ˇ∫˛π¿>˝ŸHØd.}à[?ót=¸ÚÈ<πÓﬁC>A`µ\ŸπÁÇ £ÏÛÃΩ≤„S¢NDàPc0BTºI©Wbà¯üÖAÜpò„®Xï"ÓåÑsº∏	7R∞ÒæÑ)xAä‰˛L√çáÀN°ÀéŸ}*LIËAtÙÉ≈∑ƒãc ˚ºÛ6PŸNÆ≤&Vàmjåó®§”[`=5õ˛E
+ø'´≥tß˘ê˙Ωï,›(°âFWlAWh°–$6™1!"¨í<ïò|ºU'ji'*_çÒ‘Bh}⁄ôπö√œ24…DÕhéÍ%\-B¢<‘≈ŸYÔÔã?“Ï
+5&@ÑuvQZTÅ]-£…YI :…·X≠‚YÎ®úÑJ|ÜB4°i(ˆGÙyÑ˝¡¶G–|åÍ\W`Oì™‰ß…	∞»N'çzL'ù¨ñ≈0ZÇıã@*â^	$õRc˛(íõ¡h02µ~_^Ωzb®Ä{E˙∫Çë>€ºtË¨ï°Ë&†+≠G£d;˛≠¥|πrD2¥Ôé›Ølõ»≠NMLK‡ìí
+ã‚÷\î’ÊE¸™ïY∂t!è)*,..⁄Í¥Æ†`]!˛Ì;˛8Åùóã˝Æ`7Ë∂$~©9n—◊%_Ù.;∫ok_Qfµî	Ï~ÎÓ2À∑|Âæ-%ïÇ:SÈ≈˝ﬂxJ∞®„J-◊ÆTâ°eÃX¯ö~1Ô@†{9Åã4úNﬁü≠q en\;˘o∑=i¿†óœâ-•MÙ´¸QI	÷ëË.`oçDÒ$xŸö≤'≈pÔ◊'·‹[ùØE˜ˆmìEwí-±∞_XÆ√0Æ0Æ nâ[bfBf¢Q †ÿ2K≈Ü¬‚">õ5+OH>Rk=Ã?Ít]∂¯
+l©.<?`gã[Cc’ÌÍKﬂ,›f¸G¬∆≈πf˚Üﬁl°nÌä-∞dó›ºﬂâ]gYH»WbIÃJ_e·m+⁄ê!Ï¯r˛Ê˘<zNè~e+ÀÍm∑3áπ%X˝q§ël¡+‚»√’Bgöwl[7ƒ¢É	2LhˇÍ5R9FH¢Æ¶WbZMF1|FA·h~ê∞aI]åü’‰QZNñà0ªB∏2íâ`è!g–#∂#m”xZè∑to˛ì¶ õØÇªn’k˝må>≠R±JÜL0£Y˘ö¡Ã^!“Ó IÀö≈4NV≠îç∆)äïj”∫Œ”0G-•öimnü ´íCDB*D:*g»¥#FäOÈ©≥î *ú4j˘õL\¸¢¢o4t!√Ñ¿]»pC'Ô%è"©ù4à§çgø'^œ—0Õ‰!É30áöA˙% 0éÚ–˛g–8r(∂ë—L˝KBQ´VFúÇFòB›!ˇÔ*K)à≤¸àé ≠âbçﬁXÄﬁP@5hÛÍhòà2)Ôá`&ÉL]&‘”IoÙ$°wºßFr®£'Yç°øô!Ù˝hë” 5Ó7=ÍE}c∆Pëºz⁄÷+≠éÿ≥´“jW[;]%`$√âZ8+≥©J,\ÊJ¨/—4vÚä§È∆s©]UÁ∂üÁ/ûKbôç¸6EÛ!»ÃˆÿöÄ¶ô--ı«èWŸ‘Ë'˘1≥ûqlÕÙËQ√Oã™¨ﬁΩ˝¯ñ÷•€é	ã=ëﬂÍlZ∆Xt†exUÀ¶˛S©„Z(u)ÇÓ[s7óâ<tıÀ€<8ø p∑Å≠hûÛóh!ˆ—8ÿB)9™Á4``‡›ÁœÓ^o{Y7¶üQìªØe[ä·R-<;Ã6*± Ó´ÃµVüôïìõ!îŒ^X4áGtÅ∞/8˚€ÿÙù|^H<HM¸k*ëÏ§«WÄ˝È"tπy#nDÅPùG±UÈ≥wfï8ïÂñÂïﬂ«≤Fã%êƒRUØ4¸D•û√ÂŸÃâËIÇy4Dä&[ÉN/–úo÷=u»òK≥©Å‡.(M&¶Êã1òÜo∏Wu/€ÓÜˇa@‡»ÅBn?nè'@OŸ·“iEG‘˚ﬁ'\‹∏¯I¸ßæß^g p:gGŒñÌnó'íäm¬Ó®ÔàKÔ›Ô7Ì´ºfTG√Á‹É‚˙Sœ˘÷ÊYæÒ·ÆﬁrZäe"ıv+zÃÑ\2}µ∞¸˘!ªmÌ#€X*SÏ„çëõ‚…uæ,jåÜ:t‰-†ïﬂsíQ~202\ì… wd¢Íìâ∑%tñM≥w./w`<èNÜ»]ü˙ÅÛı⁄Éˆ√Bn0Ì9y˘Ëq≥7Ì
+3Æ˛úJ=ÛxÂIÜñﬂk‘Ó∞åªﬂp„Á«u!>˛c«Òø˙¨ΩòkÄØ’ a—0IM'yÓ,q$m§ (†´kœ9À7oü&`RÄFÀ∞ôπêtù#&.^0”€í<y‚ì™Gpió"–ÉËcì∆ãäØÑäû«Æ‡å.Ìë*+:≠Qv¸•›∏ü0Q√±Ô¸˘Ö—∆5"µ∆~,]Ê¡oœ≥FA¸¡¸ˆ≈ﬁÍ
+;woÄOe":ó†	Ê≥ärà∏√%¢LÍ
+î‚¶mrÉ¯ﬂæÀ¶ç*é„2ˆÓ" $‹™¶w¡-Jd2°.ä(Ã0:Q24t'î5cl”e+0ôö*XÎÑŒ ‘‡6˛∂»ò[!5∞πuôŸ™DGÄ©,ôALÃñﬂ…#Œﬂkë∞ƒòkr}ÔrÔ›ÔΩÔÔ˚>?ñnñ`‰œ˜ ÜÉÅ>KÚd(TÙ-ÑDPA—‰≥ñ;À"¥äßÖ8Ô^&®4ßº6Ó◊ËŸo≈Ja\ÌÁ˛?∂tºhﬁæ´xøÿı∆éùeg…ﬁ
+IÔF#¶LäÛNÚÓ/€=∫Øõ^]'—„ËFh‚O∑úˆ∂ÎÜ>ós$Í¢<«/N·l≥Ñ17[∑):⁄1F:.˛6-5k◊∂óQä>îÿaœ¡ﬂàBß`ß°ì®™•©ÖWƒ/'Œoº"G˝∑oèf”Hñöü˙-Ñâ∏è MÑxˆM7ÉÊ3S«Ù:_âüQËZÿZ√Â~5≤˝áΩ√_¥üó,"äzfî¢Iç´o“Ωˇa@K&Y¬Z¬3a<ınOXjR›J◊≤xáW+ß~ûç.å/5Qòaû∞ê¿{∞ñ»ÒA”Ä≈Ö ’»jîBÛ¿¬Vñá˚ÜZº:OÎ[Vß4¨∂¥ËR2ûNëÑ ‹Ék™XÀ‘≈^˚k◊+É–Ô-‹¬'jj™‹Ôy‹⁄Ü⁄ÁQQòù§‘Q]çêÒ∂”iìÍJ>ñuÈt˘û$è⁄¸HB˚¥√ˇN∂vÀöäÁSíOåΩ+nC‡ŸÌ⁄W≥üˆuGYUô(¥˜€I[çÎ”:ùÛ∞√Q+ïzm~›Osr¬)qe÷JÇgç3˘»˜⁄æa˜Ÿ·i´·p–Sd0∆¬‚Å6®ﬂhÑ ’míø£N>˛«‚üáGø\´˚âyï…f÷•πˇî`7‘+¥û«t|»∞'îÿ[>hFodK6Iﬂ«uz¯≤¸˚eø∑∑M*6M9öÆîß	˝êó-π˘/Ëû*Óπ Am;≥JÏë ÆåÖpé⁄4W9t—LıA2¬ÂGıtñÿ9ö≥döu]Â¢m>®9•ÑŸ±“¸·ê`”∏k–Årçvê ÀqqVâtö8∏$"9\¬ˇâ0M¶ÿ√..$Äÿ(†Ÿ`B1·Ω …£^” £d–tí.CÅí≈¡*X—’ƒ»⁄i5@:cîı∞û`YcíœqHk14b»Y÷∆¢¨V*a.»ÄRÜULêãåõÆptıS=¯â¢–å
+rË\’˙Ñ~§h ‡Îﬂ°l˛kôÜí‹"ΩDxSaπŸ.ÒΩˆûrì;ÙCE@DÖO´)lº§≈ìøœ⁄jiªõõ[˚XÛRO„HfTÌ‹¡K£µﬂ‹¡ºªÊa¨≥Ygƒ—Sf‘bjÊ7óv[Eã’Zöœö∆¬≤4á(ÛàŸù◊%H‡zzùb'ov6h±„zn'%b¥:◊Üu√-vTiZ+ ‚<àk=N%xå ^8¶û?F◊’√ìıÆCT’M∫Ê´Òbc˙ÅÓD›ÎãE™3+˛9‹ö=
+endstreamendobj141 0 obj<< /Filter /FlateDecode /Length 2112 /Subtype /Type1C >> stream
+Hâlî{PSg∆œ!ûGª£r{N∫≠[mU™µU,Óä.µXØ"^HNÓ	óBH·~ó@˜Î EPºÅ∑°∫vWäåã∫ﬁ∂Ì‘Ÿv\ªﬂ±;›`˜üùŸ˘fﬁ?ﬁoæÁ˘ΩÔÃÛ°»"E—Â;˜ˇa◊æΩÔñH≈äıaJQ™$n°øö%QvÂ"ÍQÙ…•>l¿“p;î˛d˘…ŸÀ@ÛØ∆x&?ƒEÀ]ª“e:Fíò§Æâ[+‹¥ı£uuÀÎ¥PÉ>Üƒß«äÖát
+•X™Ü•≈•3≤tF§«o
+CRSÖ¬ÉbÖòQ{ªØÅÑÖP$T2¢x±Tƒ§”Ñ{%iÈJùL,Ÿ-•≈¶3Bâ˜ùB´êƒKDåD¨ÿ?√ ®˜ ÀP‰7≤”˘Eˆ†H8ä@êCÅ GQ˜Ó· ≤ŸâÙ†Åh˙ü›>W8Ôs:_4á%`S‹‹iﬂœÖ|Ô1⁄8ú˚F¡R§©Ø~†Kﬁ*ï2Lä∏◊–DÛÉã‘Øvh–=l$‹zµA0œˇ˜löÀÚ_Ì¿¯†Ã^˙Ÿ˜4h9Ïç:¡Åíº™Ï?ØgßV…πpdﬁÖ&´ÿ‰o ˚Í|ègï¥Õ•5µm‘Äa@∆u¡ïò#”ûY@ƒ…Û"Û)(ù˜NX™1∑Ä{Vc|„¯±,øŸØ˛!àö∂‘„C∏ñç>Çì'4LôõWZ÷ı5¯∂®ö6a¯P∏ŸjÕ9âŸ∏Ì÷‰÷S$ÙáÎ·>¯nZ—¶Ôi|Ù˙•N¿@;lÆ5Ñ[TJBoóèÙˆuù¬áÊóTû=2∞∏£]{lÌZò˙ñ,π·≈7∫Ÿ7«¡â˙çü˚Ë˛˛ú]Æ∂¨Éâ◊1ˆ÷≤óﬂô™åH•`x*∏ZPfQô&∆úN¡ÄyñÔ´öMΩ÷ÉO@ÿ4}.t„ﬁë…î≠√Áz6¬õÔ[JV·œ#s¢ÃGÛx¸«∆~ñnB;Ê1º¯QóªèóéŒ~˜%+\ñZüë''îŒLèßπ°Ωã9øÆÅîw‰∑†ˇÊÊÀ´3› +5 .w£]èÅˆ¨%Çß∑g/ìûJ≠:◊ó¬Xk±GEíRÈæÌ*qï4—Ì≈¯ÿ˝Ì‹=‚LjKîWsÜoÔÌﬁ˛Ú˚ø]WEÒÉa\{ØhõQ¯Ó]vÛ=N+<„~8øãÀïC˛Ád∂πºúÆ™∞◊yMfïh≥ã≠ƒÒ“°¨.,û~;}Lc Âñvc·^®Ë°˜…ö ¸\⁄òcW∆RY∑ª¡ÂrFwAø£0Ëc9»Âœ≤HùG˝∆gFû„„Ä\¡Åÿ4M6i2óóUW◊“O¿å’Å·ÛÒÊ≠±çgù(∑®ÈÙ`XCËÏ'œNûô∏vö¬ów∞fo
+öı=…
+•6)…≠˜Ù‘uπ^œË˛ŸÁ3#Ú3≤Ãà¸bﬂúå◊öU;-Ûvi2V“’5ˆ&¢I„‘$‰'ÂGèfÙ<Ω:6QˇdˇK∞—ª@–[àıZKÃz¢(€¢ ä‚·À¡j0ı›Y‘tVØf˝/∆‘˘ÅÕ>ºÎ∏á'„}ØB¡bAåXû¢%≥≠Eı4û\;özâAe[bÿ∂!/î≤9∞⁄A˜ÉZbXÌoyFKΩΩI≥¿}ƒx$'"«À2Ó¥©TA∞œFœp ﬂuk:Olª˚√(YQcói?ÖÚ˜ºó ´ü:wó7ﬁuÁ…Y]ëõA„}öÌ∞[Fd⁄ìÜ'œO^ËßJ 0˛kb‚¬Ò‡L¡ûÑw∞ßxòiÀt8i<æÛØ¿>B+[éoÑtHåóÌ ^`ãä0F¸¬vπ“ò°˛f•BÃÎ?jF∆æ‰·Òì˝SèŒëç•ô:ÔàÅVëÊêé]Ó˚”yäEN∞ªë%FÏøµ¿˘Ãõ÷e‡ñ .Ÿ√!üa™ZOÇ œ‘Ì÷´cg…õÖd4º˚L‡.ƒ‹ÖçŸ:BΩzû'Éã®î‹<Ÿ“ DN_πÿﬁÌj>Ωt∂€eÒêÄõ¡6xGzmS–¡ùI
+⁄Êh˚´*ŒwXI|™0~wì|Û√ûõÒ’~£,øﬁX1¸kGˇxááw8ÀØNâﬂh…H!´˙Ì{ßrÔÔ·‚∞d:WcsåÉcÎ®9aﬁüeÊÈ}UUEUdWâ!”î'…I†∑¡QÃõÇqS7: ™9`ú›!¯Ñ€˛¬Qn´0€¸Mé|Sæ%=ÈÿâdΩﬁînŒ3Y-vKaÔ+Ó.ÿéÂ¥·Ñ¥=«uÒÙôŸTVñ¬$≈hH£•º¢»Ó(,ÚfÁˆêÎ˝?&œÇâÈCì	~26Ø`8©Lì†&5fO]>ùÁëÄÄ¬~º—A·ûÊ2}ŸRŸÿ@„-™jmdLxP$eú¿ûË2Ï*2%Laí—xaqVﬁ][TA∂g¶V–Öñ^Ëo"‡ çrâûƒÎtç*Rï≠3xUu⁄ûÆÍ™∆z™w`¯Úπ[ùpÈ™#5ŒÃ“›a‹ø–¸«0v‚∂•¶E„«ÆƒkQ'˚é†®∫¨–I^©9ıA]1wâ	ô(öI£‚$Y&âGÈ≤⁄•§ZØW”xçhƒZñÄ6,È◊¥&»çÍLÍ¯Â™X‚H0$OÖR¿ÀöŸvg¯Î∂rè—|]√´ˇ+ ‘ˇ!ú˚Üò˜í˜†é¸tè}ô¯Vï˜^ô˚nå¯sì˜ã	◊¯à˜˘ ∆ô
+endstreamendobj142 0 obj<< /Filter /FlateDecode /Length 2264 /Subtype /Type1C >> stream
+HâDUPSW~è‰Ω ≤a…Û°&6/TóU"+ à †YA©`Î/%Å®˘ëÑ ’∂¨[EEDgg\Q©]]Î™E—R®;UªZ•¢`ƒ‘àçç`˘Ÿs”ß˚†3ªÛﬁ‹;sÓΩgæÛ}ﬂπó¶§^M”˛âÈI…)È”7XåÊº˝HP *öåóíIæÉ•?m˘i6e~∞◊øi“òç
+ ã¶kÊóó‰≠[o÷LÕô¶	èéäú12Œ£G∆h≠&!∑»`‘dîõÃ∆ìFWòSTR\T¢7sC5öÑ4£Lö£…Xb£ˇ√°…3iÙsâ>◊X†/…◊≠’§ÊôÀãçöÑ}anXQâ&O<k*5òÚrÛÙ%yF”ˇœS-~îE˘è°ﬁîRSΩ®)!°¢iJ#ñNI)•§≤©m‘˜t6Ωè∂{-Ò˙@"ëKéK˝§k§˚•WòPÊ¶ÄŸ∆‹f~f≥UÏ†¨XV-˚⁄[‚ÓIïè˛U√ÙìA	dÛæ‘‰¿AVæ…JÆ[ÈF'¥:%$ûÛò¥&0(hÕ0$ARÀ´W-Åò§v@P.‰cfÂb>a–YÃá,»:˘§ñ7XHe(Àh8Ëî ∫3¯∂e´+ê˝£w2Dy*ù2yïçú±*éˆ≈Ù¬)'◊»;|€û}kò®¯<)#lY·ºl!t√˝;$S∑ÉºI©Õ£`ké5|ı‚Jg”Ñ°´∂+†P¬¯iVî´πÓxúc∆rA,vÇ≈™8ÂH∞?›.«B'Á‰^Ç∫˘∫˝ªÎT‹è◊+–'&53«o~zká†e˜≈4ƒ<0xóüj˛≤
+‹	»ú+/,¯D®ñqœœ‘^˛‚Âb‡$L”#7Emg€j˛Ù#¯´Ü˛ñ¢è–/∏ó[6ÔﬁΩEÎá¯.≤Z¨ˇqØÑÜxæk
+Yù(√˚û•L$\√¯^àóÖÅØ∆ªhiÔÇ+L≥”$J$,ôÙÒp…Ó°ÿ∑=øÍ™dæ8ŸÚÈ%’ì;ôAKµ±ã?¥Uƒã·ı‡≥ˆô
+äOC‹¯éyàlj∂≈\0 ¿+$YÈ3∏‰êê*R«√‰≠(kéQ·⁄XÇ°aµëÁuB‹≈nSª™Ô¸±sç¬ÖÀá.ﬂUB,*øäúærï±TΩ≥öπwÉ∫Î‘ö¥ø®Ò8^·m≠.†OF¶ÕX¶õ=%´Á˛®‹}v∫ëº/iëìÒ,™0«·^.Ûv±ó‡[àsGßw∑Á}Ÿ∂#]PhUúq&;`∑#≈…p.RAÒè˜°c≥–7Qwz’5≥öH(» åTÊU≈ﬂ]™~˜ÍΩ?úUAÃ]†ÅπRˆ`Fì¿πN¯˙ƒ+%7 ˙0ìxK?ΩÊö°ºË˚´7[nˆâ;vuÒã“œ}˚ÂëõŒÅøße/Zπ2^d®tV¯∆™8ÔàÍÖ£‹Äè¯õüµ™w2¯˚“Â1”Uúkææ˘ªÌBª†}!∂◊¡Ω˚¿ñ¬z··‘8dpúÄ«,P◊Y˘ÙŸı†r∂ˇÎ—´s…sPòiY#»óãÜ0⁄È˝Óq≤å¸whdÜY¨sÙbÒ»k”œﬁ#Ûôù‹a™Ÿaº√»óWŸ`Ø6⁄˜\¿ïÍQ∆ª˝xHb9‘9„¬à•E°ŒgÉ=3y∏¡äÎè]b
+ø®ì´	±6÷ﬂjUæL±°RçwXóá„!C‹f}Z4g˘Ú sXyÕ&;È±”Õ˝˜Ô».|?ò2LS°ÇÒ8Ã
+ÑŸÌP\ü6	!,ŒyÈÇT¶,Å àÉ∑Ü^@¿ù!3*é	Ú±±€ltèãh˙%=–ƒBE‰B$‰†ﬁƒ%6≥Æ(t,L∞iQá∫Ë©®0ù∂√«v(∂”vóÑxÏº'>&oÿ=o@1ôk˜~m «X˘µM∂l¥€‡∞]q°ü\ôÌ<òŸπõ•ÆPÎﬂ~´rù
+3VA0A˙ ÷°çËBp≤i¡i]®T·áÅ∏Á«ÔA?ö,¨kºñ~™ó?4ﬂn∏-GBôo»8º-“#™◊káãet∑ãåqµêhﬁ3.ø6∏†óå≈^ó€Ãä˜iÉ≈m(£.	§ª¸»:+Ø≤ª}ÀË.1ñKåËGZ[≤*êê
+ê—ùN≤√)qW∏®ña∂gêŸ…¢û2(º68I,€∞”qKYÕBñßèy!N§_¥»¬ùZã“+5ªîÓrÖxo∑Åö ÈfP6í†ªö%¥ßõ⁄m°oTÔ≥˝dá(9»c\˙â≠ß?Qœ8ß8iAÎÉqÍ˛ ã6`C4ö0√°	†·ò L=ÍÓ´6®∂â¢¡≥~	,±Ë
+ˆ·çBmpz˛,ó±QR∞∞†˝'0˝‡=«éÏeß¶Í |iÉ6EØ~vÕÏ-ú◊y¯hƒ‚ﬁµ)È≈{êﬁˇÆ c∞ı€ˇ∫´iL®Ï74‘{sC-«⁄œ+a˙úC5>IÍˆì¬vˆBœVîŒ+O∞Tt÷&ybS¥âO<w$8πNÆõ∏»^ﬁZY¡X£¬ƒDÙB)˙ø◊Z!¿oÛÓ)¯ù6ÕSNAüÚ‰∞¿3bÉkŸÖµKÆg™ˇq9G|ßDöf∂¬\`ìØÜ~"p›®oeÙŒ>|]	Ù@˝ıûgÎQ≤W-ˇÔÄÈÇÁ!„˜©oòg˛‰˝ﬁ˛óÁÕOûÔÌˇ‹ÁæüÚÂå∑ﬁ¸`¶≠Ì¿4Ú'ä˝∑ÅzíëâŒ∂Ôr?"¥˛≥ˇñ∫˜[‡{Ë˜»Á¿
+R]ÓG;(‹A©mﬁONÊ
+?XDø∑~ˇƒ˙õÉÌ∑◊ÔÂøΩæ/g˝Õ«ˆΩı˜ßﬂSˇ∞∞~Ád˚˝}˜˜–ﬂªYøÛ∞¡4ﬂ¥SË˚V—Ôã8≤˛fc˚ùÙ˚ÌÔ§ÔoY≥≤}_¸(∂ı∞Ãû˜3iﬁÔ¨Yﬂµf±}_4Ìª@ˇ_ŒÏrú+≈ˇÛp^ÁzÃ˝„Ä–Â S Ÿè
+endstreamendobj145 0 obj<< /PitStop 146 0 R >> endobj146 0 obj<< /CC 147 0 R >> endobj147 0 obj<< >> endobjxref0 149 0000000063 65535 f
+0000000016 00000 n
+0000000183 00000 n
+0000000323 00000 n
+0000004810 00000 n
+0000004977 00000 n
+0000005117 00000 n
+0000011663 00000 n
+0000011830 00000 n
+0000011980 00000 n
+0000018043 00000 n
+0000018213 00000 n
+0000018376 00000 n
+0000026808 00000 n
+0000026978 00000 n
+0000027119 00000 n
+0000032363 00000 n
+0000032533 00000 n
+0000032674 00000 n
+0000038005 00000 n
+0000038175 00000 n
+0000038328 00000 n
+0000043475 00000 n
+0000043645 00000 n
+0000043774 00000 n
+0000049571 00000 n
+0000049741 00000 n
+0000049882 00000 n
+0000054643 00000 n
+0000054813 00000 n
+0000054942 00000 n
+0000060147 00000 n
+0000060317 00000 n
+0000060446 00000 n
+0000064800 00000 n
+0000064970 00000 n
+0000065123 00000 n
+0000069315 00000 n
+0000069485 00000 n
+0000069638 00000 n
+0000074551 00000 n
+0000074721 00000 n
+0000074862 00000 n
+0000078683 00000 n
+0000078853 00000 n
+0000078994 00000 n
+0000084094 00000 n
+0000084264 00000 n
+0000084405 00000 n
+0000089667 00000 n
+0000089837 00000 n
+0000090001 00000 n
+0000099157 00000 n
+0000099327 00000 n
+0000099456 00000 n
+0000119319 00000 n
+0000120062 00000 n
+0000120555 00000 n
+0000120848 00000 n
+0000121510 00000 n
+0000121808 00000 n
+0000122906 00000 n
+0000123063 00000 n
+0000000064 00001 f
+0000000065 00001 f
+0000000066 00001 f
+0000000067 00001 f
+0000000068 00001 f
+0000000069 00001 f
+0000000070 00001 f
+0000000071 00001 f
+0000000072 00001 f
+0000000073 00001 f
+0000000074 00001 f
+0000000075 00001 f
+0000000076 00001 f
+0000000077 00001 f
+0000000078 00001 f
+0000000079 00001 f
+0000000080 00001 f
+0000000081 00001 f
+0000000082 00001 f
+0000000083 00001 f
+0000000084 00001 f
+0000000085 00001 f
+0000000086 00001 f
+0000000087 00001 f
+0000000088 00001 f
+0000000089 00001 f
+0000000090 00001 f
+0000000091 00001 f
+0000000092 00001 f
+0000000093 00001 f
+0000000094 00001 f
+0000000095 00001 f
+0000000096 00001 f
+0000000097 00001 f
+0000000098 00001 f
+0000000100 00001 f
+0000123412 00001 n
+0000000101 00001 f
+0000000102 00001 f
+0000000103 00001 f
+0000000120 00001 f
+0000124319 00000 n
+0000124360 00000 n
+0000124406 00000 n
+0000124553 00000 n
+0000124630 00000 n
+0000124770 00000 n
+0000124835 00000 n
+0000124859 00000 n
+0000124913 00000 n
+0000124956 00000 n
+0000125035 00000 n
+0000125093 00000 n
+0000125143 00000 n
+0000125181 00000 n
+0000125261 00000 n
+0000125331 00000 n
+0000000121 00001 f
+0000000143 00001 f
+0000125471 00000 n
+0000125603 00000 n
+0000125776 00000 n
+0000125930 00000 n
+0000126130 00000 n
+0000126771 00000 n
+0000127335 00000 n
+0000127710 00000 n
+0000128260 00000 n
+0000132858 00000 n
+0000133406 00000 n
+0000133712 00000 n
+0000134323 00000 n
+0000134909 00000 n
+0000135262 00000 n
+0000135677 00000 n
+0000135817 00000 n
+0000138708 00000 n
+0000145422 00000 n
+0000150916 00000 n
+0000153121 00000 n
+0000000144 00001 f
+0000000148 00001 f
+0000155478 00000 n
+0000155521 00000 n
+0000155559 00000 n
+0000000000 00001 f
+trailer<</Size 149/Info 119 0 R /Root 122 0 R /ID[<4f8be8d27f04adc31a36329e697ad38f><1d78ef8c577b3587b00f1a03e2bc569b>]>>startxref155585%%EOF99 1 obj<</Length 3292/Subtype/XML/Type/Metadata>>stream
+<?xpacket begin="Ôªø" id="W5M0MpCehiHzreSzNTczkc9d"?>
+<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.2-c001 63.139439, 2010/09/27-13:37:26        ">
+   <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <rdf:Description rdf:about=""
+            xmlns:pdf="http://ns.adobe.com/pdf/1.3/">
+         <pdf:Producer>Acrobat Distiller 5.0 (Windows)</pdf:Producer>
+      </rdf:Description>
+      <rdf:Description rdf:about=""
+            xmlns:xmp="http://ns.adobe.com/xap/1.0/">
+         <xmp:CreateDate>2002-08-29T19:18:40Z</xmp:CreateDate>
+         <xmp:ModifyDate>2012-08-28T13:52:31-05:00</xmp:ModifyDate>
+         <xmp:MetadataDate>2012-08-28T13:52:31-05:00</xmp:MetadataDate>
+      </rdf:Description>
+      <rdf:Description rdf:about=""
+            xmlns:dc="http://purl.org/dc/elements/1.1/">
+         <dc:format>application/pdf</dc:format>
+      </rdf:Description>
+      <rdf:Description rdf:about=""
+            xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/">
+         <xmpMM:DocumentID>uuid:3badbe99-ed9a-4419-b7a9-b376bc40939e</xmpMM:DocumentID>
+         <xmpMM:InstanceID>uuid:a610b8ea-0c80-4d14-bb09-bfd556edb40d</xmpMM:InstanceID>
+      </rdf:Description>
+   </rdf:RDF>
+</x:xmpmeta>
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                           
+<?xpacket end="w"?>
+endstreamendobj119 0 obj<</CreationDate(D:20020829191840Z)/ModDate(D:20120828135231-05'00')/Producer(Acrobat Distiller 5.0 \(Windows\))>>endobj122 0 obj<</AcroForm 151 0 R/FICL:Enfocus 145 0 R/JT 118 0 R/Metadata 99 1 R/PageLabels 105 0 R/Pages 107 0 R/Type/Catalog>>endobj123 0 obj<</Annots 152 0 R/Contents 130 0 R/CropBox[40.32001 126 571.67999 792]/MediaBox[0 0 612 792]/Parent 106 0 R/Resources 124 0 R/Rotate 0/Type/Page>>endobj149 0 obj<</BaseFont/Courier/Encoding 168 0 R/Name/Cour/Subtype/Type1/Type/Font>>endobj150 0 obj<</BaseFont/Times-Roman/Encoding 162 0 R/Name/TiRo/Subtype/Type1/Type/Font>>endobj151 0 obj<</DA(/Helv 0 Tf 0 g )/DR<</Encoding<</PDFDocEncoding 168 0 R>>/Font<</Cour 149 0 R/Helv 164 0 R/TiRo 165 0 R/ZaDb 166 0 R>>>>/Fields 163 0 R>>endobj152 0 obj[153 0 R 154 0 R 155 0 R]endobj153 0 obj<</AP<</N 161 0 R>>/BS 160 0 R/Contents(Copyright © 2003 by Robert Fourer, David M. Gay and Brian W. Kernighan)/CreationDate(D:20120828135213-05'00')/DA(12.25 TL /Cour 9 Tf)/DS(font: TiRo 9.0pt;font-stretch:Normal; text-align:left; color:#000000 )/F 4/IT/FreeTextTypewriter/M(D:20120828135228-05'00')/NM(514b2b11-cd97-4e1b-87a2-c881af0015b3)/P 123 0 R/RC(<?xml version="1.0"?><body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:APIVersion="Acrobat:10.1.3" xfa:spec="2.0.2"  style="font-size:9.0pt;text-align:left;color:#000000;font-weight:normal;font-style:normal\;font-family:TiRo;font-stretch:normal"><p dir="ltr"><span style="line-height:12.3pt;font-family:Times">Copyright &#169; 2003 by Robert Fourer, David M. Gay and Brian W. Kernighan</span></p></body>)/Rect[275.729 766.183 552.78 778.183]/Subj(Typewritten Text)/Subtype/FreeText/T(Robert Fourer)/Type/Annot>>endobj154 0 obj<</AP<</N 159 0 R>>/BS 158 0 R/CreationDate(D:20120828135220-05'00')/DA(12.25 TL /Cour 9 Tf)/DS(font: Times 9.0pt; text-align:left; color:#000000 )/F 4/IT/FreeTextTypewriter/M(D:20120828135221-05'00')/NM(b197ec96-0c38-46df-bb52-ff654f5c6cd5)/P 123 0 R/Rect[347.223 725.491 361.623 737.491]/Subj(Typewritten Text)/Subtype/FreeText/T(Robert Fourer)/Type/Annot>>endobj155 0 obj<</AP<</N 157 0 R>>/BS 156 0 R/CreationDate(D:20120828135229-05'00')/DA(12.25 TL /Cour 9 Tf)/DS(font: Times 9.0pt; text-align:left; color:#000000 )/F 4/IT/FreeTextTypewriter/M(D:20120828135231-05'00')/NM(6879a5de-0ffc-4e20-85e3-1dc1137c046e)/P 123 0 R/Rect[297.433 692.841 311.833 704.841]/Subj(Typewritten Text)/Subtype/FreeText/T(Robert Fourer)/Type/Annot>>endobj156 0 obj<</W 0.0>>endobj157 0 obj<</BBox[297.433 692.841 311.833 704.841]/FormType 1/Length 95/Matrix[1.0 0.0 0.0 1.0 -297.433 -692.841]/Resources<</ProcSet[/PDF]>>/Subtype/Form/Type/XObject>>stream
+0 w
+297.4328 692.8414 14.4 12 re
+n
+q
+1 0 0 1 0 0 cm
+297.4328 692.8414 14.4 12 re
+W
+n
+0 g
+1 w
+Q
+
+endstreamendobj158 0 obj<</W 0.0>>endobj159 0 obj<</BBox[347.223 725.491 361.623 737.491]/FormType 1/Length 95/Matrix[1.0 0.0 0.0 1.0 -347.223 -725.491]/Resources<</ProcSet[/PDF]>>/Subtype/Form/Type/XObject>>stream
+0 w
+347.2229 725.4907 14.4 12 re
+n
+q
+1 0 0 1 0 0 cm
+347.2229 725.4907 14.4 12 re
+W
+n
+0 g
+1 w
+Q
+
+endstreamendobj160 0 obj<</W 0.0>>endobj161 0 obj<</BBox[256.729 764.183 533.78 776.183]/Filter[/FlateDecode]/FormType 1/Length 235/Matrix[1.0 0.0 0.0 1.0 -256.729 -764.183]/Resources<</Font<</TiRo 150 0 R>>/ProcSet[/PDF/Text]>>/Subtype/Form/Type/XObject>>stream
+HâÑêMK1ÜÔÛ+Ê® c2Mö‰Zø‚¡Ë≈Kj◊∫ÇYjÈøw∫…⁄ﬁ$¬ÛÊ}F·ÿŒ…±∑ËÊÜ¥ÁÄÏ)´Q3ñ2|ÇF%ßﬁœÔˇVVRR∏ï⁄.cø0`|im)“l1n‡Ïj¯ÿó~˚˙ÖÁﬂ`Ê…Ÿ√∏CˆƒÚq Â}£¨‘¨RV$ñJ◊˚ ¥>≤Â∞ÓJ≥å6Sp;|óÆ\¥ƒì	¶%◊Èßﬂ4nàˇ‘ÙLVqÉwiÍ‰Î§Hπ	¥=,JürÛ	_≈!Læ+YvíÚ›DxÑ_ ÆÊ`t
+endstreamendobj162 0 obj<</Differences[24/breve/caron/circumflex/dotaccent/hungarumlaut/ogonek/ring/tilde 39/quotesingle 96/grave 128/bullet/dagger/daggerdbl/ellipsis/emdash/endash/florin/fraction/guilsinglleft/guilsinglright/minus/perthousand/quotedblbase/quotedblleft/quotedblright/quoteleft/quoteright/quotesinglbase/trademark/fi/fl/Lslash/OE/Scaron/Ydieresis/Zcaron/dotlessi/lslash/oe/scaron/zcaron 160/Euro 164/currency 166/brokenbar 168/dieresis/copyright/ordfeminine 172/logicalnot/.notdef/registered/macron/degree/plusminus/twosuperior/threesuperior/acute/mu 183/periodcentered/cedilla/onesuperior/ordmasculine 188/onequarter/onehalf/threequarters 192/Agrave/Aacute/Acircumflex/Atilde/Adieresis/Aring/AE/Ccedilla/Egrave/Eacute/Ecircumflex/Edieresis/Igrave/Iacute/Icircumflex/Idieresis/Eth/Ntilde/Ograve/Oacute/Ocircumflex/Otilde/Odieresis/multiply/Oslash/Ugrave/Uacute/Ucircumflex/Udieresis/Yacute/Thorn/germandbls/agrave/aacute/acircumflex/atilde/adieresis/aring/ae/ccedilla/egrave/eacute/ecircumflex/edieresis/igrave/iacute/icircumflex/idieresis/eth/ntilde/ograve/oacute/ocircumflex/otilde/odieresis/divide/oslash/ugrave/uacute/ucircumflex/udieresis/yacute/thorn/ydieresis]/Type/Encoding>>endobj163 0 obj[]endobj164 0 obj<</BaseFont/Helvetica/Encoding 168 0 R/Name/Helv/Subtype/Type1/Type/Font>>endobj165 0 obj<</BaseFont/Times-Roman/Encoding 167 0 R/Name/TiRo/Subtype/Type1/Type/Font>>endobj166 0 obj<</BaseFont/ZapfDingbats/Name/ZaDb/Subtype/Type1/Type/Font>>endobj167 0 obj<</Differences[24/breve/caron/circumflex/dotaccent/hungarumlaut/ogonek/ring/tilde 39/quotesingle 96/grave 128/bullet/dagger/daggerdbl/ellipsis/emdash/endash/florin/fraction/guilsinglleft/guilsinglright/minus/perthousand/quotedblbase/quotedblleft/quotedblright/quoteleft/quoteright/quotesinglbase/trademark/fi/fl/Lslash/OE/Scaron/Ydieresis/Zcaron/dotlessi/lslash/oe/scaron/zcaron 160/Euro 164/currency 166/brokenbar 168/dieresis/copyright/ordfeminine 172/logicalnot/.notdef/registered/macron/degree/plusminus/twosuperior/threesuperior/acute/mu 183/periodcentered/cedilla/onesuperior/ordmasculine 188/onequarter/onehalf/threequarters 192/Agrave/Aacute/Acircumflex/Atilde/Adieresis/Aring/AE/Ccedilla/Egrave/Eacute/Ecircumflex/Edieresis/Igrave/Iacute/Icircumflex/Idieresis/Eth/Ntilde/Ograve/Oacute/Ocircumflex/Otilde/Odieresis/multiply/Oslash/Ugrave/Uacute/Ucircumflex/Udieresis/Yacute/Thorn/germandbls/agrave/aacute/acircumflex/atilde/adieresis/aring/ae/ccedilla/egrave/eacute/ecircumflex/edieresis/igrave/iacute/icircumflex/idieresis/eth/ntilde/ograve/oacute/ocircumflex/otilde/odieresis/divide/oslash/ugrave/uacute/ucircumflex/udieresis/yacute/thorn/ydieresis]/Type/Encoding>>endobj168 0 obj<</Differences[24/breve/caron/circumflex/dotaccent/hungarumlaut/ogonek/ring/tilde 39/quotesingle 96/grave 128/bullet/dagger/daggerdbl/ellipsis/emdash/endash/florin/fraction/guilsinglleft/guilsinglright/minus/perthousand/quotedblbase/quotedblleft/quotedblright/quoteleft/quoteright/quotesinglbase/trademark/fi/fl/Lslash/OE/Scaron/Ydieresis/Zcaron/dotlessi/lslash/oe/scaron/zcaron 160/Euro 164/currency 166/brokenbar 168/dieresis/copyright/ordfeminine 172/logicalnot/.notdef/registered/macron/degree/plusminus/twosuperior/threesuperior/acute/mu 183/periodcentered/cedilla/onesuperior/ordmasculine 188/onequarter/onehalf/threequarters 192/Agrave/Aacute/Acircumflex/Atilde/Adieresis/Aring/AE/Ccedilla/Egrave/Eacute/Ecircumflex/Edieresis/Igrave/Iacute/Icircumflex/Idieresis/Eth/Ntilde/Ograve/Oacute/Ocircumflex/Otilde/Odieresis/multiply/Oslash/Ugrave/Uacute/Ucircumflex/Udieresis/Yacute/Thorn/germandbls/agrave/aacute/acircumflex/atilde/adieresis/aring/ae/ccedilla/egrave/eacute/ecircumflex/edieresis/igrave/iacute/icircumflex/idieresis/eth/ntilde/ograve/oacute/ocircumflex/otilde/odieresis/divide/oslash/ugrave/uacute/ucircumflex/udieresis/yacute/thorn/ydieresis]/Type/Encoding>>endobjxref
+0 1
+0000000000 65535 f
+99 1
+0000158728 00001 n
+119 1
+0000162098 00000 n
+122 2
+0000162229 00000 n
+0000162362 00000 n
+149 20
+0000162526 00000 n
+0000162616 00000 n
+0000162710 00000 n
+0000162871 00000 n
+0000162914 00000 n
+0000163848 00000 n
+0000164225 00000 n
+0000164602 00000 n
+0000164630 00000 n
+0000164921 00000 n
+0000164949 00000 n
+0000165240 00000 n
+0000165268 00000 n
+0000165747 00000 n
+0000166940 00000 n
+0000166960 00000 n
+0000167052 00000 n
+0000167146 00000 n
+0000167224 00000 n
+0000168417 00000 n
+trailer
+<</Size 169/Root 122 0 R/Info 119 0 R/ID[<4F8BE8D27F04ADC31A36329E697AD38F><B3C5F042ED3D194589C550F917AE24D3>]/Prev 155585>>
+startxref
+169610
+%%EOF

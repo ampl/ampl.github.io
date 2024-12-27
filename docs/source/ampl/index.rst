@@ -11,7 +11,7 @@ AMPL Resoures
     install
     free
     apis
-    book/index
+    books/index
     options
     suffixes
     python/index

@@ -1,0 +1,1805 @@
+%PDF-1.4%âãÏÓ
+1 0 obj<< /Type /Page /Parent 49 0 R /Resources 2 0 R /Contents 3 0 R /Rotate 0 /MediaBox [ 0 0 612 792 ] /CropBox [ 40.32001 126 571.67999 792 ] >> endobj2 0 obj<< /ProcSet [ /PDF /Text ] /Font << /F1 69 0 R /F3 71 0 R /F4 73 0 R /F5 75 0 R /F6 19 0 R >> /ExtGState << /GS1 77 0 R >> >> endobj3 0 obj<< /Length 5241 >> stream
+BT
+/F5 1 Tf
+10 0 0 10 126 747.615 Tm
+0 g
+/GS1 gs
+0 Tc
+0 Tw
+(xvi)Tj
+7 0 0 7 155 747.615 Tm
+(INTRODUCTION)Tj
+/F1 1 Tf
+10 0 0 10 140.4 715.215 Tm
+0.1056 Tw
+[(In the development and application of )-7.7(mathematical )-7.7(programming, )-7.7(one )-7.7(special )-7.7(case)]TJ
+-1.44 -1.2 TD
+0.0961 Tw
+[(stands )-18(out: )-263.9(that )-15.9(in which all the costs, requirements and other quantities of interest are)]TJ
+T*
+0.0091 Tw
+[(terms strictly proportional to the levels of the activities, or sums )-8.3(of )-8.3(such )-8.3(terms. )-257.9(In mathe-)]TJ
+T*
+0.005 Tw
+[(matical )-12.6(terminology, )-12.6(the objective is a linear function, and the constraints are linear equa-)]TJ
+T*
+0.0177 Tw
+[(tions and inequalities. )-252.3(Such a problem is called a)]TJ
+/F4 1 Tf
+20.19 0 TD
+0.0211 Tw
+(linear program)Tj
+/F1 1 Tf
+6.24 0 TD
+0.0256 Tw
+(, and the process of set-)Tj
+-26.43 -1.2 TD
+0.0299 Tw
+[(ting up such a problem and solving it )12.4(is )12.4(called)]TJ
+/F4 1 Tf
+18.93 0 TD
+0.0211 Tw
+(linear programming.)Tj
+/F1 1 Tf
+8.76 0 TD
+0.0061 Tw
+(Linear programming)Tj
+-27.69 -1.2 TD
+0.1345 Tw
+[(is particularly important because a wide variety of )-10.9(problems )-10.9(can )-10.9(be )-10.9(modeled )-10.9(as )-10.9(linear)]TJ
+T*
+0.1437 Tw
+[(programs, and because there are fast and reliable methods for solving )10.7(linear )10.7(programs)]TJ
+T*
+0.1041 Tw
+[(even )7.1(with )7.1(thousands )7.1(of variables and constraints. )-250.9(The ideas of linear programming are)]TJ
+T*
+0.126 Tw
+[(also )-11.1(important )-11.1(for analyzing and solving mathematical programming problems that are)]TJ
+T*
+-0.0049 Tw
+(not linear.)Tj
+1.44 -1.26 TD
+0.0367 Tw
+[(All useful methods for solving linear programs require a computer. )-253.3(Thus most of the)]TJ
+-1.44 -1.2 TD
+0.0555 Tw
+[(study of linear programming has taken place since the late 1940’s, when it became )18.5(clear)]TJ
+T*
+0.055 Tw
+[(that )7.9(computers )7.9(would be available for scientific computing. )-250(The first successful compu-)]TJ
+T*
+0.1982 Tw
+[(tational )-8.9(method )-8.9(for linear programming, the simplex algorithm, was proposed at this)]TJ
+T*
+0.0243 Tw
+[(time, )6.2(and was the subject of increasingly effective implementations over the next decade.)]TJ
+T*
+0.1463 Tw
+(Coincidentally, the development of computers gave rise to a now much more familiar)Tj
+T*
+-0.0077 Tw
+(meaning for the term ‘‘programming.’’)Tj
+1.44 -1.26 TD
+0.0779 Tw
+[(In )9.9(spite of the broad applicability of linear programming, the linearity assumption is)]TJ
+-1.44 -1.2 TD
+0.1172 Tw
+[(sometimes )-11.9(too )-11.9(unrealistic. )-246.8(If instead some smooth nonlinear functions of the variables)]TJ
+T*
+0.0272 Tw
+[(are )12.2(used )12.2(in )12.2(the )12.2(objective or constraints, the problem is called a)]TJ
+/F4 1 Tf
+25.47 0 TD
+0.1111 Tw
+(nonlinear program.)Tj
+/F1 1 Tf
+8.36 0 TD
+0 Tw
+(Solv-)Tj
+-33.83 -1.2 TD
+0.0189 Tw
+[(ing )-9.9(such )-9.9(a )-9.9(problem )-9.9(is harder, though in practice not impossibly so. )-253.2(Although the optimal)]TJ
+T*
+0.0154 Tw
+[(values )13.3(of nonlinear functions have been a subject of study for over two centuries, compu-)]TJ
+T*
+0.0644 Tw
+[(tational )-15.7(methods )-15.7(for )-15.7(solving nonlinear programs in many variables were developed only)]TJ
+T*
+0.176 Tw
+[(in )18.6(recent )18.6(decades, )18.6(after the success of methods for linear programming. )-249(The field of)]TJ
+T*
+0.0281 Tw
+[(mathematical programming is thus )10.1(also )10.1(known )10.1(as)]TJ
+/F4 1 Tf
+20.24 0 TD
+0.0216 Tw
+(large scale optimization,)Tj
+/F1 1 Tf
+10.31 0 TD
+0.0321 Tw
+(to distinguish)Tj
+-30.55 -1.2 TD
+-0.0017 Tw
+(it from the classical topics of optimization in mathematical analysis.)Tj
+1.44 -1.26 TD
+0.0463 Tw
+[(The )9.3(assumptions )9.2(of )9.2(linear )9.2(programming )9.2(also break down if some variables must take)]TJ
+-1.44 -1.2 TD
+0.0656 Tw
+[(on whole number, or integral, values. )-239.4(Then )8.1(the )8.1(problem )8.1(is )8.1(called)]TJ
+/F4 1 Tf
+27.03 0 TD
+0.0571 Tw
+(integer programming,)Tj
+/F1 1 Tf
+-27.03 -1.2 TD
+0.1131 Tw
+[(and )5.1(in general becomes much harder. )-242(Nevertheless, a combination of faster computers)]TJ
+T*
+0.0429 Tw
+[(and )-11.7(more )-11.7(sophisticated methods have made large integer programs increasingly tractable)]TJ
+T*
+-0.0105 Tw
+(in recent years.)Tj
+/F3 1 Tf
+0 -3.44 TD
+0 Tw
+(The)Tj
+9 0 0 9 146.6 307.015 Tm
+(AMPL)Tj
+10 0 0 10 174.9 307.015 Tm
+0.0171 Tw
+(modeling language)Tj
+/F1 1 Tf
+-3.45 -1.95 TD
+-0.0028 Tw
+[(Practical mathematical programming is seldom as simple as )-11.8(running )-11.8(some )-11.8(algorithmic)]TJ
+-1.44 -1.2 TD
+0.0758 Tw
+[(method on a computer and printing the optimal solution. )-239.2(The )9.6(full )9.6(sequence )9.6(of )9.6(events )9.6(is)]TJ
+T*
+0.001 Tw
+(more like this:)Tj
+/F6 1 Tf
+1.25 -1.26 TD
+0 Tw
+(€)Tj
+/F1 1 Tf
+1.25 0 TD
+0.0065 Tw
+[(Formulate )11.4(a model, the abstract system of variables, objectives, and constraints that)]TJ
+0 -1.2 TD
+-0.005 Tw
+(represent the general form of the problem to be solved.)Tj
+/F6 1 Tf
+-1.25 -1.26 TD
+0 Tw
+(€)Tj
+/F1 1 Tf
+1.25 0 TD
+-0.0054 Tw
+(Collect data that define a specific problem instance.)Tj
+/F6 1 Tf
+-1.25 -1.26 TD
+0 Tw
+(€)Tj
+/F1 1 Tf
+1.25 0 TD
+0.026 Tw
+[(Generate )28.9(a specific objective function and constraint equations from the model and)]TJ
+0 -1.2 TD
+0 Tw
+(data.)Tj
+ET
+endstreamendobj4 0 obj<< /Type /Page /Parent 49 0 R /Resources 5 0 R /Contents 6 0 R /Rotate 0 /MediaBox [ 0 0 612 792 ] /CropBox [ 40.32001 126 571.67999 792 ] >> endobj5 0 obj<< /ProcSet [ /PDF /Text ] /Font << /F1 69 0 R /F4 73 0 R /F5 75 0 R /F6 19 0 R >> /ExtGState << /GS1 77 0 R >> >> endobj6 0 obj<< /Length 6460 >> stream
+BT
+/F5 1 Tf
+7 0 0 7 401.2 747.615 Tm
+0 g
+/GS1 gs
+0 Tc
+0 Tw
+(INTRODUCTION)Tj
+10 0 0 10 471.6 747.615 Tm
+(xvii)Tj
+/F6 1 Tf
+-33.31 -3.24 TD
+(€)Tj
+/F1 1 Tf
+1.25 0 TD
+0.0368 Tw
+(Solve the problem instance by running a program, or)Tj
+/F4 1 Tf
+21.72 0 TD
+0 Tw
+(solver)Tj
+/F1 1 Tf
+2.52 0 TD
+0.04 Tw
+[(, to apply )-8.5(an )-8.5(algorithm)]TJ
+-24.24 -1.2 TD
+-0.0026 Tw
+(that finds optimal values of the variables.)Tj
+/F6 1 Tf
+-1.25 -1.32 TD
+0 Tw
+(€)Tj
+/F1 1 Tf
+1.25 0 TD
+-0.0074 Tw
+(Analyze the results.)Tj
+/F6 1 Tf
+-1.25 -1.32 TD
+0 Tw
+(€)Tj
+/F1 1 Tf
+1.25 0 TD
+-0.0068 Tw
+(Refine the model and data as necessary, and repeat.)Tj
+-2.5 -1.32 TD
+0.0069 Tw
+[(If )13.5(people )13.5(could )13.5(deal with mathematical programs in the same way that solvers do, the for-)]TJ
+0 -1.2 TD
+0.0358 Tw
+[(mulation and generation phases of modeling might be relatively straightforward. )-241.2(In )17.8(real-)]TJ
+T*
+0.1605 Tw
+[(ity, however, there are many differences between the )-16.7(form )-16.7(in )-16.7(which )-16.7(human )-16.7(modelers)]TJ
+T*
+0.0392 Tw
+[(understand )-5.6(a )-5.6(problem )-5.6(and )-5.6(the form in which solver algorithms work with it. )-249.9(Conversion)]TJ
+T*
+0.4068 Tw
+[(from )17.1(the )17.1(‘‘modeler’s )17.1(form’’ to the ‘‘algorithm’s form’’ is consequently a time-)]TJ
+T*
+-0.0095 Tw
+(consuming, costly, and often error-prone procedure.)Tj
+1.44 -1.32 TD
+0.0644 Tw
+[(In the special case of linear programming, the largest )-13.6(part )-13.6(of )-13.6(the )-13.6(algorithm’s )-13.6(form )-13.6(is)]TJ
+-1.44 -1.2 TD
+0.0478 Tw
+[(the constraint coefficient matrix, which is the table of numbers that multiply all )12.8(the )12.8(vari-)]TJ
+T*
+0.0277 Tw
+[(ables in all the constraints. )-249.4(Typically this is a very sparse \(mostly zero\) matrix with )-5.3(any-)]TJ
+T*
+0.0255 Tw
+[(where from hundreds to hundreds of thousands of rows and )11.5(columns, )11.5(whose )11.5(nonzero )11.5(ele-)]TJ
+T*
+0.0837 Tw
+[(ments appear in intricate patterns. )-254.3(A computer program that produces a compact repre-)]TJ
+T*
+0.0148 Tw
+[(sentation of the coefficients is called )11.8(a )11.8(matrix )11.8(generator. )-236.2(Several )11.2(programming )11.2(languages)]TJ
+T*
+-0.007 Tw
+[(have been designed specifically for writing matrix generators, and )-10(standard )-10(computer )-10(pro-)]TJ
+T*
+-0.006 Tw
+(gramming languages are also often used.)Tj
+1.44 -1.32 TD
+0.0058 Tw
+[(Although )12.7(matrix )12.7(generators can successfully automate some of the work of translation)]TJ
+-1.44 -1.2 TD
+0.1167 Tw
+[(from modeler’s form to algorithm’s form, they remain difficult to debug and )6.6(maintain.)]TJ
+T*
+0.0072 Tw
+[(One way around much of this difficulty lies )-10.8(in )-10.8(the )-10.8(use )-10.8(of )-10.8(a)]TJ
+/F4 1 Tf
+23.74 0 TD
+0.0161 Tw
+(modeling language)Tj
+/F1 1 Tf
+8.06 0 TD
+0.0071 Tw
+(for mathe-)Tj
+-31.8 -1.2 TD
+0.006 Tw
+[(matical programming. )-252(A modeling language is designed to express the modeler’s )7(form )7(in)]TJ
+T*
+0.116 Tw
+[(a way that can serve as direct input to )-11(a )-11(computer )-11(system. )-259(Then )-13(the )-13(translation )-13(to )-13(the)]TJ
+T*
+0.0738 Tw
+[(algorithm’s form can be performed entirely by computer, )6.8(without )6.8(the )6.8(intermediate )6.8(stage)]TJ
+T*
+0.1944 Tw
+[(of computer programming. )-256.7(Modeling languages can help to make mathematical pro-)]TJ
+T*
+0.0323 Tw
+[(gramming )-9.8(more )-9.8(economical and reliable; they are particularly advantageous for develop-)]TJ
+T*
+-0.0037 Tw
+(ment of new models and for documentation of models that are subject to change.)Tj
+1.44 -1.32 TD
+0.147 Tw
+[(Since there is more than one form that modelers use to )-5.4(express )-5.4(mathematical )-5.4(pro-)]TJ
+-1.44 -1.2 TD
+0.0969 Tw
+[(grams, there is more than one kind of )10.8(modeling )10.8(language. )-241.1(An)]TJ
+/F4 1 Tf
+26.08 0 TD
+0 Tw
+(algebraic)Tj
+/F1 1 Tf
+4.25 0 TD
+0.0871 Tw
+(modeling lan-)Tj
+-30.33 -1.2 TD
+0.247 Tw
+[(guage )12(is a popular variety based on the use of traditional mathematical notation to)]TJ
+T*
+0.1219 Tw
+[(describe objective and constraint functions. )-256.1(An algebraic language provides )11.8(computer-)]TJ
+T*
+0.0285 Tw
+[(readable )30.4(equivalents of notations such as)]TJ
+/F4 1 Tf
+16.75 0 TD
+0 Tw
+(x)Tj
+7 0 0 7 299 334.015 Tm
+(j)Tj
+/F6 1 Tf
+10 0 0 10 305.8 336.015 Tm
+(+)Tj
+/F4 1 Tf
+0.95 0 TD
+(y)Tj
+7 0 0 7 320.8 334.015 Tm
+(j)Tj
+/F1 1 Tf
+10 0 0 10 323.6 336.015 Tm
+(,)Tj
+/F6 1 Tf
+11 0 0 11 329.2 336.015 Tm
+()Tj
+/F4 1 Tf
+7 0 0 7 337 334.115 Tm
+(j)Tj
+/F6 1 Tf
+0.4429 0 TD
+(=)Tj
+/F1 1 Tf
+0.7143 0 TD
+(1)Tj
+/F4 1 Tf
+-1.1571 0.9714 TD
+(n)Tj
+10 0 0 10 349.4 336.015 Tm
+(a)Tj
+7 0 0 7 355.5 334.015 Tm
+-0.1632 Tw
+(i j)Tj
+10 0 0 10 361.6 336.015 Tm
+0 Tw
+(x)Tj
+7 0 0 7 367.1 334.015 Tm
+(j)Tj
+/F1 1 Tf
+10 0 0 10 369.9 336.015 Tm
+(,)Tj
+/F4 1 Tf
+0.53 0 TD
+(x)Tj
+7 0 0 7 380.7 334.015 Tm
+(j)Tj
+/F6 1 Tf
+10 0 0 10 386.7 336.015 Tm
+()Tj
+/F1 1 Tf
+0.87 0 TD
+0.026 Tw
+(0, and)Tj
+/F4 1 Tf
+2.75 0 TD
+0 Tw
+(j)Tj
+/F6 1 Tf
+0.46 0 TD
+()Tj
+/F4 1 Tf
+0.79 0 TD
+(S)Tj
+/F1 1 Tf
+0.78 0 TD
+0.0301 Tw
+(that would)Tj
+-31.72 -1.2 TD
+0.0055 Tw
+[(be familiar to anyone who has studied algebra or )12.4(calculus. )-249.6(Familiarity )7.3(is )7.3(one )7.3(of )7.3(the )7.3(major)]TJ
+T*
+0.123 Tw
+[(advantages of algebraic modeling languages; another is )-14(their )-14(applicability )-14(to )-14(a )-14(particu-)]TJ
+T*
+-0.005 Tw
+(larly wide variety of linear, nonlinear and integer programming models.)Tj
+1.44 -1.32 TD
+0.0373 Tw
+[(While )13.2(successful )13.2(algorithms )13.2(for mathematical programming first came into use in the)]TJ
+-1.44 -1.2 TD
+0.0559 Tw
+(1950’s, the development and distribution of algebraic modeling languages only began in)Tj
+T*
+0.0542 Tw
+[(the )8.1(1970’s. )-253.8(Since then, advances in computing and computer science have enabled such)]TJ
+T*
+-0.0074 Tw
+(languages to become steadily more efficient and general.)Tj
+1.44 -1.32 TD
+0.1556 Tw
+(This book describes)Tj
+9 0 0 9 227.6 237.615 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 252.6 237.615 Tm
+0.1644 Tw
+[(, )13.9(an )13.9(algebraic modeling language for mathematical pro-)]TJ
+-12.66 -1.2 TD
+0.0867 Tw
+[(gramming; )-11.1(it )-11.1(was )-11.1(designed )-11.1(and implemented by the authors around 1985, and has been)]TJ
+T*
+0.0921 Tw
+(evolving ever since.)Tj
+9 0 0 9 214.1 213.615 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 242.6 213.615 Tm
+0.1089 Tw
+(is notable for the similarity of its arithmetic expressions to)Tj
+-11.66 -1.2 TD
+0.0279 Tw
+[(customary )-5.5(algebraic )-5.5(notation, )-5.5(and )-5.5(for )-5.5(the )-5.5(generality and power of its set and subscripting)]TJ
+ET
+endstreamendobj7 0 obj<< /Type /Page /Parent 49 0 R /Resources 8 0 R /Contents 9 0 R /Rotate 0 /MediaBox [ 0 0 612 792 ] /CropBox [ 40.32001 126 571.67999 792 ] >> endobj8 0 obj<< /ProcSet [ /PDF /Text ] /Font << /F1 69 0 R /F5 75 0 R /F7 20 0 R >> /ExtGState << /GS1 77 0 R >> >> endobj9 0 obj<< /Length 5515 >> stream
+BT
+/F5 1 Tf
+10 0 0 10 126 747.615 Tm
+0 g
+/GS1 gs
+0 Tc
+0 Tw
+(xviii)Tj
+7 0 0 7 159.4 747.615 Tm
+(INTRODUCTION)Tj
+/F1 1 Tf
+10 0 0 10 126 715.215 Tm
+(expressions.)Tj
+9 0 0 9 182.1 715.215 Tm
+(AMPL)Tj
+10 0 0 10 211.6 715.215 Tm
+0.2074 Tw
+[(also )17.8(extends )17.8(algebraic notation to express common mathematical)]TJ
+-8.56 -1.2 TD
+-0.0057 Tw
+(programming structures such as network flow constraints and piecewise linearities.)Tj
+9 0 0 9 140.4 682.115 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 168.6 682.115 Tm
+0.0768 Tw
+[(offers )22.7(an interactive command environment for setting up and solving mathe-)]TJ
+-4.26 -1.2 TD
+0.0634 Tw
+[(matical programming problems. )-254.6(A flexible interface enables several solvers to be avail-)]TJ
+T*
+0.1467 Tw
+(able at once so a user can switch among solvers and select options that may improve)Tj
+T*
+0.194 Tw
+[(solver )10.9(performance. )-256(Once )-22.1(optimal )-22(solutions have been found, they are automatically)]TJ
+T*
+0.0654 Tw
+[(translated back to the modeler’s form so that people can view )-8.6(and )-8.6(analyze )-8.6(them. )-266.6(All )-11.6(of)]TJ
+T*
+0.1138 Tw
+[(the general set and arithmetic expressions )6.3(of )6.3(the)]TJ
+9 0 0 9 329.9 622.115 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 358.5 622.115 Tm
+0.1048 Tw
+(modeling language can also be)Tj
+-23.25 -1.2 TD
+0.0663 Tw
+[(used )15.3(for displaying data and results; a variety of options are available to format data for)]TJ
+T*
+-0.0033 Tw
+(browsing, printing reports, or preparing input to other programs.)Tj
+1.44 -2.11 TD
+0.069 Tw
+[(Through )7.9(its emphasis on)]TJ
+9 0 0 9 244.2 577.015 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 269.2 577.015 Tm
+0.0659 Tw
+(, this book differs considerably from the presentation)Tj
+-14.32 -1.2 TD
+0.0271 Tw
+[(of modeling in standard mathematical programming texts. )-247.9(The )7.6(approach )7.6(taken )8.1(by )8.1(a )8.1(typi-)]TJ
+T*
+0.0169 Tw
+[(cal textbook is still strongly influenced by the circumstances of 30 years ago, )-9.8(when )-9.8(a )-9.8(stu-)]TJ
+T*
+0.0487 Tw
+[(dent might be lucky to have the opportunity to solve a few small )13.2(linear )13.2(programs )13.2(on )13.2(any)]TJ
+T*
+0.1672 Tw
+[(actual )22.1(computer. )-241.8(As )24.1(encountered in such textbooks, mathematical programming often)]TJ
+T*
+0.1945 Tw
+[(appears to require only the conversion of a )7(‘‘word )7(problem’’ )7(into )7(a )7(small )7(system )7(of)]TJ
+T*
+0.045 Tw
+[(inequalities and an objective function, which are then presented to )-16(a )-16(simple )-16(optimization)]TJ
+T*
+0.1468 Tw
+[(package that prints a short listing of answers. )-249.2(While this can be a good approach for)]TJ
+T*
+0.1077 Tw
+[(introductory )10.5(purposes, )10.5(it )10.5(is )10.5(not )10.5(workable )10.5(for dealing with the hundreds or thousands of)]TJ
+T*
+-0.0054 Tw
+(variables and constraints that are found in most real-world mathematical programs.)Tj
+1.44 -2.11 TD
+0.0064 Tw
+[(The )11.3(availability of an algebraic modeling language makes it possible to emphasize the)]TJ
+-1.44 -1.2 TD
+0.0849 Tw
+[(kinds )-15.1(of general models that can be used to describe large-scale optimization problems.)]TJ
+T*
+0 Tw
+(Each)Tj
+9 0 0 9 149.7 423.915 Tm
+(AMPL)Tj
+10 0 0 10 178.5 423.915 Tm
+0.128 Tw
+[(model in this book describes a whole )-7.3(class )-7.3(of )-7.3(mathematical )-7.3(programming)]TJ
+-5.25 -1.2 TD
+0.013 Tw
+[(problems, whose members correspond to different choices of )6.2(indexing )6.2(sets )6.2(and )6.2(numerical)]TJ
+T*
+0.1176 Tw
+[(data. )-231.5(Even )5.6(though we use relatively small data sets for illustration, the resulting prob-)]TJ
+T*
+0.1871 Tw
+[(lems )-13.4(tend )-13.4(to be larger than those of the typical textbook. )-246.9(More important, the same)]TJ
+T*
+0.1373 Tw
+[(approach, using still larger data sets, works just as well )-6.7(for )-6.7(mathematical )-6.7(programs )-6.7(of)]TJ
+T*
+-0.0085 Tw
+(realistic size and practical value.)Tj
+1.44 -2.11 TD
+0.0865 Tw
+[(We have not attempted to cover the optimization theory and algorithmic )-13(details )-13(that)]TJ
+-1.44 -1.2 TD
+0.1285 Tw
+[(comprise the greatest part of most mathematical programming texts. )-251.5(Thus, )10(for )10(readers)]TJ
+T*
+0.0696 Tw
+[(who )9.9(want )9.9(to )9.9(study the whole field in some depth, this book is a complement to existing)]TJ
+T*
+0.0657 Tw
+[(textbooks, )-8.4(not )-8.4(a )-8.4(replacement. )-262.3(On )-10.7(the )-10.7(other )-10.7(hand, for those whose immediate concern is)]TJ
+T*
+0.0366 Tw
+[(to apply mathematical programming to a particular problem, the book )-7.7(can )-7.7(provide )-7.7(a )-7.7(use-)]TJ
+T*
+0.0008 Tw
+(ful introduction on its own.)Tj
+1.44 -2.11 TD
+0.0991 Tw
+(In addition,)Tj
+9 0 0 9 190.8 261.715 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 219.4 261.715 Tm
+0.103 Tw
+(software is readily available for experiment: the)Tj
+9 0 0 9 420.8 261.715 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 449.4 261.715 Tm
+0.105 Tw
+(web site,)Tj
+/F7 1 Tf
+-32.34 -1.2 TD
+0 Tw
+(www.ampl.com)Tj
+/F1 1 Tf
+7.2 0 TD
+0.1109 Tw
+(, provides free downloadable ‘‘student’’ versions of)Tj
+9 0 0 9 415.7 249.715 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 444.3 249.715 Tm
+0.0891 Tw
+(and repre-)Tj
+-31.83 -1.2 TD
+0.1382 Tw
+[(sentative solvers that run on Windows, Unix/Linux, )-8.8(and )-8.8(Mac )-8.8(OS )140.2(X. )-253.8(These )-6.3(can )-6.3(easily)]TJ
+T*
+0.0058 Tw
+[(handle problems of a few hundred variables and constraints, including all of the )12.7(examples)]TJ
+T*
+0.0653 Tw
+[(in )5.3(the )5.3(book. )-239.8(Versions )5.9(that )5.9(support )5.9(much larger problems and additional solvers are also)]TJ
+T*
+-0.0039 Tw
+(available from a variety of vendors; again, details may be found on the web site.)Tj
+ET
+endstreamendobj10 0 obj<< /Type /Page /Parent 49 0 R /Resources 11 0 R /Contents 12 0 R /Rotate 0 /MediaBox [ 0 0 612 792 ] /CropBox [ 40.32001 126 571.67999 792 ] >> endobj11 0 obj<< /ProcSet [ /PDF /Text ] /Font << /F1 69 0 R /F3 71 0 R /F5 75 0 R >> /ExtGState << /GS1 77 0 R >> >> endobj12 0 obj<< /Length 4225 >> stream
+BT
+/F5 1 Tf
+7 0 0 7 403.4 747.615 Tm
+0 g
+/GS1 gs
+0 Tc
+0 Tw
+(INTRODUCTION)Tj
+10 0 0 10 473.8 747.615 Tm
+(xix)Tj
+/F3 1 Tf
+-34.78 -3.24 TD
+0.0027 Tw
+(Outline of the book)Tj
+/F1 1 Tf
+1.44 -1.83 TD
+0.0565 Tw
+[(The second edition, like the first, is organized conceptually into four parts. )-248.6(Chapters)]TJ
+-1.44 -1.2 TD
+-0.0023 Tw
+(1 through 4 are a tutorial introduction to models for linear programming:)Tj
+3.38 -1.83 TD
+0.0021 Tw
+[(1. )-249(Production Models: Maximizing Profits)]TJ
+0 -1.2 TD
+0.0007 Tw
+[(2. )-247.3(Diet and Other Input Models: Minimizing Costs)]TJ
+T*
+-0.0006 Tw
+[(3. )-242.7(Transportation and Assignment Models)]TJ
+T*
+-0.0075 Tw
+[(4. )-266.6(Building Larger Models)]TJ
+-3.38 -1.83 TD
+0.0575 Tw
+[(These )27.4(chapters are intended to get you started using)]TJ
+9 0 0 9 340.6 612.315 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 368.7 612.315 Tm
+0.0587 Tw
+[(as quickly as possible. )-246.3(They)]TJ
+-24.27 -1.2 TD
+0.1465 Tw
+[(include )-5.5(a )-5.5(brief review of linear programming and a discussion of a handful of simple)]TJ
+T*
+0.0172 Tw
+[(modeling ideas that underlie most large-scale optimization problems. )-247.8(They also illustrate)]TJ
+T*
+0.1262 Tw
+(how to provide the data that convert a model into a specific problem instance, how to)Tj
+T*
+-0.003 Tw
+(solve a problem, and how to display the answers.)Tj
+1.44 -1.25 TD
+0.0528 Tw
+[(The next four chapters describe the fundamental components )-13.7(of )-13.7(an)]TJ
+9 0 0 9 415.3 551.815 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 443.5 551.815 Tm
+0.0571 Tw
+(linear pro-)Tj
+-31.75 -1.2 TD
+-0.0042 Tw
+[(gramming )-14.7(model )-14.7(in )-14.7(detail, )-14.7(using more complex examples to examine major aspects of the)]TJ
+T*
+-0.0099 Tw
+(language systematically:)Tj
+3.38 -1.83 TD
+-0.002 Tw
+[(5. )-258.1(Simple Sets and Indexing)]TJ
+0 -1.2 TD
+[(6. )-257.1(Compound Sets and Indexing)]TJ
+T*
+-0.0035 Tw
+[(7. )-240.6(Parameters and Expressions)]TJ
+T*
+-0.0039 Tw
+[(8. )-244(Linear Programs: Variables, Objectives and Constraints)]TJ
+-3.38 -1.83 TD
+0.0558 Tw
+[(We )21.8(have tried to cover the most important features, so that these chapters can serve as a)]TJ
+0 -1.2 TD
+0.0977 Tw
+[(general user’s guide. )-253.3(Each )-5.8(feature )-5.8(is introduced by one or more examples, building on)]TJ
+T*
+-0.0096 Tw
+(previous examples wherever possible.)Tj
+1.44 -1.25 TD
+-0.004 Tw
+(The following six chapters describe how to use)Tj
+9 0 0 9 331.2 418.715 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 358.7 418.715 Tm
+-0.0026 Tw
+(in more sophisticated ways:)Tj
+-19.89 -1.83 TD
+0.2471 Tw
+[(9. Specifying )255.1(Data)]TJ
+-0.5 -1.2 TD
+0.2351 Tw
+[(10. Database )247.1(Access)]TJ
+T*
+0.2511 Tw
+[(11. Modeling )247(Commands)]TJ
+T*
+0.2491 Tw
+[(12. Display )245(Commands)]TJ
+T*
+0.2531 Tw
+[(13. Command )251.1(Scripts)]TJ
+T*
+0.001 Tw
+[(14. )-238.1(Interactions with Solvers)]TJ
+-2.88 -1.83 TD
+0.066 Tw
+[(The first two of these chapters explain how to provide the data values that define a )-8(spe-)]TJ
+0 -1.2 TD
+0.0053 Tw
+[(cific instance of a model; )10.9(Chapter )10.9(9 )10.9(describes)]TJ
+9 0 0 9 311 310.115 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 336 310.115 Tm
+-0.0041 Tw
+(’s text file data format, while Chapter)Tj
+-21 -1.2 TD
+0.0464 Tw
+[(10 )15.7(presents )15.7(features )15.7(for access to information in relational database systems. )-247.6(Chapter 11)]TJ
+T*
+0.0365 Tw
+[(explains the commands that read models and data, and invoke solvers; )8.5(Chapter )8.5(12 )8.5(shows)]TJ
+T*
+0.136 Tw
+[(how )5.5(to )5.5(display and save results.)]TJ
+9 0 0 9 266.3 274.115 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 295.2 274.115 Tm
+0.1344 Tw
+(provides facilities for creating scripts of com-)Tj
+-16.92 -1.2 TD
+0.005 Tw
+[(mands, )-13.2(and )-13.2(for )-13.2(writing )-13.2(loops )-13.2(and )-13.2(conditional statements; these are covered in Chapter 13.)]TJ
+T*
+0.0786 Tw
+[(Chapter )13.1(14 )13.1(goes into more detail on how to interact with solvers so as to make the best)]TJ
+T*
+-0.0036 Tw
+(use of their capabilities and the information they provide.)Tj
+1.44 -1.25 TD
+0.0375 Tw
+[(Finally, we turn to the rich variety of problems and applications )-7.2(beyond )-7.2(purely )-7.2(linear)]TJ
+-1.44 -1.2 TD
+0.1564 Tw
+[(models. )-249.7(The remaining chapters deal with six )14.8(important )14.8(special )14.8(cases )14.8(and )14.8(generaliza-)]TJ
+T*
+0 Tw
+(tions:)Tj
+ET
+endstreamendobj13 0 obj<< /Type /Page /Parent 49 0 R /Resources 14 0 R /Contents 15 0 R /Rotate 0 /MediaBox [ 0 0 612 792 ] /CropBox [ 40.32001 126 571.67999 792 ] >> endobj14 0 obj<< /ProcSet [ /PDF /Text ] /Font << /F1 69 0 R /F3 71 0 R /F5 75 0 R /F6 19 0 R /F7 20 0 R >> /ExtGState << /GS1 77 0 R >> >> endobj15 0 obj<< /Length 5258 >> stream
+BT
+/F5 1 Tf
+10 0 0 10 126 747.615 Tm
+0 g
+/GS1 gs
+0 Tc
+0 Tw
+(xx)Tj
+7 0 0 7 152.8 747.615 Tm
+(INTRODUCTION)Tj
+/F1 1 Tf
+10 0 0 10 154.8 715.215 Tm
+0.2411 Tw
+[(15. Network )247.6(Linear )247.5(Programs)]TJ
+0 -1.2 TD
+0.2541 Tw
+[(16. Columnwise )248(Formulations)]TJ
+T*
+0.2281 Tw
+[(17. Piecewise-Linear )231(Programs)]TJ
+T*
+0.2411 Tw
+[(18. Nonlinear )244(Programs)]TJ
+T*
+0.2501 Tw
+[(19. Complementarity )248(Problems)]TJ
+T*
+-0.0065 Tw
+[(20. )-244.6(Integer Linear Programs)]TJ
+-2.88 -2.22 TD
+0.0747 Tw
+(Chapters 15 and 16 describe additional language features that help)Tj
+9 0 0 9 401.8 633.015 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 430.1 633.015 Tm
+0.0651 Tw
+(represent par-)Tj
+-30.41 -1.2 TD
+0.1263 Tw
+[(ticular kinds of linear programs more naturally, and that may help )8.6(to )8.6(speed )8.6(translation)]TJ
+T*
+0.165 Tw
+[(and solution. )-250(The last four chapters cover generalizations that can help models to be)]TJ
+T*
+0.0664 Tw
+[(more )-7.2(realistic )-7.2(than linear programs, although they can also make the resulting optimiza-)]TJ
+T*
+-0.0027 Tw
+(tion problems harder to solve.)Tj
+1.44 -1.28 TD
+0.0384 Tw
+(Appendix A is the)Tj
+9 0 0 9 217.5 572.215 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 245.4 572.215 Tm
+0.0304 Tw
+[(reference manual; it describes all language )-10.6(features, )-10.6(includ-)]TJ
+-11.94 -1.2 TD
+0.0362 Tw
+[(ing some not mentioned elsewhere in the text. )-255.9(Bibliography and exercises may be found)]TJ
+T*
+-0.0025 Tw
+(in most of the chapters.)Tj
+/F3 1 Tf
+0 -4.25 TD
+0.0031 Tw
+(About the second edition)Tj
+/F1 1 Tf
+9 0 0 9 140.4 483.515 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 168.5 483.515 Tm
+0.0602 Tw
+(has evolved a lot in ten years, but its core remains essentially unchanged, and)Tj
+-4.25 -1.2 TD
+0.059 Tw
+[(almost all of the models from the first edition work with the )19(current )18.9(program. )-243.1(Although)]TJ
+T*
+0.0573 Tw
+[(we have made substantial revisions throughout the text, much )-7.7(of )-7.7(the )-7.7(brand )-7.7(new )-7.7(material)]TJ
+T*
+0.0468 Tw
+[(is )-7.7(concentrated )-7.7(in )-7.7(the )-7.7(third )-7.7(part, )-7.7(where the original single chapter on the command envi-)]TJ
+T*
+0.0335 Tw
+[(ronment has been expanded into five chapters. )-263.5(In )-7.7(particular, )-7.7(database )-7.7(access, )-7.7(scripts )-7.7(and)]TJ
+T*
+0.0866 Tw
+(programming constructs represent completely new material, and many additional)Tj
+9 0 0 9 461 423.515 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 126 411.515 Tm
+-0.0056 Tw
+(commands for examining models and accessing solver information have been added.)Tj
+1.44 -1.28 TD
+0.1169 Tw
+[(The )8.9(first )8.9(edition )8.9(was )8.9(written )8.9(in 1992, just before the explosion in Internet and web)]TJ
+-1.44 -1.2 TD
+0.0782 Tw
+[(use, )-7.3(and )-7.3(while )-7.3(personal )-7.3(computers )-7.3(were )-7.3(still rather limited in their capabilities; the first)]TJ
+T*
+0.0976 Tw
+(student versions of)Tj
+9 0 0 9 207 374.715 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 235.6 374.715 Tm
+0.103 Tw
+(ran on)Tj
+9 0 0 9 265.5 374.715 Tm
+0 Tw
+(DOS)Tj
+10 0 0 10 287.1 374.715 Tm
+0.1076 Tw
+(on tiny, slow machines, and were distributed on)Tj
+-16.11 -1.2 TD
+0.0031 Tw
+(floppy disks.)Tj
+1.44 -1.28 TD
+0.0665 Tw
+(Today, the web site at)Tj
+/F7 1 Tf
+9.39 0 TD
+0 Tw
+(www.ampl.com)Tj
+/F1 1 Tf
+7.52 0 TD
+0.0728 Tw
+(is the central source for all)Tj
+9 0 0 9 422.8 349.915 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 451.1 349.915 Tm
+(informa-)Tj
+-32.51 -1.2 TD
+0.0072 Tw
+[(tion )-12.8(and )10.1(software. )-249.8(Pages at this site cover all that you need to learn about and experiment)]TJ
+T*
+-0.0012 Tw
+(with optimization and the use of)Tj
+9 0 0 9 257.6 325.915 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 282.6 325.915 Tm
+(:)Tj
+/F6 1 Tf
+-14.41 -1.28 TD
+(€)Tj
+/F1 1 Tf
+1.25 0 TD
+-0.0065 Tw
+(Free versions of)Tj
+9 0 0 9 217.8 313.115 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 245.3 313.115 Tm
+-0.0048 Tw
+(for a variety of operating systems.)Tj
+/F6 1 Tf
+-10.68 -1.28 TD
+0 Tw
+(€)Tj
+/F1 1 Tf
+1.25 0 TD
+-0.0052 Tw
+(Free versions of several solvers for a variety of problem types.)Tj
+/F6 1 Tf
+-1.25 -1.28 TD
+0 Tw
+(€)Tj
+/F1 1 Tf
+1.25 0 TD
+-0.0017 Tw
+(All of the model and data files used as examples in this book.)Tj
+-2.5 -1.28 TD
+0.036 Tw
+[(The free software is fully functional, save that it can only handle problems of a )-8(few )-8(hun-)]TJ
+0 -1.2 TD
+0.1232 Tw
+[(dred variables and constraints. )-243.9(Unrestricted commercial versions of)]TJ
+9 0 0 9 410.8 262.715 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 439.6 262.715 Tm
+0.1131 Tw
+(and solvers)Tj
+-31.36 -1.2 TD
+-0.0041 Tw
+(are available as well; see the web site for a list of vendors.)Tj
+1.44 -1.28 TD
+0.136 Tw
+(You can also try)Tj
+9 0 0 9 214.2 237.915 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 243.2 237.915 Tm
+0.1446 Tw
+(without downloading any software, through browser inter-)Tj
+-11.72 -1.2 TD
+0.184 Tw
+(faces at)Tj
+/F7 1 Tf
+3.66 0 TD
+0 Tw
+(www.ampl.com/TRYAMPL)Tj
+/F1 1 Tf
+12.45 0 TD
+0.194 Tw
+(and the)Tj
+9 0 0 9 322.6 225.915 Tm
+0 Tw
+(NEOS)Tj
+10 0 0 10 350.5 225.915 Tm
+0.177 Tw
+(Server \()Tj
+/F7 1 Tf
+3.37 0 TD
+0 Tw
+(neos.mcs.anl.gov)Tj
+/F1 1 Tf
+9.6 0 TD
+(\).)Tj
+-35.42 -1.2 TD
+(The)Tj
+9 0 0 9 144 213.915 Tm
+(AMPL)Tj
+10 0 0 10 171.5 213.915 Tm
+-0.0041 Tw
+[(web site also provides information on graphical user )-5.1(interfaces )-5.1(and )-5.1(new)]TJ
+9 0 0 9 461 213.915 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 126 201.915 Tm
+-0.0084 Tw
+(language features, which are under continuing development.)Tj
+ET
+endstreamendobj16 0 obj<< /Type /Page /Parent 49 0 R /Resources 17 0 R /Contents 18 0 R /Rotate 0 /MediaBox [ 0 0 612 792 ] /CropBox [ 40.32001 126 571.67999 792 ] >> endobj17 0 obj<< /ProcSet [ /PDF /Text ] /Font << /F1 69 0 R /F2 66 0 R /F3 71 0 R /F4 73 0 R /F5 75 0 R /F8 21 0 R >> /ExtGState << /GS1 77 0 R >> >> endobj18 0 obj<< /Length 4290 >> stream
+BT
+/F5 1 Tf
+7 0 0 7 403.4 747.615 Tm
+0 g
+/GS1 gs
+0 Tc
+0 Tw
+(INTRODUCTION)Tj
+10 0 0 10 473.8 747.615 Tm
+(xxi)Tj
+/F3 1 Tf
+-34.78 -3.24 TD
+0.0066 Tw
+(Acknowledgements to the first edition)Tj
+/F1 1 Tf
+1.44 -1.8 TD
+0.1746 Tw
+[(We )11(are )11(deeply )11(grateful )11(to )11(Jon Bentley and Margaret Wright, who made extensive)]TJ
+-1.44 -1.2 TD
+0.1053 Tw
+[(comments )-8.1(on )-8.1(several )-8.1(drafts of the manuscript. )-246.7(We also received many helpful sugges-)]TJ
+T*
+0.145 Tw
+(tions on)Tj
+9 0 0 9 163.3 673.215 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 192.2 673.215 Tm
+0.1435 Tw
+[(and )6.8(the )6.8(book )6.8(from Collette Coullard, Gary Cramer, Arne Drud, Grace)]TJ
+-6.62 -1.2 TD
+0.0164 Tw
+[(Emlin, Gus Gassmann, Eric Grosse, Paul Kelly, Mark Kernighan, Todd )8.4(Lowe, )8.4(Bob )8.4(Rich-)]TJ
+T*
+0.0875 Tw
+[(ton, Michael Saunders, Robert Seip, Lakshman Sinha, Chris Van Wyk, Juliana )-12.5(Vignali,)]TJ
+T*
+0.106 Tw
+[(Thong Vukhac, and students in the mathematical programming classes )13.5(at )13.5(Northwestern)]TJ
+T*
+0.1158 Tw
+[(University. )-236.3(Lorinda Cherry helped with indexing, and Jerome Shepheard with typeset-)]TJ
+T*
+-0.0023 Tw
+[(ting. )-251.4(Our sincere thanks to all of them.)]TJ
+/F2 1 Tf
+11 0 0 11 126 565.215 Tm
+0 Tw
+(Bibliography)Tj
+/F1 1 Tf
+9 0 0 9 126 548.215 Tm
+0.064 Tw
+[(E. )50.1(M. )50.1(L. Beale, ‘‘Matrix Generators and Output Analyzers.’’ )-253(In Harold W. )-264(Kuhn )-20.4(\(ed.\),)]TJ
+/F4 1 Tf
+36.3333 0 TD
+0 Tw
+(Proceed-)Tj
+-36.3333 -1.2222 TD
+0.2723 Tw
+[(ings of the Princeton Symposium on )10.9(Mathematical )10.9(Programming)]TJ
+/F1 1 Tf
+28.0444 0 TD
+0.2631 Tw
+(, Princeton University Press)Tj
+-28.0444 -1.2222 TD
+0.0284 Tw
+[(\(Princeton, )-5.2(NJ, )-5.2(1970\) )-5.2(pp. )-5.2(25–36. )-255.2(A history and explanation of matrix generator software for linear)]TJ
+T*
+0 Tw
+(programming.)Tj
+0 -1.5556 TD
+0.0405 Tw
+[(Johannes Bisschop and Alexander Meeraus, ‘‘On the Development )-10.3(of )-10.3(a )-10.3(General )-10.3(Algebraic )-10.3(Model-)]TJ
+0 -1.2222 TD
+0.1175 Tw
+[(ing )-9.5(System in a Strategic Planning Environment.’’ )-255.7(Mathematical Programming Study)]TJ
+/F8 1 Tf
+35.9667 0 TD
+0 Tw
+(20)Tj
+/F1 1 Tf
+1.3667 0 TD
+(\(1982\))Tj
+-37.3333 -1.2222 TD
+0.0062 Tw
+[(pp. )-10.4(1–29. )-255.1(An introduction to GAMS, one of the first and most )-11(widely )-10.9(used )-11(algebraic )-10.9(modeling )-11(lan-)]TJ
+T*
+0 Tw
+(guages.)Tj
+0 -1.5556 TD
+0.0073 Tw
+[(Robert E. Bixby, ‘‘Solving Real-World Linear Programs: A Decade and )-11.9(More )-11.9(of )-11.9(Progress.’’ )-266.2(Oper-)]TJ
+0 -1.2222 TD
+0.1183 Tw
+(ations Reearch)Tj
+/F8 1 Tf
+6.3889 0 TD
+0 Tw
+(50)Tj
+/F1 1 Tf
+1.3556 0 TD
+0.1062 Tw
+[(\(2002\) )-5.4(pp. )-5.4(3\)–15. )-255.1(A history of recent advances in solvers for linear program-)]TJ
+-7.7444 -1.2222 TD
+0.0615 Tw
+[(ming. )-249(Also in this issue are accounts of the early days of mathematical programming by pioneers)]TJ
+T*
+0.0088 Tw
+(of the field.)Tj
+0 -1.5556 TD
+0.0731 Tw
+[(George )7.1(B. )7.1(Dantzig, )7.1(‘‘Linear Programming: The Story About How It Began.’’ )-255(In Jan Karel Lens-)]TJ
+0 -1.2222 TD
+0.143 Tw
+[(tra, Alexander H. )131.7(G. Rinnooy Kan and Alexander Schrijver, eds.,)]TJ
+/F4 1 Tf
+27.6778 0 TD
+0.139 Tw
+[(History of Mathematical )10.9(Pro-)]TJ
+-27.6778 -1.2222 TD
+0.0073 Tw
+[(gramming: )-76.5(A Collection of Personal Reminiscences.)]TJ
+/F1 1 Tf
+21.4444 0 TD
+0.0213 Tw
+(North-Holland \(Amsterdam, 1991\) pp. 19–31.)Tj
+-21.4444 -1.2222 TD
+0.0172 Tw
+[(A source for our brief account of the history )9.3(of )9.3(linear )9.3(programming. )-244.5(Dantzig )11.1(was )11.1(a )11.1(pioneer )11.1(of )11.1(such)]TJ
+T*
+0.0065 Tw
+(key ideas as objective functions and the simplex algorithm.)Tj
+0 -1.5556 TD
+0.0631 Tw
+[(Robert )10.9(Fourer, )10.9(‘‘Modeling )10.9(Languages )10.9(versus Matrix Generators for Linear Programming.’’ )-253.3(ACM)]TJ
+0 -1.2222 TD
+0.0066 Tw
+(Transactions on Mathematical Software)Tj
+/F8 1 Tf
+16.2444 0 TD
+0 Tw
+(9)Tj
+/F1 1 Tf
+0.7556 0 TD
+0.0088 Tw
+[(\(1983\) pp. 143–183. )-252.9(The case for modeling languages.)]TJ
+-17 -1.5556 TD
+0.2524 Tw
+[(C. )238.7(A. )238.7(C. Kuip, ‘‘Algebraic Languages for Mathematical Programming.’’ )-254.5(European Journal )-9(of)]TJ
+0 -1.2222 TD
+0.0084 Tw
+(Operational Research)Tj
+/F8 1 Tf
+8.9 0 TD
+0 Tw
+(67)Tj
+/F1 1 Tf
+1.2556 0 TD
+0.0117 Tw
+[(\(1993\) 25–51. )-249.6(A survey.)]TJ
+ET
+endstreamendobj19 0 obj<< /Type /Font /Subtype /Type1 /FirstChar 1 /LastChar 128 /Widths [ 592 549 713 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 549 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 549 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 460 ] /Encoding 28 0 R /BaseFont /BNFPGP+Symbol /FontDescriptor 22 0 R /ToUnicode 29 0 R >> endobj20 0 obj<< /Type /Font /Subtype /Type1 /FirstChar 46 /LastChar 119 /Widths [ 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 ] /Encoding /WinAnsiEncoding /BaseFont /BNGCAP+Courier /FontDescriptor 24 0 R >> endobj21 0 obj<< /Type /Font /Subtype /Type1 /FirstChar 48 /LastChar 57 /Widths [ 500 500 500 500 500 500 500 500 500 500 ] /Encoding /WinAnsiEncoding /BaseFont /BNGHEO+Times-Bold /FontDescriptor 26 0 R >> endobj22 0 obj<< /Type /FontDescriptor /Ascent 0 /CapHeight 0 /Descent 0 /Flags 4 /FontBBox [ -180 -293 1090 1010 ] /FontName /BNFPGP+Symbol /ItalicAngle 0 /StemV 95 /StemH 92 /CharSet (/bullet/plus/Sigma/equal/greaterequal/element)/FontFile3 23 0 R >> endobj23 0 obj<< /Filter /FlateDecode /Length 535 /Subtype /Type1C >> stream
+H‰,OhQÆß3Ù— eÕÒUl!»=HWc‹"EğEmk!¹Ôb M×´%ÉÆMª¤"q…4JêMMÔÒC„ş6ŠRÒ<t/½y0=x=¤àe^ûö`¶v˜ùññ|Ì`äÜ‡0ÆüÅÁ+CW‡¼¡\rTMØN7õ`zÔIÅ¶#l€;ßwf8<#‡ vx.µ#cÒ~L
+MÄ“Ñ¸¦D³Š¦Ü™Š&”„’TRÙKj:§MÄÇ³’;!ñï?eóÜ.}6}§¥À˜:ªH¡\&«$3R0Sµ´ªµ¢Æú$)HH»	IS2Šv·åî]Øª6äÁEüeñD¼Bê_‘«õr ã(€fĞúÏJ<M%Ó%º,°<ÓÃ ³¢	EĞM¦CŞÅC·	¢‰é*í¬j˜V	ÿùÒoºl`(ƒÛï¡!°UÖàh¼ƒ(wœLŞ~p­‹Â"»/8H“æÜ€ò\œ':x9ëáK&Ô¿`ùæ US°
+aZ ´×i`š»î¢—ÙˆÕ[Úÿ8°ğ'°´¡éß”{ü~yÖÓÓğoÍzš›-‘ZÚ€^»ñG³ã'}
+/K&ÏÖ_×–Ü+µ·•µ.Ğ7˜NäÁ˜*f&ó‘áÎáräÍ¤'¶ø9ØÜÛFã••q1µp¿öhİMeÂOÏm÷—ÙÍ
+ùµÿÏjtÀ¶ğO€ ¼TòÓ
+endstreamendobj24 0 obj<< /Type /FontDescriptor /Ascent 629 /CapHeight 562 /Descent -157 /Flags 35 /FontBBox [ -28 -250 628 805 ] /FontName /BNGCAP+Courier /ItalicAngle 0 /StemV 51 /XHeight 426 /StemH 51 /CharSet (/w/period/a/m/p/l/c/o/slash/T/R/Y/A/M/P/L/n/e/s/g/v)/FontFile3 25 0 R >> endobj25 0 obj<< /Filter /FlateDecode /Length 1764 /Subtype /Type1C >> stream
+H‰LTP×>Ëew™‹².:,î‚Ñ*Q
+Š A¸0Ä›Ä¼¨Èã^@1½•G(òğµšTT’²¸JH‰Py+‚’hÊ`ÒTÿeÎmí^R;™İ9çìÿŸı¾ÿÿ¿ÿÙÛ!‚ œuÛŞİ¾2,-Ë˜¬7ÚL¼ÂÊB{ÅİÉ5—Î8ÌÜ a¥3ìœßâN'º ;‚Ø¾+,-=Ç˜œ˜”é±"ÁËÃ7p} ·:®™}=B÷§Åë=brL™úƒ&-©	iÆô4ã¾Lı~Ğ”Ù_MF½IoÌV¯Øœ	´¡UòEÈ¡µ!¤C(¡ÍE ´ÕÅ"´‹@®jÈy¢¨uvD$q™xjçmwNƒ41š[š§ö;í/ØGFÓ”•¥Í…yäÀB·³-‰ÕII‰&½¾ÉÔØØTİÂkgæ"`>üS£l™™Ãâ¾‡·dCßL8©-–`‘×%—RĞc½ò-6€yë!‚…KT'^D2ÿú•)†Â‰ÊEXFá]V+‚^z‚u/>J×É2JET^2È75p_¹Íâ«âVÃ2Q9A…b2:ŠE¡€yµ}L†Ç²FùH9ÃJ8ˆÂ®x»Â‰ƒÄQ«!X„÷¥¥ŠáŞV²Jò”Õ°Ôæ¶¡À&	ŠUŞ@®õh PE²ÖŠĞ*á×ağ4Ä†ö˜C\'R°ØxªçAÊšİGB±›€]gq$HTq´24tj@+±"’VCÂê‡÷šoâà$ùSYÉ°pM‡C	}ßr·ó©[í@ãe<î'(Ù‚¨ç§Ş0e˜×cw/z•çKäs½D«#Ø"Ã–ÙÕ‚õÊçj•¬Ç¨#øƒ‚sC‚ÎjÀóD¸%áyj™tÔ9ÓQNş¤DY¾¢F²UWG(ì-Ø,äˆ¤~÷S‰eo|…iˆ™¼CisåD	"% %—?vCÌä*Ép‡½dş	…G6íà«Ş%/¶õV~Éõõf…	ÉtÙ>ßŠx.ÓqK¦cİ½·'&†oÜhã™Ü`ğ”|éİÓ,Ó±#ş!ÜöØkí5•ß€Ouÿ‰üÏ•^Èù‡\¾ê†éVfTIV¶²i…yæ|®ğÃ“%Bu\Â™w8ì„ğr¼ı€½×$)[Èí{s£8ÌD= æï}`÷õĞ ‹Ğ^N2m'ZŠ.|xÉárÉåòjŞF³N‚¥2ñÕŸÔ©Qê¾glKâ^óézQ (şÔÉª“g+İîDªâag¬ı™NëÎîÕ_»Ë[7Áöñ¹á®gÜÔƒİ>‚ûÊ@ËpWJ”]ÚºaLf¦”,EË>”°û¯‹(fìNÊææ;,_­†ïú_pìn¹Ù*”l¤–FgoÚWqQÇÛCæŞ~r¤“ƒ5ß<¬Îp}42ôİ“şàU~áá«}Âş:Í«ª¾´›kk‹Àãˆ€:YuÊ0k­Á¢â#á7•{46æ–‰³§uÜQ¿kmïwfLi…^U€gÑWŞŞ»/)1o=²¿!‹7d<,0cŸª=0„Çu"ì‘t4ÓWé+5×êk¹[S|\©6B\¤›ª›šë¹®ÄnRÚJÿŸ4êQ™Ñ%˜âñu"dHëh¦,t{÷íO{¸•ïêlRéR œ¦ÿbÄ!‘IqïğÌè ıs½İğŸnÒ–cÇ	µn¿ŞI}ÁbŞà
+sGz?Ù†çb"$ÒÓ3¤^ÕDz*Ã÷¶˜Ôùy73UaSÄú¾Jü™„WAL	{}xß×8ş 8¨éƒ›×vÙeØÏ«²M`wZ­ÙQ|õ	Ş°Ü+püÙôøà?õ‡xª}$ef++¤ÂC.[tBG³±“©aÎ(yĞÉæÕÔÖ¸U•V•}Ì3µ{ËHcQ~şq.ÿXY™Y8ÿ^ÆïE.ÛÿÆkáusÏï¦~²¨ç·ÛÜ¢½¿µÁ¿aôW@2É–´’ô4·¬¢ì¼l©ï($ëJ,g+¸²ò¢¢R!£³ÙÜÃıœ¯N“–ˆR©õ.ó?}×íÆPÍŸ†&3uå¼ÖüLK.§!§*£8R™øØÌRê½¡,"‡%œ*~Káµxš,¤°?L““6Ó ¥5Ëpx¸Q"
+A V˜Ùê>\!OQ÷ñr€{A½3uâCj%$‹(?è"wP~¸K]¯„Iò¡ÍÙJis>Qn‚}ÎCĞyK1yk~1Í_ËYøÒiì(ÏU¦üw ÿ/§°
+endstreamendobj26 0 obj<< /Type /FontDescriptor /Ascent 699 /CapHeight 676 /Descent -205 /Flags 262178 /FontBBox [ -168 -218 1000 935 ] /FontName /BNGHEO+Times-Bold /ItalicAngle 0 /StemV 139 /XHeight 461 /StemH 139 /CharSet (/two/zero/five/nine/six/seven)/FontFile3 27 0 R >> endobj27 0 obj<< /Filter /FlateDecode /Length 802 /Subtype /Type1C >> stream
+H‰L]LSgÇÏKé¡(«³å¨´xú‚f‚(ÆšqP2ípƒ8?*=âQÚƒçÀŠQlÔv×l„¢‚Nd3fÊÍæ¦&°íB4£‰¨Y¦[²›%ÄD/·>øQ¼òæwñO~ÿ‡p©)!Ä²¦ªÌıégyÕr@Ò¬Qü“©Èì„e¦²ìŒ¸ƒ/÷¿üÄú4hŸş{â¸…K!$vªDi©rıN~\7ºŠ–æOrù;º&éZD‹ıÊv‰~Òt) Ñò`¢6*ªO—ü”74PïdƒF½’&©ÍÉô•5ê£ºêóKŸº›*;h¥TôP£D‹Ë¨/è_¨¨TNŞiMÛ5Ù/ûTYÒ
+ŞÛÀn:ÇY9nF
+gã¸´äVÎÀÕp¹Wd+9F€šÛYƒä{XÙ°Ø ÷@Ê­7‹-áƒõ;ì_î»sJû;–;Wû7`ˆ¿áT7ã\Èú¸À˜¦ÜĞ2»Ds²˜xÃm`*Ô_¦jÏ±cË À<ÈØ6ÈÇi?y0g=:½-â ÿäòè‰³öç½N§à8—a±CgKÒÌ‡o°°–şÈ óØ¯\à«ğóqü~x,|'5¬ÔVÙ\åM²Xéı·Ô¾mïnÅ{»á!T¼€˜9¾şæ–s÷çÄ¢.“¹í<¼¾}-d
+A„|Û•X+àp s±+lØïà‚•#°S‡J7…:Ú5ñ¨óÈ³>:':…‘Ê*ÏşQ¨½û#»¿;íµßí]…sæşfv	f““l›íI	Kø­¨ÏñOÏ\Ø¡Ç¯&.ÿçÍ±fè»²g ^Ÿ·@~Ò¦ĞzíB› Ã?B.TC…-ù`ÇŸ…è–påFÑú®†Téî©x´3.Z¯Å¿îéŠÇjp¦×8[LàdÂãÈÍ£qÖêGj¶Š‡7†[í¥­côÚ{:QÇ}İ<ô3ÑÔ™v ‡}ñ-lé1a0Ê´|IûKB3ßd¤ƒcj4ÃÌfBBx+À >iŒ
+endstreamendobj28 0 obj<< /Type /Encoding /Differences [ 1 /Sigma /greaterequal /element 43 /plus 61 /equal 128 /bullet ] >> endobj29 0 obj<< /Filter /FlateDecode /Length 252 >> stream
+H‰TËjÄ †÷>ÅYNéB£4Ì"í…,z¡™voô$#Æ,òöU'LéBùÎÍÿ÷ĞS{n@ßÃ¬;Œ0Xg.ó4B£uPq0VÇ=*·”š†»m‰8µn˜¡iıHÅ%†Ïõ=»úëF8\ªÏ¯”èVïpB”`p ôô¢ü«šhûË]6ÀK\íÂ³ÁÅ+A¹¡a•„æÈ$ 3ÿk¤¾NôƒşV\;™x21OÌyıYfÇÄ¼Ï=Œ?%¦°8'ÎgœK’tö³b^ÃÍ¼^CHÿ*»*ö³qëğ¶N?ûì3ò+À »{tf
+endstreamendobj42 1 obj<< /Type /Metadata /Subtype /XML /Length 823 >> stream
+<?xpacket begin='' id='W5M0MpCehiHzreSzNTczkc9d' bytes='823'?>
+
+<rdf:RDF xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'
+ xmlns:iX='http://ns.adobe.com/iX/1.0/'>
+
+ <rdf:Description about=''
+  xmlns='http://ns.adobe.com/pdf/1.3/'
+  xmlns:pdf='http://ns.adobe.com/pdf/1.3/'>
+  <pdf:CreationDate>2002-08-29T19:16:39Z</pdf:CreationDate>
+  <pdf:ModDate>2002-08-29T15:28:15-03:00</pdf:ModDate>
+  <pdf:Producer>Acrobat Distiller 5.0 (Windows)</pdf:Producer>
+ </rdf:Description>
+
+ <rdf:Description about=''
+  xmlns='http://ns.adobe.com/xap/1.0/'
+  xmlns:xap='http://ns.adobe.com/xap/1.0/'>
+  <xap:CreateDate>2002-08-29T19:16:39Z</xap:CreateDate>
+  <xap:ModifyDate>2002-08-29T15:28:15-03:00</xap:ModifyDate>
+  <xap:MetadataDate>2002-08-29T15:28:15-03:00</xap:MetadataDate>
+ </rdf:Description>
+
+</rdf:RDF>
+<?xpacket end='r'?>endstreamendobj47 0 obj<< /S /D /St 15 >> endobj48 0 obj<< /Nums [ 0 47 0 R ] >> endobj49 0 obj<< /Type /Pages /Kids [ 64 0 R 1 0 R 4 0 R 7 0 R 10 0 R 13 0 R 16 0 R ] /Count 7 >> endobj50 0 obj<< /Dt (D:20020829151643)/JTM (Distiller)>> endobj51 0 obj/This endobj52 0 obj<< /CP (Distiller)/Fi 51 0 R >> endobj53 0 obj<< /R [ 2400 2400 ] >> endobj54 0 obj<< /JTF 0 /MB [ 0 0 612 792 ] /R 53 0 R /W [ 0 6 ] >> endobj55 0 obj<< /Fi [ 52 0 R ] /P [ 54 0 R ] >> endobj56 0 obj<< /Dm [ 612 792 612 792 ] >> endobj57 0 obj<< /Me 56 0 R >> endobj58 0 obj<< /D [ 55 0 R ] /MS 57 0 R /Type /JobTicketContents >> endobj59 0 obj<< /A [ 50 0 R ] /Cn [ 58 0 R ] /V 1.10001 >> endobj60 0 obj<< /CreationDate (D:20020829191639Z)/ModDate (D:20020829152815-03'00')/Producer (Acrobat Distiller 5.0 \(Windows\))>> endobj63 0 obj<< /Type /Catalog /Pages 49 0 R /Metadata 42 1 R /JT 59 0 R /PageLabels 48 0 R /FICL:Enfocus 85 0 R >> endobj64 0 obj<< /Type /Page /Parent 49 0 R /Resources 65 0 R /Contents 70 0 R /Rotate 0 /MediaBox [ 0 0 612 792 ] /CropBox [ 40.32001 126 571.67999 792 ] >> endobj65 0 obj<< /ProcSet [ /PDF /Text ] /Font << /F1 69 0 R /F2 66 0 R /F3 71 0 R /F4 73 0 R /F5 75 0 R >> /ExtGState << /GS1 77 0 R >> >> endobj66 0 obj<< /Type /Font /Subtype /Type1 /FirstChar 66 /LastChar 121 /Widths [ 722 722 722 667 611 778 722 278 556 722 611 833 722 778 667 778 722 667 611 722 667 944 667 667 611 333 278 333 584 556 333 556 611 556 611 556 333 611 611 278 278 556 278 889 611 611 611 611 389 556 333 611 556 778 556 556 ] /Encoding /WinAnsiEncoding /BaseFont /BNFLGD+Helvetica-Bold /FontDescriptor 67 0 R >> endobj67 0 obj<< /Type /FontDescriptor /Ascent 718 /CapHeight 718 /Descent -207 /Flags 262176 /FontBBox [ -170 -228 1003 962 ] /FontName /BNFLGD+Helvetica-Bold /ItalicAngle 0 /StemV 140 /XHeight 532 /StemH 140 /CharSet (/I/n/t/r/o/d/u/c/i/B/b/l/g/a/p/h/y)/FontFile3 82 0 R >> endobj68 0 obj<< /Type /FontDescriptor /Ascent 699 /CapHeight 662 /Descent -217 /Flags 34 /FontBBox [ -168 -218 1000 898 ] /FontName /BNFKMM+Times-Roman /ItalicAngle 0 /StemV 84 /XHeight 450 /StemH 84 /CharSet (/underscore/A/s/space/o/u/r/t/i/l/e/g/comma/h/a/w/p/c/b/j/f/k/period/T/m\/n/z/y/v/d/M/P/L/hyphen/W/F/quoteright/quoteleft/one/nine/four/zero/q/E/\x/I/semicolon/O/colon/emdash/S/C/N/G/R/parenleft/parenright/five/seven/e\ight/three/U/slash/X/V/two/D/B/six/Y/J/K/H/endash)/FontFile3 78 0 R >> endobj69 0 obj<< /Type /Font /Subtype /Type1 /FirstChar 32 /LastChar 151 /Widths [ 250 333 408 500 500 833 778 180 333 333 500 564 250 333 250 278 500 500 500 500 500 500 500 500 500 500 278 278 564 564 564 444 921 722 667 667 722 611 556 722 722 333 389 722 611 889 722 722 556 722 667 556 611 722 722 944 722 722 611 333 278 333 469 500 333 444 500 444 500 444 333 500 500 278 278 500 278 778 500 500 500 500 333 389 278 500 500 722 500 500 444 480 200 480 541 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 333 333 0 0 0 500 1000 ] /Encoding /WinAnsiEncoding /BaseFont /BNFKMM+Times-Roman /FontDescriptor 68 0 R >> endobj70 0 obj<< /Length 4242 >> stream
+BT
+/F1 1 Tf
+10 0 0 10 126 646.015 Tm
+0 g
+/GS1 gs
+0 Tc
+0 Tw
+(________________________________________________________________________)Tj
+30 0 0 30 126 645.615 Tm
+(________________________)Tj
+/F2 1 Tf
+24 0 0 24 346.4 608.215 Tm
+(Introduction)Tj
+/F1 1 Tf
+10 0 0 10 140.4 551.915 Tm
+0.118 Tw
+[(As )8(our )8(title suggests, there are two aspects to the subject of this book. )-247(The first is)]TJ
+-1.44 -1.2 TD
+0.0869 Tw
+[(mathematical )-9.8(programming, )-9.8(the )-9.8(optimization )-9.8(of )-9.8(a function of many variables subject to)]TJ
+T*
+0.048 Tw
+[(constraints. )-244.1(The second is the)]TJ
+9 0 0 9 251.4 527.915 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 279.4 527.915 Tm
+0.0441 Tw
+[(modeling language, which we )-12.6(designed )-12.6(and )-12.6(imple-)]TJ
+-15.34 -1.2 TD
+0.1062 Tw
+[(mented )-10.5(to )-10.5(help )-10.5(people use computers to develop and apply mathematical programming)]TJ
+T*
+0 Tw
+(models.)Tj
+1.44 -1.25 TD
+0.159 Tw
+[(We intend this book as an introduction both )-8.6(to )-8.6(mathematical )-8.6(programming )-8.6(and )-8.6(to)]TJ
+9 0 0 9 126 479.415 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 151 479.415 Tm
+0.1153 Tw
+[(. )-265.7(For )-6.2(readers )-6.2(already )-6.2(familiar )-6.2(with mathematical programming, it can serve as a)]TJ
+-2.5 -1.2 TD
+0.2209 Tw
+(user’s guide and reference manual for the)Tj
+9 0 0 9 310.1 467.415 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 339.9 467.415 Tm
+0.2274 Tw
+[(software. )-231.7(We assume no previous)]TJ
+-21.39 -1.2 TD
+0.0065 Tw
+[(knowledge of the subject, however, and hope that this book )10.5(will )10.5(also )10.5(encourage )10.5(the )10.5(use )10.5(of)]TJ
+T*
+-0.0034 Tw
+(mathematical programming models by those who are new to the field.)Tj
+/F3 1 Tf
+0 -3.1 TD
+0.0222 Tw
+(Mathematical programming)Tj
+/F1 1 Tf
+1.44 -1.83 TD
+0.0363 Tw
+[(The term ‘‘programming’’ was in use by 1940 to describe the planning or )-10.8(scheduling)]TJ
+-1.44 -1.2 TD
+0.0168 Tw
+[(of activities within a large organization. )-233.3(‘‘Programmers’’ found that they could )21.7(represent)]TJ
+T*
+0.137 Tw
+[(the amount or level of )-8.3(each )-8.3(activity )-8.3(as )-8.3(a)]TJ
+/F4 1 Tf
+17.47 0 TD
+0 Tw
+(variable)Tj
+/F1 1 Tf
+3.81 0 TD
+0.1446 Tw
+(whose value was to be determined.)Tj
+-21.28 -1.2 TD
+0.226 Tw
+[(Then they could mathematically describe the restrictions inherent in the planning )9(or)]TJ
+T*
+0.0582 Tw
+[(scheduling )11.6(problem )11.6(as )11.6(a )11.6(set )11.6(of equations or inequalities involving the variables. )-249.8(A solu-)]TJ
+T*
+-0.0005 Tw
+(tion to all of these)Tj
+/F4 1 Tf
+7.47 0 TD
+0 Tw
+(constraints)Tj
+/F1 1 Tf
+4.78 0 TD
+-0.0077 Tw
+(would be considered an acceptable plan or schedule.)Tj
+-10.81 -1.25 TD
+0.1364 Tw
+[(Experience soon showed that it was hard to model a complex )-13.6(operation )-13.6(simply )-13.6(by)]TJ
+-1.44 -1.2 TD
+0.1114 Tw
+[(specifying constraints. )-252.6(If there were too few constraints, many inferior solutions could)]TJ
+T*
+0.0478 Tw
+[(satisfy )13.3(them; )13.3(if )13.3(there )13.3(were too many constraints, desirable solutions were ruled out, or in)]TJ
+T*
+0.2683 Tw
+[(the worst case no solutions )13.8(were )13.8(possible. )-236.7(The )11.3(success )11.3(of )11.3(programming )11.3(ultimately)]TJ
+T*
+0.0261 Tw
+[(depended on a key insight that provided a way around )-15.4(this )-15.4(difficulty. )-257.9(One )-8.9(could )-8.9(specify,)]TJ
+T*
+0.0114 Tw
+[(in addition to the )14.9(constraints, )14.9(an)]TJ
+/F4 1 Tf
+13.11 0 TD
+0 Tw
+(objective)Tj
+/F1 1 Tf
+3.68 0 TD
+-0.0036 Tw
+(: a function of the variables, such as cost or pro-)Tj
+-16.79 -1.2 TD
+0.1062 Tw
+[(fit, that could be used to decide whether one )-10.6(solution )-10.6(was )-10.6(better )-10.6(than )-10.6(another. )-258.8(Then )-17.8(it)]TJ
+T*
+0.0382 Tw
+[(didn’t matter that many different solutions satisfied the constraints — it was )10.7(sufficient )10.7(to)]TJ
+T*
+0.0392 Tw
+[(find one such solution that minimized or maximized )-6.8(the )-6.8(objective. )-255.8(The )-7.8(term)]TJ
+/F4 1 Tf
+31.45 0 TD
+0 Tw
+(mathemati-)Tj
+-31.45 -1.2 TD
+0.1181 Tw
+(cal programming)Tj
+/F1 1 Tf
+7.54 0 TD
+0.1174 Tw
+[(came to be used to describe the minimization or maximization )10.9(of )10.9(an)]TJ
+-7.54 -1.2 TD
+-0.004 Tw
+(objective function of many variables, subject to constraints on the variables.)Tj
+/F5 1 Tf
+7 0 0 7 302.5 165.615 Tm
+0 Tw
+(xv)Tj
+ET
+endstreamendobj71 0 obj<< /Type /Font /Subtype /Type1 /FirstChar 32 /LastChar 119 /Widths [ 278 333 474 556 556 889 722 238 333 333 389 584 278 333 278 278 556 556 556 556 556 556 556 556 556 556 333 333 584 584 584 611 975 722 722 722 722 667 611 778 722 278 556 722 611 833 722 778 667 778 722 667 611 722 667 944 667 667 611 333 278 333 584 556 333 556 611 556 611 556 333 611 611 278 278 556 278 889 611 611 611 611 389 556 333 611 556 778 ] /Encoding /WinAnsiEncoding /BaseFont /BNFMAF+Helvetica-BoldOblique /FontDescriptor 72 0 R >> endobj72 0 obj<< /Type /FontDescriptor /Ascent 718 /CapHeight 718 /Descent -207 /Flags 262240 /FontBBox [ -174 -228 1114 962 ] /FontName /BNFMAF+Helvetica-BoldOblique /ItalicAngle -12 /StemV 140 /XHeight 532 /StemH 140 /CharSet (/M/a/t/h/e/m/i/c/l/space/p/r/o/g/n/T/A/P/L/d/u/O/f/b/k/s/w)/FontFile3 81 0 R >> endobj73 0 obj<< /Type /Font /Subtype /Type1 /FirstChar 32 /LastChar 122 /Widths [ 250 333 420 500 500 833 778 214 333 333 500 675 250 333 250 278 500 500 500 500 500 500 500 500 500 500 333 333 675 675 675 500 920 611 611 667 722 611 611 722 722 333 444 667 556 833 667 722 611 722 611 500 556 722 611 833 611 556 556 389 278 389 422 500 333 500 500 444 500 444 278 500 500 278 278 444 278 722 500 500 500 500 389 389 278 500 444 667 444 444 389 ] /Encoding /WinAnsiEncoding /BaseFont /BNFMKG+Times-Italic /FontDescriptor 74 0 R >> endobj74 0 obj<< /Type /FontDescriptor /Ascent 699 /CapHeight 653 /Descent -205 /Flags 98 /FontBBox [ -169 -217 1010 883 ] /FontName /BNFMKG+Times-Italic /ItalicAngle -15.5 /StemV 76 /XHeight 441 /StemH 76 /CharSet (/v/a/r/i/b/l/e/c/o/n/s/t/j/m/h/hyphen/space/p/g/period/z/comma/d/u/x/y/S\/P/f/M/H/colon/A/C/R)/FontFile3 79 0 R >> endobj75 0 obj<< /Type /Font /Subtype /Type1 /FirstChar 67 /LastChar 120 /Widths [ 722 722 667 611 778 722 278 500 667 556 833 722 778 667 778 722 667 611 722 667 944 667 667 611 278 278 278 469 556 333 556 556 500 556 556 278 556 556 222 222 500 222 833 556 556 556 556 333 500 278 556 500 722 500 ] /Encoding /WinAnsiEncoding /BaseFont /BNFNFL+Helvetica /FontDescriptor 76 0 R >> endobj76 0 obj<< /Type /FontDescriptor /Ascent 718 /CapHeight 718 /Descent -207 /Flags 32 /FontBBox [ -166 -225 1000 931 ] /FontName /BNFNFL+Helvetica /ItalicAngle 0 /StemV 88 /XHeight 523 /StemH 88 /CharSet (/x/v/i/I/N/T/R/O/D/U/C)/FontFile3 80 0 R >> endobj77 0 obj<< /Type /ExtGState /SA false /SM 0.02 /OP false /op false /OPM 1 /BG2 /Default /UCR2 /Default /TR2 /Default >> endobj78 0 obj<< /Filter /FlateDecode /Length 6505 /Subtype /Type1C >> stream
+H‰|UkPYî&é IÓ<:n'ºê¬¢€¨£<tÉ ø gñ‰DB‚IAD¢!DDEG‡àgÕbtjÇÃ‚8>ÇE¦œšœuOg.[»şØÙ*këV·Î9÷û¾:ç»8&´Áp§>ù44líZÏèäT•n~”&U™6y-ã¤8ç!ä¦9¸¢@”öë_]	Èt‚CÎ=Ó¦}*Álpüp]°&=K›¼#I/ÿCüù¿¥‹çMÆ%ï¢ßdôó‘+4ÛUòuY:½*U'_¯Ñ¦k´J½*ÁK.W¤¤È£&;èäQ*Jkàoß!‘'ëäJ¹^«LP¥*µ;åšDyxršFŸ•®’+VÊ•i	Ş­<™¯Óel×%'$+µÉ*×oY`80[ÌÑ	›á„-aARLƒa&ã©cŒÀVb{±nìNà³ñ ¼¿n3Õ&Ó¦[à&0š„s„¥Â>â#â9Ì%_ˆ”¢ÛÛÛŸí>¶ë°›°WÛ÷M™6¥ÌÁÎAçpÃq†£A,O899­wz65xj•3ãœì|Ab¢p*†ú‹Ë=Ÿ®¥_¸~æzÏÍÛ­ËsOrïõˆöbşÄaš˜Kr±\¬ãB`?Â “Œ€,¡“Š êßr!´v¦âñÌ“È£z­zO\|[~Sù¡ÒÒ2¶ô`Y©EZ^^\`ÌşlµR&ÖY—fâ=ÏĞc]J#ooo41ˆm	¾Ìv¬»r3¥ê˜;Z¸4ã”¿~8x‹}_1Ï(„ïW¯`.1Àª¶°ªŞÕ÷#¿ÈÍv‡å7#Í,•{.SD°bù>À–$àÓIÅ=AÓiªşÿ¥â~6ÜÆ;¡DĞ	t8”Ü‰åy Àïƒ@ Îy<ëúsµí_ìjJMÕjwªZ³ëeâÀrƒ54/€«8Ï3\E¢¬…wIqN“UÒ„7¾†£¯Pfeip± ƒ+M¨¹ |w×ÁEÖ$DáJ”‰ì‘c7ÒC8„wƒÁ^	™(\&6×Xçğb$ó"Ú»Âé2(³²GÆı(*´ U>Dèd¯Ù\%m5ï2È&6‹‰¦H+6qƒ8Œ>pø½÷`<(E…$Â
+ââ•§£o.¸ë³p~òLeë‹‰'ÏJÁş”÷¦ ¸‹¼d(E¹#ç´q£_KàÁˆj€ºóá	}Ïrª¸ÍhÛ§®Rh™ í^l„ªw›4[_¤Ùø¢¸€Ã÷0Ü?>§<.£İ¹ğç7˜®ô½Ê7¹Å³5û‰æšî‡£ÒÁ¶›¼ƒb|Òx²ÖÇEfJªÎCÑCÊÈ¥@6=‹‹Œ%Ñ7‘D´Š¨K(`XD!`\„VõÑ¨ˆ„#,¼èíÜW#8p÷°š{DÃ&²òˆùH™¬ãeA9±'¯ o—©H„£|¢è@Ù¾Ï¥€í‡­hƒÄŠukØõé“Æ›Óòw\Ñ€/Ø¼—y§ã®É"æ×TÛŠsš9áe(:†·ÁÁ¿¸(kŠÑr´Å2(q|ØCh,ü˜eCÓ×rÕÑlˆ)„6Û¢í¨“~{æ£™ˆØ¶1<hÕ ~]ÑXQ!k<Õv¸U*>jàÆñœBÀ­·Î¥'H2;6nfm!q­åøé~)¤’hËÄÑOB’uÁ£±Š›%½C!ƒ ¹=DAôÓÔKùu§*˜­ÊpÿmıÃ,56ÚÓy¶‰E>ÈŸ^vÇ¦²|’¯}c¸‰˜×2jøÆéGİ¯˜¡µw±xöúÙşç“Ÿ*øBß•ÛS1Ôğ#nİsöúß†Ï­^¸.Q¥ew4ø~õ× ğ'lÆÏ¼‚¢·2h(?³!
+’ğ9!× „!¿ËÈ˜/¯o¿ÈZLû´ÑüĞÇ{À-°ÒYr÷æ³»Ê,µtzØ=n{
+f´1‚ß2~¡’ï@@ÅÁ4øùCËHÕ#$üà’¾sxó¾An'•şÏIo8İR5ÒŸyQeÈ‹9xfïÙÿñ†¤ÿzåÓÁ©?h n®ƒÍ]ÜâL¼ÆºR`İPGÇ–åTîüY¸~÷L%LäcS>Ñk=²Œ»MÙ%¶FØR'2l5wW–U:*»vÔ]Äç9GÕÙL¢º$‘5ÂaÑÄ^Ş†@Í`‹š	1Ü6×Û¡û<Tµë$@ŒCñ¸?ˆ¨sµV7úñşê\3!Z‘»{‰‰¯!¢ZA{Øô,:.³ğ‰—*¿?	¼Qpõ"µ°½¤_Ÿ-Îo•Q×²¯ªıÄ Ç‚Õ‘YÛY®ZXc©>ÁVT—ÖK©~1¢)“Ç¤‘Í+™”s‘{sçñ	¬·‘.€Â@ªÕæâŒ5-¾RÄÿ×H, ğ„Åşœ-¥²¬ãDjJğ
+ä$E4å?±3/öuvÈººoøR
+N3N½×ÕØÎ=›äúË8GN¥s…vnÀ&ğ =Z8*’¡’ª5Š†÷Uæ¿ $7ûûY*¢¸>ú„¹î
+HzÓãzØ{kı—0è"*1‡Åä–·²b(çŸè€î.8ÒÁ¿òÓ8Ô6´üsËÃ¨LîXFkÈÙ±›S‘³Í1—vÉ T^¦'%59U°GO®ÈË×ñ<½@K¶V™ëY’ hÊö­‘"Àï‰‰f’j3Šn7îœÄ¶\_ö¶«4,ªó
+‹ãÜ6©NGàN;VTS«f4.â—  „,¢E‘e¸ìû0Ã*èÌÀeX…‡UAEQc%÷•j5mlM2•xîä›´ù®cµÏ“>÷ß}îwŞ÷|ç=ï9—pKdùv4BˆrÎ½/«=ì ÿ†#Gâ£¥YI‰¾2<ƒÄo.-ªgàõŸÇ¿û"şûÈ7#ui>)~+‡ü÷_§a‚êëšº¬
+o7r§i]p¾
+,]“[€â§>kğ¶`x*ÅeIÔˆ²ZãCãwĞåñ+ğïİA« <Î?b$c0õ„§_£¼–ÊâjOŞ.eÎîOZgÊğN</$…viŞ0ø¡|ñeE}#“ğ0ÜÎèåğ	ºÜ ë)bÒßíœÓS+YEÜ0sÔ¢â,îÛ`oFKó¼şf9ŞóĞåın”06³èZÔá!úù{’¿ãüÄ8-g›À9²Šª¦À G½§‹+¿%»S_zµ`Ñİÿé˜wÈ¼lIëàÿCù[E`æ¤×ô·ŠÉ§],UîOó§íÛÑæÔ´8æõ÷VÈ¢“£Ø´’c’<£¢>ı°¬~[AÙ>Ã~Í*âç‘ÆìWsê:":+ğg„¢ÿÆmgÑˆ²&wÑóº-ò¶¼‹2Œ—hXLßOŠøzz$¬	zú‡Ô;;V_ÁiPèJvÃåK¦ÂÏ‹İ8l@9wòß	b’Ä@ØÂRqHÚ_Ê/†å-è,ÇRØ%`M>ö’ù$tÉù(t»¾tD¨UÓó,œzø*«ÈöDˆBá½vNáubüK]Ë7åò^S¤.QzZV¨¨ùÍ»ëèìGÄz
+Jùb=òMw¤H¤¹¦(~ßM¡·ëJÎ;”‘­°M#¦FğŞì‘ôÚ6€,ÑäÁŒhü@ì>AŒ—°T—QÜ-·¯ıÀ4±9–ÿÀŞ+®äk)øEKÑùR€,/ÿns:DD¿(ü˜&%Ú	.ÉØ›¬y¼±3NÆ0»À*yÛ,šñWˆD£V+ˆ`ÇÌ˜ErGëÖtÁ€àNßZ!…¸ÓcÉ¨‘ÔûjnE†¿PS?m¼w#áÅºdÃUV#u§©“Wu‘W{ºoÑ’Ç Á¯b†Á•¬ó—¶V4÷ÀL5vÇo`Z®H,Ğ±Ì3÷‡î6°ˆ„Mº€hóà¤ÛtqU	x”¸/‡)u@Ó0ûšæ3¸‰’Œ²èR®!ûys(·ÕÌ¡…EYÜŸhFC:ÈÆçÄğ6%yláïK›ö•vƒ‹
+»^jo!·gëvº|Ò¾ñÉ–« 2ÕÊø=±‡ÖËæÍİˆ)ÏáÏÉÁãmcD ¸=`!–m)},O5ãâÊX^ibšû#nÈÀ}äë¿È!?¨/úÇÍcÃó|+™zê™‚ùvª6A„"L¿ñá·pRïÂn„æËN"0	7Éë¨<X,¶Ÿ£òğbq5Œ—´«¨÷Tñs™õ"¡ê=¼szb…{D6aÂ©,u)¿.y*kÑ‚¬]é	ÌÇÑ»Éğ2-È‡åpU°•Û‚­Û¾¡Ôg»ù­'[Y?ökaÃôh¬Òp³LU¹ Z'£m‘È¶VÊRj‹j­HUç1ØÃ.Â³á+qüñ¤nİÂé†óáXÔ§®ÊèûQW±ü™æzı±BbÑ÷1‹xSôƒ“´Ú!•%?ŒVäDå(<	?Ä®ğqjgFM%İvTg&!«Y4¨1äµú´úºNÅ<U¬<W©§ªKzuä5‹N+õÑ->Opûqü;g<‡_x;ı‡[ÜİÔY¼».Â:}§Qß_æüÂÌÊm«E¶2Ù„Œ¦MI³É‰ñÑc&ô¬xå£¤Öjº¹®àDA:Å¢3J“ÚŠ½È|~ËÏÃïze¦oÊwc!CaºğÂš3wšx<á©bc¼%0‰ŒÑ«Hí8´¹8Qv
+o‚FWÒ¦«/=h(,r{é®#Ä”6
+„ö°”¹C™–›‘›)'’U`OˆgÈá*èƒõG…Ô[YÔ›oP	„\ğ&W¼-QÅÏõ,‡æ¤W^¡É<OP\ü¾µ¨ààINZ^%âUx’tÀ®
+Fãø÷aùÚÄÉ€:Ã@.i—¬„DÒ¯‹Êò]åOûœI¯­o5éÚQ¾7W©Ñ¨M¾J£–åæïãŒ½Ë'>È:J¼[7¹ıËåwÁs”LÖ.øµ4J•™Ê(³#ÓdáÑæ>²®ª‚ÙYÖ>•fg¦g)dÑÚ¦&9lFŸk¿Å³Écìü±ÿö”ı{Ì\I¾Oi0ĞæªÖæ¾L?f’Œaï5oExĞ+O„Ÿ<5ØÕÚÎøÖTÉŒæ‚~B%«…å<øz'_¼‰_JFÉOİuéé¢áªÙWmÓç¬J!åE±ş,rïiøXÌ ¬=óÿö4 şÕ’ ãó5œ¢”:±Ä’üQZHºs
+*()×–Èz´Š(!Û+¼¸É©ş¦ˆŸs¥["Â·úÉ¼—ß K­ÇCsû`qRT™¼$¡$¡roƒÎ­Ygäjéªts”‰1Æ~jØ!#ÿÎ‚1ÏºúÎèG€:IhŸĞù_to¼‰÷$ø»Uº#',.T¶ÊofÁë#ıC}ı»W”Ê%Ñ07JW*µÕİ4?Œ®Ç®ÁÏ¸–½àŠç¢¦]Qú­2<áŒ°Ş
+î‰×ÚÛÉê¼*R‰%ÑƒÜQã±Jg’ÖEˆnŸØ®ö ¦Î,^–M>:u±å…{»÷Ò­ÚéªSew»Òúh-­ĞUÄï—¼!  $„$„$&!¼ <’	H@@0U| ¸*Ö+® U4ÕÕu´kWÛıîÎçÎìÜuÿÙ™ûÏ9çüÎw¿ıº®ús+áZANYúæ0*ê£aøy/óáeÄø*êcôf4ÚŠ~u#Ÿ/KÏÃ·72è6\)øs‹§{’ºÕ™TÏ`¶ÂrïõÁ=n¿½şğ+@a È:>IY?¡Ú]ö´î(²}¾“	ŞAWø¤ê(=-‡v|`ª94EÂ+0¢½„ËoìÃ]°Àcu¹§÷Ş]wÆßìv3¡ÄhèÓ5‚Ş¶ÃC4şS9këf§©dìæ4ô:%?÷Øa†˜IŸà"W<®Á{-ˆ,é>İ¼¾ôÁ-š¸
+¯x6 Y…É&Æ‚¡l¦È–Gm\‘„ŞØ>r¡”!®w„­«UHÉâCUİ
+š˜ÏMÎÀ³iÏÂÎA»r&ÔJsß!A¯È˜dv‘íÇ†ÛMtİ ®™:÷£¾vZ}Påbqx¨‰—ù¾î…Ñ^b“±‚„•ïÔ$p¬¾nK&ä½,GóÊ1u>ÅæW)~!›Tšİ´B$Z%Ö›$Ô‚“Ã¶‡štfE2(lèuX"®ÃÀ›&Ëá;Ïƒ¾}ş¡—ø;¾?T,ÿ‹®3VªÍq’xIœ4DLv»ÉAµ¬‰a¬—j·êi"ø÷/<$á`¯ÓÙã¹ŠòäB¼Ì×¡½ÜlóÄ¼éGó¦¡_ª ¼vG«º˜NIÄò²œ’1(~_g¸ 3Ç•ÇUÄÉBdÀÄ¾Â"‚¥ğÌÿ…À¾¯eág´;^âfıb¨`ùåF^Id&a&h4ÚÂk–6¨5¤B¡?@Käp/Ë/1eÕÇ_F«`lpO7AÊ]{–bQz%±Pª(å•Lf~Ì®ÜBƒ)˜û-¨ÆÅÅJc+_vTƒÑNyêd©Ì1Ø}À©¤çùŸ'O½ÄPÇb¨dùÛÍRÛy’{<¯şÌ§;¯Şü?õR°«BƒÙ<õ—Ø5ãA÷¼p‹ï[ô6qêŞw‚È"CfÎÕ>äL§HxXOL\oÍŠ¢Qø²LŸêk‘2dÍ7HhÎÜy2ÆÄ3(üAfHĞb‰b”šxiõÆ^'>EÀLåOï®‹Ş¶_L(G¾¤vgSc˜Y ÁÎÎ¥H“åÉŠ )0Ù_æaË|.±«&ƒn{a„—8~û¡ F®Höç± Î\ÙÒOÂ0tôp{/u¡-7šAÙ`c©.Ç'‘…‹ÑRÅ‘°À…İ)1Ùy)‰ô­y¸›>¸Ôy8KÓ+8•›sûõ<„‡şĞÀ¥üĞBD=\
+på4d~€ËVİGK˜ÖÑ´ n™ùirüëGg°Ø›èİÈìx&µÁí}\ «¾4ë…¢{ÄÜ,Z"H¯Géh)ÔµÏdM˜­Â~·ò™k0ÏîwÂ6¤$‹ƒ‰wh±›M’$I“ä¾64Ö6PGÌÒL†˜óêGëÎ¹)hE–¡Mk$»’G]>ìV¸cŠ{Ë]]ÔyÊ¼˜¿àÖœYeöx
+½õ>ú¢ÑŠÙˆSÓ#½­ŒEó*Ë>ÑcÇ”ÚXa9IâI€+È¢Ñó6¡»‚a­,N ©äTXÖ“G¶ù‹‰ësOŒÅ¾£…{Õ¬ş:è†—˜ºáì”éw©p4,ˆ7å[®’„Š@ßW§;ibª³1ïÕé8ØÕ_Ş‘Ÿ_‘ÌÌïºÄò„ŠD~«©¡é¿Ø§rZÅÜV—º<èÌ¥h;ÌŸN²‡à7ğŠ€h¬†¿ä)ùDoµ^§QKÛÓ¨_§Gíüt2çRCtŸ/àõU´ï’;’eùïKîŸ­¢e|"­¶¢»¡Îbn¦ŒîQÉqêòÜÈı‹yîÄ^†èE¯]æå8µ=íä¡ÏäWÇÅËœ¸ÓTãÜ‚>¿i¼Glx,ÇkÄVkÕĞ9±rQvV€H$ÒV‘z“ŞTCŸEü÷†KÎœëí¤M<…²B$¤âk/f çT¯rp‹A×¼ğ\Òø¬ÚZ°Í`p’ğ{&Ó‹8“$£*P Q©Ğ¢’¢Ê"*J}ÉÁÀ[hy%è5ô¶‘È
+ŞùvÿpÛI‹ÇCòÖ“GHÆZ:&õbn7ëwKõçJ}»‘ó»jœê227­Î_A/ƒ<½MË6“]Ns§‰fQ¼´×´kÙ¢Áˆï‘¼sk@z‹©ºªopu71pœé¼Pß2à#Ó~õbxV7°~ÿü?÷¶/ºöêıd•¶D¹^ƒö}0—Ö6µ‘=]æ~+¶Ÿ&Ãº&Íâ­FIÁ)pQ$n—ÅåC”ƒ.ƒMÑ)ô$8ßaUÕSuÖ&7~ôÏ¡æ/HÉËu˜46Êfiô´0†?°CÖÆúà1{Åx•ùµrşpòºÀ¢k®’“buu¡o¥°@j,1fŸG‹`|ğ]¸Àfïí5†°(LZk\5bR©UGÿ†–ôdLµ‘]¦6ìP¦ô›k‡££¥ÁˆÂ…)•†}ˆ.ÃöÄµm¦ÉÑQ×@ß‚y˜ xÿœ;É9¸=ÄWì9%ç÷[TR­ªJèõh°§¯×´ØÉî#F—ÃdT»á®yä£š`GáÉä¤,Ñq4Q¢(l+¡RÙZLŠKÿ½EÙ{¯m?û]jŸ°¡3X§Ïè•ä{Ô½ò‡ÔJÆÿfÿ˜˜}—­ìgµ­nÍQ”ş-Çö}áMÖY¿ß³wüæbËvpRÿÚ+ÒßåØ~Ïû£ÉZóƒ—ï{ìp»ü{KÔ=ì|?ÅÁB¿jÀB¿j€Bµ3jÍü]6õ{q7Û÷Y“ÿÔô°×Îü6õ{ÜLßy=?Š'èæ\ÎuŸûG‡È÷Ÿ¢ UñÖÇ
+endstreamendobj79 0 obj<< /Filter /FlateDecode /Length 3926 /Subtype /Type1C >> stream
+H‰T”{PSwÇï%Ü*FåöV¸±÷ÆÇªTÁUëƒQ;UK[EqEXPQ ^I „BB„‡òÈCò­"Uqğ5¶Tmİê–2Ê*jÕ¶³n];çâ/¶°ÿìüfÎÜùs¿óıœóûıpÌÕÃqüMAŸlütIˆ,Qªôİ¢’ÈeÑûáE8?Û•}¸'ÒÃ…Ÿãñ.Ú€__»=Úf}1gæ\OÌÇËë7'§h²¸x•xq´x¹ÿÚUK'âšÉè?ıÿ*Ş“%ïÒ(UÒD¥xKRt²"%Y!QIcüÄâr¹8xBA)–*¥Štçî¤!±L)–ˆU
+IŒ4Q¢8(No“%%«4)RñÆOÅ’¤˜eÉ
+±ÌùŸ2-J)‹‘I2©Òïÿ`0Ü¹°é.˜ÃæaØóÁ0?[a+qlÓl»+¶ËÛí‚-pv`æ‹`Rì8î‰Ëñ_]2\^
+t®¤«Ùõñ1F®#ûİ’Üşpu<eù”'Sc¦¶O[9­rÚïQ§oşaœğ²Xè\ˆ†Lü_lˆ¦¯¶İºÅô)Ëò$F	Ù_(cbCbÕY¬P	!CøĞ	 Êi”Lê¶B
+Åzà­ Ü×ÓXCOmoGjKb¢BqPÚ­mà„Jg2Aà9 ç'õ€jøm²²Û~²3µ9I®H•;+9êoÿ†ç“Î„¢Y¨P&ÄtrJ@™Å±'ø÷Õx8ü—vz§-ÿHöm_~È+•D}“?çš¤¹ŞZØawÛW’ekaK«ª[Ù«@LØ¬G³	«Î¢+d¢SóÃ
+X-º9¼¡†¨$¬d!yUBÒôó/Nà7Á•¨Œ‹y)İ{‰t2Ç˜Ÿ¤
+:¶Y„4( ¥¢PÀ>~u¶—Ë¬&"ö|Œš2
+³aÑ¯`„˜_˜d+'äq'ÃĞh´ãyãvÁxùø\Y´dŸ±ÕÏhŒÊ|5»­%ĞIò„Õİ<oë)ö¶£­Û@A«QögšáÊÜ~È´g‚´ĞîV–T\uå&˜¼à$¹é5±ûò¹»[¨-®¸æxñi^µCvë…
+w!Ÿb±ãv\óz†`üÍ„ƒu$zèĞ&2„×h‹–¼\x43ÉÕËõÑì\‡{rWöœŠ{ìn­1¶Ï™²’c¶£,¸ñëˆòº£‹¨%yw~€(&åˆÒ…©2ÿtlS[{™zÛÑÒfğ;j‡*­ƒŞoçy¦ºÛµvO¾ğ%õŒ†…ã³è3Æã¦XF—mP±hªcƒ&0Ëç3O j­İL­ÅRy–„PÂØXmº-‚ˆ« ¼ËQÏ`	ZWÉ¢">ŞIW–”ÚÛEàÒ.Ùˆü‘·eSV¶µXıö$ı¯Öc`óôÔLP¿¢†ù¯ít¨UÛ“Õãf/˜ßzéöĞG–8§¦–<—ÌÃdçÆ›ô“CĞlË6‡OÁält™Îz’)·”Tö³W@zÃ3Ğ0‹IêªäŸÒue%‡ûEW¿R­ú(vZ’WT¢ä„šŞÑåY[g¯ûêÌ;ZGİ£Fùx>şÜyàT¤&;7O%Rg—–ep¥eé~‘ßúÏŞßjÓ‹qÔ½®ø^y ³;Şßwù®‘ÇåE¶¢rVm%(‡)‰:²ª¤¬¾­ûbÜ·"ğ¾ıßç7ÓO-{Ê}ğ ûØ9æÖÅ®Ë,5
+Ó‹çqBı…½ya£gí¿ ü±–:Meğ1àBGîW+‰òòKË:ÂóâJÎPLP§ƒ&SN$a&ÛL	-DÈù¢hQRñŠÕ}°„£œÕLPÚ cšŠÉ´¤éë>q÷:KvL« Ÿ<˜r¼-c¯’ÏMI¨d…ú&~æØ_[§ölz¨_x/¸N¯YŠâĞ{––²W?;/“ËĞáP9‹:à1}­°Ì¨bt¹
+C2‹æ8ÌD[Ú°||al„wöœX¾Í/,5Ô½n ¾€ ÆûF›õKXN¸aw¾»pL‚çğö‡ ÀËßèè¸ˆ¨¢ ÄşáŸ¿… x·®ŞxˆË<”ŸÊ¨jtÍÍumŠ5h1bÈs‘÷¨âÆ«kÿìlf…YƒáçùYMojÆ`û÷†*ÖôÒA–«µ?şrp=g‰T¡™>(x)GõÀà]z¯D­R‹ròÊjì0ÿ°6qFA¥…ëÃáF÷L·ËoŠ¼dö Zi6†®]Î÷}ˆÑ’°†-£•>p¥\¾›ly_^|JÅ¤—+Nuİ8w«uBöóï4ácqS KÁF?îıfø’¨ùpFzy (	ÊÅtÔn‰,T$	kú¦ŞVokàÚJXİôüŞsV~,ÜI»­Gó·unxõâÇ§ö#¬p=ŠnàG:!£G‹¾ç?ôğbú	¹Ò±–ˆÎKEÂ@Q¶¡¼œ;Ra©ešS«t…lœÙ"51ûJOguˆ`ÊXÂ6î;¸C N–v#/V´CÀ}QÕá‚<NŸcIcô¥)MuõõõÚşÍÈs7ò_Ê.#…(ª5ÀßOU7z–_îú–\O¡F©ßy9ïC‘†ÜŠŠL­Ğ(*¢DşÈ}'rı¤OyBËÉT’äLFMve.»&$!-˜	Ü8¼÷Ã—XçÅ’i™ªÆÖj¶ªº JD½yôÓı»õ¦úü£Ü I¢ÿ±]­QMœiXK'Ä²Å–ÏteÆÎ´g«Swë²m·â¥]ë±-»®G­rÅåN$“{B!—„„pG¹V DD]¡ÕJE]­€.Öí±ZøÃín÷÷ó¬;éåßş9gç{Şç}ùÖ?N¥¤fÄ©ñ²ºû–±!Únìi r­Œß0¬Ì Ñ­n—hSÊ†„å@èÒÄ?Ç½ÅYt´aR)ãÈÓO–ÇÏJı²v6ÆnÚo 	
+rÙ°B”–]VÈR••ÍR–À9D^<Ø([‹_K)¤klğ÷§°G$IºDCR•PÙm%jZ©VíÓgÒx5¿
+ó‚ˆñN‡.{ÛnqŠò¹+x5‚Úx<ZJŠİòş¹à…3Ãüõ“Ü2_èû˜©ùà4ˆö)fu”Áèhln­ó0w`ŞÎ•,ã&Uv:í0É˜’­ØšN*,‡&g&¦Ï§Ñª>ÎÈ·w»r ¿¬\›Û¡ìğkûÁ*Oúà§Cÿ‡Ÿ[	xÎ,z[.ùU2eĞ[›˜f·%@X/›S[R|óÙ<¼1Fÿ“Ûøƒ8Õ‘0ƒA+1h®7*I»Î$Õ&Ñ*X³ÿ]äşåã¥[DW@+E»Re%Jmñ4¸=6'ƒÂn!¬ë•$]ÒÏº[Jexíc¿Œ,©Ë›¸püäâiš/ñ†{&İÿ^¼½`»‰òÑĞ£üğÒ³Kä”ÎloaP¾g	ƒähyÏÇ	›_ÇÂüğÏhÇWr\Ö‘ıÖ+xcjÿlÒÃKMÔ'V¨àq§¼5Ri<R%0ó‚ˆn›=/Dù£=C”ÓmËßÃµ¥¯ò/û€h™=¹ œ:víÎÕì¬Tó¹ÂnÃıbRcÉŸ95sz˜®o$~¶]˜ñè|íÊE}Üá0ßIKÕhl^eıX‚äxyçÁM1³=çöd‡¹%Ğø‘ÛÙ&½ZöÖb‚Çƒ5îà‰+B”53<ûõIÊß Q0¨ï£íØ\FÛŠNœ:qéíîµÀòÛĞ};®sáu|„¾‰×o
+íşÏë!VÎŞÂBÆ(l?”ôo,H)ş¹iğ43½ğ¾Ÿ#ƒ6æ;xïò±æD8*ïÆÑ‰«ûø(¬éú‚¾ÜıÙ‰Iê¢u¯˜ÁwEV¢Ãê×)HÙÚÇB1~š.¨¬'R*ÈôF–f[úÛzá)ç £ëh3uQ@Ã°6^+:÷»ø}ïæ–15¶û„«®Úf¦ĞŞ(%¢û2¸ÿğ³šcB\ú}ab=¡O®	QŸ×q"QèóNõÇAÊ5l93(ñ–ïz¯HÈg*ÙÛ¤…5ug÷h“|ÆÛ\.»‹:V¯Òªò*r˜Í8Äcğšıº#–yb¡Û‡Ã:‹_'|WC]“§oT~”š¹ßË™¿ãèofÉ©~g;¸‹{÷Õ3>A0„FPiªªP±-ÔËš-…¼Éß†¨	d¾*íÃÍªo'ŒáÍ˜‚ÿô/æ˜âş Ú"èıÎæ¨qkb¶jCµ©$7-#_©4”«f“Åd­^ìÀ½DµJ¾[MõV´9>Áï…¶‘(ä¦³”ŞäpÚ-6«¯‰Û‚hı_’'á¿V¶¿Ûn ;Jä2yûÊ-É•SúZW½×=ÑĞÆÜ„3ÄvAÖKÒ]©Û…È”·ë7‡)™9à¶3÷àIXµ¡]ŠonMä˜ßRÌˆßÁõ‡ÈC~õğİëğ<—i» í.gßRj[NèTw÷½Y¾í2.ŞİÅGíš«°õ4
+!.À­]o´©|qÂ¦½nüûüOŠÖémm»:G£ĞÀ%xï[r¤¬;ŸUiÔôqW™²GíÛCáÅª[E°:6`ª­­ L©ı»ß³ÓûaúËgrFbÄ\1rrë BT$fsdkìòU3U]y°¦•´\†gûhÔÕŞ¨ì¤:›ü­rvJ›åIé»ã“hı4qG¡¶H©‚„2ƒ˜AÖ:5áè÷ØTO¦ĞÉXMƒ8Ö@â_Æ•æ))´_¡ğK)©N¡â¿Ræ“kvù[èÁ‘ñ³'çâ_¬Nt{5}TGŸWy–øÈôş¯¸Nw'Ã½0ŠÜ(äå^Ù›­^êS÷áßö0-ÆñlRœ™*)¦?ÊÓTJVh{‹(™R)c;3hv@p95Ìvç”êeúàY×2q+¦ï¤Yjç÷ÀûÚÚXÅ6Ueİ¿9°(ã„ç—Ãä•ˆ%¸ šiØ?¡` Ï>:„Ëímlùëµ7ç©ÓÁşîWo(×i”ŒÔ£×“Z•YW!·”ÒI—”şáÁj‰,Ä‘D´¢õÑË-Øä]£ öÇåu‘—Ø!.¶rexÎ²b!Š3¯‚G¢ÿ Ç‡Å@
+endstreamendobj80 0 obj<< /Filter /FlateDecode /Length 864 /Subtype /Type1C >> stream
+H‰D‘_L[uÇ?nï¯ë
+´Ş²ŒåöÎ¸0ÚëcÕ°‰(Ó1Ì²ú`zéÅu­½¥]ÆD˜«ÓãpìOïÔ,>ù0ÌĞ¸—½Ÿüó4¢¥‘hoÒÌù]Nog¢¿‡ï/ç›œ“ïçJ\„RÚòôğàğ`´ó„>™Õ3‰ñXİ”yå­.¾ÏÀ'pfóÍ^²Mp©ei³ÅG(]0’©|:ñêÙŒrpüQåñÈÑ®ºö>ĞH]#ªÒOjºr:odô)CšO¦SÉt,£ÇS”şÉIåÁCIë†Î:î1”„¡Ä”L:×§bé×”ä„ML'3ù”®ô?§Ä¦ãádZI8½ÆŒf$â‰X:¡ÿ÷ç=B&*é&=äy¼HÆˆÇá&!b’iÎÒÏi‰n7´7œõ_ã¥5º\ì#ü¢7;Á'ÛPG†ğuüï‡Ş{Z€Ï–‚!†OC:mÃÁS€>xaãOü´‘Aß­ ·PæwË´dq¥*”°ÄàíŸ!=0nxOq™YG%b°§¬âE¢/ˆ#Ì;jfm-G·±5©cK³˜· 2™Ş¯p_EàwA–Şcˆ|ED÷–Vá+—§µ¨­…˜—Ÿù—æv•_p€ü€ö…°	UTCĞä¤í«8Ÿ
+jÅ1ûäj Â0ĞD3‚†1¼Š˜`®‚aÙ[¸
+_—áBÙ·nÁ¶u¨êß€“ğ½o1?‡ƒ#©^y%»®²©k³‹—Ş…À¹ªv]»¶Ã¿ñÍ­{·ÿÚ]Øø6Êø[ÉnrÁ,û¶ô
+ûŸÊ?Äæ…/vÏ…-áŠí‘`nËcÙ˜[«ıÊœÙÁıÅânKàËÎjj/¹Qm×îºªÌG;j†÷–±ÎÀØĞí2Ÿp{3Ë‹9pW}?¬·B˜¥îZqùUş·ËCªİín//XüX~ÄÏğ¾Ußí>~L<Ààt­(V¼Ì‹b§ğ¸™…;Y˜ÏÑËÜà;¸)Á³0/"a¸£¸¢"ŠpŞ©nŠ 0ğÁpL—ÃpÃÖnà¹EèXdğéehşpkç'nÙÈ·n{vŞo\ßeO<«Ò? ãÂ°ı
+endstreamendobj81 0 obj<< /Filter /FlateDecode /Length 1950 /Subtype /Type1C >> stream
+H‰lUPWí†é×Hp‚4=-Lü $‚AñQ,‚Ÿ¨g˜Y˜U>3˜ †¬• ¿%àMTÀ¬â$FK­l™Ì‰ŸXY‚ˆFD£!K*Yö6¹c±¯ÇÏÖnm½šWızîçœ{ïyÍ2/†eÙĞÙKæ-N7eeC±¥ĞšeŒšmÛ`N3m°æYTƒéŠU5[ü¼”¿ œ‰Îß¶ü¶œ“Ù‘
+©‘ÿÜŠÏs…ûŸ…scÚC|:/–m8’bÛXb·fçÊ“²&ËÑ3âc#Õ=Î³ÏP÷Såd³Íd‘_-)(´äÈó²lö6»±Ğb~^–“7lÓÕrº¥Àb/¦oŸB•­²Q.´Í–\£}½lûœjÍ³–l´ÈÉóecù›]¶Rß‚"SÕl5Ú­–‚çÿ?U†¥‹	c˜(–™Ê2±3Û‡Iå˜W½™•B‹Åx3“Â¼ÎìcÙil{Í+Úk‹W·w´w÷=A“ªÙ¦ÙÍyq)\5wŸÈÒÍóëd­¬…şÆb˜şJºƒİ;<Óœ0I„İäNâ `í°‰Ãd‚õMÄxEù‹XEîà'."Ú
+Rn9ØNˆğ†âa“ˆMJá0Ñ*©d€/ûÈÊ‹ {×ª&¹İ\9Á ¥ƒCÛCı{ ŠÀX÷ 	+\•{ d#Ô	‚²ö$D(Á4ÍI@û¡ÚôàT‡~èÇêã‘‘XmÂ~	"‚ ÈÙ ¯a&]äµ„$g!SÒB+eÚ şş*b¨ñ †’,ûâ/Âø¸;¨×cÅAACmŸá8–7w}ÅK¨Ñk‹•>
+Ş ®Ê¥O„\Ü=(@®»ºhaVé`l£š€!B§ò%D„±Úœ„,r…÷†:r¨¦áÄUİÇ_¼»4wcYÑ»zpr1›.ÚÑëÆÚëÚO9,	ÎêÜª·ëì>0¥‘lª-İÙŒ¡·E¡ı•Ô¬Å-»Î¸N¼ÿy½äªo®ßù'm)ğ~†.I€¯(„R0g”y°KLµOÉ¹Ö}kß÷?Ş9˜'a©²FD™oR¾¡¼pærŸvôB±K1—¨ëHïÇQÑÆUÖ"}¹‡ğpvô(`„ÑÀrÑ^0Îørà]—šûú¤‹5Mµ9>F a3JŸÆépA>‹I¨9…Q°Vœ€¨sÔÿ7R5`)ÈéiuFd¬+'G‹Œg¢u8*<SqÂ%”!Æu¡ñüQ}E¼ÀØ=Šòºy°ûÎûb§'æ$ÇDÛê<@5t—n<ÛLCç‚Á[ÑÂTÑ²5ËaÖ!÷vÿgïèö#ïàsgÃ°´‹Ğ|
+DÜjƒÀO$ˆ¯Öµ¶]ÒµŸË­ÓkWĞöÏ¼NcŞ¦Óexwpj#9Y¹ë´t8R¹ÅYiÒMI3¢—~İÌ‰]î9 óZÌ|¡ã_2ŒøŒÂ)¡L{„%Ni…Är¾uS–kÒªK~À›­Ç7ë«Ê¹E|lvvRÂÖıû·II«Ÿ5à¥ƒ]ïAÔ==RÉ»9l¢ÀßõéçßµÍ])	ñ¶ëW<3›D³'9Ø‹´§™¹rBÑˆ0*á«ğYiæ×K¤r¨CY•!¸HÏé¶wªš%ìT±ËÔ»ÅÑATÄc¿¡xİt®•^˜
+Ë4~íT*T˜å1“CU»7X Qt$\İ°èM’Dp®å”qz?uò´^}O•_©âş5|¾¦Àf=ú†g†/?A?İ¼4¿Dú2;çÀL]”9=§„©Ğó«¡‹Î‡«ñÔ¥›©k%ü}ó-ßñÑ©«Ç[ó³{šâqe„öÿ”fBVÚz§Dv=	èâ…öÿ)O)-l×c=Ô«3öwØ#BŠ}N—830ÄiN—Ø‚æ;¢AÆqÿÊ•½÷éd0{£æKZ\RË¨¼º<Sræ{“*·VÂ{â­æGŠõ(Øz­›öi0ø¡ƒš¨"y¶.ÿé‰hõÔÉ£Û(ó*c>e ­¡<_.†@ÇQ‡ZL¡ëkÚ38Hşº÷
+°ïïª(o Œ¯,+«,ÓM_¿bYZÇîa0¯*ih„±ÿ#p„Ù<Wa~ñòPÀA0àªAô§ñĞ!¬Pˆ[ÑÿÏá:LX5ñe½ğ WCïå˜`Ç¦œIøešíH»Ãj`¬Fëz!â ¼@í`%~¿äfpó–NÊ¬³!ÛZKÅ¶mn²7ÔÁ°Ç«w‚!eâ·ØIæ5eÂhi7ijª¬lÒñÛßzk{™.}{Ã!=´İ|ÑÓ–ğ_z­¨Yíék]â<‰\œŸ¹nõ7$è¥ç_xéLûçµ/yX¢÷Š3	(k%´‚~ÊÀÀî®ğŞ¡úH¼;€~µ^R8O’<‡xõ0™@„»…éUÆqU¤×=N=h{†M{Ğ¸"ìk ßº‡¤—SJÆø__Ÿ©ôÓ*¨ˆâ¿ »±C¥
+endstreamendobj82 0 obj<< /Filter /FlateDecode /Length 1422 /Subtype /Type1C >> stream
+H‰\’LgÇïúqªö8L(\o¶AEPÁ!JÜ,È·
+¢³ĞN*Å¶Pp¢“ib±ÌØ6ùœDp~ÀX$3N;Eeè*~L4Î©Ñ©ì9|1ÛÛN]¶\ò&w÷>ÿçÿü?IHDI’~1	óµq±SâÙ«1CcÊÖ»ş()øJ„ o?ô*|¶ñYª6=ã:(µœ‘dåŞy¦¼"³qu¦•Ÿ”1™›=+"ÄuFºÏÙ®söt>ZoJ7ğ‹‹,VC…_›a2ç™Ì:«A?•ç£³³ù$—‚…O2Xæüõ•Şháu¼Õ¬Órtæ,Şô¯5æš¬Ey>:×åê§™Ì¼×ZòÓ-F½Qg6,Sÿ7A*‚&ˆ1/"D¢ˆXL)$±Œ ä˜!&,Ä6Ò›Ì$;DãD;D=¢a±8A\%~*™&É’´Hğ2¸½ÆB2ø@Œ•÷ƒÚ@föûÁ)
+&şòÈQå¡¯OœòÿÉzqÆš«MıûV‚Årè
+Ô£A,,¦˜§'NX´1º¬%ÒRÂ	h(Fèm/Z””f]¤D±”Œ¯+I·‘ç XkFÒYü<‚)Ì-~Q'„DŞ<$A S(lX4ˆDR+Šüµ{eÇEÅÁ“[åä•äoU"y¡4|Ã‚T•?Ó‰DWW^ù½ó›-SøINÙÇåf˜RG­ÛY\uÖŞd™Îw´óÕ]ÎİÇ+8gECEÕg²b ƒÁ ¡±ÉÏ`Å fº„ùPÍjÍ“ÃÂ3û.ßhüõŞ­æ9‘*ÒXÄSÌzl>fº~,£[»œ
+ïÁ¥A UİFaºeÆ|¥İ=Ğp¼ÈVxLã •5[âb_·íìiâÎo¯OŞ™é(ˆÚ€¸C‘
+¯AcI¾E¡K: ôûÊÿ:u	sÑäQ¹jÍ×u…)§*iQPâ!ÜÙ]wºUY†Ç»zâ¹®7_¾u¯1bæœÌèğ0óƒ³œå^pöO|äG°vÖdî‘BËÎ±Ómë2œ“^Š'<
+ßëm‡6(ËìÒwéˆÕ«5QíÛ·…C!’î4) z„ŞQb=*EõXÆ:¿ÔşvDŒ%*„cîÏ2]éUÊê
+î®±‘ç1ÅÀ‹…AÂ‚gÔÕÜDıûEœÊ¡óà¤µwß*[ çP?ğ´+YB“íøÉ/ ?şö;Š“$4ÑÌtH‘x˜ğ¯ˆ/‰ÁàfæÒ£ÜÍŸ¨ÀKş¢7Óùoó ŒÄ¬BÎN1—¿Kœ4Óù?ÅØúÀ‹W€Z,ü5,$#v©ğÃÎ@É(Ø Â;ÉRûÅÙBÛİŞŞÚ»˜=Q‡÷P )82î=tã~ëqa)ìbo4ü“Bw*}—1=Ø/AşÏmøÚWeTîm©^Q‰‹ÜYÕ/Ó­ÅÈ¶ã9ß, _[«M~O9pSfê‡Ú^ wWo³Wr0v””8J3³–¤äâ 3¿İAş´lÉ–a¸ñ¼ê"g™åJ›zŞÄŸQ?5¿~øp{¨úz‡£^9L—nÚTZ¢H*­Ü¯„ö›ßpÃQ=p`]¶–»é¶ãa‰ÓTÈÂµ+V-ÿü*×ğûcô'>í;Ùrª…Ã‰-Ô îsÑŒÈlä§Â^±pĞU;‰Bäh€ÔN!J¢é,ıN³Á´y©bc‰Ã±E‰$timcid{öÂ{=JYaÍHzÒUAH%•àUşœª ¹ºyEãÿòö//à_sxËğXöï y|ê©
+endstreamendobj85 0 obj<< /PitStop 86 0 R >> endobj86 0 obj<< /CC 87 0 R >> endobj87 0 obj<< >> endobjxref0 89 0000000030 65535 f
+0000000016 00000 n
+0000000182 00000 n
+0000000328 00000 n
+0000005622 00000 n
+0000005788 00000 n
+0000005923 00000 n
+0000012436 00000 n
+0000012602 00000 n
+0000012726 00000 n
+0000018294 00000 n
+0000018463 00000 n
+0000018588 00000 n
+0000022867 00000 n
+0000023036 00000 n
+0000023183 00000 n
+0000028495 00000 n
+0000028664 00000 n
+0000028822 00000 n
+0000033166 00000 n
+0000033868 00000 n
+0000034344 00000 n
+0000034562 00000 n
+0000034831 00000 n
+0000035457 00000 n
+0000035752 00000 n
+0000037608 00000 n
+0000037892 00000 n
+0000038785 00000 n
+0000038907 00000 n
+0000000031 00001 f
+0000000032 00001 f
+0000000033 00001 f
+0000000034 00001 f
+0000000035 00001 f
+0000000036 00001 f
+0000000037 00001 f
+0000000038 00001 f
+0000000039 00001 f
+0000000040 00001 f
+0000000041 00001 f
+0000000043 00001 f
+0000039233 00001 n
+0000000044 00001 f
+0000000045 00001 f
+0000000046 00001 f
+0000000061 00001 f
+0000040140 00000 n
+0000040179 00000 n
+0000040223 00000 n
+0000040328 00000 n
+0000040392 00000 n
+0000040415 00000 n
+0000040467 00000 n
+0000040509 00000 n
+0000040585 00000 n
+0000040640 00000 n
+0000040689 00000 n
+0000040725 00000 n
+0000040802 00000 n
+0000040869 00000 n
+0000000062 00001 f
+0000000083 00001 f
+0000041008 00000 n
+0000041135 00000 n
+0000041304 00000 n
+0000041451 00000 n
+0000041861 00000 n
+0000042154 00000 n
+0000042675 00000 n
+0000043300 00000 n
+0000047596 00000 n
+0000048143 00000 n
+0000048469 00000 n
+0000049019 00000 n
+0000049368 00000 n
+0000049765 00000 n
+0000050035 00000 n
+0000050174 00000 n
+0000056771 00000 n
+0000060789 00000 n
+0000061744 00000 n
+0000063786 00000 n
+0000000084 00001 f
+0000000088 00001 f
+0000065300 00000 n
+0000065341 00000 n
+0000065377 00000 n
+0000000000 00001 f
+trailer<</Size 89/Info 60 0 R /Root 63 0 R /ID[<6bd5db595b0a33e22f18a5dd990e996f><8983135369ffaa7495a141e3260f1277>]>>startxref65402%%EOF42 1 obj<</Length 3292/Subtype/XML/Type/Metadata>>stream
+<?xpacket begin="ï»¿" id="W5M0MpCehiHzreSzNTczkc9d"?>
+<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.2-c001 63.139439, 2010/09/27-13:37:26        ">
+   <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <rdf:Description rdf:about=""
+            xmlns:pdf="http://ns.adobe.com/pdf/1.3/">
+         <pdf:Producer>Acrobat Distiller 5.0 (Windows)</pdf:Producer>
+      </rdf:Description>
+      <rdf:Description rdf:about=""
+            xmlns:xmp="http://ns.adobe.com/xap/1.0/">
+         <xmp:CreateDate>2002-08-29T19:16:39Z</xmp:CreateDate>
+         <xmp:ModifyDate>2012-08-28T13:47:13-05:00</xmp:ModifyDate>
+         <xmp:MetadataDate>2012-08-28T13:47:13-05:00</xmp:MetadataDate>
+      </rdf:Description>
+      <rdf:Description rdf:about=""
+            xmlns:dc="http://purl.org/dc/elements/1.1/">
+         <dc:format>application/pdf</dc:format>
+      </rdf:Description>
+      <rdf:Description rdf:about=""
+            xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/">
+         <xmpMM:DocumentID>uuid:a055e927-5826-4745-a416-34d84d8c1e6a</xmpMM:DocumentID>
+         <xmpMM:InstanceID>uuid:3a93be3f-94d4-4cb4-a29b-73b22aed0a11</xmpMM:InstanceID>
+      </rdf:Description>
+   </rdf:RDF>
+</x:xmpmeta>
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                           
+<?xpacket end="w"?>
+endstreamendobj60 0 obj<</CreationDate(D:20020829191639Z)/ModDate(D:20120828134713-05'00')/Producer(Acrobat Distiller 5.0 \(Windows\))>>endobj63 0 obj<</AcroForm 91 0 R/FICL:Enfocus 85 0 R/JT 59 0 R/Metadata 42 1 R/PageLabels 48 0 R/Pages 49 0 R/Type/Catalog>>endobj64 0 obj<</Annots 92 0 R/Contents 70 0 R/CropBox[40.32001 126 571.67999 792]/MediaBox[0 0 612 792]/Parent 49 0 R/Resources 65 0 R/Rotate 0/Type/Page>>endobj89 0 obj<</BaseFont/Courier/Encoding 124 0 R/Name/Cour/Subtype/Type1/Type/Font>>endobj90 0 obj<</BaseFont/Times-Roman/Encoding 115 0 R/Name/TiRo/Subtype/Type1/Type/Font>>endobj91 0 obj<</DA(/Helv 0 Tf 0 g )/DR<</Encoding<</PDFDocEncoding 124 0 R>>/Font<</Cour 89 0 R/Helv 119 0 R/TiRo 120 0 R/ZaDb 121 0 R>>>>/Fields 118 0 R>>endobj92 0 obj[93 0 R 94 0 R 95 0 R 96 0 R 97 0 R 98 0 R 99 0 R 100 0 R]endobj93 0 obj<</AP<</N 117 0 R>>/BS 116 0 R/CreationDate(D:20120828134611-05'00')/DA(12.25 TL /Cour 9 Tf)/DS(font: Helvetica 9.0pt; text-align:left; color:#000000 )/F 4/IT/FreeTextTypewriter/M(D:20120828134612-05'00')/NM(5a6db9a9-944d-406c-9ece-ed527a37a2bd)/P 64 0 R/Rect[374.792 757.043 389.192 769.043]/Subj(Typewritten Text)/Subtype/FreeText/T(Robert Fourer)/Type/Annot>>endobj94 0 obj<</AP<</N 114 0 R>>/BS 113 0 R/Contents(Copyright © 2003 by Robert Fourer, David M. Gay and Brian W. Kernighan)/CreationDate(D:20120828134612-05'00')/DA(12.25 TL /Cour 9 Tf)/DS(font: TiRo 9.0pt;font-stretch:Normal; text-align:left; color:#000000 )/F 4/IT/FreeTextTypewriter/M(D:20120828134708-05'00')/NM(2d3602b6-bbd1-45aa-a769-05e977eccd65)/P 64 0 R/RC(<?xml version="1.0"?><body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:APIVersion="Acrobat:10.1.3" xfa:spec="2.0.2"  style="font-size:9.0pt;text-align:left;color:#000000;font-weight:normal;font-style:normal\;font-family:TiRo;font-stretch:normal"><p dir="ltr"><span style="line-height:12.3pt;font-family:Times">Copyright &#169; 2003 by Robert Fourer, David M. Gay and Brian W. Kernighan</span></p></body>)/Rect[279.405 768.166 560.893 778.986]/Subj(Typewritten Text)/Subtype/FreeText/T(Robert Fourer)/Type/Annot>>endobj95 0 obj<</AP<</N 112 0 R>>/BS 111 0 R/CreationDate(D:20120828134629-05'00')/DA(12.25 TL /Cour 9 Tf)/DS(font: Times 9.0pt; text-align:left; color:#000000 )/F 4/IT/FreeTextTypewriter/M(D:20120828134630-05'00')/NM(4ff0e48b-2d91-44da-baf1-a90ca2704130)/P 64 0 R/Rect[347.606 736.447 362.006 748.447]/Subj(Typewritten Text)/Subtype/FreeText/T(Robert Fourer)/Type/Annot>>endobj96 0 obj<</AP<</N 110 0 R>>/BS 109 0 R/CreationDate(D:20120828134653-05'00')/DA(12.25 TL /Cour 9 Tf)/DS(font: Times 9.0pt; text-align:left; color:#000000 )/F 4/IT/FreeTextTypewriter/M(D:20120828134654-05'00')/NM(6f8aafc7-2122-4641-b169-c1ba6cfebd57)/P 64 0 R/Rect[402.802 736.447 417.202 748.447]/Subj(Typewritten Text)/Subtype/FreeText/T(Robert Fourer)/Type/Annot>>endobj97 0 obj<</AP<</N 108 0 R>>/BS 107 0 R/CreationDate(D:20120828134656-05'00')/DA(12.25 TL /Cour 9 Tf)/DS(font: Times 9.0pt; text-align:left; color:#000000 )/F 4/IT/FreeTextTypewriter/M(D:20120828134656-05'00')/NM(3e1d2c7a-e357-42d5-9632-5c1f7e07cdeb)/P 64 0 R/Rect[420.103 736.447 434.503 748.447]/Subj(Typewritten Text)/Subtype/FreeText/T(Robert Fourer)/Type/Annot>>endobj98 0 obj<</AP<</N 106 0 R>>/BS 105 0 R/CreationDate(D:20120828134656-05'00')/DA(12.25 TL /Cour 9 Tf)/DS(font: Times 9.0pt; text-align:left; color:#000000 )/F 4/IT/FreeTextTypewriter/M(D:20120828134657-05'00')/NM(a366e05d-685e-480c-8db5-fdab3fea6c38)/P 64 0 R/Rect[415.984 762.81 430.384 774.81]/Subj(Typewritten Text)/Subtype/FreeText/T(Robert Fourer)/Type/Annot>>endobj99 0 obj<</AP<</N 104 0 R>>/BS 103 0 R/CreationDate(D:20120828134657-05'00')/DA(12.25 TL /Cour 9 Tf)/DS(font: Times 9.0pt; text-align:left; color:#000000 )/F 4/IT/FreeTextTypewriter/M(D:20120828134658-05'00')/NM(28fc66c4-9301-46d9-a751-d0f0eff3c6d6)/P 64 0 R/Rect[403.626 762.81 418.026 774.81]/Subj(Typewritten Text)/Subtype/FreeText/T(Robert Fourer)/Type/Annot>>endobj100 0 obj<</AP<</N 102 0 R>>/BS 101 0 R/CreationDate(D:20120828134710-05'00')/DA(12.25 TL /Cour 9 Tf)/DS(font: Times 9.0pt; text-align:left; color:#000000 )/F 4/IT/FreeTextTypewriter/M(D:20120828134713-05'00')/NM(3c1507d4-7fef-4bae-9eed-f78a21d29371)/P 64 0 R/Rect[494.247 664.774 508.647 676.774]/Subj(Typewritten Text)/Subtype/FreeText/T(Robert Fourer)/Type/Annot>>endobj101 0 obj<</W 0.0>>endobj102 0 obj<</BBox[494.247 664.774 508.647 676.774]/FormType 1/Length 95/Matrix[1.0 0.0 0.0 1.0 -494.247 -664.774]/Resources<</ProcSet[/PDF]>>/Subtype/Form/Type/XObject>>stream
+0 w
+494.2469 664.7745 14.4 12 re
+n
+q
+1 0 0 1 0 0 cm
+494.2469 664.7745 14.4 12 re
+W
+n
+0 g
+1 w
+Q
+
+endstreamendobj103 0 obj<</W 0.0>>endobj104 0 obj<</BBox[403.626 762.81 418.026 774.81]/FormType 1/Length 95/Matrix[1.0 0.0 0.0 1.0 -403.626 -762.81]/Resources<</ProcSet[/PDF]>>/Subtype/Form/Type/XObject>>stream
+0 w
+403.6263 762.8095 14.4 12 re
+n
+q
+1 0 0 1 0 0 cm
+403.6263 762.8095 14.4 12 re
+W
+n
+0 g
+1 w
+Q
+
+endstreamendobj105 0 obj<</W 0.0>>endobj106 0 obj<</BBox[415.984 762.81 430.384 774.81]/FormType 1/Length 95/Matrix[1.0 0.0 0.0 1.0 -415.984 -762.81]/Resources<</ProcSet[/PDF]>>/Subtype/Form/Type/XObject>>stream
+0 w
+415.9836 762.8095 14.4 12 re
+n
+q
+1 0 0 1 0 0 cm
+415.9836 762.8095 14.4 12 re
+W
+n
+0 g
+1 w
+Q
+
+endstreamendobj107 0 obj<</W 0.0>>endobj108 0 obj<</BBox[420.103 736.447 434.503 748.447]/FormType 1/Length 95/Matrix[1.0 0.0 0.0 1.0 -420.103 -736.447]/Resources<</ProcSet[/PDF]>>/Subtype/Form/Type/XObject>>stream
+0 w
+420.1028 736.4471 14.4 12 re
+n
+q
+1 0 0 1 0 0 cm
+420.1028 736.4471 14.4 12 re
+W
+n
+0 g
+1 w
+Q
+
+endstreamendobj109 0 obj<</W 0.0>>endobj110 0 obj<</BBox[402.802 736.447 417.202 748.447]/FormType 1/Length 95/Matrix[1.0 0.0 0.0 1.0 -402.802 -736.447]/Resources<</ProcSet[/PDF]>>/Subtype/Form/Type/XObject>>stream
+0 w
+402.8025 736.4471 14.4 12 re
+n
+q
+1 0 0 1 0 0 cm
+402.8025 736.4471 14.4 12 re
+W
+n
+0 g
+1 w
+Q
+
+endstreamendobj111 0 obj<</W 0.0>>endobj112 0 obj<</BBox[347.606 736.447 362.006 748.447]/FormType 1/Length 95/Matrix[1.0 0.0 0.0 1.0 -347.606 -736.447]/Resources<</ProcSet[/PDF]>>/Subtype/Form/Type/XObject>>stream
+0 w
+347.6063 736.4471 14.4 12 re
+n
+q
+1 0 0 1 0 0 cm
+347.6063 736.4471 14.4 12 re
+W
+n
+0 g
+1 w
+Q
+
+endstreamendobj113 0 obj<</W 0.0>>endobj114 0 obj<</BBox[278.405 763.166 559.893 773.986]/Filter[/FlateDecode]/FormType 1/Length 238/Matrix[1.0 0.0 0.0 1.0 -278.405 -763.166]/Resources<</Font<</TiRo 90 0 R>>/ProcSet[/PDF/Text]>>/Subtype/Form/Type/XObject>>stream
+H‰ŒMK1†ïùsTq2›Ïkı:ˆK /[»ÖÌjPKÿ½éî¬íQ!<oŞgBvŠ}@CVƒwjçà Ñï@-”Neõ©4P]ÓşüşÏâªV	¶µ¼S‹¤.S¿ Bz©8ªÂaä i£Î®†}é·¯_péM5½==dO\#H!e¢f¢LÈVèz?1­l9¬»"bvèÍÜß¥+’ÔGE#ÉuûÓo„ä¿ÆŠÑ¼kç¡¾^m¶'‚EéÛ,b>á«£8ÆŞw%×?ióİ$õ¨~ Ï°bß
+endstreamendobj115 0 obj<</Differences[24/breve/caron/circumflex/dotaccent/hungarumlaut/ogonek/ring/tilde 39/quotesingle 96/grave 128/bullet/dagger/daggerdbl/ellipsis/emdash/endash/florin/fraction/guilsinglleft/guilsinglright/minus/perthousand/quotedblbase/quotedblleft/quotedblright/quoteleft/quoteright/quotesinglbase/trademark/fi/fl/Lslash/OE/Scaron/Ydieresis/Zcaron/dotlessi/lslash/oe/scaron/zcaron 160/Euro 164/currency 166/brokenbar 168/dieresis/copyright/ordfeminine 172/logicalnot/.notdef/registered/macron/degree/plusminus/twosuperior/threesuperior/acute/mu 183/periodcentered/cedilla/onesuperior/ordmasculine 188/onequarter/onehalf/threequarters 192/Agrave/Aacute/Acircumflex/Atilde/Adieresis/Aring/AE/Ccedilla/Egrave/Eacute/Ecircumflex/Edieresis/Igrave/Iacute/Icircumflex/Idieresis/Eth/Ntilde/Ograve/Oacute/Ocircumflex/Otilde/Odieresis/multiply/Oslash/Ugrave/Uacute/Ucircumflex/Udieresis/Yacute/Thorn/germandbls/agrave/aacute/acircumflex/atilde/adieresis/aring/ae/ccedilla/egrave/eacute/ecircumflex/edieresis/igrave/iacute/icircumflex/idieresis/eth/ntilde/ograve/oacute/ocircumflex/otilde/odieresis/divide/oslash/ugrave/uacute/ucircumflex/udieresis/yacute/thorn/ydieresis]/Type/Encoding>>endobj116 0 obj<</W 0.0>>endobj117 0 obj<</BBox[374.792 757.043 389.192 769.043]/FormType 1/Length 95/Matrix[1.0 0.0 0.0 1.0 -374.792 -757.043]/Resources<</ProcSet[/PDF]>>/Subtype/Form/Type/XObject>>stream
+0 w
+374.7924 757.0427 14.4 12 re
+n
+q
+1 0 0 1 0 0 cm
+374.7924 757.0427 14.4 12 re
+W
+n
+0 g
+1 w
+Q
+
+endstreamendobj118 0 obj[]endobj119 0 obj<</BaseFont/Helvetica/Encoding 123 0 R/Name/Helv/Subtype/Type1/Type/Font>>endobj120 0 obj<</BaseFont/Times-Roman/Encoding 122 0 R/Name/TiRo/Subtype/Type1/Type/Font>>endobj121 0 obj<</BaseFont/ZapfDingbats/Name/ZaDb/Subtype/Type1/Type/Font>>endobj122 0 obj<</Differences[24/breve/caron/circumflex/dotaccent/hungarumlaut/ogonek/ring/tilde 39/quotesingle 96/grave 128/bullet/dagger/daggerdbl/ellipsis/emdash/endash/florin/fraction/guilsinglleft/guilsinglright/minus/perthousand/quotedblbase/quotedblleft/quotedblright/quoteleft/quoteright/quotesinglbase/trademark/fi/fl/Lslash/OE/Scaron/Ydieresis/Zcaron/dotlessi/lslash/oe/scaron/zcaron 160/Euro 164/currency 166/brokenbar 168/dieresis/copyright/ordfeminine 172/logicalnot/.notdef/registered/macron/degree/plusminus/twosuperior/threesuperior/acute/mu 183/periodcentered/cedilla/onesuperior/ordmasculine 188/onequarter/onehalf/threequarters 192/Agrave/Aacute/Acircumflex/Atilde/Adieresis/Aring/AE/Ccedilla/Egrave/Eacute/Ecircumflex/Edieresis/Igrave/Iacute/Icircumflex/Idieresis/Eth/Ntilde/Ograve/Oacute/Ocircumflex/Otilde/Odieresis/multiply/Oslash/Ugrave/Uacute/Ucircumflex/Udieresis/Yacute/Thorn/germandbls/agrave/aacute/acircumflex/atilde/adieresis/aring/ae/ccedilla/egrave/eacute/ecircumflex/edieresis/igrave/iacute/icircumflex/idieresis/eth/ntilde/ograve/oacute/ocircumflex/otilde/odieresis/divide/oslash/ugrave/uacute/ucircumflex/udieresis/yacute/thorn/ydieresis]/Type/Encoding>>endobj123 0 obj<</Differences[24/breve/caron/circumflex/dotaccent/hungarumlaut/ogonek/ring/tilde 39/quotesingle 96/grave 128/bullet/dagger/daggerdbl/ellipsis/emdash/endash/florin/fraction/guilsinglleft/guilsinglright/minus/perthousand/quotedblbase/quotedblleft/quotedblright/quoteleft/quoteright/quotesinglbase/trademark/fi/fl/Lslash/OE/Scaron/Ydieresis/Zcaron/dotlessi/lslash/oe/scaron/zcaron 160/Euro 164/currency 166/brokenbar 168/dieresis/copyright/ordfeminine 172/logicalnot/.notdef/registered/macron/degree/plusminus/twosuperior/threesuperior/acute/mu 183/periodcentered/cedilla/onesuperior/ordmasculine 188/onequarter/onehalf/threequarters 192/Agrave/Aacute/Acircumflex/Atilde/Adieresis/Aring/AE/Ccedilla/Egrave/Eacute/Ecircumflex/Edieresis/Igrave/Iacute/Icircumflex/Idieresis/Eth/Ntilde/Ograve/Oacute/Ocircumflex/Otilde/Odieresis/multiply/Oslash/Ugrave/Uacute/Ucircumflex/Udieresis/Yacute/Thorn/germandbls/agrave/aacute/acircumflex/atilde/adieresis/aring/ae/ccedilla/egrave/eacute/ecircumflex/edieresis/igrave/iacute/icircumflex/idieresis/eth/ntilde/ograve/oacute/ocircumflex/otilde/odieresis/divide/oslash/ugrave/uacute/ucircumflex/udieresis/yacute/thorn/ydieresis]/Type/Encoding>>endobj124 0 obj<</Differences[24/breve/caron/circumflex/dotaccent/hungarumlaut/ogonek/ring/tilde 39/quotesingle 96/grave 128/bullet/dagger/daggerdbl/ellipsis/emdash/endash/florin/fraction/guilsinglleft/guilsinglright/minus/perthousand/quotedblbase/quotedblleft/quotedblright/quoteleft/quoteright/quotesinglbase/trademark/fi/fl/Lslash/OE/Scaron/Ydieresis/Zcaron/dotlessi/lslash/oe/scaron/zcaron 160/Euro 164/currency 166/brokenbar 168/dieresis/copyright/ordfeminine 172/logicalnot/.notdef/registered/macron/degree/plusminus/twosuperior/threesuperior/acute/mu 183/periodcentered/cedilla/onesuperior/ordmasculine 188/onequarter/onehalf/threequarters 192/Agrave/Aacute/Acircumflex/Atilde/Adieresis/Aring/AE/Ccedilla/Egrave/Eacute/Ecircumflex/Edieresis/Igrave/Iacute/Icircumflex/Idieresis/Eth/Ntilde/Ograve/Oacute/Ocircumflex/Otilde/Odieresis/multiply/Oslash/Ugrave/Uacute/Ucircumflex/Udieresis/Yacute/Thorn/germandbls/agrave/aacute/acircumflex/atilde/adieresis/aring/ae/ccedilla/egrave/eacute/ecircumflex/edieresis/igrave/iacute/icircumflex/idieresis/eth/ntilde/ograve/oacute/ocircumflex/otilde/odieresis/divide/oslash/ugrave/uacute/ucircumflex/udieresis/yacute/thorn/ydieresis]/Type/Encoding>>endobjxref
+0 1
+0000000000 65535 f
+42 1
+0000067340 00001 n
+60 1
+0000070710 00000 n
+63 2
+0000070840 00000 n
+0000070967 00000 n
+89 36
+0000071126 00000 n
+0000071215 00000 n
+0000071308 00000 n
+0000071467 00000 n
+0000071542 00000 n
+0000071921 00000 n
+0000072854 00000 n
+0000073229 00000 n
+0000073604 00000 n
+0000073979 00000 n
+0000074352 00000 n
+0000074725 00000 n
+0000075101 00000 n
+0000075129 00000 n
+0000075420 00000 n
+0000075448 00000 n
+0000075736 00000 n
+0000075764 00000 n
+0000076052 00000 n
+0000076080 00000 n
+0000076371 00000 n
+0000076399 00000 n
+0000076690 00000 n
+0000076718 00000 n
+0000077009 00000 n
+0000077037 00000 n
+0000077519 00000 n
+0000078712 00000 n
+0000078740 00000 n
+0000079031 00000 n
+0000079051 00000 n
+0000079143 00000 n
+0000079237 00000 n
+0000079315 00000 n
+0000080508 00000 n
+0000081701 00000 n
+trailer
+<</Size 125/Root 63 0 R/Info 60 0 R/ID[<6BD5DB595B0A33E22F18A5DD990E996F><B6AFDF5503ED0C45A31DEE3BB53D19EB>]/Prev 65402>>
+startxref
+82894
+%%EOF
+42 1 obj<</Length 3292/Subtype/XML/Type/Metadata>>stream
+<?xpacket begin="ï»¿" id="W5M0MpCehiHzreSzNTczkc9d"?>
+<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.2-c001 63.139439, 2010/09/27-13:37:26        ">
+   <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <rdf:Description rdf:about=""
+            xmlns:pdf="http://ns.adobe.com/pdf/1.3/">
+         <pdf:Producer>Acrobat Distiller 5.0 (Windows)</pdf:Producer>
+      </rdf:Description>
+      <rdf:Description rdf:about=""
+            xmlns:xmp="http://ns.adobe.com/xap/1.0/">
+         <xmp:CreateDate>2002-08-29T19:16:39Z</xmp:CreateDate>
+         <xmp:ModifyDate>2012-08-28T13:47:50-05:00</xmp:ModifyDate>
+         <xmp:MetadataDate>2012-08-28T13:47:50-05:00</xmp:MetadataDate>
+      </rdf:Description>
+      <rdf:Description rdf:about=""
+            xmlns:dc="http://purl.org/dc/elements/1.1/">
+         <dc:format>application/pdf</dc:format>
+      </rdf:Description>
+      <rdf:Description rdf:about=""
+            xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/">
+         <xmpMM:DocumentID>uuid:a055e927-5826-4745-a416-34d84d8c1e6a</xmpMM:DocumentID>
+         <xmpMM:InstanceID>uuid:6c70ab9c-25c3-4479-b79d-974c9a1d3530</xmpMM:InstanceID>
+      </rdf:Description>
+   </rdf:RDF>
+</x:xmpmeta>
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                           
+<?xpacket end="w"?>
+endstreamendobj60 0 obj<</CreationDate(D:20020829191639Z)/ModDate(D:20120828134750-05'00')/Producer(Acrobat Distiller 5.0 \(Windows\))>>endobj94 0 obj<</AP<</N 125 0 R>>/BS 113 0 R/Contents(Copyright © 2003 by Robert Fourer, David M. Gay and Brian W. Kernighan)/CreationDate(D:20120828134612-05'00')/DA(12.25 TL /Cour 9 Tf)/DS(font: Times 9.0pt; text-align:left; color:#000000 )/F 4/IT/FreeTextTypewriter/M(D:20120828134708-05'00')/NM(2d3602b6-bbd1-45aa-a769-05e977eccd65)/P 64 0 R/RC(<?xml version="1.0"?><body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:APIVersion="Acrobat:10.1.3" xfa:spec="2.0.2"  style="font-size:9.0pt;text-align:left;color:#000000;font-weight:normal;font-style:normal\;font-family:Times;font-stretch:normal"><p dir="ltr"><span style="line-height:12.3pt">Copyright &#169; 2003 by Robert Fourer, David M. Gay and Brian W. Kernighan</span></p></body>)/Rect[279.405 768.166 560.893 778.986]/Subj(Typewritten Text)/Subtype/FreeText/T(Robert Fourer)/Type/Annot>>endobj125 0 obj<</BBox[279.405 768.166 560.893 778.986]/Filter[/FlateDecode]/FormType 1/Length 238/Matrix[1.0 0.0 0.0 1.0 -279.405 -768.166]/Resources<</Font<</TiRo 90 0 R>>/ProcSet[/PDF/Text]>>/Subtype/Form/Type/XObject>>stream
+H‰ŒMK1†ïùsT13›Ïkı:ˆK /[»ÖÌjPKÿ½éî¬íQ!<oŞg`4ìûˆF[ï’sp 4Á; ¢…Ò©¬>®gºŸßÿY\Õª†m-ïÔ"©ËÔ/ˆ^F*ğ0r€´QgWÃÇ¾ôÛ×/8‡ô¦š€Ş†²'®ÏGÔ!e­›‰²F¶B×û‰ÙrXwEÄìĞ›9¸¾KW.$	h¢‘äºıé7Âò_ãEÏh5¼kç¡¾~mÙÁ¢ôm1ŸğÕQãï»’ëNÚ<F7I=ª_ ßbè
+endstreamendobjxref
+0 1
+0000000000 65535 f
+42 1
+0000083907 00001 n
+60 1
+0000087277 00000 n
+94 1
+0000087407 00000 n
+125 1
+0000088304 00000 n
+trailer
+<</Size 126/Root 63 0 R/Info 60 0 R/ID[<6BD5DB595B0A33E22F18A5DD990E996F><196DE4C49F07754DB9AFB228F054E40A>]/Prev 82894>>
+startxref
+88786
+%%EOF

@@ -1,0 +1,6137 @@
+%PDF-1.4%‚„œ”
+1 0 obj<< /Type /Page /Parent 134 0 R /Resources 2 0 R /Contents 3 0 R /Rotate 0 /MediaBox [ 0 0 612 792 ] /CropBox [ 40.32001 126 571.67999 792 ] >> endobj2 0 obj<< /ProcSet [ /PDF /Text ] /Font << /F2 157 0 R /F3 159 0 R /F4 162 0 R /F6 165 0 R /F7 73 0 R >> /ExtGState << /GS1 170 0 R >> >> endobj3 0 obj<< /Length 6418 >> stream
+BT
+/F6 1 Tf
+10 0 0 10 126 747.615 Tm
+0 g
+/GS1 gs
+0 Tc
+0 Tw
+(144)Tj
+7 0 0 7 159.6 747.615 Tm
+0.0407 Tw
+[(SPECIFYING DATA )-31646.1(CHAPTER )31.9(9)]TJ
+/F2 1 Tf
+10 0 0 10 126 715.215 Tm
+0.0367 Tw
+(data statements in a)Tj
+/F3 1 Tf
+8.25 0 TD
+0.1061 Tw
+(data mode)Tj
+/F2 1 Tf
+4.66 0 TD
+0.0308 Tw
+(that is initiated by the)Tj
+/F4 1 Tf
+9.07 0 TD
+0 Tw
+(data)Tj
+/F2 1 Tf
+2.68 0 TD
+0.0317 Tw
+[(command. )-241.4(In its most com-)]TJ
+-24.66 -1.2 TD
+0.1027 Tw
+(mon use, this command consists of the keyword)Tj
+/F4 1 Tf
+20.3 0 TD
+0 Tw
+(data)Tj
+/F2 1 Tf
+2.76 0 TD
+0.1062 Tw
+(followed by the name of a file.)Tj
+-23.06 -1.2 TD
+-0.0069 Tw
+(For example,)Tj
+/F4 1 Tf
+9 0 0 9 154.8 674.015 Tm
+0 Tw
+(ampl:)Tj
+/F7 1 Tf
+3.6 0 TD
+-0.0001 Tw
+(data diet.dat;)Tj
+/F2 1 Tf
+10 0 0 10 126 654.815 Tm
+0.0833 Tw
+[(reads data from a file )-10.7(named)]TJ
+/F4 1 Tf
+12.19 0 TD
+0 Tw
+(diet.dat)Tj
+/F2 1 Tf
+4.8 0 TD
+0.0963 Tw
+[(. )-252.8(Filenames containing spaces, semicolons, or)]TJ
+-16.99 -1.2 TD
+-0.0045 Tw
+(nonprinting characters must be enclosed in quotes.)Tj
+1.44 -1.26 TD
+0.0353 Tw
+(While reading in data mode,)Tj
+9 0 0 9 258.3 630.215 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 286.2 630.215 Tm
+0.0342 Tw
+[(treats white space, that is, any sequence )-8.8(of )-8.8(space,)]TJ
+-16.02 -1.2 TD
+0.0209 Tw
+[(tab, and ëënewlineíí characters, as a single space. )-263.2(Commas )-5.6(separating )-5.6(strings )-5.6(or )-5.6(numbers)]TJ
+T*
+0.0542 Tw
+[(are )12.7(also )12.7(ignored. )-247.9(Judicious use of these separators can help to arrange data into easy-to-)]TJ
+T*
+0.1356 Tw
+[(read )-10.8(lists )-10.8(and )-10.8(tables; )-10.8(our )-10.8(examples use a combination of spaces and newlines. )-248.4(If data)]TJ
+T*
+0.0138 Tw
+[(statements )9.2(are )9.2(produced )9.2(as )9.2(output )9.2(from other data management software and sent directly)]TJ
+T*
+0 Tw
+(to)Tj
+9 0 0 9 137.5 570.215 Tm
+(AMPL)Tj
+10 0 0 10 162.5 570.215 Tm
+0.104 Tw
+(, however, then you may ignore visual appearance and use whatever format is)Tj
+-3.65 -1.2 TD
+0 Tw
+(convenient.)Tj
+1.44 -1.26 TD
+0.084 Tw
+[(Data )11.5(files )11.5(often contain numerous character strings, representing set members or the)]TJ
+-1.44 -1.2 TD
+0.1127 Tw
+[(values of symbolic parameters. )-257.3(Thus )-5.3(in )-5.3(data )-5.3(mode)]TJ
+9 0 0 9 341.4 533.615 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 370.1 533.615 Tm
+0.1024 Tw
+[(does )-16.6(not, in general, require)]TJ
+-24.41 -1.2 TD
+0.0135 Tw
+[(strings )-5.1(to )-5.1(be )-5.1(enclosed )-5.1(in )-5.1(quotes. )-262.5(Strings that include any character other than )-14(letters, )-14(dig-)]TJ
+T*
+0.0821 Tw
+(its, underscores, period,)Tj
+/F4 1 Tf
+10.03 0 TD
+0 Tw
+(+)Tj
+/F2 1 Tf
+0.94 0 TD
+(and)Tj
+/F4 1 Tf
+1.78 0 TD
+(-)Tj
+/F2 1 Tf
+0.94 0 TD
+0.0862 Tw
+(must be quoted, however, as in the case of)Tj
+/F4 1 Tf
+17.96 0 TD
+0 Tw
+(A&P)Tj
+/F2 1 Tf
+1.8 0 TD
+0.328 Tw
+(. You)Tj
+-33.45 -1.2 TD
+0.1252 Tw
+[(may use a pair of either )-13.8(single )-13.8(quotes )-13.8(\()]TJ
+/F4 1 Tf
+16.54 0 TD
+0 Tw
+(íA&Pí)Tj
+/F2 1 Tf
+3 0 TD
+0.137 Tw
+(\) or double quotes \()Tj
+/F4 1 Tf
+8.38 0 TD
+0 Tw
+("A&P")Tj
+/F2 1 Tf
+3 0 TD
+0.1375 Tw
+(\), unless the)Tj
+-30.92 -1.2 TD
+0.3474 Tw
+(string contains a quote, in which case the other kind of quote must surround it)Tj
+T*
+0 Tw
+(\()Tj
+/F4 1 Tf
+0.33 0 TD
+("DOMINICKíS")Tj
+/F2 1 Tf
+7.2 0 TD
+0.8394 Tw
+(\) or the surrounding quote must be doubled within it)Tj
+-7.53 -1.2 TD
+0 Tw
+(\()Tj
+/F4 1 Tf
+0.33 0 TD
+(íDOMINICKííSí)Tj
+/F2 1 Tf
+7.8 0 TD
+(\).)Tj
+-6.69 -1.26 TD
+0.0108 Tw
+(A string that looks like a number \(for example)Tj
+/F4 1 Tf
+18.91 0 TD
+0 Tw
+("+1")Tj
+/F2 1 Tf
+2.67 0 TD
+(or)Tj
+/F4 1 Tf
+1.1 0 TD
+("3e4")Tj
+/F2 1 Tf
+3 0 TD
+0.0188 Tw
+(\) must also be quoted,)Tj
+-27.12 -1.2 TD
+0.0774 Tw
+[(to distinguish it from a set member or parameter )10.4(value )10.4(that )10.4(is )10.4(actually )10.4(a )10.4(number. )-239.6(Num-)]TJ
+T*
+0.0545 Tw
+[(bers that have the same internal representation are considered to be the same, so )-12.5(that )-12.5(for)]TJ
+T*
+0 Tw
+(example)Tj
+/F4 1 Tf
+3.63 0 TD
+(2)Tj
+/F2 1 Tf
+0.6 0 TD
+(,)Tj
+/F4 1 Tf
+0.5 0 TD
+(2.00)Tj
+/F2 1 Tf
+2.4 0 TD
+(,)Tj
+/F4 1 Tf
+0.5 0 TD
+(2.e0)Tj
+/F2 1 Tf
+2.65 0 TD
+(and)Tj
+/F4 1 Tf
+1.69 0 TD
+(0.02E+2)Tj
+/F2 1 Tf
+4.45 0 TD
+-0.0042 Tw
+(all denote the same set member.)Tj
+-14.98 -1.26 TD
+0 Tw
+(When)Tj
+9 0 0 9 168.5 400.415 Tm
+(AMPL)Tj
+10 0 0 10 197.8 400.415 Tm
+0.176 Tw
+(finishes reading a file in data mode, it normally reverts to whatever)Tj
+-7.18 -1.2 TD
+0.0066 Tw
+(mode it was in before the)Tj
+/F4 1 Tf
+10.43 0 TD
+0 Tw
+(data)Tj
+/F2 1 Tf
+2.66 0 TD
+-0.0046 Tw
+[(command )-5.7(was )9.3(executed. )-240.6(Hence a data file can itself con-)]TJ
+-13.09 -1.2 TD
+0 Tw
+(tain)Tj
+/F4 1 Tf
+1.81 0 TD
+(data)Tj
+/F2 1 Tf
+2.71 0 TD
+0.0675 Tw
+[(commands )13.3(that )13.3(read )13.3(data )13.3(from )13.3(other files. )-246.5(If the last data statement in a data)]TJ
+-4.52 -1.2 TD
+0.1065 Tw
+[(file )-5.6(lacks its terminating semicolon, however, then data mode persists regardless of the)]TJ
+T*
+-0.0059 Tw
+(previous mode.)Tj
+1.44 -1.26 TD
+0 Tw
+(A)Tj
+/F4 1 Tf
+1.02 0 TD
+(data)Tj
+/F2 1 Tf
+2.7 0 TD
+0.0464 Tw
+[(command with no filename )-16.6(puts)]TJ
+9 0 0 9 311.6 339.815 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 339.7 339.815 Tm
+0.0594 Tw
+(into data mode, so subsequent input)Tj
+-21.37 -1.2 TD
+-0.003 Tw
+(is taken as data statements:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 310.615 Tm
+0 Tw
+(ampl:)Tj
+/F7 1 Tf
+3.6 0 TD
+-0.0001 Tw
+(model dietu.mod;)Tj
+/F4 1 Tf
+-3.6 -1.1111 TD
+0 Tw
+(ampl:)Tj
+/F7 1 Tf
+3.6 0 TD
+(data;)Tj
+/F4 1 Tf
+-3.6 -1.1111 TD
+-0.0001 Tw
+(ampl data:)Tj
+/F7 1 Tf
+6.6 0 TD
+0 Tw
+(set MINREQ := A B1 B2 C CAL;)Tj
+/F4 1 Tf
+-6.6 -1.1111 TD
+-0.0001 Tw
+(ampl data:)Tj
+/F7 1 Tf
+6.6 0 TD
+0 Tw
+(set MAXREQ := A NA CAL;)Tj
+/F4 1 Tf
+-6.6 -1.1111 TD
+-0.0001 Tw
+(ampl data:)Tj
+/F7 1 Tf
+6.6 0 TD
+(display NUTR;)Tj
+/F4 1 Tf
+-6.6 -1.1111 TD
+0 Tw
+(set NUTR := A B1 B2 C CAL NA;)Tj
+0 -1.7778 TD
+(ampl:)Tj
+/F2 1 Tf
+-3.2 -2.1333 TD
+(AMPL)Tj
+10 0 0 10 154 225.415 Tm
+0.0453 Tw
+[(leaves data mode when it )-10.7(sees )-10.7(any )-10.7(statement )-10.7(\(like)]TJ
+/F4 1 Tf
+20.6 0 TD
+0 Tw
+(display)Tj
+/F2 1 Tf
+4.2 0 TD
+0.0585 Tw
+(\) that does not begin)Tj
+-27.6 -1.2 TD
+0.0754 Tw
+(with a keyword \(like)Tj
+/F4 1 Tf
+8.86 0 TD
+0 Tw
+(set)Tj
+/F2 1 Tf
+2.13 0 TD
+(or)Tj
+/F4 1 Tf
+1.16 0 TD
+(param)Tj
+/F2 1 Tf
+3 0 TD
+0.0774 Tw
+(\) that begins a)Tj
+/F4 1 Tf
+6.2 0 TD
+0 Tw
+(data)Tj
+/F2 1 Tf
+2.73 0 TD
+0.3221 Tw
+(statement. The)Tj
+/F4 1 Tf
+6.54 0 TD
+0 Tw
+(model)Tj
+/F2 1 Tf
+3.33 0 TD
+(com-)Tj
+-33.95 -1.2 TD
+-0.0028 Tw
+(mand, with or without filename, also causes a return to model mode.)Tj
+ET
+endstreamendobj4 0 obj<< /Type /Page /Parent 134 0 R /Resources 5 0 R /Contents 6 0 R /Rotate 0 /MediaBox [ 0 0 612 792 ] /CropBox [ 40.32001 126 571.67999 792 ] >> endobj5 0 obj<< /ProcSet [ /PDF /Text ] /Font << /F1 154 0 R /F2 157 0 R /F4 162 0 R /F6 165 0 R /F8 74 0 R >> /ExtGState << /GS1 170 0 R >> >> endobj6 0 obj<< /Length 4379 >> stream
+BT
+/F6 1 Tf
+7 0 0 7 126 747.615 Tm
+0 g
+/GS1 gs
+0 Tc
+0.0298 Tw
+(SECTION 9.2 )Tj
+39.5901 0 TD
+0.0182 Tw
+(DATA IN LISTS)Tj
+10 0 0 10 469.2 747.615 Tm
+0 Tw
+(145)Tj
+/F2 1 Tf
+-32.88 -3.24 TD
+0.087 Tw
+[(Model )10.9(components may be assigned values from any number of data files, by using)]TJ
+-1.44 -1.2 TD
+0 Tw
+(multiple)Tj
+/F4 1 Tf
+3.61 0 TD
+(data)Tj
+/F2 1 Tf
+2.66 0 TD
+0.007 Tw
+[(commands. )-242.1(Regardless of the number of files,)]TJ
+9 0 0 9 378 703.215 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 405.6 703.215 Tm
+0.0047 Tw
+(checks that no com-)Tj
+-27.96 -1.2 TD
+0.176 Tw
+[(ponent is assigned a value more than once, )-8.7(and )-8.7(duplicate )-8.7(assignments )-8.7(are )-8.7(flagged )-8.7(as)]TJ
+T*
+0.0085 Tw
+[(errors. )-236.6(In some situations, however, it is convenient to be able to )12.3(change )12.3(the )12.3(data )12.3(by )12.3(issu-)]TJ
+T*
+0.106 Tw
+(ing new)Tj
+/F4 1 Tf
+3.66 0 TD
+0 Tw
+(data)Tj
+/F2 1 Tf
+2.77 0 TD
+0.1155 Tw
+(statements; for example, after solving for one scenario of a model, you)Tj
+-6.43 -1.2 TD
+0.0067 Tw
+[(may want to modify some of the data by reading a new data file )11.5(that )11.5(corresponds )11.5(to )11.5(a )11.5(sec-)]TJ
+T*
+0.1353 Tw
+[(ond )17.2(scenario. )-239.7(The )8.3(data )8.3(values )8.3(in the new file would normally be treated as erroneous)]TJ
+T*
+0.1878 Tw
+(duplicates, but you can tell)Tj
+9 0 0 9 245.4 631.215 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 274.8 631.215 Tm
+0.1879 Tw
+(to accept them by first giving a)Tj
+/F4 1 Tf
+14.01 0 TD
+-0.1599 Tw
+(reset data)Tj
+/F2 1 Tf
+6.28 0 TD
+0 Tw
+(or)Tj
+/F4 1 Tf
+-35.17 -1.2 TD
+(update )Tj
+3.94 0 TD
+(data)Tj
+/F2 1 Tf
+2.74 0 TD
+0.0838 Tw
+[(command. )-244.3(These alternatives are described in Section )-16.2(11.3, )-16.2(along )-16.2(with)]TJ
+-6.68 -1.2 TD
+0.186 Tw
+(the use of)Tj
+/F4 1 Tf
+4.7 0 TD
+-0.1599 Tw
+(reset data)Tj
+/F2 1 Tf
+6.28 0 TD
+0.1817 Tw
+(to resample randomly-computed parameters, and of)Tj
+/F4 1 Tf
+22.01 0 TD
+0 Tw
+(let)Tj
+/F2 1 Tf
+2.23 0 TD
+(to)Tj
+-35.22 -1.2 TD
+-0.0063 Tw
+(directly assign new set or parameter values.)Tj
+/F1 1 Tf
+12 0 0 12 126 543.115 Tm
+0.0145 Tw
+[(9.2 )-283.9(Data in lists)]TJ
+/F2 1 Tf
+10 0 0 10 140.4 524.415 Tm
+-0.0065 Tw
+(For an unindexed \(scalar\) parameter, a data statement assigns one value:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 507.715 Tm
+0 Tw
+(param avail := 40;)Tj
+/F2 1 Tf
+10 0 0 10 126 489.015 Tm
+0.0126 Tw
+(Most of a typical modelís parameters are indexed over sets, however, and their values are)Tj
+T*
+0.0974 Tw
+[(specified in a variety of lists and tables that )10.1(are )10.1(introduced )10.1(in )10.1(this )10.1(section )10.1(and )10.1(the )10.1(next,)]TJ
+T*
+0 Tw
+(respectively.)Tj
+1.44 -1.26 TD
+0.0077 Tw
+[(We start with sets of simple one-dimensional )-7.1(objects, )-7.1(and )-7.1(the )-7.1(one-dimensional )-7.1(collec-)]TJ
+-1.44 -1.2 TD
+0.0072 Tw
+[(tions )-7.2(of )-7.2(parameters )-7.2(indexed )-7.2(over )-7.2(them. )-254.8(We )-10.8(then turn to two-dimensional sets and param-)]TJ
+T*
+0.0564 Tw
+[(eters, )15.4(for )15.4(which we have the additional option of organizing the data into ëëslicesíí. )-248.6(The)]TJ
+T*
+0.0067 Tw
+[(options for two dimensions are then shown to generalize readily to )9(higher )9(dimensions, )9(for)]TJ
+T*
+0.1153 Tw
+[(which )12.7(we )12.7(present )12.7(some )12.7(three-dimensional examples. )-260.7(Finally, we show how data state-)]TJ
+T*
+0.1054 Tw
+[(ments )-11.1(for )-11.1(a )-11.1(set )-11.1(and the parameters indexed over it can be combined to provide a more)]TJ
+T*
+-0.0119 Tw
+(concise and convenient representation.)Tj
+/F8 1 Tf
+0 -3.21 TD
+0.0113 Tw
+(Lists of one-dimensional sets and parameters)Tj
+/F2 1 Tf
+1.44 -1.87 TD
+-0.0056 Tw
+(For a parameter indexed over a one-dimensional set like)Tj
+/F4 1 Tf
+9 0 0 9 154.8 312.915 Tm
+0 Tw
+(set PROD;)Tj
+0 -1.1111 TD
+(param rate {PROD} > 0;)Tj
+/F2 1 Tf
+10 0 0 10 126 284.215 Tm
+-0.0016 Tw
+(the specification of the set can be simply a listing of its members:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 267.515 Tm
+0 Tw
+(set PROD := bands coils plate ;)Tj
+/F2 1 Tf
+10 0 0 10 126 248.815 Tm
+0.0739 Tw
+[(and the parameterís specification may be virtually the )-12.1(same )-12.1(except )-12.1(for )-12.1(the )-12.1(addition )-12.1(of )-12.1(a)]TJ
+0 -1.2 TD
+-0.009 Tw
+(value after each set member:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 220.115 Tm
+0 Tw
+[(param rate := bands 200 )-600(coils 140 )-600(plate 160 ;)]TJ
+/F2 1 Tf
+10 0 0 10 126 201.415 Tm
+-0.0068 Tw
+(The parameter specification could equally well be written)Tj
+ET
+endstreamendobj7 0 obj<< /Type /Page /Parent 134 0 R /Resources 8 0 R /Contents 9 0 R /Rotate 0 /MediaBox [ 0 0 612 792 ] /CropBox [ 40.32001 126 571.67999 792 ] >> endobj8 0 obj<< /ProcSet [ /PDF /Text ] /Font << /F2 157 0 R /F4 162 0 R /F6 165 0 R /F8 74 0 R >> /ExtGState << /GS1 170 0 R >> >> endobj9 0 obj<< /Length 4115 >> stream
+BT
+/F6 1 Tf
+10 0 0 10 126 747.615 Tm
+0 g
+/GS1 gs
+0 Tc
+0 Tw
+(146)Tj
+7 0 0 7 159.6 747.615 Tm
+0.0407 Tw
+[(SPECIFYING DATA )-31646.1(CHAPTER )31.9(9)]TJ
+/F4 1 Tf
+9 0 0 9 154.8 717.215 Tm
+0 Tw
+(param rate :=)Tj
+4.8 -1.1111 TD
+0.6 Tw
+(bands 200)Tj
+T*
+(coils 140)Tj
+T*
+[(plate 160 )600(;)]TJ
+/F2 1 Tf
+10 0 0 10 126 669.015 Tm
+-0.0077 Tw
+(since extra spaces and line breaks are ignored.)Tj
+1.44 -1.25 TD
+0.4425 Tw
+[(If a one-dimensional set has been declared )-16.5(with )-16.5(the )-16.5(attribute)]TJ
+/F4 1 Tf
+28.82 0 TD
+0 Tw
+(ordered)Tj
+/F2 1 Tf
+4.91 0 TD
+(or)Tj
+/F4 1 Tf
+-35.17 -1.2 TD
+(circular)Tj
+/F2 1 Tf
+5.12 0 TD
+0.0669 Tw
+[(\(Section 5.6\), then the ordering of its members is taken from the data )12.9(state-)]TJ
+-5.12 -1.2 TD
+-0.0013 Tw
+[(ment that defines it. )-252.3(For )6.7(example, )6.7(we )6.7(specified)]TJ
+/F4 1 Tf
+9 0 0 9 154.8 616.315 Tm
+0 Tw
+(set WEEKS := 27sep 04oct 11oct 18oct ;)Tj
+/F2 1 Tf
+10 0 0 10 126 598.115 Tm
+-0.0048 Tw
+(as the membership of the ordered set)Tj
+/F4 1 Tf
+14.94 0 TD
+0 Tw
+(WEEKS)Tj
+/F2 1 Tf
+3.25 0 TD
+-0.001 Tw
+(in Figure 5-4.)Tj
+-16.75 -1.25 TD
+-0.0035 Tw
+(Members of a set must all be different;)Tj
+9 0 0 9 297.9 585.615 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 325.4 585.615 Tm
+-0.0036 Tw
+(will warn of duplicates:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 569.415 Tm
+0 Tw
+(duplicate member coils for set PROD)Tj
+0 -1.1111 TD
+[(context: )-599.9(set PROD := bands coils plate coils )-600(>>> ; <<<)]TJ
+/F2 1 Tf
+10 0 0 10 126 541.215 Tm
+0.0349 Tw
+[(Also a parameter may not be given more than one value for each )-11.1(member )-11.1(of )-11.1(the )-11.1(set )-11.1(over)]TJ
+0 -1.2 TD
+-0.0014 Tw
+[(which it is indexed. )-249.4(A violation of this rule provokes a similar message:)]TJ
+/F4 1 Tf
+9 0 0 9 154.8 513.015 Tm
+-0.0001 Tw
+(rate[íbandsí] already defined)Tj
+0 -1.1111 TD
+0 Tw
+[(context: )-599.9(param rate := bands 200 bands 160 )-600(>>> ; <<<)]TJ
+/F2 1 Tf
+10 0 0 10 126 484.815 Tm
+0.0114 Tw
+(The context bracketed by)Tj
+/F4 1 Tf
+10.44 0 TD
+0 Tw
+(>>>)Tj
+/F2 1 Tf
+2.07 0 TD
+(and)Tj
+/F4 1 Tf
+1.71 0 TD
+(<<<)Tj
+/F2 1 Tf
+2.07 0 TD
+0.017 Tw
+[(isnít the exact point of the error, but the )-5.1(message)]TJ
+-16.29 -1.2 TD
+-0.005 Tw
+(makes the situation clear.)Tj
+1.44 -1.25 TD
+0.0607 Tw
+[(A )15.1(set )15.1(may )15.1(be )15.1(specified )15.1(as empty by giving an empty list of members; simply put the)]TJ
+-1.44 -1.2 TD
+0.0041 Tw
+[(semicolon right after )6.1(the)]TJ
+/F4 1 Tf
+10.06 0 TD
+0 Tw
+(:=)Tj
+/F2 1 Tf
+1.45 0 TD
+-0.005 Tw
+[(operator. )-241.1(A parameter indexed over an empty set has no data)]TJ
+-11.51 -1.2 TD
+-0.0019 Tw
+(associated with it.)Tj
+/F8 1 Tf
+0 -3.05 TD
+0.0105 Tw
+(Lists of two-dimensional sets and parameters)Tj
+/F2 1 Tf
+1.44 -1.82 TD
+0.0373 Tw
+[(The extension of data lists to the two-dimensional case )-8.5(is )-8.5(largely )-8.5(straightforward, )-8.5(but)]TJ
+-1.44 -1.2 TD
+0.0453 Tw
+[(with each set member denoted by a pair of objects. )-253.7(As an example, consider the )9.3(follow-)]TJ
+T*
+-0.002 Tw
+(ing sets from Figure 6-2a:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 347.415 Tm
+0 Tw
+[(set ORIG; )-1200(# origins)]TJ
+0 -1.1111 TD
+[(set DEST; )-1200(# destinations)]TJ
+0 -1.6889 TD
+-0.0001 Tw
+[(set LINKS within {ORIG,DEST}; )-1200.1(# transportation links)]TJ
+/F2 1 Tf
+10 0 0 10 126 304.015 Tm
+-0.007 Tw
+(The members of)Tj
+/F4 1 Tf
+6.79 0 TD
+0 Tw
+(ORIG)Tj
+/F2 1 Tf
+2.65 0 TD
+(and)Tj
+/F4 1 Tf
+1.69 0 TD
+(DEST)Tj
+/F2 1 Tf
+2.65 0 TD
+-0.0044 Tw
+(can be given as for any one-dimensional sets:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 287.815 Tm
+0 Tw
+(set ORIG := GARY CLEV PITT ;)Tj
+0 -1.1111 TD
+(set DEST := FRA DET LAN WIN STL FRE LAF ;)Tj
+/F2 1 Tf
+10 0 0 10 126 259.615 Tm
+0.0754 Tw
+(Then the membership of)Tj
+/F4 1 Tf
+10.36 0 TD
+0 Tw
+(LINKS)Tj
+/F2 1 Tf
+3.33 0 TD
+0.0775 Tw
+[(may be specified as a list of tuples )-11(such )-11(as )-11(you )-11(would)]TJ
+-13.69 -1.2 TD
+-0.0022 Tw
+(find in a modelís indexing expressions,)Tj
+/F4 1 Tf
+9 0 0 9 154.8 231.415 Tm
+0 Tw
+(set LINKS :=)Tj
+1.8 -1.1111 TD
+-0.0001 Tw
+(\(GARY,DET\) \(GARY,LAN\) \(GARY,STL\) \(GARY,LAF\) \(CLEV,FRA\))Tj
+T*
+(\(CLEV,DET\) \(CLEV,LAN\) \(CLEV,WIN\) \(CLEV,STL\) \(CLEV,LAF\))Tj
+T*
+(\(PITT,FRA\) \(PITT,WIN\) \(PITT,STL\) \(PITT,FRE\) ;)Tj
+ET
+endstreamendobj10 0 obj<< /Type /Page /Parent 134 0 R /Resources 11 0 R /Contents 12 0 R /Rotate 0 /MediaBox [ 0 0 612 792 ] /CropBox [ 40.32001 126 571.67999 792 ] >> endobj11 0 obj<< /ProcSet [ /PDF /Text ] /Font << /F2 157 0 R /F3 159 0 R /F4 162 0 R /F6 165 0 R >> /ExtGState << /GS1 170 0 R >> >> endobj12 0 obj<< /Length 4819 >> stream
+BT
+/F6 1 Tf
+7 0 0 7 126 747.615 Tm
+0 g
+/GS1 gs
+0 Tc
+0.0298 Tw
+(SECTION 9.2 )Tj
+39.5901 0 TD
+0.0182 Tw
+(DATA IN LISTS)Tj
+10 0 0 10 469.2 747.615 Tm
+0 Tw
+(147)Tj
+/F2 1 Tf
+-34.32 -3.24 TD
+-0.0028 Tw
+(or as a list of pairs, without the parentheses and commas:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 699.015 Tm
+0 Tw
+(set LINKS :=)Tj
+1.8 -1.1111 TD
+[(GARY DET )-1200(GARY LAN )-1200(GARY STL )-1200(GARY LAF)]TJ
+T*
+[(CLEV FRA )-1200(CLEV DET )-1200(CLEV LAN )-1200(CLEV WIN)]TJ
+T*
+[(CLEV STL )-1200(CLEV LAF )-1200(PITT FRA )-1200(PITT WIN)]TJ
+T*
+[(PITT STL )-1200(PITT FRE ;)]TJ
+/F2 1 Tf
+10 0 0 10 126 640.815 Tm
+0.0184 Tw
+[(The )16.4(order )16.4(of )16.4(members within each pair is significant ó the first must be from)]TJ
+/F4 1 Tf
+31.64 0 TD
+0 Tw
+(ORIG)Tj
+/F2 1 Tf
+2.4 0 TD
+0.016 Tw
+(, and)Tj
+-34.04 -1.2 TD
+-0.0065 Tw
+(the second from)Tj
+/F4 1 Tf
+6.68 0 TD
+0 Tw
+(DEST)Tj
+/F2 1 Tf
+2.65 0 TD
+-0.0041 Tw
+(ó but the pairs themselves may appear in any order.)Tj
+-7.89 -1.25 TD
+0.0191 Tw
+[(An )14.5(alternative, )14.5(more )14.5(concise )14.5(way )14.5(to )14.5(describe )14.5(this set of pairs is to list all second com-)]TJ
+-1.44 -1.2 TD
+-0.0023 Tw
+(ponents that go with each first component:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 588.115 Tm
+0 Tw
+(set LINKS :=)Tj
+1.8 -1.1111 TD
+(\(GARY,*\) DET LAN STL LAF)Tj
+T*
+(\(CLEV,*\) FRA DET LAN WIN STL LAF)Tj
+T*
+(\(PITT,*\) FRA WIN STL FRE ;)Tj
+/F2 1 Tf
+10 0 0 10 126 539.915 Tm
+-0.0014 Tw
+(It is also easy to list all first components that go with each second component:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 523.715 Tm
+0 Tw
+(set LINKS :=)Tj
+1.8 -1.1111 TD
+[(\(*,FRA\) CLEV PITT )-1200(\(*,DET\) GARY CLEV )-1200(\(*,LAN\) GARY CLEV)]TJ
+T*
+[(\(*,WIN\) CLEV PITT )-1200(\(*,LAF\) GARY CLEV )-1200(\(*,FRE\) PITT)]TJ
+T*
+(\(*,STL\) GARY CLEV PITT ;)Tj
+/F2 1 Tf
+10 0 0 10 126 475.515 Tm
+0.005 Tw
+(An expression such as)Tj
+/F4 1 Tf
+9.19 0 TD
+0 Tw
+(\(GARY,*\))Tj
+/F2 1 Tf
+5.06 0 TD
+(or)Tj
+/F4 1 Tf
+1.09 0 TD
+(\(*,FRA\))Tj
+/F2 1 Tf
+4.2 0 TD
+0.0082 Tw
+[(, resembling a pair but with )-7.8(a )-7.8(component)]TJ
+-19.54 -1.2 TD
+0.0295 Tw
+(replaced by a)Tj
+/F4 1 Tf
+5.68 0 TD
+0 Tw
+(*)Tj
+/F2 1 Tf
+0.6 0 TD
+0.0395 Tw
+[(, is a )15.5(data)]TJ
+/F3 1 Tf
+4.16 0 TD
+0 Tw
+(template.)Tj
+/F2 1 Tf
+4.05 0 TD
+0.0263 Tw
+(Each template is followed by a list, whose entries are)Tj
+-14.49 -1.2 TD
+0.0891 Tw
+(substituted for the)Tj
+/F4 1 Tf
+7.74 0 TD
+0 Tw
+(*)Tj
+/F2 1 Tf
+0.94 0 TD
+0.0947 Tw
+(to generate pairs; these pairs together make up a)Tj
+/F3 1 Tf
+20.38 0 TD
+0 Tw
+(slice)Tj
+/F2 1 Tf
+2.26 0 TD
+0.0971 Tw
+(through the)Tj
+-31.32 -1.2 TD
+0.0564 Tw
+(dimension of the set where the)Tj
+/F4 1 Tf
+12.84 0 TD
+0 Tw
+(*)Tj
+/F2 1 Tf
+0.91 0 TD
+0.06 Tw
+[(appears. )-234.1(A tuple without any)]TJ
+/F4 1 Tf
+12.31 0 TD
+0 Tw
+(*)Tj
+/F2 1 Tf
+0.6 0 TD
+0.058 Tw
+(ís, like)Tj
+/F4 1 Tf
+3.09 0 TD
+0 Tw
+(\(GARY,DET\))Tj
+/F2 1 Tf
+6 0 TD
+(,)Tj
+-35.75 -1.2 TD
+0.0084 Tw
+[(is in effect a template that specifies only itself, so it is not followed )-8.6(by )-8.6(any )-8.6(values. )-261.6(At )-9.6(the)]TJ
+T*
+-0.0033 Tw
+(other extreme, in the table that consists of pairs alone,)Tj
+/F4 1 Tf
+9 0 0 9 154.8 399.315 Tm
+0 Tw
+(set LINKS :=)Tj
+1.8 -1.1111 TD
+[(GARY DET )-1200(GARY LAN )-1200(GARY STL )-1200(GARY LAF)]TJ
+T*
+[(CLEV FRA )-1200(CLEV DET )-1200(CLEV LAN )-1200(CLEV WIN)]TJ
+T*
+[(CLEV STL )-1200(CLEV LAF )-1200(PITT FRA )-1200(PITT WIN)]TJ
+T*
+[(PITT STL )-1200(PITT FRE ;)]TJ
+/F2 1 Tf
+10 0 0 10 126 341.115 Tm
+-0.0074 Tw
+(a default template)Tj
+/F4 1 Tf
+7.4 0 TD
+0 Tw
+(\(*,*\))Tj
+/F2 1 Tf
+3.25 0 TD
+-0.0023 Tw
+(applies to all entries.)Tj
+-9.21 -1.25 TD
+0.0447 Tw
+(For a parameter indexed over a two-dimensional set, the)Tj
+9 0 0 9 372.2 328.615 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 400.2 328.615 Tm
+0.055 Tw
+(list formats are again)Tj
+-27.42 -1.2 TD
+-0.0053 Tw
+[(derived from those for sets by placing parameter values after the set members. )-255.3(Thus if we)]TJ
+T*
+-0.0139 Tw
+(have the parameter)Tj
+/F4 1 Tf
+7.83 0 TD
+0 Tw
+(cost)Tj
+/F2 1 Tf
+2.65 0 TD
+-0.0053 Tw
+(indexed over the set)Tj
+/F4 1 Tf
+8.26 0 TD
+0 Tw
+(LINKS)Tj
+/F2 1 Tf
+3 0 TD
+(:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 288.415 Tm
+(param cost {LINKS} >= 0;)Tj
+/F2 1 Tf
+10 0 0 10 126 270.215 Tm
+0.006 Tw
+(then the)Tj
+/F4 1 Tf
+3.46 0 TD
+0 Tw
+(set)Tj
+/F2 1 Tf
+2.06 0 TD
+0.0026 Tw
+(data statement for)Tj
+/F4 1 Tf
+7.43 0 TD
+0 Tw
+(LINKS)Tj
+/F2 1 Tf
+3.26 0 TD
+0.0164 Tw
+[(is )8.9(extended )8.9(to become the following)]TJ
+/F4 1 Tf
+14.86 0 TD
+0 Tw
+(param)Tj
+/F2 1 Tf
+3.27 0 TD
+(data)Tj
+-34.34 -1.2 TD
+-0.0089 Tw
+(statement for)Tj
+/F4 1 Tf
+5.49 0 TD
+0 Tw
+(cost)Tj
+/F2 1 Tf
+2.4 0 TD
+(:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 242.015 Tm
+(param cost :=)Tj
+1.8 -1.1111 TD
+[(GARY DET 14 )-600(GARY LAN 11 )-600(GARY STL 16 )-600(GARY LAF )-600(8)]TJ
+T*
+[(CLEV FRA 27 )-600(CLEV DET )-600(9 )-600(CLEV LAN 12 )-600(CLEV WIN )-600(9)]TJ
+T*
+[(CLEV STL 26 )-600(CLEV LAF 17 )-600(PITT FRA 24 )-600(PITT WIN 13)]TJ
+T*
+[(PITT STL 28 )-600(PITT FRE 99 ;)]TJ
+ET
+endstreamendobj13 0 obj<< /Type /Page /Parent 134 0 R /Resources 14 0 R /Contents 15 0 R /Rotate 0 /MediaBox [ 0 0 612 792 ] /CropBox [ 40.32001 126 571.67999 792 ] >> endobj14 0 obj<< /ProcSet [ /PDF /Text ] /Font << /F2 157 0 R /F4 162 0 R /F6 165 0 R /F8 74 0 R >> /ExtGState << /GS1 170 0 R >> >> endobj15 0 obj<< /Length 4128 >> stream
+BT
+/F6 1 Tf
+10 0 0 10 126 747.615 Tm
+0 g
+/GS1 gs
+0 Tc
+0 Tw
+(148)Tj
+7 0 0 7 159.6 747.615 Tm
+0.0407 Tw
+[(SPECIFYING DATA )-31646.1(CHAPTER )31.9(9)]TJ
+/F2 1 Tf
+10 0 0 10 126 715.215 Tm
+0.1533 Tw
+(Lists of slices through a set extend similarly, by placing a parameter value after each)Tj
+0 -1.2 TD
+-0.0043 Tw
+[(implied set member. )-254.3(Thus, corresponding to our concise data statement for)]TJ
+/F4 1 Tf
+30.4 0 TD
+0 Tw
+(LINKS)Tj
+/F2 1 Tf
+3 0 TD
+(:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 686.515 Tm
+(set LINKS :=)Tj
+1.8 -1.1111 TD
+(\(GARY,*\) DET LAN STL LAF)Tj
+T*
+(\(CLEV,*\) FRA DET LAN WIN STL LAF)Tj
+T*
+(\(PITT,*\) FRA WIN STL FRE ;)Tj
+/F2 1 Tf
+10 0 0 10 126 637.815 Tm
+-0.0032 Tw
+(there is the following statement for the values of)Tj
+/F4 1 Tf
+19.61 0 TD
+0 Tw
+(cost)Tj
+/F2 1 Tf
+2.4 0 TD
+(:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 621.115 Tm
+(param cost :=)Tj
+1.8 -1.1111 TD
+[([GARY,*] DET 14 )-600(LAN 11 )-600(STL 16 )-600(LAF )-600(8)]TJ
+T*
+0.6 Tw
+[([CLEV,*] )600(FRA )600(27 DET 9 LAN )600(12 WIN 9 STL )600(26 LAF )600(17)]TJ
+T*
+0 Tw
+[([PITT,*] FRA 24 )-600(WIN 13 )-600(STL 28 )-600(FRE 99 ;)]TJ
+/F2 1 Tf
+10 0 0 10 126 572.415 Tm
+0.0678 Tw
+(The templates are given in brackets to distinguish them from the set templates in paren-)Tj
+0 -1.2 TD
+0.1169 Tw
+[(theses, but they work in the same way. )-253.1(Thus a template such as)]TJ
+/F4 1 Tf
+27.29 0 TD
+0 Tw
+([GARY,*])Tj
+/F2 1 Tf
+5.16 0 TD
+(indicates)Tj
+-32.45 -1.2 TD
+-0.0028 Tw
+(that the ensuing entries will be for values of)Tj
+/F4 1 Tf
+17.78 0 TD
+0 Tw
+(cost)Tj
+/F2 1 Tf
+2.65 0 TD
+0.008 Tw
+[(that )14(have )14(a first index of)]TJ
+/F4 1 Tf
+10.02 0 TD
+0 Tw
+(GARY)Tj
+/F2 1 Tf
+2.4 0 TD
+0.006 Tw
+(, and an)Tj
+-32.85 -1.2 TD
+-0.0055 Tw
+(entry such as)Tj
+/F4 1 Tf
+5.46 0 TD
+0 Tw
+(DET )Tj
+2.05 0 TD
+(14)Tj
+/F2 1 Tf
+1.45 0 TD
+(gives)Tj
+/F4 1 Tf
+2.36 0 TD
+(cost["GARY","DET"])Tj
+/F2 1 Tf
+11.05 0 TD
+-0.0043 Tw
+(a value of 14.)Tj
+-20.93 -1.26 TD
+0.1483 Tw
+[(All of the above applies just as well to the use )-10(of )-10(templates )-10(that )-10(slice )-10(on )-10(the )-10(first)]TJ
+-1.44 -1.2 TD
+-0.0042 Tw
+(dimension, so that for instance you could also specify parameter)Tj
+/F4 1 Tf
+25.93 0 TD
+0 Tw
+(cost)Tj
+/F2 1 Tf
+2.65 0 TD
+(by:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 495.115 Tm
+(param cost :=)Tj
+1.8 -1.1111 TD
+[([*,FRA] CLEV 27 )-600(PITT 24)]TJ
+T*
+[([*,DET] GARY 14 )-600(CLEV )-600(9)]TJ
+T*
+[([*,LAN] GARY 11 )-600(CLEV 12)]TJ
+T*
+0.6 Tw
+[([*,WIN] )600.1(CLEV 9 PITT )600(13)]TJ
+T*
+0 Tw
+[([*,STL] GARY 16 )-600(CLEV 26 )-600(PITT 28)]TJ
+T*
+([*,FRE] PITT 99)Tj
+T*
+0.6 Tw
+[([*,LAF] )600.1(GARY 8 CLEV )600(17)]TJ
+/F2 1 Tf
+10 0 0 10 126 406.415 Tm
+-0.0047 Tw
+(You can even think of the list-of-pairs example,)Tj
+/F4 1 Tf
+9 0 0 9 154.8 389.715 Tm
+0 Tw
+(param cost :=)Tj
+1.8 -1.1111 TD
+[(GARY DET 14 )-600(GARY LAN 11 )-600(GARY STL 16 )-600(GARY LAF )-600(8)]TJ
+T*
+(...)Tj
+/F2 1 Tf
+10 0 0 10 126 351.015 Tm
+-0.0037 Tw
+(as also being a case of this form, corresponding to the default template)Tj
+/F4 1 Tf
+28.45 0 TD
+0 Tw
+([*,*])Tj
+/F2 1 Tf
+3 0 TD
+(.)Tj
+/F8 1 Tf
+-31.45 -3.2 TD
+0.0117 Tw
+(Lists of higher-dimensional sets and parameters)Tj
+/F2 1 Tf
+1.44 -1.87 TD
+0.1542 Tw
+[(The )7.9(concepts )7.9(underlying )7.9(data )7.9(lists for two-dimensional sets and parameters extend)]TJ
+-1.44 -1.2 TD
+0.1462 Tw
+[(straightforwardly )5.4(to )5.4(higher-dimensional )5.4(cases. )-248.8(The only difference of any note is that)]TJ
+T*
+0.0676 Tw
+[(nontrivial slices may be made through more than one dimension. )-238.4(Hence )5.1(we )5.1(confine )-10.4(the)]TJ
+T*
+0.0269 Tw
+[(presentation here to some illustrative examples in three dimensions, followed by a )11.9(sketch)]TJ
+T*
+-0.006 Tw
+(of the general rules for the)Tj
+9 0 0 9 234 252.315 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 261.5 252.315 Tm
+-0.0022 Tw
+(data list format that are given in Section A.12.)Tj
+-12.11 -1.26 TD
+0.0466 Tw
+[(We )15.1(take )15.1(our example from Section 6.3, where we suggest a version of the multicom-)]TJ
+-1.44 -1.2 TD
+-0.0023 Tw
+(modity transportation model that defines a set of triples and costs indexed over them:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 211.015 Tm
+-0.0001 Tw
+(set ROUTES within {ORIG,DEST,PROD};)Tj
+0 -1.1111 TD
+0 Tw
+(param cost {ROUTES} >= 0;)Tj
+ET
+endstreamendobj16 0 obj<< /Type /Page /Parent 134 0 R /Resources 17 0 R /Contents 18 0 R /Rotate 0 /MediaBox [ 0 0 612 792 ] /CropBox [ 40.32001 126 571.67999 792 ] >> endobj17 0 obj<< /ProcSet [ /PDF /Text ] /Font << /F2 157 0 R /F4 162 0 R /F6 165 0 R >> /ExtGState << /GS1 170 0 R >> >> endobj18 0 obj<< /Length 4618 >> stream
+BT
+/F6 1 Tf
+7 0 0 7 126 747.615 Tm
+0 g
+/GS1 gs
+0 Tc
+0.0298 Tw
+(SECTION 9.2 )Tj
+39.5901 0 TD
+0.0182 Tw
+(DATA IN LISTS)Tj
+10 0 0 10 469.2 747.615 Tm
+0 Tw
+(149)Tj
+/F2 1 Tf
+-34.32 -3.24 TD
+0.1111 Tw
+(Suppose that)Tj
+/F4 1 Tf
+5.61 0 TD
+0 Tw
+(ORIG)Tj
+/F2 1 Tf
+2.76 0 TD
+(and)Tj
+/F4 1 Tf
+1.8 0 TD
+(DEST)Tj
+/F2 1 Tf
+2.76 0 TD
+0.1027 Tw
+(are as above, that)Tj
+/F4 1 Tf
+7.61 0 TD
+0 Tw
+(PROD)Tj
+/F2 1 Tf
+2.77 0 TD
+0.1166 Tw
+(only has members)Tj
+/F4 1 Tf
+7.88 0 TD
+0 Tw
+(bands)Tj
+/F2 1 Tf
+3.37 0 TD
+(and)Tj
+/F4 1 Tf
+-34.56 -1.2 TD
+(coils)Tj
+/F2 1 Tf
+3 0 TD
+0.088 Tw
+(, and that)Tj
+/F4 1 Tf
+4.21 0 TD
+0 Tw
+(ROUTES)Tj
+/F2 1 Tf
+3.94 0 TD
+0.0846 Tw
+(has as members certain triples from)Tj
+/F4 1 Tf
+15 0 TD
+0 Tw
+({ORIG,DEST,PROD})Tj
+/F2 1 Tf
+9.6 0 TD
+(.)Tj
+-35.75 -1.2 TD
+-0.0046 Tw
+(Then the membership of)Tj
+/F4 1 Tf
+10.04 0 TD
+0 Tw
+(ROUTES)Tj
+/F2 1 Tf
+3.85 0 TD
+-0.0009 Tw
+(can be given most simply by a list of triples, either)Tj
+/F4 1 Tf
+9 0 0 9 154.8 675.215 Tm
+0 Tw
+(set ROUTES :=)Tj
+1.8 -1.1111 TD
+-0.0001 Tw
+(\(GARY,LAN,coils\) \(GARY,STL,coils\) \(GARY,LAF,coils\))Tj
+T*
+(\(CLEV,FRA,bands\) \(CLEV,FRA,coils\) \(CLEV,DET,bands\))Tj
+T*
+(\(CLEV,DET,coils\) \(CLEV,LAN,bands\) \(CLEV,LAN,coils\))Tj
+T*
+(\(CLEV,WIN,coils\) \(CLEV,STL,bands\) \(CLEV,STL,coils\))Tj
+T*
+(\(CLEV,LAF,bands\) \(PITT,FRA,bands\) \(PITT,WIN,bands\))Tj
+T*
+(\(PITT,STL,bands\) \(PITT,FRE,bands\) \(PITT,FRE,coils\) ;)Tj
+/F2 1 Tf
+10 0 0 10 126 597.215 Tm
+0 Tw
+(or)Tj
+/F4 1 Tf
+9 0 0 9 154.8 581.215 Tm
+(set ROUTES :=)Tj
+1.8 -1.1111 TD
+[(GARY LAN coils )-1200(GARY STL coils )-1200(GARY LAF coils)]TJ
+T*
+[(CLEV FRA bands )-1200(CLEV FRA coils )-1200(CLEV DET bands)]TJ
+T*
+[(CLEV DET coils )-1200(CLEV LAN bands )-1200(CLEV LAN coils)]TJ
+T*
+[(CLEV WIN coils )-1200(CLEV STL bands )-1200(CLEV STL coils)]TJ
+T*
+[(CLEV LAF bands )-1200(PITT FRA bands )-1200(PITT WIN bands)]TJ
+T*
+[(PITT STL bands )-1200(PITT FRE bands )-1200(PITT FRE coils ;)]TJ
+/F2 1 Tf
+10 0 0 10 126 503.215 Tm
+0.0345 Tw
+[(Using )7.5(templates )7.5(as )7.5(before, )7.5(but )7.5(with three items in each template, we can break the speci-)]TJ
+0 -1.2 TD
+0.0484 Tw
+(fication into slices through one dimension by placing one)Tj
+/F4 1 Tf
+23.63 0 TD
+0 Tw
+(*)Tj
+/F2 1 Tf
+0.89 0 TD
+0.035 Tw
+[(in each template. )-252(In the fol-)]TJ
+-24.52 -1.2 TD
+-0.0028 Tw
+(lowing example, we slice through the second dimension:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 463.215 Tm
+0 Tw
+(set ROUTES :=)Tj
+1.8 -1.1111 TD
+(\(CLEV,*,bands\) FRA DET LAN STL LAF)Tj
+T*
+(\(PITT,*,bands\) FRA WIN STL FRE)Tj
+0 -1.6667 TD
+(\(GARY,*,coils\) LAN STL LAF)Tj
+0 -1.1111 TD
+(\(CLEV,*,coils\) FRA DET LAN WIN STL)Tj
+T*
+-0.0001 Tw
+(\(PITT,*,coils\) FRE ;)Tj
+/F2 1 Tf
+10 0 0 10 126 390.215 Tm
+0.007 Tw
+(Because the set contains no members with origin)Tj
+/F4 1 Tf
+19.89 0 TD
+0 Tw
+(GARY)Tj
+/F2 1 Tf
+2.66 0 TD
+0.0011 Tw
+(and product)Tj
+/F4 1 Tf
+5.01 0 TD
+0 Tw
+(bands)Tj
+/F2 1 Tf
+3 0 TD
+0.008 Tw
+[(, the )-8.1(template)]TJ
+/F4 1 Tf
+-30.56 -1.2 TD
+0 Tw
+(\(GARY,*,bands\))Tj
+/F2 1 Tf
+8.65 0 TD
+0.0071 Tw
+(is omitted.)Tj
+-7.21 -1.25 TD
+0.0476 Tw
+[(When the setís dimension is more than two, the slices can also be through )-8.9(more )-8.9(than)]TJ
+-1.44 -1.2 TD
+0.0381 Tw
+[(one dimension. )-249.9(A slice through two dimensions, in particular, naturally involves placing)]TJ
+T*
+0 Tw
+(two)Tj
+/F4 1 Tf
+1.75 0 TD
+(*)Tj
+/F2 1 Tf
+0.6 0 TD
+-0.002 Tw
+[(ís in each template. )-239(Here we slice through both the first and third dimensions:)]TJ
+/F4 1 Tf
+9 0 0 9 154.8 325.715 Tm
+0 Tw
+(set ROUTES :=)Tj
+1.8 -1.1111 TD
+[(\(*,FRA,*\) )-599.9(CLEV bands )-600(CLEV coils )-600(PITT bands)]TJ
+T*
+[(\(*,DET,*\) )-599.9(CLEV bands )-600(CLEV coils)]TJ
+T*
+[(\(*,LAN,*\) )-599.9(GARY coils )-600(CLEV bands )-600(CLEV coils)]TJ
+T*
+[(\(*,WIN,*\) )-599.9(CLEV coils )-600(PITT bands)]TJ
+T*
+[(\(*,STL,*\) )-599.9(GARY coils )-600(CLEV bands )-600(CLEV coils )-600(PITT bands)]TJ
+T*
+[(\(*,FRE,*\) )-599.9(PITT bands )-600(PITT coils)]TJ
+T*
+[(\(*,LAF,*\) )-599.9(GARY coils )-600(CLEV bands ;)]TJ
+/F2 1 Tf
+10 0 0 10 126 237.715 Tm
+-0.0045 Tw
+(Since these templates have two)Tj
+/F4 1 Tf
+12.73 0 TD
+0 Tw
+(*)Tj
+/F2 1 Tf
+0.6 0 TD
+-0.0024 Tw
+(ís, they must be followed by pairs of components, which)Tj
+-13.33 -1.2 TD
+0.0766 Tw
+[(are substituted from left to right to generate )9.6(the )9.6(set )9.6(members. )-244.4(For )10.9(instance )10.9(the )10.9(template)]TJ
+/F4 1 Tf
+T*
+0 Tw
+(\(*,FRA,*\))Tj
+/F2 1 Tf
+5.66 0 TD
+0.0051 Tw
+(followed by)Tj
+/F4 1 Tf
+5.07 0 TD
+0 Tw
+(CLEV )Tj
+2.66 0 TD
+(bands)Tj
+/F2 1 Tf
+3.26 0 TD
+0.0011 Tw
+(specifies that)Tj
+/F4 1 Tf
+5.51 0 TD
+0 Tw
+(\(CLEV,FRA,bands\))Tj
+/F2 1 Tf
+9.86 0 TD
+0.018 Tw
+(is a mem-)Tj
+-32.02 -1.2 TD
+-0.0043 Tw
+(ber of the set.)Tj
+ET
+endstreamendobj19 0 obj<< /Type /Page /Parent 134 0 R /Resources 20 0 R /Contents 21 0 R /Rotate 0 /MediaBox [ 0 0 612 792 ] /CropBox [ 40.32001 126 571.67999 792 ] >> endobj20 0 obj<< /ProcSet [ /PDF /Text ] /Font << /F2 157 0 R /F3 159 0 R /F4 162 0 R /F6 165 0 R >> /ExtGState << /GS1 170 0 R >> >> endobj21 0 obj<< /Length 4436 >> stream
+BT
+/F6 1 Tf
+10 0 0 10 126 747.615 Tm
+0 g
+/GS1 gs
+0 Tc
+0 Tw
+(150)Tj
+7 0 0 7 159.6 747.615 Tm
+0.0407 Tw
+[(SPECIFYING DATA )-31646.1(CHAPTER )31.9(9)]TJ
+/F2 1 Tf
+10 0 0 10 140.4 715.215 Tm
+0.005 Tw
+[(Any )10.6(of )10.6(the )10.6(above )10.6(forms )10.6(suffices for giving the values of parameter)]TJ
+/F4 1 Tf
+26.95 0 TD
+0 Tw
+(cost)Tj
+/F2 1 Tf
+2.66 0 TD
+0.005 Tw
+[(as well. )-247(We)]TJ
+-31.05 -1.2 TD
+-0.0069 Tw
+(could write)Tj
+/F4 1 Tf
+9 0 0 9 154.8 685.115 Tm
+0 Tw
+(param cost :=)Tj
+1.8 -1.1111 TD
+0.6 Tw
+[([CLEV,*,bands] )600.1(FRA )600.1(27 DET 9 LAN )600(12 STL )600(26 LAF )600(17)]TJ
+T*
+[([PITT,*,bands] )600.1(FRA )600.1(24 WIN )600(13 STL )600(28 FRE )600(99)]TJ
+0 -1.8556 TD
+[([GARY,*,coils] )600.1(LAN )600.1(11 STL )600(16 LAF 8)]TJ
+0 -1.1111 TD
+[([CLEV,*,coils] )600.1(FRA )600.1(23 DET 8 LAN )600(10 WIN 9 STL )600(21)]TJ
+T*
+0 Tw
+([PITT,*,coils] FRE 81 ;)Tj
+/F2 1 Tf
+10 0 0 10 126 608.315 Tm
+(or)Tj
+/F4 1 Tf
+9 0 0 9 154.8 590.215 Tm
+(param cost :=)Tj
+1.8 -1.1111 TD
+[([*,*,bands] )-599.9(CLEV FRA 27 )-600(CLEV DET )-600(9 )-600(CLEV LAN 12)]TJ
+7.8 -1.1111 TD
+[(CLEV STL 26 )-600(CLEV LAF 17 )-600(PITT FRA 24)]TJ
+T*
+[(PITT WIN 13 )-600(PITT STL 28 )-600(PITT FRE 99)]TJ
+-7.8 -1.8556 TD
+[([*,*,coils] )-599.9(GARY LAN 11 )-600(GARY STL 16 )-600(GARY LAF )-600(8)]TJ
+7.8 -1.1111 TD
+[(CLEV FRA 23 )-600(CLEV DET )-600(8 )-600(CLEV LAN 10)]TJ
+T*
+[(CLEV WIN )-600(9 )-600(CLEV STL 21 )-600(PITT FRE 81)]TJ
+/F2 1 Tf
+10 0 0 10 126 503.415 Tm
+(or)Tj
+/F4 1 Tf
+9 0 0 9 154.8 485.315 Tm
+(param cost :=)Tj
+1.8 -1.1111 TD
+[(CLEV DET bands )-600(9 )-600(CLEV DET coils )-600(8 )-600(CLEV FRA bands 27)]TJ
+T*
+[(CLEV FRA coils 23 )-600(CLEV LAF bands 17 )-600(CLEV LAN bands 12)]TJ
+T*
+[(CLEV LAN coils 10 )-600(CLEV STL bands 26 )-600(CLEV STL coils 21)]TJ
+T*
+[(CLEV WIN coils )-600(9 )-600(GARY LAF coils )-600(8 )-600(GARY LAN coils 11)]TJ
+T*
+[(GARY STL coils 16 )-600(PITT FRA bands 24 )-600(PITT FRE bands 99)]TJ
+T*
+[(PITT FRE coils 81 )-600(PITT STL bands 28 )-600(PITT WIN bands 13 ;)]TJ
+/F2 1 Tf
+10 0 0 10 126 405.215 Tm
+0.3185 Tw
+(By placing the)Tj
+/F4 1 Tf
+7.05 0 TD
+0 Tw
+(*)Tj
+/F2 1 Tf
+0.6 0 TD
+0.327 Tw
+(ís in different positions within the templates, we can slice one-)Tj
+-7.65 -1.2 TD
+0.0246 Tw
+[(dimensionally )-20.5(in any of three different ways, or two-dimensionally in any of three differ-)]TJ
+T*
+-0.0054 Tw
+[(ent ways. )-247.4(\(The template)]TJ
+/F4 1 Tf
+10.09 0 TD
+0 Tw
+([*,*,*])Tj
+/F2 1 Tf
+4.45 0 TD
+-0.0032 Tw
+(would specify a three-dimensional list like)Tj
+/F4 1 Tf
+9 0 0 9 154.8 363.115 Tm
+0 Tw
+(param cost :=)Tj
+1.8 -1.1111 TD
+[(CLEV DET bands )-600(9 )-600(CLEV DET coils )-600(8 )-600(CLEV FRA bands 27)]TJ
+T*
+(...)Tj
+/F2 1 Tf
+10 0 0 10 126 323.015 Tm
+-0.0093 Tw
+(as already shown above.\))Tj
+1.44 -1.27 TD
+0.1254 Tw
+[(More )15.9(generally, )15.9(a template for an)]TJ
+/F3 1 Tf
+14.36 0 TD
+0 Tw
+(n)Tj
+/F2 1 Tf
+0.5 0 TD
+0.128 Tw
+(-dimensional set or parameter in list form must)Tj
+-16.3 -1.2 TD
+0 Tw
+(have)Tj
+/F3 1 Tf
+2.26 0 TD
+(n)Tj
+/F2 1 Tf
+0.88 0 TD
+0.1165 Tw
+[(entries. )-248.6(Each entry is either a legal set member or a)]TJ
+/F4 1 Tf
+22.25 0 TD
+0 Tw
+(*)Tj
+/F2 1 Tf
+0.6 0 TD
+0.1143 Tw
+[(. )-249.8(Templates for sets are)]TJ
+-25.99 -1.2 TD
+0.074 Tw
+(enclosed in parentheses \(like the tuples in set-expressions\) and templates for parameters)Tj
+T*
+0.1346 Tw
+[(are enclosed in brackets \(like the subscripts of )24.5(parameters\). )-253.5(Following )6.8(a )6.8(template )6.8(is )6.8(a)]TJ
+T*
+0.0558 Tw
+(series of items, each item consisting of one set member for each)Tj
+/F4 1 Tf
+26.53 0 TD
+0 Tw
+(*)Tj
+/F2 1 Tf
+0.6 0 TD
+0.068 Tw
+(, and additionally one)Tj
+-27.13 -1.2 TD
+0.123 Tw
+[(parameter value in the case of a parameter template. )-248(Each item defines )7(an)]TJ
+/F3 1 Tf
+31.55 0 TD
+0 Tw
+(n)Tj
+/F2 1 Tf
+0.5 0 TD
+0.1171 Tw
+(-tuple, by)Tj
+-32.05 -1.2 TD
+0.0204 Tw
+(substituting its set members for the)Tj
+/F4 1 Tf
+14.4 0 TD
+0 Tw
+(*)Tj
+/F2 1 Tf
+0.6 0 TD
+0.02 Tw
+[(s in the template; either this tuple is )-7.8(added )-7.8(to )-7.8(the )-7.8(set)]TJ
+-15 -1.2 TD
+-0.0028 Tw
+(being specified, or the parameter indexed by this tuple is assigned the value in the item.)Tj
+1.44 -1.27 TD
+0.0072 Tw
+[(A )9.5(template )9.5(applies )9.5(to all items between it and the next template \(or the end of the data)]TJ
+-1.44 -1.2 TD
+0.0645 Tw
+[(statement\). )-243.6(Templates having different numbers of)]TJ
+/F4 1 Tf
+21.16 0 TD
+0 Tw
+(*)Tj
+/F2 1 Tf
+0.6 0 TD
+0.066 Tw
+[(s may even be used )8.3(together )8.3(in )8.3(the)]TJ
+ET
+endstreamendobj22 0 obj<< /Type /Page /Parent 134 0 R /Resources 23 0 R /Contents 24 0 R /Rotate 0 /MediaBox [ 0 0 612 792 ] /CropBox [ 40.32001 126 571.67999 792 ] >> endobj23 0 obj<< /ProcSet [ /PDF /Text ] /Font << /F2 157 0 R /F4 162 0 R /F6 165 0 R /F8 74 0 R >> /ExtGState << /GS1 170 0 R >> >> endobj24 0 obj<< /Length 4067 >> stream
+BT
+/F6 1 Tf
+7 0 0 7 126 747.615 Tm
+0 g
+/GS1 gs
+0 Tc
+0.0298 Tw
+(SECTION 9.2 )Tj
+39.5901 0 TD
+0.0182 Tw
+(DATA IN LISTS)Tj
+10 0 0 10 469.2 747.615 Tm
+0 Tw
+(151)Tj
+/F2 1 Tf
+-34.32 -3.24 TD
+0.035 Tw
+[(same data statement, so long as each parameter is assigned a value )-12(only )-12(once. )-250(Where )-15(no)]TJ
+0 -1.2 TD
+-0.0058 Tw
+(template appears, a template of all)Tj
+/F4 1 Tf
+13.94 0 TD
+0 Tw
+(*)Tj
+/F2 1 Tf
+0.6 0 TD
+(s is assumed.)Tj
+/F8 1 Tf
+-14.54 -3.75 TD
+0.0093 Tw
+(Combined lists of sets and parameters)Tj
+/F2 1 Tf
+1.44 -2.05 TD
+-0.005 Tw
+(When we give data statements for a set and a parameter indexed over it, like)Tj
+/F4 1 Tf
+9 0 0 9 154.8 626.715 Tm
+0 Tw
+(set PROD := bands coils plate ;)Tj
+0 -1.1111 TD
+[(param rate := bands 200 )-600(coils 140 )-600(plate 160 ;)]TJ
+/F2 1 Tf
+10 0 0 10 126 596.215 Tm
+0.2134 Tw
+(we are specifying the setís members twice.)Tj
+9 0 0 9 317.9 596.215 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 347.6 596.215 Tm
+0.2308 Tw
+[(lets )8.8(us avoid this duplication by)]TJ
+-22.16 -1.2 TD
+-0.0018 Tw
+(including the setís name in the)Tj
+/F4 1 Tf
+12.49 0 TD
+0 Tw
+(param)Tj
+/F2 1 Tf
+3.25 0 TD
+-0.0069 Tw
+(data statement:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 565.715 Tm
+0 Tw
+[(param: PROD: rate := bands 200 )-600(coils 140 )-600(plate 160 ;)]TJ
+/F2 1 Tf
+-3.2 -2.2778 TD
+(AMPL)Tj
+10 0 0 10 154.2 545.215 Tm
+0.0683 Tw
+(uses this statement to determine both the membership of)Tj
+/F4 1 Tf
+23.42 0 TD
+0 Tw
+(PROD)Tj
+/F2 1 Tf
+2.73 0 TD
+0.0754 Tw
+(and the values of)Tj
+/F4 1 Tf
+-28.97 -1.2 TD
+0 Tw
+(rate)Tj
+/F2 1 Tf
+2.4 0 TD
+(.)Tj
+-0.96 -1.27 TD
+0.0345 Tw
+[(Another )13.2(common )13.2(redundancy )13.2(occurs )13.2(when )13.2(we need to supply data for several param-)]TJ
+-1.44 -1.2 TD
+0.0847 Tw
+[(eters indexed over the same set, such )7.7(as)]TJ
+/F4 1 Tf
+16.8 0 TD
+0 Tw
+(rate)Tj
+/F2 1 Tf
+2.4 0 TD
+(,)Tj
+/F4 1 Tf
+0.58 0 TD
+(profit)Tj
+/F2 1 Tf
+3.93 0 TD
+(and)Tj
+/F4 1 Tf
+1.77 0 TD
+(market)Tj
+/F2 1 Tf
+3.93 0 TD
+0.0735 Tw
+(all indexed over)Tj
+/F4 1 Tf
+-29.41 -1.2 TD
+0 Tw
+(PROD)Tj
+/F2 1 Tf
+2.65 0 TD
+-0.007 Tw
+[(in Figure 1-4a. )-251(Rather than write a separate data statement for each parameter,)]TJ
+/F4 1 Tf
+9 0 0 9 154.8 478.015 Tm
+0.6 Tw
+[(param )600.1(rate )-600(:= )600(bands 200 coils 140 plate 160 )600(;)]TJ
+0 -1.1111 TD
+0 Tw
+[(param profit := bands )-1200(25 )-600(coils )-1200(30 )-600(plate )-1200(29 ;)]TJ
+T*
+[(param market := bands 6000 )-600(coils 4000 )-600(plate 3500 ;)]TJ
+/F2 1 Tf
+10 0 0 10 126 437.515 Tm
+0.0798 Tw
+(we can combine these statements into one by listing all three parameter names after the)Tj
+0 -1.2 TD
+0 Tw
+(keyword)Tj
+/F4 1 Tf
+3.74 0 TD
+(param)Tj
+/F2 1 Tf
+3 0 TD
+(:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 407.015 Tm
+(param: rate profit market :=)Tj
+1.2 -1.1111 TD
+[(bands 200 25 6000 )-600(coils 140 30 4000 )-600(plate 160 29 3500 ;)]TJ
+/F2 1 Tf
+10 0 0 10 126 376.515 Tm
+(Since)Tj
+9 0 0 9 151.2 376.515 Tm
+(AMPL)Tj
+10 0 0 10 179.2 376.515 Tm
+0.0559 Tw
+[(ignores )13.3(extra )13.3(spaces )13.3(and )13.3(line )13.3(breaks, we have the option of rearranging this)]TJ
+-5.32 -1.2 TD
+-0.0077 Tw
+(information into an easier-to-read table:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 346.015 Tm
+0.6 Tw
+[(param: )-1199.9(rate profit market )600(:=)]TJ
+1.2 -1.1111 TD
+1.8 Tw
+[(bands 200 25 )-600(6000)]TJ
+T*
+[(coils 140 30 )-600(4000)]TJ
+T*
+[(plate 160 29 )-600(3500 )1800(;)]TJ
+/F2 1 Tf
+10 0 0 10 126 295.515 Tm
+-0.0021 Tw
+(Either way, we still have the option of adding the indexing setís name to the statement,)Tj
+/F4 1 Tf
+9 0 0 9 154.8 277.015 Tm
+0.6 Tw
+[(param: )600.1(PROD: )-600(rate profit market )600(:=)]TJ
+4.2 -1.1111 TD
+1.8 Tw
+[(bands 200 25 )-600(6000)]TJ
+T*
+[(coils 140 30 )-600(4000)]TJ
+T*
+[(plate 160 29 )-600(3500 )1800(;)]TJ
+/F2 1 Tf
+10 0 0 10 126 226.515 Tm
+-0.005 Tw
+(so that the specifications of the set and all three parameters are combined.)Tj
+1.44 -1.27 TD
+0.2348 Tw
+[(The )6(same )6(rules )6(apply )6(to )6(lists of any higher-dimensional sets and the parameters)]TJ
+-1.44 -1.2 TD
+-0.0052 Tw
+[(indexed over them. )-255.2(Thus for our two-dimensional example)]TJ
+/F4 1 Tf
+24.02 0 TD
+0 Tw
+(LINKS)Tj
+/F2 1 Tf
+3.25 0 TD
+-0.0065 Tw
+(we could write)Tj
+ET
+endstreamendobj25 0 obj<< /Type /Page /Parent 134 0 R /Resources 26 0 R /Contents 27 0 R /Rotate 0 /MediaBox [ 0 0 612 792 ] /CropBox [ 40.32001 126 571.67999 792 ] >> endobj26 0 obj<< /ProcSet [ /PDF /Text ] /Font << /F2 157 0 R /F4 162 0 R /F6 165 0 R >> /ExtGState << /GS1 170 0 R >> >> endobj27 0 obj<< /Length 3130 >> stream
+BT
+/F6 1 Tf
+10 0 0 10 126 747.615 Tm
+0 g
+/GS1 gs
+0 Tc
+0 Tw
+(152)Tj
+7 0 0 7 159.6 747.615 Tm
+0.0407 Tw
+[(SPECIFYING DATA )-31646.1(CHAPTER )31.9(9)]TJ
+/F4 1 Tf
+9 0 0 9 154.8 717.215 Tm
+0 Tw
+(param: LINKS: cost :=)Tj
+1.8 -1.1111 TD
+[(GARY DET 14 )-600(GARY LAN 11 )-600(GARY STL 16 )-600(GARY LAF )-600(8)]TJ
+T*
+[(CLEV FRA 27 )-600(CLEV DET )-600(9 )-600(CLEV LAN 12 )-600(CLEV WIN )-600(9)]TJ
+T*
+[(CLEV STL 26 )-600(CLEV LAF 17 )-600(PITT FRA 24 )-600(PITT WIN 13)]TJ
+T*
+[(PITT STL 28 )-600(PITT FRE 99 ;)]TJ
+/F2 1 Tf
+10 0 0 10 126 657.815 Tm
+0.0163 Tw
+(to specify the membership of)Tj
+/F4 1 Tf
+12 0 TD
+0 Tw
+(LINKS)Tj
+/F2 1 Tf
+3.27 0 TD
+0.0132 Tw
+(and the values of the parameter)Tj
+/F4 1 Tf
+12.86 0 TD
+0 Tw
+(cost)Tj
+/F2 1 Tf
+2.67 0 TD
+0.0071 Tw
+(indexed over)Tj
+-30.8 -1.2 TD
+0.001 Tw
+(it, or)Tj
+/F4 1 Tf
+9 0 0 9 154.8 628.415 Tm
+0 Tw
+[(param: LINKS: cost )-600(limit :=)]TJ
+1.2 -1.1111 TD
+[(GARY DET )-2400(14 )-1800(1000)]TJ
+T*
+2.4 Tw
+[(GARY )2400(LAN 11 800)]TJ
+T*
+0 Tw
+[(GARY STL )-2400(16 )-1800(1200)]TJ
+T*
+[(GARY LAF )-3000(8 )-1800(1100)]TJ
+T*
+[(CLEV FRA )-2400(27 )-1800(1200)]TJ
+T*
+[(CLEV DET )-3000(9 )-2400(600)]TJ
+T*
+2.4 Tw
+[(CLEV )2400(LAN 12 900)]TJ
+T*
+0 Tw
+[(CLEV WIN )-3000(9 )-2400(950)]TJ
+T*
+[(CLEV STL )-2400(26 )-1800(1000)]TJ
+T*
+2.4 Tw
+[(CLEV )2400(LAF 17 800)]TJ
+T*
+0 Tw
+[(PITT FRA )-2400(24 )-1800(1500)]TJ
+T*
+[(PITT WIN )-2400(13 )-1800(1400)]TJ
+T*
+[(PITT STL )-2400(28 )-1800(1500)]TJ
+T*
+[(PITT FRE )-2400(99 )-1800(1200 ;)]TJ
+/F2 1 Tf
+10 0 0 10 126 469.015 Tm
+0.056 Tw
+(to specify the values of)Tj
+/F4 1 Tf
+9.81 0 TD
+0 Tw
+(cost)Tj
+/F2 1 Tf
+2.71 0 TD
+(and)Tj
+/F4 1 Tf
+1.75 0 TD
+(limit)Tj
+/F2 1 Tf
+3.31 0 TD
+0.0664 Tw
+[(together. )-231.7(The )6.4(same )6.4(options apply when tem-)]TJ
+-17.58 -1.2 TD
+-0.0052 Tw
+(plates are used, making possible further alternatives such as)Tj
+/F4 1 Tf
+9 0 0 9 154.8 439.615 Tm
+0 Tw
+(param: LINKS: cost :=)Tj
+1.8 -1.1111 TD
+[([GARY,*] DET 14 )-600(LAN 11 )-600(STL 16 )-600(LAF )-600(8)]TJ
+T*
+0.6 Tw
+[([CLEV,*] )600(FRA )600(27 DET 9 LAN )600(12 WIN 9 STL )600(26 LAF )600(17)]TJ
+T*
+0 Tw
+[([PITT,*] FRA 24 )-600(WIN 13 )-600(STL 28 )-600(FRE 99 ;)]TJ
+/F2 1 Tf
+10 0 0 10 126 390.215 Tm
+(and)Tj
+/F4 1 Tf
+9 0 0 9 154.8 372.815 Tm
+0.6 Tw
+[(param: )-599.9(LINKS: cost limit )600(:=)]TJ
+1.2 -1.1111 TD
+1.8 Tw
+[([GARY,*] )1800.1(DET 14 1000)]TJ
+5.4 -1.1111 TD
+[(LAN 11 )-600(800)]TJ
+T*
+(STL 16 1200)Tj
+T*
+2.4 Tw
+[(LAF 8 )600(1100)]TJ
+-5.4 -1.1111 TD
+1.8 Tw
+[([CLEV,*] )1800.1(FRA 27 1200)]TJ
+5.4 -1.1111 TD
+2.4 Tw
+(DET 9 600)Tj
+T*
+1.8 Tw
+[(LAN 12 )-600(900)]TJ
+T*
+2.4 Tw
+(WIN 9 950)Tj
+T*
+1.8 Tw
+(STL 26 1000)Tj
+T*
+[(LAF 17 )-600(800)]TJ
+-5.4 -1.1111 TD
+[([PITT,*] )1800.1(FRA 24 1500)]TJ
+5.4 -1.1111 TD
+(WIN 13 1400)Tj
+T*
+(STL 28 1500)Tj
+T*
+[(FRE 99 1200 )1800(;)]TJ
+/F2 1 Tf
+10 0 0 10 126 213.415 Tm
+0.067 Tw
+[(Here )14.3(the )14.3(membership )14.3(of the indexing set is specified along with the two parameters; for)]TJ
+0 -1.2 TD
+0.0931 Tw
+(example, the template)Tj
+/F4 1 Tf
+9.34 0 TD
+0 Tw
+([GARY,*])Tj
+/F2 1 Tf
+5.15 0 TD
+0.0963 Tw
+(followed by the set member)Tj
+/F4 1 Tf
+11.9 0 TD
+0 Tw
+(DET)Tj
+/F2 1 Tf
+2.15 0 TD
+0.0945 Tw
+(and the values)Tj
+/F4 1 Tf
+6.26 0 TD
+0 Tw
+(14)Tj
+ET
+endstreamendobj28 0 obj<< /Type /Page /Parent 136 0 R /Resources 29 0 R /Contents 30 0 R /Rotate 0 /MediaBox [ 0 0 612 792 ] /CropBox [ 40.32001 126 571.67999 792 ] >> endobj29 0 obj<< /ProcSet [ /PDF /Text ] /Font << /F2 157 0 R /F4 162 0 R /F6 165 0 R >> /ExtGState << /GS1 170 0 R >> >> endobj30 0 obj<< /Length 5331 >> stream
+BT
+/F6 1 Tf
+7 0 0 7 126 747.615 Tm
+0 g
+/GS1 gs
+0 Tc
+0.0298 Tw
+(SECTION 9.2 )Tj
+39.5901 0 TD
+0.0182 Tw
+(DATA IN LISTS)Tj
+10 0 0 10 469.2 747.615 Tm
+0 Tw
+(153)Tj
+/F2 1 Tf
+-34.32 -3.24 TD
+(and)Tj
+/F4 1 Tf
+2.09 0 TD
+(1000)Tj
+/F2 1 Tf
+3.05 0 TD
+0.3951 Tw
+(indicates that)Tj
+/F4 1 Tf
+6.35 0 TD
+0 Tw
+(\(GARY,DET\))Tj
+/F2 1 Tf
+6.65 0 TD
+0.3986 Tw
+[(is to be added to the )-10.4(set)]TJ
+/F4 1 Tf
+12.45 0 TD
+0 Tw
+(LINKS)Tj
+/F2 1 Tf
+3 0 TD
+0.41 Tw
+(, that)Tj
+/F4 1 Tf
+-33.59 -1.2 TD
+0 Tw
+(cost[GARY,DET])Tj
+/F2 1 Tf
+8.88 0 TD
+0.2245 Tw
+(has the value)Tj
+/F4 1 Tf
+6.15 0 TD
+0 Tw
+(14)Tj
+/F2 1 Tf
+1.2 0 TD
+0.228 Tw
+(, and that)Tj
+/F4 1 Tf
+4.63 0 TD
+0 Tw
+(limit[GARY,DET])Tj
+/F2 1 Tf
+9.48 0 TD
+0.225 Tw
+[(has the )11(value)]TJ
+/F4 1 Tf
+-30.34 -1.2 TD
+0 Tw
+(1000)Tj
+/F2 1 Tf
+2.4 0 TD
+(.)Tj
+-0.96 -1.28 TD
+0.0894 Tw
+[(As our illustrations suggest, the key )-7.6(to )-7.6(the )-7.6(interpretation )-7.6(of )-7.6(a)]TJ
+/F4 1 Tf
+25.53 0 TD
+0 Tw
+(param)Tj
+/F2 1 Tf
+3.35 0 TD
+0.0971 Tw
+(statement that)Tj
+-30.32 -1.2 TD
+0.1635 Tw
+(provides values for several parameters or for a set and parameters is in the first line,)Tj
+T*
+0.078 Tw
+(which consists of)Tj
+/F4 1 Tf
+7.43 0 TD
+0 Tw
+(param)Tj
+/F2 1 Tf
+3.33 0 TD
+0.0782 Tw
+[(followed by a colon, then optionally )-8.8(the )-8.8(name )-8.8(of )-8.8(an )-8.8(indexing)]TJ
+-10.76 -1.2 TD
+0.0666 Tw
+[(set )-10.4(followed )-10.4(by )-10.4(a )-10.4(colon, then by a list of parameter names terminated by the)]TJ
+/F4 1 Tf
+31.65 0 TD
+0 Tw
+(:=)Tj
+/F2 1 Tf
+1.52 0 TD
+(assign-)Tj
+-33.17 -1.2 TD
+0.1507 Tw
+[(ment )12.6(operator. )-240.3(Each subsequent item in the list consists of )-5.5(a )-5.5(number )-5.5(of )-5.5(set )-5.5(members)]TJ
+T*
+0.1065 Tw
+(equal to the number of)Tj
+/F4 1 Tf
+9.84 0 TD
+0 Tw
+(*)Tj
+/F2 1 Tf
+0.6 0 TD
+0.0943 Tw
+[(s )-14(in )-14(the )-14(most )-14(recent template and then a number of parameter)]TJ
+-10.44 -1.2 TD
+-0.0031 Tw
+(values equal to the number of parameters listed in the first line.)Tj
+1.44 -1.28 TD
+0.057 Tw
+(Normally the parameters listed in the first line of a)Tj
+/F4 1 Tf
+21.08 0 TD
+0 Tw
+(param)Tj
+/F2 1 Tf
+3.32 0 TD
+0.0634 Tw
+(statement are all indexed)Tj
+-25.84 -1.2 TD
+0.0352 Tw
+[(over )-9.8(the )-9.8(same )-9.8(set. )-266.8(This )-11.8(need )-11.8(not be the case, however, as seen in the case of Figure 5-1.)]TJ
+T*
+-0.0017 Tw
+(For this variation on the diet model, the nutrient restrictions are given by)Tj
+/F4 1 Tf
+9 0 0 9 154.8 550.115 Tm
+-0.0001 Tw
+(set MINREQ;)Tj
+0 -1.1111 TD
+(set MAXREQ;)Tj
+0 -1.9889 TD
+0 Tw
+(param n_min {MINREQ} >= 0;)Tj
+0 -1.1111 TD
+(param n_max {MAXREQ} >= 0;)Tj
+/F2 1 Tf
+10 0 0 10 126 490.715 Tm
+0.001 Tw
+(so that)Tj
+/F4 1 Tf
+2.89 0 TD
+0 Tw
+(n_min)Tj
+/F2 1 Tf
+3.25 0 TD
+(and)Tj
+/F4 1 Tf
+1.69 0 TD
+(n_max)Tj
+/F2 1 Tf
+3.25 0 TD
+-0.0042 Tw
+(are indexed over sets of nutrients that may overlap but that are)Tj
+-11.08 -1.2 TD
+-0.001 Tw
+(not likely to be the same.)Tj
+1.44 -1.28 TD
+-0.0036 Tw
+(Our sample data for this model specifies:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 446.415 Tm
+0 Tw
+(set MINREQ := A B1 B2 C CAL ;)Tj
+0 -1.1111 TD
+(set MAXREQ := A NA CAL ;)Tj
+0 -1.9889 TD
+1.1999 Tw
+[(param: n_min )599.9(n_max )1199.9(:=)]TJ
+1.8 -1.1111 TD
+3 Tw
+[(A 700 )1800(20000)]TJ
+T*
+[(C 700 )-600(.)]TJ
+T*
+3.6 Tw
+(B1 0 .)Tj
+T*
+(B2 0 .)Tj
+T*
+[(NA . )2400(50000)]TJ
+T*
+0.6 Tw
+[(CAL 16000 )-600(24000 )600(;)]TJ
+/F2 1 Tf
+10 0 0 10 126 337.015 Tm
+0.0155 Tw
+(Each period or dot \()Tj
+/F4 1 Tf
+8.06 0 TD
+0 Tw
+(.)Tj
+/F2 1 Tf
+0.6 0 TD
+0.017 Tw
+(\) indicates to)Tj
+9 0 0 9 267.3 337.015 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 295 337.015 Tm
+0.0198 Tw
+(that no value is being given for the correspond-)Tj
+-16.9 -1.2 TD
+0.1094 Tw
+[(ing parameter and index. )-251.6(For )5.9(example, )5.9(since)]TJ
+/F4 1 Tf
+19.03 0 TD
+0 Tw
+(MINREQ)Tj
+/F2 1 Tf
+3.96 0 TD
+0.106 Tw
+(does not contain a member)Tj
+/F4 1 Tf
+11.56 0 TD
+0 Tw
+(NA)Tj
+/F2 1 Tf
+1.2 0 TD
+(,)Tj
+-35.75 -1.2 TD
+0.0301 Tw
+(the parameter)Tj
+/F4 1 Tf
+5.8 0 TD
+0 Tw
+(n_min[NA])Tj
+/F2 1 Tf
+5.7 0 TD
+0.0468 Tw
+(is not defined; consequently a)Tj
+/F4 1 Tf
+12.43 0 TD
+0 Tw
+(.)Tj
+/F2 1 Tf
+0.9 0 TD
+0.0478 Tw
+[(is given as the entry )-6.2(for)]TJ
+/F4 1 Tf
+9.97 0 TD
+0 Tw
+(NA)Tj
+/F2 1 Tf
+-34.8 -1.2 TD
+(and)Tj
+/F4 1 Tf
+1.71 0 TD
+(n_min)Tj
+/F2 1 Tf
+3.27 0 TD
+0.017 Tw
+[(in the data statement. )-245(We cannot simply leave )13(a )13(space )13(for )13(this )13(entry, )13(because)]TJ
+9 0 0 9 126 289.015 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 155.2 289.015 Tm
+0.171 Tw
+[(will take it )-8(to )-8(be)]TJ
+/F4 1 Tf
+7.63 0 TD
+0 Tw
+(50000)Tj
+/F2 1 Tf
+3 0 TD
+0.1749 Tw
+[(: data mode processing ignores all extra spaces. )-250.1(Nor)]TJ
+-13.55 -1.2 TD
+-0.0023 Tw
+(should we put a zero in this entry; in that case we will get a message like)Tj
+/F4 1 Tf
+9 0 0 9 154.8 257.515 Tm
+-0.0001 Tw
+(error processing param n_min:)Tj
+4.8 -1.1111 TD
+(invalid subscript n_min[íNAí] discarded.)Tj
+/F2 1 Tf
+10 0 0 10 126 226.015 Tm
+0 Tw
+(when)Tj
+9 0 0 9 150.1 226.015 Tm
+(AMPL)Tj
+10 0 0 10 177.6 226.015 Tm
+-0.005 Tw
+(first tries to access)Tj
+/F4 1 Tf
+7.65 0 TD
+0 Tw
+(n_min)Tj
+/F2 1 Tf
+3 0 TD
+-0.001 Tw
+(, usually at the first)Tj
+/F4 1 Tf
+7.94 0 TD
+0 Tw
+(solve)Tj
+/F2 1 Tf
+3 0 TD
+(.)Tj
+-25.31 -1.28 TD
+-0.0033 Tw
+(When we name a set in the first line of a)Tj
+/F4 1 Tf
+16.38 0 TD
+0 Tw
+(param)Tj
+/F2 1 Tf
+3.25 0 TD
+-0.0018 Tw
+(statement, the set must not yet have a)Tj
+-21.07 -1.2 TD
+-0.0048 Tw
+[(value. )-242.8(If the specification of parameter data in Figure 5-1 had been given as)]TJ
+ET
+endstreamendobj31 0 obj<< /Type /Page /Parent 136 0 R /Resources 32 0 R /Contents 33 0 R /Rotate 0 /MediaBox [ 0 0 612 792 ] /CropBox [ 40.32001 126 571.67999 792 ] >> endobj32 0 obj<< /ProcSet [ /PDF /Text ] /Font << /F1 154 0 R /F2 157 0 R /F4 162 0 R /F6 165 0 R /F8 74 0 R >> /ExtGState << /GS1 170 0 R >> >> endobj33 0 obj<< /Length 3198 >> stream
+BT
+/F6 1 Tf
+10 0 0 10 126 747.615 Tm
+0 g
+/GS1 gs
+0 Tc
+0 Tw
+(154)Tj
+7 0 0 7 159.6 747.615 Tm
+0.0407 Tw
+[(SPECIFYING DATA )-31646.1(CHAPTER )31.9(9)]TJ
+/F4 1 Tf
+9 0 0 9 154.8 717.215 Tm
+0.6 Tw
+[(param: )600.1(NUTR: n_min n_max )600(:=)]TJ
+4.2 -1.1111 TD
+3.6 Tw
+[(A 700 )2400(20000)]TJ
+T*
+(C 700 .)Tj
+T*
+4.2 Tw
+[(B1 0 )600(.)]TJ
+T*
+[(B2 0 )600(.)]TJ
+T*
+[(NA . )3000(50000)]TJ
+T*
+1.2 Tw
+[(CAL 16000 24000 )1200(;)]TJ
+/F2 1 Tf
+-7.4 -2.1556 TD
+0 Tw
+(AMPL)Tj
+10 0 0 10 153.5 637.815 Tm
+-0.0096 Tw
+(would have generated the error message)Tj
+/F4 1 Tf
+9 0 0 9 154.8 620.415 Tm
+0 Tw
+(dietu.dat, line 16 \(offset 366\):)Tj
+4.8 -1.1111 TD
+(NUTR was defined in the model)Tj
+-4.8 -1.1111 TD
+[(context: )-599.9(param: NUTR >>> : <<< )-1200(n_min )-600(n_max :=)]TJ
+/F2 1 Tf
+10 0 0 10 126 581.015 Tm
+-0.011 Tw
+(because the declaration of)Tj
+/F4 1 Tf
+10.63 0 TD
+0 Tw
+(NUTR)Tj
+/F2 1 Tf
+2.65 0 TD
+(in the model,)Tj
+/F4 1 Tf
+9 0 0 9 154.8 563.615 Tm
+(set NUTR = MINREQ union MAXREQ;)Tj
+/F2 1 Tf
+10 0 0 10 126 544.215 Tm
+-0.0038 Tw
+(defines it already as the union of)Tj
+/F4 1 Tf
+13.28 0 TD
+0 Tw
+(MINREQ)Tj
+/F2 1 Tf
+3.85 0 TD
+(and)Tj
+/F4 1 Tf
+1.69 0 TD
+(MAXREQ)Tj
+/F2 1 Tf
+3.6 0 TD
+(.)Tj
+/F1 1 Tf
+12 0 0 12 126 487.715 Tm
+0.0117 Tw
+[(9.3 )-286.7(Data in tables)]TJ
+/F2 1 Tf
+10 0 0 10 140.4 468.315 Tm
+0.0266 Tw
+(The table format of data, with indices running along the left and top edges and values)Tj
+-1.44 -1.2 TD
+0.0554 Tw
+[(corresponding )-9.9(to )-9.9(pairs )-9.9(of )-9.9(indices, can be more concise or easier to read than the list for-)]TJ
+T*
+0.0552 Tw
+[(mat )9.2(described )9.2(in )9.2(the )9.2(previous section. )-241.8(Here we describe tables first for two-dimensional)]TJ
+T*
+0.0074 Tw
+[(parameters and then for slices from higher-dimensional ones. )-244.6(We also show how the cor-)]TJ
+T*
+0.1075 Tw
+[(responding multidimensional sets can be specified in )-8.5(tables )-8.5(that )-8.5(have )-8.5(entries )-8.5(of)]TJ
+/F4 1 Tf
+33.23 0 TD
+0 Tw
+(+)Tj
+/F2 1 Tf
+0.97 0 TD
+(or)Tj
+/F4 1 Tf
+1.2 0 TD
+(-)Tj
+/F2 1 Tf
+-35.4 -1.2 TD
+-0.0109 Tw
+(rather than parameter value entries.)Tj
+9 0 0 9 140.4 395.715 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 168.8 395.715 Tm
+0.0965 Tw
+[(also )8.5(supports )8.5(a convenient extension of the table format, in which more than)]TJ
+-4.28 -1.2 TD
+0.0459 Tw
+[(two indices may appear along the left and top edge. )-249.1(The rules )10.4(for )10.4(specifying )10.4(such )10.4(tables)]TJ
+T*
+-0.0048 Tw
+(are provided near the end of this section.)Tj
+/F8 1 Tf
+0 -3.43 TD
+0.0242 Tw
+(Two-dimensional tables)Tj
+/F2 1 Tf
+1.44 -1.94 TD
+0.0083 Tw
+[(Data )16(values )16(for )16(a )16(parameter )16(indexed )16(over )16(two sets, such as the shipping cost data from)]TJ
+-1.44 -1.2 TD
+-0.0032 Tw
+(the transportation model of Figure 3-1a:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 288.615 Tm
+0 Tw
+(set ORIG;)Tj
+0 -1.1111 TD
+(set DEST;)Tj
+T*
+(param cost {ORIG,DEST} >= 0;)Tj
+/F2 1 Tf
+10 0 0 10 126 249.215 Tm
+-0.0058 Tw
+(are very naturally specified in a table \(Figure 3-1b\):)Tj
+/F4 1 Tf
+9 0 0 9 154.8 231.815 Tm
+0.6 Tw
+[(param )600.1(cost: FRA DET LAN WIN STL FRE LAF )600(:=)]TJ
+4.2 -1.1111 TD
+1.2 Tw
+[(GARY 39 14 11 14 16 82 )-600(8)]TJ
+T*
+[(CLEV 27 )-600(9 12 )-600(9 26 95 17)]TJ
+T*
+[(PITT 24 14 17 13 28 99 20 )1200(;)]TJ
+ET
+endstreamendobj34 0 obj<< /Type /Page /Parent 136 0 R /Resources 35 0 R /Contents 36 0 R /Rotate 0 /MediaBox [ 0 0 612 792 ] /CropBox [ 40.32001 126 571.67999 792 ] >> endobj35 0 obj<< /ProcSet [ /PDF /Text ] /Font << /F2 157 0 R /F4 162 0 R /F6 165 0 R >> /ExtGState << /GS1 170 0 R >> >> endobj36 0 obj<< /Length 3786 >> stream
+BT
+/F6 1 Tf
+7 0 0 7 126 747.615 Tm
+0 g
+/GS1 gs
+0 Tc
+0.0298 Tw
+(SECTION 9.3 )Tj
+38.533 0 TD
+0.0187 Tw
+(DATA IN TABLES)Tj
+10 0 0 10 469.2 747.615 Tm
+0 Tw
+(155)Tj
+/F2 1 Tf
+-34.32 -3.24 TD
+0.1069 Tw
+[(The row labels give the first index and the column labels the second )-11.4(index, )-11.4(so )-11.4(that )-11.4(for)]TJ
+0 -1.2 TD
+0 Tw
+(example)Tj
+/F4 1 Tf
+3.71 0 TD
+(cost["GARY","FRA"])Tj
+/F2 1 Tf
+11.13 0 TD
+0.082 Tw
+[(is set to )12(39. )-237(To )22(enable)]TJ
+9 0 0 9 371.3 703.215 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 399.5 703.215 Tm
+0.0658 Tw
+(to recognize this as a)Tj
+-27.35 -1.2 TD
+0.0557 Tw
+[(table, a colon must follow the parameter )-11(name, )-11(while )-11(the)]TJ
+/F4 1 Tf
+23.6 0 TD
+0 Tw
+(:=)Tj
+/F2 1 Tf
+1.52 0 TD
+0.0675 Tw
+(operator follows the list of)Tj
+-25.12 -1.2 TD
+-0.0029 Tw
+(column labels.)Tj
+1.44 -1.26 TD
+0.1489 Tw
+[(For )13.2(larger )13.2(index )13.2(sets, the columns of tables become impossible to view within the)]TJ
+-1.44 -1.2 TD
+0.0115 Tw
+[(width )-7.2(of )-7.2(a )-7.2(single )9.8(screen )9.8(or )9.8(page. )-247.5(To deal with this situation,)]TJ
+9 0 0 9 371.4 654.615 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 399 654.615 Tm
+-0.0089 Tw
+(offers several alterna-)Tj
+-27.3 -1.2 TD
+-0.0025 Tw
+(tives, which we illustrate on the small table above.)Tj
+1.44 -1.26 TD
+0.0567 Tw
+[(When )11(only )11(one )11(of the index sets is uncomfortably large, the table may be transposed)]TJ
+-1.44 -1.2 TD
+-0.0022 Tw
+(so that the column labels correspond to the smaller set:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 601.315 Tm
+0 Tw
+(param cost \(tr\):)Tj
+4.8 -1.1111 TD
+(GARY CLEV PITT :=)Tj
+-3 -1.1111 TD
+1.2 Tw
+(FRA 39 27 24)Tj
+T*
+[(DET 14 )-600(9 14)]TJ
+T*
+(LAN 11 12 17)Tj
+T*
+[(WIN 14 )-600(9 13)]TJ
+T*
+(STL 16 26 28)Tj
+T*
+(FRE 82 95 99)Tj
+T*
+[(LAF )-600(8 17 20 )1200(;)]TJ
+/F2 1 Tf
+10 0 0 10 126 502.615 Tm
+0.1071 Tw
+(The notation)Tj
+/F4 1 Tf
+5.55 0 TD
+0 Tw
+(\(tr\))Tj
+/F2 1 Tf
+2.76 0 TD
+0.103 Tw
+[(after the parameter name indicates a transposed table, in )-14(which )-14(the)]TJ
+-8.31 -1.2 TD
+0.0271 Tw
+[(column labels give the first index and the row labels the second index. )-234.9(When )8.1(both )8.1(of )8.1(the)]TJ
+T*
+0.1468 Tw
+[(index )8.7(sets are large, either the table or its transpose may be divided up in some way.)]TJ
+T*
+-0.0057 Tw
+(Since line breaks are ignored, each row may be divided across several lines:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 449.915 Tm
+0.6 Tw
+[(param )600.1(cost: FRA DET LAN WIN)]TJ
+7.8 -1.1111 TD
+[(STL FRE LAF )-2400(:=)]TJ
+-3.6 -1.1111 TD
+1.2 Tw
+(GARY 39 14 11 14)Tj
+4.2 -1.1111 TD
+[(16 82 )-600(8)]TJ
+-4.2 -1.1111 TD
+[(CLEV 27 )-600(9 12 )-600(9)]TJ
+4.2 -1.1111 TD
+(26 95 17)Tj
+-4.2 -1.1111 TD
+(PITT 24 14 17 13)Tj
+4.2 -1.1111 TD
+[(28 99 20 )-1800(;)]TJ
+/F2 1 Tf
+10 0 0 10 126 361.215 Tm
+-0.0033 Tw
+(Or the table may be divided columnwise into several smaller ones:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 344.515 Tm
+0.6 Tw
+[(param )600.1(cost: FRA DET LAN WIN )600(:=)]TJ
+4.2 -1.1111 TD
+1.2 Tw
+(GARY 39 14 11 14)Tj
+T*
+[(CLEV 27 )-600(9 12 )-600(9)]TJ
+T*
+(PITT 24 14 17 13)Tj
+1.8 -1.7333 TD
+0.6 Tw
+[(: STL FRE LAF )600(:=)]TJ
+-1.8 -1.1111 TD
+1.2 Tw
+[(GARY 16 82 )-600(8)]TJ
+T*
+(CLEV 26 95 17)Tj
+T*
+[(PITT 28 99 20 )1200(;)]TJ
+/F2 1 Tf
+10 0 0 10 126 250.215 Tm
+0.026 Tw
+[(A colon indicates the start of each new sub-table; in this example, each has the same )-9(row)]TJ
+0 -1.2 TD
+-0.0032 Tw
+(labels, but a different subset of the column labels.)Tj
+1.44 -1.26 TD
+0.1466 Tw
+(In the alternative formulation of this model presented in Figure 6-2a,)Tj
+/F4 1 Tf
+29.39 0 TD
+0 Tw
+(cost)Tj
+/F2 1 Tf
+2.81 0 TD
+0.165 Tw
+(is not)Tj
+-33.64 -1.2 TD
+0.026 Tw
+(indexed over all combinations of members of)Tj
+/F4 1 Tf
+18.59 0 TD
+0 Tw
+(ORIG)Tj
+/F2 1 Tf
+2.67 0 TD
+(and)Tj
+/F4 1 Tf
+1.71 0 TD
+(DEST)Tj
+/F2 1 Tf
+2.4 0 TD
+0.0174 Tw
+(, but over a subset of pairs)Tj
+-25.37 -1.2 TD
+-0.0035 Tw
+(from these sets:)Tj
+ET
+endstreamendobj37 0 obj<< /Type /Page /Parent 136 0 R /Resources 38 0 R /Contents 39 0 R /Rotate 0 /MediaBox [ 0 0 612 792 ] /CropBox [ 40.32001 126 571.67999 792 ] >> endobj38 0 obj<< /ProcSet [ /PDF /Text ] /Font << /F2 157 0 R /F4 162 0 R /F6 165 0 R /F8 74 0 R >> /ExtGState << /GS1 170 0 R >> >> endobj39 0 obj<< /Length 4216 >> stream
+BT
+/F6 1 Tf
+10 0 0 10 126 747.615 Tm
+0 g
+/GS1 gs
+0 Tc
+0 Tw
+(156)Tj
+7 0 0 7 159.6 747.615 Tm
+0.0407 Tw
+[(SPECIFYING DATA )-31646.1(CHAPTER )31.9(9)]TJ
+/F4 1 Tf
+9 0 0 9 154.8 717.215 Tm
+-0.0001 Tw
+(set LINKS within {ORIG,DEST};)Tj
+0 -1.1111 TD
+0 Tw
+(param cost {LINKS} >= 0;)Tj
+/F2 1 Tf
+10 0 0 10 126 689.115 Tm
+0.0567 Tw
+[(As we have seen in Section 9.2, )-10.3(the )-10.3(membership )-10.3(of)]TJ
+/F4 1 Tf
+21.33 0 TD
+0 Tw
+(LINKS)Tj
+/F2 1 Tf
+3.32 0 TD
+0.065 Tw
+(can be given concisely by a)Tj
+-24.65 -1.2 TD
+0.001 Tw
+(list of pairs:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 661.015 Tm
+0 Tw
+(set LINKS :=)Tj
+1.8 -1.1111 TD
+(\(GARY,*\) DET LAN STL LAF)Tj
+T*
+(\(CLEV,*\) FRA DET LAN WIN STL LAF)Tj
+T*
+(\(PITT,*\) FRA WIN STL FRE ;)Tj
+/F2 1 Tf
+10 0 0 10 126 612.915 Tm
+0.0492 Tw
+[(Rather than being given in a similar list, the )-6.8(values )-6.8(of)]TJ
+/F4 1 Tf
+22.23 0 TD
+0 Tw
+(cost)Tj
+/F2 1 Tf
+2.71 0 TD
+0.0567 Tw
+(can be given in a table like)Tj
+-24.94 -1.2 TD
+0 Tw
+(this:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 584.815 Tm
+0.6 Tw
+[(param )600.1(cost: FRA DET LAN WIN STL FRE LAF )600(:=)]TJ
+3.6 -1.1111 TD
+1.2 Tw
+[(GARY )-1200(. 14 11 )-600(. 16 )-600(. )-600(8)]TJ
+T*
+1.8 Tw
+[(CLEV 27 9 )600(12 9 )600(26 . )600(17)]TJ
+T*
+[(PITT 24 . . )600(13 )600(28 )600(99 . )1800(;)]TJ
+/F2 1 Tf
+10 0 0 10 126 536.715 Tm
+0 Tw
+(A)Tj
+/F4 1 Tf
+1.12 0 TD
+(cost)Tj
+/F2 1 Tf
+2.8 0 TD
+0.1587 Tw
+[(value )11.7(is given for all pairs that exist in)]TJ
+/F4 1 Tf
+17 0 TD
+0 Tw
+(LINKS)Tj
+/F2 1 Tf
+3 0 TD
+0.1583 Tw
+(, while a dot \()Tj
+/F4 1 Tf
+6.16 0 TD
+0 Tw
+(.)Tj
+/F2 1 Tf
+0.6 0 TD
+0.1537 Tw
+(\) serves as a)Tj
+-30.68 -1.2 TD
+0.0842 Tw
+(place-holder for pairs that are not in)Tj
+/F4 1 Tf
+15.23 0 TD
+0 Tw
+(LINKS)Tj
+/F2 1 Tf
+3 0 TD
+0.0754 Tw
+[(. )-249.6(The dot can appear in any)]TJ
+9 0 0 9 427.2 524.715 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 455.5 524.715 Tm
+0.078 Tw
+(table to)Tj
+-32.95 -1.2 TD
+-0.0112 Tw
+(indicate ëëno value specified hereíí.)Tj
+1.44 -1.25 TD
+-0.006 Tw
+(The set)Tj
+/F4 1 Tf
+3.16 0 TD
+0 Tw
+(LINKS)Tj
+/F2 1 Tf
+3.25 0 TD
+-0.0021 Tw
+(may itself be given by a table that is analogous to the one for)Tj
+/F4 1 Tf
+24.58 0 TD
+0 Tw
+(cost)Tj
+/F2 1 Tf
+2.4 0 TD
+(:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 484.115 Tm
+0.6 Tw
+[(set )600.1(LINKS: )-600(FRA DET LAN WIN STL FRE LAF )600(:=)]TJ
+3.6 -1.1111 TD
+1.8 Tw
+(GARY - + + - + - +)Tj
+T*
+(CLEV + + + + + - +)Tj
+T*
+[(PITT + - - + + + - )1200(;)]TJ
+/F2 1 Tf
+10 0 0 10 126 436.015 Tm
+0 Tw
+(A)Tj
+/F4 1 Tf
+0.97 0 TD
+(+)Tj
+/F2 1 Tf
+0.85 0 TD
+-0.0031 Tw
+[(indicates a pair that is a member of the set, )-9.1(and )-9.1(a)]TJ
+/F4 1 Tf
+19.74 0 TD
+0 Tw
+(-)Tj
+/F2 1 Tf
+0.86 0 TD
+0.0077 Tw
+(indicates a pair that is not a mem-)Tj
+-22.42 -1.2 TD
+0.3111 Tw
+[(ber. Any )244.1(of)]TJ
+9 0 0 9 178.8 424.015 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 203.8 424.015 Tm
+0.0605 Tw
+(ís table formats for specifying parameters can be used for sets in this)Tj
+-7.78 -1.2 TD
+0 Tw
+(way.)Tj
+/F8 1 Tf
+0 -3.04 TD
+0.0141 Tw
+(Two-dimensional slices of higher-dimensional data)Tj
+/F2 1 Tf
+1.44 -1.81 TD
+0.0355 Tw
+[(To provide data for parameters of more than two dimensions, )-8.7(we )-8.7(can )-8.7(specify )-8.7(the )-8.7(val-)]TJ
+-1.44 -1.2 TD
+0.015 Tw
+[(ues in two-dimensional slices that are represented as tables. )-250(The rules )9(for )9(using )9(slices )9(are)]TJ
+T*
+0.0122 Tw
+[(much )6.7(the )6.7(same )-7.5(as )-7.5(for )-7.5(lists. )-256.8(As an example, consider again the three-dimensional parame-)]TJ
+T*
+0 Tw
+(ter)Tj
+/F4 1 Tf
+1.3 0 TD
+(cost)Tj
+/F2 1 Tf
+2.65 0 TD
+-0.0089 Tw
+(defined by)Tj
+/F4 1 Tf
+9 0 0 9 154.8 311.415 Tm
+-0.0001 Tw
+(set ROUTES within {ORIG,DEST,PROD};)Tj
+0 -1.1111 TD
+0 Tw
+(param cost {ROUTES} >= 0;)Tj
+/F2 1 Tf
+10 0 0 10 126 283.315 Tm
+-0.0034 Tw
+(The values for this parameter that we specified in list format in the previous section as)Tj
+/F4 1 Tf
+9 0 0 9 154.8 267.215 Tm
+0 Tw
+(param cost :=)Tj
+1.8 -1.1111 TD
+[([*,*,bands] )-599.9(CLEV FRA 27 )-600(CLEV DET )-600(9 )-600(CLEV LAN 12)]TJ
+7.8 -1.1111 TD
+[(CLEV STL 26 )-600(CLEV LAF 17 )-600(PITT FRA 24)]TJ
+T*
+[(PITT WIN 13 )-600(PITT STL 28 )-600(PITT FRE 99)]TJ
+-7.8 -1.6778 TD
+[([*,*,coils] )-599.9(GARY LAN 11 )-600(GARY STL 16 )-600(GARY LAF )-600(8)]TJ
+7.8 -1.1111 TD
+[(CLEV FRA 23 )-600(CLEV DET )-600(8 )-600(CLEV LAN 10)]TJ
+T*
+[(CLEV WIN )-600(9 )-600(CLEV STL 21 )-600(PITT FRE 81)]TJ
+ET
+endstreamendobj40 0 obj<< /Type /Page /Parent 136 0 R /Resources 41 0 R /Contents 42 0 R /Rotate 0 /MediaBox [ 0 0 612 792 ] /CropBox [ 40.32001 126 571.67999 792 ] >> endobj41 0 obj<< /ProcSet [ /PDF /Text ] /Font << /F2 157 0 R /F4 162 0 R /F6 165 0 R /F8 74 0 R >> /ExtGState << /GS1 170 0 R >> >> endobj42 0 obj<< /Length 3639 >> stream
+BT
+/F6 1 Tf
+7 0 0 7 126 747.615 Tm
+0 g
+/GS1 gs
+0 Tc
+0.0298 Tw
+(SECTION 9.3 )Tj
+38.533 0 TD
+0.0187 Tw
+(DATA IN TABLES)Tj
+10 0 0 10 469.2 747.615 Tm
+0 Tw
+(157)Tj
+/F2 1 Tf
+-34.32 -3.24 TD
+-0.0041 Tw
+(can instead be written in table format as)Tj
+/F4 1 Tf
+9 0 0 9 154.8 697.115 Tm
+0 Tw
+(param cost :=)Tj
+0.6 -1.8556 TD
+0.6 Tw
+[([*,*,bands]: )600.1(FRA DET LAN WIN STL FRE LAF )600(:=)]TJ
+4.2 -1.1111 TD
+1.2 Tw
+[(CLEV 27 )-600(9 12 )-600(. 26 )-600(. 17)]TJ
+T*
+[(PITT 24 )-600(. )-600(. 13 28 99 )-600(.)]TJ
+-4.2 -1.8555 TD
+0.6 Tw
+[([*,*,coils]: )600.1(FRA DET LAN WIN STL FRE LAF )600(:=)]TJ
+4.2 -1.1111 TD
+1.8 Tw
+[(GARY . . )600(11 . )600(16 . 8)]TJ
+T*
+[(CLEV )600(23 8 )600(10 9 )600(21 . .)]TJ
+T*
+[(PITT . . . . . )600(81 . )1800(;)]TJ
+/F2 1 Tf
+10 0 0 10 126 593.615 Tm
+0.1367 Tw
+(Since we are working with two-dimensional tables, there must be two)Tj
+/F4 1 Tf
+29.67 0 TD
+0 Tw
+(*)Tj
+/F2 1 Tf
+0.6 0 TD
+0.139 Tw
+[(ís in the )-8(tem-)]TJ
+-30.27 -1.2 TD
+0.0177 Tw
+[(plates. )-247.3(A table valueís row label is substituted for the first)]TJ
+/F4 1 Tf
+23.83 0 TD
+0 Tw
+(*)Tj
+/F2 1 Tf
+0.6 0 TD
+0.0182 Tw
+[(, and its column label for )10.2(the)]TJ
+-24.43 -1.2 TD
+0.0575 Tw
+(second, unless the opposite is specified by)Tj
+/F4 1 Tf
+17.57 0 TD
+0 Tw
+(\(tr\))Tj
+/F2 1 Tf
+2.71 0 TD
+0.068 Tw
+[(right )18.9(after the template. )-250(You can omit)]TJ
+-20.28 -1.2 TD
+0.0368 Tw
+(any rows or columns that would have no significant entries, such as the row for)Tj
+/F4 1 Tf
+32.54 0 TD
+0 Tw
+(GARY)Tj
+/F2 1 Tf
+2.68 0 TD
+(in)Tj
+-35.22 -1.2 TD
+(the)Tj
+/F4 1 Tf
+1.47 0 TD
+([*,*,bands])Tj
+/F2 1 Tf
+6.85 0 TD
+-0.0119 Tw
+(table above.)Tj
+-6.88 -1.27 TD
+0.0272 Tw
+[(As before, a dot in the table for any slice indicates a tuple that is )-10(not )-10(a )-10(member )-10(of )-10(the)]TJ
+-1.44 -1.2 TD
+0 Tw
+(table.)Tj
+1.44 -1.27 TD
+0.1667 Tw
+(An analogous table to specify the set)Tj
+/F4 1 Tf
+16.15 0 TD
+0 Tw
+(ROUTES)Tj
+/F2 1 Tf
+4.03 0 TD
+0.176 Tw
+(can be constructed by putting a)Tj
+/F4 1 Tf
+13.78 0 TD
+0 Tw
+(+)Tj
+/F2 1 Tf
+-35.4 -1.2 TD
+-0.0139 Tw
+(where each number appears:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 478.115 Tm
+0 Tw
+(set ROUTES :=)Tj
+0.6 -1.8556 TD
+(\(*,*,bands\): FRA DET LAN WIN STL FRE LAF :=)Tj
+4.2 -1.1111 TD
+1.2 Tw
+(CLEV + + + - + - +)Tj
+T*
+(PITT + - - + + + -)Tj
+-4.2 -1.8556 TD
+0 Tw
+(\(*,*,coils\): FRA DET LAN WIN STL FRE LAF :=)Tj
+4.2 -1.1111 TD
+1.2 Tw
+(GARY - - + - + - +)Tj
+T*
+(CLEV + + + + + - -)Tj
+T*
+[(PITT - - - - - + - )600(;)]TJ
+/F2 1 Tf
+10 0 0 10 126 374.615 Tm
+0.2258 Tw
+[(Since the templates are now set )-7(templates )-7(rather )-7(than )-6.9(parameter )-7(templates, )-7(they )-6.9(are)]TJ
+0 -1.2 TD
+-0.0095 Tw
+(enclosed in parentheses rather than brackets.)Tj
+/F8 1 Tf
+0 -6.83 TD
+0.0272 Tw
+(Higher-dimensional tables)Tj
+/F2 1 Tf
+1.44 -2.01 TD
+0.0575 Tw
+[(By putting more than one index to the left of each row or )-9.7(at )-9.7(the )-9.7(top )-9.7(of )-9.7(each )-9.7(column,)]TJ
+-1.44 -1.2 TD
+0.1475 Tw
+[(you can describe multidimensional data in a single )12.3(table )12.3(rather )12.3(than )12.3(a )12.3(series )12.3(of )12.3(slices.)]TJ
+T*
+0.027 Tw
+[(Weíll continue with the three-dimensional cost data to illustrate some of the )-7.5(wide )-7.5(variety)]TJ
+T*
+0.0081 Tw
+(of possibilities.)Tj
+1.44 -1.27 TD
+0.0399 Tw
+[(By putting the first two indices, from )-10.1(sets)]TJ
+/F4 1 Tf
+17.2 0 TD
+0 Tw
+(ORIG)Tj
+/F2 1 Tf
+2.7 0 TD
+(and)Tj
+/F4 1 Tf
+1.74 0 TD
+(DEST)Tj
+/F2 1 Tf
+2.4 0 TD
+0.0497 Tw
+(, to the left, with the third)Tj
+-25.48 -1.2 TD
+0.0465 Tw
+(index from set)Tj
+/F4 1 Tf
+6.17 0 TD
+0 Tw
+(PROD)Tj
+/F2 1 Tf
+2.7 0 TD
+0.0457 Tw
+[(at the top, we produce the following three-dimensional table )8.2(of )8.2(the)]TJ
+-8.87 -1.2 TD
+0 Tw
+(costs:)Tj
+ET
+endstreamendobj43 0 obj<< /Type /Page /Parent 136 0 R /Resources 44 0 R /Contents 45 0 R /Rotate 0 /MediaBox [ 0 0 612 792 ] /CropBox [ 40.32001 126 571.67999 792 ] >> endobj44 0 obj<< /ProcSet [ /PDF /Text ] /Font << /F2 157 0 R /F4 162 0 R /F6 165 0 R >> /ExtGState << /GS1 170 0 R >> >> endobj45 0 obj<< /Length 3720 >> stream
+BT
+/F6 1 Tf
+10 0 0 10 126 747.615 Tm
+0 g
+/GS1 gs
+0 Tc
+0 Tw
+(158)Tj
+7 0 0 7 159.6 747.615 Tm
+0.0407 Tw
+[(SPECIFYING DATA )-31646.1(CHAPTER )31.9(9)]TJ
+/F4 1 Tf
+9 0 0 9 154.8 717.215 Tm
+0 Tw
+(param cost: bands coils :=)Tj
+1.2 -1.1111 TD
+1.8 Tw
+[(CLEV )1800(FRA 27 23)]TJ
+T*
+2.4 Tw
+[(CLEV )2400(DET 8 8)]TJ
+T*
+1.8 Tw
+[(CLEV )1800(LAN 12 10)]TJ
+T*
+2.4 Tw
+[(CLEV )2400(WIN . 9)]TJ
+T*
+1.8 Tw
+[(CLEV )1800(STL 26 21)]TJ
+T*
+0 Tw
+[(CLEV LAF )-1800(17 )-2400(.)]TJ
+T*
+[(PITT FRA )-1800(24 )-2400(.)]TJ
+T*
+[(PITT WIN )-1800(13 )-2400(.)]TJ
+T*
+[(PITT STL )-1800(28 )-2400(.)]TJ
+T*
+1.8 Tw
+[(PITT )1800(FRE 99 81)]TJ
+T*
+0 Tw
+[(GARY LAN )-2400(. )-1800(11)]TJ
+T*
+[(GARY STL )-2400(. )-1800(16)]TJ
+T*
+2.4 Tw
+[(GARY )2400(LAF . 8 )2400(;)]TJ
+/F2 1 Tf
+10 0 0 10 126 566.415 Tm
+0.1587 Tw
+(Putting only the first index to the left, and the second and third at the top, we arrive)Tj
+0 -1.2 TD
+-0.0048 Tw
+(instead at the following table, which for convenience we break into two pieces:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 535.615 Tm
+1.2 Tw
+[(param )1200.1(cost: )600(FRA DET LAN WIN STL FRE LAF)]TJ
+6 -1.1111 TD
+0 Tw
+(: bands bands bands bands bands bands bands :=)Tj
+-1.8 -1.1111 TD
+2.4 Tw
+[(CLEV )1200(27 9 )600(12 . )600(26 . )600(17)]TJ
+T*
+1.8 Tw
+[(PITT )600(24 )-600(. )-600(. 13 28 99 )-600(.)]TJ
+1.8 -1.9333 TD
+1.2 Tw
+[(: )600(FRA DET LAN WIN STL FRE LAF)]TJ
+0 -1.1111 TD
+0 Tw
+(: coils coils coils coils coils coils coils :=)Tj
+-1.8 -1.1111 TD
+2.4 Tw
+[(GARY )600(. . )600(11 . )600(16 . 8)]TJ
+T*
+[(CLEV )1200(23 8 )600(10 9 )600(21 . .)]TJ
+T*
+[(PITT )600(. . . . . )600(81 . )2400(;)]TJ
+/F2 1 Tf
+10 0 0 10 126 427.415 Tm
+0.0027 Tw
+[(In general a colon must precede each of )-14.5(the )-14.5(table )-14.5(heading )-14.5(lines, )-14.5(while )-14.5(a)]TJ
+/F4 1 Tf
+28.94 0 TD
+0 Tw
+(:=)Tj
+/F2 1 Tf
+1.47 0 TD
+0.0175 Tw
+(is placed only)Tj
+-30.41 -1.2 TD
+-0.0047 Tw
+(after the last heading line.)Tj
+1.44 -1.27 TD
+0.0255 Tw
+[(The indices are taken in the order that they appear, first at the left and )-13.5(then )-13.5(at )-13.5(the )-13.5(top,)]TJ
+-1.44 -1.2 TD
+0.0682 Tw
+[(if no indication is given to the contrary. )-250.8(As with other tables, )12(you )12(can )12(add )12(the )12(indicator)]TJ
+/F4 1 Tf
+T*
+0 Tw
+(\(tr\))Tj
+/F2 1 Tf
+2.71 0 TD
+0.0679 Tw
+[(to )10.4(transpose )10.4(the )10.4(table, )10.4(so that the indices are still taken in order but first from the)]TJ
+-2.71 -1.2 TD
+-0.0022 Tw
+(top and then from the left:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 347.915 Tm
+0 Tw
+(param cost \(tr\): CLEV CLEV CLEV CLEV CLEV CLEV)Tj
+9 -1.1111 TD
+0.6 Tw
+[(: FRA DET LAN WIN STL LAF )600(:=)]TJ
+-3 -1.1111 TD
+1.8 Tw
+[(bands 27 8 )600(12 . )600(26 )600(17)]TJ
+T*
+[(coils 23 8 )600(10 9 )600(21 .)]TJ
+3 -1.9333 TD
+0 Tw
+(: PITT PITT PITT PITT GARY GARY GARY)Tj
+0 -1.1111 TD
+0.6 Tw
+[(: FRA WIN STL FRE LAN STL LAF )600(:=)]TJ
+-3 -1.1111 TD
+1.8 Tw
+[(bands 24 )600(13 )600(28 )600(99 . . .)]TJ
+T*
+1.2 Tw
+[(coils )-1200(. )-600(. )-600(. 81 11 16 )-600(8 )1200(;)]TJ
+/F2 1 Tf
+10 0 0 10 126 249.715 Tm
+0.0342 Tw
+[(Templates )9.7(can )9.7(also )9.7(be )9.7(used to specify more precisely what goes where. )-256.8(For )-10.9(multidimen-)]TJ
+0 -1.2 TD
+0.0318 Tw
+[(sional )-5.6(tables )-5.6(the )-5.6(template has two symbols in it,)]TJ
+/F4 1 Tf
+19.69 0 TD
+0 Tw
+(*)Tj
+/F2 1 Tf
+0.88 0 TD
+0.0259 Tw
+(to indicate those indices that appear at)Tj
+-20.57 -1.2 TD
+0.2755 Tw
+(the left and)Tj
+/F4 1 Tf
+5.58 0 TD
+0 Tw
+(:)Tj
+/F2 1 Tf
+1.13 0 TD
+0.2864 Tw
+[(to indicate those that appear at the top. )-254.6(For example the template)]TJ
+/F4 1 Tf
+-6.71 -1.2 TD
+0 Tw
+([*,:,*])Tj
+/F2 1 Tf
+4.47 0 TD
+0.0165 Tw
+[(gives a representation in which the first and third )10.3(indices )10.3(are )10.3(at )10.3(the )10.3(left )10.3(and )10.3(the)]TJ
+-4.47 -1.2 TD
+-0.001 Tw
+(second is at the top:)Tj
+ET
+endstreamendobj46 0 obj<< /Type /Page /Parent 136 0 R /Resources 47 0 R /Contents 48 0 R /Rotate 0 /MediaBox [ 0 0 612 792 ] /CropBox [ 40.32001 126 571.67999 792 ] >> endobj47 0 obj<< /ProcSet [ /PDF /Text ] /Font << /F2 157 0 R /F4 162 0 R /F6 165 0 R /F8 74 0 R >> /ExtGState << /GS1 170 0 R >> >> endobj48 0 obj<< /Length 4207 >> stream
+BT
+/F6 1 Tf
+7 0 0 7 126 747.615 Tm
+0 g
+/GS1 gs
+0 Tc
+0.0298 Tw
+(SECTION 9.3 )Tj
+38.533 0 TD
+0.0187 Tw
+(DATA IN TABLES)Tj
+10 0 0 10 469.2 747.615 Tm
+0 Tw
+(159)Tj
+/F4 1 Tf
+9 0 0 9 154.8 717.215 Tm
+(param cost :=)Tj
+1.8 -1.1111 TD
+0.6 Tw
+[([*,:,*] )600(: FRA DET LAN WIN STL FRE LAF )600(:=)]TJ
+-0.6 -1.1111 TD
+1.2 Tw
+[(CLEV )1200.1(bands 27 )-600(9 12 )-600(. 26 )-600(. 17)]TJ
+T*
+1.8 Tw
+[(CLEV )1800.1(coils )600(23 8 )600(10 9 )600(21 . .)]TJ
+T*
+1.2 Tw
+[(PITT )1200.1(bands 24 )-600(. )-600(. 13 28 99 )-600(.)]TJ
+T*
+1.8 Tw
+[(PITT )1800.1(coils . . . . . )600(81 .)]TJ
+T*
+[(GARY )1800.1(coils . . )600(11 . )600(16 . 8 )1800(;)]TJ
+/F2 1 Tf
+10 0 0 10 126 638.315 Tm
+0.045 Tw
+[(The ordering of the indices is always preserved in )-15.3(tables )-15.3(of )-15.3(this )-15.3(kind. )-260(The )-15.7(third )-15.7(index )-15.7(is)]TJ
+0 -1.2 TD
+0.0455 Tw
+(never correctly placed before the first, for example, no matter what transposition or tem-)Tj
+T*
+-0.0089 Tw
+(plates are employed.)Tj
+1.44 -1.26 TD
+0.0255 Tw
+[(For parameters of four or more dimensions, the ideas )-15.8(of )-15.8(slicing )-15.8(and )-15.8(multidimensional)]TJ
+-1.44 -1.2 TD
+0.1539 Tw
+[(tables can be applied together provide an especially broad choice of table )8.8(formats. )-240.1(If)]TJ
+/F4 1 Tf
+T*
+0 Tw
+(cost)Tj
+/F2 1 Tf
+2.65 0 TD
+-0.0129 Tw
+(were indexed over)Tj
+/F4 1 Tf
+7.61 0 TD
+0 Tw
+(ORIG)Tj
+/F2 1 Tf
+2.4 0 TD
+(,)Tj
+/F4 1 Tf
+0.5 0 TD
+(DEST)Tj
+/F2 1 Tf
+2.4 0 TD
+(,)Tj
+/F4 1 Tf
+0.5 0 TD
+(PROD)Tj
+/F2 1 Tf
+2.4 0 TD
+-0.004 Tw
+(, and)Tj
+/F4 1 Tf
+2.19 0 TD
+0 Tw
+(1..T)Tj
+/F2 1 Tf
+2.4 0 TD
+-0.004 Tw
+(, for instance, then the templates)Tj
+/F4 1 Tf
+-23.05 -1.2 TD
+0 Tw
+([*,:,bands,*])Tj
+/F2 1 Tf
+8.15 0 TD
+(and)Tj
+/F4 1 Tf
+1.79 0 TD
+([*,:,coils,*])Tj
+/F2 1 Tf
+8.15 0 TD
+0.097 Tw
+[(could be used to specify two )8.5(slices )8.5(through)]TJ
+-18.09 -1.2 TD
+-0.0022 Tw
+[(the third index, each specified by a multidimensional table with two indices )-9.5(at )-9.5(the )-9.5(left )-9.5(and)]TJ
+T*
+-0.002 Tw
+(one at the top.)Tj
+/F8 1 Tf
+0 -3.28 TD
+0.0026 Tw
+(Choice of format)Tj
+/F2 1 Tf
+1.44 -1.89 TD
+0.0067 Tw
+[(The )16(arrangement )16(of )16(slices to represent multidimensional data has no effect on how the)]TJ
+-1.44 -1.2 TD
+0.0065 Tw
+[(data values are used in the model, so you can choose the most convenient format. )-244.5(For )8.5(the)]TJ
+/F4 1 Tf
+T*
+0 Tw
+(cost)Tj
+/F2 1 Tf
+2.66 0 TD
+0.007 Tw
+[(parameter above, it may be appealing to slice along the third dimension, so )-12(that )-12(the)]TJ
+-2.66 -1.2 TD
+0.1338 Tw
+[(data values are organized into one shipping-cost table for each )8.8(product. )-239.3(Alternatively,)]TJ
+T*
+0.0882 Tw
+(placing all of the origin-product pairs at the left gives a particularly concise representa-)Tj
+T*
+-0.0067 Tw
+[(tion. )-259.7(As another example, consider the)]TJ
+/F4 1 Tf
+15.89 0 TD
+0 Tw
+(revenue)Tj
+/F2 1 Tf
+4.45 0 TD
+-0.0079 Tw
+(parameter from Figure 6-3:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 413.115 Tm
+0 Tw
+[(set PROD; )-4800(# products)]TJ
+0 -1.1111 TD
+[(set AREA {PROD}; )-600(# market areas for each product)]TJ
+T*
+[(param T > 0; )-3000(# number of weeks)]TJ
+0 -1.7556 TD
+(param revenue {p in PROD, AREA[p], 1..T} >= 0;)Tj
+/F2 1 Tf
+10 0 0 10 126 358.415 Tm
+-0.0056 Tw
+(Because the index set)Tj
+/F4 1 Tf
+8.87 0 TD
+0 Tw
+(AREA[p])Tj
+/F2 1 Tf
+4.46 0 TD
+0.0038 Tw
+(is potentially different for each product)Tj
+/F4 1 Tf
+15.97 0 TD
+0 Tw
+(p)Tj
+/F2 1 Tf
+0.6 0 TD
+0.0085 Tw
+(, slices through)Tj
+-29.9 -1.2 TD
+0.047 Tw
+(the first \()Tj
+/F4 1 Tf
+3.76 0 TD
+0 Tw
+(PROD)Tj
+/F2 1 Tf
+2.4 0 TD
+0.0463 Tw
+[(\) dimension are most attractive. )-250.7(In the sample data from Figure )8.8(6-4, )8.8(they)]TJ
+-6.16 -1.2 TD
+0.0045 Tw
+(look like this:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 317.515 Tm
+0 Tw
+(param T := 4 ;)Tj
+0 -1.1111 TD
+(set PROD := bands coils ;)Tj
+T*
+(set AREA[bands] := east north ;)Tj
+T*
+(set AREA[coils] := east west export ;)Tj
+0 -1.7556 TD
+(param revenue :=)Tj
+1.2 -1.1111 TD
+3 Tw
+[([bands,*,*]: )1800.1(1 2 3 4 )2400(:=)]TJ
+2.4 -1.1111 TD
+1.2 Tw
+[(east )-1200(25.0 26.0 27.0 27.0)]TJ
+T*
+[(north )-599.9(26.5 27.5 28.0 28.5)]TJ
+-2.4 -1.1111 TD
+3 Tw
+[([coils,*,*]: )1800.1(1 2 3 4 )2400(:=)]TJ
+2.4 -1.1111 TD
+2.4 Tw
+[(east )-600(30 35 37 39)]TJ
+T*
+[(west )-600(29 32 33 35)]TJ
+T*
+[(export )600(25 25 25 28 )2400(;)]TJ
+ET
+endstreamendobj49 0 obj<< /Type /Page /Parent 136 0 R /Resources 50 0 R /Contents 51 0 R /Rotate 0 /MediaBox [ 0 0 612 792 ] /CropBox [ 40.32001 126 571.67999 792 ] >> endobj50 0 obj<< /ProcSet [ /PDF /Text ] /Font << /F1 154 0 R /F2 157 0 R /F4 162 0 R /F6 165 0 R /F8 74 0 R >> /ExtGState << /GS1 170 0 R >> >> endobj51 0 obj<< /Length 3596 >> stream
+BT
+/F6 1 Tf
+10 0 0 10 126 747.615 Tm
+0 g
+/GS1 gs
+0 Tc
+0 Tw
+(160)Tj
+7 0 0 7 159.6 747.615 Tm
+0.0407 Tw
+[(SPECIFYING DATA )-31646.1(CHAPTER )31.9(9)]TJ
+/F2 1 Tf
+10 0 0 10 126 715.215 Tm
+0.0503 Tw
+(We have a separate revenue table for each product)Tj
+/F4 1 Tf
+20.87 0 TD
+0 Tw
+(p)Tj
+/F2 1 Tf
+0.6 0 TD
+0.0543 Tw
+(, with market areas from)Tj
+/F4 1 Tf
+10.33 0 TD
+0 Tw
+(AREA[p])Tj
+/F2 1 Tf
+-31.8 -1.2 TD
+-0.005 Tw
+(labeling the rows, and weeks from)Tj
+/F4 1 Tf
+14 0 TD
+0 Tw
+(1..T)Tj
+/F2 1 Tf
+2.65 0 TD
+-0.0014 Tw
+(labeling the columns.)Tj
+/F1 1 Tf
+12 0 0 12 126 647.615 Tm
+0.011 Tw
+[(9.4 )-295.7(Other features of data statements)]TJ
+/F2 1 Tf
+10 0 0 10 140.4 628.315 Tm
+0.004 Tw
+(Additional features of the)Tj
+9 0 0 9 245.6 628.315 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 273.3 628.315 Tm
+0.0153 Tw
+(data format are provided to handle special situations.)Tj
+-14.73 -1.2 TD
+0.2022 Tw
+(We describe here the data statements that specify default values for parameters, that)Tj
+T*
+0.1173 Tw
+[(define the membership of individual sets within an indexed collection of )-11.4(sets, )-11.4(and )-11.4(that)]TJ
+T*
+-0.0017 Tw
+(assign initial values to variables.)Tj
+/F8 1 Tf
+0 -3.38 TD
+0.0201 Tw
+(Default values)Tj
+/F2 1 Tf
+1.44 -1.93 TD
+0.0761 Tw
+[(Data )16(statements must provide values for exactly the parameters in your model. )-251.9(You)]TJ
+-1.44 -1.2 TD
+-0.006 Tw
+(will receive an error message if you give a value for a nonexistent parameter:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 509.915 Tm
+0 Tw
+(error processing param cost:)Tj
+4.8 -1.1111 TD
+-0.0001 Tw
+(invalid subscript cost[íPITTí,íDETí,ícoilsí] discarded.)Tj
+/F2 1 Tf
+10 0 0 10 126 480.615 Tm
+-0.0034 Tw
+(or if you fail to give a value for a parameter that does exist:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 463.315 Tm
+-0.0001 Tw
+(error processing objective Total_Cost:)Tj
+4.8 -1.1111 TD
+(no value for cost[íCLEVí,íLANí,ícoilsí])Tj
+/F2 1 Tf
+10 0 0 10 126 434.015 Tm
+0.0562 Tw
+[(The )24.1(error message appears the first time that)]TJ
+9 0 0 9 310.8 434.015 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 338.9 434.015 Tm
+0.0538 Tw
+(tries to use the offending parameter,)Tj
+-21.29 -1.2 TD
+-0.0043 Tw
+(usually after you type)Tj
+/F4 1 Tf
+8.93 0 TD
+0 Tw
+(solve)Tj
+/F2 1 Tf
+3 0 TD
+(.)Tj
+-10.49 -1.26 TD
+0.0462 Tw
+[(If )14.2(the same value would appear many times in a data statement, you can avoid speci-)]TJ
+-1.44 -1.2 TD
+0.1272 Tw
+(fying it repeatedly by including a)Tj
+/F4 1 Tf
+14.32 0 TD
+0 Tw
+(default)Tj
+/F2 1 Tf
+4.58 0 TD
+0.1245 Tw
+[(phrase that provides the value )6.2(to )6.1(be )6.1(used)]TJ
+-18.9 -1.2 TD
+0.0256 Tw
+[(when )8.6(no )8.6(explicit value is given. )-255.4(For example, suppose that the parameter)]TJ
+/F4 1 Tf
+29.99 0 TD
+0 Tw
+(cost)Tj
+/F2 1 Tf
+2.68 0 TD
+0.025 Tw
+(above is)Tj
+-32.67 -1.2 TD
+-0.0022 Tw
+(indexed over all possible triples:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 356.115 Tm
+0 Tw
+(set ORIG;)Tj
+0 -1.1111 TD
+(set DEST;)Tj
+T*
+(set PROD;)Tj
+0 -1.7889 TD
+(param cost {ORIG,DEST,PROD} >= 0;)Tj
+/F2 1 Tf
+10 0 0 10 126 300.715 Tm
+0.1882 Tw
+[(but )6.2(that a very high cost is assigned to routes that should not be used. )-253.8(This can be)]TJ
+0 -1.2 TD
+-0.0159 Tw
+(expressed as)Tj
+/F4 1 Tf
+9 0 0 9 154.8 271.415 Tm
+0.6 Tw
+[(param )600.1(cost default )600(9999 :=)]TJ
+0.6 -1.1111 TD
+[([*,*,bands]: )600.1(FRA DET LAN WIN STL FRE LAF )600(:=)]TJ
+4.2 -1.1111 TD
+1.2 Tw
+[(CLEV 27 )-600(9 12 )-600(. 26 )-600(. 17)]TJ
+T*
+[(PITT 24 )-600(. )-600(. 13 28 99 )-600(.)]TJ
+-4.2 -1.1111 TD
+0.6 Tw
+[([*,*,coils]: )600.1(FRA DET LAN WIN STL FRE LAF )600(:=)]TJ
+4.2 -1.1111 TD
+1.8 Tw
+[(GARY . . )600(11 . )600(16 . 8)]TJ
+T*
+[(CLEV )600(23 8 )600(10 9 )600(21 . .)]TJ
+T*
+[(PITT . . . . . )600(81 . )1800(;)]TJ
+ET
+endstreamendobj52 0 obj<< /Type /Page /Parent 136 0 R /Resources 53 0 R /Contents 54 0 R /Rotate 0 /MediaBox [ 0 0 612 792 ] /CropBox [ 40.32001 126 571.67999 792 ] >> endobj53 0 obj<< /ProcSet [ /PDF /Text ] /Font << /F2 157 0 R /F4 162 0 R /F6 165 0 R /F8 74 0 R >> /ExtGState << /GS1 170 0 R >> >> endobj54 0 obj<< /Length 4458 >> stream
+BT
+/F6 1 Tf
+7 0 0 7 126 747.615 Tm
+0 g
+/GS1 gs
+0 Tc
+0.0187 Tw
+[(SECTION )-11.1(9.4 )-19389(OTHER FEATURES OF DATA STATEMENTS)]TJ
+10 0 0 10 469.2 747.615 Tm
+0 Tw
+(161)Tj
+/F2 1 Tf
+-34.32 -3.24 TD
+0.0801 Tw
+[(Missing parameters )-19.9(like)]TJ
+/F4 1 Tf
+10.14 0 TD
+0 Tw
+(cost["GARY","FRA","bands"])Tj
+/F2 1 Tf
+15.6 0 TD
+0.0968 Tw
+(, as well as those explic-)Tj
+-25.74 -1.2 TD
+0.0673 Tw
+(itly marked ëëomittedíí by use of a dot \(like)Tj
+/F4 1 Tf
+18.3 0 TD
+0 Tw
+(cost["GARY","FRA","coils"])Tj
+/F2 1 Tf
+15.6 0 TD
+0.046 Tw
+(\), are)Tj
+-33.9 -1.2 TD
+-0.003 Tw
+[(given the value 9999. )-250(In total, 24 values of 9999 are assigned.)]TJ
+1.44 -1.25 TD
+0 Tw
+(The)Tj
+/F4 1 Tf
+2.06 0 TD
+(default)Tj
+/F2 1 Tf
+4.71 0 TD
+0.2648 Tw
+[(feature )17.7(is especially useful when you want all parameters of an)]TJ
+-8.21 -1.2 TD
+0.0166 Tw
+[(indexed )-9.6(collection )-9.6(to )-9.6(be )-9.6(assigned )-9.6(the )-9.6(same value. )-254.4(For instance, in Figure 3-2, we apply a)]TJ
+T*
+0.0491 Tw
+[(transportation model to an assignment problem by setting all supplies and )-9.9(demands )-9.9(to )-9.9(1.)]TJ
+T*
+-0.0104 Tw
+(The model declares)Tj
+/F4 1 Tf
+9 0 0 9 154.8 626.215 Tm
+0 Tw
+(param supply {ORIG} >= 0;)Tj
+0 -1.1111 TD
+(param demand {DEST} >= 0;)Tj
+/F2 1 Tf
+10 0 0 10 126 597.715 Tm
+-0.0028 Tw
+(but in the data we give only a default value:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 581.215 Tm
+0 Tw
+(param supply default 1 ;)Tj
+T*
+(param demand default 1 ;)Tj
+/F2 1 Tf
+10 0 0 10 126 552.715 Tm
+-0.0032 Tw
+(Since no other values are specified, the default of 1 is automatically assigned to every ele-)Tj
+0 -1.2 TD
+-0.003 Tw
+(ment of)Tj
+/F4 1 Tf
+3.33 0 TD
+0 Tw
+(supply)Tj
+/F2 1 Tf
+3.85 0 TD
+(and)Tj
+/F4 1 Tf
+1.69 0 TD
+(demand)Tj
+/F2 1 Tf
+3.6 0 TD
+(.)Tj
+-11.03 -1.25 TD
+0.2332 Tw
+[(As explained in Chapter 7, a parameter declaration )-15.2(in )-15.2(the )-15.2(model )-15.2(may )-15.2(include )-15.2(a)]TJ
+/F4 1 Tf
+-1.44 -1.2 TD
+0 Tw
+(default)Tj
+/F2 1 Tf
+4.45 0 TD
+-0.0053 Tw
+[(expression. )-250.4(This offers an alternative way to specify a single default value:)]TJ
+/F4 1 Tf
+9 0 0 9 154.8 499.715 Tm
+0 Tw
+(param cost {ORIG,DEST,PROD} >= 0, default 9999;)Tj
+/F2 1 Tf
+10 0 0 10 126 481.215 Tm
+0.0479 Tw
+[(If )8.3(you )8.3(just )8.3(want )8.3(to )8.3(avoid )8.3(storing )8.3(a )8.3(lot of 9999ís in a data file, however, it is better to put)]TJ
+0 -1.2 TD
+0 Tw
+(the)Tj
+/F4 1 Tf
+1.68 0 TD
+(default)Tj
+/F2 1 Tf
+4.66 0 TD
+0.2053 Tw
+[(phrase in the data statement. )-249.7(The)]TJ
+/F4 1 Tf
+14.9 0 TD
+0 Tw
+(default)Tj
+/F2 1 Tf
+4.66 0 TD
+0.2084 Tw
+[(phrase should go in )10.4(the)]TJ
+-25.9 -1.2 TD
+0.2068 Tw
+[(model when you want the default value to depend in some way )-9.6(on )-9.6(other )-9.6(data. )-264.2(For)]TJ
+T*
+-0.006 Tw
+(instance, a different arbitrarily large cost could be given for each product by specifying:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 428.715 Tm
+0 Tw
+(param huge_cost {PROD} > 0;)Tj
+0 -1.1111 TD
+(param cost {ORIG, DEST, p in PROD} >= 0, default huge_cost[p];)Tj
+/F2 1 Tf
+10 0 0 10 126 400.215 Tm
+0.129 Tw
+(A discussion of)Tj
+/F4 1 Tf
+6.87 0 TD
+0 Tw
+(default)Tj
+/F2 1 Tf
+4.2 0 TD
+0.1377 Tw
+(ís relation to the)Tj
+/F4 1 Tf
+7.33 0 TD
+0 Tw
+(=)Tj
+/F2 1 Tf
+0.99 0 TD
+0.132 Tw
+(phrase in)Tj
+/F4 1 Tf
+4.16 0 TD
+0 Tw
+(param)Tj
+/F2 1 Tf
+3.39 0 TD
+0.1404 Tw
+(statements is given in)Tj
+-26.94 -1.2 TD
+0.0001 Tw
+(Section 7.5.)Tj
+/F8 1 Tf
+0 -3.16 TD
+0.0127 Tw
+(Indexed collections of sets)Tj
+/F2 1 Tf
+1.44 -1.85 TD
+0.145 Tw
+[(For an indexed collection of sets, separate data statements specify the )-10.5(members )-10.5(of)]TJ
+-1.44 -1.2 TD
+0.1467 Tw
+[(each set in the collection. )-250.3(In the example of Figure 6-3, for example, the sets named)]TJ
+/F4 1 Tf
+T*
+0 Tw
+(AREA)Tj
+/F2 1 Tf
+2.65 0 TD
+-0.005 Tw
+(are indexed by the set)Tj
+/F4 1 Tf
+8.95 0 TD
+0 Tw
+(PROD)Tj
+/F2 1 Tf
+2.4 0 TD
+(:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 297.615 Tm
+[(set PROD; )-4800(# products)]TJ
+0 -1.1111 TD
+[(set AREA {PROD}; )-600(# market areas for each product)]TJ
+/F2 1 Tf
+10 0 0 10 126 269.115 Tm
+-0.0016 Tw
+(The membership of these sets is given in Figure 6-4 by:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 252.615 Tm
+0 Tw
+(set PROD := bands coils ;)Tj
+T*
+(set AREA[bands] := east north ;)Tj
+T*
+(set AREA[coils] := east west export ;)Tj
+/F2 1 Tf
+10 0 0 10 126 214.115 Tm
+0.0368 Tw
+(Any of the data statement formats for a set may be used with indexed collections of sets.)Tj
+0 -1.2 TD
+-0.0042 Tw
+(The only difference is that the set name following the keyword)Tj
+/F4 1 Tf
+25.37 0 TD
+0 Tw
+(set)Tj
+/F2 1 Tf
+2.05 0 TD
+-0.0019 Tw
+(is subscripted.)Tj
+ET
+endstreamendobj55 0 obj<< /Type /Page /Parent 136 0 R /Resources 56 0 R /Contents 57 0 R /Rotate 0 /MediaBox [ 0 0 612 792 ] /CropBox [ 40.32001 126 571.67999 792 ] >> endobj56 0 obj<< /ProcSet [ /PDF /Text ] /Font << /F2 157 0 R /F4 162 0 R /F6 165 0 R /F8 74 0 R >> /ExtGState << /GS1 170 0 R >> >> endobj57 0 obj<< /Length 4575 >> stream
+BT
+/F6 1 Tf
+10 0 0 10 126 747.615 Tm
+0 g
+/GS1 gs
+0 Tc
+0 Tw
+(162)Tj
+7 0 0 7 159.6 747.615 Tm
+0.0407 Tw
+[(SPECIFYING DATA )-31646.1(CHAPTER )31.9(9)]TJ
+/F2 1 Tf
+10 0 0 10 140.4 715.215 Tm
+0.0661 Tw
+[(As )9.1(for )9.1(other )9.1(sets, )9.1(you may specify one or more members of an indexed collection to)]TJ
+-1.44 -1.2 TD
+0.0769 Tw
+[(be )-13.6(empty, )-13.6(by )-13.6(giving )-13.6(an )-13.6(empty )-13.6(list of elements. )-247.1(If you want to provide a data statement)]TJ
+T*
+0.0366 Tw
+[(only for those members of an indexed collection that are not empty, define the empty )-12.4(set)]TJ
+T*
+-0.0026 Tw
+(as the default value in the model:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 658.3149 Tm
+0 Tw
+(set AREA {PROD} default {};)Tj
+/F2 1 Tf
+10 0 0 10 126 635.415 Tm
+-0.0033 Tw
+(Otherwise you will be warned about any set whose data statement is not provided.)Tj
+/F8 1 Tf
+0 -4.47 TD
+0.0174 Tw
+(Initial values for variables)Tj
+/F2 1 Tf
+1.44 -2.29 TD
+0.0386 Tw
+[(You may optionally assign initial values to the variables of a model, )-9.9(using )-9.9(any )-9.9(of )-9.9(the)]TJ
+-1.44 -1.2 TD
+0.0459 Tw
+[(options for assigning values to parameters. )-252.1(A variableís name stands for its value, and a)]TJ
+T*
+0.0349 Tw
+[(constraintís name stands for the associated dual variableís value. )-248.1(\(See Section 12.5 for a)]TJ
+T*
+-0.0059 Tw
+(short explanation of dual variables.\))Tj
+1.44 -1.29 TD
+0 Tw
+(Any)Tj
+/F4 1 Tf
+2.05 0 TD
+(param)Tj
+/F2 1 Tf
+3.33 0 TD
+0.0764 Tw
+[(data statement may specify initial values )-5.6(for )-5.6(variables. )-258.6(The )-6.6(variable )-6.6(or)]TJ
+-6.82 -1.2 TD
+0.1952 Tw
+[(constraint )-13(name )-13(is )-13(simply )-13(used )-13(in )-13(place of a parameter name, in any of the formats)]TJ
+T*
+0.0056 Tw
+[(described by the previous sections of this chapter. )-253.4(To )-10.6(help )-10.6(clarify )-10.6(the )-10.6(intent, )-10.6(the )-10.6(keyword)]TJ
+/F4 1 Tf
+T*
+0 Tw
+(var)Tj
+/F2 1 Tf
+2.08 0 TD
+0.028 Tw
+(may be substituted for)Tj
+/F4 1 Tf
+9.28 0 TD
+0 Tw
+(param)Tj
+/F2 1 Tf
+3.28 0 TD
+0.0264 Tw
+[(at the start of a data statement. )-244.6(For )11(example, )11(the )11(fol-)]TJ
+-14.64 -1.2 TD
+-0.0033 Tw
+(lowing data table gives initial values for the variable)Tj
+/F4 1 Tf
+21.22 0 TD
+0 Tw
+(Trans)Tj
+/F2 1 Tf
+3.25 0 TD
+-0.0045 Tw
+(of Figure 3-1a:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 450.015 Tm
+0.6 Tw
+[(var )600.1(Trans: FRA DET LAN WIN STL FRE LAF )600(:=)]TJ
+3.6 -1.1111 TD
+(GARY 100 100 800 100 100 500 200)Tj
+T*
+(CLEV 900 100 100 500 500 200 200)Tj
+T*
+[(PITT 100 900 100 500 100 900 200 )600(;)]TJ
+/F2 1 Tf
+10 0 0 10 126 397.115 Tm
+0.1168 Tw
+[(As another example, in the model of Figure 1-4, a single table can give )-8.9(values )-8.9(for )-8.9(the)]TJ
+0 -1.2 TD
+0 Tw
+(parameters)Tj
+/F4 1 Tf
+4.62 0 TD
+(rate)Tj
+/F2 1 Tf
+2.4 0 TD
+(,)Tj
+/F4 1 Tf
+0.5 0 TD
+(profit)Tj
+/F2 1 Tf
+3.85 0 TD
+(and)Tj
+/F4 1 Tf
+1.69 0 TD
+(market)Tj
+/F2 1 Tf
+3.6 0 TD
+-0.0035 Tw
+(, and initial values for the variables)Tj
+/F4 1 Tf
+14.31 0 TD
+0 Tw
+(Make)Tj
+/F2 1 Tf
+2.4 0 TD
+(:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 364.215 Tm
+0.6 Tw
+[(param: )-1199.9(rate profit market Make )600(:=)]TJ
+1.2 -1.1111 TD
+1.8 Tw
+[(bands 200 25 )-600(6000 )600(3000)]TJ
+T*
+[(coils 140 30 )-600(4000 )600(2500)]TJ
+T*
+[(plate 160 29 )-600(3500 )600(1500 )1800(;)]TJ
+/F2 1 Tf
+10 0 0 10 126 311.315 Tm
+-0.005 Tw
+(All of the previously described features for default values also apply to variables.)Tj
+1.44 -1.29 TD
+0.0585 Tw
+[(Initial )14.2(values )14.2(of )14.2(variables )14.2(\(as well as the values of expressions involving these initial)]TJ
+-1.44 -1.2 TD
+0.002 Tw
+(values\) may be viewed before you type)Tj
+/F4 1 Tf
+15.98 0 TD
+0 Tw
+(solve)Tj
+/F2 1 Tf
+3 0 TD
+0.0005 Tw
+(, using the)Tj
+/F4 1 Tf
+4.39 0 TD
+0 Tw
+(display)Tj
+/F2 1 Tf
+4.2 0 TD
+(,)Tj
+/F4 1 Tf
+0.5 0 TD
+(print)Tj
+/F2 1 Tf
+3.25 0 TD
+(or)Tj
+/F4 1 Tf
+1.08 0 TD
+(printf)Tj
+/F2 1 Tf
+-32.4 -1.2 TD
+0.1779 Tw
+[(commands described in Sections 12.1 through 12.4. )-253.1(Initial )5.9(values )5.9(are )-13.6(also )-13.6(optionally)]TJ
+T*
+0.2691 Tw
+[(passed )-7.6(to )-7.6(the )-7.6(solver, as explained in Section 14.1 and A.18.1. )-240.9(After a solution is)]TJ
+T*
+0.0654 Tw
+(returned, the variables no longer have their initial values, but even then you can refer to)Tj
+T*
+[(the )-10.9(initial )-10.9(values )-10.9(by )-10.9(placing )-10.9(an )-10.9(appropriate suffix after the variableís name, as shown in)]TJ
+T*
+-0.0019 Tw
+(Section A.11.)Tj
+1.44 -1.29 TD
+0.0382 Tw
+[(The )8.5(most )8.5(common )8.5(use )8.5(of )8.5(initial )8.5(values )8.5(is to give a good starting guess to a solver for)]TJ
+-1.44 -1.2 TD
+-0.0015 Tw
+(nonlinear optimization, which is discussed in Chapter 18.)Tj
+ET
+endstreamendobj58 0 obj<< /Type /Page /Parent 137 0 R /Resources 59 0 R /Contents 60 0 R /Rotate 0 /MediaBox [ 0 0 612 792 ] /CropBox [ 40.32001 126 571.67999 792 ] >> endobj59 0 obj<< /ProcSet [ /PDF /Text ] /Font << /F1 154 0 R /F2 157 0 R /F3 159 0 R /F4 162 0 R /F5 163 0 R /F6 165 0 R >> /ExtGState << /GS1 170 0 R >> >> endobj60 0 obj<< /Length 4356 >> stream
+BT
+/F6 1 Tf
+7 0 0 7 126 747.615 Tm
+0 g
+/GS1 gs
+0 Tc
+0.0087 Tw
+[(SECTION )-21.1(9.5 )-13942.9(READING UNFORMATTED DATA: THE)]TJ
+/F5 1 Tf
+38.6857 0 TD
+0 Tw
+(READ)Tj
+/F6 1 Tf
+2.6857 0 TD
+(COMMAND)Tj
+10 0 0 10 469.2 747.615 Tm
+(163)Tj
+/F1 1 Tf
+12 0 0 12 126 715.215 Tm
+0.0064 Tw
+[(9.5 )-289(Reading unformatted data: the)]TJ
+/F5 1 Tf
+16.7667 0 TD
+0 Tw
+(read)Tj
+/F1 1 Tf
+2.6833 0 TD
+(command)Tj
+/F2 1 Tf
+10 0 0 10 140.4 696.215 Tm
+(The)Tj
+/F4 1 Tf
+1.83 0 TD
+(read)Tj
+/F2 1 Tf
+2.68 0 TD
+0.0263 Tw
+[(command provides a particularly simple way of getting )-13.2(values )-13.2(into)]TJ
+9 0 0 9 458.5 696.215 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 483.5 696.215 Tm
+(,)Tj
+-35.75 -1.2 TD
+0.1261 Tw
+[(given that the values you need are listed in a regular order in a )9.1(file. )-238.9(The )6.7(file )6.7(must )6.7(be)]TJ
+/F3 1 Tf
+T*
+0 Tw
+(unformatted)Tj
+/F2 1 Tf
+5.24 0 TD
+0.0185 Tw
+[(in the sense that it contains nothing except )-8.9(the )-8.9(values )-8.9(to )-8.9(be )-8.9(read )-8.9(ó )-8.9(no )-8.8(set )-8.8(or)]TJ
+-5.24 -1.2 TD
+-0.0067 Tw
+(parameter names, no colons or)Tj
+/F4 1 Tf
+12.47 0 TD
+0 Tw
+(:=)Tj
+/F2 1 Tf
+1.45 0 TD
+(operators.)Tj
+-12.48 -1.26 TD
+0.0814 Tw
+(In its simplest form,)Tj
+/F4 1 Tf
+8.64 0 TD
+0 Tw
+(read)Tj
+/F2 1 Tf
+2.74 0 TD
+0.0852 Tw
+(specifies a list of parameters and a file from which their)Tj
+-12.82 -1.2 TD
+0.0795 Tw
+[(values are to be read. )-255.5(The )-9(values )-9(in the file are assigned to the entries in the list in the)]TJ
+T*
+0.1061 Tw
+[(order )15.1(that )15.1(they )15.1(appear. )-244.9(For example, if you want to read the number of weeks and the)]TJ
+T*
+-0.0053 Tw
+(hours available each week for our simple production model \(Figure 4-4\),)Tj
+/F4 1 Tf
+9 0 0 9 154.8 594.615 Tm
+0 Tw
+(param T > 0;)Tj
+0 -1.1111 TD
+(param avail {1..T} >= 0;)Tj
+/F2 1 Tf
+10 0 0 10 126 565.615 Tm
+-0.0055 Tw
+(from a file)Tj
+/F4 1 Tf
+4.46 0 TD
+0 Tw
+(week_data.txt)Tj
+/F2 1 Tf
+8.05 0 TD
+(containing)Tj
+/F4 1 Tf
+9 0 0 9 154.8 548.615 Tm
+(4)Tj
+0 -1.1111 TD
+(40 40 32 40)Tj
+/F2 1 Tf
+10 0 0 10 126 519.615 Tm
+-0.0036 Tw
+(then you can give the command)Tj
+/F4 1 Tf
+9 0 0 9 154.8 502.615 Tm
+-0.0001 Tw
+(read T, avail[1], avail[2], avail[3], avail[4] <week_data.txt;)Tj
+/F2 1 Tf
+10 0 0 10 126 483.615 Tm
+0.066 Tw
+[(Or )11(you can use an indexing expression to say the same thing more concisely and gener-)]TJ
+0 -1.2 TD
+0 Tw
+(ally:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 454.615 Tm
+(read T, {t in 1..T} avail[t] <week_data.txt;)Tj
+/F2 1 Tf
+10 0 0 10 126 435.615 Tm
+0.0771 Tw
+(The notation)Tj
+/F4 1 Tf
+5.5 0 TD
+0 Tw
+(<)Tj
+/F3 1 Tf
+0.94 0 TD
+(filename)Tj
+/F2 1 Tf
+3.86 0 TD
+0.084 Tw
+[(specifies the name of a file for reading. )-252.1(\(Analogously,)]TJ
+/F4 1 Tf
+22.87 0 TD
+0 Tw
+(>)Tj
+/F2 1 Tf
+0.94 0 TD
+(indi-)Tj
+-34.11 -1.2 TD
+-0.0038 Tw
+(cates writing to a file; see A.15.\))Tj
+1.44 -1.26 TD
+-0.009 Tw
+(In general, the)Tj
+/F4 1 Tf
+5.98 0 TD
+0 Tw
+(read)Tj
+/F2 1 Tf
+2.65 0 TD
+-0.0043 Tw
+(command has the form)Tj
+/F4 1 Tf
+9 0 0 9 154.8 394.015 Tm
+0 Tw
+(read)Tj
+/F3 1 Tf
+3 0 TD
+(item-list)Tj
+/F4 1 Tf
+3.8778 0 TD
+(<)Tj
+/F3 1 Tf
+0.8556 0 TD
+(filename)Tj
+/F4 1 Tf
+4.0444 0 TD
+(;)Tj
+/F2 1 Tf
+10 0 0 10 126 375.015 Tm
+0.05 Tw
+(with the)Tj
+/F3 1 Tf
+3.6 0 TD
+0 Tw
+(item-list)Tj
+/F2 1 Tf
+3.66 0 TD
+0.0459 Tw
+[(being a comma-separated list of items that may each be any of the )-10.1(fol-)]TJ
+-7.26 -1.2 TD
+0 Tw
+(lowing:)Tj
+/F3 1 Tf
+9 0 0 9 154.8 346.015 Tm
+(parameter)Tj
+/F4 1 Tf
+0 -1.1111 TD
+({)Tj
+/F3 1 Tf
+1.2 0 TD
+(indexing)Tj
+/F4 1 Tf
+4.0444 0 TD
+(})Tj
+/F3 1 Tf
+1.2 0 TD
+(parameter)Tj
+/F4 1 Tf
+-6.4444 -1.1111 TD
+({)Tj
+/F3 1 Tf
+1.2 0 TD
+(indexing)Tj
+/F4 1 Tf
+4.0444 0 TD
+(} \()Tj
+/F3 1 Tf
+2.4 0 TD
+(item-list)Tj
+/F4 1 Tf
+3.8778 0 TD
+(\))Tj
+/F2 1 Tf
+10 0 0 10 126 307.015 Tm
+0.0168 Tw
+[(The )12.8(first two are used in our example above, while the third allows for the same indexing)]TJ
+0 -1.2 TD
+-0.0035 Tw
+[(to be applied to several items. )-254.5(Using the same production example, to read in values for)]TJ
+/F4 1 Tf
+9 0 0 9 154.8 278.015 Tm
+0 Tw
+(param prodcost {PROD} >= 0;)Tj
+0 -1.1111 TD
+(param invcost {PROD} >= 0;)Tj
+T*
+(param revenue {PROD,1..T} >= 0;)Tj
+/F2 1 Tf
+10 0 0 10 126 239.015 Tm
+-0.0087 Tw
+(from a file organized by parameters, you could read each parameter separately:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 222.015 Tm
+0 Tw
+(read {p in PROD} prodcost[p] < cost_data;)Tj
+T*
+(read {p in PROD} invcost[p] < cost_data;)Tj
+T*
+(read {p in PROD, t in 1..T} revenue[p,t] < cost_data;)Tj
+ET
+endstreamendobj61 0 obj<< /Type /Page /Parent 137 0 R /Resources 62 0 R /Contents 63 0 R /Rotate 0 /MediaBox [ 0 0 612 792 ] /CropBox [ 40.32001 126 571.67999 792 ] >> endobj62 0 obj<< /ProcSet [ /PDF /Text ] /Font << /F2 157 0 R /F3 159 0 R /F4 162 0 R /F6 165 0 R >> /ExtGState << /GS1 170 0 R >> >> endobj63 0 obj<< /Length 4509 >> stream
+BT
+/F6 1 Tf
+10 0 0 10 126 747.615 Tm
+0 g
+/GS1 gs
+0 Tc
+0 Tw
+(164)Tj
+7 0 0 7 159.6 747.615 Tm
+0.0407 Tw
+[(SPECIFYING DATA )-31646.1(CHAPTER )31.9(9)]TJ
+/F2 1 Tf
+10 0 0 10 126 715.215 Tm
+0.042 Tw
+(reading from file)Tj
+/F4 1 Tf
+7.16 0 TD
+0 Tw
+(cost_data)Tj
+/F2 1 Tf
+5.7 0 TD
+0.0484 Tw
+[(first all the production costs, then all the inventory )-11.6(costs,)]TJ
+-12.86 -1.2 TD
+-0.0055 Tw
+(and then all the revenues.)Tj
+1.44 -1.28 TD
+-0.0053 Tw
+(If the data were organized by product instead, you could say)Tj
+/F4 1 Tf
+9 0 0 9 154.8 670.815 Tm
+0 Tw
+(read {p in PROD})Tj
+1.8 -1.1111 TD
+-0.0001 Tw
+(\(prodcost[p], invcost[p], {t in 1..T} revenue[p,t]\))Tj
+1.8 -1.1111 TD
+0 Tw
+(<cost_data;)Tj
+/F2 1 Tf
+10 0 0 10 126 629.215 Tm
+0.0359 Tw
+[(to )10.5(read )10.5(the )10.5(production and inventory costs and the revenues for the first product, then for)]TJ
+0 -1.2 TD
+-0.0042 Tw
+(the second product, and so forth.)Tj
+1.44 -1.28 TD
+0.1201 Tw
+(A parenthesized)Tj
+/F3 1 Tf
+6.98 0 TD
+0 Tw
+(item-list)Tj
+/F2 1 Tf
+3.75 0 TD
+0.1387 Tw
+(may itself contain parenthesized)Tj
+/F3 1 Tf
+13.73 0 TD
+0 Tw
+(item-list)Tj
+/F2 1 Tf
+3.36 0 TD
+0.1503 Tw
+(s, so that if you)Tj
+-29.26 -1.2 TD
+-0.0046 Tw
+(also want to read)Tj
+/F4 1 Tf
+9 0 0 9 154.8 572.815 Tm
+0 Tw
+(param market {PROD,1..T} >= 0;)Tj
+/F2 1 Tf
+10 0 0 10 126 551.215 Tm
+-0.0026 Tw
+(from the same file at the same time, you could say)Tj
+/F4 1 Tf
+9 0 0 9 154.8 531.615 Tm
+0 Tw
+(read {p in PROD} \(prodcost[p], invcost[p],)Tj
+1.8 -1.1111 TD
+-0.0001 Tw
+({t in 1..T} \(revenue[p,t], market[p,t]\)\) <cost_data;)Tj
+/F2 1 Tf
+10 0 0 10 126 500.015 Tm
+0.0352 Tw
+[(in )11(which )11(case )11(for )11(each )11(product )11(you )11(would )11(read the two costs as before, and then for each)]TJ
+0 -1.2 TD
+-0.0085 Tw
+(week the productís revenue and market demand.)Tj
+1.44 -1.28 TD
+-0.0028 Tw
+(As our descriptions suggest, the form of a)Tj
+/F4 1 Tf
+16.96 0 TD
+0 Tw
+(read)Tj
+/F2 1 Tf
+2.66 0 TD
+(statementís)Tj
+/F3 1 Tf
+4.81 0 TD
+(item-list)Tj
+/F2 1 Tf
+3.62 0 TD
+0.0055 Tw
+(depends on how)Tj
+-29.49 -1.2 TD
+0.0853 Tw
+[(the )-7.5(data )-7.5(values )-7.5(are )-7.5(ordered )-7.5(in the file. )-246.7(When you are reading data indexed over sets of)]TJ
+T*
+0.0015 Tw
+(strings that, like)Tj
+/F4 1 Tf
+6.67 0 TD
+0 Tw
+(PROD)Tj
+/F2 1 Tf
+2.4 0 TD
+0.0041 Tw
+(, are not inherently ordered, then the order in which values are read)Tj
+-9.07 -1.2 TD
+0.1273 Tw
+(is the order in which)Tj
+9 0 0 9 217.1 439.215 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 245.9 439.215 Tm
+0.117 Tw
+[(is )-8.7(internally )-8.7(representing )-8.7(them. )-257(If )-11(the members of the set)]TJ
+-11.99 -1.2 TD
+-0.0076 Tw
+(came directly from a)Tj
+/F4 1 Tf
+8.53 0 TD
+0 Tw
+(set)Tj
+/F2 1 Tf
+2.05 0 TD
+0.0074 Tw
+[(data )12.8(statement, )12.8(then the ordering will be the same as in the data)]TJ
+-10.58 -1.2 TD
+0.211 Tw
+[(statement. )-246.1(Otherwise, it is best to put an)]TJ
+/F4 1 Tf
+18.21 0 TD
+0 Tw
+(ordered)Tj
+/F2 1 Tf
+4.66 0 TD
+(or)Tj
+/F4 1 Tf
+1.29 0 TD
+-0.1399 Tw
+(ordered by)Tj
+/F2 1 Tf
+6.32 0 TD
+0.205 Tw
+(phrase in the)Tj
+-30.48 -1.2 TD
+0 Tw
+(modelís)Tj
+/F4 1 Tf
+3.52 0 TD
+(set)Tj
+/F2 1 Tf
+2.1 0 TD
+0.0557 Tw
+[(declaration )11.9(to )11.9(ensure )11.9(that )11.9(the )11.9(ordering is always what you expect; see Sec-)]TJ
+-5.62 -1.2 TD
+-0.0038 Tw
+(tion 5.6 for more about ordered sets.)Tj
+1.44 -1.28 TD
+0.1377 Tw
+[(An )14.1(alternative )14.1(that avoids knowing the order of the members in a set is to specify)]TJ
+-1.44 -1.2 TD
+0.1272 Tw
+[(them )-12.6(explicitly )-12.6(in )-12.6(the )-12.6(file that is read. )-251.8(As an example, consider how you might use a)]TJ
+/F4 1 Tf
+T*
+0 Tw
+(read)Tj
+/F2 1 Tf
+2.72 0 TD
+0.0661 Tw
+(statement rather than a data statement to get the values from the)Tj
+/F4 1 Tf
+26.57 0 TD
+0 Tw
+(cost)Tj
+/F2 1 Tf
+2.73 0 TD
+(parameter)Tj
+-32.02 -1.2 TD
+-0.0033 Tw
+(of Section 9.4 that was defined as)Tj
+/F4 1 Tf
+9 0 0 9 154.8 322.815 Tm
+0 Tw
+(param cost {ORIG,DEST,PROD} >= 0, default 9999;)Tj
+/F2 1 Tf
+10 0 0 10 126 301.215 Tm
+-0.0017 Tw
+(You could set up the)Tj
+/F4 1 Tf
+8.52 0 TD
+0 Tw
+(read)Tj
+/F2 1 Tf
+2.65 0 TD
+-0.0019 Tw
+(statement as follows:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 281.615 Tm
+-0.0001 Tw
+(param ntriples integer;)Tj
+0 -1.1111 TD
+0 Tw
+(param ic symbolic in ORIG;)Tj
+T*
+(param jc symbolic in DEST;)Tj
+T*
+(param kc symbolic in PROD;)Tj
+0 -2 TD
+-0.0001 Tw
+(read ntriples, {1..ntriples})Tj
+1.8 -1.1111 TD
+(\(ic, jc, kc, cost[ic,jc,kc]\) <cost_data;)Tj
+/F2 1 Tf
+10 0 0 10 126 202.015 Tm
+-0.0094 Tw
+(The corresponding file)Tj
+/F4 1 Tf
+9.34 0 TD
+0 Tw
+(cost_data)Tj
+/F2 1 Tf
+5.65 0 TD
+0.0033 Tw
+(must begin something like this:)Tj
+ET
+endstreamendobj64 0 obj<< /Type /Page /Parent 137 0 R /Resources 65 0 R /Contents 66 0 R /Rotate 0 /MediaBox [ 0 0 612 792 ] /CropBox [ 40.32001 126 571.67999 792 ] >> endobj65 0 obj<< /ProcSet [ /PDF /Text ] /Font << /F1 154 0 R /F2 157 0 R /F3 159 0 R /F4 162 0 R /F5 163 0 R /F6 165 0 R /F7 73 0 R >> /ExtGState << /GS1 170 0 R >> >> endobj66 0 obj<< /Length 4937 >> stream
+BT
+/F6 1 Tf
+7 0 0 7 126 747.615 Tm
+0 g
+/GS1 gs
+0 Tc
+0.0087 Tw
+[(SECTION )-21.1(9.5 )-13942.9(READING UNFORMATTED DATA: THE)]TJ
+/F5 1 Tf
+38.6857 0 TD
+0 Tw
+(READ)Tj
+/F6 1 Tf
+2.6857 0 TD
+(COMMAND)Tj
+10 0 0 10 469.2 747.615 Tm
+(165)Tj
+/F4 1 Tf
+9 0 0 9 154.8 717.215 Tm
+(18)Tj
+0 -1.1111 TD
+(CLEV FRA bands 27)Tj
+T*
+(PITT FRA bands 24)Tj
+T*
+(CLEV FRA coils 23)Tj
+T*
+(...)Tj
+/F2 1 Tf
+10 0 0 10 126 658.3149 Tm
+-0.0025 Tw
+(with 15 more entries needed to give all 18 data values shown in the Section 9.4 example.)Tj
+1.44 -1.26 TD
+0.0666 Tw
+(Strings in a file for the)Tj
+/F4 1 Tf
+9.68 0 TD
+0 Tw
+(read)Tj
+/F2 1 Tf
+2.72 0 TD
+0.0633 Tw
+(command that include any character other than letters,)Tj
+-13.84 -1.2 TD
+0.0331 Tw
+(digits, underscores, period,)Tj
+/F4 1 Tf
+11.16 0 TD
+0 Tw
+(+)Tj
+/F2 1 Tf
+0.89 0 TD
+(and)Tj
+/F4 1 Tf
+1.73 0 TD
+(-)Tj
+/F2 1 Tf
+0.89 0 TD
+0.0277 Tw
+[(must )-13.3(be quoted, just as for data mode. )-237.4(However, the)]TJ
+/F4 1 Tf
+-14.67 -1.2 TD
+0 Tw
+(read)Tj
+/F2 1 Tf
+2.69 0 TD
+0.0385 Tw
+[(statement itself is interpreted in model mode, so if the )-5.3(statement )-5.3(refers )-5.3(to )-5.3(any )-5.3(par-)]TJ
+-2.69 -1.2 TD
+-0.0017 Tw
+(ticular string, as in, say,)Tj
+/F4 1 Tf
+9 0 0 9 154.8 592.815 Tm
+0 Tw
+(read {t in 1..T} revenue ["bands",t];)Tj
+/F2 1 Tf
+10 0 0 10 126 573.915 Tm
+0.0755 Tw
+[(that string must be quoted. )-249.5(The filename following)]TJ
+/F4 1 Tf
+21.44 0 TD
+0 Tw
+(<)Tj
+/F2 1 Tf
+0.93 0 TD
+0.0775 Tw
+(need not be quoted unless it con-)Tj
+-22.37 -1.2 TD
+-0.0063 Tw
+(tains spaces, semicolons, or nonprinting characters.)Tj
+1.44 -1.26 TD
+0.09 Tw
+(If a)Tj
+/F4 1 Tf
+1.8 0 TD
+0 Tw
+(read)Tj
+/F2 1 Tf
+2.76 0 TD
+0.1071 Tw
+(statement contains no)Tj
+/F4 1 Tf
+9.24 0 TD
+0 Tw
+(<)Tj
+/F3 1 Tf
+0.96 0 TD
+(filename)Tj
+/F2 1 Tf
+3.52 0 TD
+0.1042 Tw
+(, values are read from the current input)Tj
+-19.72 -1.2 TD
+0.0974 Tw
+[(stream. )-246.7(Thus if you have typed the)]TJ
+/F4 1 Tf
+15.04 0 TD
+0 Tw
+(read)Tj
+/F2 1 Tf
+2.74 0 TD
+0.085 Tw
+(command at an)Tj
+9 0 0 9 370 537.315 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 398.4 537.315 Tm
+0.087 Tw
+(prompt, you can type)Tj
+-27.24 -1.2 TD
+0.077 Tw
+[(the )7.8(values )7.8(at )7.8(subsequent )7.8(prompts )7.8(until )7.8(all of the listed items have been assigned values.)]TJ
+T*
+-0.0049 Tw
+(For example:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 496.415 Tm
+0 Tw
+(ampl:)Tj
+/F7 1 Tf
+3.6 0 TD
+(read T, {t in 1..T} avail[t];)Tj
+/F4 1 Tf
+-3.6 -1.1111 TD
+(ampl?)Tj
+/F7 1 Tf
+3.6 0 TD
+(4)Tj
+/F4 1 Tf
+-3.6 -1.1111 TD
+(ampl?)Tj
+/F7 1 Tf
+3.6 0 TD
+(40 40 32 40)Tj
+/F4 1 Tf
+-3.6 -1.1111 TD
+(ampl:)Tj
+/F7 1 Tf
+3.6 0 TD
+-0.0001 Tw
+(display avail;)Tj
+/F4 1 Tf
+-3.6 -1.1111 TD
+0 Tw
+(avail [*] :=)Tj
+T*
+[(1 40 )-1200(2 40 )-1200(3 32 )-1200(4 40)]TJ
+T*
+(;)Tj
+/F2 1 Tf
+10 0 0 10 126 417.515 Tm
+0.1137 Tw
+(The prompt changes from)Tj
+/F4 1 Tf
+11.07 0 TD
+0 Tw
+(ampl?)Tj
+/F2 1 Tf
+3.38 0 TD
+0.124 Tw
+(back to)Tj
+/F4 1 Tf
+3.42 0 TD
+0 Tw
+(ampl:)Tj
+/F2 1 Tf
+3.38 0 TD
+0.1255 Tw
+(when all the needed input has been)Tj
+-21.25 -1.2 TD
+0 Tw
+(read.)Tj
+1.44 -1.26 TD
+0.08 Tw
+(The filename ëë)Tj
+/F4 1 Tf
+6.38 0 TD
+0 Tw
+(-)Tj
+/F2 1 Tf
+0.6 0 TD
+0.0972 Tw
+[(íí )8.8(\(a )8.8(literal )8.8(minus )8.8(sign\) )8.8(is taken as the standard input of the)]TJ
+9 0 0 9 461 392.915 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 126 380.915 Tm
+-0.0018 Tw
+(process; this is useful for providing input interactively.)Tj
+1.44 -1.26 TD
+0.0255 Tw
+(Further uses of)Tj
+/F4 1 Tf
+6.33 0 TD
+0 Tw
+(read)Tj
+/F2 1 Tf
+2.68 0 TD
+(within)Tj
+9 0 0 9 258.9 368.315 Tm
+(AMPL)Tj
+10 0 0 10 286.7 368.315 Tm
+0.0252 Tw
+[(scripts, to read values directly from )-12.5(script )-12.5(files )-12.5(or)]TJ
+-16.07 -1.2 TD
+-0.0037 Tw
+(to prompt users for values at the command line, are described in Chapter 13.)Tj
+1.44 -1.26 TD
+0.2275 Tw
+[(All of our examples assume that underlying sets )-9.5(such )-9.5(as)]TJ
+/F4 1 Tf
+24.97 0 TD
+0 Tw
+(ORIG)Tj
+/F2 1 Tf
+2.89 0 TD
+(and)Tj
+/F4 1 Tf
+1.93 0 TD
+(PROD)Tj
+/F2 1 Tf
+2.89 0 TD
+(have)Tj
+-34.12 -1.2 TD
+0.0239 Tw
+(already been assigned values, through data statements as described earlier in this chapter,)Tj
+T*
+0.1346 Tw
+[(or )8.6(through )8.6(other )8.6(means )8.6(such )8.6(as database access or assignment to be described in later)]TJ
+T*
+0.2681 Tw
+[(chapters. Thus )240.1(the)]TJ
+/F4 1 Tf
+7.88 0 TD
+0 Tw
+(read)Tj
+/F2 1 Tf
+2.68 0 TD
+0.0258 Tw
+[(statement would normally supplement rather )13.8(than )13.8(replace )13.8(other)]TJ
+-10.56 -1.2 TD
+0.028 Tw
+[(input commands. )-251(It is particularly useful in handling long files of data that are generated)]TJ
+T*
+-0.0071 Tw
+(for certain parameters by programs outside of)Tj
+9 0 0 9 310.8 283.715 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 335.8 283.715 Tm
+(.)Tj
+/F1 1 Tf
+11 0 0 11 126 230.315 Tm
+(Exercises)Tj
+10 0 0 10 126 212.415 Tm
+(9-1.)Tj
+/F2 1 Tf
+9 0 0 9 147.9 212.415 Tm
+0.1512 Tw
+[(Section )10(9.2 )10(gave )10(a variety of data statements for a three-dimensional set,)]TJ
+/F4 1 Tf
+31.0556 0 TD
+0 Tw
+(ROUTES)Tj
+/F2 1 Tf
+3.6 0 TD
+0.4111 Tw
+(. Con-)Tj
+-37.0889 -1.2222 TD
+0.0058 Tw
+(struct some other alternatives for this set as follows:)Tj
+ET
+endstreamendobj67 0 obj<< /Type /Page /Parent 137 0 R /Resources 68 0 R /Contents 69 0 R /Rotate 0 /MediaBox [ 0 0 612 792 ] /CropBox [ 40.32001 126 571.67999 792 ] >> endobj68 0 obj<< /ProcSet [ /PDF /Text ] /Font << /F1 154 0 R /F2 157 0 R /F4 162 0 R /F6 165 0 R >> /ExtGState << /GS1 170 0 R >> >> endobj69 0 obj<< /Length 5982 >> stream
+BT
+/F6 1 Tf
+10 0 0 10 126 747.615 Tm
+0 g
+/GS1 gs
+0 Tc
+0 Tw
+(166)Tj
+7 0 0 7 159.6 747.615 Tm
+0.0407 Tw
+[(SPECIFYING DATA )-31646.1(CHAPTER )31.9(9)]TJ
+/F2 1 Tf
+9 0 0 9 126 716.215 Tm
+0.0059 Tw
+(\(a\) Use templates that look like)Tj
+/F4 1 Tf
+12.8111 0 TD
+0 Tw
+(\(CLEV,FRA,*\))Tj
+/F2 1 Tf
+7.2 0 TD
+(.)Tj
+-20.0111 -1.4556 TD
+0.0058 Tw
+(\(b\) Use templates that look like)Tj
+/F4 1 Tf
+12.8667 0 TD
+0 Tw
+(\(*,*,bands\))Tj
+/F2 1 Tf
+6.6 0 TD
+0.0083 Tw
+(, with the list format.)Tj
+-19.4667 -1.4556 TD
+0.0059 Tw
+(\(c\) Use templates that look like)Tj
+/F4 1 Tf
+12.8111 0 TD
+0 Tw
+(\(CLEV,*,*\))Tj
+/F2 1 Tf
+6 0 TD
+0.0086 Tw
+(, with the table format.)Tj
+-18.8111 -1.4556 TD
+0.0392 Tw
+[(\(d\) Specify some of the setís members using templates with )-11.2(one)]TJ
+/F4 1 Tf
+26.3111 0 TD
+0 Tw
+(*)Tj
+/F2 1 Tf
+0.6 0 TD
+0.0512 Tw
+(, and some using templates with)Tj
+-26.9111 -1.2222 TD
+0 Tw
+(two)Tj
+/F4 1 Tf
+1.7556 0 TD
+(*)Tj
+/F2 1 Tf
+0.6 0 TD
+(ís.)Tj
+/F1 1 Tf
+10 0 0 10 126 649.115 Tm
+(9-2.)Tj
+/F2 1 Tf
+9 0 0 9 147.9 649.115 Tm
+0.1057 Tw
+[(Rewrite )10.4(the production model data of Figure 5-4 so that it consists of just three data state-)]TJ
+-2.4333 -1.2222 TD
+0.0062 Tw
+(ments arranged as follows:)Tj
+0 -1.4556 TD
+(The set)Tj
+/F4 1 Tf
+3.1778 0 TD
+0 Tw
+(PROD)Tj
+/F2 1 Tf
+2.6556 0 TD
+0.0078 Tw
+(and parameters)Tj
+/F4 1 Tf
+6.3444 0 TD
+0 Tw
+(rate)Tj
+/F2 1 Tf
+2.4 0 TD
+(,)Tj
+/F4 1 Tf
+0.5111 0 TD
+(inv0)Tj
+/F2 1 Tf
+2.4 0 TD
+(,)Tj
+/F4 1 Tf
+0.5111 0 TD
+(prodcost)Tj
+/F2 1 Tf
+5.0556 0 TD
+(and)Tj
+/F4 1 Tf
+1.7 0 TD
+(invcost)Tj
+/F2 1 Tf
+4.4556 0 TD
+0.0075 Tw
+(are given in one table.)Tj
+-29.2111 -1.4556 TD
+0.0062 Tw
+(The set)Tj
+/F4 1 Tf
+3.1778 0 TD
+0 Tw
+(WEEKS)Tj
+/F2 1 Tf
+3.2556 0 TD
+0.0079 Tw
+(and parameter)Tj
+/F4 1 Tf
+5.9556 0 TD
+0 Tw
+(avail)Tj
+/F2 1 Tf
+3.2556 0 TD
+0.0075 Tw
+(are given in one table.)Tj
+-15.6444 -1.4556 TD
+0.0079 Tw
+(The parameters)Tj
+/F4 1 Tf
+6.4556 0 TD
+0 Tw
+(revenue)Tj
+/F2 1 Tf
+4.4556 0 TD
+(and)Tj
+/F4 1 Tf
+1.7 0 TD
+(market)Tj
+/F2 1 Tf
+3.8556 0 TD
+0.0075 Tw
+(are given in one table.)Tj
+/F1 1 Tf
+10 0 0 10 126 582.015 Tm
+0 Tw
+(9-3.)Tj
+/F2 1 Tf
+9 0 0 9 147.9 582.015 Tm
+0.0062 Tw
+[(For the assignment problem whose data is depicted in Figure 3-2, suppose that )-10.7(the )-10.7(only )-10.7(infor-)]TJ
+-2.4333 -1.2222 TD
+(mation you receive about peopleís preferences for offices is as follows:)Tj
+3.2 -1.9333 TD
+0.2612 Tw
+[(Coullard )-1599.7(M239 M233 D241 D237 D239)]TJ
+0 -1.2222 TD
+0.261 Tw
+[(Daskin )-2267.3(D237 M233 M239 D241 D239 C246 C140)]TJ
+T*
+[(Hazen )-2545.7(C246 D237 M233 M239 C250 C251 D239)]TJ
+T*
+[(Hopp )-2878.3(D237 M233 M239 D241 C251 C250)]TJ
+T*
+[(Iravani )-2268.3(D237 C138 C118 D241 D239)]TJ
+T*
+0.2609 Tw
+[(Linetsky )-1600(M233 M239 C250 C251 C246 D237)]TJ
+T*
+0.261 Tw
+[(Mehrotra )-1379.3(D237 D239 M239 M233 D241 C118 C251)]TJ
+T*
+[(Nelson )-2267.3(D237 M233 M239)]TJ
+T*
+[(Smilowitz )-987.8(M233 M239 D239 D241 C251 C250 D237)]TJ
+T*
+0.2609 Tw
+[(Tamhane )-1379(M239 M233 C251 C250 C118 C138 D237)]TJ
+T*
+0.261 Tw
+[(White )-2656(M239 M233 D237 C246)]TJ
+-3.2 -1.9333 TD
+0.063 Tw
+[(This means that, for example, Coullardís first choice is M239, her second )-10.5(choice )-10.5(is )-10.5(M233, )-10.5(and )-10.5(so)]TJ
+0 -1.2222 TD
+0.0073 Tw
+(on through her fifth choice, D239, but she hasnít given any preference for the other offices.)Tj
+0 -1.4556 TD
+0.0176 Tw
+[(To )12(use )12(this )12(information )12(with )12(the )12(transportation )12(model of Figure 3-1a as explained in Chapter 3, you)]TJ
+0 -1.2222 TD
+0.194 Tw
+(must set)Tj
+/F4 1 Tf
+3.9444 0 TD
+0 Tw
+(cost["Coullard","M239"])Tj
+/F2 1 Tf
+14.2444 0 TD
+0.1998 Tw
+(to 1,)Tj
+/F4 1 Tf
+2.4111 0 TD
+0 Tw
+(cost["Coullard","M233"])Tj
+/F2 1 Tf
+14.2333 0 TD
+0.1852 Tw
+(to 2, and so)Tj
+-34.8333 -1.2222 TD
+0.0183 Tw
+[(forth. )-248.7(For )11.9(an )11.9(office not ranked, such as C246, you can set)]TJ
+/F4 1 Tf
+23.6333 0 TD
+0 Tw
+(cost["Coullard","C246"])Tj
+/F2 1 Tf
+14.0667 0 TD
+0.022 Tw
+(to 99,)Tj
+-37.7 -1.2222 TD
+0.0063 Tw
+(to indicate that it is a highly undesirable assignment.)Tj
+0 -1.4556 TD
+0.0724 Tw
+[(\(a\) )10.3(Using the list format and a)]TJ
+/F4 1 Tf
+12.7444 0 TD
+0 Tw
+(default)Tj
+/F2 1 Tf
+4.5222 0 TD
+0.0737 Tw
+(phrase, convert the information above to an appropriate)Tj
+8 0 0 8 126 345.015 Tm
+0 Tw
+(AMPL)Tj
+9 0 0 9 150.6 345.015 Tm
+0.0065 Tw
+(data statement for the parameter)Tj
+/F4 1 Tf
+13.1667 0 TD
+0 Tw
+(cost)Tj
+/F2 1 Tf
+2.4 0 TD
+(.)Tj
+-18.3 -1.4556 TD
+0.0073 Tw
+(\(b\) Do the same, but with a table format.)Tj
+/F1 1 Tf
+10 0 0 10 126 315.115 Tm
+0 Tw
+(9-4.)Tj
+/F2 1 Tf
+9 0 0 9 147.9 315.115 Tm
+0.1625 Tw
+[(Sections )9.4(9.2 )9.4(and )9.4(9.3 )9.4(gave a variety of data statements for a three-dimensional parameter,)]TJ
+/F4 1 Tf
+-2.4333 -1.2222 TD
+0 Tw
+(cost)Tj
+/F2 1 Tf
+2.4 0 TD
+0.0535 Tw
+[(, indexed over )14.5(the )14.5(set)]TJ
+/F4 1 Tf
+9 0 TD
+0 Tw
+(ROUTES)Tj
+/F2 1 Tf
+3.8889 0 TD
+0.0395 Tw
+[(of )-5.2(triples. )-254.8(Construct some other alternatives for this parame-)]TJ
+-15.2889 -1.2222 TD
+0.0059 Tw
+(ter as follows:)Tj
+0 -1.4556 TD
+(\(a\) Use templates that look like)Tj
+/F4 1 Tf
+12.8111 0 TD
+0 Tw
+([CLEV,FRA,*])Tj
+/F2 1 Tf
+7.2 0 TD
+(.)Tj
+-20.0111 -1.4556 TD
+0.0058 Tw
+(\(b\) Use templates that look like)Tj
+/F4 1 Tf
+12.8667 0 TD
+0 Tw
+([*,*,bands])Tj
+/F2 1 Tf
+6.6 0 TD
+0.0083 Tw
+(, employing the list format.)Tj
+-19.4667 -1.4556 TD
+0.0059 Tw
+(\(c\) Use templates that look like)Tj
+/F4 1 Tf
+12.8111 0 TD
+0 Tw
+([CLEV,*,*])Tj
+/F2 1 Tf
+6 0 TD
+0.0086 Tw
+(, employing the table format.)Tj
+-18.8111 -1.4556 TD
+0.1061 Tw
+[(\(d\) Specify some of the parameter values using )-10.7(templates )-10.7(with )-10.7(one)]TJ
+/F4 1 Tf
+28.1222 0 TD
+0 Tw
+(*)Tj
+/F2 1 Tf
+0.6 0 TD
+0.1182 Tw
+(, and some using templates)Tj
+-28.7222 -1.2222 TD
+0.0053 Tw
+(with two)Tj
+/F4 1 Tf
+3.7889 0 TD
+0 Tw
+(*)Tj
+/F2 1 Tf
+0.6 0 TD
+(ís.)Tj
+/F1 1 Tf
+10 0 0 10 126 212.915 Tm
+(9-5.)Tj
+/F2 1 Tf
+9 0 0 9 147.9 212.915 Tm
+0.24 Tw
+(For the three-dimensional parameter)Tj
+/F4 1 Tf
+15.7889 0 TD
+0 Tw
+(revenue)Tj
+/F2 1 Tf
+4.6889 0 TD
+0.2517 Tw
+(of Figure 6-4, construct alternative data)Tj
+-22.9111 -1.2222 TD
+0.0057 Tw
+(statements as follows:)Tj
+ET
+endstreamendobj70 0 obj<< /Type /Page /Parent 137 0 R /Resources 71 0 R /Contents 72 0 R /Rotate 0 /MediaBox [ 0 0 612 792 ] /CropBox [ 40.32001 126 571.67999 792 ] >> endobj71 0 obj<< /ProcSet [ /PDF /Text ] /Font << /F1 154 0 R /F2 157 0 R /F4 162 0 R /F5 163 0 R /F6 165 0 R >> /ExtGState << /GS1 170 0 R >> >> endobj72 0 obj<< /Length 1174 >> stream
+BT
+/F6 1 Tf
+7 0 0 7 126 747.615 Tm
+0 g
+/GS1 gs
+0 Tc
+0.0087 Tw
+[(SECTION )-21.1(9.5 )-13942.9(READING UNFORMATTED DATA: THE)]TJ
+/F5 1 Tf
+38.6857 0 TD
+0 Tw
+(READ)Tj
+/F6 1 Tf
+2.6857 0 TD
+(COMMAND)Tj
+10 0 0 10 469.2 747.615 Tm
+(167)Tj
+/F2 1 Tf
+9 0 0 9 126 716.215 Tm
+0.0059 Tw
+(\(a\) Use templates that look like)Tj
+/F4 1 Tf
+12.8111 0 TD
+0 Tw
+([*,east,*])Tj
+/F2 1 Tf
+6 0 TD
+0.0086 Tw
+(, employing the table format.)Tj
+-18.8111 -1.4445 TD
+0.0058 Tw
+(\(b\) Use templates that look like)Tj
+/F4 1 Tf
+12.8667 0 TD
+0 Tw
+([*,*,1])Tj
+/F2 1 Tf
+4.2 0 TD
+0.0086 Tw
+(, employing the table format.)Tj
+-17.0667 -1.4444 TD
+0.0059 Tw
+(\(c\) Use templates that look like)Tj
+/F4 1 Tf
+12.8111 0 TD
+0 Tw
+([bands,*,1])Tj
+/F2 1 Tf
+6.6 0 TD
+(.)Tj
+/F1 1 Tf
+10 0 0 10 126 673.715 Tm
+(9-6.)Tj
+/F2 1 Tf
+9 0 0 9 147.9 673.715 Tm
+0.008 Tw
+(Given the following declarations,)Tj
+/F4 1 Tf
+8 0 0 8 154.8 658.715 Tm
+0.0001 Tw
+(set ORIG;)Tj
+0 -1.125 TD
+(set DEST;)Tj
+T*
+0 Tw
+(var Trans {ORIG, DEST} >= 0;)Tj
+/F2 1 Tf
+9 0 0 9 126 623.715 Tm
+0.0057 Tw
+(how could you use a data statement to assign an initial value of 300 to all of the)Tj
+/F4 1 Tf
+32.2111 0 TD
+0 Tw
+(Trans)Tj
+/F2 1 Tf
+3.2556 0 TD
+(variables?)Tj
+ET
+endstreamendobj73 0 obj<< /Type /Font /Subtype /Type1 /FirstChar 32 /LastChar 125 /Widths [ 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 ] /Encoding /WinAnsiEncoding /BaseFont /BPLFKF+Courier-BoldOblique /FontDescriptor 75 0 R >> endobj74 0 obj<< /Type /Font /Subtype /Type1 /FirstChar 32 /LastChar 120 /Widths [ 278 333 474 556 556 889 722 238 333 333 389 584 278 333 278 278 556 556 556 556 556 556 556 556 556 556 333 333 584 584 584 611 975 722 722 722 722 667 611 778 722 278 556 722 611 833 722 778 667 778 722 667 611 722 667 944 667 667 611 333 278 333 584 556 333 556 611 556 611 556 333 611 611 278 278 556 278 889 611 611 611 611 389 556 333 611 556 778 556 ] /Encoding /WinAnsiEncoding /BaseFont /BPLIEP+Helvetica-BoldOblique /FontDescriptor 77 0 R >> endobj75 0 obj<< /Type /FontDescriptor /Ascent 626 /CapHeight 562 /Descent -142 /Flags 262243 /FontBBox [ -56 -250 868 801 ] /FontName /BPLFKF+Courier-BoldOblique /ItalicAngle -12 /StemV 106 /XHeight 439 /StemH 84 /CharSet (/d/a/t/space/i/e/period/semicolon/m/o/l/u/s/M/I/N/R/E/Q/colon/equal/A/B/\one/two/C/L/X/p/y/U/T/r/comma/braceleft/n/braceright/v/bracketleft/brack\etright/four/zero/three)/FontFile3 76 0 R >> endobj76 0 obj<< /Filter /FlateDecode /Length 2998 /Subtype /Type1C >> stream
+HâlUPT◊æoó˜—ÏÛ≠-KﬁBûBE4Å†¿∏-Ç?`%ÄPT∫Ää
+Yq´`'…(äFAã¶Ñˇ"Q¬@GaçZKåïh¢)ÍMSµ◊æÛÃ°µwAÌ§Ì‹ù;oÓπ˜|˜˚æsˆrƒMG8é3Gø=kZ¸¥Ò1˘+r≤&DÁÁ-JXêó≥be∂+<Y3s⁄(∑u^:Õ◊ÀÑ<V>-⁄ Àu‹≥
+πé¯è˝Â≥¡Ô
+/§èÄÜW>ı>ŸHtó∏(&ﬂæ∫ g…“"øü,ÁÃÊ»7Áê`ø©ãÚd˚%Ø., ~ß–oÊÚÖ˘ˆ¸Ç¨¢ÏE˝¶ÊÂ˘û-Ù+».Ã.X≈ˇﬂ	«N»B^q#fé»Ñº¶#Ñ2AGB92â#ëÑX	˘!—Ñƒr$éê_∏ëd72èêtBlÑ31àéË…´d©$«87n)◊¿›’ôt∫_Îæ—«ÎıüÈˇÓˆ¶[æi¸f˛≤†Sõp¡n®0¸ﬁpœ}é˚>˜oáΩ=ló«Dèe-<«xñx^ÙˆF=ÂÄ…£◊^Öh	ﬂ&‡Qd¡€≥1rïÊ@ûò	sæîí∫ñtuu9-ãuŒîÊYÃLIYúlÒvPm
+Â˙Äát‡ı}‡î–‹ÑÒ0f6A<ò¡7bq:Nœ¡XÙïÅ7]‹c˙˚∑·ò8Ãà.≥€£w@ÜÏ]Aµ™bj@ßˇJ´ó⁄&ÄÔg¸ÄÑVEK¢h’™¢Æ=¡‘xSÖ˘¿#Q≈˛s&m&ºÂÉ”Ò—ΩŒ´ó.úv?v¥Ób´A7–3lÊ‚ƒπÚõÍ√æ∂ÜÛÕ›EIÎÏÛmrjÍƒ…Ë·ÓÌP!ÜÇ?5¬˜¿G /ˆÉ®•K‚£C]-≠ÊÌ%ôÛó&[)'±ˇí”üh[7#°æ.”bÊ3‘÷≤fNØÇ«ÂeßÊ∂àèé6’∂˜y|vÃåy≈)·.fMñChE±ŒÉNÏ=À$+T/CIÅ4¨©èÜi^Ëe®íp√OXŒoyalÉŸFHfFÿŸ¸ÕK'\6∏<êqõ€‹ir«>‰éÀ‡ã0õs˘¯ﬂO”˛7ó7xÄÓ,Ë∏œ5õ^€´Ω&ÿPßŸÑ∑ÁåèìB*Â÷Cıcÿ©_oÇjjù<,ìy´;iºÄ©öç«]
+x8U>NÄ≥p^∫àA<JÆ$‡KA`¬ÎÿX ºïâˇ‰c‹‡«_\Î;ó{2eèE‘ÔØ=⁄Ó”gΩ(„-Â&™SHUO·ÿq«¬¸ºº$zä€üÒ	å⁄ª87yFy∂ÕÇ˜jUMÀãçı‡˛å+#œHF{µﬂ@êî1sniíçâ7ô÷ü˜|◊zªpVµe[
+Ëjy±}mÀ{˙Ï˘†πÍàÏˇ;^Ï}/á?`Kﬂïb∆)®«—éV}a÷„ÎGúó,åÕó–Ì'ú‘¯t∑hõ®äüîÌ1iMÇ¯∑2X¢ﬁı„qù¿¡˜ñA¸WY"ªbèêƒ†ÿ víÌ˛¸?Ñwa1?P?ƒ‘•íJ9ÿ¿ö¢◊4ÿ†Çï$)`E≠/w¯0Ì™˛òI´j†IÂ:¸)èπlª'≈^Â™¡/6üb{˜±å∞dÈöÙõëÜ(∞ùŒµõbéäÕ°–Ãcé“çÍW$ËfWÇ‡UZ.5^a)v±Rná%⁄	3î≥®&(∞è*‡‹,à%‡g%¶Âû•ÿ†<ƒsoîi<Ãä]•≠§∆&pá”‡.Z≈≠j£TºbŸZáŸQ¥cwñe≥¸Ø¿h0˘¿§ ∞0¡ß†'…õP8â†œ\awîÂwN˛ëò~‰|ÌñÉÊ˝ıÂÂç±£ºqO˘!ÛßÕª⁄œXƒÙÅh¯^˙ˆ‰√GèNéüêêˆ>k«€·FR0R#e4Ê≤∫+i4A-çÇëWÖ?î¥Et£—Ç±„v¨¡ﬁôıó¨˝Ó'júŒ>µe còå_+7—¡2º®≈?V-)Ã (å∑Ñ˛¿40ô†ü¢‘áBÜÉnG1TÒªÑb¨]YÑÛôèÜ¡bÂ)wç]»¡Œm—lRn0
+∏T∆s-JÜ≠=Îî;∏…æpqT‘¬Ê€2l∫√÷C®∆ùPçÂP˛î`	ld≈æûe∫N±DŸ#Ãàåˇö?D±\π.Ä	#xÒ.a•∞N˙Ä‹B¬g*∞ë˛\¿qêÃ{èUµMÍs*†} Åóä•ˇ\ •*z	?ànÿ*°óî>]Ä•~¿ÇJÔ—Nj¸Ñ=´X≠8¥ÀTöÛ>Ó``tLÒ;1r€8~_GœáÌÊøV‰⁄-[ó&VÊõqTHÃ$ff›Ñ;=ùÕ-≤Ë∞AöAÏ¿4ò(≠òû5ﬂ¸´ÏöÉª´⁄∑∑æˇ˛~À ªˆ3ÈjÛÇ2b¸à°÷¢ﬁ°“≠V¿˝•5c`¸√·©¶ö—§†Ãêp§Í#N9k[ZV$p6ÿ%±#:.1jj“ôûﬁÆÓ^πv9Õ ∞‘€¥ár-ÄQ”køÖ7§‹∏∏º©f±‰ nãf6}\πwáºé„ùaLbØãc¡+Çn=8÷˙'y r•{Œ}‘m~‹î¥÷ıˇkËìjÒÏe«5/?∏c@˘å2Ñ°Ï*∞g‹ŒÁDáN‹◊*%∑ÅêóÔe≠Å1Êá2øÆèÉÓ˛‡oîØ¯’J@ÆâU†îŒe ¬øª¨⁄ò¶Œ(<¶ΩØU∂w◊%ΩŸΩÃB2b¶]õ`¿5¡!n|Ã	´¡í1-¥ÀPôîµ¨k¯ÿ"_∑)iZ1QDk6&M¯!	&ç|,⁄.[Ê6ó‹¡π…K≤Ω7d˚±‹_Á«ÛûsûÁ9Áû–ò∞Åﬁzèg¿ ïC)f{üø«„[ê+ΩCdÄ=G'NT}Ï™∑r£ç’‚Y∂÷z¡÷ƒA—´„Ëøtø#W(ˇ∫!%’
+n6
+–'ôŸ«–ı…˚„”ÏmÒb!èsà˚˙…ËùD%Qº√i˜∏ùw∏ù-Á.Ó
+#"-\ïRBÑÌEÖÌE∞1êâ5?)îbÕ6≥=díOìÑLnÎ»æµ•{Oü.U‰6U¶{´\ﬁ/ÉË%ÌcRYÄÃ|ƒá˜3D¬©|U›˛ﬁı-Èõ∞8·OºØ°ﬁ€jÁÈà›Ìº‘¯ÈÆ∏DXŸRΩ
+'†óyºxˇQ¸ª≤\S…ªyGﬁû_Ê∂{'¿HRú‹$√áuÜûÒﬁTçyÎÊçl^YıÈRûé/aª ;âº©Ç¨óq`	/âıX0»ÙπmäùÛ§∂Û⁄ıÌÖ@GËA9[ÆdËàßV%æ∂ªä≈YfC9ﬁØ8ıãﬁ©võŒR—zÏÕOÇ„nÓÚıåœTtmOCóµNgÒ4_Æ·Ëº–“QùãN∑Œ±`∏Û¸§º÷≈ø’i¸*¨≈zÓ>å∏\wÏÏU—Éó˙<ì◊t¡Æ±ÆQNπîº§ìMM'òèú?Õ\ÕÒ†'Ïb§„q∫âx´Ω1g:ˆHºÛ\øÆê£]!Ììv\ÚC2ïê¿e¬Eœ‡<TY]ŸPÀ:Nı.0ÜKÖU\Ç≈L†éﬁæ6¡—.+†¥@#$$≠D, `D˙˙RKÇIJXP±ı πù(QíÇ√8°˙ôR‰ó’Rä⁄@m;‰ ƒ%‹&LR8fA°jJ	„ËÒÙ©Œ‡/©HYq`ñ¿¸Ôñ3¿áÃÏDK]èµ(€∑|&…ŒoREfîá›(‹vs#√·∞éÑ—Yˇ∑YåÙ˘g≤˝
+†ÆΩ¶≈Ã˛ÔM˘8,0Êö+°v¥Ëô?JœgP≥ærrÿ ÀÄeƒ≈9\ÕãéÑÂf_ó1èíÀSœ|
+ ‘1qeñMkícC¯’~»ÍÔ˘í˚◊O∫∑j:8⁄ÙÚﬂ©ÍwoÏÒß¶…øΩÙrÑÜ+
+endstreamendobj77 0 obj<< /Type /FontDescriptor /Ascent 718 /CapHeight 718 /Descent -207 /Flags 262240 /FontBBox [ -174 -228 1114 962 ] /FontName /BPLIEP+Helvetica-BoldOblique /ItalicAngle -12 /StemV 140 /XHeight 532 /StemH 140 /CharSet (/L/i/s/t/space/o/f/n/e/hyphen/d/m/a/l/p/r/w/h/g/C/b/T/c/H/D/u/v/I/x)/FontFile3 78 0 R >> endobj78 0 obj<< /Filter /FlateDecode /Length 1969 /Subtype /Type1C >> stream
+HâlVT◊ûawÓ ≈Ó0ò√¬Ï(´(∫
+(Ç‘Ç/Îª>wŸ≠¨ä+Àc¡ò4AñÉ°≠.hEMÉ‚—ûúcB‚˚Q´E$‚£—XlR˙˘◊CÔ¨öûˆÙ‹≥˜Ã}}˜˚˛ˇˇfñe¥À≤ë©s2“ßÕ1”æ¶–ûÔ»≤òSùklô÷5é‹ª∫aúb`ïPÌ∆‡ %"8'a—è\»I^∂Ø\Ú2ÉÜ,ÍÛ?óÛ∞Ô8=†9"∞Sœ∞lı°4Á∫bócevæ<,k∏7>)a§⁄'˙˚Òj?>VûbsZÌÚº‚º|{Nûúæ6ÀÈZÁtYÚÌ∂Q≤<eÕyÆäê'œµÁŸ]Ötˆ'™≤#O∂»˘.ãÕûcq≠ñùøí3kù˘≈ÎÏÚî≤e≠m¥”%;ËŸºkû√Ê∞∏ˆºQˇ_*√“∆Ë∆ƒ2√Y∆Ã0	ì»Ã“2Û#—`1Üc"òÊ#¶ìQÿP6Å=†XpR£◊§kŒh9≠Y;M{P˚ò«m„.êÈ§îú&›|Ôíu≤n¨Ü0v4j‡Kx"b#ÜA#—¡˝"Sﬁ°K«¡¨ÈMQ‹bœñ±0Wp¡P¨DD¢Û`Ê?ÄÖÿFå!cä±,…Ä¬bﬁÏ9yBÍìWT)`9Ñ(´ ÑmÖh8KA[√‡<ÅÕg¿£ ‚ó`≈_Ò*Åh¡DŒ?]èŸd≈WPgƒ°*%o!‹ÄÿÎfˇ1pb4J‹ÒƒÙZ1˜‚!ÿã1œ¨tıØìΩÖΩV7{ûÓÉUΩVÒ˘
+—ïSeùn ÉŒæòW*!{âŒ[®tÅ¿¬[*¯ •KÑ|Ì(@éØK=ìK∫ºJhı √\àäîwîbd}
+≤»Âc‚[»¡ ÍcW}˛˛úúu•ÔQ_ƒ≈oH_.4c¿Ì7n=j>~®Qä~ìS±• #ºd˝∂íös·yWö_À»öµŒ^{™ÂÿŒœ∂K-€Î∑◊¸6PW¸–ß–˝!≈≠?C)îÄI8•LáZ1√5<.>˚˙ÕŒ=ﬂ<æw`B¢Ñ% 2e"ºMïGÚ¬©K|Ê·≥Ö-àøHèÖå®˚ÿ/Œ≤ƒQ`,ÛãnA{L∞”¿B—ï7cÍ†2‡[.÷wuI*ÎÊoÀÑ¡í7†Ùq¢g¶–,•†ˆöa,:Ê”ˇõ©
+X2ezRπåUe‰pÅÂTú˚E≈aΩà2ƒ∑úı~uÿXAœÙˆı£∫Ó∏yÔÒûÑq≤ßƒ«πûúì¸DµˆÄv<[O°s¿§Qt+⁄7eπm‰∂‹?˙ûQa˜xá¸y0ñ†Âutü1zö ÙO$äW´é4]44üŒM®2Í—ÙOÌæE1ÔÇ¨∑2U|–Î%«=µ'•OÄ#ûçE´aD¶å+&E∑˘¶ÇÃÎ0ßÇsˇí°ø˛(•SLï∂ﬂ)âJÉ(¥O(„è¨œjˆRÍÏßÒzÁ»'ü÷+ ∏◊˘Ñï+Sí7Ì€˜ÆÑ#	r€ p†ˆC0?4RÔ„∞éAHÀ«ü}›4-!5/y§$|ó‰ºuŸ®÷l
+Ω=≈Õ^†9]Nô+«≠˝íœDMŒ¥ΩY,ïA ¥dh!Ì'õŒﬁ´H∑Iÿ™rß&Q‹¶øÚ¿+îØè÷µ“¿±∞@Ã–LÖÅL^öÈäª?É*—)ı˙¢ Hû‚O~˛çNı^zIbúmNn±Ù≈ Ï˝ìf€‹ÏbZkB˚◊Æ^m4Õ-ﬁÔîgº!·_ÈÃ5˛‹ﬁW?=í;·…üÆx!Ph˛è¬°Yô´ã$
+ÿˆ∞ÖöˇGe	çO€ã≤ﬁÆñ ÿ%¬|ª0ä6qŒ«˘ éÅ(⁄ƒ.ò/°)lÜ€å2Óo/_ﬁ˝-M0≥€<C“·ÏBX@]“ÊOˆYzﬂ€‘ÄÌ∞>;ÎüœoD«ıõ4EpPã·œ‹t€˛
+≤ˆ˜G>yÈ=#=‰∑üŸ∂ƒíKË*©ŒâÖÍ>ÏVÉ)¥ùß°á‰À›óÅ›Y[^V-¡`ﬁSZÍ)5å[Ωh¡Z5é{à·ºjàû>∆ı˜–>f√4©èYu·Rè˛ òp DµÜPºG¥ñ "BÃ&˘cîìóDO4
+èp)t\äwØœNìÑÔ«85—Dpp%¥@CƒÏá—t,∆ofﬂ	Øﬂ—–JïµVØtl£ûy∑:ªŸ€ja∏zìTkõ“¢Øa+ô^∑˙K uuOù±áﬂ∫yÛ÷R√‹≠’ç–t∑{¨?-Q?(ÙÌ†d©?ØM¥)ƒWd‰¨‹Â+ñ˛Ó∂t¸=è≠ôˇº˛y„ç}=•Ä_u9≠’7ªSŸßQé™GáS˘"∏2ÇÙØá±Ê˘8à¶ïYNø•`bwÙñkzw®ªM$…ßßõÆË9DR¸É$u0ú@åz–D:îWπ
+“·{U–+ÈW®πj‹l≠RØÏ!j8O∆‡Ë8Õ·$©XÉÈ∏áÉâ‰!å}àc9òBtEªz≠ª–R#´	Ï©Ü†™gd;/y”äˆ˜É† êÊ	÷)™à‚ø µpM`
+endstreamendobj127 1 obj<< /Type /Metadata /Subtype /XML /Length 823 >> stream
+<?xpacket begin='' id='W5M0MpCehiHzreSzNTczkc9d' bytes='823'?>
+
+<rdf:RDF xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'
+ xmlns:iX='http://ns.adobe.com/iX/1.0/'>
+
+ <rdf:Description about=''
+  xmlns='http://ns.adobe.com/pdf/1.3/'
+  xmlns:pdf='http://ns.adobe.com/pdf/1.3/'>
+  <pdf:CreationDate>2002-08-29T19:19:12Z</pdf:CreationDate>
+  <pdf:ModDate>2002-08-29T15:33:12-03:00</pdf:ModDate>
+  <pdf:Producer>Acrobat Distiller 5.0 (Windows)</pdf:Producer>
+ </rdf:Description>
+
+ <rdf:Description about=''
+  xmlns='http://ns.adobe.com/xap/1.0/'
+  xmlns:xap='http://ns.adobe.com/xap/1.0/'>
+  <xap:CreateDate>2002-08-29T19:19:12Z</xap:CreateDate>
+  <xap:ModifyDate>2002-08-29T15:33:12-03:00</xap:ModifyDate>
+  <xap:MetadataDate>2002-08-29T15:33:12-03:00</xap:MetadataDate>
+ </rdf:Description>
+
+</rdf:RDF>
+<?xpacket end='r'?>endstreamendobj132 0 obj<< /S /D /St 143 >> endobj133 0 obj<< /Nums [ 0 132 0 R ] >> endobj134 0 obj<< /Type /Pages /Kids [ 152 0 R 1 0 R 4 0 R 7 0 R 10 0 R 13 0 R 16 0 R 19 0 R 22 0 R 25 0 R ] /Count 10 /Parent 135 0 R >> endobj135 0 obj<< /Type /Pages /Kids [ 134 0 R 136 0 R 137 0 R ] /Count 25 >> endobj136 0 obj<< /Type /Pages /Kids [ 28 0 R 31 0 R 34 0 R 37 0 R 40 0 R 43 0 R 46 0 R 49 0 R 52 0 R 55 0 R ] /Count 10 /Parent 135 0 R >> endobj137 0 obj<< /Type /Pages /Kids [ 58 0 R 61 0 R 64 0 R 67 0 R 70 0 R ] /Count 5 /Parent 135 0 R >> endobj138 0 obj<< /Dt (D:20020829151924)/JTM (Distiller)>> endobj139 0 obj/This endobj140 0 obj<< /CP (Distiller)/Fi 139 0 R >> endobj141 0 obj<< /R [ 2400 2400 ] >> endobj142 0 obj<< /JTF 0 /MB [ 0 0 612 792 ] /R 141 0 R /W [ 0 24 ] >> endobj143 0 obj<< /Fi [ 140 0 R ] /P [ 142 0 R ] >> endobj144 0 obj<< /Dm [ 612 792 612 792 ] >> endobj145 0 obj<< /Me 144 0 R >> endobj146 0 obj<< /D [ 143 0 R ] /MS 145 0 R /Type /JobTicketContents >> endobj147 0 obj<< /A [ 138 0 R ] /Cn [ 146 0 R ] /V 1.10001 >> endobj148 0 obj<< /CreationDate (D:20020829191912Z)/ModDate (D:20020829153312-03'00')/Producer (Acrobat Distiller 5.0 \(Windows\))>> endobj151 0 obj<< /Type /Catalog /Pages 135 0 R /Metadata 127 1 R /JT 147 0 R /PageLabels 133 0 R /FICL:Enfocus 176 0 R >> endobj152 0 obj<< /Type /Page /Parent 134 0 R /Resources 153 0 R /Contents 158 0 R /Rotate 0 /MediaBox [ 0 0 612 792 ] /CropBox [ 40.32001 126 571.67999 792 ] >> endobj153 0 obj<< /ProcSet [ /PDF /Text ] /Font << /F1 154 0 R /F2 157 0 R /F3 159 0 R /F4 162 0 R /F5 163 0 R /F6 165 0 R >> /ExtGState << /GS1 170 0 R >> >> endobj154 0 obj<< /Type /Font /Subtype /Type1 /FirstChar 32 /LastChar 121 /Widths [ 278 333 474 556 556 889 722 238 333 333 389 584 278 333 278 278 556 556 556 556 556 556 556 556 556 556 333 333 584 584 584 611 975 722 722 722 722 667 611 778 722 278 556 722 611 833 722 778 667 778 722 667 611 722 667 944 667 667 611 333 278 333 584 556 333 556 611 556 611 556 333 611 611 278 278 556 278 889 611 611 611 611 389 556 333 611 556 778 556 556 ] /Encoding /WinAnsiEncoding /BaseFont /BPLAJD+Helvetica-Bold /FontDescriptor 155 0 R >> endobj155 0 obj<< /Type /FontDescriptor /Ascent 718 /CapHeight 718 /Descent -207 /Flags 262176 /FontBBox [ -170 -228 1003 962 ] /FontName /BPLAJD+Helvetica-Bold /ItalicAngle 0 /StemV 140 /XHeight 532 /StemH 140 /CharSet (/nine/S/p/e/c/i/f/y/n/g/space/D/a/t/period/one/F/o/r/m/d/colon/h/two/l/s\/three/b/four/O/u/five/R/E/x/hyphen/six)/FontFile3 167 0 R >> endobj156 0 obj<< /Type /FontDescriptor /Ascent 699 /CapHeight 662 /Descent -217 /Flags 34 /FontBBox [ -168 -218 1000 898 ] /FontName /BPLANA+Times-Roman /ItalicAngle 0 /StemV 84 /XHeight 450 /StemH 84 /CharSet (/underscore/A/s/space/w/e/m/p/h/a/i/z/t/r/o/u/g/b/k/comma/d/n/c/M/P/L/l/\f/v/period/C/five/eight/j/y/I/x/E/T/S/parenleft/one/two/parenright/W/quo\teright/O/q/zero/D/B/hyphen/F/quoteleft/J/semicolon/Y/N/H/colon/R/three/\six/four/emdash/U/nine/seven/G/question)/FontFile3 168 0 R >> endobj157 0 obj<< /Type /Font /Subtype /Type1 /FirstChar 32 /LastChar 151 /Widths [ 250 333 408 500 500 833 778 180 333 333 500 564 250 333 250 278 500 500 500 500 500 500 500 500 500 500 278 278 564 564 564 444 921 722 667 667 722 611 556 722 722 333 389 722 611 889 722 722 556 722 667 556 611 722 722 944 722 722 611 333 278 333 469 500 333 444 500 444 500 444 333 500 500 278 278 500 278 778 500 500 500 500 333 389 278 500 500 722 500 500 444 480 200 480 541 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 333 333 0 0 0 0 1000 ] /Encoding /WinAnsiEncoding /BaseFont /BPLANA+Times-Roman /FontDescriptor 156 0 R >> endobj158 0 obj<< /Length 4486 >> stream
+BT
+/F1 1 Tf
+48 0 0 48 459.1 655.215 Tm
+0 g
+/GS1 gs
+0 Tc
+0 Tw
+(9)Tj
+/F2 1 Tf
+10 0 0 10 126 646.015 Tm
+(________________________________________________________________________)Tj
+30 0 0 30 126 645.615 Tm
+(________________________)Tj
+/F1 1 Tf
+24 0 0 24 305.9 608.215 Tm
+0.0021 Tw
+(Specifying Data)Tj
+/F2 1 Tf
+10 0 0 10 140.4 550.015 Tm
+0.0072 Tw
+(As we emphasize throughout this book, there is a distinction between an)Tj
+9 0 0 9 433.3 550.015 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 461 550.015 Tm
+(model)Tj
+-33.5 -1.2 TD
+0.0848 Tw
+[(for )-11.7(an )-11.7(optimization )-11.7(problem, )-11.7(and )-11.7(the )-11.7(data values that define a particular instance of the)]TJ
+T*
+0.0223 Tw
+[(problem. )-239.8(Chapters 5 through 8 focused on the declarations of sets, parameters, variables,)]TJ
+T*
+0.0739 Tw
+[(objectives and constraints that are necessary to describe models. )-243.1(In )7.4(this )7.4(chapter )7.4(and )7.4(the)]TJ
+T*
+-0.0038 Tw
+(next, we take a closer look at the statements that specify the data.)Tj
+1.44 -1.26 TD
+-0.0069 Tw
+(Examples of)Tj
+9 0 0 9 193.1 489.415 Tm
+0 Tw
+(AMPL)Tj
+/F3 1 Tf
+10 0 0 10 220.6 489.415 Tm
+0.0801 Tw
+(data statements)Tj
+/F2 1 Tf
+6.66 0 TD
+-0.0035 Tw
+[(appear in almost every chapter. )-255.5(These )-11.6(statements)]TJ
+-16.12 -1.2 TD
+0.0852 Tw
+[(offer several formats for lists and tables of set )14.2(and )14.2(parameter )14.2(values. )-246.8(Some )13.2(formats )13.2(are)]TJ
+T*
+0.0675 Tw
+[(most )13.7(naturally )13.7(created )13.7(and )13.7(maintained in a text editing or word processing environment,)]TJ
+T*
+0.0529 Tw
+[(while others are easy to generate from programs )8.5(like )8.5(database )8.5(systems )8.5(and )8.5(spreadsheets.)]TJ
+T*
+0 Tw
+(The)Tj
+/F4 1 Tf
+1.86 0 TD
+(display)Tj
+/F2 1 Tf
+4.51 0 TD
+0.0562 Tw
+[(command \(Chapter 12\) also produces output in these formats. )-241.9(Wherever)]TJ
+-6.37 -1.2 TD
+-0.0044 Tw
+(possible, similar syntax and concepts are used for both sets and parameters.)Tj
+1.44 -1.26 TD
+0.0458 Tw
+(This chapter first explains how)Tj
+9 0 0 9 269.1 416.815 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 294.1 416.815 Tm
+(ís)Tj
+/F4 1 Tf
+1.02 0 TD
+(data)Tj
+/F2 1 Tf
+2.7 0 TD
+0.0496 Tw
+(command is used, in conjunction with)Tj
+-20.53 -1.2 TD
+0.0852 Tw
+[(data statements, to read data values from files )7.9(such )7.9(as )7.9(those )7.9(whose )7.9(names )7.9(end )7.9(in)]TJ
+/F4 1 Tf
+33.6 0 TD
+0 Tw
+(.dat)Tj
+/F2 1 Tf
+-33.6 -1.2 TD
+0.1278 Tw
+[(throughout our examples. )-255.2(Options to the)]TJ
+/F4 1 Tf
+17.44 0 TD
+0 Tw
+(data)Tj
+/F2 1 Tf
+2.78 0 TD
+0.129 Tw
+(command also allow or force selected)Tj
+-20.22 -1.2 TD
+-0.0066 Tw
+(sets and parameters to be read again.)Tj
+1.44 -1.26 TD
+0.0767 Tw
+[(Subsequent sections describe data statements, first for lists and then for tables of )-12.3(set)]TJ
+-1.44 -1.2 TD
+0.0848 Tw
+[(and parameter data, followed by brief sections on initial values for variables, values )10.8(for)]TJ
+T*
+0.1454 Tw
+[(indexed collections of sets, and default values. )-262.6(A )-10.8(summary )-10.8(of )-10.8(data )-10.8(statement )-10.8(formats)]TJ
+T*
+-0.0046 Tw
+(appears in Section A.12.)Tj
+1.44 -1.26 TD
+0.0048 Tw
+(A final section describes the)Tj
+/F4 1 Tf
+11.61 0 TD
+0 Tw
+(read)Tj
+/F2 1 Tf
+2.66 0 TD
+0.0011 Tw
+(command, which reads)Tj
+/F3 1 Tf
+9.51 0 TD
+0 Tw
+(unformatted)Tj
+/F2 1 Tf
+5.24 0 TD
+0.02 Tw
+(lists of values)Tj
+-30.46 -1.2 TD
+0.1398 Tw
+[(into )5.4(sets )5.4(and )5.4(parameters. )-244.2(Chapter 10 is devoted to)]TJ
+9 0 0 9 342.5 307.615 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 367.5 307.615 Tm
+0.1318 Tw
+(ís features for data stored in)Tj
+-24.15 -1.2 TD
+-0.0114 Tw
+(relational database tables.)Tj
+/F1 1 Tf
+12 0 0 12 126 244.015 Tm
+0.0067 Tw
+[(9.1 )-294.7(Formatted data: the)]TJ
+/F5 1 Tf
+11.6 0 TD
+0 Tw
+(data)Tj
+/F1 1 Tf
+2.6833 0 TD
+(command)Tj
+/F2 1 Tf
+10 0 0 10 140.4 225.415 Tm
+0.1061 Tw
+(Declarations like)Tj
+/F4 1 Tf
+7.28 0 TD
+0 Tw
+(param)Tj
+/F2 1 Tf
+3.38 0 TD
+(and)Tj
+/F4 1 Tf
+1.82 0 TD
+(var)Tj
+/F2 1 Tf
+1.8 0 TD
+0.1277 Tw
+(, and commands like)Tj
+/F4 1 Tf
+9.04 0 TD
+0 Tw
+(solve)Tj
+/F2 1 Tf
+3.38 0 TD
+(and)Tj
+/F4 1 Tf
+1.82 0 TD
+(display)Tj
+/F2 1 Tf
+4.2 0 TD
+0.119 Tw
+(, are)Tj
+-34.16 -1.2 TD
+-0.0019 Tw
+(executed in)Tj
+/F3 1 Tf
+4.84 0 TD
+0.0801 Tw
+(model mode)Tj
+/F2 1 Tf
+5.02 0 TD
+-0.0013 Tw
+[(, )-9.3(the standard mode for most modeling activity. )-256.3(But model mode)]TJ
+-9.86 -1.2 TD
+0.0161 Tw
+[(is inconvenient for reading long lists of set and parameter values. )-245.9(Instead)]TJ
+9 0 0 9 425.1 201.415 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 452.8 201.415 Tm
+0.015 Tw
+(reads its)Tj
+/F6 1 Tf
+7 0 0 7 300.1 165.615 Tm
+0 Tw
+(143)Tj
+ET
+endstreamendobj159 0 obj<< /Type /Font /Subtype /Type1 /FirstChar 32 /LastChar 120 /Widths [ 250 333 420 500 500 833 778 214 333 333 500 675 250 333 250 278 500 500 500 500 500 500 500 500 500 500 333 333 675 675 675 500 920 611 611 667 722 611 611 722 722 333 444 667 556 833 667 722 611 722 611 500 556 722 611 833 611 556 556 389 278 389 422 500 333 500 500 444 500 444 278 500 500 278 278 444 278 722 500 500 500 500 389 389 278 500 444 667 444 ] /Encoding /WinAnsiEncoding /BaseFont /BPLBHL+Times-Italic /FontDescriptor 160 0 R >> endobj160 0 obj<< /Type /FontDescriptor /Ascent 699 /CapHeight 653 /Descent -205 /Flags 98 /FontBBox [ -169 -217 1010 883 ] /FontName /BPLBHL+Times-Italic /ItalicAngle -15.5 /StemV 76 /XHeight 441 /StemH 76 /CharSet (/d/a/t/space/s/e/m/n/u/f/o/r/l/p/period/i/c/hyphen/x/g)/FontFile3 172 0 R >> endobj161 0 obj<< /Type /FontDescriptor /Ascent 629 /CapHeight 562 /Descent -157 /Flags 35 /FontBBox [ -28 -250 628 805 ] /FontName /BPLCCH+Courier /ItalicAngle 0 /StemV 51 /XHeight 426 /StemH 51 /CharSet (/d/i/s/p/l/a/y/t/period/r/e/m/v/o/colon/plus/hyphen/A/ampersand/P/quoter\ight/quotedbl/D/O/M/I/N/C/K/S/one/three/four/two/zero/E/space/U/T/R/equa\l/B/L/semicolon/u/braceleft/braceright/greater/b/n/c/six/W/seven/eight/f\/x/less/bracketleft/bracketright/G/numbersign/g/w/h/comma/k/Y/V/F/parenl\eft/parenright/asterisk/nine/five/Q/X/underscore/j/question)/FontFile3 169 0 R >> endobj162 0 obj<< /Type /Font /Subtype /Type1 /FirstChar 32 /LastChar 146 /Widths [ 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 600 ] /Encoding /WinAnsiEncoding /BaseFont /BPLCCH+Courier /FontDescriptor 161 0 R >> endobj163 0 obj<< /Type /Font /Subtype /Type1 /FirstChar 65 /LastChar 116 /Widths [ 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 ] /Encoding /WinAnsiEncoding /BaseFont /BPLCPK+Courier-Bold /FontDescriptor 164 0 R >> endobj164 0 obj<< /Type /FontDescriptor /Ascent 626 /CapHeight 562 /Descent -142 /Flags 262179 /FontBBox [ -113 -250 749 801 ] /FontName /BPLCPK+Courier-Bold /ItalicAngle 0 /StemV 106 /XHeight 439 /StemH 84 /CharSet (/d/a/t/R/E/A/D/r/e)/FontFile3 173 0 R >> endobj165 0 obj<< /Type /Font /Subtype /Type1 /FirstChar 32 /LastChar 89 /Widths [ 278 278 355 556 556 889 667 191 333 333 389 584 278 333 278 278 556 556 556 556 556 556 556 556 556 556 278 278 584 584 584 556 1015 667 667 722 722 667 611 778 722 278 500 667 556 833 722 778 667 778 722 667 611 722 667 944 667 667 ] /Encoding /WinAnsiEncoding /BaseFont /BPLDJL+Helvetica /FontDescriptor 166 0 R >> endobj166 0 obj<< /Type /FontDescriptor /Ascent 718 /CapHeight 718 /Descent -207 /Flags 32 /FontBBox [ -166 -225 1000 931 ] /FontName /BPLDJL+Helvetica /ItalicAngle 0 /StemV 88 /XHeight 523 /StemH 88 /CharSet (/one/four/three/S/P/E/C/I/F/Y/N/G/space/D/A/T/H/R/nine/O/period/two/L/fi\ve/six/seven/eight/zero/B/U/M/colon)/FontFile3 171 0 R >> endobj167 0 obj<< /Filter /FlateDecode /Length 2730 /Subtype /Type1C >> stream
+Hâ\UTWû!…$Pâ»0Ò4ÅôQ(T~T®àR‰G—¢b•¢Y≠í‰'˛≠¥µÆ?¸´∏EYeëjQZA<n±YEDqmWäÏ∫U–#ÍjkÌ{„Ÿ}°ß›==ì˜íºwﬂ˜æ{ÔwÔ–î‹Å¢iZ3?.6jI¥_å1=ﬂòõö¨òoN7ÿwIGKnr…}Ç√±ß~Z≠Ä-·§N˜ó^∏R4]sdÅ9´»íöb _Mû&ŒùÏoüC∆ÁπˆyÓL1 `N2äÒE9π∆åqqf≤Ÿíe∂ËsçÜÈ¢ïû.Æ∞#‰à+å9FK>Y˝ïåòö#Í≈\ãﬁ`Ã–[“DÛªblj¶9∑(À(FΩ!Í33Ã1ïúÕ…K I5§Í-©∆úÈøqÜ¢…C©i UAiiÍj&EΩFSÛU‘29/£÷–î7â%ßîî@Õ°÷S≠¥ùJüwòÂp–°WÊ$õ#”ÀéÀ]‰e
+'Eä¢çô»òJwe¢r´ÚÄäV-PU©8˙8˛…qÿ…√)¡©Œ´∂8H›Õ2¯+<‚∞5–Ãê≠2¶˚¿W¡õõ@°/zÉ/£Æœóä¡ƒ>Q6 s0œV‚ÛDT2´w¶,DùÆÄQóÅãd'˙∏√Zb·“zÓ\yÂ#›’c´÷æûêÇn”úéÚm≥∂œQIE‡Çô?ÔnæﬂØ¯ÛP/®µ‡Ö‘Mtè≈y¯Ø.9d>ÜÂ wmwtM$¨’‡≈ﬁgB*ÙqÏwóÔÔK4∆l˘ˆ§P^Æ@-≥˘
+x˛{¥‡<˜sÀæB…éµÏÏºÆ_ú‘Âè≥"˝Òe4LcŸ›É5K≤gÑÔ–ÛÏ√<ªÀ4XA†·Ç›‘q∞¨ä
+&o' 0RfMòáØ1∏ﬂ≠@g8éÅ B‡êrúˆ>2î$MdM^2¯ù4»A;8Ÿ¥L¢Mì∂)Œ6uï◊Èæ>∂46¬∞"fYz´uõÄ"Éû{@±d:0vC–C¡	˝˛ã“Úã≤Öq‰= O…áìO	∂D∂[™îö∏˜ˇ^\o8©j1Ö~ú©√“"‹Ç:\ÿé1$›cOaÜ¿?[
+Ù	3mÃ.‰K*˜v’?Ω´;wƒú\%Ï√Œo≠!!f}œ‡»«ˇ“aÕ¸9"ï†§èë_ª+·íô˚ÓÚ¡œÆ∑¨	YeJ\˝v√è<∫báäö€¡Yn†ÅOÔÄÉXäÇW(Œ«óÜº¿Ω´ß¶´Y®(Q‡¥“∑ﬂ“mHØÔﬁ*î+â*â˙ º]ÔÅ/[€ˇ_ÇÏiØ¸Ç¨≤Km#∏–7¿z!@vC}lπòÓk 	∑xçt·¿ãÈ{≤	MËîÑQ-†7£N(ﬁ$√X;àLzÚ<â≥5æHí⁄ÅµM%{ﬂãﬂÉü4âQãD=ƒxˆ∏1)ÚóÉb0@÷^ê’/íÏº.+ï´ïà dÄéBe“ÿTûÇQ≈ S˛˛XôÑ£<¯j`0gááÅYÉÎ»√¨	EÊ,¨„âãuPŒ∞\\Ì^6ÕjH`$‚™úÄ»vßEÌ~˜©Ñ÷1i5eG~–Ç6ÌP‹û˝·oá€Æi{M0„y¸è=A[Æºs ﬁmÃö'®
+IwëZIŸΩLí€HæùIe}≈é¥B6‘â~P{	≤Í ∏¿∂iáyvúVdÏYWs^{˘j˝ó0π&"≠ä'1æSGNgÈ∞xNyÉ@û™,a∞H¡é‹(˙bsº6"lS4N.∏—V ´ã◊KÅD¬G…µ+¿É-î~/πs0="ëFE.Üº«Éé˘¥™ÊÙ5›gÁw∆ed}î∑S@◊BE–˚ãW{jŸNt¯«;7«:;é7ÛlaeF≈÷jã
+¸ÍôMªã˜_“¢«méÌ\õº,ÀX€m=ΩÔ‹^ﬁ∫∑aÔ˛èUj±îﬁO`ê8≤¿ı"·PL‹ÓñA-kôd˙zË_áø}0r,,Ñ«bi-GÍí›L≤Ï°dªØT(óüËÕ∑Í ®üıÜXœQt‘'¶Ê	%åö`√ÕÒ>Ë`™Lö´9KŒ—SJ@iÌo∏sáø\uhÂnì
+¶2˙>Ú'CtI‘âÚ3@∫Á€ß!†gó¢vƒ‚ÒzÔ"rE´Kòy˙Ó@:zb,z˜£A÷ﬁ˙'Ñ
+B8fúØÕë∏uÎÿ–»É√¡≥√LQAÅñGóHHYkÓ⁄€›@Ä3HeKjò…?L.0ËP±u¥má —çÏ¿WŒN≈‚<‘/E3(ÄÔ›gÌ‡ˆ9è !‹µÍñˆ~]gOvpµ@ òº-¢ﬂ$†∑Ì}≥@äÊÓ>ûYœtî◊vÒ≠†` ?(,O“˘-◊£É∞!‹g–¢R-b∆3†¿	.˝(Ç≥k!TD<fJ!“Qé+Q∂lJ∂æ˙ã´o>	∑[-≠ßÏ›d©28%%2Ù√¶¶m<˙3®ÿ™µ‡†É⁄=pO (ÂJõ p±û<˜M˚¬‡˘9°˛§€œ1ﬂº*ÿk\ä$◊G–óIN◊Ó“iIŒÅcËEœàÂÜıE|	T£H$ ÇïÓjÔ©Xl‡ÒÜùΩ-ñ?ZO–∏Ä8yÄ0∂eKGïÏLXeÔ\"©^ë7|ûT@ÿccO¢ëQCÑù¿SOprÌ#7D¸<‹‹ŸÓÁW~°1€ó]ƒôb˙$\`Xa*"jcáøA≠˝.$ô∂÷üÈøU˚è_ëïÎ KçgÆùj…˚oó’“TÖ7Ù˛.-’ı&lv'N2ƒa5â
+Â(È!Öòeäêî
+ä>ÏVîÂ®Áç®î5K◊bjûÑ=E–?¢“á∞çhf˘`
+%X„‹qîuÓ¶Ò{˙¡ÂwÓwæÔ;ﬂY˘Õºø5V0
+· ∑ú™l¢P`Btı≈óº˛(È—@jLãª[SÃG-](Œ†ïéhG∫@¥Éïé8.	6ïÀ6‘°NûõòÃÀ∫Ä≠\" +‹PEfâ¶(C/í?S¥›ß“ÓKπ±aÚ#ôhZñÈ≥°Î¨˘ﬁ„£?VH¡ñˆ†ÌtM}+a0bå†:‹ê-?íµÜ
+—∑‘fØ†ø”€’Èì üW<≈cﬁŸt¨™YÎÂ˜Y4Ò∆KÒ§ÆÌgvR◊~@JÍﬂç«7”h€ õÅ¸DKHû0OÇÍRôEWp˝†’å{j
+akaj|áIæp÷)	ãˆñáa0Ãø9ıîäSP4§≈<T„◊ä/¶ÅûÒùi∏©YÁZ¶Ù1Mmâ]ö¡úÖ0¬Î`ù‘«ÇAE	Z‚º∑£√Î1Ò˙F,0ˆm°4MåıóJCBÎHmä⁄1í!ΩÒön≠;Q{7&¡›yÃçT˛û|>˙bT¢)qnj ∏∞¸≤æW»Ä%â‡?áªôK∂C	á{î°aàõÖ“Y,Â`?5ª2FYﬂ£f®O¥¢[ÍórπNÜLÕÂpÉÍ•ß\Y{À’jÛeè¢–ûì…{!oøå}Ép¸=≠6˝âì˝XÔábÉê∑óY7/›wûœIf≠ÉÚ÷*YFıY6ŸÊ‰v‰«
+endstreamendobj168 0 obj<< /Filter /FlateDecode /Length 6284 /Subtype /Type1C >> stream
+Hâ|VyPgÔf¶g eêi°«Ì-5âà‡µrÈ2Q@él∏º52¬†‡¿‡Ã É»ç(äÇà"  óxa4Æ—‘
+∆+,àW4.í¬JÛzÚ±U€ËõTY[_’˚„’;~øWÔ˜Í√1°Ü„8˘iH∞‚Ô
+ÁàÿxïŒ%LØLòt≥úÁúÑ‹å©»%¸æÁwRl°⁄ÆwÜÃ[äY‡¯°öïöƒTmÏˆz˘«Qü»z∏/ù?ióΩ≥ì÷√MÆà÷lS…√SuzUºNê•—&j¥JΩ*zÅ\ÆP´ÂaìtÚ0ïN•MÊΩÔê»cur•\ØUF´‚ï⁄ùrMå<86A£OMT…˛reB¥´F+èÂÛtI€t±—±Jm¨J∑‡è,0úò•fcÅŸM¡‰6À
+sbãò;Üybòè+¿0~ò #0,Î¡ﬁ‡>OƒO·øYl±8jÒ¡fÅQh+‘
+;	"áÌãóã/[.∞l±r∞
+≤:hıÿ:–∫≈zbJ¬îßÜO=acaSbkIà‰ëÌ
+€“i‘¥Ëiùvyv“µ“ã§/ôgˇ±}Ö˝j’Á0œ°›Mèö~≈Òs«˚NÅN%Nurâ\¢„|a¬ ì›EÜêµo9_j*÷\ˆ‰ˆ}˙iËΩ6nOdT{vCÈÅ¢¢b¶®§∏»$+-Õœ1§}†d%:≥{
+ﬁ˚\ Ωfw
+π∫∫¢y»áFLÎ À+ôŒ€æ7‘G—
+¿ç†ß°tÏ·¿MÊ}lz.ËDæ∏æzÛ¿á&Ó¡∆åÍz¿Ω–”ôié∞·F§ôC£RÁÂäF"ﬂò{≤‹∫»»ßh&E÷˛†d‰°¬⁄[x
+∫†å
+Ü¬[bâ<¯=¿.ãg]{¶∫„ÙÆÜ¯x≠vß™-≠ñï§7ò•x˝@±ô°¿ﬁÑJ¸ΩP≤GˆêÛ¯é	J¿ûm¢`%JA÷»¶È!Ç{@6`≠ÑÃJåUÊOx ±¸®¨†©J‰ìRﬁÀrØ≈π&¥⁄çHü∏n4V»⁄åªíŸâbELAh#1ru8å<p¯ïqÄé6Ïèë°\x√*‚¸•g#oi.º„∂ÿerégjÛâk'öGd`}“uΩO‰¬%X‰áBâLéK“€πëo§pXıÄº.î∫k:ôﬂn∞Ïã´Phiümﬁò’ı-≤4}ûf›ã¸zXSÄY‡¯◊3 c,˘˝ÌsßŒ]£œ&˛à®’ã‘¸J1U˚à∆™ûá#≤ÅˆµÎ]}6π%d!-®èMëVtCﬁC“¿©!çö√Ön°o'Bâ hìê◊êò4Ä◊∏≠Ó£Pûr`î0â$È‹◊√8p˜¿=¢`Ω®¸∞Òp1€˘2ßîÿìïìµKÜT"Ñ£l"oÒﬁÉ2¿ˆÅÔf¥ÑFEx ≥&ÒüA≤(cBˆˆK∫aXo¡ÈeVS‰U6‰ÅKµW••$Ωë^Ñº£x€(î¸[¿Öô}(îüãV†@¥ïF1„Û¡¸⁄aÒw@/úûú¡‘Ä‰'êÅ_£%⁄Ü∫®∑ÕÕFƒñu¡>´¿˚õ≤˙≤2∂˛d˚°6ô‰H27:ÄÁnçy5!•mçú]ùK\m=÷‘/Éx⁄81JÙã`áy¡£1K•◊}@s7bêÖ–Oë/AÏ—Ø†}7+É=∑Ù1‰ËHoWKÉ‹ê'µ¸∂Lc¯ œV^˝6˘¢«XrËZ”£ûWÙ‡g∑±tÓöπû›±œ|‚"ˇmÍ%49ÙàõCı∂|ıØ°3k"á«®¥Ãˆ∫E_?§%5…ê{é6‚ÕØ Ôµ‡f•Ga.Ñ¡ºúÅ@∂»¡a»…„"≤˙ÀØéuúgL{µ¸“ÁG9¡M0S©˚33≤ô›… ‘8ŸÃ$∞|R7˙úåh]+ÒÊ≈E ê>	3‡ÁIé¨EH¯!)zø”>ºy_ ≥ãL¸mÚ4µV˜ﬂ£üÖT$gm⁄”ú—Úß∞„ÄtÎ‰‚>(Ûπørõ•wÆÙX˝˘3˘ˆÉ;U˘º°˚}ñÕg.‹ªB_Õ©KleötMa2?ó»π±e	›çÂı’lª™‚›z•±g®uıÁQø‘(FDÏM◊˘Ö–‰Å2‰√7≠?]’ﬁ§;©N–È’™ñæ)ák`√Yni
+^eˆò◊÷P[ã”Àw~áL\øcäEOd∂™?’kùRª“
+-∞±FúºŸÿS^\y‡{¨®ùu&¶âK£c‚
+cOdƒ–ñ®ëê¿-cç°z∫°¢√P#bÚ«=ALû©6OßûÏ´ÃT–!‚Uôªó˘/ƒdhè”˘´WÔíc¨âºP˛√	–‡äVV.aP´6¢ó‘XK~vK&]MªÁA#Ÿ‰Ñ¶ñt0\•∞ Tyú)´,™ïëÁÓˇb@S&_ÅÜù_8	(˝<˜¶ÁÒ	Ã∑é Å$"YógÃO
+l]$C>¸w¿Èë	Œ∞ÇüÉù©àM=Fƒ´WÆB∂2$ES^2ô}æØ´ì=€s„¯ó2∞}‡5Î‰˚π:∏Ô'π˛2Œâ '’G†C7áa=8Å-Â±®NDVƒC{À≥ﬂ¿73Ìo˚Ra\u‹Xs	§◊#{ôªü’{.£—yTh⁄îY⁄∆H†îo—	=g·p'ﬂÂßÒˇ≤]•QQ\Yÿ∂ÌzÃL∆D{Z§ S≈àÇ[åíI çh‚håé(!âÎ`Peiö}oönZ6Ÿ∫õbk∂fï]ä¢∆@5*.D«83NfÃ“ëÒyù…ºO2ÁdN˝´SuÔwÔ˝Ó˜æ¶äÜßÿ'NëG
+_¬*EÂº€/œ`B]f;ôñf‹◊‚
+W:T@l8ÂùòFÍ\
+°Tc°ÆåÜiUå´Å3SpíŸj(y≥
+™+”ﬁ±yÜ'o"ÿ"UBö˛Ñ9ó~NûW—1ô¸k!å-âè÷$EEz0x>â_óõefaŒ/„ﬂˇ)˛:‰ëª&ùøÅGﬁ«#o—Ç`~∆-meRÅõÈi\ñ@S€Ãz†«'™‰¬∏<S‡º(jX]™ußÒÎË‡˙¯'êÅ‰ÄÀ‡?Y˘8ûY‡UÕUP)pPAÖ§Rß~ø¡ô¡‚Yx%¥}›÷˛w8œÎ ˙öë0.s>∫^•Ô b'•∑Zx…3+X•¸,∞‘™Ï$˛2˚` ÔDk“#‹D¸Mæ∂¢ÎÖE#9,è-*t3≠òÃ˚‚˝Â{Rˇ‰ˇ”√t¸¯4^»*-ô}<ı¶>,ˇéÏû9˜∆qÚSü
+›ˇüçyù“ıq'Ö…OﬁV)XÑ>≈Õ‚Ç;Ÿ‰”6U∆y”∂˝hgl\˚gÛÉLptê*.'∆≈%ò„;òj¯˝qÂ&9’*|+NT~z»¡ÅõT‘‰Ñ‰-?s‡®JhB¡ZY(ÖÌ∑mJ«ã˜®Ã6NBwÕπ√b√jüó!ÈJ¨“Òßb,
+≥Èqå†ó·wU‘ÕÙ≤îU¥m¬Sî±´’§u	<Z{\Y˛-8ÈËmù≤b
+rÖÀ2ΩmÂªÍ9?6eÖü∏-∂‰neŒ`ˆ‰xíï„sâ≤ê|Øv…ª«wä	TÑ5)—¯ãdì2ºZEµ’~ÌúmÛˇKL≠Q	¥uÀLBø™œÃ€ÚüfI#aû'PR¯!NAÊˆ—ÿç®ú;y‹∞é∆Å‡åÌ¡ákûÜ•Ûˇ
+GA“Q´§+∞
+ùÔä•‹‰˛î∑Aü(ﬂX!ÜHƒ˘®ë®·ç‘Çoë^∫p∑¥…Ç=ı—Ü4ºÖ2*ym%36T“ﬁ…ôå]ÌwhrL»ÒK˝òe±âÇ-ﬁäÜÇÃ∫.pŒ¿Nx	¶u »LΩäùê`hoÜ&1#A/fw·˚Ùa%’x‰Ã>ù≥*Å¶a)ˆ(seq-%U°k©Ü‰ÁUÆªU«£ïYI¸¸–ÄíÒ%ºF…üÿ¸Öáä⁄π˝Ì`Ø¡¿¢7-IÌO∫7ﬁ.π˛‚æï
+€âOWRâÍê–ço3Àóm«‘Ç°›è}9pyÕ∏çﬁ±€JÃÏÇY=*6ú™√  )cæ©å≠Îa¿i¯_·`/˛¢—üú∂Ùç-˜0±fjÇ¡¬Wí“2¥B`ŸÔ‹Ö]º¬Ìx?LygL≠â¬SÀ∏J*<e∂KTˆîU}.ØÊa*s÷¶°ﬁ‘Ñ/i÷çƒ©w	„º‰©~ËíéãF
+«™®kÈï—é4Æ@+í≈G∞Ôo;ºä¡ku¿qpC‹Ìª‚nÌQ'íùˇΩM¸1Ö:ÿzèÖb4f2‹Œ#¥zê/≤Ví˝˝´“Ô›≈d-5MÈheJPäí≈3c<æî≈∂&îõËÊSzâ\™B˝ZCZÉ{É«lG‹ÑÁ	/»‘Ei¶b∫™4ß[Oæ»P°ÛÍ‚‡z˜ì.OqÀi¸≤ùÅÇ•¬ N,˘499®ã∞„∫
+[ä[ç≈ΩyvK4±≤√d_∑ã`BTîÂd∆ë∏‘Ñ‘DéLSâ@®,π(Ö/†kÃôßƒL*‘ùn–XÒ"∞«öç◊¢’öÖ‚!~ëGÀ3„Mü—DÔ`(Ø˛ª!´9Àa:û—'—	©†¡3}6çö∏N!ó¿t]‰L@≠Äì∑»7B$! SÇí<|ºi˜ÒÊCg€¡¸c©j≠V√j”5⁄&55˚oÏæ‹A,T“yP+·ç ô-è÷ﬂá£D˘€‡EEê&·H,´N>¡[zàùh,Ä≈},1(í„ìîL∞Æ∂ñÉùËc›7x!+ÇÌﬁÛﬁSb©‚ÀÀ∏jÉÅ∂ú,i®ÎIÙb∑ ˘v€Ùá@z„ôÄ≥Á˙€ZXØÏm	c¥dˆ(Iı¬o¡›–9ÛÍà|$%7ù[äÛYC%ıÃﬂõÁ-ıâ¡2åBΩãö8∑E¿ÿ—>ÿ|\ˇˆl ¸€’æÔÑß±péRÎerõÙªq˛Òv1(3'_ó√tÈîAbµü	≤Zâ˘∂TòÀªˆx1nÎGàÈryliÈœé
+ „r"r"L«™Ùuz#_Aóƒ[Ç XcËÜÉ1“v¢fπ>{ÎﬁËßù@ù%∞œËå¬Øk&ÅW?Ñ»Ú&¯áUq0Â@ÿ^∆«k ¬ú·ﬁÅûﬁ√r9y0,∆’äçj]i;-!Îi´ﬂ÷ºü∞‚e®ˆPPÒO[Ç∂«{¿)≤ıfKK5±v[®,çL‹œü2~d≤#e]Ö‡z@ÕÛU©∞Ñ‡Ä=\üÌ∞.ÅÉ!
+ÏΩœºÃ¨ƒ/m¡õÒ‹‚ÈÁ]Ä9ñ|ﬂÉ%äG∆÷ÍsÃ›¸ç˛π9MÇK=Ï≠ë|˜@
+üæ
+¸"ÿQ-ŸgŒ±=Ÿk:ò“ä¢⁄∆›’€ÒF^∑ùÛ8¸9æByF'˚hÿX(2†WÙ⁄™K4\ÅÈh:>Œ#{ï∞ÿáZ≥kf÷\æˇ∆«∞Îvuç¸¶£º”Ò´Âä∫í2À€Æ÷†¶Œ4Kì´EÀ1
+ÁÏû£”⁄k;´ÏÆ[wΩl-”JW≠rY.r		!9	ILBBÆ.…Ñ$D@Ôpº’Ÿ∂∫Ä÷bS]Gªmuª≥ﬂ±;›/∏Î˛ÈL˛dÊ}ﬂÁ=ÔÌyæ!ˇ=©Òò√'MßMôd‚ª–[ a˛ëÉ1ô5∆«ä>ˆﬁmEd©ƒÓÎ Ôﬂ¶â;K‡ç¢·ı@QmuJ±·.G‚,†6¨HCs∑d\*gàâŒòµfïú,=P”£¢â©%…˘ÈŸcj◊”˜†¿ßú\‚†âÈØê®^PbI≥y…é##V∫~––B]¯«09£›ØÒ2∏<‘ÿÛ~O`|ÄòÊú(•Q„¿tìé‘¡πh˛÷TqJ¡Ûq¥˝w3g[l{—‚1ÿ®—Ì‘·¢s ’!s‹"°úÊz©qOÓ&•Çı2C™[Äàµx~Ûx\˙4ÚÛß´ƒ?±>÷p¬˜ÌÜ6¨® ®µ%…íeIÚhX].´õj›_ó¿ ¨ìÎ∑i"Í*ˇo|dnÒ†ﬂ„ÈıIº%¨Û‹Z¥gÄüjõ˝p64Õ≠1oO°Û5ó≥(ôî≠‹}BväFû¿9ü∂§™§Í$E¥XπXDîû˝Iú˚;|œçãv'@‹jXUú∞ "(≤Jú#$å√⁄ÖFõ-ÚF≠éT©å˚h˜p¬2knCÚ5Ù6LåÍÌ¿HH˘ÃÁ)e)¡QÁ>µvüöU29Ö	;ÚãM÷(˛7†oü(OT¶>ﬂ®FããÆWd23R∞süiìöû-‰øÇô| Ü:A5'‹fì;/í¸£Y˜'A˜ƒY˜ñˇªóÉ’™¨6˘5ÿ±Kw.Ún n˛˛ú8}˜+—¶SNÓ’^Xä¨ßIx8Nå}vÆ-7éF%‡√JcfpE*9êm)∂›$°xÊ˝’íêÃ†|'Ö)Eè-J9PnÏj∞¯=X*ÉIÂ˜Ø≠çﬂZ!•è™ãè~HÌÃg&0S@áìùŒêß≥È™p9∞:õû˜aÛÏå.vi∆#ø¿ÿ q¸ã¢Vï/‡@íMŸ⁄O¬0t¯`áü∫‘ûœ†<∞°‹∞;hëãá—^√ù$a5ÄÛc{2Ú
+2RÈ€≥p∑Çpô≥pˆÊp„Ì} ›¬†âœ!r
+EÛı‡u(Ço]áÃ∑pŸ€˜–b¶m&^ÑÊU¬Õìﬂèü˚¯·Yl∂ Ω∂)/ôâ@%Ìp[Œi/GN†‰.1=Öã≤j•qZÌ‡=E3÷´Ä∏ﬂß>BAÊ\ÇowÙÜ;1Î3RK•å…*ò zúÊﬂ”diÚ46ÿ¬∆&s#u»&œaàÈÄQt∏˛ÇoêÇ¥∫m\%+⁄ë>Íb∑¡ÌW¯W}µUë]w°"Ä5‚øN‰…≠t%SË’ÂËgàF+¶bÔ_π~‘ﬂ∆8Pº0EY˘G#NLÌôM’ˆS$æxÇÏ:£`#˙RT'6+íd·∫jπâ•br?dpÃW∆&¶[bKÉè~˜M\ãˆ„»õ‚ ÕÄË#Öqá7@«Ådk°˝3ípA	Ë;v¶ã&Æt5¢∫‹˚ª˚´:Û
+´b””˝YÆÎM≠J©NU‡oµ66ˇo#˙4áîﬂ‚’VEûΩÔÇÖ◊”\ƒ¯)¸DD4’¬_‘B¬_k4Ë¥Ú‚é]‘õYqΩ;æ˚jCÙ\,ÙUwTà…ÌÈä¬Â≤{ÁkhÖê»C+]ÄËi¨∑€Z(ãoTvú∫6}ÙﬁÂ_™ü!¸(‰ö`∑Gﬂ€AË?v\∫ÃÉ7Mséü◊zÛàÛ»òFúfáéﬁù»JÚr√%âæÜ4Zç÷:˙<˛r§ÏÏâì˝£]¥™Y†RWKƒT≤˘“A?öã5n~ë;ÚF æèGø8*Œà∂öLﬁA~çb‰‡∫….Õ!â„®È4⁄}¥§¨DYB≈iØ‚gÈmÙÜ¯M}¶≠$rÄ•üWå¥ü≤”££ÇwÄ’$ d'€ª«‹·R~'∫üœ„ÀÉ‹«∞¬Ó:è∂íÃèE+W–À`£¿Ë‘s-d∑«÷e•9îÃÇé∫=W2˚5bª∂ÑgµZk©ÜFoO3¬…ÆK≠∂h,§ºÆÁB;ü˝6åˇ«gAó°£∂Ç¨—ó©˜“´–ﬁ?¿",]ıÕÌdo∑≠ﬂÅ„Ôb¡à°Y7Ñ+QZT\ò âC§œk˜—7±†€‰Tu§A
+=é*t;4TΩ£Ÿá?˙%®˚RÚ›Vùìr⁄õÜ[H√oπ!GSgC4ôÄ~)¶≤–6>;éOàÏÜññîjkãÉá,ÉrKô%Ô"Zì£æÑÛú.ø‘Õ°¥’yÎ§§ZØçˇ5-ÎÕæ“Nvv[€qB9,Ë∑¥òG‚°◊£ê≠g(Me∆h.√Ò§Êv”ÏÓ¨o§o√˘,ø{ ü‚"›¸üâ!æ4XräˆYZ52R´k Ëuh/∞^`l–µ∫»ûCØ√d+ÅÀt¿–≤
+Q]îª¯‘ØXRëÉË$ö(S∑óQ¶<=≈Â^Òô©cÅ‰YÀ˘∑8ÃÈ.ktƒ=≥ü'˝°?Ü¨Vá¸≤@∆ØÜî®⁄.Xß–/•-Ñ~πÄCﬂ#zY–.k∞LPê¢˝3À,ˇ
+àx∂fú5ˇ¿ÜA€K©?∞ßAÑ“˝ÏM7í6¡
+≥rŒ÷în>±	f∫√—_·ÑÃs|/ÊÚ∆ÖôË?˜Ki
+endstreamendobj169 0 obj<< /Filter /FlateDecode /Length 5338 /Subtype /Type1C >> stream
+HâlUPWÌû¶ªA•Åizpg‹ôY©ı~P7
+$Et¯è8à¢TÑëÄö*„äõà[jma¡
+Ë\D˘”“⁄
+ëQ—àFA71~àZYAÙ>Î±q{H•íl∂∫ﬁ≠€ØÔΩÔ›ÛŒÈG*Ç$Ió†à‡‡%^¡9Yi…Yˆ)=“ë»√Mö†…¿Eoﬂ¥—‡Âqnıì&ÓQ*íå0glÕÀJK›∏Õ8m˝t£èÔB_o≈˙Œ≥>∆E2÷%£Û≤∑%oŒ6.›≤>#kkFV“∂‰≥åã6m2é•f≥í≥ì≥rï…W'HÂ!(í`	7b2CÃ oé'à@Çxè Ç\àhñH àDÇàT T•ƒ¥íA§Ö‹Oû#ëJ´öØ
+U%´jU∑(µãjupqÿÏpàv°”Ë
+˙zàqeÊ0ü0˜ÿ`ˆ4˚¬1–1ﬂÒ?NßÕN•N∆Mó;Nü2˛¸Ñ›∫ùùCú;øÊ|93ó√ÌÂF\‚]ŒªNw-pΩ‰6œÌc∑z∑!u§:_=»œÂÛ¯ªÓûÓ6ÅbÑBø∆Wì£±y¸ñ„` ví`ÓÈÎ°¿Ñ>JN∫É)Åù¥MÛìœAîEı[¢Ì#B|˚v`Ãˆ+ˆ˛/ﬁ¯^˛Rß≈êEÉÉ»ΩX≈Çâ4oß0≈êI[òù8ì6˛Ã«*ã$≥+ÅßXæS¶≥hë±Wy=ÊÛΩ–·ıXÑë·
+§TBE»iQ_ñÀ¸vt*Ã2˘Q˘I÷ué|f¡èﬁ“¥©£I€÷xÙtSÌáŸ5˙™Z∫jÕÍä›≤kﬁO¸l˝≥Åo åYÓØıΩbËi≠n≠”Û€õW–`ïjÈßKŒñ4˝Êüﬂä„$!3gCFå."Ulª*∂¥5pËs+	i∞ÄÇºE
+`]Ãà∞7*ÂCE7Ö¥oTB¯ÏHÏÖ9-Ê∫∞◊ÂŸ˙∆T<∏ÇFöpΩî˛áåc›§`B∏¸§ºÄ”	^·OÙÒÃ%Lu`W¨—bM<v5a%Ω¥íoI˜èàv
+—Jº÷Õ¿\s˙–<¿öÊì3ÄØ∆œ·©±¡áéeb<UVN≥@"°R¢†} `é[	q8BÇ0Kÿ&ñ√vZ,µ7v∏ü7˘29åÙ‘0‘±H/≥\∏íêì)ƒ∂ı©«7nLÕNNÆÀÆ≠≠;^ØÁ
+DT/íØd®ë©W–%`∑„ ÅxÃ‡nôÉ˝±&é¡nzYÛ∏BÅæáŒÒŸÖ√∞;vﬂaèÙ‹'"ÍU :°Ïª_5ç¡Ò>KÇwn”£Gp®yâ8îµGïIÍ«T…Ò"ˇ‚ÜÜDû0Ÿ2◊0¸(ÜèÈ∫öSÁz¥#Ë√NKC6ö◊ÎKÏ◊O ö;•Œé‹∂6ı=nƒGiÖfP"¬6Iç\ÂôjÍÂÚ≥:˛≈My≠iq‘JoÉ•äÂÔﬂJÚıﬂ4ﬂ]ˆ˜’´ÖŒ∏÷jΩ´{ıÌ‡–∑ÍJHÖÅq°™ÊÏUÌ‡ÇŒôK‚6ßØ≤7ÙTDºHˆI`ï(T—¬,Ïœ‡¢Q?:
+™Ω±ﬁµ‚¨ßÉÏ(+
+êÉxzˇ(oÁ?úì`ëH'¡1ôÖ
+Ód´
+ËÍ±§E˜Ìµ•˛”Bbº#£JÀc˘It˙m±‡ñÆÎBIs£°∂ÆLÓ‘;ø±õwmO‘√ZhY{Ÿz	ï≤î’2Öˆ(008;ag\˘éÉàá˜˚`¸øÉy˛1!i√V√>¶®£HÈ¨£ÌJS1xÎ}¸Ω`+ÔnøÆh]Úû%ÃoNÙ”Wûã.ä‰=∫DÍû}ø:Òt±ÿ2zëÓd 
+IÙyeçpXÑBQ=$Øï·®b¯a˛9 GI¬ÛπW¶Oüªl∆“ñÂ∂˝>ñÀ3≈*™äzˆl®8Ÿ|+¨TøüÂü€éµÿz¥
+µ=Ñ≈üÜ_∏°ΩikÎÌµ≠^º<&‰œz~ÿ‚pÁzºﬂª¡´ÇCÇŒﬁ∏ﬁq«†0Ìê√]P)Sœ
+ÑØà'pÜ“ÆLªDÊ.¿„ßﬁÙyyÂrS[•a?Seùi19ÜEƒÔ¿Ût/¯^Xaç∞ÑÈ÷|Ÿ{ª˝jﬂ7ÁΩ˝vâÄ˜O2Å;ø÷	>·kÌ¿ëì˛GÜï∞˙ˇH≠	ëç(K98¥IM¿ÈHm£,(ã(‚’K0I"˚Q8’è&+Q∏ƒéÜc”á≠dèíﬂÉƒ‚ÄQeT¨F	ê>™E@° IÇ‘Ó^x»¸s–2AÍdJÍù÷ç‘õ¬‚ƒL√…∆~]ˆ]∞⁄áÔˆbóeI;¨ëz~‰ÈËüÑ¥ìπ'Oû,?Uõ^ûûûûª—ÆÂ~Å3¢∫íq2zåS EQ‹BX"¿1F∂ﬂ#S,ê"F38˝ï∆Y¯=ÉÕ£)tåíEO∫ïXºÉŒ–{≈,¢<$hêÛd~<DaûÓ2¿]øv˜´Ëñ¿RÉ¬t±¨±ı≤ˆf‹ul‘„À7å§•†Û±ÙSbàœapôd¿ÔX~§º
+1â	<Ó”Ö.OB{≈k≠U›ÿâu|7_Év"õ¿_Õ›g-ÿªßh°æ÷úR≤Lá«·isÒZ¸Œ3Ï	_ˆ’6w∂4–©´Vl
+–aœ@ÖeZßÉ/Ôƒcáø⁄“|ÈÓ∫¬ˇ–V(/:5ˆLQ‘È*¡”N
+\E¡ÔøÑWyX◊à3Cë>ıçCî¡7ïÄ±(ã(b≈lç£V1A	˙¬ƒ*¡˜ƒ«¢†,ä•∆P?	˜ √õ®EÎé
+í∏≈*Q˘¨û1gÚŸ;ÄUˇÍ_wÊﬁsœΩÁwœÔ,"§a\-ÙOòâˆM¯;ˇ)6i£œC∑Ö8	„—#yäÄ¸˚êÙì!H˙…∂¿∆˛ ™J∫b‡™ËO©)‚=5⁄è$‰_+LòK[±ÖßâÈA°ÃC1»¢
+’Ô¥ŸΩ’f¬J%ÏÛ°4›LûÔ˝4¡%8ÿ]Yç‚,/¸é}ı∞û¡?bígG¶Ã‡—*Ù
+∆ø™{&∞@6¬£ôKÔ#√÷Õ#S>Ñ|:OÚÂ;»'Ï√ñ+;˜\`§MbﬁÇπW∂BR∑·j4Üãä…"J4©.˛'aê!Ê⁄+•ê;#·\/n¬çlº'ar^ê,˘ÅS„¡≤SË¥cNüÚ@ä8Ù@:Í˛í[‚≈—e}ﬁjÛîA∂ëFŒƒr±Mçˆï4z¨ßÊ–_£H·˜‰tñÓoí·>I[…—“Ëå-Ë-äjtà´$w%:è/’Å⁄A≈Å S£›µÖZüzfû¶«≥ç2©ì4EuÆ°©i‘%Y9ÔÔã?“Ï
+5⁄_ÑuvQZTÇM-•»[I :…ÓXç‚^cØúÑ
+ºá@ƒ¿!ÿΩ—˚!ˆá@|˝¡€®Œsˆ4	xn‡vöº ãÏt2∏°€t2…∂S}îÎ	2TêÇ'Ä\Jç˛£HíÑQ`d r¸°¨j)ÙƒP˜ä4Ùu#}∂yÈêŸ+C—E@gZèF…z¸[i˘rÂàdhøª_Ÿ6ë[ùíêœ'&∆	¨©0˛ÀÕã˘U+3≠iB.SXPTT∏’a]~˛∫¸⁄o¸°5;?˚]¡n–Ìã∏•¶ÿ≈_÷ªÙËæ≠’|y©≈\*∞˚-ªKÕﬂÚ˚∂WÍ,•˜Ì]$¡‚él]¶ekâÆyÃ`XÙä~>ˇ@Ä{9Äì4åN⁄©v»anÁ_;˘oó=©¿†áœâ-•Èóy#„-#–U¿ﬁâ‚àÒ≤%yO≤·Ó·ØN¬π7:≥ÓÕõF≥Ó$[lf?3_á°\Al~Ï.	Ò	F)ùbKÕÂ
+ä
+˘ºmñÃ\!ÈHçÂ0ˇ®S–8t⁄‚] ∞%∫∞<ˇù-.ıï∑´.}ΩtõÒÒó‰òlz≥∫µ7(6ﬂúU\xtÛ~vùy!_±9!3mïô∑˛≠pC∫∞„ÛõË>¡c<˙B§µ4K®≥ﬁŒÍoÒ√Frè#Vùnﬁqm›`≥&»0°˝´◊Â!â∫ö^â©’ÈE0ìÇ1Ñ£=D¯A¬Ñ%cË"úYùKiA8I≤#5ﬂ¬ï˘êDZÅòÚ=bÄ1¬—6çßuxãA◊Ê?i≈eÛUp5¬≠:mæç—ßV(…ê&4)ˇAòÿ+§j<@‹ÚÇÑ&Ò9çìUe•qäb°⁄¥©Û4ÃUK®fZ€€ß‚™dó	êˆ ≤ÌàÑ‚zj«.;%à
+#ÉD˛&øhÀáËõDC=]»2!p≤\ﬂ…{C1ƒ°Hb'"„ÿÜÔâ÷s4å@iëpfS3»º‰FÉ?ƒÇ?∆Rn⁄ˇg@6≈6>ö®I(j— àS–S®&Úˇ6≤îÄ(À?ÄhØ‹–Bë(÷”ËÖ˘Ë˘TΩ∂ØñÜâ(ì–qf`2»‘eB=ùÙZOz¡{já˙◊z‚’˙õ	Bﬂ≠ñìJΩ\π∆˝¶GΩ°ØM*í÷¢ßÕnΩ“jè=ª*≠6µµ≥ùõ(#N‘¿YôMQb‡2WlyÅÅc'ØHún‹1è⁄Uyn˚y˛‚π§0!ÜŸ∏–wSÇÃ7Å≠ˆoú’“Rw¸x•ëM	Å~í/3˚)«VOè˘Á—¸¥»ä™›€ÔÇOImöıò–qÿc˘çŒ™yúøYg ZÜó5l 7J-◊öO©{HteÿÍ;9Lƒ°´üﬂÊ¡Ò9ÿÅ∏x∂¢!xRÙ_¢Ñ,ÿG„ 3•d´ﬁúOH– œÄ;œûﬁπﬁˆ¢vt?£VIøí≠…ÜK5Ù0€†ƒ(S∏/3÷Z¨|FfvN∫P2gQ·\ù–q8¿æ‡ËlC„wÚy!· 5-‡Ø)§\`'=∫ÏO°ÀÕ±√ÛÖ™\ä≠L;òµ3≥ÿ°4ß4∑ƒ¯Œñ5ö-ƒñ x©·'*u.œbNDM:Ã£¡s 	öl5:<G;pºYwÙ‘!cÕ¶Ä´‰Ø42òêí'RD`æÊ^÷÷øhªˆ…ÄÄûBn?j∑«_wŸÓ“iEGÉΩèπÿqaqì¯è}NΩJîatˆéÏ-€].O$;ª£æ√.Ωtø◊∏Ø‚öQür˜ãÍN=„[õg˚hƒá;x…©…HêI©∑[—s`"‰íÈ´eœŸ¨kŸÜôbmåﬂG“˘≤»—¬‘â†#mÜNT~OƒâG˘ ¿»pMZ,k 4…§aH"⁄~î–uhÕ6]^:Ó¿x&ê;?Ò«Î5máÖú`⁄}ÚÚQ„Êl⁄5∆∏˙S*ÂÃ£ï'yRv∑YPª√2Ó^˝çü’Üx˚ç;ÿ'ÏÍ”ˆ`ÆæV|∏YG¿$1ù¯π£ƒ∑âó¸!üÆ™9s‰,ﬂº}ﬁ˝5ZáÕÃÖƒÎË>q…¬YFÿ∆Á…ÁSù8ÿÉS{)=HÈ-¬ bﬁxQÒë0\—3`ﬂúÇ—©›ReEß4 ˆø¥·c&2}ˆ]∞0Ø  ∏F§÷ÿé•…<¯Óy⁄ (Éﬁ€ﬂ~ÿ]AÁÌÒ˚.ˇò6 0éÀÿ{K¬≠jzÛ.∏Eâõ[há&Pòat¢D4ÎN⁄ÆcCó¨¿\‘TA¨:;¶7˘Ÿ"cne∞rPõ[óô≠:@tò íƒƒ∏<ß/q>oãdsó‹ΩÔÂﬁªÁ}æœ˜˝º!ÑŒ2∫	ÏÇ¶ù¡·hôBü£2—Ï'V>V`Ê/√¡Dü&€∞´Fé⁄a'40Çé‹d÷rgY‚¢cÒt¢|K¡DïÊQ√∆|]Åëù+V
+ìZ/ 8˛∂µ˚€é›•˚•ﬁ◊wûpàé]Â{´ea≤çhîNô∞®&¨O8…w˚æËÚã_∂æ≤N¶ü°ò°ï?›~:–%é|™ 4 D}Ü_˙ƒ≥d	>6o3t*ñ1F:^˛íñïø{˚K(≈+Ï∏KÁ·oD°S∞Kè“ÑiT’›•úÑG¬Oê¥∞Ò~Hﬂæ=^@i\V~jj÷◊'a’[ÒÏünEÕgÆëÈu· ~¯¨JáÁÎπ¢3c;æ˚◊{0¸%˚y—!°®Á∆)ö‘§ˆ›˚ç∏Aø0≠CB$UJ JØhI*›6˜ç¥D«õNè<Ù!Æu¥[≈Ã<ÎSô≤Å{0`’Y©•©uU)?˜æ<ÉÅäa¡'|§’¿∞æ∆˜ÆﬂghnhˆìøÕC*‹µµH oy<.π…Z~DsËÚ≤t™É«\·˜e°k÷~ª¿∞umı≥ô'&ﬁë∂#çÏÒÓ´ﬂøœöª≤¶R∫ÎHgΩ˜„F—sÿÌnêÀáÆ∞¯$üúÉxJºy≤‡_Î…8˙≠a`‘wnt÷i:ıß_TÃ)∞!Ñkw 6h_ÈÖ7+ﬂPü˙}Èè£„ü˚/JµÉƒ∂ ‚≤âô%æﬂeÿM*m‚ÒëèπÈîöÚG⁄êï[ÿîM”˜pûπ¢¸z%ËÔîÑÍ-Q«‘—ï >°ä£®¯9Ò…“‡EzyùÎ,Ã´)G£,1c	8Ê“_„–‚Ú¥…√áõ5“yR«—ò'≥¨ÎßsÖ†zÏîWá€¿O¿i.}Ñª›à◊i7âp∞G@J6!ÆØ°≥ƒÕ•√)‰“ÈﬁØÅY2√ˆr1§4ÉïÄk‹ÇW+bAº™GÄ»•9$G´öœ¡*X”’ƒÃ⁄Ÿ5Aàı∞û‡û√¢úÁ•íi2$ìs¨ç;‘ØvPçÛB.T0ÊÒ£z/1®π —Õ4Lç&™Js1*(§eS=°O(Fƒet °-‚√ñ?óÈ))*1 4ç∑ÿ´luR	ﬂ_¨≤∞√8RDR˘Ïz{Àe.ÀŒGõ‘◊÷÷1¿öóÉ-cı“›c2Ëÿà–1ÊVöX#≈m}N…·tV≥¶Ÿ^ôÌñy∑ÁÜi¸P∞πﬂ#ı6èΩy»Ä7äz(ëtéké”uM∞©…{àÉö∆iÔBÌ!^j…9¿ù§{C	°Dmn≈?œd_#
+endstreamendobj170 0 obj<< /Type /ExtGState /SA false /SM 0.02 /OP false /op false /OPM 1 /BG2 /Default /UCR2 /Default /TR2 /Default >> endobj171 0 obj<< /Filter /FlateDecode /Length 2248 /Subtype /Type1C >> stream
+HâDUTSÁŒ%π7å\/jbsCuLQ$àL@A@©†T∞Ûóí@¥˘ëÑ ’VÊ™®àËzŒ¿â Ït÷©E–R®=Ûg⁄Ç¢`‘‘ÄMç`˘Ÿ˚•o<€›÷sÔ˘æsﬁ˚~ÔyﬁÁ}ûÔ2ôáÑaø¯¥îÑ7S¶-4¨7LπŸ∫ë†HT'#Ω˝1
+K~‹¸„lJ}° Øi‚kÜ©©ü_XTVúªÓ]ìfJˆTMhdD¯ÙëuˆË9≤Fj5q9ÖzÉ&ΩÃh2‰5…ŸÖ≈EÖ≈:ì!gÜF∑~Ωf¥ÇQSl0äÕ4˙ö\£Fß1Îr˘∫‚<M·ZMJnA°©¨»†â[†—‰ÑkrÈYcâﬁòõì´+Œ5>/ë0Ùë¯J$~^í7<%¡2IòT%ë–æ%2â\¢îdI∂Iæe≤ò}åÕcâ«R©¥H˙ÈMY®lãÏÇ¨áeY#[«6≤7π±\˜1◊.èêüìﬂÒ„ÈNÒ}+áôûA)§ﬁíIÉúœFπnapﬁ!%1L¿Ñ5ÅÅkÜ!ZÜ_æl	¿µ√s 313Û012!≥Ú PÌSo&†,e‡†C
+ËJí∏BîØ.GÓ˜ûâ·Æp»}*≠‰åEq¥/™N9¯nO~+¥ÓŸøÑ	™Åœ“CñÃÀg,c˘g$«l«@ORbu+∏Ícı_>ø“Ÿ4~Ë™ı
+(î0n™}‘|w,Œ1aôHõÄÉù`∂(NŸ„l=êºÀæ–¡;¯`Çn°vˇÓZˇ√µ¡rÙäJ…≈qõûﬁﬁ!jπ}QıQÙûeßö?º¨Ç˜@
+r« ˛,V…˘ggj.˛ùÚ_Qp"¶Íêü¨∂q≠’ˇ ~™°ø$È¬íãà¸ãÕõvÔﬁ,“˛!∂ã¨¶˝?Èïí√+tM&´„ÂxﬂΩîák€±ÚP"
+UxÕîˆ.Ë∞¿TC"(aâ§OÄK6∑Ñ{€˝ãÆ
+ˆÛì-ü\Rı¥gÜ-ç◊F/˛ÏÒVäCÎ¿kÌ˜*(:1‡W¯⁄C‰R≤Ã¶¸QnX ¡¬ú±√%ªîTíZ&mEysî
+◊Æ¿búR~.YåπÿmlSıù;v∂Aºp˘–ÂªJàFÂó·”VÆ2î®wV±˜é√bPwùZì˙G5«+Çı|áòì·©”ó%œûú˘Ë˛Ë∏˚lLy_⁄@ëìq™0«‚^#.Ûtró‡kàSGßg∑˚}˘∂#]P`Qúq$⁄a∑=…¡NRN	è˜°£3—;>˘Ù™k&5?óüôÆÃ≠åΩªT˝Œ’{økTA‘]`ÄΩR˙`zì»;O¯˚âóJ~ÄÍ0Cxx[7=Êö°O·∑Woµ‹Í£ª∫ÑEigø˛‚»-«¿_S≥≠\KÍÑd‹¥(ŒŸ#z·Ë ?`ãp´„”∂£b’Nﬂ,Y5M≈;ÁÎöÔl√∏ÕËë∞ΩÓ›ÆﬁE
+oßƒ ãcE‘ÿgÅø∫÷"§ÕÆï£Ìè_ûMúÉ‚LÛq‘h’∞¢gêØˇŸl|©ï˝◊wÀ©d6føk¨îl ÉpÏ0áµ.=ãy•g˚π˚``?µ	 áv∂ä∆v÷gy•ˆZ`ÉUqœ	ú)N⁄G¨ÀWÄé' 9kX∂¥pÜàÛπ ˜LnpÙ{ÿ'-·qrı!ë'ñÜ∫€Áï/í¨®Tc;ÁtÛ§”4À”“¿9ÀóäòÕ˘To¥ëG6¶π_Í˙Ÿ%Ä˜”@é©*4†ÉqáY0ªäj‡ì&1ò√9Ô!ìü¢¬§%‡1÷–so2°‚òËSM≠ﬂje9â¶_˙»ö8(ÔÄálî√∏DƒfŒ!@2„≠ZL∆‰»)®1çUiÉèlPdclN)q€w"|D^∑π_á"2◊Ê>¸JOéq> ßÂi∞,ŸpàÊL∂π∑Ω“;9ük≠Yfh≥¬aõ‚B?1ÿ˘V2⁄0qs7-JY°÷Ω˝V≈:¶ØÇ Ñ¥·,C–ÔÑË‡ ‹åSªP©¬pŒè›Éæ‡1I\◊p-|U/æk˛¶U‰7ô¡ﬁ$cÒ  ‘kÉã•L∑ìå°–[H§‡É(Ë%c∞◊È“qT+ıfóæî±S‹i.Ω4
+∂“ÊÚ.e∫h,Óß—ç‹> Ø))9”È ;RWïøKèj9fπŸùÍ» ã‚+ΩÉDsı;Ì∑ïUd∫˚ÿÁt#˝TEwjÕJw¥ú‘ÑZùÈrΩ¸[A-–H∫YîèËÆ‚„ÓfÅqÈÉGËïDc?ŸAU¡
+åæ‘ø⁄`•#èq–MZ∆®˚˝!$åXèıëhƒyåF®á˙«`Ñı®ÆZ° Jﬂ˜”ôç®x˜FÅ6(-oñàÀ∏ò9–~l?xŒ±·ªFŸ©Æ< _XaáU—ÎÑ;gˆSïß¬u∂å∏¿≥&)≠h2˚ﬂaÃ.øn˚üv5mˇÒ˝˙É˙:O~®ÂX[„∞¶£◊YÙR„ìë¢._lÁ.<⁄ä“Äye	"ñPÒm¥í´¢ï˛O‡ô=Œ¡wÚ›ƒIˆ
+ñäb¬j∆«£ –o¯ΩÛÂ"¸:óÂüÇW·i„<ÂdÙ*K	8Co	-∑∞f…ıu¡ﬂ.g”ü•iÊyòˇõÎaΩÖÚ¬7~'ÓbMúö0ˇÑ‘w∆OsN‹yûÒõyÇ(Iˇ‰y»¯}ÍÊô?yDø∑ˇÂyÛìÁ{˚√?∑¡Ùß|9„≠7?ÿÅik;0ç¸âbˇm†ûdd¢≥ÌªÅ‹è≠?≈Ïø•Ó˝¯˙=Ú9∞ñUó˚ë∆
+wPj˚æ®MË˚V—Ôã8≤˛fc˚ùÙ˚ÌÔ§ÔoY≥≤}_¸(∂ı∞Ïû˜3iﬁÔ¨Yﬂµf±}_4Ìª@ˇ_ŒÏrú+≈ˇÛp^ÁzÃ˝„Ä–r ÒJﬂ≠
+endstreamendobj172 0 obj<< /Filter /FlateDecode /Length 2370 /Subtype /Type1C >> stream
+HâTT{PSŸO7ƒÍ∆nÆ±ı^Õç”∫jQ©∫Æ‡™-ZwóŸÄ  JÄêêÑ$êB ÜJÅ»Kûñ7àä≤ªZ◊◊åê*Æ∫®ªuf≠£˝n=÷ibˇÍúôÔèÔÃ9ø«|øè…ıa0ôÃ€æ›ˆE®ˇ^âT¨\¢•Jº˝e4…§„+xx nûΩxﬁB¥Iﬂòﬁ¯aê;™?Y<GŒc¯0ô6◊vô<S!9í§ÆHX)\∏aï∑n|_Éº5Ëè¬‡DYºX∏'S©Kï¬ê¥ôB.SàT‚ƒ5Bapj™0‹˚ÉR.VäjO˜=!°D)	U
+Q¢X*R§eáÖ°í4ô*S..•%»BâÁù2#^)Iîà±rÕˇâa0=á¡e2∂1Òe|…`ÏÚeÏa1¢æ«ãÅ1ñ0∂0∆ôsôÕÃw>:÷ZV5k÷◊Å˝;à=eÔd˜˙-Ù´ÊlrÖ\%ÏΩÃÉtÉçèdÏúP‰lÆP,f∞X˜ı¸yåÜÓ⁄SÌÈÕR©Bë"Ó“5P\˝XÙYö€»´} ë∑Lµx?Æ•¡á´Qdì˘ÂÌO·ßí* XÇ·˝a∆¢¢º8ÃÃn-Jn>D¢Eh5˙
+-O+Y˜Ö_?	‹ j∆p≠.Ãî°"≤,ÈÉ]=∑/
+˛∑sÌ¸ŸYê√ú∂VmÙ ï(u©<πn\¿}§Ô°©Ê…á†xƒÇóØ˘	Gb‚ø"√§√Sˇ∏;`aùÀîMee§*gNSSc]kª‚ÃF¥	<K—¢≈ïWﬂﬁÈhpèéGû¶?tClmùÜÁ|ª&çN<6û‚áYæ©}Ú3§ÇÔ®%NÖ~ΩÖØ¢nøÕèiT2/ø¬Y–[ae*√åH}§1“ƒ…Úªp¨¬§"råä|ô‡Zo6cçÖ∆Œ=$öã∂¢ù»?¢!dÜ¬’g&j¡ÁÊ{˘É˘IÖ*°∂)z;Øå^Ùä¶∏ôÌè@{ï´†åˇ„©ÎSÁ…¶„Zuæ	ÕCÒ"
+î+¯ÒQ"…>R·æÓ*sï5P≠•|‚˛Èﬁ41îz"“£v⁄å~⁄±Â’/Oû÷T
+∏õQB=›⁄F&Z>I<ÕÍ¶Ö¸Yˆ˙∑ÅXB~:‚Ó$sç6Ui∑‘MÈ’9«GÃqq∞ºˇh;	s&`p[©õp&ªºCˆY˚Iÿqü¨>^òOÈÛ,Ñæ\ﬁ·Æsπ\∫·ÌàÖÇ>I∞π(æ7¿˛^G#œv°Û.¯_Lû∆gwt*Ωí∆6Ïˆ,
+ü±g*ÏÒd‚ÏFæü*{tîDu(-ï–:s´Çç{ì3¬âΩ„{Ä	KÓ^˙A $—ç’ç-Aµ£∞öƒˇÛ¯Á˚∑]EÆÇzÍüAÀﬂFÛ£ƒÆÕFå“gnKK∑†§§´•ú¥=?l®£Í=Y±~øÖÂF˘áƒfu_˙Á‘Ä3-—cô~îf‘4i Õª3¯∞˘ª„”4π§¡h´®™Í+uPè·Në√ﬂ&ub3GÁw¡fRS≤Õ®8Ü»¥ƒçN]¯ÆWÄ/h£çûh5fu&+U⁄§$wVSgMªÀ3Hø™i‘˙ß†Ö˘¸–jôÇÃ∂8 +m-V;Öø z“;l7"r#êÊ‚K∫-{[Ø&d•í°øıûû:+‡“L√hñö^t.¶Üˇöz0iù∆ìÒÓÔÄ9¸qzäñÃ-*©•d«=hË"˙T-GB6≠Gú≥sÙπgƒÄ⁄-ﬁ¯{p@ÍÈM@åW‹Å˝˙˝y˚Ú<∏cNsFFÍ÷ÖPwÿßÄÎ∫⁄wëÉ'˜µLæ&Ì’πˆ3t,˝ûÀ6¿j/üû‰åµﬂ|‹OVŸÛ≥=A“lAr"«í40qf‚lè†¨„ægLúı2ÓªsÏûÑ∑—áº|+R4§9«Í§ƒìÀ 1†:q00 Q¡1nﬂÉÿÀ-rü~ﬂˇ∏ù?ÆœVÅé¶"ÃÉﬂã´GnpƒâûÀOìıÂ9ôﬁñåäîDöU:ræ{‰⁄Wﬂ@Øi`∂<ÄÊ,∏MÔ‚£è<;cZ8ˆV√Å˘WSÔ#eTÛO7∆E=aBÏ(iœ7´'æâúy=MZ4ºópŒ‚œÈ˘pïèÊÆEaà´PT6˜ˆ¡‚¶Ô◊õø%ØÔñShrñÔ.∆‹≈ıπôÑzŸ[é˘
+RÚ‰˚Iàú~ÈbKá´|Ï]TÆ€ej"A √&∏)˝n]P¯∂$%e∂∂<√*K≠E$~d`‹é5<{ÒÂïƒ*ﬁ0Õ¬/¡˚aëc¯Ø79xõ”vXÌ$~ÈDˆëA≤≤«rÆK·TÖ˛	Õ	I¶Ú5fÎD{=≠é5~}4“ËYj÷  íJ≤ΩLóc(ê‰¶6°aÜ«≥Un0oçL6◊‡/z‡#æ≠«jÿïÂ•«m}⁄ì‰ƒ≥&`R? Óèóâ±{£ ßØúÿ^F’∞]@a9Ï|SA^ñTSK.Õ˘4’3‰[aÆë¨ãﬁ≥I˜t»ËM∆ºÈ`ûÇ*å—Ê n}iµôÌFÛ"Éµ–Phí%E«&ged∆Cë…b*.‡‹foG≠X°NñMH[Û\Ázá<π8ZÅ•(íb4§ﬁd≥óX¨≈%ûÿ>ƒ∞π˙Ò»QxÁ®”¥ixwaÀ]ºﬂOã<„ó$K“í˙cïeŒÍ°r5Á∞‡ˇ'ÿ˛d uLZAéWiL-`và†òéÊ˜ˇàçÆYYÇYÖ}¥ûãnp?˚ê__û|ØÂ’˜˜œéNt9w7y|çf∏Ω••Ê ‚Ä¬Tÿ˜¬‘S√f∞p¯nî¯&˜mpwfvwÑ§õáÖ§i˜ùãœ˜®§°íz££ïûùî£uóxW\N9WÄ¬„y|ãukIsÇpåè|ì´ôéî¶è}lîåÜ≠˚Ç˚1qizTyyûuuy{îsõx¨™óñûú≠∞µ¡ªÕ©˚Vòö}®¢®ã˜“yù˘!ú˚Üò˜í˜†é¸tè}ô¯Vï˜^ô˚nå¯sì˜ã	◊¯à˜˘F©Å+
+endstreamendobj173 0 obj<< /Filter /FlateDecode /Length 956 /Subtype /Type1C >> stream
+HâTí}L[U∆œΩpœe¨R÷À≠ÜªÙ;Ü|lÆ›¶Hñ∂a„c—ÒaÉ∂îQa÷⁄‚Æ—:≥‘å5|l¿∂1∂ÕêÄ	m≥˙3mñt±h–òòECéÙΩÛÒ¬˛Úú‰˝„99œÔyﬂsî»"Üa“lá⁄ïÁ⁄›oxèπº;lÓÊ˙u›†Håíñ®l’Ë)G;ΩÛhíÉÁ¥P∫Â”:ƒ2LE≠›Ìi˜khl5>s4€h.»/»Sk¡ÆçjŒ3ZÎ›u.cUªØ’’‚3ñ?Íˆz‹^g´´~ß—⁄‹l‹∏Î3z]>ó˜Ñ*˛/É∫ûFôh;⁄çl®ÌGUË%î¨fF,:ÄﬁC?3VfúMgè≥”ÏJJ	pÊ4Ù,√˘Ñ”zË!Ex$ÃA#©‚äLpûîcÍPs¥ﬂ…òÊ“8WÜ·K¯F¸ñÊpTƒ™	ƒ	¨∫{!)aLZêÊ°	û*Å∫_¶˜LhºC%ƒEÿÇÔÃ;©@ı•’y€∫¡◊ØìÆŸ0—˝låL≈≥‚¬x‡ä^πâÖ?–`‚œ9˙6VEÿ„Ö<&^¯U‰Ü6^òC]‹
+>Øq´=Ü•t,>O ïÄéËàÓe‡Ñì#z$˚ ı˛˙‰T~àÍí 3ã≈ºgŒ˘ªs4i∂/˛1}0 ∫«@2=¿Ç_u„GﬂåøÔn9è¯ eNÒ˘çÃ›8ppX¡Ø‹%‚^x√Ÿ7≤lˆ∂ªa*õª6Ω8-=ÏhÚ»4Vt∫%öf∂ÔïÖôº__\äŒ2a¸á°ÜfhÏ[_?‡|U™uı›ËûZûûGÂú%k® Ä÷ê7ÄtC*ıÚuâàÖ  ¶£oˆmÉ‹^éb˛Vù„¢C¢z”vjPI45û⁄œ√Éì*ÎTÚÙà¬å≠¨büµ2]¯"¥†û‹ø[S§≤‚ã$Jò	†∂ñ†\Ä]bSYY≥U¢⁄ÜÔdE¬Á∆:Øˆ¶√≥47ºáÊPçôf“L–X 'ˆ«Ì…y√j4â≥Wæ
+IÀ7+ﬂí◊ø…)µ™o·à ƒDa:xõªlπS(Y´Îk´da!JΩ&H§ß®∆§X=/L/≈"√√“¿Öw›ÎÈ H@€∆¿&`înÿ!÷ôK⁄j•ˇXHã:%z¥î•⁄bSîVÛªC≈ DÓ}ˆó!•˝íπD3˙!´øßÉ∑ÎóWﬂÁóÌÌOÆi6-&Øl>ßIQ¶˝'¿ :˙Ã÷
+endstreamendobj176 0 obj<< /PitStop 177 0 R >> endobj177 0 obj<< /CC 178 0 R >> endobj178 0 obj<< >> endobjxref0 180 0000000079 65535 f
+0000000016 00000 n
+0000000183 00000 n
+0000000334 00000 n
+0000006805 00000 n
+0000006972 00000 n
+0000007123 00000 n
+0000011555 00000 n
+0000011722 00000 n
+0000011861 00000 n
+0000016029 00000 n
+0000016199 00000 n
+0000016340 00000 n
+0000021213 00000 n
+0000021383 00000 n
+0000021523 00000 n
+0000025705 00000 n
+0000025875 00000 n
+0000026004 00000 n
+0000030676 00000 n
+0000030846 00000 n
+0000030987 00000 n
+0000035477 00000 n
+0000035647 00000 n
+0000035787 00000 n
+0000039908 00000 n
+0000040078 00000 n
+0000040207 00000 n
+0000043391 00000 n
+0000043561 00000 n
+0000043690 00000 n
+0000049075 00000 n
+0000049245 00000 n
+0000049397 00000 n
+0000052649 00000 n
+0000052819 00000 n
+0000052948 00000 n
+0000056788 00000 n
+0000056958 00000 n
+0000057098 00000 n
+0000061368 00000 n
+0000061538 00000 n
+0000061678 00000 n
+0000065371 00000 n
+0000065541 00000 n
+0000065670 00000 n
+0000069444 00000 n
+0000069614 00000 n
+0000069754 00000 n
+0000074015 00000 n
+0000074185 00000 n
+0000074337 00000 n
+0000077987 00000 n
+0000078157 00000 n
+0000078297 00000 n
+0000082809 00000 n
+0000082979 00000 n
+0000083119 00000 n
+0000087748 00000 n
+0000087918 00000 n
+0000088083 00000 n
+0000092493 00000 n
+0000092663 00000 n
+0000092804 00000 n
+0000097367 00000 n
+0000097537 00000 n
+0000097714 00000 n
+0000102705 00000 n
+0000102875 00000 n
+0000103016 00000 n
+0000109052 00000 n
+0000109222 00000 n
+0000109375 00000 n
+0000110603 00000 n
+0000111172 00000 n
+0000111723 00000 n
+0000112157 00000 n
+0000115247 00000 n
+0000115582 00000 n
+0000000080 00001 f
+0000000081 00001 f
+0000000082 00001 f
+0000000083 00001 f
+0000000084 00001 f
+0000000085 00001 f
+0000000086 00001 f
+0000000087 00001 f
+0000000088 00001 f
+0000000089 00001 f
+0000000090 00001 f
+0000000091 00001 f
+0000000092 00001 f
+0000000093 00001 f
+0000000094 00001 f
+0000000095 00001 f
+0000000096 00001 f
+0000000097 00001 f
+0000000098 00001 f
+0000000099 00001 f
+0000000100 00001 f
+0000000101 00001 f
+0000000102 00001 f
+0000000103 00001 f
+0000000104 00001 f
+0000000105 00001 f
+0000000106 00001 f
+0000000107 00001 f
+0000000108 00001 f
+0000000109 00001 f
+0000000110 00001 f
+0000000111 00001 f
+0000000112 00001 f
+0000000113 00001 f
+0000000114 00001 f
+0000000115 00001 f
+0000000116 00001 f
+0000000117 00001 f
+0000000118 00001 f
+0000000119 00001 f
+0000000120 00001 f
+0000000121 00001 f
+0000000122 00001 f
+0000000123 00001 f
+0000000124 00001 f
+0000000125 00001 f
+0000000126 00001 f
+0000000128 00001 f
+0000117643 00001 n
+0000000129 00001 f
+0000000130 00001 f
+0000000131 00001 f
+0000000149 00001 f
+0000118551 00000 n
+0000118592 00000 n
+0000118638 00000 n
+0000118785 00000 n
+0000118870 00000 n
+0000119019 00000 n
+0000119131 00000 n
+0000119196 00000 n
+0000119220 00000 n
+0000119274 00000 n
+0000119317 00000 n
+0000119396 00000 n
+0000119454 00000 n
+0000119504 00000 n
+0000119542 00000 n
+0000119622 00000 n
+0000119692 00000 n
+0000000150 00001 f
+0000000174 00001 f
+0000119832 00000 n
+0000119965 00000 n
+0000120138 00000 n
+0000120304 00000 n
+0000120854 00000 n
+0000121228 00000 n
+0000121741 00000 n
+0000122366 00000 n
+0000126907 00000 n
+0000127451 00000 n
+0000127762 00000 n
+0000128363 00000 n
+0000128969 00000 n
+0000129363 00000 n
+0000129638 00000 n
+0000130053 00000 n
+0000130412 00000 n
+0000133235 00000 n
+0000139612 00000 n
+0000145043 00000 n
+0000145183 00000 n
+0000147524 00000 n
+0000149987 00000 n
+0000000175 00001 f
+0000000179 00001 f
+0000151035 00000 n
+0000151078 00000 n
+0000151116 00000 n
+0000000000 00001 f
+trailer<</Size 180/Info 148 0 R /Root 151 0 R /ID[<46d4623cb2150ad1f7bc4f5cddd87210><a8faae45cf20872420eb80165fedfc55>]>>startxref151142%%EOF127 1 obj<</Length 3292/Subtype/XML/Type/Metadata>>stream
+<?xpacket begin="Ôªø" id="W5M0MpCehiHzreSzNTczkc9d"?>
+<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.2-c001 63.139439, 2010/09/27-13:37:26        ">
+   <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <rdf:Description rdf:about=""
+            xmlns:pdf="http://ns.adobe.com/pdf/1.3/">
+         <pdf:Producer>Acrobat Distiller 5.0 (Windows)</pdf:Producer>
+      </rdf:Description>
+      <rdf:Description rdf:about=""
+            xmlns:xmp="http://ns.adobe.com/xap/1.0/">
+         <xmp:CreateDate>2002-08-29T19:19:12Z</xmp:CreateDate>
+         <xmp:ModifyDate>2012-08-28T13:53:28-05:00</xmp:ModifyDate>
+         <xmp:MetadataDate>2012-08-28T13:53:28-05:00</xmp:MetadataDate>
+      </rdf:Description>
+      <rdf:Description rdf:about=""
+            xmlns:dc="http://purl.org/dc/elements/1.1/">
+         <dc:format>application/pdf</dc:format>
+      </rdf:Description>
+      <rdf:Description rdf:about=""
+            xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/">
+         <xmpMM:DocumentID>uuid:3df7acab-b845-4d45-8051-4840acb75499</xmpMM:DocumentID>
+         <xmpMM:InstanceID>uuid:8604f538-78d8-40e7-96cf-0a13f53ae785</xmpMM:InstanceID>
+      </rdf:Description>
+   </rdf:RDF>
+</x:xmpmeta>
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                           
+<?xpacket end="w"?>
+endstreamendobj148 0 obj<</CreationDate(D:20020829191912Z)/ModDate(D:20120828135328-05'00')/Producer(Acrobat Distiller 5.0 \(Windows\))>>endobj151 0 obj<</AcroForm 182 0 R/FICL:Enfocus 176 0 R/JT 147 0 R/Metadata 127 1 R/PageLabels 133 0 R/Pages 135 0 R/Type/Catalog>>endobj152 0 obj<</Annots 183 0 R/Contents 158 0 R/CropBox[40.32001 126 571.67999 792]/MediaBox[0 0 612 792]/Parent 134 0 R/Resources 153 0 R/Rotate 0/Type/Page>>endobj180 0 obj<</BaseFont/Courier/Encoding 202 0 R/Name/Cour/Subtype/Type1/Type/Font>>endobj181 0 obj<</BaseFont/Times-Roman/Encoding 196 0 R/Name/TiRo/Subtype/Type1/Type/Font>>endobj182 0 obj<</DA(/Helv 0 Tf 0 g )/DR<</Encoding<</PDFDocEncoding 202 0 R>>/Font<</Cour 180 0 R/Helv 198 0 R/TiRo 199 0 R/ZaDb 200 0 R>>>>/Fields 197 0 R>>endobj183 0 obj[184 0 R 185 0 R 186 0 R 187 0 R]endobj184 0 obj<</AP<</N 195 0 R>>/BS 194 0 R/Contents(Copyright © 2003 by Robert Fourer, David M. Gay and Brian W. Kernighan)/CreationDate(D:20120828135315-05'00')/DA(12.25 TL /Cour 9 Tf)/DS(font: TiRo 9.0pt;font-stretch:Normal; text-align:left; color:#000000 )/F 4/IT/FreeTextTypewriter/M(D:20120828135324-05'00')/NM(6ce0cd85-a93c-4265-8614-5048b36b190e)/P 152 0 R/RC(<?xml version="1.0"?><body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:APIVersion="Acrobat:10.1.3" xfa:spec="2.0.2"  style="font-size:9.0pt;text-align:left;color:#000000;font-weight:normal;font-style:normal\;font-family:TiRo;font-stretch:normal"><p dir="ltr"><span style="line-height:12.3pt;font-family:Times">Copyright &#169; 2003 by Robert Fourer, David M. Gay and Brian W. Kernighan</span></p></body>)/Rect[275.6 763.978 552.651 775.978]/Subj(Typewritten Text)/Subtype/FreeText/T(Robert Fourer)/Type/Annot>>endobj185 0 obj<</AP<</N 193 0 R>>/BS 192 0 R/CreationDate(D:20120828135318-05'00')/DA(12.25 TL /Cour 9 Tf)/DS(font: Times 9.0pt; text-align:left; color:#000000 )/F 4/IT/FreeTextTypewriter/M(D:20120828135319-05'00')/NM(777fdc5a-7bdd-49e3-91c0-ef32cbc73fb6)/P 152 0 R/Rect[343.958 735.285 358.358 747.285]/Subj(Typewritten Text)/Subtype/FreeText/T(Robert Fourer)/Type/Annot>>endobj186 0 obj<</AP<</N 191 0 R>>/BS 190 0 R/CreationDate(D:20120828135319-05'00')/DA(12.25 TL /Cour 9 Tf)/DS(font: Times 9.0pt; text-align:left; color:#000000 )/F 4/IT/FreeTextTypewriter/M(D:20120828135319-05'00')/NM(99f289ec-087a-4ed1-ad16-4052d98e4c12)/P 152 0 R/Rect[343.958 735.285 358.358 747.285]/Subj(Typewritten Text)/Subtype/FreeText/T(Robert Fourer)/Type/Annot>>endobj187 0 obj<</AP<</N 189 0 R>>/BS 188 0 R/CreationDate(D:20120828135326-05'00')/DA(12.25 TL /Cour 9 Tf)/DS(font: Times 9.0pt; text-align:left; color:#000000 )/F 4/IT/FreeTextTypewriter/M(D:20120828135328-05'00')/NM(a47a0bf9-ca03-4a2a-85ca-fa613e8908e2)/P 152 0 R/Rect[307.228 712.431 321.628 724.431]/Subj(Typewritten Text)/Subtype/FreeText/T(Robert Fourer)/Type/Annot>>endobj188 0 obj<</W 0.0>>endobj189 0 obj<</BBox[307.228 712.431 321.628 724.431]/FormType 1/Length 93/Matrix[1.0 0.0 0.0 1.0 -307.228 -712.431]/Resources<</ProcSet[/PDF]>>/Subtype/Form/Type/XObject>>stream
+0 w
+307.2275 712.431 14.4 12 re
+n
+q
+1 0 0 1 0 0 cm
+307.2275 712.431 14.4 12 re
+W
+n
+0 g
+1 w
+Q
+
+endstreamendobj190 0 obj<</W 0.0>>endobj191 0 obj<</BBox[343.958 735.285 358.358 747.285]/FormType 1/Length 95/Matrix[1.0 0.0 0.0 1.0 -343.958 -735.285]/Resources<</ProcSet[/PDF]>>/Subtype/Form/Type/XObject>>stream
+0 w
+343.9579 735.2855 14.4 12 re
+n
+q
+1 0 0 1 0 0 cm
+343.9579 735.2855 14.4 12 re
+W
+n
+0 g
+1 w
+Q
+
+endstreamendobj192 0 obj<</W 0.0>>endobj193 0 obj<</BBox[343.958 735.285 358.358 747.285]/FormType 1/Length 95/Matrix[1.0 0.0 0.0 1.0 -343.958 -735.285]/Resources<</ProcSet[/PDF]>>/Subtype/Form/Type/XObject>>stream
+0 w
+343.9579 735.2855 14.4 12 re
+n
+q
+1 0 0 1 0 0 cm
+343.9579 735.2855 14.4 12 re
+W
+n
+0 g
+1 w
+Q
+
+endstreamendobj194 0 obj<</W 0.0>>endobj195 0 obj<</BBox[265.6 749.978 542.651 761.978]/Filter[/FlateDecode]/FormType 1/Length 235/Matrix[1.0 0.0 0.0 1.0 -265.6 -749.978]/Resources<</Font<</TiRo 181 0 R>>/ProcSet[/PDF/Text]>>/Subtype/Form/Type/XObject>>stream
+HâÑêMK1ÜÔ˘sTê1ô&õÃµ~ƒÉ%–ãó‘Æu≥‘“ovw÷ˆ&Åû7Ô30ˆäáé9Ä∑åÏ}‰=jg¿îVeı©Ëz¶˚˘˝ﬂ ∫ñ4ÏjmØñQ]∆n’C|È–n¿;ãL∑ÍÏ™ˇ8în˜˙Áﬂ‘"†w√¨!{¢˙1£A(iΩò(i$'tsòò1G∂Í7m15ËÌ‹ˆﬂ•-í¥l%πN?›V∏E˙k<†Ë	ù&ÅwiÍÎ◊Yë≤å;,Kó≤àÈÑØèbÊﬁ∑%◊ù§<F7Q=™_ „8_ˇ
+endstreamendobj196 0 obj<</Differences[24/breve/caron/circumflex/dotaccent/hungarumlaut/ogonek/ring/tilde 39/quotesingle 96/grave 128/bullet/dagger/daggerdbl/ellipsis/emdash/endash/florin/fraction/guilsinglleft/guilsinglright/minus/perthousand/quotedblbase/quotedblleft/quotedblright/quoteleft/quoteright/quotesinglbase/trademark/fi/fl/Lslash/OE/Scaron/Ydieresis/Zcaron/dotlessi/lslash/oe/scaron/zcaron 160/Euro 164/currency 166/brokenbar 168/dieresis/copyright/ordfeminine 172/logicalnot/.notdef/registered/macron/degree/plusminus/twosuperior/threesuperior/acute/mu 183/periodcentered/cedilla/onesuperior/ordmasculine 188/onequarter/onehalf/threequarters 192/Agrave/Aacute/Acircumflex/Atilde/Adieresis/Aring/AE/Ccedilla/Egrave/Eacute/Ecircumflex/Edieresis/Igrave/Iacute/Icircumflex/Idieresis/Eth/Ntilde/Ograve/Oacute/Ocircumflex/Otilde/Odieresis/multiply/Oslash/Ugrave/Uacute/Ucircumflex/Udieresis/Yacute/Thorn/germandbls/agrave/aacute/acircumflex/atilde/adieresis/aring/ae/ccedilla/egrave/eacute/ecircumflex/edieresis/igrave/iacute/icircumflex/idieresis/eth/ntilde/ograve/oacute/ocircumflex/otilde/odieresis/divide/oslash/ugrave/uacute/ucircumflex/udieresis/yacute/thorn/ydieresis]/Type/Encoding>>endobj197 0 obj[]endobj198 0 obj<</BaseFont/Helvetica/Encoding 202 0 R/Name/Helv/Subtype/Type1/Type/Font>>endobj199 0 obj<</BaseFont/Times-Roman/Encoding 201 0 R/Name/TiRo/Subtype/Type1/Type/Font>>endobj200 0 obj<</BaseFont/ZapfDingbats/Name/ZaDb/Subtype/Type1/Type/Font>>endobj201 0 obj<</Differences[24/breve/caron/circumflex/dotaccent/hungarumlaut/ogonek/ring/tilde 39/quotesingle 96/grave 128/bullet/dagger/daggerdbl/ellipsis/emdash/endash/florin/fraction/guilsinglleft/guilsinglright/minus/perthousand/quotedblbase/quotedblleft/quotedblright/quoteleft/quoteright/quotesinglbase/trademark/fi/fl/Lslash/OE/Scaron/Ydieresis/Zcaron/dotlessi/lslash/oe/scaron/zcaron 160/Euro 164/currency 166/brokenbar 168/dieresis/copyright/ordfeminine 172/logicalnot/.notdef/registered/macron/degree/plusminus/twosuperior/threesuperior/acute/mu 183/periodcentered/cedilla/onesuperior/ordmasculine 188/onequarter/onehalf/threequarters 192/Agrave/Aacute/Acircumflex/Atilde/Adieresis/Aring/AE/Ccedilla/Egrave/Eacute/Ecircumflex/Edieresis/Igrave/Iacute/Icircumflex/Idieresis/Eth/Ntilde/Ograve/Oacute/Ocircumflex/Otilde/Odieresis/multiply/Oslash/Ugrave/Uacute/Ucircumflex/Udieresis/Yacute/Thorn/germandbls/agrave/aacute/acircumflex/atilde/adieresis/aring/ae/ccedilla/egrave/eacute/ecircumflex/edieresis/igrave/iacute/icircumflex/idieresis/eth/ntilde/ograve/oacute/ocircumflex/otilde/odieresis/divide/oslash/ugrave/uacute/ucircumflex/udieresis/yacute/thorn/ydieresis]/Type/Encoding>>endobj202 0 obj<</Differences[24/breve/caron/circumflex/dotaccent/hungarumlaut/ogonek/ring/tilde 39/quotesingle 96/grave 128/bullet/dagger/daggerdbl/ellipsis/emdash/endash/florin/fraction/guilsinglleft/guilsinglright/minus/perthousand/quotedblbase/quotedblleft/quotedblright/quoteleft/quoteright/quotesinglbase/trademark/fi/fl/Lslash/OE/Scaron/Ydieresis/Zcaron/dotlessi/lslash/oe/scaron/zcaron 160/Euro 164/currency 166/brokenbar 168/dieresis/copyright/ordfeminine 172/logicalnot/.notdef/registered/macron/degree/plusminus/twosuperior/threesuperior/acute/mu 183/periodcentered/cedilla/onesuperior/ordmasculine 188/onequarter/onehalf/threequarters 192/Agrave/Aacute/Acircumflex/Atilde/Adieresis/Aring/AE/Ccedilla/Egrave/Eacute/Ecircumflex/Edieresis/Igrave/Iacute/Icircumflex/Idieresis/Eth/Ntilde/Ograve/Oacute/Ocircumflex/Otilde/Odieresis/multiply/Oslash/Ugrave/Uacute/Ucircumflex/Udieresis/Yacute/Thorn/germandbls/agrave/aacute/acircumflex/atilde/adieresis/aring/ae/ccedilla/egrave/eacute/ecircumflex/edieresis/igrave/iacute/icircumflex/idieresis/eth/ntilde/ograve/oacute/ocircumflex/otilde/odieresis/divide/oslash/ugrave/uacute/ucircumflex/udieresis/yacute/thorn/ydieresis]/Type/Encoding>>endobjxref
+0 1
+0000000000 65535 f
+127 1
+0000154905 00001 n
+148 1
+0000158276 00000 n
+151 2
+0000158407 00000 n
+0000158541 00000 n
+180 23
+0000158705 00000 n
+0000158795 00000 n
+0000158889 00000 n
+0000159050 00000 n
+0000159101 00000 n
+0000160034 00000 n
+0000160411 00000 n
+0000160788 00000 n
+0000161165 00000 n
+0000161193 00000 n
+0000161482 00000 n
+0000161510 00000 n
+0000161801 00000 n
+0000161829 00000 n
+0000162120 00000 n
+0000162148 00000 n
+0000162624 00000 n
+0000163817 00000 n
+0000163837 00000 n
+0000163929 00000 n
+0000164023 00000 n
+0000164101 00000 n
+0000165294 00000 n
+trailer
+<</Size 203/Root 151 0 R/Info 148 0 R/ID[<46D4623CB2150AD1F7BC4F5CDDD87210><FF9251CAAD0A0D4BB9D4E31E9E4A1FA7>]/Prev 151142>>
+startxref
+166487
+%%EOF

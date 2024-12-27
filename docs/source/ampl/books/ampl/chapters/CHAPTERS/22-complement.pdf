@@ -1,0 +1,4774 @@
+%PDF-1.4%âãÏÓ
+1 0 obj<< /Type /Page /Parent 102 0 R /Resources 2 0 R /Contents 3 0 R /Rotate 0 /MediaBox [ 0 0 612 792 ] /CropBox [ 40.32001 126 571.67999 792 ] >> endobj2 0 obj<< /ProcSet [ /PDF /Text ] /Font << /F2 121 0 R /F4 128 0 R /F5 130 0 R /F6 49 0 R /F7 50 0 R /F8 51 0 R >> /ExtGState << /GS1 132 0 R >> >> endobj3 0 obj<< /Length 4293 >> stream
+BT
+/F5 1 Tf
+10 0 0 10 126 747.615 Tm
+0 g
+/GS1 gs
+0 Tc
+0 Tw
+(420)Tj
+7 0 0 7 159.6 747.615 Tm
+0.0352 Tw
+[(COMPLEMENTARITY PROBLEMS )-24265.9(CHAPTER )25.2(19)]TJ
+/F2 1 Tf
+10 0 0 10 126 726.015 Tm
+0 Tw
+(________________________________________________________________________)Tj
+4 0 0 4 126 723.535 Tm
+(_______________________________________________________________________________________________________________________________)Tj
+63.499 0 TD
+(_____________________________________________________)Tj
+/F4 1 Tf
+9 0 0 9 154.8 704.215 Tm
+[(set PROD; )-600(# products)]TJ
+0 -1.1111 TD
+[(set ACT; )-1200(# activities)]TJ
+0 -1.7778 TD
+[(param cost {ACT} > 0; )-2400(# cost per unit of each activity)]TJ
+0 -1.1111 TD
+(param demand {PROD} >= 0; # units of demand for each product)Tj
+T*
+(param io {PROD,ACT} >= 0; # units of each product from)Tj
+15.6 -1.1111 TD
+(# 1 unit of each activity)Tj
+-15.6 -1.7778 TD
+(var Level {j in ACT} >= 0;)Tj
+T*
+[(minimize Total_Cost: )-600(sum {j in ACT} cost[j] * Level[j];)]TJ
+T*
+(subject to Demand {i in PROD}:)Tj
+1.8 -1.1111 TD
+(sum {j in ACT} io[i,j] * Level[j] >= demand[i];)Tj
+/F6 1 Tf
+10 0 0 10 165.5 569.215 Tm
+-0.0089 Tw
+(Figure 19-1:)Tj
+/F2 1 Tf
+5.74 0 TD
+0.0008 Tw
+(Production cost minimization model \()Tj
+/F4 1 Tf
+15.17 0 TD
+0 Tw
+(econmin.mod)Tj
+/F2 1 Tf
+6.6 0 TD
+(\).)Tj
+4 0 0 4 126 558.535 Tm
+(_______________________________________________________________________________________________________________________________)Tj
+63.499 0 TD
+(_____________________________________________________)Tj
+10 0 0 10 126 557.015 Tm
+(________________________________________________________________________)Tj
+0 -3.07 TD
+0.1167 Tw
+(bounded variables are handled though an extension to the concept of complementarity.)Tj
+0 -1.2 TD
+0.0046 Tw
+[(We then describe a further extension to price-dependent demands that is not )-15.4(motivated )-15.4(by)]TJ
+T*
+0.1872 Tw
+[(optimization or equivalent to any linear )15.1(program. )-234.8(We )12.7(conclude )12.7(by )12.7(briefly )12.7(describing)]TJ
+T*
+-0.0044 Tw
+(other complementarity models and applications.)Tj
+/F7 1 Tf
+0 -3.89 TD
+0.0083 Tw
+(A complementarity model of production economics)Tj
+/F2 1 Tf
+1.44 -2.1 TD
+0.0875 Tw
+[(In Section 2.4 we observed that the form of a diet model also applies to a )-11(model )-11(of)]TJ
+-1.44 -1.2 TD
+0.0859 Tw
+[(production )5.8(economics. )-249.1(The decision variables may be taken as the levels )8.9(of )8.9(production)]TJ
+T*
+-0.001 Tw
+(activities, so that the objective is the total production cost,)Tj
+/F4 1 Tf
+9 0 0 9 154.8 387.415 Tm
+0 Tw
+[(minimize Total_Cost: )-600(sum {j in ACT} cost[j] * Level[j];)]TJ
+/F2 1 Tf
+10 0 0 10 126 366.415 Tm
+(where)Tj
+/F4 1 Tf
+2.77 0 TD
+(cost[j])Tj
+/F2 1 Tf
+4.54 0 TD
+(and)Tj
+/F4 1 Tf
+1.78 0 TD
+(Level[j])Tj
+/F2 1 Tf
+5.14 0 TD
+0.0985 Tw
+[(are )15.5(the )15.5(cost )15.5(per unit and the level of activity)]TJ
+/F4 1 Tf
+18.77 0 TD
+0 Tw
+(j)Tj
+/F2 1 Tf
+0.6 0 TD
+0.345 Tw
+(. The)Tj
+-33.6 -1.2 TD
+-0.0016 Tw
+(constraints say that the totals of the product outputs must be at least the product demands:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 335.415 Tm
+0 Tw
+(subject to Demand {i in PROD}:)Tj
+1.8 -1.1111 TD
+(sum {j in ACT} io[i,j] * Level[j] >= demand[i];)Tj
+/F2 1 Tf
+10 0 0 10 126 304.415 Tm
+(with)Tj
+/F4 1 Tf
+2.24 0 TD
+(io[i,j])Tj
+/F2 1 Tf
+4.66 0 TD
+0.207 Tw
+(being the amount of product)Tj
+/F4 1 Tf
+12.62 0 TD
+0 Tw
+(i)Tj
+/F2 1 Tf
+1.06 0 TD
+0.2058 Tw
+(produced per unit of activity)Tj
+/F4 1 Tf
+12.67 0 TD
+0 Tw
+(j)Tj
+/F2 1 Tf
+0.6 0 TD
+0.206 Tw
+(, and)Tj
+/F4 1 Tf
+-33.85 -1.2 TD
+0 Tw
+(demand[i])Tj
+/F2 1 Tf
+5.81 0 TD
+0.1584 Tw
+(being the total quantity of product)Tj
+/F4 1 Tf
+14.84 0 TD
+0 Tw
+(i)Tj
+/F2 1 Tf
+1.01 0 TD
+0.1567 Tw
+[(demanded. )-243.4(Figures 19-1 and 19-2)]TJ
+-21.66 -1.2 TD
+-0.0036 Tw
+(show this ‘‘economic’’ model and some data for it.)Tj
+1.44 -1.27 TD
+(Minimum-cost production levels are easily computed by a linear programming solver:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 248.715 Tm
+0 Tw
+(ampl:)Tj
+/F8 1 Tf
+3.6 0 TD
+-0.0001 Tw
+(model econmin.mod;)Tj
+/F4 1 Tf
+-3.6 -1.1111 TD
+0 Tw
+(ampl:)Tj
+/F8 1 Tf
+3.6 0 TD
+-0.0001 Tw
+(data econ.dat;)Tj
+/F4 1 Tf
+-3.6 -1.9444 TD
+0 Tw
+(ampl:)Tj
+/F8 1 Tf
+3.6 0 TD
+(solve;)Tj
+/F4 1 Tf
+-3.6 -1.1111 TD
+-0.0001 Tw
+(CPLEX 8.0.0: optimal solution; objective 6808640.553)Tj
+T*
+0 Tw
+(3 dual simplex iterations \(0 in phase I\))Tj
+ET
+endstreamendobj4 0 obj<< /Type /Page /Parent 102 0 R /Resources 5 0 R /Contents 6 0 R /Rotate 0 /MediaBox [ 0 0 612 792 ] /CropBox [ 40.32001 126 571.67999 792 ] >> endobj5 0 obj<< /ProcSet [ /PDF /Text ] /Font << /F2 121 0 R /F4 128 0 R /F5 130 0 R /F6 49 0 R /F8 51 0 R >> /ExtGState << /GS1 132 0 R >> >> endobj6 0 obj<< /Length 2868 >> stream
+BT
+/F5 1 Tf
+7 0 0 7 126 747.615 Tm
+0 g
+/GS1 gs
+0 Tc
+0.0198 Tw
+[(SECTION )-11.1(19.1 )-22700(SOURCES OF COMPLEMENTARITY)]TJ
+10 0 0 10 469.2 747.615 Tm
+0 Tw
+(421)Tj
+/F2 1 Tf
+-34.32 -2.16 TD
+(________________________________________________________________________)Tj
+4 0 0 4 126 723.535 Tm
+(_______________________________________________________________________________________________________________________________)Tj
+63.499 0 TD
+(_____________________________________________________)Tj
+/F4 1 Tf
+9 0 0 9 154.8 703.415 Tm
+-0.0001 Tw
+[(param: ACT: )-1200.1(cost )-600.1(:=)]TJ
+4.8 -1.1111 TD
+1.8 Tw
+[(P1 2450 )-1200(P1a )600(1290)]TJ
+T*
+3 Tw
+[(P2 )1200(1850 P2a )1800(3700 P2b )1800(2150)]TJ
+T*
+1.8 Tw
+[(P3 2200 )-1200(P3c )600(2370)]TJ
+T*
+[(P4 2170 )1200(;)]TJ
+-4.8 -1.8333 TD
+0 Tw
+[(param: PROD: )-600(demand :=)]TJ
+4.2 -1.1111 TD
+2.4 Tw
+(AA1 70000)Tj
+T*
+(AC1 80000)Tj
+T*
+(BC1 90000)Tj
+T*
+(BC2 70000)Tj
+T*
+1.7999 Tw
+(NA2 400000)Tj
+T*
+[(NA3 800000 )1199.9(;)]TJ
+-4.2 -1.8333 TD
+0 Tw
+(param io \(tr\):)Tj
+5.4 -1.1111 TD
+0.6 Tw
+[(AA1 AC1 BC1 BC2 )-600(NA2 )-600(NA3 )600(:=)]TJ
+-3.6 -1.1111 TD
+1.2 Tw
+[(P1 )-1200(60 20 10 15 938 295)]TJ
+T*
+[(P1a )-1200(8 )-600(0 20 20 )600(1180 770)]TJ
+T*
+[(P2 )-1800(8 10 15 10 945 440)]TJ
+T*
+[(P2a )-600(40 40 35 10 278 430)]TJ
+T*
+[(P2b )-600(15 35 15 15 )600(1182 315)]TJ
+T*
+[(P3 )-1200(70 30 15 15 896 400)]TJ
+T*
+[(P3c )-600(25 40 30 30 )600(1029 370)]TJ
+T*
+[(P4 )-1200(60 20 15 10 )600(1397 450 )1200(;)]TJ
+/F6 1 Tf
+10 0 0 10 192.4 458.615 Tm
+-0.0089 Tw
+(Figure 19-2:)Tj
+/F2 1 Tf
+5.74 0 TD
+-0.0047 Tw
+(Data for production models \()Tj
+/F4 1 Tf
+11.59 0 TD
+0 Tw
+(econ.dat)Tj
+/F2 1 Tf
+4.8 0 TD
+(\).)Tj
+4 0 0 4 126 447.135 Tm
+(_______________________________________________________________________________________________________________________________)Tj
+63.499 0 TD
+(_____________________________________________________)Tj
+10 0 0 10 126 445.615 Tm
+(________________________________________________________________________)Tj
+/F4 1 Tf
+9 0 0 9 154.8 415.215 Tm
+(ampl:)Tj
+/F8 1 Tf
+3.6 0 TD
+-0.0001 Tw
+(display Level;)Tj
+/F4 1 Tf
+-3.6 -1.1111 TD
+0 Tw
+(Level [*] :=)Tj
+0.6 -1.1111 TD
+2.4 Tw
+(P1 0)Tj
+-0.6 -1.1111 TD
+0.5999 Tw
+(P1a 1555.3)Tj
+0.6 -1.1111 TD
+2.4 Tw
+(P2 0)Tj
+-0.6 -1.1111 TD
+(P2a 0)Tj
+T*
+(P2b 0)Tj
+0.6 -1.1111 TD
+1.1999 Tw
+(P3 147.465)Tj
+-0.6 -1.1111 TD
+0.5999 Tw
+(P3c 1889.4)Tj
+0.6 -1.1111 TD
+2.4 Tw
+(P4 0)Tj
+/F2 1 Tf
+10 0 0 10 126 303.415 Tm
+0.0547 Tw
+[(Recall )8.4(\(from )8.4(Section )8.4(12.5\) )8.4(that there are also dual or marginal values — or ‘‘prices’’ —)]TJ
+0 -1.2 TD
+-0.0036 Tw
+(associated with the constraints:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 271.615 Tm
+0 Tw
+(ampl:)Tj
+/F8 1 Tf
+3.6 0 TD
+-0.0001 Tw
+(display Demand.dual;)Tj
+/F4 1 Tf
+-3.6 -1.1111 TD
+0 Tw
+(Demand.dual [*] :=)Tj
+T*
+0.5999 Tw
+(AA1 16.7051)Tj
+T*
+1.1999 Tw
+(AC1 5.44585)Tj
+T*
+0.5999 Tw
+(BC1 57.818)Tj
+T*
+1.2 Tw
+(BC2 0)Tj
+T*
+(NA2 0)Tj
+T*
+(NA3 0)Tj
+ET
+endstreamendobj7 0 obj<< /Type /Page /Parent 102 0 R /Resources 8 0 R /Contents 9 0 R /Rotate 0 /MediaBox [ 0 0 612 792 ] /CropBox [ 40.32001 126 571.67999 792 ] >> endobj8 0 obj<< /ProcSet [ /PDF /Text ] /Font << /F2 121 0 R /F3 122 0 R /F4 128 0 R /F5 130 0 R >> /ExtGState << /GS1 132 0 R >> >> endobj9 0 obj<< /Length 5684 >> stream
+BT
+/F5 1 Tf
+10 0 0 10 126 747.615 Tm
+0 g
+/GS1 gs
+0 Tc
+0 Tw
+(422)Tj
+7 0 0 7 159.6 747.615 Tm
+0.0352 Tw
+[(COMPLEMENTARITY PROBLEMS )-24265.9(CHAPTER )25.2(19)]TJ
+/F2 1 Tf
+10 0 0 10 126 715.215 Tm
+0.1347 Tw
+[(In the conventional linear programming interpretation, the )-11(price )-11(on )-11(constraint)]TJ
+/F4 1 Tf
+32.64 0 TD
+0 Tw
+(i)Tj
+/F2 1 Tf
+1 0 TD
+(gives,)Tj
+-33.64 -1.2 TD
+0.1972 Tw
+[(within a sufficiently small range, the change in the total cost per unit change in )9.2(the)]TJ
+T*
+-0.0084 Tw
+(demand for product)Tj
+/F4 1 Tf
+8.12 0 TD
+0 Tw
+(i)Tj
+/F2 1 Tf
+0.6 0 TD
+(.)Tj
+-7.28 -1.28 TD
+0.0358 Tw
+[(Consider now an alternative view of the production )-10.6(economics )-10.6(problem, )-10.6(in )-10.6(which )-10.6(we)]TJ
+-1.44 -1.2 TD
+0.0711 Tw
+(define variables)Tj
+/F4 1 Tf
+6.77 0 TD
+0 Tw
+(Price[i])Tj
+/F2 1 Tf
+5.14 0 TD
+0.086 Tw
+(as well as)Tj
+/F4 1 Tf
+4.4 0 TD
+0 Tw
+(Level[j])Tj
+/F2 1 Tf
+5.14 0 TD
+0.0825 Tw
+(and seek an)Tj
+/F3 1 Tf
+5.17 0 TD
+0 Tw
+(equilibrium)Tj
+/F2 1 Tf
+5.01 0 TD
+0.0661 Tw
+(rather than)Tj
+-31.63 -1.2 TD
+0.038 Tw
+[(an optimum solution. )-240(There are two requirements that the equilibrium solution must sat-)]TJ
+T*
+0 Tw
+(isfy.)Tj
+1.44 -1.28 TD
+-0.0022 Tw
+[(First, for each product, total output must meet demand and )-8(the )-8(price )-8(must )-8(be )-8(nonnega-)]TJ
+-1.44 -1.2 TD
+0.0383 Tw
+(tive, and in addition there must be a)Tj
+/F3 1 Tf
+14.89 0 TD
+0 Tw
+(complementarity)Tj
+/F2 1 Tf
+7.08 0 TD
+0.0204 Tw
+(between these relationships: where)Tj
+-21.97 -1.2 TD
+0.1235 Tw
+[(production exceeds demand the price must be zero, or equivalently, where )-13.9(the )-13.9(price )-13.9(is)]TJ
+T*
+0.0782 Tw
+[(positive the production must equal the demand. )-253.8(This )10.7(relationship )10.7(is )10.7(expressed )10.7(in)]TJ
+9 0 0 9 461 593.615 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 126 581.615 Tm
+-0.0033 Tw
+(by means of the)Tj
+/F4 1 Tf
+6.6 0 TD
+0 Tw
+(complements)Tj
+/F2 1 Tf
+6.85 0 TD
+(operator:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 562.315 Tm
+(subject to Pri_Compl {i in PROD}:)Tj
+1.8 -1.1111 TD
+(Price[i] >= 0 complements)Tj
+1.8 -1.1111 TD
+(sum {j in ACT} io[i,j] * Level[j] >= demand[i];)Tj
+/F2 1 Tf
+10 0 0 10 126 521.015 Tm
+0.086 Tw
+(When two inequalities are joined by)Tj
+/F4 1 Tf
+15.24 0 TD
+0 Tw
+(complements)Tj
+/F2 1 Tf
+6.6 0 TD
+0.1 Tw
+[(, )12(they both must hold, and at least)]TJ
+-21.84 -1.2 TD
+0.0578 Tw
+[(one )-13.3(must hold with equality. )-240.3(Because our example is indexed over the set)]TJ
+/F4 1 Tf
+30.67 0 TD
+0 Tw
+(PROD)Tj
+/F2 1 Tf
+2.4 0 TD
+0.062 Tw
+(, it sets)Tj
+-33.07 -1.2 TD
+-0.0031 Tw
+(up a relationship of this kind for each product.)Tj
+1.44 -1.28 TD
+0.0755 Tw
+[(Second, for each activity, there is another relationship that may )-12.9(at )-12.9(first )-12.9(be )-12.9(less )-12.9(obvi-)]TJ
+-1.44 -1.2 TD
+0.0272 Tw
+[(ous. )-252.9(Consider that, for each unit of activity)]TJ
+/F4 1 Tf
+17.85 0 TD
+0 Tw
+(j)Tj
+/F2 1 Tf
+0.6 0 TD
+0.017 Tw
+(, the value of the resulting product)Tj
+/F4 1 Tf
+14.12 0 TD
+0 Tw
+(i)Tj
+/F2 1 Tf
+0.87 0 TD
+(output)Tj
+-33.44 -1.2 TD
+0.0283 Tw
+[(in terms of the model’s )-9.2(prices )-9.2(is)]TJ
+/F4 1 Tf
+13.31 0 TD
+0 Tw
+(Price[i] )Tj
+5.09 0 TD
+(* )Tj
+0.8901 0 TD
+(io[i,j])Tj
+/F2 1 Tf
+4.1999 0 TD
+0.0396 Tw
+[(. )-245.4(The total value of all outputs)]TJ
+-23.49 -1.2 TD
+-0.0017 Tw
+(from one unit of activity)Tj
+/F4 1 Tf
+10.02 0 TD
+0 Tw
+(j)Tj
+/F2 1 Tf
+0.85 0 TD
+0.006 Tw
+(is thus)Tj
+/F4 1 Tf
+9 0 0 9 154.8 428.915 Tm
+0 Tw
+(sum {i in ACT} Price[i] * io[i,j])Tj
+/F2 1 Tf
+10 0 0 10 126 407.615 Tm
+0.3484 Tw
+[(At equilibrium prices, this total value cannot )-7.6(exceed )-7.6(the )-7.6(activity’s )-7.6(cost )-7.6(per )-7.6(unit,)]TJ
+/F4 1 Tf
+0 -1.2 TD
+0 Tw
+(cost[j])Tj
+/F2 1 Tf
+4.2 0 TD
+0.0363 Tw
+[(. )-240.8(Moreover, there is a complementarity between this relationship )9.6(and )9.6(the )9.6(level)]TJ
+-4.2 -1.2 TD
+0.1071 Tw
+(of activity)Tj
+/F4 1 Tf
+4.55 0 TD
+0 Tw
+(j)Tj
+/F2 1 Tf
+0.6 0 TD
+0.104 Tw
+(: where cost)Tj
+/F3 1 Tf
+5.4 0 TD
+0 Tw
+(exceeds)Tj
+/F2 1 Tf
+3.46 0 TD
+0.1172 Tw
+(total value the activity must be zero, or equivalently,)Tj
+-14.01 -1.2 TD
+0.0582 Tw
+[(where the activity is positive the total value must equal the )9.2(cost. )-237.8(Again )6.7(this )6.7(relationship)]TJ
+T*
+-0.0076 Tw
+(can be expressed in)Tj
+9 0 0 9 206.3 359.615 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 233.8 359.615 Tm
+(with the)Tj
+/F4 1 Tf
+3.5 0 TD
+(complements)Tj
+/F2 1 Tf
+6.85 0 TD
+(operator:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 340.315 Tm
+(subject to Lev_Compl {j in ACT}:)Tj
+1.8 -1.1111 TD
+(Level[j] >= 0 complements)Tj
+1.8 -1.1111 TD
+(sum {i in PROD} Price[i] * io[i,j] <= cost[j];)Tj
+/F2 1 Tf
+10 0 0 10 126 299.015 Tm
+0.0442 Tw
+(Here the constraint is indexed over)Tj
+/F4 1 Tf
+14.49 0 TD
+0 Tw
+(ACT)Tj
+/F2 1 Tf
+1.8 0 TD
+0.0463 Tw
+(, so that we have a complementarity relationship)Tj
+-16.29 -1.2 TD
+-0.009 Tw
+(for each activity.)Tj
+1.44 -1.28 TD
+0.0663 Tw
+(Putting together the two collections of complementarity constraints, we have the lin-)Tj
+-1.44 -1.2 TD
+0 Tw
+(ear)Tj
+/F3 1 Tf
+1.6 0 TD
+0.1262 Tw
+(complementarity problem)Tj
+/F2 1 Tf
+10.9 0 TD
+0.1378 Tw
+[(shown in Figure 19-3. )-247.2(The number of )13.1(variables )13.1(and )13.1(the)]TJ
+-12.5 -1.2 TD
+0.098 Tw
+[(number )14.7(of )14.7(complementarity )14.7(relationships )14.7(are equal \(to activities plus products\), making)]TJ
+T*
+0.0056 Tw
+(this a ‘‘square’’ complementarity problem that is amenable to certain solution techniques,)Tj
+T*
+-0.0037 Tw
+(though not the same techniques as those for linear programs.)Tj
+1.44 -1.28 TD
+0.0401 Tw
+(Applying the)Tj
+9 0 0 9 196.2 213.415 Tm
+0 Tw
+(PATH)Tj
+10 0 0 10 222.6 213.415 Tm
+0.0455 Tw
+[(solver, )12.1(for )12.1(example, )12.1(the complementarity problem can be seen to)]TJ
+-9.66 -1.2 TD
+-0.0024 Tw
+(have the same solution as the related minimum-cost production problem:)Tj
+ET
+endstreamendobj10 0 obj<< /Type /Page /Parent 102 0 R /Resources 11 0 R /Contents 12 0 R /Rotate 0 /MediaBox [ 0 0 612 792 ] /CropBox [ 40.32001 126 571.67999 792 ] >> endobj11 0 obj<< /ProcSet [ /PDF /Text ] /Font << /F2 121 0 R /F3 122 0 R /F4 128 0 R /F5 130 0 R /F6 49 0 R /F7 50 0 R /F8 51 0 R >> /ExtGState << /GS1 132 0 R >> >> endobj12 0 obj<< /Length 4699 >> stream
+BT
+/F5 1 Tf
+7 0 0 7 126 747.615 Tm
+0 g
+/GS1 gs
+0 Tc
+0.0198 Tw
+[(SECTION )-11.1(19.1 )-22700(SOURCES OF COMPLEMENTARITY)]TJ
+10 0 0 10 469.2 747.615 Tm
+0 Tw
+(423)Tj
+/F2 1 Tf
+-34.32 -2.16 TD
+(________________________________________________________________________)Tj
+4 0 0 4 126 723.535 Tm
+(_______________________________________________________________________________________________________________________________)Tj
+63.499 0 TD
+(_____________________________________________________)Tj
+/F4 1 Tf
+9 0 0 9 154.8 706.215 Tm
+[(set PROD; )-1200(# products)]TJ
+0 -1.1111 TD
+[(set ACT; )-1800(# activities)]TJ
+0 -1.6333 TD
+[(param cost {ACT} > 0; )-3000(# cost per unit of each activity)]TJ
+0 -1.1111 TD
+[(param demand {PROD} >= 0; )-600(# units of demand for each product)]TJ
+T*
+[(param io {PROD,ACT} >= 0; )-600(# units of each product from)]TJ
+16.2 -1.1111 TD
+(# 1 unit of each activity)Tj
+-16.2 -1.6333 TD
+(var Price {i in PROD};)Tj
+0 -1.1111 TD
+(var Level {j in ACT};)Tj
+0 -1.6333 TD
+(subject to Pri_Compl {i in PROD}:)Tj
+1.8 -1.1111 TD
+(Price[i] >= 0 complements)Tj
+1.8 -1.1111 TD
+(sum {j in ACT} io[i,j] * Level[j] >= demand[i];)Tj
+-3.6 -1.6333 TD
+(subject to Lev_Compl {j in ACT}:)Tj
+1.8 -1.1111 TD
+(Level[j] >= 0 complements)Tj
+1.8 -1.1111 TD
+(sum {i in PROD} Price[i] * io[i,j] <= cost[j];)Tj
+/F6 1 Tf
+10 0 0 10 187.2 538.415 Tm
+-0.0089 Tw
+(Figure 19-3:)Tj
+/F2 1 Tf
+5.74 0 TD
+0.0004 Tw
+(Production equilibrium model \()Tj
+/F4 1 Tf
+12.64 0 TD
+0 Tw
+(econ.mod)Tj
+/F2 1 Tf
+4.8 0 TD
+(\).)Tj
+4 0 0 4 126 529.735 Tm
+(_______________________________________________________________________________________________________________________________)Tj
+63.499 0 TD
+(_____________________________________________________)Tj
+10 0 0 10 126 528.215 Tm
+(________________________________________________________________________)Tj
+/F4 1 Tf
+9 0 0 9 154.8 503.415 Tm
+(ampl:)Tj
+/F8 1 Tf
+3.6 0 TD
+-0.0001 Tw
+(model econ.mod;)Tj
+/F4 1 Tf
+-3.6 -1.1111 TD
+0 Tw
+(ampl:)Tj
+/F8 1 Tf
+3.6 0 TD
+-0.0001 Tw
+(data econ.dat;)Tj
+/F4 1 Tf
+-3.6 -1.1111 TD
+0 Tw
+(ampl:)Tj
+/F8 1 Tf
+3.6 0 TD
+-0.0001 Tw
+(option solver path;)Tj
+/F4 1 Tf
+-3.6 -1.1111 TD
+0 Tw
+(ampl:)Tj
+/F8 1 Tf
+3.6 0 TD
+(solve;)Tj
+/F4 1 Tf
+-3.6 -1.1111 TD
+(Path v4.5: Solution found.)Tj
+T*
+(7 iterations \(0 for crash\); 33 pivots.)Tj
+T*
+(20 function, 8 gradient evaluations.)Tj
+0 -1.7556 TD
+(ampl:)Tj
+/F8 1 Tf
+3.6 0 TD
+(display sum {j in ACT} cost[j] * Level[j];)Tj
+/F4 1 Tf
+-3.6 -1.1111 TD
+(sum{j in ACT} cost[j]*Level[j] = 6808640)Tj
+/F2 1 Tf
+10 0 0 10 126 398.615 Tm
+0.0146 Tw
+(Further application of)Tj
+/F4 1 Tf
+9.02 0 TD
+0 Tw
+(display)Tj
+/F2 1 Tf
+4.47 0 TD
+0.0201 Tw
+(shows that)Tj
+/F4 1 Tf
+4.54 0 TD
+0 Tw
+(Level)Tj
+/F2 1 Tf
+3.27 0 TD
+0.017 Tw
+(is the same as in the production eco-)Tj
+-21.3 -1.2 TD
+0 Tw
+(nomics LP and that)Tj
+/F4 1 Tf
+8 0 TD
+(Price)Tj
+/F2 1 Tf
+3.25 0 TD
+-0.0042 Tw
+(takes the same values that)Tj
+/F4 1 Tf
+10.62 0 TD
+0 Tw
+(Demand.dual)Tj
+/F2 1 Tf
+6.85 0 TD
+(has in the LP.)Tj
+/F7 1 Tf
+-28.72 -3.3 TD
+0.0124 Tw
+(Complementarity for bounded variables)Tj
+/F2 1 Tf
+1.44 -1.9 TD
+0.1477 Tw
+[(Suppose now that we extend our models by placing )-11.9(bounds )-11.9(on )-11.9(the )-11.9(activity )-11.9(levels:)]TJ
+/F4 1 Tf
+-1.44 -1.2 TD
+-0.2199 Tw
+[(level_min[j] )-10(<= Level[j] <= level_max[j])]TJ
+/F2 1 Tf
+23.13 0 TD
+0.12 Tw
+[(. )-255(The equivalence between the)]TJ
+-23.13 -1.2 TD
+0.1847 Tw
+[(optimization )8.9(problem )8.9(and )8.9(a )8.9(square complementarity problem can be maintained, pro-)]TJ
+T*
+0.0152 Tw
+[(vided )-11.6(that )-11.6(the )-11.6(complementarity )-11.6(relationship for the activities is generalized to a ‘‘mixed’’)]TJ
+T*
+0.018 Tw
+[(form. )-223.1(Where )11.6(an )11.6(activity’s )11.6(cost )11.6(is )11.6(greater )11.6(than its total value \(per unit\), the activity’s level)]TJ
+T*
+0.131 Tw
+(must be)Tj
+/F3 1 Tf
+3.65 0 TD
+0.133 Tw
+(at its lower bound)Tj
+/F2 1 Tf
+8.11 0 TD
+0.118 Tw
+[(\(much as before\). )-237(Where an activity’s level is)]TJ
+/F3 1 Tf
+19.65 0 TD
+0.1181 Tw
+(between its)Tj
+-31.41 -1.2 TD
+0 Tw
+(bounds,)Tj
+/F2 1 Tf
+3.47 0 TD
+-0.0005 Tw
+[(its cost must equal its total value. )-248.5(And an activity’s cost may also )-10.3(be )-10.3(less )-10.3(than )-10.3(its)]TJ
+-3.47 -1.2 TD
+0.1525 Tw
+(total value, provided that its level is)Tj
+/F3 1 Tf
+15.62 0 TD
+0.1514 Tw
+(at its upper bound.)Tj
+/F2 1 Tf
+8.49 0 TD
+0.1404 Tw
+(These three relationships are)Tj
+-24.11 -1.2 TD
+-0.0052 Tw
+(summarized by another form of the)Tj
+/F4 1 Tf
+14.36 0 TD
+0 Tw
+(complements)Tj
+/F2 1 Tf
+6.85 0 TD
+(operator:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 221.615 Tm
+(subject to Lev_Compl {j in ACT}:)Tj
+1.8 -1.1111 TD
+-0.0001 Tw
+(level_min[j] <= Level[j] <= level_max[j] complements)Tj
+1.8 -1.1111 TD
+0 Tw
+(cost[j] - sum {i in PROD} Price[i] * io[i,j];)Tj
+ET
+endstreamendobj13 0 obj<< /Type /Page /Parent 102 0 R /Resources 14 0 R /Contents 15 0 R /Rotate 0 /MediaBox [ 0 0 612 792 ] /CropBox [ 40.32001 126 571.67999 792 ] >> endobj14 0 obj<< /ProcSet [ /PDF /Text ] /Font << /F2 121 0 R /F4 128 0 R /F5 130 0 R /F6 49 0 R /F8 51 0 R >> /ExtGState << /GS1 132 0 R >> >> endobj15 0 obj<< /Length 4042 >> stream
+BT
+/F5 1 Tf
+10 0 0 10 126 747.615 Tm
+0 g
+/GS1 gs
+0 Tc
+0 Tw
+(424)Tj
+7 0 0 7 159.6 747.615 Tm
+0.0352 Tw
+[(COMPLEMENTARITY PROBLEMS )-24265.9(CHAPTER )25.2(19)]TJ
+/F2 1 Tf
+10 0 0 10 126 726.015 Tm
+0 Tw
+(________________________________________________________________________)Tj
+4 0 0 4 126 723.535 Tm
+(_______________________________________________________________________________________________________________________________)Tj
+63.499 0 TD
+(_____________________________________________________)Tj
+/F4 1 Tf
+9 0 0 9 140.4 707.115 Tm
+-0.0001 Tw
+[(set PROD; )-1200.1(# products)]TJ
+0 -1.1111 TD
+0 Tw
+[(set ACT; )-1800(# activities)]TJ
+0 -1.5667 TD
+[(param cost {ACT} > 0; )-3000(# cost per unit of each activity)]TJ
+0 -1.1111 TD
+[(param demand {PROD} >= 0; )-600(# units of demand for each product)]TJ
+T*
+[(param io {PROD,ACT} >= 0; )-600(# units of each product from)]TJ
+16.2 -1.1111 TD
+(# 1 unit of each activity)Tj
+-16.2 -1.5667 TD
+(param level_min {ACT} > 0; # min allowed level for each activity)Tj
+0 -1.1111 TD
+(param level_max {ACT} > 0; # max allowed level for each activity)Tj
+0 -1.5667 TD
+(var Price {i in PROD};)Tj
+0 -1.1111 TD
+(var Level {j in ACT};)Tj
+0 -1.5667 TD
+(subject to Pri_Compl {i in PROD}:)Tj
+1.8 -1.1111 TD
+(Price[i] >= 0 complements)Tj
+1.8 -1.1111 TD
+(sum {j in ACT} io[i,j] * Level[j] >= demand[i];)Tj
+-3.6 -1.5667 TD
+(subject to Lev_Compl {j in ACT}:)Tj
+1.8 -1.1111 TD
+-0.0001 Tw
+(level_min[j] <= Level[j] <= level_max[j] complements)Tj
+1.8 -1.1111 TD
+0 Tw
+(cost[j] - sum {i in PROD} Price[i] * io[i,j];)Tj
+/F6 1 Tf
+10 0 0 10 143.8 518.515 Tm
+-0.0089 Tw
+(Figure 19-4:)Tj
+/F2 1 Tf
+5.74 0 TD
+-0.0018 Tw
+(Bounded version of production equilibrium model \()Tj
+/F4 1 Tf
+20.71 0 TD
+0 Tw
+(econ2.mod)Tj
+/F2 1 Tf
+5.4 0 TD
+(\).)Tj
+4 0 0 4 126 510.735 Tm
+(_______________________________________________________________________________________________________________________________)Tj
+63.499 0 TD
+(_____________________________________________________)Tj
+10 0 0 10 126 509.215 Tm
+(________________________________________________________________________)Tj
+0 -2.5 TD
+0.0478 Tw
+(When a double inequality is joined to an expression by)Tj
+/F4 1 Tf
+22.7 0 TD
+0 Tw
+(complements)Tj
+/F2 1 Tf
+6.6 0 TD
+0.0585 Tw
+(, the inequalities)Tj
+-29.3 -1.2 TD
+0.0271 Tw
+[(must hold, and either the expression must be zero, or )7.1(the )7.1(lower )7.1(inequality )7.1(must )7.1(hold )7.1(with)]TJ
+T*
+0.059 Tw
+[(equality )13.9(and )13.9(the )13.9(expression must be nonnegative, or the upper inequality must hold with)]TJ
+T*
+-0.0018 Tw
+(equality and the expression must be nonpositive.)Tj
+1.44 -1.25 TD
+0.0973 Tw
+[(A bounded version of our complementarity examples is shown in Figure 19-4. )-257.7(The)]TJ
+9 0 0 9 126 423.715 Tm
+0 Tw
+(PATH)Tj
+10 0 0 10 152 423.715 Tm
+-0.002 Tw
+(solver can be applied to this model as well:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 407.615 Tm
+0 Tw
+(ampl:)Tj
+/F8 1 Tf
+3.6 0 TD
+-0.0001 Tw
+(model econ2.mod;)Tj
+/F4 1 Tf
+-3.6 -1.1111 TD
+0 Tw
+(ampl:)Tj
+/F8 1 Tf
+3.6 0 TD
+-0.0001 Tw
+(data econ2.dat;)Tj
+/F4 1 Tf
+-3.6 -1.1111 TD
+0 Tw
+(ampl:)Tj
+/F8 1 Tf
+3.6 0 TD
+-0.0001 Tw
+(option solver path;)Tj
+/F4 1 Tf
+-3.6 -1.1111 TD
+0 Tw
+(ampl:)Tj
+/F8 1 Tf
+3.6 0 TD
+(solve;)Tj
+/F4 1 Tf
+-3.6 -1.1111 TD
+(Path v4.5: Solution found.)Tj
+T*
+(9 iterations \(4 for crash\); 8 pivots.)Tj
+T*
+(22 function, 10 gradient evaluations.)Tj
+0 -1.7889 TD
+(ampl:)Tj
+/F8 1 Tf
+3.6 0 TD
+-0.0001 Tw
+(display level_min, Level, level_max;)Tj
+/F4 1 Tf
+-3.6 -1.1111 TD
+0.6 Tw
+[(: )-599.9(level_min Level )600.1(level_max :=)]TJ
+T*
+3 Tw
+[(P1 240 240 )1200(1000)]TJ
+T*
+2.4 Tw
+[(P1a 270 1000 )600(1000)]TJ
+T*
+3 Tw
+[(P2 220 220 )1200(1000)]TJ
+T*
+2.4 Tw
+[(P2a 260 )-600(680 )600(1000)]TJ
+T*
+[(P2b 200 )-600(200 )600(1000)]TJ
+T*
+3 Tw
+[(P3 260 260 )1200(1000)]TJ
+T*
+2.4 Tw
+[(P3c 220 1000 )600(1000)]TJ
+T*
+3 Tw
+[(P4 240 240 )1200(1000)]TJ
+T*
+0 Tw
+(;)Tj
+/F2 1 Tf
+10 0 0 10 126 213.415 Tm
+0.0464 Tw
+[(The )12.3(results are the same as for the LP that is derived from our previous example \(Figure)]TJ
+0 -1.2 TD
+-0.0033 Tw
+(19-1\) by adding the bounds above to the variables.)Tj
+ET
+endstreamendobj16 0 obj<< /Type /Page /Parent 102 0 R /Resources 17 0 R /Contents 18 0 R /Rotate 0 /MediaBox [ 0 0 612 792 ] /CropBox [ 40.32001 126 571.67999 792 ] >> endobj17 0 obj<< /ProcSet [ /PDF /Text ] /Font << /F2 121 0 R /F4 128 0 R /F5 130 0 R /F6 49 0 R /F7 50 0 R /F8 51 0 R >> /ExtGState << /GS1 132 0 R >> >> endobj18 0 obj<< /Length 4094 >> stream
+BT
+/F5 1 Tf
+7 0 0 7 126 747.615 Tm
+0 g
+/GS1 gs
+0 Tc
+0.0198 Tw
+[(SECTION )-11.1(19.1 )-22700(SOURCES OF COMPLEMENTARITY)]TJ
+10 0 0 10 469.2 747.615 Tm
+0 Tw
+(425)Tj
+/F2 1 Tf
+-34.32 -2.16 TD
+(________________________________________________________________________)Tj
+4 0 0 4 126 723.535 Tm
+(_______________________________________________________________________________________________________________________________)Tj
+63.499 0 TD
+(_____________________________________________________)Tj
+/F4 1 Tf
+9 0 0 9 154.8 704.615 Tm
+[(set PROD; )-1200(# products)]TJ
+0 -1.1111 TD
+[(set ACT; )-1800(# activities)]TJ
+0 -1.7556 TD
+[(param cost {ACT} > 0; )-3000(# cost per unit of each activity)]TJ
+0 -1.1111 TD
+[(param io {PROD,ACT} >= 0; )-600(# units of each product from)]TJ
+16.2 -1.1111 TD
+(# 1 unit of each activity)Tj
+-16.2 -1.7556 TD
+[(param demzero {PROD} > 0; )-600(# intercept and slope of the demand)]TJ
+0 -1.1111 TD
+(param demrate {PROD} >= 0; # as a function of price)Tj
+0 -1.7556 TD
+(var Price {i in PROD};)Tj
+0 -1.1111 TD
+(var Level {j in ACT};)Tj
+0 -1.7556 TD
+(subject to Pri_Compl {i in PROD}:)Tj
+1.8 -1.1111 TD
+(Price[i] >= 0 complements)Tj
+1.8 -1.1111 TD
+(sum {j in ACT} io[i,j] * Level[j])Tj
+1.8 -1.1111 TD
+(>= demzero[i] - demrate[i] * Price[i];)Tj
+-5.4 -1.7556 TD
+(subject to Lev_Compl {j in ACT}:)Tj
+1.8 -1.1111 TD
+(Level[j] >= 0 complements)Tj
+1.8 -1.1111 TD
+(sum {i in PROD} Price[i] * io[i,j] <= cost[j];)Tj
+/F6 1 Tf
+10 0 0 10 190.1 505.015 Tm
+-0.0089 Tw
+(Figure 19-5:)Tj
+/F2 1 Tf
+5.74 0 TD
+-0.0129 Tw
+(Price-dependent demands \()Tj
+/F4 1 Tf
+10.86 0 TD
+0 Tw
+(econnl.mod)Tj
+/F2 1 Tf
+6 0 TD
+(\).)Tj
+4 0 0 4 126 494.735 Tm
+(_______________________________________________________________________________________________________________________________)Tj
+63.499 0 TD
+(_____________________________________________________)Tj
+10 0 0 10 126 493.215 Tm
+(________________________________________________________________________)Tj
+/F7 1 Tf
+0 -3.01 TD
+0.0121 Tw
+(Complementarity for price-dependent demands)Tj
+/F2 1 Tf
+1.44 -2.06 TD
+0.0344 Tw
+[(If complementarity problems only arose from linear )-11.8(programs, )-11.8(they )-11.8(would )-11.8(be )-11.8(of )-11.8(very)]TJ
+-1.44 -1.2 TD
+0.124 Tw
+[(limited )-18.1(interest. )-251(The idea of an economic equilibrium can be generalized, however, to)]TJ
+T*
+0.0973 Tw
+[(problems )9.7(that )9.7(have )9.7(no )9.7(LP )9.7(equivalents. )-246.7(Rather than taking the demands to be fixed, for)]TJ
+T*
+0.0362 Tw
+[(example, it makes sense to view the demand for )12.7(each )12.7(product )12.7(as )12.7(a )12.7(decreasing )12.7(function )12.7(of)]TJ
+T*
+-0.004 Tw
+(its price.)Tj
+1.44 -1.27 TD
+0.0544 Tw
+[(The simplest case is a decreasing linear )-11.1(demand, )-11.1(which )-11.1(could )-11.1(be )-11.1(expressed )-11.1(in)]TJ
+9 0 0 9 461 381.815 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 126 369.815 Tm
+(as)Tj
+/F4 1 Tf
+9 0 0 9 154.8 351.215 Tm
+(demzero[i] - demrate[i] * Price[i])Tj
+/F2 1 Tf
+10 0 0 10 126 330.615 Tm
+(where)Tj
+/F4 1 Tf
+2.94 0 TD
+(demzero[i])Tj
+/F2 1 Tf
+6.51 0 TD
+(and)Tj
+/F4 1 Tf
+1.95 0 TD
+(demrate[i])Tj
+/F2 1 Tf
+6.51 0 TD
+0.2521 Tw
+[(are nonnegative parameters. )-262.9(The )-18(resulting)]TJ
+-17.91 -1.2 TD
+0.0614 Tw
+[(complementarity problem simply substitutes )14(this )14(expression )14(for)]TJ
+/F4 1 Tf
+26.07 0 TD
+0 Tw
+(demand[i])Tj
+/F2 1 Tf
+5.4 0 TD
+0.0474 Tw
+(, as seen in)Tj
+-31.47 -1.2 TD
+0.127 Tw
+[(Figure )10.9(19-5. )-238(The )11.9(complementarity )11.9(problem remains square, and can still be solved by)]TJ
+9 0 0 9 126 294.615 Tm
+0 Tw
+(PATH)Tj
+10 0 0 10 149.5 294.615 Tm
+-0.0038 Tw
+(, but with clearly different results:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 276.015 Tm
+0 Tw
+(ampl:)Tj
+/F8 1 Tf
+3.6 0 TD
+-0.0001 Tw
+(model econnl.mod;)Tj
+/F4 1 Tf
+-3.6 -1.1111 TD
+0 Tw
+(ampl:)Tj
+/F8 1 Tf
+3.6 0 TD
+-0.0001 Tw
+(data econnl.dat;)Tj
+/F4 1 Tf
+-3.6 -1.9111 TD
+0 Tw
+(ampl:)Tj
+/F8 1 Tf
+3.6 0 TD
+-0.0001 Tw
+(option solver path;)Tj
+/F4 1 Tf
+-3.6 -1.9111 TD
+0 Tw
+(ampl:)Tj
+/F8 1 Tf
+3.6 0 TD
+(solve;)Tj
+/F4 1 Tf
+-3.6 -1.1111 TD
+(Path v4.5: Solution found.)Tj
+T*
+(11 iterations \(3 for crash\); 11 pivots.)Tj
+T*
+(12 function, 12 gradient evaluations.)Tj
+ET
+endstreamendobj19 0 obj<< /Type /Page /Parent 102 0 R /Resources 20 0 R /Contents 21 0 R /Rotate 0 /MediaBox [ 0 0 612 792 ] /CropBox [ 40.32001 126 571.67999 792 ] >> endobj20 0 obj<< /ProcSet [ /PDF /Text ] /Font << /F2 121 0 R /F4 128 0 R /F5 130 0 R /F7 50 0 R /F8 51 0 R >> /ExtGState << /GS1 132 0 R >> >> endobj21 0 obj<< /Length 4418 >> stream
+BT
+/F5 1 Tf
+10 0 0 10 126 747.615 Tm
+0 g
+/GS1 gs
+0 Tc
+0 Tw
+(426)Tj
+7 0 0 7 159.6 747.615 Tm
+0.0352 Tw
+[(COMPLEMENTARITY PROBLEMS )-24265.9(CHAPTER )25.2(19)]TJ
+/F4 1 Tf
+9 0 0 9 154.8 717.215 Tm
+0 Tw
+(ampl:)Tj
+/F8 1 Tf
+3.6 0 TD
+-0.0001 Tw
+(display Level;)Tj
+/F4 1 Tf
+-3.6 -1.1111 TD
+0 Tw
+(Level [*] :=)Tj
+0.6 -1.1111 TD
+0.6 Tw
+(P1 240)Tj
+-0.6 -1.1111 TD
+0.5999 Tw
+(P1a 710.156)Tj
+0.6 -1.1111 TD
+0.6 Tw
+(P2 220)Tj
+-0.6 -1.1111 TD
+(P2a 260)Tj
+T*
+(P2b 200)Tj
+0.6 -1.1111 TD
+(P3 260)Tj
+-0.6 -1.1111 TD
+0.5999 Tw
+(P3c 939.063)Tj
+0.6 -1.1111 TD
+0.6 Tw
+(P4 240)Tj
+-0.6 -1.1111 TD
+0 Tw
+(;)Tj
+/F2 1 Tf
+10 0 0 10 126 597.215 Tm
+0.085 Tw
+[(The balance between demands and prices now tends to push down )-13.4(the )-13.4(equilibrium )-13.4(pro-)]TJ
+0 -1.2 TD
+-0.0029 Tw
+(duction levels.)Tj
+1.44 -1.27 TD
+0.0061 Tw
+(Because the)Tj
+/F4 1 Tf
+5.08 0 TD
+0 Tw
+(Price[i])Tj
+/F2 1 Tf
+5.07 0 TD
+0.0148 Tw
+[(variables appear on both sides of )-13.2(the)]TJ
+/F4 1 Tf
+14.99 0 TD
+0 Tw
+(complements)Tj
+/F2 1 Tf
+6.88 0 TD
+(opera-)Tj
+-33.46 -1.2 TD
+0.0866 Tw
+[(tor )-12.7(in )-12.7(this )-12.7(model, )-12.7(there is no equivalent linear program. )-241.4(There does exist an equivalent)]TJ
+T*
+0.0079 Tw
+[(nonlinear )9.3(optimization )9.3(model, but it is not as easy to derive and may be harder to solve as)]TJ
+T*
+0 Tw
+(well.)Tj
+/F7 1 Tf
+0 -3.61 TD
+0.0138 Tw
+(Other complementarity models and applications)Tj
+/F2 1 Tf
+1.44 -2 TD
+0.1234 Tw
+[(This basic example can be extended )-12.3(to )-12.4(considerably )-12.3(more )-12.3(complex )-12.3(models )-12.4(of )-12.4(eco-)]TJ
+-1.44 -1.2 TD
+0.025 Tw
+[(nomic )-8.1(equilibrium. )-250(The activity and price variables and their )14.9(corresponding )14.9(complemen-)]TJ
+T*
+0.0343 Tw
+[(tarity constraints can be comprised of several indexed collections )-12.3(each, )-12.3(and )-12.3(both )-12.3(the )-12.3(cost)]TJ
+T*
+0.0552 Tw
+[(and )-7.4(price )-7.4(functions can be nonlinear. )-252.8(A solver such as)]TJ
+9 0 0 9 352.8 444.415 Tm
+0 Tw
+(PATH)Tj
+10 0 0 10 379.4 444.415 Tm
+0.0545 Tw
+(handles all of these exten-)Tj
+-25.34 -1.2 TD
+0.1277 Tw
+[(sions, so long as the problem remains square in the sense of )-8.6(having )-8.6(equal )-8.6(numbers )-8.6(of)]TJ
+T*
+0.1143 Tw
+[(variables and complementarity constraints \(or being easily converted to )7.8(such )7.8(a )7.8(form )7.8(as)]TJ
+T*
+-0.004 Tw
+(explained in the next section\).)Tj
+1.44 -1.27 TD
+-0.0021 Tw
+[(More ambitious models may add an objective function and may mix equality, )-5.1(inequal-)]TJ
+-1.44 -1.2 TD
+0.0859 Tw
+[(ity and complementarity constraints in arbitrary numbers. )-264.1(Solution )11.9(techniques )11.9(for )11.9(these)]TJ
+T*
+0 Tw
+(so-called)Tj
+9 0 0 9 164.8 371.715 Tm
+(MPEC)Tj
+10 0 0 10 189.3 371.715 Tm
+0.0367 Tw
+[(s )11.3(— )11.3(mathematical )11.3(programs with equilibrium constraints — are at a rela-)]TJ
+-6.33 -1.2 TD
+-0.0089 Tw
+(tively experimental stage, however.)Tj
+1.44 -1.27 TD
+0.1449 Tw
+[(Complementarity )7.1(problems )7.1(also )7.1(arise )7.1(in physical systems, where they can serve as)]TJ
+-1.44 -1.2 TD
+0.1955 Tw
+[(models of equilibrium conditions between forces. )-252.5(A complementarity constraint )7.5(may)]TJ
+T*
+0.0353 Tw
+[(represent )15.2(a )15.2(discretization )15.2(of the relationship between two objects, for example. )-249.7(The )7.3(rela-)]TJ
+T*
+0.1375 Tw
+[(tionship )-19.6(on one side of the)]TJ
+/F4 1 Tf
+11.68 0 TD
+0 Tw
+(complements)Tj
+/F2 1 Tf
+6.99 0 TD
+0.1385 Tw
+(operator may hold with equality at points)Tj
+-18.67 -1.2 TD
+0.0065 Tw
+[(where the objects are in contact, while the relationship on the other side holds )-10(with )-10(equal-)]TJ
+T*
+-0.0022 Tw
+(ity where they do not touch.)Tj
+1.44 -1.27 TD
+0.1747 Tw
+[(Game theory provides another class of examples. )-250.3(The Nash equilibrium for )-12.8(a )-12.8(bi-)]TJ
+-1.44 -1.2 TD
+0.0946 Tw
+[(matrix game is characterized by complementarity conditions, for example, in which )6.6(the)]TJ
+T*
+0.1356 Tw
+[(variables are the probabilities with which the two players make their )-9(available )-9(moves.)]TJ
+T*
+0.0479 Tw
+[(For )-5.5(each )-5.5(move, )-5.5(either its probability is zero, or a related equality holds to insure there is)]TJ
+T*
+-0.003 Tw
+(nothing to be gained by increasing or decreasing its probability.)Tj
+1.44 -1.27 TD
+0.0476 Tw
+[(Surveys )13.4(that )13.4(describe )13.4(a )13.4(variety )13.4(of )13.4(complementarity problems in detail are cited in the)]TJ
+-1.44 -1.2 TD
+-0.0078 Tw
+(references at the end of this chapter.)Tj
+ET
+endstreamendobj22 0 obj<< /Type /Page /Parent 102 0 R /Resources 23 0 R /Contents 24 0 R /Rotate 0 /MediaBox [ 0 0 612 792 ] /CropBox [ 40.32001 126 571.67999 792 ] >> endobj23 0 obj<< /ProcSet [ /PDF /Text ] /Font << /F1 125 0 R /F2 121 0 R /F3 122 0 R /F4 128 0 R /F5 130 0 R /F9 52 0 R >> /ExtGState << /GS1 132 0 R >> >> endobj24 0 obj<< /Length 6483 >> stream
+BT
+/F5 1 Tf
+7 0 0 7 126 747.615 Tm
+0 g
+/GS1 gs
+0 Tc
+0.0172 Tw
+[(SECTION )-13.7(19.2 )-16579.5(FORMS OF COMPLEMENTARITY CONSTRAINTS)]TJ
+10 0 0 10 469.2 747.615 Tm
+0 Tw
+(427)Tj
+/F1 1 Tf
+12 0 0 12 126 715.215 Tm
+0.0156 Tw
+[(19.2 )-287.8(Forms of complementarity constraints)]TJ
+/F2 1 Tf
+10 0 0 10 140.4 695.115 Tm
+0 Tw
+(An)Tj
+9 0 0 9 155.3 695.115 Tm
+(AMPL)Tj
+10 0 0 10 183 695.115 Tm
+0.0172 Tw
+(complementarity constraint consists of two expressions or constraints sepa-)Tj
+-5.7 -1.2 TD
+0.0145 Tw
+(rated by the)Tj
+/F4 1 Tf
+5.02 0 TD
+0 Tw
+(complements)Tj
+/F2 1 Tf
+6.87 0 TD
+0.2461 Tw
+[(operator. There )237.1(are )243.1(always)]TJ
+/F3 1 Tf
+11.18 0 TD
+0.0181 Tw
+(two inequalities,)Tj
+/F2 1 Tf
+6.89 0 TD
+0.0121 Tw
+(whose position)Tj
+-29.96 -1.2 TD
+-0.0049 Tw
+(determines how the constraint is interpreted.)Tj
+1.44 -1.27 TD
+0.0175 Tw
+[(If )13.5(there )13.5(is one inequality on either side of)]TJ
+/F4 1 Tf
+16.88 0 TD
+0 Tw
+(complements)Tj
+/F2 1 Tf
+6.6 0 TD
+0.0164 Tw
+(, the constraint has the gen-)Tj
+-24.92 -1.2 TD
+-0.0129 Tw
+(eral form)Tj
+/F3 1 Tf
+9 0 0 9 154.8 628.315 Tm
+0 Tw
+(single-inequality)Tj
+/F4 1 Tf
+7.3222 0 TD
+(complements)Tj
+/F3 1 Tf
+7.2 0 TD
+(single-inequality)Tj
+/F4 1 Tf
+7.3222 0 TD
+(;)Tj
+/F2 1 Tf
+10 0 0 10 126 608.215 Tm
+0.063 Tw
+(where a)Tj
+/F3 1 Tf
+3.53 0 TD
+0 Tw
+(single-inequality)Tj
+/F2 1 Tf
+7.05 0 TD
+0.0774 Tw
+[(is any valid ordinary constraint — )-7.8(linear )-7.8(or )-7.8(nonlinear )-7.8(— )-7.8(con-)]TJ
+-10.58 -1.2 TD
+0.0381 Tw
+(taining one)Tj
+/F4 1 Tf
+4.8 0 TD
+0 Tw
+(>=)Tj
+/F2 1 Tf
+1.49 0 TD
+(or)Tj
+/F4 1 Tf
+1.12 0 TD
+(<=)Tj
+/F2 1 Tf
+1.49 0 TD
+0.0394 Tw
+[(operator. )-236.7(A constraint of this type is satisfied if both of )11.4(the)]TJ
+/F3 1 Tf
+24.38 0 TD
+0 Tw
+(single-)Tj
+-33.28 -1.2 TD
+(inequality)Tj
+/F2 1 Tf
+4.25 0 TD
+-0.0031 Tw
+(relations are satisfied, and at least one is satisfied with equality.)Tj
+-2.81 -1.27 TD
+0.1468 Tw
+(If both inequalities are on the same side of the)Tj
+/F4 1 Tf
+20.19 0 TD
+0 Tw
+(complements)Tj
+/F2 1 Tf
+7 0 TD
+0.1361 Tw
+[(operator, the )-16.9(con-)]TJ
+-28.63 -1.2 TD
+-0.003 Tw
+(straint has instead one of the forms)Tj
+/F3 1 Tf
+9 0 0 9 154.8 541.415 Tm
+0 Tw
+(double-inequality)Tj
+/F4 1 Tf
+7.6556 0 TD
+(complements)Tj
+/F3 1 Tf
+7.2 0 TD
+(expression)Tj
+/F4 1 Tf
+4.8778 0 TD
+(;)Tj
+/F3 1 Tf
+-19.7333 -1.1111 TD
+(expression)Tj
+/F4 1 Tf
+4.8778 0 TD
+(complements)Tj
+/F3 1 Tf
+7.2 0 TD
+(double-inequality)Tj
+/F4 1 Tf
+7.6556 0 TD
+(;)Tj
+/F2 1 Tf
+10 0 0 10 126 511.315 Tm
+(where)Tj
+/F3 1 Tf
+2.77 0 TD
+(double-inequality)Tj
+/F2 1 Tf
+7.39 0 TD
+0.0855 Tw
+(is any ordinary)Tj
+9 0 0 9 292.7 511.315 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 321.1 511.315 Tm
+0.0971 Tw
+(constraint containing two)Tj
+/F4 1 Tf
+10.71 0 TD
+0 Tw
+(>=)Tj
+/F2 1 Tf
+1.55 0 TD
+0.097 Tw
+(or two)Tj
+/F4 1 Tf
+3.03 0 TD
+0 Tw
+(<=)Tj
+/F2 1 Tf
+-34.8 -1.2 TD
+0.0151 Tw
+(operators, and)Tj
+/F3 1 Tf
+5.96 0 TD
+0 Tw
+(expression)Tj
+/F2 1 Tf
+4.54 0 TD
+0.0135 Tw
+[(is any numerical expression. )-244.6(Variables may appear nonlinearly)]TJ
+-10.5 -1.2 TD
+-0.0035 Tw
+(in either the)Tj
+/F3 1 Tf
+5.02 0 TD
+0 Tw
+(double-inequality)Tj
+/F2 1 Tf
+7.3 0 TD
+-0.005 Tw
+(or the)Tj
+/F3 1 Tf
+2.56 0 TD
+0 Tw
+(expression)Tj
+/F2 1 Tf
+4.53 0 TD
+0.0064 Tw
+[(\(or both\). )-248.6(The conditions for a constraint)]TJ
+-19.41 -1.2 TD
+-0.0021 Tw
+(of this type to be satisfied are as follows:)Tj
+/F9 1 Tf
+2.5 -2.01 TD
+0 Tw
+(€)Tj
+/F2 1 Tf
+0.71 0 TD
+0.0677 Tw
+(if the left side)Tj
+/F4 1 Tf
+6.05 0 TD
+0 Tw
+(<=)Tj
+/F2 1 Tf
+1.52 0 TD
+0.0684 Tw
+(or the right side)Tj
+/F4 1 Tf
+6.83 0 TD
+0 Tw
+(>=)Tj
+/F2 1 Tf
+1.52 0 TD
+0.075 Tw
+(of the)Tj
+/F3 1 Tf
+2.71 0 TD
+0 Tw
+(double-inequality)Tj
+/F2 1 Tf
+7.38 0 TD
+0.0851 Tw
+(holds with)Tj
+-26.72 -1.2 TD
+-0.003 Tw
+(equality, then the)Tj
+/F3 1 Tf
+7.16 0 TD
+0 Tw
+(expression)Tj
+/F2 1 Tf
+4.52 0 TD
+-0.0033 Tw
+(is greater than or equal to 0;)Tj
+/F9 1 Tf
+-11.68 -2.01 TD
+0 Tw
+(€)Tj
+/F2 1 Tf
+0.71 0 TD
+0.069 Tw
+(if the right side)Tj
+/F4 1 Tf
+6.61 0 TD
+0 Tw
+(<=)Tj
+/F2 1 Tf
+1.52 0 TD
+0.067 Tw
+(or the left side)Tj
+/F4 1 Tf
+6.27 0 TD
+0 Tw
+(>=)Tj
+/F2 1 Tf
+1.52 0 TD
+0.075 Tw
+(of the)Tj
+/F3 1 Tf
+2.71 0 TD
+0 Tw
+(double-inequality)Tj
+/F2 1 Tf
+7.38 0 TD
+0.0851 Tw
+(holds with)Tj
+-26.72 -1.2 TD
+-0.003 Tw
+(equality, then the)Tj
+/F3 1 Tf
+7.16 0 TD
+0 Tw
+(expression)Tj
+/F2 1 Tf
+4.52 0 TD
+-0.0006 Tw
+(is less than or equal to 0;)Tj
+/F9 1 Tf
+-11.68 -2.01 TD
+0 Tw
+(€)Tj
+/F2 1 Tf
+0.71 0 TD
+0.0065 Tw
+(if neither side of the)Tj
+/F3 1 Tf
+8.34 0 TD
+0 Tw
+(double-inequality)Tj
+/F2 1 Tf
+7.31 0 TD
+0.0198 Tw
+(holds with equality, then the)Tj
+/F3 1 Tf
+11.71 0 TD
+0 Tw
+(expres-)Tj
+-28.07 -1.2 TD
+(sion)Tj
+/F2 1 Tf
+1.92 0 TD
+-0.0049 Tw
+(equals 0.)Tj
+-4.42 -2.01 TD
+0.0424 Tw
+(In the special case where the)Tj
+/F3 1 Tf
+11.99 0 TD
+0 Tw
+(double-inequality)Tj
+/F2 1 Tf
+7.36 0 TD
+0.0555 Tw
+(has the form)Tj
+/F4 1 Tf
+5.42 0 TD
+0 Tw
+(0 )Tj
+0.91 0 TD
+(<=)Tj
+/F3 1 Tf
+1.51 0 TD
+(body)Tj
+/F4 1 Tf
+2.25 0 TD
+(<= )Tj
+1.5101 0 TD
+(Infinity)Tj
+/F2 1 Tf
+4.7999 0 TD
+(,)Tj
+-35.75 -1.2 TD
+-0.0036 Tw
+(these conditions reduce to those for complementarity of a pair of single inequalities.)Tj
+1.44 -1.27 TD
+0.0952 Tw
+[(For completeness, the special case in which )-10.5(the )-10.5(left-hand )-10.5(side )-10.5(equals )-10.5(the )-10.5(right-hand)]TJ
+-1.44 -1.2 TD
+-0.0021 Tw
+(side of the double inequality may be written using one of the forms)Tj
+/F3 1 Tf
+9 0 0 9 154.8 304.115 Tm
+0 Tw
+(equality)Tj
+/F4 1 Tf
+3.8222 0 TD
+(complements)Tj
+/F3 1 Tf
+7.2 0 TD
+(expression)Tj
+/F4 1 Tf
+4.8778 0 TD
+(;)Tj
+/F3 1 Tf
+-15.9 -1.1111 TD
+(expression)Tj
+/F4 1 Tf
+4.8778 0 TD
+(complements)Tj
+/F3 1 Tf
+7.2 0 TD
+(equality)Tj
+/F4 1 Tf
+3.8222 0 TD
+(;)Tj
+/F2 1 Tf
+10 0 0 10 126 274.015 Tm
+0.1392 Tw
+[(A constraint of this kind is equivalent to an )-9(ordinary )-9(constraint )-9(consisting )-9(only )-9(of )-9(the)]TJ
+/F3 1 Tf
+0 -1.2 TD
+0 Tw
+(equality)Tj
+/F2 1 Tf
+3.22 0 TD
+-0.0015 Tw
+(; it places no restrictions on the)Tj
+/F3 1 Tf
+12.74 0 TD
+0 Tw
+(expression)Tj
+/F2 1 Tf
+4.27 0 TD
+(.)Tj
+-18.79 -1.27 TD
+0.1342 Tw
+[(For )5.2(the use of solvers that require ‘‘square’’ complementarity systems,)]TJ
+9 0 0 9 439.4 249.315 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 468.3 249.315 Tm
+(con-)Tj
+-34.23 -1.2 TD
+0.006 Tw
+(verts to square any model instance in which the number of variables equals the number of)Tj
+T*
+0.0769 Tw
+[(complementarity constraints plus the number of equality constraints. )-241.1(There )-9.8(may )-9.8(be )-9.8(any)]TJ
+T*
+0.1282 Tw
+[(number of additional inequality constraints, but there must )11.2(not )11.2(be )11.2(any )11.2(objective. )-232.8(Each)]TJ
+T*
+0.1721 Tw
+(equality is trivially turned into a complementarity condition, as observed above; each)Tj
+ET
+endstreamendobj25 0 obj<< /Type /Page /Parent 102 0 R /Resources 26 0 R /Contents 27 0 R /Rotate 0 /MediaBox [ 0 0 612 792 ] /CropBox [ 40.32001 126 571.67999 792 ] >> endobj26 0 obj<< /ProcSet [ /PDF /Text ] /Font << /F1 125 0 R /F2 121 0 R /F3 122 0 R /F4 128 0 R /F5 130 0 R /F7 50 0 R /F8 51 0 R >> /ExtGState << /GS1 132 0 R >> >> endobj27 0 obj<< /Length 4687 >> stream
+BT
+/F5 1 Tf
+10 0 0 10 126 747.615 Tm
+0 g
+/GS1 gs
+0 Tc
+0 Tw
+(428)Tj
+7 0 0 7 159.6 747.615 Tm
+0.0352 Tw
+[(COMPLEMENTARITY PROBLEMS )-24265.9(CHAPTER )25.2(19)]TJ
+/F2 1 Tf
+10 0 0 10 126 715.215 Tm
+0.0248 Tw
+[(added inequality is made complementary to a new, otherwise unused variable, )15.7(preserving)]TJ
+0 -1.2 TD
+-0.0058 Tw
+(the squareness of the problem overall.)Tj
+/F1 1 Tf
+12 0 0 12 126 645.415 Tm
+0.0192 Tw
+[(19.3 )-281.9(Working with complementarity constraints)]TJ
+/F2 1 Tf
+10 0 0 10 140.4 625.815 Tm
+0.019 Tw
+(All of)Tj
+9 0 0 9 166.9 625.815 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 191.9 625.815 Tm
+0.0124 Tw
+[(’s features for ordinary equalities and )-14(inequalities )-14(extend )-14(in )-14(a )-14(straightfor-)]TJ
+-6.59 -1.2 TD
+0.0544 Tw
+[(ward )-9.9(way )-9.9(to )-9.9(complementarity )-9.9(constraints. )-257.6(This section covers extensions in three areas:)]TJ
+T*
+0.094 Tw
+[(expressions )9.2(for )9.2(related )9.2(solution )9.2(values, effects of presolve and related displays of prob-)]TJ
+T*
+-0.0028 Tw
+(lem statistics, and generic synonyms for constraints.)Tj
+/F7 1 Tf
+0 -3.49 TD
+0.0151 Tw
+(Related solution values)Tj
+/F2 1 Tf
+9 0 0 9 140.4 535.315 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 165.4 535.315 Tm
+0.148 Tw
+(’s built-in suffixes for values related to a problem and its solution extend to)Tj
+-3.94 -1.2 TD
+0.3675 Tw
+[(complementarity constraints, but with two collections of suffixes )9.7(— )9.7(of )9.7(the )9.7(form)]TJ
+/F3 1 Tf
+T*
+0 Tw
+(cname)Tj
+/F4 1 Tf
+2.6 0 TD
+(.L)Tj
+/F3 1 Tf
+1.2 0 TD
+(suf)Tj
+/F2 1 Tf
+1.53 0 TD
+(and)Tj
+/F3 1 Tf
+1.8 0 TD
+(cname)Tj
+/F4 1 Tf
+2.6 0 TD
+(.R)Tj
+/F3 1 Tf
+1.2 0 TD
+(suf)Tj
+/F2 1 Tf
+1.54 0 TD
+0.1163 Tw
+(— corresponding to the left and right operands of)Tj
+/F4 1 Tf
+21.13 0 TD
+0 Tw
+(com-)Tj
+-33.6 -1.2 TD
+(plements)Tj
+/F2 1 Tf
+4.8 0 TD
+0.148 Tw
+[(, respectively. )-262(Thus after)]TJ
+/F4 1 Tf
+11.03 0 TD
+0 Tw
+(econ2.mod)Tj
+/F2 1 Tf
+5.81 0 TD
+0.153 Tw
+[(\(Figure 19-4\) has been )6.5(solved, )6.5(for)]TJ
+-21.64 -1.2 TD
+0.0148 Tw
+(example, we can use the following)Tj
+/F4 1 Tf
+14.23 0 TD
+0 Tw
+(display)Tj
+/F2 1 Tf
+4.47 0 TD
+0.0194 Tw
+[(command to look at )-6.3(values )-6.3(associated )-6.3(with)]TJ
+-18.7 -1.2 TD
+-0.0059 Tw
+(the constraint)Tj
+/F4 1 Tf
+5.66 0 TD
+0 Tw
+(Lev_Compl)Tj
+/F2 1 Tf
+5.4 0 TD
+(:)Tj
+/F4 1 Tf
+9 0 0 9 126 457.715 Tm
+(ampl:)Tj
+/F8 1 Tf
+3.6 0 TD
+-0.0001 Tw
+(display Lev_Compl.Llb, Lev_Compl.Lbody,)Tj
+/F4 1 Tf
+-3.6 -1.1111 TD
+0 Tw
+(ampl?)Tj
+/F8 1 Tf
+8.4 0 TD
+-0.0002 Tw
+(Lev_Compl.Rbody, Lev_Compl.Rslack;)Tj
+/F4 1 Tf
+-8.4 -1.8222 TD
+-0.0001 Tw
+(: Lev_Compl.Llb Lev_Compl.Lbody Lev_Compl.Rbody Lev_Compl.Rslack :=)Tj
+0 -1.1111 TD
+3.6 Tw
+[(P1 240 )-2400(240 )600(1392.86 )-3600(Infinity)]TJ
+T*
+3 Tw
+[(P1a 270 )-2400(1000 -824.286 )-3600(Infinity)]TJ
+T*
+3.6 Tw
+[(P2 220 )-2400(220 264.286 )-3000(Infinity)]TJ
+T*
+3 Tw
+[(P2a 260 )-3000(680 )-1799.9(5.00222e-12 Infinity)]TJ
+T*
+[(P2b 200 )-3000(200 )-600(564.286 )-3600(Infinity)]TJ
+T*
+3.6 Tw
+[(P3 260 )-2400(260 614.286 )-3000(Infinity)]TJ
+T*
+3 Tw
+[(P3c 220 )-2400(1000 -801.429 )-3600(Infinity)]TJ
+T*
+3.6 Tw
+[(P4 240 )-2400(240 584.286 )-3000(Infinity)]TJ
+T*
+0 Tw
+(;)Tj
+/F2 1 Tf
+10 0 0 10 126 321.715 Tm
+-0.0067 Tw
+(Because the right operand of)Tj
+/F4 1 Tf
+11.72 0 TD
+0 Tw
+(Lev_Compl)Tj
+/F2 1 Tf
+5.65 0 TD
+-0.0006 Tw
+(is an expression, it is treated as a ‘‘constraint’’)Tj
+-17.37 -1.2 TD
+-0.0037 Tw
+(with infinite lower and upper bounds, and hence infinite slack.)Tj
+1.44 -1.26 TD
+0.0665 Tw
+(A suffix of the form)Tj
+/F3 1 Tf
+8.64 0 TD
+0 Tw
+(cname)Tj
+/F4 1 Tf
+2.6 0 TD
+(.slack)Tj
+/F2 1 Tf
+3.92 0 TD
+0.0657 Tw
+[(is also defined for )-9.4(complementarity )-9.4(constraints.)]TJ
+-16.6 -1.2 TD
+0.5687 Tw
+[(For )-8(complementary )-8(pairs )-8(of )-8(single )-8(inequalities, it is equal to the lesser of)]TJ
+/F3 1 Tf
+T*
+0 Tw
+(cname)Tj
+/F4 1 Tf
+2.6 0 TD
+(.Lslack)Tj
+/F2 1 Tf
+4.7 0 TD
+(and)Tj
+/F3 1 Tf
+1.94 0 TD
+(cname)Tj
+/F4 1 Tf
+2.6 0 TD
+(.Rslack)Tj
+/F2 1 Tf
+4.2 0 TD
+0.2596 Tw
+[(. )-236.4(Hence it is nonnegative if and only if both)]TJ
+-16.04 -1.2 TD
+0.0457 Tw
+[(inequalities are satisfied and is zero if the )9.6(complementarity )9.6(constraint )9.6(holds )9.6(exactly. )-245.3(For)]TJ
+T*
+-0.0045 Tw
+(complementary double inequalities of the form)Tj
+/F3 1 Tf
+9 0 0 9 154.8 231.515 Tm
+0 Tw
+(expr)Tj
+/F4 1 Tf
+2.3778 0 TD
+(complements)Tj
+/F3 1 Tf
+7.2 0 TD
+(lbound)Tj
+/F4 1 Tf
+3.3778 0 TD
+(<=)Tj
+/F3 1 Tf
+1.8 0 TD
+(body)Tj
+/F4 1 Tf
+2.5444 0 TD
+(<=)Tj
+/F3 1 Tf
+1.8 0 TD
+(ubound)Tj
+-19.1 -1.1111 TD
+(lbound)Tj
+/F4 1 Tf
+3.3778 0 TD
+(<=)Tj
+/F3 1 Tf
+1.8 0 TD
+(body)Tj
+/F4 1 Tf
+2.5444 0 TD
+(<=)Tj
+/F3 1 Tf
+1.8 0 TD
+(ubound)Tj
+/F4 1 Tf
+3.6 0 TD
+(complements)Tj
+/F3 1 Tf
+7.2 0 TD
+(expr)Tj
+10 0 0 10 126 201.915 Tm
+(cname)Tj
+/F4 1 Tf
+2.6 0 TD
+(.slack)Tj
+/F2 1 Tf
+3.85 0 TD
+-0.0026 Tw
+(is defined to be)Tj
+ET
+endstreamendobj28 0 obj<< /Type /Page /Parent 104 0 R /Resources 29 0 R /Contents 30 0 R /Rotate 0 /MediaBox [ 0 0 612 792 ] /CropBox [ 40.32001 126 571.67999 792 ] >> endobj29 0 obj<< /ProcSet [ /PDF /Text ] /Font << /F2 121 0 R /F3 122 0 R /F4 128 0 R /F5 130 0 R /F7 50 0 R /F8 51 0 R >> /ExtGState << /GS1 132 0 R >> >> endobj30 0 obj<< /Length 5704 >> stream
+BT
+/F5 1 Tf
+7 0 0 7 126 747.615 Tm
+0 g
+/GS1 gs
+0 Tc
+0.0142 Tw
+[(SECTION )-16.7(19.3 )-14147.3(WORKING WITH COMPLEMENTARITY CONSTRAINTS)]TJ
+10 0 0 10 469.2 747.615 Tm
+0 Tw
+(429)Tj
+/F4 1 Tf
+9 0 0 9 154.8 716.215 Tm
+(min\()Tj
+/F3 1 Tf
+2.4 0 TD
+(expr)Tj
+/F4 1 Tf
+1.7778 0 TD
+(,)Tj
+/F3 1 Tf
+1.2 0 TD
+(body)Tj
+/F4 1 Tf
+2.5444 0 TD
+(-)Tj
+/F3 1 Tf
+1.2 0 TD
+(lbound)Tj
+/F4 1 Tf
+2.7778 0 TD
+(\))Tj
+/F2 1 Tf
+4.4444 0 TD
+(if)Tj
+/F3 1 Tf
+0.8667 0 TD
+(body)Tj
+/F4 1 Tf
+2.5444 0 TD
+(<=)Tj
+/F3 1 Tf
+1.8 0 TD
+(lbound)Tj
+/F4 1 Tf
+-21.5556 -1.2222 TD
+(min\()Tj
+/F2 1 Tf
+2.4 0 TD
+(–)Tj
+/F3 1 Tf
+0.5 0 TD
+(expr)Tj
+/F4 1 Tf
+1.7778 0 TD
+(,)Tj
+/F3 1 Tf
+1.2 0 TD
+(ubound)Tj
+/F4 1 Tf
+3.6 0 TD
+(-)Tj
+/F3 1 Tf
+1.2 0 TD
+(body)Tj
+/F4 1 Tf
+1.9444 0 TD
+(\))Tj
+/F2 1 Tf
+3.7222 0 TD
+(if)Tj
+/F3 1 Tf
+0.8667 0 TD
+(body)Tj
+/F4 1 Tf
+2.5444 0 TD
+(>=)Tj
+/F3 1 Tf
+1.8 0 TD
+(ubound)Tj
+/F4 1 Tf
+-21.5556 -1.2222 TD
+(-abs\()Tj
+/F3 1 Tf
+3 0 TD
+(expr)Tj
+/F4 1 Tf
+1.7778 0 TD
+(\))Tj
+/F2 1 Tf
+11.5667 0 TD
+(otherwise)Tj
+10 0 0 10 126 675.015 Tm
+0.0965 Tw
+[(Hence )10(in )10(this )10(case )10(it is always nonpositive, and is zero when the complementarity con-)]TJ
+0 -1.2 TD
+-0.0026 Tw
+(straint is satisfied exactly.)Tj
+1.44 -1.26 TD
+0 Tw
+(If)Tj
+/F3 1 Tf
+1.01 0 TD
+(cname)Tj
+/F2 1 Tf
+2.95 0 TD
+0.0948 Tw
+[(for a complementarity constraint appears unsuffixed in an expression, it )-18.2(is)]TJ
+-5.4 -1.2 TD
+-0.0139 Tw
+(interpreted as representing)Tj
+/F3 1 Tf
+10.83 0 TD
+0 Tw
+(cname)Tj
+/F4 1 Tf
+2.6 0 TD
+(.slack)Tj
+/F2 1 Tf
+3.6 0 TD
+(.)Tj
+/F7 1 Tf
+-17.03 -3.36 TD
+(Presolve)Tj
+/F2 1 Tf
+1.44 -1.92 TD
+0.0765 Tw
+[(As explained in )-13.5(Section )-13.5(14.1,)]TJ
+9 0 0 9 264.9 585.615 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 293.3 585.615 Tm
+0.0829 Tw
+(incorporates a presolve phase that can substan-)Tj
+-16.73 -1.2 TD
+0.1788 Tw
+[(tially simplify some linear programs. )-238.2(In )15.3(the )15.3(presence )15.3(of )15.3(complementarity )15.4(constraints,)]TJ
+T*
+-0.0034 Tw
+(several new kinds of simplifications become possible.)Tj
+1.44 -1.26 TD
+-0.004 Tw
+(As an example, given a constraint of the form)Tj
+/F3 1 Tf
+9 0 0 9 154.8 531.815 Tm
+0 Tw
+(expr)Tj
+/F2 1 Tf
+6 0 0 6 171.8 530.015 Tm
+(1)Tj
+/F4 1 Tf
+9 0 0 9 180.9 531.815 Tm
+(>= 0 complements)Tj
+/F3 1 Tf
+10.2 0 TD
+(expr)Tj
+/F2 1 Tf
+6 0 0 6 289.7 530.015 Tm
+(2)Tj
+/F4 1 Tf
+9 0 0 9 298.8 531.815 Tm
+(>= 0)Tj
+/F2 1 Tf
+10 0 0 10 126 512.615 Tm
+0.1334 Tw
+[(if )12.3(presolve can deduce that)]TJ
+/F3 1 Tf
+11.63 0 TD
+0 Tw
+(expr)Tj
+/F2 1 Tf
+7 0 0 7 261.1 510.615 Tm
+(1)Tj
+10 0 0 10 269.3 512.615 Tm
+0.1394 Tw
+(is strictly positive for all feasible points — in other)Tj
+-14.33 -1.2 TD
+-0.0027 Tw
+(words, that it has a positive lower bound — it can replace the constraint by)Tj
+/F3 1 Tf
+30.18 0 TD
+0 Tw
+(expr)Tj
+/F2 1 Tf
+7 0 0 7 446.6 498.615 Tm
+(2)Tj
+/F4 1 Tf
+10 0 0 10 456.9 500.615 Tm
+(= 0)Tj
+/F2 1 Tf
+1.8 0 TD
+(.)Tj
+-33.45 -1.26 TD
+-0.0013 Tw
+(Similarly, in a constraint of the form)Tj
+/F3 1 Tf
+9 0 0 9 154.8 470.815 Tm
+0 Tw
+(lbound)Tj
+/F4 1 Tf
+3.3778 0 TD
+(<=)Tj
+/F3 1 Tf
+1.8 0 TD
+(body)Tj
+/F4 1 Tf
+2.5444 0 TD
+(<=)Tj
+/F3 1 Tf
+1.8 0 TD
+(ubound)Tj
+/F4 1 Tf
+3.6 0 TD
+(complements)Tj
+/F3 1 Tf
+7.2 0 TD
+(expr)Tj
+/F2 1 Tf
+10 0 0 10 126 451.615 Tm
+-0.0016 Tw
+(there are various possibilities, including the following:)Tj
+2.88 -1.92 TD
+0.0687 Tw
+[(If presolve can deduce )-18.3(for )-18.3(all)]TJ
+0 -1.2 TD
+-0.0024 Tw
+(feasible points that)Tj
+13.57 1.2 TD
+-0.0066 Tw
+(Then the constraint can be replaced by)Tj
+/F3 1 Tf
+9 0 0 9 161.7 404.815 Tm
+0 Tw
+(body)Tj
+/F4 1 Tf
+2.5444 0 TD
+(<)Tj
+/F3 1 Tf
+1.2 0 TD
+8.0831 Tw
+(ubound lbound)Tj
+/F4 1 Tf
+14.7111 0 TD
+0 Tw
+(<=)Tj
+/F3 1 Tf
+1.8 0 TD
+(body)Tj
+/F4 1 Tf
+2.2 0 TD
+(complements)Tj
+/F3 1 Tf
+6.8556 0 TD
+(expr)Tj
+/F4 1 Tf
+2.3778 0 TD
+(>= 0)Tj
+/F3 1 Tf
+-31.6889 -1.2222 TD
+(lbound)Tj
+/F4 1 Tf
+3.3778 0 TD
+(<)Tj
+/F3 1 Tf
+1.2 0 TD
+(body)Tj
+/F4 1 Tf
+2.5444 0 TD
+(<)Tj
+/F3 1 Tf
+1.2 0 TD
+3.5063 Tw
+(ubound expr)Tj
+/F4 1 Tf
+9.1333 0 TD
+0 Tw
+(= 0)Tj
+/F3 1 Tf
+-17.4556 -1.2222 TD
+(expr)Tj
+/F4 1 Tf
+2.3778 0 TD
+(< 0)Tj
+/F3 1 Tf
+12.7 0 TD
+(body)Tj
+/F4 1 Tf
+2.5444 0 TD
+(=)Tj
+/F3 1 Tf
+1.2 0 TD
+(ubound)Tj
+/F2 1 Tf
+10 0 0 10 126 363.615 Tm
+-0.0055 Tw
+(Transformations of these kinds are carried out automatically, unless)Tj
+/F4 1 Tf
+27.34 0 TD
+0 Tw
+(option )Tj
+3.8601 0 TD
+(presolve)Tj
+-31.2001 -1.2 TD
+(0)Tj
+/F2 1 Tf
+0.87 0 TD
+0.0169 Tw
+[(is used to turn off the presolve phase. )-252.1(As )12.4(with )12.4(ordinary )12.4(constraints, )12.4(results )12.4(are )12.4(reported)]TJ
+-0.87 -1.2 TD
+-0.0012 Tw
+(in terms of the original model.)Tj
+1.44 -1.26 TD
+-0.0075 Tw
+(By displaying a few predefined parameters:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 309.815 Tm
+0 Tw
+(_ncons)Tj
+/F2 1 Tf
+6.6 0 TD
+0.0063 Tw
+(the number of ordinary constraints before presolve)Tj
+/F4 1 Tf
+-6.6 -1.1111 TD
+0 Tw
+(_nccons)Tj
+/F2 1 Tf
+6.6 0 TD
+0.0062 Tw
+(the number of complementarity conditions before presolve)Tj
+/F4 1 Tf
+-6.6 -1.1111 TD
+0 Tw
+(_sncons)Tj
+/F2 1 Tf
+6.6 0 TD
+0.0063 Tw
+(the number of ordinary constraints after presolve)Tj
+/F4 1 Tf
+-6.6 -1.1111 TD
+0 Tw
+(_snccons)Tj
+/F2 1 Tf
+6.6 0 TD
+0.0061 Tw
+(the number of complementarity conditions after presolve)Tj
+10 0 0 10 126 260.615 Tm
+0.03 Tw
+(or by setting)Tj
+/F4 1 Tf
+5.34 0 TD
+0 Tw
+(option )Tj
+3.8801 0 TD
+(show_stats )Tj
+6.2899 0 TD
+(1)Tj
+/F2 1 Tf
+0.6 0 TD
+0.0375 Tw
+(, you can get some information on the number of)Tj
+-16.11 -1.2 TD
+-0.0027 Tw
+(simplifying transformations that presolve has made:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 231.415 Tm
+0 Tw
+(ampl:)Tj
+/F8 1 Tf
+3.6 0 TD
+-0.0001 Tw
+(model econ2.mod; data econ2.dat;)Tj
+/F4 1 Tf
+-3.6 -1.1111 TD
+0 Tw
+(ampl:)Tj
+/F8 1 Tf
+3.6 0 TD
+-0.0001 Tw
+(option solver path;)Tj
+/F4 1 Tf
+-3.6 -1.1111 TD
+0 Tw
+(ampl:)Tj
+/F8 1 Tf
+3.6 0 TD
+-0.0001 Tw
+(option show_stats 1;)Tj
+/F4 1 Tf
+-3.6 -1.1111 TD
+0 Tw
+(ampl:)Tj
+/F8 1 Tf
+3.6 0 TD
+(solve;)Tj
+ET
+endstreamendobj31 0 obj<< /Type /Page /Parent 104 0 R /Resources 32 0 R /Contents 33 0 R /Rotate 0 /MediaBox [ 0 0 612 792 ] /CropBox [ 40.32001 126 571.67999 792 ] >> endobj32 0 obj<< /ProcSet [ /PDF /Text ] /Font << /F2 121 0 R /F4 128 0 R /F5 130 0 R /F8 51 0 R >> /ExtGState << /GS1 132 0 R >> >> endobj33 0 obj<< /Length 4114 >> stream
+BT
+/F5 1 Tf
+10 0 0 10 126 747.615 Tm
+0 g
+/GS1 gs
+0 Tc
+0 Tw
+(430)Tj
+7 0 0 7 159.6 747.615 Tm
+0.0352 Tw
+[(COMPLEMENTARITY PROBLEMS )-24265.9(CHAPTER )25.2(19)]TJ
+/F4 1 Tf
+9 0 0 9 154.8 717.215 Tm
+0 Tw
+(Presolve eliminates 16 constraints and 2 variables.)Tj
+0 -1.1111 TD
+(Presolve resolves 2 of 14 complementarity conditions.)Tj
+T*
+-0.0001 Tw
+(Adjusted problem:)Tj
+T*
+0 Tw
+(12 variables, all linear)Tj
+T*
+(12 constraints, all linear; 62 nonzeros)Tj
+T*
+-0.0001 Tw
+(12 complementarity conditions among the constraints:)Tj
+4.8 -1.1111 TD
+0 Tw
+(12 linear, 0 nonlinear.)Tj
+-4.8 -1.1111 TD
+-0.0001 Tw
+(0 objectives.)Tj
+0 -2.1667 TD
+0 Tw
+(Path v4.5: Solution found.)Tj
+0 -1.1111 TD
+(7 iterations \(1 for crash\); 30 pivots.)Tj
+T*
+(8 function, 8 gradient evaluations.)Tj
+0 -2.1667 TD
+(ampl:)Tj
+/F8 1 Tf
+3.6 0 TD
+-0.0001 Tw
+(display _ncons, _nccons, _sncons, _snccons;)Tj
+/F4 1 Tf
+-3.6 -1.1111 TD
+0 Tw
+(_ncons = 28)Tj
+T*
+(_nccons = 14)Tj
+T*
+(_sncons = 12)Tj
+T*
+(_snccons = 12)Tj
+/F2 1 Tf
+10 0 0 10 140.4 526.715 Tm
+0.0978 Tw
+(When first instantiating the problem,)Tj
+9 0 0 9 295.3 526.715 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 323.8 526.715 Tm
+0.1021 Tw
+(counts each complementarity constraint)Tj
+-19.78 -1.2 TD
+0.0168 Tw
+(as two ordinary constraints \(the two arguments to)Tj
+/F4 1 Tf
+20.18 0 TD
+0 Tw
+(complements)Tj
+/F2 1 Tf
+6.6 0 TD
+0.0056 Tw
+(\) and also as a comple-)Tj
+-26.78 -1.2 TD
+0.0691 Tw
+[(mentarity condition. )-250.9(Thus)]TJ
+/F4 1 Tf
+11.07 0 TD
+0 Tw
+(_nccons)Tj
+/F2 1 Tf
+4.53 0 TD
+0.0751 Tw
+(equals the number of complementarity constraints)Tj
+-15.6 -1.2 TD
+0.2271 Tw
+(before presolve, and)Tj
+/F4 1 Tf
+9.08 0 TD
+0 Tw
+(_ncons)Tj
+/F2 1 Tf
+4.09 0 TD
+0.2291 Tw
+(equals twice)Tj
+/F4 1 Tf
+5.69 0 TD
+0 Tw
+(_nccons)Tj
+/F2 1 Tf
+4.69 0 TD
+0.2263 Tw
+[(plus )-14.7(the number of any non-)]TJ
+-23.55 -1.2 TD
+0.0462 Tw
+[(complementarity )6.8(constraints )6.8(before )6.8(presolve. )-248.8(The presolve messages at the beginning )-10.8(of)]TJ
+T*
+0 Tw
+(the)Tj
+/F4 1 Tf
+1.47 0 TD
+(show_stats)Tj
+/F2 1 Tf
+6.25 0 TD
+-0.0047 Tw
+(output indicate how much presolve was able to reduce these numbers.)Tj
+-6.28 -1.28 TD
+0.1447 Tw
+[(In this case the reason for the reduction can be )-8.7(seen )-8.7(by )-8.7(comparing )-8.7(each )-8.7(product’s)]TJ
+-1.44 -1.2 TD
+0.07 Tw
+[(demand to the minimum possible output of that product — the amount )11.6(that )11.6(results )11.6(from)]TJ
+T*
+-0.0089 Tw
+(setting each)Tj
+/F4 1 Tf
+4.99 0 TD
+0 Tw
+(Level[j])Tj
+/F2 1 Tf
+5.05 0 TD
+(to)Tj
+/F4 1 Tf
+1.03 0 TD
+(level_min[j])Tj
+/F2 1 Tf
+7.2 0 TD
+(:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 410.415 Tm
+(ampl:)Tj
+/F8 1 Tf
+3.6 0 TD
+(display {i in PROD})Tj
+/F4 1 Tf
+-3.6 -1.1111 TD
+(ampl?)Tj
+/F8 1 Tf
+5.4 0 TD
+-0.0001 Tw
+(\(sum{j in ACT} io[i,j]*level_min[j], demand[i]\);)Tj
+/F4 1 Tf
+-5.4 -1.1111 TD
+[(: )-1200.1(sum{j in ACT} io[i,j]*level_min[j] demand[i] )-1800.1(:=)]TJ
+T*
+9.6 Tw
+(AA1 69820 70000)Tj
+T*
+(AC1 45800 80000)Tj
+T*
+(BC1 37300 90000)Tj
+T*
+(BC2 29700 70000)Tj
+T*
+8.3999 Tw
+[(NA2 1854920 )-1200.1(4e+05)]TJ
+T*
+8.9999 Tw
+[(NA3 843700 )-600.1(8e+05)]TJ
+T*
+0 Tw
+(;)Tj
+/F2 1 Tf
+10 0 0 10 126 298.915 Tm
+0.0138 Tw
+(We see that for products)Tj
+/F4 1 Tf
+10.11 0 TD
+0 Tw
+(NA2)Tj
+/F2 1 Tf
+2.08 0 TD
+(and)Tj
+/F4 1 Tf
+1.72 0 TD
+(NA3)Tj
+/F2 1 Tf
+1.8 0 TD
+0.0265 Tw
+(, the total output exceeds demand even at the low-)Tj
+-15.71 -1.2 TD
+-0.0015 Tw
+[(est activity levels. )-237.5(Hence in the constraint)]TJ
+/F4 1 Tf
+9 0 0 9 154.8 267.415 Tm
+0 Tw
+(subject to Pri_Compl {i in PROD}:)Tj
+1.8 -1.1111 TD
+(Price[i] >= 0 complements)Tj
+1.8 -1.1111 TD
+(sum {j in ACT} io[i,j] * Level[j] >= demand[i];)Tj
+/F2 1 Tf
+10 0 0 10 126 225.915 Tm
+0.0957 Tw
+(the right-hand argument to)Tj
+/F4 1 Tf
+11.33 0 TD
+0 Tw
+(complements)Tj
+/F2 1 Tf
+6.95 0 TD
+0.097 Tw
+[(never holds with )-9(equality )-9(for)]TJ
+/F4 1 Tf
+12.32 0 TD
+0 Tw
+(NA2)Tj
+/F2 1 Tf
+2.16 0 TD
+(or)Tj
+/F4 1 Tf
+1.19 0 TD
+(NA3)Tj
+/F2 1 Tf
+1.8 0 TD
+(.)Tj
+-35.75 -1.2 TD
+0.1967 Tw
+(Presolve thus concludes that)Tj
+/F4 1 Tf
+12.4 0 TD
+0 Tw
+(Price["NA2"])Tj
+/F2 1 Tf
+7.65 0 TD
+(and)Tj
+/F4 1 Tf
+1.89 0 TD
+(Price["NA3"])Tj
+/F2 1 Tf
+7.65 0 TD
+0.1837 Tw
+(can be fixed at)Tj
+-29.59 -1.2 TD
+-0.0038 Tw
+(zero, removing them from the resulting problem.)Tj
+ET
+endstreamendobj34 0 obj<< /Type /Page /Parent 104 0 R /Resources 35 0 R /Contents 36 0 R /Rotate 0 /MediaBox [ 0 0 612 792 ] /CropBox [ 40.32001 126 571.67999 792 ] >> endobj35 0 obj<< /ProcSet [ /PDF /Text ] /Font << /F2 121 0 R /F3 122 0 R /F4 128 0 R /F5 130 0 R /F7 50 0 R /F8 51 0 R >> /ExtGState << /GS1 132 0 R >> >> endobj36 0 obj<< /Length 4394 >> stream
+BT
+/F5 1 Tf
+7 0 0 7 126 747.615 Tm
+0 g
+/GS1 gs
+0 Tc
+0.0142 Tw
+[(SECTION )-16.7(19.3 )-14147.3(WORKING WITH COMPLEMENTARITY CONSTRAINTS)]TJ
+10 0 0 10 469.2 747.615 Tm
+0 Tw
+(431)Tj
+/F7 1 Tf
+-34.32 -3.24 TD
+0.0321 Tw
+(Generic synonyms)Tj
+/F2 1 Tf
+9 0 0 9 140.4 696.415 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 165.4 696.415 Tm
+0.1059 Tw
+(’s generic synonyms for constraints \(Section 12.6\) extend to complementarity)Tj
+-3.94 -1.2 TD
+0.0023 Tw
+(conditions, mainly through the substitution of)Tj
+/F4 1 Tf
+18.54 0 TD
+0 Tw
+(ccon)Tj
+/F2 1 Tf
+2.65 0 TD
+(for)Tj
+/F4 1 Tf
+1.41 0 TD
+(con)Tj
+/F2 1 Tf
+2.05 0 TD
+-0.0006 Tw
+(in the synonym names.)Tj
+-23.21 -1.26 TD
+-0.0054 Tw
+(From the modeler’s view \(before presolve\), the ordinary constraint synonyms remain:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 655.015 Tm
+0 Tw
+(_ncons)Tj
+/F2 1 Tf
+9.6 0 TD
+0.0064 Tw
+(number of ordinary constraints before presolve)Tj
+/F4 1 Tf
+-9.6 -1.1111 TD
+0 Tw
+(_conname)Tj
+/F2 1 Tf
+9.6 0 TD
+0.0063 Tw
+(names of the ordinary constraints before presolve)Tj
+/F4 1 Tf
+-9.6 -1.1111 TD
+0 Tw
+(_con)Tj
+/F2 1 Tf
+9.6 0 TD
+0.0062 Tw
+(synonyms for the ordinary constraints before presolve)Tj
+10 0 0 10 126 616.215 Tm
+-0.0052 Tw
+(The complementarity constraint synonyms are:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 599.415 Tm
+0 Tw
+(_nccons)Tj
+/F2 1 Tf
+9.6 0 TD
+0.0064 Tw
+(number of complementarity constraints before presolve)Tj
+/F4 1 Tf
+-9.6 -1.1111 TD
+0 Tw
+(_cconname)Tj
+/F2 1 Tf
+9.6 0 TD
+0.0063 Tw
+(names of the complementarity constraints before presolve)Tj
+/F4 1 Tf
+-9.6 -1.1111 TD
+0 Tw
+(_ccon)Tj
+/F2 1 Tf
+9.6 0 TD
+0.0062 Tw
+(synonyms for the complementarity constraints before presolve)Tj
+10 0 0 10 126 560.615 Tm
+0.1076 Tw
+[(Because )16.5(each )16.5(complementarity )16.5(constraint )16.5(also gives rise to two ordinary constraints, as)]TJ
+0 -1.2 TD
+0.1352 Tw
+[(explained in the preceding discussion of presolve, )10(there )10(are )10(two )10(entries )10(in)]TJ
+/F4 1 Tf
+31.2 0 TD
+0 Tw
+(_conname)Tj
+/F2 1 Tf
+-31.2 -1.2 TD
+-0.006 Tw
+(corresponding to each entry in)Tj
+/F4 1 Tf
+12.39 0 TD
+0 Tw
+(_cconname)Tj
+/F2 1 Tf
+5.4 0 TD
+(:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 519.815 Tm
+(ampl:)Tj
+/F8 1 Tf
+3.6 0 TD
+(display {i in 1..6} \(_conname[i], _cconname[i]\);)Tj
+/F4 1 Tf
+-3.6 -1.1111 TD
+3.5999 Tw
+[(: _conname[i] )-2400(_cconname[i] :=)]TJ
+T*
+1.1999 Tw
+(1 "Pri_Compl[’AA1’].L" "Pri_Compl[’AA1’]")Tj
+T*
+(2 "Pri_Compl[’AA1’].R" "Pri_Compl[’AC1’]")Tj
+T*
+(3 "Pri_Compl[’AC1’].L" "Pri_Compl[’BC1’]")Tj
+T*
+(4 "Pri_Compl[’AC1’].R" "Pri_Compl[’BC2’]")Tj
+T*
+(5 "Pri_Compl[’BC1’].L" "Pri_Compl[’NA2’]")Tj
+T*
+(6 "Pri_Compl[’BC1’].R" "Pri_Compl[’NA3’]")Tj
+T*
+0 Tw
+(;)Tj
+/F2 1 Tf
+10 0 0 10 126 421.015 Tm
+-0.0054 Tw
+[(For )15.6(each complementarity constraint)]TJ
+/F3 1 Tf
+14.91 0 TD
+0 Tw
+(cname)Tj
+/F2 1 Tf
+2.6 0 TD
+-0.002 Tw
+(, the left and right arguments to the)Tj
+/F4 1 Tf
+14.29 0 TD
+0 Tw
+(comple-)Tj
+-31.8 -1.2 TD
+(ments)Tj
+/F2 1 Tf
+3.26 0 TD
+0.0016 Tw
+(operator are the ordinary constraints named)Tj
+/F3 1 Tf
+17.68 0 TD
+0 Tw
+(cname)Tj
+/F4 1 Tf
+2.6 0 TD
+(.L)Tj
+/F2 1 Tf
+1.46 0 TD
+(and)Tj
+/F3 1 Tf
+1.7 0 TD
+(cname)Tj
+/F4 1 Tf
+2.6 0 TD
+(.R)Tj
+/F2 1 Tf
+1.2 0 TD
+0.008 Tw
+[(. )-254(This is con-)]TJ
+-30.5 -1.2 TD
+0.228 Tw
+(firmed by using the synonym terminology to expand the complementarity constraint)Tj
+/F4 1 Tf
+T*
+0 Tw
+(Pri_Compl[’AA1’])Tj
+/F2 1 Tf
+9.86 0 TD
+-0.0041 Tw
+[(and )-5.7(the )-5.7(corresponding two ordinary constraints from the example)]TJ
+-9.86 -1.2 TD
+0 Tw
+(above:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 356.215 Tm
+(ampl:)Tj
+/F8 1 Tf
+3.6 0 TD
+-0.0001 Tw
+(expand Pri_Compl[’AA1’];)Tj
+/F4 1 Tf
+-3.6 -1.1111 TD
+(subject to Pri_Compl[’AA1’]:)Tj
+4.8 -1.1111 TD
+0 Tw
+(Price[’AA1’] >= 0)Tj
+-3 -1.1111 TD
+(complements)Tj
+3 -1.1111 TD
+(60*Level[’P1’] + 8*Level[’P1a’] + 8*Level[’P2’] +)Tj
+T*
+-0.0001 Tw
+(40*Level[’P2a’] + 15*Level[’P2b’] + 70*Level[’P3’] +)Tj
+T*
+(25*Level[’P3c’] + 60*Level[’P4’] >= 70000;)Tj
+-4.8 -1.7444 TD
+0 Tw
+(ampl:)Tj
+/F8 1 Tf
+3.6 0 TD
+-0.0001 Tw
+(expand _con[1], _con[2];)Tj
+/F4 1 Tf
+-3.6 -1.1111 TD
+(subject to Pri_Compl.L[’AA1’]:)Tj
+4.8 -1.1111 TD
+0 Tw
+(Price[’AA1’] >= 0;)Tj
+-4.8 -1.1111 TD
+-0.0001 Tw
+(subject to Pri_Compl.R[’AA1’]:)Tj
+4.8 -1.1111 TD
+0 Tw
+(60*Level[’P1’] + 8*Level[’P1a’] + 8*Level[’P2’] +)Tj
+T*
+-0.0001 Tw
+(40*Level[’P2a’] + 15*Level[’P2b’] + 70*Level[’P3’] +)Tj
+T*
+(25*Level[’P3c’] + 60*Level[’P4’] >= 70000;)Tj
+/F2 1 Tf
+10 0 0 10 126 201.715 Tm
+-0.0034 Tw
+(From the solver’s view \(after presolve\), a more limited collection of synonyms is defined:)Tj
+ET
+endstreamendobj37 0 obj<< /Type /Page /Parent 104 0 R /Resources 38 0 R /Contents 39 0 R /Rotate 0 /MediaBox [ 0 0 612 792 ] /CropBox [ 40.32001 126 571.67999 792 ] >> endobj38 0 obj<< /ProcSet [ /PDF /Text ] /Font << /F1 125 0 R /F2 121 0 R /F3 122 0 R /F4 128 0 R /F5 130 0 R /F8 51 0 R >> /ExtGState << /GS1 132 0 R >> >> endobj39 0 obj<< /Length 5604 >> stream
+BT
+/F5 1 Tf
+10 0 0 10 126 747.615 Tm
+0 g
+/GS1 gs
+0 Tc
+0 Tw
+(432)Tj
+7 0 0 7 159.6 747.615 Tm
+0.0352 Tw
+[(COMPLEMENTARITY PROBLEMS )-24265.9(CHAPTER )25.2(19)]TJ
+/F4 1 Tf
+9 0 0 9 154.8 717.215 Tm
+0 Tw
+(_sncons)Tj
+/F2 1 Tf
+9.6 0 TD
+0.0062 Tw
+(number of all constraints after presolve)Tj
+/F4 1 Tf
+-9.6 -1.1111 TD
+0 Tw
+(_snccons)Tj
+/F2 1 Tf
+9.6 0 TD
+0.0064 Tw
+(number of complementarity constraints after presolve)Tj
+/F4 1 Tf
+-9.6 -1.1111 TD
+0 Tw
+(_sconname)Tj
+/F2 1 Tf
+9.6 0 TD
+0.0062 Tw
+(names of all constraints after presolve)Tj
+/F4 1 Tf
+-9.6 -1.1111 TD
+0 Tw
+(_scon)Tj
+/F2 1 Tf
+9.6 0 TD
+0.0061 Tw
+(synonyms for all constraints after presolve)Tj
+10 0 0 10 126 668.915 Tm
+0 Tw
+(Necessarily)Tj
+/F4 1 Tf
+4.99 0 TD
+(_snccons)Tj
+/F2 1 Tf
+5.14 0 TD
+0.0894 Tw
+[(is less than or )-8.6(equal )-8.6(to)]TJ
+/F4 1 Tf
+9.73 0 TD
+0 Tw
+(_sncons)Tj
+/F2 1 Tf
+4.2 0 TD
+0.0992 Tw
+(, with equality only when all)Tj
+-24.06 -1.2 TD
+-0.0079 Tw
+(constraints are complementarity constraints.)Tj
+1.44 -1.25 TD
+0.0994 Tw
+(To simplify the problem description that is sent to the solver,)Tj
+9 0 0 9 398 644.415 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 426.5 644.415 Tm
+0.0911 Tw
+(converts every)Tj
+-30.05 -1.2 TD
+-0.0034 Tw
+(complementarity constraint into one of the following canonical forms:)Tj
+/F3 1 Tf
+9 0 0 9 154.8 616.115 Tm
+0 Tw
+(expr)Tj
+/F4 1 Tf
+2.3778 0 TD
+(complements)Tj
+/F3 1 Tf
+7.2 0 TD
+(lbound)Tj
+/F4 1 Tf
+3.3778 0 TD
+(<=)Tj
+/F3 1 Tf
+1.8 0 TD
+(var)Tj
+/F4 1 Tf
+1.9333 0 TD
+(<=)Tj
+/F3 1 Tf
+1.8 0 TD
+(ubound)Tj
+-18.4889 -1.1111 TD
+(expr)Tj
+/F4 1 Tf
+2.3778 0 TD
+(<= 0 complements)Tj
+/F3 1 Tf
+10.2 0 TD
+(var)Tj
+/F4 1 Tf
+1.9333 0 TD
+(<=)Tj
+/F3 1 Tf
+1.8 0 TD
+(ubound)Tj
+-16.3111 -1.1111 TD
+(expr)Tj
+/F4 1 Tf
+2.3778 0 TD
+(>= 0 complements)Tj
+/F3 1 Tf
+10.2 0 TD
+(lbound)Tj
+/F4 1 Tf
+3.3778 0 TD
+(<=)Tj
+/F3 1 Tf
+1.8 0 TD
+(var)Tj
+/F2 1 Tf
+10 0 0 10 126 577.815 Tm
+(where)Tj
+/F3 1 Tf
+2.76 0 TD
+(var)Tj
+/F2 1 Tf
+1.66 0 TD
+0.0774 Tw
+[(is the name of )-8.6(a)]TJ
+/F3 1 Tf
+6.99 0 TD
+0 Tw
+(different)Tj
+/F2 1 Tf
+3.73 0 TD
+0.0791 Tw
+[(variable for each constraint. )-242.9(\(Where )-5.4(an )-5.4(expression)]TJ
+-15.14 -1.2 TD
+0.1057 Tw
+[(more )-9.8(complicated )-9.8(than )-9.8(a )-9.8(single variable appears on both sides of)]TJ
+/F4 1 Tf
+27.34 0 TD
+0 Tw
+(complements)Tj
+/F2 1 Tf
+6.6 0 TD
+0.115 Tw
+(, this)Tj
+-33.94 -1.2 TD
+0.0662 Tw
+[(involves the introduction of an auxiliary variable and an )-11.1(equality )-11.1(constraint )-11.1(defining )-11.1(the)]TJ
+T*
+0.0955 Tw
+[(variable )-7(to )-7(equal one of the expressions.\) )-257.5(By )-7.5(using)]TJ
+/F4 1 Tf
+21.64 0 TD
+0 Tw
+(solexpand)Tj
+/F2 1 Tf
+5.75 0 TD
+0.0945 Tw
+(in place of)Tj
+/F4 1 Tf
+4.76 0 TD
+0 Tw
+(expand)Tj
+/F2 1 Tf
+3.6 0 TD
+(,)Tj
+-35.75 -1.2 TD
+-0.0038 Tw
+(you can see the form in which)Tj
+9 0 0 9 248.8 529.815 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 276.3 529.815 Tm
+-0.003 Tw
+(has sent a complementarity constraint to the solver:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 513.515 Tm
+0 Tw
+(ampl:)Tj
+/F8 1 Tf
+3.6 0 TD
+-0.0002 Tw
+(solexpand Pri_Compl[’AA1’];)Tj
+/F4 1 Tf
+-3.6 -1.1111 TD
+-0.0001 Tw
+(subject to Pri_Compl[’AA1’]:)Tj
+1.8 -1.1111 TD
+0 Tw
+(-70000 + 60*Level[’P1’] + 8*Level[’P1a’] + 8*Level[’P2’] +)Tj
+T*
+-0.0001 Tw
+(40*Level[’P2a’] + 15*Level[’P2b’] + 70*Level[’P3’] +)Tj
+T*
+0 Tw
+(25*Level[’P3c’] + 60*Level[’P4’] >= 0)Tj
+-1.2 -1.1111 TD
+(complements)Tj
+1.2 -1.1111 TD
+(0 <= Price[’AA1’];)Tj
+/F2 1 Tf
+10 0 0 10 126 435.215 Tm
+0.1198 Tw
+(A predefined array of integers,)Tj
+/F4 1 Tf
+13.16 0 TD
+0 Tw
+(_scvar)Tj
+/F2 1 Tf
+3.6 0 TD
+0.1278 Tw
+[(, gives the indices of the )-7.3(complementing )-7.3(vari-)]TJ
+-16.76 -1.2 TD
+0.0128 Tw
+[(ables in the generic variable )15.8(arrays)]TJ
+/F4 1 Tf
+14.22 0 TD
+0 Tw
+(_var)Tj
+/F2 1 Tf
+2.66 0 TD
+(and)Tj
+/F4 1 Tf
+1.7 0 TD
+(_varname)Tj
+/F2 1 Tf
+4.8 0 TD
+0.0065 Tw
+[(. )-255.5(This terminology can be used)]TJ
+-23.38 -1.2 TD
+-0.002 Tw
+(to display a list of names of such variables:)Tj
+/F4 1 Tf
+9 0 0 9 154.8 394.915 Tm
+0 Tw
+(ampl:)Tj
+/F8 1 Tf
+3.6 0 TD
+-0.0001 Tw
+(display {i in 1..3} \(_sconname[i],_svarname[_scvar[i]]\);)Tj
+/F4 1 Tf
+-3.6 -1.1111 TD
+3.5999 Tw
+[(: _sconname[i] )1200(_svarname[_scvar[i]] )1799.9(:=)]TJ
+T*
+1.1999 Tw
+(1 "Pri_Compl[’AA1’].R" "Price[’AA1’]")Tj
+T*
+(2 "Pri_Compl[’AC1’].R" "Price[’AC1’]")Tj
+T*
+(3 "Pri_Compl[’BC1’].R" "Price[’BC1’]")Tj
+T*
+0 Tw
+(;)Tj
+/F2 1 Tf
+10 0 0 10 126 326.615 Tm
+0.0081 Tw
+(When constraint)Tj
+/F4 1 Tf
+6.86 0 TD
+0 Tw
+(i)Tj
+/F2 1 Tf
+0.87 0 TD
+0.0172 Tw
+(is an ordinary equality or inequality,)Tj
+/F4 1 Tf
+14.91 0 TD
+0 Tw
+(_scvar[i])Tj
+/F2 1 Tf
+5.67 0 TD
+0.025 Tw
+[(is 0. )-240(The )10(names of)]TJ
+-28.31 -1.2 TD
+0.1611 Tw
+(complementarity constraints in)Tj
+/F4 1 Tf
+13.12 0 TD
+0 Tw
+(_sconname)Tj
+/F2 1 Tf
+5.81 0 TD
+0.152 Tw
+(are suffixed with)Tj
+/F4 1 Tf
+7.49 0 TD
+0 Tw
+(.L)Tj
+/F2 1 Tf
+1.61 0 TD
+(or)Tj
+/F4 1 Tf
+1.24 0 TD
+(.R)Tj
+/F2 1 Tf
+1.61 0 TD
+0.1491 Tw
+(according to)Tj
+-30.88 -1.2 TD
+0.1071 Tw
+(whether the)Tj
+/F3 1 Tf
+5.17 0 TD
+0 Tw
+(expr)Tj
+/F2 1 Tf
+2.15 0 TD
+0.1274 Tw
+(in the constraint sent to the solver was derived from the left or right)Tj
+-7.32 -1.2 TD
+-0.0049 Tw
+(argument to)Tj
+/F4 1 Tf
+5.05 0 TD
+0 Tw
+(complements)Tj
+/F2 1 Tf
+6.85 0 TD
+-0.0016 Tw
+(in the original constraint.)Tj
+/F1 1 Tf
+11 0 0 11 126 240.915 Tm
+0 Tw
+(Bibliography)Tj
+/F2 1 Tf
+9 0 0 9 126 223.615 Tm
+0.0986 Tw
+[(Richard W. Cottle, Jong-Shi Pang, )-10(and )-10(Richard )-10(E. )-10(Stone,)]TJ
+/F3 1 Tf
+24.0444 0 TD
+0.1057 Tw
+(The Linear Complementarity Problem)Tj
+/F2 1 Tf
+15.7 0 TD
+0 Tw
+(,)Tj
+-39.7444 -1.2222 TD
+0.0201 Tw
+[(Academic Press \(San Diego, CA, 1992\). )-252.3(An encyclopedic )13.8(account )13.8(of )13.8(linear )13.8(complementarity )13.8(prob-)]TJ
+T*
+0.0066 Tw
+(lems with a nice overview of how these problems arise.)Tj
+ET
+endstreamendobj40 0 obj<< /Type /Page /Parent 104 0 R /Resources 41 0 R /Contents 42 0 R /Rotate 0 /MediaBox [ 0 0 612 792 ] /CropBox [ 40.32001 126 571.67999 792 ] >> endobj41 0 obj<< /ProcSet [ /PDF /Text ] /Font << /F1 125 0 R /F2 121 0 R /F3 122 0 R /F4 128 0 R /F5 130 0 R /F6 49 0 R /F9 52 0 R >> /ExtGState << /GS1 132 0 R >> >> endobj42 0 obj<< /Length 7517 >> stream
+BT
+/F5 1 Tf
+7 0 0 7 126 747.615 Tm
+0 g
+/GS1 gs
+0 Tc
+0.0142 Tw
+[(SECTION )-16.7(19.3 )-14147.3(WORKING WITH COMPLEMENTARITY CONSTRAINTS)]TJ
+10 0 0 10 469.2 747.615 Tm
+0 Tw
+(433)Tj
+/F2 1 Tf
+9 0 0 9 126 716.215 Tm
+0.0073 Tw
+[(Steven P. Dirkse and Michael C. Ferris, ‘‘MCPLIB: A Collection of Nonlinear )-9.5(Mixed )-9.5(Complemen-)]TJ
+0 -1.2222 TD
+0.0063 Tw
+[(tarity )-16.4(Problems.’’ )-265.6(Optimization )-10.3(Methods and Software)]TJ
+/F6 1 Tf
+22.4667 0 TD
+0 Tw
+(5)Tj
+/F2 1 Tf
+0.5 0 TD
+0.0086 Tw
+[(, 4 \(1995\) pp. 319–345. )-252.7(An extensive sur-)]TJ
+-22.9667 -1.2222 TD
+0.0072 Tw
+(vey of nonlinear complementarity, including problem descriptions and mathematical formulations.)Tj
+0 -1.6111 TD
+0.0181 Tw
+(Michael C. Ferris and Jong-Shi Pang, ‘‘Engineering and Economic Applications of Complementar-)Tj
+0 -1.2222 TD
+0.053 Tw
+[(ity Problems.’’ )-252.5(SIAM Review)]TJ
+/F6 1 Tf
+12.7556 0 TD
+0 Tw
+(39)Tj
+/F2 1 Tf
+1 0 TD
+0.041 Tw
+[(, 4 \(1997\) pp. 669–713. )-253.7(A variety of complementarity test prob-)]TJ
+-13.7556 -1.2222 TD
+0.2069 Tw
+(lems, originally written in the)Tj
+8 0 0 8 244.3 657.715 Tm
+0 Tw
+(GAMS)Tj
+9 0 0 9 271.6 657.715 Tm
+0.2059 Tw
+[(modeling language but now in many cases translated )-10.5(to)]TJ
+8 0 0 8 126 646.715 Tm
+0 Tw
+(AMPL)Tj
+9 0 0 9 148.3 646.715 Tm
+(.)Tj
+/F1 1 Tf
+11 0 0 11 126 597.715 Tm
+(Exercises)Tj
+10 0 0 10 126 579.815 Tm
+(19-1.)Tj
+/F2 1 Tf
+9 0 0 9 153.5 579.815 Tm
+0.1841 Tw
+[(The economics example in Section 19.1 used a demand function that was linear in )-10.6(the)]TJ
+-3.0556 -1.2222 TD
+0.0511 Tw
+[(price. )-260.8(Construct a nonlinear demand function that has each of the characteristics described below.)]TJ
+T*
+0.0169 Tw
+[(Define )9(a )9(corresponding )9(complementarity )9(problem, using the data from Figure 19-2 as much as pos-)]TJ
+T*
+0 Tw
+(sible.)Tj
+0 -1.4778 TD
+0.0285 Tw
+[(Use a solver )-10.7(such )-10.7(as)]TJ
+8 0 0 8 202.8 533.515 Tm
+0 Tw
+(PATH)Tj
+9 0 0 9 226.4 533.515 Tm
+0.0393 Tw
+[(to compute an equilibrium solution. )-255.8(Compare this solution to those for)]TJ
+-11.1556 -1.2222 TD
+0.0075 Tw
+(the constant-demand and linear-demand alternatives shown in Section 19.1.)Tj
+0 -1.4778 TD
+0.2065 Tw
+(\(a\) For price)Tj
+/F4 1 Tf
+5.8667 0 TD
+0 Tw
+(i)Tj
+/F2 1 Tf
+1.0667 0 TD
+0.2175 Tw
+(near zero the demand is near)Tj
+/F4 1 Tf
+13.0222 0 TD
+0 Tw
+(demzero[i])Tj
+/F2 1 Tf
+6.4667 0 TD
+0.2174 Tw
+(and is decreasing at a rate near)Tj
+/F4 1 Tf
+-26.4222 -1.2222 TD
+0 Tw
+(demrate[i])Tj
+/F2 1 Tf
+6 0 TD
+0.3455 Tw
+[(. After )261.2(price)]TJ
+/F4 1 Tf
+5.6222 0 TD
+0 Tw
+(i)Tj
+/F2 1 Tf
+0.9333 0 TD
+0.0852 Tw
+[(has increased substantially, however, both the demand and the )12(rate)]TJ
+-12.5556 -1.2222 TD
+0.0076 Tw
+(of decrease of the demand approach zero.)Tj
+0 -1.4778 TD
+0.0952 Tw
+(\(b\) For price)Tj
+/F4 1 Tf
+5.5889 0 TD
+0 Tw
+(i)Tj
+/F2 1 Tf
+0.9444 0 TD
+0.095 Tw
+(near zero the demand is approximately constant at)Tj
+/F4 1 Tf
+21.0889 0 TD
+0 Tw
+(demzero[i])Tj
+/F2 1 Tf
+6 0 TD
+0.1062 Tw
+[(, )6.4(but as price)]TJ
+/F4 1 Tf
+5.7778 0 TD
+0 Tw
+(i)Tj
+/F2 1 Tf
+-39.4 -1.2222 TD
+(approaches)Tj
+/F4 1 Tf
+4.7556 0 TD
+(demlim[i])Tj
+/F2 1 Tf
+5.6556 0 TD
+0.0071 Tw
+(the demand drops quickly to zero.)Tj
+-10.4111 -1.4778 TD
+0.1735 Tw
+(\(c\) Demand for)Tj
+/F4 1 Tf
+6.9333 0 TD
+0 Tw
+(i)Tj
+/F2 1 Tf
+1.0222 0 TD
+0.1847 Tw
+[(actually )12.1(rises )12.1(with price, until it reaches a value)]TJ
+/F4 1 Tf
+20.9111 0 TD
+0 Tw
+(demmax[i])Tj
+/F2 1 Tf
+5.8333 0 TD
+0.184 Tw
+(at a price of)Tj
+/F4 1 Tf
+-34.7 -1.2222 TD
+0 Tw
+(demarg[i])Tj
+/F2 1 Tf
+5.4 0 TD
+0.0073 Tw
+[(. )-259.9(Then demand falls with price.)]TJ
+/F1 1 Tf
+10 0 0 10 126 421.315 Tm
+0 Tw
+(19-2.)Tj
+/F2 1 Tf
+9 0 0 9 153.5 421.315 Tm
+0.0401 Tw
+[(For each scenario in the previous problem, experiment with different )-10(starting )-10(points )-10(for )-10(the)]TJ
+/F4 1 Tf
+-3.0556 -1.2222 TD
+0 Tw
+(Level)Tj
+/F2 1 Tf
+3.2556 0 TD
+(and)Tj
+/F4 1 Tf
+1.7 0 TD
+(Price)Tj
+/F2 1 Tf
+3.2556 0 TD
+0.0068 Tw
+[(values. )-261.6(Determine whether there appears a unique equilibrium point.)]TJ
+/F1 1 Tf
+10 0 0 10 126 393.015 Tm
+0 Tw
+(19-3.)Tj
+/F2 1 Tf
+9 0 0 9 153.5 393.015 Tm
+(A)Tj
+/F3 1 Tf
+1.0667 0 TD
+0.0949 Tw
+(bimatrix game)Tj
+/F2 1 Tf
+6.3222 0 TD
+(between players A and B is defined by two)Tj
+/F3 1 Tf
+18.3222 0 TD
+0 Tw
+(m)Tj
+/F2 1 Tf
+1.0778 0 TD
+(by)Tj
+/F3 1 Tf
+1.3556 0 TD
+(n)Tj
+/F2 1 Tf
+0.8556 0 TD
+0.1144 Tw
+(‘‘payoff’’ matrices,)Tj
+-32.0556 -1.2222 TD
+0.0839 Tw
+(whose elements we denote by)Tj
+/F3 1 Tf
+12.6111 0 TD
+0 Tw
+(a)Tj
+6 0 0 6 245 380.215 Tm
+-0.156 Tw
+(i j)Tj
+/F2 1 Tf
+9 0 0 9 252.6 382.015 Tm
+0 Tw
+(and)Tj
+/F3 1 Tf
+1.7778 0 TD
+(b)Tj
+6 0 0 6 274.1 380.215 Tm
+-0.156 Tw
+(i j)Tj
+/F2 1 Tf
+9 0 0 9 278.7 382.015 Tm
+0.0847 Tw
+[(. )-260.1(In one round of the game, player )12(A )12(has )12(a )12(choice )12(of)]TJ
+/F3 1 Tf
+22.3111 0 TD
+0 Tw
+(m)Tj
+/F2 1 Tf
+-39.2778 -1.2222 TD
+0.084 Tw
+(alternatives and player B a choice of)Tj
+/F3 1 Tf
+15.4444 0 TD
+0 Tw
+(n)Tj
+/F2 1 Tf
+0.8333 0 TD
+0.095 Tw
+[(alternatives. )-262.3(If A plays \(chooses\))]TJ
+/F3 1 Tf
+14.1778 0 TD
+0 Tw
+(i)Tj
+/F2 1 Tf
+0.6222 0 TD
+0.0945 Tw
+(and B plays)Tj
+/F3 1 Tf
+5.2556 0 TD
+0 Tw
+(j)Tj
+/F2 1 Tf
+0.2778 0 TD
+0.0974 Tw
+(, then A)Tj
+-36.6111 -1.2222 TD
+0.0055 Tw
+(and B win amounts)Tj
+/F3 1 Tf
+8.0222 0 TD
+0 Tw
+(a)Tj
+6 0 0 6 203.7 358.215 Tm
+-0.156 Tw
+(i j)Tj
+/F2 1 Tf
+9 0 0 9 210.6 360.015 Tm
+0 Tw
+(and)Tj
+/F3 1 Tf
+1.7 0 TD
+(b)Tj
+6 0 0 6 231.4 358.215 Tm
+-0.156 Tw
+(i j)Tj
+/F2 1 Tf
+9 0 0 9 236 360.015 Tm
+0.0077 Tw
+(, respectively; negative winnings are interpreted as losses.)Tj
+-12.2222 -1.4778 TD
+0.1061 Tw
+(We can allow for ‘‘mixed’’ strategies in which A plays)Tj
+/F3 1 Tf
+23.3889 0 TD
+0 Tw
+(i)Tj
+/F2 1 Tf
+0.6333 0 TD
+0.1052 Tw
+(with probability)Tj
+/F3 1 Tf
+6.8778 0 TD
+0 Tw
+(p)Tj
+6 0 0 6 409.1 345.015 Tm
+(i)Tj
+0 0.85 TD
+(A)Tj
+/F2 1 Tf
+9 0 0 9 416.7 346.715 Tm
+0.1056 Tw
+(and B plays)Tj
+/F3 1 Tf
+5.2889 0 TD
+0 Tw
+(j)Tj
+/F2 1 Tf
+0.6333 0 TD
+(with)Tj
+-38.2222 -1.2222 TD
+(probability)Tj
+/F3 1 Tf
+4.6444 0 TD
+(p)Tj
+6 0 0 6 172.8 334.015 Tm
+(j)Tj
+0 0.85 TD
+(B)Tj
+/F2 1 Tf
+9 0 0 9 177.2 335.715 Tm
+0.006 Tw
+[(. )-261.2(Then the expected value of player A’s winnings is:)]TJ
+/F3 1 Tf
+6 0 0 6 155.4 304.315 Tm
+0 Tw
+(j)Tj
+/F9 1 Tf
+0.45 0 TD
+(=)Tj
+/F2 1 Tf
+0.7167 0 TD
+(1)Tj
+/F9 1 Tf
+14 0 0 14 156.3 310.615 Tm
+()Tj
+/F3 1 Tf
+6 0 0 6 159 322.315 Tm
+(n)Tj
+9 0 0 9 166.8 313.315 Tm
+(a)Tj
+6 0 0 6 172.3 311.515 Tm
+-0.156 Tw
+(i j)Tj
+/F9 1 Tf
+9 0 0 9 180.6 313.315 Tm
+0 Tw
+(×)Tj
+/F3 1 Tf
+0.9667 0 TD
+(p)Tj
+6 0 0 6 194.3 311.615 Tm
+(j)Tj
+0 0.85 TD
+(B)Tj
+/F2 1 Tf
+9 0 0 9 198.7 313.315 Tm
+0.0057 Tw
+[(, )-261.1(if A plays)]TJ
+/F3 1 Tf
+4.9778 0 TD
+0 Tw
+(i)Tj
+/F2 1 Tf
+-13.0556 -2.9889 TD
+0.0059 Tw
+(and the expected value of player B’s winnings is:)Tj
+/F3 1 Tf
+6 0 0 6 155.2 255.015 Tm
+0 Tw
+(i)Tj
+/F9 1 Tf
+0.5333 0 TD
+(=)Tj
+/F2 1 Tf
+0.7167 0 TD
+(1)Tj
+/F9 1 Tf
+14 0 0 14 156.3 261.315 Tm
+()Tj
+/F3 1 Tf
+6 0 0 6 158.3 273.015 Tm
+(m)Tj
+9 0 0 9 166.1 264.015 Tm
+(b)Tj
+6 0 0 6 171.6 262.215 Tm
+-0.156 Tw
+(i j)Tj
+/F9 1 Tf
+9 0 0 9 179.9 264.015 Tm
+0 Tw
+(×)Tj
+/F3 1 Tf
+0.9667 0 TD
+(p)Tj
+6 0 0 6 193.6 262.315 Tm
+(i)Tj
+0 0.85 TD
+(A)Tj
+/F2 1 Tf
+9 0 0 9 198 264.015 Tm
+0.0054 Tw
+[(, )-261.4(if B plays)]TJ
+/F3 1 Tf
+4.9222 0 TD
+0 Tw
+(j)Tj
+/F2 1 Tf
+-12.9222 -2.9889 TD
+0.0726 Tw
+[(A )10(‘‘pure’’ )10(strategy is the special case in which each player has one probability equal to 1 and the)]TJ
+0 -1.2222 TD
+0.0077 Tw
+(rest equal to 0.)Tj
+0 -1.4778 TD
+0.206 Tw
+(A pair of strategies is said to represent a)Tj
+/F3 1 Tf
+18.1556 0 TD
+0.2158 Tw
+(Nash equilibrium)Tj
+/F2 1 Tf
+7.7333 0 TD
+0.2172 Tw
+(if neither player can improve his)Tj
+-25.8889 -1.2222 TD
+0.0068 Tw
+(expected payoff by changing only his own strategy.)Tj
+ET
+endstreamendobj43 0 obj<< /Type /Page /Parent 104 0 R /Resources 44 0 R /Contents 45 0 R /Rotate 0 /MediaBox [ 0 0 612 792 ] /CropBox [ 40.32001 126 571.67999 792 ] >> endobj44 0 obj<< /ProcSet [ /PDF /Text ] /Font << /F2 121 0 R /F3 122 0 R /F4 128 0 R /F5 130 0 R /F9 52 0 R >> /ExtGState << /GS1 132 0 R >> >> endobj45 0 obj<< /Length 4928 >> stream
+BT
+/F5 1 Tf
+10 0 0 10 126 747.615 Tm
+0 g
+/GS1 gs
+0 Tc
+0 Tw
+(434)Tj
+7 0 0 7 159.6 747.615 Tm
+0.0352 Tw
+[(COMPLEMENTARITY PROBLEMS )-24265.9(CHAPTER )25.2(19)]TJ
+/F2 1 Tf
+9 0 0 9 126 716.215 Tm
+0.5171 Tw
+[(\(a\) Show that the requirement for a Nash equilibrium is equivalent )-10.6(to )-10.6(the )-10.6(following)]TJ
+0 -1.2222 TD
+0.006 Tw
+(complementarity-like conditions:)Tj
+2.7778 -1.4889 TD
+0.084 Tw
+(for all)Tj
+/F3 1 Tf
+2.8333 0 TD
+0 Tw
+(i)Tj
+/F2 1 Tf
+0.6111 0 TD
+0.0836 Tw
+(such that)Tj
+/F3 1 Tf
+4 0 TD
+0 Tw
+(p)Tj
+6 0 0 6 223 690.115 Tm
+(i)Tj
+0 0.85 TD
+(A)Tj
+/F9 1 Tf
+9 0 0 9 230.4 691.815 Tm
+(>)Tj
+/F2 1 Tf
+0.8889 0 TD
+0.0952 Tw
+[(0, )5.9(A’s expected return when playing)]TJ
+/F3 1 Tf
+15.3667 0 TD
+0 Tw
+(i)Tj
+/F2 1 Tf
+0.6222 0 TD
+0.0947 Tw
+(equals A’s maximum)Tj
+-25.7 -1.2222 TD
+0.0061 Tw
+(expected return over all possible plays)Tj
+0 -1.9444 TD
+0.0951 Tw
+(for all)Tj
+/F3 1 Tf
+2.8556 0 TD
+0 Tw
+(j)Tj
+/F2 1 Tf
+0.6222 0 TD
+0.0947 Tw
+(such that)Tj
+/F3 1 Tf
+4.0222 0 TD
+0 Tw
+(p)Tj
+6 0 0 6 223.5 661.615 Tm
+(j)Tj
+0 0.85 TD
+(B)Tj
+/F9 1 Tf
+9 0 0 9 231 663.315 Tm
+(>)Tj
+/F2 1 Tf
+0.9 0 TD
+0.0961 Tw
+(0, B’s expected return when playing)Tj
+/F3 1 Tf
+15.3222 0 TD
+0 Tw
+(j)Tj
+/F2 1 Tf
+0.6222 0 TD
+0.1055 Tw
+(equals B’s maximum)Tj
+-25.7333 -1.2222 TD
+0.0061 Tw
+(expected return over all possible plays)Tj
+-2.7778 -1.4889 TD
+0.0058 Tw
+(\(b\) To build a complementarity problem in)Tj
+8 0 0 8 283.2 638.915 Tm
+0 Tw
+(AMPL)Tj
+9 0 0 9 307.9 638.915 Tm
+0.0177 Tw
+(whose solution is a Nash equilibrium, the param-)Tj
+-20.2111 -1.2222 TD
+0.0062 Tw
+(eters representing the payoff matrices can be defined by the following)Tj
+/F4 1 Tf
+28.3111 0 TD
+0 Tw
+(param)Tj
+/F2 1 Tf
+3.2556 0 TD
+(declarations:)Tj
+/F4 1 Tf
+8 0 0 8 154.8 611.815 Tm
+[(param nA > 0; )-1200(# actions available to player A)]TJ
+0 -1.125 TD
+[(param nB > 0; )-1200(# actions available to player B)]TJ
+0 -1.8 TD
+[(param payoffA {1..nA, 1..nB}; )-1200(# payoffs to player A)]TJ
+0 -1.125 TD
+[(param payoffB {1..nA, 1..nB}; )-1200(# payoffs to player B)]TJ
+/F2 1 Tf
+9 0 0 9 126 561.315 Tm
+0.0402 Tw
+[(The probabilities that define the mixed strategies are necessarily variables. )-265.7(In )-9.8(addition )-9.8(it )-9.8(is )-9.8(conve-)]TJ
+0 -1.2222 TD
+0.0062 Tw
+(nient to define a variable to represent the maximum expected payoff for each player:)Tj
+/F4 1 Tf
+8 0 0 8 154.8 534.215 Tm
+0 Tw
+[(var PlayA {i in 1..nA}; )-1200(# player A’s mixed strategy)]TJ
+0 -1.125 TD
+[(var PlayB {j in 1..nB}; )-1200(# player B’s mixed strategy)]TJ
+0 -1.8 TD
+[(var MaxExpA; )-1200(# maximum expected payoff to player A)]TJ
+0 -1.125 TD
+[(var MaxExpB; )-1200(# maximum expected payoff to player B)]TJ
+/F2 1 Tf
+9 0 0 9 126 483.715 Tm
+(Write)Tj
+8 0 0 8 148.8 483.715 Tm
+(AMPL)Tj
+9 0 0 9 173.4 483.715 Tm
+0.0061 Tw
+(declarations for the following constraints:)Tj
+-2.0667 -2.0111 TD
+0.0064 Tw
+(- The probabilities in any mixed strategy must be nonnegative.)Tj
+0 -1.2222 TD
+(- The probabilities in each player’s mixed strategy must sum to 1.)Tj
+T*
+(- Player A’s expected return when playing any particular)Tj
+/F3 1 Tf
+23.0222 0 TD
+0 Tw
+(i)Tj
+/F2 1 Tf
+-21.7444 -1.2222 TD
+0.0059 Tw
+(must not exceed A’s maximum expected return over all possible plays)Tj
+-1.2778 -1.2222 TD
+0.0062 Tw
+(- Player B’s expected return when playing any particular)Tj
+/F3 1 Tf
+22.9667 0 TD
+0 Tw
+(j)Tj
+/F2 1 Tf
+-21.6889 -1.2222 TD
+0.0059 Tw
+(must not exceed B’s maximum expected return over all possible plays)Tj
+-4.4778 -2.0111 TD
+0.0511 Tw
+(\(c\) Write an)Tj
+8 0 0 8 173.1 392.515 Tm
+0 Tw
+(AMPL)Tj
+9 0 0 9 198.1 392.515 Tm
+0.0505 Tw
+[(model for a square complementarity system that enforces the constraints )-10.8(in )-10.8(\(b\))]TJ
+-8.0111 -1.2222 TD
+0.0072 Tw
+(and the conditions in \(a\).)Tj
+0 -1.4889 TD
+0.0616 Tw
+(\(d\) Test your model by applying it to the ‘‘rock-scissors-paper’’ game in which both players have)Tj
+0 -1.2222 TD
+0.0062 Tw
+(the payoff matrix)Tj
+/F4 1 Tf
+8 0 0 8 159.6 341.015 Tm
+1.2 Tw
+[(0 1 )600(-1)]TJ
+-0.6 -1.125 TD
+(-1 0 1)Tj
+0.6 -1.125 TD
+0.6 Tw
+[(1 -1 )-600(0)]TJ
+/F2 1 Tf
+9 0 0 9 126 304.915 Tm
+0.0282 Tw
+(Confirm that an equilibrium is found where each player chooses between all three plays with equal)Tj
+0 -1.2222 TD
+0 Tw
+(probability.)Tj
+0 -1.4889 TD
+0.006 Tw
+(\(e\) Show that the game for which both players have the payoff matrix)Tj
+/F4 1 Tf
+8 0 0 8 154.8 264.415 Tm
+1.2 Tw
+[(-3 1 3 )600(-1)]TJ
+0.6 -1.125 TD
+0.6 Tw
+[(2 )-600(3 -1 -5)]TJ
+/F2 1 Tf
+9 0 0 9 126 237.315 Tm
+0.1731 Tw
+[(has several equilibria, at least one of which uses mixed strategies and one )-10.7(of )-10.7(which )-10.7(uses )-10.7(pure)]TJ
+0 -1.2222 TD
+0 Tw
+(strategies.)Tj
+0 -1.4889 TD
+0.0947 Tw
+(Running a solver such as)Tj
+8 0 0 8 222.5 212.915 Tm
+0 Tw
+(PATH)Tj
+9 0 0 9 246.6 212.915 Tm
+0.0946 Tw
+[(will only return one )-13.1(equilibrium )-13.1(solution. )-266.6(To )-13.5(find )-13.5(more, )-13.4(experi-)]TJ
+-13.4 -1.2222 TD
+0.006 Tw
+(ment with changing the initial solution or fixing some of the variables to 0 or 1.)Tj
+ET
+endstreamendobj46 0 obj<< /Type /Page /Parent 104 0 R /Resources 47 0 R /Contents 48 0 R /Rotate 0 /MediaBox [ 0 0 612 792 ] /CropBox [ 40.32001 126 571.67999 792 ] >> endobj47 0 obj<< /ProcSet [ /PDF /Text ] /Font << /F1 125 0 R /F2 121 0 R /F4 128 0 R /F5 130 0 R /F8 51 0 R >> /ExtGState << /GS1 132 0 R >> >> endobj48 0 obj<< /Length 2447 >> stream
+BT
+/F5 1 Tf
+7 0 0 7 126 747.615 Tm
+0 g
+/GS1 gs
+0 Tc
+0.0142 Tw
+[(SECTION )-16.7(19.3 )-14147.3(WORKING WITH COMPLEMENTARITY CONSTRAINTS)]TJ
+10 0 0 10 469.2 747.615 Tm
+0 Tw
+(435)Tj
+/F1 1 Tf
+-34.32 -3.14 TD
+(19-4.)Tj
+/F2 1 Tf
+9 0 0 9 153.5 716.215 Tm
+0.1171 Tw
+[(Two )11(companies )10.9(have )10.9(to )10.9(decide )11(now whether to adopt standard 1 or standard 2 for future)]TJ
+-3.0556 -1.2222 TD
+0.0066 Tw
+[(introduction )-12(in )-12(their )-12(products. )-255.2(If they decide on the same standard, company A has the greater pay-)]TJ
+T*
+0.1178 Tw
+[(off )11.8(because )11.8(its )11.8(technology )11.8(is )-5.2(superior. )-255.1(If they decide on different standards, company B has the)]TJ
+T*
+0.1169 Tw
+[(greater payoff because its market share is greater. )-245.1(These )11(considerations )11(lead )11(to )11(a )11(bimatrix )11(game)]TJ
+T*
+0.0068 Tw
+(whose payoff matrices are)Tj
+/F4 1 Tf
+8 0 0 8 154.8 657.215 Tm
+0 Tw
+[(A = 10 )-1200(3 )-2400(B = 4 )-1200(6)]TJ
+3 -1.125 TD
+1.2 Tw
+[(2 9 )-3600(7 5)]TJ
+/F2 1 Tf
+9 0 0 9 126 631.215 Tm
+0.0615 Tw
+[(\(a\) )9.9(Use a solver such as)]TJ
+8 0 0 8 216.7 631.215 Tm
+0 Tw
+(PATH)Tj
+9 0 0 9 240.5 631.215 Tm
+0.0621 Tw
+[(to find a Nash equilibrium. )-255.7(Verify that it is a mixed strategy, with)]TJ
+-12.7222 -1.2222 TD
+0.0391 Tw
+(A’s probabilities being 1/2 for both standards and B’s probabilities being 3/7 and 4/7 for standards)Tj
+T*
+0.0098 Tw
+(1 and 2, respectively.)Tj
+0 -1.4444 TD
+0.0059 Tw
+(Why is a mixed strategy not appropriate for this application?)Tj
+T*
+0.117 Tw
+[(\(b\) )10.6(You )10.6(can )10.6(see what happens when company A decides on standard 1 by issuing the following)]TJ
+0 -1.2222 TD
+0 Tw
+(commands:)Tj
+/F4 1 Tf
+8 0 0 8 154.8 557.215 Tm
+(ampl:)Tj
+/F8 1 Tf
+3.6 0 TD
+(fix PlayA[1] := 1;)Tj
+/F4 1 Tf
+-3.6 -1.125 TD
+(ampl:)Tj
+/F8 1 Tf
+3.6 0 TD
+(solve;)Tj
+/F4 1 Tf
+-3.6 -1.125 TD
+0.0001 Tw
+(presolve, constraint ComplA[1].L:)Tj
+4.8 -1.125 TD
+0 Tw
+(all variables eliminated, but upper bound = -1 < 0)Tj
+/F2 1 Tf
+9 0 0 9 126 513.215 Tm
+0.0392 Tw
+(Explain how)Tj
+8 0 0 8 174.7 513.215 Tm
+0 Tw
+(AMPL)Tj
+9 0 0 9 197 513.215 Tm
+0.0505 Tw
+[(’s )10.7(presolve )10.7(phase could deduce that the complementarity problem has no feasi-)]TJ
+-7.8889 -1.2222 TD
+0.0069 Tw
+(ble solution in this case.)Tj
+0 -1.4444 TD
+0.0844 Tw
+[(\(c\) Through further experimentation, show that there are no Nash equilibria for this )-9.7(situation )-9.7(that)]TJ
+0 -1.2222 TD
+0.0078 Tw
+(involve only pure strategies.)Tj
+ET
+endstreamendobj49 0 obj<< /Type /Font /Subtype /Type1 /FirstChar 32 /LastChar 117 /Widths [ 250 333 555 500 500 1000 833 278 333 333 500 570 250 333 250 278 500 500 500 500 500 500 500 500 500 500 333 333 570 570 570 500 930 722 667 722 722 667 611 778 778 389 500 778 667 944 722 778 611 778 722 556 667 722 722 1000 722 722 667 333 278 333 581 500 333 500 556 444 556 444 333 500 556 278 333 556 278 833 556 500 556 556 444 389 333 556 ] /Encoding /WinAnsiEncoding /BaseFont /CDGBNB+Times-Bold /FontDescriptor 55 0 R >> endobj50 0 obj<< /Type /Font /Subtype /Type1 /FirstChar 32 /LastChar 121 /Widths [ 278 333 474 556 556 889 722 238 333 333 389 584 278 333 278 278 556 556 556 556 556 556 556 556 556 556 333 333 584 584 584 611 975 722 722 722 722 667 611 778 722 278 556 722 611 833 722 778 667 778 722 667 611 722 667 944 667 667 611 333 278 333 584 556 333 556 611 556 611 556 333 611 611 278 278 556 278 889 611 611 611 611 389 556 333 611 556 778 556 556 ] /Encoding /WinAnsiEncoding /BaseFont /CDGCHM+Helvetica-BoldOblique /FontDescriptor 57 0 R >> endobj51 0 obj<< /Type /Font /Subtype /Type1 /FirstChar 32 /LastChar 146 /Widths [ 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 600 ] /Encoding /WinAnsiEncoding /BaseFont /CDGDEF+Courier-BoldOblique /FontDescriptor 59 0 R >> endobj52 0 obj<< /Type /Font /Subtype /Type1 /FirstChar 1 /LastChar 215 /Widths [ 592 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 549 549 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 460 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 549 ] /Encoding 61 0 R /BaseFont /CDHECD+Symbol /FontDescriptor 53 0 R /ToUnicode 62 0 R >> endobj53 0 obj<< /Type /FontDescriptor /Ascent 0 /CapHeight 0 /Descent 0 /Flags 4 /FontBBox [ -180 -293 1090 1010 ] /FontName /CDHECD+Symbol /ItalicAngle 0 /StemV 95 /StemH 92 /CharSet (/bullet/equal/Sigma/multiply/greater)/FontFile3 54 0 R >> endobj54 0 obj<< /Filter /FlateDecode /Length 424 /Subtype /Type1C >> stream
+H‰,;H#Q†ç:¹WÑe|°£ næZÈnÖ$"²U¬|‰Î¨8“IX7ŠìZ¨ˆ¶>Q°q-„AĞÆŞR-bc%ZD°9WïÎ¨şŸÿ|Åù|%BHŠDc½‘h[<ŸNê)4±FÄê|ìÛ—Zãöëõë"†P%D« ¿z‡k!2œŒO§İÈ›“ã9m¡?BÁvÏ¾{ÈóĞwÚ3¦'UÏgsj:Kû¦FuÓĞÍDNë ´'•¢ï²ÔT³ªùÛ¥ŸÏ¸ã´$ürîêŸ!Q‰.ŸİQ	š.@¹@ìÕËÎŞ Û#\ñ}	ş\"6r)²]8•˜Á¿JY/r\yÑ#ü]y`6‚(á
+2?äÌNˆ	<MZÓÚ\·	üƒ}>ëRÜ©kÊ™‡6ìl¹Mù+ó7";`³²fñ7yLMÃÍ®,Ü\nYÜ€–ƒƒÎÁYØr1|h‡«şæBøiÕ_¼-<)ÒÌöKpƒn’ûòÇ
+f…ùM€ {Àt
+endstreamendobj55 0 obj<< /Type /FontDescriptor /Ascent 699 /CapHeight 676 /Descent -205 /Flags 262178 /FontBBox [ -168 -218 1000 935 ] /FontName /CDGBNB+Times-Bold /ItalicAngle 0 /StemV 139 /XHeight 461 /StemH 139 /CharSet (/F/i/g/u/r/e/space/one/nine/hyphen/colon/two/three/four/five)/FontFile3 56 0 R >> endobj56 0 obj<< /Filter /FlateDecode /Length 1527 /Subtype /Type1C >> stream
+H‰L“PeÇw¹c÷PZğ¶5İ³İÍ_P¢B“%#?T”B@Ñ°¼;ÏË;wA%E8½ƒĞÓ‚sDñN@à•°&lp$K%5-”ÙTÖd“ùÇ³ø2Ùâ_Í;ó}g>3Ïó|Ÿ÷ySa8k“''¦'ÎÊ¶ØLÒìD»Õ8FyY‡Ë/ªå)¡Q*xZötA0…Á	_L!B´X{'Ù·ŠóF‡ixUˆ‰?/jLßz®±c-$íëMBÖVÉa²IÂòƒ],´‹ù“q $X­BæXIÈ4I&q‹BŸ,’/8Ä|£É–/nì„TKİ±µĞ$$$ùÆ¹vQ°(qRÑzÉb´ä‹“4çM`¸r0
+Ã´jŒÅ±[ŠaË0,Ã²0l†…+íc*,›‚­ÄNàƒ·MÊ
+êS…©îªg«+Õ¿”@Iğ6hğ³P­‚3p†AÕHÕåòDã‘*9İÇDîl¾ÂËWJIT‡ğàÍd} ğqƒî´kÈ2dšÓˆ4nN’Ç“”&Ëi@à0 ST²fF"’í;?xE‡fğ&Ì	p×­V¢PXgz%Eds-Ä]_î;¦ûçP„C/ IèM”À;ä7Hªü3ùê]-œ„™ñ@ĞÃä#ŒÏÛyqXGß¿Ñ±.#:VÌ-ãKIzøÖf˜&³19¹\šíÑ[ºM6Çû©×
+îÀ2x(næ]kåéûg›Oû¿c&}2[“ZÀ)Æ=H*yI±¶±L0.‘£ÁÃÈKsQ¨âgáëhªƒ›¤{Ñt˜AÒ%0ı¨H´~"2`€şà‚Ú5$WË!ß«àU¹6¢è`t“x=º^u«êŠmò€ãüšt6vy‘…KÍ|°T—W²ÉyÙú¤< xéQÆ%½Ÿ_v*m_t†òl#½›Ã¿ÍÚãÄĞŸ¶mg`àL…lHa¡ñƒ1h™	-ZÉÑwQ<¨MÃ‡½îZ/Gê­i¨ózV£(duD±"äZæ¶ëÒĞ—Ş4´Æ±{µs·koaÕ6İÒm·`:OIÛa!DÀBí=XH½w	ÅÖÜp®ÿÔÉs}¦ÓksÍ=GçÁ7ê1nRx—ÂO)Ü¨ç(ØïòÃ` Ú¢_ûD÷l?>ú/ú‡C#<ÓïìŞ³œ-!Ó¬ÎÌİœ£~rI­¡æ2å$h%Æ~ÄûáW‘(_P¶…×hè¿ Œì9üáyˆoNÖÄùà½Ñ¯êAùux§ŞhÃıÀa*˜p¦®Îz±hç±¹rÜVÍÃ8J6®ËĞE=¾ïä¡8ïÜ‰(Q‡ÈèÙ(½ı8áï;ƒí‡x
+­oêV\=ÃVU`-`ØÙ¦mù9^F“@­¼¼nÃmúxúŸ
+y‹<•@IúŠCË>³½œ· éÜÊoù=$ı{|Şc*›ÓQÖ»SÀŸñYUf›Íúv#„Ã˜Ô¬\*D|×ÍÑ+RÜÁ	îÍî {¢ëHãŸ.×Vîú±Ï‡Ø‹¶ÖrJø¢ÑUÌç-eæÅHë2”N­ùªé@ıñ£¼Rÿ<c.Õ]ºìš§Ït&¥fT^æ¨8—Oñİ„¹Ú‹0Í~cüpWS+‡£l‰<Ué­Ô³¨ŸÌ-ušwrì"éh”#(Ïk·ôõ:ÎöX:óôï›ó9êËƒ0cŞOfŸö%]=œó1éµ;¼C,İ
++Èg›”ß6Ô¾7ã‚î³†îã¾²óÉ)úw¬[ø=]­ÈÕ¾ª5c×UoÚ­l$)È-ÿÚzLæ|Ú¯•QrJâ^eï=ŒŞ]qø4£è=‰8[öf³ÊÒ$KJDÑ¤ËŞÛÓÂÃo(C"»+=;,ª#–>¾Ò×íoåR”ÅllpCX½†*i™ïE¥ptÿhQ-YŞ ¯:ú*pË’Â]!ÜÑ¤­/=~¼;”’/Âóß ş‡ÔM
+endstreamendobj57 0 obj<< /Type /FontDescriptor /Ascent 718 /CapHeight 718 /Descent -207 /Flags 262240 /FontBBox [ -174 -228 1114 962 ] /FontName /CDGCHM+Helvetica-BoldOblique /ItalicAngle -12 /StemV 140 /XHeight 532 /StemH 140 /CharSet (/A/space/c/o/m/p/l/e/n/t/a/r/i/y/d/f/u/s/C/b/v/hyphen/O/h/R/P/G)/FontFile3 58 0 R >> endobj58 0 obj<< /Filter /FlateDecode /Length 2027 /Subtype /Type1C >> stream
+H‰lVPWíffº…àiªf »%~P¢‰1¸€‚¢3Ê20|²¢	š0ˆ\”øMâWt-Lüàg]VŠ‰ŸİDr›\,öh¶*µõj^Mwİ{ß9çûªiJé@Ñ4í9;bÎüñsŒi¹ÆlS²>àMsš!:)Í”™c´L•µ´ì¦\ïì {:»ã,Ìûuı¯‹TB-=X"ÔR£ÇÄı/qfaÏ«paT‹§£Ê•r éªıæŒ|‹iUJ¶äŸ<N
+š>mÊû2´O·ïÓ¥pƒ9É(Åæge×dIsÓ“Í–³EŸm4¼&IáiiRŒ½B–cÌ2ZrÉÛß J¦,I/e[ôã½%U2¯”¢Léæìü£>[Ò§&š-’‰äfå$e™&½ÅdÌzíÿS¥h²(5EyS”/EùST MM¢¨7UÔ\šš¯¤b•ÔŠò$ªQ”‚ÒR	T­¡WÒ#Jz!Š
+ÅCåhåråÇÊí*U¤j³êãÏÔ1İ¬ÈÎc?S«±RÁŞM
+8ylBwhbÔgksÁ\ä+½£–òÀŸ‡íÌqôWAƒåıI*g°òy’
+‚xG>Í—2÷ñÎ#Éyà.o$eA€¢?L¶ò}&ƒ?¦jq>A7,Cx!±0ç?@C`£ˆ:fRş–MÓ"— #€‡å}'®K}èŠ*Qlp“s¡FB.¸¸’²§1 t\«5<¼Îà˜4tX·Z;F:	õäú/"÷—¾SAftÌr¾fhñcÒD‚7Cº@¸Àµ‚Ç™‹Ç¾¹µÕAª§²f†O”‹#t²tŠc€<öÀ¦¤Ş^Øtz 707%a :wHædW0‹1‘,fqh(2'!QP—)«ÀVİ:(#Õ*ÂXx¦]„Ñ!÷Q±ëyÁ*sJû
+ûÃWéo¥–¼JQ}¶¤ª	ù8B¾ü`èH›tœÜáNša"Šrã¸ğò•[L"„Ö0©U%»Ÿi@“Z·`·À=ûÛÎC—ohÎ¥ÀhŒp?¼Â“jÑì½Ïc‘ÆŒ™¢Z*x:¥–ˆ©tm 	bÀ‹Ë“7Ê<x W}QM•!@Ëì+«:zU{ğëO¬É(ÌùTD×<Uğº¹‹|4\:ÜzïfoË±ıM—·iMé†
+Ë_Ë¼_^°í¼½îò\Ë;QÉó3ŒÕ­mG·şµRh«¬¯Üö§êø`Çş:	Í0«ëwCø’ö¾Õ|”e\PpÊõwv~ÿãıÆ!ÈËx”n-‘Ì‹åZ/•²ÑÍçrÛ´ÜNRÇB”O:é—˜rÄ"†n‚İ¾°¼ò(XÄ[²fG.¶­½şŞ=ábY]\yÊğf t
+_†hqN¾Ša¨<N¬¶âBÀ™ÍâïÚ+€DèO"˜°¢ˆiÎÑ·iÑÑ'£pl;JÜv®öÛf±” 3xÀ‘ğºİxãş;§L‘dy|^°U‚û²±t=©¼|²yãÉVƒUz}"Êô.>Á1'½± õóĞlèô·/á¯V8Ò®m9“9¥B$S^›+G>½IŠŞIV9’ğ4°–9f«>!|*Æ¶>Ï–¤­GqÅ,¿ÎHXu<I'B“¾HTM$¹òQYÉƒcèw>oD–çEPi‚mL×‰#çî—Î5ØaÏ&ÉÖnpw½’Ç¹ Î’X.*)"•;H	ëO²ÒWì¸ŒC
+Ú«‘Ìµş³8¹^ Õßş¹yr­ı—^B˜jX™/|³*eï,m€!&%Ÿôšëú'jì'A'‘¹­öxûí’¨÷ü;ys=¿ëøÕÃ2g¼€ÿÛ/øq-ÿ#869:5O ;_Vlc¹–ß‘$fp"VvV¥½[ÿ°ßGqÈßC²øI‡qÀO²ø{' ¯ûlk RHY^¾¼ã!P@í˜-¨ãñİ\XHœÚù‹#]Ï‘×’è"÷ÙgüúaïÍ‚éú{û”¨yn%a{K™ôÏ,züÒş"Iš€ Ã}&á Æ=„êÌ\p³6[í‚rˆúĞÈœİqè­Õ%EUx³¶ÂB[¡vjjüÂt»–?ü5,1eß eyâ6H­{K¤V_¼ÔçÚ¾8
+¼€¸™\£×Ë=’Kd†İè²ÛG‹¡KüfŠ\/.…îKÁëû)÷Ó$óş}ô.=ŒÔvƒn/L$q€ß¿{[S¿¥¡ƒ0ë¨Ze*·ûö£>¸ó”¾e7‡¥š}¼|#ü®aóv]"Œ¶3uu6[ØÇøaq¡6¦¸jŸGî><ÜŸŸe2¢vI–õöq!©ñ-3a~fâŠ¥¾%@7yş‰EÏèg×¿nú¦I 3švÚ%Ä®Vz«¼G!²gcP5à©*b|{¨0Øø‘Wƒ²_m¥·È»òA{°?ƒôp0ó"8aà”êÍuæ	Úõ…6ÛG"*Ùâ;‹k´ Ş¾·‹ê¼šş¤Ôoƒ	Uì¬§ŠçL%+ÔFä{:;‚“H¯ØœÕ°Ï­<ÿß ‹ñ]
+endstreamendobj59 0 obj<< /Type /FontDescriptor /Ascent 626 /CapHeight 562 /Descent -142 /Flags 262243 /FontBBox [ -56 -250 868 801 ] /FontName /CDGDEF+Courier-BoldOblique /ItalicAngle -12 /StemV 106 /XHeight 439 /StemH 84 /CharSet (/m/o/d/e/l/space/c/n/i/period/semicolon/a/t/s/v/p/y/L/D/u/r/h/braceleft/\j/A/C/T/braceright/bracketleft/bracketright/asterisk/two/underscore/comm\a/x/b/R/k/w/one/P/O/parenleft/parenright/six/quoteright/three/f/colon/eq\ual)/FontFile3 60 0 R >> endobj60 0 obj<< /Filter /FlateDecode /Length 3264 /Subtype /Type1C >> stream
+H‰l•P×ÇÏŞ{wï•ËCïº×”kv!WBU´òP RÁŠ\E´¼K
+	¨3:ŠcDE#Æ·(H)t‰o¥ñE‰$êŒ¥¡V÷[ûÑ±0iÒvÎÌ9;{Î÷úıÏ·Ë†0c	™2wŞäà¬59é9Sæde¦E¦ff¬^“>´=Cµ0êX]‰½FooF·¿Yÿ¦™k˜·ebquûíÛáç2{=,u‚ƒcş0Ş±ÇD4•œ•½.'cÅÊ<—_.›èâéïçïAgÿiÃ³§‡KPZVjºKôºÜ¼ôs]B?Y–•“•“’—6Õ%(3ÓeØ6×%'=7=g-}ùÿR$Ä %„8bÒq„X"ò!2…iñ&d:!„Ì"d6!sXj Ñz²”DB¼)	¢!Zb%qd+¹@zhånL>Ó«ñÕ¬ÓœÔÜÖš´Ÿj/hÿ¡óÖ­Ñu³Fv";c;97n3'ëçë·é¿36Ã1ÃıQÁ£vzhh·Åø¾1ÁXgüÆ~²ızûsNËá84–å› vğÉ|]`äàĞÈ¢ç¨æ3­šâ&, ã"àÀä¦+ÀuQDÂ…¸G ;êœQwİïº‹#&¨	Hê Ğ…Æ+È¡ÉM‹[€Fwwà¸ƒÎtà2@m^P›m²öoª B†ß‡OÓ¤ÉÓë~/A¨Ï@Sb9˜YÔpåhFS+ëˆZhdÀ	ê´êû0GÀn
+6² rÅ°ı×š 2ùdˆùF°u¬èèè8ó•È×tÆ6ÄŠ|rlìòhÉ±LV+hà*Ğh¿Uk…–)0ş2;(`€UµÉ Vê‡ÎxÈ¦^– ‹Dáû¯™ÕPq	Æyÿ²ïâ½Û7¿2œm¬¹Õìì¤‡hô	]µXôVé´Ôİh¸”gK*É^’(ÆÅMF?ƒc±Á2¸Ê&ø'°~ÀòıÀ«Kşå©¦ºfK[kArÒ’•ÑRšõÇ÷ßîÌJ\¶ ²¶&YJô`“”æÒ›pï]×ïÛcê%şeãÉêÖsÎ¯<®NXë+:Ë €ÌôÁ(ˆV=@ÅXÏ¹rx$7ÑÎ‰|ívàĞû==õÑ3×ÔÔ’¢L	ÆÖw «å>‡vØ+Äg$Æ„.¿vs³ØVÛ\×b¹t*!Nz‡vÂBDSÄÙt~ò#ã!ÀCtEÜ©û÷†îÙ#Ü‡¤»™!…ş[½yjäÿúr¤©j®‚†¹«&jÕÃêÂ`"jÔD.R÷îêÔ)CœÌl€İ¯`vƒvËÜ¡NVr‡¢Ù +ì‘Ã9ŒSYÜg;'£Â†qpn·p‹ç¸NQÇÉëóMµ`xËø”’·$©”ğ=êF˜$$…..´YĞÕF°»{çEóãÜˆİÒÎXĞT³|ëgM›pş²¼¡âŒèz€å{6e°Ç—î‹µàLÔâ8ôÅ ÇCÄ«¿œé¼=t÷@‘ĞĞQI›å¸®pô6[ºa¼· \q„÷¬½¨ÌäÀŠ c¸Ëİ)È£94ÆKšÀıàÀ™:ÈV´gÍj-WuH¶—à¯Y\
+eì±>CÅƒ&«Î2CË‚¬N	èZ”`&´SÁ¦SU$šëP¶NÕ³5ÊÓjê“__î“åË®"Ú'ƒ;–†MV{Îetí“9=úë¯}Ÿà(	oü$s…;s« "~E¶‡4‹¦ıØW†Ñ2˜d“L},¦÷¿àªå@}»^Ğâw	Mğàøóçê³/¦|ŸrÔĞVÕÙùĞ¹ºDôñ;k/ÇSÿú2FîëŠ¹)I¹á’×\¶Ğ¦³úeÔƒ2ÀU¡/h*ó¡‚ÜÇåchJ«À—@õœ£›¢nSŞZ.€½‚…ÿJ…Bí¾»e‡€ö.Pø&]€nâ˜6¦L}®­[¬>oÓÓÖó¢.Ê¦ÓÀÂZĞğÅj—,L‡&pŸœÿq°Ø2‘=rşÎ­–çe«²¥+£¶gYp¬gğt‰?ïñ×È§w.Ö54‰|q"ÄëùóS…¼ÕóS–X~—^ubEË«ÖæÍ›JÃÁ`«|tô+ŞOyÖPŸì5ƒãO·è—5w´[ÀIy£A´¾Ds\\aFª¹zL*aùµ»&<)g=gêùÓ°ÂÃ®z:bfÍµ-
+
+»|_úZUÊ%ù¦&êøku–š$”n-İR"îKN®ZnA´÷D7t{/˜ô´ëOí½’í=;¢`™Å/¨¾ÿïî×·oY]#í)ú<ëól •ïñ›68è|x×©Šãâ5¼%şC—SJL)¹šarOea¦ZÍáÑÂª	0¹’EN_Ÿ÷EœÍÖQ¤´p´â
+NíÕMÍ”WØô¸²şüœ°¨À Û•;=—zèÎƒ®ø ÊKy,ß‘ZPy´ê^˜&¬
+Ë² ÓŠ?ï—T·íøöÃ•Îğ+œÜéƒ“~ZŞ£gg›»ÅAwX%´}yíà%Ë«“¶Ï†;¹H~$Ñßh8MºGmQïß=ã£ò<jÃ—#‘RÜ­XänU½eL"H¡Ë1}cùşö?vlÜĞ>ÔX°Y‘ñ•1:ú–¾Wİ%Œd…½ò\Õ×Ÿ¸p´ÃÒ|ğÓp	ı­°öMœşµ­µKd%‹5,íHVWÀgäÚÊê¿Û,÷˜(î ÊşÖC‚rëµ	kw-j+1êõJª6$´Á
+ô¬ZI@yÉÓC(¡œ^¹Z@åq(áŠI¥p‚4Æ	M¤Ğ`{‘ƒV¡ÑÔ´Û2›‰ı-¯?s—ÜÎegfg~ŸùÎ†ë$**¹K»&Xúu €éÊÄ·fßËV²T-ŒÓäNÎô#®ÖqÎ¼7K(BÁ=3¿‹Ê;¨H`Áz6²èğÛÇ>½\yT€“JÍr˜ù¤¿ÌWA;ìy˜W¹‡
+$„‘®oÀ+€‰’àª¼™ 60œ´nfRF‡ôÓ‚d/¸€æÌ2š4êêE6Êy¢”ëTæ¶,ïêz–B²Xö¦Ymx>™ÿ®YË¹³Ôê‡17T‚³r(ø„m¶Ùkí¼½êtªˆN*i1É¶Ô55Öó•ö/‰xBäèôÁÊİíˆ7Nš²ãl§ø¤”¼ÔñáÜ-ìrº¥3sÕ©©F1wáÀXÎ©YÇ-]/?³ÌôÒâLsegd}¾¢M•ÚVÚ¾AĞAHÕA úı¡Rˆ~0úé!~ü&!P˜ÛñÚØğíÇ‡c·n5Bo»_Ô™ÒËÚ‡‹¢à°`€É(Ñ'{‰2¤6ŸK9Gzqf~öÙ7ğ 4:§¡Êà¦ÊPõe˜¯f Ä>¥à»`œcşi6'÷mçwFÅ‰9×0¦KàEÙó‘½Œû€§}™ïohàk®§ª*¶+@.9£¥èAí£ƒ«U‚¨ÖpÒ$Ævø”õë†\odÎ”ŠƒæÎó©ş‰±çö¾²¡¥X(úv]!Ã%U¦U¤$û'–æ%œ^)¸ä`²z»ÎİåÁpëùğÙhßP!î¹´ı«6ÿÖşÊûSF¹`M¯*†«Í¿RÚqİ¿¡¢¹¢i^÷Ì2¬¢¯‡
+œò5lÔ}¶%ìÌ>,¯õ®zÚ]´À*ôÄU¡”­(öİ»¡Àõ?°İz®:oR›£¥åDĞrLÊ}*d0QÒáœ¸“=w4-‰Ïˆ®¡#%7d·ô‡‚¦·§şz»À™R ŒõµgÃ„¬µ€mÊŸh7ÄMÓg™ĞÑ‘±I÷ÈfLÙ)Ì=Õš$°'˜):†ôLã¿?.ks >€|Î©PŸ;2æK#$ã3á\!`e‘´ª–3â™õ†;ä/ešÑ?.’!zóôü`Ù@d­¬X…cPH¬Ü3¥‰î‘±Pê"Á{‚fºÔëk‘0Üß€æ€V9šLı:µƒ‰V¯ £bªhd3”€”¼ªØi,—Œ%RA_áL§jºè±+z+ƒ!ü#ïW72e0.-e×u·$—‹¨eƒ,#Ç&ù¾Y²ßXÖ+‚7Û–Û–Q/4Ö×´µùS³·»l@˜`õ»•©Éç
+Œüÿb*û`@gL¨n=/‚–}Z¶«SÏG¬#İ–½ÙÄšÄF“aÊMLô§fŒÑ²_X×ÇNt>µ¨­åíÕİ¼oNÒ_‡o^ƒõ×*¿$~ù‘u.á+Øwç¼şÂGó›÷¿+Ë||•gkşê%LÙ
+endstreamendobj61 0 obj<< /Type /Encoding /Differences [ 1 /Sigma 61 /equal /greater 128 /bullet 215 /multiply ] >> endobj62 0 obj<< /Filter /FlateDecode /Length 252 >> stream
+H‰TP»nÄ ìùŠ-/J˜â	!ÎŠä"Å—ô¬¤#Œÿ}Àv.JÚÇÌîÎĞsS7Ş% oq4-&èœ·§qáŠ½óÀ+°Î¤=[3è 4“ÛeJ84¾AJBßssJqÃÓã=»ú-Fç{8\øÇg.´sß8 OÀ@)°Øz~ÖáE´Ğşj—% TkÎ÷Å£Å)hƒQûA2®@Ú£ôöˆqíÌ—dC2qŠÈ–ãŠUUY2VÉ3v4ÿån£¤°$pEŠzGn½²¸¸qÓ`æ³¼Õ²UE¹ßy¼¹ÆPÎ-ü0 ‘tz‹
+endstreamendobj95 1 obj<< /Type /Metadata /Subtype /XML /Length 823 >> stream
+<?xpacket begin='' id='W5M0MpCehiHzreSzNTczkc9d' bytes='823'?>
+
+<rdf:RDF xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'
+ xmlns:iX='http://ns.adobe.com/iX/1.0/'>
+
+ <rdf:Description about=''
+  xmlns='http://ns.adobe.com/pdf/1.3/'
+  xmlns:pdf='http://ns.adobe.com/pdf/1.3/'>
+  <pdf:CreationDate>2002-08-29T19:23:13Z</pdf:CreationDate>
+  <pdf:ModDate>2002-08-29T15:38:27-03:00</pdf:ModDate>
+  <pdf:Producer>Acrobat Distiller 5.0 (Windows)</pdf:Producer>
+ </rdf:Description>
+
+ <rdf:Description about=''
+  xmlns='http://ns.adobe.com/xap/1.0/'
+  xmlns:xap='http://ns.adobe.com/xap/1.0/'>
+  <xap:CreateDate>2002-08-29T19:23:13Z</xap:CreateDate>
+  <xap:ModifyDate>2002-08-29T15:38:27-03:00</xap:ModifyDate>
+  <xap:MetadataDate>2002-08-29T15:38:27-03:00</xap:MetadataDate>
+ </rdf:Description>
+
+</rdf:RDF>
+<?xpacket end='r'?>endstreamendobj100 0 obj<< /S /D /St 419 >> endobj101 0 obj<< /Nums [ 0 100 0 R ] >> endobj102 0 obj<< /Type /Pages /Kids [ 119 0 R 1 0 R 4 0 R 7 0 R 10 0 R 13 0 R 16 0 R 19 0 R 22 0 R 25 0 R ] /Count 10 /Parent 103 0 R >> endobj103 0 obj<< /Type /Pages /Kids [ 102 0 R 104 0 R ] /Count 17 >> endobj104 0 obj<< /Type /Pages /Kids [ 28 0 R 31 0 R 34 0 R 37 0 R 40 0 R 43 0 R 46 0 R ] /Count 7 /Parent 103 0 R >> endobj105 0 obj<< /Dt (D:20020829152324)/JTM (Distiller)>> endobj106 0 obj/This endobj107 0 obj<< /CP (Distiller)/Fi 106 0 R >> endobj108 0 obj<< /R [ 2400 2400 ] >> endobj109 0 obj<< /JTF 0 /MB [ 0 0 612 792 ] /R 108 0 R /W [ 0 16 ] >> endobj110 0 obj<< /Fi [ 107 0 R ] /P [ 109 0 R ] >> endobj111 0 obj<< /Dm [ 612 792 612 792 ] >> endobj112 0 obj<< /Me 111 0 R >> endobj113 0 obj<< /D [ 110 0 R ] /MS 112 0 R /Type /JobTicketContents >> endobj114 0 obj<< /A [ 105 0 R ] /Cn [ 113 0 R ] /V 1.10001 >> endobj115 0 obj<< /CreationDate (D:20020829192313Z)/ModDate (D:20020829153827-03'00')/Producer (Acrobat Distiller 5.0 \(Windows\))>> endobj118 0 obj<< /Type /Catalog /Pages 103 0 R /Metadata 95 1 R /JT 114 0 R /PageLabels 101 0 R /FICL:Enfocus 140 0 R >> endobj119 0 obj<< /Type /Page /Parent 102 0 R /Resources 120 0 R /Contents 127 0 R /Rotate 0 /MediaBox [ 0 0 612 792 ] /CropBox [ 40.32001 126 571.67999 792 ] >> endobj120 0 obj<< /ProcSet [ /PDF /Text ] /Font << /F1 125 0 R /F2 121 0 R /F3 122 0 R /F4 128 0 R /F5 130 0 R >> /ExtGState << /GS1 132 0 R >> >> endobj121 0 obj<< /Type /Font /Subtype /Type1 /FirstChar 32 /LastChar 151 /Widths [ 250 333 408 500 500 833 778 180 333 333 500 564 250 333 250 278 500 500 500 500 500 500 500 500 500 500 278 278 564 564 564 444 921 722 667 667 722 611 556 722 722 333 389 722 611 889 722 722 556 722 667 556 611 722 722 944 722 722 611 333 278 333 469 500 333 444 500 444 500 444 333 500 500 278 278 500 278 778 500 500 500 500 333 389 278 500 500 722 500 500 444 480 200 480 541 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 333 333 0 0 0 500 1000 ] /Encoding /WinAnsiEncoding /BaseFont /CDFNON+Times-Roman /FontDescriptor 123 0 R >> endobj122 0 obj<< /Type /Font /Subtype /Type1 /FirstChar 32 /LastChar 121 /Widths [ 250 333 420 500 500 833 778 214 333 333 500 675 250 333 250 278 500 500 500 500 500 500 500 500 500 500 333 333 675 675 675 500 920 611 611 667 722 611 611 722 722 333 444 667 556 833 667 722 611 722 611 500 556 722 611 833 611 556 556 389 278 389 422 500 333 500 500 444 500 444 278 500 500 278 278 444 278 722 500 500 500 500 389 389 278 500 444 667 444 444 ] /Encoding /WinAnsiEncoding /BaseFont /CDFOJJ+Times-Italic /FontDescriptor 126 0 R >> endobj123 0 obj<< /Type /FontDescriptor /Ascent 699 /CapHeight 662 /Descent -217 /Flags 34 /FontBBox [ -168 -218 1000 898 ] /FontName /CDFNON+Times-Roman /ItalicAngle 0 /StemV 84 /XHeight 450 /StemH 84 /CharSet (/underscore/A/space/v/a/r/i/e/t/y/o/f/p/h/s/c/l/n/d/m/u/b/g/q/w/period/T\/j/comma/I/z/O/k/hyphen/M/P/L/C/x/W/quoteleft/quoteright/H/E/parenleft/p\arenright/S/two/four/colon/F/one/nine/D/R/five/emdash/B/three/G/N/V/zero\/semicolon/endash/six/J/seven/U/slash/question/Y)/FontFile3 137 0 R >> endobj124 0 obj<< /Type /FontDescriptor /Ascent 718 /CapHeight 718 /Descent -207 /Flags 262176 /FontBBox [ -170 -228 1003 962 ] /FontName /CDFNLA+Helvetica-Bold /ItalicAngle 0 /StemV 140 /XHeight 532 /StemH 140 /CharSet (/one/nine/C/o/m/p/l/e/n/t/a/r/i/y/space/P/b/s/period/S/u/c/f/two/F/three\/W/k/g/w/h/B/E/x/hyphen/four)/FontFile3 133 0 R >> endobj125 0 obj<< /Type /Font /Subtype /Type1 /FirstChar 32 /LastChar 121 /Widths [ 278 333 474 556 556 889 722 238 333 333 389 584 278 333 278 278 556 556 556 556 556 556 556 556 556 556 333 333 584 584 584 611 975 722 722 722 722 667 611 778 722 278 556 722 611 833 722 778 667 778 722 667 611 722 667 944 667 667 611 333 278 333 584 556 333 556 611 556 611 556 333 611 611 278 278 556 278 889 611 611 611 611 389 556 333 611 556 778 556 556 ] /Encoding /WinAnsiEncoding /BaseFont /CDFNLA+Helvetica-Bold /FontDescriptor 124 0 R >> endobj126 0 obj<< /Type /FontDescriptor /Ascent 699 /CapHeight 653 /Descent -205 /Flags 98 /FontBBox [ -169 -217 1010 883 ] /FontName /CDFOJJ+Times-Italic /ItalicAngle -15.5 /StemV 76 /XHeight 441 /StemH 76 /CharSet (/c/o/m/p/l/e/n/t/a/r/y/comma/i/space/b/hyphen/s/q/u/x/d/w/period/g/f/v/T\/h/L/C/P/j/A/B/N)/FontFile3 136 0 R >> endobj127 0 obj<< /Length 3994 >> stream
+BT
+/F1 1 Tf
+48 0 0 48 432.2 655.215 Tm
+0 g
+/GS1 gs
+0 Tc
+0 Tw
+(19)Tj
+/F2 1 Tf
+10 0 0 10 126 646.015 Tm
+(________________________________________________________________________)Tj
+30 0 0 30 126 645.615 Tm
+(________________________)Tj
+/F1 1 Tf
+24 0 0 24 173.6 608.215 Tm
+0.0136 Tw
+(Complementarity Problems)Tj
+/F2 1 Tf
+10 0 0 10 140.4 549.515 Tm
+0.016 Tw
+[(A )14.9(variety of physical and economic phenomena are most naturally modeled by saying)]TJ
+-1.44 -1.2 TD
+0.1372 Tw
+(that certain pairs of inequality constraints must be)Tj
+/F3 1 Tf
+21.32 0 TD
+0 Tw
+(complementary,)Tj
+/F2 1 Tf
+6.78 0 TD
+0.128 Tw
+(in the sense that at)Tj
+-28.1 -1.2 TD
+0.0355 Tw
+[(least )5.5(one )5.5(must )5.5(hold )5.5(with )5.5(equality. )-236.5(These conditions may in principle be accompanied by)]TJ
+T*
+0.0959 Tw
+[(an objective function, but are more commonly )8.2(used )8.2(to )8.2(construct)]TJ
+/F3 1 Tf
+26.73 0 TD
+0.0771 Tw
+(complementarity prob-)Tj
+-26.73 -1.2 TD
+0 Tw
+(lems)Tj
+/F2 1 Tf
+2.19 0 TD
+0.1172 Tw
+[(for )11.4(which )11.4(a )11.4(feasible )11.4(solution )-5.8(is )-5.8(sought. )-241.8(Indeed, optimization may be viewed as a)]TJ
+-2.19 -1.2 TD
+0.0964 Tw
+(special case of complementarity, since the standard optimality conditions for linear and)Tj
+T*
+0.1271 Tw
+[(smooth nonlinear optimization are )-8.5(complementarity )-8.5(problems. )-255.9(Other )-10.6(kinds )-10.6(of )-10.6(comple-)]TJ
+T*
+0.085 Tw
+[(mentarity )-14(problems )-14.1(do )-14(not arise from optimization, however, or cannot be conveniently)]TJ
+T*
+-0.0025 Tw
+(formulated or solved as optimization problems.)Tj
+1.44 -1.26 TD
+0 Tw
+(The)Tj
+9 0 0 9 158.7 440.915 Tm
+(AMPL)Tj
+10 0 0 10 186.5 440.915 Tm
+(operator)Tj
+/F4 1 Tf
+3.6 0 TD
+(complements)Tj
+/F2 1 Tf
+6.88 0 TD
+0.0367 Tw
+[(permits )8.6(complementarity )8.6(conditions to be speci-)]TJ
+-16.53 -1.2 TD
+0.0845 Tw
+[(fied directly in constraint declarations. )-255.6(Complementarity models can thereby be )11.5(formu-)]TJ
+T*
+0.0462 Tw
+[(lated in a natural way, and instances of such models are easily sent to special )-9.3(solvers )-9.3(for)]TJ
+T*
+-0.0088 Tw
+(complementarity problems.)Tj
+1.44 -1.26 TD
+0.0683 Tw
+(To motivate the syntax of)Tj
+/F4 1 Tf
+10.87 0 TD
+0 Tw
+(complements)Tj
+/F2 1 Tf
+6.6 0 TD
+0.068 Tw
+[(, we begin by describing how it )-10(would )-10(be)]TJ
+-18.91 -1.2 TD
+0.1174 Tw
+[(used )-11.6(to model a few simple economic equilibrium problems, some equivalent to linear)]TJ
+T*
+0.0273 Tw
+[(programs )18.2(and some not. )-244.7(We then give a general definition of the)]TJ
+/F4 1 Tf
+26.58 0 TD
+0 Tw
+(complements)Tj
+/F2 1 Tf
+6.88 0 TD
+(opera-)Tj
+-33.46 -1.2 TD
+0.1034 Tw
+[(tor )-12.8(for )-12.8(pairs )-12.8(of )-12.8(inequalities )-12.8(and for more general ‘‘mixed’’ complementarity conditions)]TJ
+T*
+0.1667 Tw
+[(via )10.6(double inequalities. )-238.3(Where appropriate in these sections, we also comment on an)]TJ
+9 0 0 9 126 332.315 Tm
+0 Tw
+(AMPL)Tj
+10 0 0 10 153.9 332.315 Tm
+0.031 Tw
+(interface to the)Tj
+9 0 0 9 217.3 332.315 Tm
+0 Tw
+(PATH)Tj
+10 0 0 10 243.6 332.315 Tm
+0.0225 Tw
+[(solver for ‘‘square’’ mixed complementarity problems. )-254.5(In a)]TJ
+-11.76 -1.2 TD
+0.0341 Tw
+[(final section, we describe how complementarity constraints )-7.2(are )-7.2(accommodated )-7.2(in )-7.2(several)]TJ
+T*
+0 Tw
+(of)Tj
+9 0 0 9 138.5 308.315 Tm
+(AMPL)Tj
+10 0 0 10 163.5 308.315 Tm
+0.1636 Tw
+[(’s existing features, including presolve, constraint-name suffixes, )12.1(and )12.1(generic)]TJ
+-3.75 -1.2 TD
+-0.0024 Tw
+(synonyms for constraints.)Tj
+/F1 1 Tf
+12 0 0 12 126 244.215 Tm
+0.0157 Tw
+[(19.1 )-289.4(Sources of complementarity)]TJ
+/F2 1 Tf
+10 0 0 10 140.4 225.515 Tm
+0.055 Tw
+[(Economic equilibria are one of the best-known applications of )-8.1(complementarity )-8.1(con-)]TJ
+-1.44 -1.2 TD
+0.0689 Tw
+[(ditions. )-250.2(We begin this section by showing how a previous )15.2(linear )15.2(programming )15.2(example)]TJ
+T*
+0.1063 Tw
+[(in )10.2(production )10.2(economics has an equivalent form as a complementarity model, and how)]TJ
+/F5 1 Tf
+7 0 0 7 300.1 165.615 Tm
+0 Tw
+(419)Tj
+ET
+endstreamendobj128 0 obj<< /Type /Font /Subtype /Type1 /FirstChar 32 /LastChar 146 /Widths [ 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 600 ] /Encoding /WinAnsiEncoding /BaseFont /CDFPEO+Courier /FontDescriptor 129 0 R >> endobj129 0 obj<< /Type /FontDescriptor /Ascent 629 /CapHeight 562 /Descent -157 /Flags 35 /FontBBox [ -28 -250 628 805 ] /FontName /CDFPEO+Courier /ItalicAngle 0 /StemV 51 /XHeight 426 /StemH 51 /CharSet (/c/o/m/p/l/e/n/t/s/space/P/R/O/D/semicolon/numbersign/r/d/u/A/C/T/a/i/v/\braceleft/braceright/greater/zero/f/h/y/equal/comma/one/L/j/z/underscore\/colon/bracketleft/bracketright/asterisk/b/period/E/X/eight/six/four/fiv\e/three/x/parenleft/I/parenright/two/nine/seven/B/N/less/S/g/hyphen/w/qu\estion/k/plus/quotedbl/quoteright/M)/FontFile3 134 0 R >> endobj130 0 obj<< /Type /Font /Subtype /Type1 /FirstChar 32 /LastChar 89 /Widths [ 278 278 355 556 556 889 667 191 333 333 389 584 278 333 278 278 556 556 556 556 556 556 556 556 556 556 278 278 584 584 584 556 1015 667 667 722 722 667 611 778 722 278 500 667 556 833 722 778 667 778 722 667 611 722 667 944 667 667 ] /Encoding /WinAnsiEncoding /BaseFont /CDGAAD+Helvetica /FontDescriptor 131 0 R >> endobj131 0 obj<< /Type /FontDescriptor /Ascent 718 /CapHeight 718 /Descent -207 /Flags 32 /FontBBox [ -166 -225 1000 931 ] /FontName /CDGAAD+Helvetica /ItalicAngle 0 /StemV 88 /XHeight 523 /StemH 88 /CharSet (/four/one/nine/two/zero/C/O/M/P/L/E/N/T/A/R/I/Y/space/B/S/H/period/U/F/t\hree/five/six/seven/eight/W/K/G)/FontFile3 135 0 R >> endobj132 0 obj<< /Type /ExtGState /SA false /SM 0.02 /OP false /op false /OPM 1 /BG2 /Default /UCR2 /Default /TR2 /Default >> endobj133 0 obj<< /Filter /FlateDecode /Length 2658 /Subtype /Type1C >> stream
+H‰\UTg!ÉLĞ‘aâ6™Q•‡jA¤_mTT°¬‡ª<²Â# â»«H}œM¥Ç‘õQ,*âBGk¶>P°Ö…"İZ¡®Z]ÕŞÁ‹çìhİszşÌŸäÿï½ÿw¿ÿ»whJéBÑ4­3g¡qfÀ<Sf)Ïœ’mÉLuîˆ²–=•²×Zœ…/7¼\¦‚M#àØÈf¯áû=(š¶ÿ}–%»ÈjNKÏ“Æ§LB¦…OtÎaƒó4ç<-Xš™jI6IK‹róLY¹ÒüÕ)k¶Åš”gJ(I333¥%Î¹ÒS®ÉZ@V_ƒ‘Ì¹R’”gMJ5e%Y3$Ë_$£yµ%¯(Û$Íœ+%­Nd±Jfâ››ŸœkN5'YÍ¦Ü‰H†¢É 44å¡ tåCS~4BQS(*œ¢¢]¨9JÊ¨¢–*¨j,¡…RR,%’Í•T=@›éo\fºìr9ërO 8¤T*·(o«U›Tg˜iŒ©b:™'l<kg{ÕQêµê_\ƒ]s\›\Ÿ0jœ2@K‚ZüñX‹Z¨eÈV)øÑWÀ_€ÿ…şèşŒ¦ª@.~#l4lIÑ!óğö@1HıË‘e–mO›z½Ñ”‚»œÃè/À‰!ÌWògËvö<Ò·Oœ†EœˆÊ§ü5\-;^d>9ÖZ{ÿªºãİ—@£_¤n¡—ß¶áZASJXıÒãx¡;hOCBH¨_î>÷Ìp…ç¶İßæ¹Ü´4hÓ'Å²2z3h…yë®Ï€Ü¦°îÊYîAÃşææ:ğÇ‘-8Åˆo
+ ejJïşÜe'gÒŒmI÷0ß™2„ iøÚ™‹>åa8TåLşvT Am¤‹“Ü7£B78†! AH7;["ÏN`é£äW*ø:Ù°ğOÛö¿Q÷çˆ°øôåËŞ«şU@¼Â£Ê~g6¸éÁ´}pøñ6Ø;PôÀhŞí^-çí-µby‰
+'ìX¼|±~UfUë±ŒÕTÎ!ÜXwNğ…:B şÜóN-\``\}MÃ)ñä‰ƒç.è¾É»>ù˜ÀÉG+Gén® Œğ)¾~<,e¸ççÎå£“2¢E42òJ00œÜŞX»$1/VÄFSQZy+ÑÎiRôdÿbËz\€cÑ+°¼‘DƒyO	}ÁGEôg&-N×#— jàaå‹–à^±Ê.jJƒ…ä	 î„q
+ùI2?Pó*Ynn`Ù{>ƒ y$£‘È¥œ'Æo•’¿<tƒ²öŠ8ìy•ìÔk1´bÒÀİiCÆvdñÇ!¼F‡õ¡(bÏ ƒÌ)‰ípö^ıêÙ¥ÓQI1DH­'„¾I®°†|»Ñ}ËõÕCÚŒPy²?…LàC&¸.œÕ¤ÊÚı¾ı+][{ÕeÊ¨À—éİK¼³õX¼
+GOÇPPæ€:[ì*Rq}EçÖ-ÕEE®‰ÁQ¶Î†‚
+J!^V@(ıÉË±
+¢2˜.™±Ÿ= ‚ºœ9ˆÂÇ³oâs5	+ú“UÈL7,Ø0W]Â¬½·õd˜,¨‰,£Ü6F¯7Åõßoşr’ì­Æ)Œ¦øñÔ*9„ÔÓ’Ôğæ
+å­²£Ğ»Ú€4ªò0l­ zæó
+{Óuıñ¯¶ÇfeoÎß.¢G¡*tıüe>:®]¾_qëAóécµW¸3«|Ë«ª˜5»Š÷]Ö¡÷k~Ç˜² ÛTÙêhúøì^Á±·zï¾¿©5R1°~O ‹HÖ`ó¸H0R[å9PÉ­BBÓovß>øãÏ}G#Ã,–y”n¹&o–k½VÎ.úâRC¡W‰«}~B×¤åæ|±„ä,Ül@¾°
+Æ(ä‘°Œ·æÎ]¬ãjuo¯ĞVq nWºÆ0±…“azœgÀh@å"më½&:ÿ‘Hb)A{—L,]MÂe‘
+–5Ì›6¦ØRõ¨ÚòSÃ6Q¦kØ†c¿ƒÅù˜ô.Z€şw_4‚ç	Âøë{ê¯ê›ÏçLİ#’ÎKZiÌã[$ègS±É1üİÇÁUÌé²Ê¡TLÙ†Â²d}À¢$tWÍ×5«‘0ëP0.ÿ*›GT×Ã=”Ãä#<×YÂÖ­IqŒ×£«Oqá“Pğü¡®şTµ³k¼ËNMK3Dl<tèC¨U»@.z¨ÜAÿI”2v@…H pwœ<û]ãì©Ñ¹¤†[nµ‹ÎÊ“äxƒn#¼¿O°ËM²’×ˆ‹>Q‹RW	%°%rM8˜–ÆK}åóSìt¢0÷#¶ƒÖ£¤Qñ QŸ|„å‚!^IŞ3:E®4ƒdİá$Ç‘¼ãkRİ…*ˆd0º!ˆÜÆà
+•ü§¡ó†â÷¿ö"dhƒÑ@”÷/>0Ìã
+5ôxzq­ı×~GÿVjlN‘p!-ığ}Pê’ô""$®ç;Ô9!B£êÌÕJ+ü–¬Ü`/×œ¹~ª.'ò·ì¤×güF×ünüRe
+$b×ï,×ü~HM#1¤Û½N¡ıËù²‰C¾}Èà'cÆ?|Èà{!N@_í\[RHÙî··vŸˆƒú,h®@”²° âIt*å9q)°H€İüíê¡Â,4óÍnr¿ğ¹u¯lÄìpùÿj¬šĞ&Â š%İo1Ö¥&)-IÜÕ6P•¨•HmPô ‚ Æ†‚A­ĞÒš*XíbMVD4ÄT›š†`kı9zA±µDâ%ñç)h¡fÃ¬ÄÙˆÇß7Ã›7ofXßı§'~ü÷–LŸjöÚz¶;2@D,ÕÀØ£O¢FAmŸŞl0Ë^O½îîD|<)A‹ *Šª8w^<y¼Ï¨å÷:ñJ¹jüi¯šFöKUSïÛ¥²u–fâzØ ic4P´eêÃ¸ÆÁsr­NÜİİmË†âÒGôòù d[íè¼ £›aËMhŠĞÒ,‚ç!xé„ğë‘ÏéÄLˆå“ç.Ü27V†/+\ÁèÁŠŸzİÁ¶˜g2=°Nšd™Œªfä²)Îc±ä#æ¿­øş	ÓúK£AeT$\“vº—b,²öÃ=§Ã÷
+	¯
+èÊııñåÜ«9é³w±^ŒÓöQÀÍ%*qs%a|u3¿nåÇÙÍÊã&ÖY~laàÑgxëE­™ÎŒ¢Şl ãY‚T”›Ğ¦Í C¶‚âqë@ïvğò¸—A¦ğfy°øJèãa)Öu1Ê%´œY{f¤ßÌÓ]”™æâqƒşœïé¿r^UTuLÆ:!6•¥ NæàÔ;YNWÎ¤1’‚ö$ƒl,·ÿ°;‚ô x©©Z¿,Ø¸V­µvòŞ_š¤
+endstreamendobj134 0 obj<< /Filter /FlateDecode /Length 4738 /Subtype /Type1C >> stream
+H‰lUPGÙÙ™‘vğv­]ÔTğ5*
+$¢ü˜åWÄA¢€YÔ=N4¹òP¼SbéıàÁÔzˆpüÑUHDENü+„hü'bå1¯MoÅë%eÅ»\Mõ«î÷^ïõû^Ó”VCÑ4í;ßì–³Ñ²:ÃâX2"¼´hÔpÏ\üÊéU#~nâQ7JJÔQšMËYŸoYµjƒ÷ø¼gú8uHx‡®Ìù Ã;!?oCÆÚ<ïÈu+r,ës,é2VNö]³Æ{È4ÏÛ’‘—aÙDßœNÑä£šrâ)7jŒ–šHQ“´ÔtHQABQïQÔ<7*Á™ZNQ‘$JC1Díu…fèwèuôºŠn¦{4¿ÔDiş¤yÉLf
+™ûZgm¡öëÅF°Yìv¶’£¹®‘÷á3ùş†ëí´Çé³¯óo‡…Û9¬ßÅÙÅ×%Ğ¥r¸ËpËğ×É®ù®…™Â
+áã6Éí¯nÜıÜw¹_÷ØìqFÇéBu»uı¢¯'~&¾è…­4$wtw0`F_H¥x+ÛÂ•ÂV¶İó§¹ ñ
+ŒTt¯©Æ)åõëŞ!ÙCäíÿú»ÄkH—-•€…­Â‰]XÃíƒ‘¬Øş\ñáJ —•¹­8—õ~k52QšÛ†‰âù[²laÎáå»¡¹Ø5ùHßixsúÂJÃj˜Å@=J`¶qƒ˜¯4dãÀyé_i¤˜)qØz,´a¿SŒ-œ˜pO=x¶€û—À´8xLLI·zâÀ/æ±1…û3-Ø{ê±g
+v7cb^Xé×ôˆ©&œĞ	ü>˜ˆ…Ù÷Àóö<qt"à×ğ›ÓØ7i/°IÜ^€}m$‡*•*•èC	›ñâ%°ÇªÉ*N3/`­ã2"íáíÀ`³@Ff ê¤$d´ñB¸ÓcÄ7IuY‡V­ÊÊËÈ¨Í«©©=Tg
+T§Ğ/mPmc^B›„=‘3B ä$ƒxäB"ÂA¹8{mJ DKpÄÔ€pG|QÂÔERt„àî!I]Íá”€¿¥ÃÌ¬}?‘Ÿ‚#x‡V¹ª{¤Âa[Š">»â)ö¡±0F„«9ñ”ÀïØÚêc§;ôƒïtcçÈğUÉ+ŒóUşîãò-³¦ÄmHËúĞˆğ§¬P B©Tr·m´‰}À¢ıRu­¢Ù >»jK3Ï_âo’óbßíkéAÌ3Ì	å_f²ÊlÎåSÖ[†—ßü´İK/†0‰ÏÎ®n¾¤ï›Õ:iáâµÙK=Q¨Ğİ*XUA‚4…q¸Ø>‡‡*l”¡F™ü¤·óŠ‘Èî¶‹œØiBÚ ¥ áVşp[U¯”4|s92h|x¢\|YE’is:›}C)¸fh;[z¢ÁTS[nkÕ?£SIk?úõr#¤A½Â;ÜÖ©°œ¸elPecP!Is0‡°3vÅeqŸáÅûàv7¸ü;ìáØ¹©é+×›vrÅ-å@«ÍNí—€¿ßÆ?Híç›:½§BÃß“£æLMxÒk*6¡s
+ı•m
+ó•¯A¹m<–íçØVâ‘Ê!à
+)ºç¶4|J„8 >E›QºôtÚÅ	¦EOŒ<¹¨}£q'/Då'ÏK"¬zßßÿ¼[òµ¨2ãn^|Ú~ğd{‡”¶—4WÌÙ+ú«í]]íËÂæ/Jÿ½Qµ7;Sæ¼¶4,|^óÍŞÎ–›&R©°Ü‘z *mLô5	à®PÖ–ë È´ÙÁØÅ÷jÀ‹‹7VšvsEñÖI²Ù)*6en€;ğƒô¾5V2ÿêz×¦Kİ÷ÏøÏ19(ş?Ñnşœ'øˆöçÜıoŒş‡†•°ìÿPí8šG7 ¹8´F²§âlDÆF;ÁäĞ`B^£
+£TºÅ0=h¸´Å¨¼=›œ	(ÄJwû"!ÛÉ8°¥B¶B`P°ªI=	#üTğ²‰OABÑ’ÚÊ•Õ×íû§a°Îœ•’ŠGæš|Ôvşnù·õÀë¼Û…İ¢Ó·XãŒâàûviõÑMG­8V“]‘½i•ƒ¤«ÃçŠ®2pz„3!“0n6,”à gsôãA2•g¡?³Ø"Ã8'Û3ÙD2”±œ'ºx|Î~Â9<æ( +:ğR¡Ş–oÁK‘¦Ëp‹¡óò­¯N†”™Hµ så§.è¯.îÄŞF\/ßçTO ]ÆdÇš—‡›ğT—k!Fóâ`øaSxØ®Ù&!_E;”kU×ĞŠLµây±mEí’xiÓNkÁÂâİEÆšäÌÒh†ÇOÃixf?±×»kN´™ÖÕ³YKß_lÀcCH•éa8_é{q3k÷˜šö²bÙ¶Ú¢#ÿĞW}RQ|l¨fvº«ğ¤•wEš#C0&@fz±³	Ÿ“{Ìà.€K:Æ¹xœu‘	ŞNÉhæ*w[ÒZÄïE;ÚtR·²öù¾=s:y¿G…™Êâ_°¸„>7T%r(dÓÍÜ4‡U¦Ÿ¼}2,°gâ2ò'meB„Â¿Ñ˜ ‚ÚBš6ÑÂÕòs{æ8mãşÿá»J£¢¸²p#VI«ıl&‡ÒªQâŠ
+*:n¸‹µâ†ŠŠ€
+D‰6Êb+;Š£‰ 8´ 4QA„Áq‹:DÍ8xËs;Ã¼jŒÉœ9İç¼®ªWï½ïŞï~÷ë=ÌBö”¼Dç“_lRà1UÃ/Õ,cƒŒŞ,:b:BƒŞRƒ%ØG‚­²‹œÎÂ ‹s„ª“n	vÑø°úm×ië~P Q!ÑÖ…êdÜ.A'–[V›9ºß_#=`I´%ØS‚İ2vRWQ&C©åÓÀê?—Õİ²ÍÅ
+Õ¥ÂV-ƒSFpıĞ½‡`?tC·§Ø¼Áû)ô7Á²ÈÈUZãÎà|•6i‚d6œÑy6½I¬ì'Ã/NÑïEe	!QİÅ0÷ÃO\YİÑOÄã½A`+ï¯2‹:‰èhMàrVuÿ	MøeãH	¢äÁ°ü-ûzq¡W)ö°y8»ùôøÃ»dî^Æí²çNùÛ€Ã¾VI-;¼Ù¶ô±ÃcGaO?¦€•°Hõ¼•exX´©ªÚuî&]{{£IWFrLd…é5f†d„¬uŠHOŒä†3LÉ<Å§Šİ•&n>_[Ä¿¦:ƒö»eŠ$W7>İóh‹S}Cñ½+7¾XwH8º:9´4åc’©‹«eH†Éœ“uaßi;²Û´œ’>Ç±kçVÿyVJ‚xdåÒ}Kyt™Òw2z@`ü1³X/q¨Sxì0%Ğ#ôtşÉvñ=}:­lÒÁ¦Xõ¥^¤ä³lg·à¶’„0—ÊÖn|#c7Ê>ö Î-Ic:1ä@J Q)‘èF.Ñ|U±0
+C©/Ä9˜ÄÌ¡÷eg<!<1„qÖ®ç°8’Ò@¹Ê|'£DkœLgšè5«GüNO3˜MI>c¦õïô4è÷s(øıúô$u9'ÕÛÆŸõ¨—Àï](úIÔ–u/µÙ£¶Úb÷Îjk©¥U³«d˜*'¾­€J…Ä¨kà¦1'özO˜½q¶pd“]\uø{şzÕæñâ.u™ÇŞ Ş¹…Î")ñlœ×ÒRwùr±@b| ·ìÁÍi$%³ƒÆ~êËÏ
+<u%ïğCpÏ­ŞQìØì…Ò®‹×BìiÒ€U ­‚Ä|¥V[3K>­¦)iNæf»µòö¯ÁìÀ©+Æÿ9H4C‹MŒšdq3ºûŒvíïÕüêeóŸŞTûö4òV‰2Ü¨€—E¤A]£N7nHŒ‹çw%%'ˆ¹—g}Æ£ÚDWìöÃ€44Q¾#Î2³¼–ÄP©%Ïj€üó:tº[22C¼’ÆâgÍGwåØK>––+üŠe‡†Å‹b)®€6-~’ZgÄH3÷mP@áıĞê#%h÷mÀşnİ…òsB2Kb¼ §ì©6r“.1tÂ,|gl«®óSóøO\½Fõwõ¹÷ÌŠÇSÅæÆUUGMÕñÆ‰ãÃø>îåoDu8›t$iÿa§›Sié{cWÔwàÒƒ®Nİ,ã`ññºòW|ëıùîÓ¡Y†AÊ¶(D(´Mæ©z#„Êª°·2O¼:WW(†\…!ÏRgNÚÆc·õ¾¢?ê$ĞQ‹¦“ÔètÊ(8nË«- M
+5[›éjdì9ÔÌ’¦›ë&NæÑÎu0¹ã¿<ÀşNÅÙÒ"1yë2-rÜÄ…{³ı…í˜˜kÏ¶”ñ0äÄÃû¢¥+¬7>ª¯ıáYµÛ°	»¿õÒª‚ZÀã´€4éh0©ˆQÛËFJ›pÙ2Ø+×ÎWò÷/òq£§VS#a÷÷wĞ~ÒÔÕËæ	pˆ£äI“^d0ïã`Ö.İ¨m‘` …7YRİeœ¤ê9°ícĞÁŠT~?Û­“à.0a8öZº,=3HØ!1;J/îTxğÈÙ ªó¾u³v]æûÓ BöZô†¥DUÏÑåp­¤°´ÖEFuÒ™"i%‘§•p×.Rş8‘™/ÁRy‹KaCTzæ©¦ííº¼çbã”ˆ–¼`¬LK•ŞÃ¦ùªV`„öíÑ“4©E@MGÉ«i_Ï[²lõª0¡hËŠA|Ppøúh‘4§ZW‹Íş,ıi}ÂIîë¼Sùü7ÙëÜE<Lõ# ²¹3¹g
+øò/¥Ù"#Oç>l¶Z²HC·ØÜ‘1­efpÿ'i¾SW/üŒR±†ë(l›ª
+ø/í©§!Ø®hßBYõÛRv ûGĞK°Œt„.õ•mmõ3°ÚøNíİÛ÷:Ø4òsj€´3=·ŠOë^¯–­tã2ºÁÜd6ğ\İ²»¿h…ÿA~>(©[ë‘ŠT“ú®ÿ²"^KMÒl²KIM•)”VFIuq>i°9ø¨<·Ï?¶mSªXšÎ”Åå.æGO^<v´Hj@GË›"ÕOäÄ(Ãã¢2()Œ(#y$Kƒ2c\^B~Ó‘”#©_	$I*a§-o{jj¬xpqx¦ÄÇÎk‡¡ÄVîIÁsåNÓEÏ=üDÃNa!m¿k26$‡mpÚlŒ‹HAI"s<9cÿ^>5ÍlNÃË
+c+ù@×“­`‹LÆä‘äJ¾ï¶ÓåÚ¼¿Õ>ÙäŸfÕ§²ğPH)õª‘Ô ÿ'é¦r½W=¬­ÿkşwB|	³¤Ï‚Ø%üè•yÿa”ñ G_à¹5m–ÿ¡ÿG©é:ª…¬wÑ8õ»)ıx³²ğÒqDO±*¦{Jèü_“åÚT„qÒ¸»ø‡ŠK*/ E{hƒ(^òGPÖB.á‘4¢·bh-Jµƒ‚KB(^ªbhM)Ksˆ¢•,”€P°öO5×ïétõài÷›…ag™Ùï÷XY™xòöàÕ»ÍO~¬(Oñzºÿr”³¿R9~ÇEcGòwİŒq9ë‡¤ õDIÒz¢ë„v¤§ØÂıÎí*1B?GØ@ÑØ–»XOä.-‹m‰cœq+ÌÜ7L]Q–£h‹	9JmŞ£+¾;‡+ò¨ú«HÑ-$xÆ¼¦ØÓk¸g°ûG)""Rú¦Äyá‰˜£C’Âˆ8î?‚Áğš°>Hæ@/yáïÍhÉık?Ğ®
+¢ÈcÜm¿äîı¬iÜú"émR›BkŠrU˜ ß!2]¶°ÉLwt3ú4´v÷Şwì´ÆèµÂ7ü¯ÏÒ€ŞCM9V­ qãWŸA"ú) ééÉ’™Uk¥ætÂÇ`;ajšK×¶|làë…¥Lİ\­×—Ö¹Õ¬uæÌÿs:xr‰ñ¤SnNÅ|<MÉz~µ`f
+…|Ò‘±ôT¨lZŠQ°±ïG@m4«kófCMÎ§«>ìÇ$LÏÌ¢ıq‘..àÊBeVâáÓ½Êá£YeÖ"3gşœ:Ş:Ñ:iœşy³Ù
+endstreamendobj135 0 obj<< /Filter /FlateDecode /Length 2274 /Subtype /Type1C >> stream
+H‰DUTT×}á½A¤C™çC1ó†j©"?E* ˆ(© DĞâ0#£ä#3Mb­ŠŠˆ®¬¬¨ÄTb¬üEbWÑT(8êÄƒ ôÜÉW{!ı¬w×½kwÎYûì³Ï½,ãîÆ°,ë3/>)..~ê|Ãz³Á”»Z7l”ˆš%cİÉ/_ŒÂ’7ÿ8“ƒRoøÈçÜ„Q•ŒËV×Í+,*+Î]»Î¤¼zŠvZdDxàğ>sdŞ#Cµq9…zƒ6½Ìh2äµÉ«‹‹
+‹u&CN°V·~½v$ƒQ[l0ŠÍÔú?Ú\£V§5ërùºâ<mámJnA¡©¬È KÒê
+rB
+‹µ¹4ÖX¢7ææäêŠsÆÿÇ3K?Æ›a|F1¿pcüİ™@	“1Å0~´zÆ‘3*&›ÙÎ|Çf³ûY›Û"·÷e2Y‘ì¸»·û*÷mîŸr"7›ËàvruÜ^Åçòõr…¼B~\nó˜ì±Ô•¢YCìÓ×2H½˜‰~¯yÅF¹naìĞl—‘x!bü*?ÿUCñMCııM~¯±û‚äafå`ú£ÿYÌƒ,È:yà¯QÔ™IùP•²pÈ.t¦‹‰|!ÊWnAş÷	á*·ËVrÆ¢<ÖÕ§ìBŒ#¿[öî‡ŸÃxõÀçñé!K
+ædKÁK8áAÉ1;Ğßƒ”X]J¾ª¾îË—W;Î¼f½
+JŒbA…FèŠÅY&,“hp¨Ìå©8ÛSHŞİ3ß.Ø…W`‚.±æÀµğCûë-è•’1Çnzvk§Êïª‹z ÷(;ÕøA«’îäöå—’>–*åÂ‹3Õ­¿Wı3êNÀT
+“46¾¥ê£ÀG=øçD]XrQ’$¼Ú¼iÏÍ­b;ÉJZÿ“n9±bç$²r®ï»sáĞ±İ+ŸF$±ï¢™ÒŞ	w,0ÅÆ’JXéáŠÍÅğK]?ë,ç.lúäŠúéíÿ°ÅsC£~şx+Å‹ÓjÁsÍs5†˜ğKõù”l³)„ˆ·°gzàJŒT&nEyc”×,Ãb©¿,Å\î2¶©{/ÔŸo.µn½«‚hT}>uù
+C‰fW%wï8,Mç©U©Ôàq¼*Z›ï8€=¸$yæ¤¬G÷GÚİkcÈ{²ŠœŒåQÓpî3â¾†h0İéğèr½'Æv´
+,Ê3ö„ØÓ“hÙB‹öb(Fg¡×ÜäÓ+ÚMa .?+#\•[{w±æk÷~wVQwîjéƒÀs’à8qğo'úUÂ Õa†øğ–.İf› ¢ğ»k7›nöRİâ‚´ó_qô¦}àÓÔìË—ÇR†: Ù_Y”z"ºáØ€0áCñæÏÚI•»8üMIfÔTµà˜§küv‡Æ'5¢DÂ¸wøX‡Ş NAÇH¨í™¾š‹˜6³Ôö¶¿?î?Ÿ0¥éæU’"“
+Â`c8ÇÈÈ0ˆß¢â±Æ©çĞÇ£oô\Üg6äp›«ä‡ğ6§È¬°Â>l°*ï9à#ÅAQÆ:½EˆçÌyÃü°Å…ÁÎã\ÓE¸ÁÓÿaO4…wÄÉ•‡%Xjo5«^%ZQ¥ÁÛ¼Ã%ˆNİ,ÏJıgefúK¸šWTm´‘G6¶±Oæü5Ù-‚×ûSA©j4 ƒp‡~0³Šªá“sR³ŞE6?E‰‹ÀbàíÁ—à{{Ğ„ÊzZl…¶Ù ÈÆÚ2â²‰®ØFŞ²¹Ş‚"2Ûæ:òFOêy…–rbù¯, ‹ƒ6¤>“l®íoô^Ñ¾Ñšm†6+±)/õCĞBÆC›&~ö¦)Ë4º¥o—¯Ucú
+ H Ñ2¸}NHvÂÍ8¥UjüÀ—á¼Ø½èn¥µíYà­~õ}ã7-’°ùh0÷ƒßP( n\.e»d4…ŞD"E×h¸@Á@7İ§>€§×fÙ©/e{(î4§^›ù“±“ã`Ÿ0P….”<¶“9Ğ
+9TñØıôÇĞ+ĞæôúOÈOyˆnxê ¯ Ùr¶ÃNvÚeÎJ_§5rÌv½ævñ¨#¯9”Şèí$š¯ÛÕsKUÉC–«—{IÒGÕ3W¨YåŠ–+ª*@Cè ³v¢¤WzhDš I‡òá]•<a]]°N}Ğ0å#R8ÛGvR5€"Æ¡7ÊĞ ğ¦­±Ó#BíÔ£éó…H0bÖE¢C0ä1¡êƒB4#Â¿f…J+m2<ï£}Vï2şá‚Ğ€´¼.á#ÜÁÌCè_ëY6/aç£Uá+ì´*»ğ/Çô>ªîT¸.Â‡Ãê÷¨NL+Ú‹ìw$}Ï¯İñ§İç¶ƒï¸ò>ı!}­‡0ØTßvvHèy=5ød8©ÓÛvğ—mE™ßœ²x	Khç6ZÉS«²…¾ğ¢'Î.t]ÄAö‰–òbÀ*5Î‹nè>Cï6o‘àW¹œğ<Oç¨&¡gYBˆß:û¡üüêE×34i]MŸ0JÓôf˜|Âµà%¡uÍœîÙG®«€¨½şèù:”íû÷ä@Ùà'ÏCÆïSß0ÏüÉ#ú½ı/Ï›Ÿ<ßÛş¹Î˜?åËo½ùÁLÛiäOûoõ$#mßä~Dhı)fÿ-uï·À÷Ğï‘Ïu§ºÜ4v¾ïeİß¥~$~çgœıK…ùGöç¢À$bñç9ëG¶ïÀbGí·ÔŸ; ´dúã«"‚ğ¤€<%¶ïşÀé#<Mß´]èûVÑï‹8²şfcûôûíï¤ïoY³²}_ü(¶˜š+æıLš÷;kÖw­YlßMû.Ğÿ—s»ÜçJñÿ<œ×¹sÿ8 ô "8ğ~
+endstreamendobj136 0 obj<< /Filter /FlateDecode /Length 3918 /Subtype /Type1C >> stream
+H‰T“{TSwÇoî(DåzUnôŞø¨Êâ£ÚZe«=‹ŠªâQ@4^I ğ$$Èy$ yÈ›vñ¹”êÚõÙ®hÕ£´ZmµµkÛã¹ô—­ôŸİ3çÌó;¿™ùÌ|‡‡¹ñ17sÓæ-;?şØ/T$S-RKò¸Éø;œ˜ÇÍvcí‹ñäss=g¡(éwÓïBò¦}Æé¹Ógxc|¯ªiSJj–R~ğZ²4ÎW²Êİše“~íï?éıß•Ä§ÄÊ$»³TjY’J”—¢LMQJÕ²øI€B!	™Ì ’„ÈT2e†+ú¦!‰\%‘JÔJi¼,Iª<,IIl—'§¨³Re’€­irüÊ¥Dîú§JUÉãåR¥\¦Zñ0Ïe˜[ÀÇ–cØJ[…ak0l£¶Ã[äš&Àp×S &ÃnòâyøÓùFş‚‚/İ6»•á¾xşš8)Ü"ìu÷sÏôXæÑíñËí”§Sƒ¦xÎô¬ñtz9D[E$"—!
+´¼^”#ŠºØ1vå=¤<!7HMR&f¸XN'„&hr‘
+B¯ğÎA ú ŠB)DÎvR	‘D^;õ”'ÖÜ×0Ğ•Ö–”¤T–õêšYTZíĞÏıIÃç€ûÂNí*/¬Éûj9weN†œ$)°È
+|t°Ó.Ü_–[ŞF;*êêÛ™‹€OÖhB³ñ’kN1—VfftP,tú€_¨ÅKˆbâªÅ'+uÂgİP×©³{s› û…3Ì‚>‚¼3aŞ?`ŞÏ{[Ø!9öüØ½¡§4ız2¨FGœ±tZh­)½PÍ iÎ`ílË¾ØúwêØß Àv•!ïŞ,>]ÜªsïÌ<~(œ^²ÍgÈ±äÄÊOXò	,à([Yiİ¨øÎÀÁ­è]´ĞâWêÂ¿’5Ì½ìç]7.ªQ0!ádÔ DâD¾©0/Y||“e¡@”†ö (Xî°øÉ«S¬¶ŠÜŒp1š:³aÉ¯`‚(XXè”WæHk?÷³gà®
+¸%ó)Ô¦#Î›ÛMr:Ë¤*Ôü/†«^‚­š
+-ú³y‰CB­§kØêO`·³ñúÙò¾RW¯V{~Æ„Äî­™È#&O&Ô£f[~<­5fšs˜ÅNOÜB XÎ€£5:â¬¥Y×€¦:×ÌI@³ôù¡wì³“KbKÿJW•4V¶1.ò÷ñ2‚L…Lç ŞHÀ"ÎÚ^åõ×ê}ŞÊãä ô¾YZñoä3×²OÌ NšN¸’“gt-dŠsCÖ¶Ü¢pƒK#EvaX¥®¤—n°ZkO1#°79ê-_‰!ê"ˆn³ä3ğC‰aĞ6ï¢jË*ìbàwJ?ò±nÌÍ+)Õ¼™ŸûW»U/˜ğr¡:OR´¢ÑŒÃ´Kç­0KŒ9[³‚˜£Í®²Cvá_Ê³Òõe¶ªXÎ„·‡2èØ†"\¤?y9¼¾ğ1S9HfrñÀ§b¢5Êl±¡°¢²ëx^ZËKqr0Øh±äÇàED‡%±í€ù åh'Z’\ºú%K_éÑ8[R„“™º`SºšÖZÓNõöß¾ÌƒÎ©ÕÔÓ§
+':2#}}‘b~jbã#Ò·pÓÏAtC£Æ»åtK¾àæÀejí2tÍ‹²¶U¾úÉ¥ ş•£{ê‚'Ô¥âJ“šÎ)PS4×Y„›…éw#°>„ X=¶ïlàªí+Â™¢#8ù ğÓìxh*ŸC¾Ë7Fº‹ëû9¶™×ù”ğÛ¿©¸ƒQ±;ÅÁIÃwúaVc“)›Õf¦Ñj[Nk«£±£Ky~-ZŠò|ä3®¼öêÒîVF”;~–›ÑòÀöv|m´‘é°v€
+¶^løşGP€ÛkŒM÷E!ËX²FnS‘RZ#Î7TÚìàÅ}4YS9N¦‡ëÃá&w­pô-£QiHa ÷ŠŠp‡ÙØ³ÛuTè#´ù…5³dÆùÏ€ëÍÈ‡‡Ìj5Q¥ü´çÚ™CŒr˜›ÙÂëz™×°Ê©'7ï~&n=š™a0!O+eAµ”ŠÊ÷ˆ¥a-7›Ê›Ê›Ù2>hyşà>}Jq<ÜE»­G·woxõòûì5Œh=ŠkæîwC¦ƒ‡–|Í½_ĞÇI¨§Ä{Îuxœ!‰¶‰óŒUUlMµµnM«Ë)fYezÅ`n—<>‡5 ê`oÁ<¢¢Gq¡ºŠëš¬>ßšNë+R»[›šštÃ›wòÿ YIˆP¬¾k†½ŸÖ;¼«F{îßåÄûä8ù§à|©`ÂXP]­eÉñê,eu¬Ø¹ïBn[†Tı:V®>¬ 3myµÌÚĞÄô:td7ğ`Ş½/¾e€Arİ]çh¯gêêÍubò?ßıøğv“¥©ğ{ ÇÑg$±/zU6ÂÊµXÛû˜ÒÒŞö
+qÕ‹„‚FöXA¿6š&¶sÛ©u~AÑÚá§~½{Ò–Ïˆ
+Îh38úÂkì²{MÓc7Ş/½G*É!NT¤L¥Ğˆ†ÊZ–Ô6?€ê>úÚşÊôUï 
+¦¨¦pÛ&5¢ËÛ[Vè®¶Á{Š«róèl]ˆ^Ê 9®S¸Cô€·mtø¦{GÓ7ÿe»J£š:Ó°”Ş˜#vøŒ#÷ê½íLµ§Ë”q¬Sq«Ë±Ê‡QD@¤¸0€@=!„$²€²²„%YÄˆApªm­Œ­€­ã¸ÔıáéLç½Îçç¦Ë¿ù{ï9÷yŞ÷yßçy/ç(¯«ŠëFH“ˆƒ¥¤È%ë›
+}~aÓP{–çí–ú>nl:ô-1ğ»K+)¾©ÑéÖ»™û0m²èY~2·–h2J˜’õØ’EÊÍÎN™¸|šF‹¬ËÑEAY¹L(ìTt÷{{Û•Îç/ìø©èáğËs æ /›eâßfP:­¥™qºÌ>Ò'õHój„5™aUÿƒKÓğîıO6á'+•‡#,Ä€©A¯ m•Æ
+M-‚åpåÿ£kCì¿¼\«‡fÑuÁBÁÎLI‰˜R™İÇM=V;ƒÀ[ìL¤¯×Ó+Óîë°¹T‚—?k“%õùg>?=:{e£~1şB–7ş={wÆz “O·qâeå–Ê¨J“­…Aî9ğÁò#IkWaş6N<ÂìüÚMK:sß{'dqÏ&!+RXfš6­jo‡;æ©­¨HÄ'•IÌ4ïÄ¶O?å£‚`ÏÌ“0ew™E²p]é›ÜË -WFgøc½7ïQN{µŠóéÜ'"Õfáğä¹ÉóƒtC#ñóØE§ëæØƒ¾yâB)U«¶z”sâo`‘Ãå]®IÀÌæ,Ûá–±W»÷GnãÍZ•dÖÅ‡?K]¡‘ë|”39xåŞ(ÕvL-gPà£ÍØTF[‹FÆOüõgí>ö_TÏ]ğß†[ìŸxg¡«ñëkÂÉßs~½’`áÔÑ¯0ŸÑK£Ò_áóö~¿xûáE&òÀö6–™¥qß¹Áóˆ…0%À1+q2‹şÓAXÚı}Íiä,uÕ²[Äà™‡‚NÑii«”“’åÏø"ü"]Xm¥QJ8ä™_škîk?/Ø˜ÊÎvc74¼k!áfÑå?$¦l–1µÖÇ„£¾Æj¢ĞN¨ bqn+ì¸È.èˆê¾îh–Â{Åu©uÎaXÃŞZ²…§„£_§‰8õb®Ğ¼l»?eöÁ¥¹Ù‹œK¯Æ«³Å5©‘d6ÌÇıp[ÀN|øËãŞ€$û<çÿF(éå¼»Ï'ÇOşt5Çf£Ñg°`ñÄ»Ãßä£€§éSˆî¥Ğg]ª#!Ê1h¾0 ö”ï|¿”TÀTKk­c°?"Ÿ+[¿K“¡çâÄêpØToƒR­3äWå1kq˜ˆíãäy»3¢¾™ñ{Ñ“AX!âU„—ç8Vßìe'¨ÉÇİÅüÇ>¸BõÙ;hÄ^íÚÒÀxyíÀj^µÑP¥(’¶dS¯ª×åöi#Ä¼•D(÷ïY«üæŒ>²„cğŸ¾¨SàŒ†1v“`ïøwÖ¦Z»¾6^g­ÑÕK„û³
+]‰Ş 3ÍF‹‹·'j”²dYt¼ªıÂé3Ü
+j‰B±0KJiMv›Ùj±qşt¸Ë‹Õ^Ì8ÿu·JÒ¸áÛ°á6²¡4ö7é„%B¥­s4x\gµ3wà±™—óJÅÎÌÍ|dKÏßù»ƒ”ÄäsÙ˜Gğ<Òµ“û*÷é¸#A=¨Í\ÌˆŞÇÈmªÁ‡·àW@\£m<”\(}ONª¬yás~ÿ£+\ØÚ$l¢«›sõ¥7`ıyF¬}]p«Ñªô®ä7ïvá?nåî!İÓÚ~cŠFáş“ÜÀß§ÊüR¥ZEïväûÖá˜”]ôÑB=,3|UKâ}Æºº*Ê˜©Ön‰Üå6Éó(ÄNhçuJ}Ş‚ëì;£¨Íy9¼vKÈÚ`pnŠ·§ÚWÛvÔ¯Z¢6¸<>Øô-¾Ó5ÜÚÇ·òø:¡´˜ÕÊáj2¨ed ıd@Ù“W¬“+è‚ñ™¾ñÍU8ŠFı…€	k¹AOL5Fƒ÷à	nÒQKk,“?¡Ç«LV¥KVV§0Üİ1‘:_î™Ì;'b‹‘]Ñ‚"‘4OBIõİŞÆĞK[Ió5X QwG£¢‹êjnke½«Â)KÏJNL§µÄ}¹Ê\A&•éD²Ô«ˆ¦>·ÍNõÔ«Ú‹q ÇëHüë•¥ù
+
+¥ÊåmTE¥\É}¥Ì+ëïu:ÚZèSÃã£S'ğ/—¤¹<ê Õ0ïÇHıšíruIãØÅAäBaûšÀæl´x¨O\ßÃ´ìÆ[sIÑ¡Lq1ıQ¾F§¤P†\s¼ˆ’(¹…LMılÄJıy¥Z‰šşpÜq˜L[©ƒÛh)ğ5Ó»`»¦.^¾AY½Ÿ‰•·>}µ]PÙÈŸíYyı|µ›Mk†l7[Ø²&xÙüÒLkZOÿ T½S
+endstreamendobj137 0 obj<< /Filter /FlateDecode /Length 6265 /Subtype /Type1C >> stream
+H‰|UiPTW~î÷ºÙéÇcyí¼nc¢Èâ6Š Ó‚ Ä ×d …&‚@cwÓ4¶ì‹@”U@d	  »F“1jè¸Keâ‚1¨¥•
+Fç¼Îe*ó0?&SeMªóãÔ=÷|ßWç»Ç„VãTÀê u­sßŸ¤ÖyDj’TÉÓe9'Ã97!7ÓÎù¡ä_öüâL@šÔ;Ï”ùJ1+?Ğ II×Æ¶C¯ø fb¡Ïò¥¦ó²·Ùg:ûx+üc5ÛÕŠõé:½:I§IÑhS4Z•^ë©Pø'&*"§oĞ)"Õ:µÖÀWß"QÄë*…^«ŠU'©´;š8EX|²FŸ¢Vø¯Q¨’c½4ZE<ß§Kİ®‹WiãÕ:Ïß³Àp>0±fo‹1V˜Ãf[cBl1­À0¥Ó`X1†…ğ2`ŒÀÖ`™Øö
+'ğ¹¸/Á¿²ša•f5$pmB±p°…p%rH)™BŠ"EßˆıÅ]âqë÷­µÖlüm*l…¶Y¶Ïí–ÙÕØ½´O··-Y!¹èğÃ‡_g¬›qÈ1ÙqBª”¶P^T²“Ô)Çé2@9;9×:ÿàò¡K‡«ëY·%nén%n
+‰B¢ãa/Â “<¶Ÿ
+§šŞp´ÖYyÿÚ-æAD^›°':¦'§­bii9[º¯¼´LVQQ˜k4ı5D%—è,ËÓğáq[–ÓÈËËÍGJ±]gØ¾õ×/&VrE« 7ƒf’Š÷n_bkƒmã‚>Hƒ×Ó§0”°	£[GYõ…›G³L®°
+áf¤yAî+ıÃY‰¢ °å)x÷SÑĞ,šjúÿ@©èßC…Wğ~(ôC%%WDE6ğ› €c6Ïºéx}ïÑ]mIIZíNu·©I.ñ«0X‚Òğ\8+€a0‰ÒÿD\'%miŞòj^ ÜÂÒàT†ö­ñ+FùÈ	9Cîw×Ë`8ÉÛ„(L…Ò²Bzƒ°!Ğƒ=Ø¨ …É%æ:Ë<^Œx^Dgè¨#•iUÃrî¥(¯{¢#ÌæjY·y—A>µEäWQÌJÌw¸æÛ8LŒ8üÎÜO„Å‹âd(?XMœ<ópâÂ…×½{lCîIlS!ñõ‘Î;2°iõÚ¬Œ^¸ÄS‚P‘Å1"IF7qY
+·ÆÔ£Ôğ€ô²ÖÂ£x$¡Ú_Ë(·ûy²áêŸÊLú|Í¦Ç…-°ì¾‡Ùàú§ãª9õèÚ‰/N|Í¦<Gtğ¢DäÃÖí%Úë†îMÈn÷lÜì¥ÜæÌ“Sè‘&­€ü{”‘KıE¢LE¡Ğ-¢N!ß»"Ê¾“"<B£|ráQÆ‹ŞË}3†wS !Ü?iØLV4,—÷=É­ ödçfï’!5‰p”Cä•|.l/~‚–0Hâ¿~-ûqÊßCe1æäœÏÎèÆ`X½·'ÙÑçåá£õ¾µbIF;'<ù‡ğîg°ïiQÒ¨0­BkQƒâ&€õÀâoYygÖzCVÂ¶$?‚‚ÚÅh;ê§ßt¾?Ÿn
+Sß¿Ë•-••ò–Öİ2I{v?Ìù¸-óé)’4EEÏ©Ï#Îw5t\•A‰¶N=#®’°Ã2›4 ï'lÇ;ŸBşKÁ¥T*Á\ˆ„øº³/Â›Ïi$æË¯zO²eÅÚüÂÆ¸Á%°ĞéEY™9ìnƒ*=A6+¬ïÜo~öÜÌhS8¿á¼ Òï@@EÃLøé]F š¾Ó o	¯~» «ŸJù×´/;ºªÇ®Şd†W²·mˆëÌ<ö?¾Üñ__RŞ}\Â;Í÷8ï5wºSzıÜUÀÖÖß{JıD½„"XN×·ümDÜyüÔÍsÌùÜæ”.¶CÒ)òˆ_™<Ğ^ÕR/ïQWÁtkºÛüQŒ1(=†Õ„º p†Ú_‰”üĞ–£u=ºÖÄd>Q},“ÊáæFØ2È-MÃë,k–tTyFÕÎoQwÕ5D±SYÆ¨Ä¿èµnéÆİÅ¦±¶6ŠŸ˜‡ªÊk÷×ÈOƒ5uä ;ñyFM‚‰‰K(‰cp@4•É¿; ‚v£vBWÌÆ^€ê^c£ˆI(œ\"êx½Å…¾¿·6ËŸ™
+­ÎÚ½¬˜ï,¢ºA{Ø¾×¾ÃKäeüÁSUß^( v	‹ºHØŠĞ/ætË©Ôó¦³	>b}nHDú¾^–«Ö•Õf+kK›dÔ‰[?‘ítkäJ¦eœä^à<>ã6Ñ¹JÈ„¼saêÚ®E2¤ä?j{¤GeàïK!lËJåéDRbÀjä CRdûvÀœ“#ı}òÁ¡‹‡¿”Ã¨ïìÖßt5ör¦¹ş<É‘€S‰‡œ¡—„Kc°Ü@òå¨™¤ê¢»U9oÌ2ıy/K%B$7B67é…”èaöÆ‡-+–1è$*1‡nËªèf%PÁèƒ¡A8ØÇOùqê›»~Å\²1*{+i97jKr”¡yæÒA9”ŠÀ³øAI]Fµ¯[3ìÑ“«³st<OOĞ’İÕæ&d$ÚL‹êä­dü‘˜j'©£èJaKß4¶UúÜP[šñ?lWiTWNÛv=2“1Ñ©òT1¢â£f@#Á…8£#jHTÔ ‚ÊÒ4ûŞôB³
+ÒİPì[ƒĞ²‹ (jŒDQ#âBtŒ3q2c–Œ·ÈëÌäx’9'súW×yïŞïİûİï}O°¢IàG˜sé—äyåmãÉ¿ÂˆÈ‘øheRT¤ƒg‘øu¹Y•,Lÿuüû?Ç_<bW¦“æ7ğÈ;3òØ-!˜¥½¥«H*ps"5kËÅĞØ2¥(ÁùÉ¾*¹0º)p^5 .Ñ¹ÓøM¸&|-~Ídà9àzùŸ¬|œÏÌñªæÊ©”EP‡Òö«S|Ø0›Áá©xi´cİ¦Ş÷8Ï ş†‘0œ.9øİ¨2td±ãƒÒİV^òÌ}6)?,<µ<;‰¿BÃèÃÛĞÊô7¿…Gãß…MèÆ±Â¡–ÇL3’c_Ü¾¿şNÎ?¾R˜ÈK Ù¤ÅS¡‡§Ş6„åßƒİ«Ì½™I6õ¨Ğıÿ™˜7ÉYwBø/Ùäm“‚EèQîd“¥-*4¬>çMÛ÷¢m±qaì_*¬eB¢ƒUq91æ(.¡ 2¾©†?d‚/7Î©fá;±£òÃĞED7ª¨ñÉ­¿pà°JhD§`•,”Â›×§ãyŒ{TF'£»•¹bÁjŸCÒ!Û¤£OÅX~>b7àÁ Ãï«¨ÁôÒ”å´}Â/(cW¨Iéx´*SYö=-¸ìí2#¹Â™Á¾•òˆ]şœë³ÂŞKr·"çröx{’•£3ˆ²|¯wÈ;G·‰	T„5)Ñø-²Ë…^¡¢ZÌê­œ}ÃÿKL­Q	²wÊŠ„r
+^¬Ïºœ+& –á?M’ã„y@IáÇ8!Ølp„ ˆÆnDåÜÉÏ;àh³±#øpM±tÖßà0¨@:l³t)VáÃ³–`)7>?e-Ğ#JÄ·6ˆ!ñD>l&jx3µ Á[$„—>Ü-müÀ†hÓMŞAÚ
+^WÁŒô·¶sEæÖ;4¹&äø•^Ì²¸ˆ‚ŞŠ†‚Œº˜­Å.x¦õÊÈƒŠ“`hm‚F1#A/fuå{aÅÕxäL;S+€¦a!ö(]ÂâZJ>¬B×SMÉÏª\*V«GË²’ø«4ì@}HÆ—dğ%b÷*jæö¶‚£; ó´n:’ÚTo´Urã!Ä}'¶o©¤µêğC¡[¿Ë,^´Ssúw=öåÀõsĞfzëŞÍË0³¦v©Øpª$+£ÌùE¥l]wĞ.ÿú+şø‹˜GrÚÒ3Ò¿Ø£ˆ­¤Æ,|İ&))… •şŞ]ØÎ+Ü2øZÈ;‹`BMPÊUPià)³_¢Ò°§¬‚èsY5˜³võ¶&|‘H³N$v½Cå%Omğc‡tT418VE]O¯ˆv¦q9Zš´?>‚ı dóå^¥®Ÿƒ›âlßg›hçÚ˜HfşSô.ñÄxÓÃ¦{,ÑH‘évH«|‘µóèréè1¼¿Š:¡mÔì¡•ÑşÚ4»Ú¥x>|)?Õj¢ëyCŸ¨ ¼
+ui‹ZÎ~rš‰‚PáBİÑx*“èäƒñ˜Ù?¼.ıÁ]ŒIFí¸¦1}­L	NQ²x2~Œ§ÁW²Øæ„²"ºé¤ÁBB–¨P¯Î”ÖàŞà1Í7â™ÂK2uaZ‘‘®*Éé4Z:¯6†Ô»Ÿp}Š­§ñ«$ñBaY;–|]œLÔEØzö_ƒÆf³±;Ïal0Çd`€hÀÌ!e9¡=—ššÈ†(ñ•%¦ğtMeÆI1Sƒ
+u¦›46<ñŸ§áUh…&|®h.òhqF|Ñg4ÑP˜ÊkÿnÈjÊrš„'÷Hô‚F*hğdE]³=÷^ Ï½t}ä@Íû€“[åë ’ï¥‚“<|¼i÷ñå•¦ö–Àü#©jNÃêÒ5:-“šš}”7w^i#¶,é<¨•ğVÅë£5÷aÎ0¹MZàeE°&á`,«N>Á„XºˆE9^Ğó{XbPv*’ã“”Lˆ¾¶–ƒmècı·x.+‚>ğŞsì¥Š/+åªM&Úr¢¸¡®+Ñ‹İˆä#Ømıƒ\éugÎëmi°²^ÙmºbÆlÉè&P’ê…ß^wSGä”k ò‘|˜¼\n)Îgõ×3_6Í\èƒe…z6rn1Š€‘Ã=°á",ùû³Í€ğïVø¾Æjá¥6Èäv¿è÷ãüâbPFN¾>‡éĞ+ƒÅÓ~&Èj%•·¥ÂX¤Ø°Û‹q[3DŒœëc‹µ7;*8Ë‰È‰(:Repª3˜ùrº8Ş\ÊšCwšbÎD\òì{ÃŸ¶u–À>£7¿©^ı"Èá6E`Ê¾0ÆÇ«æÂôî¾®îks9yÌÇÕŠuj}I+-ô#ëië1¬y?cÅ‹Píş`ãnO\€vÄ»Á%²yĞj­&vq#•¥‘ÉCzù“æSEäX× ¤P“¤òšTX@Lu@øîµKŸ¥­°:ƒ~
+½Ï¼Ê,Ã¯lÄğŒ!òN˜y¦[ò9|(™›«Ï1wó×ùårä†6	®õà_#ùş>|øep ¬ÙgÎ±]Ù+Û˜’òÂÚã»ª·àuz¼zçqàs|•òŒNöÑ°±PhB¯tU—h¸
+“Ğ$rfù+a~%ìoÎ®™Rs=äş[ÃöÛÕ5òAgy»ó×‹uÅ¥+Kşv%•é¿Ò8j»µ;ißµ»ğ‹,Y©À'ü©íjjêJã²öæĞjÑrÂ½»÷ê´vÇÚÎ*»ëÖ][Ët¥«ˆVyƒ,y„„Ü„$&!!OäBR@ßp|ÕÙ¶ºˆÖbS]§vÛêvgÏµ‡îIÜuÿÙ™û×™ïû~ß=ßã÷;9ãB¼øãßğİvD•KïüamåıÛyg1¼~\<²(km.6\ÌçI]EôúåhÎÖ¡¬‹•,9Ù·Æ¢VPåûëúÔ9µ8µ03cLí|ò şö<$üª‹9ı%7eÖ»ê:<Úec‡môù¿ÀY§uû´>üìåzüY½'ƒ01HNJ^œÖ¬ub
+Ë ‡à4oKº$­èY;ÚÿÓÙáÛŸ—xF6hõ;ôøÒJyî”;oQĞ Nğıô„7#‹ÒÁ:¹1İˆ-Š@Ô<¯u¢.yıÙ“UAòXskyÑ{cViÔÛSä©òE,ln·ÍC·ïkHbÖ*›MsEø^rd8àõöû¥¾²"N‚¹sÚ=$Lµ‡C?‡†ÙâÕ–miL¡öR-—qÕ»ËO@ñècø"+d£=¥&¥6E«6ş9£€gş/Îım¾ëÁ—v'HŞjZÕ¼¨ÆJ”Ø¤®Q
+&`=Ä MD›¢Y§§ÔjÓ^FÎÁİ¼¨Â–ß”z½“cúûi¿åÍ£8âÚ«ÑíÕp*6¯8i{a©Ù#ü
+Ôã‰’ÉªôgÕluÓ#ÊlvFvì5oÔ0á‹üg(“o‚äÁî…PÃ‹¶Ú®”ğUØıqÈ=9ìŞö?÷J°½V„¬°û/rëÏFßÂM¡oÁOÉSw¿o,3ç5àZíáA‘µÄvŠ‚€óøø§g;òTŞ¯6e‡F¤š¹ÖRûM
+:ÁwOŞ_¬I©,*TšÓØ¢œ•6bg“5àÅòÜP}ÿêšÄ-U2æˆ¦ôÈûô\Iv;ô8Ùé,E&—©T ›«åY6…{t‘[;ıyÆÉcŸ?'qêÌxRìªöA
+ƒ‡>ì
+Ğ;YT ÖWw…,òq3:êø¬p^|_VRAQV:s;w+—†s´>‡Óú…8Dÿèy0š…1¢V£4Ñ^ƒbøæ5È~—¾u-b;fÅhn5Ütãû‰³=<ƒÍæ£W7¤²Q¨¬n"yİ¥è© ”Ş%§§Ğ"qN½,ÁÈ( ±¼«lÅd%ú5‡iÈ^‡‹ñî]'n]Vz¹Œ5ÛˆI`Àiş-C¡ÈàB%ln±4ÓìŠ<–œšÄ‡Ïû‡iåD«ªÑ†•ò’í™c¾vÜvYxÅ__İs*ƒXwÎkÅŞüjw*^Y†~‚´|*şşåkG¬%ŠÒTÕ¿7áÄ4İRë8IáM€;È¡7Ğâ‰E™"Ô×*Ì—ÿè!‹c¾<>9ıÈ_zñğ»oÚtEß’—oÅ(MÛµ¸ z¤ÚŠŸR¤JÁÀÑÓ=y¹§¥è İãÙ×;XÓ]\P\ŸÉšï‡¹®?½&­6]‰ÿÕÖÜúßIŒĞz2a³OW}æJ¢_Ëp“ûá'ğc1ÙRFhDd ŞdÔë¥];é7r>xgb×•"–ì»PBÔvUI¨m™Êâeò{çê¥ˆ,@+Ü€ìkntØÛh«L~Œ¾:}äŞ¥"z€%hÖUb—×ĞßEíï™8zL¶Ô‹'M{V˜;qóˆóÈë˜F\§Ù•ÌIò#¥R©¡2ÙL¶æı|´âÌñƒc=Œº•Pkj¥:ÕrñC<QÚua¡'úz¾‡[¿bªN‹·˜Í¾a
+~âàšÙ!Ë£Èc¨”èµº½Œ´¢LUF'è®à§îmôº
+Ìæ-r‚%ŸUvtŒŒ0ccÄÛÀf&Hù‰CqOdT“LØÁGì²g•!îc9QoƒWWMÆ£ÅË™¥°™0¹|Õëµ÷Ø¥r «¡ËÀ—Ç¸Í‘9í¶úfº©Ù××ÊÂğFÏÅ¦ö¡vh’Ás2¸è~úëÙÂ'8>zŒ]õUT¡B³‡Y‰öü–`éjhí¤ú{íƒN'F­úƒˆX2b²à‚$H ü>‡/„¾‘½f—º+ÒèQL±Ç©m¢­~üÓ/@ı_‘†(ôØô.Úåhig!¿å:[º›by€×È0•Et¹³áÄ¤Øal«ã(™®¾4´È²x °VX. 05æ8×åÆ¬±<Šã@Gƒ¯AFiºÄ_2òşÜËTw¯­'”ÇAk›e4ñ+ôZ¡Õ’,•¹ÂËÁ¥8ÌÒif[=İÍÌm8À!ø›'ÂI>Ú#ü‰<(”‡®œæDÖv­œÒ©%Ú
+f-Úƒ l$LMúv7ÕwÀê³b˜\p›÷Ûö@jˆñ”üG)ó“ÂêÒÎ
+:Ë\`À¢¸Ò'9=uôÏ:Ã`9ÿ&9İm‹ºg	T âÇY«4³~œ5_3k¶°
+ÒâZ±Vi(]B#F½Â2‚Gßz‰è79†&iÈˆĞ¾™e'¼¢`Ö©°.‡öÒÓ)õtQøè.|ô‡T§ox¬VYDwÍpV òÉ-0Û‰v[…*œoyÑÿRp`Z ŸŠÿÖpHî
+endstreamendobj140 0 obj<< /PitStop 141 0 R >> endobj141 0 obj<< /CC 142 0 R >> endobj142 0 obj<< >> endobjxref0 144 0000000063 65535 f
+0000000016 00000 n
+0000000183 00000 n
+0000000344 00000 n
+0000004690 00000 n
+0000004857 00000 n
+0000005007 00000 n
+0000007928 00000 n
+0000008095 00000 n
+0000008235 00000 n
+0000013972 00000 n
+0000014142 00000 n
+0000014317 00000 n
+0000019070 00000 n
+0000019240 00000 n
+0000019391 00000 n
+0000023487 00000 n
+0000023657 00000 n
+0000023819 00000 n
+0000027967 00000 n
+0000028137 00000 n
+0000028288 00000 n
+0000032760 00000 n
+0000032930 00000 n
+0000033094 00000 n
+0000039631 00000 n
+0000039801 00000 n
+0000039977 00000 n
+0000044718 00000 n
+0000044888 00000 n
+0000045051 00000 n
+0000050809 00000 n
+0000050979 00000 n
+0000051119 00000 n
+0000055287 00000 n
+0000055457 00000 n
+0000055620 00000 n
+0000060068 00000 n
+0000060238 00000 n
+0000060402 00000 n
+0000066060 00000 n
+0000066230 00000 n
+0000066406 00000 n
+0000073977 00000 n
+0000074147 00000 n
+0000074299 00000 n
+0000079281 00000 n
+0000079451 00000 n
+0000079603 00000 n
+0000082104 00000 n
+0000082634 00000 n
+0000083189 00000 n
+0000083805 00000 n
+0000084861 00000 n
+0000085121 00000 n
+0000085636 00000 n
+0000085951 00000 n
+0000087570 00000 n
+0000087901 00000 n
+0000090020 00000 n
+0000090508 00000 n
+0000093864 00000 n
+0000093977 00000 n
+0000000064 00001 f
+0000000065 00001 f
+0000000066 00001 f
+0000000067 00001 f
+0000000068 00001 f
+0000000069 00001 f
+0000000070 00001 f
+0000000071 00001 f
+0000000072 00001 f
+0000000073 00001 f
+0000000074 00001 f
+0000000075 00001 f
+0000000076 00001 f
+0000000077 00001 f
+0000000078 00001 f
+0000000079 00001 f
+0000000080 00001 f
+0000000081 00001 f
+0000000082 00001 f
+0000000083 00001 f
+0000000084 00001 f
+0000000085 00001 f
+0000000086 00001 f
+0000000087 00001 f
+0000000088 00001 f
+0000000089 00001 f
+0000000090 00001 f
+0000000091 00001 f
+0000000092 00001 f
+0000000093 00001 f
+0000000094 00001 f
+0000000096 00001 f
+0000094303 00001 n
+0000000097 00001 f
+0000000098 00001 f
+0000000099 00001 f
+0000000116 00001 f
+0000095210 00000 n
+0000095251 00000 n
+0000095297 00000 n
+0000095444 00000 n
+0000095521 00000 n
+0000095647 00000 n
+0000095712 00000 n
+0000095736 00000 n
+0000095790 00000 n
+0000095833 00000 n
+0000095912 00000 n
+0000095970 00000 n
+0000096020 00000 n
+0000096058 00000 n
+0000096138 00000 n
+0000096208 00000 n
+0000000117 00001 f
+0000000138 00001 f
+0000096348 00000 n
+0000096480 00000 n
+0000096653 00000 n
+0000096807 00000 n
+0000097434 00000 n
+0000097982 00000 n
+0000098504 00000 n
+0000098867 00000 n
+0000099417 00000 n
+0000099764 00000 n
+0000103813 00000 n
+0000104419 00000 n
+0000104996 00000 n
+0000105411 00000 n
+0000105766 00000 n
+0000105906 00000 n
+0000108657 00000 n
+0000113488 00000 n
+0000115855 00000 n
+0000119866 00000 n
+0000000139 00001 f
+0000000143 00001 f
+0000126224 00000 n
+0000126267 00000 n
+0000126305 00000 n
+0000000000 00001 f
+trailer<</Size 144/Info 115 0 R /Root 118 0 R /ID[<7f405d4211cc0c1f558408d1eecd3812><bcd73b3cd39c7ea94f2f809d26a28571>]>>startxref126331%%EOF95 1 obj<</Length 3292/Subtype/XML/Type/Metadata>>stream
+<?xpacket begin="ï»¿" id="W5M0MpCehiHzreSzNTczkc9d"?>
+<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.2-c001 63.139439, 2010/09/27-13:37:26        ">
+   <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <rdf:Description rdf:about=""
+            xmlns:pdf="http://ns.adobe.com/pdf/1.3/">
+         <pdf:Producer>Acrobat Distiller 5.0 (Windows)</pdf:Producer>
+      </rdf:Description>
+      <rdf:Description rdf:about=""
+            xmlns:xmp="http://ns.adobe.com/xap/1.0/">
+         <xmp:CreateDate>2002-08-29T19:23:13Z</xmp:CreateDate>
+         <xmp:ModifyDate>2012-08-28T14:03:08-05:00</xmp:ModifyDate>
+         <xmp:MetadataDate>2012-08-28T14:03:08-05:00</xmp:MetadataDate>
+      </rdf:Description>
+      <rdf:Description rdf:about=""
+            xmlns:dc="http://purl.org/dc/elements/1.1/">
+         <dc:format>application/pdf</dc:format>
+      </rdf:Description>
+      <rdf:Description rdf:about=""
+            xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/">
+         <xmpMM:DocumentID>uuid:866f06cc-971b-481d-9fbe-2543f619d94d</xmpMM:DocumentID>
+         <xmpMM:InstanceID>uuid:bcdecf12-6c50-4922-9732-558ff51f34ec</xmpMM:InstanceID>
+      </rdf:Description>
+   </rdf:RDF>
+</x:xmpmeta>
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                           
+<?xpacket end="w"?>
+endstreamendobj115 0 obj<</CreationDate(D:20020829192313Z)/ModDate(D:20120828140308-05'00')/Producer(Acrobat Distiller 5.0 \(Windows\))>>endobj118 0 obj<</AcroForm 146 0 R/FICL:Enfocus 140 0 R/JT 114 0 R/Metadata 95 1 R/PageLabels 101 0 R/Pages 103 0 R/Type/Catalog>>endobj119 0 obj<</Annots 147 0 R/Contents 127 0 R/CropBox[40.32001 126 571.67999 792]/MediaBox[0 0 612 792]/Parent 102 0 R/Resources 120 0 R/Rotate 0/Type/Page>>endobj144 0 obj<</BaseFont/Courier/Encoding 163 0 R/Name/Cour/Subtype/Type1/Type/Font>>endobj145 0 obj<</BaseFont/Times-Roman/Encoding 157 0 R/Name/TiRo/Subtype/Type1/Type/Font>>endobj146 0 obj<</DA(/Helv 0 Tf 0 g )/DR<</Encoding<</PDFDocEncoding 163 0 R>>/Font<</Cour 144 0 R/Helv 159 0 R/TiRo 160 0 R/ZaDb 161 0 R>>>>/Fields 158 0 R>>endobj147 0 obj[148 0 R 149 0 R 150 0 R]endobj148 0 obj<</AP<</N 156 0 R>>/BS 155 0 R/Contents(Copyright © 2003 by Robert Fourer, David M. Gay and Brian W. Kernighan)/CreationDate(D:20120828140244-05'00')/DA(12.25 TL /Cour 9 Tf)/DS(font: TiRo 9.0pt;font-stretch:Normal; text-align:left; color:#000000 )/F 4/IT/FreeTextTypewriter/M(D:20120828140305-05'00')/NM(6186ee39-b1ce-40dc-9440-00e30b41fafa)/P 119 0 R/RC(<?xml version="1.0"?><body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:APIVersion="Acrobat:10.1.3" xfa:spec="2.0.2"  style="font-size:9.0pt;text-align:left;color:#000000;font-weight:normal;font-style:normal\;font-family:TiRo;font-stretch:normal"><p dir="ltr"><span style="line-height:12.3pt;font-family:Times">Copyright &#169; 2003 by Robert Fourer, David M. Gay and Brian W. Kernighan</span></p></body>)/Rect[278.134 765.572 555.185 777.572]/Subj(Typewritten Text)/Subtype/FreeText/T(Robert Fourer)/Type/Annot>>endobj149 0 obj<</AP<</N 154 0 R>>/BS 153 0 R/CreationDate(D:20120828140256-05'00')/DA(12.25 TL /Cour 9 Tf)/DS(font: Times 9.0pt; text-align:left; color:#000000 )/F 4/IT/FreeTextTypewriter/M(D:20120828140256-05'00')/NM(8ca0148e-b1fa-42ac-8830-1dd2963186b4)/P 119 0 R/Rect[331.714 713.247 346.114 725.247]/Subj(Typewritten Text)/Subtype/FreeText/T(Robert Fourer)/Type/Annot>>endobj150 0 obj<</AP<</N 152 0 R>>/BS 151 0 R/CreationDate(D:20120828140306-05'00')/DA(12.25 TL /Cour 9 Tf)/DS(font: Times 9.0pt; text-align:left; color:#000000 )/F 4/IT/FreeTextTypewriter/M(D:20120828140308-05'00')/NM(afbcafb8-a3df-4e85-b486-9e41b17d949b)/P 119 0 R/Rect[341.509 690.393 355.909 702.393]/Subj(Typewritten Text)/Subtype/FreeText/T(Robert Fourer)/Type/Annot>>endobj151 0 obj<</W 0.0>>endobj152 0 obj<</BBox[341.509 690.393 355.909 702.393]/FormType 1/Length 95/Matrix[1.0 0.0 0.0 1.0 -341.509 -690.393]/Resources<</ProcSet[/PDF]>>/Subtype/Form/Type/XObject>>stream
+0 w
+341.5092 690.3928 14.4 12 re
+n
+q
+1 0 0 1 0 0 cm
+341.5092 690.3928 14.4 12 re
+W
+n
+0 g
+1 w
+Q
+
+endstreamendobj153 0 obj<</W 0.0>>endobj154 0 obj<</BBox[331.714 713.247 346.114 725.247]/FormType 1/Length 95/Matrix[1.0 0.0 0.0 1.0 -331.714 -713.247]/Resources<</ProcSet[/PDF]>>/Subtype/Form/Type/XObject>>stream
+0 w
+331.7145 713.2472 14.4 12 re
+n
+q
+1 0 0 1 0 0 cm
+331.7145 713.2472 14.4 12 re
+W
+n
+0 g
+1 w
+Q
+
+endstreamendobj155 0 obj<</W 0.0>>endobj156 0 obj<</BBox[256.134 762.572 533.185 774.572]/Filter[/FlateDecode]/FormType 1/Length 235/Matrix[1.0 0.0 0.0 1.0 -256.134 -762.572]/Resources<</Font<</TiRo 145 0 R>>/ProcSet[/PDF/Text]>>/Subtype/Form/Type/XObject>>stream
+H‰„MO!†ïó+æ¨‰a¸Ö¯ƒñ`CÒ‹j×º&²JÔ¦ÿ^º;k{3$„</ï3…;`Û’nLƒ®e²N{dçHYš±tá4ªº¦ıùıßÊª–nkm‹—±_0¾ŒTÚµìÈjƒqgWÃÇ¾ôÛ×/<Çø'gãÙ×ãˆ)ï…²RÍDY[¡ëıÄ´>²å°îŠˆ¹%gæàvø.]¹Ä“	F’ëôÓo„â¿Æ‰¾>[±À»4uõê¬HYÚ¥OYÄ|ÂWGq3¼ïJ®’òİDx„_ }z`R
+endstreamendobj157 0 obj<</Differences[24/breve/caron/circumflex/dotaccent/hungarumlaut/ogonek/ring/tilde 39/quotesingle 96/grave 128/bullet/dagger/daggerdbl/ellipsis/emdash/endash/florin/fraction/guilsinglleft/guilsinglright/minus/perthousand/quotedblbase/quotedblleft/quotedblright/quoteleft/quoteright/quotesinglbase/trademark/fi/fl/Lslash/OE/Scaron/Ydieresis/Zcaron/dotlessi/lslash/oe/scaron/zcaron 160/Euro 164/currency 166/brokenbar 168/dieresis/copyright/ordfeminine 172/logicalnot/.notdef/registered/macron/degree/plusminus/twosuperior/threesuperior/acute/mu 183/periodcentered/cedilla/onesuperior/ordmasculine 188/onequarter/onehalf/threequarters 192/Agrave/Aacute/Acircumflex/Atilde/Adieresis/Aring/AE/Ccedilla/Egrave/Eacute/Ecircumflex/Edieresis/Igrave/Iacute/Icircumflex/Idieresis/Eth/Ntilde/Ograve/Oacute/Ocircumflex/Otilde/Odieresis/multiply/Oslash/Ugrave/Uacute/Ucircumflex/Udieresis/Yacute/Thorn/germandbls/agrave/aacute/acircumflex/atilde/adieresis/aring/ae/ccedilla/egrave/eacute/ecircumflex/edieresis/igrave/iacute/icircumflex/idieresis/eth/ntilde/ograve/oacute/ocircumflex/otilde/odieresis/divide/oslash/ugrave/uacute/ucircumflex/udieresis/yacute/thorn/ydieresis]/Type/Encoding>>endobj158 0 obj[]endobj159 0 obj<</BaseFont/Helvetica/Encoding 163 0 R/Name/Helv/Subtype/Type1/Type/Font>>endobj160 0 obj<</BaseFont/Times-Roman/Encoding 162 0 R/Name/TiRo/Subtype/Type1/Type/Font>>endobj161 0 obj<</BaseFont/ZapfDingbats/Name/ZaDb/Subtype/Type1/Type/Font>>endobj162 0 obj<</Differences[24/breve/caron/circumflex/dotaccent/hungarumlaut/ogonek/ring/tilde 39/quotesingle 96/grave 128/bullet/dagger/daggerdbl/ellipsis/emdash/endash/florin/fraction/guilsinglleft/guilsinglright/minus/perthousand/quotedblbase/quotedblleft/quotedblright/quoteleft/quoteright/quotesinglbase/trademark/fi/fl/Lslash/OE/Scaron/Ydieresis/Zcaron/dotlessi/lslash/oe/scaron/zcaron 160/Euro 164/currency 166/brokenbar 168/dieresis/copyright/ordfeminine 172/logicalnot/.notdef/registered/macron/degree/plusminus/twosuperior/threesuperior/acute/mu 183/periodcentered/cedilla/onesuperior/ordmasculine 188/onequarter/onehalf/threequarters 192/Agrave/Aacute/Acircumflex/Atilde/Adieresis/Aring/AE/Ccedilla/Egrave/Eacute/Ecircumflex/Edieresis/Igrave/Iacute/Icircumflex/Idieresis/Eth/Ntilde/Ograve/Oacute/Ocircumflex/Otilde/Odieresis/multiply/Oslash/Ugrave/Uacute/Ucircumflex/Udieresis/Yacute/Thorn/germandbls/agrave/aacute/acircumflex/atilde/adieresis/aring/ae/ccedilla/egrave/eacute/ecircumflex/edieresis/igrave/iacute/icircumflex/idieresis/eth/ntilde/ograve/oacute/ocircumflex/otilde/odieresis/divide/oslash/ugrave/uacute/ucircumflex/udieresis/yacute/thorn/ydieresis]/Type/Encoding>>endobj163 0 obj<</Differences[24/breve/caron/circumflex/dotaccent/hungarumlaut/ogonek/ring/tilde 39/quotesingle 96/grave 128/bullet/dagger/daggerdbl/ellipsis/emdash/endash/florin/fraction/guilsinglleft/guilsinglright/minus/perthousand/quotedblbase/quotedblleft/quotedblright/quoteleft/quoteright/quotesinglbase/trademark/fi/fl/Lslash/OE/Scaron/Ydieresis/Zcaron/dotlessi/lslash/oe/scaron/zcaron 160/Euro 164/currency 166/brokenbar 168/dieresis/copyright/ordfeminine 172/logicalnot/.notdef/registered/macron/degree/plusminus/twosuperior/threesuperior/acute/mu 183/periodcentered/cedilla/onesuperior/ordmasculine 188/onequarter/onehalf/threequarters 192/Agrave/Aacute/Acircumflex/Atilde/Adieresis/Aring/AE/Ccedilla/Egrave/Eacute/Ecircumflex/Edieresis/Igrave/Iacute/Icircumflex/Idieresis/Eth/Ntilde/Ograve/Oacute/Ocircumflex/Otilde/Odieresis/multiply/Oslash/Ugrave/Uacute/Ucircumflex/Udieresis/Yacute/Thorn/germandbls/agrave/aacute/acircumflex/atilde/adieresis/aring/ae/ccedilla/egrave/eacute/ecircumflex/edieresis/igrave/iacute/icircumflex/idieresis/eth/ntilde/ograve/oacute/ocircumflex/otilde/odieresis/divide/oslash/ugrave/uacute/ucircumflex/udieresis/yacute/thorn/ydieresis]/Type/Encoding>>endobjxref
+0 1
+0000000000 65535 f
+95 1
+0000129374 00001 n
+115 1
+0000132744 00000 n
+118 2
+0000132875 00000 n
+0000133008 00000 n
+144 20
+0000133172 00000 n
+0000133262 00000 n
+0000133356 00000 n
+0000133517 00000 n
+0000133560 00000 n
+0000134495 00000 n
+0000134872 00000 n
+0000135249 00000 n
+0000135277 00000 n
+0000135568 00000 n
+0000135596 00000 n
+0000135887 00000 n
+0000135915 00000 n
+0000136395 00000 n
+0000137588 00000 n
+0000137608 00000 n
+0000137700 00000 n
+0000137794 00000 n
+0000137872 00000 n
+0000139065 00000 n
+trailer
+<</Size 164/Root 118 0 R/Info 115 0 R/ID[<7F405D4211CC0C1F558408D1EECD3812><7758E532E8A6A54E8708AA64A5DF841E>]/Prev 126331>>
+startxref
+140258
+%%EOF

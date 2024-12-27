@@ -137,7 +137,8 @@ redirects["ampl/python/colab/index.html"] = "../colab.html"
 redirects["solvers/solver_options/cbc_options.html"] = "../cbc/options.html"
 redirects["solver_options.html"] = "solvers/index.html"
 redirects["social.html"] = "https://www.linkedin.com/company/ampl"
-redirects["ampl/book.html"] = "book/index.html"
+redirects["ampl/book.html"] = "books/index.html"
+redirects["ampl/book/index.html"] = "../books/index.html"
 
 
 # Add any paths that contain custom themes here, relative to this directory.
