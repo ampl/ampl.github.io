@@ -43,9 +43,9 @@ Python
 
 - Installation:
 
-    .. code-block:: bash
+.. code-block:: bash
 
-        $ python -m pip install amplpy
+    $ python -m pip install amplpy
 
 - Documentation: https://amplpy.ampl.com/
 - GitHub: https://github.com/ampl/amplpy
@@ -57,10 +57,10 @@ R
 
 - Installation:
 
-    .. code-block:: R
+.. code-block:: R
 
-        install.packages("Rcpp", type="source")
-        install.packages("https://ampl.com/dl/API/rAMPL.tar.gz", repos=NULL)
+    install.packages("Rcpp", type="source")
+    install.packages("https://ampl.com/dl/API/rAMPL.tar.gz", repos=NULL)
 
 - Documentation: https://rAMPL.ampl.com/
 - GitHub: https://github.com/ampl/rAMPL
@@ -71,11 +71,9 @@ Java
 ----
 
 - Installation:
-
     - `API bundle for Windows <https://portal.ampl.com/dl/modules/amplapi-module.mswin64.zip>`_
     - `API bundle for Linux <https://portal.ampl.com/dl/modules/amplapi-module.linux64.tgz>`_
     - `API bundle for macOS <https://portal.ampl.com/dl/modules/amplapi-module.macos64.tgz>`_
-
 - Documentation: https://ampl.com/api/latest/java/
 
 .. _apis_csharp:
@@ -84,11 +82,9 @@ C#
 --
 
 - Installation:
-
     - `API bundle for Windows <https://portal.ampl.com/dl/modules/amplapi-module.mswin64.zip>`_
     - `API bundle for Linux <https://portal.ampl.com/dl/modules/amplapi-module.linux64.tgz>`_
     - `API bundle for macOS <https://portal.ampl.com/dl/modules/amplapi-module.macos64.tgz>`_
-
 - Documentation: https://ampl.com/api/latest/dotnet/
 
 .. _apis_cpp:
@@ -97,11 +93,9 @@ C++
 ---
 
 - Installation:
-
     - `API bundle for Windows <https://portal.ampl.com/dl/modules/amplapi-module.mswin64.zip>`_
     - `API bundle for Linux <https://portal.ampl.com/dl/modules/amplapi-module.linux64.tgz>`_
     - `API bundle for macOS <https://portal.ampl.com/dl/modules/amplapi-module.macos64.tgz>`_
-
 - Documentation: https://ampl.com/api/latest/cpp/
 
 .. _apis_matlab:
@@ -110,7 +104,6 @@ MATLAB
 ------
 
 - Installation:
-
     - `API bundle for Windows <https://portal.ampl.com/dl/modules/amplapi-module.mswin64.zip>`_
     - `API bundle for Linux <https://portal.ampl.com/dl/modules/amplapi-module.linux64.tgz>`_
     - `API bundle for macOS <https://portal.ampl.com/dl/modules/amplapi-module.macos64.tgz>`_
