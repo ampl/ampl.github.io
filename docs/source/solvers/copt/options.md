@@ -163,8 +163,9 @@ alg:matrixtol (matrixtol)
       nput matrix coefficient tolerance (default 1e-10).
 
 alg:rays (rays)
-      Whether to return suffix .unbdd if the objective is unbounded or suffix
-      .dunbdd if the constraints are infeasible:
+      Whether to return suffix .unbdd (unbounded ray) if the objective is
+      unbounded or suffix .dunbdd (Farkas dual) if the constraints are
+      infeasible:
 
       0 - Neither
       1 - Just .unbdd
@@ -232,7 +233,13 @@ cvt:pre:eqbinary
       0/1*: Preprocess reified equality comparison with a binary variable.
 
 cvt:pre:eqresult
-      0/1*: Preprocess reified equality comparison's boolean result bounds.
+      0/1*: Preprocess reified equality comparison's decidable cases.
+
+cvt:pre:ineqresult
+      0/1*: Preprocess reified inequality comparison's decidable cases.
+
+cvt:pre:ineqrhs
+      0/1*: Preprocess reified inequality comparison's right-hand sides.
 
 cvt:pre:unnest
       0/1*: Inline nested expressions, currently Ands/Ors.
@@ -248,8 +255,7 @@ cvt:prod (cvt:pre:prod)
       natively (see acc:and), the conjunction is linearized.
       4 - Logicalize products of >=3 binary terms.
 
-      Default: 1+4. That is, 2-term binary products which are not part of a
-      higher-order binary product, are not logicalized by default.
+      Default: 7.
 
       Bits 2 or 4 imply bit 1.
 
@@ -259,8 +265,9 @@ cvt:quadcon (passquadcon)
       quadratic terms, then they are linearized.
 
 cvt:quadobj (passquadobj)
-      0/1*: Multiply out and pass quadratic objective terms to the solver, vs.
-      linear approximation.
+      0/1*: Pass quadratic objective terms to the solver. If the solver
+      accepts quadratic constraints, such a constraint will be created with
+      those, otherwise linearly approximated.
 
 cvt:socp (socpmode, socp)
       Second-Order Cone recognition mode:
@@ -687,10 +694,17 @@ tech:wantsol (wantsol)
 tech:writegraph (cvt:writegraph, writegraph, exportgraph)
       File to export conversion graph. Format: JSON Lines.
 
-tech:writemodel (writeprob, writemodel, tech:exportfile)
+tech:writemodel (tech:writeprob, writeprob, writemodel, tech:exportfile)
       Specifies files where to export the model before solving (repeat the
       option for several files.) File name extensions can be ".lp[.7z]",
       ".mps", etc.
+      To write a model during iterative solve (e.g., with obj:multi=2), use
+      tech:writemodel:index.
+
+tech:writemodel:index (tech:writeprob:index, writeprobindex, writemodelindex)
+      During iterative solve (e.g., with obj:multi=2), the iteration before
+      which to write solver model. 0 means before iteration is initialized;
+      positive value - before solving that iteration. Default 0.
 
 tech:writemodelonly (justwriteprob, justwritemodel)
       Specifies files where to export the model, no solving (option can be

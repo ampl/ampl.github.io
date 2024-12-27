@@ -1,6 +1,10 @@
 # BARONMP Changelog
 
 
+## 20241227
+- Updated to baron 24.12.21. In addition to bug fixes, this version comes with improvements in memory management, convexity identification, branching, and new relaxation and reduction strategies for certain quadratic and concave programs.
+
+
 ## 20241209
 - Removed spurious output from execution of local solves.
 - Fixed bug that made `outlev` ineffective.

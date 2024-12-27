@@ -4,11 +4,11 @@
 
 
 - [**AMPL** Changelog (latest: **20241203**)](../releases/ampl.md)
-- [**BARON** Changelog (latest: **20240508**)](../solvers/baron/changes.md)
-- [**BARONMP** Changelog (latest: **20241209**)](../solvers/baron/changesmp.md)
+- [**BARON** Changelog (latest: **20241227**)](../solvers/baron/changes.md)
+- [**BARONMP** Changelog (latest: **20241227**)](../solvers/baron/changesmp.md)
 - [**CBC** Changelog (latest: **20241128**)](../solvers/cbc/changes.md)
 - [**CONOPT** Changelog (latest: **20240201**)](../solvers/conopt/changes.md)
-- [**COPT** Changelog (latest: **20240724**)](../solvers/copt/changes.md)
+- [**COPT** Changelog (latest: **20241228**)](../solvers/copt/changes.md)
 - [**CPLEX** Changelog (latest: **20241206**)](../solvers/cplex/changes.md)
 - [**CPLEXASL** Changelog (latest: **20230228**)](../solvers/cplex/changesasl.md)
 - [**GCG** Changelog (latest: **20240115**)](../solvers/gcg/changes.md)
@@ -16,14 +16,14 @@
 - [**GUROBIASL** Changelog (latest: **20231208**)](../solvers/gurobi/changesasl.md)
 - [**HiGHS** Changelog (latest: **20241119**)](../solvers/highs/changes.md)
 - [**ILOGCP** Changelog (latest: **20230228**)](../solvers/ilogcp/changes.md)
-- [**KNITRO** Changelog (latest: **20240209**)](../solvers/knitro/changes.md)
+- [**KNITRO** Changelog (latest: **20241220**)](../solvers/knitro/changes.md)
 - [**LOQO** Changelog (latest: **20210410**)](../solvers/loqo/changes.md)
 - [**Lindo Global** Changelog (latest: **20210406**)](../solvers/lindoglobal/changes.md)
 - [**MINOS** Changelog (latest: **20211109**)](../solvers/minos/changes.md)
 - [**MOSEK** Changelog (latest: **20240901**)](../solvers/mosek/changes.md)
 - [**SCIP** Changelog (latest: **20240121**)](../solvers/scip/changes.md)
 - [**SNOPT** Changelog (latest: **20211109**)](../solvers/snopt/changes.md)
-- [**XPRESS** Changelog (latest: **20240823**)](../solvers/xpress/changes.md)
+- [**XPRESS** Changelog (latest: **20241227**)](../solvers/xpress/changes.md)
 - [**XPRESSASL** Changelog (latest: **20220112**)](../solvers/xpress/changesasl.md)
 
 ```{toctree}
@@ -33,6 +33,14 @@ ampl.md
 ```
 
 
+## 20241228
+- [COPT](../solvers/copt/changes.md#20241228)
+## 20241227
+- [BARON](../solvers/baron/changes.md#20241227)
+- [BARONMP](../solvers/baron/changesmp.md#20241227)
+- [XPRESS](../solvers/xpress/changes.md#20241227)
+## 20241220
+- [KNITRO](../solvers/knitro/changes.md#20241220)
 ## 20241209
 - [BARONMP](../solvers/baron/changesmp.md#20241209)
 ## 20241206

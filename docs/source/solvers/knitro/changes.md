@@ -1,5 +1,25 @@
 # KNITRO Changelog
 
+## 20241220
+- Updated to Knitro 14.2, changes include:
+    - Significant performance improvements on nonconvex
+      problems both in terms of efficiency and solution quality. 
+    - Significant improvements in robustness and efficiency
+      when solving models with conic constraints using the specialized
+      conic algorithm (enabled via `bar_conic_enable=1`).
+    - Improves the efficiency of the "ncvx_qcqp_init" user option,
+      which can be used to improve the initial points when solving nonconvex
+      QPs/QCQPs.
+    - Ability to retrieve the best feasible iterate found during the 
+      optimization by setting the new user option `soltype=1`.
+    - New options for time limits:
+      - `maxtime` - global time limit
+      - `mip_sub_maxtime` - limit on MIP subproblems
+      - `ma_sub_maxtime` - limit on multi-algorithm subproblems
+      - `ms_sub_maxtime` - limit on multi-start subproblems
+      - `tuner_sub_maxtime` - limit on tuner subproblems
+
+
 ## 20240209
 - Fixed a bug with multithreading on MacOS
 

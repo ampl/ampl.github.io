@@ -37,7 +37,7 @@ acc:abs
 
 acc:acos
       Solver acceptance level for 'AcosConstraint' as flat constraint, default
-      2:
+      1:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
@@ -45,7 +45,7 @@ acc:acos
 
 acc:acosh
       Solver acceptance level for 'AcoshConstraint' as flat constraint,
-      default 2:
+      default 1:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
@@ -61,7 +61,7 @@ acc:and (acc:forall)
 
 acc:asin
       Solver acceptance level for 'AsinConstraint' as flat constraint, default
-      2:
+      1:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
@@ -69,7 +69,7 @@ acc:asin
 
 acc:asinh
       Solver acceptance level for 'AsinhConstraint' as flat constraint,
-      default 2:
+      default 1:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
@@ -77,7 +77,7 @@ acc:asinh
 
 acc:atan
       Solver acceptance level for 'AtanConstraint' as flat constraint, default
-      2:
+      1:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
@@ -85,7 +85,7 @@ acc:atan
 
 acc:atanh
       Solver acceptance level for 'AtanhConstraint' as flat constraint,
-      default 2:
+      default 1:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
@@ -93,7 +93,7 @@ acc:atanh
 
 acc:cos
       Solver acceptance level for 'CosConstraint' as flat constraint, default
-      2:
+      1:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
@@ -101,7 +101,7 @@ acc:cos
 
 acc:cosh
       Solver acceptance level for 'CoshConstraint' as flat constraint, default
-      2:
+      1:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
@@ -109,7 +109,7 @@ acc:cosh
 
 acc:div
       Solver acceptance level for 'DivConstraint' as flat constraint, default
-      2:
+      1:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
@@ -117,7 +117,7 @@ acc:div
 
 acc:exp
       Solver acceptance level for 'ExpConstraint' as flat constraint, default
-      2:
+      1:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
@@ -125,7 +125,7 @@ acc:exp
 
 acc:expa (acc:expA)
       Solver acceptance level for 'ExpAConstraint' as flat constraint, default
-      2:
+      1:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
@@ -178,7 +178,7 @@ acc:linle
 
 acc:log
       Solver acceptance level for 'LogConstraint' as flat constraint, default
-      2:
+      1:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
@@ -208,9 +208,9 @@ acc:or (acc:exists)
       1 - Accepted but automatic redefinition will be used where possible
       2 - Accepted natively and preferred
 
-acc:pow
-      Solver acceptance level for 'PowConstraint' as flat constraint, default
-      2:
+acc:powconstexp
+      Solver acceptance level for 'PowConstExpConstraint' as flat constraint,
+      default 1:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
@@ -239,7 +239,7 @@ acc:quadle
 
 acc:sin
       Solver acceptance level for 'SinConstraint' as flat constraint, default
-      2:
+      1:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
@@ -247,7 +247,7 @@ acc:sin
 
 acc:sinh
       Solver acceptance level for 'SinhConstraint' as flat constraint, default
-      2:
+      1:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
@@ -271,7 +271,7 @@ acc:sos2
 
 acc:tan
       Solver acceptance level for 'TanConstraint' as flat constraint, default
-      2:
+      1:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
@@ -279,7 +279,7 @@ acc:tan
 
 acc:tanh
       Solver acceptance level for 'TanhConstraint' as flat constraint, default
-      2:
+      1:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
@@ -751,7 +751,13 @@ cvt:pre:eqbinary
       0/1*: Preprocess reified equality comparison with a binary variable.
 
 cvt:pre:eqresult
-      0/1*: Preprocess reified equality comparison's boolean result bounds.
+      0/1*: Preprocess reified equality comparison's decidable cases.
+
+cvt:pre:ineqresult
+      0/1*: Preprocess reified inequality comparison's decidable cases.
+
+cvt:pre:ineqrhs
+      0/1*: Preprocess reified inequality comparison's right-hand sides.
 
 cvt:pre:unnest
       0/1*: Inline nested expressions, currently Ands/Ors.
@@ -767,8 +773,7 @@ cvt:prod (cvt:pre:prod)
       natively (see acc:and), the conjunction is linearized.
       4 - Logicalize products of >=3 binary terms.
 
-      Default: 1+4. That is, 2-term binary products which are not part of a
-      higher-order binary product, are not logicalized by default.
+      Default: 5.
 
       Bits 2 or 4 imply bit 1.
 
@@ -1738,6 +1743,9 @@ pre:ops (presolveops)
       4096 = 2^12      - No eliminations on integers
       16384 = 2^14     - Linearly dependant row removal
       32768 = 2^15     - No integer variable and SOS detection
+      65536 = 2^16     - No implied bounds
+      131072 = 2^17    - No clique presolve
+      262144 = 2^18    - No mod2 presolve
       536870912 = 2^29 - No dual reduction on globals
 
       (default 511 = bits 0-8 set)
@@ -1821,9 +1829,24 @@ pre:scaling (scaling)
 pre:solve (presolve)
       Whether to use Xpress' presolve:
 
+      -1 - Presolve applied, but a problem will not be declared infeasible if
+           primal infeasibilities are detected. The problem will be solved by
+           the LP optimization algorithm, returning an infeasible solution,
+           which can sometimes be helpful
+      0  - No
+      1  - Yes (default)
+      2  - Yes, retaining redundant bounds. This can sometimes increase the
+           efficiency of the barrier algorithm
+
+      For nonlinear presolve, see option pre:solve_nlp.
+
+pre:solve_nlp (presolve_nlp, presolve_slp)
+      Whether to use Xpress' nonlinear presolve:
+
       0 - No
-      1 - Yes, removing redundant bounds (default)
-      2 - Yes, retaining redundant bounds
+      1 - Yes (default)
+      2 - Low memory presolve. Original problem is not restored by postsolve
+          and dual solution may not be completely postsolved.
 
 pre:sosreftol (sosreftol)
       Minimum relative gap between the ordering values of elements in a
@@ -2127,10 +2150,17 @@ tech:wantsol (wantsol)
 tech:writegraph (cvt:writegraph, writegraph, exportgraph)
       File to export conversion graph. Format: JSON Lines.
 
-tech:writemodel (writeprob, writemodel, tech:exportfile)
+tech:writemodel (tech:writeprob, writeprob, writemodel, tech:exportfile)
       Specifies files where to export the model before solving (repeat the
       option for several files.) File name extensions can be ".lp[.7z]",
       ".mps", etc.
+      To write a model during iterative solve (e.g., with obj:multi=2), use
+      tech:writemodel:index.
+
+tech:writemodel:index (tech:writeprob:index, writeprobindex, writemodelindex)
+      During iterative solve (e.g., with obj:multi=2), the iteration before
+      which to write solver model. 0 means before iteration is initialized;
+      positive value - before solving that iteration. Default 0.
 
 tech:writemodelonly (justwriteprob, justwritemodel)
       Specifies files where to export the model, no solving (option can be
