@@ -2,12 +2,8 @@
 
 [Optimization Models in Electricity Markets](https://www.cambridge.org/highereducation/books/optimization-models-in-electricity-markets/0D2D36891FB5EB6AAC3A4EFC78A8F1D3?utm_campaign=shareaholic&utm_medium=copy_link&utm_source=bookmark) by [Anthony Papavasiliou](https://www.linkedin.com/in/anthony-papavasiliou-4bab9213/) is a textbook published by Cambridge University Press that treats the analysis of optimization models that are routinely used in electricity market operations. 
 
-- [Optimization Models in Electricity Markets](#optimization-models-in-electricity-markets)
-  - [Abstract](#abstract)
-  - [Youtube videos](#youtube-videos)
-  - [Slide decks](#slide-decks)
-  - [Authors](#authors)
-  - [Citation](#citation)
+- [Youtube videos](#youtube-videos)
+- [Slide decks](#slide-decks)
 
 ## Abstract
 
@@ -49,7 +45,7 @@ Slide decks corresponding to the chapters of the book are available [online](htt
     - [3.1 Power system operation](./electricity-markets/Ch-3.1-Power-system-operation.pdf "3.1 Power system operation")
     - [3.2 Power market operation](./electricity-markets/Ch-3.2-Power-market-operation-1.pdf "3.2 Power market operation")
 - Chapter 4
-    - [Economic dispatch](./electricity-markets/Ch-4-Economic-dispatch.pdf "4 Economic dispatch")
+    - [4 Economic dispatch](./electricity-markets/Ch-4-Economic-dispatch.pdf "4 Economic dispatch")
 - Chapter 5 
     - [5.1 Direct current optimal power flow](./electricity-markets/Ch-5.1-Direct-current-optimal-power-flow.pdf "5.1 Direct current optimal power flow")     
     - [5.2 Locational marginal pricing](./electricity-markets/Ch-5.2-Locational-marginal-pricing.pdf "5.2 Locational marginal pricing")
