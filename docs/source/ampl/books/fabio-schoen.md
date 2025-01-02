@@ -1,6 +1,6 @@
 # Optimization Models by Fabio Schoen
 
-An e-book on modeling techniques for Operations Research. A new book on the art of modeling optimization problems. This text was used in the “Optimization and Data Science for Management” course, Master degree in Management Engineering at the University of Florence.
+[Optimization Models](https://webgol.dinfo.unifi.it/OptimizationModels/contents.html) by [Fabio Schoen](https://www.linkedin.com/in/fabioschoen/) is an e-book on modeling techniques for Operations Research. A new book on the art of modeling optimization problems. This text was used in the “Optimization and Data Science for Management” course, Master degree in Management Engineering at the University of Florence.
 
 - Free version available [on-line](https://webgol.dinfo.unifi.it/OptimizationModels/contents.html).
 - Printed Book available on [Amazon](https://www.amazon.com/Optimization-Models-Fabio-Schoen/dp/B0CTXM4B52).

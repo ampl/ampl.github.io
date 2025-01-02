@@ -1,6 +1,6 @@
 # Optimization Models in Electricity Markets
 
-[Optimization Models in Electricity Markets](https://www.cambridge.org/highereducation/books/optimization-models-in-electricity-markets/0D2D36891FB5EB6AAC3A4EFC78A8F1D3?utm_campaign=shareaholic&utm_medium=copy_link&utm_source=bookmark) is a textbook published by Cambridge University Press that treats the analysis of optimization models that are routinely used in electricity market operations. 
+[Optimization Models in Electricity Markets](https://www.cambridge.org/highereducation/books/optimization-models-in-electricity-markets/0D2D36891FB5EB6AAC3A4EFC78A8F1D3?utm_campaign=shareaholic&utm_medium=copy_link&utm_source=bookmark) by [Anthony Papavasiliou](https://www.linkedin.com/in/anthony-papavasiliou-4bab9213/) is a textbook published by Cambridge University Press that treats the analysis of optimization models that are routinely used in electricity market operations. 
 
 - [Optimization Models in Electricity Markets](#optimization-models-in-electricity-markets)
   - [Abstract](#abstract)

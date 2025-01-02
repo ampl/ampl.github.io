@@ -32,7 +32,7 @@ mo-book.md
 
 ## Optimization Models by Fabio Schoen
 
-An e-book on modeling techniques for Operations Research. A new book on the art of modeling optimization problems. This text is used in the “Optimization and Data Science for Management” course, Master degree in Management Engineering.
+[Optimization Models](https://webgol.dinfo.unifi.it/OptimizationModels/contents.html) by [Fabio Schoen](https://www.linkedin.com/in/fabioschoen/) is an e-book on modeling techniques for Operations Research. A new book on the art of modeling optimization problems. This text was used in the “Optimization and Data Science for Management” course, Master degree in Management Engineering at the University of Florence.
 
 ```{toctree}
 :glob:
@@ -42,7 +42,7 @@ fabio-schoen.md
 
 ## Optimization Models in Electricity Markets
 
-[Optimization Models in Electricity Markets](https://www.cambridge.org/highereducation/books/optimization-models-in-electricity-markets/0D2D36891FB5EB6AAC3A4EFC78A8F1D3?utm_campaign=shareaholic&utm_medium=copy_link&utm_source=bookmark) is a textbook published by Cambridge University Press that treats the analysis of optimization models that are routinely used in electricity market operations.
+[Optimization Models in Electricity Markets](https://www.cambridge.org/highereducation/books/optimization-models-in-electricity-markets/0D2D36891FB5EB6AAC3A4EFC78A8F1D3?utm_campaign=shareaholic&utm_medium=copy_link&utm_source=bookmark) by [Anthony Papavasiliou](https://www.linkedin.com/in/anthony-papavasiliou-4bab9213/) is a textbook published by Cambridge University Press that treats the analysis of optimization models that are routinely used in electricity market operations.
 
 ```{toctree}
 :glob:
