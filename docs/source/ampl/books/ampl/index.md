@@ -25,7 +25,7 @@ examples/index.rst
 
 ## Authors
 
--   Robert Fourer, AMPL Optimization, Inc.
+-   [Robert Fourer](https://www.linkedin.com/in/4er/), AMPL Optimization, Inc.
 -   David M. Gay, AMPL Optimization, Inc.
 -   Brian W. Kernighan, AMPL Optimization, Inc.
 

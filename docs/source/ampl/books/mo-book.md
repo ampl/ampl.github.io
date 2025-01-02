@@ -6,6 +6,8 @@ The repository of notebooks [Hands-On Mathematical Optimization with AMPL in Pyt
 -   demonstrate the tools and concepts of optimization with practical examples,
 -   help readers to develop the practical skills needed to build models and solving problems using state-of-the-art modeling languages and solvers.
 
+## Table of Contents
+
 [MO-BOOK: Hands-On Mathematical Optimization with AMPL in Python 🐍](https://ampl.com/mo-book/)
 
 1. [Mathematical Optimization](https://ampl.com/mo-book//notebooks/01/01.00.html)
@@ -20,9 +22,9 @@ The repository of notebooks [Hands-On Mathematical Optimization with AMPL in Pyt
 10. [Two-Stage Problems](https://ampl.com/mo-book//notebooks/10/10.00.html) 
 
 ## Authors
--   Krzysztof Postek, Boston Consulting Group (formerly TU Delft)
--   Alessandro Zocca, VU Amsterdam
--   Joaquim Gromicho, ORTEC and the University of Amsterdam
+-   [Krzysztof Postek](https://www.linkedin.com/in/krzysztof-postek-412a2516/), Boston Consulting Group (formerly TU Delft)
+-   [Alessandro Zocca](https://www.linkedin.com/in/alezocca/), VU Amsterdam
+-   [Joaquim Gromicho](https://www.linkedin.com/in/j-gromicho/), ORTEC and the University of Amsterdam
 -   Jeffrey Kantor, University of Notre Dame
 
 ## Citation
