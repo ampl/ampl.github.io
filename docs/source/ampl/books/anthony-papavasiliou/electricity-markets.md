@@ -5,6 +5,8 @@
 - [Youtube videos](#youtube-videos)
 - [Slide decks](#slide-decks)
 
+Order your copy from [Cambridge University Press](https://www.cambridge.org/highereducation/books/optimization-models-in-electricity-markets/0D2D36891FB5EB6AAC3A4EFC78A8F1D3?utm_campaign=shareaholic&utm_medium=copy_link&utm_source=bookmark) or [Amazon](https://www.amazon.com/Optimization-Electricity-Markets-Anthony-Papavasiliou/dp/1009416618).
+
 ## Abstract
 
 Get up-to-speed with the fundamentals of how electricity markets are structured and operated with this comprehensive textbook, presenting coverage of key topics in electricity market design, including power system and power market operations, transmission, unit commitment, demand response, and risk management. It includes over 140 practical examples, inspired by real-industry applications, connecting key theoretical concepts to practical scenarios in electricity market design, and features over 100 coding-based examples and exercises, with selected solutions for readers. It further demonstrates how mathematical programming models are implemented in an industry setting. Requiring no experience in power systems or energy economics, this is the ideal introduction to electricity markets for senior undergraduate and graduate students in electrical engineering, economics, and operations research, and a robust introduction to the field for professionals in utilities, energy policy, and energy regulation. Accompanied online by datasets, AMPL code, supporting videos, and full solutions and lecture slides for instructors.
