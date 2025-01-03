@@ -13,7 +13,7 @@ Get up-to-speed with the fundamentals of how electricity markets are structured 
 
 ## Youtube videos
 
-- Introduction
+- Chapter 1
     - [Chapter 1 (Introduction)](https://www.youtube.com/watch?v=Elk--NgW2ac)
 - Chapter 2
     - [Chapter 2 (Mathematical Background)](https://www.youtube.com/watch?v=oCeoCGVWpsc)
@@ -37,7 +37,7 @@ Get up-to-speed with the fundamentals of how electricity markets are structured 
 
 Slide decks corresponding to the chapters of the book are available [online](https://ap-rg.eu/courses/optimization-models-in-electricity-markets-book/).
 
-- Introduction
+- Chapter 1
     - [1.1 Introduction](./electricity-markets/Ch-1.1-Introduction.pdf "1.1 Introduction")   
 
     - [1.2 Missing money problem](./electricity-markets/Ch-1.2-Missing-money-problem.pdf "1.2 Missing money problem")
