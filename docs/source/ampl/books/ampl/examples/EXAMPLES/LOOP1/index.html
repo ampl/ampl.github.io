@@ -1,0 +1,144 @@
+<TITLE> AMPL -- loop1 examples index page </TITLE>
+
+</head>
+
+<body bgcolor="#cccccc">
+
+<hr>
+<font size=-1><b><i>INDEX TO EXAMPLES</i></b></font>
+<hr>
+
+<h2>
+LOOPING AND TESTING 1:<br>
+writing "scripts" in the AMPL command language
+</h2>
+
+<br>
+All examples use <a href=steelT.mod><tt>steelT.mod</tt></a> as the
+model file and <a href=steelT.dat><tt>steelT.dat</tt></a> as the
+data file.<p>
+
+<br>
+<table border width=100% cellpadding=7>
+
+<tr align=left>
+<th>Script file</th>
+<th>Implements</th>
+</tr>
+
+<tr></tr>
+
+<tr valign=top>
+<td><tt><a href=steelT.sa1>steelT.sa1</a></tt>
+<td>One pass of sensitivity analysis on <tt>avail[3]</tt> in the
+multi-period production problem (Section 4.2)
+</tr>
+
+<tr valign=top>
+<td><tt><a href=steelT.sa1a>steelT.sa1a</a></tt><br>
+    <tt><a href=steelT.sa1b>steelT.sa1b</a></tt>
+<td>Same as <tt>steelT.sa1</tt> but split into two scripts, using the 
+<tt>commands</tt> command
+</tr>
+
+<tr></tr>
+
+<tr valign=top>
+<td><tt><a href=steelT.sa2>steelT.sa2</a></tt>
+<td>Iterated sensitivity analysis, using contents of
+<tt>steelT.sa1a</tt> and <tt>steelT.sa1b</tt> within a <tt>for</tt>
+loop
+</tr>
+
+<tr valign=top>
+<td><tt><a href=steelT.sa3>steelT.sa3</a></tt>
+<td>. . . also building a table of results
+</tr>
+
+<tr valign=top>
+<td><tt><a href=steelT.sa4>steelT.sa4</a></tt>
+<td>. . . also using <tt>repeat</tt> <tt>until</tt>, 
+and building up an index set for the table
+</tr>
+
+<tr valign=top>
+<td><tt><a href=steelT.sa5>steelT.sa5</a></tt>
+<td>. . . also using <tt>if</tt> to record only 
+those parameter values at which the dual price changes
+</tr>
+
+<tr></tr>
+
+<tr valign=top>
+<td><tt><a href=steelT.sa6>steelT.sa6</a></tt>
+<td>Binary search to find a breakpoint in the dual value
+</tr>
+
+<tr valign=top>
+<td><tt><a href=steelT.sa6a>steelT.sa6a</a></tt>
+<td>. . . also handling the case of more than one breakpoint in 
+the initial interval
+</tr>
+
+<tr valign=top>
+<td><tt><a href=steelT.sa6b>steelT.sa6b</a></tt>
+<td>. . . also counting the extra breakpoints detected
+</tr>
+
+<tr></tr>
+
+<tr valign=top>
+<td><tt><a href=steelT.sa7>steelT.sa7</a></tt>
+<td>Sensitivity analysis using <tt>break</tt> and <tt>continue</tt>
+</tr>
+
+<tr valign=top>
+<td><tt><a href=steelT.sa7a>steelT.sa7a</a></tt>
+<td>. . . also for each <tt>t</tt>, printing at the end of each pass
+</tr>
+
+<tr valign=top>
+<td><tt><a href=steelT.sa7b>steelT.sa7b</a></tt>
+<td>. . . also for each <tt>t</tt>, storing all values until the end
+</tr>
+
+<tr valign=top>
+<td><tt><a href=steelT.sa7c>steelT.sa7c</a></tt>
+<td>. . . also incorporating a break criterion requiring a named loop
+</tr>
+
+<tr></tr>
+
+<tr valign=top>
+<td><tt><a href=steelT.tab0>steelT.tab0</a></tt>
+<td>Data-specific script for a formatted table
+</tr>
+
+<tr valign=top>
+<td><tt><a href=steelT.tab1>steelT.tab1</a></tt>
+<td>General script for formatted table, using a <tt>for</tt> loop
+</tr>
+
+<tr valign=top>
+<td><tt><a href=steelT.tab2>steelT.tab2</a></tt>
+<td>. . . also with <tt>if</tt> statement to suppress printing of 
+<tt>100%</tt>
+</tr>
+
+</table>
+
+
+<br><hr><br>
+<b><i>Comments or questions?</i></b><br>
+Write to <a href=mailto:info@ampl.com><tt>info@ampl.com</tt></a>
+or use our <a href=../../comments.html>comment form</a>.<p>
+
+<i><a href=../index.html>Return to the AMPL update page</a>.</i><p>
+<i><a href=../../index.html>Return to the AMPL home page</a>.</i><p>
+
+<hr width=50% align=left>
+<font size=-2>LAST MODIFIED 7 FEBRUARY 1996 BY 
+<a href=mailto:4er@iems.nwu.edu>4er@iems.nwu.edu</a>.</font>
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+Implements|Script file
+One pass of sensitivity analysis on avail[3] in the multi-period production problem (Section 4.2)|steelT.sa1
+Same as steelT.sa1 but split into two scripts, using the commands command|steelT.sa1a steelT.sa1b
+Iterated sensitivity analysis, using contents of steelT.sa1a and steelT.sa1b within a for loop|steelT.sa2
+... also building a table of results|steelT.sa3
+... also using repeat until, and building up an index set for the table|steelT.sa4
+... also using if to record only those parameter values at which the dual price changes|steelT.sa5
+Binary search to find a breakpoint in the dual value|steelT.sa6
+... also handling the case of more than one breakpoint in the initial interval|steelT.sa6a
+... also counting the extra breakpoints detected|steelT.sa6b
+Sensitivity analysis using break and continue|steelT.sa7
+... also for each t, printing at the end of each pass|steelT.sa7a
+... also for each t, storing all values until the end|steelT.sa7b
+... also incorporating a break criterion requiring a named loop|steelT.sa7c
+Data-specific script for a formatted table|steelT.tab0
+General script for formatted table, using a for loop|steelT.tab1
+... also with if statement to suppress printing of 100%|steelT.tab2

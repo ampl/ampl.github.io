@@ -1,0 +1,15 @@
+Implements|Script|Uses
+Gilmore-Gomory column generation procedure for the cutting-stock (roll trim) problem|cut1.run|cut1.mod cut.dat
+Same as cut1.run, but using an alternative arrangement wherein problems are defined immediately before before their members are declared|cut2.run|cut2.mod cut.dat
+Same as cut1.run, but with better formatting of output|cut3.run|cut1.mod cut.dat
+Dantzig-Wolfe decomposition for a multi-commodity transportation problem, using a single subproblem|multi1.run|multi1.mod multi1.dat
+Same as multi1.run, but using the same repeat loop for both phase I (infeasible) and phase II (feasible).|multi1a.run|multi1.mod multi1.dat
+Same as multi1.run, but using a separate subproblem for each product; subproblems are represented in AMPL by an indexed collection of named problems|multi2.run|multi2.mod multi2.dat
+Same as multi2.run, except that the separate subproblems are realized by changing the data to a single AMPL named problem|multi3.run|multi3.mod multi3.dat
+Benders decomposition for a stochastic programming variant of a multi-period production problem (see Exercise 4-5)|stoch1.run|stoch1.mod stoch.dat
+Same as stoch1.run, but using a separate subproblem for each scenario; subproblems are represented in AMPL by an indexed collection of named problems|stoch2.run|stoch2.mod stoch.dat
+Same as stoch2.run, except that the separate subproblems are realized by changing the data to a single AMPL named problem|stoch3.run|stoch3.mod stoch.dat
+Benders decomposition for a location-transportation problem (original model in trnloc.mod)|trnloc1.run|trnloc1.mod trnloc.dat
+Same as trnloc2a.run, but model has upper limits on the Ship variables: LP relaxation bound is still poor, but subproblem does not have the integrality property and considerable improvement is made|trnloc2b.run|trnloc2b.mod trnloc2.dat
+Same as trnloc2b.run, but model has 0-1 constraints disaggregated: LP relaxation bound is good, but subproblem has the integrality property and no further improvement can be made|trnloc2c.run|trnloc2c.mod trnloc2.dat
+Lagrangian relaxation for a location-transportation problem: LP relaxation bound is poor, and subproblem has the integrality property so no improvement can be made|trnloc2a.run|trnloc2a.mod trnloc2.dat

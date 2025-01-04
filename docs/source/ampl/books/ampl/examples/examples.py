@@ -1,16 +1,20 @@
 import csv
+import os
 import shutil
 
 # Define the input CSV file and output RST file
 csv_file = "examples.csv"
 csv_fig_file = "examples_fig.csv"
+csv_additional_scripts_1 = "examples-additional-scripts-1.csv"
+csv_additional_scripts_2 = "examples-additional-scripts-2.csv"
+csv_logic_examples = "examples-logic.csv"
 rst_file = "index.rst"
 
 
 def csv_to_rows(csv_file):
     # Read the CSV file
     with open(csv_file, mode="r", newline="", encoding="utf-8") as file:
-        reader = csv.reader(file)
+        reader = csv.reader(file, delimiter="|")
         rows = list(reader)
     return rows
 
@@ -19,12 +23,19 @@ examples_files = {}
 
 
 def preprocess_rows(rows):
+    def link_examples(value, examples):
+        if value in examples:
+            return examples[value]
+        if " " in value:
+            return " ".join(map(lambda v: examples.get(v, v), value.split(" ")))
+        return value
+
     for row in rows:
         for value in row:
-            if "." not in value:
-                continue
-            examples_files[value] = f":doc:`{value} <{value}>`"
-    return [[examples_files.get(value, value) for value in row] for row in rows]
+            if value.endswith((".mod", ".dat", ".run")) or value.startswith(("steelT")):
+                for v in value.split(" "):
+                    examples_files[v] = f":doc:`{v} <{v}>`"
+    return [[link_examples(value, examples_files) for value in row] for row in rows]
 
 
 def rows_to_rst_table(rows, file):
@@ -100,6 +111,38 @@ with open(rst_file, mode="w", encoding="utf-8") as file:
     rows = preprocess_rows(rows)
     rows_to_rst_table(rows, file)
 
+    file.write("\n")
+    file.write("Additional Scripts: Looping and Testing - 1\n")
+    file.write("-------------------------------------------\n\n")
+    file.write("Writing “scripts” in the AMPL command language\n\n")
+    file.write(
+        "All examples use :doc:`steelT.mod <steelT.mod>` as the model file and the :doc:`steelT.dat <steelT.dat>` as the data file.\n\n"
+    )
+
+    rows = csv_to_rows(csv_additional_scripts_1)
+    rows = preprocess_rows(rows)
+    rows_to_rst_table(rows, file)
+
+    file.write("\n")
+    file.write("Additional Scripts: Looping and Testing - 2\n")
+    file.write("-------------------------------------------\n\n")
+    file.write("Implementing algorithms through AMPL scripts\n\n")
+
+    rows = csv_to_rows(csv_additional_scripts_2)
+    rows = preprocess_rows(rows)
+    rows_to_rst_table(rows, file)
+
+    file.write("\n")
+    file.write("Logic & Constraint Programming Examples\n")
+    file.write("---------------------------------------\n\n")
+    file.write(
+        "This is a preliminary set of examples to offer some starting points for experimenting with AMPL’s `“logic” and constraint programming interfaces <https://ampl.com/products/ampl/logic-and-constraint-programming-extensions/>`_. We welcome comments for improvements or other examples. \n\n"
+    )
+
+    rows = csv_to_rows(csv_logic_examples)
+    rows = preprocess_rows(rows)
+    rows_to_rst_table(rows, file)
+
     file.write("List of example files\n")
     file.write("---------------------\n\n")
 
@@ -110,9 +153,20 @@ with open(rst_file, mode="w", encoding="utf-8") as file:
 
 print(f"RST file '{rst_file}' has been generated.")
 
+paths = [
+    "EXAMPLES/EXAMPLES2",
+    "EXAMPLES/LOOP1",
+    "EXAMPLES/LOOP2",
+    "EXAMPLES/LOGIC/EXAMPLES",
+]
+
 for ampl_file in examples_files:
     rst_file = f"{ampl_file}.rst"
-    fname = f"EXAMPLES/EXAMPLES2/{ampl_file}"
+    for path in paths:
+        fname = f"{path}/{ampl_file}"
+        if os.path.isfile(fname):
+            break
+    assert os.path.isfile(fname), f"{fname} not found"
     content = open(fname, "r").read()
     with open(rst_file, "w") as file:
         file.write(f"{ampl_file}\n{'='*len(ampl_file)}\n\n")

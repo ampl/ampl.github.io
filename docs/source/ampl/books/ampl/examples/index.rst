@@ -326,6 +326,119 @@ Book examples by figure number
 +--------+------------------------------------+
 
 
+
+Additional Scripts: Looping and Testing - 1
+-------------------------------------------
+
+Writing “scripts” in the AMPL command language
+
+All examples use :doc:`steelT.mod <steelT.mod>` as the model file and the :doc:`steelT.dat <steelT.dat>` as the data file.
+
++------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
+| Implements                                                                                                                               | Script file                                                       |
++==========================================================================================================================================+===================================================================+
+| One pass of sensitivity analysis on avail[3] in the multi-period production problem (Section 4.2)                                        | :doc:`steelT.sa1 <steelT.sa1>`                                    |
++------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
+| Same as :doc:`steelT.sa1 <steelT.sa1>` but split into two scripts, using the commands command                                            | :doc:`steelT.sa1a <steelT.sa1a>` :doc:`steelT.sa1b <steelT.sa1b>` |
++------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
+| Iterated sensitivity analysis, using contents of :doc:`steelT.sa1a <steelT.sa1a>` and :doc:`steelT.sa1b <steelT.sa1b>` within a for loop | :doc:`steelT.sa2 <steelT.sa2>`                                    |
++------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
+| ... also building a table of results                                                                                                     | :doc:`steelT.sa3 <steelT.sa3>`                                    |
++------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
+| ... also using repeat until, and building up an index set for the table                                                                  | :doc:`steelT.sa4 <steelT.sa4>`                                    |
++------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
+| ... also using if to record only those parameter values at which the dual price changes                                                  | :doc:`steelT.sa5 <steelT.sa5>`                                    |
++------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
+| Binary search to find a breakpoint in the dual value                                                                                     | :doc:`steelT.sa6 <steelT.sa6>`                                    |
++------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
+| ... also handling the case of more than one breakpoint in the initial interval                                                           | :doc:`steelT.sa6a <steelT.sa6a>`                                  |
++------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
+| ... also counting the extra breakpoints detected                                                                                         | :doc:`steelT.sa6b <steelT.sa6b>`                                  |
++------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
+| Sensitivity analysis using break and continue                                                                                            | :doc:`steelT.sa7 <steelT.sa7>`                                    |
++------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
+| ... also for each t, printing at the end of each pass                                                                                    | :doc:`steelT.sa7a <steelT.sa7a>`                                  |
++------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
+| ... also for each t, storing all values until the end                                                                                    | :doc:`steelT.sa7b <steelT.sa7b>`                                  |
++------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
+| ... also incorporating a break criterion requiring a named loop                                                                          | :doc:`steelT.sa7c <steelT.sa7c>`                                  |
++------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
+| Data-specific script for a formatted table                                                                                               | :doc:`steelT.tab0 <steelT.tab0>`                                  |
++------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
+| General script for formatted table, using a for loop                                                                                     | :doc:`steelT.tab1 <steelT.tab1>`                                  |
++------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
+| ... also with if statement to suppress printing of 100%                                                                                  | :doc:`steelT.tab2 <steelT.tab2>`                                  |
++------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
+
+
+
+Additional Scripts: Looping and Testing - 2
+-------------------------------------------
+
+Implementing algorithms through AMPL scripts
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------+---------------------------------------------------------------------+
+| Implements                                                                                                                                                                                            | Script                             | Uses                                                                |
++=======================================================================================================================================================================================================+====================================+=====================================================================+
+| Gilmore-Gomory column generation procedure for the cutting-stock (roll trim) problem                                                                                                                  | :doc:`cut1.run <cut1.run>`         | :doc:`cut1.mod <cut1.mod>` :doc:`cut.dat <cut.dat>`                 |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------+---------------------------------------------------------------------+
+| Same as cut1.run, but using an alternative arrangement wherein problems are defined immediately before before their members are declared                                                              | :doc:`cut2.run <cut2.run>`         | :doc:`cut2.mod <cut2.mod>` :doc:`cut.dat <cut.dat>`                 |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------+---------------------------------------------------------------------+
+| Same as cut1.run, but with better formatting of output                                                                                                                                                | :doc:`cut3.run <cut3.run>`         | :doc:`cut1.mod <cut1.mod>` :doc:`cut.dat <cut.dat>`                 |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------+---------------------------------------------------------------------+
+| Dantzig-Wolfe decomposition for a multi-commodity transportation problem, using a single subproblem                                                                                                   | :doc:`multi1.run <multi1.run>`     | :doc:`multi1.mod <multi1.mod>` :doc:`multi1.dat <multi1.dat>`       |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------+---------------------------------------------------------------------+
+| Same as multi1.run, but using the same repeat loop for both phase I (infeasible) and phase II (feasible).                                                                                             | :doc:`multi1a.run <multi1a.run>`   | :doc:`multi1.mod <multi1.mod>` :doc:`multi1.dat <multi1.dat>`       |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------+---------------------------------------------------------------------+
+| Same as multi1.run, but using a separate subproblem for each product; subproblems are represented in AMPL by an indexed collection of named problems                                                  | :doc:`multi2.run <multi2.run>`     | :doc:`multi2.mod <multi2.mod>` :doc:`multi2.dat <multi2.dat>`       |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------+---------------------------------------------------------------------+
+| Same as multi2.run, except that the separate subproblems are realized by changing the data to a single AMPL named problem                                                                             | :doc:`multi3.run <multi3.run>`     | :doc:`multi3.mod <multi3.mod>` :doc:`multi3.dat <multi3.dat>`       |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------+---------------------------------------------------------------------+
+| Benders decomposition for a stochastic programming variant of a multi-period production problem (see Exercise 4-5)                                                                                    | :doc:`stoch1.run <stoch1.run>`     | :doc:`stoch1.mod <stoch1.mod>` :doc:`stoch.dat <stoch.dat>`         |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------+---------------------------------------------------------------------+
+| Same as stoch1.run, but using a separate subproblem for each scenario; subproblems are represented in AMPL by an indexed collection of named problems                                                 | :doc:`stoch2.run <stoch2.run>`     | :doc:`stoch2.mod <stoch2.mod>` :doc:`stoch.dat <stoch.dat>`         |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------+---------------------------------------------------------------------+
+| Same as stoch2.run, except that the separate subproblems are realized by changing the data to a single AMPL named problem                                                                             | :doc:`stoch3.run <stoch3.run>`     | :doc:`stoch3.mod <stoch3.mod>` :doc:`stoch.dat <stoch.dat>`         |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------+---------------------------------------------------------------------+
+| Benders decomposition for a location-transportation problem (original model in trnloc.mod)                                                                                                            | :doc:`trnloc1.run <trnloc1.run>`   | :doc:`trnloc1.mod <trnloc1.mod>` :doc:`trnloc.dat <trnloc.dat>`     |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------+---------------------------------------------------------------------+
+| Same as trnloc2a.run, but model has upper limits on the Ship variables: LP relaxation bound is still poor, but subproblem does not have the integrality property and considerable improvement is made | :doc:`trnloc2b.run <trnloc2b.run>` | :doc:`trnloc2b.mod <trnloc2b.mod>` :doc:`trnloc2.dat <trnloc2.dat>` |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------+---------------------------------------------------------------------+
+| Same as trnloc2b.run, but model has 0-1 constraints disaggregated: LP relaxation bound is good, but subproblem has the integrality property and no further improvement can be made                    | :doc:`trnloc2c.run <trnloc2c.run>` | :doc:`trnloc2c.mod <trnloc2c.mod>` :doc:`trnloc2.dat <trnloc2.dat>` |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------+---------------------------------------------------------------------+
+| Lagrangian relaxation for a location-transportation problem: LP relaxation bound is poor, and subproblem has the integrality property so no improvement can be made                                   | :doc:`trnloc2a.run <trnloc2a.run>` | :doc:`trnloc2a.mod <trnloc2a.mod>` :doc:`trnloc2.dat <trnloc2.dat>` |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------+---------------------------------------------------------------------+
+
+
+
+Logic & Constraint Programming Examples
+---------------------------------------
+
+This is a preliminary set of examples to offer some starting points for experimenting with AMPL’s `“logic” and constraint programming interfaces <https://ampl.com/products/ampl/logic-and-constraint-programming-extensions/>`_. We welcome comments for improvements or other examples. 
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| Represents                                                                                                                                                | Model File                                                                                                                     |
++===========================================================================================================================================================+================================================================================================================================+
+| Integer program for assignment of people of groups so that each group is “balanced” by various criteria.                                                  | :doc:`balAssign0.mod <balAssign0.mod>` :doc:`balAssign0.dat <balAssign0.dat>`                                                  |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| Constraint program for balanced assignment of people to groups, using the numberof operator.                                                              | :doc:`balAssign1.mod <balAssign1.mod>` :doc:`balAssign1.dat <balAssign1.dat>`                                                  |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| Model for map coloring using not-equals constraint.                                                                                                       | :doc:`mapColoring.mod <mapColoring.mod>`                                                                                       |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| Integer program for the n queens problem: put n queens on an n-by-n chessboard so that no queen is attacking any other queen.                             | :doc:`nQueens0.mod <nQueens0.mod>`                                                                                             |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| Constraint program for the n queens problem, using the alldiff operator.                                                                                  | :doc:`nQueens.mod <nQueens.mod>`                                                                                               |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| Open-shop scheduling model using disjunctive constraints to avoid job and machine conflicts.                                                              | :doc:`openShop.mod <openShop.mod>` :doc:`openShop.dat <openShop.dat>`                                                          |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| Line up a group of people to maximize the number of adjacency preferences satisfied, modeling with alldiff, equivalence (<==>), and strict inequality (<) | :doc:`photo.mod <photo.mod>` :doc:`photo9.dat <photo9.dat>` :doc:`photo11.dat <photo11.dat>`                                   |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| Hoist scheduling model using disjunctive constraints                                                                                                      | :doc:`singleHoist.mod <singleHoist.mod>` :doc:`singleHoist3.dat <singleHoist3.dat>` :doc:`singleHoist4.dat <singleHoist4.dat>` |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| Model to solve instances of the 3 x 3 Sudoku problem, using the alldiff operator                                                                          | :doc:`sudoku.mod <sudoku.mod>` :doc:`sudokuVeryEasy.dat <sudokuVeryEasy.dat>` :doc:`sudokuHard.dat <sudokuHard.dat>`           |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+
+
 List of example files
 ---------------------
 
@@ -334,12 +447,19 @@ List of example files
     :maxdepth: 2
 
     assign.dat.rst
+    balAssign0.dat.rst
+    balAssign0.mod.rst
+    balAssign1.dat.rst
+    balAssign1.mod.rst
     blend.mod.rst
     cut.dat.rst
     cut.mod.rst
     cut.run.rst
+    cut1.mod.rst
+    cut1.run.rst
     cut2.mod.rst
     cut2.run.rst
+    cut3.run.rst
     diet.dat.rst
     diet.mod.rst
     diet.run.rst
@@ -358,9 +478,20 @@ List of example files
     iocol1.mod.rst
     iocol2.mod.rst
     iorow.mod.rst
+    mapColoring.mod.rst
     minmax.mod.rst
     multi.dat.rst
     multi.mod.rst
+    multi1.dat.rst
+    multi1.mod.rst
+    multi1.run.rst
+    multi1a.run.rst
+    multi2.dat.rst
+    multi2.mod.rst
+    multi2.run.rst
+    multi3.dat.rst
+    multi3.mod.rst
+    multi3.run.rst
     multic.mod.rst
     multmip1.dat.rst
     multmip1.mod.rst
@@ -368,6 +499,8 @@ List of example files
     multmip2.mod.rst
     multmip3.dat.rst
     multmip3.mod.rst
+    nQueens.mod.rst
+    nQueens0.mod.rst
     net1.dat.rst
     net1.mod.rst
     net1node.mod.rst
@@ -389,11 +522,19 @@ List of example files
     nltransb.mod.rst
     nltransc.mod.rst
     nltransd.mod.rst
+    openShop.dat.rst
+    openShop.mod.rst
+    photo.mod.rst
+    photo11.dat.rst
+    photo9.dat.rst
     prod.dat.rst
     prod.mod.rst
     prod0.mod.rst
     sched.dat.rst
     sched.mod.rst
+    singleHoist.mod.rst
+    singleHoist3.dat.rst
+    singleHoist4.dat.rst
     steel.dat.rst
     steel.mod.rst
     steel2.dat.rst
@@ -408,12 +549,22 @@ List of example files
     steelT.dat.rst
     steelT.mod.rst
     steelT.sa1.rst
+    steelT.sa1a.rst
+    steelT.sa1b.rst
     steelT.sa2.rst
     steelT.sa3.rst
     steelT.sa4.rst
     steelT.sa5.rst
+    steelT.sa6.rst
+    steelT.sa6a.rst
+    steelT.sa6b.rst
     steelT.sa7.rst
+    steelT.sa7a.rst
+    steelT.sa7b.rst
+    steelT.sa7c.rst
+    steelT.tab0.rst
     steelT.tab1.rst
+    steelT.tab2.rst
     steelT0.mod.rst
     steelT2.dat.rst
     steelT2.mod.rst
@@ -428,6 +579,16 @@ List of example files
     steelpl4.mod.rst
     steelpl5.dat.rst
     steelpl5.mod.rst
+    stoch.dat.rst
+    stoch1.mod.rst
+    stoch1.run.rst
+    stoch2.mod.rst
+    stoch2.run.rst
+    stoch3.mod.rst
+    stoch3.run.rst
+    sudoku.mod.rst
+    sudokuHard.dat.rst
+    sudokuVeryEasy.dat.rst
     transp.dat.rst
     transp.mod.rst
     transp2.mod.rst
@@ -436,3 +597,13 @@ List of example files
     transpl1.mod.rst
     transpl2.dat.rst
     transpl2.mod.rst
+    trnloc.dat.rst
+    trnloc1.mod.rst
+    trnloc1.run.rst
+    trnloc2.dat.rst
+    trnloc2a.mod.rst
+    trnloc2a.run.rst
+    trnloc2b.mod.rst
+    trnloc2b.run.rst
+    trnloc2c.mod.rst
+    trnloc2c.run.rst

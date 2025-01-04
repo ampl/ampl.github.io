@@ -1,0 +1,170 @@
+<TITLE> AMPL -- loop2 examples index page </TITLE>
+
+</head>
+
+<body bgcolor="#cccccc">
+
+<hr>
+<font size=-1><b><i>INDEX TO EXAMPLES</i></b></font>
+<hr>
+
+<h2>
+LOOPING AND TESTING 2:<br>
+implementing algorithms through AMPL scripts
+</h2>
+
+<br>
+<table border width=100% cellpadding=7>
+
+<tr align=left>
+<th>Script</th>
+<th>Uses</th>
+<th>Implements</th>
+</tr>
+
+<tr></tr>
+
+<tr valign=top>
+<td><tt><a href=cut1.run>cut1.run</a></tt>
+<td><tt><a href=cut1.mod>cut1.mod</a><br>
+        <a href=cut.dat>cut.dat</a></tt>
+<td>Gilmore-Gomory column generation procedure for the cutting-stock
+(roll trim) problem
+</tr>
+
+<tr valign=top>
+<td><tt><a href=cut2.run>cut2.run</a></tt>
+<td><tt><a href=cut2.mod>cut2.mod</a><br>
+        <a href=cut.dat>cut.dat</a></tt>
+<td>Same as <tt>cut1.run</tt>, but using an alternative arrangement
+wherein problems are defined immediately before before their members 
+are declared
+</tr>
+
+<tr valign=top>
+<td><tt><a href=cut3.run>cut3.run</a></tt>
+<td><tt><a href=cut1.mod>cut1.mod</a><br>
+        <a href=cut.dat>cut.dat</a></tt>
+<td>Same as <tt>cut1.run</tt>, but with better formatting of output
+</tr>
+
+<tr></tr>
+
+<tr valign=top>
+<td><tt><a href=multi1.run>multi1.run</a></tt>
+<td><tt><a href=multi1.mod>multi1.mod</a><br>
+        <a href=multi1.dat>multi1.dat</a></tt>
+<td>Dantzig-Wolfe decomposition for a multi-commodity transportation
+problem, using a single subproblem
+</tr>
+
+<tr valign=top>
+<td><tt><a href=multi1a.run>multi1a.run</a></tt>
+<td><tt><a href=multi1.mod>multi1.mod</a><br>
+        <a href=multi1.dat>multi1.dat</a></tt>
+<td>Same as <tt>multi1.run</tt>, but using the same <tt>repeat</tt> loop 
+for both phase I (infeasible) and phase II (feasible).
+</tr>
+
+<tr valign=top>
+<td><tt><a href=multi2.run>multi2.run</a></tt>
+<td><tt><a href=multi2.mod>multi2.mod</a><br>
+        <a href=multi2.dat>multi2.dat</a></tt>
+<td>Same as <tt>multi1.run</tt>, but using a separate subproblem for
+each product; subproblems are represented in AMPL by an indexed collection
+of named problems
+</tr>
+
+<tr valign=top>
+<td><tt><a href=multi3.run>multi3.run</a></tt>
+<td><tt><a href=multi3.mod>multi3.mod</a><br>
+        <a href=multi3.dat>multi3.dat</a></tt>
+<td>Same as <tt>multi2.run</tt>, except that the separate subproblems are
+realized by changing the data to a single AMPL named problem
+</tr>
+
+<tr></tr>
+
+<tr valign=top>
+<td><tt><a href=stoch1.run>stoch1.run</a></tt>
+<td><tt><a href=stoch1.mod>stoch1.mod</a><br>
+        <a href=stoch.dat>stoch.dat</a></tt>
+<td>Benders decomposition for a stochastic programming variant of a
+multi-period production problem (see Exercise 4-5)
+</tr>
+
+<tr valign=top>
+<td><tt><a href=stoch2.run>stoch2.run</a></tt>
+<td><tt><a href=stoch2.mod>stoch2.mod</a><br>
+        <a href=stoch.dat>stoch.dat</a></tt>
+<td>Same as <tt>stoch1.run</tt>, but using a separate subproblem for
+each scenario; subproblems are represented in AMPL by an indexed collection
+of named problems
+</tr>
+
+<tr valign=top>
+<td><tt><a href=stoch3.run>stoch3.run</a></tt>
+<td><tt><a href=stoch3.mod>stoch3.mod</a><br>
+        <a href=stoch.dat>stoch.dat</a></tt>
+<td>Same as <tt>stoch2.run</tt>, except that the separate subproblems are
+realized by changing the data to a single AMPL named problem
+</tr>
+
+<tr></tr>
+
+<tr valign=top>
+<td><tt><a href=trnloc1.run>trnloc1.run</a></tt><br><font color="ff7700"><b><i>revised!</i></b></font>
+<td><tt><a href=trnloc1.mod>trnloc1.mod</a><br>
+        <a href=trnloc.dat>trnloc.dat</a></tt>
+<td>Benders decomposition for a location-transportation problem
+(original model in <tt><a href=trnloc.mod>trnloc.mod</a></tt>)
+</tr>
+
+<tr></tr>
+
+<tr valign=top>
+<td><tt><a href=trnloc2a.run>trnloc2a.run</a></tt>
+<td><tt><a href=trnloc2a.mod>trnloc2a.mod</a><br>
+        <a href=trnloc2.dat>trnloc2.dat</a></tt>
+<td>Lagrangian relaxation for a location-transportation problem: 
+LP relaxation bound is poor, and subproblem has the integrality property
+so no improvement can be made
+</tr>
+
+<tr valign=top>
+<td><tt><a href=trnloc2b.run>trnloc2b.run</a></tt>
+<td><tt><a href=trnloc2b.mod>trnloc2b.mod</a><br>
+        <a href=trnloc2.dat>trnloc2.dat</a></tt>
+<td>Same as <tt>trnloc2a.run</tt>, but model has upper limits on the
+<tt>Ship</tt> variables: 
+LP relaxation bound is still poor, but subproblem does <i>not</i> have
+the integrality property and considerable improvement is made
+</tr>
+
+<tr valign=top>
+<td><tt><a href=trnloc2c.run>trnloc2c.run</a></tt>
+<td><tt><a href=trnloc2c.mod>trnloc2c.mod</a><br>
+        <a href=trnloc2.dat>trnloc2.dat</a></tt>
+<td>Same as <tt>trnloc2b.run</tt>, but model has 0-1 constraints
+disaggregated:
+LP relaxation bound is good, but subproblem has the integrality property
+and no further improvement can be made
+</tr>
+
+</table>
+
+
+<br><hr><br>
+<b><i>Comments or questions?</i></b><br>
+Write to <a href=mailto:info@ampl.com><tt>info@ampl.com</tt></a>
+or use our <a href=../../comments.html>comment form</a>.<p>
+
+<i><a href=../index.html>Return to the AMPL update page</a>.</i><p>
+<i><a href=../../index.html>Return to the AMPL home page</a>.</i><p>
+
+<hr width=50% align=left>
+<font size=-2>LAST MODIFIED 24 MARCH 2012 BY 
+<a href=mailto:4er@ampl.com>4er@ampl.com</a>.</font>
+
+</body>
+</html>

@@ -1,0 +1,10 @@
+Represents|Model File
+Integer program for assignment of people of groups so that each group is “balanced” by various criteria.|balAssign0.mod balAssign0.dat
+Constraint program for balanced assignment of people to groups, using the numberof operator.|balAssign1.mod balAssign1.dat
+Model for map coloring using not-equals constraint.|mapColoring.mod
+Integer program for the n queens problem: put n queens on an n-by-n chessboard so that no queen is attacking any other queen.|nQueens0.mod
+Constraint program for the n queens problem, using the alldiff operator.|nQueens.mod
+Open-shop scheduling model using disjunctive constraints to avoid job and machine conflicts.|openShop.mod openShop.dat
+Line up a group of people to maximize the number of adjacency preferences satisfied, modeling with alldiff, equivalence (<==>), and strict inequality (<)|photo.mod photo9.dat photo11.dat
+Hoist scheduling model using disjunctive constraints|singleHoist.mod singleHoist3.dat singleHoist4.dat
+Model to solve instances of the 3 x 3 Sudoku problem, using the alldiff operator|sudoku.mod sudokuVeryEasy.dat sudokuHard.dat
