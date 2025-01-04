@@ -147,6 +147,10 @@ for example in examples_list:
         continue
     if example.lower() != example:
         assert example.lower() not in examples_list
+        fname = os.path.join(examples_dir, example.lower())
+        if os.path.exists(fname):
+            print(f"{fname} already exists! skipping redirect.")
+            continue
         example = example.replace(".rst", "")
         redirects[f"ampl/books/ampl/examples/{example.lower()}.html"] = (
             f"{example}.html"
