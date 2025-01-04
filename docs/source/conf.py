@@ -140,6 +140,17 @@ redirects["social.html"] = "https://www.linkedin.com/company/ampl"
 redirects["ampl/book.html"] = "books/index.html"
 redirects["ampl/book/index.html"] = "../books/index.html"
 
+examples_dir = os.path.join(os.path.dirname(__file__), "ampl/books/ampl/examples/")
+examples_list = os.listdir(examples_dir)
+for example in examples_list:
+    if not example.endswith(".rst"):
+        continue
+    if example.lower() != example:
+        assert example.lower() not in examples_list
+        example = example.replace(".rst", "")
+        redirects[f"ampl/books/ampl/examples/{example.lower()}.html"] = (
+            f"{example}.html"
+        )
 
 # Add any paths that contain custom themes here, relative to this directory.
 # html_theme_path = []
