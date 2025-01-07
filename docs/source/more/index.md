@@ -2,6 +2,19 @@
 
 # Learn more
 
+```{toctree}
+:hidden:
+:maxdepth: 1
+
+new.md
+interviews.md
+videos.md
+reports.md
+news.md
+projects.md
+faq.md
+```
+
 Browse these resources for additional information about AMPL.
 
 -   [**What's New**](new.md)  
@@ -27,15 +40,3 @@ Browse these resources for additional information about AMPL.
 
 -   [**FAQs**](faq.md)  
     AMPL Frequently Asked Questions (FAQ)
-
-```{toctree}
-:hidden:
-:maxdepth: 0
-new.md
-interviews.md
-videos.md
-reports.md
-news.md
-projects.md
-faq.md
-```
