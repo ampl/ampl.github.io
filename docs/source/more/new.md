@@ -11,7 +11,7 @@
 
 ## AMPL Community Edition
 
-**Free, full-powered AMPL for personal, academic, or commercial prototyping purposes using [AMPL APIs](ampl/apis.rst)**.
+**Free, full-powered AMPL for personal, academic, or commercial prototyping purposes using [AMPL APIs](../ampl/apis.rst)**.
 
 -   License never expires
 -   Unlimited variables & constraints
@@ -143,7 +143,7 @@ The drivers have the following features:
 - Algebraic expressions beyond linear and quadratic.
 - Choice between conversions in the driver vs. native solver support.
 
-[[Modeling Guide](https://mp.ampl.com/model-guide.html)] [[gurobi options](solvers/gurobi/options.md)] [[copt options](solvers/copt/options.md)]  [[highs options](solvers/highs/options.md)]
+[[Modeling Guide](https://mp.ampl.com/model-guide.html)] [[gurobi options](../solvers/gurobi/options.md)] [[copt options](../solvers/copt/options.md)]  [[highs options](../solvers/highs/options.md)]
 
 ## New AMPL-solver interface library
 

@@ -18,11 +18,11 @@ AMPL connects to most :ref:`commercial and open-source solvers <solvers>` and al
 
     ampl/index
     solvers/index
-    faq
-    features
     more/index
 
 .. toctree::
     :hidden:
+    :maxdepth: 1
 
     releases/index
+

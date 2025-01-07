@@ -140,6 +140,8 @@ redirects["social.html"] = "https://www.linkedin.com/company/ampl"
 redirects["ampl/book.html"] = "books/index.html"
 redirects["ampl/book/index.html"] = "../books/index.html"
 redirects["projects.html"] = "more/projects.html"
+redirects["faq.html"] = "more/faq.html"
+redirects["features.html"] = "more/new.html"
 
 examples_dir = os.path.join(os.path.dirname(__file__), "ampl/books/ampl/examples/")
 examples_list = os.listdir(examples_dir)

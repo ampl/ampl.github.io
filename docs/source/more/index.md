@@ -4,6 +4,9 @@
 
 Browse these resources for additional information about AMPL.
 
+-   [**What's New**](new.md)  
+    learn about new AMPL features
+
 -   [**Interviews**](interviews.md)  
     interviews with founders of AMPL
 
@@ -22,13 +25,17 @@ Browse these resources for additional information about AMPL.
 -   [**Hooking Your Solver to AMPL**](https://mp.ampl.com/howto.html)  
     covering all aspects of making new interfaces from AMPL to solvers
 
+-   [**FAQs**](faq.md)  
+    AMPL Frequently Asked Questions (FAQ)
+
 ```{toctree}
 :hidden:
-:glob:
-:maxdepth: 1
+:maxdepth: 0
+new.md
 interviews.md
 videos.md
 reports.md
 news.md
 projects.md
+faq.md
 ```
