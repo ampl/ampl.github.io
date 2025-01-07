@@ -20,7 +20,7 @@ AMPL connects to most :ref:`commercial and open-source solvers <solvers>` and al
     solvers/index
     faq
     features
-    projects
+    more/index
 
 .. toctree::
     :hidden:

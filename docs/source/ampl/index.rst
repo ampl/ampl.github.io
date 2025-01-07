@@ -17,4 +17,5 @@ AMPL Resoures
     python/index
     docker/index
     cicd/index
+    best-practices/index
 
