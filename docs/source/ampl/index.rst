@@ -1,6 +1,6 @@
 .. _ampl_index:
 
-AMPL Resoures
+AMPL Resources
 =============
 
 
