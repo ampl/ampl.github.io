@@ -24,5 +24,5 @@ AMPL connects to most :ref:`commercial and open-source solvers <solvers>` and al
     :hidden:
     :maxdepth: 1
 
-    releases/index
+    Releases <releases/index>
 

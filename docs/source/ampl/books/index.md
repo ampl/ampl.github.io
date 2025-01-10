@@ -1,4 +1,4 @@
-# AMPL Books
+# AMPL & Optimization Books
 
 ## AMPL: A Modeling Language for Mathematical Programming
 

@@ -1,7 +1,7 @@
 .. _ampl_index:
 
 AMPL Resources
-=============
+==============
 
 
 .. toctree::
@@ -11,7 +11,7 @@ AMPL Resources
     install
     free
     apis
-    books/index
+    AMPL Book <books/index>
     options
     suffixes
     python/index
