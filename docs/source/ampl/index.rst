@@ -8,8 +8,8 @@ AMPL Resources
     :maxdepth: 2
 
     introduction
-    install
     free
+    install
     apis
     AMPL Books <books/index>
     options
