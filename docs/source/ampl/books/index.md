@@ -1,5 +1,7 @@
 # AMPL & Optimization Books
 
+This page offers a collection of resources for learning mathematical optimization with AMPL, including the original [AMPL Book](#ampl-a-modeling-language-for-mathematical-programming) and other works focused on practical applications like [Python integration](#mo-book-hands-on-mathematical-optimization-with-ampl-in-python), [electricity markets](#optimization-models-in-electricity-markets), and general optimization topics.
+
 ## AMPL: A Modeling Language for Mathematical Programming
 
 ![](./ampl/ampl_s.jpg)
