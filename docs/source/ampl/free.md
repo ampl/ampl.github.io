@@ -1,4 +1,8 @@
-# How to use AMPL for free
+# Get started for free
+
+AMPL offers several free options for users to develop and test optimization models.
+These options enable users to explore AMPL's capabilities and integrate them into 
+their projects without financial commitment.
 
 ## AMPL Community Edtion
 
