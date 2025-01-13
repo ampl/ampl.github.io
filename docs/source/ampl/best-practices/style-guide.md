@@ -3,7 +3,9 @@
 Creating clear, consistent, and scalable AMPL models is critical for managing complex optimization workflows. The best practices identified in this guide provide actionable guidelines for naming, organizing, and formatting AMPL models to ensure readability, maintainability, and professional-quality output.
 
 ## 1. Model Structure
-### 1.1. Divide the model into clear sections: 
+
+### 1.1. Divide the model into clear sections
+
   - Sets
   - Parameters
   - Variables
@@ -11,6 +13,7 @@ Creating clear, consistent, and scalable AMPL models is critical for managing co
   - Objective Functions
 
 ### 1.2. Use Indentation and Formatting
+
 AMPL supports spaces, indentation and line breaks, so use them to guarantee the readability and understanding of the model.
 
 - **Indent Blocks:** Use consistent indentation for readability.
@@ -75,6 +78,7 @@ This check can also be performed on the [API](#apis) side (specially when using 
 The most important rule for scalable models is to write descriptive and significant names for the entities in the model, rather than the usual short names used in Maths and Programming (`x`, `i`, `j`, `p`, `q`...). This depends on the context, because short names can help reading some complex expression, specially when using short names for index variables.
 
 ### 2.1. General Naming Principles
+
 - **Readable Names:** Use meaningful, descriptive names for `sets`, `parameters`, `variables`, `constraints`, and `objectives`.    
   ```ampl
   warehouse_capacity, transport_cost  # Good practice
@@ -99,6 +103,7 @@ The most important rule for scalable models is to write descriptive and signific
   - **Overloading:** Do not use the same name across different types (e.g., avoid using `cost` for both a parameter and a variable).
 
 ### 2.2. Sets
+
 - Name sets using uppercase letters (CONSTANT_CASE).
 - Name sets using plural nouns to indicate they represent collections.
 - Ensure the name specifies what the set contains.
@@ -111,6 +116,7 @@ The most important rule for scalable models is to write descriptive and signific
   ```
 
 ### 2.3. Parameters
+
 - Name parameters using lowercase letters (snake_case).
 - Provide context about what the parameter represents.
 - For multi-word names of parameters use underscores (`_`) to combine words and improve readability.
@@ -120,6 +126,7 @@ The most important rule for scalable models is to write descriptive and signific
   ```
 
 ### 2.4. Variables
+
 - Name variables starting each word with uppercase letters (PascalCase).
 - Use names that reflect the decision being modeled and avoid generic names like `x` or `y`.
   ```ampl
@@ -128,6 +135,7 @@ The most important rule for scalable models is to write descriptive and signific
   ```
 
 ### 2.5. Constraints
+
 - Name constraints starting each word with uppercase letters (PascalCase).
 - Use descriptive names for constraints that actually describe the logic or restriction being modeled. For example, words such as: Limit, Balance, Level can be implemented in the name of restrictions.
   ```ampl
@@ -149,6 +157,7 @@ The most important rule for scalable models is to write descriptive and signific
 ```
 
 ### 2.6. Objective Functions
+
 - Name objectives starting each word with uppercase letters (PascalCase).
 - Action-Oriented: Use verbs or action-oriented phrases to describe the goal.
 - Single Purpose: Ensure the name reflects the exact purpose of the objective.
@@ -162,6 +171,7 @@ Remember that AMPL also supports [Multiple, Blended and Lexicographical objectiv
 ``` 
 
 ## Benefits
+
 - ***Readability:*** Clear visual separation between different model elements.
 - ***Debugging:*** Easier to identify computed vs input elements.
 - ***Maintainability:*** Facilitates collaboration and future updates.
