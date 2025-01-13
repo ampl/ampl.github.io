@@ -72,30 +72,16 @@ This check can also be performed on the `API` side, before loading the data.
 The most important rule for scalable models is to write descriptive and significant names for the entities in the model, rather than the usual short names used in Maths and Programming (`x`, `i`, `j`, `p`, `q`...). This depends on the context, because short names can help reading some complex expression, specially when using short names for index variables.
 
 ### 2.1. General Naming Principles
-- **Readable Names:** Use meaningful, descriptive names for `sets`, `parameters`, `variables`, and `constraints`.    
+- **Readable Names:** Use meaningful, descriptive names for `sets`, `parameters`, `variables`, `constraints`, and `objectives`.    
   ```ampl
   warehouse_capacity, transport_cost  # Good practice
   cap, tc                             ! Not recommended
   ```
 - **Use Domain Terms:** Align sets, parameters, variables, and constraints names with the terminology of your domain (e.g., logistics, finance).  
   ```ampl
-  Shipment_volume                     # Good practice
+  shipment_volume                     # Good practice
   volume                              ! Not recommended
   ```
-- **Use Snake Case:** For multi-word names of `sets`, `parameters`, and `variables`, use underscores (`_`) to combine words and improve readability.  
-  ```ampl
-  param cost_per_unit{PROD} >= 0 ;    # Good practice              
-  param costPerUnit{PROD} >= 0 ;      ! Not recommended
-  ```
-- **Use Snake Case at the End** of computed `sets`, `parameters` and `variables` to denote computed model objects.
-  ```ampl
-  var Storage_Fraction_{p in PROD, t in 1..nPeriod} =          # Amount of each product in Storage each period
-    sum{tt in 1..t} (sum{(i,p) in BLENDING} Blending[i,p,tt]
-    - sum{s in STAT, n in 1..nStep} Demand[p,s,tt,n]) * (1-storage_Waste[p]/100) ;  
-  ```
-
-  # Compute remaining capacity in warehouses
-  var Remaining_Capacity_{w in WAREHOUSES} = capacity[w] - sum{p in PRODUCTS}Shipment[p,w];
 - **Consistency:** Maintain consistent patterns for similar items.  
   ```ampl
   # Good practice
@@ -110,67 +96,67 @@ The most important rule for scalable models is to write descriptive and signific
   - **Overloading:** Do not use the same name across different types (e.g., avoid using `cost` for both a parameter and a variable).
 
 ### 2.2. Sets
-- **Set names are often specified using uppercase letters**. Name sets using plural nouns to indicate they represent collections. Ensure the name specifies what the set contains.
+- Name sets using uppercase letters (CONSTANT_CASE).
+- Name sets using plural nouns to indicate they represent collections.
+- Ensure the name specifies what the set contains.
+- For multi-word names of sets use underscores (`_`) to combine words and improve readability.
   ```ampl
   set WAREHOUSES;
   set CUSTOMERS;
   set WAREHOUSES {CUSTOMERS};
+  set COST_TYPES = {'production', 'transport'};
   ```
+
 ### 2.3. Parameters
-- **Parameter names are often specified using lowercase letters**. Provide context about what the parameter represents.  
+- Name parameters using lowercase letters (snake_case).
+- Provide context about what the parameter represents.
+- For multi-word names of parameters use underscores (`_`) to combine words and improve readability.
   ```ampl
   param cost_per_unit{PRODUCTS};
   param demand_per_product{PRODUCTS};
   ```
-- **Group related parameters:** indexes can be useful to identify parameters related to the same group (like costs). 
-  - Instead of:
-    ```ampl
-    param production_cost{PRODUCTS} >= 0;         # Cost of producing each product
-    param transport_cost{PRODUCTS} >= 0;          # Transportation cost per unit
-    ```
-  - It makes sense to use:
-    ```ampl
-    set COST_TYPES = {'production', 'transport'}; # Define cost types
-    param cost{COST_TYPES, PRODUCTS} >= 0;        # Define a parameter for costs, indexed by products and cost types
 
-    # Use grouped parameter in constraints
-    subject to TotalCostConstraint:
-      sum{c in COST_TYPES, p in PRODUCTS} cost[c,p] <= budget;
-    ```
 ### 2.4. Variables
-- **Variables names are often begin with uppercase letters**. Use names that reflect the decision being modeled and avoid generic names like `x` or `y`.
+- Name variables starting each word with uppercase letters (PascalCase).
+- Use names that reflect the decision being modeled and avoid generic names like `x` or `y`.
   ```ampl
   var Shipment{PRODUCTS, WAREHOUSES} >= 0;
-  var Inventory_Level{PRODUCTS} >= 0;
+  var InventoryLevel{PRODUCTS} >= 0;
   ```
-- **Use Prefixes for Binary & Integer Variables:**
-  ```ampl
-  var IsOpen{WAREHOUSES} binary;    # Binary variable: 1 if warehouse is open, 0 otherwise
-  var NumTruck_Count >= 0 integer;  # Integer variable: Number of trucks to be used
-  ```
+
 ### 2.5. Constraints
-- **Constraints names are often begin with** ***uppercase letters*** with combining words. Use descriptive names for constraints that actually describe the logic or restriction being modeled. For example, words such as: Limit, Balance, Level can be implemented in the name of restrictions.
+- Name constraints starting each word with uppercase letters (PascalCase).
+- Use descriptive names for constraints that actually describe the logic or restriction being modeled. For example, words such as: Limit, Balance, Level can be implemented in the name of restrictions.
   ```ampl
   subject to CapacityLimit{w in WAREHOUSES}: 
     sum{p in PRODUCTS} Shipment[p,w] <= capacity[w];
   ```
-- Remember that in AMPL you can include logical rules directly in the model. Try to use logical constraints to model business rules or problematic constraints whenever possible.
-  ```ampl
-  subject to Shipment{p in PRODUCTS}: 
-    Shipment[p,w] == 0 or Shipment[p,w] >= min_shipment[w];
-  ```
 
-See more expressive modeling examples here: [Modeling guide](https://mp.ampl.com/model-guide.html)
+```{eval-rst}
+.. note::
+
+    Remember that in AMPL you can include logical rules directly in the model. Try to use logical constraints to model business rules or problematic constraints whenever possible.
+
+    .. code-block:: ampl
+        
+        subject to Shipment{p in PRODUCTS}: 
+            Shipment[p,w] == 0 or Shipment[p,w] >= min_shipment[w];
+
+    See more expressive modeling examples here: `Modeling guide <https://mp.ampl.com/model-guide.html>`_
+```
 
 ### 2.6. Objective Functions
-- **Action-Oriented:** Use verbs or action-oriented phrases to describe the goal.
-- **Single Purpose:** Ensure the name reflects the exact purpose of the objective.
+- Name objectives starting each word with uppercase letters (PascalCase).
+- Action-Oriented: Use verbs or action-oriented phrases to describe the goal.
+- Single Purpose: Ensure the name reflects the exact purpose of the objective.
   ```ampl
   maximize TotalProfit: sum{p in PROD} Assign[p] * (fixed_profit[p] + variable_profit[p]) ;
   minimize TotalCost: sum{p in PROD} cost[i] * Assign[p];
   ```
 
-** Remember that AMPL also supports [Multiple, Blended and Lexicographical objectives](https://mp.ampl.com/modeling-mo.html). 
+```{note}
+Remember that AMPL also supports [Multiple, Blended and Lexicographical objectives](https://mp.ampl.com/modeling-mo.html).
+``` 
 
 ## Benefits
 - ***Readability:*** Clear visual separation between different model elements.
