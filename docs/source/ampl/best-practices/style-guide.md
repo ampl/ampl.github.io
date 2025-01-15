@@ -49,7 +49,7 @@ Single line (`#`) and multi-line C-style comments (`/*...*/`) are allowed in the
 - **Section & Document comments:** Use comments to describe additional information or key assumptions in the model.
   ```ampl
   # Input parameters defining unit_cost and price steps
-  # Assumption: demand is always non-negative
+  # Assumption: unit_cost is always non-negative
   param unit_cost >= 0;                   
   param n_step integer > 0;
   ```
