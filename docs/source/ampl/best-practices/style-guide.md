@@ -70,7 +70,7 @@ Help ensure that the model's requirements can indeed be met given the available 
   ```
 
 ```{note}
-This check can also be performed on the [API](#apis) side (specially when using [Python](#python_integration)), before loading the data.
+This check could also be performed before loading the data on the [API](#apis) side (specially when using [Python](#python_integration)).
 ```
 
 ## 2. Naming
