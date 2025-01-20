@@ -53,6 +53,17 @@ Example:
 $ python -m amplpy.modules install highs gurobi
 ```
 
+### update
+
+Modules are not automatically updated with amplpy. To update AMPL or solver versions:
+```bash
+$ python -m amplpy.modules install <base> <solver 1> <solver 2> ... --upgrade
+```
+Example:
+```bash
+$ python -m amplpy.modules install base highs gurobi --upgrade
+```
+
 ### activate
 
 Activate a license (e.g., free <https://ampl.com/ce> license):
