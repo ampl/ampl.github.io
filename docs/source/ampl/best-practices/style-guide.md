@@ -152,8 +152,8 @@ The most important rule for scalable models is to write descriptive and signific
         
         subject to Shipment{p in PRODUCTS}: 
             Shipment[p,w] == 0 or Shipment[p,w] >= min_shipment[w];
-        subject to Already_Finished{container in CONTAINERS, t in T}:
-            Container_Finish[c,t] = 1 ==> Container_Move[c,t+1] = 0;
+        subject to AlreadyFinished{container in CONTAINERS, t in T}:
+            ContainerFinish[c,t] = 1 ==> ContainerMove[c,t+1] = 0;
 
     See more expressive modeling examples here: `Modeling guide <https://mp.ampl.com/model-guide.html>`_
 ```
