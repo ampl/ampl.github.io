@@ -104,7 +104,7 @@ The most important rule for scalable models is to write descriptive and signific
 
 ### 2.2. Sets
 
-- Name sets using uppercase letters.
+- Name sets using uppercase letters (CONSTANT_CASE).
 - Name sets using plural nouns to indicate they represent collections.
 - Ensure the name specifies what the set contains.
 - For multi-word names of sets use underscores (`_`) to combine words and improve readability.
@@ -117,7 +117,7 @@ The most important rule for scalable models is to write descriptive and signific
 
 ### 2.3. Parameters
 
-- Name parameters using lowercase letters.
+- Name parameters using lowercase letters (snake_case).
 - Provide context about what the parameter represents.
 - For multi-word names of parameters use underscores (`_`) to combine words and improve readability.
   ```ampl
@@ -127,7 +127,7 @@ The most important rule for scalable models is to write descriptive and signific
 
 ### 2.4. Variables
 
-- Name variables starting each word with uppercase letters.
+- Name variables starting each word with uppercase letters (PascalCase).
 - Use names that reflect the decision being modeled and avoid generic names like `x` or `y`.
   ```ampl
   var Shipment{PRODUCTS, WAREHOUSES} >= 0;
@@ -136,7 +136,7 @@ The most important rule for scalable models is to write descriptive and signific
 
 ### 2.5. Constraints
 
-- Name constraints starting each word with uppercase letters.
+- Name constraints starting each word with uppercase letters (PascalCase).
 - Use descriptive names for constraints that actually describe the logic or restriction being modeled. For example, words such as: Limit, Balance, Level can be implemented in the name of restrictions.
   ```ampl
   subject to CapacityLimit{w in WAREHOUSES}: 
@@ -160,7 +160,7 @@ The most important rule for scalable models is to write descriptive and signific
 
 ### 2.6. Objective Functions
 
-- Name objectives starting each word with uppercase letters.
+- Name objectives starting each word with uppercase letters (PascalCase).
 - Action-Oriented: Use verbs or action-oriented phrases to describe the goal.
 - Single Purpose: Ensure the name reflects the exact purpose of the objective.
   ```ampl
