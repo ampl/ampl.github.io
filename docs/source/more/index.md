@@ -32,7 +32,7 @@ Browse these resources for additional information about AMPL.
 -   [**News & Events Archive**](news.md)  
     with slides from many AMPL and optimization modeling presentations
     
--   [**Open-Source Porject**](projects.md)  
+-   [**Open-Source Projects**](projects.md)  
     AMPL's Open-Source Projects
 
 -   [**Hooking Your Solver to AMPL**](https://mp.ampl.com/howto.html)  
