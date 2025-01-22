@@ -165,7 +165,7 @@ The most important rule for scalable models is to write descriptive and signific
 - Single Purpose: Ensure the name reflects the exact purpose of the objective.
   ```ampl
   maximize TotalProfit:
-    sum{p in PROD} Assign[p] * (fixed_profit[p] + variable_profit[p]) ;
+    sum{p in PROD} Assign[p] * (fixed_profit[p] + variable_profit[p]);
   minimize TotalCost:
     sum{p in PROD} cost[i] * Assign[p];
   ```
