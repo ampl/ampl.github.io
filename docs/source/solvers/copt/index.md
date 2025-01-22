@@ -15,6 +15,7 @@ found [here](https://mp.ampl.com/model-guide.html).
 [[Options](#solver-options)]
 [[Changes](changes.md)]
 [[Download COPT](https://portal.ampl.com/user/ampl/download/copt)]
+[[Start a COPT Trial](https://portal.ampl.com/user/ampl/request/amplce/trial?solver=copt)]
 
 ## How to use it
 

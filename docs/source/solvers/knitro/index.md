@@ -8,6 +8,7 @@
 [[Options](options.md)]
 [[Changes](changes.md)]
 [[Download Knitro](https://portal.ampl.com/user/ampl/download/knitro)]
+[[Start a Knitro Trial](https://portal.ampl.com/user/ampl/request/amplce/trial?solver=knitro)]
 
 ## How to use it
 

@@ -8,6 +8,7 @@ IBM ILOG CPLEX has been a well known and widely used large-scale solver for over
 [[Options](#solver-options)]
 [[Changes](changes.md)]
 [[Download CPLEX](https://portal.ampl.com/user/ampl/download/cplex)]
+[[Start a CPLEX Trial](https://portal.ampl.com/user/ampl/request/amplce/trial?solver=cplex)]
 
 ## How to use it
 

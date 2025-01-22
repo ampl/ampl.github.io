@@ -12,6 +12,7 @@ An experimental version of the driver, BARONMP, supports the extended modeling c
 [[Changes](changes.md)]
 [[BARONMP Changes](changesmp.md)]
 [[Download BARON and BARONMP](https://portal.ampl.com/user/ampl/download/baron)]
+[[Start a BARON Trial](https://portal.ampl.com/user/ampl/request/amplce/trial?solver=baron)]
 
 ## How to use it
 

@@ -8,6 +8,7 @@ MINOS is an established choice for both linear and nonlinear optimization proble
 [[Options](options.md)]
 [[Changes](changes.md)]
 [[Download MINOS](https://portal.ampl.com/user/ampl/download/minos)]
+[[Start a MINOS Trial](https://portal.ampl.com/user/ampl/request/amplce/trial?solver=minos)]
 
 ## How to use it
 

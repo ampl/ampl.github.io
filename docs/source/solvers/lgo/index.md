@@ -7,6 +7,7 @@ LGO is capable of determining high-quality solutions to global optimization prob
 [[Read More](https://ampl.com/products/solvers/solvers-we-sell/lgo/)]
 [[Options](options.md)]
 [[Download LGO](https://portal.ampl.com/user/ampl/download/lgo)]
+[[Start a LGO Trial](https://portal.ampl.com/user/ampl/request/amplce/trial?solver=lgo)]
 
 ## How to use it
 

@@ -8,6 +8,7 @@ A proven choice for highly nonlinear problems, CONOPT’s efficient and reliable
 [[Options](options.md)]
 [[Changes](changes.md)]
 [[Download CONOPT](https://portal.ampl.com/user/ampl/download/conopt)]
+[[Start a CONOPT Trial](https://portal.ampl.com/user/ampl/request/amplce/trial?solver=conopt)]
 
 ## How to use it
 

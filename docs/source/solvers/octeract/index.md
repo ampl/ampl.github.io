@@ -6,6 +6,7 @@ The Octeract Engine supports global optimization of mixed-integer nonlinear opti
 
 [[Read More](https://ampl.com/products/solvers/solvers-we-sell/octeract/)]
 [[Download Octeract](https://portal.ampl.com/user/ampl/download/octeract)]
+[[Start a Octeract Trial](https://portal.ampl.com/user/ampl/request/amplce/trial?solver=octeract)]
 
 ## How to use it
 

@@ -8,6 +8,7 @@ SNOPT is a widely used large-scale optimizer for difficult large-scale nonlinear
 [[Options](options.md)]
 [[Changes](changes.md)]
 [[Download SNOPT](https://portal.ampl.com/user/ampl/download/snopt)]
+[[Start a SNOPT Trial](https://portal.ampl.com/user/ampl/request/amplce/trial?solver=snopt)]
 
 ## How to use it
 

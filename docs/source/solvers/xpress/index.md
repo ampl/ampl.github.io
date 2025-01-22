@@ -13,7 +13,8 @@ found [here](https://mp.ampl.com/model-guide.html).
 [[Modeling guide](https://mp.ampl.com/model-guide.html)]
 [[Options](#solver-options)]
 [[Changes](changes.md)]
-[[Download Xpress](https://portal.ampl.com/user/ampl/download/xpress)]
+[[Download XPRESS](https://portal.ampl.com/user/ampl/download/xpress)]
+[[Start a XPRESS Trial](https://portal.ampl.com/user/ampl/request/amplce/trial?solver=xpress)]
 
 This package contains an all-new Xpress driver, that provides significantly extended modeling support for logical and nonlinear operators through linearizations performed by the [MP library](https://mp.ampl.com/). For compatibility, there are two binaries in this package: `xpress` [[options](options.md)] is the new version, `xpressasl` [[options](xpressasl.md)] is the legacy version. If you are upgrading an existing installation and encounter any issues with the new version please report them to [support@ampl.com](mailto:support@ampl.com).
 

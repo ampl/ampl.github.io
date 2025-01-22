@@ -11,6 +11,7 @@ found [here](https://mp.ampl.com/model-guide.html).
 [[Options](#solver-options)]
 [[Changes](changes.md)]
 [[Download MOSEK](https://portal.ampl.com/user/ampl/download/mosek)]
+[[Start a MOSEK Trial](https://portal.ampl.com/user/ampl/request/amplce/trial?solver=mosek)]
 
 ## How to use it
 
