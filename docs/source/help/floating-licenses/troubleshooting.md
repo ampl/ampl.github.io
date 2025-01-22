@@ -1,4 +1,4 @@
-# Floating license troubleshooting guide
+# Floating License Troubleshooting Guide
 
 ```{note}
 This page explains how to interpret the AMPL floating license manager’s informational and error messages, and how to request additional help with configuration and connection problems.

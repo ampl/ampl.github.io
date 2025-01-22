@@ -21,7 +21,7 @@ $ python
 
 [Python API (amplpy) Documentation](https://amplpy.ampl.com/)
 
-## Modules available
+## Modules Available
 
 List of modules available:
 
@@ -194,9 +194,9 @@ All of this is also available from Python programmatically:
 ['base', 'gurobi', 'highs']
 ```
 
-## How to use modules
+## How to Use Modules
 
-### Install modules
+### Install Modules
 
 ```bash
 # Install Python API for AMPL

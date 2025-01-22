@@ -1,9 +1,9 @@
-# How to install AMPL
+# How to Install AMPL
 
 After downloading your AMPL & Solvers bundle from the [AMPL Portal](https://portal.ampl.com),
 please follow the instructions below that correspond to your operating system:
 
-- [How to install AMPL](#how-to-install-ampl)
+- [How to Install AMPL](#how-to-install-ampl)
   - [Google Colab](#google-colab)
   - [Python](#python)
   - [Windows](#windows)

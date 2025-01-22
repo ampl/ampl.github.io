@@ -1,5 +1,5 @@
 (amplpy.bundle)=
-# PyInstaller bundles
+# PyInstaller Bundles
 
 [PyInstaller](https://pyinstaller.org/) is a popular tool in the Python ecosystem used to convert Python applications into standalone executables. It's beneficial when you want to distribute your Python code as a single package, making it easier for users who might not have Python or the required dependencies installed.
 

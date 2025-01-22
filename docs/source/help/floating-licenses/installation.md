@@ -1,4 +1,4 @@
-# Floating license installation guide
+# Floating License Installation Guide
 
 ```{note}
 This page introduces AMPL floating licenses and gives instructions for initial installation.

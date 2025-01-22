@@ -1,7 +1,7 @@
 
 .. _python_integration:
 
-AMPL integration with Python
+AMPL Integration with Python
 ============================
 
 .. image:: https://portal.ampl.com/dl/ads/python_ecosystem_horizontal.png
@@ -110,7 +110,7 @@ Check it out on Streamlit Cloud: |RunOnStreamlit|
 
 [`AMPL on Streamlit <https://ampl.com/streamlit>`_]
 
-See more
+See More
 ~~~~~~~~
 
 .. toctree::

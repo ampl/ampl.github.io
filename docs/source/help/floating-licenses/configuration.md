@@ -1,4 +1,4 @@
-# Floating license configuration guide
+# Floating License Configuration Guide
 
 ```{note}
 This page explains how to change the default configuration of the AMPL floating license manager, to handle various special situations.

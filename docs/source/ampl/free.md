@@ -1,4 +1,4 @@
-# Get started for free
+# Get Started for Free
 
 AMPL offers several free options for users to develop and test optimization models.
 These options enable users to explore AMPL's capabilities and integrate them into 

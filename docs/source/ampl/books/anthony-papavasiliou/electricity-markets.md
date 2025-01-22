@@ -13,7 +13,7 @@ Order your copy from [Cambridge University Press](https://www.cambridge.org/high
 
 Get up-to-speed with the fundamentals of how electricity markets are structured and operated with this comprehensive textbook, presenting coverage of key topics in electricity market design, including power system and power market operations, transmission, unit commitment, demand response, and risk management. It includes over 140 practical examples, inspired by real-industry applications, connecting key theoretical concepts to practical scenarios in electricity market design, and features over 100 coding-based examples and exercises, with selected solutions for readers. It further demonstrates how mathematical programming models are implemented in an industry setting. Requiring no experience in power systems or energy economics, this is the ideal introduction to electricity markets for senior undergraduate and graduate students in electrical engineering, economics, and operations research, and a robust introduction to the field for professionals in utilities, energy policy, and energy regulation. [Accompanied online by datasets, AMPL code, supporting videos, and full solutions and lecture slides for instructors.](https://www.cambridge.org/Papavasiliou)
 
-## Youtube videos
+## Youtube Videos
 
 - Chapter 1
     - [Chapter 1 (Introduction)](https://www.youtube.com/watch?v=Elk--NgW2ac)
@@ -35,7 +35,7 @@ Get up-to-speed with the fundamentals of how electricity markets are structured 
 - Appendix
     - [Appendix B (The Direct Current Power Flow)](https://www.youtube.com/watch?v=sJ17WNjvuwY)
 
-## Slide decks
+## Slide Decks
 
 Slide decks corresponding to the chapters of the book are available [online](https://ap-rg.eu/courses/optimization-models-in-electricity-markets-book/).
 

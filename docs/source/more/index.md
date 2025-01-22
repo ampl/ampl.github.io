@@ -1,6 +1,6 @@
 (more)=
 
-# Learn more
+# Learn More
 
 ```{toctree}
 :hidden:

@@ -1,4 +1,4 @@
-# Quick introduction
+# Quick Introduction
 
 AMPL (A Mathematical Programming Language) is a high-level language for expressing optimization models. It is widely used in academia and industry to model and solve linear, nonlinear, and integer optimization problems.
 
@@ -91,7 +91,7 @@ param demand{PRODUCTS};
 param capacity{CITIES};
 ```
 
-### Decision variables
+### Decision Variables
 
 Decision variables represent the decisions you need to make in your model. For example, you might define a binary variable to represent whether a product is produced at a particular facility, or a continuous variable to represent the amount of a product that is produced.
 
@@ -103,7 +103,7 @@ var x{PRODUCTS, CITIES} binary;
 var y{PRODUCTS, PERIODS} >= 0;
 ```
 
-### Objective function
+### Objective Function
 
 The objective function defines the goal of your optimization model. For example, you might want to maximize profit, minimize cost, or maximize customer satisfaction.
 

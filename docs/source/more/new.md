@@ -1,5 +1,5 @@
 (what_is_new)=
-# What's new?
+# What's New?
 
 ## New book: Hands-On Mathematical Optimization with AMPL in Python
 

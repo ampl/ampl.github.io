@@ -2,7 +2,7 @@
 
 Creating clear, consistent, and scalable AMPL models is critical for managing complex optimization workflows. The best practices identified in this guide provide actionable guidelines for naming, organizing, and formatting AMPL models to ensure readability, maintainability, and professional-quality output.
 
-## 1. Model structure
+## 1. Model Structure
 
 ### 1.1. Divide the model into clear sections
 
@@ -158,7 +158,7 @@ The most important rule for scalable models is to write descriptive and signific
     See more expressive modeling examples here: `Modeling guide <https://mp.ampl.com/model-guide.html>`_
 ```
 
-### 2.6. Objective functions
+### 2.6. Objective Functions
 
 - Name objectives starting each word with uppercase letters (PascalCase).
 - Action-Oriented: Use verbs or action-oriented phrases to describe the goal.
@@ -174,7 +174,7 @@ The most important rule for scalable models is to write descriptive and signific
 Remember that AMPL also supports [Multiple, Blended and Lexicographical objectives](https://mp.ampl.com/modeling-mo.html).
 ``` 
 
-## Benefits
+## 3. Benefits
 
 - ***Readability:*** Clear visual separation between different model elements.
 - ***Debugging:*** Easier to identify computed vs input elements.
@@ -183,7 +183,7 @@ Remember that AMPL also supports [Multiple, Blended and Lexicographical objectiv
 
 Adopting these best practices ensures clarity, consistency, and scalability in AMPL models. By following these guidelines, your models will be easier to read, maintain, and scale, achieving professional-quality optimization workflows. This structured approach enhances collaboration, simplifies debugging, and supports long-term usability, making your models highly effective and user-friendly.
 
-## How to use it
+## 4. How to Use It
 
 Just ask ChatGPT:
 - ***Please use these rules:*** https://dev.ampl.com/ampl/best-practices/style-guide.html

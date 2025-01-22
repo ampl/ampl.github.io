@@ -1,4 +1,4 @@
-# Fingerprint instructions for static licenses
+# Fingerprint Instructions for Static Licenses
 
 Some AMPL licenses require a license file that is tied to a particular computer. Before we can generate this license file, we need you to run our "fingerprint" program on your computer that will host AMPL, and to send us the resulting output.
 

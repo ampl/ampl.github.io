@@ -53,7 +53,7 @@ USER ${USERNAME}
  **Contact us at <support@ampl.com> for free deployment support.** You can also ask any questions you may have on our [Support Forum](https://discuss.ampl.com).
 ```
 
-## Other Docker containers
+## Other Docker Containers
 
 AMPL and solvers are also easy to use with Docke containers for languages other than Python.
 In this example, we use the image [`debian:stable-slim`](https://hub.docker.com/_/debian) as base image. We then use `curl` and `tar` for downloading and installing some [modules](https://ampl.com/dl/modules) that you may need.

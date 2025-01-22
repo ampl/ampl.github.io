@@ -1,4 +1,4 @@
-# Legacy floating license manager
+# Legacy Floating License Manager
 
 AMPL offers a **floating license** facility that lets you share one or several AMPL and solver licenses over a greater number of computers and users.
 

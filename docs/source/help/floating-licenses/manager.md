@@ -1,4 +1,4 @@
-# Floating license manager guide
+# Floating License Manager Guide
 
 ```{note}
 This page explains how to run the floating license manager `ampl_lic` and related programs, to start serving floating licenses and to manage their use.

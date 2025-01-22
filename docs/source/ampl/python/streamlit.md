@@ -20,7 +20,7 @@ ampl = AMPL()
 - [Python API documentation](https://amplpy.ampl.com)
 - [Python modules documentation](modules.md)
 
-## N-Queens using AMPL and HiGHS
+## N-Queens Using AMPL and HiGHS
 
 - Running on Streamlit Cloud: [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/fdabrandao/streamlit-nqueens/)
 - Project GitHub: <https://github.com/fdabrandao/streamlit-nqueens>
