@@ -6,12 +6,12 @@ Mosek is a versatile linear, quadratic, quadratically constrained and conic opti
 The framework used by the driver supports automatic reformulation for many expression types; the modeling guide can be
 found [here](https://mp.ampl.com/model-guide.html).
 
-[[Read More](https://ampl.com/products/solvers/solvers-we-sell/mosek/)]
-[[Modeling guide](https://mp.ampl.com/model-guide.html)]
-[[Options](#solver-options)]
-[[Changes](changes.md)]
-[[Download MOSEK](https://portal.ampl.com/user/ampl/download/mosek)]
-[[Start a MOSEK Trial](https://portal.ampl.com/user/ampl/request/amplce/trial?solver=mosek)]
+[Learn More](https://ampl.com/products/solvers/solvers-we-sell/mosek/)
+| [Modeling guide](https://mp.ampl.com/model-guide.html)
+| [Options](#solver-options)
+| [Changes](changes.md)
+| [Download MOSEK](https://portal.ampl.com/user/ampl/download/mosek)
+| [Start a MOSEK Trial Now!](https://portal.ampl.com/user/ampl/request/amplce/trial?solver=mosek)
 
 ## How to use it
 

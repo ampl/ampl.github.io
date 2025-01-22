@@ -7,8 +7,8 @@ To simplify the work of comparing and testing solvers, we have made AMPL and sol
     
 These services are available free of charge through any Internet connection. They are intended mainly for testing, prototyping, and instructional purposes, however; pursuant to the posted [terms of use](https://www.neos-server.org/neos/termofuse.html), there are no guarantees of performance or confidentiality.
 
-[[Read More](https://ampl.com/products/ampl/run-ampl-on-neos/)]
-[[Download](https://portal.ampl.com)]
+[Learn More](https://ampl.com/products/ampl/run-ampl-on-neos/)
+| [Download](https://portal.ampl.com)
 
 ## How to use it
 

@@ -8,11 +8,11 @@ branch-price-and-cut algorithm to solve it to optimality. Alternatively,
 GCG is able to automatically apply a Benders decomposition.
 No user interaction is necessary, thus GCG provides decomposition-based MIP solving technology to everyone.
 
-[[Read More](https://ampl.com/products/solvers/open-source-solvers/)]
-[[GCG modeling guide](#gcg-modeling-guide)]
-[[Options](#solver-options)]
-[[Changes](changes.md)]
-[[Download GCG](https://portal.ampl.com/user/ampl/download/gcg)]
+[Learn More](https://ampl.com/products/solvers/open-source-solvers/)
+| [GCG modeling guide](#gcg-modeling-guide)
+| [Options](#solver-options)
+| [Changes](changes.md)
+| [Download GCG](https://portal.ampl.com/user/ampl/download/gcg)
 
 ## How to use it
 

@@ -16,9 +16,9 @@ where `f(x): R^n --> R`, `g(x): R^n --> R^m` are twice continuously differentiab
 
 The algorithms in Bonmin are exact when the functions `f` and `g` are convex; in the case where `f` or `g` or both are non-convex they are heuristics.
 
-[[Read More](https://ampl.com/products/solvers/open-source-solvers/)]
-[[Options](#solver-options)]
-[[Download BONMIN](https://portal.ampl.com/user/ampl/download/coin)]
+[Learn More](https://ampl.com/products/solvers/open-source-solvers/)
+| [Options](#solver-options)
+| [Download BONMIN](https://portal.ampl.com/user/ampl/download/coin)
 
 ## How to use it
 
@@ -74,8 +74,11 @@ The algorithms in Bonmin are exact when the functions `f` and `g` are convex; in
 
 ## Resources
 
-* [Solver options](#solver-options)
-* [Solve result codes](#retrieving-solutions)
+- [BONMIN](#bonmin)
+  - [How to use it](#how-to-use-it)
+  - [Resources](#resources)
+  - [Solver options](#solver-options)
+  - [Retrieving solutions](#retrieving-solutions)
 
 ## Solver options
 

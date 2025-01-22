@@ -1,7 +1,7 @@
 (faq)=
 # FAQs
 
-## What is AMPL?
+## What is AMPL
 
 1. AMPL is a modelling language for describing production, distribution, blending, scheduling and many other kinds of problems known generally as large-scale optimization or mathematical programming.
 
@@ -11,7 +11,7 @@
 
 4. **You can use AMPL for free** with open-source solvers with a [Community Edition License](https://ampl.com/ce/) for personal, academic, or commercial prototyping purposes using [AMPL APIs](../ampl/apis.rst). You can also start 30-day trials for individual commercial solvers. We also offer a few other free licenses for you to [start for free now](https://ampl.com/start-free-now/).
 
-## How to install AMPL?
+## How to Install AMPL
 
 After downloading your AMPL & Solvers bundle from the [AMPL Portal](https://portal.ampl.com),
 please follow the instructions below that correspond to your operating system:
@@ -20,7 +20,7 @@ please follow the instructions below that correspond to your operating system:
 - [macOS](../ampl/install.md#macos)
 
 (cloud_licenses)=
-## How do cloud licenses work?
+## How do Cloud Licenses Work
 
 Instead of using long term licenses that require static hardware we use short-term leases which give the flexibility of moving the license between different machines or containers.
 
@@ -32,7 +32,7 @@ If everything is ok with the request, a new lease is returned in the response an
 
 Even though this mechanism was designed with Docker containers in mind, it also works natively on Windows and macOS virtual and physical machines too. The only requirement is an internet connection.
 
-### Which information is collected?
+### Which Information is Collected?
 
 The fingerprint information sent in each request includes among other details the following: 
   - number of CPU cores on the underlying machine
@@ -52,7 +52,7 @@ If a license is exceeding its limitations for long periods of time users are the
 
 You can check the status of AMPL cloud services at <https://status.ampl.com/>.
 
-## How to use AMPL with Docker containers?
+## How to Use AMPL with Docker Containers
 
 AMPL can be easily used on [Docker containers](https://www.docker.com/):
 
@@ -70,7 +70,7 @@ In this example, we use the image [`python:3.9-slim-bullseye`](https://hub.docke
 
 In the example above we used a Python container, for other options see [AMPL on Docker Containers](ampl_docker).
 
-## How to add AMPL installation directory to PATH/Path?
+## How to Add AMPL Installation Directory to PATH/Path?
 
 ### Windows
 
@@ -106,7 +106,7 @@ os.environ["PATH"] += os.pathsep + "/complete/path/to/ampl/installation/director
 
 Note: on Windows you should replace `"PATH"` by `"Path"`.
 
-## Other help resources
+## Other Help Resources
 
 ```{toctree}
 ../help/index

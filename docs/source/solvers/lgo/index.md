@@ -4,10 +4,10 @@
 
 LGO is capable of determining high-quality solutions to global optimization problems with continuous variables that have (possibly many) locally optimal solutions. Because LGO makes only limited assumptions as to problem structure and differentiability, it can be applied in a broad range of design and operational applications.
 
-[[Read More](https://ampl.com/products/solvers/solvers-we-sell/lgo/)]
-[[Options](options.md)]
-[[Download LGO](https://portal.ampl.com/user/ampl/download/lgo)]
-[[Start a LGO Trial](https://portal.ampl.com/user/ampl/request/amplce/trial?solver=lgo)]
+[Learn More](https://ampl.com/products/solvers/solvers-we-sell/lgo/)
+| [Options](options.md)
+| [Download LGO](https://portal.ampl.com/user/ampl/download/lgo)
+| [Start a LGO Trial Now!](https://portal.ampl.com/user/ampl/request/amplce/trial?solver=lgo)
 
 ## How to use it
 

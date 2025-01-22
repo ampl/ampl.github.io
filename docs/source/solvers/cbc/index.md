@@ -6,11 +6,11 @@ The [COIN Branch and Cut solver (CBC)](https://github.com/coin-or/Cbc) is an ope
 The framework used by the driver supports automatic reformulation for many expression types; the modeling guide can be
 found [here](https://mp.ampl.com/model-guide.html).
 
-[[Read More](https://ampl.com/products/solvers/open-source-solvers/)]
-[[Modeling guide](https://mp.ampl.com/model-guide.html)]
-[[Options](#solver-options)]
-[[Changes](changes.md)]
-[[Download CBC](https://portal.ampl.com/user/ampl/download/cbc)]
+[Learn More](https://ampl.com/products/solvers/open-source-solvers/)
+| [Modeling guide](https://mp.ampl.com/model-guide.html)
+| [Options](#solver-options)
+| [Changes](changes.md)
+| [Download CBC](https://portal.ampl.com/user/ampl/download/cbc)
 
 ## How to use it
 

@@ -6,9 +6,9 @@ The [COIN Ipopt solver (IPOPT)](https://github.com/coin-or/Ipopt) is an open-sou
 for large-scale nonlinear continuous optimization. Ipopt uses an interior point method,
 together with a filter linear search procedure.
 
-[[Read More](https://ampl.com/products/solvers/open-source-solvers/)]
-[[Options](#solver-options)]
-[[Download IPOPT](https://portal.ampl.com/user/ampl/download/coin)]
+[Learn More](https://ampl.com/products/solvers/open-source-solvers/)
+| [Options](#solver-options)
+| [Download IPOPT](https://portal.ampl.com/user/ampl/download/coin)
 
 ## How to use it
 
@@ -64,8 +64,11 @@ together with a filter linear search procedure.
 
 ## Resources
 
-* [Solver options](#solver-options)
-* [Solve result codes](#retrieving-solutions)
+- [IPOPT](#ipopt)
+  - [How to use it](#how-to-use-it)
+  - [Resources](#resources)
+  - [Solver options](#solver-options)
+  - [Retrieving solutions](#retrieving-solutions)
 
 ## Solver options
 

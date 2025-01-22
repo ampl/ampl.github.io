@@ -9,11 +9,11 @@ the access of detailed information down to the guts of the solver.
 The framework used by the driver supports automatic reformulation for many expression types; the modeling guide can be
 found [here](https://mp.ampl.com/model-guide.html).
 
-[[Read More](https://ampl.com/products/solvers/open-source-solvers/)]
-[[Modeling guide](https://mp.ampl.com/model-guide.html)]
-[[Options](#solver-options)]
-[[Changes](changes.md)]
-[[Download SCIP](https://portal.ampl.com/user/ampl/download/scip)]
+[Learn More](https://ampl.com/products/solvers/open-source-solvers/)
+| [Modeling guide](https://mp.ampl.com/model-guide.html)
+| [Options](#solver-options)
+| [Changes](changes.md)
+| [Download SCIP](https://portal.ampl.com/user/ampl/download/scip)
 
 ## How to use it
 

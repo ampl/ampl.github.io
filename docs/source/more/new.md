@@ -41,14 +41,79 @@ Get your free license at: **<https://ampl.com/ce>**
 -   [It works with Docker Containers and Cloud Functions (e.g., AWS Lambda, Azure Functions, etc.)](ampl_docker)
 -   Since it is a [cloud license](cloud_licenses) it can be used on continuous integration and continuous delivery (CI/CD) platforms.
 
-## Using AMPL in Google Colab, Kaggle, and similar platforms
+## Using AMPL in Google Colab, Kaggle, and Similar Platforms
 
 We have a set of Jupyter Notebooks available on our [Model Colaboratory](https://ampl.com/colab/).
 
 You can use our template (<https://ampl.com/colab/tags/template.html>)
 as a starting point. Our cloud licenses, including AMPL CE licenses, work on all cloud platforms.
 
-## Snapshot feature (save and restore AMPL sessions)
+## Enhanced Solver Drivers with Automatic Reformulations
+
+We have released new [MP-Based](https://mp.ampl.com/model-guide.html) solver
+drivers for [Gurobi](../solvers/gurobi/index.md), [CPLEX](../solvers/cplex/index.md), [XPRESS](../solvers/xpress/index.md), [COPT](../solvers/copt/index.md), [MOSEK](../solvers/mosek/index.md),
+[BARON](../solvers/baron/index.md), among others. They are included in the [AMPL distribution bundle](https://portal.ampl.com).
+
+The new solver drivers have the following features:
+
+- Full support of logical expressions and constraints, as described in the AMPL page on Logic and Constraint Programming Extensions.
+- Algebraic expressions beyond linear and quadratic.
+- Choice between conversions in the driver vs. native solver support.
+
+[[Modeling Guide](https://mp.ampl.com/model-guide.html)]
+
+### New AMPL-Solver Interface Library
+
+We're rolling out a new AMPL-solver interface library that significantly
+expands the range of model expressions that can be used with popular
+solvers.
+
+Modeling languages aim to let you describe
+optimization models to a computer in much the same way that you describe
+models to other people. The newly extended ["MP" interface](https://github.com/ampl/mp)
+brings AMPL closer to this goal, by allowing expanded use of a variety of convenient
+expressions in objectives and constraints. Notable examples include:
+
+- Conditional operators: `if-then-else`; `==>`, `<==`, `<==>`
+- Logical operators: `or`, `and`, `not`; `exists`, `forall`
+- Piecewise linear functions: `abs`; `min`, `max`; `<<breakpoints;slopes>>`
+- Counting operators: `count`; `atmost`, `atleast`, `exactly`; `numberof`
+- Comparison operators: `>`, `<`, `!=`; `alldiff`
+
+These operators can be applied to general forms of AMPL expressions, and
+thus can be used together in objective and constraint specifications. The
+new interface also helps solvers to accept nonlinear operators (`*`, `/`, `^`) in
+a broader variety of circumstances.
+
+A public [MP Library repository](https://github.com/ampl/mp) on GitHub links to a [modeling guide](https://mp.ampl.com/model-guide.html) and
+documentation of the source code. See also the slides from our presentation
+of the new interface at this summer's [EURO and ICCOPT conferences](../TALKS/2022_07_Bethlehem_Fourer.pdf).
+
+### New Solvers
+
+The first implementations using the MP interface library are
+now available in our regular distributions through the [AMPL Portal](https://portal.ampl.com/).
+
+An entirely new MP-based interface greatly expands the variety of AMPL
+expressions that can be used with the [Gurobi](https://ampl.com/products/solvers/solvers-we-sell/gurobi/) solver. The new implementation uses the solver's native "generalized
+constraints" where possible, but can be switched to use alternative
+transformations built into MP. Common univariate nonlinear functions (`exp`,
+`log`; `sin`, `cos`, `tan`) are also supported, using Gurobi's native
+piecewise-linear approximation facilities.
+
+Two relatively new linear/quadratic MIP solvers -- [COPT](https://ampl.com/products/solvers/solvers-we-sell/copt/) and [HiGHS](https://ampl.com/products/solvers/open-source/) -- are now
+also supported by AMPL, exclusively through the MP interface. Both are in
+active development and appear in recent benchmark listings. COPT, a product
+of Cardinal Operations, has joined the lineup of commercial solvers that we
+distribute. HiGHS, a free open-source solver, has evolved from a project at
+the University of Edinburgh. They appear as "copt" and "highs" in AMPL
+distributions.
+
+Currently supported MIP solvers such as [Xpress](https://ampl.com/products/solvers/solvers-we-sell/xpress/) and [CPLEX](https://ampl.com/products/solvers/solvers-we-sell/cplex/) are also planned to
+have versions with the new interface. Also we will soon be distributing the
+*MOSEK* solver with an MP interface.
+
+## Snapshot Feature (Save and Restore AMPL Sessions)
 
 In your AMPL bundle you should find `x-ampl`, the development version of AMPL where experimental features are enabled. One of such features is the snapshot command which allows saving the AMPL session in such a way that you can restore the state of AMPL using it.
 
@@ -129,80 +194,7 @@ FISH   0
 ```
 The snapshot feature is not finished and it is still being perfected. If you encounter any issues, please let us know.
 
-## Enhanced solver drivers: gurobi, copt, highs
-
-We have released `gurobi`, the enhanced
-[AMPL-Gurobi](https://ampl.com/products/solvers/solvers-we-sell/gurobi/)
-interface, `copt`, an interface to [Cardinal Optimizer](https://www.shanshu.ai/copt),
-and `highs`, an interface to [HiGHS](https://highs.dev/).
-They are included in the [AMPL distribution bundle](https://portal.ampl.com).
-
-The drivers have the following features:
-
-- Full support of logical expressions and constraints, as described in the AMPL page on Logic and Constraint Programming Extensions.
-- Algebraic expressions beyond linear and quadratic.
-- Choice between conversions in the driver vs. native solver support.
-
-[[Modeling Guide](https://mp.ampl.com/model-guide.html)] [[gurobi options](../solvers/gurobi/options.md)] [[copt options](../solvers/copt/options.md)]  [[highs options](../solvers/highs/options.md)]
-
-## New AMPL-solver interface library
-
-We're rolling out a new AMPL-solver interface library that significantly
-expands the range of model expressions that can be used with popular
-solvers. Initially, the new library is being used to implement AMPL
-interfaces to two notable new solvers, [COPT](https://ampl.com/products/solvers/solvers-we-sell/copt/) and [HiGHS](https://ampl.com/products/solvers/open-source/), and to provide
-greatly enhanced support for [Gurobi's](https://ampl.com/products/solvers/solvers-we-sell/gurobi/) generalized constraints. Extensions to
-other solvers will be released soon.
-
-### NEW SOLVER INTERFACE
-
-Modeling languages aim to let you describe
-optimization models to a computer in much the same way that you describe
-models to other people. The newly extended ["MP" interface](https://github.com/ampl/mp)
-brings AMPL closer to this goal, by allowing expanded use of a variety of convenient
-expressions in objectives and constraints. Notable examples include:
-
-- Conditional operators: `if-then-else`; `==>`, `<==`, `<==>`
-- Logical operators: `or`, `and`, `not`; `exists`, `forall`
-- Piecewise linear functions: `abs`; `min`, `max`; `<<breakpoints;slopes>>`
-- Counting operators: `count`; `atmost`, `atleast`, `exactly`; `numberof`
-- Comparison operators: `>`, `<`, `!=`; `alldiff`
-
-These operators can be applied to general forms of AMPL expressions, and
-thus can be used together in objective and constraint specifications. The
-new interface also helps solvers to accept nonlinear operators (`*`, `/`, `^`) in
-a broader variety of circumstances.
-
-A public [MP Library repository](https://github.com/ampl/mp) on GitHub links to a [modeling guide](https://mp.ampl.com/model-guide.html) and
-documentation of the source code. See also the slides from our presentation
-of the new interface at this summer's [EURO and ICCOPT conferences](https://ampl.com/MEETINGS/TALKS/2022_07_Bethlehem_Fourer.pdf), or attend
-updated presentations at the [INFORMS Annual Meeting, October 15-19](https://ampl.com/resources/informs-annual-2022/).
-
-### NEW SOLVERS
-
-The first implementations using the MP interface library are
-now available in our regular distributions through the [AMPL Portal](https://portal.ampl.com/).
-
-An entirely new MP-based interface greatly expands the variety of AMPL
-expressions that can be used with the [Gurobi](https://ampl.com/products/solvers/solvers-we-sell/gurobi/) solver. The new implementation uses the solver's native "generalized
-constraints" where possible, but can be switched to use alternative
-transformations built into MP. Common univariate nonlinear functions (`exp`,
-`log`; `sin`, `cos`, `tan`) are also supported, using Gurobi's native
-piecewise-linear approximation facilities.
-
-Two relatively new linear/quadratic MIP solvers -- [COPT](https://ampl.com/products/solvers/solvers-we-sell/copt/) and [HiGHS](https://ampl.com/products/solvers/open-source/) -- are now
-also supported by AMPL, exclusively through the MP interface. Both are in
-active development and appear in recent benchmark listings. COPT, a product
-of Cardinal Operations, has joined the lineup of commercial solvers that we
-distribute. HiGHS, a free open-source solver, has evolved from a project at
-the University of Edinburgh. They appear as "copt" and "highs" in AMPL
-distributions.
-
-Currently supported MIP solvers such as [Xpress](https://ampl.com/products/solvers/solvers-we-sell/xpress/) and [CPLEX](https://ampl.com/products/solvers/solvers-we-sell/cplex/) are also planned to
-have versions with the new interface. Also we will soon be distributing the
-*MOSEK* solver with an MP interface.
-
-## Using remote solvers from NEOS with gokestrel
+## Using Remote Solvers from NEOS with gokestrel
 
 To simplify the work of comparing and testing solvers, we have made AMPL and solver resources available online in collaboration with the [NEOS Server](https://www.neos-server.org/) project, under the auspices of the [Wisconsin Institutes for Discovery](https://www.discovery.wisc.edu/) at the University of Wisconsin, Madison. 
 

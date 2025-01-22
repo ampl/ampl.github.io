@@ -20,10 +20,10 @@ an easy way to switch between them.
 
    <br />
 
-'Linear-Quadratic' Solvers
------------------------------------------
+Linear-Quadratic Solvers
+------------------------
 
-Traditional 'linear-quadratic' solvers are advancing into the
+Traditional Linear-Quadratic solvers are advancing into the
 nonlinear domain (MINLP,  *Mixed Integer NonLinear Programming*).
 
 .. toctree::
