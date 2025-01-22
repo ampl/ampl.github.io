@@ -2,7 +2,7 @@
 
 Creating clear, consistent, and scalable AMPL models is critical for managing complex optimization workflows. The best practices identified in this guide provide actionable guidelines for naming, organizing, and formatting AMPL models to ensure readability, maintainability, and professional-quality output.
 
-## 1. Model Structure
+## 1. Model structure
 
 ### 1.1. Divide the model into clear sections
 
@@ -12,7 +12,7 @@ Creating clear, consistent, and scalable AMPL models is critical for managing co
   - Constraints
   - Objective Functions
 
-### 1.2. Use Indentation and Formatting
+### 1.2. Use indentation and formatting
 
 AMPL supports spaces, indentation and line breaks, so use them to guarantee the readability and understanding of the model.
 
@@ -62,7 +62,7 @@ Single line (`#`) and multi-line C-style comments (`/*...*/`) are allowed in the
   # Last Updated: 11 April 2025
   ```
 
-### 1.4. Check for infeasibility
+### 1.4. Check the data for feasibility
 
 Help ensure that the model's requirements can indeed be met given the available resources and constraints.
   ```ampl
@@ -77,7 +77,7 @@ This check could also be performed before loading the data on the [API](#apis) s
 
 The most important rule for scalable models is to write descriptive and significant names for the entities in the model, rather than the usual short names used in Maths and Programming (`x`, `i`, `j`, `p`, `q`...). This depends on the context, because short names can help reading some complex expression, specially when using short names for index variables.
 
-### 2.1. General Naming Principles
+### 2.1. General naming principles
 
 - **Readable Names:** Use meaningful, descriptive names for `sets`, `parameters`, `variables`, `constraints`, and `objectives`.    
   ```ampl
@@ -150,22 +150,24 @@ The most important rule for scalable models is to write descriptive and signific
 
     .. code-block:: ampl
         
-        subject to Shipment{p in PRODUCTS}: 
-            Shipment[p,w] == 0 or Shipment[p,w] >= min_shipment[w];
+        subject to ShipmentDomain{p in PRODUCTS}: 
+          Shipment[p,w] == 0 or Shipment[p,w] >= min_shipment[w];
         subject to AlreadyFinished{container in CONTAINERS, t in T}:
-            ContainerFinish[c,t] = 1 ==> ContainerMove[c,t+1] = 0;
+          ContainerFinish[c,t] = 1 ==> ContainerMove[c,t+1] = 0;
 
     See more expressive modeling examples here: `Modeling guide <https://mp.ampl.com/model-guide.html>`_
 ```
 
-### 2.6. Objective Functions
+### 2.6. Objective functions
 
 - Name objectives starting each word with uppercase letters (PascalCase).
 - Action-Oriented: Use verbs or action-oriented phrases to describe the goal.
 - Single Purpose: Ensure the name reflects the exact purpose of the objective.
   ```ampl
-  maximize TotalProfit: sum{p in PROD} Assign[p] * (fixed_profit[p] + variable_profit[p]) ;
-  minimize TotalCost: sum{p in PROD} cost[i] * Assign[p];
+  maximize TotalProfit:
+    sum{p in PROD} Assign[p] * (fixed_profit[p] + variable_profit[p]) ;
+  minimize TotalCost:
+    sum{p in PROD} cost[i] * Assign[p];
   ```
 
 ```{note}
@@ -181,7 +183,7 @@ Remember that AMPL also supports [Multiple, Blended and Lexicographical objectiv
 
 Adopting these best practices ensures clarity, consistency, and scalability in AMPL models. By following these guidelines, your models will be easier to read, maintain, and scale, achieving professional-quality optimization workflows. This structured approach enhances collaboration, simplifies debugging, and supports long-term usability, making your models highly effective and user-friendly.
 
-## How To Use It
+## How to use it
 
 Just ask ChatGPT:
 - ***Please use these rules:*** https://dev.ampl.com/ampl/best-practices/style-guide.html
