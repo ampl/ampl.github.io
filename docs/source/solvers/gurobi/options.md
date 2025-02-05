@@ -11,7 +11,7 @@ Solver options obtained with `$ gurobi -=`.
 
 ```
 Gurobi Optimizer Options for AMPL
------------------------------------
+---------------------------------
 
 To set these options, assign a string specifying their values to the AMPL
 option "gurobi_options". For example:
@@ -448,24 +448,28 @@ alg:sens (sens, solnsens, sensitivity)
 
       0 - No (default)
       1 - Yes: suffixes returned on variables are
-      .sensobjlo = smallest objective coefficient
-      .sensobjhi = greatest objective coefficient
-      .senslblo = smallest variable lower bound
-      .senslbhi = greatest variable lower bound
-      .sensublo = smallest variable upper bound
-      .sensubhi = greatest variable upper bound;
+      .sensobjlo = smallest objective coefficients
+      .sensobj = current objective coefficients
+      .sensobjhi = greatest objective coefficients
+      .senslblo = smallest variable lower bounds
+      .senslbhi = greatest variable lower bounds
+      .sensublo = smallest variable upper bounds
+      .sensubhi = greatest variable upper bounds;
 
       suffixes for all constraints are
 
-      .senslblo = smallest constraint lower bound
-      .senslbhi = greatest constraint lower bound
-      .sensublo = smallest constraint upper bound
-      .sensubhi = greatest constraint upper bound;
+      .senslblo = smallest constraint lower bounds
+      .senslbhi = greatest constraint lower bounds
+      .sensublo = smallest constraint upper bounds
+      .sensubhi = greatest constraint upper bounds;
 
       suffixes for one-sided constraints only:
 
-      .sensrhslo = smallest right-hand side value
-      .sensrhshi = greatest right-hand side value.
+      .sensrhslo = smallest right-hand side values
+      .sensrhshi = greatest right-hand side values.
+
+      The suffixes correspond to the AMPL solver model, command 'solexpand'.
+      For easiest interpretation, disable AMPL presolve, 'option presolve 0;'
 
       For problems with integer variables or quadratic constraints, alg:sens=0
       is assumed quietly.
@@ -649,6 +653,19 @@ cvt:bigM (cvt:bigm, cvt:mip:bigM, cvt:mip:bigm)
       used by default. Use with care (prefer tight bounds). Should be smaller
       than (1.0 / [integrality tolerance])
 
+cvt:dvelim (dvelim)
+      Eliminate AMPL defined variables by substitution into linear, quadratic,
+      and polynomial expressions:
+
+      0 - Do not eliminate, always instantiate the variables.
+      1 - Eliminate only those used 1x. This can increase model density but
+          greatly simplifies some models.
+      2 - Always substitute where possible, even if the variable needs to be
+          instantiated for use in other places. Can introduce redundancy, but
+          seems best for some models (default.)
+
+      See also AMPL options linelim and substout.
+
 cvt:expcones (expcones)
       0*/1: Recognize exponential cones.
 
@@ -681,7 +698,13 @@ cvt:pre:eqbinary
       0/1*: Preprocess reified equality comparison with a binary variable.
 
 cvt:pre:eqresult
-      0/1*: Preprocess reified equality comparison's boolean result bounds.
+      0/1*: Preprocess reified equality comparison's decidable cases.
+
+cvt:pre:ineqresult
+      0/1*: Preprocess reified inequality comparison's decidable cases.
+
+cvt:pre:ineqrhs
+      0/1*: Preprocess reified inequality comparison's right-hand sides.
 
 cvt:pre:unnest
       0/1*: Inline nested expressions, currently Ands/Ors.
@@ -697,8 +720,7 @@ cvt:prod (cvt:pre:prod)
       natively (see acc:and), the conjunction is linearized.
       4 - Logicalize products of >=3 binary terms.
 
-      Default: 1+4. That is, 2-term binary products which are not part of a
-      higher-order binary product, are not logicalized by default.
+      Default: 5.
 
       Bits 2 or 4 imply bit 1.
 
