@@ -21,6 +21,7 @@
 - [**Lindo Global** Changelog (latest: **20210406**)](../solvers/lindoglobal/changes.md)
 - [**MINOS** Changelog (latest: **20211109**)](../solvers/minos/changes.md)
 - [**MOSEK** Changelog (latest: **20240901**)](../solvers/mosek/changes.md)
+- [**MP** Changelog (latest: **20250205**)](../releases/mp.md)
 - [**SCIP** Changelog (latest: **20240121**)](../solvers/scip/changes.md)
 - [**SNOPT** Changelog (latest: **20211109**)](../solvers/snopt/changes.md)
 - [**XPRESS** Changelog (latest: **20241227**)](../solvers/xpress/changes.md)
@@ -30,9 +31,12 @@
 :hidden:
 :glob:
 ampl.md
+mp.md
 ```
 
 
+## 20250205
+- [MP](../releases/mp.md#20250205)
 ## 20241228
 - [COPT](../solvers/copt/changes.md#20241228)
 ## 20241227
@@ -80,6 +84,7 @@ ampl.md
 - [GUROBI](../solvers/gurobi/changes.md#20240724)
 - [HiGHS](../solvers/highs/changes.md#20240724)
 - [MOSEK](../solvers/mosek/changes.md#20240724)
+- [MP](../releases/mp.md#20240724)
 - [XPRESS](../solvers/xpress/changes.md#20240724)
 ## 20240627
 - [HiGHS](../solvers/highs/changes.md#20240627)
@@ -90,6 +95,7 @@ ampl.md
 - [GUROBI](../solvers/gurobi/changes.md#20240617)
 - [HiGHS](../solvers/highs/changes.md#20240617)
 - [MOSEK](../solvers/mosek/changes.md#20240617)
+- [MP](../releases/mp.md#20240617)
 - [XPRESS](../solvers/xpress/changes.md#20240617)
 ## 20240606
 - [XPRESS](../solvers/xpress/changes.md#20240606)
@@ -100,6 +106,7 @@ ampl.md
 - [GUROBI](../solvers/gurobi/changes.md#20240604)
 - [HiGHS](../solvers/highs/changes.md#20240604)
 - [MOSEK](../solvers/mosek/changes.md#20240604)
+- [MP](../releases/mp.md#20240604)
 - [XPRESS](../solvers/xpress/changes.md#20240604)
 ## 20240531
 - [COPT](../solvers/copt/changes.md#20240531)
@@ -111,6 +118,7 @@ ampl.md
 - [GUROBI](../solvers/gurobi/changes.md#20240529)
 - [HiGHS](../solvers/highs/changes.md#20240529)
 - [MOSEK](../solvers/mosek/changes.md#20240529)
+- [MP](../releases/mp.md#20240529)
 - [XPRESS](../solvers/xpress/changes.md#20240529)
 ## 20240518
 - [GUROBI](../solvers/gurobi/changes.md#20240518)
@@ -123,6 +131,7 @@ ampl.md
 - [GUROBI](../solvers/gurobi/changes.md#20240429)
 - [HiGHS](../solvers/highs/changes.md#20240429)
 - [MOSEK](../solvers/mosek/changes.md#20240429)
+- [MP](../releases/mp.md#20240429)
 - [XPRESS](../solvers/xpress/changes.md#20240429)
 ## 20240425
 - [CBC](../solvers/cbc/changes.md#20240425)
@@ -137,6 +146,7 @@ ampl.md
 - [GUROBI](../solvers/gurobi/changes.md#20240320)
 - [HiGHS](../solvers/highs/changes.md#20240320)
 - [MOSEK](../solvers/mosek/changes.md#20240320)
+- [MP](../releases/mp.md#20240320)
 - [XPRESS](../solvers/xpress/changes.md#20240320)
 ## 20240313
 - [AMPL](../releases/ampl.md#20240313)
@@ -177,6 +187,7 @@ ampl.md
 - [GUROBI](../solvers/gurobi/changes.md#20240115)
 - [HiGHS](../solvers/highs/changes.md#20240115)
 - [MOSEK](../solvers/mosek/changes.md#20240115)
+- [MP](../releases/mp.md#20240115)
 - [SCIP](../solvers/scip/changes.md#20240115)
 - [XPRESS](../solvers/xpress/changes.md#20240115)
 ## 20240110
@@ -213,6 +224,7 @@ ampl.md
 - [GUROBI](../solvers/gurobi/changes.md#20231103)
 - [HiGHS](../solvers/highs/changes.md#20231103)
 - [MOSEK](../solvers/mosek/changes.md#20231103)
+- [MP](../releases/mp.md#20231103)
 - [SCIP](../solvers/scip/changes.md#20231103)
 - [XPRESS](../solvers/xpress/changes.md#20231103)
 ## 20231017
@@ -222,6 +234,7 @@ ampl.md
 - [GUROBI](../solvers/gurobi/changes.md#20231017)
 - [HiGHS](../solvers/highs/changes.md#20231017)
 - [MOSEK](../solvers/mosek/changes.md#20231017)
+- [MP](../releases/mp.md#20231017)
 - [SCIP](../solvers/scip/changes.md#20231017)
 - [XPRESS](../solvers/xpress/changes.md#20231017)
 ## 20231015
@@ -239,6 +252,7 @@ ampl.md
 - [GUROBI](../solvers/gurobi/changes.md#20230919)
 - [HiGHS](../solvers/highs/changes.md#20230919)
 - [MOSEK](../solvers/mosek/changes.md#20230919)
+- [MP](../releases/mp.md#20230919)
 - [SCIP](../solvers/scip/changes.md#20230919)
 - [XPRESS](../solvers/xpress/changes.md#20230919)
 ## 20230918
@@ -252,6 +266,7 @@ ampl.md
 - [GUROBI](../solvers/gurobi/changes.md#20230831)
 - [HiGHS](../solvers/highs/changes.md#20230831)
 - [MOSEK](../solvers/mosek/changes.md#20230831)
+- [MP](../releases/mp.md#20230831)
 - [SCIP](../solvers/scip/changes.md#20230831)
 - [XPRESS](../solvers/xpress/changes.md#20230831)
 ## 20230817
@@ -261,6 +276,7 @@ ampl.md
 - [GUROBI](../solvers/gurobi/changes.md#20230817)
 - [HiGHS](../solvers/highs/changes.md#20230817)
 - [MOSEK](../solvers/mosek/changes.md#20230817)
+- [MP](../releases/mp.md#20230817)
 - [SCIP](../solvers/scip/changes.md#20230817)
 - [XPRESS](../solvers/xpress/changes.md#20230817)
 ## 20230816
@@ -272,6 +288,7 @@ ampl.md
 ## 20230728
 - [GUROBI](../solvers/gurobi/changes.md#20230728)
 - [HiGHS](../solvers/highs/changes.md#20230728)
+- [MP](../releases/mp.md#20230728)
 - [XPRESS](../solvers/xpress/changes.md#20230728)
 ## 20230727
 - [XPRESS](../solvers/xpress/changes.md#20230727)
@@ -282,6 +299,7 @@ ampl.md
 - [GUROBI](../solvers/gurobi/changes.md#20230726)
 - [HiGHS](../solvers/highs/changes.md#20230726)
 - [MOSEK](../solvers/mosek/changes.md#20230726)
+- [MP](../releases/mp.md#20230726)
 - [SCIP](../solvers/scip/changes.md#20230726)
 - [XPRESS](../solvers/xpress/changes.md#20230726)
 ## 20230724
@@ -289,8 +307,10 @@ ampl.md
 - [GUROBI](../solvers/gurobi/changes.md#20230724)
 - [HiGHS](../solvers/highs/changes.md#20230724)
 - [MOSEK](../solvers/mosek/changes.md#20230724)
+- [MP](../releases/mp.md#20230724)
 - [XPRESS](../solvers/xpress/changes.md#20230724)
 ## 20230714
+- [MP](../releases/mp.md#20230714)
 - [XPRESS](../solvers/xpress/changes.md#20230714)
 ## 20230713
 - [CBC](../solvers/cbc/changes.md#20230713)
@@ -306,6 +326,7 @@ ampl.md
 - [GUROBI](../solvers/gurobi/changes.md#20230621)
 - [HiGHS](../solvers/highs/changes.md#20230621)
 - [MOSEK](../solvers/mosek/changes.md#20230621)
+- [MP](../releases/mp.md#20230621)
 - [SCIP](../solvers/scip/changes.md#20230621)
 - [XPRESS](../solvers/xpress/changes.md#20230621)
 ## 20230619
@@ -318,6 +339,7 @@ ampl.md
 - [GUROBI](../solvers/gurobi/changes.md#20230616)
 - [HiGHS](../solvers/highs/changes.md#20230616)
 - [MOSEK](../solvers/mosek/changes.md#20230616)
+- [MP](../releases/mp.md#20230616)
 - [SCIP](../solvers/scip/changes.md#20230616)
 - [XPRESS](../solvers/xpress/changes.md#20230616)
 ## 20230607
@@ -328,6 +350,7 @@ ampl.md
 - [GUROBI](../solvers/gurobi/changes.md#20230531)
 - [HiGHS](../solvers/highs/changes.md#20230531)
 - [MOSEK](../solvers/mosek/changes.md#20230531)
+- [MP](../releases/mp.md#20230531)
 ## 20230522
 - [GUROBI](../solvers/gurobi/changes.md#20230522)
 - [HiGHS](../solvers/highs/changes.md#20230522)
@@ -336,6 +359,7 @@ ampl.md
 ## 20230515
 - [GCG](../solvers/gcg/changes.md#20230515)
 - [MOSEK](../solvers/mosek/changes.md#20230515)
+- [MP](../releases/mp.md#20230515)
 - [SCIP](../solvers/scip/changes.md#20230515)
 ## 20230505
 - [MOSEK](../solvers/mosek/changes.md#20230505)
@@ -350,6 +374,7 @@ ampl.md
 - [COPT](../solvers/copt/changes.md#20230424)
 - [HiGHS](../solvers/highs/changes.md#20230424)
 - [MOSEK](../solvers/mosek/changes.md#20230424)
+- [MP](../releases/mp.md#20230424)
 - [XPRESS](../solvers/xpress/changes.md#20230424)
 ## 20230405
 - [BARON](../solvers/baron/changes.md#20230405)
@@ -361,6 +386,7 @@ ampl.md
 - [BARON](../solvers/baron/changes.md#20230321)
 - [GUROBI](../solvers/gurobi/changes.md#20230321)
 - [MOSEK](../solvers/mosek/changes.md#20230321)
+- [MP](../releases/mp.md#20230321)
 ## 20230310
 - [GUROBIASL](../solvers/gurobi/changesasl.md#20230310)
 ## 20230228
@@ -380,6 +406,7 @@ ampl.md
 - [COPT](../solvers/copt/changes.md#20230207)
 - [GUROBI](../solvers/gurobi/changes.md#20230207)
 - [HiGHS](../solvers/highs/changes.md#20230207)
+- [MP](../releases/mp.md#20230207)
 - [XPRESS](../solvers/xpress/changes.md#20230207)
 ## 20230206
 - [GUROBI](../solvers/gurobi/changes.md#20230206)
@@ -390,12 +417,14 @@ ampl.md
 - [COPT](../solvers/copt/changes.md#20221228)
 - [GUROBI](../solvers/gurobi/changes.md#20221228)
 - [HiGHS](../solvers/highs/changes.md#20221228)
+- [MP](../releases/mp.md#20221228)
 - [XPRESS](../solvers/xpress/changes.md#20221228)
 ## 20221222
 - [CBC](../solvers/cbc/changes.md#20221222)
 - [COPT](../solvers/copt/changes.md#20221222)
 - [GUROBI](../solvers/gurobi/changes.md#20221222)
 - [HiGHS](../solvers/highs/changes.md#20221222)
+- [MP](../releases/mp.md#20221222)
 - [XPRESS](../solvers/xpress/changes.md#20221222)
 ## 20221213
 - [KNITRO](../solvers/knitro/changes.md#20221213)
@@ -404,6 +433,7 @@ ampl.md
 - [COPT](../solvers/copt/changes.md#20221211)
 - [GUROBI](../solvers/gurobi/changes.md#20221211)
 - [HiGHS](../solvers/highs/changes.md#20221211)
+- [MP](../releases/mp.md#20221211)
 - [XPRESS](../solvers/xpress/changes.md#20221211)
 ## 20221208
 - [CBC](../solvers/cbc/changes.md#20221208)
@@ -421,12 +451,14 @@ ampl.md
 - [COPT](../solvers/copt/changes.md#20221012)
 - [GUROBI](../solvers/gurobi/changes.md#20221012)
 - [HiGHS](../solvers/highs/changes.md#20221012)
+- [MP](../releases/mp.md#20221012)
 ## 20221008
 - [AMPL](../releases/ampl.md#20221008)
 ## 20220928
 - [COPT](../solvers/copt/changes.md#20220928)
 - [GUROBI](../solvers/gurobi/changes.md#20220928)
 - [HiGHS](../solvers/highs/changes.md#20220928)
+- [MP](../releases/mp.md#20220928)
 ## 20220927
 - [AMPL](../releases/ampl.md#20220927)
 ## 20220812
@@ -437,8 +469,10 @@ ampl.md
 - [AMPL](../releases/ampl.md#20220730)
 ## 20220725
 - [GUROBI](../solvers/gurobi/changes.md#20220725)
+- [MP](../releases/mp.md#20220725)
 ## 20220720
 - [GUROBI](../solvers/gurobi/changes.md#20220720)
+- [MP](../releases/mp.md#20220720)
 ## 20220715
 - [COPT](../solvers/copt/changes.md#20220715)
 ## 20220706
@@ -450,17 +484,21 @@ ampl.md
 - [AMPL](../releases/ampl.md#20220703)
 ## 20220621
 - [AMPL](../releases/ampl.md#20220621)
+## 20220617
+- [MP](../releases/mp.md#20220617)
 ## 20220615
 - [COPT](../solvers/copt/changes.md#20220615)
 ## 20220603
 - [HiGHS](../solvers/highs/changes.md#20220603)
 ## 20220526
 - [COPT](../solvers/copt/changes.md#20220526)
+- [MP](../releases/mp.md#20220526)
 ## 20220524
 - [HiGHS](../solvers/highs/changes.md#20220524)
 ## 20220511
 - [COPT](../solvers/copt/changes.md#20220511)
 - [GUROBI](../solvers/gurobi/changes.md#20220511)
+- [MP](../releases/mp.md#20220511)
 ## 20220506
 - [AMPL](../releases/ampl.md#20220506)
 ## 20220505
@@ -473,6 +511,7 @@ ampl.md
 - [COPT](../solvers/copt/changes.md#20220411)
 ## 20220408
 - [GUROBI](../solvers/gurobi/changes.md#20220408)
+- [MP](../releases/mp.md#20220408)
 ## 20220323
 - [AMPL](../releases/ampl.md#20220323)
 ## 20220310
@@ -488,6 +527,8 @@ ampl.md
 - [AMPL](../releases/ampl.md#20220219)
 ## 20220217
 - [GUROBI](../solvers/gurobi/changes.md#20220217)
+## 20220216
+- [MP](../releases/mp.md#20220216)
 ## 20220215
 - [KNITRO](../solvers/knitro/changes.md#20220215)
 ## 20220202
@@ -1492,8 +1533,6 @@ ampl.md
 - [SNOPT](../solvers/snopt/changes.md#20140828)
 ## 20140827
 - [AMPL](../releases/ampl.md#20140827)
-## 20140826
-- [GUROBIASL](../solvers/gurobi/changesasl.md#20140826)
 ## 20140718
 - [CPLEXASL](../solvers/cplex/changesasl.md#20140718)
 ## 20140711
@@ -1940,8 +1979,6 @@ ampl.md
 - [CPLEXASL](../solvers/cplex/changesasl.md#20110909)
 ## 20110908
 - [AMPL](../releases/ampl.md#20110908)
-## 20110907
-- [GUROBIASL](../solvers/gurobi/changesasl.md#20110907)
 ## 20110906
 - [AMPL](../releases/ampl.md#20110906)
 ## 20110901

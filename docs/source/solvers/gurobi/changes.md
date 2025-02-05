@@ -1,6 +1,5 @@
 # GUROBI Changelog
 
-
 ## 20241119
 - MP changes: added support for x^y expressions, where x and y
   are variables

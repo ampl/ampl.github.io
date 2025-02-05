@@ -1,6 +1,5 @@
 # SCIP Changelog
 
-
 ## 20240121
 - Updated to SCIP 8.1.0
 

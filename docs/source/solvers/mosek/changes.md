@@ -1,6 +1,5 @@
 # MOSEK Changelog
 
-
 ## 20240901
 - Option *tech:logfile* to write Mosek's output to a log file
 

@@ -1,6 +1,5 @@
 # COPT Changelog
 
-
 ## 20241228
 - Updated to COPT 7.2.4, which includes performance improvements to 
   the MIP, SOCP and QCQP solvers

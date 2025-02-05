@@ -33,6 +33,25 @@ SOLVERS = {
     "GCG-CPX": "gcg-cpx",
 }
 
+import requests
+
+
+def fetch_url_content(url):
+    response = requests.get(url)
+    response.raise_for_status()
+    return response.text
+
+
+def filter_changelog(changelog):
+    h2_pattern = r"## \d{8}"
+    entries = re.split(r"(?=## \d{8})", changelog)
+    filtered_entries = [
+        entry for entry in entries if re.match(h2_pattern, entry.strip())
+    ]
+    filtered_changelog = "".join(filtered_entries)
+    return filtered_changelog
+
+
 releases = {}
 for label, solver in SOLVERS.items():
     output = subprocess.check_output([solver, "-="]).decode().strip()
@@ -52,16 +71,17 @@ for label, solver in SOLVERS.items():
             content = content[content.find("==") :]
             content = content[content.find("\n") + 1 :]
         content = re.sub(r"###+ (\d+)", r"## \g<1>", content)
-        content = f"# {label} Changelog\n" + content
+        content = f"# {label} Changelog\n\n" + filter_changelog(content)
         fname = f"solvers/{solver}/changes.md"
         if solver.endswith("asl"):
             fname = f"solvers/{solver[:-3]}/changesasl.md"
         elif solver.endswith("mp"):
             fname = f"solvers/{solver[:-2]}/changesmp.md"
+        # Index solver changelog
         releases[solver] = {
             "label": label,
             "file": fname,
-            "versions": re.findall(r"## (\d{8})", content),
+            "versions": re.findall(r"^## (\d{8})", content, re.MULTILINE),
         }
         open(f"source/{fname}", "w").write(content)
     else:
@@ -96,12 +116,25 @@ Solver options obtained with `$ {solver} -=`.
             file=f,
         )
 
+# Index AMPL changelog
 releases["ampl"] = {
     "label": "AMPL",
     "file": "releases/ampl.md",
     "versions": re.findall(r"## (\d{8})", open("source/releases/ampl.md").read()),
 }
 
+# Download and index MP changelog
+mp_changelog = fetch_url_content(
+    "https://raw.githubusercontent.com/ampl/mp/refs/heads/develop/CHANGES.mp.md"
+)
+mp_changelog = mp_changelog[mp_changelog.find("##") :]
+mp_changelog = f"# AMPL MP Library Changelog\n\n{mp_changelog}"
+open("source/releases/mp.md", "w").write(mp_changelog)
+releases["mp"] = {
+    "label": "MP",
+    "file": "releases/mp.md",
+    "versions": re.findall(r"## (\d{8})", open("source/releases/mp.md").read()),
+}
 
 released_on = {}
 for item in releases:
@@ -132,12 +165,14 @@ for label, item in sorted(changelogs):
         file=changes,
     )
 
+
 print(
     """
 ```{toctree}
 :hidden:
 :glob:
 ampl.md
+mp.md
 ```
 
 """,

@@ -1,6 +1,5 @@
 # XPRESS Changelog
 
-
 ## 20241227
 - Fix acceptance options for nonlinear formulas
   (still disabled by default.)

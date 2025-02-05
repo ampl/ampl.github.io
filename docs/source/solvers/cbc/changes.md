@@ -1,6 +1,5 @@
 # CBC Changelog
 
-
 ## 20241128
 - Fixed a bug that made CBC segfault for some models
 

@@ -1,6 +1,5 @@
 # HiGHS Changelog
 
-
 ## 20241119
 - Updated to HiGHS 1.8.1
 
