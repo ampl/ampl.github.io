@@ -59,9 +59,14 @@ for label, solver in SOLVERS.items():
     # subprocess.check_output(f"{solver} -= || true", shell=True).decode().strip()
 
     exec_location = subprocess.check_output(["which", solver]).decode()
-    changes = os.path.join(
-        os.path.dirname(exec_location), "docs", f"CHANGES.{solver}.md"
-    )
+    if solver in ["lgo"]:
+        # handle solvers whose changelog are not being distributed
+        changes = f"source/solvers/{solver}/changes.md"
+    else:
+        changes = os.path.join(
+            os.path.dirname(exec_location), "docs", f"CHANGES.{solver}.md"
+        )
+
     if os.path.exists(changes):
         content = open(changes, "r").read().strip()
         if content.startswith("#"):

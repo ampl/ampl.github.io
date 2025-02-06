@@ -17,6 +17,7 @@
 - [**HiGHS** Changelog (latest: **20241119**)](../solvers/highs/changes.md)
 - [**ILOGCP** Changelog (latest: **20230228**)](../solvers/ilogcp/changes.md)
 - [**KNITRO** Changelog (latest: **20241220**)](../solvers/knitro/changes.md)
+- [**LGO** Changelog (latest: **20201030**)](../solvers/lgo/changes.md)
 - [**LOQO** Changelog (latest: **20210410**)](../solvers/loqo/changes.md)
 - [**Lindo Global** Changelog (latest: **20210406**)](../solvers/lindoglobal/changes.md)
 - [**MINOS** Changelog (latest: **20211109**)](../solvers/minos/changes.md)
@@ -644,6 +645,7 @@ mp.md
 - [AMPL](../releases/ampl.md#20201031)
 ## 20201030
 - [KNITRO](../solvers/knitro/changes.md#20201030)
+- [LGO](../solvers/lgo/changes.md#20201030)
 - [LOQO](../solvers/loqo/changes.md#20201030)
 - [MINOS](../solvers/minos/changes.md#20201030)
 - [SNOPT](../solvers/snopt/changes.md#20201030)
@@ -659,6 +661,7 @@ mp.md
 ## 20201018
 - [CONOPT](../solvers/conopt/changes.md#20201018)
 - [KNITRO](../solvers/knitro/changes.md#20201018)
+- [LGO](../solvers/lgo/changes.md#20201018)
 - [LOQO](../solvers/loqo/changes.md#20201018)
 - [MINOS](../solvers/minos/changes.md#20201018)
 - [SNOPT](../solvers/snopt/changes.md#20201018)
@@ -745,6 +748,7 @@ mp.md
 - [CPLEXASL](../solvers/cplex/changesasl.md#20190908)
 - [GUROBIASL](../solvers/gurobi/changesasl.md#20190908)
 - [KNITRO](../solvers/knitro/changes.md#20190908)
+- [LGO](../solvers/lgo/changes.md#20190908)
 - [LOQO](../solvers/loqo/changes.md#20190908)
 - [MINOS](../solvers/minos/changes.md#20190908)
 ## 20190830
@@ -800,6 +804,7 @@ mp.md
 - [CPLEXASL](../solvers/cplex/changesasl.md#20190315)
 - [GUROBIASL](../solvers/gurobi/changesasl.md#20190315)
 - [KNITRO](../solvers/knitro/changes.md#20190315)
+- [LGO](../solvers/lgo/changes.md#20190315)
 - [LOQO](../solvers/loqo/changes.md#20190315)
 ## 20190314
 - [SNOPT](../solvers/snopt/changes.md#20190314)
@@ -821,10 +826,14 @@ mp.md
 - [KNITRO](../solvers/knitro/changes.md#20190207)
 ## 20190130
 - [AMPL](../releases/ampl.md#20190130)
+## 20190123
+- [LGO](../solvers/lgo/changes.md#20190123)
 ## 20190122
 - [AMPL](../releases/ampl.md#20190122)
 ## 20190116
 - [BARON](../solvers/baron/changes.md#20190116)
+## 20190110
+- [LGO](../solvers/lgo/changes.md#20190110)
 ## 20181221
 - [CONOPT](../solvers/conopt/changes.md#20181221)
 - [KNITRO](../solvers/knitro/changes.md#20181221)
@@ -843,6 +852,7 @@ mp.md
 - [CPLEXASL](../solvers/cplex/changesasl.md#20181120)
 - [GUROBIASL](../solvers/gurobi/changesasl.md#20181120)
 - [KNITRO](../solvers/knitro/changes.md#20181120)
+- [LGO](../solvers/lgo/changes.md#20181120)
 - [LOQO](../solvers/loqo/changes.md#20181120)
 - [MINOS](../solvers/minos/changes.md#20181120)
 ## 20181116
@@ -1036,6 +1046,7 @@ mp.md
 - [CPLEXASL](../solvers/cplex/changesasl.md#20170806)
 ## 20170803
 - [KNITRO](../solvers/knitro/changes.md#20170803)
+- [LGO](../solvers/lgo/changes.md#20170803)
 - [MINOS](../solvers/minos/changes.md#20170803)
 ## 20170802
 - [MINOS](../solvers/minos/changes.md#20170802)
@@ -1093,6 +1104,7 @@ mp.md
 - [BARON](../solvers/baron/changes.md#20170511)
 - [CONOPT](../solvers/conopt/changes.md#20170511)
 - [KNITRO](../solvers/knitro/changes.md#20170511)
+- [LGO](../solvers/lgo/changes.md#20170511)
 - [LOQO](../solvers/loqo/changes.md#20170511)
 - [MINOS](../solvers/minos/changes.md#20170511)
 - [XPRESSASL](../solvers/xpress/changesasl.md#20170511)
@@ -1282,6 +1294,7 @@ mp.md
 ## 20151208
 - [CONOPT](../solvers/conopt/changes.md#20151208)
 - [KNITRO](../solvers/knitro/changes.md#20151208)
+- [LGO](../solvers/lgo/changes.md#20151208)
 ## 20151205
 - [BARON](../solvers/baron/changes.md#20151205)
 - [CPLEXASL](../solvers/cplex/changesasl.md#20151205)
@@ -1364,6 +1377,7 @@ mp.md
 - [CPLEXASL](../solvers/cplex/changesasl.md#20150630)
 - [GUROBIASL](../solvers/gurobi/changesasl.md#20150630)
 - [KNITRO](../solvers/knitro/changes.md#20150630)
+- [LGO](../solvers/lgo/changes.md#20150630)
 - [MINOS](../solvers/minos/changes.md#20150630)
 ## 20150623
 - [CPLEXASL](../solvers/cplex/changesasl.md#20150623)
@@ -1378,6 +1392,8 @@ mp.md
 - [GUROBIASL](../solvers/gurobi/changesasl.md#20150529)
 - [KNITRO](../solvers/knitro/changes.md#20150529)
 - [XPRESSASL](../solvers/xpress/changesasl.md#20150529)
+## 20150526
+- [LGO](../solvers/lgo/changes.md#20150526)
 ## 20150525
 - [SNOPT](../solvers/snopt/changes.md#20150525)
 ## 20150524
@@ -1400,6 +1416,7 @@ mp.md
 - [BARON](../solvers/baron/changes.md#20150424)
 - [CONOPT](../solvers/conopt/changes.md#20150424)
 - [KNITRO](../solvers/knitro/changes.md#20150424)
+- [LGO](../solvers/lgo/changes.md#20150424)
 - [MINOS](../solvers/minos/changes.md#20150424)
 ## 20150422
 - [AMPL](../releases/ampl.md#20150422)
@@ -1421,6 +1438,8 @@ mp.md
 - [GUROBIASL](../solvers/gurobi/changesasl.md#20150324)
 ## 20150319
 - [BARON](../solvers/baron/changes.md#20150319)
+## 20150316
+- [LGO](../solvers/lgo/changes.md#20150316)
 ## 20150313
 - [AMPL](../releases/ampl.md#20150313)
 ## 20150312
@@ -1439,6 +1458,8 @@ mp.md
 - [KNITRO](../solvers/knitro/changes.md#20150226)
 ## 20150225
 - [GUROBIASL](../solvers/gurobi/changesasl.md#20150225)
+## 20150218
+- [LGO](../solvers/lgo/changes.md#20150218)
 ## 20150217
 - [MINOS](../solvers/minos/changes.md#20150217)
 - [SNOPT](../solvers/snopt/changes.md#20150217)

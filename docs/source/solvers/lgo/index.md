@@ -67,3 +67,9 @@ Full list of solver options:
 ```{toctree}
 options.md
 ```
+
+## Changelog
+
+```{toctree}
+changes.md
+```
