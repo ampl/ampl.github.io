@@ -349,6 +349,19 @@ cvt:bigM (cvt:bigm, cvt:mip:bigM, cvt:mip:bigm)
       used by default. Use with care (prefer tight bounds). Should be smaller
       than (1.0 / [integrality tolerance])
 
+cvt:dvelim (dvelim)
+      Eliminate AMPL defined variables by substitution into linear, quadratic,
+      and polynomial expressions:
+
+      0 - Do not eliminate, always instantiate the variables.
+      1 - Eliminate only those used 1x. This can increase model density but
+          greatly simplifies some models.
+      2 - Always substitute where possible, even if the variable needs to be
+          instantiated for use in other places. Can introduce redundancy, but
+          seems best for some models (default.)
+
+      See also AMPL options linelim and substout.
+
 cvt:expcones (expcones)
       0*/1: Recognize exponential cones.
 
@@ -381,7 +394,13 @@ cvt:pre:eqbinary
       0/1*: Preprocess reified equality comparison with a binary variable.
 
 cvt:pre:eqresult
-      0/1*: Preprocess reified equality comparison's boolean result bounds.
+      0/1*: Preprocess reified equality comparison's decidable cases.
+
+cvt:pre:ineqresult
+      0/1*: Preprocess reified inequality comparison's decidable cases.
+
+cvt:pre:ineqrhs
+      0/1*: Preprocess reified inequality comparison's right-hand sides.
 
 cvt:pre:unnest
       0/1*: Inline nested expressions, currently Ands/Ors.
@@ -397,8 +416,7 @@ cvt:prod (cvt:pre:prod)
       natively (see acc:and), the conjunction is linearized.
       4 - Logicalize products of >=3 binary terms.
 
-      Default: 1+4. That is, 2-term binary products which are not part of a
-      higher-order binary product, are not logicalized by default.
+      Default: 7.
 
       Bits 2 or 4 imply bit 1.
 
