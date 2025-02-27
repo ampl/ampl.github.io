@@ -64,6 +64,7 @@ setup(
         "sphinx-autobuild==2024.10.3",
         "sphinxcontrib-googleanalytics==0.4",
         "breathe==4.35.0",
+        "sphinx-sitemap==2.6.0",
     ],
     packages=["ampl_sphinx_theme"],
     package_data={"": ls_dir("ampl_sphinx_theme/")},
