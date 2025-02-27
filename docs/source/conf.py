@@ -109,6 +109,8 @@ html_context = {"default_mode": "light"}
 
 html_baseurl = "https://dev.ampl.com"
 
+html_extra_path = ["_html"]
+
 sitemap_filename = "sphinx-sitemap.xml"
 
 redirects = {
