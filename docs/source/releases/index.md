@@ -21,7 +21,7 @@
 - [**LOQO** Changelog (latest: **20210410**)](../solvers/loqo/changes.md)
 - [**Lindo Global** Changelog (latest: **20210406**)](../solvers/lindoglobal/changes.md)
 - [**MINOS** Changelog (latest: **20211109**)](../solvers/minos/changes.md)
-- [**MOSEK** Changelog (latest: **20240901**)](../solvers/mosek/changes.md)
+- [**MOSEK** Changelog (latest: **20250226**)](../solvers/mosek/changes.md)
 - [**MP** Changelog (latest: **20250205**)](../releases/mp.md)
 - [**SCIP** Changelog (latest: **20240121**)](../solvers/scip/changes.md)
 - [**SNOPT** Changelog (latest: **20211109**)](../solvers/snopt/changes.md)
@@ -36,6 +36,8 @@ mp.md
 ```
 
 
+## 20250226
+- [MOSEK](../solvers/mosek/changes.md#20250226)
 ## 20250206
 - [CBC](../solvers/cbc/changes.md#20250206)
 ## 20250205

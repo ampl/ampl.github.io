@@ -153,8 +153,9 @@ alg:method (method, lpmethod, simplex)
       6 - Primal simplex
 
 alg:rays (rays)
-      Whether to return suffix .unbdd if the objective is unbounded or suffix
-      .dunbdd if the constraints are infeasible:
+      Whether to return suffix .unbdd (unbounded ray) if the objective is
+      unbounded or suffix .dunbdd (Farkas dual) if the constraints are
+      infeasible:
 
       0 - Neither
       1 - Just .unbdd
@@ -171,24 +172,28 @@ alg:sens (sens, solnsens, sensitivity)
 
       0 - No (default)
       1 - Yes: suffixes returned on variables are
-      .sensobjlo = smallest objective coefficient
-      .sensobjhi = greatest objective coefficient
-      .senslblo = smallest variable lower bound
-      .senslbhi = greatest variable lower bound
-      .sensublo = smallest variable upper bound
-      .sensubhi = greatest variable upper bound;
+      .sensobjlo = smallest objective coefficients
+      .sensobj = current objective coefficients
+      .sensobjhi = greatest objective coefficients
+      .senslblo = smallest variable lower bounds
+      .senslbhi = greatest variable lower bounds
+      .sensublo = smallest variable upper bounds
+      .sensubhi = greatest variable upper bounds;
 
       suffixes for all constraints are
 
-      .senslblo = smallest constraint lower bound
-      .senslbhi = greatest constraint lower bound
-      .sensublo = smallest constraint upper bound
-      .sensubhi = greatest constraint upper bound;
+      .senslblo = smallest constraint lower bounds
+      .senslbhi = greatest constraint lower bounds
+      .sensublo = smallest constraint upper bounds
+      .sensubhi = greatest constraint upper bounds;
 
       suffixes for one-sided constraints only:
 
-      .sensrhslo = smallest right-hand side value
-      .sensrhshi = greatest right-hand side value.
+      .sensrhslo = smallest right-hand side values
+      .sensrhshi = greatest right-hand side values.
+
+      The suffixes correspond to the AMPL solver model, command 'solexpand'.
+      For easiest interpretation, disable AMPL presolve, 'option presolve 0;'
 
 alg:start (warmstart)
       Whether to use incoming primal (and dual, for LP) variable values in a
@@ -198,10 +203,31 @@ alg:start (warmstart)
       1 - Yes (for LP: if there is no incoming alg:basis) (default)
       2 - Yes (for LP: ignoring the incoming alg:basis, if any.)
 
+bar:basis (bar:crossover, crossover)
+      Whether the interior-point optimizer also computes an optimal basis:
+
+      0 - Never
+      1 - Always (default)
+      2 - If no error detected
+      3 - If primal and dual feasible
+
 cvt:bigM (cvt:bigm, cvt:mip:bigM, cvt:mip:bigm)
       Default value of big-M for linearization of logical constraints. Not
       used by default. Use with care (prefer tight bounds). Should be smaller
       than (1.0 / [integrality tolerance])
+
+cvt:dvelim (dvelim)
+      Eliminate AMPL defined variables by substitution into linear, quadratic,
+      and polynomial expressions:
+
+      0 - Do not eliminate, always instantiate the variables.
+      1 - Eliminate only those used 1x. This can increase model density but
+          greatly simplifies some models.
+      2 - Always substitute where possible, even if the variable needs to be
+          instantiated for use in other places. Can introduce redundancy, but
+          seems best for some models (default.)
+
+      See also AMPL options linelim and substout.
 
 cvt:expcones (expcones)
       0/1*: Recognize exponential cones.
@@ -235,7 +261,13 @@ cvt:pre:eqbinary
       0/1*: Preprocess reified equality comparison with a binary variable.
 
 cvt:pre:eqresult
-      0/1*: Preprocess reified equality comparison's boolean result bounds.
+      0/1*: Preprocess reified equality comparison's decidable cases.
+
+cvt:pre:ineqresult
+      0/1*: Preprocess reified inequality comparison's decidable cases.
+
+cvt:pre:ineqrhs
+      0/1*: Preprocess reified inequality comparison's right-hand sides.
 
 cvt:pre:unnest
       0/1*: Inline nested expressions, currently Ands/Ors.
@@ -251,8 +283,7 @@ cvt:prod (cvt:pre:prod)
       natively (see acc:and), the conjunction is linearized.
       4 - Logicalize products of >=3 binary terms.
 
-      Default: 1+4. That is, 2-term binary products which are not part of a
-      higher-order binary product, are not logicalized by default.
+      Default: 7.
 
       Bits 2 or 4 imply bit 1.
 
@@ -337,15 +368,11 @@ mip:constructsol (mipconstructsol)
       integer problem by fixing all integer values and solving the remaining
       problem.Default = OFF
 
+mip:gap (mipgap)
+      Max. relative MIP optimality gap (default 1e-4).
+
 mip:inttol (inttol)
       MIP integrality tolerance.
-
-mip:presolve (presolve)
-      MIP presolve:
-
-      0 - Do not use presolve
-      1 - Use presolve
-      2 - Automatic (default)
 
 mip:relgapconst (miorelgapconst)
       This value is used to compute the relative gap for the solution to an
@@ -428,14 +455,63 @@ obj:no (objno)
       1 - First (default, if available)
       2 - Second (if available), etc.
 
+pre:aggregate (aggregate)
+      Whether to use aggregation in presolve:
+
+      0 - No
+      1 - Yes (default)
+
 pre:dualray_analysis (dualrayanalysis)
-      Controls the amount of symmetry detection employed by the mixed-integer
-      optimizer in presolve:
+      Controls the amount of dual ray analysis employed by the mixed-integer
+      optimizer:
 
       -1 - Automatic (default)
       0  - Disabled
       1  - Low amount of analyis
       2  - Higher amount of analysis
+
+pre:folding (folding, foldinguse)
+      Whether to use folding in presolve (for MIP problems use
+      pre:mipfolding):
+
+      0 - Disabled
+      1 - The solver decides on the usage and amount of folding
+      2 - If only the interior-point solution is requested then the solver
+          decides; if the basic solution is requested then folding is disabled
+          (default)
+      3 - Full folding is always performed regardless of workload
+
+pre:mipfolding (mipfolding, miosimmetrylevel)
+      Controls the amount of symmetry detection by the mixed-integer optimizer
+      in presolve:
+
+      -1 - Automatic
+      0  - Disabled
+      1  - Low amount
+      2  - Medium amount
+      3  - High amount
+      4  - Extremely high amount
+
+pre:passes (prepasses)
+      Limit on the number of presolve passes; a negative value implies MOSEK
+      decides:
+
+      -1 - Automatic choice (default)
+      n>=0 - At most n passes.
+
+pre:scale (scale)
+      Whether to use scaling in presolve. Applies to both simplex and interior
+      point method:
+
+      0 - Automatic (default)
+      1 - Automatic (default)
+
+pre:solve (presolve)
+      MIP presolve:
+
+      0 - Do not use presolve
+      1 - Use presolve
+      2 - Automatic (default)
 
 sol:chk:fail (chk:fail, checkfail)
       Fail on MP solution check violations, with solve result 150.
@@ -482,7 +558,7 @@ sol:chk:round (chk:round, chk:rnd)
 
 tech:debug (debug)
       0*/1: whether to assist testing & debugging, e.g., by outputting
-      auxiliary information.
+      auxiliary information (mostly via suffixes).
 
 tech:logfile (logfile)
       Log file name. Note that if outlev is set to 0, there will be no output
@@ -518,6 +594,9 @@ tech:optionnativewrite (optionnativewrite, tech:param:write, param:write)
 
 tech:outlev (outlev)
       0*/1: Whether to write mosek log lines to stdout and to the logfile.
+
+tech:outlev_mp (outlev_mp)
+      0*/1: whether to print MP model information.
 
 tech:seed (seed)
       Random number seed (default 42), used for randomization in the

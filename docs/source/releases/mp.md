@@ -1,5 +1,16 @@
 # AMPL MP Library Changelog
 
+## unreleased
+- Fixed a bug in monotonicity presolve which could
+  have led to wrong models using a^x with a<1.
+- Reduced memory fragmentation for linear
+  and quadratic expressions.
+- Option tech:outlev_mp=1 (implied by tech:outlev=1)
+  prints initial and transformed model statistics.
+- Improved presolve for disequality: more cases when
+  no logical disjunction is needed.
+
+
 ## 20250205
 - Fixed a bug in model reformulations which could
   cause some constraints to be lost, see issue 248.
@@ -45,7 +56,7 @@
 - *Multi-objective emulator*
 	- obj:multi=2 forces emulation, even if MO natively supported.
 	- Fixed a bug in the objective degradation suffixes
-		.objasbtol, .objreltol.
+    .objabstol, .objreltol.
 
 
 ## 20240604
