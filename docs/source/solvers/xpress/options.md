@@ -37,7 +37,7 @@ acc:abs
 
 acc:acos
       Solver acceptance level for 'AcosConstraint' as flat constraint, default
-      1:
+      2:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
@@ -45,7 +45,7 @@ acc:acos
 
 acc:acosh
       Solver acceptance level for 'AcoshConstraint' as flat constraint,
-      default 1:
+      default 2:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
@@ -61,7 +61,7 @@ acc:and (acc:forall)
 
 acc:asin
       Solver acceptance level for 'AsinConstraint' as flat constraint, default
-      1:
+      2:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
@@ -69,7 +69,7 @@ acc:asin
 
 acc:asinh
       Solver acceptance level for 'AsinhConstraint' as flat constraint,
-      default 1:
+      default 2:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
@@ -77,7 +77,7 @@ acc:asinh
 
 acc:atan
       Solver acceptance level for 'AtanConstraint' as flat constraint, default
-      1:
+      2:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
@@ -85,7 +85,7 @@ acc:atan
 
 acc:atanh
       Solver acceptance level for 'AtanhConstraint' as flat constraint,
-      default 1:
+      default 2:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
@@ -93,7 +93,7 @@ acc:atanh
 
 acc:cos
       Solver acceptance level for 'CosConstraint' as flat constraint, default
-      1:
+      2:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
@@ -101,7 +101,7 @@ acc:cos
 
 acc:cosh
       Solver acceptance level for 'CoshConstraint' as flat constraint, default
-      1:
+      2:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
@@ -109,7 +109,7 @@ acc:cosh
 
 acc:div
       Solver acceptance level for 'DivConstraint' as flat constraint, default
-      1:
+      2:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
@@ -117,7 +117,7 @@ acc:div
 
 acc:exp
       Solver acceptance level for 'ExpConstraint' as flat constraint, default
-      1:
+      2:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
@@ -125,7 +125,7 @@ acc:exp
 
 acc:expa (acc:expA)
       Solver acceptance level for 'ExpAConstraint' as flat constraint, default
-      1:
+      2:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
@@ -178,7 +178,7 @@ acc:linle
 
 acc:log
       Solver acceptance level for 'LogConstraint' as flat constraint, default
-      1:
+      2:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
@@ -210,7 +210,7 @@ acc:or (acc:exists)
 
 acc:powconstexp
       Solver acceptance level for 'PowConstExpConstraint' as flat constraint,
-      default 1:
+      default 2:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
@@ -239,7 +239,7 @@ acc:quadle
 
 acc:sin
       Solver acceptance level for 'SinConstraint' as flat constraint, default
-      1:
+      2:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
@@ -247,7 +247,7 @@ acc:sin
 
 acc:sinh
       Solver acceptance level for 'SinhConstraint' as flat constraint, default
-      1:
+      2:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
@@ -271,7 +271,7 @@ acc:sos2
 
 acc:tan
       Solver acceptance level for 'TanConstraint' as flat constraint, default
-      1:
+      2:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
@@ -279,16 +279,15 @@ acc:tan
 
 acc:tanh
       Solver acceptance level for 'TanhConstraint' as flat constraint, default
-      1:
+      2:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
       2 - Accepted natively and preferred
 
 alg:addcutoff (addcutoff, mipaddcutoff)
-      Amount to add to the objective function of the best integer
-
-      solution found to give the new MIP cutoff; default -1e-5.
+      Amount to add to the objective function of the best integer solution
+      found to give the new MIP cutoff; default -1e-5.
 
 alg:barrier (barrier)
       Solve (MIP node) LPs by barrier method.
@@ -343,7 +342,10 @@ alg:indlinbigm (indlinbigm)
 
 alg:lpfolding (lpfolding)
       Simplex and barrier: whether to fold an LP problem before solving it:
-      .. value-table:
+
+      -1 - Automatic choice (default)
+      0  - No
+      1  - Yes.
 
 alg:maxiis (maxiis)
       Maximum number of IIS to find; default=-1 (no limit)
@@ -423,7 +425,13 @@ alg:zerotol (matrixtol)
       default=1e-9.
 
 bar:alg (baralg)
-      Which barrier algorithm to use
+      Which barrier algorithm to use:
+
+      -1 - Automatic choice (default)
+      1  - Infeasible-start barrier algorithm
+      2  - Homogeneous self-dual barrier algorithm
+      3  - Start with 2 and maybe switch to 1 while solving
+      4  - Use the hybrid gradient algorithm
 
 bar:cachesize (cachesize)
       Newton Barrier: L2 or L3 (see notes) cache size in kB (kilobytes) of the
@@ -432,12 +440,22 @@ bar:cachesize (cachesize)
 
 bar:choleskyalg (choleskyalg)
       Type of Cholesky factorization used for barrier, sum of:
-      :
+
+      -1  - Automatic choice (default)
+      1   - manual matrix blocking
+      2   - manual blocking: single-pass (multi-pass if not set)
+      4   - nonseparable QP relaxation
+      8   - manual corrector weight (honor "16" bit)
+      16  - manual corrector weight "on"
+      32  - manual refinement
+      64  - use preconditioned conjugate gradients
+      128 - refine with QMR (quasi-minimal residual)
+      256 - perform refinement on the augmented system
+      512 - force highest accuracy in refinement
 
 bar:choleskytol (choleskytol)
-      Zero tolerance for Cholesky pivots in the
-
-      Newton Barrier algorithm; default = 1e-15
+      Zero tolerance for Cholesky pivots in the Newton Barrier algorithm;
+      default = 1e-15
 
 bar:cores (barcores)
       If positive, number of CPU cores to assume present when using the
@@ -449,11 +467,21 @@ bar:corespercpu (corespercpu)
 
 bar:cpuplatform (cpuplatform)
       Which instruction are allowed to the Newton barrier method:
-      :
+
+      -2 - Highest supported [Generic, SSE2, AVX or AVX2]
+      -1 - Highest supported solve path consistent code [Generic, SSE2 or
+           AVX] (default)
+      0  - Use generic code compatible with all CPUs
+      1  - Use SSE2
+      2  - Use AVX
+      3  - Use AVX2
 
 bar:crash (barcrash)
       Choice of crash procedure for crossover, higher number means more
       aggressive procedure:
+
+      0   - No crash
+      1-6 - Available strategies
 
 bar:crossover (crossover)
       How to transform a barrier solution to a basic one:
@@ -614,13 +642,12 @@ bar:stepstop (barstepstop)
       barstepstop; default = 1e-10
 
 bar:threads (threads)
-      number of threads used in the Newton Barrier algorithm;
-
-      default = -1 (determined by "threads")
+      Number of threads used in the Newton Barrier algorithm; default = -1
+      (determined by "threads")
 
 cut:cover (covercuts)
-      The number of rounds of lifted cover inequalities at the top
-      node.Default=-1, automatic.
+      The number of rounds of lifted cover inequalities at the top node.
+      Default=-1, automatic.
 
 cut:depth (cutdepth)
       Maximum MIP tree depth at which to generate cuts. Default -1
@@ -631,13 +658,12 @@ cut:factor (cutfactor)
       Default=-1 (automatic); a value of 0 will disable cuts generation.
 
 cut:freq (cutfreq)
-      Cuts are only generated at tree depths that are integer
-
-      multiples of cutfreq. Default=-1 (automatic choice).
+      Cuts are only generated at tree depths that are integer multiples of
+      cutfreq. Default=-1 (automatic choice).
 
 cut:gomory (gomcuts)
-      The number of rounds of Gomory or lift-and-project cuts at the top
-      node.Default=-1, automatic.
+      The number of rounds of Gomory or lift-and-project cuts at the top node.
+      Default=-1, automatic.
 
 cut:lnpbest (lnpbest)
       Number of infeasible global entities to create lift-and-project cuts for
@@ -718,6 +744,19 @@ cvt:bigM (cvt:bigm, cvt:mip:bigM, cvt:mip:bigm)
       Default value of big-M for linearization of logical constraints. Not
       used by default. Use with care (prefer tight bounds). Should be smaller
       than (1.0 / [integrality tolerance])
+
+cvt:dvelim (dvelim)
+      Eliminate AMPL defined variables by substitution into linear, quadratic,
+      and polynomial expressions:
+
+      0 - Do not eliminate, always instantiate the variables.
+      1 - Eliminate only those used 1x. This can increase model density but
+          greatly simplifies some models.
+      2 - Always substitute where possible, even if the variable needs to be
+          instantiated for use in other places. Can introduce redundancy, but
+          seems best for some models (default.)
+
+      See also AMPL options linelim and substout.
 
 cvt:expcones (expcones)
       0*/1: Recognize exponential cones.
@@ -920,7 +959,10 @@ lp:crash (crash)
 
 lp:dualforceparallel (forceparalleldual, dualforceparallel)
       Specifies whether the dual simplex solver should always use the parallel
-      simplex algorithm
+      simplex algorithm:
+
+      0 - No (default)
+      1 - Yes.
 
 lp:dualgradient (dualgradient)
       dual simplex pricing strategy:
@@ -1050,7 +1092,8 @@ lp:sifting (sifting)
 
 lp:siftpasses (siftpasses)
       Determines how quickly we allow to grow the worker problems during the
-      sifting algorithm; default 4.
+      sifting algorithm; large values might reduce the number of iterations
+      but increase the solve time for each. Default 4.
 
 lp:siftpresolveops (siftpresolveops)
       Presolve operations for solving the subproblems during sifting:
@@ -1118,18 +1161,16 @@ mip:breadthfirst (breadthfirst)
       local-first search; default=11.
 
 mip:components (mipcomponents)
-      Determines whether disconnected components in a MIP should
-
-      be solved as separate MIPs:
+      Determines whether disconnected components in a MIP should be solved as
+      separate MIPs:
 
       -1 - Automatic choice (default)
       0  - No
       1  - Yes.
 
 mip:concurrentnodes (mipconcurrentnodes)
-      Node limit to choose the winning solve when concurrent
-
-      solves are enabled:
+      Node limit to choose the winning solve when concurrent solves are
+      enabled:
 
       -1    - automatic (default)
       n > 0 - number of nodes to complete
@@ -1144,6 +1185,7 @@ mip:concurrentsolves (mipconcurrentsolves)
 
 mip:deterministic (deterministic)
       Whether a MIP search should be deterministic:
+      .. value-table:
 
 mip:dualreductions (mipdualreductions)
       Kinds of dual reductions allowed during branch and bound:
@@ -1204,7 +1246,12 @@ mip:heurdivesoftrounding (hdive_rounding, heurdivesoftrounding)
 mip:heurdivespeedup (hdive_speed, heurdivespeedup)
       Controls tradeoff between speed and solution quality in the diving
       heuristic:
-      .. value-table:
+
+      -2  - automatic bias toward quality
+      -1  - automatic bias toward speed (default)
+      0   - emphasize quality
+      1-3 - intermediate emphasis
+      4   - emphasize speed
 
 mip:heurdivestrategy (hdive_strategy, heurdivestrategy)
       Chooses the strategy for the diving heuristic:
@@ -1295,12 +1342,24 @@ mip:heurshiftprop (heurshiftprop)
       0  - No
       1  - Yes.
 
-mip:heurthreads (heurtreads)
+mip:heurthreads (heurthreads)
       Number of threads to dedicate to running heuristics on the root node:
+
+      -1  - determined from "threads" keyword
+      0   - no separate threads (default)
+      n>0 - use n threads
 
 mip:historycosts (historycosts)
       How to update the pseudo cost for a global entity when a strong branch
       or a regular branch is applied:
+
+      -1 - automatic (default)
+      0  - no update
+      1  - initialize using only regular branches from the root to the
+           current node
+      2  - same as 1, but initialize with strong branching results as well
+      3  - initialize using any regular branching or strong branching
+           information from all nodes solves before the current node
 
 mip:intfeastol (intfeastol)
       Feasibility tolerance for integer variables (default 5e-06).
@@ -1344,7 +1403,7 @@ mip:maxlocalbacktrack (maxlocalbacktrack, maxlocalbt)
 
 mip:maxtasks (maxmiptasks)
       Maximum tasks to run in parallel during a MIP solve; default = -1 (use
-      mip:threads).For mip:maxtasks > 0, branch-and-bound nodes are solved in
+      mip:threads). For mip:maxtasks > 0, branch-and-bound nodes are solved in
       a deterministic way, but the barrier algorithm (if used) may cause a
       nondeterministic MIP solve unless bar:threads = 1.
 
@@ -1383,13 +1442,12 @@ mip:presolve (mippresolve)
       256 - allow use of symmetry
 
 mip:pseudocost (pseudocost)
-      Default pseudo-cost assumed for forcing an integer variable
-
-      to an integer value; default = 0.01
+      Default pseudo-cost assumed for forcing an integer variable to an
+      integer value; default = 0.01
 
 mip:qcrootalg (qcrootalg)
-      when using miqcpalg = 1 to solve a mixed - integer problem that has
-      quadratic constraints or second - order cone constraints, the algorithm
+      When using miqcpalg = 1 to solve a mixed - integer problem that has
+      quadratic constraints or second-order cone constraints, the algorithm
       for solving the root node:
 
       -1 - automatic (default)
@@ -1397,9 +1455,8 @@ mip:qcrootalg (qcrootalg)
       1  - use dual simplex on outer approximation
 
 mip:rampup (miprampup)
-      Whether to limit the number of parallel tasks
-
-      during the ramp-up phase of the parallel MIP algorithm:
+      Whether to limit the number of parallel tasks during the ramp-up phase
+      of the parallel MIP algorithm:
 
       -1 - automatic choice (default)
       0  - no: use as many tasks as possible
@@ -1779,7 +1836,9 @@ pre:probing (preprobing)
 pre:protectdual (preprotectdual)
       Specifies whether the presolver should protect a given dual solution by
       maintaining the same level of dual feasibility:
-      .. value-table:
+
+      0 - No (default)
+      1 - Yes.
 
 pre:pwldualreductions (pwldualreductions)
       Whether dual reductions should be applied to reduce the number of
@@ -2018,7 +2077,7 @@ tech:cputime (cputime)
 
 tech:debug (debug)
       0*/1: whether to assist testing & debugging, e.g., by outputting
-      auxiliary information.
+      auxiliary information (mostly via suffixes).
 
 tech:globalfileloginterval (globalfileloginterval)
       Seconds between additions to the logfile about, additions to the "global
@@ -2046,6 +2105,9 @@ tech:outlev (outlev)
       3 - warnings & errors only (default)
       4 - errors
       5 - none
+
+tech:outlev_mp (outlev_mp)
+      0*/1: whether to print MP model information.
 
 tech:sleeponthreadwait (sleeponthreadwait)
       Whether threads should sleep while awaiting work:

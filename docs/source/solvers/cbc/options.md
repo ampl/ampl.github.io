@@ -1169,7 +1169,7 @@ sol:chk:round (chk:round, chk:rnd)
 
 tech:debug (debug)
       0*/1: whether to assist testing & debugging, e.g., by outputting
-      auxiliary information.
+      auxiliary information (mostly via suffixes).
 
 tech:messages (messages)
       Controls if Clpnnnn is printed
@@ -1185,6 +1185,9 @@ tech:optionfile (optionfile, option:file)
 
 tech:outlev (outlev)
       0*-4: Whether to write log lines (chatter) to stdout and to file.
+
+tech:outlev_mp (outlev_mp)
+      0*/1: whether to print MP model information.
 
 tech:timing (timing, tech:report_times, report_times)
       0*/1/2: Whether to print and return timings for the run, all times are

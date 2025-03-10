@@ -388,6 +388,14 @@ alg:kappa (kappa, basis_cond)
       return kappa in the solver-defined suffix .kappa on the objective and
       problem. The request is ignored when there is no optimal basis.
 
+alg:kappa_exact (kappa_exact, basis_cond_exact)
+      Whether to return the exact condition number (kappa) of the optimal
+      basis (default 0): sum of 1 = report kappa in the result message; 2 =
+      return kappa in the solver-defined suffix .kappa_exact on the objective
+      and problem. The request is ignored when there is no optimal basis.
+
+      The exact kappa may be hard to compute.
+
 alg:lbpen (lbpen)
       See alg:feasrelax.
 
@@ -1515,7 +1523,7 @@ tech:concurrentmip (concurrentmip)
 
 tech:debug (debug)
       0*/1: whether to assist testing & debugging, e.g., by outputting
-      auxiliary information.
+      auxiliary information (mostly via suffixes).
 
 tech:distmip (pool_distmip, distmip)
       Enables distributed MIP. A value of n causes the MIP solver to divide
@@ -1569,6 +1577,9 @@ tech:optionnativewrite (optionnativewrite, tech:param:write, param:write)
 
 tech:outlev (outlev)
       0*/1: Whether to write gurobi log lines (chatter) to stdout.
+
+tech:outlev_mp (outlev_mp)
+      0*/1: whether to print MP model information.
 
 tech:pooljobs (pool_jobs, pooljobs)
       Enables distributed concurrent optimization, which can be used to solve

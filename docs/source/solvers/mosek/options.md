@@ -368,8 +368,31 @@ mip:constructsol (mipconstructsol)
       integer problem by fixing all integer values and solving the remaining
       problem.Default = OFF
 
+mip:feaspump (feaspump)
+      MIP feasibility pump.
+
+      -1 - Automatic (default)
+      0  - The Feasibility Pump is disabled
+      1  - The Feasibility Pump is enabled with an effort to improve solution
+           quality
+      2  - The Feasibility Pump is enabled with an effort to reach
+           feasibility early
+
+mip:feastol (feastol)
+      MIP integrality tolerance.
+
 mip:gap (mipgap)
       Max. relative MIP optimality gap (default 1e-4).
+
+mip:gapabs (mipgapabs)
+      Max. absolute MIP optimality gap (default 0.0).
+
+mip:heurlevel (heurlevel)
+      MIP heuristic level to find an initial good feasible solution.
+
+      -1: automatic (default);
+      0: not used;
+      positive, larger - more effort (3-5 recommended).
 
 mip:inttol (inttol)
       MIP integrality tolerance.
@@ -503,8 +526,8 @@ pre:scale (scale)
       Whether to use scaling in presolve. Applies to both simplex and interior
       point method:
 
-      0 - Automatic (default)
-      1 - Automatic (default)
+      0 - Mosek chooses scaling heuristic (default)
+      1 - No scaling.
 
 pre:solve (presolve)
       MIP presolve:

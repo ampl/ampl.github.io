@@ -1,5 +1,9 @@
 # GUROBI Changelog
 
+## 20250308
+- Option alg:kappa_exact
+
+
 ## 20250204
 - Updated to Gurobi 12.0.1
 

@@ -16,7 +16,7 @@ HIGHS Optimizer Options for AMPL
 To set these options, assign a string specifying their values to the AMPL
 option "highs_options". For example:
 
-   ampl: option highs_options 'relgaptol=1e-6';
+   ampl: option highs_options 'mip:gap=1e-6';
 
  Options:
 
@@ -177,6 +177,19 @@ cvt:bigM (cvt:bigm, cvt:mip:bigM, cvt:mip:bigm)
       used by default. Use with care (prefer tight bounds). Should be smaller
       than (1.0 / [integrality tolerance])
 
+cvt:dvelim (dvelim)
+      Eliminate AMPL defined variables by substitution into linear, quadratic,
+      and polynomial expressions:
+
+      0 - Do not eliminate, always instantiate the variables.
+      1 - Eliminate only those used 1x. This can increase model density but
+          greatly simplifies some models.
+      2 - Always substitute where possible, even if the variable needs to be
+          instantiated for use in other places. Can introduce redundancy, but
+          seems best for some models (default.)
+
+      See also AMPL options linelim and substout.
+
 cvt:expcones (expcones)
       0*/1: Recognize exponential cones.
 
@@ -209,7 +222,13 @@ cvt:pre:eqbinary
       0/1*: Preprocess reified equality comparison with a binary variable.
 
 cvt:pre:eqresult
-      0/1*: Preprocess reified equality comparison's boolean result bounds.
+      0/1*: Preprocess reified equality comparison's decidable cases.
+
+cvt:pre:ineqresult
+      0/1*: Preprocess reified inequality comparison's decidable cases.
+
+cvt:pre:ineqrhs
+      0/1*: Preprocess reified inequality comparison's right-hand sides.
 
 cvt:pre:unnest
       0/1*: Inline nested expressions, currently Ands/Ors.
@@ -225,8 +244,7 @@ cvt:prod (cvt:pre:prod)
       natively (see acc:and), the conjunction is linearized.
       4 - Logicalize products of >=3 binary terms.
 
-      Default: 1+4. That is, 2-term binary products which are not part of a
-      higher-order binary product, are not logicalized by default.
+      Default: 7.
 
       Bits 2 or 4 imply bit 1.
 
@@ -397,6 +415,9 @@ mip:round_reptol (round_reptol)
       Tolerance for reporting rounding of integer variables to integer values;
       see "mip:round". Default = 1e-9.
 
+obj:blend (blend_multi_objectives)
+      Whether to blend multiple objectives or apply lexicographical ordering
+
 obj:multi (multiobj)
       Whether to use multi-objective optimization:
 
@@ -515,7 +536,7 @@ sol:chk:round (chk:round, chk:rnd)
 
 tech:debug (debug)
       0*/1: whether to assist testing & debugging, e.g., by outputting
-      auxiliary information.
+      auxiliary information (mostly via suffixes).
 
 tech:logfile (logfile)
       Log file name.
@@ -531,6 +552,9 @@ tech:optionfile (optionfile, option:file)
 
 tech:outlev (outlev)
       0*/1: Whether to write HighS log lines (chatter) to stdout and to file.
+
+tech:outlev_mp (outlev_mp)
+      0*/1: whether to print MP model information.
 
 tech:threads (threads)
       How many threads to use when using the barrier algorithm or solving MIP

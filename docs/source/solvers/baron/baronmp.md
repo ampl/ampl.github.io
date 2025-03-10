@@ -251,6 +251,19 @@ cvt:bigM (cvt:bigm, cvt:mip:bigM, cvt:mip:bigm)
       used by default. Use with care (prefer tight bounds). Should be smaller
       than (1.0 / [integrality tolerance])
 
+cvt:dvelim (dvelim)
+      Eliminate AMPL defined variables by substitution into linear, quadratic,
+      and polynomial expressions:
+
+      0 - Do not eliminate, always instantiate the variables.
+      1 - Eliminate only those used 1x. This can increase model density but
+          greatly simplifies some models.
+      2 - Always substitute where possible, even if the variable needs to be
+          instantiated for use in other places. Can introduce redundancy, but
+          seems best for some models (default.)
+
+      See also AMPL options linelim and substout.
+
 cvt:expcones (expcones)
       0*/1: Recognize exponential cones.
 
@@ -513,7 +526,7 @@ tech:cplexlibname (cplexlibname)
 
 tech:debug (debug)
       0*/1: whether to assist testing & debugging, e.g., by outputting
-      auxiliary information.
+      auxiliary information (mostly via suffixes).
 
 tech:keepsol (keepsol)
       Keep BARON's solution files.
@@ -571,6 +584,9 @@ tech:optionnative (optionnative, optnative, tech:param)
 
 tech:outlev (outlev)
       Output verbosity level.
+
+tech:outlev_mp (outlev_mp)
+      0*/1: whether to print MP model information.
 
 tech:overwrite (overwrite)
       If set, overwrite the files in the scratch directory.

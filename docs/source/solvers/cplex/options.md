@@ -242,7 +242,8 @@ alg:method (method, lpmethod, simplex, mipstartalg)
       constraints), all settings are treated as 4.
 
 alg:network (network, netopt)
-      Solve (substructure of) (MIP node) LPs by network simplex method.
+      Solve (substructure of) (MIP node) LPs by network simplex method. For
+      best recognition of network (sub)structures, switch off CPLEX presolve.
 
 alg:primal (primalopt)
       Solve (MIP root) LPs by primal simplex method.
@@ -270,24 +271,28 @@ alg:sens (sens, solnsens, sensitivity)
 
       0 - No (default)
       1 - Yes: suffixes returned on variables are
-      .sensobjlo = smallest objective coefficient
-      .sensobjhi = greatest objective coefficient
-      .senslblo = smallest variable lower bound
-      .senslbhi = greatest variable lower bound
-      .sensublo = smallest variable upper bound
-      .sensubhi = greatest variable upper bound;
+      .sensobjlo = smallest objective coefficients
+      .sensobj = current objective coefficients
+      .sensobjhi = greatest objective coefficients
+      .senslblo = smallest variable lower bounds
+      .senslbhi = greatest variable lower bounds
+      .sensublo = smallest variable upper bounds
+      .sensubhi = greatest variable upper bounds;
 
       suffixes for all constraints are
 
-      .senslblo = smallest constraint lower bound
-      .senslbhi = greatest constraint lower bound
-      .sensublo = smallest constraint upper bound
-      .sensubhi = greatest constraint upper bound;
+      .senslblo = smallest constraint lower bounds
+      .senslbhi = greatest constraint lower bounds
+      .sensublo = smallest constraint upper bounds
+      .sensubhi = greatest constraint upper bounds;
 
       suffixes for one-sided constraints only:
 
-      .sensrhslo = smallest right-hand side value
-      .sensrhshi = greatest right-hand side value.
+      .sensrhslo = smallest right-hand side values
+      .sensrhshi = greatest right-hand side values.
+
+      The suffixes correspond to the AMPL solver model, command 'solexpand'.
+      For easiest interpretation, disable AMPL presolve, 'option presolve 0;'
 
 alg:sifting (sifting, siftopt, siftingopt)
       Solve (MIP root) LPs by sifting method.
@@ -485,6 +490,19 @@ cvt:bigM (cvt:bigm, cvt:mip:bigM, cvt:mip:bigm)
       used by default. Use with care (prefer tight bounds). Should be smaller
       than (1.0 / [integrality tolerance])
 
+cvt:dvelim (dvelim)
+      Eliminate AMPL defined variables by substitution into linear, quadratic,
+      and polynomial expressions:
+
+      0 - Do not eliminate, always instantiate the variables.
+      1 - Eliminate only those used 1x. This can increase model density but
+          greatly simplifies some models.
+      2 - Always substitute where possible, even if the variable needs to be
+          instantiated for use in other places. Can introduce redundancy, but
+          seems best for some models (default.)
+
+      See also AMPL options linelim and substout.
+
 cvt:expcones (expcones)
       0*/1: Recognize exponential cones.
 
@@ -517,7 +535,13 @@ cvt:pre:eqbinary
       0/1*: Preprocess reified equality comparison with a binary variable.
 
 cvt:pre:eqresult
-      0/1*: Preprocess reified equality comparison's boolean result bounds.
+      0/1*: Preprocess reified equality comparison's decidable cases.
+
+cvt:pre:ineqresult
+      0/1*: Preprocess reified inequality comparison's decidable cases.
+
+cvt:pre:ineqrhs
+      0/1*: Preprocess reified inequality comparison's right-hand sides.
 
 cvt:pre:unnest
       0/1*: Inline nested expressions, currently Ands/Ors.
@@ -533,8 +557,7 @@ cvt:prod (cvt:pre:prod)
       natively (see acc:and), the conjunction is linearized.
       4 - Logicalize products of >=3 binary terms.
 
-      Default: 1+4. That is, 2-term binary products which are not part of a
-      higher-order binary product, are not logicalized by default.
+      Default: 7.
 
       Bits 2 or 4 imply bit 1.
 
@@ -972,7 +995,12 @@ pre:sos2enc (presos2enc, presos2reform)
       Encoding used for SOS2 reformulation, see pre:sos1enc.
 
 qp:target (optimalitytarget)
-      Type of solution to compute for a QP problem
+      Type of solution to compute for a (MI)QP (not QCP) problem:
+
+      0 - automatic (default)
+      1 - assume convex and search for global optimum
+      2 - search for first order optimality (not valid for QMIP)
+      3 - solve non-convex to global optimality
 
 sol:chk:fail (chk:fail, checkfail)
       Fail on MP solution check violations, with solve result 150.
@@ -1109,7 +1137,7 @@ tech:cpumask (cpumask)
 
 tech:debug (debug)
       0*/1: whether to assist testing & debugging, e.g., by outputting
-      auxiliary information.
+      auxiliary information (mostly via suffixes).
 
 tech:endbasis (writebas, endbasis)
       Write the final basis to the specified file (in BAS format).
@@ -1166,6 +1194,9 @@ tech:outlev (outlev)
       0 - no output (default)
       1 - equivalent to "bardisplay"=1, "display"=1, "mipdisplay"=3
       2 - equivalent to "bardisplay"=2, "display"=2, "mipdisplay"=5
+
+tech:outlev_mp (outlev_mp)
+      0*/1: whether to print MP model information.
 
 tech:seed (seed)
       Seed for random number generator used internally by CPLEX.Use "seed=?"

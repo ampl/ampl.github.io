@@ -1,6 +1,9 @@
 # CPLEXASL Changelog
 
 ## 20230228
+- Relinked with CPLEX 22.01.02
+
+## 20230228
 - Relinked with CPLEX 22.01.01
 
 ## 20210614.1
