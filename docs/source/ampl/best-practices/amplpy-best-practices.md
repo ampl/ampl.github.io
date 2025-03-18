@@ -42,7 +42,7 @@ AMPL and solvers are available as Python packages for **Windows**, *Linux*, and 
 
 Note: This guide assumes there is no other local AMPL installation (like the stand-alone version or AMPLIDE). If there is already an AMPL version installed, Amplpy will be able to find the license and solvers in the local AMPL installation directory.
 
-#### **For Google Colab or Jupyter notebooks:**
+### **For Google Colab or Jupyter notebooks:**
 Google Colab offers a default [AMPL Community Edition](https://ampl.com/ce/) license, which provides free access to AMPL along with open-source solvers or commercial solvers via the `gokestreal` interface for [NEOS Server](https://www.neos-server.org/).
 - **1. Install `amplpy` and Dependencies**
     To install `amplpy` in Google Colab, use the following command:
@@ -609,14 +609,14 @@ To solve the current optimization problem instance using AMPL in Python, follow 
 - Checks whether the model was solved successfully by comparing ampl.solve_result to "solved".
 - If the assertion fails, it raises an error indicating the model was not solved. See the full list of codes for Amplpy here:
 
-| Number | String     | Interpretation                                      |
-|--------|------------|----------------------------------------------------|
-| 0-99   | solved     | Optimal solution found                             |
-| 100-199| solved?    | Optimal solution indicated, but error likely       |
-| 200-299| infeasible | Constraints cannot be satisfied                   |
-| 300-399| unbounded  | Objective can be improved without limit           |
-| 400-499| limit      | Stopped by a limit that you set (such as on iterations) |
-| 500-599| failure    | Stopped by an error condition in the solver routines |
+| Number  | String     | Interpretation                                          |
+| ------- | ---------- | ------------------------------------------------------- |
+| 0-99    | solved     | Optimal solution found                                  |
+| 100-199 | solved?    | Optimal solution indicated, but error likely            |
+| 200-299 | infeasible | Constraints cannot be satisfied                         |
+| 300-399 | unbounded  | Objective can be improved without limit                 |
+| 400-499 | limit      | Stopped by a limit that you set (such as on iterations) |
+| 500-599 | failure    | Stopped by an error condition in the solver routines    |
 
 **2.1. Debugging an infeasible model**
 Some solvers like Gurobi can return the Irreducible Infeasible Subsystem (IIS):
@@ -739,7 +739,7 @@ if ampl.solve_result == "infeasible":
 ## Section 8. Get arbitrary values via ampl expressions
 When working with optimization models, there are often cases where we require specific outputs beyond the complete set of results. Instead of cluttering the AMPL environment with additional entities (like variables or constraints), AMPL provides a clean and efficient way to directly fetch values using arbitrary expressions. This keeps the workspace organized while leveraging AMPL's powerful expression capabilities.
 
-#### Accessing the values of a decision variable
+### Accessing the values of a decision variable
 * We can access the value of a variable and save it into a DataFrame easily with `ampl.var['Buy'].to_pandas()` or to a dictionary with `ampl.var['Buy'].to_dict()`, in this case, to access the values of variable `Buy`:
     ```python
     buy_df = ampl.var['Buy'].to_pandas()
@@ -750,7 +750,7 @@ When working with optimization models, there are often cases where we require sp
     buy_df = ampl.get_data('Buy').to_pandas()
     buy_dict = ampl.get_data('Buy').to_dict()
     ```
-#### Example: Evaluating Decision Variables Against Their Upper Bounds
+### Example: Evaluating Decision Variables Against Their Upper Bounds
 In this example, we aim to determine how close each decision variable (`Buy[j]`) is to its upper bound (`Buy[j].ub`) as a percentage. This insight helps identify variables that are tightly constrained by their upper limits, which can inform further optimization or model adjustments. We can achieve this by using the function [`amplpy.AMPL.get_data()`](https://amplpy.ampl.com/en/latest/classes/ampl.html#amplpy.AMPL.get_data). This function retrieves data based on a given AMPL expression and converts it into a Python-friendly format, such as a pandas DataFrame.
 - Here’s the Code Example:
     ```python
@@ -758,7 +758,7 @@ In this example, we aim to determine how close each decision variable (`Buy[j]`)
     df = ampl.get_data("{j in FOOD} 100*Buy[j]/Buy[j].ub").to_pandas()
     print(df)
     ```
-##### **Code Breakdown**
+#### **Code Breakdown**
 **1. Expression**: `{j in FOOD} 100 * Buy[j] / Buy[j].ub`:
 - Iterates efficiently over all items in the set FOOD.
 - For each item j, calculates the percentage of Buy[j] relative to its upper bound (Buy[j].ub).
