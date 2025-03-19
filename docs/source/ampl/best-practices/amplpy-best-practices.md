@@ -248,8 +248,8 @@ Native data structures in Python can be loaded seamlessly into AMPL through dire
         ampl.param['amt'] = amt                 # Assign the nutrient amounts for each food item in AMPL
         ```
         
-- #### 3.1.3 Use Pandas DataFrames, [set_data()](https://amplpy.ampl.com/en/latest/classes/ampl.html#amplpy.AMPL.set_data) & [get_parameter()](https://amplpy.ampl.com/en/latest/classes/ampl.html#amplpy.AMPL.get_parameter) Methods
-    Pandas is useful for handling data in a tabular format, which can be easily imported into AMPL using `set_data()` and `get_parameter()`. Here's an example for the cost parameter:
+- #### 3.1.3 Use Pandas DataFrames
+    Pandas is useful for handling data in a tabular format, which can be easily imported into AMPL using [`set_data()`](https://amplpy.ampl.com/en/latest/classes/ampl.html#amplpy.AMPL.set_data) and [`get_parameter()`](https://amplpy.ampl.com/en/latest/classes/ampl.html#amplpy.AMPL.get_parameter). Here's an example for the cost parameter:
     ```python
     import pandas as pd  # For handling data as DataFrames
     import numpy as np   # For matrix operations  
@@ -373,7 +373,7 @@ It is possible to retrieve data from external files and load them into your AMPL
     import json
 
     # Example JSON data stored in a file
-    # all_data.json:
+    # data.json:
     # {
     #   "products": [
     #     {"id": 1, "prod": "Unit A", "price": 0.5},
@@ -386,7 +386,7 @@ It is possible to retrieve data from external files and load them into your AMPL
     # }
 
     # Load the JSON file
-    with open("all_data.json", "r") as file:
+    with open("data.json", "r") as file:
         data = json.load(file)
 
     # Create DataFrames from the JSON data
@@ -418,7 +418,7 @@ It is possible to retrieve data from external files and load them into your AMPL
         df = pd.read_csv(csv_file)   # Read the CSV into a DataFrame
         ampl.set_data(df, ampl_name) # Send dataframe df to AMPL
     ```
-    This snippet demonstrates how to load data from multiple CSV files into Pandas DataFrames and assign them to variable names dynamically, which can then be used for further analysis or optimization tasks ([`pandas.read_csv()` Documentation](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html)).
+    This snippet demonstrates how to load data from multiple CSV files into Pandas DataFrames and assign them to variable names dynamically, which can then be used for further analysis or optimization tasks ([`pandas.read_csv()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html) documentation).
 - #### 3.2.3 Excel Files
     When working with Excel files that contain multiple sheets, this code reads all sheets into separate DataFrame variables. This is useful for cases where data is organized into multiple sheets within a single file.
     ```python
@@ -429,7 +429,7 @@ It is possible to retrieve data from external files and load them into your AMPL
         var_name = sheet_name.lower().replace(" ", "_") # Create a valid variable name by converting the sheet names
         ampl.set_values(df, var_name)                   # Load the sheet data into AMPL using the appropriate var_name as one of the indexing sets in the model
     ```
-    By reading all sheets from an Excel file and assigning each sheet to a corresponding DataFrame, this approach facilitates the automatic handling of multi-sheet Excel files without the need to manually specify each sheet ([Pandas `read_excel` documentation](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_excel.html)).
+    By reading all sheets from an Excel file and assigning each sheet to a corresponding DataFrame, this approach facilitates the automatic handling of multi-sheet Excel files without the need to manually specify each sheet ([Pandas `read_excel`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_excel.html) documentation).
 - #### 3.2.4 Google Sheets
     Google Sheets can be an efficient way to store and collaborate on data. This Python script enables automatic importing of data from Google Sheets directly into Pandas DataFrames. The script constructs the necessary URLs dynamically based on the sheet names and imports the data.
     ```python
@@ -521,7 +521,7 @@ Below are two examples demonstrating how to modify the values of the cost parame
     time.set_values(range(10))
     ```
 
->The function `amplpy.Parameter.set_values() `is versatile and supports both specific updates (using a dictionary) and complete updates (using a list). When updating all values, ensure the order matches the indexing in AMPL to avoid unintended results. For a complete list of available methods and more detailed documentation, refer to the [amplpy.Parameter.set_values() documentation](https://amplpy.ampl.com/en/latest/classes/parameter.html#amplpy.Parameter.set_values).
+>The function `amplpy.Parameter.set_values() `is versatile and supports both specific updates (using a dictionary) and complete updates (using a list). When updating all values, ensure the order matches the indexing in AMPL to avoid unintended results. For a complete list of available methods and more detailed documentation, refer to the [amplpy.Parameter.set_values()](https://amplpy.ampl.com/en/latest/classes/parameter.html#amplpy.Parameter.set_values) documentation.
 
 - #### Example 2: Modify Specific Values
     In this approach, you modify the values of specific entries in the parameter, leaving other values unchanged. One option is to access the parameter directly through the model.param:
@@ -663,7 +663,7 @@ if ampl.solve_result == "infeasible":
     ```python
     import json
     solution_dict = ampl.get_solution(flat=False, zeros=False)
-    with open("all_data.json", "w") as file:
+    with open("data.json", "w") as file:
         json.dump(solution_dict, file, indent=4)
 - ### 7.6 Save to CSV Files
     This stores each variable's DataFrame as a separate CSV file.
@@ -739,7 +739,7 @@ if ampl.solve_result == "infeasible":
 ## Section 8. Get arbitrary values via ampl expressions
 When working with optimization models, there are often cases where we require specific outputs beyond the complete set of results. Instead of cluttering the AMPL environment with additional entities (like variables or constraints), AMPL provides a clean and efficient way to directly fetch values using arbitrary expressions. This keeps the workspace organized while leveraging AMPL's powerful expression capabilities.
 
-### Accessing the values of a decision variable
+### 8.1. Accessing the values of a decision variable
 * We can access the value of a variable and save it into a DataFrame easily with `ampl.var['Buy'].to_pandas()` or to a dictionary with `ampl.var['Buy'].to_dict()`, in this case, to access the values of variable `Buy`:
     ```python
     buy_df = ampl.var['Buy'].to_pandas()
@@ -750,7 +750,7 @@ When working with optimization models, there are often cases where we require sp
     buy_df = ampl.get_data('Buy').to_pandas()
     buy_dict = ampl.get_data('Buy').to_dict()
     ```
-### Example: Evaluating Decision Variables Against Their Upper Bounds
+### 8.2. Example: Evaluating Decision Variables Against Their Upper Bounds
 In this example, we aim to determine how close each decision variable (`Buy[j]`) is to its upper bound (`Buy[j].ub`) as a percentage. This insight helps identify variables that are tightly constrained by their upper limits, which can inform further optimization or model adjustments. We can achieve this by using the function [`amplpy.AMPL.get_data()`](https://amplpy.ampl.com/en/latest/classes/ampl.html#amplpy.AMPL.get_data). This function retrieves data based on a given AMPL expression and converts it into a Python-friendly format, such as a pandas DataFrame.
 - Here’s the Code Example:
     ```python
