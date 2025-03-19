@@ -1,5 +1,9 @@
 # AMPL Changelog
 
+## 20250311
+
+* Fix a bug when conveying defined non-linear variables that also appear on logical constraints in the .nl file.
+
 ## 20241203
 
 * Improve in handling logical literals when presolve is off.
