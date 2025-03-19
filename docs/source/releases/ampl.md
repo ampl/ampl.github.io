@@ -1,5 +1,11 @@
 # AMPL Changelog
 
+## 20250318
+
+* Snapshot 0.1.5:
+  * Do not print values for defined variables.
+  * Omit some of the output unless the model is being included. It affects sections: Current problem/environ, current objective, fixed variables, dropped constraints.
+
 ## 20250311
 
 * Fix a bug when conveying defined non-linear variables that also appear on logical constraints in the .nl file.
