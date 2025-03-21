@@ -16,14 +16,6 @@ LINDO Global is a versatile nonlinear optimizer that supports global optimizatio
 
 .. tab-set::
 
-   .. tab-item:: AMPL
-
-        .. code-block:: ampl
-
-            ampl: option solver lindoglobal; # change the solver
-            ampl: option lindoglobal_options 'option1=value1 option2=value2'; # specify options
-            ampl: solve; # solve the problem
-
    .. tab-item:: Python
    
         How to install using `amplpy <https://amplpy.ampl.com>`_:
@@ -60,6 +52,14 @@ LINDO Global is a versatile nonlinear optimizer that supports global optimizatio
         - `C#/.NET <https://ampl.com/api/latest/dotnet>`_
         - `Java <https://ampl.com/api/latest/java>`_
         - `MATLAB <https://ampl.com/api/latest/matlab>`_
+
+   .. tab-item:: AMPL
+
+        .. code-block:: ampl
+
+            ampl: option solver lindoglobal; # change the solver
+            ampl: option lindoglobal_options 'option1=value1 option2=value2'; # specify options
+            ampl: solve; # solve the problem
 ```
 
 ## Options

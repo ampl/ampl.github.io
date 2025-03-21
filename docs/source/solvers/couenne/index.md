@@ -14,14 +14,6 @@ The [COIN Couenne solver (COUENNE, Convex Over and Under ENvelopes for Nonlinear
 
 .. tab-set::
 
-   .. tab-item:: AMPL
-
-        .. code-block:: ampl
-
-            ampl: option solver couenne; # change the solver
-            ampl: option couenne_options 'option1=value1 option2=value2'; # specify options
-            ampl: solve; # solve the problem
-
    .. tab-item:: Python
    
         How to install using `amplpy <https://amplpy.ampl.com>`_:
@@ -58,6 +50,14 @@ The [COIN Couenne solver (COUENNE, Convex Over and Under ENvelopes for Nonlinear
         - `C#/.NET <https://ampl.com/api/latest/dotnet>`_
         - `Java <https://ampl.com/api/latest/java>`_
         - `MATLAB <https://ampl.com/api/latest/matlab>`_
+
+   .. tab-item:: AMPL
+
+        .. code-block:: ampl
+
+            ampl: option solver couenne; # change the solver
+            ampl: option couenne_options 'option1=value1 option2=value2'; # specify options
+            ampl: solve; # solve the problem
 ```
 
 ## Resources

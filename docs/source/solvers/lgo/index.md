@@ -15,14 +15,6 @@ LGO is capable of determining high-quality solutions to global optimization prob
 
 .. tab-set::
 
-   .. tab-item:: AMPL
-
-        .. code-block:: ampl
-
-            ampl: option solver lgo; # change the solver
-            ampl: option lgo_options 'option1=value1 option2=value2'; # specify options
-            ampl: solve; # solve the problem
-
    .. tab-item:: Python
    
         How to install using `amplpy <https://amplpy.ampl.com>`_:
@@ -59,6 +51,14 @@ LGO is capable of determining high-quality solutions to global optimization prob
         - `C#/.NET <https://ampl.com/api/latest/dotnet>`_
         - `Java <https://ampl.com/api/latest/java>`_
         - `MATLAB <https://ampl.com/api/latest/matlab>`_
+
+   .. tab-item:: AMPL
+
+        .. code-block:: ampl
+
+            ampl: option solver lgo; # change the solver
+            ampl: option lgo_options 'option1=value1 option2=value2'; # specify options
+            ampl: solve; # solve the problem
 ```
 
 ## Options

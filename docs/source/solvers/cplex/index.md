@@ -16,16 +16,6 @@ IBM ILOG CPLEX has been a well known and widely used large-scale solver for over
 
 .. tab-set::
 
-   .. tab-item:: AMPL
-
-        CPLEX options consist of a single-word option, or an option followed by an = sign and a value; a space may be used as a separator in place of the =.
-
-        .. code-block:: ampl
-
-            ampl: option solver cplex; # change the solver
-            ampl: option cplex_options 'option1=value1 option2=value2'; # specify options
-            ampl: solve; # solve the problem
-
    .. tab-item:: Python
    
         How to install using `amplpy <https://amplpy.ampl.com>`_:
@@ -62,6 +52,16 @@ IBM ILOG CPLEX has been a well known and widely used large-scale solver for over
         - `C#/.NET <https://ampl.com/api/latest/dotnet>`_
         - `Java <https://ampl.com/api/latest/java>`_
         - `MATLAB <https://ampl.com/api/latest/matlab>`_
+
+   .. tab-item:: AMPL
+
+        CPLEX options consist of a single-word option, or an option followed by an = sign and a value; a space may be used as a separator in place of the =.
+
+        .. code-block:: ampl
+
+            ampl: option solver cplex; # change the solver
+            ampl: option cplex_options 'option1=value1 option2=value2'; # specify options
+            ampl: solve; # solve the problem
 ```
 
 ## Resources

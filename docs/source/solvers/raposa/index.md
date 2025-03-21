@@ -14,14 +14,6 @@ RAPOSa is a global optimization solver, specifically designed for mixed-integer 
 
 .. tab-set::
 
-   .. tab-item:: AMPL
-
-        .. code-block:: ampl
-
-            ampl: option solver raposa; # change the solver
-            ampl: option raposa_options 'option1=value1 option2=value2'; # specify options
-            ampl: solve; # solve the problem
-
    .. tab-item:: Python
 
         .. code-block:: python
@@ -43,6 +35,14 @@ RAPOSa is a global optimization solver, specifically designed for mixed-integer 
         - `C#/.NET <https://ampl.com/api/latest/dotnet>`_
         - `Java <https://ampl.com/api/latest/java>`_
         - `MATLAB <https://ampl.com/api/latest/matlab>`_
+
+   .. tab-item:: AMPL
+
+        .. code-block:: ampl
+
+            ampl: option solver raposa; # change the solver
+            ampl: option raposa_options 'option1=value1 option2=value2'; # specify options
+            ampl: solve; # solve the problem
 ```
 
 ## Options

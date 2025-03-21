@@ -26,14 +26,6 @@ The algorithms in Bonmin are exact when the functions `f` and `g` are convex; in
 
 .. tab-set::
 
-   .. tab-item:: AMPL
-
-        .. code-block:: ampl
-
-            ampl: option solver bonmin; # change the solver
-            ampl: option bonmin_options 'option1=value1 option2=value2'; # specify options
-            ampl: solve; # solve the problem
-
    .. tab-item:: Python
    
         How to install using `amplpy <https://amplpy.ampl.com>`_:
@@ -70,6 +62,14 @@ The algorithms in Bonmin are exact when the functions `f` and `g` are convex; in
         - `C#/.NET <https://ampl.com/api/latest/dotnet>`_
         - `Java <https://ampl.com/api/latest/java>`_
         - `MATLAB <https://ampl.com/api/latest/matlab>`_
+
+   .. tab-item:: AMPL
+
+        .. code-block:: ampl
+
+            ampl: option solver bonmin; # change the solver
+            ampl: option bonmin_options 'option1=value1 option2=value2'; # specify options
+            ampl: solve; # solve the problem
 ```
 
 ## Resources
