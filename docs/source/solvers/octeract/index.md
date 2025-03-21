@@ -59,3 +59,12 @@ The Octeract Engine supports global optimization of mixed-integer nonlinear opti
             ampl: option octeract_options 'option1=value1 option2=value2'; # specify options
             ampl: solve; # solve the problem
 ```
+
+## Solver options
+
+Octeract options differ significantly from those of other solvers and cannot be set using the `octeract -=` command. For a complete list of available options, please refer to the [Octeract Options Reference Manual](https://www.octeract.com/docs/octeract-engine-options/options-reference/).
+
+For example, to set the MIP solver to HiGHS and the time limit to 25 seconds:
+```ampl
+option octeract_options 'MIP_SOLVER=HIGHS MAX_SOLVER_TIME=25';
+```
