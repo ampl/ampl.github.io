@@ -66,6 +66,9 @@ alg:basis (basis)
 alg:dualfeastol (dualfeastol, dual_feasibility_tolerance)
       Dual feasibility tolerance (default 1e-7).
 
+alg:dualrestol (dualrestol, dual_residual_tolerance)
+      Dual residual tolerance (default 1e-7).
+
 alg:feastol (feastol, primal_feasibility_tolerance)
       Primal feasibility tolerance (default 1e-7).
 
@@ -87,10 +90,12 @@ alg:ipmopttol (ipmopttol, ipm_optimality_tolerance)
 alg:method (method, lpmethod, solver)
       Which algorithm to use :
 
-      choose  - Automatic (default)
-      simplex - Simplex
-      ipm     - Interior Point Method
-      pdlp    - cuPDLP-c solver
+      choose   - Automatic (default)
+      simplex  - Simplex
+      ipm      - Interior Point Method
+      pdlp     - cuPDLP-c solver
+      pdlp-gpu - cuPDLP-c solver on NVIDIA GPU. Requires CUDA v12, not
+                 available on MacOS
 
 alg:parallel (parallel)
       Parallel option :
@@ -101,6 +106,9 @@ alg:parallel (parallel)
 
 alg:pdlpdgaptol (pdlpdgaptol, pdlp_d_gap_tol)
       Duality gap tolerance for PDLP solver (default 1e-4).
+
+alg:pdlperestartmethod (pdlperestartmethod, pdlp_e_restart_method)
+      Restart mode for PDLP solver (default 1).
 
 alg:rays (rays)
       Whether to return suffix .unbdd (unbounded ray) if the objective is
@@ -169,7 +177,7 @@ alg:zerocoeff (zerocoeff, small_matrix_value)
       Lower limit on |matrix entries|: values smaller than this will be
       treated as zero (default: 1e-9).
 
-bar:crossover (run_crossover)
+bar:crossover (crossover, run_crossover)
       Run crossover after IPM to get a basic solution
 
 cvt:bigM (cvt:bigm, cvt:mip:bigM, cvt:mip:bigm)
@@ -370,6 +378,9 @@ mip:heureff (heureff, mip_heuristic_effort)
 mip:intfeastol (intfeastol, inttol, mip_feasibility_tolerance)
       Feasibility tolerance for integer variables (default 1e-06).
 
+mip:lifting (lifting, mip_lifting_for_probing)
+      Whether lifting for probing should be used (default -1)
+
 mip:lpagelimit (lpagelimit, mip_lp_age_limit)
       Maximal age of dynamic LP rows before they are removed from the LP
       relaxation (default 10)
@@ -555,6 +566,10 @@ tech:outlev (outlev)
 
 tech:outlev_mp (outlev_mp)
       0*/1: whether to print MP model information.
+
+tech:seed (seed, random_seed)
+      Random number seed (default 0), affecting perturbations that may
+      influence the solution path.
 
 tech:threads (threads)
       How many threads to use when using the barrier algorithm or solving MIP
