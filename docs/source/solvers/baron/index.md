@@ -68,6 +68,7 @@ An experimental version of the driver, BARONMP, supports the extended modeling c
 ## Resources
 
 * [BARONMP modeling guide](https://mp.ampl.com/model-guide.html)
+* [Important features](https://mp.ampl.com/features-guide.html#important-features)
 * [Solver options](options.md)
 * [BARONMP solver options](baronmp.md)
 * [BARONMP solve result codes](#retrieving-solutions)

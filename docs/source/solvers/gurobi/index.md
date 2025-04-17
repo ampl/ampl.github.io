@@ -75,6 +75,7 @@ Our enhanced Gurobi driver (previously know as x-gurobi) is now the default Guro
 ### Resources
 
 * [Modeling guide](https://mp.ampl.com/model-guide.html)
+* [Important features](https://mp.ampl.com/features-guide.html#important-features)
 * [Solver options](#solver-options)
 * [Solve result codes](#retrieving-solutions)
 * [Driver sources](https://github.com/ampl/mp/tree/develop/solvers/gurobi)
@@ -85,7 +86,8 @@ Our enhanced Gurobi driver (previously know as x-gurobi) is now the default Guro
 * Problem types: 
 
   * LP, QP, QCP, SOCP
-  * MIP, MIQP, MIQCP, MISOCP, MINLP
+  * MIP, MIQP, MIQCP, MISOCP
+  * MINLP
   * <details>
     <summary>General constraints and nonlinear expressions</summary>  
 

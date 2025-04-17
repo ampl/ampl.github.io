@@ -69,9 +69,8 @@ No user interaction is necessary, thus GCG provides decomposition-based MIP solv
 ## Resources
 
 - [GCG](#gcg)
-  - [How to use it](#how-to-use-it)
-  - [Resources](#resources)
   - [GCG modeling guide](#gcg-modeling-guide)
+  - [Important features](https://mp.ampl.com/features-guide.html#important-features)
   - [Solver options](#solver-options)
   - [Retrieving solutions](#retrieving-solutions)
   - [Changelog](#changelog)

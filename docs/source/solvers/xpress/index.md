@@ -75,6 +75,7 @@ This package contains an all-new Xpress driver, that provides significantly exte
 ### Resources
 
 * [Modeling guide](https://mp.ampl.com/model-guide.html)
+* [Important features](https://mp.ampl.com/features-guide.html#important-features)
 * [Solver options](#solver-options)
 * [Solve result codes](#retrieving-solutions)
 * [Driver sources](https://github.com/ampl/mp/tree/develop/solvers/xpress)
@@ -86,13 +87,7 @@ This package contains an all-new Xpress driver, that provides significantly exte
 
   * LP, QP, QCP, SOCP
   * MIP, MIQP, MIQCP, MISOCP
-  * <details>
-    <summary>General constraints</summary>  
-
-    * min / max
-    * and / or
-    * abs
-    </details>
+  * MINLP
 
 * Features for all models:
     * Problem input

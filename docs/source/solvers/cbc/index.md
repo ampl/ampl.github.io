@@ -67,6 +67,7 @@ found [here](https://mp.ampl.com/model-guide.html).
 ## Resources
 
 * [Modeling guide](https://mp.ampl.com/model-guide.html)
+* [Important features](https://mp.ampl.com/features-guide.html#important-features)
 * [Solver options](#solver-options)
 * [Solve result codes](#retrieving-solutions)
 * [Driver sources](https://github.com/ampl/mp/tree/develop/solvers/cbcmp)
