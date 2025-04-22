@@ -18,7 +18,7 @@ option "ilogcp_options". For example:
 
    ampl: option ilogcp_options 'optimalitytolerance=1e-6 searchtype=restart';
 
- Options:
+'' Options:
 
 alldiffinferencelevel
       Inference level for "alldiff" constraints. Possible values:
@@ -151,10 +151,37 @@ multipointnumberofsearchpoints
       Number of solutions for the multi-point search algorithm. Default = 30.
 
 obj:multi (multiobj)
-      0*/1: Whether to use multi-objective optimization. If set to 1
-      multi-objective optimization is performed using lexicographic method
-      with the first objective treated as the most important, then the second
-      objective and so on.
+      Whether to use multi-objective optimization:
+
+      0 - Single objective, see option obj:no (default)
+      1 - Multi-objective, solver's native handling if available
+      2 - Multi-objective, force emulation
+
+      When obj:multi>0 and several objectives are present, suffixes
+      .objpriority, .objweight, .objreltol, and .objabstol on the objectives
+      are relevant. Objectives with greater .objpriority values (integer
+      values) have higher priority. Objectives with the same .objpriority are
+      weighted by .objweight, according to the option obj:multi:weight.
+
+      Objectives with positive .objabstol or .objreltol are allowed to be
+      degraded by lower priority objectives by amounts not exceeding the
+      .objabstol (absolute) and .objreltol (relative) limits.
+
+      Note that with solver's native handling (when obj:multi=1 and
+      supported), some solvers might have special rules for the tolerances,
+      especially for LP, and not allow quadratic objectives. See the solver
+      documentation.
+
+obj:multi:weight (multiobjweight, obj:multi:weights, multiobjweights)
+      How to interpret each objective's weight sign:
+
+      1 - relative to the sense of the 1st objective
+      2 - relative to its own sense (default)
+
+      With the 1st option (legacy behaviour), negative .objweight for
+      objective i would make objective i's sense the opposite of the model's
+      1st objective. Otherwise, it would make objective i's sense the opposite
+      to its sense defined in the model.
 
 obj:no (objno)
       Objective to optimize:
@@ -207,6 +234,10 @@ sol:count (countsolutions)
       0*/1: Whether to count the number of solutions and return it in the
       ".nsol" problem suffix.
 
+sol:report_uncertain (report_uncertain_sol)
+      0/1*: whether to report objective value(s) in solve_message when
+      solve_result is '?' (unknown).
+
 sol:stub (solstub, solutionstub)
       Stub for solution files. If "solutionstub" is specified, found solutions
       are written to files ("solutionstub & '1' & '.sol'") ... ("solutionstub
@@ -222,15 +253,24 @@ solutionlimit
 
 tech:debug (debug)
       0*/1: whether to assist testing & debugging, e.g., by outputting
-      auxiliary information.
+      auxiliary information (mostly via suffixes).
 
 tech:optionfile (optionfile, option:file)
-      Name of solver option file to read (surrounded by 'single' or "double"
-      quotes if the name contains blanks). Lines that start with # are
-      ignored. Otherwise, each nonempty line should contain "name=value".
+      Name of an AMPL solver option file to read (surrounded by 'single' or
+      "double" quotes if the name contains blanks). Lines that start with #
+      are ignored. Otherwise, each nonempty line should contain "name=value",
+      e.g., "lim:iter=500".
 
-tech:timing (timing)
-      0*/1: Whether to display timings for the run.
+tech:outlev_mp (outlev_mp)
+      0*/1: whether to print MP model information.
+
+tech:timing (timing, tech:report_times, report_times)
+      0*/1/2: Whether to print and return timings for the run, all times are
+      wall times. If set to 1, return the solution times in the problem
+      suffixes 'time_solver', 'time_setup' and 'time', 'time'=
+      time_solver+time_setup+time_output is a measure of the total time spent
+      in the solver driver. If set to 2, return more granular times, including
+      'time_read', 'time_conversion' and 'time_output'.
 
 tech:version (version)
       Single-word phrase: report version details before solving the problem.

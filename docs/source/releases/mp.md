@@ -1,5 +1,15 @@
 # AMPL MP Library Changelog
 
+## 20250416
+- Improved parsing speed of large sums of quadratic
+  and polynomial expressions.
+  - Setting option cvt:qp2passes=0 switches to
+    a simpler method, usually slightly slower.
+  - Option cvt:multoutcard to limit the size of
+    out-multiplied QP expressions. Can improve speed
+    on large models, but prone to numerical issues.
+
+
 ## 20250308
 - Fixed a bug in monotonicity presolve which could
   have led to wrong models using a^x with a<1.

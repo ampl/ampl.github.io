@@ -1,5 +1,24 @@
 # COPT Changelog
 
+## 20250408
+- Fixed a bug in parsing of quadratic expressions
+
+
+## 20250407
+- Updated to COPT version 7.2.6
+- GPU is now supported for PDLP on Windows and Linux;
+  CUDA library version >= 11.7 is required. See
+  options *lp:method* and *lp:pdlpgpumode*.
+
+
+## 20250329
+- Changes in MP:
+  - Option cvt:multoutcard to limit the size of
+    out-multiplied QP expressions. Can improve speed
+    on large models.
+  - Improved parsing of quadratic expressions.
+
+
 ## 20250308
 - Option mip:gapabs
 

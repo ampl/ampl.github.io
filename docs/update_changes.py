@@ -54,7 +54,11 @@ def filter_changelog(changelog):
 
 releases = {}
 for label, solver in SOLVERS.items():
-    output = subprocess.check_output([solver, "-="]).decode().strip()
+    try:
+        output = subprocess.check_output([solver, "-="]).decode().strip()
+    except:
+        print(f"{solver} -= failed")
+        continue
     # (errors="ignore")
     # subprocess.check_output(f"{solver} -= || true", shell=True).decode().strip()
 
