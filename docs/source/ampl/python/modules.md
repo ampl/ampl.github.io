@@ -216,7 +216,8 @@ Installed modules are loaded by default when [amplpy](https://amplpy.ampl.com) i
 ```python
 from amplpy import AMPL
 ampl = AMPL()  # instantiate AMPL object
-ampl.option["solver"] = "highs"  # use the solver highs
+...
+ampl.solve(solver="highs")  # solve using HiGHS
 ```
 
 In case you have another AMPL installation and want to ensure that modules

@@ -596,7 +596,7 @@ To solve the current optimization problem instance using AMPL in Python, follow 
    ```python
    # Specify the Solver and Solve
    ampl.option["solver"] = "highs"           # Specify the solver to use (e.g., HiGHS)
-   ampl.solve(verbose=False)                              # Solve the problem
+   ampl.solve(verbose=False)                 # Solve the problem
    ```
 - Sets the solver globally for the current AMPL model instance.
 - Executes the optimization using the specified solver

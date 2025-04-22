@@ -115,11 +115,17 @@ have versions with the new interface. Also we will soon be distributing the
 
 ## Snapshot Feature (Save and Restore AMPL Sessions)
 
-In your AMPL bundle you should find `x-ampl`, the development version of AMPL where experimental features are enabled. One of such features is the snapshot command which allows saving the AMPL session in such a way that you can restore the state of AMPL using it.
+One of the most powerful features recently introduced in **AMPL** is the **snapshot feature**. It enables you to save the exact state of an AMPL session and restore it later, allowing you to seamlessly pick up where you left off.
+
+This feature is particularly valuable in several scenarios:
+
+- **Debugging**: In complex applications where models and data are loaded dynamically, snapshots make it easy to capture the AMPL state at any point. This allows for quick and consistent reproduction of issues outside the original environment—on another machine or in a standalone session.
+
+- **Warm-starting**: A common use case in AMPL involves running the same model across thousands of scenarios in parallel, with slight data perturbations introduced by uncertainty. Instead of reloading models and reprocessing data in Python or another language, you can load a snapshot and apply only the necessary changes. This significantly reduces overhead and speeds up execution.
+
+This technique is especially effective in high-performance applications, such as energy price forecasting. For example, power traders use snapshots to optimize their workflows in [Electricity Market Simulations](https://ampl.com/blog/breaking-barriers-in-optimization-ampls-early-results-with-nvidia-cuopt/), leveraging AMPL to maximize performance and quickly adapt to shifting market conditions.
 
 ### Example using it with amplpy
-
-You need to be using at least amplpy 0.12.0 (you can install it with `python -m pip install amplpy>=0.12.0`).
 
 You can then use [`AMPL.snapshot`](https://amplpy.ampl.com/en/latest/classes/ampl.html#amplpy.AMPL.snapshot) to retrieve a session snapshot as a string. The string returned is a compact representation of the AMPL state (model declaration, data, solution loaded, options, etc.)
 ```python
@@ -130,14 +136,13 @@ print(snapshot)
 ```
 This string can then be passed to another AMPL object using `AMPL.eval`. The following example produces the output below:
 ```python
-from amplpy import AMPL, Environment
+from amplpy import AMPL
 
 print('First object:')
 ampl = AMPL()
 ampl.read('diet.mod')
 ampl.read_data('diet.dat')
-ampl.option['solver'] = 'gurobi'
-ampl.solve()
+ampl.solve(solver="gurobi")
 ampl.snapshot("snapshot.run")  # save the session snapshot to a file
 
 print('Second object:')
@@ -149,8 +154,7 @@ print('Third object:')
 ampl3 = AMPL()
 snapshot = ampl2.snapshot()  # return a string with the session snapshot
 ampl3.eval(snapshot)  # load the snapshot from the string
-ampl3.display('_VARS;')
-ampl3.eval('option solver;')
+ampl3.solve()
 ```
 
 
@@ -171,15 +175,13 @@ FISH   0
 ;
 
 Third object:
-set _VARS := Buy;
-
-option solver gurobi;
+Gurobi 11.0.0: optimal solution; objective 88.2
+1 simplex iterations
 ```
 
 One thing that may also be useful: In the example, there is the line `ampl.snapshot("snapshot.run")` that writes the snapshot to a file called `snapshot.run`. This file can be loaded into AMPL (e.g., for debugging) as follows:
 ```
-$ ampl
-ampl: include "snapshot.run";
+$ ampl snapshot.run -
 ampl: display Buy;
 Buy [*] :=
 BEEF   0
@@ -192,7 +194,6 @@ FISH   0
  TUR   0
 ;
 ```
-The snapshot feature is not finished and it is still being perfected. If you encounter any issues, please let us know.
 
 ## Using Remote Solvers from NEOS with gokestrel
 
