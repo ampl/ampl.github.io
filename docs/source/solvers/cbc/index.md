@@ -10,7 +10,6 @@ found [here](https://mp.ampl.com/model-guide.html).
 | [Modeling guide](https://mp.ampl.com/model-guide.html)
 | [Options](#solver-options)
 | [Changes](changes.md)
-| [Contact Sales](https://ampl.com/contact/sales/)
 
 [Download CBC](https://ampl.com/download/cbc)
 

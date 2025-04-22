@@ -14,7 +14,6 @@ found [here](https://mp.ampl.com/model-guide.html).
 | [Modeling guide](https://mp.ampl.com/model-guide.html)
 | [Options](#solver-options)
 | [Changes](changes.md)
-| [Contact Sales](https://ampl.com/contact/sales/)
 
 [Download COPT](https://ampl.com/download/copt)
 | [Start a COPT Trial Now!](https://ampl.com/trial/copt)

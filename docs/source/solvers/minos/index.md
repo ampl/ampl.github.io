@@ -7,7 +7,6 @@ MINOS is an established choice for both linear and nonlinear optimization proble
 [Product Page](https://ampl.com/products/solvers/solvers-we-sell/minos/)
 | [Options](options.md)
 | [Changes](changes.md)
-| [Contact Sales](https://ampl.com/contact/sales/)
 
 [Download MINOS](https://ampl.com/download/minos)
 | [Start a MINOS Trial Now!](https://ampl.com/trial/minos)

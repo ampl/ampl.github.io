@@ -7,7 +7,6 @@
 [Product Page](https://ampl.com/products/solvers/solvers-we-sell/knitro/)
 | [Options](options.md)
 | [Changes](changes.md)
-| [Contact Sales](https://ampl.com/contact/sales/)
 
 [Download Knitro](https://ampl.com/download/knitro)
 | [Start a Knitro Trial Now!](https://ampl.com/trial/knitro)

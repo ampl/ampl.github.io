@@ -8,7 +8,6 @@ together with a filter linear search procedure.
 
 [Learn More](https://ampl.com/products/solvers/open-source-solvers/)
 | [Options](#solver-options)
-| [Contact Sales](https://ampl.com/contact/sales/)
 
 [Download IPOPT](https://ampl.com/download/coin)
 

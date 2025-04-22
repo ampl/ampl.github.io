@@ -13,7 +13,6 @@ found [here](https://mp.ampl.com/model-guide.html).
 | [Modeling guide](https://mp.ampl.com/model-guide.html)
 | [Options](#solver-options)
 | [Changes](changes.md)
-| [Contact Sales](https://ampl.com/contact/sales/)
 
 [Download Gurobi](https://ampl.com/download/gurobi)
 | [Start a Gurobi Trial Now!](https://ampl.com/trial/gurobi)
