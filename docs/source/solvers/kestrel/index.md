@@ -70,7 +70,7 @@ The introduction below covers everything you need to know to start using Kestrel
 
 ## Downloading and installing the Kestrel client
 
-To get started using this feature, you must obtain the free Kestrel program (called `gokestrel`). Kestrel downloads are available from the My Downloads page of your account at the [AMPL Portal](https://portal.ampl.com), and are included in the [demo bundles](https://portal.ampl.com/user/ampl/download/demo) that are used for free trials. The gokestrel program is one of open-source projects developed at AMPL and its source code is available at <https://github.com/ampl/gokestrel>.
+To get started using this feature, you must obtain the free Kestrel program (called `gokestrel`). Kestrel downloads are available from the My Downloads page of your account at the [AMPL Portal](https://portal.ampl.com), and are included in the [demo bundles](https://ampl.com/download/demo) that are used for free trials. The gokestrel program is one of open-source projects developed at AMPL and its source code is available at <https://github.com/ampl/gokestrel>.
 
 To install, copy the downloaded file to the same folder or directory as your AMPL executable (`ampl` or `ampl.exe`). Then extract the kestrel program by double-clicking the downloaded file’s icon on Windows and macOS systems, or by invoking
 

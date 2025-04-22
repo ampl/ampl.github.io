@@ -9,12 +9,14 @@ It also supports some types of nonlinear expressions, thus addressing MINLP.
 The MP framework used by the driver supports automatic reformulation for many expression types; the modeling guide can be
 found [here](https://mp.ampl.com/model-guide.html).
 
-[Learn More](https://ampl.com/products/solvers/solvers-we-sell/gurobi/)
+[Product Page](https://ampl.com/products/solvers/solvers-we-sell/gurobi/)
 | [Modeling guide](https://mp.ampl.com/model-guide.html)
 | [Options](#solver-options)
 | [Changes](changes.md)
-| [Download Gurobi](https://portal.ampl.com/user/ampl/download/gurobi)
-| [Start a Gurobi Trial Now!](https://portal.ampl.com/user/ampl/request/amplce/trial?solver=gurobi)
+| [Contact Sales](https://ampl.com/contact/sales/)
+
+[Download Gurobi](https://ampl.com/download/gurobi)
+| [Start a Gurobi Trial Now!](https://ampl.com/trial/gurobi)
 
 Our enhanced Gurobi driver is now the default Gurobi driver. The new driver provides significantly extended modeling support for logical and nonlinear operators natively through Gurobi’s built-in nonlinear and “general constraints” and through linearizations performed by the [MP library](https://mp.ampl.com/). There are two binaries in this package: `gurobi` [[options](options.md)] is the new version, `gurobiasl` [[options](gurobiasl)] is the legacy version. If you are upgrading an existing installation and encounter any issues with the new version please report them to [support@ampl.com](mailto:support@ampl.com).
 

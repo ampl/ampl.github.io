@@ -10,12 +10,14 @@ The framework used by the driver supports automatic reformulation for many expre
 found [here](https://mp.ampl.com/model-guide.html).
 
 
-[Learn More](https://ampl.com/products/solvers/solvers-we-sell/copt/)
+[Product Page](https://ampl.com/products/solvers/solvers-we-sell/copt/)
 | [Modeling guide](https://mp.ampl.com/model-guide.html)
 | [Options](#solver-options)
 | [Changes](changes.md)
-| [Download COPT](https://portal.ampl.com/user/ampl/download/copt)
-| [Start a COPT Trial Now!](https://portal.ampl.com/user/ampl/request/amplce/trial?solver=copt)
+| [Contact Sales](https://ampl.com/contact/sales/)
+
+[Download COPT](https://ampl.com/download/copt)
+| [Start a COPT Trial Now!](https://ampl.com/trial/copt)
 
 ## How to use it
 

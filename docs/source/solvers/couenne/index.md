@@ -6,7 +6,9 @@ The [COIN Couenne solver (COUENNE, Convex Over and Under ENvelopes for Nonlinear
 
 [Learn More](https://ampl.com/products/solvers/open-source-solvers/)
 | [Options](#solver-options)
-| [Download COUENNE](https://portal.ampl.com/user/ampl/download/coin)
+| [Contact Sales](https://ampl.com/contact/sales/)
+
+[Download COUENNE](https://ampl.com/download/coin)
 
 ## How to use it
 

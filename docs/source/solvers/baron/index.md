@@ -6,12 +6,13 @@ BARON is a general nonlinear optimizer capable of solving nonconvex optimization
 
 An experimental version of the driver, BARONMP, supports the extended modeling capabilities of the [MP library](https://mp.ampl.com/).
 
-[Learn More](https://ampl.com/products/solvers/solvers-we-sell/baron/)
+[Product Page](https://ampl.com/products/solvers/solvers-we-sell/baron/)
 | [Options](options.md)
 | [BARONMP Options](baronmp.md)
 | [Changes](changes.md)
-| [Download BARON](https://portal.ampl.com/user/ampl/download/baron)
-| [Start a BARON Trial Now!](https://portal.ampl.com/user/ampl/request/amplce/trial?solver=baron)
+
+[Download BARON](https://ampl.com/download/baron)
+| [Start a BARON Trial Now!](https://ampl.com/trial/baron)
 
 ## How to use it
 

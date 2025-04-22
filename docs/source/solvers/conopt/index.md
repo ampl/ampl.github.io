@@ -4,11 +4,13 @@
 
 A proven choice for highly nonlinear problems, CONOPT’s efficient and reliable multi-method architecture handles a broad range of models. Specialized techniques achieve feasibility quickly, while powerful preprocessing tools reduce problem size and suggest formulation improvements.
 
-[Learn More](https://ampl.com/products/solvers/solvers-we-sell/conopt/)
+[Product Page](https://ampl.com/products/solvers/solvers-we-sell/conopt/)
 | [Options](options.md)
 | [Changes](changes.md)
-| [Download CONOPT](https://portal.ampl.com/user/ampl/download/conopt)
-| [Start a CONOPT Trial Now!](https://portal.ampl.com/user/ampl/request/amplce/trial?solver=conopt)
+| [Contact Sales](https://ampl.com/contact/sales/)
+
+[Download CONOPT](https://ampl.com/download/conopt)
+| [Start a CONOPT Trial Now!](https://ampl.com/trial/conopt)
 
 ## How to use it
 

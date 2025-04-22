@@ -2,7 +2,7 @@
 
 IBM ILOG CP Optimizer is a generic CP-based system to model and solve scheduling problems.
 
-[Learn More](https://ampl.com/products/solvers/solvers-we-sell/cplex/)
+[Product Page](https://ampl.com/products/solvers/solvers-we-sell/cplex/)
 | [Options](options.md)
 | [Changes](changes.md)
 | [Download](https://portal.ampl.com)

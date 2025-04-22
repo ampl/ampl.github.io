@@ -18,7 +18,9 @@ The algorithms in Bonmin are exact when the functions `f` and `g` are convex; in
 
 [Learn More](https://ampl.com/products/solvers/open-source-solvers/)
 | [Options](#solver-options)
-| [Download BONMIN](https://portal.ampl.com/user/ampl/download/coin)
+| [Contact Sales](https://ampl.com/contact/sales/)
+
+[Download BONMIN](https://ampl.com/download/coin)
 
 ## How to use it
 

@@ -12,7 +12,9 @@ found [here](https://mp.ampl.com/model-guide.html).
 | [Modeling guide](https://mp.ampl.com/model-guide.html)
 | [Options](#solver-options)
 | [Changes](changes.md)
-| [Download HiGHS](https://portal.ampl.com/user/ampl/download/highs)
+| [Contact Sales](https://ampl.com/contact/sales/)
+
+[Download HiGHS](https://ampl.com/download/highs)
 
 ## How to use it
 

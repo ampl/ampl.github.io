@@ -6,12 +6,14 @@ IBM ILOG CPLEX has been a well known and widely used large-scale solver for over
 The framework used by the driver supports automatic reformulation for many expression types; the modeling guide can be
 found [here](https://mp.ampl.com/model-guide.html).
 
-[Learn More](https://ampl.com/products/solvers/solvers-we-sell/cplex/)
+[Product Page](https://ampl.com/products/solvers/solvers-we-sell/cplex/)
 | [Modeling guide](https://mp.ampl.com/model-guide.html)
 | [Options](#solver-options)
 | [Changes](changes.md)
-| [Download CPLEX](https://portal.ampl.com/user/ampl/download/cplex)
-| [Start a CPLEX Trial Now!](https://portal.ampl.com/user/ampl/request/amplce/trial?solver=cplex)
+| [Contact Sales](https://ampl.com/contact/sales/)
+
+[Download CPLEX](https://ampl.com/download/cplex)
+| [Start a CPLEX Trial Now!](https://ampl.com/trial/cplex)
 
 This package contains an all-new CPLEX driver, that provides significantly extended modeling support for logical and nonlinear operators through linearizations performed by the [MP library](https://mp.ampl.com/). For compatibility, there are two binaries in this package: `cplex` [[options](options.md)] is the new version, `cplexasl` [[options](cplexasl.md)] is the legacy version. If you are upgrading an existing installation and encounter any issues with the new version please report them to [support@ampl.com](mailto:support@ampl.com).
 

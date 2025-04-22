@@ -4,11 +4,13 @@
 
 MINOS is an established choice for both linear and nonlinear optimization problems. It incorporates proven methods for large-scale sparse nonlinear constraints, and its methods are especially effective for nonlinear objectives subject to linear and near-linear constraints.
 
-[Learn More](https://ampl.com/products/solvers/solvers-we-sell/minos/)
+[Product Page](https://ampl.com/products/solvers/solvers-we-sell/minos/)
 | [Options](options.md)
 | [Changes](changes.md)
-| [Download MINOS](https://portal.ampl.com/user/ampl/download/minos)
-| [Start a MINOS Trial Now!](https://portal.ampl.com/user/ampl/request/amplce/trial?solver=minos)
+| [Contact Sales](https://ampl.com/contact/sales/)
+
+[Download MINOS](https://ampl.com/download/minos)
+| [Start a MINOS Trial Now!](https://ampl.com/trial/minos)
 
 ## How to use it
 

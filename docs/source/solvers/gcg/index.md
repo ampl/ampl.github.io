@@ -12,7 +12,9 @@ No user interaction is necessary, thus GCG provides decomposition-based MIP solv
 | [GCG modeling guide](#gcg-modeling-guide)
 | [Options](#solver-options)
 | [Changes](changes.md)
-| [Download GCG](https://portal.ampl.com/user/ampl/download/gcg)
+| [Contact Sales](https://ampl.com/contact/sales/)
+
+[Download GCG](https://ampl.com/download/gcg)
 
 ## How to use it
 
@@ -69,8 +71,9 @@ No user interaction is necessary, thus GCG provides decomposition-based MIP solv
 ## Resources
 
 - [GCG](#gcg)
+  - [How to use it](#how-to-use-it)
+  - [Resources](#resources)
   - [GCG modeling guide](#gcg-modeling-guide)
-  - [Important features](https://mp.ampl.com/features-guide.html#important-features)
   - [Solver options](#solver-options)
   - [Retrieving solutions](#retrieving-solutions)
   - [Changelog](#changelog)
