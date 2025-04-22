@@ -56,77 +56,77 @@ anthony-papavasiliou/electricity-markets.md
 
 ## Book on General Optimization Topics
 
--   H.T. Lau, _[A Numerical Library in C for Scientists and Engineers](http://www.amazon.com/exec/obidos/ISBN=084937376X/amplA/)._ CRC Press, 1995. _Includes a section on optimization; comes with a disk._
+-   H.T. Lau, _[A Numerical Library in C for Scientists and Engineers](https://www.amazon.com/exec/obidos/ISBN=084937376X/amplA/)._ CRC Press, 1995. _Includes a section on optimization; comes with a disk._
     
--   G.L. Nemhauser, A.H.G. Rinnooy Kan and M.J. Todd (editors), _[Optimization](http://www.amazon.com/exec/obidos/ISBN=0444872841/amplA/)._ Handbooks in Operations Research and Management Science, volume 1. North-Holland, 1989. _A broad reference with large biliography. Entries are at a fairly advanced level._
+-   G.L. Nemhauser, A.H.G. Rinnooy Kan and M.J. Todd (editors), _[Optimization](https://www.amazon.com/exec/obidos/ISBN=0444872841/amplA/)._ Handbooks in Operations Research and Management Science, volume 1. North-Holland, 1989. _A broad reference with large biliography. Entries are at a fairly advanced level._
     
--   Hamdy A. Taha, _[Operations Research: An Introduction](http://www.amazon.com/exec/obidos/ISBN=0131889230/amplA/),_ 8th edition. Prentice Hall, 2006. _Makes extensive use of AMPL in examples and exercises._
+-   Hamdy A. Taha, _[Operations Research: An Introduction](https://www.amazon.com/exec/obidos/ISBN=0131889230/amplA/),_ 8th edition. Prentice Hall, 2006. _Makes extensive use of AMPL in examples and exercises._
     
--   H.P. Williams, _[Model Building in Mathematical Programming](http://www.amazon.com/exec/obidos/ISBN=0471997889/amplA/),_ 4th edition. Wiley, 1993. _A popular collection of optimization models and modeling techniques._
+-   H.P. Williams, _[Model Building in Mathematical Programming](https://www.amazon.com/exec/obidos/ISBN=0471997889/amplA/),_ 4th edition. Wiley, 1993. _A popular collection of optimization models and modeling techniques._
     
--   W.L. Winston, _[Introduction to Mathematical Programming: Applications and Algorithms](http://www.amazon.com/exec/obidos/ISBN=0534230474/amplA/),_ 2nd edition. Wadsworth, 1997. _A widely used elementary introduction to optimization topics._
+-   W.L. Winston, _[Introduction to Mathematical Programming: Applications and Algorithms](https://www.amazon.com/exec/obidos/ISBN=0534230474/amplA/),_ 2nd edition. Wadsworth, 1997. _A widely used elementary introduction to optimization topics._
 
 ## Linear Programming Books
 
--   D. Bertsimas and J. Tsitsiklis, _[Introduction to Linear Optimization](http://www.amazon.com/exec/obidos/ISBN=1886529191/amplA/)._ Athena Scientific, 1996.
+-   D. Bertsimas and J. Tsitsiklis, _[Introduction to Linear Optimization](https://www.amazon.com/exec/obidos/ISBN=1886529191/amplA/)._ Athena Scientific, 1996.
     
--   V. Chvatal, _[Linear Programming](http://www.amazon.com/exec/obidos/ISBN=0716715872/amplA/)._ W.H. Freeman & Co., 1983. _A perennial favorite among introductory texts._
+-   V. Chvatal, _[Linear Programming](https://www.amazon.com/exec/obidos/ISBN=0716715872/amplA/)._ W.H. Freeman & Co., 1983. _A perennial favorite among introductory texts._
     
--   S.I. Gass, _[An Illustrated Guide to Linear Programming](http://www.amazon.com/exec/obidos/ISBN=0486262588/amplA/)._ Dover, 1990. _An inexpensive reprint of a classic introduction._
+-   S.I. Gass, _[An Illustrated Guide to Linear Programming](https://www.amazon.com/exec/obidos/ISBN=0486262588/amplA/)._ Dover, 1990. _An inexpensive reprint of a classic introduction._
     
--   I. Maros, _[Computational Techniques of the Simplex Method](http://www.amazon.com/exec/obidos/ISBN=1402073321/amplA/)._ Kluwer, 2003.
+-   I. Maros, _[Computational Techniques of the Simplex Method](https://www.amazon.com/exec/obidos/ISBN=1402073321/amplA/)._ Kluwer, 2003.
     
--   R. Saigal, _[Linear Programming: A Modern Integrated Analysis](http://www.amazon.com/exec/obidos/ISBN=0792396227/amplA/)._ Kluwer, 1995.
+-   R. Saigal, _[Linear Programming: A Modern Integrated Analysis](https://www.amazon.com/exec/obidos/ISBN=0792396227/amplA/)._ Kluwer, 1995.
     
--   R.J. Vanderbei, _[Linear Programming: Foundations and Extensions](http://www.amazon.com/exec/obidos/ISBN=0792373421/amplA/),_ 2nd edition. Kluwer, 2001. _An introductory graduate-level text covering theory and computation for both simplex and interior-point methods._
+-   R.J. Vanderbei, _[Linear Programming: Foundations and Extensions](https://www.amazon.com/exec/obidos/ISBN=0792373421/amplA/),_ 2nd edition. Kluwer, 2001. _An introductory graduate-level text covering theory and computation for both simplex and interior-point methods._
     
--   S.J. Wright, _[Primal-Dual Interior-Point Methods](http://www.amazon.com/exec/obidos/ISBN=089871382X/amplA/)._ SIAM, 1997.
+-   S.J. Wright, _[Primal-Dual Interior-Point Methods](https://www.amazon.com/exec/obidos/ISBN=089871382X/amplA/)._ SIAM, 1997.
     
 
 ## Nonlinear Programming Books
 
--   M.S. Bazaraa, H.D. Sherali and C.M. Shetty, _[Nonlinear Programming: Theory and Algorithms](http://www.amazon.com/exec/obidos/ISBN=0471557935/amplA/)._ Wiley, 1992.
+-   M.S. Bazaraa, H.D. Sherali and C.M. Shetty, _[Nonlinear Programming: Theory and Algorithms](https://www.amazon.com/exec/obidos/ISBN=0471557935/amplA/)._ Wiley, 1992.
     
--   D.P. Bertsekas, _[Nonlinear Programming](http://www.amazon.com/exec/obidos/ISBN=1886529140/amplA/)._ Athena Scientific, 1995.
+-   D.P. Bertsekas, _[Nonlinear Programming](https://www.amazon.com/exec/obidos/ISBN=1886529140/amplA/)._ Athena Scientific, 1995.
     
--   R. Fletcher, _[Practical Methods of Optimization](http://www.amazon.com/exec/obidos/ISBN=0471494631/amplA/), 2nd edition._ Wiley, 2000.
+-   R. Fletcher, _[Practical Methods of Optimization](https://www.amazon.com/exec/obidos/ISBN=0471494631/amplA/), 2nd edition._ Wiley, 2000.
     
--   P.E. Gill, W. Murrary and M.H. Wright, _[Practical Optimization](http://www.amazon.com/exec/obidos/ISBN=0122839528/amplA/)._ Academic Press, 1981.
+-   P.E. Gill, W. Murrary and M.H. Wright, _[Practical Optimization](https://www.amazon.com/exec/obidos/ISBN=0122839528/amplA/)._ Academic Press, 1981.
     
--   D.G. Luenberger, _[Linear and Nonlinear Programming](http://www.amazon.com/exec/obidos/ISBN=0201157942/amplA/), 2nd edition._ Addison-Wesley, 1984.
+-   D.G. Luenberger, _[Linear and Nonlinear Programming](https://www.amazon.com/exec/obidos/ISBN=0201157942/amplA/), 2nd edition._ Addison-Wesley, 1984.
     
--   S. Nash and A. Sofer, _[Linear and Nonlinear Programming](http://www.amazon.com/exec/obidos/ISBN=0070460655/amplA/)._ McGraw-Hill, 1996.
+-   S. Nash and A. Sofer, _[Linear and Nonlinear Programming](https://www.amazon.com/exec/obidos/ISBN=0070460655/amplA/)._ McGraw-Hill, 1996.
     
--   J. Nocedal and S.J. Wright, _[Numerical Optimization](http://www.amazon.com/exec/obidos/ISBN=0387987932/amplA/)._ Springer Verlag, 1999.
+-   J. Nocedal and S.J. Wright, _[Numerical Optimization](https://www.amazon.com/exec/obidos/ISBN=0387987932/amplA/)._ Springer Verlag, 1999.
 
 ## Integer Programming and Combinatorial Optimization Books
 
--   W.J. Cook, W.H. Cunningham, W.R. Pulleyblank and A. Schrijver, _[Combinatorial Optimization](http://www.amazon.com/exec/obidos/ISBN=047155894X/amplA/)._ Wiley Interscience, 1997. _A comprehensive and up-to-date treatment._
+-   W.J. Cook, W.H. Cunningham, W.R. Pulleyblank and A. Schrijver, _[Combinatorial Optimization](https://www.amazon.com/exec/obidos/ISBN=047155894X/amplA/)._ Wiley Interscience, 1997. _A comprehensive and up-to-date treatment._
     
--   G.L. Nemhauser and L.A. Wolsey, _[Integer and Combinatorial Optimization](http://www.amazon.com/exec/obidos/ISBN=0471359432/amplA/)._ Wiley Interscience, 1988. _An advanced text that covers many theortical and computational topics in integer programming._
+-   G.L. Nemhauser and L.A. Wolsey, _[Integer and Combinatorial Optimization](https://www.amazon.com/exec/obidos/ISBN=0471359432/amplA/)._ Wiley Interscience, 1988. _An advanced text that covers many theortical and computational topics in integer programming._
     
--   C.H. Papadimitriou and K. Steiglitz, _[Combinatorial Optimization: Algorithms and Complexity](http://www.amazon.com/exec/obidos/ISBN=0486402584/amplA/)._ Dover, 1998. _Recently reprinted in an inexpensive paperback edition._
+-   C.H. Papadimitriou and K. Steiglitz, _[Combinatorial Optimization: Algorithms and Complexity](https://www.amazon.com/exec/obidos/ISBN=0486402584/amplA/)._ Dover, 1998. _Recently reprinted in an inexpensive paperback edition._
     
--   L.A. Wolsey, _[Integer Programming](http://www.amazon.com/exec/obidos/ISBN=0471283665/amplA/)._ Wiley, 1998. _An introduction to the subject and its applications._
+-   L.A. Wolsey, _[Integer Programming](https://www.amazon.com/exec/obidos/ISBN=0471283665/amplA/)._ Wiley, 1998. _An introduction to the subject and its applications._
 
 ## Network Optimization Books
 
--   R.K. Ahuja, T.L. Magnanti and J.B. Orlin, _[Network Flows: Theory, Algorithms, and Applications](http://www.amazon.com/exec/obidos/ISBN=013617549X/amplA/)._ Prentice-Hall, 1993. _A comprehensive recent survey of the topic._
+-   R.K. Ahuja, T.L. Magnanti and J.B. Orlin, _[Network Flows: Theory, Algorithms, and Applications](https://www.amazon.com/exec/obidos/ISBN=013617549X/amplA/)._ Prentice-Hall, 1993. _A comprehensive recent survey of the topic._
     
--   D.P. Bertsekas, _[Linear Network Optimization: Algorithms and Codes](http://www.amazon.com/exec/obidos/ISBN=0262023342/amplA/)._ MIT Press, 1991. _Includes code for a variety of network algorithms._
+-   D.P. Bertsekas, _[Linear Network Optimization: Algorithms and Codes](https://www.amazon.com/exec/obidos/ISBN=0262023342/amplA/)._ MIT Press, 1991. _Includes code for a variety of network algorithms._
     
--   D.P. Bertsekas, _[Network Optimization: Continuous and Discrete Models](http://www.amazon.com/exec/obidos/ISBN=1886529027/amplA/)._ Athena Scientific, 1998.
+-   D.P. Bertsekas, _[Network Optimization: Continuous and Discrete Models](https://www.amazon.com/exec/obidos/ISBN=1886529027/amplA/)._ Athena Scientific, 1998.
     
--   K.G. Murty, _[Network Programming](http://www.amazon.com/exec/obidos/ISBN=013615493X/amplA/)._ Prentice-Hall, 1992.
+-   K.G. Murty, _[Network Programming](https://www.amazon.com/exec/obidos/ISBN=013615493X/amplA/)._ Prentice-Hall, 1992.
 
 ## Additional Topics
 
--   D.P. Bertsekas and J. Tsitsiklis, _[Parallel and Distributed Computation: Numerical Methods](http://www.amazon.com/exec/obidos/ISBN=1886529019/amplA/)._ Athena Scientific, 1997.
+-   D.P. Bertsekas and J. Tsitsiklis, _[Parallel and Distributed Computation: Numerical Methods](https://www.amazon.com/exec/obidos/ISBN=1886529019/amplA/)._ Athena Scientific, 1997.
     
--   Y. Censor and S.A. Zenios, _[Parallel Optimization: Theory, Algorithms, and Applications](http://www.amazon.com/exec/obidos/ISBN=019510062X/amplA/)._ Oxford University Press, 1998. _Winner of the 1999 INFORMS Computing Society Prize for Research Excellence in the Interface Between Operations Research and Computer Science._
+-   Y. Censor and S.A. Zenios, _[Parallel Optimization: Theory, Algorithms, and Applications](https://www.amazon.com/exec/obidos/ISBN=019510062X/amplA/)._ Oxford University Press, 1998. _Winner of the 1999 INFORMS Computing Society Prize for Research Excellence in the Interface Between Operations Research and Computer Science._
     
--   L.S. Lasdon, _[Optimization Theory for Large Systems](http://www.amazon.com/exec/obidos/ISBN=0486419991/amplA/)._ Dover, 2002. _A survey of decomposition, relaxation, column-generation, and compact-basis methods for large-scale optimization, in an inexpensive reprint edition._
+-   L.S. Lasdon, _[Optimization Theory for Large Systems](https://www.amazon.com/exec/obidos/ISBN=0486419991/amplA/)._ Dover, 2002. _A survey of decomposition, relaxation, column-generation, and compact-basis methods for large-scale optimization, in an inexpensive reprint edition._
     
--   K. Marriott and P.J. Stuckey, _[Programming With Constraints: An Introduction](http://www.amazon.com/exec/obidos/ISBN=0262133415/amplA/)._ MIT Press, 1998. _An introduction to techniques that can provide an alternative to integer programming for highly combinatorial problems._ (See also the [AMPL extensions](https://ampl.com/products/ampl/logic-and-constraint-programming-extensions/) that take advantage of constraint logic programming solvers.)
+-   K. Marriott and P.J. Stuckey, _[Programming With Constraints: An Introduction](https://www.amazon.com/exec/obidos/ISBN=0262133415/amplA/)._ MIT Press, 1998. _An introduction to techniques that can provide an alternative to integer programming for highly combinatorial problems._ (See also the [AMPL extensions](https://ampl.com/products/ampl/logic-and-constraint-programming-extensions/) that take advantage of constraint logic programming solvers.)
     
--   J.D. Pinter, _[Global Optimization in Action: Continuous and Lipschitz Optimization: Algorithms, Implementations and Applications](http://www.amazon.com/exec/obidos/ISBN=0792337573/amplA/)._ Kluwer, 1996. _Winner of the 1999 INFORMS Computing Society Prize for Research Excellence in the Interface Between Operations Research and Computer Science._
+-   J.D. Pinter, _[Global Optimization in Action: Continuous and Lipschitz Optimization: Algorithms, Implementations and Applications](https://www.amazon.com/exec/obidos/ISBN=0792337573/amplA/)._ Kluwer, 1996. _Winner of the 1999 INFORMS Computing Society Prize for Research Excellence in the Interface Between Operations Research and Computer Science._

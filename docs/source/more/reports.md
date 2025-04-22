@@ -4,7 +4,7 @@
 
 Robert Fourer, [Algebraic Modeling Languages for Optimization](../REFS//amlopt.pdf). In S.I. Gass and M.C. Fu, eds., _Encyclopedia of Operations Research and Management Science,_ Springer (2013).
 
-Robert Fourer, [On the Evolution of Optimization Modeling Systems](http://www.zib.de/groetschel/pubnew/paper/groetschelismp2012.pdf). M. Groetschel, _Optimization Stories._ Documenta Mathematica (2012) 377-388.
+Robert Fourer, [On the Evolution of Optimization Modeling Systems](https://www.zib.de/groetschel/pubnew/paper/groetschelismp2012.pdf). M. Groetschel, _Optimization Stories._ Documenta Mathematica (2012) 377-388.
 
 Robert Fourer, [Modeling Languages versus Matrix Generators for Linear Programming](https://dx.doi.org/10.1145/357456.357457). _ACM Transactions on Mathematical Software_ **9** (1983) 143-183.
 
@@ -35,7 +35,7 @@ Abstract:
 David M. Gay, [Hooking Your Solver to AMPL](../REFS//hooking3.pdf). Technical report, Bell Laboratories, Murray Hill, NJ (1993; revised 1994, 1997).
 
 Abstract:
-> This report tells how to make solvers work with AMPL’s solve command. It describes an interface library, amplsolver.a, whose source is available from the AMPL web site in http://ampl.com/netlib/ampl (where updates first appear) and from netlib. Examples include programs for listing LPs, automatic conversion to the LP dual (shell-script as solver), solvers for various nonlinear problems (with first and sometimes second derivatives computed by automatic differentiation), and getting C or Fortran 77 for nonlinear constraints, objectives, and their first derivatives. Drivers for various well known linear, mixed-integer, and nonlinear solvers provide more examples.
+> This report tells how to make solvers work with AMPL’s solve command. It describes an interface library, amplsolver.a, whose source is available from the AMPL web site in https://ampl.com/netlib/ampl (where updates first appear) and from netlib. Examples include programs for listing LPs, automatic conversion to the LP dual (shell-script as solver), solvers for various nonlinear problems (with first and sometimes second derivatives computed by automatic differentiation), and getting C or Fortran 77 for nonlinear constraints, objectives, and their first derivatives. Drivers for various well known linear, mixed-integer, and nonlinear solvers provide more examples.
 
 ## Running AMPL remotely on the NEOS Server
 
@@ -44,7 +44,7 @@ Elizabeth D. Dolan, Robert Fourer, Jean-Pierre Goux, Todd S. Munson and Jason Sa
 Abstract:
 > The NEOS server provides access to a variety of optimization resources via the Internet. The new Kestrel interface to the server enables local modeling environments to request NEOS optimization services and retrieve the results for local visualization and analysis so that users have the same convenient access to remote NEOS solvers as to those installed locally. Kestrel agents have been implemented for the AMPL and GAMS modeling environments; these agents have been designed so that subproblems can be queued for execution and later retrieval of results, making possible a rudimentary form of parallel processing.
 
-Elizabeth D. Dolan, Robert Fourer, Jorge J. Moré and Todd S. Munson, [Optimization on the NEOS Server](http://www.siam.org/pdf/news/457.pdf). _SIAM News_ **35,** 6 (July/August 2002), 4, 8-9.
+Elizabeth D. Dolan, Robert Fourer, Jorge J. Moré and Todd S. Munson, [Optimization on the NEOS Server](https://www.siam.org/pdf/news/457.pdf). _SIAM News_ **35,** 6 (July/August 2002), 4, 8-9.
 
 ## Details of AMPL’s design
 

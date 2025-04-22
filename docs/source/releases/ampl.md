@@ -2259,7 +2259,7 @@ Fix a bug with "option linelim 0;" that affected some complicated examples invol
   
 Somewhat improve performance in handling many linear defined variables with the default "option linelim 1". In one example, time to invoke the solver was reduced by 16%.  
   
-The "temporary" debugging interpretation of the "4" bit of $linelim, describe in the change-log entry of 20011206 (see, e.g., [https://www.ampl.com/netlib/ampl/changes](https://www.ampl.com/netlib/ampl/changes)), is rescinded. (Version 20130407 had a glitch in this change.)
+The "temporary" debugging interpretation of the "4" bit of $linelim, describe in the change-log entry of 20011206 (see, e.g., [https://ampl.com/netlib/ampl/changes](https://ampl.com/netlib/ampl/changes)), is rescinded. (Version 20130407 had a glitch in this change.)
 
 ## 20130327
 
@@ -2552,7 +2552,7 @@ Add command-line option --version: when given as the sole command-line argument,
   
 Adjust default computation of $ampl\_libdirs to work correctly with non-ASCII directory names (where "ASCII" means "7-bit ASCII"). Note that AMPL has long handled UTF-8 encoding of Unicode, which can involve non-ASCII characters. On MS Windows systems, use of non-ASCII names can cause confusion when different code pages are involved. This is an issue outside the scope of AMPL.  
   
-A new "tableproxy" table handler is now available. It permits a 32-bit AMPL to access a 64-bit database and vice versa. It also allows AMPL to access databases on other machines where a tableproxy server is running. For more details, [click here.](https://www.ampl.com/NEW/TABLEPROXY/index.html)
+A new "tableproxy" table handler is now available. It permits a 32-bit AMPL to access a 64-bit database and vice versa. It also allows AMPL to access databases on other machines where a tableproxy server is running. For more details, [click here.](https://ampl.com/NEW/TABLEPROXY/index.html)
 
 ## 20120217
 
@@ -2861,7 +2861,7 @@ Fix a rarely seen bug (fault) that bit under the "right" conditions when making 
 
 # Older changes
 
-Two logs of changes and fixes are available from the [AMPL netlib directory](https://www.ampl.com/netlib/ampl/index.html):
+Two logs of changes and fixes are available from the [AMPL netlib directory](https://ampl.com/netlib/ampl/index.html):
 
--   **[Changes and recent bug fixes](https://www.ampl.com/netlib/ampl/changes):** A summary of all changes and extensions to AMPL since publication of the AMPL book, plus the last several months’ bug fixes.
--   **[Complete changes and bug fixes](https://www.ampl.com/netlib/ampl/fixlog):** A listing of all changes and bug fixes since 30 November 1992.
+-   **[Changes and recent bug fixes](https://ampl.com/netlib/ampl/changes):** A summary of all changes and extensions to AMPL since publication of the AMPL book, plus the last several months’ bug fixes.
+-   **[Complete changes and bug fixes](https://ampl.com/netlib/ampl/fixlog):** A listing of all changes and bug fixes since 30 November 1992.

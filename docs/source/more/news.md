@@ -6,7 +6,7 @@ ___
 
 3-5 April 2022
 
-[INFORMS Business Analytics Conference](http://meetings2.informs.org/wordpress/analytics2022/), Houston, Texas, U.S.A.
+[INFORMS Business Analytics Conference](https://meetings2.informs.org/wordpress/analytics2022/), Houston, Texas, U.S.A.
 
 AMPL Optimization Inc. was a **Platinum Sponsor** of this event and had a booth in the exhibit area  
 
@@ -31,13 +31,13 @@ ___
 
 23-25 January 2022
 
-[INFORMS Computing Society Conference](http://ics2021tampa.eng.usf.edu/), Tampa, Florida, USA
+[INFORMS Computing Society Conference](https://ics2021tampa.eng.usf.edu/), Tampa, Florida, USA
 
 ___
 
 24-27 October 2021
 
-[INFORMS Annual Meeting](http://meetings2.informs.org/wordpress/anaheim2021/), Anaheim, California, USA _and online_
+[INFORMS Annual Meeting](https://meetings2.informs.org/wordpress/anaheim2021/), Anaheim, California, USA _and online_
 
 AMPL Optimization was a sponsor of this event and had a booth in the exhibit area
 
@@ -54,7 +54,7 @@ ___
 
 23-27 August 2021
 
-[IFORS 2021](http://www.ifors2020.kr/): 22nd Conference of the  
+[IFORS 2021](https://www.ifors2020.kr/): 22nd Conference of the  
 International Federation of Operational Research Societies, _online_ **_UTC+9_**
 
 _**Session TD-09, Modeling and Solver Interfaces,**_ Tuesday, August 24, 14:00-15:40  
@@ -77,7 +77,7 @@ ___
 
 7-13 November 2020
 
-[INFORMS Virtual Annual Meeting](http://meetings2.informs.org/wordpress/annual2020/)
+[INFORMS Virtual Annual Meeting](https://meetings2.informs.org/wordpress/annual2020/)
 
 AMPL Optimization was a **Silver Sponsor** of this event
 
@@ -97,9 +97,9 @@ ___
 
 18-22 May 2020
 
-[INFORMS **Virtual** Business Analytics Conference](http://meetings2.informs.org/wordpress/analytics2020/)
+[INFORMS **Virtual** Business Analytics Conference](https://meetings2.informs.org/wordpress/analytics2020/)
 
-AMPL Optimization was a [_Virtual Sponsor_](http://meetings2.informs.org/wordpress/analytics2020/sponsor/ampl/) of this event
+AMPL Optimization was a [_Virtual Sponsor_](https://meetings2.informs.org/wordpress/analytics2020/sponsor/ampl/) of this event
 
 ___
 
@@ -124,7 +124,7 @@ ___
 
 20-23 October 2019
 
-[INFORMS Annual Meeting](http://meetings2.informs.org/wordpress/seattle2019/), Seattle, Washington, USA
+[INFORMS Annual Meeting](https://meetings2.informs.org/wordpress/seattle2019/), Seattle, Washington, USA
 
 AMPL Optimization was a **Silver Sponsor** of this event and had a booth in the exhibit area
 
@@ -175,7 +175,7 @@ ___
 
 9-12 June 2019
 
-[INFORMS-ALIO Joint International Conference](http://meetings2.informs.org/wordpress/2019international/), Cancun, Mexico
+[INFORMS-ALIO Joint International Conference](https://meetings2.informs.org/wordpress/2019international/), Cancun, Mexico
 
 AMPL Optimization was a sponsor of this event and had a table in the exhibit area  
 Robert Fourer and Melinh Nguyen represented AMPL at this event
@@ -184,7 +184,7 @@ ___
 
 14-16 April 2019
 
-[INFORMS Business Analytics Conference](http://meetings2.informs.org/wordpress/analytics2019/), Austin, Texas, USA
+[INFORMS Business Analytics Conference](https://meetings2.informs.org/wordpress/analytics2019/), Austin, Texas, USA
 
 AMPL Optimization Inc. was a **Gold Sponsor** of this event and had a booth in the exhibit area  
 Filipe Brandão, Robert Fourer, Melinh Nguyen, Martin Laskowski, and Bill Wells represented AMPL at this event
@@ -213,7 +213,7 @@ ___
 
 4-7 November 2018
 
-[INFORMS Annual Meeting](http://meetings2.informs.org/wordpress/phoenix2018/), Phoenix, Arizona, USA
+[INFORMS Annual Meeting](https://meetings2.informs.org/wordpress/phoenix2018/), Phoenix, Arizona, USA
 
 AMPL Optimization is a sponsor of this event and has a booth in the exhibit area
 
@@ -240,7 +240,7 @@ ___
 
 _27-31 August 2018_
 
-_[CP 2018](http://cp2018.a4cp.org/): International Conference on Principles and Practice of Constraint Programming, Lille, France_
+_[CP 2018](https://cp2018.a4cp.org/): International Conference on Principles and Practice of Constraint Programming, Lille, France_
 
 __**Tutorial,**_ Tuesday, August 28, 14:00-15:00  
 _Robert Fourer, _[Model-Based Optimization: Principles and Trends](../TALKS/2018_08_Lille_Tutorial1.pdf)_
@@ -249,7 +249,7 @@ ___
 
 8-11 July 2018
 
-[EURO 2018](http://euro2018valencia.com/): European Conference on Operational Research, Valencia, Spain
+[EURO 2018](https://euro2018valencia.com/): European Conference on Operational Research, Valencia, Spain
 
 AMPL Optimization is a sponsor of this event and has a booth in the exhibit area
 
@@ -277,7 +277,7 @@ ___
 
 17-20 June 2018
 
-[INFORMS International Conference](http://meetings2.informs.org/wordpress/2018international/), Taipei, Taiwan
+[INFORMS International Conference](https://meetings2.informs.org/wordpress/2018international/), Taipei, Taiwan
 
 AMPL Optimization is a sponsor of this event and has a table in the exhibit area
 
@@ -288,7 +288,7 @@ ___
 
 15-17 April 2018
 
-[INFORMS Business Analytics Conference](http://meetings2.informs.org/wordpress/analytics2018/), Baltimore, Maryland, U.S.A.
+[INFORMS Business Analytics Conference](https://meetings2.informs.org/wordpress/analytics2018/), Baltimore, Maryland, U.S.A.
 
 AMPL Optimization is a sponsor of this event and has a booth in the exhibit area
 
@@ -306,7 +306,7 @@ ___
 
 23-25 March 2018
 
-[INFORMS Optimization Society Meeting](http://orwe.mines.edu/conference/info.html), Denver, Colorado, U.S.A.
+[INFORMS Optimization Society Meeting](https://orwe.mines.edu/conference/info.html), Denver, Colorado, U.S.A.
 
 AMPL Optimization is a sponsor of this event and will have a table in the exhibit area
 
@@ -317,7 +317,7 @@ ___
 
 8-12 January 2018
 
-[U.S.-Mexico Workshop on Optimization and Its Applications](http://www.mccormick.northwestern.edu/research/optimization-machine-learning-center/us-mexico-workshop-optimization-applications/), Huatulco, Mexico
+[U.S.-Mexico Workshop on Optimization and Its Applications](https://www.mccormick.northwestern.edu/research/optimization-machine-learning-center/us-mexico-workshop-optimization-applications/), Huatulco, Mexico
 
 _**Invited Presentation,** Tuesday, January 9, 18:50-19:25  
 _David M. Gay, [_Toward Conveniently Handling Bi-Level Optimization Problems_](../TALKS/2018_01_Huatulco_Gay.pdf)
@@ -329,11 +329,11 @@ ___
 
 19 December 2017
 
-[Symposium on Recent Trends in Operations Research and Data Science](http://www.isical.ac.in/events/symposium_rev.pdf), Indian Statistical Institute, Kolkata
+[Symposium on Recent Trends in Operations Research and Data Science](https://www.isical.ac.in/events/symposium_rev.pdf), Indian Statistical Institute, Kolkata
 
 21-23 December 2017
 
-[AFOR 2017](http://orsi.in/afor2017/): Advancing Frontiers in Operational Research / 50th Annual Convention of the Operational Research Society of India, Kolkata
+[AFOR 2017](https://orsi.in/afor2017/): Advancing Frontiers in Operational Research / 50th Annual Convention of the Operational Research Society of India, Kolkata
 
 _**Plenary Session at ISI,** Tuesday, December 19  
 _Robert Fourer, [_Optimization Software and Systems for Operations Research: Best Practices and Current Trends_](../TALKS/2017_12_Kolkata_ISI.pdf)
@@ -345,7 +345,7 @@ ___
 
 22-25 October 2017
 
-[INFORMS Annual Meeting](http://meetings.informs.org/wordpress/houston2017/), Houston, Texas, U.S.A.
+[INFORMS Annual Meeting](https://meetings.informs.org/wordpress/houston2017/), Houston, Texas, U.S.A.
 
 AMPL Optimization was a sponsor of this event and had a booth in the exhibit area
 
@@ -359,7 +359,7 @@ ___
 
 6-8 September 2017
 
-[OR 2017](http://or2017.de/): International Conference on Operations Research  
+[OR 2017](https://or2017.de/): International Conference on Operations Research  
 Berlin, Germany
 
 AMPL Optimization Inc. was a sponsor and exhibitor for this event
@@ -371,7 +371,7 @@ ___
 
 17-21 July 2017
 
-[IFORS 2017](http://ifors2017.ca/): 21st Conference of the International Federation of Operational Research Societies  
+[IFORS 2017](https://ifors2017.ca/): 21st Conference of the International Federation of Operational Research Societies  
 Quebec City, Canada
 
 AMPL Optimization was a sponsor of this event and had a booth in the exhibit area  
@@ -381,7 +381,7 @@ ___
 
 22-25 May 2017
 
-[SIAM Conference on Optimization](http://www.siam.org/meetings/op17/)  
+[SIAM Conference on Optimization](https://www.siam.org/meetings/op17/)  
 Vancouver, British Columbia, Canada
 
 AMPL Optimization was a sponsor of this event  
@@ -394,7 +394,7 @@ ___
 
 2-4 April 2017
 
-[Analytics 2017](http://meetings2.informs.org/wordpress/analytics2017/): INFORMS Conference on Business Analytics & Operations Research  
+[Analytics 2017](https://meetings2.informs.org/wordpress/analytics2017/): INFORMS Conference on Business Analytics & Operations Research  
 Las Vegas, Nevada, U.S.A.
 
 AMPL Optimization Inc. was a **Gold Sponsor** of this event and had a booth in the exhibit area  
@@ -430,44 +430,44 @@ ___
 
 [13-16 November 2016](../TALKS/2017_01_Muscat.pdf)
 
-[INFORMS Annual Meeting](http://meetings.informs.org/wordpress/nashville2016/)  
+[INFORMS Annual Meeting](https://meetings.informs.org/wordpress/nashville2016/)  
 Nashville, Tennessee, U.S.A.
 
 AMPL had 5 representatives at this event  
 AMPL Optimization Inc. had a booth in the exhibit area and sponsored the Exhibit Hall Networking Lounge
 
-_**Session [SB16](http://www.abstractsonline.com/pp8/#!/4182/presentation/21604), Algorithms for Stochastic Programming,**_ _Sunday, November 13, 11:00-12:30_  
-Christian Valente, Gautam Mitra, Christiano Arbex Valle, Robert Fourer, [_AMPL Representation and Solution of Multiple Stochastic Programming Formulations_](http://ampl.com/MEETINGS/TALKS/2016_11_Nashville_CV_SB16.2.pdf)
+_**Session [SB16](https://www.abstractsonline.com/pp8/#!/4182/presentation/21604), Algorithms for Stochastic Programming,**_ _Sunday, November 13, 11:00-12:30_  
+Christian Valente, Gautam Mitra, Christiano Arbex Valle, Robert Fourer, [_AMPL Representation and Solution of Multiple Stochastic Programming Formulations_](https://ampl.com/MEETINGS/TALKS/2016_11_Nashville_CV_SB16.2.pdf)
 
-_**Session [MD94](http://www.abstractsonline.com/pp8/#!/4182/presentation/26615), Software Tutorials,**_ _Monday, November 14, 16:30-18:00_  
-Robert Fourer, [_AMPL in the Cloud: Using Online Services to Develop and Deploy Optimization Applications through Algebraic Modeling_](http://ampl.com/MEETINGS/TALKS/2016_11_Nashville_MD94.2.pdf)
+_**Session [MD94](https://www.abstractsonline.com/pp8/#!/4182/presentation/26615), Software Tutorials,**_ _Monday, November 14, 16:30-18:00_  
+Robert Fourer, [_AMPL in the Cloud: Using Online Services to Develop and Deploy Optimization Applications through Algebraic Modeling_](https://ampl.com/MEETINGS/TALKS/2016_11_Nashville_MD94.2.pdf)
 
-_**Session [TA19](http://www.abstractsonline.com/pp8/#!/4182/presentation/25260), Optimization Modeling and Beyond with a Focus on Practice,**_  
+_**Session [TA19](https://www.abstractsonline.com/pp8/#!/4182/presentation/25260), Optimization Modeling and Beyond with a Focus on Practice,**_  
 _Tuesday, November 15, 8:00-9:30_  
-Robert Fourer, [_Building Optimization-Enabled Applications Using AMPL API_](http://ampl.com/MEETINGS/TALKS/2016_11_Nashville_TA19.3.pdf)
+Robert Fourer, [_Building Optimization-Enabled Applications Using AMPL API_](https://ampl.com/MEETINGS/TALKS/2016_11_Nashville_TA19.3.pdf)
 
-_**Session [TD13](http://www.abstractsonline.com/pp8/#!/4182/presentation/5175), Software and Methodologies for (Nonlinear) Integer Programming,**_  
+_**Session [TD13](https://www.abstractsonline.com/pp8/#!/4182/presentation/5175), Software and Methodologies for (Nonlinear) Integer Programming,**_  
 _Tuesday, November 15, 4:30-6:00 pm_  
-Robert Fourer, [_Choosing A Solution Strategy For Discrete Quadratic Optimization_](http://ampl.com/MEETINGS/TALKS/2016_11_Nashville_TD13.2.pdf)
+Robert Fourer, [_Choosing A Solution Strategy For Discrete Quadratic Optimization_](https://ampl.com/MEETINGS/TALKS/2016_11_Nashville_TD13.2.pdf)
 
 ___
 
 30 August-2 September 2016
 
-[OR 2016](http://or2016.de/): International Conference on Operations Research  
+[OR 2016](https://or2016.de/): International Conference on Operations Research  
 Hamburg, Germany
 
 Robert Fourer represented AMPL at this event  
 AMPL Optimization Inc. had an exhibit table at this event
 
 _**Session TB-09, Algebraic Modeling Languages,**_ _Thursday, September 1, 11:00-12:30_  
-Robert Fourer, [_Cloud Services for Optimization Modeling Software_](http://ampl.com/MEETINGS/TALKS/2016_09_Hamburg_TB-09.pdf)
+Robert Fourer, [_Cloud Services for Optimization Modeling Software_](https://ampl.com/MEETINGS/TALKS/2016_09_Hamburg_TB-09.pdf)
 
 ___
 
 3-6 July 2016
 
-[EURO 2016](http://www.euro2016.poznan.pl/): 28th European Conference on Operational Research  
+[EURO 2016](https://www.euro2016.poznan.pl/): 28th European Conference on Operational Research  
 Poznań, Poland
 
 Robert Fourer represented AMPL at this event  
@@ -480,7 +480,7 @@ ___
 
 25 June-1 July 2016
 
-[ICSP 2016](http://icsp2016.sciencesconf.org/): XIV International Conference on Stochastic Programming  
+[ICSP 2016](https://icsp2016.sciencesconf.org/): XIV International Conference on Stochastic Programming  
 Búzios, Brazil
 
 Victor Zverovich represented AMPL at this event
@@ -495,7 +495,7 @@ ___
 
 12-15 June 2016
 
-[INFORMS International Conference](http://meetings.informs.org/wordpress/2016international/)  
+[INFORMS International Conference](https://meetings.informs.org/wordpress/2016international/)  
 Waikoloa Village, Hawaii, U.S.A.
 
 Robert Fourer and Melinh Nguyen represented AMPL at this event  
@@ -505,26 +505,26 @@ ___
 
 8-10 June 2016
 
-[APMOD 2016: Applied Mathematical Programming and Modelling](http://www.apmod2016.org/)  
+[APMOD 2016: Applied Mathematical Programming and Modelling](https://www.apmod2016.org/)  
 Brno, Czech Republic
 
 Robert Fourer of AMPL gave an invited talk at this event
 
 _**Wednesday, June 8, 10:50-12:00**_  
-Robert Fourer, [_Cloud Services for Optimization Modeling Software_](http://ampl.com/MEETINGS/TALKS/2016_06_Brno_2A.pdf)
+Robert Fourer, [_Cloud Services for Optimization Modeling Software_](https://ampl.com/MEETINGS/TALKS/2016_06_Brno_2A.pdf)
 
 ___
 
 10-12 April 2016
 
-[INFORMS Conference on Business Analytics & Operations Research](http://meetings2.informs.org/wordpress/analytics2016/)  
+[INFORMS Conference on Business Analytics & Operations Research](https://meetings2.informs.org/wordpress/analytics2016/)  
 Orlando, Florida, U.S.A.
 
 Robert Fourer, Victor Zverovich, and Melinh Nguyen represented AMPL at this event  
 AMPL Optimization Inc. is a **Gold Sponsor** of this event and will have a booth in the exhibit area
 
 _**Monday, April 11, 13:50-14:40**_  
-Robert Fourer, [_Developing Optimization Applications Quickly and Effectively with Algebraic Modeling_](http://ampl.com/MEETINGS/TALKS/2016_04_Orlando_MD11.pdf)
+Robert Fourer, [_Developing Optimization Applications Quickly and Effectively with Algebraic Modeling_](https://ampl.com/MEETINGS/TALKS/2016_04_Orlando_MD11.pdf)
 
 ___
 
@@ -539,38 +539,38 @@ ___
 
 4-8 January 2016
 
-[U.S.-Mexico Workshop on Optimization and its Applications](http://coral.ie.lehigh.edu/~usmex2016/)  
+[U.S.-Mexico Workshop on Optimization and its Applications](https://coral.ie.lehigh.edu/~usmex2016/)  
 Mérida, Yucatan, Mexico
 
 Robert Fourer and David Gay of AMPL Optimization gave invited talks at this event
 
 _**Tuesday, January 5, 10:10-10:45**_  
-Robert Fourer, [_The Surprisingly Complicated Case of Convex Quadratic Optimization_](http://ampl.com/MEETINGS/TALKS/2016_01_Merida_Tue1010.pdf)
+Robert Fourer, [_The Surprisingly Complicated Case of Convex Quadratic Optimization_](https://ampl.com/MEETINGS/TALKS/2016_01_Merida_Tue1010.pdf)
 
 _**Friday, January 8, 9:35-10:10**_  
-David M. Gay, [_Rethinking Expression Representations for Nonlinear AMPL Models_](http://ampl.com/MEETINGS/TALKS/2016_01_Merida_Fri0935.pdf)
+David M. Gay, [_Rethinking Expression Representations for Nonlinear AMPL Models_](https://ampl.com/MEETINGS/TALKS/2016_01_Merida_Fri0935.pdf)
 
 ___
 
 1-4 November 2015
 
-[INFORMS Annual Meeting](http://meetings.informs.org/philadelphia2015/)  
+[INFORMS Annual Meeting](https://meetings.informs.org/philadelphia2015/)  
 Phildelphia, Pennsylvania, U.S.A.
 
 Robert Fourer, David Gay, Melinh Nguyen, and Victor Zverovich represented AMPL at this event  
 AMPL Optimization Inc. had a booth in the exhibit area for this event
 
 _**Session MB79: Software Demonstrations,**_ Monday, November 2, 11:00-12:30  
-Robert Fourer, [_Developing Optimization Applications Quickly and Reliably with Algebraic Modeling_](http://ampl.com/MEETINGS/TALKS/2015_11_Philadelphia_MB79.pdf)
+Robert Fourer, [_Developing Optimization Applications Quickly and Reliably with Algebraic Modeling_](https://ampl.com/MEETINGS/TALKS/2015_11_Philadelphia_MB79.pdf)
 
 _**Session MC19: Tools for Optimization Modeling,**_ Monday, November 2, 13:30-15:00  
-Robert Fourer, [_The Surprising Difficulties of Supporting Quadratic Optimization in Algebraic Modeling Languages_](http://ampl.com/MEETINGS/TALKS/2015_11_Philadelphia_MC19.pdf)
+Robert Fourer, [_The Surprising Difficulties of Supporting Quadratic Optimization in Algebraic Modeling Languages_](https://ampl.com/MEETINGS/TALKS/2015_11_Philadelphia_MC19.pdf)
 
 ___
 
 1-4 September 2015
 
-[OR 2015](http://or2015.univie.ac.at/): _International Conference on Operations Research_  
+[OR 2015](https://or2015.univie.ac.at/): _International Conference on Operations Research_  
 Vienna, Austria
 
 Robert Fourer represented AMPL at this event  
@@ -580,26 +580,26 @@ ___
 
 12-15 July 2015
 
-[EURO 2105](http://www.euro2015.org/): _27th European Conference on Operational Research_  
+[EURO 2105](https://www.euro2015.org/): _27th European Conference on Operational Research_  
 Glasgow, Scotland, United Kingdom
 
 Robert Fourer represented AMPL at this event  
 AMPL Optimization Inc. had a table in the exhibit area for this event
 
 _**Session MA-18: Software for Optimization Modeling 1,**_ Monday, July 13, 8:30-10:00  
-Robert Fourer, [_Building AMPL Models into Your Applications_](http://ampl.com/MEETINGS/TALKS/2015_07_Glasgow_MA-18.pdf)
+Robert Fourer, [_Building AMPL Models into Your Applications_](https://ampl.com/MEETINGS/TALKS/2015_07_Glasgow_MA-18.pdf)
 
 _**Session MB-18: Software for Optimization Modeling 2,**_ Monday, July 13, 10:30-12:00  
 Christian Valente, _Developments in the AMPL Ecosystem_
 
 _**Session TA-9: Vendor Presentations 1,**_ Tuesday, July 14, 8:30-10:00  
-Robert Fourer, [_Adding Optimization to Your Applications: Efficient and Effective Strategies Using Algebraic Modeling with AMPL_](http://ampl.com/MEETINGS/TALKS/2015_07_Glasgow_TA-09.pdf)
+Robert Fourer, [_Adding Optimization to Your Applications: Efficient and Effective Strategies Using Algebraic Modeling with AMPL_](https://ampl.com/MEETINGS/TALKS/2015_07_Glasgow_TA-09.pdf)
 
 ___
 
 12-17 July 2015
 
-[22nd International Symposium on Mathematical Programming](http://www.ismp2015.org/)  
+[22nd International Symposium on Mathematical Programming](https://www.ismp2015.org/)  
 Pittsburgh, Pennsylvania, U.S.A.
 
 David Gay and Victor Zverovich represented AMPL at this event  
@@ -615,7 +615,7 @@ ___
 
 14-17 June 2015
 
-[CORS/INFORMS International Conference](http://meetings.informs.org/montreal2015/)  
+[CORS/INFORMS International Conference](https://meetings.informs.org/montreal2015/)  
 Montreal, Canada
 
 Robert Fourer represented AMPL at this event  
@@ -638,7 +638,7 @@ ___
 
 18-22 May 2015
 
-[CPAIOR](http://cpaior2015.uconn.edu/): _12th International Conference on Integration of Artificial Intelligence and Operations Research Techniques in Constraint Programming_  
+[CPAIOR](https://cpaior2015.uconn.edu/): _12th International Conference on Integration of Artificial Intelligence and Operations Research Techniques in Constraint Programming_  
 Barcelona, Spain
 
 AMPL sponsorship of this event
@@ -647,64 +647,64 @@ ___
 
 12-14 April 2015
 
-[INFORMS Conference on Business Analytics & Operations Research](http://meetings2.informs.org/wordpress/analytics2015/)  
+[INFORMS Conference on Business Analytics & Operations Research](https://meetings2.informs.org/wordpress/analytics2015/)  
 Huntington Beach, California, U.S.A.
 
 AMPL sponsorship of this event  
 AMPL booth in the exhibit area
 
 _**Track 10: Software Tutorials,**_ Monday, April 13, 15:40-16:35  
-Robert Fourer, Victor Zverovich, [_Building AMPL Models into Your Applications_](http://ampl.com/MEETINGS/TALKS/2015_04_Huntington_Beach_T10.pdf)
+Robert Fourer, Victor Zverovich, [_Building AMPL Models into Your Applications_](https://ampl.com/MEETINGS/TALKS/2015_04_Huntington_Beach_T10.pdf)
 
 ___
 
 11-13 January 2015
 
-[14th INFORMS Computing Society Conference](http://go.vcu.edu/ics2015/)  
+[14th INFORMS Computing Society Conference](https://go.vcu.edu/ics2015/)  
 Richmond, Virginia, U.S.A.
 
 AMPL sponsorship of this event
 
 _**Session 1E: Advances in Algebraic Modeling Systems,**_ Sunday, January 11, 8:30-10:00:  
-Robert Fourer, [_Alternatives for Programming in Conjunction with an Algebraic Modeling Language for Optimization_](http://ampl.com/MEETINGS/TALKS/2015_01_Richmond_2E.1.pdf)  
-Victor Zverovich, [_Automatic Reformulation of Second-Order Cone Programming Problems_](http://ampl.com/MEETINGS/TALKS/2015_01_Richmond_2E.2.pdf)
+Robert Fourer, [_Alternatives for Programming in Conjunction with an Algebraic Modeling Language for Optimization_](https://ampl.com/MEETINGS/TALKS/2015_01_Richmond_2E.1.pdf)  
+Victor Zverovich, [_Automatic Reformulation of Second-Order Cone Programming Problems_](https://ampl.com/MEETINGS/TALKS/2015_01_Richmond_2E.2.pdf)
 
 ___
 
 9-12 November 2014
 
-[INFORMS Annual Meeting](http://meetings.informs.org/sanfrancisco2014/)  
+[INFORMS Annual Meeting](https://meetings.informs.org/sanfrancisco2014/)  
 San Francisco, California, U.S.A.
 
 AMPL booth in the exhibit area
 
 _**Session SC56: Software Demonstrations,**_ Sunday, November 9, 13:30-15:00:  
-Robert Fourer, Victor Zverovich, [_Building AMPL Models into Your Applications_](http://ampl.com/MEETINGS/TALKS/2014_11_San_Francisco_SC56.1.pdf)
+Robert Fourer, Victor Zverovich, [_Building AMPL Models into Your Applications_](https://ampl.com/MEETINGS/TALKS/2014_11_San_Francisco_SC56.1.pdf)
 
 _**Session MB08: Celebrating the Contributions of George Dantzig,**_ Monday, November 10, 11:00-12:30:  
-Robert Fourer, [_The Origins of a Practical Simplex Method_](http://ampl.com/MEETINGS/TALKS/2014_11_San_Francisco_MB08.2.pdf)
+Robert Fourer, [_The Origins of a Practical Simplex Method_](https://ampl.com/MEETINGS/TALKS/2014_11_San_Francisco_MB08.2.pdf)
 
 _**Session MC46: Advances in MIP Modeling Systems,**_ Monday, November 10, 13:30-15:00:  
-Robert Fourer, David M. Gay, Victor Zverovich, [_Conveying Logical Conditions to MIP Solvers through an Algebraic Modeling Language_](http://ampl.com/MEETINGS/TALKS/2014_11_San_Francisco_MC46.4.pdf)
+Robert Fourer, David M. Gay, Victor Zverovich, [_Conveying Logical Conditions to MIP Solvers through an Algebraic Modeling Language_](https://ampl.com/MEETINGS/TALKS/2014_11_San_Francisco_MC46.4.pdf)
 
 ___
 
 2-5 September 2014
 
-[OR2014](http://www.or2014.de/)  
+[OR2014](https://www.or2014.de/)  
 Aachen, Germany
 
 AMPL sponsorship of this event  
 AMPL booth in the exhibit area
 
 _**Session TA-21: Optimization Modeling II,**_ Thursday, September 4, 8:15-9:45:  
-Robert Fourer, [_Alternatives for Programming in Conjunction with an Algebraic Modeling Language for Optimization_](http://ampl.com/MEETINGS/TALKS/2014_09_Aachen_TA21.2.pdf)
+Robert Fourer, [_Alternatives for Programming in Conjunction with an Algebraic Modeling Language for Optimization_](https://ampl.com/MEETINGS/TALKS/2014_09_Aachen_TA21.2.pdf)
 
 ___
 
 21-24 July 2014
 
-[11th Mixed Integer Programming Workshop](http://mip2014.engineering.osu.edu/)  
+[11th Mixed Integer Programming Workshop](https://mip2014.engineering.osu.edu/)  
 Columbus, Ohio, U.S.A.
 
 AMPL sponsorship of this event
@@ -713,7 +713,7 @@ ___
 
 13-18 July 2014
 
-[IFORS 2014: 20th Conference of the International Federation of Operational Research Societies](http://www.ifors2014.org/)  
+[IFORS 2014: 20th Conference of the International Federation of Operational Research Societies](https://www.ifors2014.org/)  
 Barcelona, Spain
 
 AMPL booth in the exhibit area
@@ -722,7 +722,7 @@ ___
 
 19-22 May 2014
 
-[SIAM Conference on Optimization](http://www.siam.org/meetings/op14/)  
+[SIAM Conference on Optimization](https://www.siam.org/meetings/op14/)  
 San Diego, California, U.S.A.
 
 AMPL sponsorship of this event  
@@ -732,7 +732,7 @@ ___
 
 9-11 April 2014
 
-[APMOD 2014: International Conference on Applied Mathematical Optimization and Modelling](http://www.apmod2014.org/)  
+[APMOD 2014: International Conference on Applied Mathematical Optimization and Modelling](https://www.apmod2014.org/)  
 Coventry, U.K.
 
 AMPL sponsorship of this event
@@ -743,31 +743,31 @@ ___
 
 30 March-1 April 2014
 
-[2014 INFORMS Conference on Business Analytics & Operations Research](http://meetings2.informs.org/analytics2014/)  
+[2014 INFORMS Conference on Business Analytics & Operations Research](https://meetings2.informs.org/analytics2014/)  
 Boston, Massachusetts, U.S.A.
 
 AMPL booth in the exhibit area
 
 _**Session MD11: Software Tutorials,**_ Monday, March 31, 13:50-14:40  
-Robert Fourer, [_New AMPL Interfaces for Enhanced Development and Deployment of Optimization Models_](http://ampl.com/MEETINGS/TALKS/2014_03_Boston_Track11.pdf)
+Robert Fourer, [_New AMPL Interfaces for Enhanced Development and Deployment of Optimization Models_](https://ampl.com/MEETINGS/TALKS/2014_03_Boston_Track11.pdf)
 
 ___
 
 6-8 March 2014
 
-[6th INFORMS Optimization Society Conference](http://www.caam.rice.edu/~ios2014/)  
+[6th INFORMS Optimization Society Conference](https://www.caam.rice.edu/~ios2014/)  
 Houston, Texas, U.S.A.
 
 AMPL sponsorship of this event  
 AMPL table in the exhibit area
 
 _**Session TA-01: Large-Scale Problems,**_ Thursday, March 6, 9:00-10:30  
-Robert Fourer, [_Strategies for “Not Linear” Optimization_](http://ampl.com/MEETINGS/TALKS/2014_03_Houston_TA-01.pdf)
+Robert Fourer, [_Strategies for “Not Linear” Optimization_](https://ampl.com/MEETINGS/TALKS/2014_03_Houston_TA-01.pdf)
 
 ___
 
 ## _6-9 October 2013_  
-[**Informs Annual Meeting**](http://meetings.informs.org/minneapolis2013/), Minneapolis, Minnesota, U.S.A.
+[**Informs Annual Meeting**](https://meetings.informs.org/minneapolis2013/), Minneapolis, Minnesota, U.S.A.
 
 _**AMPL booth in the exhibit area**_
 
@@ -779,24 +779,24 @@ _**Session MC29: Software Demonstrations,**_ Monday, October 7, 13:30-15:00
 _**Session TD08: Constraint Programming III,**_ Tuesday, October 8, 16:30-18:00
 
 -   Victor Zverovich,  
-    **[New Features of the AMPL Constraint Programming Interfaces](http://zverovich.net/slides/2013-10-08-informs/new-features-of-ampl-cp-interfaces.html)**
+    **[New Features of the AMPL Constraint Programming Interfaces](https://zverovich.net/slides/2013-10-08-informs/new-features-of-ampl-cp-interfaces.html)**
 
 ___
 
 ## _16-20 September 2013_  
-[**CP 2013: 19th International Conference on Principles and Practice of Constraint Programming**](http://cp2013.a4cp.org/), Uppsala, Sweden
+[**CP 2013: 19th International Conference on Principles and Practice of Constraint Programming**](https://cp2013.a4cp.org/), Uppsala, Sweden
 
 _**AMPL sponsorship of this event**_
 
 _**Workshop on CP Solvers: Modeling, Applications, Integration, and Standardization,**_ Monday, September 16, 15:00-15:25
 
 -   Victor Zverovich,  
-    **[Constraint Programming in AMPL](http://zverovich.net/slides/2013-09-16-cpsolvers/constraint-programming-in-ampl.html)**
+    **[Constraint Programming in AMPL](https://zverovich.net/slides/2013-09-16-cpsolvers/constraint-programming-in-ampl.html)**
 
 ___
 
 ## _3-6 September 2013_  
-[**OR 2013: International Conference of the German and Dutch OR Societies**](http://www.or2013.org/), Rotterdam, The Netherlands
+[**OR 2013: International Conference of the German and Dutch OR Societies**](https://www.or2013.org/), Rotterdam, The Netherlands
 
 _**AMPL booth in the exhibit area**_
 
@@ -805,7 +805,7 @@ _**AMPL sponsorship of this event**_
 ___
 
 ## _29 July – 1 August 2013_  
-[**4th International Conference on Continuous Optimization**](http://eventos.fct.unl.pt/iccopt2013/), Caparica, Portugal
+[**4th International Conference on Continuous Optimization**](https://eventos.fct.unl.pt/iccopt2013/), Caparica, Portugal
 
 _**Session Thu.A.23: Extending the Power and Expressiveness of Optimization  
 Modeling Languages,**_ Thursday, August 1, 9:00-10:30
@@ -816,7 +816,7 @@ Modeling Languages,**_ Thursday, August 1, 9:00-10:30
 ___
 
 ## _8-12 July 2013_  
-[**13th International Conference on Stochastic Programming**](http://dinamico2.unibg.it/icsp2013/), Bergamo, Italy
+[**13th International Conference on Stochastic Programming**](https://dinamico2.unibg.it/icsp2013/), Bergamo, Italy
 
 _**Solvers for Stochastic Optimization,**_ Wednesday, July 10, 10:45-12:50
 
@@ -831,7 +831,7 @@ _**Computational SP Including Risk Management and Energy Applications,**_ Thursd
 ___
 
 ## _1-4 July 2013_  
-[**EURO-INFORMS Joint International Meeting**](http://euro2013.org/), Rome, Italy
+[**EURO-INFORMS Joint International Meeting**](https://euro2013.org/), Rome, Italy
 
 _**AMPL booth in the exhibit area**_
 
@@ -848,17 +848,17 @@ _**Session WB9: Sponsor Presentations,**_ Wednesday, July 3, 10:30-12:00
 ___
 
 ## _18-22 May 2013_  
-[**CPAIOR 2013: 10th International Conference on Integration of Artificial Intelligence and Operations Research Techniques in Constraint Programming**](http://www.cis.cornell.edu/ics/cpaior2013/), Yorktown Heights, New York, U.S.A.
+[**CPAIOR 2013: 10th International Conference on Integration of Artificial Intelligence and Operations Research Techniques in Constraint Programming**](https://www.cis.cornell.edu/ics/cpaior2013/), Yorktown Heights, New York, U.S.A.
 
 _**Late Breaking Abstracts,**_ Wednesday, May 22, 16:00-17:00
 
 -   Victor Zverovich,  
-    **[Connecting Constraint Programming Solvers to AMPL](http://zverovich.net/slides/2013-05-22-cpaior/connecting-cp-solvers-to-ampl.html)**
+    **[Connecting Constraint Programming Solvers to AMPL](https://zverovich.net/slides/2013-05-22-cpaior/connecting-cp-solvers-to-ampl.html)**
 
 ___
 
 ## _7-9 April 2013_  
-[**INFORMS Conference on Business Analytics & Operations Research**](http://meetings.informs.org/Analytics2013/), San Antonio, Texas, U.S.A.
+[**INFORMS Conference on Business Analytics & Operations Research**](https://meetings.informs.org/Analytics2013/), San Antonio, Texas, U.S.A.
 
 _**AMPL booth in the exhibit area**_
 
@@ -871,7 +871,7 @@ ___
 
 6-8 January 2013
 
-**[13th INFORMS Computing Society Conference](http://www.informs.org/Community/Conferences/ICS2013)**
+**[13th INFORMS Computing Society Conference](https://www.informs.org/Community/Conferences/ICS2013)**
 
 Santa Fe, New Mexico, U.S.A.
 
@@ -885,7 +885,7 @@ _Bob Fourer of AMPL Optimization is the stream chair for
 _**Optimization Modeling: Alternative Interfaces,**_ Sunday, January 6, 16:30-18:00
 
 -   Session SC3: Victor Zverovich and Robert Fourer,  
-    **[The AMPL Interface to Constraint Programming Solvers](http://zverovich.net/slides/2013-01-06-ics/ampl-interface-to-constraint-programming-solvers.html)**
+    **[The AMPL Interface to Constraint Programming Solvers](https://zverovich.net/slides/2013-01-06-ics/ampl-interface-to-constraint-programming-solvers.html)**
 
 _**Optimization Modeling: Algebraic Languages,**_ Tuesday, January 8, 16:30-18:00
 
@@ -920,7 +920,7 @@ ___
 
 14-17 October 2012
 
-**[INFORMS Annual Meeting](http://meetings2.informs.org/phoenix2012/)**
+**[INFORMS Annual Meeting](https://meetings2.informs.org/phoenix2012/)**
 
 Phoenix, Arizona, U.S.A.
 
@@ -942,7 +942,7 @@ Phoenix, Arizona, U.S.A.
 ___
 
 ## _4-7 September 2012_  
-[**OR 2012: International Annual Conference of the German Operations Research Society**](http://www.or2012.de/), Hannover, Germany
+[**OR 2012: International Annual Conference of the German Operations Research Society**](https://www.or2012.de/), Hannover, Germany
 
 _**AMPL booth in the exhibit area**_
 
@@ -960,7 +960,7 @@ ___
 ___
 
 ## _19-24 August 2012_  
-[**21st International Symposium on Mathematical Programming**](http://ismp2012.mathopt.org/), Berlin, Germany
+[**21st International Symposium on Mathematical Programming**](https://ismp2012.mathopt.org/), Berlin, Germany
 
 _**AMPL booth in the exhibit area**_
 
@@ -974,7 +974,7 @@ _**Modeling Languages and Software I,**_ Thursday, August 23, 10:30-12:00
 ___
 
 ## _23-27 July 2012_  
-[**6th International Conference on Automatic Differentiation**](http://www.autodiff.org/ad12/), Fort Collins, Colorado, U.S.A.
+[**6th International Conference on Automatic Differentiation**](https://www.autodiff.org/ad12/), Fort Collins, Colorado, U.S.A.
 
 _**Poster Presentation 5**_
 
@@ -984,7 +984,7 @@ _**Poster Presentation 5**_
 ___
 
 ## _8-11 July 2012_  
-[**25th European Conference on Operational Research**](http://www.euro-2012.lt/), Vilnius, Lithuania
+[**25th European Conference on Operational Research**](https://www.euro-2012.lt/), Vilnius, Lithuania
 
 _**AMPL booth in the exhibit area**_
 
@@ -996,7 +996,7 @@ _**Session WD-33: Optimization Modeling II,**_ Wednesday, July 11, 14:30-16:00
 ___
 
 ## _24-27 June 2012_  
-[**INFORMS International Conference**](http://meetings.informs.org/beijing2012/), Beijing, China
+[**INFORMS International Conference**](https://meetings.informs.org/beijing2012/), Beijing, China
 
 _**AMPL booth in the exhibit area**_
 
@@ -1019,7 +1019,7 @@ ___
 
 ## Gurobi 5.0 for AMPL Now Available
 
-**_15 May 2012:_** [Gurobi](http://www.gurobi.com) version 5.0 for linear, mixed integer, and quadratic programming is now available for purchase with an AMPL interface, both directly through us and from Gurobi Optimization. This version adds support for quadratic constraints and a variety of [performance enhancements](http://www.gurobi.com/products/gurobi-optimizer/what's-new-in-v5.0). Accounts that are up-to-date on Gurobi for AMPL maintenance and support service can download this major update immediately; other should contact <licensing@ampl.com> for information.
+**_15 May 2012:_** [Gurobi](https://www.gurobi.com) version 5.0 for linear, mixed integer, and quadratic programming is now available for purchase with an AMPL interface, both directly through us and from Gurobi Optimization. This version adds support for quadratic constraints and a variety of [performance enhancements](https://www.gurobi.com/products/gurobi-optimizer/what's-new-in-v5.0). Accounts that are up-to-date on Gurobi for AMPL maintenance and support service can download this major update immediately; other should contact <licensing@ampl.com> for information.
 
 ## CPLEX 12.4 for AMPL Now Available
 
@@ -1028,7 +1028,7 @@ ___
 ___
 
 ## _April 15-17, 2012_  
-[**INFORMS Conference on Business Analytics & Operations Research**](http://meetings.informs.org/Analytics2012/), Huntington Beach, California, U.S.A.
+[**INFORMS Conference on Business Analytics & Operations Research**](https://meetings.informs.org/Analytics2012/), Huntington Beach, California, U.S.A.
 
 _**AMPL booth in the exhibit area**_
 
@@ -1040,14 +1040,14 @@ _**Track 22: Software Tutorials,**_ Tuesday, April 17, 10:30-11:20
 ___
 
 ## _March 28-30, 2012_  
-[**APMOD 2012**](http://www.apmod.org/conference/): International Conference on Applied Mathematical Optimization and Modelling, Paderborn, Germany
+[**APMOD 2012**](https://www.apmod.org/conference/): International Conference on Applied Mathematical Optimization and Modelling, Paderborn, Germany
 
 _**AMPL sponsorship of this event**_
 
 ___
 
 ## _February 24-26, 2012_  
-[**4th INFORMS Optimization Society Conference**](http://www.bus.miami.edu/ios/), Coral Gables, Florida
+[**4th INFORMS Optimization Society Conference**](https://www.bus.miami.edu/ios/), Coral Gables, Florida
 
 _**AMPL sponsorship of this event**_
 
@@ -1101,7 +1101,7 @@ _**Session SB03: Optimization Software,**_ Sunday, November 13, 11:00-12:30
 ___
 
 ## _6-8 September 2011_  
-[OR53](http://www.orsoc.org.uk/orshop/(rfz4xdvpm2zo3345utx2t3bl)/orcontent.aspx?inc=or53_main.htm): Annual Conference of the OR Society, Nottingham, United Kingdom
+[OR53](https://www.orsoc.org.uk/orshop/(rfz4xdvpm2zo3345utx2t3bl)/orcontent.aspx?inc=or53_main.htm): Annual Conference of the OR Society, Nottingham, United Kingdom
 
 _**Track 11: Optimisation Keynote,**_ Thursday, Sept 8, 14:00-15:00
 
@@ -1121,7 +1121,7 @@ _**Invited presentation,**_ Tuesday, September 6, 14:45-15:30
 ___
 
 ## _30 August – 2 September 2011_  
-[OR 2011](http://www.or2011.ch/): International Conference on Operations Research, sponsored by the German, Austrian, and Swiss OR societies, Zurich, Switzerland
+[OR 2011](https://www.or2011.ch/): International Conference on Operations Research, sponsored by the German, Austrian, and Swiss OR societies, Zurich, Switzerland
 
 _**AMPL booth in the exhibit area**_
 
@@ -1133,7 +1133,7 @@ _**Session TC-22: Advances in Modeling Languages,**_ Thursday, Sept 1, 11:30-13:
 ___
 
 ## _10-15 July 2011_  
-[IFORS 2011](http://www.ifors2011.org/): 19th Triennial Conference of the International Federation of Operational Research Societies, Melbourne, Australia
+[IFORS 2011](https://www.ifors2011.org/): 19th Triennial Conference of the International Federation of Operational Research Societies, Melbourne, Australia
 
 _**AMPL booth in the exhibit area**_
 
@@ -1151,7 +1151,7 @@ ___
 ___
 
 ## _23-27 May 2011_  
-[CPAIOR 2011](http://cpaior2011.zib.de/site/make.php?event=cpaior2011): 8th International Conference on Integration of Artificial Intelligence and Operations Research Techniques in Constraint Programming for Combinatorial Optimization, Berlin, Germany
+[CPAIOR 2011](https://cpaior2011.zib.de/site/make.php?event=cpaior2011): 8th International Conference on Integration of Artificial Intelligence and Operations Research Techniques in Constraint Programming for Combinatorial Optimization, Berlin, Germany
 
 _**AMPL sponsorship of this event**_
 
@@ -1160,7 +1160,7 @@ _Bob Fourer of AMPL Optimization will be attending._
 ___
 
 ## _16-19 May 2011_  
-[SIAM Conference on Optimization](http://www.siam.org/meetings/op11/), Darmstadt, Germany
+[SIAM Conference on Optimization](https://www.siam.org/meetings/op11/), Darmstadt, Germany
 
 _**AMPL sponsorship and booth in the exhibit area**_
 
@@ -1171,12 +1171,12 @@ ___
 
 ## Gurobi 4.5 for AMPL Now Available
 
-**_15 April 2011:_** [Gurobi](http://www.gurobi.com) version 4.5 for linear, mixed integer, and quadratic programming is now available for purchase with an AMPL interface, both directly through us and from Gurobi Optimization. Those who have purchased earlier versions from us can also arrange to download this update; contact <licensing@ampl.com> if you need to set up a download account.
+**_15 April 2011:_** [Gurobi](https://www.gurobi.com) version 4.5 for linear, mixed integer, and quadratic programming is now available for purchase with an AMPL interface, both directly through us and from Gurobi Optimization. Those who have purchased earlier versions from us can also arrange to download this update; contact <licensing@ampl.com> if you need to set up a download account.
 
 ___
 
 ## _10-12 April 2011_  
-[INFORMS Conference on Business Analytics and Operations Research](http://meetings.informs.org/Practice2011), Chicago, Illinois, U.S.A.
+[INFORMS Conference on Business Analytics and Operations Research](https://meetings.informs.org/Practice2011), Chicago, Illinois, U.S.A.
 
 _**AMPL booth in the exhibit area**_
 
@@ -1200,7 +1200,7 @@ _Bob Fourer of AMPL Optimization will be attending._
 ___
 
 ## _4-7 January 2011_  
-[CMIC-2011](http://math.science.cmu.ac.th/CMIC2011/): Chiang Mai University Intl Conference, Chiang Mai, Thailand
+[CMIC-2011](https://math.science.cmu.ac.th/CMIC2011/): Chiang Mai University Intl Conference, Chiang Mai, Thailand
 
 _**Workshop,**_ Tuesday-Wednesday, January 4-5
 
@@ -1234,7 +1234,7 @@ _**Developer presentation,**_ Friday, November 19, 09:15-10:15
 ___
 
 ## _7-10 November 2010_  
-[INFORMS Annual Meeting](http://meetings2.informs.org/austin2010/),  
+[INFORMS Annual Meeting](https://meetings2.informs.org/austin2010/),  
 Austin, Texas, U.S.A.
 
 _**AMPL booth in the exhibit area**_
@@ -1273,7 +1273,7 @@ ___
 
 ## KNITRO 7.0 for AMPL Now Available
 
-**_13 October 2010:_** [KNITRO](http://www.ziena.com) version 7.0 for nonlinear optimization in continuous and integer variables is now available for purchase with an AMPL interface, both directly through us and from Ziena Optimization. Those who have purchased earlier versions from us can also arrange to download this update; contact <licensing@ampl.com> if you need to set up a download account.
+**_13 October 2010:_** [KNITRO](https://www.ziena.com) version 7.0 for nonlinear optimization in continuous and integer variables is now available for purchase with an AMPL interface, both directly through us and from Ziena Optimization. Those who have purchased earlier versions from us can also arrange to download this update; contact <licensing@ampl.com> if you need to set up a download account.
 
 ___
 
@@ -1291,9 +1291,9 @@ ___
 
 **_20 September 2010:_** The AMPL-enabled versions of two popular mixed-integer optimizers are now available free _for teaching and research at degree-granting academic institutions. These are full-featured versions that impose no arbitrary limits on problem size._
 
-**Gurobi** may be included as a no-cost item on any academic license order. Those who already have AMPL academic licenses can contact us to arrange to add Gurobi, or can download solver software and academic licenses free of charge from the Gurobi website; see our [Gurobi download instructions](http://www.ampl.com/DOWNLOADS/details.html#Gurobi) for details.
+**Gurobi** may be included as a no-cost item on any academic license order. Those who already have AMPL academic licenses can contact us to arrange to add Gurobi, or can download solver software and academic licenses free of charge from the Gurobi website; see our [Gurobi download instructions](https://ampl.com/DOWNLOADS/details.html#Gurobi) for details.
 
-**CPLEX** for AMPL can be obtained without charge through the IBM Academic Initiative; see our [CPLEX download instructions](http://www.ampl.com/DOWNLOADS/details.html#CPLEX) for details.
+**CPLEX** for AMPL can be obtained without charge through the IBM Academic Initiative; see our [CPLEX download instructions](https://ampl.com/DOWNLOADS/details.html#CPLEX) for details.
 
 ___
 
@@ -1304,7 +1304,7 @@ ___
 ___
 
 ## _1-3 September 2010_  
-[OR 2010](http://or2010.informatik.unibw-muenchen.de/): German OR Society Annual International Conference, Munich, Germany
+[OR 2010](https://or2010.informatik.unibw-muenchen.de/): German OR Society Annual International Conference, Munich, Germany
 
 _**Semi-plenary presentation,**_ Wednesday, September 1, 13:30-14:15
 
@@ -1314,7 +1314,7 @@ _**Semi-plenary presentation,**_ Wednesday, September 1, 13:30-14:15
 ___
 
 ## _16-20 August 2010_  
-[SP XXI](http://icsp12.dal.ca/): 12th International Conference on Stochastic Programming,  
+[SP XXI](https://icsp12.dal.ca/): 12th International Conference on Stochastic Programming,  
 Halifax, Nova Scotia, Canada
 
 _**AMPL table in the exhibit area**_
@@ -1334,7 +1334,7 @@ Thursday, August 19, 13:20-15:00
 ___
 
 ## _11-14 July 2010_  
-[EURO XXIV](http://www.euro2010lisbon.org/): 24th European Conference on Operational Research,  
+[EURO XXIV](https://www.euro2010lisbon.org/): 24th European Conference on Operational Research,  
 Lisbon, Portugal
 
 _**AMPL booth in the exhibit area**_
@@ -1359,7 +1359,7 @@ _**Session WD35: Mixed-Integer Nonlinear Programming  Problem-Specific Approache
 ___
 
 ## _6-9 June 2010_  
-[ALIO-INFORMS Joint International Meeting](http://meetings.informs.org/BuenosAires2010), Buenos Aires, Argentina
+[ALIO-INFORMS Joint International Meeting](https://meetings.informs.org/BuenosAires2010), Buenos Aires, Argentina
 
 _**AMPL table in the exhibit area**_
 
@@ -1376,7 +1376,7 @@ _**Session WC08: OR in Practice III  Modeling,**_ Wednesday, June 9, 13:20-14:50
 ___
 
 ## _18-20 April 2010_  
-[INFORMS Conference on OR/MS Practice](http://meetings.informs.org/Practice2010), Orlando, Florida, U.S.A.
+[INFORMS Conference on OR/MS Practice](https://meetings.informs.org/Practice2010), Orlando, Florida, U.S.A.
 
 _**AMPL booth in the exhibit area**_
 

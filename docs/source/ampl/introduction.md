@@ -55,7 +55,7 @@ of models as you can see in the following example:
   ```
   Single-letter names for illustration purposes only! With AMPL you can use meaningful names for better model maintainability!
 
-To get started with AMPL, you will need to learn the syntax of the language. You can find a reference manual and examples on the AMPL website ([https://www.ampl.com/](https://www.ampl.com/)) or in the AMPL book ([https://ampl.com/learn/ampl-book/](https://ampl.com/learn/ampl-book/)). There are also online resources and courses available to help you learn AMPL.
+To get started with AMPL, you will need to learn the syntax of the language. You can find a reference manual and examples on the AMPL website ([https://ampl.com/](https://ampl.com/)) or in the AMPL book ([https://ampl.com/learn/ampl-book/](https://ampl.com/learn/ampl-book/)). There are also online resources and courses available to help you learn AMPL.
 
 ## AMPL Entities
 
