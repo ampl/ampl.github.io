@@ -1,5 +1,20 @@
 # CONOPT Changelog
 
+## 20250312
+- The default distribution of CONOPT is now this package, based on CONOPT 4. To
+  obtain the vestigial CONOPT package, contact AMPL support.
+- Updated libs to CONOPT 4.36
+- MacOS version is now distributed as a universal binary
+
+
+## 20240710
+- Updated libs to CONOPT 4.35
+
+
+## 20240418
+- CONOPT 4 release
+
+
 ## 20240201
 - Relinked with ASL2 20240106 which fixes a bug with constant terms that apparently involve variables, such as (x-x)^2,
 

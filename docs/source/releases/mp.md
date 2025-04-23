@@ -1,6 +1,9 @@
 # AMPL MP Library Changelog
 
-## 20250416
+## unreleased
+- Option alg:sens return synonym suffixes
+  .down/.up/.current for objective coefficients
+  and .down/.up for right-hand sides.
 - Improved parsing speed of large sums of quadratic
   and polynomial expressions.
   - Setting option cvt:qp2passes=0 switches to

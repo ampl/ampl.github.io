@@ -39,7 +39,8 @@ outlev       output level:
 		0 no chatter.
 		1 = options but no iteration log on stdout (default).
 		2 = CONOPT "SCREEN" output on stdout.
-		3 = log line every logfreq iterations
+		3 = log line every logfreq iterations.
+		4 = also show preprocessing information.
 superbasics  limit on number of superbasic variables (default >= 500)
 timing       report I/O and solution times: 1 = stdout, 2 = stderr, 3 = both
 version      report version
@@ -48,9 +49,5 @@ wantsol      solution report without -AMPL: sum of
 		2 ==> print primal variable values
 		4 ==> print dual variable values
 		8 ==> do not print solution message
-workfactor   if > 1, multiply memory allocation by this much
-workmeg      megabytes of memory CONOPT should allocate:
-		0 (default) ==> CONOPT estimates the memory it needs
-		> 0 ==> that many megabytes.
 ```
 

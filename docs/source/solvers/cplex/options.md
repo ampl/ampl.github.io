@@ -18,7 +18,7 @@ option "cplex_options". For example:
 
    ampl: option cplex_options 'mipgap=1e-6';
 
- Options:
+'' Options:
 
 acc:_all
       Solver acceptance level for all constraints and expressions. Value
@@ -179,19 +179,15 @@ alg:conflictalg (conflictalg)
       Infeasible Set of linear constraints(e.g., ignoring quadratic
       constraints).
 
-alg:conflictdisplay (conflictdisplay)
-      What to report when the conflict finder is working:
-
-      0 - Nothing
-      1 - Summary (default)
-      2 - Detailed
-
 alg:droptol (droptol)
       If droptol > 0 is specified, linear constraint and objective
       coefficients less than droptol in magnitude are treated as zero.
 
-alg:dual (dual, dualopt)
+alg:dual (dualopt)
       Solve (MIP root) LPs by dual simplex method.
+
+alg:dualproblem (dual)
+      Compatibility option with the legacy cplexasl driver. No effect.
 
 alg:feasrelax (feasrelax)
       Whether to modify the problem into a feasibility relaxation problem:
@@ -226,7 +222,7 @@ alg:lbpen (lbpen)
 
 alg:method (method, lpmethod, simplex, mipstartalg)
       Which algorithm to use for non-MIP problems or for the root node of MIP
-      problems, unless primal/dual/barrier/network/sifting flags are
+      problems, unless primalopt/dualopt/barrier/network/sifting flags are
       specified:
 
       -1 - Automatic (default)
@@ -238,15 +234,56 @@ alg:method (method, lpmethod, simplex, mipstartalg)
       5  - Sifting
 
       For MIQP problems (quadratic objective, linear constraints), setting 5
-      is treated as 0 and 6 as 4. For MIQCP problems(quadratic objective &
+      is treated as 0 and 6 as 4. For MIQCP problems (quadratic objective &
       constraints), all settings are treated as 4.
 
-alg:network (network, netopt)
-      Solve (substructure of) (MIP node) LPs by network simplex method. For
-      best recognition of network (sub)structures, switch off CPLEX presolve.
+alg:netfeasibility (netfeasibility, netfeastol)
+      Feasibility tolerance for network primal optimization. Can be any number
+      from 1e-11 to 1e-1; default: 1e-6.
+
+alg:netfind (netfind, netfinder)
+      Level of network extraction for network simplex optimization:
+
+      0 - Extract pure network only
+      1 - (Default) try reflection scaling
+      2 - Try general scaling
+
+alg:netopt (netopt)
+      Whether to use network simplex method for non-MIP problems or for the
+      root node of MIP problems, unless
+      primalopt/dualopt/barrier/network/sifting flags or alg:method are
+      specified:
+
+      0 - Never invoke the network optimizer
+      1 - Compatibility value; same as 3
+      2 - Compatibility value; same as 3
+      3 - (Default) invoke the network optimizer by setting CPLEX'
+          LP/QPMethod to CPX_ALG_NET telling CPLEX to search for network
+          (sub)structures in the model. CPLEX presolve might influence
+          automatic recognition of network structures
+
+alg:netoptimality (netoptimality)
+      Specifies the optimality tolerance for network optimization; that is,
+      the amount a reduced cost may violate the criterion for an optimal
+      solution. Can be any number from 1e-11 to 1e-1; default: 1e-6.
+
+alg:netpricing (netpricing)
+      Pricing algorithm for network simplex optimization:
+
+      0 - (Default) automatic
+      1 - Partial pricing
+      2 - Multiple partial pricing
+      3 - Multiple partial pricing with sorting
+
+alg:network (network)
+      Solve (substructure of) (MIP node's) LP/QP by network simplex method.
+      Synonym for alg:netopt=3.
 
 alg:primal (primalopt)
       Solve (MIP root) LPs by primal simplex method.
+
+alg:primalproblem (primal)
+      Compatibility option with the legacy cplexasl driver. No effect.
 
 alg:rays (rays)
       Whether to return suffix .unbdd (unbounded ray) if the objective is
@@ -340,13 +377,6 @@ bar:dense (bar:densecol, dense, densecol)
       If positive, minimum nonzeros in a column for the barrier algorithm to
       consider the column dense. If 0 (default), this tolerance is selected
       automatically.
-
-bar:display (bardisplay)
-      Specifies how much the barrier algorithm chatters:
-
-      0 - No output
-      1 - Normal setup and iteration information (default)
-      2 - Diagnostic information
 
 bar:growth (bargrowth, growth)
       Tolerance for detecting unbounded faces in the barrier algorithm: higher
@@ -512,6 +542,12 @@ cvt:mip:eps (cvt:cmp:eps, cmp:eps)
       comparisons: b==1 <==> x<=5 means that with b==0, x>=5+eps. Default:
       1e-4.
 
+cvt:multoutcard (multoutcard)
+      Up to which (estimated) QP matrix cardinality should a product of 2
+      linear expressions be multiplied out. Default 1e9.
+
+      Can speed up model input, but prone to numerical issues.
+
 cvt:names (names, modelnames)
       Whether to read or generate variable / constraint / objective names:
 
@@ -561,15 +597,18 @@ cvt:prod (cvt:pre:prod)
 
       Bits 2 or 4 imply bit 1.
 
+cvt:qp2passes (cvt:qp2pass, qp2passes, qp2pass)
+      Parse sums of QP expressions in 2 passes. Usually faster. Default 1.
+
 cvt:quadcon (passquadcon)
       Convenience option. Set to 0 to disable quadratic constraints. Synonym
       for acc:quad..=0. Currently this disables out-multiplication of
       quadratic terms, then they are linearized.
 
 cvt:quadobj (passquadobj)
-      0/1*: Pass quadratic objective terms to the solver. If the solver
-      accepts quadratic constraints, such a constraint will be created with
-      those, otherwise linearly approximated.
+      0/1*: Pass quadratic objective terms to the solver. When 0, if the
+      solver accepts quadratic constraints, such a constraint will be created
+      with those, otherwise linearly approximated.
 
 cvt:socp (socpmode, socp)
       Second-Order Cone recognition mode:
@@ -621,10 +660,10 @@ lim:dettime (dettimelim)
       Time limit in platform-dependent "ticks".
 
 lim:iter (iterlim, iterlimit, iterations)
-      LP iteration limit (default: 9223372036800000000).
+      LP iteration limit (default: large).
 
-lim:netiterations (netiterations)
-      Limit on network simplex iterations (default: 9223372036800000000).
+lim:netiterations (netiterations, netiter)
+      Limit on network simplex iterations (default: large).
 
 lim:nodes (node, nodelim, nodelimit)
       Maximum MIP nodes to explore (default: 2^31 - 1).
@@ -938,9 +977,7 @@ pre:dependency (dependency)
 pre:dual (predual)
       Whether CPLEX's presolve phase should present the CPLEX solution
       algorithm with the primal(-1) or dual(1) problem or (default = 0) should
-      decidewhich automatically.Specifying "predual=1" often gives better
-      performance than specifying just "dual", but sometimes "dual predual=1"
-      is still better.
+      decide automatically.
 
 pre:node (presolvenode)
       Whether to run presolve at each node of the MIP branch-and-bound:
@@ -1103,6 +1140,10 @@ sol:poolreplace (poolreplace)
       1 - Keep best solutions
       2 - Keep most diverse solutions
 
+sol:report_uncertain (report_uncertain_sol)
+      0/1*: whether to report objective value(s) in solve_message when
+      solve_result is '?' (unknown).
+
 sol:stub (ams_stub, solstub, solutionstub)
       Stub for alternative MIP solutions, written to files with names obtained
       by appending "1.sol", "2.sol", etc., to <solutionstub>. The number of
@@ -1126,6 +1167,13 @@ tech:bardisplay (bardisplay)
       0 - no information (default)
       1 - balanced setup and iteration information
       2 - diagnostic information
+
+tech:conflictdisplay (conflictdisplay)
+      What to report when the conflict finder is working:
+
+      0 - Nothing
+      1 - Summary (default)
+      2 - Detailed
 
 tech:cpumask (cpumask)
       Whether and how to bind threads to cores on systems where this is
@@ -1170,6 +1218,20 @@ tech:mipinterval (mipinterval)
       n > 0 - every n nodes and every incumbent
       n < 0 - new incumbents and less info the more negative n is
 
+tech:modisplay (modisplay, multiobjdisplay)
+      Level of display during multiobjective optimization:
+
+      0 - No output
+      1 - (Default) summary display after each subproblem
+      2 - Summary display after each subproblem, as well as subproblem logs
+
+tech:netdisplay (netdisplay)
+      Decides what CPLEX reports to the screen during network optimization:
+
+      0 - No display
+      1 - Display true objective values (can be non-monotonic)
+      2 - (Default) display penalized objective values
+
 tech:nosolve (nosolve)
       Stop after loading the problem and honoring any "writeprob" or
       "writemipstart" directives.
@@ -1192,7 +1254,7 @@ tech:outlev (outlev)
       "tech:bardisplay".Values:
 
       0 - no output (default)
-      1 - equivalent to "bardisplay"=1, "display"=1, "mipdisplay"=3
+      1 - equivalent to "bardisplay"=1, "display"=1, "mipdisplay"=2
       2 - equivalent to "bardisplay"=2, "display"=2, "mipdisplay"=5
 
 tech:outlev_mp (outlev_mp)

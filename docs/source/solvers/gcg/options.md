@@ -18,7 +18,7 @@ option "gcg_options". For example:
 
    ampl: option gcg_options 'mipgap=1e-6';
 
- Options:
+'' Options:
 
 acc:_all
       Solver acceptance level for all constraints and expressions. Value
@@ -167,6 +167,19 @@ cvt:bigM (cvt:bigm, cvt:mip:bigM, cvt:mip:bigm)
       used by default. Use with care (prefer tight bounds). Should be smaller
       than (1.0 / [integrality tolerance])
 
+cvt:dvelim (dvelim)
+      Eliminate AMPL defined variables by substitution into linear, quadratic,
+      and polynomial expressions:
+
+      0 - Do not eliminate, always instantiate the variables.
+      1 - Eliminate only those used 1x. This can increase model density but
+          greatly simplifies some models.
+      2 - Always substitute where possible, even if the variable needs to be
+          instantiated for use in other places. Can introduce redundancy, but
+          seems best for some models (default.)
+
+      See also AMPL options linelim and substout.
+
 cvt:expcones (expcones)
       0*/1: Recognize exponential cones.
 
@@ -175,6 +188,12 @@ cvt:mip:eps (cvt:cmp:eps, cmp:eps)
       to <, >, and != operators. Also applies to negation of conditional
       comparisons: b==1 <==> x<=5 means that with b==0, x>=5+eps. Default:
       1e-4.
+
+cvt:multoutcard (multoutcard)
+      Up to which (estimated) QP matrix cardinality should a product of 2
+      linear expressions be multiplied out. Default 1e9.
+
+      Can speed up model input, but prone to numerical issues.
 
 cvt:names (names, modelnames)
       Whether to read or generate variable / constraint / objective names:
@@ -199,7 +218,13 @@ cvt:pre:eqbinary
       0/1*: Preprocess reified equality comparison with a binary variable.
 
 cvt:pre:eqresult
-      0/1*: Preprocess reified equality comparison's boolean result bounds.
+      0/1*: Preprocess reified equality comparison's decidable cases.
+
+cvt:pre:ineqresult
+      0/1*: Preprocess reified inequality comparison's decidable cases.
+
+cvt:pre:ineqrhs
+      0/1*: Preprocess reified inequality comparison's right-hand sides.
 
 cvt:pre:unnest
       0/1*: Inline nested expressions, currently Ands/Ors.
@@ -215,10 +240,12 @@ cvt:prod (cvt:pre:prod)
       natively (see acc:and), the conjunction is linearized.
       4 - Logicalize products of >=3 binary terms.
 
-      Default: 1+4. That is, 2-term binary products which are not part of a
-      higher-order binary product, are not logicalized by default.
+      Default: 5.
 
       Bits 2 or 4 imply bit 1.
+
+cvt:qp2passes (cvt:qp2pass, qp2passes, qp2pass)
+      Parse sums of QP expressions in 2 passes. Usually faster. Default 1.
 
 cvt:quadcon (passquadcon)
       Convenience option. Set to 0 to disable quadratic constraints. Synonym
@@ -226,8 +253,9 @@ cvt:quadcon (passquadcon)
       quadratic terms, then they are linearized.
 
 cvt:quadobj (passquadobj)
-      0*/1: Multiply out and pass quadratic objective terms to the solver, vs.
-      linear approximation.
+      0*/1: Pass quadratic objective terms to the solver. When 0, if the
+      solver accepts quadratic constraints, such a constraint will be created
+      with those, otherwise linearly approximated.
 
 cvt:socp (socpmode, socp)
       Second-Order Cone recognition mode:
@@ -810,6 +838,10 @@ sol:count (countsolutions)
       0*/1: Whether to count the number of solutions and return it in the
       ".nsol" problem suffix.
 
+sol:report_uncertain (report_uncertain_sol)
+      0/1*: whether to report objective value(s) in solve_message when
+      solve_result is '?' (unknown).
+
 sol:stub (solstub, solutionstub)
       Stub for solution files. If "solutionstub" is specified, found solutions
       are written to files ("solutionstub & '1' & '.sol'") ... ("solutionstub
@@ -819,7 +851,7 @@ sol:stub (solstub, solutionstub)
 
 tech:debug (debug)
       0*/1: whether to assist testing & debugging, e.g., by outputting
-      auxiliary information.
+      auxiliary information (mostly via suffixes).
 
 tech:exportfile (writeprob, writemodel)
       Specifies the name of a file where to export the model before solving
@@ -845,6 +877,9 @@ tech:outlev (outlev)
 tech:outlev-native (outlev-native)
       0*/1/2/3/4/5: Whether to write GCG log lines (chatter) to stdout and to
       file (native output level of SCIP).
+
+tech:outlev_mp (outlev_mp)
+      0*/1: whether to print MP model information.
 
 tech:timing (timing, tech:report_times, report_times)
       0*/1/2: Whether to print and return timings for the run, all times are
