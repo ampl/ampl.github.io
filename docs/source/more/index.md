@@ -7,8 +7,6 @@
 :maxdepth: 1
 
 new.md
-interviews.md
-videos.md
 reports.md
 news.md
 projects.md
