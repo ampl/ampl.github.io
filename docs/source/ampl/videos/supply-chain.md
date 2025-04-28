@@ -1,5 +1,8 @@
 # Supply Chain Masterclass
 
+Learn how to build a network optimization solver in the free hands-on supply chain masterclass. 
+We start with a production planning solver and build towards a network optimization solver.
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/GgAS2Iw-pvw?si=UKUFHIJCBSvw8VxJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Episode 1
