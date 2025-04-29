@@ -2,7 +2,7 @@ AMPL: Powering Optimization at Scale
 ====================================
 
 AMPL is the most powerful and intuitive platform for developing and deploying complex solutions in mission-critical applications — from managing large electric grids in real time to optimizing global supply chains.
-It connects seamlessly to major :ref:`commercial and open-source solvers <solvers>`, with enhanced interfaces that automatically reformulate models for faster, more robust performance.
+It connects seamlessly to major :ref:`commercial and open-source solvers <solvers>`, with enhanced interfaces that `automatically reformulate models <https://mp.ampl.com/model-guide.html>`_ to ensure correctness, improve robustness, and deliver faster performance.
 
 .. grid:: 1 2 2 2
     :gutter: 1 1 1 2
