@@ -84,7 +84,7 @@ However, some solvers accept integer variables (MINLP), and some target global o
     couenne/index
 
 
-Constraint Programming solvers
+Constraint Programming Solvers
 ------------------------------
 
 .. toctree::

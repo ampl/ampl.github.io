@@ -12,17 +12,16 @@ interviews.md
 supply-chain.md
 ```
 
-Explore these video resources to learn more about AMPL.
+Explore these video resources to deepen your understanding of AMPL:
 
 -   [**Webinars**](webinars.md)  
-    Learn about new AMPL features.
+    Stay up-to-date with new AMPL features through detailed webinar sessions.
 
 -   [**Videos**](videos.md)  
-    Introducing concepts of model-based optimization, and surveying new features in AMPL.
+    Get introduced to key concepts in model-based optimization.
 
 -   [**Interviews**](interviews.md)  
-    Interviews with founders of AMPL.
+    Hear directly from the founders of AMPL in a series of in-depth interviews.
 
 -   [**Supply-Chain Masterclass**](supply-chain.md)  
-    Learn how to build a network optimization solver in the free hands-on supply chain masterclass. 
-    We start with a production planning solver and build towards a network optimization solver. 
+    Join our free hands-on masterclass to learn how to build a network optimization solver. Starting with a production planning model, you'll progressively develop a full network optimization solution

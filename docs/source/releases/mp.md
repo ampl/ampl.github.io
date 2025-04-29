@@ -1,6 +1,6 @@
 # AMPL MP Library Changelog
 
-## unreleased
+## 20250424
 - Option alg:sens return synonym suffixes
   .down/.up/.current for objective coefficients
   and .down/.up for right-hand sides.

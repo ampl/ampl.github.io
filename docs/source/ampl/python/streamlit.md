@@ -1,4 +1,4 @@
-# AMPL on Streamlit
+# AMPL on Streamlit Cloud
 
 Since AMPL and all Solvers are now available as [Python Packages](modules.md). To use them in [streamlit](https://streamlit.io) you just need to list the modules in the [requirements.txt](https://github.com/fdabrandao/streamlit-nqueens/blob/master/requirements.txt) file as follows:
 

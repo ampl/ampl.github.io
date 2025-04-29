@@ -1,7 +1,10 @@
 # Supply Chain Masterclass
 
-Learn how to build a network optimization solver in the free hands-on supply chain masterclass. 
-We start with a production planning solver and build towards a network optimization solver.
+Join our free, hands-on masterclass and learn how to build a powerful network optimization solver from scratch.
+
+We begin with creating a production planning solver and progressively expand it into a full network optimization solution.
+
+Throughout the session, you'll develop a [Streamlit app](https://amplopt.streamlit.app/Supply_Chain_Optimization) and complete interactive exercises designed to reinforce your understanding of key concepts.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/GgAS2Iw-pvw?si=UKUFHIJCBSvw8VxJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 

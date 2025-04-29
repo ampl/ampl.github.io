@@ -10,13 +10,8 @@ AMPL Resources
     introduction
     free
     install
-    apis
-    books/index
-    videos/index
-    options
-    suffixes
     python/index
-    docker/index
-    cicd/index
+    books/index
+    videos/index 
     best-practices/index
-
+    reference/index

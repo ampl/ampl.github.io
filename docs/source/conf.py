@@ -118,9 +118,9 @@ redirects = {
     "help/install_ampl": "../ampl/install.html",
     "help/install-ampl": "../ampl/install.html",
     "ampl/python": "../ampl/python/index.html",
-    "ampl/python/docker": "../../ampl/docker/index.html",
-    "apis": "ampl/apis.html",
-    "book": "ampl/book.html",
+    "apis": "ampl/reference/apis.html",
+    "ampl/apis": "reference/apis.html",
+    "book": "ampl/books/index.html",
 }
 solvers_dir = os.path.join(os.path.dirname(__file__), "solvers")
 for solver in os.listdir(solvers_dir):
@@ -146,6 +146,10 @@ redirects["ampl/book.html"] = "books/index.html"
 redirects["more/videos.html"] = "../ampl/videos/index.html"
 redirects["more/interviews.html"] = "../ampl/videos/interviews.html"
 redirects["ampl/book/index.html"] = "../books/index.html"
+redirects["ampl/options.html"] = "reference/options.html"
+redirects["ampl/suffixes.html"] = "reference/suffixes.html"
+redirects["ampl/docker/index.html"] = "../python/docker.html"
+redirects["ampl/cicd/index.html"] = "../python/cicd.html"
 redirects["projects.html"] = "more/projects.html"
 redirects["faq.html"] = "more/faq.html"
 redirects["features.html"] = "more/new.html"
