@@ -289,8 +289,9 @@ cvt:sos (sos)
       variables.
 
 cvt:sos2 (sos2)
-      0/1*: Whether to honor SOS2 constraints for nonconvex piecewise-linear
-      terms, using suffixes .sos and .sosref provided by AMPL.
+      0*/1: Whether to honor SOS2 constraints for nonconvex piecewise-linear
+      terms, using suffixes .sos and .sosref provided by AMPL. Currently under
+      rework.
 
 cvt:uenc:negctx:max (uenc:negctx:max, uenc:negctx)
       If cvt:uenc:ratio applies, max number of constants in comparisons

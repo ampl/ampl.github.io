@@ -1,5 +1,20 @@
 # MOSEK Changelog
 
+## 20250426
+- Updated to MOSEK 11.0.18
+- Return solution whenever available (even 'unknown'
+  or 'infeasible'). This seems helpful on some
+  numerically tough models.
+- Changes in MP:
+  - Option cvt:multoutcard to limit the size of
+    out-multiplied QP expressions. Can improve speed
+    on large models.
+  - Improved parsing of quadratic expressions.
+- Option mip:conic:outapprox, useful to find
+  feasible solutions in numerically tough conic
+  models.
+
+
 ## 20250308
 - Options mip:gapabs, mip:feastol, mip:heurlevel, mip:feaspump
 

@@ -18,7 +18,7 @@ option "gurobi_options". For example:
 
    ampl: option gurobi_options 'opttol=1e-6';
 
- Options:
+'' Options:
 
 acc:_all
       Solver acceptance level for all constraints and expressions. Value
@@ -457,8 +457,11 @@ alg:sens (sens, solnsens, sensitivity)
       0 - No (default)
       1 - Yes: suffixes returned on variables are
       .sensobjlo = smallest objective coefficients
+      .down = same as .sensobjlo
       .sensobj = current objective coefficients
+      .current = same as .sensobj
       .sensobjhi = greatest objective coefficients
+      .up = same as .sensobjhi
       .senslblo = smallest variable lower bounds
       .senslbhi = greatest variable lower bounds
       .sensublo = smallest variable upper bounds
@@ -474,7 +477,9 @@ alg:sens (sens, solnsens, sensitivity)
       suffixes for one-sided constraints only:
 
       .sensrhslo = smallest right-hand side values
+      .down = same as .sensrhslo
       .sensrhshi = greatest right-hand side values.
+      .up = same as .sensrhshi.
 
       The suffixes correspond to the AMPL solver model, command 'solexpand'.
       For easiest interpretation, disable AMPL presolve, 'option presolve 0;'
@@ -683,6 +688,12 @@ cvt:mip:eps (cvt:cmp:eps, cmp:eps)
       comparisons: b==1 <==> x<=5 means that with b==0, x>=5+eps. Default:
       1e-4.
 
+cvt:multoutcard (multoutcard)
+      Up to which (estimated) QP matrix cardinality should a product of 2
+      linear expressions be multiplied out. Default 1e9.
+
+      Can speed up model input, but prone to numerical issues.
+
 cvt:names (names, modelnames)
       Whether to read or generate variable / constraint / objective names:
 
@@ -732,15 +743,18 @@ cvt:prod (cvt:pre:prod)
 
       Bits 2 or 4 imply bit 1.
 
+cvt:qp2passes (cvt:qp2pass, qp2passes, qp2pass)
+      Parse sums of QP expressions in 2 passes. Usually faster. Default 1.
+
 cvt:quadcon (passquadcon)
       Convenience option. Set to 0 to disable quadratic constraints. Synonym
       for acc:quad..=0. Currently this disables out-multiplication of
       quadratic terms, then they are linearized.
 
 cvt:quadobj (passquadobj)
-      0/1*: Pass quadratic objective terms to the solver. If the solver
-      accepts quadratic constraints, such a constraint will be created with
-      those, otherwise linearly approximated.
+      0/1*: Pass quadratic objective terms to the solver. When 0, if the
+      solver accepts quadratic constraints, such a constraint will be created
+      with those, otherwise linearly approximated.
 
 cvt:socp (socpmode, socp)
       Second-Order Cone recognition mode:
@@ -774,8 +788,9 @@ cvt:sos (sos)
       variables.
 
 cvt:sos2 (sos2)
-      0/1*: Whether to honor SOS2 constraints for nonconvex piecewise-linear
-      terms, using suffixes .sos and .sosref provided by AMPL.
+      0*/1: Whether to honor SOS2 constraints for nonconvex piecewise-linear
+      terms, using suffixes .sos and .sosref provided by AMPL. Currently under
+      rework.
 
 cvt:uenc:negctx:max (uenc:negctx:max, uenc:negctx)
       If cvt:uenc:ratio applies, max number of constants in comparisons
@@ -1490,6 +1505,10 @@ sol:poolmode (ams_mode, poolmode)
       1 - Make some effort at finding additional solutions
       2 - Seek "poollimit" best solutions (default).'Best solutions' are
           defined by the poolgap(abs) parameters.
+
+sol:report_uncertain (report_uncertain_sol)
+      0/1*: whether to report objective value(s) in solve_message when
+      solve_result is '?' (unknown).
 
 sol:stub (ams_stub, solstub, solutionstub)
       Stub for alternative MIP solutions, written to files with names obtained

@@ -118,7 +118,7 @@ acc:sos2
       2 - Accepted natively and preferred
 
 alg:barrier (barrier, baropt)
-      Solve (MIP root) LPs by barrier method.
+      Solve (MIP node) LP/QPs by barrier method.
 
 alg:basis (basis)
       Whether to use or return a basis:
@@ -184,7 +184,7 @@ alg:droptol (droptol)
       coefficients less than droptol in magnitude are treated as zero.
 
 alg:dual (dualopt)
-      Solve (MIP root) LPs by dual simplex method.
+      Solve (MIP node) LPs by dual simplex method.
 
 alg:dualproblem (dual)
       Compatibility option with the legacy cplexasl driver. No effect.
@@ -220,22 +220,24 @@ alg:kappa (kappa, basis_cond)
 alg:lbpen (lbpen)
       See alg:feasrelax.
 
-alg:method (method, lpmethod, simplex, mipstartalg)
+alg:method (method, lpmethod, qpmethod, simplex, mip:method, mipstartalg)
       Which algorithm to use for non-MIP problems or for the root node of MIP
-      problems, unless primalopt/dualopt/barrier/network/sifting flags are
-      specified:
+      problems:
 
-      -1 - Automatic (default)
-      0  - Primal simplex
-      1  - Dual simplex
-      2  - Barrier
-      3  - Nondeterministic concurrent (several solves in parallel)
-      4  - Network simplex
-      5  - Sifting
+      0 - Automatic (default)
+      1 - Primal simplex
+      2 - Dual simplex
+      3 - Network simplex
+      4 - Barrier
+      5 - Sifting
+      6 - Concurrent (dual, barrier and primal in opportunistic mode; dual
+          and barrier in deterministic mode; 4 is used for MIPQs).
 
       For MIQP problems (quadratic objective, linear constraints), setting 5
       is treated as 0 and 6 as 4. For MIQCP problems (quadratic objective &
-      constraints), all settings are treated as 4.
+      constraints), all settings are treated as 4. See also mip:nodemethod.
+      Overrides netopt option and primalopt/dualopt/barrier/network/sifting
+      flags.
 
 alg:netfeasibility (netfeasibility, netfeastol)
       Feasibility tolerance for network primal optimization. Can be any number
@@ -250,17 +252,17 @@ alg:netfind (netfind, netfinder)
 
 alg:netopt (netopt)
       Whether to use network simplex method for non-MIP problems or for the
-      root node of MIP problems, unless
-      primalopt/dualopt/barrier/network/sifting flags or alg:method are
-      specified:
+      continuous relaxations of MIP nodes, unless alg:(node)method or
+      primalopt/dualopt/barrier/network/sifting flags are specified. Options
+      alg:(node)method override (for MIP, in the root or subnodes):
 
-      0 - Never invoke the network optimizer
+      0 - (Default) never invoke the network optimizer
       1 - Compatibility value; same as 3
       2 - Compatibility value; same as 3
-      3 - (Default) invoke the network optimizer by setting CPLEX'
-          LP/QPMethod to CPX_ALG_NET telling CPLEX to search for network
-          (sub)structures in the model. CPLEX presolve might influence
-          automatic recognition of network structures
+      3 - Invoke the network optimizer by setting CPLEX' LP/QP/MIPNodeMethod
+          to CPX_ALG_NET telling CPLEX to search for network (sub)structures
+          in the model. CPLEX presolve might influence automatic recognition
+          of network structures
 
 alg:netoptimality (netoptimality)
       Specifies the optimality tolerance for network optimization; that is,
@@ -280,7 +282,7 @@ alg:network (network)
       Synonym for alg:netopt=3.
 
 alg:primal (primalopt)
-      Solve (MIP root) LPs by primal simplex method.
+      Solve (MIP node) LPs by primal simplex method.
 
 alg:primalproblem (primal)
       Compatibility option with the legacy cplexasl driver. No effect.
@@ -309,8 +311,11 @@ alg:sens (sens, solnsens, sensitivity)
       0 - No (default)
       1 - Yes: suffixes returned on variables are
       .sensobjlo = smallest objective coefficients
+      .down = same as .sensobjlo
       .sensobj = current objective coefficients
+      .current = same as .sensobj
       .sensobjhi = greatest objective coefficients
+      .up = same as .sensobjhi
       .senslblo = smallest variable lower bounds
       .senslbhi = greatest variable lower bounds
       .sensublo = smallest variable upper bounds
@@ -326,13 +331,15 @@ alg:sens (sens, solnsens, sensitivity)
       suffixes for one-sided constraints only:
 
       .sensrhslo = smallest right-hand side values
+      .down = same as .sensrhslo
       .sensrhshi = greatest right-hand side values.
+      .up = same as .sensrhshi.
 
       The suffixes correspond to the AMPL solver model, command 'solexpand'.
       For easiest interpretation, disable AMPL presolve, 'option presolve 0;'
 
 alg:sifting (sifting, siftopt, siftingopt)
-      Solve (MIP root) LPs by sifting method.
+      Solve (MIP node) LPs by sifting method.
 
 alg:start (warmstart)
       Whether to use incoming primal (and dual, for LP) variable values in a
@@ -642,8 +649,9 @@ cvt:sos (sos)
       variables.
 
 cvt:sos2 (sos2)
-      0/1*: Whether to honor SOS2 constraints for nonconvex piecewise-linear
-      terms, using suffixes .sos and .sosref provided by AMPL.
+      0*/1: Whether to honor SOS2 constraints for nonconvex piecewise-linear
+      terms, using suffixes .sos and .sosref provided by AMPL. Currently under
+      rework.
 
 cvt:uenc:negctx:max (uenc:negctx:max, uenc:negctx)
       If cvt:uenc:ratio applies, max number of constants in comparisons
@@ -761,6 +769,17 @@ mip:branchdir (branchdir, branch)
       0  - Explore "most promising" branch first (default)
       1  - Explore "up" branch first.
 
+mip:focus (mip:emphasis, mipemphasis, mipfocus)
+      MIP solution strategy:
+
+      0 - Balance finding good feasible solutions and proving optimality
+          (default)
+      1 - Favor finding feasible solutions
+      2 - Favor providing optimality
+      3 - Focus on improving the best objective bound
+      4 - Focus on finding hidden feasible solutions
+      5 - Focus on finding high quality solutions earlier (heuristic).
+
 mip:fpheur (fpheur)
       Whether to use the feasibility pump heuristic on MIP problems:
 
@@ -783,16 +802,16 @@ mip:inttol (inttol, intfeastol, integrality)
 mip:nodefile (nodefile)
       Whether to save node information in a temporary file:
 
-      0 - no
-      1 - compressed node file in memory (default)
-      2 - node file on disk
-      3 - compressed node file on disk
+      0 - No
+      1 - Compressed node file in memory (default)
+      2 - Node file on disk
+      3 - Compressed node file on disk
 
 mip:nodemethod (nodemethod, mipalg, mipalgorithm)
-      Algorithm used to solve relaxed MIP node problems; for MIQP problems
-      (quadratic objective, linear constraints), settings other than 3 and 5
-      are treated as 0. For MIQCP problems (quadratic objective and
-      constraints), only 0 is permitted.
+      Algorithm used to solve relaxed MIP node problems (after the initial
+      relaxation); for MIQP problems (quadratic objective, linear
+      constraints), settings other than 3 and 5 are treated as 0. For MIQCP
+      problems (quadratic objective and constraints), only 0 is permitted.
 
       0 - Automatic (default)
       1 - Primal simplex
@@ -800,6 +819,9 @@ mip:nodemethod (nodemethod, mipalg, mipalgorithm)
       3 - Network simplex
       4 - Barrier
       5 - Sifting
+
+      See also alg:method. Overrides netopt option and
+      primalopt/dualopt/barrier/network/sifting flags.
 
 mip:nodesel (nodesel, nodeselect)
       Strategy for choosing next node while optimizing

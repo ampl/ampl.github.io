@@ -1,5 +1,19 @@
 # GUROBI Changelog
 
+## 20250424
+- Changes in MP
+  - Option cvt:qp2pass (default even faster parsing
+    of quadratics)
+
+
+## 20250329
+- Changes in MP:
+  - Option cvt:multoutcard to limit the size of
+    out-multiplied QP expressions. Can improve speed
+    on large models.
+  - Improved parsing of quadratic expressions.
+
+
 ## 20250311
 - Additional diagnostic messages are printed in case the solver
   fails to initialize

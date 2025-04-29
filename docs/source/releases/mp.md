@@ -1,5 +1,11 @@
 # AMPL MP Library Changelog
 
+## 20250429
+- Fix a bug in parsing of quadratic expressions,
+  which could wrongly parse products of unequal
+  linear expressions, such as (x-3)*(x-z-5).
+
+
 ## 20250424
 - Option alg:sens return synonym suffixes
   .down/.up/.current for objective coefficients

@@ -48,7 +48,7 @@ acc:abs
 
 acc:and (acc:forall)
       Solver acceptance level for 'AndConstraint' as flat constraint, default
-      1:
+      2:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
@@ -221,7 +221,7 @@ acc:nlreifrimpl
 
 acc:or (acc:exists)
       Solver acceptance level for 'OrConstraint' as flat constraint, default
-      2:
+      1:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
@@ -306,7 +306,7 @@ acc:sos1
 
 acc:sos2
       Solver acceptance level for 'SOS2Constraint' as flat constraint, default
-      1:
+      2:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
@@ -545,8 +545,9 @@ cvt:sos (sos)
       variables.
 
 cvt:sos2 (sos2)
-      0/1*: Whether to honor SOS2 constraints for nonconvex piecewise-linear
-      terms, using suffixes .sos and .sosref provided by AMPL.
+      0*/1: Whether to honor SOS2 constraints for nonconvex piecewise-linear
+      terms, using suffixes .sos and .sosref provided by AMPL. Currently under
+      rework.
 
 cvt:uenc:negctx:max (uenc:negctx:max, uenc:negctx)
       If cvt:uenc:ratio applies, max number of constants in comparisons

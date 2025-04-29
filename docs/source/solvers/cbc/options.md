@@ -18,7 +18,7 @@ option "cbc_options". For example:
 
    ampl: option cbc_options 'presolve=more';
 
- Options:
+'' Options:
 
 :cplexUse (cplexUse)
       Whether to use Cplex!
@@ -371,6 +371,12 @@ cvt:mip:eps (cvt:cmp:eps, cmp:eps)
       comparisons: b==1 <==> x<=5 means that with b==0, x>=5+eps. Default:
       1e-4.
 
+cvt:multoutcard (multoutcard)
+      Up to which (estimated) QP matrix cardinality should a product of 2
+      linear expressions be multiplied out. Default 1e9.
+
+      Can speed up model input, but prone to numerical issues.
+
 cvt:names (names, modelnames)
       Whether to read or generate variable / constraint / objective names:
 
@@ -420,15 +426,18 @@ cvt:prod (cvt:pre:prod)
 
       Bits 2 or 4 imply bit 1.
 
+cvt:qp2passes (cvt:qp2pass, qp2passes, qp2pass)
+      Parse sums of QP expressions in 2 passes. Usually faster. Default 1.
+
 cvt:quadcon (passquadcon)
       Convenience option. Set to 0 to disable quadratic constraints. Synonym
       for acc:quad..=0. Currently this disables out-multiplication of
       quadratic terms, then they are linearized.
 
 cvt:quadobj (passquadobj)
-      0*/1: Pass quadratic objective terms to the solver, If the solver
-      accepts quadratic constraints, such a constraint will be created with
-      those, otherwise linearly approximated.
+      0*/1: Pass quadratic objective terms to the solver. When 0, if the
+      solver accepts quadratic constraints, such a constraint will be created
+      with those, otherwise linearly approximated.
 
 cvt:socp (socpmode, socp)
       Second-Order Cone recognition mode:
@@ -462,8 +471,9 @@ cvt:sos (sos)
       variables.
 
 cvt:sos2 (sos2)
-      0/1*: Whether to honor SOS2 constraints for nonconvex piecewise-linear
-      terms, using suffixes .sos and .sosref provided by AMPL.
+      0*/1: Whether to honor SOS2 constraints for nonconvex piecewise-linear
+      terms, using suffixes .sos and .sosref provided by AMPL. Currently under
+      rework.
 
 cvt:uenc:negctx:max (uenc:negctx:max, uenc:negctx)
       If cvt:uenc:ratio applies, max number of constants in comparisons
@@ -1166,6 +1176,10 @@ sol:chk:prec (chk:prec, chk:precision)
 sol:chk:round (chk:round, chk:rnd)
       AMPL solution_round option when checking: round to this number of
       decimals after comma (before comma if negative.)
+
+sol:report_uncertain (report_uncertain_sol)
+      0/1*: whether to report objective value(s) in solve_message when
+      solve_result is '?' (unknown).
 
 tech:debug (debug)
       0*/1: whether to assist testing & debugging, e.g., by outputting

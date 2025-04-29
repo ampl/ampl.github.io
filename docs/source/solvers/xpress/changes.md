@@ -1,5 +1,24 @@
 # XPRESS Changelog
 
+## 20250426
+- Relinked with XPRESS 44.01.04.
+- Non-linear constraints are now passed via the expression
+  API, that can improve performance.
+- Changes in MP
+  - Option cvt:qp2pass (default even faster parsing
+    of quadratics)
+
+
+## 20250329
+- Changes in MP:
+  - Option cvt:multoutcard to limit the size of
+    out-multiplied QP expressions. Can improve speed
+    on large models.
+  - Improved parsing of quadratic expressions.
+- Renamed option poolnbest to sol:poollimit.
+	Old name kept as synonym.
+
+
 ## 20250308
 - Fix several option descriptions.
 - Default to natively accept nonlinear expressions

@@ -1,5 +1,19 @@
 # HiGHS Changelog
 
+## 20250424
+- Changes in MP
+  - Option cvt:qp2pass (default even faster parsing
+    of quadratics)
+
+
+## 20250329
+- Changes in MP:
+  - Option cvt:multoutcard to limit the size of
+    out-multiplied QP expressions. Can improve speed
+    on large models.
+  - Improved parsing of quadratic expressions.
+
+
 ## 20250320
 - Updated to HiGHS 1.10, which include GPU support for cuPDLP-C, 
   lifting for probing (see `mip:lifting`), and bug fixes

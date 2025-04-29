@@ -18,7 +18,7 @@ option "xpress_options". For example:
 
    ampl: option xpress_options 'mipgap=1e-6';
 
- Options:
+'' Options:
 
 acc:_all
       Solver acceptance level for all constraints and expressions. Value
@@ -27,21 +27,36 @@ acc:_all
       Can be useful to disable all reformulations (acc:_all=2), or force
       linearization (acc:_all=0.)
 
+acc:_expr
+      Solver acceptance level for all expressions, default 1:
+
+      0 - Not accepted, all expressions will be treated as flat constraints,
+          or redefined
+      1 - Accepted. See the individual acc:... options
+
 acc:abs
-      Solver acceptance level for 'AbsConstraint' as flat constraint, default
-      2:
+      Solver acceptance level for 'AbsConstraint' as either constraint or
+      expression, default 4:
 
       0 - Not accepted natively, automatic redefinition will be attempted
-      1 - Accepted but automatic redefinition will be used where possible
-      2 - Accepted natively and preferred
+      1 - Accepted as constraint but automatic redefinition will be used
+          where possible
+      2 - Accepted as constraint natively and preferred
+      3 - Accepted as expression but automatic redefinition will be used
+          where possible
+      4 - Accepted as expression natively and preferred
 
 acc:acos
-      Solver acceptance level for 'AcosConstraint' as flat constraint, default
-      2:
+      Solver acceptance level for 'AcosConstraint' as either constraint or
+      expression, default 4:
 
       0 - Not accepted natively, automatic redefinition will be attempted
-      1 - Accepted but automatic redefinition will be used where possible
-      2 - Accepted natively and preferred
+      1 - Accepted as constraint but automatic redefinition will be used
+          where possible
+      2 - Accepted as constraint natively and preferred
+      3 - Accepted as expression but automatic redefinition will be used
+          where possible
+      4 - Accepted as expression natively and preferred
 
 acc:acosh
       Solver acceptance level for 'AcoshConstraint' as flat constraint,
@@ -60,12 +75,16 @@ acc:and (acc:forall)
       2 - Accepted natively and preferred
 
 acc:asin
-      Solver acceptance level for 'AsinConstraint' as flat constraint, default
-      2:
+      Solver acceptance level for 'AsinConstraint' as either constraint or
+      expression, default 4:
 
       0 - Not accepted natively, automatic redefinition will be attempted
-      1 - Accepted but automatic redefinition will be used where possible
-      2 - Accepted natively and preferred
+      1 - Accepted as constraint but automatic redefinition will be used
+          where possible
+      2 - Accepted as constraint natively and preferred
+      3 - Accepted as expression but automatic redefinition will be used
+          where possible
+      4 - Accepted as expression natively and preferred
 
 acc:asinh
       Solver acceptance level for 'AsinhConstraint' as flat constraint,
@@ -76,12 +95,16 @@ acc:asinh
       2 - Accepted natively and preferred
 
 acc:atan
-      Solver acceptance level for 'AtanConstraint' as flat constraint, default
-      2:
+      Solver acceptance level for 'AtanConstraint' as either constraint or
+      expression, default 4:
 
       0 - Not accepted natively, automatic redefinition will be attempted
-      1 - Accepted but automatic redefinition will be used where possible
-      2 - Accepted natively and preferred
+      1 - Accepted as constraint but automatic redefinition will be used
+          where possible
+      2 - Accepted as constraint natively and preferred
+      3 - Accepted as expression but automatic redefinition will be used
+          where possible
+      4 - Accepted as expression natively and preferred
 
 acc:atanh
       Solver acceptance level for 'AtanhConstraint' as flat constraint,
@@ -92,12 +115,16 @@ acc:atanh
       2 - Accepted natively and preferred
 
 acc:cos
-      Solver acceptance level for 'CosConstraint' as flat constraint, default
-      2:
+      Solver acceptance level for 'CosConstraint' as either constraint or
+      expression, default 4:
 
       0 - Not accepted natively, automatic redefinition will be attempted
-      1 - Accepted but automatic redefinition will be used where possible
-      2 - Accepted natively and preferred
+      1 - Accepted as constraint but automatic redefinition will be used
+          where possible
+      2 - Accepted as constraint natively and preferred
+      3 - Accepted as expression but automatic redefinition will be used
+          where possible
+      4 - Accepted as expression natively and preferred
 
 acc:cosh
       Solver acceptance level for 'CoshConstraint' as flat constraint, default
@@ -108,20 +135,28 @@ acc:cosh
       2 - Accepted natively and preferred
 
 acc:div
-      Solver acceptance level for 'DivConstraint' as flat constraint, default
-      2:
+      Solver acceptance level for 'DivConstraint' as either constraint or
+      expression, default 4:
 
       0 - Not accepted natively, automatic redefinition will be attempted
-      1 - Accepted but automatic redefinition will be used where possible
-      2 - Accepted natively and preferred
+      1 - Accepted as constraint but automatic redefinition will be used
+          where possible
+      2 - Accepted as constraint natively and preferred
+      3 - Accepted as expression but automatic redefinition will be used
+          where possible
+      4 - Accepted as expression natively and preferred
 
 acc:exp
-      Solver acceptance level for 'ExpConstraint' as flat constraint, default
-      2:
+      Solver acceptance level for 'ExpConstraint' as either constraint or
+      expression, default 4:
 
       0 - Not accepted natively, automatic redefinition will be attempted
-      1 - Accepted but automatic redefinition will be used where possible
-      2 - Accepted natively and preferred
+      1 - Accepted as constraint but automatic redefinition will be used
+          where possible
+      2 - Accepted as constraint natively and preferred
+      3 - Accepted as expression but automatic redefinition will be used
+          where possible
+      4 - Accepted as expression natively and preferred
 
 acc:expa (acc:expA)
       Solver acceptance level for 'ExpAConstraint' as flat constraint, default
@@ -162,6 +197,14 @@ acc:lineq
       1 - Accepted but automatic redefinition will be used where possible
       2 - Accepted natively and preferred
 
+acc:linfunccon
+      Solver acceptance level for 'LinearFunctionalConstraint' as expression,
+      default 4:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      3 - Accepted but automatic redefinition will be used where possible
+      4 - Accepted natively and preferred
+
 acc:linge
       Solver acceptance level for 'LinConGE' as flat constraint, default 2:
 
@@ -177,23 +220,71 @@ acc:linle
       2 - Accepted natively and preferred
 
 acc:log
-      Solver acceptance level for 'LogConstraint' as flat constraint, default
-      2:
+      Solver acceptance level for 'LogConstraint' as either constraint or
+      expression, default 4:
 
       0 - Not accepted natively, automatic redefinition will be attempted
-      1 - Accepted but automatic redefinition will be used where possible
-      2 - Accepted natively and preferred
+      1 - Accepted as constraint but automatic redefinition will be used
+          where possible
+      2 - Accepted as constraint natively and preferred
+      3 - Accepted as expression but automatic redefinition will be used
+          where possible
+      4 - Accepted as expression natively and preferred
+
+acc:loga (acc:logA)
+      Solver acceptance level for 'LogAConstraint' as expression, default 4:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      3 - Accepted but automatic redefinition will be used where possible
+      4 - Accepted natively and preferred
 
 acc:max
-      Solver acceptance level for 'MaxConstraint' as flat constraint, default
-      2:
+      Solver acceptance level for 'MaxConstraint' as either constraint or
+      expression, default 4:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted as constraint but automatic redefinition will be used
+          where possible
+      2 - Accepted as constraint natively and preferred
+      3 - Accepted as expression but automatic redefinition will be used
+          where possible
+      4 - Accepted as expression natively and preferred
+
+acc:min
+      Solver acceptance level for 'MinConstraint' as either constraint or
+      expression, default 4:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted as constraint but automatic redefinition will be used
+          where possible
+      2 - Accepted as constraint natively and preferred
+      3 - Accepted as expression but automatic redefinition will be used
+          where possible
+      4 - Accepted as expression natively and preferred
+
+acc:nlassigneq
+      Solver acceptance level for 'NLAssignEQ' as flat constraint, default 2:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
       2 - Accepted natively and preferred
 
-acc:min
-      Solver acceptance level for 'MinConstraint' as flat constraint, default
+acc:nlassignge
+      Solver acceptance level for 'NLAssignGE' as flat constraint, default 2:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+acc:nlassignle
+      Solver acceptance level for 'NLAssignLE' as flat constraint, default 2:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+acc:nlcon (acc:nlalgcon)
+      Solver acceptance level for 'NLConstraint' as flat constraint, default
       2:
 
       0 - Not accepted natively, automatic redefinition will be attempted
@@ -208,13 +299,25 @@ acc:or (acc:exists)
       1 - Accepted but automatic redefinition will be used where possible
       2 - Accepted natively and preferred
 
-acc:powconstexp
-      Solver acceptance level for 'PowConstExpConstraint' as flat constraint,
-      default 2:
+acc:pl (acc:pwl, acc:piecewise)
+      Solver acceptance level for 'PLConstraint' as flat constraint, default
+      2:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
       2 - Accepted natively and preferred
+
+acc:powconstexp
+      Solver acceptance level for 'PowConstExpConstraint' as either constraint
+      or expression, default 4:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted as constraint but automatic redefinition will be used
+          where possible
+      2 - Accepted as constraint natively and preferred
+      3 - Accepted as expression but automatic redefinition will be used
+          where possible
+      4 - Accepted as expression natively and preferred
 
 acc:quadeq
       Solver acceptance level for 'QuadConEQ' as flat constraint, default 2:
@@ -222,6 +325,14 @@ acc:quadeq
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
       2 - Accepted natively and preferred
+
+acc:quadfunccon
+      Solver acceptance level for 'QuadraticFunctionalConstraint' as
+      expression, default 4:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      3 - Accepted but automatic redefinition will be used where possible
+      4 - Accepted natively and preferred
 
 acc:quadge
       Solver acceptance level for 'QuadConGE' as flat constraint, default 2:
@@ -238,12 +349,16 @@ acc:quadle
       2 - Accepted natively and preferred
 
 acc:sin
-      Solver acceptance level for 'SinConstraint' as flat constraint, default
-      2:
+      Solver acceptance level for 'SinConstraint' as either constraint or
+      expression, default 4:
 
       0 - Not accepted natively, automatic redefinition will be attempted
-      1 - Accepted but automatic redefinition will be used where possible
-      2 - Accepted natively and preferred
+      1 - Accepted as constraint but automatic redefinition will be used
+          where possible
+      2 - Accepted as constraint natively and preferred
+      3 - Accepted as expression but automatic redefinition will be used
+          where possible
+      4 - Accepted as expression natively and preferred
 
 acc:sinh
       Solver acceptance level for 'SinhConstraint' as flat constraint, default
@@ -270,12 +385,16 @@ acc:sos2
       2 - Accepted natively and preferred
 
 acc:tan
-      Solver acceptance level for 'TanConstraint' as flat constraint, default
-      2:
+      Solver acceptance level for 'TanConstraint' as either constraint or
+      expression, default 4:
 
       0 - Not accepted natively, automatic redefinition will be attempted
-      1 - Accepted but automatic redefinition will be used where possible
-      2 - Accepted natively and preferred
+      1 - Accepted as constraint but automatic redefinition will be used
+          where possible
+      2 - Accepted as constraint natively and preferred
+      3 - Accepted as expression but automatic redefinition will be used
+          where possible
+      4 - Accepted as expression natively and preferred
 
 acc:tanh
       Solver acceptance level for 'TanhConstraint' as flat constraint, default
@@ -357,7 +476,7 @@ alg:method (method, lpmethod, defaultalg)
       1 - Automatic choice (default)
       2 - Dual simplex
       3 - Primal simplex
-      4 - Netwon Barrier
+      4 - Newton Barrier (or hybrid gradient, if bar:alg=4 is set)
 
 alg:network (network)
       Solve (substructure of) (MIP node) LPs by network simplex method.
@@ -767,6 +886,12 @@ cvt:mip:eps (cvt:cmp:eps, cmp:eps)
       comparisons: b==1 <==> x<=5 means that with b==0, x>=5+eps. Default:
       1e-4.
 
+cvt:multoutcard (multoutcard)
+      Up to which (estimated) QP matrix cardinality should a product of 2
+      linear expressions be multiplied out. Default 1e9.
+
+      Can speed up model input, but prone to numerical issues.
+
 cvt:names (names, modelnames)
       Whether to read or generate variable / constraint / objective names:
 
@@ -816,15 +941,18 @@ cvt:prod (cvt:pre:prod)
 
       Bits 2 or 4 imply bit 1.
 
+cvt:qp2passes (cvt:qp2pass, qp2passes, qp2pass)
+      Parse sums of QP expressions in 2 passes. Usually faster. Default 1.
+
 cvt:quadcon (passquadcon)
       Convenience option. Set to 0 to disable quadratic constraints. Synonym
       for acc:quad..=0. Currently this disables out-multiplication of
       quadratic terms, then they are linearized.
 
 cvt:quadobj (passquadobj)
-      0/1*: Pass quadratic objective terms to the solver. If the solver
-      accepts quadratic constraints, such a constraint will be created with
-      those, otherwise linearly approximated.
+      0/1*: Pass quadratic objective terms to the solver. When 0, if the
+      solver accepts quadratic constraints, such a constraint will be created
+      with those, otherwise linearly approximated.
 
 cvt:socp (socpmode, socp)
       Second-Order Cone recognition mode:
@@ -858,8 +986,9 @@ cvt:sos (sos)
       variables.
 
 cvt:sos2 (sos2)
-      0/1*: Whether to honor SOS2 constraints for nonconvex piecewise-linear
-      terms, using suffixes .sos and .sosref provided by AMPL.
+      0*/1: Whether to honor SOS2 constraints for nonconvex piecewise-linear
+      terms, using suffixes .sos and .sosref provided by AMPL. Currently under
+      rework.
 
 cvt:uenc:negctx:max (uenc:negctx:max, uenc:negctx)
       If cvt:uenc:ratio applies, max number of constants in comparisons
@@ -2012,7 +2141,7 @@ sol:count (countsolutions)
       ".nsol" problem suffix.
 
 sol:pooldualred (pooldualred)
-      Whether to suppress removal of dominated solutions(via "dual
+      Whether to suppress removal of dominated solutions (via "dual
       reductions") when poolstub is specified:
 
       0 - Yes (default, can be expensive)
@@ -2042,14 +2171,17 @@ sol:poolfeastol (poolfeastol)
       Zero tolerance for discrete variables in the solution pool (default
       1e-6)
 
+sol:poollimit (poollimit, poolnbest)
+      When poollimit = n > 1, the solution pool (see sol:stub) is allowed to
+      keep n best solutions. Default 10.
+
 sol:poolmiptol (poolmiptol)
       Error (nonintegrality) allowed in discrete variables in the solution
       pool (default 5e-6)
 
-sol:poolnbest (poolnbest, poollimit)
-      Whether the solution pool (see poolstub) should contain inferior
-      solutions. When poolnbest = n > 1, the solution pool is allowed to keep
-      the n best solutions.
+sol:report_uncertain (report_uncertain_sol)
+      0/1*: whether to report objective value(s) in solve_message when
+      solve_result is '?' (unknown).
 
 sol:stub (ams_stub, solstub, solutionstub)
       Stub for solution files. If "solutionstub" is specified, found solutions
