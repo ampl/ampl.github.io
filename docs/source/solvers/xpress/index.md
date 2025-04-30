@@ -11,6 +11,7 @@ found [here](https://mp.ampl.com/model-guide.html).
 
 [Product Page](https://ampl.com/products/solvers/solvers-we-sell/xpress/)
 | [Modeling guide](https://mp.ampl.com/model-guide.html)
+| [Features guide](https://mp.ampl.com/features-guide.html)
 | [Options](#solver-options)
 | [Changes](changes.md)
 

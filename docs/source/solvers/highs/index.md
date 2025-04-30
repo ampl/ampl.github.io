@@ -10,6 +10,7 @@ found [here](https://mp.ampl.com/model-guide.html).
 
 [Learn More](https://ampl.com/products/solvers/open-source-solvers/)
 | [Modeling guide](https://mp.ampl.com/model-guide.html)
+| [Features guide](https://mp.ampl.com/features-guide.html)
 | [Options](#solver-options)
 | [Changes](changes.md)
 
