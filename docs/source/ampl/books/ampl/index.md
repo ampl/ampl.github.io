@@ -9,6 +9,11 @@ Second edition
 517 + xxi pp., ISBN 0-534-38809-4  
 [The AMPL Book PDF](./ampl-book.pdf)
 
+```{eval-rst}
+.. warning::
+    The original AMPL book does not reflect many of the latest features available in AMPL. For example, it doesn't cover our new high-level modeling constructs that are `automatically reformulated <https://mp.ampl.com/model-guide.html>`_. Additionally, for modern data transfer and programmatic interaction with your models, we recommend using :ref:`APIs <apis>` such as our widely used :ref:`Python API <python_integration>`.
+```
+
 A comprehensive guide to building optimization models, for beginning or experienced users.
 
 - Written by the creators of AMPL, this book is a complete guide for modelers at all levels of experience.

@@ -131,38 +131,3 @@ param budget;
 subject to budget_constraint:
   sum{p in PRODUCTS, c in CITIES} (x[p,c] * cost[p]) <= budget;
 ```
-
-## AMPL Scripting
-
-Here are some examples of the most important AMPL scripting commands:
-- `model model_file.mod;`: specifies the location of the model file
-- `data data_file.dat;`: specifies the location of the data file
-- `option option_name option_value;`: specifies options for the solver
-- `solve;`: solves the optimization model
-- `display expression;`: displays the values of the decision variables, objective function, and constraints
-- `let name := value;`: assigns a value to a declared parameter or a decision variable
-
-Here is an example of a simple AMPL script:
-```ampl
-# specify the model and data files
-model model_file.mod;
-data data_file.dat;
-
-# specify the solver options
-option solver highs;
-
-# solve the model
-solve;
-
-# display the values of the decision variables, objective function, and constraints
-display x, y, total_profit, capacity_constraint, budget_constraint;
-
-# assign a new value to a parameter
-let budget := 100;
-
-# re-solve the model
-solve;
-
-# display the new values of the decision variables and objective function
-display x, y, total_profit;
-```

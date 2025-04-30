@@ -1,6 +1,11 @@
 prod0.mod
 =========
 
+
+.. warning::
+    The original AMPL book does not reflect many of the latest features available in AMPL.
+    For example, it doesn't cover our new high-level modeling constructs that are `automatically reformulated <https://mp.ampl.com/model-guide.html>`_.
+
 :download:`prod0.mod <EXAMPLES/EXAMPLES2/prod0.mod>`
 
 .. code-block:: ampl

@@ -8,6 +8,9 @@ AMPL Book Examples
 | 517 + xxi pp., ISBN 0-534-38809-4
 | :download:`The AMPL Book PDF <../ampl-book.pdf>`
 
+.. warning::
+    The original AMPL book does not reflect many of the latest features available in AMPL. For example, it doesn't cover our new high-level modeling constructs that are `automatically reformulated <https://mp.ampl.com/model-guide.html>`_. Additionally, for modern data transfer and programmatic interaction with your models, we recommend using :ref:`APIs <apis>` such as our widely used :ref:`Python API <python_integration>`.
+
 Use this page to download all the model, data, and script files that appear as examples in the AMPL book (second edition). You can download everything in one file:
 
 - :download:`zipfile <./EXAMPLES/EXAMPLES2/amplbook2.zip>` with line endings characteristic of Windows

@@ -1,6 +1,11 @@
 steelT.sa6a
 ===========
 
+
+.. warning::
+    The original AMPL book does not reflect many of the latest features available in AMPL.
+    To programmatically interact with your models you should use :ref:`APIs <apis>` such as our popular :ref:`Python API <python_integration>`.
+
 :download:`steelT.sa6a <EXAMPLES/LOOP1/steelT.sa6a>`
 
 .. code-block:: ampl

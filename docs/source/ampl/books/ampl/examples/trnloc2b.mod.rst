@@ -1,6 +1,11 @@
 trnloc2b.mod
 ============
 
+
+.. warning::
+    The original AMPL book does not reflect many of the latest features available in AMPL.
+    For example, it doesn't cover our new high-level modeling constructs that are `automatically reformulated <https://mp.ampl.com/model-guide.html>`_.
+
 :download:`trnloc2b.mod <EXAMPLES/LOOP2/trnloc2b.mod>`
 
 .. code-block:: ampl

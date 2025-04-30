@@ -1,6 +1,11 @@
 transp3.mod
 ===========
 
+
+.. warning::
+    The original AMPL book does not reflect many of the latest features available in AMPL.
+    For example, it doesn't cover our new high-level modeling constructs that are `automatically reformulated <https://mp.ampl.com/model-guide.html>`_.
+
 :download:`transp3.mod <EXAMPLES/EXAMPLES2/transp3.mod>`
 
 .. code-block:: ampl

@@ -1,6 +1,11 @@
 trnloc2c.run
 ============
 
+
+.. warning::
+    The original AMPL book does not reflect many of the latest features available in AMPL.
+    To programmatically interact with your models you should use :ref:`APIs <apis>` such as our popular :ref:`Python API <python_integration>`.
+
 :download:`trnloc2c.run <EXAMPLES/LOOP2/trnloc2c.run>`
 
 .. code-block:: ampl

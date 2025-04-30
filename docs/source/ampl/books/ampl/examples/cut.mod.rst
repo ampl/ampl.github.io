@@ -1,6 +1,11 @@
 cut.mod
 =======
 
+
+.. warning::
+    The original AMPL book does not reflect many of the latest features available in AMPL.
+    For example, it doesn't cover our new high-level modeling constructs that are `automatically reformulated <https://mp.ampl.com/model-guide.html>`_.
+
 :download:`cut.mod <EXAMPLES/EXAMPLES2/cut.mod>`
 
 .. code-block:: ampl

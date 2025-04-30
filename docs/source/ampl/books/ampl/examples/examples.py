@@ -84,6 +84,9 @@ AMPL Book Examples
 | 517 + xxi pp., ISBN 0-534-38809-4
 | :download:`The AMPL Book PDF <../ampl-book.pdf>`
 
+.. warning::
+    The original AMPL book does not reflect many of the latest features available in AMPL. For example, it doesn't cover our new high-level modeling constructs that are `automatically reformulated <https://mp.ampl.com/model-guide.html>`_. Additionally, for modern data transfer and programmatic interaction with your models, we recommend using :ref:`APIs <apis>` such as our widely used :ref:`Python API <python_integration>`.
+
 Use this page to download all the model, data, and script files that appear as examples in the AMPL book (second edition). You can download everything in one file:
 
 - :download:`zipfile <./EXAMPLES/EXAMPLES2/amplbook2.zip>` with line endings characteristic of Windows
@@ -160,6 +163,22 @@ paths = [
     "EXAMPLES/LOGIC/EXAMPLES",
 ]
 
+warning_generic = """
+.. warning::
+    The original AMPL book does not reflect many of the latest features available in AMPL."""
+warning_mod = f"""{warning_generic}
+    For example, it doesn't cover our new high-level modeling constructs that are `automatically reformulated <https://mp.ampl.com/model-guide.html>`_.
+
+"""
+warning_dat = f"""{warning_generic}
+    For modern data transfer, we recommend using :ref:`APIs <apis>` such as our popular :ref:`Python API <python_integration>` or table handlers such as `amplxl <https://plugins.ampl.com/amplxl.html>`_.
+
+"""
+warning_run = f"""{warning_generic}
+    To programmatically interact with your models you should use :ref:`APIs <apis>` such as our popular :ref:`Python API <python_integration>`.
+
+"""
+
 for ampl_file in examples_files:
     rst_file = f"{ampl_file}.rst"
     for path in paths:
@@ -170,6 +189,12 @@ for ampl_file in examples_files:
     content = open(fname, "r").read()
     with open(rst_file, "w") as file:
         file.write(f"{ampl_file}\n{'='*len(ampl_file)}\n\n")
+        if fname.endswith(".mod"):
+            file.write(warning_mod)
+        elif fname.endswith(".dat"):
+            file.write(warning_dat)
+        else:
+            file.write(warning_run)
         file.write(f":download:`{ampl_file} <{fname}>`\n\n")
         file.write(".. code-block:: ampl\n\n")
         for line in content.splitlines():
