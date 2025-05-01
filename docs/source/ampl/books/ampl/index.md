@@ -12,6 +12,12 @@ Second edition
 ```{eval-rst}
 .. warning::
     The original AMPL book does not reflect many of the latest features available in AMPL. For example, it doesn't cover our new high-level modeling constructs that are `automatically reformulated <https://mp.ampl.com/model-guide.html>`_. Additionally, for modern data transfer and programmatic interaction with your models, we recommend using :ref:`APIs <apis>` such as our widely used :ref:`Python API <python_integration>`.
+
+    To explore examples showcasing these recent features, please visit:
+
+    - `AMPL Streamlit Apps <https://ampl.com/streamlit/>`__
+    - `AMPL+Python Book <https://ampl.com/mo-book/>`__
+    - `AMPL Colab Notebooks <https://ampl.com/colab/>`__
 ```
 
 A comprehensive guide to building optimization models, for beginning or experienced users.
