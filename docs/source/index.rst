@@ -19,6 +19,18 @@ It connects seamlessly to major :ref:`commercial and open-source solvers <solver
         
         Documentation for all solvers available with AMPL, including installation instructions, and usage examples.
 
+    .. grid-item-card:: AMPL & Optimization Books
+        :link: books
+        :link-type: ref
+        
+        Books on AMPL, modeling, and optimization — from beginner guides to advanced references.
+
+    .. grid-item-card:: AMPL Videos, Webinars, & Interviews
+        :link: videos
+        :link-type: ref
+        
+        Video content on AMPL, including tutorials, webinars, and interviews.
+
     .. grid-item-card:: AMPL Streamlit Apps
         :link: https://ampl.com/streamlit/
 
