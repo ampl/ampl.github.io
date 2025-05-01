@@ -183,11 +183,17 @@ alg:droptol (droptol)
       If droptol > 0 is specified, linear constraint and objective
       coefficients less than droptol in magnitude are treated as zero.
 
-alg:dual (dualopt)
+alg:dualopt (alg:dual, dualopt)
       Solve (MIP node) LPs by dual simplex method.
 
 alg:dualproblem (dual)
-      Compatibility option with the legacy cplexasl driver. No effect.
+      Compatibility option with the legacy cplexasl driver. Interacts with
+      pre:dual as follows:
+
+      alg:dualproblem - alone, equivalent to pre:dual=0
+      alg:dualproblem pre:dual=-1 - together, equivalent to pre:dual=1
+      alg:dualproblem pre:dual=0 - together, equivalent to pre:dual=0
+      alg:dualproblem pre:dual=1 - together, equivalent to pre:dual=-1.
 
 alg:feasrelax (feasrelax)
       Whether to modify the problem into a feasibility relaxation problem:
@@ -281,7 +287,7 @@ alg:network (network)
       Solve (substructure of) (MIP node's) LP/QP by network simplex method.
       Synonym for alg:netopt=3.
 
-alg:primal (primalopt)
+alg:primalopt (alg:primal, primalopt)
       Solve (MIP node) LPs by primal simplex method.
 
 alg:primalproblem (primal)
@@ -997,9 +1003,11 @@ pre:dependency (dependency)
       3  - Turn on at both start and end of preprocessing
 
 pre:dual (predual)
-      Whether CPLEX's presolve phase should present the CPLEX solution
+      Whether CPLEX' presolve phase should present the CPLEX solution
       algorithm with the primal(-1) or dual(1) problem or (default = 0) should
       decide automatically.
+
+      For compatibility, pre:dual interacts with alg:dualproblem.
 
 pre:node (presolvenode)
       Whether to run presolve at each node of the MIP branch-and-bound:

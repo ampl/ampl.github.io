@@ -1,5 +1,11 @@
 # XPRESS Changelog
 
+## 20250429
+- Fix a bug in parsing of quadratic expressions,
+  which could wrongly parse products of unequal
+  linear expressions, such as (x-3)*(x-z-5).
+
+
 ## 20250426
 - Relinked with XPRESS 44.01.04.
 - Non-linear constraints are now passed via the expression

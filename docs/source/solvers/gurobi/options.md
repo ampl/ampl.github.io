@@ -293,12 +293,16 @@ acc:sos2
       2 - Accepted natively and preferred
 
 acc:tan
-      Solver acceptance level for 'TanConstraint' as flat constraint, default
-      2:
+      Solver acceptance level for 'TanConstraint' as either constraint or
+      expression, default 4:
 
       0 - Not accepted natively, automatic redefinition will be attempted
-      1 - Accepted but automatic redefinition will be used where possible
-      2 - Accepted natively and preferred
+      1 - Accepted as constraint but automatic redefinition will be used
+          where possible
+      2 - Accepted as constraint natively and preferred
+      3 - Accepted as expression but automatic redefinition will be used
+          where possible
+      4 - Accepted as expression natively and preferred
 
 alg:basis (basis)
       Whether to use or return a basis:

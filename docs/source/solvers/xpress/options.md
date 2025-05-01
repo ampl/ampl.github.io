@@ -436,7 +436,7 @@ alg:cutoff (cutoff)
       cutoff" and do not return a solution. Default: 1.0E+40 for minimizing,
       -1.0E+40 for maximizing.
 
-alg:dual (dual)
+alg:dual (alg:dualopt, dual, dualopt)
       Solve (MIP node) LPs by dual simplex method.
 
 alg:feastol (feastol)
@@ -481,7 +481,7 @@ alg:method (method, lpmethod, defaultalg)
 alg:network (network)
       Solve (substructure of) (MIP node) LPs by network simplex method.
 
-alg:primal (primal)
+alg:primal (alg:primalopt, primal, primalopt)
       Solve (MIP node) LPs by primal simplex method.
 
 alg:randomseed (randomseed)
