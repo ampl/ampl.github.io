@@ -17,12 +17,7 @@ AMPL Book Examples
     - `AMPL+Python Book <https://ampl.com/mo-book/>`__
     - `AMPL Colab Notebooks <https://ampl.com/colab/>`__
 
-Use this page to download all the model, data, and script files that appear as examples in the AMPL book (second edition). You can download everything in one file:
-
-- :download:`zipfile <./EXAMPLES/EXAMPLES2/amplbook2.zip>` with line endings characteristic of Windows
-- :download:`gzipped tar file <./EXAMPLES/EXAMPLES2/amplbook2.tgz>` with line endings characteristic of Unix
-
-Or download individual files from our listings below, by filename or by figure number.
+Use this page to download all the model, data, and script files that appear as examples in the AMPL book (second edition). You can download individual files from our listings below, by filename or by figure number.
 
 
 
