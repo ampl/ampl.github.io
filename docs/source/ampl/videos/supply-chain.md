@@ -4,7 +4,7 @@ Join our free, hands-on masterclass and learn how to build a powerful network op
 
 We begin with creating a production planning solver and progressively expand it into a full network optimization solution.
 
-Throughout the session, you'll develop a [Streamlit app](https://amplopt.streamlit.app/Supply_Chain_Optimization) and complete interactive exercises designed to reinforce your understanding of key concepts.
+Throughout the sessions, you'll develop a [Streamlit app](https://amplopt.streamlit.app/Supply_Chain_Optimization) and complete interactive exercises designed to reinforce your understanding of key concepts.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/GgAS2Iw-pvw?si=UKUFHIJCBSvw8VxJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
