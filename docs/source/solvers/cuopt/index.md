@@ -42,24 +42,23 @@ An example of supported container is::
 
         .. code-block:: bash
 
-            # Download cuOpt solver
-            $ mkdir cuopt ; cd cuopt            
-            $ wget http://portal.ampl.com/~ccv/solvers-cuopt.linux-intel64.20250521.tar.gz
+            # Install Python API for AMPL:
+            $ python -m pip install amplpy --upgrade
 
-            # Decompress it:
-            $ tar -xvf solvers-cuopt.linux-intel64.20250521.tar.gz
+            # Install AMPL & solver modules:
+            $ python -m amplpy.modules install cuopt # install cuopt
+
+            # Activate your license (e.g., free ampl.com/ce or ampl.com/courses licenses):
+            $ python -m amplpy.modules activate <your-license-uuid>
 
         How to use:
 
         .. code-block:: python
 
-            # Set the following to the full path of the solver binary decompressed above
-            cuoptbin = "path/to/cuopt/cuopt"
-
             from amplpy import AMPL
             ampl = AMPL()
             ...
-            ampl.solve(solver=cuoptbin, cuopt_options="option1=value1 option2=value2")
+            ampl.solve(solver="cuopt", cuopt_options="option1=value1 option2=value2")
 
         Learn more about what we have to offer to implement and deploy `Optimization in Python <https://ampl.com/python/>`_.
 
