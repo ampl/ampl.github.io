@@ -33,6 +33,7 @@ nonlinear domain (MINLP,  *Mixed Integer NonLinear Programming*).
     xpress/index
     cplex/index
     copt/index
+    cuopt/index
     mosek/index
     highs/index
     scip/index

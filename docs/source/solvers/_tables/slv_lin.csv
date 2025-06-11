@@ -3,6 +3,7 @@
 :ref:`xpress`,|y|,|y|,|y|,|y|,|y|,|y|,|y|,|y|,|y|
 :ref:`cplex`,|y|,|y|,|y|,|y|,|y|,|n|,|y|,|n|,|y|
 :ref:`copt`,|y|,|y|,|y|,|y|,|y|,|n|,|y|,|n|,|y|
+:ref:`cuopt`,|y|,|y|,|n|,|n|,|n|,|n|,|n|,|n|,|y|
 :ref:`mosek`,|y|,|y|,|y|,|y|,|y|,|n|,|y|,|n|,|y|
 :ref:`highs`,|y|,|y|,|y|,|n|,|n|,|n|,|n|,|n|,|y|
 :ref:`scip`,|y|,|y|,|y|,|y|,|y|,|y|,|y|,|y|,|y|
