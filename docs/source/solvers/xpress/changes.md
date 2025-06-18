@@ -1,5 +1,29 @@
 # XPRESS Changelog
 
+## 20250617
+- Changes in MP
+  - Multi-objective emulator: added support for
+    objective-specific options via objective suffixes
+    beginning with *option_*
+  - Option *cvt:unnest*: bits 2 and 4 switch on
+    inlining of linear and quadratic subexpressions
+    produced during reformulations (by default on).
+  - Options *cvt:pre:ctx2ineq*, *cvt:pre:ctx2count*
+    to control context propagation into conditional
+    comparisons #267.
+
+
+## 20250531
+- Updated to Xpress 45.01.01 (9.6) that includes:
+  - Pre root parallel heuristics phase.
+  - New deterministic measure of algorithmic work.
+  - Performance improvements.
+- Option *lp:opttol* (*opttol*), synonym for previous
+  *lp:optimalitytolerance*.
+- Added keywords *lim:work*, *lim:prerootwork* and *mip:prerooteffort*.
+- Added value *3* to *pre:domcol*.
+
+
 ## 20250429
 - Fix a bug in parsing of quadratic expressions,
   which could wrongly parse products of unequal
@@ -11,13 +35,13 @@
 - Non-linear constraints are now passed via the expression
   API, that can improve performance.
 - Changes in MP
-  - Option cvt:qp2pass (default even faster parsing
+  - Option *cvt:qp2pass* (default even faster parsing
     of quadratics)
 
 
 ## 20250329
 - Changes in MP:
-  - Option cvt:multoutcard to limit the size of
+  - Option *cvt:multoutcard* to limit the size of
     out-multiplied QP expressions. Can improve speed
     on large models.
   - Improved parsing of quadratic expressions.

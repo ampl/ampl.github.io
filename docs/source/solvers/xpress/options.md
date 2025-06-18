@@ -875,7 +875,7 @@ cvt:dvelim (dvelim)
           instantiated for use in other places. Can introduce redundancy, but
           seems best for some models (default.)
 
-      See also AMPL options linelim and substout.
+      See also cvt:pre:unnest, as well as AMPL options linelim and substout.
 
 cvt:expcones (expcones)
       0*/1: Recognize exponential cones.
@@ -911,6 +911,20 @@ cvt:plapprox:reltol (plapprox:reltol, plapproxreltol)
 cvt:pre:all
       0/1*: Set to 0 to disable most presolve in the flat converter.
 
+cvt:pre:ctx2count (ctx2count)
+      Propagate exact context into atleast/atmost/exactly, count and numberof
+      expressions, vs mixed. Bitwise OR of the following values:
+
+      1 - atleast/atmost/exactly, count
+      2 - numberof with constant total
+      4 - numberof with variable total.
+
+      Default 0, see #267.
+
+cvt:pre:ctx2ineq (ctx2ineq)
+      0/1*: Propagate exact context into conditional inequalities, vs mixed.
+      See #267.
+
 cvt:pre:eqbinary
       0/1*: Preprocess reified equality comparison with a binary variable.
 
@@ -923,8 +937,14 @@ cvt:pre:ineqresult
 cvt:pre:ineqrhs
       0/1*: Preprocess reified inequality comparison's right-hand sides.
 
-cvt:pre:unnest
-      0/1*: Inline nested expressions, currently Ands/Ors.
+cvt:pre:unnest (cvt:unnest, cvt:pre:inline, cvt:inline)
+      Inline nested expressions. Bitwise OR of the following values:
+
+      1 - Ands and Ors
+      2 - Linear subexpressions
+      4 - Quadratic subexpressions.
+
+      See also option cvt:dvelim concerning only the input model. Default 7.
 
 cvt:prod (cvt:pre:prod)
       Product preprocessing flags. Sum of a subset of the following bits:
@@ -1038,6 +1058,15 @@ lim:mipsol (maxmipsol)
 lim:nodes (nodelim, nodelimit, maxnode)
       Maximum MIP nodes to explore (default: 2147483647).
 
+lim:prerootwork (prerootworklim, prerootworklimit)
+      Limit on work units for different heuristics executed in parallel before
+      the initial LP root relaxation is solved:
+
+      -1 - no explicit limit; if enabled, the work limit for this phase is
+           controlled via prerooteffeort (default)
+      0  - disable preroot parallel heuristics
+      >0 - limit for work in preroot heuristics
+
 lim:softmem (softmemlimit, maxmemorysoft)
       Soft limit (integer number of MB) on memory allocated; default = 0 (no
       limit)
@@ -1053,6 +1082,11 @@ lim:stalltime (maxstalltime)
 
 lim:time (timelim, timelimit)
       Limit on solve time (in seconds; default: no limit).
+
+lim:work (worklim, worklimit)
+      Limit on work units, a hardware and platform independent measure of
+      effort; see control mip:deterministi for full repreducibility (default:
+      1e20)
 
 lp:bigm (bigm, bigmpenalty)
       Infeasibility penalty to be used if "BigM" method is used; default =
@@ -1175,16 +1209,16 @@ lp:netstalllimit (netstalllimit)
       0     - no limit
       n > 0 - limit to n network simplex iterations
 
-lp:optimalitytol (optimalitytol)
+lp:optimalitytoltarget (optimalitytoltarget)
+      Target optimality tolerance for the solution refiner; default=0 (use the
+      value specified by lp:optimalitytol)
+
+lp:opttol (lp:optimalitytol, opttol, optimalitytol)
       This is the zero tolerance for reduced costs. On each iteration, the
       simplex method searches for a variable to enter the basis which has a
       negative reduced cost. The candidates are only those variables which
       have reduced costs less than the negative value of optimalitytol;
       default=1e-6
-
-lp:optimalitytoltarget (optimalitytoltarget)
-      Target optimality tolerance for the solution refiner; default=0 (use the
-      value specified by lp:optimalitytol)
 
 lp:penalty (penalty)
       Minimum absolute penalty variable coefficient; default = automatic
@@ -1396,7 +1430,7 @@ mip:heuremphasis (heuremphasis)
       -1 - default strategy (default)
       0  - disable heuristics
       1  - focus on reducing the gap early
-      2  - extremely aggressive heuristics
+      2  - extremely aggressive heuristics, also enables pre-root heuristics
 
 mip:heurforcespecialobj (heurforcespecobj, heurforcespecialobj)
       Whether to use special objective heuristics on large problems and even
@@ -1556,6 +1590,17 @@ mip:nodeselection (nodeselection)
       4 - best first, then local first: best first is used for the first
           BREADTHFIRST nodes, after which local first is used
       5 - pure depth first: choose from the deepest outstanding nodes
+
+mip:prerooteffort (prerooteffort)
+      Dial for the work spent during the Pre-root parallel heuristic phase:
+
+      -2 - enable pre-root parallel heuristics without a specific work limit
+           for this phase
+      -1 - enablement of pre-root parallel heuristics is subject to
+           mip:heuremphasis (default)
+      0  - disable preroot heuristics
+      >0 - enable preroot heuristics with a work limit proportional to this
+           factor
 
 mip:presolve (mippresolve)
       Type of integer processing to be performed. If set to 0, no processing
@@ -1815,6 +1860,7 @@ pre:domcol (predomcol)
       0  - disable
       1  - cautious
       2  - aggressive: all candidate will be checked
+      3  - includes 1 and 2 but also looks for more generic column domination
 
 pre:domrow (predomrow)
       Whether presolve should remove constraints when solving MIP problems:

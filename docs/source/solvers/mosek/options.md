@@ -232,7 +232,7 @@ cvt:dvelim (dvelim)
           instantiated for use in other places. Can introduce redundancy, but
           seems best for some models (default.)
 
-      See also AMPL options linelim and substout.
+      See also cvt:pre:unnest, as well as AMPL options linelim and substout.
 
 cvt:expcones (expcones)
       0/1*: Recognize exponential cones.
@@ -268,6 +268,20 @@ cvt:plapprox:reltol (plapprox:reltol, plapproxreltol)
 cvt:pre:all
       0/1*: Set to 0 to disable most presolve in the flat converter.
 
+cvt:pre:ctx2count (ctx2count)
+      Propagate exact context into atleast/atmost/exactly, count and numberof
+      expressions, vs mixed. Bitwise OR of the following values:
+
+      1 - atleast/atmost/exactly, count
+      2 - numberof with constant total
+      4 - numberof with variable total.
+
+      Default 0, see #267.
+
+cvt:pre:ctx2ineq (ctx2ineq)
+      0/1*: Propagate exact context into conditional inequalities, vs mixed.
+      See #267.
+
 cvt:pre:eqbinary
       0/1*: Preprocess reified equality comparison with a binary variable.
 
@@ -280,8 +294,14 @@ cvt:pre:ineqresult
 cvt:pre:ineqrhs
       0/1*: Preprocess reified inequality comparison's right-hand sides.
 
-cvt:pre:unnest
-      0/1*: Inline nested expressions, currently Ands/Ors.
+cvt:pre:unnest (cvt:unnest, cvt:pre:inline, cvt:inline)
+      Inline nested expressions. Bitwise OR of the following values:
+
+      1 - Ands and Ors
+      2 - Linear subexpressions
+      4 - Quadratic subexpressions.
+
+      See also option cvt:dvelim concerning only the input model. Default 7.
 
 cvt:prod (cvt:pre:prod)
       Product preprocessing flags. Sum of a subset of the following bits:
