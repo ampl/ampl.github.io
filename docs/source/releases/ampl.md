@@ -1,5 +1,51 @@
 # AMPL Changelog
 
+## 20250626
+
+* Fix an issue with constraints surrounded by parenthesis.
+
+## 20250508
+
+* Fix presolve bugs simplifying logical expressions involving "and", "or", "exists", and "forall" operators.
+
+* Have option `allow_Nan` affect presolve simplifications of comparisons involving less than or greater then.  Adding option `allow_NaN=1` to the above example changes the output to
+```
+	subject to con:
+	        !(20 <= x) || !(x <= 70);
+```
+
+* Fix a bug in the `expand` command.  Example:
+```
+	var x{1..4};
+	subj to con: 0 <==> forall {a in 1..4} not(1 <= x[a] <= 2);
+	expand;
+```
+
+gave
+```
+	subject to con:
+		0 /*FALSE*/ <==> ((!(1 <= x[1]) || !(x[1] <= 2)) && (!(1 <= x[2]) || !
+		(x[2] <= 2)));
+```
+
+missing out `x[3]` and `x[4]`, rather than
+```
+	subject to con:
+		0 /*FALSE*/ <==> ((1 > x[1] || x[1] > 2) && (1 > x[2] || x[2] > 2) && 
+		(1 > x[3] || x[3] > 2) && (1 > x[4] || x[4] > 2));
+```
+
+* Fix a fault seen in
+```
+	var x;
+	subj to con: 0 <==> exists{i in 0..3} i <= i*x <= i^2;
+	solexpand;
+```
+	
+## 20250401
+
+* `Snapshot` (0.1.5) command and `xor` operator are no longer experimental but official features.
+
 ## 20250318
 
 * Snapshot 0.1.5:

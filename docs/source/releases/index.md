@@ -3,7 +3,7 @@
 # Release History
 
 
-- [**AMPL** Changelog (latest: **20250318**)](../releases/ampl.md)
+- [**AMPL** Changelog (latest: **20250626**)](../releases/ampl.md)
 - [**BARON** Changelog (latest: **20241227**)](../solvers/baron/changes.md)
 - [**BARONMP** Changelog (latest: **20250308**)](../solvers/baron/changesmp.md)
 - [**CBC** Changelog (latest: **20250429**)](../solvers/cbc/changes.md)
@@ -36,6 +36,8 @@ mp.md
 ```
 
 
+## 20250626
+- [AMPL](../releases/ampl.md#20250626)
 ## 20250617
 - [COPT](../solvers/copt/changes.md#20250617)
 - [CPLEX](../solvers/cplex/changes.md#20250617)
@@ -50,6 +52,8 @@ mp.md
 - [XPRESS](../solvers/xpress/changes.md#20250531)
 ## 20250515
 - [GUROBI](../solvers/gurobi/changes.md#20250515)
+## 20250508
+- [AMPL](../releases/ampl.md#20250508)
 ## 20250429
 - [CBC](../solvers/cbc/changes.md#20250429)
 - [COPT](../solvers/copt/changes.md#20250429)
@@ -75,6 +79,8 @@ mp.md
 - [COPT](../solvers/copt/changes.md#20250408)
 ## 20250407
 - [COPT](../solvers/copt/changes.md#20250407)
+## 20250401
+- [AMPL](../releases/ampl.md#20250401)
 ## 20250329
 - [CBC](../solvers/cbc/changes.md#20250329)
 - [COPT](../solvers/copt/changes.md#20250329)
