@@ -13,11 +13,34 @@ It connects seamlessly to major :ref:`commercial and open-source solvers <solver
 
         AMPL documentation, tutorials, and other resources that can help you get started with AMPL.
 
-    .. grid-item-card:: AMPL Solvers
+    .. grid-item-card:: AMPL Solvers: From Linear to Global, and Beyond
         :link: solvers
         :link-type: ref
         
         Documentation for all solvers available with AMPL, including installation instructions, and usage examples.
+
+    .. grid-item-card:: AMPL+Python: Built for Today's Enterprise
+        :link: python_integration
+        :link-type: ref
+
+        Modern AMPL+Python integration, including installation instructions, and usage examples. Learn how to deploy AMPL in enterprise environments.
+
+    .. grid-item-card:: AMPL APIs: Integrate AMPL with Your Applications
+        :link: apis
+        :link-type: ref
+        
+        Documentation for all APIs available for AMPL. Integrate AMPL with your applications using Python, R, C#, C++, Java, and more.
+
+    .. grid-item-card:: AMPL Streamlit Apps
+        :link: https://ampl.com/streamlit/
+
+        Collection of Streamlit Applications built with AMPL and Python API.
+        Explore the AMPL Streamlit Applications for detailed guidance, examples, and references to integrate AMPL with Python.
+
+    .. grid-item-card:: MP Modeling Guide
+        :link: https://mp.ampl.com/model-guide.html
+
+        Models today go far beyond simple forms like `min cx s.t. Ax = b`. The **MP Modeling Guide** introduces AMPL's high-level modeling constructs that enhance solver capabilities through automatic reformulations.
 
     .. grid-item-card:: AMPL & Optimization Books
         :link: books
@@ -30,17 +53,6 @@ It connects seamlessly to major :ref:`commercial and open-source solvers <solver
         :link-type: ref
         
         Video content on AMPL, including tutorials, webinars, and interviews.
-
-    .. grid-item-card:: AMPL Streamlit Apps
-        :link: https://ampl.com/streamlit/
-
-        Collection of Streamlit Applications built with AMPL and Python API.
-        Explore the AMPL Streamlit Applications for detailed guidance, examples, and references to integrate AMPL with Python.
-
-    .. grid-item-card:: MP Modeling Guide
-        :link: https://mp.ampl.com/model-guide.html
-
-        Models today go far beyond simple forms like `min cx s.t. Ax = b`. The **MP Modeling Guide** introduces AMPL's high-level modeling constructs that enhance solver capabilities through automatic reformulations.
 
     .. grid-item-card:: MO-Book
         :link: https://ampl.com/mo-book/
