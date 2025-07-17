@@ -31,3 +31,11 @@ Throughout the sessions, you'll develop a [Streamlit app](https://amplopt.stream
 ## Episode 6
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/ehPAqLwebiI?si=0p8-0sg9oZZ4cOLc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+## Episode 7
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/vS3Xl0QPg3s?si=6DMaJGsnUFzYn4Zd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+## Episode 8
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/36Xp1IPN8UQ?si=6kSeDRpwpVvauxk9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
