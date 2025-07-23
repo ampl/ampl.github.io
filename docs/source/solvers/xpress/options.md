@@ -890,7 +890,7 @@ cvt:multoutcard (multoutcard)
       Up to which (estimated) QP matrix cardinality should a product of 2
       linear expressions be multiplied out. Default 1e9.
 
-      Can speed up model input, but prone to numerical issues.
+      Low value can speed up model input, but prone to numerical issues.
 
 cvt:names (names, modelnames)
       Whether to read or generate variable / constraint / objective names:
@@ -962,7 +962,7 @@ cvt:prod (cvt:pre:prod)
       Bits 2 or 4 imply bit 1.
 
 cvt:qp2passes (cvt:qp2pass, qp2passes, qp2pass)
-      Parse sums of QP expressions in 2 passes. Usually faster. Default 1.
+      0/1*: Parse sums of QP expressions in 2 passes. Usually faster.
 
 cvt:quadcon (passquadcon)
       Convenience option. Set to 0 to disable quadratic constraints. Synonym
