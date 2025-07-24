@@ -1,5 +1,25 @@
 # AMPL Changelog
 
+## 20250722
+
+* New builtin suffix .ctype for constraints to indicate the kind of an specific constraint:
+```
+	0 ==> Algebraic constraint
+	1 ==> Logical constraint
+	2 ==> Complementarity constraint
+```
+
+* Change the values for builtin suffix `.domain`. Now values "2" and "3" are merged into "2".
+```
+	0 ==> floating-point (double precision)
+	1 ==> integer
+	2 ==> in a discrete set or union of intervals
+```
+
+* Update the default value of option `strict_ineq_warn` to be zero by default. Strict inequalities are treated as logical constraints. This option controls whether strict inequalities display a warning or not (previous default value was 1).
+
+* Add new option `ampl_debug` (default to 0) that controls whether a fatal error is displayed or not. Set to 1 to display fatal errors information.
+
 ## 20250626
 
 * Fix an issue with constraints surrounded by parenthesis.
