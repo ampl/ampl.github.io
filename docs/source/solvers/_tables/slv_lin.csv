@@ -2,7 +2,7 @@
 :ref:`gurobi`,|y|,|y|,|y|,|y|,|y|,|y|,|y|,|y|,|y|
 :ref:`xpress`,|y|,|y|,|y|,|y|,|y|,|y|,|y|,|y|,|y|
 :ref:`cplex`,|y|,|y|,|y|,|y|,|y|,|n|,|y|,|n|,|y|
-:ref:`copt`,|y|,|y| [1]_,|y|,|y|,|y|,|n|,|y|,|n|,|y|
+:ref:`copt`,|y| [1]_,|y|,|y|,|y|,|y|,|n|,|y|,|n|,|y|
 :ref:`mosek`,|y|,|y|,|y|,|y|,|y|,|n|,|y| [2]_,|n|,|y|
 :ref:`cuopt`,|y| [1]_,|y| [1]_,|n|,|n|,|n|,|n|,|n|,|n|,|y|
 :ref:`highs`,|y| [1]_,|y|,|y|,|n|,|n|,|n|,|n|,|n|,|y|

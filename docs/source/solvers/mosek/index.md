@@ -1,6 +1,6 @@
 (mosek)=
 
-# Mosek
+# MOSEK
 
 Mosek is a versatile linear, quadratic, quadratically constrained and conic optimizer that supports continuous and discrete variables.
 The framework used by the driver supports automatic reformulation for many expression types; the modeling guide can be
