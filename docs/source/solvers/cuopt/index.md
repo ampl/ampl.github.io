@@ -6,6 +6,8 @@ NVIDIA [cuOpt](https://www.nvidia.com/en-eu/ai-data-science/products/cuopt/)  is
 The framework used by the driver supports automatic reformulation for many expression types; the modeling guide can be
 found [here](https://mp.ampl.com/model-guide.html).
 
+[Try cuOpt on Google Colab using NVIDIA GPUs for free!](https://ampl.com/cuOpt)
+
 [Learn More](https://ampl.com/products/solvers/open-source-solvers/)
 | [Modeling guide](https://mp.ampl.com/model-guide.html)
 | [Features guide](https://mp.ampl.com/features-guide.html)
