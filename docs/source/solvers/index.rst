@@ -46,8 +46,8 @@ nonlinear domain (MINLP,  *Mixed Integer NonLinear Programming*).
 
 .. rubric:: Footnotes
 
-.. [#] Conic programming: Mosek supports SOCP and exponential cones, other solvers only SOCP.
-
+.. [1] GPU-accelerated algorithms, such as `PDLP <https://ampl.com/cuPDLP>`_, are available.
+.. [2] Conic programming: MOSEK supports SOCP and `exponential cones <https://amplopt.streamlit.app/Logistic_Regression>`_, other solvers only SOCP.
 
 Nonlinear Solvers
 ------------------

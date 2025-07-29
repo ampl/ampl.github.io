@@ -1,11 +1,11 @@
-,LP,MILP,QP,MIQP,convex |br| (MI)QCP,non-convex |br| (MI)QCP,Conic [#]_,MINLP, |mp|
+,LP,MILP,QP,MIQP,convex |br| (MI)QCP,non-convex |br| (MI)QCP,Conic,MINLP,|mp|
 :ref:`gurobi`,|y|,|y|,|y|,|y|,|y|,|y|,|y|,|y|,|y|
 :ref:`xpress`,|y|,|y|,|y|,|y|,|y|,|y|,|y|,|y|,|y|
 :ref:`cplex`,|y|,|y|,|y|,|y|,|y|,|n|,|y|,|n|,|y|
-:ref:`copt`,|y|,|y|,|y|,|y|,|y|,|n|,|y|,|n|,|y|
-:ref:`cuopt`,|y|,|y|,|n|,|n|,|n|,|n|,|n|,|n|,|y|
-:ref:`mosek`,|y|,|y|,|y|,|y|,|y|,|n|,|y|,|n|,|y|
-:ref:`highs`,|y|,|y|,|y|,|n|,|n|,|n|,|n|,|n|,|y|
+:ref:`copt`,|y|,|y| [1]_,|y|,|y|,|y|,|n|,|y|,|n|,|y|
+:ref:`mosek`,|y|,|y|,|y|,|y|,|y|,|n|,|y| [2]_,|n|,|y|
+:ref:`cuopt`,|y| [1]_,|y| [1]_,|n|,|n|,|n|,|n|,|n|,|n|,|y|
+:ref:`highs`,|y| [1]_,|y|,|y|,|n|,|n|,|n|,|n|,|n|,|y|
+:ref:`cbc`,|y|,|y|,|y|,|y|,|n|,|n|,|n|,|n|,|y|
 :ref:`scip`,|y|,|y|,|y|,|y|,|y|,|y|,|y|,|y|,|y|
 :ref:`gcg`,|y|,|y|,|y|,|y|,|y|,|y|,|y|,|y|,|y|
-:ref:`cbc`,|y|,|y|,|y|,|y|,|n|,|n|,|n|,|n|,|y|
