@@ -62,6 +62,8 @@ An example of supported container is::
             ...
             ampl.solve(solver="cuopt", cuopt_options="option1=value1 option2=value2")
 
+        `Try cuOpt on Google Colab using NVIDIA GPUs for free! <https://ampl.com/cuOpt>`_
+
         Learn more about what we have to offer to implement and deploy `Optimization in Python <https://ampl.com/python/>`_.
 
    .. tab-item:: Other APIs
