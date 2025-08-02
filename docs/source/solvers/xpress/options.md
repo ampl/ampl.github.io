@@ -864,6 +864,19 @@ cvt:bigM (cvt:bigm, cvt:mip:bigM, cvt:mip:bigm)
       used by default. Use with care (prefer tight bounds). Should be smaller
       than (1.0 / [integrality tolerance])
 
+cvt:compl (cvt:complementarity)
+      Complementarity conversion method (if not accepted natively, see
+      acc:compl and acc:nlcompl):
+
+      0 - Disjunction: a<=0 || b<=0, a>=0, b>=0
+      1 - Product: a*b=cvt:compl:tol
+      2 - Fischer-Burmeister function: sqrt(a^2+b^2+2*cvt:compl:tol)=a+b
+      3 - min(a,b)=0
+
+cvt:compl:tol (cvt:compl:eps, compl:eps)
+      Tolerance parameter for the product and Fischer-Burmeister encodings of
+      complementarity, see cvt:compl. Default 1e-6.
+
 cvt:dvelim (dvelim)
       Eliminate AMPL defined variables by substitution into linear, quadratic,
       and polynomial expressions:
@@ -1896,6 +1909,16 @@ pre:elimtol (elimtol)
       The Markowitz tolerance for the elimination phase of the presolve;
       default=0.001
 
+pre:feastol (pre:eps, pre:feastolabs, pre:epsabs)
+      Absolute tolerance to check variable and constraint bound contraditions.
+      Only triggers if also pre:feastolrel is violated. See also
+      sol:chk:feastol. Default 1e-6.
+
+pre:feastolrel (pre:epsrel)
+      Relative tolerance to check variable and constraint bound
+      contradictions. Only triggers if also pre:feastol is violated. See also
+      sol:chk:feastol. Default 1e-6.
+
 pre:folding (prefolding)
       Determines if a folding procedure should be used to aggregate continuous
       columns in an equitable partition:
@@ -2143,12 +2166,14 @@ sol:chk:fail (chk:fail, checkfail)
       Fail on MP solution check violations, with solve result 150.
 
 sol:chk:feastol (sol:chk:eps, chk:eps, chk:feastol)
-      Absolute tolerance to check objective values, variable and constraint
-      bounds. Default 1e-6.
+      Absolute tolerance to check objective values', variable and constraint
+      bounds' violations. Only triggers if also sol:chk:feastolrel is
+      violated. See also pre:feastol. Default 1e-6.
 
 sol:chk:feastolrel (sol:chk:epsrel, chk:epsrel, chk:feastolrel)
-      Relative tolerance to check objective values, variable and constraint
-      bounds. Default 1e-6.
+      Relative tolerance to check objective values', variable and constraint
+      bounds' violations. Only triggers if also sol:chk:feastol is violated.
+      See also pre:feastol. Default 1e-6.
 
 sol:chk:infeas (chk:infeas, checkinfeas)
       Check even infeasible solution condidates, whenever solver reports them.

@@ -1,5 +1,48 @@
 # BARONMP Changelog
 
+## 20250801
+- Changes in MP
+  - Tolerances set by options pre:feastol,
+    pre:feastolrel both need to be violated
+    to produce a warning on contradicting
+    variable/constraint bounds. Previously
+    the preprocessor failed on any violation,
+    without letting the solver try.
+  - Options cvt:compl, cvt:compl:eps control
+    complementarity reformulations.
+
+
+## 20250617
+- Changes in MP
+  - Multi-objective emulator: added support for
+    objective-specific options via objective suffixes
+    beginning with *option_*
+  - Option *cvt:unnest*: bits 2 and 4 switch on
+    inlining of linear and quadratic subexpressions
+    produced during reformulations (by default on).
+  - Options *cvt:pre:ctx2ineq*, *cvt:pre:ctx2count*
+    to control context propagation into conditional
+    comparisons #267.
+
+
+
+## unreleased
+- Changes in MP
+  - Option cvt:qp2pass (default even faster parsing
+    of quadratics)
+  - Fix a bug in parsing of quadratic expressions,
+    which could wrongly parse products of unequal
+    linear expressions, such as (x-3)*(x-z-5).
+
+
+## 20250329
+- Changes in MP:
+  - Option cvt:multoutcard to limit the size of
+    out-multiplied QP expressions. Can improve speed
+    on large models.
+  - Improved parsing of quadratic expressions.
+
+
 ## 20250308
 - Changes in MP.
 

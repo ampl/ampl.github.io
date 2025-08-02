@@ -167,6 +167,19 @@ cvt:bigM (cvt:bigm, cvt:mip:bigM, cvt:mip:bigm)
       used by default. Use with care (prefer tight bounds). Should be smaller
       than (1.0 / [integrality tolerance])
 
+cvt:compl (cvt:complementarity)
+      Complementarity conversion method (if not accepted natively, see
+      acc:compl and acc:nlcompl):
+
+      0 - Disjunction: a<=0 || b<=0, a>=0, b>=0
+      1 - Product: a*b=cvt:compl:tol
+      2 - Fischer-Burmeister function: sqrt(a^2+b^2+2*cvt:compl:tol)=a+b
+      3 - min(a,b)=0
+
+cvt:compl:tol (cvt:compl:eps, compl:eps)
+      Tolerance parameter for the product and Fischer-Burmeister encodings of
+      complementarity, see cvt:compl. Default 1e-6.
+
 cvt:dvelim (dvelim)
       Eliminate AMPL defined variables by substitution into linear, quadratic,
       and polynomial expressions:
@@ -178,7 +191,7 @@ cvt:dvelim (dvelim)
           instantiated for use in other places. Can introduce redundancy, but
           seems best for some models (default.)
 
-      See also AMPL options linelim and substout.
+      See also cvt:pre:unnest, as well as AMPL options linelim and substout.
 
 cvt:expcones (expcones)
       0*/1: Recognize exponential cones.
@@ -193,7 +206,7 @@ cvt:multoutcard (multoutcard)
       Up to which (estimated) QP matrix cardinality should a product of 2
       linear expressions be multiplied out. Default 1e9.
 
-      Can speed up model input, but prone to numerical issues.
+      Low value can speed up model input, but prone to numerical issues.
 
 cvt:names (names, modelnames)
       Whether to read or generate variable / constraint / objective names:
@@ -214,6 +227,20 @@ cvt:plapprox:reltol (plapprox:reltol, plapproxreltol)
 cvt:pre:all
       0/1*: Set to 0 to disable most presolve in the flat converter.
 
+cvt:pre:ctx2count (ctx2count)
+      Propagate exact context into atleast/atmost/exactly, count and numberof
+      expressions, vs mixed. Bitwise OR of the following values:
+
+      1 - atleast/atmost/exactly, count
+      2 - numberof with constant total
+      4 - numberof with variable total.
+
+      Default 0, see #267.
+
+cvt:pre:ctx2ineq (ctx2ineq)
+      0/1*: Propagate exact context into conditional inequalities, vs mixed.
+      See #267.
+
 cvt:pre:eqbinary
       0/1*: Preprocess reified equality comparison with a binary variable.
 
@@ -226,8 +253,14 @@ cvt:pre:ineqresult
 cvt:pre:ineqrhs
       0/1*: Preprocess reified inequality comparison's right-hand sides.
 
-cvt:pre:unnest
-      0/1*: Inline nested expressions, currently Ands/Ors.
+cvt:pre:unnest (cvt:unnest, cvt:pre:inline, cvt:inline)
+      Inline nested expressions. Bitwise OR of the following values:
+
+      1 - Ands and Ors
+      2 - Linear subexpressions
+      4 - Quadratic subexpressions.
+
+      See also option cvt:dvelim concerning only the input model. Default 7.
 
 cvt:prod (cvt:pre:prod)
       Product preprocessing flags. Sum of a subset of the following bits:
@@ -240,12 +273,12 @@ cvt:prod (cvt:pre:prod)
       natively (see acc:and), the conjunction is linearized.
       4 - Logicalize products of >=3 binary terms.
 
-      Default: 5.
+      Default: 7.
 
       Bits 2 or 4 imply bit 1.
 
 cvt:qp2passes (cvt:qp2pass, qp2passes, qp2pass)
-      Parse sums of QP expressions in 2 passes. Usually faster. Default 1.
+      0/1*: Parse sums of QP expressions in 2 passes. Usually faster.
 
 cvt:quadcon (passquadcon)
       Convenience option. Set to 0 to disable quadratic constraints. Synonym
@@ -714,6 +747,16 @@ pre:donotmultaggr (donotmultaggr)
 
       1 - Multi-aggregation of variables should be forbidden.
 
+pre:feastol (pre:eps, pre:feastolabs, pre:epsabs)
+      Absolute tolerance to check variable and constraint bound contraditions.
+      Only triggers if also pre:feastolrel is violated. See also
+      sol:chk:feastol. Default 1e-6.
+
+pre:feastolrel (pre:epsrel)
+      Relative tolerance to check variable and constraint bound
+      contradictions. Only triggers if also pre:feastol is violated. See also
+      sol:chk:feastol. Default 1e-6.
+
 pre:immrestartfac (immrestartfac)
       Fraction of integer variables that were fixed in the root node
       triggering an immediate restart with preprocessing (default: 0.1)
@@ -796,12 +839,14 @@ sol:chk:fail (chk:fail, checkfail)
       Fail on MP solution check violations, with solve result 150.
 
 sol:chk:feastol (sol:chk:eps, chk:eps, chk:feastol)
-      Absolute tolerance to check objective values, variable and constraint
-      bounds. Default 1e-6.
+      Absolute tolerance to check objective values', variable and constraint
+      bounds' violations. Only triggers if also sol:chk:feastolrel is
+      violated. See also pre:feastol. Default 1e-6.
 
 sol:chk:feastolrel (sol:chk:epsrel, chk:epsrel, chk:feastolrel)
-      Relative tolerance to check objective values, variable and constraint
-      bounds. Default 1e-6.
+      Relative tolerance to check objective values', variable and constraint
+      bounds' violations. Only triggers if also sol:chk:feastol is violated.
+      See also pre:feastol. Default 1e-6.
 
 sol:chk:infeas (chk:infeas, checkinfeas)
       Check even infeasible solution condidates, whenever solver reports them.

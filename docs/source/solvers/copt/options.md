@@ -27,6 +27,34 @@ acc:_all
       Can be useful to disable all reformulations (acc:_all=2), or force
       linearization (acc:_all=0.)
 
+acc:cos
+      Solver acceptance level for 'CosConstraint' as expression, default 0:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      3 - Accepted but automatic redefinition will be used where possible
+      4 - Accepted natively and preferred
+
+acc:div
+      Solver acceptance level for 'DivConstraint' as expression, default 0:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      3 - Accepted but automatic redefinition will be used where possible
+      4 - Accepted natively and preferred
+
+acc:exp
+      Solver acceptance level for 'ExpConstraint' as expression, default 0:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      3 - Accepted but automatic redefinition will be used where possible
+      4 - Accepted natively and preferred
+
+acc:expa (acc:expA)
+      Solver acceptance level for 'ExpAConstraint' as expression, default 0:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      3 - Accepted but automatic redefinition will be used where possible
+      4 - Accepted natively and preferred
+
 acc:indeq (acc:indlineq)
       Solver acceptance level for 'IndicatorConstraintLinEQ' as flat
       constraint, default 2:
@@ -58,6 +86,14 @@ acc:lineq
       1 - Accepted but automatic redefinition will be used where possible
       2 - Accepted natively and preferred
 
+acc:linfunccon
+      Solver acceptance level for 'LinearFunctionalConstraint' as expression,
+      default 0:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      3 - Accepted but automatic redefinition will be used where possible
+      4 - Accepted natively and preferred
+
 acc:linge
       Solver acceptance level for 'LinConGE' as flat constraint, default 2:
 
@@ -79,12 +115,71 @@ acc:linrange (acc:linrng)
       1 - Accepted but automatic redefinition will be used where possible
       2 - Accepted natively and preferred
 
+acc:log
+      Solver acceptance level for 'LogConstraint' as expression, default 0:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      3 - Accepted but automatic redefinition will be used where possible
+      4 - Accepted natively and preferred
+
+acc:loga (acc:logA)
+      Solver acceptance level for 'LogAConstraint' as expression, default 0:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      3 - Accepted but automatic redefinition will be used where possible
+      4 - Accepted natively and preferred
+
+acc:nlassigneq
+      Solver acceptance level for 'NLAssignEQ' as flat constraint, default 2:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+acc:nlassignge
+      Solver acceptance level for 'NLAssignGE' as flat constraint, default 2:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+acc:nlassignle
+      Solver acceptance level for 'NLAssignLE' as flat constraint, default 2:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+acc:nlcon (acc:nlalgcon)
+      Solver acceptance level for 'NLConstraint' as flat constraint, default
+      2:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
+acc:powconstexp
+      Solver acceptance level for 'PowConstExpConstraint' as expression,
+      default 0:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      3 - Accepted but automatic redefinition will be used where possible
+      4 - Accepted natively and preferred
+
 acc:quadeq
       Solver acceptance level for 'QuadConEQ' as flat constraint, default 2:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
       2 - Accepted natively and preferred
+
+acc:quadfunccon
+      Solver acceptance level for 'QuadraticFunctionalConstraint' as
+      expression, default 0:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      3 - Accepted but automatic redefinition will be used where possible
+      4 - Accepted natively and preferred
 
 acc:quadge
       Solver acceptance level for 'QuadConGE' as flat constraint, default 2:
@@ -99,6 +194,13 @@ acc:quadle
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
       2 - Accepted natively and preferred
+
+acc:sin
+      Solver acceptance level for 'SinConstraint' as expression, default 0:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      3 - Accepted but automatic redefinition will be used where possible
+      4 - Accepted natively and preferred
 
 acc:sos1
       Solver acceptance level for 'SOS1Constraint' as flat constraint, default
@@ -115,6 +217,13 @@ acc:sos2
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
       2 - Accepted natively and preferred
+
+acc:tan
+      Solver acceptance level for 'TanConstraint' as expression, default 0:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      3 - Accepted but automatic redefinition will be used where possible
+      4 - Accepted natively and preferred
 
 alg:basis (basis)
       Whether to use or return a basis:
@@ -201,6 +310,19 @@ cvt:bigM (cvt:bigm, cvt:mip:bigM, cvt:mip:bigm)
       used by default. Use with care (prefer tight bounds). Should be smaller
       than (1.0 / [integrality tolerance])
 
+cvt:compl (cvt:complementarity)
+      Complementarity conversion method (if not accepted natively, see
+      acc:compl and acc:nlcompl):
+
+      0 - Disjunction: a<=0 || b<=0, a>=0, b>=0
+      1 - Product: a*b=cvt:compl:tol
+      2 - Fischer-Burmeister function: sqrt(a^2+b^2+2*cvt:compl:tol)=a+b
+      3 - min(a,b)=0
+
+cvt:compl:tol (cvt:compl:eps, compl:eps)
+      Tolerance parameter for the product and Fischer-Burmeister encodings of
+      complementarity, see cvt:compl. Default 1e-6.
+
 cvt:dvelim (dvelim)
       Eliminate AMPL defined variables by substitution into linear, quadratic,
       and polynomial expressions:
@@ -227,7 +349,7 @@ cvt:multoutcard (multoutcard)
       Up to which (estimated) QP matrix cardinality should a product of 2
       linear expressions be multiplied out. Default 1e9.
 
-      Can speed up model input, but prone to numerical issues.
+      Low value can speed up model input, but prone to numerical issues.
 
 cvt:names (names, modelnames)
       Whether to read or generate variable / constraint / objective names:
@@ -299,7 +421,7 @@ cvt:prod (cvt:pre:prod)
       Bits 2 or 4 imply bit 1.
 
 cvt:qp2passes (cvt:qp2pass, qp2passes, qp2pass)
-      Parse sums of QP expressions in 2 passes. Usually faster. Default 1.
+      0/1*: Parse sums of QP expressions in 2 passes. Usually faster.
 
 cvt:quadcon (passquadcon)
       Convenience option. Set to 0 to disable quadratic constraints. Synonym
@@ -606,6 +728,16 @@ pre:dualize (dualize)
       0  - No
       1  - Yes.
 
+pre:feastol (pre:eps, pre:feastolabs, pre:epsabs)
+      Absolute tolerance to check variable and constraint bound contraditions.
+      Only triggers if also pre:feastolrel is violated. See also
+      sol:chk:feastol. Default 1e-6.
+
+pre:feastolrel (pre:epsrel)
+      Relative tolerance to check variable and constraint bound
+      contradictions. Only triggers if also pre:feastol is violated. See also
+      sol:chk:feastol. Default 1e-6.
+
 pre:scale (scale)
       Whether to scale the problem:
 
@@ -631,12 +763,14 @@ sol:chk:fail (chk:fail, checkfail)
       Fail on MP solution check violations, with solve result 150.
 
 sol:chk:feastol (sol:chk:eps, chk:eps, chk:feastol)
-      Absolute tolerance to check objective values, variable and constraint
-      bounds. Default 1e-6.
+      Absolute tolerance to check objective values', variable and constraint
+      bounds' violations. Only triggers if also sol:chk:feastolrel is
+      violated. See also pre:feastol. Default 1e-6.
 
 sol:chk:feastolrel (sol:chk:epsrel, chk:epsrel, chk:feastolrel)
-      Relative tolerance to check objective values, variable and constraint
-      bounds. Default 1e-6.
+      Relative tolerance to check objective values', variable and constraint
+      bounds' violations. Only triggers if also sol:chk:feastol is violated.
+      See also pre:feastol. Default 1e-6.
 
 sol:chk:infeas (chk:infeas, checkinfeas)
       Check even infeasible solution condidates, whenever solver reports them.

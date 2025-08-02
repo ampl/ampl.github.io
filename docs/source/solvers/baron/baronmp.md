@@ -18,7 +18,7 @@ option "baronmp_options". For example:
 
    ampl: option baronmp_options 'mipgap=1e-6';
 
- Options:
+'' Options:
 
 acc:_all
       Solver acceptance level for all constraints and expressions. Value
@@ -251,6 +251,19 @@ cvt:bigM (cvt:bigm, cvt:mip:bigM, cvt:mip:bigm)
       used by default. Use with care (prefer tight bounds). Should be smaller
       than (1.0 / [integrality tolerance])
 
+cvt:compl (cvt:complementarity)
+      Complementarity conversion method (if not accepted natively, see
+      acc:compl and acc:nlcompl):
+
+      0 - Disjunction: a<=0 || b<=0, a>=0, b>=0
+      1 - Product: a*b=cvt:compl:tol
+      2 - Fischer-Burmeister function: sqrt(a^2+b^2+2*cvt:compl:tol)=a+b
+      3 - min(a,b)=0
+
+cvt:compl:tol (cvt:compl:eps, compl:eps)
+      Tolerance parameter for the product and Fischer-Burmeister encodings of
+      complementarity, see cvt:compl. Default 1e-6.
+
 cvt:dvelim (dvelim)
       Eliminate AMPL defined variables by substitution into linear, quadratic,
       and polynomial expressions:
@@ -262,7 +275,7 @@ cvt:dvelim (dvelim)
           instantiated for use in other places. Can introduce redundancy, but
           seems best for some models (default.)
 
-      See also AMPL options linelim and substout.
+      See also cvt:pre:unnest, as well as AMPL options linelim and substout.
 
 cvt:expcones (expcones)
       0*/1: Recognize exponential cones.
@@ -272,6 +285,12 @@ cvt:mip:eps (cvt:cmp:eps, cmp:eps)
       to <, >, and != operators. Also applies to negation of conditional
       comparisons: b==1 <==> x<=5 means that with b==0, x>=5+eps. Default:
       1e-4.
+
+cvt:multoutcard (multoutcard)
+      Up to which (estimated) QP matrix cardinality should a product of 2
+      linear expressions be multiplied out. Default 1e9.
+
+      Low value can speed up model input, but prone to numerical issues.
 
 cvt:names (names, modelnames)
       Whether to read or generate variable / constraint / objective names:
@@ -292,6 +311,20 @@ cvt:plapprox:reltol (plapprox:reltol, plapproxreltol)
 cvt:pre:all
       0/1*: Set to 0 to disable most presolve in the flat converter.
 
+cvt:pre:ctx2count (ctx2count)
+      Propagate exact context into atleast/atmost/exactly, count and numberof
+      expressions, vs mixed. Bitwise OR of the following values:
+
+      1 - atleast/atmost/exactly, count
+      2 - numberof with constant total
+      4 - numberof with variable total.
+
+      Default 0, see #267.
+
+cvt:pre:ctx2ineq (ctx2ineq)
+      0/1*: Propagate exact context into conditional inequalities, vs mixed.
+      See #267.
+
 cvt:pre:eqbinary
       0/1*: Preprocess reified equality comparison with a binary variable.
 
@@ -304,8 +337,14 @@ cvt:pre:ineqresult
 cvt:pre:ineqrhs
       0/1*: Preprocess reified inequality comparison's right-hand sides.
 
-cvt:pre:unnest
-      0/1*: Inline nested expressions, currently Ands/Ors.
+cvt:pre:unnest (cvt:unnest, cvt:pre:inline, cvt:inline)
+      Inline nested expressions. Bitwise OR of the following values:
+
+      1 - Ands and Ors
+      2 - Linear subexpressions
+      4 - Quadratic subexpressions.
+
+      See also option cvt:dvelim concerning only the input model. Default 7.
 
 cvt:prod (cvt:pre:prod)
       Product preprocessing flags. Sum of a subset of the following bits:
@@ -322,15 +361,18 @@ cvt:prod (cvt:pre:prod)
 
       Bits 2 or 4 imply bit 1.
 
+cvt:qp2passes (cvt:qp2pass, qp2passes, qp2pass)
+      0/1*: Parse sums of QP expressions in 2 passes. Usually faster.
+
 cvt:quadcon (passquadcon)
       Convenience option. Set to 0 to disable quadratic constraints. Synonym
       for acc:quad..=0. Currently this disables out-multiplication of
       quadratic terms, then they are linearized.
 
 cvt:quadobj (passquadobj)
-      0/1*: Pass quadratic objective terms to the solver. If the solver
-      accepts quadratic constraints, such a constraint will be created with
-      those, otherwise linearly approximated.
+      0/1*: Pass quadratic objective terms to the solver. When 0, if the
+      solver accepts quadratic constraints, such a constraint will be created
+      with those, otherwise linearly approximated.
 
 cvt:socp (socpmode, socp)
       Second-Order Cone recognition mode:
@@ -364,8 +406,9 @@ cvt:sos (sos)
       variables.
 
 cvt:sos2 (sos2)
-      0/1*: Whether to honor SOS2 constraints for nonconvex piecewise-linear
-      terms, using suffixes .sos and .sosref provided by AMPL.
+      0*/1: Whether to honor SOS2 constraints for nonconvex piecewise-linear
+      terms, using suffixes .sos and .sosref provided by AMPL. Currently under
+      rework.
 
 cvt:uenc:negctx:max (uenc:negctx:max, uenc:negctx)
       If cvt:uenc:ratio applies, max number of constants in comparisons
@@ -464,16 +507,28 @@ obj:no (objno)
       1 - First (default, if available)
       2 - Second (if available), etc.
 
+pre:feastol (pre:eps, pre:feastolabs, pre:epsabs)
+      Absolute tolerance to check variable and constraint bound contraditions.
+      Only triggers if also pre:feastolrel is violated. See also
+      sol:chk:feastol. Default 1e-6.
+
+pre:feastolrel (pre:epsrel)
+      Relative tolerance to check variable and constraint bound
+      contradictions. Only triggers if also pre:feastol is violated. See also
+      sol:chk:feastol. Default 1e-6.
+
 sol:chk:fail (chk:fail, checkfail)
       Fail on MP solution check violations, with solve result 150.
 
 sol:chk:feastol (sol:chk:eps, chk:eps, chk:feastol)
-      Absolute tolerance to check objective values, variable and constraint
-      bounds. Default 1e-6.
+      Absolute tolerance to check objective values', variable and constraint
+      bounds' violations. Only triggers if also sol:chk:feastolrel is
+      violated. See also pre:feastol. Default 1e-6.
 
 sol:chk:feastolrel (sol:chk:epsrel, chk:epsrel, chk:feastolrel)
-      Relative tolerance to check objective values, variable and constraint
-      bounds. Default 1e-6.
+      Relative tolerance to check objective values', variable and constraint
+      bounds' violations. Only triggers if also sol:chk:feastol is violated.
+      See also pre:feastol. Default 1e-6.
 
 sol:chk:infeas (chk:infeas, checkinfeas)
       Check even infeasible solution condidates, whenever solver reports them.
@@ -510,6 +565,10 @@ sol:chk:round (chk:round, chk:rnd)
 sol:count (countsolutions)
       0*/1: Whether to count the number of solutions and return it in the
       ".nsol" problem suffix.
+
+sol:report_uncertain (report_uncertain_sol)
+      0/1*: whether to report objective value(s) in solve_message when
+      solve_result is '?' (unknown).
 
 sol:stub (solstub, solutionstub)
       Stub for solution files. If "solutionstub" is specified, found solutions

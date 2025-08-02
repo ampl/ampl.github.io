@@ -1,5 +1,17 @@
 # CPLEX Changelog
 
+## 20250801
+- Changes in MP
+  - Tolerances set by options pre:feastol,
+    pre:feastolrel both need to be violated
+    to produce a warning on contradicting
+    variable/constraint bounds. Previously
+    the preprocessor failed on any violation,
+    without letting the solver try.
+  - Options cvt:compl, cvt:compl:eps control
+    complementarity reformulations.
+
+
 ## 20250617
 - Option lp:opttol (opttol).
 - Changes in MP
