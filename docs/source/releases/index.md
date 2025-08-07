@@ -4,8 +4,8 @@
 
 
 - [**AMPL** Changelog (latest: **20250722**)](../releases/ampl.md)
-- [**BARON** Changelog (latest: **20241227**)](../solvers/baron/changes.md)
-- [**BARONMP** Changelog (latest: **20250801**)](../solvers/baron/changesmp.md)
+- [**BARON** Changelog (latest: **20250806**)](../solvers/baron/changes.md)
+- [**BARONMP** Changelog (latest: **20250806**)](../solvers/baron/changesmp.md)
 - [**CBC** Changelog (latest: **20250801**)](../solvers/cbc/changes.md)
 - [**CONOPT** Changelog (latest: **20250312**)](../solvers/conopt/changes.md)
 - [**COPT** Changelog (latest: **20250801**)](../solvers/copt/changes.md)
@@ -25,7 +25,7 @@
 - [**MP** Changelog (latest: **20250801**)](../releases/mp.md)
 - [**SCIP** Changelog (latest: **20240121**)](../solvers/scip/changes.md)
 - [**SNOPT** Changelog (latest: **20211109**)](../solvers/snopt/changes.md)
-- [**XPRESS** Changelog (latest: **20250801**)](../solvers/xpress/changes.md)
+- [**XPRESS** Changelog (latest: **20250806**)](../solvers/xpress/changes.md)
 - [**XPRESSASL** Changelog (latest: **20220112**)](../solvers/xpress/changesasl.md)
 
 ```{toctree}
@@ -36,6 +36,10 @@ mp.md
 ```
 
 
+## 20250806
+- [BARON](../solvers/baron/changes.md#20250806)
+- [BARONMP](../solvers/baron/changesmp.md#20250806)
+- [XPRESS](../solvers/xpress/changes.md#20250806)
 ## 20250801
 - [BARONMP](../solvers/baron/changesmp.md#20250801)
 - [CBC](../solvers/cbc/changes.md#20250801)

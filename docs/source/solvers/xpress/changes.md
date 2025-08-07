@@ -1,5 +1,10 @@
 # XPRESS Changelog
 
+## 20250806
+- Updated to Xpress 45.01.02 (9.7), which includes
+  bugfixes.
+
+
 ## 20250801
 - Changes in MP
   - Tolerances set by options pre:feastol,

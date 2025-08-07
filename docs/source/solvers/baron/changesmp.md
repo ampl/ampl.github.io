@@ -1,5 +1,10 @@
 # BARONMP Changelog
 
+## 20250806
+- Updated Baron to version 2025.8.5, which includes
+  bugfixes.
+
+
 ## 20250801
 - Changes in MP
   - Tolerances set by options pre:feastol,
