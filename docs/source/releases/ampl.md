@@ -1,5 +1,9 @@
 # AMPL Changelog
 
+## 20250805
+
+* Fix a fault seen in `for` loops with tuples of dummy variables if the cartesian product of the form `{I, J}`.
+
 ## 20250722
 
 * New builtin suffix .ctype for constraints to indicate the kind of an specific constraint:

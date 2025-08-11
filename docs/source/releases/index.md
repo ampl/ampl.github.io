@@ -3,7 +3,7 @@
 # Release History
 
 
-- [**AMPL** Changelog (latest: **20250722**)](../releases/ampl.md)
+- [**AMPL** Changelog (latest: **20250805**)](../releases/ampl.md)
 - [**BARON** Changelog (latest: **20250806**)](../solvers/baron/changes.md)
 - [**BARONMP** Changelog (latest: **20250806**)](../solvers/baron/changesmp.md)
 - [**CBC** Changelog (latest: **20250801**)](../solvers/cbc/changes.md)
@@ -40,6 +40,8 @@ mp.md
 - [BARON](../solvers/baron/changes.md#20250806)
 - [BARONMP](../solvers/baron/changesmp.md#20250806)
 - [XPRESS](../solvers/xpress/changes.md#20250806)
+## 20250805
+- [AMPL](../releases/ampl.md#20250805)
 ## 20250801
 - [BARONMP](../solvers/baron/changesmp.md#20250801)
 - [CBC](../solvers/cbc/changes.md#20250801)
