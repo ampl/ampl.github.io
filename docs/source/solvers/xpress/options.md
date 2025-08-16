@@ -232,11 +232,16 @@ acc:log
       4 - Accepted as expression natively and preferred
 
 acc:loga (acc:logA)
-      Solver acceptance level for 'LogAConstraint' as expression, default 4:
+      Solver acceptance level for 'LogAConstraint' as either constraint or
+      expression, default 4:
 
       0 - Not accepted natively, automatic redefinition will be attempted
-      3 - Accepted but automatic redefinition will be used where possible
-      4 - Accepted natively and preferred
+      1 - Accepted as constraint but automatic redefinition will be used
+          where possible
+      2 - Accepted as constraint natively and preferred
+      3 - Accepted as expression but automatic redefinition will be used
+          where possible
+      4 - Accepted as expression natively and preferred
 
 acc:max
       Solver acceptance level for 'MaxConstraint' as either constraint or
@@ -452,6 +457,10 @@ alg:feastoltarget (feastoltarget)
       Specifies the target feasibility tolerance for the solution refiner.
       Default = 0 (use the value of "alg:feastol")
 
+alg:global (global)
+      0/1*: Allow global solving. Passing 0 should linearize all expressions
+      requiring Xpress Global.
+
 alg:iisfind (iisfind, iis)
       Whether to find and export an IIS. Default = 0 (don't export).
 
@@ -480,6 +489,16 @@ alg:method (method, lpmethod, defaultalg)
 
 alg:network (network)
       Solve (substructure of) (MIP node) LPs by network simplex method.
+
+alg:numericalemphasis (alg:numericfocus, numericfocus, numfocus, numericemphasis, numericalemphasis)
+      How much emphasis to place on numerical stability instead of solve
+      speed.
+
+      -1 - automatic (default)
+      0  - epmhasize speed
+      1  - mild emphasis on numerical stability
+      2  - medium emphasis on numerical stability
+      3  - strong emphasis on numerical stability
 
 alg:primal (alg:primalopt, primal, primalopt)
       Solve (MIP node) LPs by primal simplex method.
@@ -866,7 +885,7 @@ cvt:bigM (cvt:bigm, cvt:mip:bigM, cvt:mip:bigm)
 
 cvt:compl (cvt:complementarity)
       Complementarity conversion method (if not accepted natively, see
-      acc:compl and acc:nlcompl):
+      acc:compl and acc:nlcompl). Default 0:
 
       0 - Disjunction: a<=0 || b<=0, a>=0, b>=0
       1 - Product: a*b=cvt:compl:tol
@@ -924,6 +943,9 @@ cvt:plapprox:reltol (plapprox:reltol, plapproxreltol)
 cvt:pre:all
       0/1*: Set to 0 to disable most presolve in the flat converter.
 
+cvt:pre:boundlogarg (boundlogarg)
+      0*/1: Bound logarithm arguments to nonnegative.
+
 cvt:pre:ctx2count (ctx2count)
       Propagate exact context into atleast/atmost/exactly, count and numberof
       expressions, vs mixed. Bitwise OR of the following values:
@@ -944,22 +966,23 @@ cvt:pre:eqbinary
 cvt:pre:eqresult
       0/1*: Preprocess reified equality comparison's decidable cases.
 
+cvt:pre:feastol (pre:feastol, pre:eps, pre:feastolabs, pre:epsabs)
+      Absolute tolerance to check variable and constraint bound contraditions.
+      Only warns if also pre:feastolrel is violated. See also sol:chk:feastol.
+      Default 1e-6.
+
+cvt:pre:feastolrel (pre:feastolrel, pre:epsrel)
+      Relative tolerance to check variable and constraint bound
+      contradictions. Only warns if also pre:feastol is violated. See also
+      sol:chk:feastol. Default 1e-6.
+
 cvt:pre:ineqresult
       0/1*: Preprocess reified inequality comparison's decidable cases.
 
 cvt:pre:ineqrhs
       0/1*: Preprocess reified inequality comparison's right-hand sides.
 
-cvt:pre:unnest (cvt:unnest, cvt:pre:inline, cvt:inline)
-      Inline nested expressions. Bitwise OR of the following values:
-
-      1 - Ands and Ors
-      2 - Linear subexpressions
-      4 - Quadratic subexpressions.
-
-      See also option cvt:dvelim concerning only the input model. Default 7.
-
-cvt:prod (cvt:pre:prod)
+cvt:pre:prod (cvt:prod)
       Product preprocessing flags. Sum of a subset of the following bits:
 
       1 - Quadratize higher-order products in the following order: integer
@@ -973,6 +996,21 @@ cvt:prod (cvt:pre:prod)
       Default: 5.
 
       Bits 2 or 4 imply bit 1.
+
+cvt:pre:sort (cvt:sort)
+      0/1*: Sort and eliminate duplicates in arguments of AND, OR, MIN, MAX.
+      Sort arguments of COUNT, ATLEAST, EXACTLY, ATMOST, NUMBEROF, ALLDIFF.
+      Can be necessary for some solvers.
+
+cvt:pre:unnest (cvt:unnest, cvt:pre:inline, cvt:inline)
+      Inline nested expressions. Bitwise OR of the following values:
+
+      1 - AND/FORALL and OR/EXISTS expressions
+      2 - Linear subexpressions
+      4 - Quadratic subexpressions
+      8 - MIN/MAX.
+
+      See also option cvt:dvelim concerning only the input model. Default 15.
 
 cvt:qp2passes (cvt:qp2pass, qp2passes, qp2pass)
       0/1*: Parse sums of QP expressions in 2 passes. Usually faster.
@@ -1029,7 +1067,7 @@ cvt:uenc:negctx:max (uenc:negctx:max, uenc:negctx)
       context) to skip UEnc(x). Default 1.
 
 cvt:uenc:ratio (uenc:ratio)
-      Min ratio (ub-lb)/Nvalues to skip unary encoding for a variable x, where
+      Max ratio (ub-lb)/Nvalues to skip unary encoding for a variable x, where
       Nvalues is the number of constants used in conditional comparisons
       x==const. Instead, indicator constraints (or big-Ms) are used, if
       uenc:negctx also applies. Default 0.
@@ -1908,16 +1946,6 @@ pre:elimquad (preelimquad)
 pre:elimtol (elimtol)
       The Markowitz tolerance for the elimination phase of the presolve;
       default=0.001
-
-pre:feastol (pre:eps, pre:feastolabs, pre:epsabs)
-      Absolute tolerance to check variable and constraint bound contraditions.
-      Only triggers if also pre:feastolrel is violated. See also
-      sol:chk:feastol. Default 1e-6.
-
-pre:feastolrel (pre:epsrel)
-      Relative tolerance to check variable and constraint bound
-      contradictions. Only triggers if also pre:feastol is violated. See also
-      sol:chk:feastol. Default 1e-6.
 
 pre:folding (prefolding)
       Determines if a folding procedure should be used to aggregate continuous

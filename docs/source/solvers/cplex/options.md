@@ -287,6 +287,10 @@ alg:network (network)
       Solve (substructure of) (MIP node's) LP/QP by network simplex method.
       Synonym for alg:netopt=3.
 
+alg:numericalemphasis (numfocus, numericemphasis, numericalemphasis, alg:numericfocus, numericfocus)
+      0*/1: Whether to try to improve numerical accuracy (at a possible cost
+      of time or memory).
+
 alg:primalopt (alg:primal, primalopt)
       Solve (MIP node) LPs by primal simplex method.
 
@@ -535,7 +539,7 @@ cvt:bigM (cvt:bigm, cvt:mip:bigM, cvt:mip:bigm)
 
 cvt:compl (cvt:complementarity)
       Complementarity conversion method (if not accepted natively, see
-      acc:compl and acc:nlcompl):
+      acc:compl and acc:nlcompl). Default 0:
 
       0 - Disjunction: a<=0 || b<=0, a>=0, b>=0
       1 - Product: a*b=cvt:compl:tol
@@ -593,6 +597,9 @@ cvt:plapprox:reltol (plapprox:reltol, plapproxreltol)
 cvt:pre:all
       0/1*: Set to 0 to disable most presolve in the flat converter.
 
+cvt:pre:boundlogarg (boundlogarg)
+      0*/1: Bound logarithm arguments to nonnegative.
+
 cvt:pre:ctx2count (ctx2count)
       Propagate exact context into atleast/atmost/exactly, count and numberof
       expressions, vs mixed. Bitwise OR of the following values:
@@ -613,22 +620,23 @@ cvt:pre:eqbinary
 cvt:pre:eqresult
       0/1*: Preprocess reified equality comparison's decidable cases.
 
+cvt:pre:feastol (pre:feastol, pre:eps, pre:feastolabs, pre:epsabs)
+      Absolute tolerance to check variable and constraint bound contraditions.
+      Only warns if also pre:feastolrel is violated. See also sol:chk:feastol.
+      Default 1e-6.
+
+cvt:pre:feastolrel (pre:feastolrel, pre:epsrel)
+      Relative tolerance to check variable and constraint bound
+      contradictions. Only warns if also pre:feastol is violated. See also
+      sol:chk:feastol. Default 1e-6.
+
 cvt:pre:ineqresult
       0/1*: Preprocess reified inequality comparison's decidable cases.
 
 cvt:pre:ineqrhs
       0/1*: Preprocess reified inequality comparison's right-hand sides.
 
-cvt:pre:unnest (cvt:unnest, cvt:pre:inline, cvt:inline)
-      Inline nested expressions. Bitwise OR of the following values:
-
-      1 - Ands and Ors
-      2 - Linear subexpressions
-      4 - Quadratic subexpressions.
-
-      See also option cvt:dvelim concerning only the input model. Default 7.
-
-cvt:prod (cvt:pre:prod)
+cvt:pre:prod (cvt:prod)
       Product preprocessing flags. Sum of a subset of the following bits:
 
       1 - Quadratize higher-order products in the following order: integer
@@ -642,6 +650,21 @@ cvt:prod (cvt:pre:prod)
       Default: 7.
 
       Bits 2 or 4 imply bit 1.
+
+cvt:pre:sort (cvt:sort)
+      0/1*: Sort and eliminate duplicates in arguments of AND, OR, MIN, MAX.
+      Sort arguments of COUNT, ATLEAST, EXACTLY, ATMOST, NUMBEROF, ALLDIFF.
+      Can be necessary for some solvers.
+
+cvt:pre:unnest (cvt:unnest, cvt:pre:inline, cvt:inline)
+      Inline nested expressions. Bitwise OR of the following values:
+
+      1 - AND/FORALL and OR/EXISTS expressions
+      2 - Linear subexpressions
+      4 - Quadratic subexpressions
+      8 - MIN/MAX.
+
+      See also option cvt:dvelim concerning only the input model. Default 15.
 
 cvt:qp2passes (cvt:qp2pass, qp2passes, qp2pass)
       0/1*: Parse sums of QP expressions in 2 passes. Usually faster.
@@ -698,7 +721,7 @@ cvt:uenc:negctx:max (uenc:negctx:max, uenc:negctx)
       context) to skip UEnc(x). Default 1.
 
 cvt:uenc:ratio (uenc:ratio)
-      Min ratio (ub-lb)/Nvalues to skip unary encoding for a variable x, where
+      Max ratio (ub-lb)/Nvalues to skip unary encoding for a variable x, where
       Nvalues is the number of constants used in conditional comparisons
       x==const. Instead, indicator constraints (or big-Ms) are used, if
       uenc:negctx also applies. Default 0.
@@ -812,7 +835,7 @@ mip:branchdir (branchdir, branch)
       0  - Explore "most promising" branch first (default)
       1  - Explore "up" branch first.
 
-mip:focus (mip:emphasis, mipemphasis, mipfocus)
+mip:emphasis (mipemphasis, mip:focus, mipfocus)
       MIP solution strategy:
 
       0 - Balance finding good feasible solutions and proving optimality
@@ -1046,16 +1069,6 @@ pre:dual (predual)
 
       For compatibility, pre:dual interacts with alg:dualproblem.
 
-pre:feastol (pre:eps, pre:feastolabs, pre:epsabs)
-      Absolute tolerance to check variable and constraint bound contraditions.
-      Only triggers if also pre:feastolrel is violated. See also
-      sol:chk:feastol. Default 1e-6.
-
-pre:feastolrel (pre:epsrel)
-      Relative tolerance to check variable and constraint bound
-      contradictions. Only triggers if also pre:feastol is violated. See also
-      sol:chk:feastol. Default 1e-6.
-
 pre:node (presolvenode)
       Whether to run presolve at each node of the MIP branch-and-bound:
 
@@ -1278,6 +1291,10 @@ tech:lpdisplay (display, lpdisplay)
       0 - never (default)
       1 - each factorization
       2 - each iteration
+
+tech:memoryemphasis (memoryemphasis)
+      0*/1: Whether to compress data to reduce the memory used, which may make
+      some information (e.g., basis condition) unavailable.
 
 tech:mipdisplay (mipdisplay)
       Frequency of displaying branch-and-bound information:

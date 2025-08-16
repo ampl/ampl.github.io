@@ -1,5 +1,30 @@
 # AMPL MP Library Changelog
 
+## 20250814
+- Fixed reformulation of numberof and alldiff.
+  Previously could produce an inefficient
+  reformulation.
+- Option cvt:pre:sort:
+  - Sorting and eliminating duplicates
+    in arguments of AND, OR, MIN, MAX.
+    This is necessary for some solvers.
+  - Sorting arguments of COUNT, ATLEAST,
+    EXACTLY, ATMOST, NUMBEROF, ALLDIFF.
+- Option cvt:pre:unnest extended for MIN, MAX
+  (bit 8).
+
+
+
+## 20250811
+- The legacy fmt::MemoryWriter has double output
+  precision of 17 significant digits
+  (previously 6).
+- Option cvt:pre:boundlogarg (default 0) to bound
+  arguments of logarithms nonnegative. Previously
+  always done, sometimes deteriorating performance
+  of nonlinear solvers.
+
+
 ## 20250801
 - Tolerances set by options pre:feastol,
   pre:feastolrel both need to be violated

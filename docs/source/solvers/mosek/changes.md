@@ -1,5 +1,16 @@
 # MOSEK Changelog
 
+## 20250814
+- Changes in MP
+  - Improved preprocessing of logical
+    and combinatorial expressions
+    (options cvt:pre:unnest, cvt:pre:sort).
+  - Option cvt:pre:boundlogarg (default 0) to bound
+    arguments of logarithm nonnegative. Previously
+    always done, sometimes deteriorating performance
+    of nonlinear solvers.
+
+
 ## 20250801
 - Changes in MP
   - Tolerances set by options pre:feastol,
