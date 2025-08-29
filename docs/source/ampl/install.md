@@ -90,9 +90,9 @@ Note: you need to restart AMPL in order to start using the new license.
     Please make sure you place AMPL in a **directory where you have write permissions** such as your home directory. Otherwise, please see the note at the end.
     ```
 
-2. **To run via IDE:**
+2. **To run via VS Code:**
     
-    Inside your AMPL folder, enter the directory named `amplide` and run the `amplide` executable.
+    Open VS Code, install the [AMPL plugin](https://marketplace.visualstudio.com/items?itemName=AMPLOptimizationInc.ampl-plugin-official). If AMPL is not on the system path, configure the path to the AMPL binary in the settings.
 
 3. **To run via the command line:**
 
