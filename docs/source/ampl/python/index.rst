@@ -11,7 +11,7 @@ AMPL Integration with Python
 
 [`Model Colaboratory <https://colab.ampl.com>`_] [`AMPL on Streamlit <https://ampl.com/streamlit>`_] [`AMPL Community Edition <https://ampl.com/ce>`_]
 
-:ref:`AMPL and all solvers are now available as python packages <amplpy.modules>` for **Windows, Linux (X86_64, aarch64, ppc64le), and macOS**. For instance, to install AMPL with HiGHS, CBC and Gurobi,
+:ref:`AMPL and all solvers are now available as python packages <amplpy.modules>` for **Windows, Linux (X86_64, aarch64), and macOS**. For instance, to install AMPL with HiGHS, CBC and Gurobi,
 you just need the following:
 
 .. code-block:: bash

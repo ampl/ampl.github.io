@@ -4,13 +4,17 @@ After downloading your AMPL & Solvers bundle from the [AMPL Portal](https://port
 please follow the instructions below that correspond to your operating system:
 
 - [How to Install AMPL](#how-to-install-ampl)
-  - [Google Colab](#google-colab)
-  - [Python](#python)
-  - [Windows](#windows)
-  - [macOS](#macos)
-  - [Linux](#linux)
+  - [To use with Python](#to-use-with-python)
+    - [Google Colab](#google-colab)
+    - [Python](#python)
+  - [To use with other APIs](#to-use-with-other-apis)
+    - [Windows](#windows)
+    - [macOS](#macos)
+    - [Linux](#linux)
 
-## Google Colab
+## To use with Python
+
+### Google Colab
 
 [AMPL Model Colaboratory](https://ampl.com/colab/) is a collection of AMPL models in Jupyter Notebooks that run on platforms such as **Google Colab**, **Kaggle**, **Gradient**, and **AWS SageMaker**. In order to be use AMPL on these notebook platforms you just need to following two code blocks
 at the beginning of your notebook:
@@ -28,9 +32,9 @@ ampl = ampl_notebook(
     license_uuid="default") # license to use
 ```
 
-## Python
+### Python
 
-[AMPL and all solvers are now available as python packages](amplpy.modules) for **Windows, Linux (X86_64, aarch64, ppc64le), and macOS**. For instance, to install AMPL with HiGHS, CBC and Gurobi,
+[AMPL and all solvers are now available as python packages](amplpy.modules) for **Windows, Linux (X86_64, aarch64), and macOS**. For instance, to install AMPL with HiGHS, CBC and Gurobi,
 you just need the following:
 
 ```bash
@@ -38,7 +42,7 @@ you just need the following:
 $ python -m pip install amplpy --upgrade
 
 # Install solver modules (e.g., HiGHS, CBC, Gurobi)
-$ python -m amplpy.modules install highs cbc gurobi
+$ python -m amplpy.modules install highs cbc gurobi --upgrade
 
 # Activate your license (e.g., free https://ampl.com/ce license)
 $ python -m amplpy.modules activate <license-uuid>
@@ -49,7 +53,13 @@ $ python
 >>> ampl = AMPL() # instantiate AMPL object
 ```
 
-## Windows
+```{note}
+Recommend IDE: It is recommend to use [VS Code](https://code.visualstudio.com/download) with our [official plugin](https://portal.ampl.com/external/?url=https://marketplace.visualstudio.com/items?itemName=AMPLOptimizationInc.ampl-plugin-official).
+```
+
+## To use with other APIs
+
+### Windows
 
 **For Windows, we have an installer available that asks for your license UUID during the installation process.**
 
@@ -67,7 +77,11 @@ Note: you need to restart AMPL in order to start using the new license.
 Otherwise, if you use dynamic cloud licenses, make sure the AMPL folder is not read-only (e.g., it will not work if installed at `"C:\Program Files\AMPL"`).
 ```
 
-## macOS
+```{note}
+Recommend IDE: It is recommend to use [VS Code](https://code.visualstudio.com/download) with our [official plugin](https://portal.ampl.com/external/?url=https://marketplace.visualstudio.com/items?itemName=AMPLOptimizationInc.ampl-plugin-official).
+```
+
+### macOS
 
 **For macOS, we have an installer available that asks for the license UUID at the end for the installation process.**
 
@@ -80,7 +94,11 @@ ampl: shell "amplkey activate --uuid <license-uuid>";
 ```
 Note: you need to restart AMPL in order to start using the new license.
 
-## Linux
+```{note}
+Recommend IDE: It is recommend to use [VS Code](https://code.visualstudio.com/download) with our [official plugin](https://portal.ampl.com/external/?url=https://marketplace.visualstudio.com/items?itemName=AMPLOptimizationInc.ampl-plugin-official).
+```
+
+### Linux
 
 1. **To install:**
    
@@ -127,4 +145,8 @@ For instance, assuming that you want to install AMPL on a Linux system in the `/
         and add those definitions to the `.bash_profile` or `.bashrc` of each user.
     2. Start a new terminal in order to load the new environment variable definitions.
     3. Run the `amplkey activate --uuid <license-uuid>` command in the terminal.
+```
+
+```{note}
+Recommend IDE: It is recommend to use [VS Code](https://code.visualstudio.com/download) with our [official plugin](https://portal.ampl.com/external/?url=https://marketplace.visualstudio.com/items?itemName=AMPLOptimizationInc.ampl-plugin-official).
 ```
