@@ -121,12 +121,14 @@ alg:barrier (barrier, baropt)
       Solve (MIP node) LP/QPs by barrier method.
 
 alg:basis (basis)
-      Whether to use or return a basis:
+      Whether to use and/or return a basis for LP models:
 
       0 - No
       1 - Use incoming basis (if provided)
       2 - Return final basis
       3 - Both (1 + 2 = default)
+
+      See also mip:basis and qcp:dual (for some solvers).
 
 alg:benders (benders, bendersopt)
       Solve MIP using Benders algorithm. Both integer and continuous variables
@@ -605,8 +607,8 @@ cvt:pre:ctx2count (ctx2count)
       expressions, vs mixed. Bitwise OR of the following values:
 
       1 - atleast/atmost/exactly, count
-      2 - numberof with constant total
-      4 - numberof with variable total.
+      2 - numberof with constant reference value
+      4 - numberof with variable reference value.
 
       Default 0, see #267.
 
@@ -715,22 +717,49 @@ cvt:sos2 (sos2)
       terms, using suffixes .sos and .sosref provided by AMPL. Currently under
       rework.
 
-cvt:uenc:negctx:max (uenc:negctx:max, uenc:negctx)
+cvt:uenc:negctx:max (uenc:negctx:max, cvt:uenc:negctx, uenc:negctx)
       If cvt:uenc:ratio applies, max number of constants in comparisons
       x==const in negative context (equivalently, x!=const in positive
       context) to skip UEnc(x). Default 1.
 
+      Example:
+
+      var x in 1..9;
+      var y >=1 <=200;
+      
+      s.t. Con: (x==2 || x==6) ==> y >= 4;
+
+      With uenc:negctx<=1, this triggers unary encoding for x.
+
 cvt:uenc:ratio (uenc:ratio)
-      Max ratio (ub-lb)/Nvalues to skip unary encoding for a variable x, where
-      Nvalues is the number of constants used in conditional comparisons
+      Min ratio (ub-lb+1)/Nvalues to skip unary encoding for a variable x,
+      where Nvalues is the number of constants used in conditional comparisons
       x==const. Instead, indicator constraints (or big-Ms) are used, if
       uenc:negctx also applies. Default 0.
+
+      Example:
+
+      var x in 1..9;
+      var y >=1 <=200;
+      
+      s.t. Con: y>3 ==> (x==2 || x==6 || x==5);
+
+      With uenc:ratio>3, this triggers unary encoding for x.
 
 lim:dettime (dettimelim)
       Time limit in platform-dependent "ticks".
 
 lim:iter (iterlim, iterlimit, iterations)
       LP iteration limit (default: large).
+
+lim:lowercutoff (lowercutoff, mip:lowercutoff)
+      See lim:uppercutoff.
+
+lim:lowerobj (lowerobjlim, lowerobj)
+      See lim:upperobjlim.
+
+lim:lowerobjstop (lowerobjstop, mip:lowerobj)
+      See lim:upperobjstop.
 
 lim:netiterations (netiterations, netiter)
       Limit on network simplex iterations (default: large).
@@ -743,7 +772,33 @@ lim:sol (sollimit, solutionlimit, mipsolutions)
       termination if exceeded; default = 2e31-1
 
 lim:time (timelim, timelimit, time)
-      limit on solve time (in seconds; default: no limit).
+      Limit on solve time (in seconds; default: no limit).
+
+lim:uppercutoff (uppercutoff, mip:uppercutoff)
+      Sets the upper cutoff tolerance. When the problem is a minimization
+      problem, CPLEX cuts off or discards any solutions that are greater than
+      the specified upper cutoff value. If the model has no solution with an
+      objective value less than or equal to the cutoff value, CPLEX declares
+      the model infeasible. In other words, setting an upper cutoff value c
+      for a minimization problem is similar to adding this constraint to the
+      objective function of the model: obj <= c. Default: 1e+75.
+
+      Only effective in the branch and bound algorithm, for example, in a
+      mixed integer program (MIP).
+
+lim:upperobj (upperobjlim, upperobj)
+      Sets an upper limit on the value of the objective function in the
+      simplex algorithms. Setting an upper objective function limit causes
+      CPLEX to halt the optimization process when the maximum objective
+      function value limit has been reached. This limit applies only during
+      Phase II of the simplex algorithm in maximization problems. Default:
+      1e+75.
+
+lim:upperobjstop (upperobjstop, mip:upperobj)
+      In a maximization MILP or MIQP, the solver will abort the optimization
+      process as soon it finds a solution of value greater than or equal to
+      the specified value. It is ignored if the problem is multiobjective.
+      Default: 1e+75.
 
 lp:crash (crash)
       Crash strategy (used to obtain starting basis in simplex); possible
@@ -1344,10 +1399,20 @@ tech:optionfile (optionfile, option:file)
       are ignored. Otherwise, each nonempty line should contain "name=value",
       e.g., "lim:iter=500".
 
+tech:optionnativeread (optionnativeread, tech:param:read, param:read)
+      Name of CPLEX parameter file (surrounded by 'single' or "double" quotes
+      if the name contains blanks). The easiest approach to use PRM files is
+      to export an initial file with tech:optionnativewrite.
+
+tech:optionnativewrite (optionnativewrite, tech:param:write, param:write)
+      Name of CPLEX parameter file (surrounded by 'single' or "double" quotes
+      if the name contains blanks) to be written. Only parameters with
+      non-default values are written.
+
 tech:outlev (outlev)
       Whether to write CPLEX log lines (chatter) to stdout,for granular
-      control see "tech:lpdisplay", "tech:mipdisplay",
-      "tech:bardisplay".Values:
+      control see "tech:lpdisplay", "tech:mipdisplay", "tech:bardisplay".
+      Values:
 
       0 - no output (default)
       1 - equivalent to "bardisplay"=1, "display"=1, "mipdisplay"=2

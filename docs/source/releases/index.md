@@ -9,7 +9,7 @@
 - [**CBC** Changelog (latest: **20250814**)](../solvers/cbc/changes.md)
 - [**CONOPT** Changelog (latest: **20250312**)](../solvers/conopt/changes.md)
 - [**COPT** Changelog (latest: **20250814**)](../solvers/copt/changes.md)
-- [**CPLEX** Changelog (latest: **20250814**)](../solvers/cplex/changes.md)
+- [**CPLEX** Changelog (latest: **20250828**)](../solvers/cplex/changes.md)
 - [**CPLEXASL** Changelog (latest: **20230228**)](../solvers/cplex/changesasl.md)
 - [**GCG** Changelog (latest: **20240115**)](../solvers/gcg/changes.md)
 - [**GUROBI** Changelog (latest: **20250814**)](../solvers/gurobi/changes.md)
@@ -25,7 +25,7 @@
 - [**MP** Changelog (latest: **20250814**)](../releases/mp.md)
 - [**SCIP** Changelog (latest: **20240121**)](../solvers/scip/changes.md)
 - [**SNOPT** Changelog (latest: **20211109**)](../solvers/snopt/changes.md)
-- [**XPRESS** Changelog (latest: **20250814**)](../solvers/xpress/changes.md)
+- [**XPRESS** Changelog (latest: **20250902**)](../solvers/xpress/changes.md)
 - [**XPRESSASL** Changelog (latest: **20220112**)](../solvers/xpress/changesasl.md)
 
 ```{toctree}
@@ -36,6 +36,10 @@ mp.md
 ```
 
 
+## 20250902
+- [XPRESS](../solvers/xpress/changes.md#20250902)
+## 20250828
+- [CPLEX](../solvers/cplex/changes.md#20250828)
 ## 20250814
 - [BARONMP](../solvers/baron/changesmp.md#20250814)
 - [CBC](../solvers/cbc/changes.md#20250814)

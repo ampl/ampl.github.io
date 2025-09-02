@@ -417,12 +417,14 @@ alg:barrier (barrier)
       Solve (MIP node) LPs by barrier method.
 
 alg:basis (basis)
-      Whether to use or return a basis:
+      Whether to use and/or return a basis for LP models:
 
       0 - No
       1 - Use incoming basis (if provided)
       2 - Return final basis
       3 - Both (1 + 2 = default)
+
+      See also mip:basis and qcp:dual (for some solvers).
 
 alg:clamping (clamping)
       Control adjustements of the returned solution values such that they are
@@ -468,6 +470,19 @@ alg:indlinbigm (indlinbigm)
       Largest "big M" value to use in converting indicator constraints to
       regular constraints, default = 1e5
 
+alg:localsolver (localsolver, nlp:localsolver)
+      Selects the library to use for local solves:
+
+      -1 - Automatic selection, based on model characteristics and solver
+           availability (default)
+      0  - Use Xpress-SLP (always available)
+      1  - Use Knitro if available
+      2  - Use Xpress-Optimizer if possible (convex quadratic problems only).
+
+      When solving problems to global optimality (see alg:nlpsolver),
+      alg:localsolver is used to decide which local solver to call for
+      reoptimizing NLP-infeasible solutions heuristically.
+
 alg:lpfolding (lpfolding)
       Simplex and barrier: whether to fold an LP problem before solving it:
 
@@ -489,6 +504,17 @@ alg:method (method, lpmethod, defaultalg)
 
 alg:network (network)
       Solve (substructure of) (MIP node) LPs by network simplex method.
+
+alg:nlpsolver (nlpsolver, nlp:solver)
+      Controls whether to call FICO Xpress Global or one of the local solvers:
+
+      -1 - If the license allows and there are no user functions or
+           multistart jobs, FICO Xpress Global will be called, otherwise a
+           local solver (default)
+      1  - The algorithm selected by alg:localsolver will be used to find a
+           locally optimal solution
+      2  - FICO Xpress Global will be used to find a globally optimal
+           solution.
 
 alg:numericalemphasis (alg:numericfocus, numericfocus, numfocus, numericemphasis, numericalemphasis)
       How much emphasis to place on numerical stability instead of solve
@@ -516,7 +542,7 @@ alg:refactor (refactor)
       1  - Yes.
 
 alg:refineops (refineops)
-      Bit vector: specifies wmhen the solution refiner should be executed to
+      Bit vector: specifies when the solution refiner should be executed to
       reduce solution infeasibilities. The refiner will attempt to satisfy the
       target tolerances for all original linear constraints before presolve or
       scaling has been applied:
@@ -951,8 +977,8 @@ cvt:pre:ctx2count (ctx2count)
       expressions, vs mixed. Bitwise OR of the following values:
 
       1 - atleast/atmost/exactly, count
-      2 - numberof with constant total
-      4 - numberof with variable total.
+      2 - numberof with constant reference value
+      4 - numberof with variable reference value.
 
       Default 0, see #267.
 
@@ -1061,16 +1087,34 @@ cvt:sos2 (sos2)
       terms, using suffixes .sos and .sosref provided by AMPL. Currently under
       rework.
 
-cvt:uenc:negctx:max (uenc:negctx:max, uenc:negctx)
+cvt:uenc:negctx:max (uenc:negctx:max, cvt:uenc:negctx, uenc:negctx)
       If cvt:uenc:ratio applies, max number of constants in comparisons
       x==const in negative context (equivalently, x!=const in positive
       context) to skip UEnc(x). Default 1.
 
+      Example:
+
+      var x in 1..9;
+      var y >=1 <=200;
+      
+      s.t. Con: (x==2 || x==6) ==> y >= 4;
+
+      With uenc:negctx<=1, this triggers unary encoding for x.
+
 cvt:uenc:ratio (uenc:ratio)
-      Max ratio (ub-lb)/Nvalues to skip unary encoding for a variable x, where
-      Nvalues is the number of constants used in conditional comparisons
+      Min ratio (ub-lb+1)/Nvalues to skip unary encoding for a variable x,
+      where Nvalues is the number of constants used in conditional comparisons
       x==const. Instead, indicator constraints (or big-Ms) are used, if
       uenc:negctx also applies. Default 0.
+
+      Example:
+
+      var x in 1..9;
+      var y >=1 <=200;
+      
+      s.t. Con: y>3 ==> (x==2 || x==6 || x==5);
+
+      With uenc:ratio>3, this triggers unary encoding for x.
 
 lim:bariter (bar:iterlim, bariterlim)
       Limit on the number of barrier iterations (default 500).
