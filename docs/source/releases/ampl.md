@@ -1,5 +1,17 @@
 # AMPL Changelog
 
+## 20250901
+
+* Update to `snapshot 0.1.6`: Suffixes related to variables and constraints are showed in the snapshot by default (or when "solution" is included). Before, it only happened after the problem has been solved, regardless "solution" was being included.
+
+* Omit the initial space sometimes printed before the name of a function that accepts a variable number of arguments.  For example,
+```
+	set I; param p{I};
+	data; param :I: p := b 3.7 c 2.9;
+	display min(p['b'], p['c']);
+```
+printed `min(p['b'],p['c']) = 2.9`.
+
 ## 20250805
 
 * Fix a fault seen in `for` loops with tuples of dummy variables if the cartesian product of the form `{I, J}`.
