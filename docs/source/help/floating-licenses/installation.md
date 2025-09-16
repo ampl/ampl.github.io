@@ -10,6 +10,18 @@ To interpret and fix error conditions, consult our [Troubleshooting Guide](troub
 
 ```
 
+```{warning}
+Support of academic floating licenses is being discontinued. Please, consider using the Academic [Community Edition license](https://ampl.com/community-edition/), a simple and flexible approach to use AMPL and the solvers. See below how this compares to a floating license:
+
+* The Academic Community Edition license is limited to each user personally, but it lets them use AMPL and solvers on any computer - even on more than one computer - at the same time.
+* The use of AMPL and free academic solvers are included at no cost with this option.
+* You are still required to validate your academic status each year (initial validations supported by an active academic email address).
+* The license requires an Internet connection for communication with our license server (so it will not work without an Internet connection).
+* As AMPL and the academic solvers you are receiving are free with this option, you will not be required to confirm your product renewal on a recurring basis (i.e., no invoicing process)
+
+Please contact us if you have any issues in switching over to the Academic Community Edition.
+```
+
 ## Introduction
 
 _Floating licenses_ let you run an application on any computer, subject to a limit on the number of application sessions that can be active at the same time. You can purchase one or more floating licenses for AMPL and also for any of the solvers that we sell; the number of purchased floating licenses determines the number of simultaneous sessions allowed. Optionally you make your floating licenses available only to computers at specified network addresses.
