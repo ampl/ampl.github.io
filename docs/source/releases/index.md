@@ -7,7 +7,7 @@
 - [**BARON** Changelog (latest: **20250806**)](../solvers/baron/changes.md)
 - [**BARONMP** Changelog (latest: **20250814**)](../solvers/baron/changesmp.md)
 - [**CBC** Changelog (latest: **20250814**)](../solvers/cbc/changes.md)
-- [**CONOPT** Changelog (latest: **20250312**)](../solvers/conopt/changes.md)
+- [**CONOPT** Changelog (latest: **20250918**)](../solvers/conopt/changes.md)
 - [**COPT** Changelog (latest: **20250814**)](../solvers/copt/changes.md)
 - [**CPLEX** Changelog (latest: **20250828**)](../solvers/cplex/changes.md)
 - [**CPLEXASL** Changelog (latest: **20230228**)](../solvers/cplex/changesasl.md)
@@ -16,7 +16,7 @@
 - [**GUROBIASL** Changelog (latest: **20231208**)](../solvers/gurobi/changesasl.md)
 - [**HiGHS** Changelog (latest: **20250814**)](../solvers/highs/changes.md)
 - [**ILOGCP** Changelog (latest: **20250422**)](../solvers/ilogcp/changes.md)
-- [**KNITRO** Changelog (latest: **20241220**)](../solvers/knitro/changes.md)
+- [**KNITRO** Changelog (latest: **20250923**)](../solvers/knitro/changes.md)
 - [**LGO** Changelog (latest: **20201030**)](../solvers/lgo/changes.md)
 - [**LOQO** Changelog (latest: **20210410**)](../solvers/loqo/changes.md)
 - [**Lindo Global** Changelog (latest: **20210406**)](../solvers/lindoglobal/changes.md)
@@ -36,6 +36,10 @@ mp.md
 ```
 
 
+## 20250923
+- [KNITRO](../solvers/knitro/changes.md#20250923)
+## 20250918
+- [CONOPT](../solvers/conopt/changes.md#20250918)
 ## 20250902
 - [XPRESS](../solvers/xpress/changes.md#20250902)
 ## 20250901
@@ -91,6 +95,8 @@ mp.md
 - [MP](../releases/mp.md#20250616)
 ## 20250531
 - [XPRESS](../solvers/xpress/changes.md#20250531)
+## 20250527
+- [CONOPT](../solvers/conopt/changes.md#20250527)
 ## 20250515
 - [GUROBI](../solvers/gurobi/changes.md#20250515)
 ## 20250508

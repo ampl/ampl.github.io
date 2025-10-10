@@ -1,5 +1,16 @@
 # KNITRO Changelog
 
+## 20250923
+- Updated to Knitro 15, changes include:
+    - A new Augmented Lagrangian algorithm for
+      nonlinear optimization models (see option `nlp_algorithm`)
+    - A new Primal-Dual Hybrid Gradient algorithm for LP problems,
+    - preferiblyy for extremely large-scale models
+    - Many performance improvements
+    - Added options `nlp_algorithm` and `lp_algorithm` to choose
+      the algorithm used for linear and non-linear optimization problems
+
+
 ## 20241220
 - Updated to Knitro 14.2, changes include:
     - Significant performance improvements on nonconvex

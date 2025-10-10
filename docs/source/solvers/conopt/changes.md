@@ -1,5 +1,14 @@
 # CONOPT Changelog
 
+## 20250918
+- Driver rewritten to use Conopt 4 style options (see -= output)
+- Updated libs to CONOPT 4.38
+
+
+## 20250527
+- Fixed inconsistencies in the iterations log
+
+
 ## 20250312
 - The default distribution of CONOPT is now this package, based on CONOPT 4. To
   obtain the vestigial CONOPT package, contact AMPL support.
