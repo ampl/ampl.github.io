@@ -1,8 +1,10 @@
 # CONOPT Changelog
 
-## 20250918
-- Driver rewritten to use Conopt 4 style options (see -= output)
-- Updated libs to CONOPT 4.38
+## 20251015
+- Updated libs to CONOPT 4.38.1
+- Fixed threading issue that could cause inconsistent behvaiour
+- Added support for many Conopt options. Note that names might
+  have changed since version 3 (see -= output).
 
 
 ## 20250527
