@@ -417,12 +417,15 @@ alg:barrier (barrier)
       Solve (MIP node) LPs by barrier method.
 
 alg:basis (basis)
-      Whether to use and/or return a basis for LP models:
+      Whether to use and/or return a basis for LP models (variable/constraint
+      suffixes .(s)status):
 
       0 - No
       1 - Use incoming basis (if provided)
       2 - Return final basis
       3 - Both (1 + 2 = default)
+
+      See alg:start for interaction with the LP warmstart.
 
       See also mip:basis and qcp:dual (for some solvers).
 
@@ -580,8 +583,10 @@ alg:start (warmstart)
       warmstart:
 
       0 - No
-      1 - Yes (for LP: if there is no incoming alg:basis) (default)
-      2 - Yes (for LP: ignoring the incoming alg:basis, if any.)
+      1 - Yes (for LP: if there is no incoming alg:basis)
+      2 - Yes (for LP: omitting the incoming alg:basis, if any)
+      3 - Yes (for LP: together with the incoming alg:basis, if any;
+          default).
 
 alg:zerotol (matrixtol)
       The zero tolerance on matrix elements. If the value of a matrix element
@@ -799,13 +804,13 @@ bar:start (barstart)
       0  - Automatic choice (default)
       1  - Heuristics based on magnitudes of matrix entries
       2  - Use pseudoinverse of constraint matrix
-      3  - Unit starting point for homogeneous self - dual barrier algorithm.
+      3  - Unit starting point for homogeneous self-dual barrier algorithm.
 
 bar:stepstop (barstepstop)
       Barrier method convergence tolerance: stop when step size <=
       barstepstop; default = 1e-10
 
-bar:threads (threads)
+bar:threads (barthreads)
       Number of threads used in the Newton Barrier algorithm; default = -1
       (determined by "threads")
 
@@ -854,15 +859,15 @@ cut:select (cutselect)
       Detailed control of cuts at MIP root node; sum of:
 
       32     - clique cuts
-      64     - mixed - integer founding(MIR) cuts
+      64     - mixed-integer rounding (MIR) cuts
       128    - lifted cover cuts
       2048   - flow path cuts
       4096   - implication cuts
-      8192   - automatic lift - and -project strategy
+      8192   - automatic lift-and-project strategy
       16384  - disable cutting from cut rows
       32768  - lifted GUB cover cuts
-      65536  - zero - half cuts
-      131072 - indicator - constraint cuts
+      65536  - zero-half cuts
+      131072 - indicator-constraint cuts
       -1     - all available cuts(default)
 
 cut:strategy (cutstrategy)
@@ -893,15 +898,15 @@ cut:treeselect (treecutselect)
       Detailed control of cuts created during the tree search; sum of:
 
       32     - clique cuts
-      64     - mixed - integer founding(MIR) cuts
+      64     - mixed-integer rounding (MIR) cuts
       128    - lifted cover cuts
       2048   - flow path cuts
       4096   - implication cuts
-      8192   - automatic lift - and -project strategy
+      8192   - automatic lift-and-project strategy
       16384  - disable cutting from cut rows
       32768  - lifted GUB cover cuts
-      65536  - zero - half cuts
-      131072 - indicator - constraint cuts
+      65536  - zero-half cuts
+      131072 - indicator-constraint cuts
       -1     - all available cuts(default)
 
 cvt:bigM (cvt:bigm, cvt:mip:bigM, cvt:mip:bigm)
@@ -920,7 +925,7 @@ cvt:compl (cvt:complementarity)
 
 cvt:compl:tol (cvt:compl:eps, compl:eps)
       Tolerance parameter for the product and Fischer-Burmeister encodings of
-      complementarity, see cvt:compl. Default 1e-6.
+      complementarity, see cvt:compl. Default 1e-9.
 
 cvt:dvelim (dvelim)
       Eliminate AMPL defined variables by substitution into linear, quadratic,
@@ -941,8 +946,9 @@ cvt:expcones (expcones)
 cvt:mip:eps (cvt:cmp:eps, cmp:eps)
       Tolerance for strict comparison of continuous variables for MIP. Applies
       to <, >, and != operators. Also applies to negation of conditional
-      comparisons: b==1 <==> x<=5 means that with b==0, x>=5+eps. Default:
-      1e-4.
+      comparisons: b==1 <==> x<=5 means that with b==0, x>=5+eps. Normally
+      should be larger or equal to the solver's feasibility tolerance.
+      Default: 1e-4.
 
 cvt:multoutcard (multoutcard)
       Up to which (estimated) QP matrix cardinality should a product of 2
@@ -972,19 +978,181 @@ cvt:pre:all
 cvt:pre:boundlogarg (boundlogarg)
       0*/1: Bound logarithm arguments to nonnegative.
 
+cvt:pre:ctx2bndeq (ctx2bndeq)
+      0/1*: Propagate exact context into conditional (dis)equalities-to-bound,
+      vs always mixed. Can be affected by cvt:pre:ineq2bndeq. See #267.
+
 cvt:pre:ctx2count (ctx2count)
+      DEPRECATED. Use ctx2bndeq. NEW DEFAULT.
+
       Propagate exact context into atleast/atmost/exactly, count and numberof
-      expressions, vs mixed. Bitwise OR of the following values:
+      expressions, vs always mixed. Bitwise OR of the following values:
 
       1 - atleast/atmost/exactly, count
       2 - numberof with constant reference value
       4 - numberof with variable reference value.
 
-      Default 0, see #267.
+      Default 7, see #267.
 
 cvt:pre:ctx2ineq (ctx2ineq)
-      0/1*: Propagate exact context into conditional inequalities, vs mixed.
-      See #267.
+      0/1*: Propagate exact context into conditional inequalities, vs always
+      mixed. See #267.
+
+      Finer control provided by cvt:pre:ctx:cond...(le/ge) options.
+
+cvt:pre:ctx:abs (ctx:abs)
+      Controls propagation of context into abs() expressions, which could
+      affect reformulations of abs() and its arguments (see the acc: options).
+      Bitwise OR of the following values:
+
+      1 - Propagate positive context exactly (otherwise always mixed)
+      2 - Propagate negative context exactly (otherwise always mixed)
+
+      Default 3. See mp.ampl.com/components.html#mathematical-background.
+
+cvt:pre:ctx:acos (ctx:acos)
+      Context propagation for 'Acos' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:acosh (ctx:acosh)
+      Context propagation for 'Acosh' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:alldiff (ctx:alldiff)
+      Context propagation for 'AllDiff' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:and (ctx:and)
+      Context propagation for 'And' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:asin (ctx:asin)
+      Context propagation for 'Asin' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:asinh (ctx:asinh)
+      Context propagation for 'Asinh' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:atan (ctx:atan)
+      Context propagation for 'Atan' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:atanh (ctx:atanh)
+      Context propagation for 'Atanh' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:condlineq (ctx:condlineq)
+      Context propagation for 'Conditional< AlgebraicConstraint< LinTerms,
+      RhsEQ > >' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:condlinge (ctx:condlinge)
+      Context propagation for 'Conditional< AlgebraicConstraint< LinTerms,
+      RhsGE > >' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:condlingt (ctx:condlingt)
+      Context propagation for 'Conditional< AlgebraicConstraint< LinTerms,
+      RhsGT > >' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:condlinle (ctx:condlinle)
+      Context propagation for 'Conditional< AlgebraicConstraint< LinTerms,
+      RhsLE > >' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:condlinlt (ctx:condlinlt)
+      Context propagation for 'Conditional< AlgebraicConstraint< LinTerms,
+      RhsLT > >' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:condquadeq (ctx:condquadeq)
+      Context propagation for 'Conditional< AlgebraicConstraint<
+      QuadAndLinTerms, RhsEQ > >' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:condquadge (ctx:condquadge)
+      Context propagation for 'Conditional< AlgebraicConstraint<
+      QuadAndLinTerms, RhsGE > >' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:condquadgt (ctx:condquadgt)
+      Context propagation for 'Conditional< AlgebraicConstraint<
+      QuadAndLinTerms, RhsGT > >' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:condquadle (ctx:condquadle)
+      Context propagation for 'Conditional< AlgebraicConstraint<
+      QuadAndLinTerms, RhsLE > >' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:condquadlt (ctx:condquadlt)
+      Context propagation for 'Conditional< AlgebraicConstraint<
+      QuadAndLinTerms, RhsLT > >' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:cos (ctx:cos)
+      Context propagation for 'Cos' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:cosh (ctx:cosh)
+      Context propagation for 'Cosh' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:count (ctx:count)
+      Context propagation for 'Count' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:div (ctx:div)
+      Context propagation for 'Div' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:equiv (ctx:equiv)
+      Context propagation for 'Equivalence' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:exp (ctx:exp)
+      Context propagation for 'Exp' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:expa (ctx:expa)
+      Context propagation for 'ExpA' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:ifthen (ctx:ifthen)
+      Context propagation for 'IfThen' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:impl (ctx:impl)
+      Context propagation for 'Implication' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:linfunccon (ctx:linfunccon)
+      Context propagation for 'LinearFunctionalConstraint' expression, see
+      cvt:pre:ctx:abs.
+
+cvt:pre:ctx:log (ctx:log)
+      Context propagation for 'Log' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:loga (ctx:loga)
+      Context propagation for 'LogA' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:max (ctx:max)
+      Context propagation for 'Max' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:min (ctx:min)
+      Context propagation for 'Min' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:not (ctx:not)
+      Context propagation for 'Not' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:numberofconst (ctx:numberofconst)
+      Context propagation for 'NumberofConst' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:numberofvar (ctx:numberofvar)
+      Context propagation for 'NumberofVar' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:or (ctx:or)
+      Context propagation for 'Or' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:pl (ctx:pl)
+      Context propagation for 'PL' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:pow (ctx:pow)
+      Context propagation for 'Pow' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:powconstexp (ctx:powconstexp)
+      Context propagation for 'PowConstExp' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:quadfunccon (ctx:quadfunccon)
+      Context propagation for 'QuadraticFunctionalConstraint' expression, see
+      cvt:pre:ctx:abs.
+
+cvt:pre:ctx:sin (ctx:sin)
+      Context propagation for 'Sin' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:sinh (ctx:sinh)
+      Context propagation for 'Sinh' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:tan (ctx:tan)
+      Context propagation for 'Tan' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:tanh (ctx:tanh)
+      Context propagation for 'Tanh' expression, see cvt:pre:ctx:abs.
 
 cvt:pre:eqbinary
       0/1*: Preprocess reified equality comparison with a binary variable.
@@ -1002,11 +1170,21 @@ cvt:pre:feastolrel (pre:feastolrel, pre:epsrel)
       contradictions. Only warns if also pre:feastol is violated. See also
       sol:chk:feastol. Default 1e-6.
 
+cvt:pre:ineq2bndeq (ineq2bndeq)
+      0/1*: Preprocess reified inequality expr <(=) c, where c <)=(
+      lb(expr)+cvt:mip:eps, into expr == lb(expr), which works better on some
+      benchmarks/solvers.
+
+cvt:pre:ineq2related (ineq2related, ineq2rel)
+      0/1*: Unify related reified inequalities: <=c, <c+cvt:mip:eps, >c,
+      >=c+cvt:mip:eps.
+
 cvt:pre:ineqresult
       0/1*: Preprocess reified inequality comparison's decidable cases.
 
 cvt:pre:ineqrhs
-      0/1*: Preprocess reified inequality comparison's right-hand sides.
+      0/1*: Preprocess reified inequality comparison's right-hand sides (round
+      for integer expression body).
 
 cvt:pre:prod (cvt:prod)
       Product preprocessing flags. Sum of a subset of the following bits:
@@ -1090,14 +1268,15 @@ cvt:sos2 (sos2)
 cvt:uenc:negctx:max (uenc:negctx:max, cvt:uenc:negctx, uenc:negctx)
       If cvt:uenc:ratio applies, max number of constants in comparisons
       x==const in negative context (equivalently, x!=const in positive
-      context) to skip UEnc(x). Default 1.
+      context), where const!=lb(x) and const!=ub(x), to skip unary encoding of
+      x. Default 1.
 
       Example:
 
       var x in 1..9;
       var y >=1 <=200;
       
-      s.t. Con: (x==2 || x==6) ==> y >= 4;
+      s.t. Con: (x==9 || x==2 || x==6) ==> y >= 4;
 
       With uenc:negctx<=1, this triggers unary encoding for x.
 
@@ -1715,7 +1894,7 @@ mip:pseudocost (pseudocost)
       integer value; default = 0.01
 
 mip:qcrootalg (qcrootalg)
-      When using miqcpalg = 1 to solve a mixed - integer problem that has
+      When using miqcpalg = 1 to solve a mixed-integer problem that has
       quadratic constraints or second-order cone constraints, the algorithm
       for solving the root node:
 
@@ -1837,16 +2016,16 @@ mip:varselection (varselection)
       How to score the integer variables at a MIP node, for branching on a
       variable with minimum score:
 
-      - 1 - automatic choice(default)
-      1   - minimum of the 'up' and 'down' pseudo - costs
-      2   - 'up' pseudo - cost + 'down' pseudo - cost
-      3   - maximum of the 'up' and 'down' pseudo - costs plus twice their
-            minimum
-      4   - maximum of the 'up' and 'down' pseudo - costs
-      5   - the 'down' pseudo - cost
-      6   - the 'up' pseudo - cost
-      7   - weighted combination of the 'up' and 'down' pseudo costs
-      8   - product of 'up' and 'down' pseudo costs
+      1 - automatic choice(default)
+      1 - minimum of the 'up' and 'down' pseudo-costs
+      2 - 'up' pseudo-cost + 'down' pseudo-cost
+      3 - maximum of the 'up' and 'down' pseudo-costs plus twice their
+          minimum
+      4 - maximum of the 'up' and 'down' pseudo-costs
+      5 - the 'down' pseudo-cost
+      6 - the 'up' pseudo-cost
+      7 - weighted combination of the 'up' and 'down' pseudo costs
+      8 - product of 'up' and 'down' pseudo costs
 
 obj:multi (multiobj)
       Whether to use multi-objective optimization:
@@ -2334,13 +2513,13 @@ sol:stub (ams_stub, solstub, solutionstub)
       ... "Current.nsol" to "solutionstub".
 
 tech:backgroundselect (backgroundselect)
-      Select which tasks to run in background jobs;default - 1 ==> automatic
+      Select which tasks to run in background jobs;default -1 ==> automatic
       choice. Set to 0 to not to run any task in the background or to 1 to run
       the feasibility jump heuristic in the background.
 
 tech:backgroundthreads (backgroundmaxthreads, backgroundthreads)
       Limits the number of threads that Xpress will use for jobs in the
-      background;default - 1 ==> automatic choice.
+      background;default -1 ==> automatic choice.
 
 tech:cputime (cputime)
       How time should be measured when timings are reported in the log and
@@ -2392,7 +2571,7 @@ tech:sleeponthreadwait (sleeponthreadwait)
       >0 - yes (sleep, might add overhead)
 
 tech:threads (threads)
-      The default number of threads used during optimization.;default - 1 ==>
+      The default number of threads used during optimization. Default -1 ==>
       automatic choice.
 
 tech:timing (timing, tech:report_times, report_times)
@@ -2431,33 +2610,40 @@ tech:tunerhistory (tunerhistory)
 tech:tunermethod (tunermethod)
       Method for tuning when "tunebase" is specified:
 
-      - 1 - automatic choice(default)
-      0   - default LP tuner
-      1   - default MIP tuner
-      2   - more elaborate MIP tuner
-      3   - root - focused MIP tuner
-      4   - tree - focused MIP tuner
-      5   - simple MIP tuner
-      6   - default SLP tuner
-      7   - default MISLP tuner
-      8   - MIP tuner using primal heuristics
+      -1 - automatic choice(default)
+      0  - default LP tuner
+      1  - default MIP tuner
+      2  - more elaborate MIP tuner
+      3  - root-focused MIP tuner
+      4  - tree-focused MIP tuner
+      5  - simple MIP tuner
+      6  - default SLP tuner
+      7  - default MISLP tuner
+      8  - MIP tuner using primal heuristics
+
+tech:tunermethodread (tunermethodread)
+      Read existing tuner method from the specified .xtm file, see
+      "tunermethodwrite" to obtaing a template file
+
+tech:tunermethodwrite (tunermethodwrite)
+      Write existing tuner method from the specified .xtm file
 
 tech:tunertarget (tunertarget)
       What to measure to compare two problem solutions when running the XPRESS
       tuner:
 
-      - 1 - automatic choice(default)
-      0   - solution time, then integrality gap
-      1   - solution time, then best bound
-      2   - solution time, then best integer solution
-      3   - the "primal dual integral", whatever that is
-      4   - just solution time (default for LPs)
-      5   - just objective value
-      6   - validation number (probably not relevant)
-      7   - gap only
-      8   - best bound only
-      9   - best integer solution only
-      10  - best primal integral - only for individual instances
+      1  - automatic choice(default)
+      0  - solution time, then integrality gap
+      1  - solution time, then best bound
+      2  - solution time, then best integer solution
+      3  - the "primal dual integral", whatever that is
+      4  - just solution time (default for LPs)
+      5  - just objective value
+      6  - validation number (probably not relevant)
+      7  - gap only
+      8  - best bound only
+      9  - best integer solution only
+      10 - best primal integral-only for individual instances
 
 tech:tunerthreads (tunerthreads)
       Number of tuner threads to run in parallel; default=-1 (automatic)

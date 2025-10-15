@@ -1,22 +1,38 @@
 # XPRESS Changelog
 
+## 20251015
+- Changes in MP
+- Fixed retrieval of basis after time/work
+  limit in Xpress Global.
+
+
+## 20250924
+- Submit initial guess to the local NLP solver
+  as well.
+- Fixed retrieval of duals after time limit
+  in Xpress Global.
+- Added options *tech:tunermethodread* and 
+  *tech:tunermethodwrite* to load and write
+  tuning methods from/to files.
+
+
 ## 20250902
 - Fix retrieval of feasible solution after
   time limit in Xpress Global.
-- Options alg:nlpsolver, alg:localsolver.
+- Options *alg:nlpsolver*, *alg:localsolver*.
 
 
 ## 20250814
 - Changes in MP
   - Improved preprocessing of logical
     and combinatorial expressions
-    (options cvt:pre:unnest, cvt:pre:sort).
-  - Option cvt:pre:boundlogarg (default 0) to bound
+    (options *cvt:pre:unnest*, *cvt:pre:sort*).
+  - Option *cvt:pre:boundlogarg* (default 0) to bound
     arguments of logarithm nonnegative. Previously
     always done, sometimes deteriorating performance
     of nonlinear solvers.
 - Fixed modeling interface for AND, OR, MIN, MAX.
-- Option alg:numericalemphasis.
+- Option *alg:numericalemphasis*.
 - Handling Ctrl-C correctly.
 
 
@@ -28,12 +44,12 @@
 ## 20250801
 - Changes in MP
   - Tolerances set by options pre:feastol,
-    pre:feastolrel both need to be violated
+    *pre:feastolrel* both need to be violated
     to produce a warning on contradicting
     variable/constraint bounds. Previously
     the preprocessor failed on any violation,
     without letting the solver try.
-  - Options cvt:compl, cvt:compl:eps control
+  - Options *cvt:compl*, *cvt:compl:eps* control
     complementarity reformulations.
 
 

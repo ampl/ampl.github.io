@@ -1,5 +1,9 @@
 # COPT Changelog
 
+## 20251015
+- Changes in MP
+
+
 ## 20250814
 - Changes in MP
   - Improved preprocessing of logical

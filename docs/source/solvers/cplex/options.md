@@ -121,12 +121,15 @@ alg:barrier (barrier, baropt)
       Solve (MIP node) LP/QPs by barrier method.
 
 alg:basis (basis)
-      Whether to use and/or return a basis for LP models:
+      Whether to use and/or return a basis for LP models (variable/constraint
+      suffixes .(s)status):
 
       0 - No
       1 - Use incoming basis (if provided)
       2 - Return final basis
       3 - Both (1 + 2 = default)
+
+      See alg:start for interaction with the LP warmstart.
 
       See also mip:basis and qcp:dual (for some solvers).
 
@@ -358,8 +361,21 @@ alg:start (warmstart)
       warmstart:
 
       0 - No
-      1 - Yes (for LP: if there is no incoming alg:basis) (default)
-      2 - Yes (for LP: ignoring the incoming alg:basis, if any.)
+      1 - Yes (for LP: if there is no incoming alg:basis)
+      2 - Yes (for LP: omitting the incoming alg:basis, if any)
+      3 - Yes (for LP: together with the incoming alg:basis, if any;
+          default).
+
+      For IBM ILOG CPLEX, choices can be refined via alg:start:advance.
+
+alg:start:advance (alg:start:advanced, advance, advind)
+      If set to 1 or 2, this parameter specifies that CPLEX should use
+      advanced starting information when it initiates optimization. Exact
+      meaning differs by problem type. Here for LP:
+
+      0 - Do not use advanced start information
+      1 - Use an advanced basis supplied by the user (default)
+      2 - Crush an advanced basis or starting vector supplied by the user.
 
 alg:ubpen (ubpen)
       See alg:feasrelax.
@@ -550,7 +566,7 @@ cvt:compl (cvt:complementarity)
 
 cvt:compl:tol (cvt:compl:eps, compl:eps)
       Tolerance parameter for the product and Fischer-Burmeister encodings of
-      complementarity, see cvt:compl. Default 1e-6.
+      complementarity, see cvt:compl. Default 1e-9.
 
 cvt:dvelim (dvelim)
       Eliminate AMPL defined variables by substitution into linear, quadratic,
@@ -571,8 +587,9 @@ cvt:expcones (expcones)
 cvt:mip:eps (cvt:cmp:eps, cmp:eps)
       Tolerance for strict comparison of continuous variables for MIP. Applies
       to <, >, and != operators. Also applies to negation of conditional
-      comparisons: b==1 <==> x<=5 means that with b==0, x>=5+eps. Default:
-      1e-4.
+      comparisons: b==1 <==> x<=5 means that with b==0, x>=5+eps. Normally
+      should be larger or equal to the solver's feasibility tolerance.
+      Default: 1e-4.
 
 cvt:multoutcard (multoutcard)
       Up to which (estimated) QP matrix cardinality should a product of 2
@@ -602,19 +619,181 @@ cvt:pre:all
 cvt:pre:boundlogarg (boundlogarg)
       0*/1: Bound logarithm arguments to nonnegative.
 
+cvt:pre:ctx2bndeq (ctx2bndeq)
+      0/1*: Propagate exact context into conditional (dis)equalities-to-bound,
+      vs always mixed. Can be affected by cvt:pre:ineq2bndeq. See #267.
+
 cvt:pre:ctx2count (ctx2count)
+      DEPRECATED. Use ctx2bndeq. NEW DEFAULT.
+
       Propagate exact context into atleast/atmost/exactly, count and numberof
-      expressions, vs mixed. Bitwise OR of the following values:
+      expressions, vs always mixed. Bitwise OR of the following values:
 
       1 - atleast/atmost/exactly, count
       2 - numberof with constant reference value
       4 - numberof with variable reference value.
 
-      Default 0, see #267.
+      Default 7, see #267.
 
 cvt:pre:ctx2ineq (ctx2ineq)
-      0/1*: Propagate exact context into conditional inequalities, vs mixed.
-      See #267.
+      0/1*: Propagate exact context into conditional inequalities, vs always
+      mixed. See #267.
+
+      Finer control provided by cvt:pre:ctx:cond...(le/ge) options.
+
+cvt:pre:ctx:abs (ctx:abs)
+      Controls propagation of context into abs() expressions, which could
+      affect reformulations of abs() and its arguments (see the acc: options).
+      Bitwise OR of the following values:
+
+      1 - Propagate positive context exactly (otherwise always mixed)
+      2 - Propagate negative context exactly (otherwise always mixed)
+
+      Default 3. See mp.ampl.com/components.html#mathematical-background.
+
+cvt:pre:ctx:acos (ctx:acos)
+      Context propagation for 'Acos' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:acosh (ctx:acosh)
+      Context propagation for 'Acosh' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:alldiff (ctx:alldiff)
+      Context propagation for 'AllDiff' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:and (ctx:and)
+      Context propagation for 'And' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:asin (ctx:asin)
+      Context propagation for 'Asin' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:asinh (ctx:asinh)
+      Context propagation for 'Asinh' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:atan (ctx:atan)
+      Context propagation for 'Atan' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:atanh (ctx:atanh)
+      Context propagation for 'Atanh' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:condlineq (ctx:condlineq)
+      Context propagation for 'Conditional< AlgebraicConstraint< LinTerms,
+      RhsEQ > >' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:condlinge (ctx:condlinge)
+      Context propagation for 'Conditional< AlgebraicConstraint< LinTerms,
+      RhsGE > >' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:condlingt (ctx:condlingt)
+      Context propagation for 'Conditional< AlgebraicConstraint< LinTerms,
+      RhsGT > >' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:condlinle (ctx:condlinle)
+      Context propagation for 'Conditional< AlgebraicConstraint< LinTerms,
+      RhsLE > >' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:condlinlt (ctx:condlinlt)
+      Context propagation for 'Conditional< AlgebraicConstraint< LinTerms,
+      RhsLT > >' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:condquadeq (ctx:condquadeq)
+      Context propagation for 'Conditional< AlgebraicConstraint<
+      QuadAndLinTerms, RhsEQ > >' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:condquadge (ctx:condquadge)
+      Context propagation for 'Conditional< AlgebraicConstraint<
+      QuadAndLinTerms, RhsGE > >' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:condquadgt (ctx:condquadgt)
+      Context propagation for 'Conditional< AlgebraicConstraint<
+      QuadAndLinTerms, RhsGT > >' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:condquadle (ctx:condquadle)
+      Context propagation for 'Conditional< AlgebraicConstraint<
+      QuadAndLinTerms, RhsLE > >' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:condquadlt (ctx:condquadlt)
+      Context propagation for 'Conditional< AlgebraicConstraint<
+      QuadAndLinTerms, RhsLT > >' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:cos (ctx:cos)
+      Context propagation for 'Cos' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:cosh (ctx:cosh)
+      Context propagation for 'Cosh' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:count (ctx:count)
+      Context propagation for 'Count' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:div (ctx:div)
+      Context propagation for 'Div' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:equiv (ctx:equiv)
+      Context propagation for 'Equivalence' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:exp (ctx:exp)
+      Context propagation for 'Exp' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:expa (ctx:expa)
+      Context propagation for 'ExpA' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:ifthen (ctx:ifthen)
+      Context propagation for 'IfThen' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:impl (ctx:impl)
+      Context propagation for 'Implication' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:linfunccon (ctx:linfunccon)
+      Context propagation for 'LinearFunctionalConstraint' expression, see
+      cvt:pre:ctx:abs.
+
+cvt:pre:ctx:log (ctx:log)
+      Context propagation for 'Log' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:loga (ctx:loga)
+      Context propagation for 'LogA' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:max (ctx:max)
+      Context propagation for 'Max' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:min (ctx:min)
+      Context propagation for 'Min' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:not (ctx:not)
+      Context propagation for 'Not' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:numberofconst (ctx:numberofconst)
+      Context propagation for 'NumberofConst' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:numberofvar (ctx:numberofvar)
+      Context propagation for 'NumberofVar' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:or (ctx:or)
+      Context propagation for 'Or' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:pl (ctx:pl)
+      Context propagation for 'PL' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:pow (ctx:pow)
+      Context propagation for 'Pow' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:powconstexp (ctx:powconstexp)
+      Context propagation for 'PowConstExp' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:quadfunccon (ctx:quadfunccon)
+      Context propagation for 'QuadraticFunctionalConstraint' expression, see
+      cvt:pre:ctx:abs.
+
+cvt:pre:ctx:sin (ctx:sin)
+      Context propagation for 'Sin' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:sinh (ctx:sinh)
+      Context propagation for 'Sinh' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:tan (ctx:tan)
+      Context propagation for 'Tan' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:tanh (ctx:tanh)
+      Context propagation for 'Tanh' expression, see cvt:pre:ctx:abs.
 
 cvt:pre:eqbinary
       0/1*: Preprocess reified equality comparison with a binary variable.
@@ -632,11 +811,21 @@ cvt:pre:feastolrel (pre:feastolrel, pre:epsrel)
       contradictions. Only warns if also pre:feastol is violated. See also
       sol:chk:feastol. Default 1e-6.
 
+cvt:pre:ineq2bndeq (ineq2bndeq)
+      0/1*: Preprocess reified inequality expr <(=) c, where c <)=(
+      lb(expr)+cvt:mip:eps, into expr == lb(expr), which works better on some
+      benchmarks/solvers.
+
+cvt:pre:ineq2related (ineq2related, ineq2rel)
+      0/1*: Unify related reified inequalities: <=c, <c+cvt:mip:eps, >c,
+      >=c+cvt:mip:eps.
+
 cvt:pre:ineqresult
       0/1*: Preprocess reified inequality comparison's decidable cases.
 
 cvt:pre:ineqrhs
-      0/1*: Preprocess reified inequality comparison's right-hand sides.
+      0/1*: Preprocess reified inequality comparison's right-hand sides (round
+      for integer expression body).
 
 cvt:pre:prod (cvt:prod)
       Product preprocessing flags. Sum of a subset of the following bits:
@@ -720,14 +909,15 @@ cvt:sos2 (sos2)
 cvt:uenc:negctx:max (uenc:negctx:max, cvt:uenc:negctx, uenc:negctx)
       If cvt:uenc:ratio applies, max number of constants in comparisons
       x==const in negative context (equivalently, x!=const in positive
-      context) to skip UEnc(x). Default 1.
+      context), where const!=lb(x) and const!=ub(x), to skip unary encoding of
+      x. Default 1.
 
       Example:
 
       var x in 1..9;
       var y >=1 <=200;
       
-      s.t. Con: (x==2 || x==6) ==> y >= 4;
+      s.t. Con: (x==9 || x==2 || x==6) ==> y >= 4;
 
       With uenc:negctx<=1, this triggers unary encoding for x.
 
@@ -1421,6 +1611,11 @@ tech:outlev (outlev)
 tech:outlev_mp (outlev_mp)
       0*/1: whether to print MP model information.
 
+tech:pretunefileprm (pretunefileprm)
+      File to which nondefault keyword settings are written in CPLEX PRM
+      format before tuning; written whether or not tunefile or tunefileprm is
+      specified.
+
 tech:seed (seed)
       Seed for random number generator used internally by CPLEX.Use "seed=?"
       to see the default, which depends on the CPLEX release.
@@ -1436,6 +1631,27 @@ tech:timing (timing, tech:report_times, report_times)
       time_solver+time_setup+time_output is a measure of the total time spent
       in the solver driver. If set to 2, return more granular times, including
       'time_read', 'time_conversion' and 'time_output'.
+
+tech:tunebase (tunefileprm, tunebase)
+      Name of file for tuning results in CPLEX PRM format. If specified, CPLEX
+      will experiment with parameter settings as described for "tech:tunefile"
+
+tech:tunedisplay (tunedisplay)
+      How much to print during tunin:
+
+      0 - Nothing
+      1 - Minimal printing (default)
+      2 - Show parameters being tried
+      3 - Exhaustive printing
+
+tech:tunerepeat (tunerepeat)
+      How many times to perturb the problem during tuning (default = 1).
+
+tech:tunetimedet (tunetimedet)
+      Limit (in "ticks") on tuning time; meaningful if < time (default = 1e75)
+
+tech:tunetimelim (tunetimelim, tunetime)
+      Limit (in seconds) on tuning time; meaningful if < time (default = 1e75)
 
 tech:version (version)
       Single-word phrase: report version details before solving the problem.

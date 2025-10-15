@@ -1,9 +1,23 @@
 # CPLEX Changelog
 
+## 20251015
+- Changes in MP
+- Fixed *multiobj=1/2* for a single objective.
+  Running multiobjective for a single-objective
+  model makes sense with a negative `.objweight`
+  suffix.
+
+
+## 20250924
+- Option *alg:start:advance*
+- Added options to execute the CPLEX tuner
+  (see *tech:tunebase* and other *tech:* options)
+
+
 ## 20250828
-- Options tech:optionnativeread, tech:optionnativewrite
+- Options *tech:optionnativeread*, *tech:optionnativewrite*
   to read/write CPLEX PRM files.
-- Options lim:(lower/upper)(cutoff/obj/objstop) for
+- Options *lim:(lower/upper)(cutoff/obj/objstop)* for
   limiting search in the Simplex and Branch-and-Bound
   algorithms.
 
@@ -12,12 +26,12 @@
 - Changes in MP
   - Improved preprocessing of logical
     and combinatorial expressions
-    (options cvt:pre:unnest, cvt:pre:sort).
-  - Option cvt:pre:boundlogarg (default 0) to bound
+    (options *cvt:pre:unnest*, *cvt:pre:sort*).
+  - Option *cvt:pre:boundlogarg* (default 0) to bound
     arguments of logarithm nonnegative. Previously
     always done, sometimes deteriorating performance
     of nonlinear solvers.
-- Options alg:numericalemphasis, tech:memoryemphasis.
+- Options *alg:numericalemphasis*, *tech:memoryemphasis*.
 
 
 ## 20250801
