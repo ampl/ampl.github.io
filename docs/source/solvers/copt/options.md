@@ -27,29 +27,36 @@ acc:_all
       Can be useful to disable all reformulations (acc:_all=2), or force
       linearization (acc:_all=0.)
 
+acc:_expr
+      Solver acceptance level for all expressions, default 0:
+
+      0 - Not accepted, all expressions will be treated as flat constraints,
+          or redefined
+      1 - Accepted. See the individual acc:... options
+
 acc:cos
-      Solver acceptance level for 'CosConstraint' as expression, default 0:
+      Solver acceptance level for 'CosConstraint' as expression, default 4:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       3 - Accepted but automatic redefinition will be used where possible
       4 - Accepted natively and preferred
 
 acc:div
-      Solver acceptance level for 'DivConstraint' as expression, default 0:
+      Solver acceptance level for 'DivConstraint' as expression, default 4:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       3 - Accepted but automatic redefinition will be used where possible
       4 - Accepted natively and preferred
 
 acc:exp
-      Solver acceptance level for 'ExpConstraint' as expression, default 0:
+      Solver acceptance level for 'ExpConstraint' as expression, default 4:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       3 - Accepted but automatic redefinition will be used where possible
       4 - Accepted natively and preferred
 
 acc:expa (acc:expA)
-      Solver acceptance level for 'ExpAConstraint' as expression, default 0:
+      Solver acceptance level for 'ExpAConstraint' as expression, default 4:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       3 - Accepted but automatic redefinition will be used where possible
@@ -88,7 +95,7 @@ acc:lineq
 
 acc:linfunccon
       Solver acceptance level for 'LinearFunctionalConstraint' as expression,
-      default 0:
+      default 4:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       3 - Accepted but automatic redefinition will be used where possible
@@ -116,14 +123,14 @@ acc:linrange (acc:linrng)
       2 - Accepted natively and preferred
 
 acc:log
-      Solver acceptance level for 'LogConstraint' as expression, default 0:
+      Solver acceptance level for 'LogConstraint' as expression, default 4:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       3 - Accepted but automatic redefinition will be used where possible
       4 - Accepted natively and preferred
 
 acc:loga (acc:logA)
-      Solver acceptance level for 'LogAConstraint' as expression, default 0:
+      Solver acceptance level for 'LogAConstraint' as expression, default 4:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       3 - Accepted but automatic redefinition will be used where possible
@@ -160,7 +167,7 @@ acc:nlcon (acc:nlalgcon)
 
 acc:powconstexp
       Solver acceptance level for 'PowConstExpConstraint' as expression,
-      default 0:
+      default 4:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       3 - Accepted but automatic redefinition will be used where possible
@@ -175,7 +182,7 @@ acc:quadeq
 
 acc:quadfunccon
       Solver acceptance level for 'QuadraticFunctionalConstraint' as
-      expression, default 0:
+      expression, default 4:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       3 - Accepted but automatic redefinition will be used where possible
@@ -196,7 +203,7 @@ acc:quadle
       2 - Accepted natively and preferred
 
 acc:sin
-      Solver acceptance level for 'SinConstraint' as expression, default 0:
+      Solver acceptance level for 'SinConstraint' as expression, default 4:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       3 - Accepted but automatic redefinition will be used where possible
@@ -219,7 +226,7 @@ acc:sos2
       2 - Accepted natively and preferred
 
 acc:tan
-      Solver acceptance level for 'TanConstraint' as expression, default 0:
+      Solver acceptance level for 'TanConstraint' as expression, default 4:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       3 - Accepted but automatic redefinition will be used where possible
@@ -345,6 +352,10 @@ cvt:dvelim (dvelim)
 
 cvt:expcones (expcones)
       0*/1: Recognize exponential cones.
+
+cvt:expr:nlassign (expr:nlassign)
+      Above which reference count, a formula node should be assigned to a
+      variable (see acc: options). 0 means all nodes outlined. Default 1.
 
 cvt:mip:eps (cvt:cmp:eps, cmp:eps)
       Tolerance for strict comparison of continuous variables for MIP. Applies

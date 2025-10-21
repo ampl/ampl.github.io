@@ -560,9 +560,9 @@ alg:refineops (refineops)
       256  - iterative refiner will use the dual simplex algorithm
       512  - refine MIP solutions such that rounding them keeps the problem
              feasible when reoptimized
-      1024 - ttempt to refine MIP solutions such that rounding them keeps the
-             problem feasible when reoptimized, but accept integers solutions
-             even if refinement fails
+      1024 - attempt to refine MIP solutions such that rounding them keeps
+             the problem feasible when reoptimized, but accept integer
+             solutions even if refinement fails
 
 alg:relax (relax)
       0*/1: Whether to relax integrality of variables.
@@ -942,6 +942,10 @@ cvt:dvelim (dvelim)
 
 cvt:expcones (expcones)
       0*/1: Recognize exponential cones.
+
+cvt:expr:nlassign (expr:nlassign)
+      Above which reference count, a formula node should be assigned to a
+      variable (see acc: options). 0 means all nodes outlined. Default 1.
 
 cvt:mip:eps (cvt:cmp:eps, cmp:eps)
       Tolerance for strict comparison of continuous variables for MIP. Applies
@@ -1798,7 +1802,7 @@ mip:historycosts (historycosts)
       3  - initialize using any regular branching or strong branching
            information from all nodes solves before the current node
 
-mip:intfeastol (intfeastol)
+mip:intfeastol (inttol, intfeastol)
       Feasibility tolerance for integer variables (default 5e-06).
 
 mip:kappafreq (mipkappafreq)

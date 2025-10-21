@@ -360,7 +360,7 @@ alg:feasrelaxbigm (feasrelaxbigm)
       feasibility relaxation. Default = 1e6.
 
 alg:feastol (feastol)
-      Primal feasibility tolerance (default 1e-6).
+      Primal feasibility tolerance (default 1e-6; should be in [1e-9, 1e-2]).
 
 alg:global (global)
       Synonym for pre:funcnonlinear.
@@ -705,6 +705,10 @@ cvt:dvelim (dvelim)
 
 cvt:expcones (expcones)
       0*/1: Recognize exponential cones.
+
+cvt:expr:nlassign (expr:nlassign)
+      Above which reference count, a formula node should be assigned to a
+      variable (see acc: options). 0 means all nodes outlined. Default 1.
 
 cvt:mip:eps (cvt:cmp:eps, cmp:eps)
       Tolerance for strict comparison of continuous variables for MIP. Applies
@@ -1266,7 +1270,10 @@ mip:intfocus (integralityfocus, intfocus)
       1 - Yes.
 
 mip:inttol (inttol, intfeastol)
-      Feasibility tolerance for integer variables (default 1e-05).
+      Feasibility tolerance for integer variables (default 1e-05; should be in
+      [1e-9, 1e-1]).
+
+      Consider mip:intfocus which can have more impact.
 
 mip:lazy (lazy)
       Whether to recognize suffix .lazy on constraints: sum of

@@ -5,14 +5,14 @@
 
 - [**AMPL** Changelog (latest: **20250901**)](../releases/ampl.md)
 - [**BARON** Changelog (latest: **20250806**)](../solvers/baron/changes.md)
-- [**BARONMP** Changelog (latest: **20251015**)](../solvers/baron/changesmp.md)
+- [**BARONMP** Changelog (latest: **20251021**)](../solvers/baron/changesmp.md)
 - [**CBC** Changelog (latest: **20251015**)](../solvers/cbc/changes.md)
 - [**CONOPT** Changelog (latest: **20251015**)](../solvers/conopt/changes.md)
-- [**COPT** Changelog (latest: **20251015**)](../solvers/copt/changes.md)
+- [**COPT** Changelog (latest: **20251021**)](../solvers/copt/changes.md)
 - [**CPLEX** Changelog (latest: **20251015**)](../solvers/cplex/changes.md)
 - [**CPLEXASL** Changelog (latest: **20230228**)](../solvers/cplex/changesasl.md)
 - [**GCG** Changelog (latest: **20240115**)](../solvers/gcg/changes.md)
-- [**GUROBI** Changelog (latest: **20251015**)](../solvers/gurobi/changes.md)
+- [**GUROBI** Changelog (latest: **20251021**)](../solvers/gurobi/changes.md)
 - [**GUROBIASL** Changelog (latest: **20231208**)](../solvers/gurobi/changesasl.md)
 - [**HiGHS** Changelog (latest: **20251015**)](../solvers/highs/changes.md)
 - [**ILOGCP** Changelog (latest: **20250422**)](../solvers/ilogcp/changes.md)
@@ -21,11 +21,11 @@
 - [**LOQO** Changelog (latest: **20210410**)](../solvers/loqo/changes.md)
 - [**Lindo Global** Changelog (latest: **20210406**)](../solvers/lindoglobal/changes.md)
 - [**MINOS** Changelog (latest: **20211109**)](../solvers/minos/changes.md)
-- [**MOSEK** Changelog (latest: **20251015**)](../solvers/mosek/changes.md)
-- [**MP** Changelog (latest: **20251015**)](../releases/mp.md)
+- [**MOSEK** Changelog (latest: **20251021**)](../solvers/mosek/changes.md)
+- [**MP** Changelog (latest: **20251021**)](../releases/mp.md)
 - [**SCIP** Changelog (latest: **20240121**)](../solvers/scip/changes.md)
 - [**SNOPT** Changelog (latest: **20211109**)](../solvers/snopt/changes.md)
-- [**XPRESS** Changelog (latest: **20251015**)](../solvers/xpress/changes.md)
+- [**XPRESS** Changelog (latest: **20251021**)](../solvers/xpress/changes.md)
 - [**XPRESSASL** Changelog (latest: **20220112**)](../solvers/xpress/changesasl.md)
 
 ```{toctree}
@@ -36,6 +36,13 @@ mp.md
 ```
 
 
+## 20251021
+- [BARONMP](../solvers/baron/changesmp.md#20251021)
+- [COPT](../solvers/copt/changes.md#20251021)
+- [GUROBI](../solvers/gurobi/changes.md#20251021)
+- [MOSEK](../solvers/mosek/changes.md#20251021)
+- [MP](../releases/mp.md#20251021)
+- [XPRESS](../solvers/xpress/changes.md#20251021)
 ## 20251015
 - [BARONMP](../solvers/baron/changesmp.md#20251015)
 - [CBC](../solvers/cbc/changes.md#20251015)

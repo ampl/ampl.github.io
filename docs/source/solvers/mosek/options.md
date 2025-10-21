@@ -257,6 +257,10 @@ cvt:dvelim (dvelim)
 cvt:expcones (expcones)
       0/1*: Recognize exponential cones.
 
+cvt:expr:nlassign (expr:nlassign)
+      Above which reference count, a formula node should be assigned to a
+      variable (see acc: options). 0 means all nodes outlined. Default 1.
+
 cvt:mip:eps (cvt:cmp:eps, cmp:eps)
       Tolerance for strict comparison of continuous variables for MIP. Applies
       to <, >, and != operators. Also applies to negation of conditional
@@ -649,7 +653,7 @@ mip:feaspump (feaspump)
            feasibility early
 
 mip:feastol (feastol)
-      MIP feasibility tolerance.
+      MIP feasibility tolerance. Default 1e-6.
 
 mip:gap (mipgap)
       Max. relative MIP optimality gap (default 1e-4).
@@ -664,8 +668,8 @@ mip:heurlevel (heurlevel)
       0: not used;
       positive, larger - more effort (3-5 recommended).
 
-mip:inttol (inttol)
-      MIP integrality tolerance.
+mip:inttol (inttol, intfeastol)
+      MIP integrality tolerance. Default 1e-5.
 
 mip:relgapconst (miorelgapconst)
       This value is used to compute the relative gap for the solution to an

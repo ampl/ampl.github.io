@@ -1,5 +1,9 @@
 # MOSEK Changelog
 
+## 20251021
+- Update to Mosek 11.0.29.
+
+
 ## 20251015
 - Changes in MP
 
@@ -8,8 +12,8 @@
 - Changes in MP
   - Improved preprocessing of logical
     and combinatorial expressions
-    (options cvt:pre:unnest, cvt:pre:sort).
-  - Option cvt:pre:boundlogarg (default 0) to bound
+    (options *cvt:pre:unnest*, *cvt:pre:sort*).
+  - Option *cvt:pre:boundlogarg* (default 0) to bound
     arguments of logarithm nonnegative. Previously
     always done, sometimes deteriorating performance
     of nonlinear solvers.
@@ -17,13 +21,13 @@
 
 ## 20250801
 - Changes in MP
-  - Tolerances set by options pre:feastol,
-    pre:feastolrel both need to be violated
+  - Tolerances set by options *pre:feastol*,
+    *pre:feastolrel* both need to be violated
     to produce a warning on contradicting
     variable/constraint bounds. Previously
     the preprocessor failed on any violation,
     without letting the solver try.
-  - Options cvt:compl, cvt:compl:eps control
+  - Options *cvt:compl*, *cvt:compl:eps* control
     complementarity reformulations.
 
 

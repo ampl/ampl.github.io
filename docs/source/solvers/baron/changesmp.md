@@ -1,5 +1,9 @@
 # BARONMP Changelog
 
+## 20251021
+- Changes in MP: option *cvt:expr:nlassign*.
+
+
 ## 20251015
 - Changes in MP
 
