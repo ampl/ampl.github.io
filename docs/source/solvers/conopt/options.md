@@ -68,6 +68,7 @@ outlev            output level:
 		4 = also show preprocessing information.
 rat_nopen         ratio limit of penalty constraints for no-penalty model (double, default 0.1)
 superbasics       limit on number of superbasic variables (default >= 500)
+threads           maximum number of threads to use
 timing            report I/O and solution times: 1 = stdout, 2 = stderr, 3 = both
 tol_bound         bound filter tolerance (double, default 1e-07)
 tol_box_linfac    trust-region box factor for linear vars (double, default 10)

@@ -1,6 +1,12 @@
 # CONOPT Changelog
 
-## 20251015
+## 20251021
+- Added keyword *threads* to control number of threads used in
+  function evaluations.
+- Fix for basis input in feasibility problems.
+
+
+## 20251017
 - Updated libs to CONOPT 4.38.1
 - Fixed threading issue that could cause inconsistent behvaiour
 - Added support for many Conopt options. Note that names might
