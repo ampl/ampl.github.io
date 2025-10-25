@@ -64,7 +64,7 @@ However, some solvers accept integer variables (MINLP), and some target global o
 
 .. [#] Global optimality: while Knitro and Bonmin accept integer variables,
    they only guarantee local optimum for non-convex models.
-
+.. [#mp2nl] With the `MP2NL meta-driver <https://mp.ampl.com/modeling-tools.html#meta-driver-mp2nl>`_.
 
 .. toctree::
     :hidden:

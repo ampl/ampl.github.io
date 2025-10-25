@@ -1,14 +1,14 @@
 ,NLP,MINLP,Global [#]_,|mp|
-:ref:`knitro`,|y|,|y|,|n|,|n|
+:ref:`knitro`,|y|,|y|,|n|,|y| [#mp2nl]_
 :ref:`baron`,|y|,|y|,|y|,|y|
-:ref:`lindo-global-solver`,|y|,|y|,|y|,|n|
-:ref:`octeract`,|y|,|y|,|y|,|n|
-:ref:`raposa`,|y|,|y|,|y|,|n|
-:ref:`lgo`,|y|,|n|,|y|,|n|
-:ref:`conopt`,|y|,|n|,|n|,|n|
-:ref:`loqo`,|y|,|n|,|n|,|n|
-:ref:`minos`,|y|,|n|,|n|,|n|
-:ref:`snopt`,|y|,|n|,|n|,|n|
-:ref:`ipopt`,|y|,|n|,|n|,|n|
-:ref:`bonmin`,|y|,|y|,|n|,|n|
-:ref:`couenne`,|y|,|y|,|y|,|n|
+:ref:`lindo-global-solver`,|y|,|y|,|y|,|y| [#mp2nl]_
+:ref:`octeract`,|y|,|y|,|y|,|y| [#mp2nl]_
+:ref:`raposa`,|y|,|y|,|y|,|y| [#mp2nl]_
+:ref:`lgo`,|y|,|n|,|y|,|y| [#mp2nl]_
+:ref:`conopt`,|y|,|n|,|n|,|y| [#mp2nl]_
+:ref:`loqo`,|y|,|n|,|n|,|y| [#mp2nl]_
+:ref:`minos`,|y|,|n|,|n|,|y| [#mp2nl]_
+:ref:`snopt`,|y|,|n|,|n|,|y| [#mp2nl]_
+:ref:`ipopt`,|y|,|n|,|n|,|y| [#mp2nl]_
+:ref:`bonmin`,|y|,|y|,|n|,|y| [#mp2nl]_
+:ref:`couenne`,|y|,|y|,|y|,|y| [#mp2nl]_
