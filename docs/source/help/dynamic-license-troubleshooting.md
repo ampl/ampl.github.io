@@ -22,7 +22,7 @@ This guide covers some common issues when activating or using Academic licenses,
 
 * **Academic licenses** require an **active internet connection** to periodically renew its short-term lease.
 
-* Install AMPL in your **user home directory**, typically:
+* Install AMPL in your **user home directory**, typically (on Windows):
 
   ```
   C:\Users\<YOUR_USERNAME>\AMPL\
@@ -48,7 +48,7 @@ C:\Users\USER\AMPL\ampl.lic: Short term lease expired.
 * The short-term license lease couldn’t be renewed due to:
 
   * No active internet connection, or
-  * Installation in a **read-only directory** that prevents license updates.
+  * Installation in a **read-only directory** that prevents license updates. This is a typical Windows issue when AMPL is installed in `C:\Program Files\AMPL\`.
 
 **Fix:**
 
