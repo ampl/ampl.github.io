@@ -2,7 +2,7 @@
 
 Table of contents:
 ```{toctree}
-dynamic-licensing-troubleshooting
+dynamic-license-troubleshooting
 get-fingerprint
 floating-licenses/index
 ```

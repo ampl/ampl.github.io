@@ -59,15 +59,6 @@ C:\Users\USER\AMPL\ampl.lic: Short term lease expired.
    ```
    C:\Users\<YOUR_USERNAME>\AMPL\
    ```
-4. If the issue continues:
-
-   * Locate the log file:
-
-     ```
-     C:\Users\<YOUR_USERNAME>\AMPL\amplkey.log
-     ```
-   * Send it to **[licensing@ampl.com](mailto:licensing@ampl.com)** for review.
-
 ---
 
 ### 2. "Bundle Expired" Message
@@ -116,38 +107,35 @@ C:\Users\user\OneDrive - <University>\ampl_mswin64\ampl.exe
    ```
 2. Reactivate your bundle from the AMPL Portal:
     - [Download your bundle](https://portal.ampl.com/download/ampl/bundle/<your-bundle-uuid>)
-3. If problems persist, contact **[licensing@ampl.com](mailto:licensing@ampl.com)** and describe your setup.
 
 ---
 
 ## Extending Solver Trials
 
 If your **trial license for commercial solvers** (e.g., Gurobi, CPLEX) has expired, you can request an extension through the AMPL Portal:
-
-    - [AMPL Community Edition Trial Extension](https://ampl.com/trial)
+   
+   * [AMPL Community Edition Trial Extension](https://ampl.com/trial)
 
 AMPL will review your request and grant an extension where eligible.
 
 ---
 
-### Contact Support
+## Contact Support
 
 If your issue remains unresolved, please include the following when contacting support:
 
-* The **full error message**
-* The **log file** (if available):
-
-  ```
-  C:\Users\<YOUR_USERNAME>\AMPL\amplkey.log
-  ```
-
-**Email:** [licensing@ampl.com](mailto:licensing@ampl.com)
+   * The **full error message**
+   * The **log file** (if available):
+     ```
+     C:\Users\<YOUR_USERNAME>\AMPL\amplkey.log
+     ```
+   * Send it to **[licensing@ampl.com](mailto:licensing@ampl.com)**.
 
 ---
 
 ## 🔗 Useful Links
 
-* [Installation Instructions](https://dev.ampl.com/ampl/install.html)
+* [AMPL Installation Instructions](https://dev.ampl.com/ampl/install.html)
 * [Static Fingerprint Guide](https://dev.ampl.com/help/get-fingerprint.html)
 * [Amplpy documentation](https://amplpy.ampl.com/en/latest/index.html)
 
