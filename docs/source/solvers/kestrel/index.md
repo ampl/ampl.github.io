@@ -80,6 +80,8 @@ gzip -dc gokestrel.linux-intel64.tgz | tar xf -
 
 in a Linux command window.
 
+You can directly run the Kestrel interface from a Jupyter Notebook on Google Colab, see the examples here `NEOS Server Colab <https://colab.ampl.com/tags/neos.html>`_.
+
 ## Selecting and running a solver with the Kestrel client
 
 The Kestrel client program works like a special kind of solver. Once you have installed the Kestrel executable, you tell AMPL to use Kestrel by setting the option solver to kestrel. You then set the option `kestrel_options` to indicate which remote solver you want to access through Kestrel. Directives for the chosen solver are specified in the usual way through an option having a name of the form `solvername_options`.

@@ -96,6 +96,8 @@ Constraint Programming Solvers
 NEOS Server
 -----------
 
+Try NEOS directly from Google Colab here: `Open in Google Colab <https://colab.ampl.com/tags/neos.html>`_.
+
 .. toctree::
     :maxdepth: 2
 
