@@ -1,4 +1,4 @@
-# AMPL Academic Licenses Troubleshooting
+# Academic License Troubleshooting
 
 This guide covers some common issues when activating or using Academic licenses, Course Bundle licenses, and other trial licenses such as Community Edition for industry practitioners.
 
