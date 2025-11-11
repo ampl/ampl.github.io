@@ -15,7 +15,7 @@ This guide covers some common issues when activating or using Academic licenses,
   ```python
   from amplpy import AMPL, ampl_notebook
   ampl = ampl_notebook(
-      modules=["gurobi", "cbc", "highs"],  # modules to install
+      modules=["gurobi", "xpress", "highs"],  # modules to install
       license_uuid=<license-uuid>          # license to use
   )
   ```
