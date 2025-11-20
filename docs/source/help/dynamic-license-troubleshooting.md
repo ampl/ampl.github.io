@@ -81,11 +81,72 @@ No ampl license for this machine.
     - [Request a new academic bundle](https://portal.ampl.com/user/ampl/request/ampl-for-courses/new)
 3. If you already had one:
     - [Download your bundle](https://portal.ampl.com/download/ampl/bundle/<your-bundle-uuid>)
-4. Activate your new license bundle as instructed at the AMPL portal.
+4. Activate your new license bundle following the [instructions document](https://dev.ampl.com/ampl/install.html).
 
 ---
 
-### 3. "No AMPL License for This Machine" in Synced Folders (e.g., OneDrive)
+### 3. Showing demo license after full license activation
+
+**Example symptoms:**
+
+* License activation appears to succeed (no errors) using a command such as:
+
+  ```
+  ampl: shell "amplkey activate --uuid <license-uuid>";
+  ```
+
+* However, when running a model, AMPL still displays a demo limitation message:
+
+  ```
+  Sorry, a demo license is limited to 2000 variables and 2000 constraints and objectives for linear problems.
+  You have <N> variables and <M> constraints.
+  ```
+
+**Explanation:**
+
+The most common cause is that AMPL was activated in **one installation**, but the user later runs AMPL from a **different installation or executable**.
+
+This can happen when:
+
+* Multiple AMPL installations exist on the system (e.g., in different folders or environments, Amplpy and a previous AMPL-standalone version).
+* The activation was performed using one method (e.g., inside AMPL or via amplkey), but AMPL is later invoked from a different location, like from Amplpy. The other way around is true, activating with `` won't ensure that an independent previous installation will find the license.
+
+**Fix / Diagnostic Steps:**
+
+1. When using Python, you don't need to run the `amplkey` command. Ensure activation is done in the same environment and installation:
+
+   ```bash
+   python -m amplpy.modules install base --upgrade # update ampl version
+   python -m amplpy.modules activate <license-uuid>
+   ```
+
+2. For standalone installations of AMPL, **identify which AMPL executable is being used** when running the model.
+   For example:
+
+   ```bash
+   which ampl
+   ```
+
+   or on Windows:
+
+   ```
+   where ampl
+   ```
+
+* Confirm that this is the same AMPL installation where the license was activated, or activate it again:
+
+  ```
+  ampl: shell "amplkey activate --uuid <license-uuid>";
+  ```
+
+**Reference:**
+
+Installation and activation workflow details:
+[https://dev.ampl.com/ampl/install.html]()
+
+---
+
+### 4. "No AMPL License for This Machine" in Synced Folders (e.g., OneDrive)
 
 **Example error:**
 
@@ -107,7 +168,7 @@ C:\Users\user\OneDrive - <University>\ampl_mswin64\ampl.exe
    ```
    C:\Users\<YOUR_USERNAME>\AMPL\
    ```
-2. Activate your new license using the uuid as instructed at the AMPL portal.
+2. Activate your new license using the uuid as instructed at the [instructions document](https://dev.ampl.com/ampl/install.html).
 
 ---
 
@@ -126,7 +187,7 @@ AMPL will review your request and grant an extension where eligible.
 If your issue remains unresolved, please include the following when contacting support:
 
    * The **full error message**
-   * The **log file** (if available):
+   * The **log file** (if available, find it with `ampl: shell "amplkey show log";`):
      ```
      C:\Users\<YOUR_USERNAME>\AMPL\amplkey.log
      ```
