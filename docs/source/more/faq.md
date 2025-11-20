@@ -5,19 +5,19 @@
 
 1. AMPL is a modelling language for describing production, distribution, blending, scheduling and many other kinds of problems known generally as large-scale optimization or mathematical programming.
 
-2. AMPL’s familiar algebraic notation and interactive command environment are designed to help formulate models, **communicate with a wide variety of solvers (e.g., Gurobi, CPLEX, etc.)**, and examine solutions. **AMPL connects to most open-source and commercial solvers and allows you to switch easily between them.**
+2. AMPL's familiar algebraic notation and interactive command environment are designed to help formulate models, **communicate with a wide variety of solvers (e.g., Gurobi, CPLEX, etc.)**, and examine solutions. **AMPL connects to most open-source and commercial solvers and allows you to switch easily between them.**
 
 3. **AMPL has [APIs](../ampl/apis.rst) for several popular programming languages (e.g., Python, R, etc.)** and it allows you to only model once in AMPL and interact with it using an API for a language you are familiar with, and possibly deploy to a completely different language with minimal effort since the model remains the same.
 
-4. **You can use AMPL for free** with open-source solvers with a [Community Edition License](https://ampl.com/ce/) for personal, academic, or commercial prototyping purposes using [AMPL APIs](../ampl/apis.rst). You can also start 30-day trials for individual commercial solvers. We also offer a few other free licenses for you to [start for free now](https://ampl.com/start-free-now/).
+4. If you are in Academia: students, researchers, professors teaching optimization, or just graduated, **you can use AMPL and commercial solvers for free** with an [Academic License](https://ampl.com/academia/).
+
+5. **You can use AMPL for free** with open-source solvers with a [Community Edition License](https://ampl.com/ce/) for personal, or commercial prototyping purposes using [AMPL APIs](../ampl/apis.rst). You can also start 30-day trials for individual commercial solvers. We also offer a few other free licenses for you to [start for free now](https://ampl.com/start-free-now/).
 
 ## How to Install AMPL
 
-After downloading your AMPL & Solvers bundle from the [AMPL Portal](https://portal.ampl.com),
-please follow the instructions below that correspond to your operating system:
-- [Windows](../ampl/install.md#windows)
-- [Linux](../ampl/install.md#linux)
-- [macOS](../ampl/install.md#macos)
+Sign up into the [AMPL Portal](https://portal.ampl.com) to get an account. Then,
+please follow the instructions below:
+- [Installation guide](https://dev.ampl.com/ampl/install.html)
 
 (cloud_licenses)=
 ## How do Cloud Licenses Work
@@ -70,7 +70,24 @@ In this example, we use the image [`python:3.9-slim-bullseye`](https://hub.docke
 
 In the example above we used a Python container, for other options see [AMPL on Docker Containers](ampl_docker).
 
+## What is amplbot?
+
+Amplbot is a specialized AI companion for optimization that helps you learn AMPL, formulate models from natural language, and generate ready-to-run Amplpy code. It streamlines the entire modeling workflow. [Amplbot FAQ](../help/faq_amplbot.md).
+
+You can access it for free in [Amplbot ChatGPT](https://chatgpt.com/g/g-68c00de8b030819185be6db190ad7bce-amplbot).
+
 ## How to Add AMPL Installation Directory to PATH/Path?
+
+### Python
+
+On any python script you can add the path to AMPL installation directory to the environment variable `PATH`/`Path` as follows:
+
+```python
+import os
+os.environ["PATH"] += os.pathsep + "/complete/path/to/ampl/installation/directory/"
+```
+
+Note: on Windows you should replace `"PATH"` by `"Path"`.
 
 ### Windows
 
@@ -93,18 +110,6 @@ On macOS, you can add the path to AMPL installation directory (e.g., `"/Users/us
 export PATH="/complete/path/to/ampl.macos64/":$PATH
 ```
 You can add this line to `~/.zshrc`.
-
-
-### Python
-
-On any python script you can add the path to AMPL installation directory to the environment variable `PATH`/`Path` as follows:
-
-```python
-import os
-os.environ["PATH"] += os.pathsep + "/complete/path/to/ampl/installation/directory/"
-```
-
-Note: on Windows you should replace `"PATH"` by `"Path"`.
 
 ## Other Help Resources
 

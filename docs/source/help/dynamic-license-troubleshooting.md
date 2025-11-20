@@ -81,7 +81,7 @@ No ampl license for this machine.
     - [Request a new academic bundle](https://portal.ampl.com/user/ampl/request/ampl-for-courses/new)
 3. If you already had one:
     - [Download your bundle](https://portal.ampl.com/download/ampl/bundle/<your-bundle-uuid>)
-4. Activate your new license bundle following the [instructions document](https://dev.ampl.com/ampl/install.html).
+4. Activate your new license bundle following the [installation instructions](https://dev.ampl.com/ampl/install.html).
 
 ---
 
@@ -168,7 +168,7 @@ C:\Users\user\OneDrive - <University>\ampl_mswin64\ampl.exe
    ```
    C:\Users\<YOUR_USERNAME>\AMPL\
    ```
-2. Activate your new license using the uuid as instructed at the [instructions document](https://dev.ampl.com/ampl/install.html).
+2. Activate your new license using the uuid following the [installation instructions](https://dev.ampl.com/ampl/install.html).
 
 ---
 
