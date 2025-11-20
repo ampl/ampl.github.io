@@ -6,19 +6,17 @@ Amplbot is a specialized AI assistant to help you develop and optimize models us
 
 ### Is amplbot free?
 
-Yes, access it here:
-
-[https://chatgpt.com/g/g-68c00de8b030819185be6db190ad7bce-amplbot](https://chatgpt.com/g/g-68c00de8b030819185be6db190ad7bce-amplbot)
+Yes, access it here at [Amplbot GPT](https://chatgpt.com/g/g-68c00de8b030819185be6db190ad7bce-amplbot).
 
 ### What can amplbot help me with?
 
 Amplbot supports your entire optimization workflow, including:
 
-* Learn AMPL syntax and modeling concepts
-* Formulate optimization problems in Python from natural language descriptions
-* Explain and debug optimization models
-* Troubleshoot issues like infeasibilities, unboundedness, or analyze the computational complexity of the model
-* Streamline integration with real-world data through Python
+* Learn AMPL syntax and modeling concepts.
+* Formulate optimization problems in Python from natural language descriptions.
+* Explain and debug optimization models.
+* Troubleshoot issues like infeasibilities, unboundedness, or analyze the computational complexity of the model.
+* Streamline integration with real-world data through Python.
 
 ### What makes amplbot different from other LLMs?
 

@@ -72,9 +72,9 @@ In the example above we used a Python container, for other options see [AMPL on 
 
 ## What is amplbot?
 
-Amplbot is a specialized AI companion for optimization that helps you learn AMPL, formulate models from natural language, and generate ready-to-run Amplpy code. It streamlines the entire modeling workflow. [Amplbot FAQ](../help/faq-amplbot.md).
+Amplbot is a specialized AI companion for optimization that helps you learn AMPL, formulate models from natural language, and generate ready-to-run Amplpy code. It streamlines the entire modeling workflow. [Amplbot FAQ](https://dev.ampl.com/help/faq-amplbot.html).
 
-You can access it for free in [Amplbot ChatGPT](https://chatgpt.com/g/g-68c00de8b030819185be6db190ad7bce-amplbot).
+You can access it for free in [Amplbot GPT](https://chatgpt.com/g/g-68c00de8b030819185be6db190ad7bce-amplbot).
 
 ## How to Add AMPL Installation Directory to PATH/Path?
 
