@@ -70,8 +70,8 @@ Your data and conversations are not accesible by AMPL Optimization Inc., but the
 
 We'd love to hear from you! You can:
 
-* Thumbs-up in ChatGPT
-* Rate the GPT directly
+* Thumbs-up in [ChatGPT](https://chatgpt.com/g/g-68c00de8b030819185be6db190ad7bce-amplbot).
+* Rate the [GPT](https://chatgpt.com/g/g-68c00de8b030819185be6db190ad7bce-amplbot) directly.
 * Email us at: [devteam@ampl.com](mailto:devteam@ampl.com)
 
 ### I don't want to use Amplbot, any alternatives?
