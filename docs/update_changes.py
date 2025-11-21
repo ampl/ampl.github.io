@@ -180,7 +180,7 @@ print(
 changelogs = {
     (releases[item]["label"], item): releases[item]["file"] for item in releases
 }
-for label, item in sorted(changelogs):
+for label, item in sorted(changelogs, key=lambda x: x[0].lower()):
     latest = max(releases[item]["versions"])
     fname = changelogs[label, item]
     print(
