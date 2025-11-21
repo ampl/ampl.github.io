@@ -78,7 +78,6 @@ However, some solvers accept integer variables (MINLP), and some target global o
     conopt/index
     lgo/index
     lindoglobal/index
-    octeract/index
     raposa/index
     ipopt/index
     bonmin/index

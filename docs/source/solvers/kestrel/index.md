@@ -179,22 +179,22 @@ The following choices for solvername are currently recognized (with links to the
     [Knitro](https://www.neos-server.org/neos/solvers/cp:Knitro/AMPL.html), [PATH](https://www.neos-server.org/neos/solvers/cp:PATH/AMPL.html)
     
 -   Global Optimization  
-    [Couenne](https://www.neos-server.org/neos/solvers/go:Couenne/AMPL.html), [LGO](https://www.neos-server.org/neos/solvers/go:LGO/AMPL.html), [Octeract](https://www.neos-server.org/neos/solvers/go:OCTERACT/AMPL.html), [RAPOSa](https://www.neos-server.org/neos/solvers/go:RAPOSa/AMPL.html)
+    [Couenne](https://www.neos-server.org/neos/solvers/go:Couenne/AMPL.html), [LGO](https://www.neos-server.org/neos/solvers/go:LGO/AMPL.html), [RAPOSa](https://www.neos-server.org/neos/solvers/go:RAPOSa/AMPL.html)
     
 -   Linear Programming  
-    [CPLEX](https://www.neos-server.org/neos/solvers/lp:CPLEX/AMPL.html), [MOSEK](https://www.neos-server.org/neos/solvers/lp:MOSEK/AMPL.html), [Octeract](https://www.neos-server.org/neos/solvers/lp:OCTERACT/AMPL.html), [OOQP](https://www.neos-server.org/neos/solvers/lp:OOQP/AMPL.html)
+    [CPLEX](https://www.neos-server.org/neos/solvers/lp:CPLEX/AMPL.html), [MOSEK](https://www.neos-server.org/neos/solvers/lp:MOSEK/AMPL.html), [OOQP](https://www.neos-server.org/neos/solvers/lp:OOQP/AMPL.html)
     
 -   Mathematical Programs with Equilibrium Constraints  
     [Knitro](https://www.neos-server.org/neos/solvers/mpec:Knitro/AMPL.html)
     
 -   Mixed Integer Linear Programming  
-    [Cbc](https://www.neos-server.org/neos/solvers/milp:Cbc/AMPL.html), [CPLEX](https://www.neos-server.org/neos/solvers/milp:CPLEX/AMPL.html), [MINTO](https://www.neos-server.org/neos/solvers/milp:MINTO/AMPL.html), [MOSEK](https://www.neos-server.org/neos/solvers/milp:MOSEK/AMPL.html), [Octeract](https://www.neos-server.org/neos/solvers/milp:OCTERACT/AMPL.html)
+    [Cbc](https://www.neos-server.org/neos/solvers/milp:Cbc/AMPL.html), [CPLEX](https://www.neos-server.org/neos/solvers/milp:CPLEX/AMPL.html), [MINTO](https://www.neos-server.org/neos/solvers/milp:MINTO/AMPL.html), [MOSEK](https://www.neos-server.org/neos/solvers/milp:MOSEK/AMPL.html)
     
 -   Mixed Integer Nonlinearly Constrained Optimization  
-    [Bonmin](https://www.neos-server.org/neos/solvers/minco:Bonmin/AMPL.html), [Couenne](https://www.neos-server.org/neos/solvers/minco:Couenne/AMPL.html), [FilMINT](https://www.neos-server.org/neos/solvers/minco:FilMINT/AMPL.html), [Knitro](https://www.neos-server.org/neos/solvers/minco:Knitro/AMPL.html), [MINLP](https://www.neos-server.org/neos/solvers/minco:MINLP/AMPL.html), [Octeract](https://www.neos-server.org/neos/solvers/minco:OCTERACT/AMPL.html)
+    [Bonmin](https://www.neos-server.org/neos/solvers/minco:Bonmin/AMPL.html), [Couenne](https://www.neos-server.org/neos/solvers/minco:Couenne/AMPL.html), [FilMINT](https://www.neos-server.org/neos/solvers/minco:FilMINT/AMPL.html), [Knitro](https://www.neos-server.org/neos/solvers/minco:Knitro/AMPL.html), [MINLP](https://www.neos-server.org/neos/solvers/minco:MINLP/AMPL.html)
     
 -   Nonlinearly Constrained Optimization  
-    [CONOPT](https://www.neos-server.org/neos/solvers/nco:CONOPT/AMPL.html), [filter](https://www.neos-server.org/neos/solvers/nco:filter/AMPL.html), [Ipopt](https://www.neos-server.org/neos/solvers/nco:Ipopt/AMPL.html), [KNITRO](https://www.neos-server.org/neos/solvers/nco:KNITRO/AMPL.html), [LANCELOT](https://www.neos-server.org/neos/solvers/nco:LANCELOT/AMPL.html), [LOQO](https://www.neos-server.org/neos/solvers/nco:LOQO/AMPL.html), [MINOS](https://www.neos-server.org/neos/solvers/nco:MINOS/AMPL.html), [Octeract](https://www.neos-server.org/neos/solvers/nco:OCTERACT/AMPL.html), [SNOPT](https://www.neos-server.org/neos/solvers/nco:SNOPT/AMPL.html)
+    [CONOPT](https://www.neos-server.org/neos/solvers/nco:CONOPT/AMPL.html), [filter](https://www.neos-server.org/neos/solvers/nco:filter/AMPL.html), [Ipopt](https://www.neos-server.org/neos/solvers/nco:Ipopt/AMPL.html), [KNITRO](https://www.neos-server.org/neos/solvers/nco:KNITRO/AMPL.html), [LANCELOT](https://www.neos-server.org/neos/solvers/nco:LANCELOT/AMPL.html), [LOQO](https://www.neos-server.org/neos/solvers/nco:LOQO/AMPL.html), [MINOS](https://www.neos-server.org/neos/solvers/nco:MINOS/AMPL.html), [SNOPT](https://www.neos-server.org/neos/solvers/nco:SNOPT/AMPL.html)
     
 
 A current list can be obtained by leaving out the solver name:

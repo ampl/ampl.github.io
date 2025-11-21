@@ -27,7 +27,7 @@ Get your free license at: **<https://ampl.com/ce>**
 
 -   Linear: [Gurobi](https://ampl.com/products/solvers/solvers-we-sell/gurobi/), [CPLEX](https://ampl.com/products/solvers/solvers-we-sell/cplex/), [Xpress](https://ampl.com/products/solvers/solvers-we-sell/xpress/), [COPT](https://ampl.com/products/solvers/solvers-we-sell/copt/)
 -   Nonlinear: [Artleys Knitro](https://ampl.com/products/solvers/solvers-we-sell/knitro/), [CONOPT](https://ampl.com/products/solvers/solvers-we-sell/conopt/), [LOQO](https://ampl.com/products/solvers/solvers-we-sell/loqo/), [MINOS](https://ampl.com/products/solvers/solvers-we-sell/minos/), [SNOPT](https://ampl.com/products/solvers/solvers-we-sell/snopt/)
--   Global: [BARON](https://ampl.com/products/solvers/solvers-we-sell/baron/), [LGO](https://ampl.com/products/solvers/solvers-we-sell/lgo/), [LINDO Global](https://ampl.com/products/solvers/solvers-we-sell/lindoglobal/), [OCTERACT](https://ampl.com/products/solvers/solvers-we-sell/octeract/)
+-   Global: [BARON](https://ampl.com/products/solvers/solvers-we-sell/baron/), [LGO](https://ampl.com/products/solvers/solvers-we-sell/lgo/), [LINDO Global](https://ampl.com/products/solvers/solvers-we-sell/lindoglobal/)
 
 **APIs included:**
 

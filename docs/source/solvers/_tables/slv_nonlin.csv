@@ -2,7 +2,6 @@
 :ref:`knitro`,|y|,|y|,|n|,|y| [#mp2nl]_
 :ref:`baron`,|y|,|y|,|y|,|y|
 :ref:`lindo-global-solver`,|y|,|y|,|y|,|y| [#mp2nl]_
-:ref:`octeract`,|y|,|y|,|y|,|y| [#mp2nl]_
 :ref:`raposa`,|y|,|y|,|y|,|y| [#mp2nl]_
 :ref:`lgo`,|y|,|n|,|y|,|y| [#mp2nl]_
 :ref:`conopt`,|y|,|n|,|n|,|y| [#mp2nl]_
