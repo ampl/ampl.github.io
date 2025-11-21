@@ -145,6 +145,20 @@ releases["mp"] = {
     "versions": re.findall(r"## (\d{8})", open("source/releases/mp.md").read()),
 }
 
+cuopt_changelog = fetch_url_content(
+    "https://raw.githubusercontent.com/ampl/mp/refs/heads/develop/solvers/cuoptmp/CHANGES.cuoptmp.md"
+)
+cuopt_changelog = cuopt_changelog[cuopt_changelog.find("##") :]
+cuopt_changelog = f"# CUOPT Changelog\n\n{cuopt_changelog}"
+open("source/solvers/cuopt/changes.md", "w").write(cuopt_changelog)
+releases["cuopt"] = {
+    "label": "cuOpt",
+    "file": "solvers/cuopt/changes.md",
+    "versions": re.findall(
+        r"## (\d{8})", open("source/solvers/cuopt/changes.md").read()
+    ),
+}
+
 released_on = {}
 for item in releases:
     for date in releases[item]["versions"]:
