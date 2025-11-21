@@ -2,7 +2,7 @@
 
 ### What is amplbot?
 
-Amplbot is a specialized AI assistant to help you develop and optimize models using the AMPL language and tools. It is integrated as a GPT into chatgpt.com. It's powered by the AMPL engine and trained on advanced modeling techniques, making it the perfect companion for optimization professionals, researchers, and students.
+Amplbot is a specialized AI assistant to help you develop and optimize models using AMPL and Python. It is integrated as a GPT into chatgpt.com. It's powered by the AMPL engine and trained on advanced modeling techniques, making it the perfect companion for optimization professionals, researchers, and students.
 
 ### Is amplbot free?
 
@@ -30,9 +30,9 @@ We hope amplbot will smooth the learning curve for those who are new to optimiza
 
 ### How do I get started with amplbot?
 
-Just start a conversation on chatgpt.com and ask for help with any optimization problem. Whether you're starting from scratch or refining an advanced model, amplbot adapts to your journey.
+Just start a conversation with the bot clicking [here](https://chatgpt.com/g/g-68c00de8b030819185be6db190ad7bce-amplbot).
 
-An excellent starting prompt could be:
+Ask for help with any optimization problem. Whether you're starting from scratch or refining an advanced model, amplbot adapts to your journey. An excellent starting prompt could be:
 
 > "Quick guide on how to use AMPL"
 
