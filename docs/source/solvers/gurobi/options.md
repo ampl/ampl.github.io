@@ -304,6 +304,13 @@ acc:tan
           where possible
       4 - Accepted as expression natively and preferred
 
+acc:tanh
+      Solver acceptance level for 'TanhConstraint' as expression, default 4:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      3 - Accepted but automatic redefinition will be used where possible
+      4 - Accepted natively and preferred
+
 alg:basis (basis)
       Whether to use and/or return a basis for LP models (variable/constraint
       suffixes .(s)status):
@@ -412,13 +419,15 @@ alg:method (method, lpmethod, simplex)
       Which algorithm to use for non-MIP problems or for the root node of MIP
       problems:
 
-      -1 - Automatic (default): 3 for LP, 2 for QP, 1 for MIP
+      -1 - Automatic (default): 3 for LP, 2 for QP, 1/4/5 for MIP
       0  - Primal simplex
       1  - Dual simplex
       2  - Barrier
       3  - Nondeterministic concurrent (several solves in parallel)
       4  - Deterministic concurrent
-      5  - Deterministic concurrent simplex.
+      5  - Deterministic concurrent simplex (deprecated; use
+           concurrentmethod).
+      6  - PDHG (Primal-Dual Hybrid Gradient)
 
 alg:networkalg (networkalg)
       Whether to use network simplex if an LP is a network problem:
@@ -428,17 +437,50 @@ alg:networkalg (networkalg)
       1  - Yes.
 
 alg:nlpheur (nlpheur)
-      Use NLP heuristic to find feasible solutions to non-convex quadratic
-      models:
-
-      0 - No
-      1 - Yes (default)
+      The NLP heuristic uses a non-linear barrier solver to find feasible
+      solutions to nonconvex quadratic and nonlinear models during a global
+      optimization solve. It often helps to find solutions quicker, but in
+      some cases it can consume significant runtime without producing a
+      solution. A value of 0 disables the heuristic completely, while larger
+      values call the heuristic more and more aggressively during the
+      optimization process. The default -1 value chooses automatically.
 
 alg:numericfocus (numericfocus, numfocus, numericemphasis, numericalemphasis)
       How much to try detecting and managing numerical issues:
 
       0 - Automatic choice (default)
       1-3 - Increasing focus on more stable computations.
+
+alg:optimalitytarget (optimalitytarget)
+      Specifies the optimality target for nonlinear continuous problems (NLP):
+
+      -1 - Automatic (default)
+      0  - Global optimum
+      1  - Local optimum via nonlinear barrier algorithm (preview). See
+           nlbar:... options. Note that this provides no optimality gap and
+           can be applied only to models with no discrete variables (set
+           alg:relax=1 if needed) and no nondifferentiable functions.
+
+alg:pdhgabstol (alg:pdhgfeastol, pdhgabstol, pdhgfeastol)
+      PDHG absolute feasibility tolerance (default 1e-6; should be in [1e-9,
+      1e-2]).
+
+alg:pdhgconvtol (pdhgconvtol)
+      PDHG convergence tolerance. PDHG terminates if the relative difference
+      between primal and dual objective values is less than this value and if
+      the solution respects the feasibility tolerance (see alg:pdhgabstol)
+      (default 1e-6).
+
+alg:pdhggpu (pdhggpu)
+      Enables PDHG on GPU on compatible systems (preview):
+
+      -1 - Automatic choice (default)
+      0  - No
+      1  - Yes.
+
+alg:pdhgreltol (pdhgreltol)
+      PDHG relative feasibility tolerance (default 1e-6; set it to 0 to use
+      only pdhgabstol).
 
 alg:rays (rays)
       Whether to return suffix .unbdd (unbounded ray) if the objective is
@@ -555,7 +597,7 @@ bar:homog (barhomogeneous)
       unboundedness directly, without crossover, but is a bit slower than the
       nonhomogeneous barrier algorithm.
 
-bar:iterlim (bariterlim)
+bar:iterlim (bariterlim, lim:bariter)
       Limit on the number of barrier iterations (default 1000).
 
 bar:order (barorder)
@@ -601,20 +643,20 @@ cut:cuts (cuts)
       2  - Aggressive cut generation
       3  - Very aggressive cut generation.
 
-cut:flowcover (flowcover)
+cut:flowcover (flowcovercuts)
       Flowcover cuts: overrides "cuts"; choices as for "cuts".
 
-cut:flowpath (flowpath)
+cut:flowpath (flowpathcuts)
       Overrides "cuts"; choices as for "cuts".
 
-cut:gomory (gomory)
+cut:gomory (gomorycuts)
       Maximum number of Gomory cut passes during cut generation (-1 = default
       = no limit); overrides "cuts".
 
-cut:gubcover (gubcover)
+cut:gubcover (gubcovercuts)
       Overrides "cuts"; choices as for "cuts".
 
-cut:implied (implied)
+cut:implied (impliedcuts)
       Implied cuts: overrides "cuts"; choices as for "cuts".
 
 cut:infproof (infproofcuts)
@@ -625,7 +667,10 @@ cut:infproof (infproofcuts)
       1  - Moderate cut generation
       2  - Aggressive cut generation.
 
-cut:mipsep (mipsep)
+cut:masterkp (masterkpcuts)
+      MIPsep cuts: overrides "cuts"; choices as for "cuts".
+
+cut:mipsep (mipsepcuts)
       MIPsep cuts: overrides "cuts"; choices as for "cuts".
 
 cut:mir (mircuts)
@@ -1063,7 +1108,7 @@ cvt:uenc:ratio (uenc:ratio)
       With uenc:ratio>3, this triggers unary encoding for x.
 
 lim:iter (iterlim, iterlimit)
-      Iteration limit (default: no limit).
+      Simplex iteration limit (default: no limit).
 
 lim:mem (memlimit, maxmemoryhard)
       Hard limit (number of MB) on memory allocated, causing early termination
@@ -1076,6 +1121,9 @@ lim:minrelnodes (minrelnodes)
 
 lim:nodes (nodelim, nodelimit)
       Maximum MIP nodes to explore (default: no limit).
+
+lim:pdhgiter (pdhgiterlim, pdhgiterlimit)
+      Iteration limit (default: no limit).
 
 lim:softmem (softmemlimit, maxmemorysoft)
       Soft limit (number of MB) on memory allocated; default = 0 (no limit)
@@ -1176,12 +1224,13 @@ lp:warmstart (lpwarmstart)
       Controls whether and how to warm-start LP optimization, see options
       alg:basis and alg:start:
 
-      0 - Ignore any warm start information (generally)
-      1 - Use warm start information to solve the original, unpresolved
-          problem (default)
-      2 - If presolve is enabled, use warm start to solve the presolved
-          problem. Otherwise, setting 2 prioritizes start vectors
-          (primal/dual), while setting 1 prioritizes basis statuses.
+      -1 - Default (equivalent to 2 for PDHG, to 1 otherwise)
+      0  - Ignore any warm start information (generally).
+      1  - Use warm start information to solve the original, unpresolved
+           problem.
+      2  - If presolve is enabled, use warm start to solve the presolved
+           problem. Otherwise, setting 2 prioritizes start vectors
+           (primal/dual), while setting 1 prioritizes basis statuses.
 
 mip:basis (fixmodel, mip:fix)
       Whether to compute duals / basis / sensitivity for MIP models:
@@ -1245,20 +1294,25 @@ mip:gapabs (mipgapabs)
 mip:heurfrac (heurfrac)
       Fraction of time to spend in MIP heuristics (default 0.05).
 
-mip:improvegap (improvegap)
+mip:improvegap (improvegap, impstartgap)
       Optimality gap below which the MIP solver switches from trying to
       improve the best bound to trying to find better feasible solutions
       (default 0).
 
-mip:improvetime (improvetime)
+mip:improvenodes (improvenodes, impstartnodes)
+      Number of MIP nodes after which the solution strategy will change from
+      improving the best bound to finding better feasible solutions (default
+      Infinity).
+
+mip:improvetime (improvetime, impstarttime)
       Execution seconds after which the MIP solver switches from trying to
       improve the best bound to trying to find better feasible solutions
       (default Infinity).
 
-mip:impstartnodes (impstartnodes)
-      Number of MIP nodes after which the solution strategy will change from
-      improving the best bound to finding better feasible solutions (default
-      Infinity).
+mip:improvework (improvework, impstartwork)
+      Execution seconds after which the MIP solver switches from trying to
+      improve the best bound to trying to find better feasible solutions
+      (default Infinity).
 
 mip:intfocus (integralityfocus, intfocus)
       Setting this parameter to 1 requests the solver to work harder at
@@ -1304,17 +1358,20 @@ mip:nodemethod (nodemethod)
       1  - Dual simplex
       2  - Barrier.
 
-mip:norelheurtime (norelheurtime)
+mip:norelheursolutions (norelheursolutions, norelsol)
+      Limits the number of solutions found by the NoRel heuristic (default 0).
+
+mip:norelheurtime (norelheurtime, noreltime)
       Limits the amount of time (in seconds) spent in the NoRel heuristic; see
       the description of "norelheurwork" for details. This parameter will
-      introduce nondeterminism; use "norelheurwork" for deterministic results.
-      Default 0.
+      introduce nondeterminism; use "norelheurwork" for deterministic results
+      (default 0)
 
-mip:norelheurwork (norelheurwork)
+mip:norelheurwork (norelheurwork, norelwork)
       Limits the amount of work spent in the NoRel heuristic. This heuristic
       searches for high-quality feasible solutions before solving the root
       relaxation. The work metrix is hard to define precisely, as it depends
-      on the machine. Default 0.
+      on the machine (default 0).
 
 mip:obbt (obbt)
       Controls aggressiveness of Optimality - Based Bound Tightening:
@@ -1403,6 +1460,16 @@ mip:start (mipstart, intstart)
           (integer) values give greater priority to the initial value of the
           associated variable.
 
+mip:starttimelim (starttimelim, lim:starttime)
+      This parameter limits the total time (in seconds) spent on completing a
+      partial MIP start. Note that this parameter will introduce
+      non-determinism - different runs may take different paths. Use the
+      startworklim parameter for deterministic results (default Infinity).
+
+mip:startworklim (startworklim, lim:startwork)
+      This parameter limits the total work (in work units) spent on completing
+      a partial MIP start (default Infinity).
+
 mip:symmetry (symmetry)
       MIP symmetry detection:
 
@@ -1427,6 +1494,24 @@ miqcp:method (miqcpmethod)
       -1 - Automatic choice (default)
       0  - Solve continuous QCP relaxations at each node
       1  - Use linearized outer approximations.
+
+nlbar:cfeastol (nlbarcfeastol)
+      For the NL barrier algorithm (set alg:optimalitytarget), the
+      complementarity error must be smaller in order for a model to be
+      declared locally optimal. Due to problem transformations like presolve
+      or internal scaling, the returned solution’s residuals may deviate
+      from those observed by the algorithm (default 1e-8).
+
+nlbar:dfeastol (nlbardfeastol)
+      For the NL barrier algorithm, the dual feasibility error must be smaller
+      in order for a model to be declared locally optimal (default 1e-6).
+
+nlbar:iterlim (nlbariterlim, lim:nlbariter)
+      Limits the number of barrier NL iterations performed (default 1000).
+
+nlbar:pfeastol (nlbarpfeastol)
+      For the NL barrier algorithm, the dual feasibility error must be smaller
+      in order for a model to be declared locally optimal (default 1e-6).
 
 obj:*:abstol (obj_*_abstol)
       Absolute tolerance for objective with index *. Can only be applied on a
@@ -1470,18 +1555,7 @@ obj:multi (multiobj)
       tolerances and method values may be assigned via keywords of the form
       obj_n_<name>, such as obj_1_method for the first objective.
 
-obj:multi:weight (multiobjweight, obj:multi:weights, multiobjweights)
-      How to interpret each objective's weight sign:
-
-      1 - relative to the sense of the 1st objective
-      2 - relative to its own sense (default)
-
-      With the 1st option (legacy behaviour), negative .objweight for
-      objective i would make objective i's sense the opposite of the model's
-      1st objective. Otherwise, it would make objective i's sense the opposite
-      to its sense defined in the model.
-
-obj:multiobjmethod (multiobjmethod)
+obj:multi:method (obj:multiobjmethod, multiobjmethod)
       Choice of optimization algorithm for lower-priority objectives:
 
       -1 - Automatic choice (default)
@@ -1492,6 +1566,22 @@ obj:multiobjmethod (multiobjmethod)
 
       The method keyword determines the algorithm to use for the highest
       priority objective.
+
+obj:multi:options (multiobjoptions)
+      0/1*: Regard multiobjective option suffixes which are objective suffixes
+      beginning with option_. Example: suffix option_timelim; let
+      _obj[2].option_timelim:=15;
+
+obj:multi:weight (multiobjweight, obj:multi:weights, multiobjweights)
+      How to interpret each objective's weight sign:
+
+      1 - relative to the sense of the 1st objective
+      2 - relative to its own sense (default)
+
+      With the 1st option (legacy behaviour), negative .objweight for
+      objective i would make objective i's sense the opposite of the model's
+      1st objective. Otherwise, it would make objective i's sense the opposite
+      to its sense defined in the model.
 
 obj:multiobjpre (multiobjpre)
       How to apply Gurobi's presolve when doing multi-objective optimization:
@@ -1944,8 +2034,9 @@ tech:server_timeout (server_timeout)
       started within server_timeout seconds. Default = 10.
 
 tech:threads (threads)
-      How many threads to use when using the barrier algorithm or solving MIP
-      problems; default 0 ==> automatic choice.
+      How many threads to apply to parallel algorithms (concurrent LP,
+      parallel barrier, parallel MIP, etc). Default 0 - automatic (max 32),
+      set -1 to use as many threads as detected virtual processors.
 
 tech:timing (timing, tech:report_times, report_times)
       0*/1/2: Whether to print and return timings for the run, all times are

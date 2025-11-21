@@ -1,5 +1,11 @@
 # COPT Changelog
 
+## 20251121
+- New option *obj:multi:options* to control
+  whether multi-objective option suffixes
+  are used.
+
+
 ## 20251021
 - Changes in MP: option *cvt:expr:nlassign*.
 - Upgrade to COPT 7.2.11.

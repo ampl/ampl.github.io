@@ -11,13 +11,13 @@ Solver options obtained with `$ conopt -=`.
 
 ```
 debug             when to use finite differences to check derivatives:
-		0 (default) ==> never;
-		-1 ==> only at the starting point;
-		> 0 ==> each that many iterations.
+		      0 (default) ==> never
+		     -1 ==> only at the starting point
+		    > 0 ==> each that many iterations
 debug2d           when to use finite differences to check the Lagrangian Hessian:
-		0 (default) ==> never;
-		-1 ==> only at the starting point;
-		> 0 ==> each that many iterations.
+		      0 (default) ==> never
+		     -1 ==> only at the starting point
+		    > 0 ==> each that many iterations.
 errlim            evaluation-error limit (default 500)
 flg_adjinip       adjust initial point (0/1*)
 flg_convex        convex model flag (0*/1)
@@ -25,12 +25,12 @@ flg_crash_slack   preselect slacks for initial basis (0*/1)
 flg_dbg_intv      debug interval evaluations (0*/1)
 flg_fordefc       force definitional constraints on (0*/1)
 hess              whether to use the Hessian:
-		0 = no,
-		1 = yes: just the explicit Hessian,
-		2 = yes: just Hessian-vector products,
-		3 = yes (default) both explicit and Hessian-vector products,
-		-1 = no, but evaluate gradients as for
-			Hessian computations (debug option).
+		    0 = no
+		    1 = yes: just the explicit Hessian
+		    2 = yes: just Hessian-vector products
+		    3 = yes (default) both explicit and Hessian-vector products
+		   -1 = no, but evaluate gradients as for
+		        Hessian computations (debug option).
 iterlim           iteration limit (default 1000000)
 licshow           show license details
 lim_err_2ddir     limit on directional 2nd-derivative errors (int, default 10)
@@ -61,14 +61,17 @@ mtd_step_tight    max step while tightening tolerances (int, default 0)
 num_rounds        number of rounds with linear feasibility model (int, default 4)
 objno             objective number: 0 = none, 1 = first (default)
 outlev            output level:
-		0 no chatter.
-		1 = options but no iteration log on stdout (default).
-		2 = CONOPT "SCREEN" output on stdout.
-		3 = log line every logfreq iterations.
-		4 = also show preprocessing information.
+		    0 no chatter.
+		    1 = options but no iteration log on stdout (default).
+		    2 = CONOPT "SCREEN" output on stdout.
+		    3 = log line every logfreq iterations.
+		    4 = also show preprocessing information.
 rat_nopen         ratio limit of penalty constraints for no-penalty model (double, default 0.1)
 superbasics       limit on number of superbasic variables (default >= 500)
-threads           maximum number of threads to use
+threads           maximum number of threads to use. Override specific threads settings
+		  with options threads_2d and threads_fd (default=0, automatic)
+threads_2d        maximum number of threads to use for second derivative evaluations
+threads_fd        maximum number of threads to use for function and derivative evaluations
 timing            report I/O and solution times: 1 = stdout, 2 = stderr, 3 = both
 tol_bound         bound filter tolerance (double, default 1e-07)
 tol_box_linfac    trust-region box factor for linear vars (double, default 10)

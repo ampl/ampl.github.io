@@ -1,5 +1,14 @@
 # CPLEX Changelog
 
+## 20251121
+- New option *obj:multi:options* to control
+  whether multi-objective option suffixes
+  are used.
+- Allow standalone *mipdisplay=..*,
+  *lpdisplay=..*, *bardisplay=..* without
+  *outlev*.
+
+
 ## 20251015
 - Changes in MP
 - Fixed *multiobj=1/2* for a single objective.

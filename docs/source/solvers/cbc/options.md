@@ -385,6 +385,10 @@ cvt:dvelim (dvelim)
 cvt:expcones (expcones)
       0*/1: Recognize exponential cones.
 
+cvt:expr:nlassign (expr:nlassign)
+      Above which reference count, a formula node should be assigned to a
+      variable (see acc: options). 0 means all nodes outlined. Default 1.
+
 cvt:mip:eps (cvt:cmp:eps, cmp:eps)
       Tolerance for strict comparison of continuous variables for MIP. Applies
       to <, >, and != operators. Also applies to negation of conditional
@@ -1305,6 +1309,11 @@ obj:multi (multiobj)
       supported), some solvers might have special rules for the tolerances,
       especially for LP, and not allow quadratic objectives. See the solver
       documentation.
+
+obj:multi:options (multiobjoptions)
+      0/1*: Regard multiobjective option suffixes which are objective suffixes
+      beginning with option_. Example: suffix option_timelim; let
+      _obj[2].option_timelim:=15;
 
 obj:multi:weight (multiobjweight, obj:multi:weights, multiobjweights)
       How to interpret each objective's weight sign:

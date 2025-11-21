@@ -1,7 +1,12 @@
 # CONOPT Changelog
 
+## 20251022
+- Added keywords *threads_fd* and *threads_2d* to control the number
+  of threads used in function, first and second derivative evaluations.
+
+
 ## 20251021
-- Added keyword *threads* to control number of threads used in
+- Added keyword *threads* to control the number of threads used in
   function evaluations.
 - Fix for basis input in feasibility problems.
 
