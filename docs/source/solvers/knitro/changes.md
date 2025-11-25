@@ -1,5 +1,10 @@
 # KNITRO Changelog
 
+## 20251123
+- Updated ASL to version 20251121, that fixed a bug in the handling
+  of certain models
+
+
 ## 20250923
 - Updated to Knitro 15, changes include:
     - A new Augmented Lagrangian algorithm for

@@ -1,5 +1,8 @@
 # BARON Changelog
 
+## 20251123
+- Updated to Baron 25.11.17, which inlcludes bug fixes and performance improvements.
+
 ## 20250806
 - Updated to Baron 25.8.5, which inlcludes bug fixes.
 
