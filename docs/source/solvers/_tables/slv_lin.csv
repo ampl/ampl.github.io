@@ -1,6 +1,6 @@
 ,LP,MILP,QP,MIQP,convex |br| (MI)QCP,non-convex |br| (MI)QCP,Conic,MINLP,|mp|
-:ref:`gurobi`,|y|,|y|,|y|,|y|,|y|,|y|,|y|,|y|,|y|
-:ref:`xpress`,|y|,|y|,|y|,|y|,|y|,|y|,|y|,|y|,|y|
+:ref:`gurobi`,|y| [1]_,|y|,|y|,|y|,|y|,|y|,|y|,|y|,|y|
+:ref:`xpress`,|y| [1]_,|y|,|y|,|y|,|y|,|y|,|y|,|y|,|y|
 :ref:`cplex`,|y|,|y|,|y|,|y|,|y|,|n|,|y|,|n|,|y|
 :ref:`copt`,|y| [1]_,|y|,|y|,|y|,|y|,|n|,|y|,|n|,|y|
 :ref:`mosek`,|y|,|y|,|y|,|y|,|y|,|n|,|y| [2]_,|n|,|y|
