@@ -1,5 +1,15 @@
 # KNITRO Changelog
 
+## 20251219
+- Updated to Knitro 15.1.0, changes include:
+    - Significant performance improvements when using the Augmented 
+      Lagrangian algorithm 
+    - New presolve operations aimed mainly at binary variables in MILP,
+      see options `presolveop_probing` and `presolveop_clique_merging`.
+    - New MIP heuristic via option `mip_heuristic_fixpropagate`.
+    - Various bug fixes and performance improvements.
+
+
 ## 20251123
 - Updated ASL to version 20251121, that fixed a bug in the handling
   of certain models

@@ -349,6 +349,10 @@ mip_heuristic_feaspump       Whether to use the feasibility pump MIP heuristic.
                                     -1 (auto): Determine automatically
                                     0 (off): Feasibility pump heuristic is turned off
                                     1 (on): Feasibility pump heuristic is turned on
+mip_heuristic_fixpropagate   Whether to use the MIP fix-and-propagate heuristics.
+                                    -1 (auto): Determine automatically
+                                    0 (off): MIP tree search (diving) heuristics are turned off
+                                    1 (on): MIP tree search (diving) heuristics are turned on
 mip_heuristic_lns            Controls use of the Large Neighborhood Search (LNS) MIP heuristic.
 mip_heuristic_localsearch    Whether to use the MIP local search heuristic.
                                     -1 (auto): Determine automatically
@@ -609,6 +613,15 @@ presolve_level               Presolve level.
                                     2 (level2): More advanced presolve
 presolve_passes              Maximum number of presolve passes allowed.
 presolve_tol                 Specifies the tolerance used to determine whether or not deduced bounds from the presolve operation are infeasible.
+presolveop_clique_merging    Presolve operation that attempts to merge cliques to strengthen the formulation.
+                                    -1 (auto): Determine automatically
+                                    0 (no): Disabled
+                                    1 (yes): Enabled
+presolveop_probing           Presolve operation that analyzes deductions made by fixing integer variables.
+                                    -1 (auto): Automatic selection
+                                    0 (no): Disabled
+                                    1 (light): Light probing
+                                    2 (full): Full probing until no more deductions are found
 presolveop_redundant         Detection/removal degree of redundant constraints
                                     0 (none): Do not detect redundant constraints
                                     1 (dupcon): Detect and remove duplicate constraints

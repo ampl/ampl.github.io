@@ -1,5 +1,14 @@
 # AMPL MP Library Changelog
 
+## 20251213
+- Recognize logistic function 1/(1+e^(-x)),
+  option cvt:pre:logistic.
+- *iis:find* now the main name for option
+  *alg:iisfind* (which is now a synonym).
+- Option *obj:multi:options*: fix integer-valued
+  options.
+
+
 ## 20251121
 - Meta-driver MP2NL, see
   https://mp.ampl.com/modeling-tools.html#mp2nl.
