@@ -170,6 +170,14 @@ acc:loga (acc:logA)
           where possible
       4 - Accepted as expression natively and preferred
 
+acc:logistic
+      Solver acceptance level for 'LogisticConstraint' as expression, default
+      4:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      3 - Accepted but automatic redefinition will be used where possible
+      4 - Accepted natively and preferred
+
 acc:max
       Solver acceptance level for 'MaxConstraint' as flat constraint, default
       2:
@@ -263,6 +271,14 @@ acc:quadle
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
       2 - Accepted natively and preferred
+
+acc:signpowconstexp
+      Solver acceptance level for 'SignpowConstExpConstraint' as expression,
+      default 4:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      3 - Accepted but automatic redefinition will be used where possible
+      4 - Accepted natively and preferred
 
 acc:sin
       Solver acceptance level for 'SinConstraint' as either constraint or
@@ -371,29 +387,6 @@ alg:feastol (feastol)
 
 alg:global (global)
       Synonym for pre:funcnonlinear.
-
-alg:iisfind (iisfind, iis)
-      Whether to find and export an IIS. Default = 0 (don't export).
-
-alg:iisforce (iisforce)
-      0/1*: whether to consider the .iis(lb/ub)force suffixes on variables and
-      range constraints, as well as .iisforce on other constraints. Suffix
-      values mean the following (ATTENTION: different to Gurobi IIS...Force
-      attribute!):
-
-      -1 - This model item never to be in an IIS (careful, the remaining
-      constraints can be feasible)
-      0 - No influence on this bound or constraint (default)
-      1 - This model item always to be in the computed IIS.
-
-alg:iismethod (iismethod)
-      Which method to use when finding an IIS (irreducible infeasible set of
-      constraints, including variable bounds):
-
-      -1 - Automatic choice (default)
-      0  - Often faster than method 1
-      1  - Can find a smaller IIS than method 0
-      2  - Ignore the bound constraints.
 
 alg:infunbdinfo (infunbdinfo, InfUnbdInfo)
       Synonym for alg:rays.
@@ -923,6 +916,9 @@ cvt:pre:ctx:log (ctx:log)
 cvt:pre:ctx:loga (ctx:loga)
       Context propagation for 'LogA' expression, see cvt:pre:ctx:abs.
 
+cvt:pre:ctx:logistic (ctx:logistic)
+      Context propagation for 'Logistic' expression, see cvt:pre:ctx:abs.
+
 cvt:pre:ctx:max (ctx:max)
       Context propagation for 'Max' expression, see cvt:pre:ctx:abs.
 
@@ -952,6 +948,10 @@ cvt:pre:ctx:powconstexp (ctx:powconstexp)
 
 cvt:pre:ctx:quadfunccon (ctx:quadfunccon)
       Context propagation for 'QuadraticFunctionalConstraint' expression, see
+      cvt:pre:ctx:abs.
+
+cvt:pre:ctx:signpowconstexp (ctx:signpowconstexp)
+      Context propagation for 'SignpowConstExp' expression, see
       cvt:pre:ctx:abs.
 
 cvt:pre:ctx:sin (ctx:sin)
@@ -998,6 +998,9 @@ cvt:pre:ineqrhs
       0/1*: Preprocess reified inequality comparison's right-hand sides (round
       for integer expression body).
 
+cvt:pre:logistic (cvt:logistic)
+      0/1*: recognize logistic functions in the model, see acc:logistic.
+
 cvt:pre:prod (cvt:prod)
       Product preprocessing flags. Sum of a subset of the following bits:
 
@@ -1012,6 +1015,10 @@ cvt:pre:prod (cvt:prod)
       Default: 5.
 
       Bits 2 or 4 imply bit 1.
+
+cvt:pre:signpow (cvt:signpow)
+      0/1*: recognize signpow() functions in the model, such as abs(x)*x, see
+      acc:signpow.
 
 cvt:pre:sort (cvt:sort)
       0/1*: Sort and eliminate duplicates in arguments of AND, OR, MIN, MAX.
@@ -1106,6 +1113,29 @@ cvt:uenc:ratio (uenc:ratio)
       s.t. Con: y>3 ==> (x==2 || x==6 || x==5);
 
       With uenc:ratio>3, this triggers unary encoding for x.
+
+iis:find (iisfind, iis, alg:iisfind)
+      Whether to find and export an IIS. Default = 0 (don't export).
+
+iis:force (iisforce, alg:iisforce)
+      0/1*: whether to consider the .iis(lb/ub)force suffixes on variables and
+      range constraints, as well as .iisforce on other constraints. Suffix
+      values mean the following (ATTENTION: different to Gurobi IIS...Force
+      attribute!):
+
+      -1 - This model item never to be in an IIS (careful, the remaining
+      constraints can be feasible)
+      0 - No influence on this bound or constraint (default)
+      1 - This model item always to be in the computed IIS.
+
+iis:method (iismethod, alg:iismethod)
+      Which method to use when finding an IIS (irreducible infeasible set of
+      constraints, including variable bounds):
+
+      -1 - Automatic choice (default)
+      0  - Often faster than method 1
+      1  - Can find a smaller IIS than method 0
+      2  - Ignore the bound constraints.
 
 lim:iter (iterlim, iterlimit)
       Simplex iteration limit (default: no limit).

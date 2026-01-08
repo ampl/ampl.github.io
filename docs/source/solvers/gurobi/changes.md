@@ -1,5 +1,16 @@
 # GUROBI Changelog
 
+## 20251213
+- Recognize logistic function 1/(1+e^(-x)),
+  option cvt:pre:logistic.
+- Recognize signpow() functions in the model
+  (from expressions such as abs(x)^0.5*x).
+  Gurobi 13 accepts signpow() natively.
+  See option *cvt:pre:signpow*.
+- Change in MP: option *obj:multi:options*: fix integer-valued
+  objective-specific options.
+
+
 ## 20251121
 - Updated to Gurobi 13.0.0:
   - Nonlinear barrier method for finding local optima 
