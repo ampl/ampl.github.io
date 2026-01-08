@@ -1,5 +1,10 @@
 # CPLEX Changelog
 
+## 20251210
+- Option *obj:multi:options*: fix integer-valued
+  objective-specific options.
+
+
 ## 20251121
 - New option *obj:multi:options* to control
   whether multi-objective option suffixes

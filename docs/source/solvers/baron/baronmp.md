@@ -454,6 +454,9 @@ cvt:pre:ctx:log (ctx:log)
 cvt:pre:ctx:loga (ctx:loga)
       Context propagation for 'LogA' expression, see cvt:pre:ctx:abs.
 
+cvt:pre:ctx:logistic (ctx:logistic)
+      Context propagation for 'Logistic' expression, see cvt:pre:ctx:abs.
+
 cvt:pre:ctx:max (ctx:max)
       Context propagation for 'Max' expression, see cvt:pre:ctx:abs.
 
@@ -483,6 +486,10 @@ cvt:pre:ctx:powconstexp (ctx:powconstexp)
 
 cvt:pre:ctx:quadfunccon (ctx:quadfunccon)
       Context propagation for 'QuadraticFunctionalConstraint' expression, see
+      cvt:pre:ctx:abs.
+
+cvt:pre:ctx:signpowconstexp (ctx:signpowconstexp)
+      Context propagation for 'SignpowConstExp' expression, see
       cvt:pre:ctx:abs.
 
 cvt:pre:ctx:sin (ctx:sin)
@@ -529,6 +536,9 @@ cvt:pre:ineqrhs
       0/1*: Preprocess reified inequality comparison's right-hand sides (round
       for integer expression body).
 
+cvt:pre:logistic (cvt:logistic)
+      0*/1: recognize logistic functions in the model, see acc:logistic.
+
 cvt:pre:prod (cvt:prod)
       Product preprocessing flags. Sum of a subset of the following bits:
 
@@ -543,6 +553,10 @@ cvt:pre:prod (cvt:prod)
       Default: 5.
 
       Bits 2 or 4 imply bit 1.
+
+cvt:pre:signpow (cvt:signpow)
+      0*/1: recognize signpow() functions in the model, such as abs(x)*x, see
+      acc:signpow.
 
 cvt:pre:sort (cvt:sort)
       0/1*: Sort and eliminate duplicates in arguments of AND, OR, MIN, MAX.

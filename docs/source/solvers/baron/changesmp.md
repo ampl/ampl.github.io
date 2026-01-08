@@ -1,5 +1,15 @@
 # BARONMP Changelog
 
+## 20251225
+- Updated to Baron 25.12.10, which inlcludes bug fixes.
+- Fixed issue with numeric precision when writing bounds
+
+
+## 20251210
+- Option *obj:multi:options*: fix integer-valued
+  objective-specific options.
+
+
 ## 20251123
 - Updated to Baron 25.11.17, which inlcludes bug fixes and performance improvements.
 

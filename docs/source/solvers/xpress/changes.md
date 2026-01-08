@@ -1,5 +1,14 @@
 # XPRESS Changelog
 
+## 20251210
+- New option names
+  - In particular, *pre:indlin(big/small)bigm* now stand for
+    the previous *alg:indlinbigm* and *pre:indlinbigm*, resp.
+    (old names kept as synonyms).
+- Change in MP: option *obj:multi:options*: fix integer-valued
+  objective-specific options.
+
+
 ## 20251121
 - Full list of Xpress options supported.
 - New option *obj:multi:options* to control

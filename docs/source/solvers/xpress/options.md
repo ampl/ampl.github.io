@@ -505,19 +505,6 @@ alg:global (global)
       0/1*: Allow global solving. Passing 0 should linearize all expressions
       requiring Xpress Global.
 
-alg:iisfind (iisfind, iis)
-      Whether to find and export an IIS. Default = 0 (don't export).
-
-alg:indlinbigm (indlinbigm, pre:xprs_indlinbigm, XPRS_INDLINBIGM)
-      During presolve, indicator constraints will be linearized using a BigM
-      coefficient whenever that BigM coefficient is small enough. This control
-      defines the largest BigM for which such a linearized version will be
-      added to the problem in addition to the original constraint. If the BigM
-      is even smaller than INDPRELINBIGM, then the original indicator
-      constraint will additionally be dropped from the problem.
-
-      Default: 1.0E+05
-
 alg:localsolver (localsolver, nlp:localsolver, alg:xslp_solver, XSLP_SOLVER, LOCALSOLVER)
       Selects the library to use for local solves
 
@@ -531,30 +518,6 @@ alg:localsolver (localsolver, nlp:localsolver, alg:xslp_solver, XSLP_SOLVER, LOC
       * (1) use Knitro if available
 
       * (2) use Xpress-Optimizer if possible (convex quadratic problems only)
-
-alg:lpfolding (lpfolding, lp:xprs_lpfolding, XPRS_LPFOLDING)
-      Simplex and barrier: whether to fold an LP problem before solving it.
-
-      Values (default: -1):
-
-      * (-1) Automatic.
-
-      * (0) Disable LP folding.
-
-      * (1) Enable LP folding. Attempt to fold all LP problems and MIP initial
-        relaxations.
-
-alg:maxiis (maxiis, inf:xprs_maxiis, XPRS_MAXIIS)
-      This function controls the number of Irreducible Infeasible Sets to be
-      found using the XPRSiisall (IIS-a).
-
-      Values (default: -1):
-
-      * (-1) Search for all IIS.
-
-      * (0) Do not search for IIS.
-
-      * (n>0) Search for the first n IIS.
 
 alg:method (method, lpmethod, defaultalg, mip:xprs_defaultalg, XPRS_DEFAULTALG)
       This selects the algorithm that will be used to solve LPs, standalone or
@@ -1807,6 +1770,9 @@ cvt:pre:ctx:log (ctx:log)
 cvt:pre:ctx:loga (ctx:loga)
       Context propagation for 'LogA' expression, see cvt:pre:ctx:abs.
 
+cvt:pre:ctx:logistic (ctx:logistic)
+      Context propagation for 'Logistic' expression, see cvt:pre:ctx:abs.
+
 cvt:pre:ctx:max (ctx:max)
       Context propagation for 'Max' expression, see cvt:pre:ctx:abs.
 
@@ -1836,6 +1802,10 @@ cvt:pre:ctx:powconstexp (ctx:powconstexp)
 
 cvt:pre:ctx:quadfunccon (ctx:quadfunccon)
       Context propagation for 'QuadraticFunctionalConstraint' expression, see
+      cvt:pre:ctx:abs.
+
+cvt:pre:ctx:signpowconstexp (ctx:signpowconstexp)
+      Context propagation for 'SignpowConstExp' expression, see
       cvt:pre:ctx:abs.
 
 cvt:pre:ctx:sin (ctx:sin)
@@ -1882,6 +1852,9 @@ cvt:pre:ineqrhs
       0/1*: Preprocess reified inequality comparison's right-hand sides (round
       for integer expression body).
 
+cvt:pre:logistic (cvt:logistic)
+      0*/1: recognize logistic functions in the model, see acc:logistic.
+
 cvt:pre:prod (cvt:prod)
       Product preprocessing flags. Sum of a subset of the following bits:
 
@@ -1896,6 +1869,10 @@ cvt:pre:prod (cvt:prod)
       Default: 5.
 
       Bits 2 or 4 imply bit 1.
+
+cvt:pre:signpow (cvt:signpow)
+      0*/1: recognize signpow() functions in the model, such as abs(x)*x, see
+      acc:signpow.
 
 cvt:pre:sort (cvt:sort)
       0/1*: Sort and eliminate duplicates in arguments of AND, OR, MIN, MAX.
@@ -2357,7 +2334,10 @@ heur:xslp_heurstrategy (XSLP_HEURSTRATEGY, SLPHEURSTRATEGY)
 
       * (4) Run all heuristics without effort limits.
 
-inf:xprs_iislog (XPRS_IISLOG)
+iis:find (iisfind, iis, alg:iisfind)
+      Whether to find and export an IIS. Default = 0 (don't export).
+
+iis:log (iislog, inf:xprs_iislog, XPRS_IISLOG)
       Selects how much information should be printed during the IIS procedure.
       Please refer to Appendix The IIS Log for a more detailed description of
       the IIS logging format.
@@ -2374,7 +2354,19 @@ inf:xprs_iislog (XPRS_IISLOG)
         subproblem solves in the deletion filter. This setting is recommended
         only for debugging as it may produce a lot of output.
 
-inf:xprs_iisops (XPRS_IISOPS)
+iis:max (iismax, maxiis, inf:xprs_maxiis, XPRS_MAXIIS)
+      This function controls the number of Irreducible Infeasible Sets to be
+      found using the XPRSiisall (IIS-a).
+
+      Values (default: -1):
+
+      * (-1) Search for all IIS.
+
+      * (0) Do not search for IIS.
+
+      * (n>0) Search for the first n IIS.
+
+iis:ops (iisops, inf:xprs_iisops, XPRS_IISOPS)
       Selects which part of the restrictions (bounds, constraints, entities)
       should always be kept in an IIS. This is useful if certain types of
       restrictions cannot be violated, thus they are known not to be the cause
@@ -2462,7 +2454,7 @@ lim:iter (lpiterlimit, iterlim, lp:xprs_lpiterlimit, XPRS_LPITERLIMIT)
 
       Default: 2147483647
 
-lim:lprefineiter (lprefineiterlimit, sol:xprs_lprefineiterlimit, XPRS_LPREFINEITERLIMIT)
+lim:lprefineiter (lprefineiterlimit, lp:xprs_lprefineiterlimit, XPRS_LPREFINEITERLIMIT)
       This specifies the simplex iteration limit the solution refiner can
       spend in attempting to increase the accuracy of an LP solution.
 
@@ -2891,6 +2883,18 @@ lp:etatol (etatol, sim:xprs_etatol, XPRS_ETATOL)
 
       Default: 1.0E-13
 
+lp:folding (lpfolding, alg:lpfolding, lp:xprs_lpfolding, XPRS_LPFOLDING)
+      Simplex and barrier: whether to fold an LP problem before solving it.
+
+      Values (default: -1):
+
+      * (-1) Automatic.
+
+      * (0) Disable LP folding.
+
+      * (1) Enable LP folding. Attempt to fold all LP problems and MIP initial
+        relaxations.
+
 lp:invertfreq (invertfreq, sim:xprs_invertfreq, XPRS_INVERTFREQ)
       Simplex: The frequency with which the basis will be inverted. The basis
       is maintained in a factorized form and on most simplex iterations it is
@@ -3100,6 +3104,22 @@ lp:xprs_autoperturb (XPRS_AUTOPERTURB)
       * (0) No perturbation performed.
 
       * (1) Automatic perturbation is performed.
+
+lp:xprs_lpflags (XPRS_LPFLAGS)
+      A bit-vector control (see Section Bit-vector controls) which defines the
+      algorithm for solving an LP problem or the initial LP relaxation of a
+      MIP problem.
+
+      Values (default: 0):
+
+      * (0) Use the dual simplex method.
+
+      * (1) Use the primal simplex method.
+
+      * (2) Use the barrier method (or hybrid gradient method if BARALG=4 is
+        set).
+
+      * (3) Use the network simplex method.
 
 lp:xprs_lplogdelay (XPRS_LPLOGDELAY)
       Time interval between two LP log lines.
@@ -3730,7 +3750,7 @@ mip:pseudocost (pseudocost, mip:xprs_pseudocost, XPRS_PSEUDOCOST)
 
       Default: 0.01
 
-mip:qcrootalg (qcrootalg, pre:xprs_qcrootalg, XPRS_QCROOTALG)
+mip:qcrootalg (qcrootalg, qp:xprs_qcrootalg, XPRS_QCROOTALG)
       This control determines which algorithm is to be used to solve the root
       of a mixed integer quadratic constrained or mixed integer second order
       cone problem, when outer approximation is used.
@@ -4035,6 +4055,23 @@ mip:xprs_conflictcuts (XPRS_CONFLICTCUTS)
       * (2) Medium application of conflict cuts.
 
       * (3) Aggressive application of conflict cuts.
+
+mip:xprs_mipfracreduce (XPRS_MIPFRACREDUCE)
+      Branch and Bound: Specifies how often the optimizer should run a
+      heuristic to reduce the number of fractional integer variables in the
+      node LP solutions.
+
+      Values (default: -1):
+
+      * (-1) Automatic.
+
+      * (0) Disabled.
+
+      * (1) Run before and after cutting on the root node.
+
+      * (2) Run also during root cutting.
+
+      * (3) Run also during the tree search.
 
 mip:xprs_mipterminationmethod (XPRS_MIPTERMINATIONMETHOD)
       Branch and Bound: How a MIP solve should be stopped on early termination
@@ -4604,7 +4641,7 @@ pre:implications (preimplications, pre:xprs_preimplications, XPRS_PREIMPLICATION
 
       * (1) Use implications to remove reduandant rows.
 
-pre:indlinbigm (indprelinbigm, pre:xprs_indprelinbigm, XPRS_INDPRELINBIGM)
+pre:indlinbigbigm (indprelinbigm, pre:indlinbigm, pre:xprs_indprelinbigm, XPRS_INDPRELINBIGM)
       During presolve, indicator constraints will be linearized using a BigM
       coefficient whenever that BigM coefficient is small enough. This control
       defines the largest BigM for which the original constraint will be
@@ -4614,6 +4651,16 @@ pre:indlinbigm (indprelinbigm, pre:xprs_indprelinbigm, XPRS_INDPRELINBIGM)
       stable way to check feasibility.
 
       Default: 100.0
+
+pre:indlinsmallbigm (indlinbigm, alg:indlinbigm, pre:xprs_indlinbigm, XPRS_INDLINBIGM)
+      During presolve, indicator constraints will be linearized using a BigM
+      coefficient whenever that BigM coefficient is small enough. This control
+      defines the largest BigM for which such a linearized version will be
+      added to the problem in addition to the original constraint. If the BigM
+      is even smaller than INDPRELINBIGM, then the original indicator
+      constraint will additionally be dropped from the problem.
+
+      Default: 1.0E+05
 
 pre:lindep (prelindep, pre:xprs_prelindep, XPRS_PRELINDEP)
       Presolve: Determines whether to check for and remove linearly dependent
@@ -4795,7 +4842,7 @@ pre:pwlnonconvextransformation (pwlnonconvextransformation, pre:xprs_pwlnonconve
 
       * (1) Use a formulation based on binary variables.
 
-pre:rootpresolve (rootpresolve, pre:xprs_rootpresolve, XPRS_ROOTPRESOLVE)
+pre:rootpresolve (rootpresolve, mip:xprs_rootpresolve, XPRS_ROOTPRESOLVE)
       Determines if presolving should be performed on the problem after the
       tree search has finished with root cutting and heuristics.
 
@@ -4926,39 +4973,6 @@ pre:xprs_genconsabstransformation (XPRS_GENCONSABSTRANSFORMATION)
       * (0) Use a formulation based on indicator constraints.
 
       * (1) Use a formulation based on SOS1-constraints.
-
-pre:xprs_lpflags (XPRS_LPFLAGS)
-      A bit-vector control (see Section Bit-vector controls) which defines the
-      algorithm for solving an LP problem or the initial LP relaxation of a
-      MIP problem.
-
-      Values (default: 0):
-
-      * (0) Use the dual simplex method.
-
-      * (1) Use the primal simplex method.
-
-      * (2) Use the barrier method (or hybrid gradient method if BARALG=4 is
-        set).
-
-      * (3) Use the network simplex method.
-
-pre:xprs_mipfracreduce (XPRS_MIPFRACREDUCE)
-      Branch and Bound: Specifies how often the optimizer should run a
-      heuristic to reduce the number of fractional integer variables in the
-      node LP solutions.
-
-      Values (default: -1):
-
-      * (-1) Automatic.
-
-      * (0) Disabled.
-
-      * (1) Run before and after cutting on the root node.
-
-      * (2) Run also during root cutting.
-
-      * (3) Run also during the tree search.
 
 pre:xprs_preconedecomp (XPRS_PRECONEDECOMP)
       Presolve: decompose regular and rotated cones with more than two
@@ -6400,7 +6414,7 @@ tech:backgroundselect (backgroundselect, heur:xprs_backgroundselect, XPRS_BACKGR
 
       * (3) Fix-propagate-repair heuristic.
 
-tech:backgroundthreads (backgroundmaxthreads, backgroundthreads, pre:xprs_backgroundmaxthreads, XPRS_BACKGROUNDMAXTHREADS)
+tech:backgroundthreads (backgroundmaxthreads, backgroundthreads, tech:xprs_backgroundmaxthreads, XPRS_BACKGROUNDMAXTHREADS)
       Limit the number of threads to use in background jobs (for example in
       parallel to the root cut loop).
 

@@ -1,5 +1,9 @@
 # KNITRO Changelog
 
+## 20260108
+- Use MIP warm start
+
+
 ## 20251219
 - Updated to Knitro 15.1.0, changes include:
     - Significant performance improvements when using the Augmented 

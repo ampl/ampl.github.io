@@ -4,12 +4,12 @@
 
 
 - [**AMPL** Changelog (latest: **20250901**)](../releases/ampl.md)
-- [**BARON** Changelog (latest: **20251123**)](../solvers/baron/changes.md)
-- [**BARONMP** Changelog (latest: **20251123**)](../solvers/baron/changesmp.md)
+- [**BARON** Changelog (latest: **20251225**)](../solvers/baron/changes.md)
+- [**BARONMP** Changelog (latest: **20251225**)](../solvers/baron/changesmp.md)
 - [**CBC** Changelog (latest: **20251121**)](../solvers/cbc/changes.md)
 - [**CONOPT** Changelog (latest: **20251022**)](../solvers/conopt/changes.md)
 - [**COPT** Changelog (latest: **20251121**)](../solvers/copt/changes.md)
-- [**CPLEX** Changelog (latest: **20251121**)](../solvers/cplex/changes.md)
+- [**CPLEX** Changelog (latest: **20251210**)](../solvers/cplex/changes.md)
 - [**CPLEXASL** Changelog (latest: **20230228**)](../solvers/cplex/changesasl.md)
 - [**cuOpt** Changelog (latest: **20251210**)](../solvers/cuopt/changes.md)
 - [**GCG** Changelog (latest: **20240115**)](../solvers/gcg/changes.md)
@@ -17,7 +17,7 @@
 - [**GUROBIASL** Changelog (latest: **20231208**)](../solvers/gurobi/changesasl.md)
 - [**HiGHS** Changelog (latest: **20251121**)](../solvers/highs/changes.md)
 - [**ILOGCP** Changelog (latest: **20250422**)](../solvers/ilogcp/changes.md)
-- [**KNITRO** Changelog (latest: **20251219**)](../solvers/knitro/changes.md)
+- [**KNITRO** Changelog (latest: **20260108**)](../solvers/knitro/changes.md)
 - [**LGO** Changelog (latest: **20201030**)](../solvers/lgo/changes.md)
 - [**Lindo Global** Changelog (latest: **20210406**)](../solvers/lindoglobal/changes.md)
 - [**LOQO** Changelog (latest: **20210410**)](../solvers/loqo/changes.md)
@@ -26,7 +26,7 @@
 - [**MP** Changelog (latest: **20251213**)](../releases/mp.md)
 - [**SCIP** Changelog (latest: **20240121**)](../solvers/scip/changes.md)
 - [**SNOPT** Changelog (latest: **20211109**)](../solvers/snopt/changes.md)
-- [**XPRESS** Changelog (latest: **20251121**)](../solvers/xpress/changes.md)
+- [**XPRESS** Changelog (latest: **20251210**)](../solvers/xpress/changes.md)
 - [**XPRESSASL** Changelog (latest: **20220112**)](../solvers/xpress/changesasl.md)
 
 ```{toctree}
@@ -37,12 +37,20 @@ mp.md
 ```
 
 
+## 20260108
+- [KNITRO](../solvers/knitro/changes.md#20260108)
+## 20251225
+- [BARON](../solvers/baron/changes.md#20251225)
+- [BARONMP](../solvers/baron/changesmp.md#20251225)
 ## 20251219
 - [KNITRO](../solvers/knitro/changes.md#20251219)
 ## 20251213
 - [MP](../releases/mp.md#20251213)
 ## 20251210
+- [BARONMP](../solvers/baron/changesmp.md#20251210)
+- [CPLEX](../solvers/cplex/changes.md#20251210)
 - [cuOpt](../solvers/cuopt/changes.md#20251210)
+- [XPRESS](../solvers/xpress/changes.md#20251210)
 ## 20251123
 - [BARON](../solvers/baron/changes.md#20251123)
 - [BARONMP](../solvers/baron/changesmp.md#20251123)

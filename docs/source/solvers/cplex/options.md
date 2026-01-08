@@ -219,9 +219,6 @@ alg:feastol (feastol)
       Primal feasibility tolerance (default 1e-6, possible values are between
       1e-9 and 0.1).
 
-alg:iisfind (iisfind, iis)
-      Whether to find and export an IIS. Default = 0 (don't export).
-
 alg:kappa (kappa, basis_cond)
       Whether to return the estimated condition number (kappa) of the optimal
       basis (default 0): sum of 1 = report kappa in the result message; 2 =
@@ -756,6 +753,9 @@ cvt:pre:ctx:log (ctx:log)
 cvt:pre:ctx:loga (ctx:loga)
       Context propagation for 'LogA' expression, see cvt:pre:ctx:abs.
 
+cvt:pre:ctx:logistic (ctx:logistic)
+      Context propagation for 'Logistic' expression, see cvt:pre:ctx:abs.
+
 cvt:pre:ctx:max (ctx:max)
       Context propagation for 'Max' expression, see cvt:pre:ctx:abs.
 
@@ -785,6 +785,10 @@ cvt:pre:ctx:powconstexp (ctx:powconstexp)
 
 cvt:pre:ctx:quadfunccon (ctx:quadfunccon)
       Context propagation for 'QuadraticFunctionalConstraint' expression, see
+      cvt:pre:ctx:abs.
+
+cvt:pre:ctx:signpowconstexp (ctx:signpowconstexp)
+      Context propagation for 'SignpowConstExp' expression, see
       cvt:pre:ctx:abs.
 
 cvt:pre:ctx:sin (ctx:sin)
@@ -831,6 +835,9 @@ cvt:pre:ineqrhs
       0/1*: Preprocess reified inequality comparison's right-hand sides (round
       for integer expression body).
 
+cvt:pre:logistic (cvt:logistic)
+      0*/1: recognize logistic functions in the model, see acc:logistic.
+
 cvt:pre:prod (cvt:prod)
       Product preprocessing flags. Sum of a subset of the following bits:
 
@@ -845,6 +852,10 @@ cvt:pre:prod (cvt:prod)
       Default: 7.
 
       Bits 2 or 4 imply bit 1.
+
+cvt:pre:signpow (cvt:signpow)
+      0*/1: recognize signpow() functions in the model, such as abs(x)*x, see
+      acc:signpow.
 
 cvt:pre:sort (cvt:sort)
       0/1*: Sort and eliminate duplicates in arguments of AND, OR, MIN, MAX.
@@ -939,6 +950,9 @@ cvt:uenc:ratio (uenc:ratio)
       s.t. Con: y>3 ==> (x==2 || x==6 || x==5);
 
       With uenc:ratio>3, this triggers unary encoding for x.
+
+iis:find (iisfind, iis, alg:iisfind)
+      Whether to find and export an IIS. Default = 0 (don't export).
 
 lim:dettime (dettimelim)
       Time limit in platform-dependent "ticks".
