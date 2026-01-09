@@ -13,7 +13,7 @@
 - [**CPLEXASL** Changelog (latest: **20230228**)](../solvers/cplex/changesasl.md)
 - [**cuOpt** Changelog (latest: **20251210**)](../solvers/cuopt/changes.md)
 - [**GCG** Changelog (latest: **20240115**)](../solvers/gcg/changes.md)
-- [**GUROBI** Changelog (latest: **20251213**)](../solvers/gurobi/changes.md)
+- [**GUROBI** Changelog (latest: **20260109**)](../solvers/gurobi/changes.md)
 - [**GUROBIASL** Changelog (latest: **20231208**)](../solvers/gurobi/changesasl.md)
 - [**HiGHS** Changelog (latest: **20251121**)](../solvers/highs/changes.md)
 - [**ILOGCP** Changelog (latest: **20250422**)](../solvers/ilogcp/changes.md)
@@ -23,7 +23,7 @@
 - [**LOQO** Changelog (latest: **20210410**)](../solvers/loqo/changes.md)
 - [**MINOS** Changelog (latest: **20211109**)](../solvers/minos/changes.md)
 - [**MOSEK** Changelog (latest: **20251121**)](../solvers/mosek/changes.md)
-- [**MP** Changelog (latest: **20251213**)](../releases/mp.md)
+- [**MP** Changelog (latest: **20260109**)](../releases/mp.md)
 - [**SCIP** Changelog (latest: **20240121**)](../solvers/scip/changes.md)
 - [**SNOPT** Changelog (latest: **20211109**)](../solvers/snopt/changes.md)
 - [**XPRESS** Changelog (latest: **20251210**)](../solvers/xpress/changes.md)
@@ -37,6 +37,9 @@ mp.md
 ```
 
 
+## 20260109
+- [GUROBI](../solvers/gurobi/changes.md#20260109)
+- [MP](../releases/mp.md#20260109)
 ## 20260108
 - [KNITRO](../solvers/knitro/changes.md#20260108)
 ## 20251225

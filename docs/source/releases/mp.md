@@ -1,5 +1,10 @@
 # AMPL MP Library Changelog
 
+## 20260109
+- Remove excessive '_' symbols in output 
+  model constraint and variable names.
+
+
 ## 20251213
 - Recognize logistic function 1/(1+e^(-x)),
   option cvt:pre:logistic.

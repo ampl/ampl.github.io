@@ -1,5 +1,11 @@
 # GUROBI Changelog
 
+## 20260109
+- Changes in MP
+  - Remove excessive '_' symbols in output 
+    model constraint and variable names.
+
+
 ## 20251213
 - Recognize logistic function 1/(1+e^(-x)),
   option cvt:pre:logistic.
