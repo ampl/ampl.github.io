@@ -8,7 +8,7 @@
 - [**BARONMP** Changelog (latest: **20251225**)](../solvers/baron/changesmp.md)
 - [**CBC** Changelog (latest: **20251121**)](../solvers/cbc/changes.md)
 - [**CONOPT** Changelog (latest: **20251022**)](../solvers/conopt/changes.md)
-- [**COPT** Changelog (latest: **20251121**)](../solvers/copt/changes.md)
+- [**COPT** Changelog (latest: **20260108**)](../solvers/copt/changes.md)
 - [**CPLEX** Changelog (latest: **20251210**)](../solvers/cplex/changes.md)
 - [**CPLEXASL** Changelog (latest: **20230228**)](../solvers/cplex/changesasl.md)
 - [**cuOpt** Changelog (latest: **20251210**)](../solvers/cuopt/changes.md)
@@ -41,6 +41,7 @@ mp.md
 - [GUROBI](../solvers/gurobi/changes.md#20260109)
 - [MP](../releases/mp.md#20260109)
 ## 20260108
+- [COPT](../solvers/copt/changes.md#20260108)
 - [KNITRO](../solvers/knitro/changes.md#20260108)
 ## 20251225
 - [BARON](../solvers/baron/changes.md#20251225)
@@ -52,6 +53,7 @@ mp.md
 - [MP](../releases/mp.md#20251213)
 ## 20251210
 - [BARONMP](../solvers/baron/changesmp.md#20251210)
+- [COPT](../solvers/copt/changes.md#20251210)
 - [CPLEX](../solvers/cplex/changes.md#20251210)
 - [cuOpt](../solvers/cuopt/changes.md#20251210)
 - [XPRESS](../solvers/xpress/changes.md#20251210)

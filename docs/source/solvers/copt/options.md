@@ -266,17 +266,6 @@ alg:feasrelax (feasrelax)
 alg:feastol (feastol)
       Primal feasibility tolerance (default 1e-6).
 
-alg:iisfind (iisfind, iis)
-      Whether to find and export an IIS. Default = 0 (don't export).
-
-alg:iismethod (iismethod)
-      Which method to use when finding an IIS (irreducible infeasible set of
-      constraints, including variable bounds):
-
-      -1 - Automatic choice (default)
-      0  - Find smaller IIS
-      1  - Find IIS quickly
-
 alg:lbpen (lbpen)
       See alg:feasrelax.
 
@@ -525,6 +514,9 @@ cvt:pre:ctx:log (ctx:log)
 cvt:pre:ctx:loga (ctx:loga)
       Context propagation for 'LogA' expression, see cvt:pre:ctx:abs.
 
+cvt:pre:ctx:logistic (ctx:logistic)
+      Context propagation for 'Logistic' expression, see cvt:pre:ctx:abs.
+
 cvt:pre:ctx:max (ctx:max)
       Context propagation for 'Max' expression, see cvt:pre:ctx:abs.
 
@@ -554,6 +546,10 @@ cvt:pre:ctx:powconstexp (ctx:powconstexp)
 
 cvt:pre:ctx:quadfunccon (ctx:quadfunccon)
       Context propagation for 'QuadraticFunctionalConstraint' expression, see
+      cvt:pre:ctx:abs.
+
+cvt:pre:ctx:signpowconstexp (ctx:signpowconstexp)
+      Context propagation for 'SignpowConstExp' expression, see
       cvt:pre:ctx:abs.
 
 cvt:pre:ctx:sin (ctx:sin)
@@ -600,6 +596,9 @@ cvt:pre:ineqrhs
       0/1*: Preprocess reified inequality comparison's right-hand sides (round
       for integer expression body).
 
+cvt:pre:logistic (cvt:logistic)
+      0*/1: recognize logistic functions in the model, see acc:logistic.
+
 cvt:pre:prod (cvt:prod)
       Product preprocessing flags. Sum of a subset of the following bits:
 
@@ -614,6 +613,10 @@ cvt:pre:prod (cvt:prod)
       Default: 7.
 
       Bits 2 or 4 imply bit 1.
+
+cvt:pre:signpow (cvt:signpow)
+      0*/1: recognize signpow() functions in the model, such as abs(x)*x, see
+      acc:signpow.
 
 cvt:pre:sort (cvt:sort)
       0/1*: Sort and eliminate duplicates in arguments of AND, OR, MIN, MAX.
@@ -708,6 +711,24 @@ cvt:uenc:ratio (uenc:ratio)
       s.t. Con: y>3 ==> (x==2 || x==6 || x==5);
 
       With uenc:ratio>3, this triggers unary encoding for x.
+
+iis:find (iisfind, iis, alg:iisfind)
+      Whether to find and export an IIS. Default = 0 (don't export).
+
+iis:method (iismethod, alg:iismethod)
+      Which method to use when finding an IIS (irreducible infeasible set of
+      constraints, including variable bounds):
+
+      -1 - Automatic choice (default)
+      0  - Find smaller IIS
+      1  - Find IIS quickly
+
+lim:mipnlpiterlimit (mipnlpiterlimit)
+      Iteration limit for solving NLP problem(s) within the MIP solver
+      (default: no limit).
+
+lim:nlpiterlimit (nlpiterlimit)
+      Iteration limit for the nonlinear solver (default: no limit).
 
 lim:nodes (nodelim, nodelimit)
       Maximum MIP nodes to explore (default: no limit).
@@ -831,6 +852,24 @@ mip:intfeastol (intfeastol, inttol)
 mip:nodecutrounds (nodecutrounds)
       Rounds of cutting-planes generation of search tree node;
       default -1 ==> automatic.
+
+mip:prerootheurlevel (prerootheurlevel)
+      Level of pre-root heuristics:
+
+      -1 - Automatic (default)
+      0  - Off
+      1  - Fast
+      2  - Normal
+      3  - Aggressive
+
+mip:repair (miprepair, repair)
+      Level for repairing the MIP solution in case of numerical issues:
+
+      -1 - Only when time left (default)
+      0  - Off
+      1  - Extend time limit and attempt repair (Fast)
+      2  - Extend time limit and attempt repair (Normal)
+      3  - Extend time limit and attempt repair (Aggressive)
 
 mip:return_gap (return_mipgap)
       Whether to return mipgap suffixes or include mipgap values (|objectve -
@@ -1057,6 +1096,13 @@ tech:debug (debug)
 
 tech:logfile (logfile)
       Log file name.
+
+tech:loglevel (loglevel)
+      Controls the level of detail in the optimization logs:
+
+      2 - Print basic optimization logs (default)
+      3 - Print memory usage information in addition to basic optimization
+          logs (for MIP problems).
 
 tech:miptasks (miptasks)
       Number of MIP tasks in parallel;

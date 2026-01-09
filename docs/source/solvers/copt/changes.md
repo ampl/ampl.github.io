@@ -1,5 +1,17 @@
 # COPT Changelog
 
+## 20260108
+- Updated to COPT 8.0.2, that introduces a global 
+  nonconvex (MI)QCQP solver and performance improvements.
+- Added options *tech:loglevel*, *mip:prerootheurlevel*, 
+  *mip:repair*
+
+  
+## 20251210
+- Option *obj:multi:options*: fix integer-valued
+  objective-specific options.
+
+
 ## 20251121
 - New option *obj:multi:options* to control
   whether multi-objective option suffixes
