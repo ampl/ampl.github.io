@@ -20,7 +20,7 @@ at the beginning of your notebook:
     # Google Colab & Kaggle integration
     from amplpy import AMPL, ampl_notebook
     ampl = ampl_notebook(
-        modules=["gurobi", "coin", "highs", "gokestrel"], # modules to install
+        modules=["gurobi", "xpress", "highs", "gokestrel"], # modules to install
         license_uuid="default") # license to use
 
 In the list ``MODULES`` you can specify the AMPL solvers you want to use in your notebook.

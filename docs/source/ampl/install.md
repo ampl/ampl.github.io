@@ -28,7 +28,7 @@ at the beginning of your notebook:
 # Google Colab & Kaggle integration
 from amplpy import AMPL, ampl_notebook
 ampl = ampl_notebook(
-    modules=["gurobi", "cbc", "highs"], # modules to install
+    modules=["gurobi", "xpress", "highs"], # modules to install
     license_uuid="default") # license to use
 ```
 

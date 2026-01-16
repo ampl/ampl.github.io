@@ -19,16 +19,16 @@ AMPL and solvers are available as Python packages for **Windows**, *Linux*, and 
 3. **Install Solvers and Activate AMPL License**
     Once you’ve installed `amplpy`, you can install solvers. Run the following command:
     ```python
-    python -m amplpy.modules install highs gurobi cplex       # Automatically installs AMPL with any solver
+    python -m amplpy.modules install highs gurobi xpress cplex       # Automatically installs AMPL with any solver
     ```
     Run these commands to activate your AMPL license and verify it:
     ```python
     python -m amplpy.modules activate <license-uuid>    # # Replace <license-uuid> with your unique license key
     python -m amplpy.modules run ampl -vvq              # Verify that the license has been activated successfully
     ```
-   This will install solvers like HiGHS and Gurobi and activate AMPL using the provided license key.
+   This will install solvers such Gurobi and activate AMPL using the provided license key.
 
-5. **Import AMPL in Python**
+4. **Import AMPL in Python**
     Once AMPL is installed and activated, you can start using it in Python. Import the `AMPL class` and initialize it:
     ```python
     from amplpy import AMPL
