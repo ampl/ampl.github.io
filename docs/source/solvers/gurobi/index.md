@@ -2,16 +2,15 @@
 
 # Gurobi
 
-Gurobi is a powerful commercial suite of optimization products, which includes simplex
-and parallel barrier solvers to handle linear programming (LP) and quadratic programming (QP),
-also quadratically constrained (QCP, SOCP) and the mixed-integer variations thereof (MIP, MIQP, MIQCP, MISOCP).
-It also supports some types of nonlinear expressions, thus addressing MINLP.
+Gurobi is a powerful commercial suite of optimization products, which includes simplex, parallel and nonlinear barrier, and primal-dual hybrid gradient (PDHG) solvers to handle linear programming (LP), quadratic programming (QP), and nonlinear programming (NLP);
+also quadratically constrained (QCP, SOCP) and the mixed-integer variations thereof (MILP, MIQP, MIQCP, MISOCP, MINLP).
+The (MI)NLP capability is provided via nonlinear expressions (formulas).
 The MP framework used by the driver supports automatic reformulation for many expression types; the modeling guide can be
 found [here](https://mp.ampl.com/model-guide.html).
 
 [Product Page](https://ampl.com/products/solvers/solvers-we-sell/gurobi/)
 | [Modeling guide](https://mp.ampl.com/model-guide.html)
-| [Features guide](https://mp.ampl.com/features-guide.html)
+| [Features](#features)
 | [Options](#solver-options)
 | [Changes](changes.md)
 
@@ -77,7 +76,7 @@ Our enhanced Gurobi driver is now the default Gurobi driver. The new driver prov
 ### Resources
 
 * [Modeling guide](https://mp.ampl.com/model-guide.html)
-* [Important features](https://mp.ampl.com/features-guide.html#important-features)
+* [Features](#features)
 * [Solver options](#solver-options)
 * [Solve result codes](#retrieving-solutions)
 * [Driver sources](https://github.com/ampl/mp/tree/develop/solvers/gurobi)
@@ -87,21 +86,27 @@ Our enhanced Gurobi driver is now the default Gurobi driver. The new driver prov
 
 * Problem types: 
 
-  * LP, QP, QCP, SOCP
-  * MIP, MIQP, MIQCP, MISOCP
+  * LP, QP, QCP, SOCP, NLP
+  * MILP, MIQP, MIQCP, MISOCP
   * MINLP
   * <details>
     <summary>General constraints and nonlinear expressions</summary>  
 
-    * log / exp
+    * log / exp / logistic
     * min / max
     * and / or
     * abs
-    * sin/cos/tan
-    * pow
+    * sin / cos / tan / tanh
+    * pow / signpow
     </details>
 
+* Algorithms:
 
+  * Simplex method, parallel barrier, PDHG (options `alg:method`, `alg:pdhggpu`)
+  * Nonlinear barrier (option `alg:optimalitytarget`)
+  * Branch-and-Bound, Branch-and-Cut (mainly `mip:` and `cut:` options)
+    
+* [Important features](https://mp.ampl.com/features-guide.html#important-features)
 
 * Features for all models:
     * Problem input
@@ -199,12 +204,14 @@ display solve_result_num, solve_result;
 
 Gurobi solve result codes can be obtained by running `gurobi -!` or `ampl: shell "gurobi -!";`:
 ```
-Solve result table for Gurobi 12.0.0
+Solve result table for Gurobi 13.0.1
 	  0- 99	solved: optimal for an optimization problem,
 		feasible for a satisfaction problem 
 	100-199	solved? solution candidate returned but error likely 
+	    120	locally optimal solution
 	    150	solved? MP solution check failed (option sol:chk:fail) 
 	200-299	infeasible 
+	    220	locally infeasible solution
 	300-349	unbounded, feasible solution returned 
 	350-399	unbounded, no feasible solution returned 
 	400-449	limit, feasible: stopped, e.g., on iterations or Ctrl-C 
