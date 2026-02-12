@@ -1,12 +1,13 @@
 # AMPL Suffixes
 
-To represent values associated with an entity, AMPL employs various qualifiers or _suffixes_ appended to entity names. A suffix consists of a period or "dot" (.) followed by a (usually short) identifier, so that for example the reduced cost associated with a variable Buy[j] is written Buy[j].rc, and the reduced costs of all such variables can be viewed by giving the command display Buy.rc. There are numerous built-in suffixes of this kind, available for use in any AMPL session; see our tables of _built-in_ suffixes for details below.
+To represent values associated with an entity, AMPL employs various qualifiers or _suffixes_ appended to entity names. A suffix consists of a period or "dot" (.) followed by a (usually short) identifier, so that for example the reduced cost associated with a variable `Buy[j]` is written `Buy[j].rc`, and the reduced costs of all such variables can be viewed by giving the command `display Buy.rc;`. There are numerous built-in suffixes of this kind, available for use in any AMPL session; see our tables of [built-in suffixes](#built-in-suffixes) for details below. However, some solvers can exchange information via custom suffixes.
 
-AMPL cannot anticipate all of the values that a solver might associate with model components, however. The values recognized (as input) or computed (as output) depend on the design of each solver and its algorithms. To provide for the representation of these values, the concept of a suffix has been extended to permit the definition of new suffixes for the duration of an AMPL session. For details please refer to Chapter 14 of the [AMPL Book](https://ampl.com/resources/books/ampl-book/).
+## Custom suffixes
 
-The following section shows all built-in suffixes of AMPL.
+AMPL cannot anticipate all of the values that a solver might associate with model components, such as [multi-objective options](https://mp.ampl.com/modeling-mo.html). The values recognized (as input) or computed (as output) depend on the design of each solver and its algorithms. To provide for the representation of these values, the concept of a suffix has been extended to permit the definition of new suffixes for the duration of an AMPL session. For details please refer to Chapter 14 of the [AMPL Book](https://ampl.com/resources/books/ampl-book/).
 
-## Built-in Suffixes
+
+## Built-In Suffixes
 
 ### Variables
 
