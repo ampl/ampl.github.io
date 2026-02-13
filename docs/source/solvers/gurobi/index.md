@@ -354,16 +354,16 @@ For general information, see [MP result codes guide](https://mp.ampl.com/feature
 
 ## Handle infeasibility
 
-### IIS
+### Irreducible inconsistent set (IIS)
 
-When a model is unfeasible, one usedful information is finding the irreducible inconsistent sets, which are subsets of constraints that are
-incompatible. This is supported by the framework, see the description [here](https://mp.ampl.com/features-guide.html#irreducible-inconsistent-set-iis).
+When a model is infeasible, one useful information kind is the IIS, which are subsets of constraints that are
+incompatible. See the details [here](https://mp.ampl.com/features-guide.html#irreducible-inconsistent-set-iis).
 
 
-### Feasibility Relaxation
+### Feasibility relaxation
 
-Another approach to tackle infeasibilities is to use feasibility relaxation to find a solution which only penalizes infeasibilities. 
-This is supported via the framework, see the description  [here](https://mp.ampl.com/features-guide.html#feasibiliyrelaxation).
+Another approach to tackle infeasibilities is the feasibility relaxation to find a solution which only penalizes infeasibilities. 
+See the details  [here](https://mp.ampl.com/features-guide.html#feasibility-relaxation).
 
 
 ## Gurobi compute server and Gurobi cloud
