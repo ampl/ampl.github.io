@@ -5,7 +5,7 @@
 Gurobi is a powerful commercial suite of optimization products, which include simplex, parallel and nonlinear barrier, and primal-dual hybrid gradient (PDHG) solvers to handle linear programming (LP), quadratic programming (QP), and nonlinear programming (NLP);
 also quadratically constrained (QCP, SOCP) and the mixed-integer variations thereof (MILP, MIQP, MIQCP, MISOCP, MINLP).
 The (MI)NLP capability is provided via nonlinear expressions (formulas).
-The [MP framework](https://mp.ampl.com/) used by the AMPL Gurobi driver supports automatic reformulation for many expression types; the modeling guide can be
+The [MP Library](https://mp.ampl.com/) used by the AMPL Gurobi driver supports automatic reformulation for many expression types; the modeling guide can be
 found [here](https://mp.ampl.com/model-guide.html).
 
 [Product Page](https://ampl.com/products/solvers/solvers-we-sell/gurobi/)
@@ -17,7 +17,7 @@ found [here](https://mp.ampl.com/model-guide.html).
 [Download Gurobi](https://ampl.com/download/gurobi)
 | [Start a Gurobi Trial Now!](https://ampl.com/trial/gurobi)
 
-Our enhanced Gurobi driver is now the default. The new driver provides significantly extended modeling support for logical and nonlinear operators natively through Gurobi’s built-in nonlinear and “general constraints” and through linearizations performed by the [MP library](https://mp.ampl.com/). There are two binaries in this package: `gurobi` [[options](options.md)] is the new version, `gurobiasl` [[options](gurobiasl)] is the legacy version. If you are upgrading an existing installation and encounter any issues with the new version please report them to [support@ampl.com](mailto:support@ampl.com).
+Our enhanced Gurobi driver is now the default. The new driver provides significantly extended modeling support for logical and nonlinear operators natively through Gurobi’s built-in nonlinear and “general constraints” and through linearizations performed by the [MP Library](https://mp.ampl.com/). There are two binaries in this package: `gurobi` [[options](options.md)] is the new version, `gurobiasl` [[options](gurobiasl)] is the legacy version. If you are upgrading an existing installation and encounter any issues with the new version please report them to [support@ampl.com](mailto:support@ampl.com).
 
 ## How to use it
 
@@ -150,7 +150,7 @@ options.md
 gurobiasl.md
 ```
 
-Many solver parameters can be changed directly from AMPL, by specifying them as a space separated string in the [AMPL option](https://dev.ampl.com/ampl/reference/options.html) `gurobi_options`, or `mp_options`. 
+Many solver parameters can be changed directly from AMPL, by specifying them as a space-separated string in the [AMPL option](https://dev.ampl.com/ampl/reference/options.html) `gurobi_options`, or `mp_options`. 
 A list of all supported solver options is available [here](options.md) or can be obtained by executing the solver driver with the `-=` command line parameter:
 
 ```{eval-rst}
