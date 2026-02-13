@@ -295,7 +295,8 @@ The outcome of the last optimization is stored in the AMPL parameter `solve_resu
 
             ampl: display solve_result_num, solve_result;
             ampl: display _varname, _var, _conname, _con.slack;
-            ampl: display _logconname, _logcon.value;      # Logical constraints
+            ampl: display _logconname, min {i in 1.._nlogcons} _logcon[i].val;
+                                                           # Logical constraints
             ampl: display _cconname, _ccon.slack;          # Complementarities
             
 
