@@ -11,7 +11,7 @@ found [here](https://mp.ampl.com/model-guide.html).
 [Product Page](https://ampl.com/products/solvers/solvers-we-sell/gurobi/)
 | [Modeling guide](https://mp.ampl.com/model-guide.html)
 | [Features](#features)
-| [Options](#solver-options)
+| [Options](#gurobi-options)
 | [Changes](changes.md)
 
 [Download Gurobi](https://ampl.com/download/gurobi)
@@ -78,7 +78,7 @@ Our enhanced Gurobi driver is now the default. The new driver provides significa
 
 * [Modeling guide](https://mp.ampl.com/model-guide.html)
 * [Features](#features)
-* [Solver options](#solver-options)
+* [Gurobi options](#gurobi-options)
 * [Solve result codes](#retrieve-solutions)
 * [Driver sources](https://github.com/ampl/mp/tree/develop/solvers/gurobi)
 * [Using with callbacks](https://ampls.ampl.com/)
@@ -103,7 +103,7 @@ Our enhanced Gurobi driver is now the default. The new driver provides significa
 
 * Algorithms:
 
-  * Simplex method, parallel barrier, PDHG ([options](#solver-options) `alg:method`, `alg:pdhggpu`)
+  * Simplex method, parallel barrier, PDHG ([options](#gurobi-options) `alg:method`, `alg:pdhggpu`)
   * Nonlinear barrier (option `alg:optimalitytarget=1`)
   * Branch-and-Bound, Branch-and-Cut (mainly `mip:` and `cut:` options)
     
@@ -139,9 +139,9 @@ Our enhanced Gurobi driver is now the default. The new driver provides significa
       * [Branching variable priorites](https://mp.ampl.com/features-guide.html#variable-priorities)
       
 
-## Solver options
+## Gurobi options
 
-Full list of solver options:
+Full list of AMPL/Gurobi options:
 ```{toctree}
 options.md
 ```

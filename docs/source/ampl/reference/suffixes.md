@@ -6,7 +6,11 @@ To represent values associated with an entity, AMPL employs various qualifiers o
 
 AMPL cannot anticipate all of the values that a solver might associate with model components, such as [multi-objective options](https://mp.ampl.com/modeling-mo.html). The values recognized (as input) or computed (as output) depend on the design of each solver and its algorithms. To provide for the representation of these values, the concept of a suffix has been extended to permit the definition of new suffixes for the duration of an AMPL session. For details please refer to Chapter 14 of the [AMPL Book](https://ampl.com/resources/books/ampl-book/).
 
+> To find out the custom suffixes supported by a solver, study its options.
+> For example, [Gurobi options](../../solvers/gurobi/index.md#gurobi-options) ``obj:multi:options``, ``mip:lazy``, ``cvt:sos``
+> control the interpretation of the corresponding suffixes.
 
+   
 ## Built-In Suffixes
 
 ### Variables
