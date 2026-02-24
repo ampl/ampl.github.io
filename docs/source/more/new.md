@@ -1,6 +1,94 @@
 (what_is_new)=
 # What's New?
 
+## Amplbot — AI Companion for Optimization
+
+We've introduced Amplbot, a specialized AI assistant for optimization that helps you build, improve, and debug AMPL and Python models directly from natural language prompts. It's integrated as a GPT on ChatGPT and trained specifically on AMPL modeling workflows.
+
+Access amplbot directly [here](https://l.ampl.com/https://chatgpt.com/g/g-68c00de8b030819185be6db190ad7bce-amplbot).
+
+### What amplbot can do
+
+* Explain AMPL syntax and modeling concepts
+* Translate natural language descriptions into AMPL or Python (amplpy) code
+* Help debug and refine models, including diagnosing infeasibilities and suggesting reformulations
+* Assist with data handling and integration in Python workflows
+* Offer guidance on solver usage and modeling best practices
+
+Amplbot does not execute code, but the code it generates is usually ready to run in environments like Google Colab or VS Code.
+
+Whether you're new to optimization or tackling complex models, amplbot can streamline your workflow and reduce the time from idea to optimized model.
+
+See the [Amplbot FAQ section](https://dev.ampl.com/help/faq-amplbot.html) for more details. 
+
+
+## New IDE for AMPL: Official Extension for Visual Studio Code
+
+```{eval-rst}
+.. image:: https://github.com/ampl/ampl-plugin-official/raw/HEAD/resources/Animation.gif
+  :alt: Official AMPL Extension for Visual Studio Code
+  :target: https://l.ampl.com/https://marketplace.visualstudio.com/items?itemName=AMPLOptimizationInc.ampl-plugin-official
+```
+
+We have released the [**official AMPL extension for Visual Studio Code**](https://l.ampl.com/https://marketplace.visualstudio.com/items?itemName=AMPLOptimizationInc.ampl-plugin-official), bringing first-class AMPL support to one of the most popular development environments. On the other side, we will discontinue support on the Amplide towards a modern way of writing optimization code.
+
+The extension integrates AMPL directly into **VS Code**, providing a modern and productive workflow for model development, debugging, and solver interaction. Key features include:
+
+* Syntax highlighting for AMPL files (`.mod`, `.run`, and for no-API applications `.dat`)
+* Use Python scripts with Amplpy and models in the AMPL format
+* Search entity declaration
+* Auto-format code
+* Code snippets for faster model writing
+* Smart editor support tailored to AMPL modeling constructs
+* Integrated execution of AMPL scripts
+* Output panel integration for solver logs and results
+
+The extension is designed to work seamlessly with local AMPL installations.
+
+### Why use the VS Code extension?
+
+* Develop, edit, and run AMPL models in a professional IDE
+* Combine AMPL modeling with Python or other API-based workflows in the same workspace
+* Improve productivity with modern editor features
+* Dark mode :-)
+
+You can install the extension directly from the [**Visual Studio Code Marketplace**](https://l.ampl.com/https://marketplace.visualstudio.com/items?itemName=AMPLOptimizationInc.ampl-plugin-official), or learn more in our [announcement post](https://ampl.com/blog/official-ampl-extension-for-visual-studio/).
+
+This release makes AMPL development more accessible, integrated, and aligned with modern software engineering practices.
+
+## AMPL Academic Licenses
+
+AMPL provides completely free academic licenses for students, faculty, and researchers, giving full access to AMPL and a wide range of commercial and open-source solvers for teaching and research.
+
+New licenses are attached to an uuid that can be easily activated following the [Installation instructions](https://dev.ampl.com/ampl/install.html).
+
+### AMPL for Academics (A4A)
+
+Individual academic license available to anyone with a valid academic email. Just sign up at the [Portal](https://portal.ampl.com/).
+
+* No size limits
+* Access to major commercial solvers (e.g., Gurobi, CPLEX, XPRESS, COPT, MOSEK)
+* Includes open-source solvers (HiGHS, CBC, Ipopt, etc.)
+* Renewable annually at no cost
+
+### AMPL for Courses (A4C)
+
+Course-wide licenses for instructors who want to use AMPL in the classroom.
+
+* Covers all your students
+* All commercial and open-source solvers are included
+* Valid for the duration of the academic term
+
+### AMPL Career Starter (ACS)
+
+For recent graduates transitioning to industry.
+
+* All commercial and open-source solvers are included
+* For recent graduates after 24 months
+* Duration: 12 months
+
+Learn more and apply at: **[https://ampl.com/academia/](https://ampl.com/academia/)**
+
 ## New book: Hands-On Mathematical Optimization with AMPL in Python
 
 ```{eval-rst}
