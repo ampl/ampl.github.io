@@ -43,8 +43,8 @@ AMPL APIs
 
 .. _apis_python:
 
-Python
-------
+Python API
+----------
 
 - Installation:
 
@@ -57,8 +57,8 @@ Python
 
 .. _apis_r:
 
-R
--
+R API
+-----
 
 - Installation:
 
@@ -70,25 +70,10 @@ R
 - Documentation: https://rAMPL.ampl.com/
 - GitHub: https://github.com/ampl/rAMPL
 
-.. _apis_java:
-
-Java
-----
-
-- Installation:
-
-  - `API bundle for Windows <https://portal.ampl.com/dl/modules/amplapi-module.mswin64.zip>`_
-
-  - `API bundle for Linux <https://portal.ampl.com/dl/modules/amplapi-module.linux64.tgz>`_
-
-  - `API bundle for macOS <https://portal.ampl.com/dl/modules/amplapi-module.macos64.tgz>`_
-
-- Documentation: https://ampl.com/api/latest/java/
-
 .. _apis_csharp:
 
-C#
---
+C# API
+------
 
 - Installation:
 
@@ -102,8 +87,8 @@ C#
 
 .. _apis_cpp:
 
-C++
----
+C++ API
+-------
 
 - Installation:
 
@@ -115,10 +100,40 @@ C++
 
 - Documentation: https://ampl.com/api/latest/cpp/
 
+.. _apis_c:
+
+C API
+-----
+
+- Installation:
+
+  - `API bundle for Windows <https://portal.ampl.com/dl/modules/amplapi-module.mswin64.zip>`_
+
+  - `API bundle for Linux <https://portal.ampl.com/dl/modules/amplapi-module.linux64.tgz>`_
+
+  - `API bundle for macOS <https://portal.ampl.com/dl/modules/amplapi-module.macos64.tgz>`_
+
+- Documentation: https://ampl.com/api/latest/c/
+
+.. _apis_java:
+
+Java API
+--------
+
+- Installation:
+
+  - `API bundle for Windows <https://portal.ampl.com/dl/modules/amplapi-module.mswin64.zip>`_
+
+  - `API bundle for Linux <https://portal.ampl.com/dl/modules/amplapi-module.linux64.tgz>`_
+
+  - `API bundle for macOS <https://portal.ampl.com/dl/modules/amplapi-module.macos64.tgz>`_
+
+- Documentation: https://ampl.com/api/latest/java/
+
 .. _apis_matlab:
 
-MATLAB
-------
+MATLAB API
+----------
 
 - Installation:
 
