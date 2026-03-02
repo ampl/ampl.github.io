@@ -7,37 +7,44 @@ AMPL APIs
     :gutter: 1 1 1 2
 
     .. grid-item-card:: Python API
-        :link: https://amplpy.ampl.com/
+        :link-type: ref
+        :link: apis_python
 
         Explore the AMPL Python API Documentation for detailed guidance, examples, and references to integrate AMPL with Python.
 
     .. grid-item-card:: R API
-        :link: https://rAMPL.ampl.com/
+        :link-type: ref
+        :link: apis_r
 
         Explore the AMPL R API Documentation for detailed guidance, examples, and references to integrate AMPL with R.
 
     .. grid-item-card:: C# API
-        :link: https://ampl.com/api/latest/dotnet/
+        :link-type: ref
+        :link: apis_csharp
 
         Explore the AMPL C# API Documentation for detailed guidance, examples, and references to integrate AMPL with C#.
 
     .. grid-item-card:: C++ API
-        :link: https://ampl.com/api/latest/cpp/
+        :link-type: ref
+        :link: apis_cpp
 
         Explore the AMPL C++ API Documentation for detailed guidance, examples, and references to integrate AMPL with C++.
 
     .. grid-item-card:: C API
-        :link: https://ampl.com/api/latest/c/
+        :link-type: ref
+        :link: apis_c
 
         Explore the AMPL C API Documentation for detailed guidance, examples, and references to integrate AMPL with C.
 
     .. grid-item-card:: Java API
-        :link: https://ampl.com/api/latest/java/
+        :link-type: ref
+        :link: apis_java
 
         Explore the AMPL Java API Documentation for detailed guidance, examples, and references to integrate AMPL with Java.
 
     .. grid-item-card:: MATLAB API
-        :link: https://ampl.com/api/latest/matlab/
+        :link-type: ref
+        :link: apis_matlab
 
         Explore the AMPL MATLAB API Documentation for detailed guidance, examples, and references to integrate AMPL with MATLAB.
 
@@ -53,7 +60,6 @@ Python API
     $ python -m pip install amplpy
 
 - Documentation: https://amplpy.ampl.com/
-- GitHub: https://github.com/ampl/amplpy
 
 .. _apis_r:
 
@@ -68,7 +74,6 @@ R API
     install.packages("https://ampl.com/dl/API/rAMPL.tar.gz", repos=NULL)
 
 - Documentation: https://rAMPL.ampl.com/
-- GitHub: https://github.com/ampl/rAMPL
 
 .. _apis_csharp:
 
