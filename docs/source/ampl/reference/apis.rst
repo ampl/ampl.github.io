@@ -15,11 +15,6 @@ AMPL APIs
         :link: https://rAMPL.ampl.com/
 
         Explore the AMPL R API Documentation for detailed guidance, examples, and references to integrate AMPL with R.
-        
-    .. grid-item-card:: Java API
-        :link: https://ampl.com/api/latest/java/
-
-        Explore the AMPL Java API Documentation for detailed guidance, examples, and references to integrate AMPL with Java.
 
     .. grid-item-card:: C# API
         :link: https://ampl.com/api/latest/dotnet/
@@ -30,7 +25,17 @@ AMPL APIs
         :link: https://ampl.com/api/latest/cpp/
 
         Explore the AMPL C++ API Documentation for detailed guidance, examples, and references to integrate AMPL with C++.
-        
+
+    .. grid-item-card:: C API
+        :link: https://ampl.com/api/latest/c/
+
+        Explore the AMPL C API Documentation for detailed guidance, examples, and references to integrate AMPL with C.
+
+    .. grid-item-card:: Java API
+        :link: https://ampl.com/api/latest/java/
+
+        Explore the AMPL Java API Documentation for detailed guidance, examples, and references to integrate AMPL with Java.
+
     .. grid-item-card:: MATLAB API
         :link: https://ampl.com/api/latest/matlab/
 
