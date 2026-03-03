@@ -6,7 +6,8 @@ Xpress offers proven optimization technology for large-scale applications, with 
 high performance on a wide range of model types.  Its ultra-efficient sparse matrix handling
 and on-the-fly data compression address the largest problems, with reliable performance
 even on numerically difficult or unstable problems.
-The framework used by the drivers supports automatic reformulation for many expression types; the modeling guide can be
+The [MP Library](https://mp.ampl.com/) used by the AMPL Xpress driver supports automatic
+reformulation for many expression types; the modeling guide can be
 found [here](https://mp.ampl.com/model-guide.html).
 
 [Product Page](https://ampl.com/products/solvers/solvers-we-sell/xpress/)
@@ -87,7 +88,7 @@ This package contains an all-new Xpress driver, that provides significantly exte
 
 * Problem types: 
 
-  * LP, QP, QCP, SOCP
+  * LP, QP, QCP, SOCP, NLP
   * MIP, MIQP, MIQCP, MISOCP
   * MINLP
 

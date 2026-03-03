@@ -197,7 +197,7 @@ acc:lineq
       1 - Accepted but automatic redefinition will be used where possible
       2 - Accepted natively and preferred
 
-acc:linfunccon
+acc:linfn (acc:linfunccon)
       Solver acceptance level for 'LinearFunctionalConstraint' as expression,
       default 4:
 
@@ -312,7 +312,7 @@ acc:pl (acc:pwl, acc:piecewise)
       1 - Accepted but automatic redefinition will be used where possible
       2 - Accepted natively and preferred
 
-acc:powconstexp
+acc:powc (acc:powconstexp)
       Solver acceptance level for 'PowConstExpConstraint' as either constraint
       or expression, default 4:
 
@@ -331,7 +331,7 @@ acc:quadeq
       1 - Accepted but automatic redefinition will be used where possible
       2 - Accepted natively and preferred
 
-acc:quadfunccon
+acc:quadfn (acc:quadfunccon)
       Solver acceptance level for 'QuadraticFunctionalConstraint' as
       expression, default 4:
 
@@ -1760,7 +1760,7 @@ cvt:pre:ctx:ifthen (ctx:ifthen)
 cvt:pre:ctx:impl (ctx:impl)
       Context propagation for 'Implication' expression, see cvt:pre:ctx:abs.
 
-cvt:pre:ctx:linfunccon (ctx:linfunccon)
+cvt:pre:ctx:linfn (ctx:linfn)
       Context propagation for 'LinearFunctionalConstraint' expression, see
       cvt:pre:ctx:abs.
 
@@ -1770,7 +1770,7 @@ cvt:pre:ctx:log (ctx:log)
 cvt:pre:ctx:loga (ctx:loga)
       Context propagation for 'LogA' expression, see cvt:pre:ctx:abs.
 
-cvt:pre:ctx:logistic (ctx:logistic)
+cvt:pre:ctx:logi (ctx:logi)
       Context propagation for 'Logistic' expression, see cvt:pre:ctx:abs.
 
 cvt:pre:ctx:max (ctx:max)
@@ -1797,14 +1797,14 @@ cvt:pre:ctx:pl (ctx:pl)
 cvt:pre:ctx:pow (ctx:pow)
       Context propagation for 'Pow' expression, see cvt:pre:ctx:abs.
 
-cvt:pre:ctx:powconstexp (ctx:powconstexp)
+cvt:pre:ctx:powc (ctx:powc)
       Context propagation for 'PowConstExp' expression, see cvt:pre:ctx:abs.
 
-cvt:pre:ctx:quadfunccon (ctx:quadfunccon)
+cvt:pre:ctx:quadfn (ctx:quadfn)
       Context propagation for 'QuadraticFunctionalConstraint' expression, see
       cvt:pre:ctx:abs.
 
-cvt:pre:ctx:signpowconstexp (ctx:signpowconstexp)
+cvt:pre:ctx:signpowc (ctx:signpowc)
       Context propagation for 'SignpowConstExp' expression, see
       cvt:pre:ctx:abs.
 
@@ -6487,6 +6487,20 @@ tech:sleeponthreadwait (sleeponthreadwait, sys:xprs_sleeponthreadwait, XPRS_SLEE
       * (0) Keep the threads busy when waiting for work.
 
       * (1) Put the threads into a wait state when waiting for work.
+
+tech:stats (stats, tech:report_stats, solve_stats)
+      Whether to return solve statistics and timings; the information will be
+      stored in the problem suffixes: 'simplex_iterations',
+      'barrier_iterations', 'nodes' and possibly other solver-dependent
+      suffixes. A JSON representation of the information above is returned in
+      the problem suffix `stats`.
+      Note that timing information will also be included in the JSON
+      representation if tech:timing>0. Values:
+
+      0 - Do not report statistics (default)
+      1 - Report statistics in JSON format in the problem suffix 'stats'
+      2 - Report statistics in suffixes
+      3 - Report statistics both in suffixes and the suffix 'stats'
 
 tech:threads (threads, tech:xprs_threads, XPRS_THREADS)
       The default number of threads used during optimization.
