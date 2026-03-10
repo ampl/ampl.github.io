@@ -1,13 +1,13 @@
 # AMPL Suffixes
 
-To represent values associated with an entity, AMPL employs various qualifiers or _suffixes_ appended to entity names. A suffix consists of a period or "dot" (.) followed by a (usually short) identifier, so that for example the reduced cost associated with a variable `Buy[j]` is written `Buy[j].rc`, and the reduced costs of all such variables can be viewed by giving the command `display Buy.rc;`. There are numerous built-in suffixes of this kind, available for use in any AMPL session; see our tables of [built-in suffixes](#built-in-suffixes) for details below. However, some solvers can exchange information via custom suffixes.
+To represent values associated with an entity, AMPL employs various qualifiers or _suffixes_ appended to entity names. A suffix consists of a period or "dot" (.) followed by a (usually short) identifier, so that for example the reduced cost associated with a variable `Buy[j]` is written `Buy[j].rc`, and the reduced costs of all such variables can be viewed by giving the command `display Buy.rc;`. There are numerous built-in suffixes of this kind, available for use in any AMPL session; see our tables of [built-in suffixes](#built-in-suffixes) for details below. However, some solvers can exchange information via [custom suffixes](#custom-suffixes). Finally, suffixes can be affected by [AMPL presolve](#ampl-presolve-and-suffixes).
 
 ## Custom suffixes
 
 AMPL cannot anticipate all of the values that a solver might associate with model components, such as [multi-objective options](https://mp.ampl.com/modeling-mo.html). The values recognized (as input) or computed (as output) depend on the design of each solver and its algorithms. To provide for the representation of these values, the concept of a suffix has been extended to permit the definition of new suffixes for the duration of an AMPL session. For details please refer to Chapter 14 of the [AMPL Book](https://ampl.com/resources/books/ampl-book/).
 
 > To find out the custom suffixes supported by a solver, study its options.
-> For example, [Gurobi options](../../solvers/gurobi/index.md#gurobi-options) ``obj:multi:options``, ``mip:lazy``, ``cvt:sos``
+> For example, [Gurobi options](../../solvers/gurobi/index.md#gurobi-options) ``obj:multi:options``, ``mip:lazy``, ``cvt:sos``, 
 > control the interpretation of the corresponding suffixes.
 
    
@@ -83,3 +83,9 @@ To define these values unambiguously, all constraints are assumed to be put in t
 | .exitcode | Exit code returned by solver after most recent solve of this problem |
 | .message | Result message returned by solver after most recent solve of this problem |
 | .result | Result string returned by solver after most recent solve of this problem |
+
+
+## AMPL Presolve and Suffixes
+
+AMPL presolve can eliminate variables and change constraints. To avoid interference with
+custom or built-in suffixes, switch off presolve by setting [AMPL option](../options.md#ampl-options) ``presolve 0;``
