@@ -3,7 +3,7 @@
 # COPT
 
 Cardinal Optimizer (COPT) incorporates a full suite of solvers for
-linear, convex quadratic, and second-order conic mixed-integer programming.
+linear, (non-)convex quadratic, second-order and exponential conic mixed-integer programming.
 It ranks at the top of benchmark tests on continuous linear programs,
 and has been fully extended to handle integer variables.
 The framework used by the driver supports automatic reformulation for many expression types; the modeling guide can be
@@ -79,6 +79,39 @@ found [here](https://mp.ampl.com/model-guide.html).
 * [Solve result codes](#retrieving-solutions)
 * [Driver sources](https://github.com/ampl/mp/tree/develop/solvers/copt)
 
+### Features
+
+* Problem types: 
+
+  * LP, (non-)convex QP, (non-)convex QCP, conic programs (SOCP, exponential cones)
+  * MIP, MIQP, MIQCP, mixed-integer conic programs
+  
+* Algorithms
+
+  * Branch-and-Cut (default).
+    * Note that the driver will [approximate any nonlinear functions
+      by piecewise-linear expressions](https://mp.ampl.com/modeling-expressions.html#piecewise-linear-approximation).
+  * NLP local solver (continuos problems). To enable, submit a nonlinear problem with
+    the option `alg:_expr=2`. To locally solve a continuous relaxation of a problem,
+    add `alg:relax=1`.
+    * Note that the local solver natively handles nonlinear expressions, such as
+      trigonometric functions, in contrast to the default behavior.
+
+* Features for all models:
+    * Problem input
+        * [Basis IO](https://mp.ampl.com/features-guide.html#input-and-output-basis)
+        * [Warm start](https://mp.ampl.com/features-guide.html#warm-start)
+
+    * Dealing with infeasibility/unboundedness
+    
+        * [Unbounded rays](https://mp.ampl.com/features-guide.html#unbounded-rays)
+
+* Features for MIP models:
+    * Model investigation
+      * [Return MIP gap](https://mp.ampl.com/features-guide.html#return-mip-gap)
+      * [Return best dual bound](https://mp.ampl.com/features-guide.html#return-best-dual-bound)
+      
+      
 ## Solver options
 
 Full list of solver options:
