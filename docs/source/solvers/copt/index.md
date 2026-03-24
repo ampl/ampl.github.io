@@ -89,13 +89,13 @@ found [here](https://mp.ampl.com/model-guide.html).
 * Algorithms
 
   * Branch-and-Cut (default).
-    * Note that the driver will [approximate any nonlinear functions
+    * Note that the driver will [approximate any nonlinear non-quadratic functions
       by piecewise-linear expressions](https://mp.ampl.com/modeling-expressions.html#piecewise-linear-approximation).
   * NLP local solver (continuos problems). To enable, submit a nonlinear problem with
     the option `alg:_expr=2`. To locally solve a continuous relaxation of a problem,
     add `alg:relax=1`.
-    * Note that the local solver natively handles nonlinear expressions, such as
-      trigonometric functions, in contrast to the default behavior.
+    * Note that the local solver natively handles nonlinear functions, such as
+      trigonometric, in contrast to the default behavior.
 
 * Features for all models:
     * Problem input
