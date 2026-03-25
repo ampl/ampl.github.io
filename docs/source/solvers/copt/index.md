@@ -81,18 +81,21 @@ found [here](https://mp.ampl.com/model-guide.html).
 
 ### Features
 
-* Problem types: 
+* Supported problem types: 
 
   * LP, (non-)convex QP, (non-)convex QCP, conic programs (SOCP, exponential cones)
   * MIP, MIQP, MIQCP, mixed-integer conic programs
+  * NLP
   
 * Algorithms:
 
-  * Branch-and-Cut (default).
+  * LP: simplex method, barrier (CPU/GPU), PDLP (CPU/GPU). See option `lp:method`.
+  * Convex Q(C)P / Conic: barrier (CPU/GPU). 
+  * MIP: Branch-and-Cut.
     * Note that the driver will [approximate any nonlinear non-quadratic functions
       by piecewise-linear expressions](https://mp.ampl.com/modeling-expressions.html#piecewise-linear-approximation).
-  * NLP local solver (continuous problems). To enable, submit a nonlinear problem with
-    the option `alg:_expr=2`. To locally solve a continuous relaxation of an MINLP,
+  * NLP: local solver. To enable, submit a nonlinear problem with
+    the option `alg:_expr=2`. To locally solve the continuous relaxation of an MINLP,
     add `alg:relax=1`.
     * Note that the local solver natively handles nonlinear functions, such as
       trigonometric, in contrast to the default behavior.
