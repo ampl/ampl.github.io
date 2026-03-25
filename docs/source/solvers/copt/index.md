@@ -86,20 +86,22 @@ found [here](https://mp.ampl.com/model-guide.html).
   * LP, (non-)convex QP, (non-)convex QCP, conic programs (SOCP, exponential cones)
   * MIP, MIQP, MIQCP, mixed-integer conic programs
   * NLP
+  * MINLP (approximated)
   
 * Algorithms:
 
   * LP: simplex method, barrier (CPU/GPU), PDLP (CPU/GPU). See option `lp:method`.
   * Convex Q(C)P / Conic: barrier (CPU/GPU). 
   * MIP: Branch-and-Cut.
-    * Note that the driver will [approximate any nonlinear non-quadratic functions
+    * Note that AMPL/COPT will [approximate any nonlinear non-quadratic functions
       by piecewise-linear expressions](https://mp.ampl.com/modeling-expressions.html#piecewise-linear-approximation).
+      This enables approximate solving of MINLP.
   * NLP: barrier. To enable, submit a nonlinear problem with
     the option `alg:_expr=2`. To locally solve the continuous relaxation of an MINLP,
     add `alg:relax=1`.
     * Note that the barrier local solver natively handles nonlinear functions, such as
-      trigonometric, in contrast to the default behavior which would piecewise-linearly
-      approximate them, making COPT handle it as an LP/QCP/MIP.
+      trigonometric. In contrast, AMPL/COPT default behavior (`alg:_expr=1`) piecewise-linearly
+      approximates them, producing LP/QCP/MIP.
 
 * Features for all models:
     * Problem input
