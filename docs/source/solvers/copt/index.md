@@ -94,11 +94,12 @@ found [here](https://mp.ampl.com/model-guide.html).
   * MIP: Branch-and-Cut.
     * Note that the driver will [approximate any nonlinear non-quadratic functions
       by piecewise-linear expressions](https://mp.ampl.com/modeling-expressions.html#piecewise-linear-approximation).
-  * NLP: local solver. To enable, submit a nonlinear problem with
+  * NLP: barrier. To enable, submit a nonlinear problem with
     the option `alg:_expr=2`. To locally solve the continuous relaxation of an MINLP,
     add `alg:relax=1`.
-    * Note that the local solver natively handles nonlinear functions, such as
-      trigonometric, in contrast to the default behavior.
+    * Note that the barrier local solver natively handles nonlinear functions, such as
+      trigonometric, in contrast to the default behavior which would piecewise-linearly
+      approximate them, making COPT handle it as an LP/QCP/MIP.
 
 * Features for all models:
     * Problem input
