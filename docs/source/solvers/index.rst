@@ -12,6 +12,9 @@ an easy way to switch between them.
 .. |n| unicode:: U+274C
    :trim:
 
+.. |a| unicode:: U+2248
+   :trim:
+
 .. |mp| raw:: html
 
    <a href="https://mp.ampl.com/model-guide.html" target="_blank">MP</a>
@@ -47,7 +50,9 @@ nonlinear domain (MINLP,  *Mixed Integer NonLinear Programming*).
 .. rubric:: Footnotes
 
 .. [1] GPU-accelerated algorithms, such as `PDLP <https://ampl.com/cuPDLP>`_, are available.
-.. [2] Conic programming: MOSEK supports SOCP and `exponential cones <https://amplopt.streamlit.app/Logistic_Regression>`_, other solvers only SOCP.
+.. [2] Conic programming: MOSEK and COPT support SOCP and `exponential cones <https://amplopt.streamlit.app/Logistic_Regression>`_, other solvers only SOCP.
+.. [3] (MI)NLP: for solvers not supporting it directly, `piecewise-linear approximation <https://mp.ampl.com/modeling-expressions.html#piecewise-linear-approximation>`_ is applied.
+.. [4] COPT solves NLP to local optimality.
 
 Nonlinear Solvers
 ------------------
