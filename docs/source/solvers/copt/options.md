@@ -34,8 +34,64 @@ acc:_expr
           or redefined
       1 - Accepted. See the individual acc:... options
 
+acc:abs
+      Solver acceptance level for 'AbsConstraint' as expression, default 4:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      3 - Accepted but automatic redefinition will be used where possible
+      4 - Accepted natively and preferred
+
+acc:acos
+      Solver acceptance level for 'AcosConstraint' as expression, default 4:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      3 - Accepted but automatic redefinition will be used where possible
+      4 - Accepted natively and preferred
+
+acc:acosh
+      Solver acceptance level for 'AcoshConstraint' as expression, default 4:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      3 - Accepted but automatic redefinition will be used where possible
+      4 - Accepted natively and preferred
+
+acc:asin
+      Solver acceptance level for 'AsinConstraint' as expression, default 4:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      3 - Accepted but automatic redefinition will be used where possible
+      4 - Accepted natively and preferred
+
+acc:asinh
+      Solver acceptance level for 'AsinhConstraint' as expression, default 4:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      3 - Accepted but automatic redefinition will be used where possible
+      4 - Accepted natively and preferred
+
+acc:atan
+      Solver acceptance level for 'AtanConstraint' as expression, default 4:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      3 - Accepted but automatic redefinition will be used where possible
+      4 - Accepted natively and preferred
+
+acc:atanh
+      Solver acceptance level for 'AtanhConstraint' as expression, default 4:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      3 - Accepted but automatic redefinition will be used where possible
+      4 - Accepted natively and preferred
+
 acc:cos
       Solver acceptance level for 'CosConstraint' as expression, default 4:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      3 - Accepted but automatic redefinition will be used where possible
+      4 - Accepted natively and preferred
+
+acc:cosh
+      Solver acceptance level for 'CoshConstraint' as expression, default 4:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       3 - Accepted but automatic redefinition will be used where possible
@@ -61,6 +117,14 @@ acc:expa (acc:expA)
       0 - Not accepted natively, automatic redefinition will be attempted
       3 - Accepted but automatic redefinition will be used where possible
       4 - Accepted natively and preferred
+
+acc:expcone
+      Solver acceptance level for 'ExponentialConeConstraint' as flat
+      constraint, default 2:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
 
 acc:indeq (acc:indlineq)
       Solver acceptance level for 'IndicatorConstraintLinEQ' as flat
@@ -93,7 +157,7 @@ acc:lineq
       1 - Accepted but automatic redefinition will be used where possible
       2 - Accepted natively and preferred
 
-acc:linfunccon
+acc:linfn (acc:linfunccon)
       Solver acceptance level for 'LinearFunctionalConstraint' as expression,
       default 4:
 
@@ -165,13 +229,21 @@ acc:nlcon (acc:nlalgcon)
       1 - Accepted but automatic redefinition will be used where possible
       2 - Accepted natively and preferred
 
-acc:powconstexp
+acc:powc (acc:powconstexp)
       Solver acceptance level for 'PowConstExpConstraint' as expression,
       default 4:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       3 - Accepted but automatic redefinition will be used where possible
       4 - Accepted natively and preferred
+
+acc:quadcone
+      Solver acceptance level for 'QuadraticConeConstraint' as flat
+      constraint, default 2:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
 
 acc:quadeq
       Solver acceptance level for 'QuadConEQ' as flat constraint, default 2:
@@ -180,7 +252,7 @@ acc:quadeq
       1 - Accepted but automatic redefinition will be used where possible
       2 - Accepted natively and preferred
 
-acc:quadfunccon
+acc:quadfn (acc:quadfunccon)
       Solver acceptance level for 'QuadraticFunctionalConstraint' as
       expression, default 4:
 
@@ -202,8 +274,23 @@ acc:quadle
       1 - Accepted but automatic redefinition will be used where possible
       2 - Accepted natively and preferred
 
+acc:rotatedquadcone
+      Solver acceptance level for 'RotatedQuadraticConeConstraint' as flat
+      constraint, default 2:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
 acc:sin
       Solver acceptance level for 'SinConstraint' as expression, default 4:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      3 - Accepted but automatic redefinition will be used where possible
+      4 - Accepted natively and preferred
+
+acc:sinh
+      Solver acceptance level for 'SinhConstraint' as expression, default 4:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       3 - Accepted but automatic redefinition will be used where possible
@@ -227,6 +314,13 @@ acc:sos2
 
 acc:tan
       Solver acceptance level for 'TanConstraint' as expression, default 4:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      3 - Accepted but automatic redefinition will be used where possible
+      4 - Accepted natively and preferred
+
+acc:tanh
+      Solver acceptance level for 'TanhConstraint' as expression, default 4:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       3 - Accepted but automatic redefinition will be used where possible
@@ -266,11 +360,36 @@ alg:feasrelax (feasrelax)
 alg:feastol (feastol)
       Primal feasibility tolerance (default 1e-6).
 
+alg:gpudevice (gpudevice, lp:pdlpgpudevice, pdlpgpudevice, bar:gpudevice)
+      Specify devide ID of GPU to use in case of multiple GPUs (default -1,
+      choose automatically)
+
+alg:gpumode (gpumode, lp:pdlpgpumode, pdlpgpumode, bar:gpumode)
+      Whether to use GPU or CPU for barrier and PDLP methods. Note that CUDA
+      GPU mode is only supported on Windows and Linux:
+
+      -1 - Automatic (default). The first-order method (PDLP) will attempt to
+           use the GPU, while the barrier method will use the CPU
+      0  - Force CPU mode
+      1  - Attempt to use the standard GPU mode
+      2  - For the barrier method, attempt to use the high-performance GPU
+           mode when solving LP problems, which may lead to higher memory
+           usage. For the first-order method (PDLP), this is equivalent to
+           gpumode=1 (standard GPU mode)
+
 alg:lbpen (lbpen)
       See alg:feasrelax.
 
 alg:matrixtol (matrixtol)
       nput matrix coefficient tolerance (default 1e-10).
+
+alg:nonconvex (nonconvex)
+      Strategy for continuous nonconvex models (default -1):
+
+      -1 - Default choice (as of COPT 8, same as 1)
+      0  - Report nonconvexity and terminate
+      1  - Search for a locally optimal solution
+      2  - Search for a globally optimal solution.
 
 alg:rays (rays)
       Whether to return suffix .unbdd (unbounded ray) if the objective is
@@ -340,7 +459,7 @@ cvt:dvelim (dvelim)
       See also cvt:pre:unnest, as well as AMPL options linelim and substout.
 
 cvt:expcones (expcones)
-      0*/1: Recognize exponential cones.
+      0/1*: Recognize exponential cones.
 
 cvt:expr:nlassign (expr:nlassign)
       Above which reference count, a formula node should be assigned to a
@@ -380,6 +499,15 @@ cvt:pre:all
 
 cvt:pre:boundlogarg (boundlogarg)
       0*/1: Bound logarithm arguments to nonnegative.
+
+cvt:pre:boundsbest (boundsbest)
+      0*/1: Submit best-known variable bounds to the solver. Can inhibit its
+      presolve.
+
+      Note: when a variable can be fixed, the stronger bounds are submitted.
+
+cvt:pre:continuous_fixed_vars (continuous_fixed_vars, ctg_fixed)
+      0/1*: Make fixed variables continuous, to avoid fake MIPs.
 
 cvt:pre:ctx2bndeq (ctx2bndeq)
       0/1*: Propagate exact context into conditional (dis)equalities-to-bound,
@@ -504,7 +632,7 @@ cvt:pre:ctx:ifthen (ctx:ifthen)
 cvt:pre:ctx:impl (ctx:impl)
       Context propagation for 'Implication' expression, see cvt:pre:ctx:abs.
 
-cvt:pre:ctx:linfunccon (ctx:linfunccon)
+cvt:pre:ctx:linfn (ctx:linfn)
       Context propagation for 'LinearFunctionalConstraint' expression, see
       cvt:pre:ctx:abs.
 
@@ -514,7 +642,7 @@ cvt:pre:ctx:log (ctx:log)
 cvt:pre:ctx:loga (ctx:loga)
       Context propagation for 'LogA' expression, see cvt:pre:ctx:abs.
 
-cvt:pre:ctx:logistic (ctx:logistic)
+cvt:pre:ctx:logi (ctx:logi)
       Context propagation for 'Logistic' expression, see cvt:pre:ctx:abs.
 
 cvt:pre:ctx:max (ctx:max)
@@ -541,14 +669,14 @@ cvt:pre:ctx:pl (ctx:pl)
 cvt:pre:ctx:pow (ctx:pow)
       Context propagation for 'Pow' expression, see cvt:pre:ctx:abs.
 
-cvt:pre:ctx:powconstexp (ctx:powconstexp)
+cvt:pre:ctx:powc (ctx:powc)
       Context propagation for 'PowConstExp' expression, see cvt:pre:ctx:abs.
 
-cvt:pre:ctx:quadfunccon (ctx:quadfunccon)
+cvt:pre:ctx:quadfn (ctx:quadfn)
       Context propagation for 'QuadraticFunctionalConstraint' expression, see
       cvt:pre:ctx:abs.
 
-cvt:pre:ctx:signpowconstexp (ctx:signpowconstexp)
+cvt:pre:ctx:signpowc (ctx:signpowc)
       Context propagation for 'SignpowConstExp' expression, see
       cvt:pre:ctx:abs.
 
@@ -668,7 +796,7 @@ cvt:socp2qc (socp2qcmode, socp2qc)
       2 - Always convert
 
       Such conversion can be necessary if the solver does not accept a mix of
-      conic and quadratic constraints/objectives. Default: 2.
+      conic and quadratic constraints/objectives. Default: 1.
 
 cvt:sos (sos)
       0/1*: Whether to honor declared suffixes .sosno and .ref describing SOS
@@ -754,6 +882,11 @@ lp:barorder (barorder)
       0  - Approximate Minimum Degree (AMD)
       1  - Nested Dissection (ND)
 
+lp:concurrentmode (lp:concurrentlpmode, concurrentlpmode)
+      The LP concurrent solving mode, only effective when lp:method = 4. The
+      parameters lp:pdlpgpumode and lp:pdlpgpudevice are ignored, and GPU
+      usage and device selection are fully controlled by this parameter.
+
 lp:dualperturb (dualperturb)
       Whether to allow the objective function perturbation when using the dual
       simplex method:
@@ -774,23 +907,11 @@ lp:method (method, lpmethod)
 
       -1 - Automatic (default)
       1  - Dual simplex
-      2  - Barrier
+      2  - Barrier. See also alg:gpumode.
       3  - Crossover
       4  - Concurrent (simplex and barrier simultaneously)
       5  - Choose between simplex and barrier automatically
-      6  - First-order method (PDLP)
-
-lp:pdlpgpudevice (pdlpgpudevice, gpudevide)
-      Specify devide ID of GPU to use in case of multiple GPUs (default -1,
-      choose automatically)
-
-lp:pdlpgpumode (pdlpgpumode, gpumode)
-      Wether to use GPU or CPU for PDLP method. Note that CUDA GPU mode is
-      only supported on Windows and Linux:
-
-      -1 - Automatic (default)
-      0  - Force the use of CPU mode
-      1  - Utilize NVIDA GPU
+      6  - First-order method (PDLP). See also alg:gpumode.
 
 lp:pdlptol (pdlptol)
       Convergence tolerance for PDLP (default 1e-6)
@@ -921,6 +1042,15 @@ mip:roundingheurlevel (roundingheurlevel)
       1  - Fast
       2  - Normal
       3  - Aggressive
+
+mip:startmode (mipstartmode)
+      Mode of MIP starts:
+
+      -1 - Automatic (default)
+      0  - Off
+      1  - Only load full and feasible MIP starts
+      2  - Only load feasible ones (complete partial solutions by solving
+           subMIPs).
 
 mip:strongbranching (strongbranching)
       Level of strong branching:
@@ -1123,6 +1253,20 @@ tech:outlev_mp (outlev_mp)
 tech:simplexthreads (simplexthreads)
       Number of threads used by dual simplex;
       default -1 ==> use value in tech:threads.
+
+tech:stats (stats, tech:report_stats, solve_stats)
+      Whether to return solve statistics and timings; the information will be
+      stored in the problem suffixes: 'simplex_iterations',
+      'barrier_iterations', 'nodes' and possibly other solver-dependent
+      suffixes. A JSON representation of the information above is returned in
+      the problem suffix `stats`.
+      Note that timing information will also be included in the JSON
+      representation if tech:timing>0. Values:
+
+      0 - Do not report statistics (default)
+      1 - Report statistics in JSON format in the problem suffix 'stats'
+      2 - Report statistics in suffixes
+      3 - Report statistics both in suffixes and the suffix 'stats'
 
 tech:threads (threads)
       Number of threads to use;

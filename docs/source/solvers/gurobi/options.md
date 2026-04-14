@@ -124,7 +124,7 @@ acc:lineq
       1 - Accepted but automatic redefinition will be used where possible
       2 - Accepted natively and preferred
 
-acc:linfunccon
+acc:linfn (acc:linfunccon)
       Solver acceptance level for 'LinearFunctionalConstraint' as expression,
       default 4:
 
@@ -170,7 +170,7 @@ acc:loga (acc:logA)
           where possible
       4 - Accepted as expression natively and preferred
 
-acc:logistic
+acc:logi (acc:logistic)
       Solver acceptance level for 'LogisticConstraint' as expression, default
       4:
 
@@ -231,7 +231,7 @@ acc:pl (acc:pwl, acc:piecewise)
       1 - Accepted but automatic redefinition will be used where possible
       2 - Accepted natively and preferred
 
-acc:powconstexp
+acc:powc (acc:powconstexp)
       Solver acceptance level for 'PowConstExpConstraint' as either constraint
       or expression, default 4:
 
@@ -250,7 +250,7 @@ acc:quadeq
       1 - Accepted but automatic redefinition will be used where possible
       2 - Accepted natively and preferred
 
-acc:quadfunccon
+acc:quadfn (acc:quadfunccon)
       Solver acceptance level for 'QuadraticFunctionalConstraint' as
       expression, default 4:
 
@@ -272,7 +272,7 @@ acc:quadle
       1 - Accepted but automatic redefinition will be used where possible
       2 - Accepted natively and preferred
 
-acc:signpowconstexp
+acc:signpowc (acc:signpowconstexp)
       Solver acceptance level for 'SignpowConstExpConstraint' as expression,
       default 4:
 
@@ -409,8 +409,7 @@ alg:lbpen (lbpen)
       See alg:feasrelax.
 
 alg:method (method, lpmethod, simplex)
-      Which algorithm to use for non-MIP problems or for the root node of MIP
-      problems:
+      Algorithm for non-MIP problems or the root node of MIP problems:
 
       -1 - Automatic (default): 3 for LP, 2 for QP, 1/4/5 for MIP
       0  - Primal simplex
@@ -419,8 +418,11 @@ alg:method (method, lpmethod, simplex)
       3  - Nondeterministic concurrent (several solves in parallel)
       4  - Deterministic concurrent
       5  - Deterministic concurrent simplex (deprecated; use
-           concurrentmethod).
-      6  - PDHG (Primal-Dual Hybrid Gradient)
+           alg:concurrentmethod).
+      6  - PDHG (Primal-Dual Hybrid Gradient). For PDHG on GPU, see
+           alg:pdhggpu.
+
+      Note: for NLP barrier method, see alg:optimalitytarget.
 
 alg:networkalg (networkalg)
       Whether to use network simplex if an LP is a network problem:
@@ -444,15 +446,18 @@ alg:numericfocus (numericfocus, numfocus, numericemphasis, numericalemphasis)
       0 - Automatic choice (default)
       1-3 - Increasing focus on more stable computations.
 
-alg:optimalitytarget (optimalitytarget)
+alg:optimalitytarget (optimalitytarget, opttarget)
       Specifies the optimality target for nonlinear continuous problems (NLP):
 
       -1 - Automatic (default)
       0  - Global optimum
-      1  - Local optimum via nonlinear barrier algorithm (preview). See
-           nlbar:... options. Note that this provides no optimality gap and
-           can be applied only to models with no discrete variables (set
-           alg:relax=1 if needed) and no nondifferentiable functions.
+      1  - Local optimum via nonlinear barrier algorithm (preview). Note that
+           this provides no optimality gap and can be applied only to models
+           with no discrete variables (set AMPL option relax_integrality to 1
+           or Gurobi option alg:relax=1 if needed) and no nondifferentiable
+           functions.
+
+      See also nlbar:... options.
 
 alg:pdhgabstol (alg:pdhgfeastol, pdhgabstol, pdhgfeastol)
       PDHG absolute feasibility tolerance (default 1e-6; should be in [1e-9,
@@ -783,6 +788,15 @@ cvt:pre:all
 cvt:pre:boundlogarg (boundlogarg)
       0*/1: Bound logarithm arguments to nonnegative.
 
+cvt:pre:boundsbest (boundsbest)
+      0*/1: Submit best-known variable bounds to the solver. Can inhibit its
+      presolve.
+
+      Note: when a variable can be fixed, the stronger bounds are submitted.
+
+cvt:pre:continuous_fixed_vars (continuous_fixed_vars, ctg_fixed)
+      0/1*: Make fixed variables continuous, to avoid fake MIPs.
+
 cvt:pre:ctx2bndeq (ctx2bndeq)
       0/1*: Propagate exact context into conditional (dis)equalities-to-bound,
       vs always mixed. Can be affected by cvt:pre:ineq2bndeq. See #267.
@@ -906,7 +920,7 @@ cvt:pre:ctx:ifthen (ctx:ifthen)
 cvt:pre:ctx:impl (ctx:impl)
       Context propagation for 'Implication' expression, see cvt:pre:ctx:abs.
 
-cvt:pre:ctx:linfunccon (ctx:linfunccon)
+cvt:pre:ctx:linfn (ctx:linfn)
       Context propagation for 'LinearFunctionalConstraint' expression, see
       cvt:pre:ctx:abs.
 
@@ -916,7 +930,7 @@ cvt:pre:ctx:log (ctx:log)
 cvt:pre:ctx:loga (ctx:loga)
       Context propagation for 'LogA' expression, see cvt:pre:ctx:abs.
 
-cvt:pre:ctx:logistic (ctx:logistic)
+cvt:pre:ctx:logi (ctx:logi)
       Context propagation for 'Logistic' expression, see cvt:pre:ctx:abs.
 
 cvt:pre:ctx:max (ctx:max)
@@ -943,14 +957,14 @@ cvt:pre:ctx:pl (ctx:pl)
 cvt:pre:ctx:pow (ctx:pow)
       Context propagation for 'Pow' expression, see cvt:pre:ctx:abs.
 
-cvt:pre:ctx:powconstexp (ctx:powconstexp)
+cvt:pre:ctx:powc (ctx:powc)
       Context propagation for 'PowConstExp' expression, see cvt:pre:ctx:abs.
 
-cvt:pre:ctx:quadfunccon (ctx:quadfunccon)
+cvt:pre:ctx:quadfn (ctx:quadfn)
       Context propagation for 'QuadraticFunctionalConstraint' expression, see
       cvt:pre:ctx:abs.
 
-cvt:pre:ctx:signpowconstexp (ctx:signpowconstexp)
+cvt:pre:ctx:signpowc (ctx:signpowc)
       Context propagation for 'SignpowConstExp' expression, see
       cvt:pre:ctx:abs.
 
@@ -1551,7 +1565,10 @@ obj:*:method (obj_*_method)
       Method for objective with index *
 
 obj:*:priority (obj_*_priority)
-      Priority for objective with index *
+      Priority for objective with index *.
+
+      Note that to use multi-objective options (see obj:multi:options),
+      suffixes .objpriority should be used currently.
 
 obj:*:reltol (obj_*_reltol)
       Relative tolerance for objective with index *
@@ -2062,6 +2079,20 @@ tech:server_router (server_router)
 tech:server_timeout (server_timeout)
       Report job as rejected by Gurobi Compute Server if the job is not
       started within server_timeout seconds. Default = 10.
+
+tech:stats (stats, tech:report_stats, solve_stats)
+      Whether to return solve statistics and timings; the information will be
+      stored in the problem suffixes: 'simplex_iterations',
+      'barrier_iterations', 'nodes' and possibly other solver-dependent
+      suffixes. A JSON representation of the information above is returned in
+      the problem suffix `stats`.
+      Note that timing information will also be included in the JSON
+      representation if tech:timing>0. Values:
+
+      0 - Do not report statistics (default)
+      1 - Report statistics in JSON format in the problem suffix 'stats'
+      2 - Report statistics in suffixes
+      3 - Report statistics both in suffixes and the suffix 'stats'
 
 tech:threads (threads)
       How many threads to apply to parallel algorithms (concurrent LP,

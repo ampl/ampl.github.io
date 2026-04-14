@@ -1637,6 +1637,15 @@ cvt:pre:all
 cvt:pre:boundlogarg (boundlogarg)
       0*/1: Bound logarithm arguments to nonnegative.
 
+cvt:pre:boundsbest (boundsbest)
+      0*/1: Submit best-known variable bounds to the solver. Can inhibit its
+      presolve.
+
+      Note: when a variable can be fixed, the stronger bounds are submitted.
+
+cvt:pre:continuous_fixed_vars (continuous_fixed_vars, ctg_fixed)
+      0/1*: Make fixed variables continuous, to avoid fake MIPs.
+
 cvt:pre:ctx2bndeq (ctx2bndeq)
       0/1*: Propagate exact context into conditional (dis)equalities-to-bound,
       vs always mixed. Can be affected by cvt:pre:ineq2bndeq. See #267.

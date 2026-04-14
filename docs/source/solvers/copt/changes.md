@@ -1,5 +1,24 @@
 # COPT Changelog
 
+## 20260414
+- Option *alg:nonconvex*, *mip:startmode*.
+- Fixed objective value output.
+- Fixed objective suffixes (.objpriority etc, see option *obj:multi*).
+- Changes in MP, in particular:
+  - Option *cvt:pre:boundsbest* defaults to making
+    auxiliary subexpression result variables free,
+    unless the result is constant. This allows
+    stronger nonlinear presolve.
+
+
+## 20260322
+- Updated to COPT 8.0.3, with performance improvements and bug fixes
+- Added option *lp:concurrentmode*
+- Added support for conic constraints 
+- Added support for many non-linear expressions
+- Added native multi-objective optimization
+
+
 ## 20260108
 - Updated to COPT 8.0.2, that introduces a global 
   nonconvex (MI)QCQP solver and performance improvements.

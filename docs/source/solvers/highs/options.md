@@ -260,6 +260,15 @@ cvt:pre:all
 cvt:pre:boundlogarg (boundlogarg)
       0*/1: Bound logarithm arguments to nonnegative.
 
+cvt:pre:boundsbest (boundsbest)
+      0*/1: Submit best-known variable bounds to the solver. Can inhibit its
+      presolve.
+
+      Note: when a variable can be fixed, the stronger bounds are submitted.
+
+cvt:pre:continuous_fixed_vars (continuous_fixed_vars, ctg_fixed)
+      0/1*: Make fixed variables continuous, to avoid fake MIPs.
+
 cvt:pre:ctx2bndeq (ctx2bndeq)
       0/1*: Propagate exact context into conditional (dis)equalities-to-bound,
       vs always mixed. Can be affected by cvt:pre:ineq2bndeq. See #267.
@@ -383,7 +392,7 @@ cvt:pre:ctx:ifthen (ctx:ifthen)
 cvt:pre:ctx:impl (ctx:impl)
       Context propagation for 'Implication' expression, see cvt:pre:ctx:abs.
 
-cvt:pre:ctx:linfunccon (ctx:linfunccon)
+cvt:pre:ctx:linfn (ctx:linfn)
       Context propagation for 'LinearFunctionalConstraint' expression, see
       cvt:pre:ctx:abs.
 
@@ -392,6 +401,9 @@ cvt:pre:ctx:log (ctx:log)
 
 cvt:pre:ctx:loga (ctx:loga)
       Context propagation for 'LogA' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:logi (ctx:logi)
+      Context propagation for 'Logistic' expression, see cvt:pre:ctx:abs.
 
 cvt:pre:ctx:max (ctx:max)
       Context propagation for 'Max' expression, see cvt:pre:ctx:abs.
@@ -417,11 +429,15 @@ cvt:pre:ctx:pl (ctx:pl)
 cvt:pre:ctx:pow (ctx:pow)
       Context propagation for 'Pow' expression, see cvt:pre:ctx:abs.
 
-cvt:pre:ctx:powconstexp (ctx:powconstexp)
+cvt:pre:ctx:powc (ctx:powc)
       Context propagation for 'PowConstExp' expression, see cvt:pre:ctx:abs.
 
-cvt:pre:ctx:quadfunccon (ctx:quadfunccon)
+cvt:pre:ctx:quadfn (ctx:quadfn)
       Context propagation for 'QuadraticFunctionalConstraint' expression, see
+      cvt:pre:ctx:abs.
+
+cvt:pre:ctx:signpowc (ctx:signpowc)
+      Context propagation for 'SignpowConstExp' expression, see
       cvt:pre:ctx:abs.
 
 cvt:pre:ctx:sin (ctx:sin)
@@ -468,6 +484,9 @@ cvt:pre:ineqrhs
       0/1*: Preprocess reified inequality comparison's right-hand sides (round
       for integer expression body).
 
+cvt:pre:logistic (cvt:logistic)
+      0*/1: recognize logistic functions in the model, see acc:logistic.
+
 cvt:pre:prod (cvt:prod)
       Product preprocessing flags. Sum of a subset of the following bits:
 
@@ -482,6 +501,10 @@ cvt:pre:prod (cvt:prod)
       Default: 7.
 
       Bits 2 or 4 imply bit 1.
+
+cvt:pre:signpow (cvt:signpow)
+      0*/1: recognize signpow() functions in the model, such as abs(x)*x, see
+      acc:signpow.
 
 cvt:pre:sort (cvt:sort)
       0/1*: Sort and eliminate duplicates in arguments of AND, OR, MIN, MAX.
@@ -846,6 +869,20 @@ tech:outlev_mp (outlev_mp)
 tech:seed (seed, random_seed)
       Random number seed (default 0), affecting perturbations that may
       influence the solution path.
+
+tech:stats (stats, tech:report_stats, solve_stats)
+      Whether to return solve statistics and timings; the information will be
+      stored in the problem suffixes: 'simplex_iterations',
+      'barrier_iterations', 'nodes' and possibly other solver-dependent
+      suffixes. A JSON representation of the information above is returned in
+      the problem suffix `stats`.
+      Note that timing information will also be included in the JSON
+      representation if tech:timing>0. Values:
+
+      0 - Do not report statistics (default)
+      1 - Report statistics in JSON format in the problem suffix 'stats'
+      2 - Report statistics in suffixes
+      3 - Report statistics both in suffixes and the suffix 'stats'
 
 tech:threads (threads)
       How many threads to use when using the barrier algorithm or solving MIP

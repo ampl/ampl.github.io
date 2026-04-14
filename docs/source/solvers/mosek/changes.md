@@ -1,5 +1,14 @@
 # MOSEK Changelog
 
+## 20260414
+- Changes in MP, see MP changelog.
+
+
+## 20251210
+- Change in MP: option *obj:multi:options*: fix integer-valued
+  objective-specific options.
+
+
 ## 20251121
 - New option *obj:multi:options* to control
   whether multi-objective option suffixes

@@ -1,5 +1,20 @@
 # GUROBI Changelog
 
+## 20260414
+- Changes in MP, see MP changelog. In particular:
+  - Additional case where the signpow function
+    is recognized: abs(C*x)*x
+    (C constant, x variable).
+  - Option *cvt:pre:boundsbest* defaults to making
+    auxiliary subexpression result variables free,
+    unless the result is constant.  This allows
+    stronger nonlinear presolve.
+
+
+## 20260130
+- Updated to Gurobi 13.0.1, which includes bugfixes.
+
+
 ## 20260109
 - Changes in MP
   - Remove excessive '_' symbols in output 

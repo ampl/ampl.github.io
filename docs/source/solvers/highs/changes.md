@@ -1,7 +1,19 @@
 # HiGHS Changelog
 
+## 20260414
+- Changes in MP, in particular new naming for
+  auxiliaries.
+
+
+## 20251210
+- Change in MP: option *obj:multi:options*:
+  fix integer-valued
+  objective-specific options.
+
+
 ## 20251121
-- New option *obj:multi:options* to control
+- Change in MP: new option *obj:multi:options*
+  to control
   whether multi-objective option suffixes
   are used.
 

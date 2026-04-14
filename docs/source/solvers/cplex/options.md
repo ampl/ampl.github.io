@@ -620,6 +620,15 @@ cvt:pre:all
 cvt:pre:boundlogarg (boundlogarg)
       0*/1: Bound logarithm arguments to nonnegative.
 
+cvt:pre:boundsbest (boundsbest)
+      0*/1: Submit best-known variable bounds to the solver. Can inhibit its
+      presolve.
+
+      Note: when a variable can be fixed, the stronger bounds are submitted.
+
+cvt:pre:continuous_fixed_vars (continuous_fixed_vars, ctg_fixed)
+      0/1*: Make fixed variables continuous, to avoid fake MIPs.
+
 cvt:pre:ctx2bndeq (ctx2bndeq)
       0/1*: Propagate exact context into conditional (dis)equalities-to-bound,
       vs always mixed. Can be affected by cvt:pre:ineq2bndeq. See #267.
@@ -743,7 +752,7 @@ cvt:pre:ctx:ifthen (ctx:ifthen)
 cvt:pre:ctx:impl (ctx:impl)
       Context propagation for 'Implication' expression, see cvt:pre:ctx:abs.
 
-cvt:pre:ctx:linfunccon (ctx:linfunccon)
+cvt:pre:ctx:linfn (ctx:linfn)
       Context propagation for 'LinearFunctionalConstraint' expression, see
       cvt:pre:ctx:abs.
 
@@ -753,7 +762,7 @@ cvt:pre:ctx:log (ctx:log)
 cvt:pre:ctx:loga (ctx:loga)
       Context propagation for 'LogA' expression, see cvt:pre:ctx:abs.
 
-cvt:pre:ctx:logistic (ctx:logistic)
+cvt:pre:ctx:logi (ctx:logi)
       Context propagation for 'Logistic' expression, see cvt:pre:ctx:abs.
 
 cvt:pre:ctx:max (ctx:max)
@@ -780,14 +789,14 @@ cvt:pre:ctx:pl (ctx:pl)
 cvt:pre:ctx:pow (ctx:pow)
       Context propagation for 'Pow' expression, see cvt:pre:ctx:abs.
 
-cvt:pre:ctx:powconstexp (ctx:powconstexp)
+cvt:pre:ctx:powc (ctx:powc)
       Context propagation for 'PowConstExp' expression, see cvt:pre:ctx:abs.
 
-cvt:pre:ctx:quadfunccon (ctx:quadfunccon)
+cvt:pre:ctx:quadfn (ctx:quadfn)
       Context propagation for 'QuadraticFunctionalConstraint' expression, see
       cvt:pre:ctx:abs.
 
-cvt:pre:ctx:signpowconstexp (ctx:signpowconstexp)
+cvt:pre:ctx:signpowc (ctx:signpowc)
       Context propagation for 'SignpowConstExp' expression, see
       cvt:pre:ctx:abs.
 
@@ -1161,6 +1170,18 @@ mip:nodesel (nodesel, nodeselect)
       1 - Breadth-first search (default)
       2 - Best-estimate search
       3 - Alternative best-estimate search
+
+mip:objdiff (objdiff, objdif)
+      Used to update the cutoff each time a solution is found. This absolute
+      value is subtracted from (added to) the newly found integer objective
+      value when minimizing (maximizing). This forces the mixed integer
+      optimization to ignore integer solutions that are not at least this
+      amount better than the best one found so far. Positive values may speed
+      the search -- and may cause the optimal solution to be missed.
+
+mip:relobjdiff (relobjdiff, relobjdif)
+      If objdiff parameter is 0, relobjdiff times the absolute value is used
+      as a cutoff (see objdiff)
 
 mip:return_gap (return_mipgap)
       Whether to return mipgap suffixes or include mipgap values (|objectve -
@@ -1636,12 +1657,25 @@ tech:outlev_mp (outlev_mp)
 
 tech:pretunefileprm (pretunefileprm)
       File to which nondefault keyword settings are written in CPLEX PRM
-      format before tuning; written whether or not tunefile or tunefileprm is
-      specified.
+      format before tuning.
 
 tech:seed (seed)
       Seed for random number generator used internally by CPLEX.Use "seed=?"
       to see the default, which depends on the CPLEX release.
+
+tech:stats (stats, tech:report_stats, solve_stats)
+      Whether to return solve statistics and timings; the information will be
+      stored in the problem suffixes: 'simplex_iterations',
+      'barrier_iterations', 'nodes' and possibly other solver-dependent
+      suffixes. A JSON representation of the information above is returned in
+      the problem suffix `stats`.
+      Note that timing information will also be included in the JSON
+      representation if tech:timing>0. Values:
+
+      0 - Do not report statistics (default)
+      1 - Report statistics in JSON format in the problem suffix 'stats'
+      2 - Report statistics in suffixes
+      3 - Report statistics both in suffixes and the suffix 'stats'
 
 tech:threads (threads)
       How many threads to use when using the barrier algorithm
@@ -1655,10 +1689,6 @@ tech:timing (timing, tech:report_times, report_times)
       in the solver driver. If set to 2, return more granular times, including
       'time_read', 'time_conversion' and 'time_output'.
 
-tech:tunebase (tunefileprm, tunebase)
-      Name of file for tuning results in CPLEX PRM format. If specified, CPLEX
-      will experiment with parameter settings as described for "tech:tunefile"
-
 tech:tunedisplay (tunedisplay)
       How much to print during tunin:
 
@@ -1666,6 +1696,12 @@ tech:tunedisplay (tunedisplay)
       1 - Minimal printing (default)
       2 - Show parameters being tried
       3 - Exhaustive printing
+
+tech:tunefile (tunefile, tunefileprm, tech:tunebase, tunebase)
+      Name of file for tuning results in CPLEX PRM format. If specified, CPLEX
+      will experiment with parameter settings that would make solving faster.
+      This can significantly increase execution time of the current
+      invocation, but the settings it finds might save time in future runs.
 
 tech:tunerepeat (tunerepeat)
       How many times to perturb the problem during tuning (default = 1).

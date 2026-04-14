@@ -1,13 +1,37 @@
 # AMPL MP Library Changelog
 
+## 20260414
+- Fixed a bug in the multi-objective emulator
+  (see option *obj:multi*) when nonlinear terms
+  were not reset for consecutive objectives.
+- Option *cvt:pre:continuous_fixed_vars* to declare
+  fixed variables continuous. Default 1.
+- Option *cvt:pre:boundsbest* defaults to making
+  auxiliary subexpression result variables free,
+  unless the result is constant.  This allows
+  stronger nonlinear presolve.
+- Additional case where the signpow function
+  is recognized: abs(C*x)*x
+  (C constant, x variable).
+- Auxiliary variables and constraints receive names
+  describing the redefinition path. Such names are
+  only given if AMPL option (solver_)auxfiles rc is
+  set, or solver option *cvt:names=2,3* provided.
+- Added option *tech:stats* to return solution 
+  statistics via problem suffixes.
+
+
 ## 20260109
 - Remove excessive '_' symbols in output 
   model constraint and variable names.
 
 
 ## 20251213
-- Recognize logistic function 1/(1+e^(-x)),
-  option cvt:pre:logistic.
+- Recognize the logistic function 1/(1+e^(-x)),
+  option *cvt:pre:logistic*.
+- Recognize the signpow function sign(x)*x^k
+  from several kinds of algebra, such as abs(x)*x^k.
+  Option *cvt:pre:signpow*.
 - *iis:find* now the main name for option
   *alg:iisfind* (which is now a synonym).
 - Option *obj:multi:options*: fix integer-valued
