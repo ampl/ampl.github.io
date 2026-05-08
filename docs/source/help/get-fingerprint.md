@@ -50,6 +50,21 @@ Download the distribution archive, [fingerprint.macosx.tgz](https://portal.ampl.
 
 Double-click the `fingerprint` icon. A window will appear stating that, “Your system’s fingerprint has been copied to the Clipboard”. Click the “OK” button in this window to close it.
 
+```{note}
+Recent versions of macOS require applications to be code-signed, so the standalone `fingerprint` application can no longer be launched directly from Finder. Instead:
+
+1. Open the Terminal application.
+2. Run the following command:
+
+```bash
+/Applications/AMPL/fingerprint -s
+```
+
+If AMPL is installed in a different location, replace `/Applications/AMPL/` with the appropriate installation path.
+
+The command will print your system fingerprint, copy it to the Clipboard.
+```
+
 Now return to your trial license form, and use your computer’s paste function to paste the fingerprint into the indicated field on the form. Complete the form and click the Submit button at the bottom; we will reply by email with a license file and instructions for downloading the AMPL and solver software.
 
 **Troubleshooting tip:** If the fingerprint program is provisionally blocked by your version of MacOSX, then proceed as follows: While holding down the Ctrl key, click on the fingerprint file icon; a small contextual menu will pop up. Select Open in that menu, and you will see a dialog box that asks, “Are you sure you want to open it?” Then click Open again in that dialog box, to run the fingerprint program.
