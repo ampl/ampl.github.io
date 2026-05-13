@@ -1,7 +1,6 @@
 # How to Install AMPL
 
-After downloading your AMPL & Solvers bundle from the [AMPL Portal](https://portal.ampl.com),
-please follow the instructions below that correspond to your operating system:
+Get your license at the [AMPL Portal](https://portal.ampl.com). AMPL is free for [academics](https://ampl.com/academia/), and you can easily install it through Python.
 
 - [How to Install AMPL](#how-to-install-ampl)
   - [To use with Python](#to-use-with-python)
@@ -44,7 +43,7 @@ $ python -m pip install amplpy --upgrade
 # Install solver modules (e.g., HiGHS, CBC, Gurobi)
 $ python -m amplpy.modules install highs cbc gurobi --upgrade
 
-# Activate your license (e.g., free https://ampl.com/ce license)
+# Activate your license (e.g., free https://ampl.com/academia or https://ampl.com/ce license)
 $ python -m amplpy.modules activate <license-uuid>
 
 # Import in Python
@@ -59,11 +58,14 @@ Recommend IDE: It is recommend to use [VS Code](https://code.visualstudio.com/do
 
 ## To use with other APIs
 
+After downloading your AMPL & Solvers bundle from the [AMPL Portal](https://portal.ampl.com),
+please follow the instructions below that correspond to your operating system:
+
 ### Windows
 
 **For Windows, we have an installer available that asks for your license UUID during the installation process.**
 
-In case you have AMPL already installed, activate your license if you received a license UUID (e.g., [AMPL CE](https://ampl.com/ce) or [AMPL for Courses](https://ampl.com/courses) licenses):
+In case you have AMPL already installed, activate your license if you received a license UUID (e.g., [AMPL for Academics](https://ampl.com/academia/), [AMPL for Courses](https://ampl.com/courses), [AMPL Career Starter](https://portal.ampl.com/user/ampl/request/ampl-career-starter/new), or [AMPL Community Edition](https://ampl.com/ce) licenses):
 
 Run this command in AMPL to activate your license:
 ```
@@ -85,7 +87,7 @@ Recommend IDE: It is recommend to use [VS Code](https://code.visualstudio.com/do
 
 **For macOS, we have an installer available that asks for the license UUID at the end for the installation process.**
 
-In case you have AMPL already installed, activate your license if you received a license UUID (e.g., [AMPL CE](https://ampl.com/ce) or [AMPL for Courses](https://ampl.com/courses) licenses):
+In case you have AMPL already installed, activate your license if you received a license UUID (e.g., [AMPL for Academics](https://ampl.com/academia/) or [AMPL for Courses](https://ampl.com/courses) licenses):
 
 Run this command in AMPL to activate your license:
 ```
@@ -116,7 +118,7 @@ Recommend IDE: It is recommend to use [VS Code](https://code.visualstudio.com/do
 
     In a command window, use cd to go to your AMPL directory, then type `./ampl` at the system prompt. Then you will see an `ampl:` prompt and can proceed to type AMPL commands.
 
-4. **Activate your license if you received a license UUID (e.g., [AMPL CE](https://ampl.com/ce) licenses):**
+4. **Activate your license if you received a license UUID (e.g., [AMPL for Academics](https://ampl.com/academia/) licenses):**
 
     Run this command in AMPL to activate your license:
     ```
@@ -128,7 +130,7 @@ Recommend IDE: It is recommend to use [VS Code](https://code.visualstudio.com/do
 ```{note}
 **If you install AMPL somewhere in your home directory, you do not need to worry about the following.**
 
-If you use cloud licenses (e.g., [AMPL Community Edition](https://ampl.com/ce/) licenses), **the AMPL directory cannot be read-only**. If really you want to have AMPL installed on a read-only directory, you need to set the environment
+If you use cloud licenses (e.g., [AMPL for Academics](https://ampl.com/academia/) licenses), **the AMPL directory cannot be read-only**. If really you want to have AMPL installed on a read-only directory, you need to set the environment
 variables `AMPL_LICFILE` to a location where you store `ampl.lic` and where you have permissions to write, and set `AMPLKEY_RUNTIME_DIR` to a temporary directory.
 
 For instance, assuming that you want to install AMPL on a Linux system in the `/opt` directory, which is not writeable by normal users. To install AMPL and dynamic licenses, you need to do the following:
