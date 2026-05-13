@@ -1,5 +1,9 @@
 # AMPL Changelog
 
+## 20260429
+
+* Fix a obscure bug causing a crash related to defined variables under certain circumstances.
+
 ## 20250901
 
 * Update to `snapshot 0.1.6`: Suffixes related to variables and constraints are showed in the snapshot by default (or when "solution" is included). Before, it only happened after the problem has been solved, regardless "solution" was being included.
