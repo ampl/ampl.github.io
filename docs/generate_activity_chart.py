@@ -38,6 +38,7 @@ _TEMPLATE = """\
 .rac-months span{{position:absolute;font-size:10px;color:#767676;line-height:1}}
 .rac-grid{{display:grid;grid-template-rows:repeat(7,11px);grid-auto-columns:11px;grid-auto-flow:column;gap:2px}}
 .rac-cell{{width:11px;height:11px;border-radius:2px;cursor:default}}
+.rac-cell-link{{display:block;width:11px;height:11px;border-radius:2px;cursor:pointer;text-decoration:none}}
 .rac-l0{{background:#ebedf0}}
 .rac-l1{{background:#9be9a8}}
 .rac-l2{{background:#40c463}}
@@ -80,6 +81,7 @@ var MONTHS={months};
 function p2(n){{return String(n).padStart(2,'0')}}
 function ds(d){{return d.getFullYear()+'-'+p2(d.getMonth()+1)+'-'+p2(d.getDate())}}
 function level(c){{return !c?0:c<=2?1:c<=5?2:c<=8?3:4}}
+var ANCHORS={{}};
 function render(){{
   document.getElementById('rac-year').textContent=year;
   document.getElementById('rac-prev').disabled=year<=MIN_Y;
@@ -96,9 +98,18 @@ function render(){{
     var iny=d.getFullYear()===year;
     var s=ds(d),c=D[s]||0,lv=iny?level(c):'x';
     if(iny&&d.getDate()===1&&mpos[d.getMonth()]===undefined)mpos[d.getMonth()]=wi;
-    var cell=document.createElement('div');
-    cell.className='rac-cell rac-l'+lv;
-    if(iny){{var lbl=c===0?'No releases':c+' release'+(c>1?'s':'');cell.title=s+': '+lbl;}}
+    var lbl=c===0?'No releases':c+' release'+(c>1?'s':'');
+    var cell;
+    if(iny&&c>0){{
+      cell=document.createElement('a');
+      cell.href=ANCHORS[s]?'#'+ANCHORS[s]:'#';
+      cell.className='rac-cell-link rac-l'+lv;
+      cell.title=s+': '+lbl;
+    }}else{{
+      cell=document.createElement('div');
+      cell.className='rac-cell rac-l'+lv;
+      if(iny)cell.title=s+': '+lbl;
+    }}
     grid.appendChild(cell);
     d.setDate(d.getDate()+1);
     if(d.getDay()===0)wi++;
@@ -116,7 +127,16 @@ window.racNav=function(delta){{
   var ny=year+delta;
   if(ny>=MIN_Y&&ny<=MAX_Y){{year=ny;render();}}
 }};
-render();
+document.addEventListener('DOMContentLoaded',function(){{
+  document.querySelectorAll('section[id]').forEach(function(sec){{
+    var h=sec.querySelector('h2');
+    if(h&&/^\\d{{8}}/.test(h.textContent.trim())){{
+      var date=h.textContent.trim().slice(0,8);
+      ANCHORS[date.slice(0,4)+'-'+date.slice(4,6)+'-'+date.slice(6,8)]=sec.id;
+    }}
+  }});
+  render();
+}});
 }})();
 </script>
 </div>
