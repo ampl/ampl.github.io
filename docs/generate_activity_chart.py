@@ -49,7 +49,7 @@ _TEMPLATE = """\
 .rac-barcharts{{display:flex;gap:2em;margin-top:1em;flex-wrap:wrap}}
 .rac-barchart{{display:flex;flex-direction:column;gap:4px}}
 .rac-barchart-title{{font-size:11px;color:#767676;font-weight:600}}
-.rac-bars{{display:flex;align-items:flex-end;gap:3px;height:75px}}
+.rac-bars{{display:flex;align-items:flex-end;gap:3px;height:130px}}
 .rac-bar{{display:flex;flex-direction:column;align-items:center;cursor:default}}
 .rac-bar-y{{cursor:pointer}}
 .rac-bar-y:hover .rac-bar-fill,.rac-bar-active .rac-bar-fill{{background:#216e39!important}}
@@ -126,7 +126,7 @@ function buildYearChart(){{
   var mx=Math.max.apply(null,ys.map(function(y){{return yTot[y]||0;}}));
   var el=document.getElementById('rac-year-bars');el.innerHTML='';
   ys.forEach(function(y){{
-    var c=yTot[y]||0,h=mx?Math.round(c/mx*56)+4:2;
+    var c=yTot[y]||0,h=mx?Math.round(c/mx*112)+4:2;
     var cls='rac-bar-y'+(y===year?' rac-bar-active':'');
     var b=makeBar(h,16,String(y).slice(2),y+': '+c+' release'+(c!==1?'s':''),cls,c||'');
     b.onclick=(function(yy){{return function(){{year=yy;render();}};}})(y);
@@ -140,7 +140,7 @@ function buildMonthChart(){{
   document.getElementById('rac-month-title').textContent='Releases per month ('+year+')';
   var el=document.getElementById('rac-month-bars');el.innerHTML='';
   MONTHS.forEach(function(m,i){{
-    var c=mTot[i],h=mx?Math.round(c/mx*56)+4:2;
+    var c=mTot[i],h=mx?Math.round(c/mx*112)+4:2;
     var b=makeBar(h,28,m,m+' '+year+': '+c+' release'+(c!==1?'s':''),'',c||'');
     if(!c)b.querySelector('.rac-bar-fill').style.opacity='0.3';
     el.appendChild(b);
