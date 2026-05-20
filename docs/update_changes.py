@@ -140,9 +140,33 @@ mp_changelog = mp_changelog[mp_changelog.find("##") :]
 mp_changelog = f"# AMPL MP Library Changelog\n\n{mp_changelog}"
 open("source/releases/mp.md", "w").write(mp_changelog)
 releases["mp"] = {
-    "label": "MP",
+    "label": "AMPL MP",
     "file": "releases/mp.md",
     "versions": re.findall(r"## (\d{8})", open("source/releases/mp.md").read()),
+}
+
+amplpy_changelog = fetch_url_content(
+    "https://raw.githubusercontent.com/ampl/amplpy/refs/heads/master/CHANGELOG.md"
+)
+amplpy_changelog = amplpy_changelog[amplpy_changelog.find("##") :]
+amplpy_changelog = f"# amplpy Changelog\n\n{amplpy_changelog}"
+open("source/releases/amplpy.md", "w").write(amplpy_changelog)
+releases["amplpy"] = {
+    "label": "AMPLPY",
+    "file": "releases/amplpy.md",
+    "versions": re.findall(r"## (\d{8})", open("source/releases/amplpy.md").read()),
+}
+
+amplgsl_changelog = fetch_url_content(
+    "https://raw.githubusercontent.com/ampl/gsl/cf180cd7fbd06039a577f9c9ff0b428784765ac1/ampl/CHANGES.amplgsl.md"
+)
+amplgsl_changelog = amplgsl_changelog[amplgsl_changelog.find("##") :]
+amplgsl_changelog = f"# AMPL GSL Library Changelog\n\n{amplgsl_changelog}"
+open("source/releases/amplgsl.md", "w").write(amplgsl_changelog)
+releases["amplgsl"] = {
+    "label": "GSL",
+    "file": "releases/amplgsl.md",
+    "versions": re.findall(r"## (\d{8})", open("source/releases/amplgsl.md").read()),
 }
 
 cuopt_changelog = fetch_url_content(
@@ -196,12 +220,13 @@ print(
 :glob:
 ampl.md
 mp.md
+amplgsl.md
+amplpy.md
 ```
 
 """,
     file=changes,
 )
-
 for date in sorted(released_on, reverse=True):
     print(f"## {date}", file=changes)
     if len(released_on[date]) != len(set(released_on[date])):

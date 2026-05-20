@@ -1,5 +1,20 @@
 # AMPL MP Library Changelog
 
+## 20260515
+- Fixed a bug in solve result name in the Multi-Objective
+  Emulator.
+- Similar to inlining, nonlinear expressions with nontrivial
+  external bounds are explicified into an auxiliary variable,
+  depending on options *cvt:pre:boundsbest* and
+  *cvt:pre:boundlogarg*.
+- Fixed a debugging feature on Windows.
+- Fixed a non-critical bug in the inlining of algebraic subexpressions
+  resulting from redefinitions, option *cvt:pre:unnest*.
+  In particular
+  with *cvt:pre:boundsbest=1*, subexpressions
+  with stronger result bounds are not inlined.  
+
+
 ## 20260414
 - Fixed a bug in the multi-objective emulator
   (see option *obj:multi*) when nonlinear terms

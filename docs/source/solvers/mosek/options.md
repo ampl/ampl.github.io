@@ -258,8 +258,14 @@ cvt:expcones (expcones)
       0/1*: Recognize exponential cones.
 
 cvt:expr:nlassign (expr:nlassign)
-      Above which reference count, a formula node should be assigned to a
-      variable (see acc: options). 0 means all nodes outlined. Default 1.
+      Above which reference count, an algebraic formula node should be
+      assigned to a variable (see acc: options). 0 means all nodes assigned.
+      Default 1.
+
+cvt:expr:nlreif (expr:nlreif, expr:nlreify)
+      Above which reference count, a logical formula node should be assigned
+      (reified) to a variable (see acc: options). 0 means all nodes reified.
+      Default 1.
 
 cvt:mip:eps (cvt:cmp:eps, cmp:eps)
       Tolerance for strict comparison of continuous variables for MIP. Applies
@@ -300,7 +306,8 @@ cvt:pre:boundsbest (boundsbest)
       0*/1: Submit best-known variable bounds to the solver. Can inhibit its
       presolve.
 
-      Note: when a variable can be fixed, the stronger bounds are submitted.
+      Note: when a variable can be fixed, the stronger bounds are always
+      submitted.
 
 cvt:pre:continuous_fixed_vars (continuous_fixed_vars, ctg_fixed)
       0/1*: Make fixed variables continuous, to avoid fake MIPs.
@@ -562,8 +569,8 @@ cvt:qp2passes (cvt:qp2pass, qp2passes, qp2pass)
 
 cvt:quadcon (passquadcon)
       Convenience option. Set to 0 to disable quadratic constraints. Synonym
-      for acc:quad..=0. Currently this disables out-multiplication of
-      quadratic terms, then they are linearized.
+      for acc:quad..=0. Setting to 0 disables out-multiplication of quadratic
+      terms, then they are linearized.
 
 cvt:quadobj (passquadobj)
       0/1*: Pass quadratic objective terms to the solver. When 0, if the

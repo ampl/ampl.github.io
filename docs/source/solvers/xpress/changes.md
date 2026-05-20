@@ -1,5 +1,12 @@
 # XPRESS Changelog
 
+## 20260515
+- Updated to Xpress 46.01.02, which includes bugfixes
+  and performance improvements. 
+- Solve result LIMIT_INF_UNB, 450 is returned in some cases
+  (previously used UNBOUNDED_NO_FEAS, 350).
+
+
 ## 20260414
 - Fixed solve result reporting for (MI)NLP.
 - Mark result/argument variables of logical

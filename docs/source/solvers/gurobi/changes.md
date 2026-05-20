@@ -1,5 +1,12 @@
 # GUROBI Changelog
 
+## 20260515
+- Updated to Gurobi 13.0.2, which includes bugfixes;
+  the GPU-PDHG algorithm has matured from the beta state
+  and is now fully supported.
+- Changes in MP.
+
+
 ## 20260414
 - Changes in MP, see MP changelog. In particular:
   - Additional case where the signpow function
