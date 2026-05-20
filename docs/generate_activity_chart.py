@@ -73,6 +73,15 @@ _TEMPLATE = """\
     </div>
   </div>
 </div>
+<div class="rac-legend">
+  <span>Less&nbsp;</span>
+  <div class="rac-cell rac-l0" title="No releases"></div>
+  <div class="rac-cell rac-l1" title="1–2 releases"></div>
+  <div class="rac-cell rac-l2" title="3–5 releases"></div>
+  <div class="rac-cell rac-l3" title="6–8 releases"></div>
+  <div class="rac-cell rac-l4" title="9+ releases"></div>
+  <span>&nbsp;More</span>
+</div>
 <div class="rac-barcharts">
   <div class="rac-barchart">
     <div class="rac-barchart-title">Releases per year</div>
@@ -82,15 +91,6 @@ _TEMPLATE = """\
     <div class="rac-barchart-title" id="rac-month-title">Releases per month</div>
     <div class="rac-bars" id="rac-month-bars"></div>
   </div>
-</div>
-<div class="rac-legend">
-  <span>Less&nbsp;</span>
-  <div class="rac-cell rac-l0" title="No releases"></div>
-  <div class="rac-cell rac-l1" title="1–2 releases"></div>
-  <div class="rac-cell rac-l2" title="3–5 releases"></div>
-  <div class="rac-cell rac-l3" title="6–8 releases"></div>
-  <div class="rac-cell rac-l4" title="9+ releases"></div>
-  <span>&nbsp;More</span>
 </div>
 <script>
 (function(){{
