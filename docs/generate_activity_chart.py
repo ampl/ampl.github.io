@@ -53,7 +53,8 @@ _TEMPLATE = """\
 .rac-bar{{display:flex;flex-direction:column;align-items:center;cursor:default}}
 .rac-bar-y{{cursor:pointer}}
 .rac-bar-y:hover .rac-bar-fill,.rac-bar-active .rac-bar-fill{{background:#216e39!important}}
-.rac-bar-fill{{border-radius:2px 2px 0 0;min-height:2px;background:#40c463}}
+.rac-bar-fill{{position:relative;border-radius:2px 2px 0 0;min-height:2px;background:#40c463;overflow:hidden}}
+.rac-bar-cnt{{position:absolute;bottom:2px;left:0;right:0;text-align:center;font-size:8px;color:rgba(255,255,255,.9);line-height:1;pointer-events:none}}
 .rac-bar-lbl{{font-size:9px;color:#767676;margin-top:2px;white-space:nowrap}}
 </style>
 <div class="rac-controls">
@@ -101,13 +102,18 @@ function p2(n){{return String(n).padStart(2,'0')}}
 function ds(d){{return d.getFullYear()+'-'+p2(d.getMonth()+1)+'-'+p2(d.getDate())}}
 function level(c){{return !c?0:c<=2?1:c<=5?2:c<=8?3:4}}
 var ANCHORS={{}};
-function makeBar(h,w,lbl,title,cls){{
+function makeBar(h,w,lbl,title,cls,cnt){{
   var b=document.createElement('div');
   b.className='rac-bar'+(cls?' '+cls:'');
   if(title)b.title=title;
   var f=document.createElement('div');
   f.className='rac-bar-fill';
   f.style.cssText='height:'+h+'px;width:'+w+'px';
+  if(cnt&&h>=14){{
+    var n=document.createElement('span');
+    n.className='rac-bar-cnt';n.textContent=cnt;
+    f.appendChild(n);
+  }}
   var l=document.createElement('div');
   l.className='rac-bar-lbl';l.textContent=lbl;
   b.appendChild(f);b.appendChild(l);
@@ -122,7 +128,7 @@ function buildYearChart(){{
   ys.forEach(function(y){{
     var c=yTot[y]||0,h=mx?Math.round(c/mx*56)+4:2;
     var cls='rac-bar-y'+(y===year?' rac-bar-active':'');
-    var b=makeBar(h,16,String(y).slice(2),y+': '+c+' release'+(c!==1?'s':''),cls);
+    var b=makeBar(h,16,String(y).slice(2),y+': '+c+' release'+(c!==1?'s':''),cls,c||'');
     b.onclick=(function(yy){{return function(){{year=yy;render();}};}})(y);
     el.appendChild(b);
   }});
@@ -135,7 +141,7 @@ function buildMonthChart(){{
   var el=document.getElementById('rac-month-bars');el.innerHTML='';
   MONTHS.forEach(function(m,i){{
     var c=mTot[i],h=mx?Math.round(c/mx*56)+4:2;
-    var b=makeBar(h,28,m,m+' '+year+': '+c+' release'+(c!==1?'s':''),'');
+    var b=makeBar(h,28,m,m+' '+year+': '+c+' release'+(c!==1?'s':''),'',c||'');
     if(!c)b.querySelector('.rac-bar-fill').style.opacity='0.3';
     el.appendChild(b);
   }});
