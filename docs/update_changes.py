@@ -196,18 +196,22 @@ changes = open("source/releases/index.md", "w")
 print(
     """(releases)=
 
-# Release History
+# Product Updates
 
 """,
     file=changes,
 )
+print(activity_chart_block(released_on), file=changes, end="")
 
+print("## Changelogs", file=changes)
 changelogs = {
     (releases[item]["label"], item): releases[item]["file"] for item in releases
 }
+md_list = []
 for label, item in sorted(changelogs, key=lambda x: x[0].lower()):
     latest = max(releases[item]["versions"])
     fname = changelogs[label, item]
+    md_list.append(f"../{fname}")
     print(
         f"- [**{label}** Changelog (latest: **{latest}**)](../{fname})",
         file=changes,
@@ -215,20 +219,15 @@ for label, item in sorted(changelogs, key=lambda x: x[0].lower()):
 
 
 print(
-    """
-```{toctree}
+    f"""
+```{{toctree}}
 :hidden:
 :glob:
-ampl.md
-mp.md
-amplgsl.md
-amplpy.md
+{'\n'.join(md_list)}
 ```
-
 """,
     file=changes,
 )
-print(activity_chart_block(released_on), file=changes, end="")
 for date in sorted(released_on, reverse=True):
     print(f"## {date}", file=changes)
     if len(released_on[date]) != len(set(released_on[date])):

@@ -18,7 +18,6 @@ import sys
 _MONTHS_JS = "['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']"
 
 _TEMPLATE = """\
-## Release Activity
 
 ```{{raw}} html
 <div id="rac-root">
