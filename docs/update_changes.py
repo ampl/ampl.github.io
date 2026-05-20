@@ -2,6 +2,7 @@ import subprocess
 import os
 import re
 import json
+from generate_activity_chart import activity_chart_block
 
 SOLVERS = {
     "BARON": "baron",
@@ -227,6 +228,7 @@ amplpy.md
 """,
     file=changes,
 )
+print(activity_chart_block(released_on), file=changes, end="")
 for date in sorted(released_on, reverse=True):
     print(f"## {date}", file=changes)
     if len(released_on[date]) != len(set(released_on[date])):
