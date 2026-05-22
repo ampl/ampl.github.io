@@ -100,6 +100,13 @@ acc:atanh
       3 - Accepted but automatic redefinition will be used where possible
       4 - Accepted natively and preferred
 
+acc:call
+      Solver acceptance level for 'CallConstraint' as expression, default 4:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      3 - Accepted but automatic redefinition will be used where possible
+      4 - Accepted natively and preferred
+
 acc:condlineq
       Solver acceptance level for 'CondLinConEQ' as expression, default 4:
 
@@ -585,6 +592,9 @@ cvt:pre:ctx:atan (ctx:atan)
 
 cvt:pre:ctx:atanh (ctx:atanh)
       Context propagation for 'Atanh' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:call (ctx:call)
+      Context propagation for 'Call' expression, see cvt:pre:ctx:abs.
 
 cvt:pre:ctx:condlineq (ctx:condlineq)
       Context propagation for 'Conditional< AlgebraicConstraint< LinTerms,
