@@ -32,6 +32,7 @@ SOLVERS = {
     "GCG": "gcg",
     "SCIP-CPX": "scip-cpx",
     "GCG-CPX": "gcg-cpx",
+    "MP2NL": "mp2nl",
 }
 
 import requests
@@ -54,6 +55,7 @@ def filter_changelog(changelog):
 
 
 releases = {}
+ampl_location = subprocess.check_output(["which", "ampl"]).decode()
 for label, solver in SOLVERS.items():
     try:
         output = subprocess.check_output([solver, "-="]).decode().strip()
@@ -63,13 +65,12 @@ for label, solver in SOLVERS.items():
     # (errors="ignore")
     # subprocess.check_output(f"{solver} -= || true", shell=True).decode().strip()
 
-    exec_location = subprocess.check_output(["which", solver]).decode()
     if solver in ["lgo"]:
         # handle solvers whose changelog are not being distributed
         changes = f"source/solvers/{solver}/changes.md"
     else:
         changes = os.path.join(
-            os.path.dirname(exec_location), "docs", f"CHANGES.{solver}.md"
+            os.path.dirname(ampl_location), "docs", f"CHANGES.{solver}.md"
         )
 
     if os.path.exists(changes):
