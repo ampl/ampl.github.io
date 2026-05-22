@@ -1,5 +1,53 @@
 # AMPL Changelog
 
+## 20260520
+
+* Drop partial declarations under error. Errors in declarations would keep the entities declared, so they could be later redeclare (for example, using the `redeclare` command). Now this behavior changes to a more natural one, so errors in declarations of Variables, Parameters, Sets, Objectives or Constraints won't declare the entity partially. With this update, the following code would be valid:
+
+```
+var x hinttreger {i in 1..10}; # rather than "var x integer;"
+var x integer {i in 1..10}; # rather than "var x integer;"
+```
+
+The first declaration will trigger a syntax error. The second line will declare variable `x` correctly (before this change, the second line would also trigger an error since `x` would be already declared). This should not affect the behavior of correct AMPL models.
+
+* Provide a better error message for attempts to reuse a loopdummy as a dummy.  Example: with
+```
+	param p{1..3};
+	for{i in 1..2}{
+		let {i in 1..3} p[i] := Uniform01();
+		display p;
+		}
+```
+in file "foo", the invocation "ampl foo" now gives
+```
+		syntax error: attempt to reuse loopdummy as dummy
+	context:  let {i in  >>> 1..3} <<<  p[i] := Uniform01();
+```
+instead of just
+```
+	foo, line 3 (offset 39):
+		syntax error
+	context:  let {i  >>> in  <<< 1..3} p[i] := Uniform01();
+```
+
+* Fix an obscure bug with interactive use:  a syntax error could cause the current problem name to be lost.  For example, if "foo" contains
+```
+	var x; var y >= 0;
+	minimize o: x^2 + (y - 10)^2;
+	minimize f: (x - y)^2;
+	problem Outer: x, o;
+	problem Inner: y, f;
+	solve outer; # not defined
+```
+then (the interactive) `include foo` gives error message
+```
+	foo, line 6 (offset 146):
+		outer is not defined
+```
+
+after which `show Inner;` gave "Inner is undefined. ..." instead of showing Inner.
+
 ## 20260429
 
 * Fix a obscure bug causing a crash related to defined variables under certain circumstances.

@@ -192,7 +192,7 @@ document.addEventListener('DOMContentLoaded',function(){
 ```
 
 ## Changelogs
-- [**AMPL** Changelog (latest: **20260429**)](../releases/ampl.md)
+- [**AMPL** Changelog (latest: **20260520**)](../releases/ampl.md)
 - [**AMPL MP** Changelog (latest: **20260515**)](../releases/mp.md)
 - [**AMPLPY** Changelog (latest: **20251208**)](../releases/amplpy.md)
 - [**BARON** Changelog (latest: **20251225**)](../solvers/baron/changes.md)
@@ -248,6 +248,8 @@ document.addEventListener('DOMContentLoaded',function(){
 ../solvers/xpress/changesasl.md
 ```
 
+## 20260520
+- [AMPL](../releases/ampl.md#20260520)
 ## 20260519
 - [GSL](../releases/amplgsl.md#20260519)
 ## 20260515
