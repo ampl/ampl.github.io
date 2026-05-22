@@ -5,8 +5,8 @@
 * Drop partial declarations under error. Errors in declarations would keep the entities declared, so they could be later redeclare (for example, using the `redeclare` command). Now this behavior changes to a more natural one, so errors in declarations of Variables, Parameters, Sets, Objectives or Constraints won't declare the entity partially. With this update, the following code would be valid:
 
 ```
-var x hinttreger {i in 1..10}; # rather than "var x integer;"
-var x integer {i in 1..10}; # rather than "var x integer;"
+var x hinttreger {i in 1..10}; # syntax error
+var x integer {i in 1..10}; # correct declaration
 ```
 
 The first declaration will trigger a syntax error. The second line will declare variable `x` correctly (before this change, the second line would also trigger an error since `x` would be already declared). This should not affect the behavior of correct AMPL models.
