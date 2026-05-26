@@ -171,6 +171,18 @@ releases["amplgsl"] = {
     "versions": re.findall(r"## (\d{8})", open("source/releases/amplgsl.md").read()),
 }
 
+ampls_changelog = fetch_url_content(
+    "https://raw.githubusercontent.com/ampl/ampls-api/refs/heads/master/changes.md"
+)
+ampls_changelog = ampls_changelog[ampls_changelog.find("##") :]
+ampls_changelog = f"# AMPLS Libraries Changelog\n\n{ampls_changelog}"
+open("source/releases/ampls.md", "w").write(ampls_changelog)
+releases["ampls"] = {
+    "label": "AMPLS",
+    "file": "releases/ampls.md",
+    "versions": re.findall(r"## (\d{8})", open("source/releases/ampls.md").read()),
+}
+
 cuopt_changelog = fetch_url_content(
     "https://raw.githubusercontent.com/ampl/mp/refs/heads/develop/solvers/cuoptmp/CHANGES.cuoptmp.md"
 )
