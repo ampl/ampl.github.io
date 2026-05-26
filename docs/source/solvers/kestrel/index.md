@@ -251,3 +251,9 @@ Kill Job #11200670 Request sent to prod-sub-1.neos-server.org
 ```
 
 Normally Kestrel will still be running at this point, so you will need to start up a second AMPL process to enter these commands. After the job has been terminated, the Kestrel run in your original AMPL window will complete and return you to the `ampl:` prompt. If the solver is set up to handle interruptions, Kestrel will return the best solution that the solver was able to find.
+
+## Changelog
+
+```{toctree}
+changes.md
+```

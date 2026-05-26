@@ -33,6 +33,7 @@ SOLVERS = {
     "SCIP-CPX": "scip-cpx",
     "GCG-CPX": "gcg-cpx",
     "MP2NL": "mp2nl",
+    "Kestrel": "kestrel",
 }
 
 import requests
@@ -61,7 +62,8 @@ for label, solver in SOLVERS.items():
         output = subprocess.check_output([solver, "-="]).decode().strip()
     except:
         print(f"{solver} -= failed")
-        continue
+        output = ""
+        #continue
     # (errors="ignore")
     # subprocess.check_output(f"{solver} -= || true", shell=True).decode().strip()
 
@@ -97,6 +99,10 @@ for label, solver in SOLVERS.items():
         open(f"source/{fname}", "w").write(content)
     else:
         print(f"No changelog for {solver}.")
+
+    if output == "":
+        print(f"No options for {solver}.")
+        continue
 
     if solver.endswith("asl"):
         fname = f"source/solvers/{solver.replace('asl', '')}/{solver}.md"
