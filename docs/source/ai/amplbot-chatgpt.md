@@ -1,6 +1,6 @@
 # AMPLbot in ChatGPT
 
-AMPLbot is AMPL's specialized AI assistant for optimization, available on the ChatGPT platform.
+AMPLbot is AMPL's specialized AI assistant for optimization, available on the ChatGPT platform as a custom GPT.
 
 For common questions about capabilities, usage, and limits, see [FAQ: AMPLbot](faq-amplbot.md).
 
@@ -18,6 +18,8 @@ Try it here: [AMPLbot on ChatGPT](https://l.ampl.com/https://chatgpt.com/g/g-68c
 
 AMPLbot is focused on optimization modeling with AMPL and practical AMPL+Python workflows. It is designed to provide more reliable guidance for AMPL use cases, from modeling and debugging to deployment patterns.
 
+AMPLbot will reference internal documentation, reducing the probability of hallucinations in the answers. In any case, you should understand and verify the assistant output.
+
 ## Typical prompts
 
 - "Help me formulate a production planning model in AMPL from this business description."
@@ -27,7 +29,7 @@ AMPLbot is focused on optimization modeling with AMPL and practical AMPL+Python 
 
 ## Notes
 
-- AMPLbot helps you write and improve optimization code but does not execute your model.
+- **Code execution:** AMPLbot helps you write and improve optimization code but does not execute your model.
 - As with any LLM, review generated code and recommendations before using them in production.
 
 For detailed FAQ entries, see [FAQ: AMPLbot](faq-amplbot.md).

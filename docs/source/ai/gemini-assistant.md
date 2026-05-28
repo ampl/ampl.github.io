@@ -14,7 +14,6 @@ Use AMPLbot to enhance and accelerate your mathematical programming workflows:
 - **Formulation & Translation:** Convert complex natural-language business descriptions and mathematical formulations into clean, executable code.
 - **Rigorous Debugging:** Diagnose infeasible or unbounded models, resolve script syntax issues, and optimize solver configurations for performance.
 - **Style & Best Practices:** Refine model architecture following official style guidelines to ensure scalability, readability, and efficient presolve operations.
-- **Grounded Optimization Theory:** Gain deep insights into underlying mathematical concepts (linear programming, integer programming, network flows, etc.) aligned with the core literature.
 
 ## Why Use This Gem Over General LLMs?
 
@@ -28,11 +27,12 @@ Unlike standard language models, AMPLbot operates under strict domain-specific c
 ## Typical Prompts
 
 - *"Help me formulate a multi-period capacity planning model using amplpy from this description."*
-- *"I am encountering an evaluation error in my constraint. How should I debug this based on the style guide?"*
+- *"Why is my model infeasible? Help me debugging the model"*
 - *"Can you explain the mathematical difference between these two formulations and implement the more efficient one in Python?"*
+- *"Suggest solver options to improve runtime on this problem."*
 - *"Which chapter of the AMPL Book covers piecewise-linear objectives, and how do I declare them via amplpy?"*
 
 ## Operational Notes
 
 - **Code Validation:** AMPLbot excels at generating, optimizing, and explaining code structures but does not execute optimization scripts or interact with live solvers. Always run and validate the code within your own local or cloud environment.
-- **Clarification Loop:** To maintain extreme precision, the Gem may ask clarifying questions regarding your objective functions, constraint sets, or data layouts before proposing a definitive formulation.
+- **Clarification Loop:** In order to provide the best quality answers, the Gem may ask clarifying questions regarding your objective functions, constraint sets, or data layouts before proposing a definitive formulation.
