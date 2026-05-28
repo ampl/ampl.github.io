@@ -32,3 +32,6 @@ Browse these resources for additional information about AMPL.
 
 -   [**FAQs**](faq.md)  
     AMPL Frequently Asked Questions (FAQ).
+
+-   [**AI for Optimization**](../ai/index.md)  
+    AI-focused resources including amplbot FAQs and LLM-related pages.

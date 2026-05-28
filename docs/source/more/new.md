@@ -19,7 +19,7 @@ Amplbot does not execute code, but the code it generates is usually ready to run
 
 Whether you're new to optimization or tackling complex models, amplbot can streamline your workflow and reduce the time from idea to optimized model.
 
-See the [Amplbot FAQ section](https://dev.ampl.com/help/faq-amplbot.html) for more details. 
+See the [Amplbot FAQ section](https://dev.ampl.com/ai/faq-amplbot.html) for more details. 
 
 
 ## New IDE for AMPL: Official Extension for Visual Studio Code

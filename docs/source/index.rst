@@ -58,6 +58,12 @@ It connects seamlessly to major :ref:`commercial and open-source solvers <solver
         :link: https://ampl.com/mo-book/
 
         Collection of Jupyter Notebooks that demonstrate the use of AMPL with various solvers on a large variety of problem types.
+
+    .. grid-item-card:: AI for Optimization
+        :link: ai_for_optimization
+        :link-type: ref
+
+        AI-focused resources for AMPL users, including amplbot and related tools.
         
     .. grid-item-card:: AMPL on Google Colab
         :link: https://ampl.com/colab/
@@ -77,11 +83,12 @@ It connects seamlessly to major :ref:`commercial and open-source solvers <solver
 
     ampl/index
     solvers/index
-    more/index
 
 .. toctree::
     :hidden:
     :maxdepth: 1
 
+    AI for Optimization <ai/index>
     Releases <releases/index>
+    Learn More <more/index>
 
