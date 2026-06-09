@@ -381,7 +381,7 @@ alg:lbpen (lbpen)
       See alg:feasrelax.
 
 alg:matrixtol (matrixtol)
-      nput matrix coefficient tolerance (default 1e-10).
+      input matrix coefficient tolerance (default 1e-10).
 
 alg:nonconvex (nonconvex)
       Strategy for continuous nonconvex models (default -1):
@@ -390,6 +390,9 @@ alg:nonconvex (nonconvex)
       0  - Report nonconvexity and terminate
       1  - Search for a locally optimal solution
       2  - Search for a globally optimal solution.
+
+alg:qmatrixtol (qmatrixtol)
+      input Q matrix coefficient tolerance (default 5e-14).
 
 alg:rays (rays)
       Whether to return suffix .unbdd (unbounded ray) if the objective is
@@ -462,8 +465,14 @@ cvt:expcones (expcones)
       0/1*: Recognize exponential cones.
 
 cvt:expr:nlassign (expr:nlassign)
-      Above which reference count, a formula node should be assigned to a
-      variable (see acc: options). 0 means all nodes outlined. Default 1.
+      Above which reference count, an algebraic formula node should be
+      assigned to a variable (see acc: options). 0 means all nodes assigned.
+      Default 1.
+
+cvt:expr:nlreif (expr:nlreif, expr:nlreify)
+      Above which reference count, a logical formula node should be assigned
+      (reified) to a variable (see acc: options). 0 means all nodes reified.
+      Default 1.
 
 cvt:mip:eps (cvt:cmp:eps, cmp:eps)
       Tolerance for strict comparison of continuous variables for MIP. Applies
@@ -504,7 +513,8 @@ cvt:pre:boundsbest (boundsbest)
       0*/1: Submit best-known variable bounds to the solver. Can inhibit its
       presolve.
 
-      Note: when a variable can be fixed, the stronger bounds are submitted.
+      Note: when a variable can be fixed, the stronger bounds are always
+      submitted.
 
 cvt:pre:continuous_fixed_vars (continuous_fixed_vars, ctg_fixed)
       0/1*: Make fixed variables continuous, to avoid fake MIPs.
@@ -564,6 +574,9 @@ cvt:pre:ctx:atan (ctx:atan)
 
 cvt:pre:ctx:atanh (ctx:atanh)
       Context propagation for 'Atanh' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:call (ctx:call)
+      Context propagation for 'Call' expression, see cvt:pre:ctx:abs.
 
 cvt:pre:ctx:condlineq (ctx:condlineq)
       Context propagation for 'Conditional< AlgebraicConstraint< LinTerms,
@@ -676,6 +689,9 @@ cvt:pre:ctx:quadfn (ctx:quadfn)
       Context propagation for 'QuadraticFunctionalConstraint' expression, see
       cvt:pre:ctx:abs.
 
+cvt:pre:ctx:sdpdotprod (ctx:sdpdotprod)
+      Context propagation for 'SDPDotProd' expression, see cvt:pre:ctx:abs.
+
 cvt:pre:ctx:signpowc (ctx:signpowc)
       Context propagation for 'SignpowConstExp' expression, see
       cvt:pre:ctx:abs.
@@ -766,8 +782,8 @@ cvt:qp2passes (cvt:qp2pass, qp2passes, qp2pass)
 
 cvt:quadcon (passquadcon)
       Convenience option. Set to 0 to disable quadratic constraints. Synonym
-      for acc:quad..=0. Currently this disables out-multiplication of
-      quadratic terms, then they are linearized.
+      for acc:quad..=0. Setting to 0 disables out-multiplication of quadratic
+      terms, then they are linearized.
 
 cvt:quadobj (passquadobj)
       0/1*: Pass quadratic objective terms to the solver. When 0, if the
@@ -884,8 +900,8 @@ lp:barorder (barorder)
 
 lp:concurrentmode (lp:concurrentlpmode, concurrentlpmode)
       The LP concurrent solving mode, only effective when lp:method = 4. The
-      parameters lp:pdlpgpumode and lp:pdlpgpudevice are ignored, and GPU
-      usage and device selection are fully controlled by this parameter.
+      parameters alg:gpumode and alg:gpudevice are ignored, and GPU usage and
+      device selection are fully controlled by this parameter.
 
 lp:dualperturb (dualperturb)
       Whether to allow the objective function perturbation when using the dual
