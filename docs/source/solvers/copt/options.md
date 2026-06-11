@@ -453,11 +453,10 @@ cvt:dvelim (dvelim)
       and polynomial expressions:
 
       0 - Do not eliminate, always instantiate the variables.
-      1 - Eliminate only those used 1x. This can increase model density but
-          greatly simplifies some models.
-      2 - Always substitute where possible, even if the variable needs to be
-          instantiated for use in other places. Can introduce redundancy, but
-          seems best for some models (default.)
+      1 - Eliminate only those used once.
+      2 - (Default). Always substitute where possible, even if the variable
+          needs to be instantiated for use in other places. Can introduce
+          redundancy but proves efficient in many cases.
 
       See also cvt:pre:unnest, as well as AMPL options linelim and substout.
 
@@ -1326,5 +1325,10 @@ tech:writemodel:index (tech:writeprob:index, writeprobindex, writemodelindex)
 tech:writemodelonly (justwriteprob, justwritemodel)
       Specifies files where to export the model, no solving (option can be
       repeated.) File extensions can be ".dlp", ".mps", etc.
+
+tech:writesolution (writesol, writesolution)
+      Specifies the names of files where to export the solution and/or other
+      result files in solver's native formats. Option can be repeated. File
+      name extensions can be ".sol[.tar.gz]", ".json", ".bas", ".ilp", etc.
 ```
 
