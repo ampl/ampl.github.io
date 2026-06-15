@@ -1,5 +1,12 @@
 # AMPL MP Library Changelog
 
+## unreleased
+- Option *cvt:pow2_as_qp* prefers quadratization
+  of the ^2 operator for affine arguments.
+- Faster parsing of quadratic expressions with
+  defined variables.
+
+
 ## 20260515
 - Fixed a bug in solve result name in the Multi-Objective
   Emulator.

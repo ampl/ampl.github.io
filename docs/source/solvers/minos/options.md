@@ -29,6 +29,7 @@ objrep   Whether to replace
 			2 = yes for v == f(x)
 			3 = yes in both cases (default)
 outlev   output level; 1 = default
+timelim  limit (in seconds) on CPU time
 timing   report I/O and solution times: 1 = stdout, 2 = stderr, 3 = both
 version  report version
 wantsol  solution report without -AMPL: sum of

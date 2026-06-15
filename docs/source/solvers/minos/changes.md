@@ -1,5 +1,15 @@
 # MINOS Changelog
 
+## 20260614
+- Added support for ARM on Macos
+
+## 20240201
+- Relinked with ASL2 20240106 which fixes a bug with constant terms that apparently involve variables, such as (x-x)^2,
+
+## 20230310
+- Added timelim option to limit the CPU time spent trying to solve a problem to the 
+  specified number of seconds.
+
 ## 20211109
 - Relinked with ASL 20211109, which allows the use of functions with output arguments in the AMPL session.
 

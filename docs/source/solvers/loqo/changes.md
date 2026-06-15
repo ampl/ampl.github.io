@@ -1,5 +1,11 @@
 # LOQO Changelog
 
+## 20260614
+- Added support for ARM on Macos
+
+## 20240201
+- Relinked with ASL2 20240106 which fixes a bug with constant terms that apparently involve variables, such as (x-x)^2,
+
 ## 20210410.1
 - Fixed a possible problem in the licencing routines for computer with many MAC addresses.
 
