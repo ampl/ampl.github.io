@@ -570,11 +570,10 @@ cvt:dvelim (dvelim)
       and polynomial expressions:
 
       0 - Do not eliminate, always instantiate the variables.
-      1 - Eliminate only those used 1x. This can increase model density but
-          greatly simplifies some models.
-      2 - Always substitute where possible, even if the variable needs to be
-          instantiated for use in other places. Can introduce redundancy, but
-          seems best for some models (default.)
+      1 - Eliminate only those used once.
+      2 - (Default). Always substitute where possible, even if the variable
+          needs to be instantiated for use in other places. Can introduce
+          redundancy but proves efficient in many cases.
 
       See also cvt:pre:unnest, as well as AMPL options linelim and substout.
 
@@ -582,8 +581,14 @@ cvt:expcones (expcones)
       0*/1: Recognize exponential cones.
 
 cvt:expr:nlassign (expr:nlassign)
-      Above which reference count, a formula node should be assigned to a
-      variable (see acc: options). 0 means all nodes outlined. Default 1.
+      Above which reference count, an algebraic formula node should be
+      assigned to a variable (see acc: options). 0 means all nodes assigned.
+      Default 1.
+
+cvt:expr:nlreif (expr:nlreif, expr:nlreify)
+      Above which reference count, a logical formula node should be assigned
+      (reified) to a variable (see acc: options). 0 means all nodes reified.
+      Default 1.
 
 cvt:mip:eps (cvt:cmp:eps, cmp:eps)
       Tolerance for strict comparison of continuous variables for MIP. Applies
@@ -624,7 +629,8 @@ cvt:pre:boundsbest (boundsbest)
       0*/1: Submit best-known variable bounds to the solver. Can inhibit its
       presolve.
 
-      Note: when a variable can be fixed, the stronger bounds are submitted.
+      Note: when a variable can be fixed, the stronger bounds are always
+      submitted.
 
 cvt:pre:continuous_fixed_vars (continuous_fixed_vars, ctg_fixed)
       0/1*: Make fixed variables continuous, to avoid fake MIPs.
@@ -684,6 +690,9 @@ cvt:pre:ctx:atan (ctx:atan)
 
 cvt:pre:ctx:atanh (ctx:atanh)
       Context propagation for 'Atanh' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:call (ctx:call)
+      Context propagation for 'Call' expression, see cvt:pre:ctx:abs.
 
 cvt:pre:ctx:condlineq (ctx:condlineq)
       Context propagation for 'Conditional< AlgebraicConstraint< LinTerms,
@@ -796,6 +805,9 @@ cvt:pre:ctx:quadfn (ctx:quadfn)
       Context propagation for 'QuadraticFunctionalConstraint' expression, see
       cvt:pre:ctx:abs.
 
+cvt:pre:ctx:sdpdotprod (ctx:sdpdotprod)
+      Context propagation for 'SDPDotProd' expression, see cvt:pre:ctx:abs.
+
 cvt:pre:ctx:signpowc (ctx:signpowc)
       Context propagation for 'SignpowConstExp' expression, see
       cvt:pre:ctx:abs.
@@ -886,8 +898,8 @@ cvt:qp2passes (cvt:qp2pass, qp2passes, qp2pass)
 
 cvt:quadcon (passquadcon)
       Convenience option. Set to 0 to disable quadratic constraints. Synonym
-      for acc:quad..=0. Currently this disables out-multiplication of
-      quadratic terms, then they are linearized.
+      for acc:quad..=0. Setting to 0 disables out-multiplication of quadratic
+      terms, then they are linearized.
 
 cvt:quadobj (passquadobj)
       0/1*: Pass quadratic objective terms to the solver. When 0, if the

@@ -264,6 +264,20 @@ tech:optionfile (optionfile, option:file)
 tech:outlev_mp (outlev_mp)
       0*/1: whether to print MP model information.
 
+tech:stats (stats, tech:report_stats, solve_stats)
+      Whether to return solve statistics and timings; the information will be
+      stored in the problem suffixes: 'simplex_iterations',
+      'barrier_iterations', 'nodes' and possibly other solver-dependent
+      suffixes. A JSON representation of the information above is returned in
+      the problem suffix `stats`.
+      Note that timing information will also be included in the JSON
+      representation if tech:timing>0. Values:
+
+      0 - Do not report statistics (default)
+      1 - Report statistics in JSON format in the problem suffix 'stats'
+      2 - Report statistics in suffixes
+      3 - Report statistics both in suffixes and the suffix 'stats'
+
 tech:timing (timing, tech:report_times, report_times)
       0*/1/2: Whether to print and return timings for the run, all times are
       wall times. If set to 1, return the solution times in the problem

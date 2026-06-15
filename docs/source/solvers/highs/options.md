@@ -92,15 +92,8 @@ alg:infinitecost (infinitecost, infinite_cost)
 alg:ipmopttol (ipmopttol, ipm_optimality_tolerance)
       IPM optimality tolerance (default 1e-8).
 
-alg:method (method, lpmethod, solver)
-      Which algorithm to use :
-
-      choose   - Automatic (default)
-      simplex  - Simplex
-      ipm      - Interior Point Method
-      pdlp     - cuPDLP-c solver
-      pdlp-gpu - cuPDLP-c solver on NVIDIA GPU. Requires CUDA v12, not
-                 available on MacOS
+alg:kkt_tolerance (kkttol, kkt_tolerance)
+      KKt tolerance (default 1e-7).
 
 alg:parallel (parallel)
       Parallel option :
@@ -108,12 +101,6 @@ alg:parallel (parallel)
       choose - Automatic (default)
       off    - Off
       on     - On
-
-alg:pdlperestartmethod (pdlperestartmethod, pdlp_e_restart_method)
-      Restart mode for PDLP solver (default 1).
-
-alg:pdlpopttol (pdlpopttol, pdlp_d_gap_tol, pdlp_optimality_tolerance)
-      PDLP optimality tolerance (default 1e-7).
 
 alg:rays (rays)
       Whether to return suffix .unbdd (unbounded ray) if the objective is
@@ -187,6 +174,32 @@ alg:zerocoeff (zerocoeff, small_matrix_value)
 bar:crossover (crossover, run_crossover)
       Run crossover after IPM to get a basic solution
 
+      choose - Run if the results of IPM without crossover is imprecise
+      off    - Off
+      on     - On
+
+bar:hipo_ordering (hipo_ordering)
+      Control the ordering used by HiPO before factorization:
+
+      choose - Choose automatically (default)
+      metis  - Multilevel graph partitioning
+      amd    - Approximate minimum degree
+      rcm    - Reverse Cuthill-McKee
+
+bar:hipo_parallel_type (hipo_parallel_type)
+      Control the type of parallelism used by HiPO:
+
+      tree - Tree parallelism
+      node - Node parallelism
+      both - Both tree and node parallelism
+
+bar:hipo_system (hipo_system)
+      Control which Newton/KKT system is used by HiPO:
+
+      choose    - Choose automatically (default)
+      augmented - Augmented system
+      normaleq  - Normal equations
+
 cvt:bigM (cvt:bigm, cvt:mip:bigM, cvt:mip:bigm)
       Default value of big-M for linearization of logical constraints. Not
       used by default. Use with care (prefer tight bounds). Should be smaller
@@ -210,11 +223,10 @@ cvt:dvelim (dvelim)
       and polynomial expressions:
 
       0 - Do not eliminate, always instantiate the variables.
-      1 - Eliminate only those used 1x. This can increase model density but
-          greatly simplifies some models.
-      2 - Always substitute where possible, even if the variable needs to be
-          instantiated for use in other places. Can introduce redundancy, but
-          seems best for some models (default.)
+      1 - Eliminate only those used once.
+      2 - (Default). Always substitute where possible, even if the variable
+          needs to be instantiated for use in other places. Can introduce
+          redundancy but proves efficient in many cases.
 
       See also cvt:pre:unnest, as well as AMPL options linelim and substout.
 
@@ -222,8 +234,14 @@ cvt:expcones (expcones)
       0*/1: Recognize exponential cones.
 
 cvt:expr:nlassign (expr:nlassign)
-      Above which reference count, a formula node should be assigned to a
-      variable (see acc: options). 0 means all nodes outlined. Default 1.
+      Above which reference count, an algebraic formula node should be
+      assigned to a variable (see acc: options). 0 means all nodes assigned.
+      Default 1.
+
+cvt:expr:nlreif (expr:nlreif, expr:nlreify)
+      Above which reference count, a logical formula node should be assigned
+      (reified) to a variable (see acc: options). 0 means all nodes reified.
+      Default 1.
 
 cvt:mip:eps (cvt:cmp:eps, cmp:eps)
       Tolerance for strict comparison of continuous variables for MIP. Applies
@@ -264,7 +282,8 @@ cvt:pre:boundsbest (boundsbest)
       0*/1: Submit best-known variable bounds to the solver. Can inhibit its
       presolve.
 
-      Note: when a variable can be fixed, the stronger bounds are submitted.
+      Note: when a variable can be fixed, the stronger bounds are always
+      submitted.
 
 cvt:pre:continuous_fixed_vars (continuous_fixed_vars, ctg_fixed)
       0/1*: Make fixed variables continuous, to avoid fake MIPs.
@@ -324,6 +343,9 @@ cvt:pre:ctx:atan (ctx:atan)
 
 cvt:pre:ctx:atanh (ctx:atanh)
       Context propagation for 'Atanh' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:call (ctx:call)
+      Context propagation for 'Call' expression, see cvt:pre:ctx:abs.
 
 cvt:pre:ctx:condlineq (ctx:condlineq)
       Context propagation for 'Conditional< AlgebraicConstraint< LinTerms,
@@ -436,6 +458,9 @@ cvt:pre:ctx:quadfn (ctx:quadfn)
       Context propagation for 'QuadraticFunctionalConstraint' expression, see
       cvt:pre:ctx:abs.
 
+cvt:pre:ctx:sdpdotprod (ctx:sdpdotprod)
+      Context propagation for 'SDPDotProd' expression, see cvt:pre:ctx:abs.
+
 cvt:pre:ctx:signpowc (ctx:signpowc)
       Context propagation for 'SignpowConstExp' expression, see
       cvt:pre:ctx:abs.
@@ -526,8 +551,8 @@ cvt:qp2passes (cvt:qp2pass, qp2passes, qp2pass)
 
 cvt:quadcon (passquadcon)
       Convenience option. Set to 0 to disable quadratic constraints. Synonym
-      for acc:quad..=0. Currently this disables out-multiplication of
-      quadratic terms, then they are linearized.
+      for acc:quad..=0. Setting to 0 disables out-multiplication of quadratic
+      terms, then they are linearized.
 
 cvt:quadobj (passquadobj)
       0/1*: Pass quadratic objective terms to the solver. When 0, if the
@@ -600,6 +625,19 @@ cvt:uenc:ratio (uenc:ratio)
 
       With uenc:ratio>3, this triggers unary encoding for x.
 
+iis:strategy (iis_strategy, iisstrategy)
+      Strategy for IIS calculation (sum of):
+
+      0  - Light test
+      1  - Try dual ray
+      2  - Try elastic LP
+      4  - Prioritise columns
+      8  - Find true IIS
+      16 - Find relaxation IIS for MIP
+
+lim:iis_time_limit (iis_time_limit, iistimelimit)
+      Time limit for computing IIS (default: no limit).
+
 lim:improvingsols (improvingsolslimit, mip_max_improving_sols)
       Maximum number of improving solutions found (default: no limit).
 
@@ -619,7 +657,7 @@ lim:objectivebound (objective_bound, objectivebound)
 lim:objectivetarget (objective_target, objectivetarget)
       Objective target for termination of the MIP solver (default: no limit).
 
-lim:pdlpiterationlimit (pdlpiterationlimit, pdlp_iteration_limit)
+lim:pdlp_iteration_limit (pdlpiterationlimit, pdlp_iteration_limit)
       Iteration limit for PDLP solver (default: no limit).
 
 lim:pdlpnativetermination (pdlp_native_termination, pdlpnativetermination)
@@ -627,6 +665,9 @@ lim:pdlpnativetermination (pdlp_native_termination, pdlpnativetermination)
 
       0 - No (default)
       1 - Yes.
+
+lim:qp_iteration_limit (qp_iteration_limit, qpiterationlimit)
+      Iteration limit for QP active set method (default: no limit).
 
 lim:simplexiterationlimit (simplexiterationlimit, simplex_iteration_limit)
       Limit on simplex iterations (default: no limit).
@@ -637,6 +678,22 @@ lim:stallnodes (stallnodelim, stallnodelimit, mip_max_stall_nodes)
 
 lim:time (timelim, timelimit, time_limit)
       Limit on solve time (in seconds; default: no limit).
+
+lp:method (method, lpmethod, solver, alg:method)
+      Which algorithm to use :
+
+      choose     - Automatic (default)
+      simplex    - Simplex
+      ipm        - Interior Point Method (automatic)
+      hipo       - Highs Interior point method
+      ipx        - IPX interior point method
+      pdlp       - cuPDLP-c solver
+      pdlp-gpu   - cuPDLP-c solver on NVIDIA GPU. Requires CUDA, not
+                   available on MacOS
+      hipdlp     - HiPDLP solver
+      hipdlp-gpu - HiPDLP-c solver on NVIDIA GPU. Requires CUDA, not
+                   available on MacOS
+      qpasm      - QP active set method
 
 mip:bestbound (bestbound, return_bound)
       Whether to return suffix .bestbound for the best known MIP dual bound on
@@ -762,6 +819,35 @@ obj:no (objno)
       1 - First (default, if available)
       2 - Second (if available), etc.
 
+pdlp:cupdlpc_restart_method (pdlpcupdlpcrestartmethod, pdlp_cupdlpc_restart_method)
+      Restart mode for PDLP solver:
+
+      0 - None
+      1 - GPU (default)
+      2 - CPU
+
+pdlp:optimality_tolerance (pdlp_optimality_tolerance, pdlp_opt_tol, pdlpopttol)
+      PDLP optimality tolerance (default 1e-7).
+
+pdlp:restart_strategy (pdlprestartstrategy, pdlp_restart_strategy)
+      Restart strategy for PDLP solver:
+
+      0 - Off
+      1 - Fixed
+      2 - Adaptive (default)
+      3 - Halpern
+
+pdlp:ruiz_iterations (pdlp_ruiz_iterations)
+      Number of Ruiz scaling iterations for PDLP solver (default 10).
+
+pdlp:step_size_strategy (pdlpstepsizestrategy, pdlp_step_size_strategy)
+      Stepsize strategy for PDLP solver:
+
+      0 - Fixed
+      1 - Adaptive (default)
+      2 - Malitsky-Pock
+      3 - PID
+
 pre:centring (run_centring, centring)
       Perform centring steps or not:
 
@@ -776,11 +862,12 @@ pre:maxcentringsteps (max_centring_steps, maxcentringsteps)
       Maximum number of steps to use when computing the analytic centre
       (default 5).
 
-pre:pdlpscaling (pdlp_scaling, pdlpscaling)
-      Scaling option for PDLP solver:
+pre:pdlpscaling_mode (pdlp_scaling_mode)
+      Scaling mode for PDLP solver, sum of:
 
-      0 - No
-      1 - Yes (default)
+      1 - Ruiz scaling
+      2 - L2 (default)
+      4 - PC (preconditioner-oriented)
 
 pre:solve (presolve)
       Whether to use presolve:
@@ -794,6 +881,16 @@ pre:userboundscale (user_bound_scale, userboundscale)
 
 pre:usercostscale (user_cost_scale, usercostscale)
       Exponent of power-of-two cost scaling for model (default 0).
+
+pre:userobjectivescale (user_objective_scale, userobjectivescale)
+      Exponent of power-of-two objective scaling for model (default 0).
+
+qp:nullspace_limit (qp_nullspace_limit, qpnullspacelimit)
+      Nullspace limit for the active set QP solver (default: 4000 ).
+
+qp:regularization_value (qp_regularization_value, qpregularizationvalue)
+      Regularization value added to the Hessian in the active set QP solver
+      (default: 1e-7).
 
 sol:chk:fail (chk:fail, checkfail)
       Fail on MP solution check violations, with solve result 150.
