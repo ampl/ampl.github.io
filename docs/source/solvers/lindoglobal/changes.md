@@ -1,5 +1,13 @@
 # Lindo Global Changelog
 
+## 20260615
+- Updated to Lindo API 16.
+- Added support for ARM-based MacOS.
+
+## 20250527
+- Added support for Lindo licenses.
+- Updated to Lindo API 15
+
 ## 20210406.1
 - Possible problem in the licencing routines for computer with many MAC addresses.
 
