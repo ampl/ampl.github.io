@@ -553,7 +553,7 @@ alg:start (warmstart)
       3 - Yes (for LP: together with the incoming alg:basis, if any;
           default).
 
-      For Gurobi, choices can be refined vie "lp:warmstart"; MIP-specific
+      For Gurobi, choices can be refined via "lp:warmstart"; MIP-specific
       options can be tuned via "mip:start".
 
 alg:ubpen (ubpen)
@@ -738,11 +738,10 @@ cvt:dvelim (dvelim)
       and polynomial expressions:
 
       0 - Do not eliminate, always instantiate the variables.
-      1 - Eliminate only those used 1x. This can increase model density but
-          greatly simplifies some models.
-      2 - Always substitute where possible, even if the variable needs to be
-          instantiated for use in other places. Can introduce redundancy, but
-          seems best for some models (default.)
+      1 - Eliminate only those used once.
+      2 - (Default). Always substitute where possible, even if the variable
+          needs to be instantiated for use in other places. Can introduce
+          redundancy but proves efficient in many cases.
 
       See also cvt:pre:unnest, as well as AMPL options linelim and substout.
 
@@ -787,6 +786,12 @@ cvt:plapprox:domain (plapprox:domain, plapproxdomain)
 
 cvt:plapprox:reltol (plapprox:reltol, plapproxreltol)
       Relative tolerance for piecewise-linear approximation. Default 0.01.
+
+cvt:pow2_as_qp (pow2_as_qp, pow2asqp)
+      0/1*: whenever both quadratics and ^2 are accepted, submit (expr)^2 as
+      out-multiplied quadratics, if (expr) is linear.
+
+      See also cvt:multoutcard, cvt:quadobj, cvt:quadcon.
 
 cvt:pre:all
       0/1*: Set to 0 to disable most presolve in the flat converter.
@@ -859,6 +864,9 @@ cvt:pre:ctx:atan (ctx:atan)
 
 cvt:pre:ctx:atanh (ctx:atanh)
       Context propagation for 'Atanh' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:call (ctx:call)
+      Context propagation for 'Call' expression, see cvt:pre:ctx:abs.
 
 cvt:pre:ctx:condlineq (ctx:condlineq)
       Context propagation for 'Conditional< AlgebraicConstraint< LinTerms,
@@ -971,6 +979,9 @@ cvt:pre:ctx:quadfn (ctx:quadfn)
       Context propagation for 'QuadraticFunctionalConstraint' expression, see
       cvt:pre:ctx:abs.
 
+cvt:pre:ctx:sdpdotprod (ctx:sdpdotprod)
+      Context propagation for 'SDPDotProd' expression, see cvt:pre:ctx:abs.
+
 cvt:pre:ctx:signpowc (ctx:signpowc)
       Context propagation for 'SignpowConstExp' expression, see
       cvt:pre:ctx:abs.
@@ -1060,8 +1071,8 @@ cvt:qp2passes (cvt:qp2pass, qp2passes, qp2pass)
       0/1*: Parse sums of QP expressions in 2 passes. Usually faster.
 
 cvt:quadcon (passquadcon)
-      Convenience option. Set to 0 to disable quadratic constraints. Synonym
-      for acc:quad..=0. Setting to 0 disables out-multiplication of quadratic
+      0/1*: set to 0 to disable quadratic constraints. Synonym for
+      acc:quad..=0. Setting to 0 disables out-multiplication of quadratic
       terms, then they are linearized.
 
 cvt:quadobj (passquadobj)
@@ -1103,7 +1114,8 @@ cvt:sos (sos)
 cvt:sos2 (sos2)
       0*/1: Whether to honor SOS2 constraints for nonconvex piecewise-linear
       terms, using suffixes .sos and .sosref provided by AMPL. Currently under
-      rework.
+      rework; we recommend to switch off PL expression linearization in AMPL
+      (option pl_linearize 0).
 
 cvt:uenc:negctx:max (uenc:negctx:max, cvt:uenc:negctx, uenc:negctx)
       If cvt:uenc:ratio applies, max number of constants in comparisons
@@ -1663,7 +1675,7 @@ pre:aggfill (aggfill)
       Amount of fill allowed during aggregation in presolve(default -1).
 
 pre:aggregate (aggregate)
-      0/1*: whether to use aggregation in presolve.Setting it to 0 can
+      0/1*: whether to use aggregation in presolve. Setting it to 0 can
       sometimes reduce numerical errors.
 
 pre:deprow (predeprow)

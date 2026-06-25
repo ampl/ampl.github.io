@@ -72,7 +72,7 @@ acc:lineq
       1 - Accepted but automatic redefinition will be used where possible
       2 - Accepted natively and preferred
 
-acc:linfunccon
+acc:linfn (acc:linfunccon)
       Solver acceptance level for 'LinearFunctionalConstraint' as expression,
       default 4:
 
@@ -154,7 +154,7 @@ acc:nlcon (acc:nlalgcon)
       1 - Accepted but automatic redefinition will be used where possible
       2 - Accepted natively and preferred
 
-acc:powconstexp
+acc:powc (acc:powconstexp)
       Solver acceptance level for 'PowConstExpConstraint' as either constraint
       or expression, default 4:
 
@@ -173,7 +173,7 @@ acc:quadeq
       1 - Accepted but automatic redefinition will be used where possible
       2 - Accepted natively and preferred
 
-acc:quadfunccon
+acc:quadfn (acc:quadfunccon)
       Solver acceptance level for 'QuadraticFunctionalConstraint' as
       expression, default 4:
 
@@ -271,11 +271,10 @@ cvt:dvelim (dvelim)
       and polynomial expressions:
 
       0 - Do not eliminate, always instantiate the variables.
-      1 - Eliminate only those used 1x. This can increase model density but
-          greatly simplifies some models.
-      2 - Always substitute where possible, even if the variable needs to be
-          instantiated for use in other places. Can introduce redundancy, but
-          seems best for some models (default.)
+      1 - Eliminate only those used once.
+      2 - (Default). Always substitute where possible, even if the variable
+          needs to be instantiated for use in other places. Can introduce
+          redundancy but proves efficient in many cases.
 
       See also cvt:pre:unnest, as well as AMPL options linelim and substout.
 
@@ -283,8 +282,14 @@ cvt:expcones (expcones)
       0*/1: Recognize exponential cones.
 
 cvt:expr:nlassign (expr:nlassign)
-      Above which reference count, a formula node should be assigned to a
-      variable (see acc: options). 0 means all nodes outlined. Default 1.
+      Above which reference count, an algebraic formula node should be
+      assigned to a variable (see acc: options). 0 means all nodes assigned.
+      Default 1.
+
+cvt:expr:nlreif (expr:nlreif, expr:nlreify)
+      Above which reference count, a logical formula node should be assigned
+      (reified) to a variable (see acc: options). 0 means all nodes reified.
+      Default 1.
 
 cvt:mip:eps (cvt:cmp:eps, cmp:eps)
       Tolerance for strict comparison of continuous variables for MIP. Applies
@@ -315,11 +320,27 @@ cvt:plapprox:domain (plapprox:domain, plapproxdomain)
 cvt:plapprox:reltol (plapprox:reltol, plapproxreltol)
       Relative tolerance for piecewise-linear approximation. Default 0.01.
 
+cvt:pow2_as_qp (pow2_as_qp, pow2asqp)
+      0/1*: whenever both quadratics and ^2 are accepted, submit (expr)^2 as
+      out-multiplied quadratics, if (expr) is linear.
+
+      See also cvt:multoutcard, cvt:quadobj, cvt:quadcon.
+
 cvt:pre:all
       0/1*: Set to 0 to disable most presolve in the flat converter.
 
 cvt:pre:boundlogarg (boundlogarg)
       0*/1: Bound logarithm arguments to nonnegative.
+
+cvt:pre:boundsbest (boundsbest)
+      0*/1: Submit best-known variable bounds to the solver. Can inhibit its
+      presolve.
+
+      Note: when a variable can be fixed, the stronger bounds are always
+      submitted.
+
+cvt:pre:continuous_fixed_vars (continuous_fixed_vars, ctg_fixed)
+      0/1*: Make fixed variables continuous, to avoid fake MIPs.
 
 cvt:pre:ctx2bndeq (ctx2bndeq)
       0/1*: Propagate exact context into conditional (dis)equalities-to-bound,
@@ -376,6 +397,9 @@ cvt:pre:ctx:atan (ctx:atan)
 
 cvt:pre:ctx:atanh (ctx:atanh)
       Context propagation for 'Atanh' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:call (ctx:call)
+      Context propagation for 'Call' expression, see cvt:pre:ctx:abs.
 
 cvt:pre:ctx:condlineq (ctx:condlineq)
       Context propagation for 'Conditional< AlgebraicConstraint< LinTerms,
@@ -444,7 +468,7 @@ cvt:pre:ctx:ifthen (ctx:ifthen)
 cvt:pre:ctx:impl (ctx:impl)
       Context propagation for 'Implication' expression, see cvt:pre:ctx:abs.
 
-cvt:pre:ctx:linfunccon (ctx:linfunccon)
+cvt:pre:ctx:linfn (ctx:linfn)
       Context propagation for 'LinearFunctionalConstraint' expression, see
       cvt:pre:ctx:abs.
 
@@ -454,7 +478,7 @@ cvt:pre:ctx:log (ctx:log)
 cvt:pre:ctx:loga (ctx:loga)
       Context propagation for 'LogA' expression, see cvt:pre:ctx:abs.
 
-cvt:pre:ctx:logistic (ctx:logistic)
+cvt:pre:ctx:logi (ctx:logi)
       Context propagation for 'Logistic' expression, see cvt:pre:ctx:abs.
 
 cvt:pre:ctx:max (ctx:max)
@@ -481,14 +505,17 @@ cvt:pre:ctx:pl (ctx:pl)
 cvt:pre:ctx:pow (ctx:pow)
       Context propagation for 'Pow' expression, see cvt:pre:ctx:abs.
 
-cvt:pre:ctx:powconstexp (ctx:powconstexp)
+cvt:pre:ctx:powc (ctx:powc)
       Context propagation for 'PowConstExp' expression, see cvt:pre:ctx:abs.
 
-cvt:pre:ctx:quadfunccon (ctx:quadfunccon)
+cvt:pre:ctx:quadfn (ctx:quadfn)
       Context propagation for 'QuadraticFunctionalConstraint' expression, see
       cvt:pre:ctx:abs.
 
-cvt:pre:ctx:signpowconstexp (ctx:signpowconstexp)
+cvt:pre:ctx:sdpdotprod (ctx:sdpdotprod)
+      Context propagation for 'SDPDotProd' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:signpowc (ctx:signpowc)
       Context propagation for 'SignpowConstExp' expression, see
       cvt:pre:ctx:abs.
 
@@ -577,9 +604,9 @@ cvt:qp2passes (cvt:qp2pass, qp2passes, qp2pass)
       0/1*: Parse sums of QP expressions in 2 passes. Usually faster.
 
 cvt:quadcon (passquadcon)
-      Convenience option. Set to 0 to disable quadratic constraints. Synonym
-      for acc:quad..=0. Currently this disables out-multiplication of
-      quadratic terms, then they are linearized.
+      0/1*: set to 0 to disable quadratic constraints. Synonym for
+      acc:quad..=0. Setting to 0 disables out-multiplication of quadratic
+      terms, then they are linearized.
 
 cvt:quadobj (passquadobj)
       0/1*: Pass quadratic objective terms to the solver. When 0, if the
@@ -620,7 +647,8 @@ cvt:sos (sos)
 cvt:sos2 (sos2)
       0*/1: Whether to honor SOS2 constraints for nonconvex piecewise-linear
       terms, using suffixes .sos and .sosref provided by AMPL. Currently under
-      rework.
+      rework; we recommend to switch off PL expression linearization in AMPL
+      (option pl_linearize 0).
 
 cvt:uenc:negctx:max (uenc:negctx:max, cvt:uenc:negctx, uenc:negctx)
       If cvt:uenc:ratio applies, max number of constants in comparisons
@@ -898,6 +926,20 @@ tech:scratch (scratch)
 tech:seed (seed)
       Initial seed for random number generation, must be a positive integer
       (default 19631963).
+
+tech:stats (stats, tech:report_stats, solve_stats)
+      Whether to return solve statistics and timings; the information will be
+      stored in the problem suffixes: 'simplex_iterations',
+      'barrier_iterations', 'nodes' and possibly other solver-dependent
+      suffixes. A JSON representation of the information above is returned in
+      the problem suffix `stats`.
+      Note that timing information will also be included in the JSON
+      representation if tech:timing>0. Values:
+
+      0 - Do not report statistics (default)
+      1 - Report statistics in JSON format in the problem suffix 'stats'
+      2 - Report statistics in suffixes
+      3 - Report statistics both in suffixes and the suffix 'stats'
 
 tech:sumfile (sumfile)
       Name of summary file.

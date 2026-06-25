@@ -95,6 +95,22 @@ alg:ipmopttol (ipmopttol, ipm_optimality_tolerance)
 alg:kkt_tolerance (kkttol, kkt_tolerance)
       KKt tolerance (default 1e-7).
 
+alg:method (method, lp:method, lpmethod, lp:algorithm, solver)
+      Which algorithm to use for non-MIP problems:
+
+      choose     - Automatic (default)
+      simplex    - Simplex
+      ipm        - Interior Point Method (automatic)
+      hipo       - Highs Interior point method
+      ipx        - IPX interior point method
+      pdlp       - cuPDLP-c solver
+      pdlp-gpu   - cuPDLP-c solver on NVIDIA GPU. Requires CUDA, not
+                   available on MacOS
+      hipdlp     - HiPDLP solver
+      hipdlp-gpu - HiPDLP-c solver on NVIDIA GPU. Requires CUDA, not
+                   available on MacOS
+      qpasm      - QP active set method
+
 alg:parallel (parallel)
       Parallel option :
 
@@ -271,6 +287,12 @@ cvt:plapprox:domain (plapprox:domain, plapproxdomain)
 
 cvt:plapprox:reltol (plapprox:reltol, plapproxreltol)
       Relative tolerance for piecewise-linear approximation. Default 0.01.
+
+cvt:pow2_as_qp (pow2_as_qp, pow2asqp)
+      0/1*: whenever both quadratics and ^2 are accepted, submit (expr)^2 as
+      out-multiplied quadratics, if (expr) is linear.
+
+      See also cvt:multoutcard, cvt:quadobj, cvt:quadcon.
 
 cvt:pre:all
       0/1*: Set to 0 to disable most presolve in the flat converter.
@@ -550,8 +572,8 @@ cvt:qp2passes (cvt:qp2pass, qp2passes, qp2pass)
       0/1*: Parse sums of QP expressions in 2 passes. Usually faster.
 
 cvt:quadcon (passquadcon)
-      Convenience option. Set to 0 to disable quadratic constraints. Synonym
-      for acc:quad..=0. Setting to 0 disables out-multiplication of quadratic
+      0/1*: set to 0 to disable quadratic constraints. Synonym for
+      acc:quad..=0. Setting to 0 disables out-multiplication of quadratic
       terms, then they are linearized.
 
 cvt:quadobj (passquadobj)
@@ -593,7 +615,8 @@ cvt:sos (sos)
 cvt:sos2 (sos2)
       0*/1: Whether to honor SOS2 constraints for nonconvex piecewise-linear
       terms, using suffixes .sos and .sosref provided by AMPL. Currently under
-      rework.
+      rework; we recommend to switch off PL expression linearization in AMPL
+      (option pl_linearize 0).
 
 cvt:uenc:negctx:max (uenc:negctx:max, cvt:uenc:negctx, uenc:negctx)
       If cvt:uenc:ratio applies, max number of constants in comparisons
@@ -660,12 +683,6 @@ lim:objectivetarget (objective_target, objectivetarget)
 lim:pdlp_iteration_limit (pdlpiterationlimit, pdlp_iteration_limit)
       Iteration limit for PDLP solver (default: no limit).
 
-lim:pdlpnativetermination (pdlp_native_termination, pdlpnativetermination)
-      Use native termination for PDLP solver:
-
-      0 - No (default)
-      1 - Yes.
-
 lim:qp_iteration_limit (qp_iteration_limit, qpiterationlimit)
       Iteration limit for QP active set method (default: no limit).
 
@@ -678,22 +695,6 @@ lim:stallnodes (stallnodelim, stallnodelimit, mip_max_stall_nodes)
 
 lim:time (timelim, timelimit, time_limit)
       Limit on solve time (in seconds; default: no limit).
-
-lp:method (method, lpmethod, solver, alg:method)
-      Which algorithm to use :
-
-      choose     - Automatic (default)
-      simplex    - Simplex
-      ipm        - Interior Point Method (automatic)
-      hipo       - Highs Interior point method
-      ipx        - IPX interior point method
-      pdlp       - cuPDLP-c solver
-      pdlp-gpu   - cuPDLP-c solver on NVIDIA GPU. Requires CUDA, not
-                   available on MacOS
-      hipdlp     - HiPDLP solver
-      hipdlp-gpu - HiPDLP-c solver on NVIDIA GPU. Requires CUDA, not
-                   available on MacOS
-      qpasm      - QP active set method
 
 mip:bestbound (bestbound, return_bound)
       Whether to return suffix .bestbound for the best known MIP dual bound on
@@ -878,9 +879,6 @@ pre:solve (presolve)
 
 pre:userboundscale (user_bound_scale, userboundscale)
       Exponent of power-of-two bound scaling for model (default 0).
-
-pre:usercostscale (user_cost_scale, usercostscale)
-      Exponent of power-of-two cost scaling for model (default 0).
 
 pre:userobjectivescale (user_objective_scale, userobjectivescale)
       Exponent of power-of-two objective scaling for model (default 0).

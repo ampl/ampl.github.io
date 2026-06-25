@@ -1,5 +1,15 @@
 # GUROBI Changelog
 
+## 20260624
+- Changes in MP, in particular:
+  - Option *cvt:pow2_as_qp* prefers quadratization
+    of the ^2 operator for affine arguments (default).
+  - Faster parsing of quadratic expressions with
+    defined variables.
+  - The main driver code is separated into a shared
+    library and used commonly with AMPLS API.
+
+
 ## 20260515
 - Updated to Gurobi 13.0.2, which includes bugfixes;
   the GPU-PDHG algorithm has matured from the beta state

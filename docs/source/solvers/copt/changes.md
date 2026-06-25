@@ -1,5 +1,15 @@
 # COPT Changelog
 
+## 20260624
+- Changes in MP, in particular:
+  - Option *cvt:pow2_as_qp* prefers quadratization
+    of the ^2 operator for affine arguments (default).
+  - Faster parsing of quadratic expressions with
+    defined variables.
+  - The main driver code is separated into a shared
+    library and used commonly with AMPLS API.
+
+
 ## 20260610
 - Fixed a bug causing NLP initial guess to be submitted
   only when a dual initial guess was available.

@@ -1,5 +1,15 @@
 # MP2NL Changelog
 
+## 20260624
+- Changes in MP, in particular:
+  - Option *cvt:pow2_as_qp* prefers quadratization
+    of the ^2 operator for affine arguments (default).
+  - Faster parsing of quadratic expressions with
+    defined variables.
+  - The main driver code is separated into a shared
+    library and used commonly with AMPLS API.
+
+
 ## 20260525
 - Forward AMPL imported function calls to the subsolver,
   such as gsl_ran_gaussian_pdf().

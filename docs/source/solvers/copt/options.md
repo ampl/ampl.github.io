@@ -383,6 +383,17 @@ alg:lbpen (lbpen)
 alg:matrixtol (matrixtol)
       input matrix coefficient tolerance (default 1e-10).
 
+alg:method (method, lp:method, lpmethod)
+      Which algorithm to use for non-MIP problems:
+
+      -1 - Automatic (default)
+      1  - Dual simplex
+      2  - Barrier. See also alg:gpumode.
+      3  - Crossover
+      4  - Concurrent (simplex and barrier simultaneously)
+      5  - Choose between simplex and barrier automatically
+      6  - First-order method (PDLP). See also alg:gpumode.
+
 alg:nonconvex (nonconvex)
       Strategy for continuous nonconvex models (default -1):
 
@@ -501,6 +512,12 @@ cvt:plapprox:domain (plapprox:domain, plapproxdomain)
 
 cvt:plapprox:reltol (plapprox:reltol, plapproxreltol)
       Relative tolerance for piecewise-linear approximation. Default 0.01.
+
+cvt:pow2_as_qp (pow2_as_qp, pow2asqp)
+      0/1*: whenever both quadratics and ^2 are accepted, submit (expr)^2 as
+      out-multiplied quadratics, if (expr) is linear.
+
+      See also cvt:multoutcard, cvt:quadobj, cvt:quadcon.
 
 cvt:pre:all
       0/1*: Set to 0 to disable most presolve in the flat converter.
@@ -780,8 +797,8 @@ cvt:qp2passes (cvt:qp2pass, qp2passes, qp2pass)
       0/1*: Parse sums of QP expressions in 2 passes. Usually faster.
 
 cvt:quadcon (passquadcon)
-      Convenience option. Set to 0 to disable quadratic constraints. Synonym
-      for acc:quad..=0. Setting to 0 disables out-multiplication of quadratic
+      0/1*: set to 0 to disable quadratic constraints. Synonym for
+      acc:quad..=0. Setting to 0 disables out-multiplication of quadratic
       terms, then they are linearized.
 
 cvt:quadobj (passquadobj)
@@ -823,7 +840,8 @@ cvt:sos (sos)
 cvt:sos2 (sos2)
       0*/1: Whether to honor SOS2 constraints for nonconvex piecewise-linear
       terms, using suffixes .sos and .sosref provided by AMPL. Currently under
-      rework.
+      rework; we recommend to switch off PL expression linearization in AMPL
+      (option pl_linearize 0).
 
 cvt:uenc:negctx:max (uenc:negctx:max, cvt:uenc:negctx, uenc:negctx)
       If cvt:uenc:ratio applies, max number of constants in comparisons
@@ -898,7 +916,7 @@ lp:barorder (barorder)
       1  - Nested Dissection (ND)
 
 lp:concurrentmode (lp:concurrentlpmode, concurrentlpmode)
-      The LP concurrent solving mode, only effective when lp:method = 4. The
+      The LP concurrent solving mode, only effective when alg:method = 4. The
       parameters alg:gpumode and alg:gpudevice are ignored, and GPU usage and
       device selection are fully controlled by this parameter.
 
@@ -916,17 +934,6 @@ lp:dualprice (dualprice)
       -1 - Choose automatically (default)
       0  - Use Devex pricing algorithm
       1  - Using dual steepest-edge pricing algorithm
-
-lp:method (method, lpmethod)
-      Which algorithm to use for non-MIP problems:
-
-      -1 - Automatic (default)
-      1  - Dual simplex
-      2  - Barrier. See also alg:gpumode.
-      3  - Crossover
-      4  - Concurrent (simplex and barrier simultaneously)
-      5  - Choose between simplex and barrier automatically
-      6  - First-order method (PDLP). See also alg:gpumode.
 
 lp:pdlptol (pdlptol)
       Convergence tolerance for PDLP (default 1e-6)

@@ -239,6 +239,12 @@ cvt:plapprox:domain (plapprox:domain, plapproxdomain)
 cvt:plapprox:reltol (plapprox:reltol, plapproxreltol)
       Relative tolerance for piecewise-linear approximation. Default 0.01.
 
+cvt:pow2_as_qp (pow2_as_qp, pow2asqp)
+      0/1*: whenever both quadratics and ^2 are accepted, submit (expr)^2 as
+      out-multiplied quadratics, if (expr) is linear.
+
+      See also cvt:multoutcard, cvt:quadobj, cvt:quadcon.
+
 cvt:pre:all
       0/1*: Set to 0 to disable most presolve in the flat converter.
 
@@ -517,8 +523,8 @@ cvt:qp2passes (cvt:qp2pass, qp2passes, qp2pass)
       0/1*: Parse sums of QP expressions in 2 passes. Usually faster.
 
 cvt:quadcon (passquadcon)
-      Convenience option. Set to 0 to disable quadratic constraints. Synonym
-      for acc:quad..=0. Setting to 0 disables out-multiplication of quadratic
+      0/1*: set to 0 to disable quadratic constraints. Synonym for
+      acc:quad..=0. Setting to 0 disables out-multiplication of quadratic
       terms, then they are linearized.
 
 cvt:quadobj (passquadobj)
@@ -560,7 +566,8 @@ cvt:sos (sos)
 cvt:sos2 (sos2)
       0*/1: Whether to honor SOS2 constraints for nonconvex piecewise-linear
       terms, using suffixes .sos and .sosref provided by AMPL. Currently under
-      rework.
+      rework; we recommend to switch off PL expression linearization in AMPL
+      (option pl_linearize 0).
 
 cvt:uenc:negctx:max (uenc:negctx:max, cvt:uenc:negctx, uenc:negctx)
       If cvt:uenc:ratio applies, max number of constants in comparisons
@@ -680,23 +687,6 @@ det:scoretype (scoretype)
       spfawh - ppc-max-white with aggregation info
       bender - experimental benders score
       strong - strong decomposition score
-
-gcg:aggregation
-      0/1: whether identical blocks should be aggregated (only for
-      discretization approach)?
-
-      0 - Identical blocks should not be aggregated (only for discretization
-      approach)
-
-      1 - Identical blocks should be aggregated (only for discretization
-      approach) (default).
-
-gcg:bliss-enabled (bliss-enabled)
-      0/1: whether bliss should be used to check for identical blocks?
-
-      0 - Bliss should not be used to check for identical blocks
-
-      1 - Bliss should be used to check for identical blocks (default).
 
 gcg:discretization (discretization)
       0/1: whether discretization (TRUE) or convexification (FALSE) approach

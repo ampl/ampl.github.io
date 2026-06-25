@@ -60,7 +60,7 @@ acc:acos
 
 acc:acosh
       Solver acceptance level for 'AcoshConstraint' as flat constraint,
-      default 2:
+      default 1:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
@@ -88,7 +88,7 @@ acc:asin
 
 acc:asinh
       Solver acceptance level for 'AsinhConstraint' as flat constraint,
-      default 2:
+      default 1:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
@@ -108,7 +108,7 @@ acc:atan
 
 acc:atanh
       Solver acceptance level for 'AtanhConstraint' as flat constraint,
-      default 2:
+      default 1:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
@@ -128,7 +128,7 @@ acc:cos
 
 acc:cosh
       Solver acceptance level for 'CoshConstraint' as flat constraint, default
-      2:
+      1:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
@@ -367,7 +367,7 @@ acc:sin
 
 acc:sinh
       Solver acceptance level for 'SinhConstraint' as flat constraint, default
-      2:
+      1:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
@@ -403,7 +403,7 @@ acc:tan
 
 acc:tanh
       Solver acceptance level for 'TanhConstraint' as flat constraint, default
-      2:
+      1:
 
       0 - Not accepted natively, automatic redefinition will be attempted
       1 - Accepted but automatic redefinition will be used where possible
@@ -733,15 +733,10 @@ bar:alg (baralg, bar:xprs_baralg, XPRS_BARALG)
 
       * (4) Use the hybrid gradient algorithm.
 
-bar:cachesize (cachesize, sys:xprs_cachesize, XPRS_CACHESIZE)
-      This parameter is deprecated and will be removed in a future release.
+bar:cachesize (cachesize)
       Newton Barrier: L2 or L3 (see notes) cache size in kB (kilobytes) of the
-      CPU. On Intel (or compatible) platforms a value of -1 may be used to
-      determine the cache size automatically. If the CPU model is new then the
-      cache size may not be correctly detected by an older release of the
-      software.
-
-      Default: -1
+      CPU (default -1). On Intel (or compatible) platforms a value of -1 may
+      be used to determine the cache size automatically.
 
 bar:choleskyalg (choleskyalg, bar:xprs_choleskyalg, XPRS_CHOLESKYALG)
       Newton barrier: type of Cholesky factorization used; bit-vector-control
@@ -1004,13 +999,10 @@ bar:kernel (barkernel, bar:xprs_barkernel, XPRS_BARKERNEL)
       * (<=-1.0) Selects a value adaptively in every iteration from [+1,
         -BARKERNEL].
 
-bar:l1cache (l1cache, bar:xprs_l1cache, XPRS_L1CACHE)
-      This parameter is deprecated and will be removed in a future release.
+bar:l1cache (l1cache)
       Newton barrier: L1 cache size in kB (kilo bytes) of the CPU. On Intel
       (or compatible) platforms a value of -1 may be used to determine the
       cache size automatically.
-
-      Default: Hardware/platform dependent.
 
 bar:objperturb (barobjperturb, bar:xprs_barobjperturb, XPRS_BAROBJPERTURB)
       Defines how the barrier perturbs the objective.
@@ -1025,14 +1017,19 @@ bar:objperturb (barobjperturb, bar:xprs_barobjperturb, XPRS_BAROBJPERTURB)
       * (<0) Always perturb the objective by the absolute value of the
         parameter.
 
-bar:objscale (barobjscale)
-      How the barrier algorithm scales the objective; when the objective is
-      quadratic, the quadratic diagonal is used in determining the scale:
+bar:objscale (barobjscale, bar:xprs_barobjscale, XPRS_BAROBJSCALE)
+      Defines how the barrier scales the objective.
 
-      -1  - Automatic choice (default)
-      0   - Scale by the geometric mean of the objective coefficients
-      > 0 - Scale so the argest objective coefficient in absolute value is <=
-            barobjscale.
+      Values (default: -1):
+
+      * (-1) Let the optimizer decide.
+
+      * (0) Scale by geometric mean.
+
+      * (>=0) Scale such that the largest objective coefficient's largest
+        element does not exceed this number. In quadratic problems, the
+        quadratic diagonal is used as reference valuses instead of the linear
+        objective.
 
 bar:order (barorder, bar:xprs_barorder, XPRS_BARORDER)
       Newton barrier: This controls the Cholesky factorization in the
@@ -1221,20 +1218,6 @@ bar:xprs_barlargebound (XPRS_BARLARGEBOUND)
 
       Default: 0
 
-bar:xprs_barobjscale (XPRS_BAROBJSCALE)
-      Defines how the barrier scales the objective.
-
-      Values (default: -1):
-
-      * (-1) Let the optimizer decide.
-
-      * (0) Scale by geometric mean.
-
-      * (>=0) Scale such that the largest objective coefficient's largest
-        element does not exceed this number. In quadratic problems, the
-        quadratic diagonal is used as reference valuses instead of the linear
-        objective.
-
 bar:xprs_barperturb (XPRS_BARPERTURB)
       Newton barrier: In numerically challenging cases it is often
       advantageous to apply perturbations on the KKT system to improve its
@@ -1340,9 +1323,18 @@ cut:depth (cutdepth, cut:xprs_cutdepth, XPRS_CUTDEPTH)
 
       Default: -1 — determined automatically.
 
-cut:factor (cutfactor)
-      Limit on number of cuts and cut coefficients added while solving MIPs.
-      Default=-1 (automatic); a value of 0 will disable cuts generation.
+cut:factor (cutfactor, cut:xprs_cutfactor, XPRS_CUTFACTOR)
+      Limit on the number of cuts and cut coefficients the optimizer is
+      allowed to add to the matrix during tree search. The cuts and cut
+      coefficients are limited by CUTFACTOR times the number of rows and
+      coefficients in the initial matrix.
+
+      Values (default: -1):
+
+      * (-1) Let the optimizer decide on the maximum amount of cuts based on
+        CUTSTRATEGY.
+
+      * (>=0) Multiple of number of rows and coefficients to use.
 
 cut:freq (cutfreq, cut:xprs_cutfreq, XPRS_CUTFREQ)
       Branch and Bound: This specifies the frequency at which cuts are
@@ -1511,19 +1503,6 @@ cut:xprs_autocutting (XPRS_AUTOCUTTING)
 
       * (1) Enabled.
 
-cut:xprs_cutfactor (XPRS_CUTFACTOR)
-      Limit on the number of cuts and cut coefficients the optimizer is
-      allowed to add to the matrix during tree search. The cuts and cut
-      coefficients are limited by CUTFACTOR times the number of rows and
-      coefficients in the initial matrix.
-
-      Values (default: -1):
-
-      * (-1) Let the optimizer decide on the maximum amount of cuts based on
-        CUTSTRATEGY.
-
-      * (>=0) Multiple of number of rows and coefficients to use.
-
 cut:xprs_mcfcutstrategy (XPRS_MCFCUTSTRATEGY)
       Level of Multi-Commodity Flow (MCF) cutting planes separation: This
       specifies how aggressively MCF cuts should be separated. If the
@@ -1587,11 +1566,10 @@ cvt:dvelim (dvelim)
       and polynomial expressions:
 
       0 - Do not eliminate, always instantiate the variables.
-      1 - Eliminate only those used 1x. This can increase model density but
-          greatly simplifies some models.
-      2 - Always substitute where possible, even if the variable needs to be
-          instantiated for use in other places. Can introduce redundancy, but
-          seems best for some models (default.)
+      1 - Eliminate only those used once.
+      2 - (Default). Always substitute where possible, even if the variable
+          needs to be instantiated for use in other places. Can introduce
+          redundancy but proves efficient in many cases.
 
       See also cvt:pre:unnest, as well as AMPL options linelim and substout.
 
@@ -1636,6 +1614,12 @@ cvt:plapprox:domain (plapprox:domain, plapproxdomain)
 
 cvt:plapprox:reltol (plapprox:reltol, plapproxreltol)
       Relative tolerance for piecewise-linear approximation. Default 0.01.
+
+cvt:pow2_as_qp (pow2_as_qp, pow2asqp)
+      0/1*: whenever both quadratics and ^2 are accepted, submit (expr)^2 as
+      out-multiplied quadratics, if (expr) is linear.
+
+      See also cvt:multoutcard, cvt:quadobj, cvt:quadcon.
 
 cvt:pre:all
       0/1*: Set to 0 to disable most presolve in the flat converter.
@@ -1708,6 +1692,9 @@ cvt:pre:ctx:atan (ctx:atan)
 
 cvt:pre:ctx:atanh (ctx:atanh)
       Context propagation for 'Atanh' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:call (ctx:call)
+      Context propagation for 'Call' expression, see cvt:pre:ctx:abs.
 
 cvt:pre:ctx:condlineq (ctx:condlineq)
       Context propagation for 'Conditional< AlgebraicConstraint< LinTerms,
@@ -1820,6 +1807,9 @@ cvt:pre:ctx:quadfn (ctx:quadfn)
       Context propagation for 'QuadraticFunctionalConstraint' expression, see
       cvt:pre:ctx:abs.
 
+cvt:pre:ctx:sdpdotprod (ctx:sdpdotprod)
+      Context propagation for 'SDPDotProd' expression, see cvt:pre:ctx:abs.
+
 cvt:pre:ctx:signpowc (ctx:signpowc)
       Context propagation for 'SignpowConstExp' expression, see
       cvt:pre:ctx:abs.
@@ -1909,8 +1899,8 @@ cvt:qp2passes (cvt:qp2pass, qp2passes, qp2pass)
       0/1*: Parse sums of QP expressions in 2 passes. Usually faster.
 
 cvt:quadcon (passquadcon)
-      Convenience option. Set to 0 to disable quadratic constraints. Synonym
-      for acc:quad..=0. Setting to 0 disables out-multiplication of quadratic
+      0/1*: set to 0 to disable quadratic constraints. Synonym for
+      acc:quad..=0. Setting to 0 disables out-multiplication of quadratic
       terms, then they are linearized.
 
 cvt:quadobj (passquadobj)
@@ -1952,7 +1942,8 @@ cvt:sos (sos)
 cvt:sos2 (sos2)
       0*/1: Whether to honor SOS2 constraints for nonconvex piecewise-linear
       terms, using suffixes .sos and .sosref provided by AMPL. Currently under
-      rework.
+      rework; we recommend to switch off PL expression linearization in AMPL
+      (option pl_linearize 0).
 
 cvt:uenc:negctx:max (uenc:negctx:max, cvt:uenc:negctx, uenc:negctx)
       If cvt:uenc:ratio applies, max number of constants in comparisons
@@ -2227,20 +2218,6 @@ heur:xprs_heurdepth (XPRS_HEURDEPTH)
 
       Default: -1
 
-heur:xprs_heurdiveiterlimit (XPRS_HEURDIVEITERLIMIT)
-      Branch and Bound: Simplex iteration limit for reoptimizing during the
-      diving heuristic.
-
-      Values (default: -1):
-
-      * (>=1) Fixed iteration limit.
-
-      * (0) No iteration limit.
-
-      * (<0) Automatic selection of the iteration limit based on the problem
-        size. The absolute value is used as a multiplier on the automatic
-        selection.
-
 heur:xprs_heurmaxsol (XPRS_HEURMAXSOL)
       Branch and Bound: This specifies the maximum number of heuristic
       solutions that will be found in the tree search. This control no longer
@@ -2417,20 +2394,6 @@ iis:ops (iisops, inf:xprs_iisops, XPRS_IISOPS)
 
       * (11) Keep all constraints.
 
-inf:xprs_repairinfeasmaxtime (XPRS_REPAIRINFEASMAXTIME)
-      This parameter is deprecated and will be removed in a future release.
-      Overall time limit for the repairinfeas tool
-
-      Values (default: 0):
-
-      * (0) No time limit.
-
-      * (n>0) If an integer solution has been found, stop MIP search after n
-        seconds, otherwise continue until an integer solution is finally
-        found.
-
-      * (n<0) Stop in LP or MIP search after n seconds.
-
 inf:xprs_repairinfeastimelimit (XPRS_REPAIRINFEASTIMELIMIT)
       Overall time limit for the repairinfeas tool
 
@@ -2457,10 +2420,19 @@ lim:crossoveriter (bar:crossoveriterlim, crossoveriterlim, crossoveritlim, bar:x
 
       Default: 2147483647
 
-lim:heurdiveiterlimit (heurdepth, mip:heurdiveiterlimit)
-      Simplex iteration limit for reoptimizing during the diving heuristic;
-      default = -1 (automatic selection); a value of 0 implies no iteration
-      limit
+lim:heurdiveiterlimit (heurdepth, mip:heurdiveiterlimit, heur:xprs_heurdiveiterlimit, XPRS_HEURDIVEITERLIMIT)
+      Branch and Bound: Simplex iteration limit for reoptimizing during the
+      diving heuristic.
+
+      Values (default: -1):
+
+      * (>=1) Fixed iteration limit.
+
+      * (0) No iteration limit.
+
+      * (<0) Automatic selection of the iteration limit based on the problem
+        size. The absolute value is used as a multiplier on the automatic
+        selection.
 
 lim:iter (lpiterlimit, iterlim, lp:xprs_lpiterlimit, XPRS_LPITERLIMIT)
       The maximum number of iterations that will be performed by primal
@@ -2661,22 +2633,6 @@ lim:xprs_maxchecksonmaxtime (XPRS_MAXCHECKSONMAXTIME)
       * (n>0) The number of times the optimizer should check the TIMELIMIT (or
         MAXTIME) criterion before triggering a termination.
 
-lim:xprs_maxtime (XPRS_MAXTIME)
-      This parameter is deprecated and will be removed in a future release.
-      The maximum time in seconds that the Optimizer will run before it
-      terminates, including the problem setup time and solution time. For MIP
-      problems, this is the total time taken to solve all nodes.
-
-      Values (default: 0):
-
-      * (0) No time limit.
-
-      * (n>0) If an integer solution has been found, stop MIP search after n
-        seconds, otherwise continue until an integer solution is finally
-        found.
-
-      * (n<0) Stop in LP or MIP search after n seconds.
-
 lim:xslp_maxtime (XSLP_MAXTIME, NLPMAXTIME)
       The maximum time in seconds that the SLP optimization will run before it
       terminates
@@ -2792,15 +2748,15 @@ lp:crash (crash, lp:xprs_crash, XPRS_CRASH)
 
       * (n>10) As for value 4 but performing at most n - 10 passes.
 
-      * (0) Perform standard crash.
+      * (Bit 0) Perform standard crash.
 
-      * (1) Perform additional numerical checks during crash.
+      * (Bit 1) Perform additional numerical checks during crash.
 
-      * (2) Extend the set of column candidates for crash.
+      * (Bit 2) Extend the set of column candidates for crash.
 
-      * (3) Extend the set of row candidates for crash.
+      * (Bit 3) Extend the set of row candidates for crash.
 
-      * (4) Force crash, i.e., consider all suitable columns/rows as
+      * (Bit 4) Force crash, i.e., consider all suitable columns/rows as
         candidates for crash.
 
 lp:dualforceparallel (forceparalleldual, dualforceparallel, lp:xprs_forceparalleldual, XPRS_FORCEPARALLELDUAL)
@@ -4300,16 +4256,6 @@ num:xprs_autoscaling (XPRS_AUTOSCALING)
       * (3) Aggressive strategy. Standard scaling will only be selected if it
         appears to be clearly superior.
 
-num:xprs_objscalefactor (XPRS_OBJSCALEFACTOR)
-      Custom objective scaling factor, expressed as a power of 2. When set, it
-      overwrites the automatic objective scaling factor. A value of 0 means no
-      objective scaling. This control is applied for the full solve, and is
-      independent of any extra scaling that may occur specifically for the
-      barrier or simplex solvers. As it is a power of 2, to scale by 16, set
-      the value of the control to 4.
-
-      Default: 0
-
 num:xslp_infinity (XSLP_INFINITY, NLPINFINITY)
       Value returned by a divide-by-zero in a formula
 
@@ -4723,9 +4669,15 @@ pre:objcutdetect (preobjcutdetect, pre:xprs_preobjcutdetect, XPRS_PREOBJCUTDETEC
 
       * (1) Enable check and reductions.
 
-pre:objscalefactor (objscalefactor)
-      Power of 2 (default 0) by which the objective is scaled. Nonzero
-      objscalfactor values override automatic global objective scaling
+pre:objscalefactor (objscalefactor, num:xprs_objscalefactor, XPRS_OBJSCALEFACTOR)
+      Custom objective scaling factor, expressed as a power of 2. When set, it
+      overwrites the automatic objective scaling factor. A value of 0 means no
+      objective scaling. This control is applied for the full solve, and is
+      independent of any extra scaling that may occur specifically for the
+      barrier or simplex solvers. As it is a power of 2, to scale by 16, set
+      the value of the control to 4.
+
+      Default: 0
 
 pre:ops (presolveops, pre:xprs_presolveops, XPRS_PRESOLVEOPS)
       This bit-vector control (see Section Bit-vector controls) specifies the
@@ -6370,28 +6322,9 @@ sol:pooldupcol (pooldupcol)
       1 - No
       2 - Honor presolveops bit 3 (2^3 = 8)
 
-sol:pooldups (poold/ups)
-      How poolstub should handle duplicate solutions:
-
-      0 - Retain all duplicates
-      1 - Discard exact matches
-      2 - Discard exact matches of continuous variables and matches of
-          rounded values of discrete variables
-      3 - Discard matches of rounded values of discrete variables (default)
-
-      Rounding of discrete variables is affected bypoolmiptol and poolfeastol
-
-sol:poolfeastol (poolfeastol)
-      Zero tolerance for discrete variables in the solution pool (default
-      1e-6)
-
 sol:poollimit (poollimit, poolnbest)
       When poollimit = n > 1, the solution pool (see sol:stub) is allowed to
       keep n best solutions. Default 10.
-
-sol:poolmiptol (poolmiptol)
-      Error (nonintegrality) allowed in discrete variables in the solution
-      pool (default 5e-6)
 
 sol:report_uncertain (report_uncertain_sol)
       0/1*: whether to report objective value(s) in solve_message when
@@ -6490,19 +6423,12 @@ tech:outlev (outlev)
 tech:outlev_mp (outlev_mp)
       0*/1: whether to print MP model information.
 
-tech:sleeponthreadwait (sleeponthreadwait, sys:xprs_sleeponthreadwait, XPRS_SLEEPONTHREADWAIT)
-      This parameter is deprecated and will be removed in a future release. In
-      previous versions this was used to determine if the threads should be
-      put into a wait state when waiting for work.
+tech:sleeponthreadwait (sleeponthreadwait)
+      Whether threads should sleep while awaiting work:
 
-      Values (default: -1):
-
-      * (-1) Automatically determined depending on the CPU the Optimizer is
-        running on.
-
-      * (0) Keep the threads busy when waiting for work.
-
-      * (1) Put the threads into a wait state when waiting for work.
+      -1 - automatically determined
+      0  - no (busy-wait)
+      >0 - yes (sleep, might add overhead)
 
 tech:stats (stats, tech:report_stats, solve_stats)
       Whether to return solve statistics and timings; the information will be

@@ -1,5 +1,15 @@
 # XPRESS Changelog
 
+## 20260624
+- Changes in MP, in particular:
+  - Option *cvt:pow2_as_qp* prefers quadratization
+    of the ^2 operator for affine arguments (default).
+  - Faster parsing of quadratic expressions with
+    defined variables.
+  - The main driver code is separated into a shared
+    library and used commonly with AMPLS API.
+
+
 ## 20260515
 - Updated to Xpress 46.01.02, which includes bugfixes
   and performance improvements. 
