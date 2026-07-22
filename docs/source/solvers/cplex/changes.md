@@ -1,5 +1,10 @@
 # CPLEX Changelog
 
+## 20260720
+- Fixed IIS reporting for range constraints.
+- Support IIS export to file: *writesol=(name).clp*.
+
+
 ## 20260624
 - Changes in MP, in particular:
   - Option *cvt:pow2_as_qp* prefers quadratization

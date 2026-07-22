@@ -1,5 +1,11 @@
 # amplpy Changelog
 
+## 20260721
+
+### 0.18.0
+- Add `AMPL.reset_options()` method.
+- Add `Entity.set_suffix(suffix, value)` method (numeric/string for scalar instances, DataFrame/Series for indexed entities).
+
 ## 20260624
 
 ### 0.17.0

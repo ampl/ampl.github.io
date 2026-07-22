@@ -11,7 +11,7 @@ Solver options obtained with `$ cplex -=`.
 
 ```
 IBM ILOG CPLEX Optimizer Options for AMPL
---------------------------------------------
+-----------------------------------------
 
 To set these options, assign a string specifying their values to the AMPL
 option "cplex_options". For example:
@@ -1778,7 +1778,8 @@ tech:writemodelonly (justwriteprob, justwritemodel)
 
 tech:writesolution (writesol, writesolution)
       Specifies the names of files where to export the solution and/or other
-      result files in solver's native formats. Option can be repeated. File
-      name extensions can be ".sol[.tar.gz]", ".json", ".bas", ".ilp", etc.
+      result files in solver's native formats. Option can be repeated.
+
+      File name extensions can be ".sol[.gz|.zip]", ".clp", ".bas".
 ```
 
