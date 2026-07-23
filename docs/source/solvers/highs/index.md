@@ -34,7 +34,7 @@ found [here](https://mp.ampl.com/model-guide.html).
             # Install AMPL & solver modules:
             $ python -m amplpy.modules install highs # install HiGHS
 
-            # Activate your license (e.g., free ampl.com/ce or ampl.com/courses licenses):
+            # Activate your license (e.g., free ampl.com/ce or ampl.com/academia licenses):
             $ python -m amplpy.modules activate <your-license-uuid>
 
         How to use:

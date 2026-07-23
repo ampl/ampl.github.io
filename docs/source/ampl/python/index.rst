@@ -22,7 +22,7 @@ you just need the following:
     # Install solver modules (e.g., HiGHS, CBC, Gurobi)
     $ python -m amplpy.modules install highs cbc gurobi
 
-    # Activate your license (e.g., free https://ampl.com/ce license)
+    # Activate your license (e.g., free ampl.com/ce or ampl.com/academia licenses)
     $ python -m amplpy.modules activate <license-uuid>
 
     # Import in Python
@@ -30,9 +30,8 @@ you just need the following:
     >>> from amplpy import AMPL
     >>> ampl = AMPL() # instantiate AMPL object
 
-.. note::
-  You can use a free `Community Edition license <https://ampl.com/ce>`_, which allows **free
-  and perpetual use of AMPL with Open-Source solvers** for personal, academic, or commercial prototyping purposes using :ref:`AMPL APIs <apis>`.
+.. important::
+  You can get started right away with one of our `free licenses <free>`_!"
 
 .. code-block:: python
 
@@ -82,7 +81,7 @@ You can also install AMPL on :ref:`Google Colab <colab>` (`where it is free by d
 .. note::
     On Google Colab there is a default `AMPL Community
     Edition license <https://ampl.com/ce/>`_ that gives you **access to AMPL
-    with open-source solvers for personal, academic or commercial prototyping use** (e.g., HiGHS, CBC, Couenne, Ipopt, Bonmin)
+    with open-source solvers for personal or commercial prototyping use** (e.g., HiGHS, CBC, Couenne, Ipopt, Bonmin)
     or with commercial solvers from the `NEOS Server <https://www.neos-server.org/>`_ as described in `Kestrel documentation <https://dev.ampl.com/solvers/kestrel.html>`_.
 
     In the list ``modules`` you need to include

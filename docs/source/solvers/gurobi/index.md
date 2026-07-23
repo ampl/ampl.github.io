@@ -37,7 +37,7 @@ Our enhanced Gurobi driver is now the default. The new driver provides significa
             # Install AMPL & solver modules:
             $ python -m amplpy.modules install gurobi # install Gurobi
 
-            # Activate your license (e.g., free ampl.com/ce or ampl.com/courses licenses):
+            # Activate your license (e.g., free ampl.com/ce or ampl.com/academia licenses):
             $ python -m amplpy.modules activate <your-license-uuid>
 
         How to use:

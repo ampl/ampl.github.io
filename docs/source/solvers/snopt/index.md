@@ -29,7 +29,7 @@ SNOPT is a widely used large-scale optimizer for difficult large-scale nonlinear
             # Install AMPL & solver modules:
             $ python -m amplpy.modules install snopt # install SNOPT
 
-            # Activate your license (e.g., free ampl.com/ce or ampl.com/courses licenses):
+            # Activate your license (e.g., free ampl.com/ce or ampl.com/academia licenses):
             $ python -m amplpy.modules activate <your-license-uuid>
 
         How to use:

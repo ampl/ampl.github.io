@@ -28,7 +28,7 @@ These services are available free of charge through any Internet connection. The
             # Install AMPL & solver modules:
             $ python -m amplpy.modules install gokestrel # install Kestrel
 
-            # Activate your license (e.g., free ampl.com/ce or ampl.com/courses licenses):
+            # Activate your license (e.g., free ampl.com/ce or ampl.com/academia licenses):
             $ python -m amplpy.modules activate <your-license-uuid>
 
         How to use:

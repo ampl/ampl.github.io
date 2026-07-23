@@ -1,6 +1,6 @@
-# Academic License Troubleshooting
+# Dynamic License Troubleshooting
 
-This guide covers some common issues when activating or using Academic licenses, Course Bundle licenses, and other trial licenses such as Community Edition for industry practitioners.
+This guide covers some common issues when activating or using dynamic licenses (e.g.,  [Community Edition](https://ampl.com/ce) or [AMPL for Academia](https://ampl.com/academia) licenses).
 
 ## General Licensing Notes
 

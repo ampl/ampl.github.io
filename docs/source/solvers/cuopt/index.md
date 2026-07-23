@@ -50,7 +50,7 @@ An example of supported container is::
             # Install AMPL & solver modules:
             $ python -m amplpy.modules install cuopt # install cuopt
 
-            # Activate your license (e.g., free ampl.com/ce or ampl.com/courses licenses):
+            # Activate your license (e.g., free ampl.com/ce or ampl.com/academia licenses):
             $ python -m amplpy.modules activate <your-license-uuid>
 
         How to use:

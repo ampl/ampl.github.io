@@ -11,7 +11,7 @@ To interpret and fix error conditions, consult our [Troubleshooting Guide](troub
 ```
 
 ```{warning}
-Support of academic floating licenses is being discontinued. Please, consider using the Academic [Community Edition license](https://ampl.com/community-edition/), a simple and flexible approach to use AMPL and the solvers. See below how this compares to a floating license:
+Support of academic floating licenses is being discontinued. Please, consider using free [AMPL for Academia licenses](https://ampl.com/academia/), a simple and flexible approach to use AMPL and the solvers. See below how this compares to a floating license:
 
 * The Academic Community Edition license is limited to each user personally, but it lets them use AMPL and solvers on any computer - even on more than one computer - at the same time.
 * The use of AMPL and free academic solvers are included at no cost with this option.

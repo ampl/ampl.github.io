@@ -34,7 +34,7 @@ No user interaction is necessary, thus GCG provides decomposition-based MIP solv
             # Install AMPL & solver modules:
             $ python -m amplpy.modules install gcg # install GCG
 
-            # Activate your license (e.g., free ampl.com/ce or ampl.com/courses licenses):
+            # Activate your license (e.g., free ampl.com/ce or ampl.com/academia licenses):
             $ python -m amplpy.modules activate <your-license-uuid>
 
         How to use:

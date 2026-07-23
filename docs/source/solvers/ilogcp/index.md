@@ -25,7 +25,7 @@ IBM ILOG CP Optimizer is a generic CP-based system to model and solve scheduling
             # Install AMPL & solver modules:
             $ python -m amplpy.modules install ilogcp # install ILOG CP
 
-            # Activate your license (e.g., free ampl.com/ce or ampl.com/courses licenses):
+            # Activate your license (e.g., free ampl.com/ce or ampl.com/academia licenses):
             $ python -m amplpy.modules activate <your-license-uuid>
 
         How to use:

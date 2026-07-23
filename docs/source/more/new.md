@@ -71,6 +71,8 @@ Individual academic license available to anyone with a valid academic email. Jus
 * Includes open-source solvers (HiGHS, CBC, Ipopt, etc.)
 * Renewable annually at no cost
 
+Learn more and apply at: **[https://ampl.com/academia/](https://ampl.com/academia/)**
+
 ### AMPL for Courses (A4C)
 
 Course-wide licenses for instructors who want to use AMPL in the classroom.
@@ -78,6 +80,8 @@ Course-wide licenses for instructors who want to use AMPL in the classroom.
 * Covers all your students
 * All commercial and open-source solvers are included
 * Valid for the duration of the academic term
+
+Learn more and apply at: **[https://ampl.com/academia/](https://ampl.com/academia/)**
 
 ### AMPL Career Starter (ACS)
 

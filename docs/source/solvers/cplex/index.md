@@ -36,7 +36,7 @@ This package contains an all-new CPLEX driver, that provides significantly exten
             # Install AMPL & solver modules:
             $ python -m amplpy.modules install cplex # install CPLEX
 
-            # Activate your license (e.g., free ampl.com/ce or ampl.com/courses licenses):
+            # Activate your license (e.g., free ampl.com/ce or ampl.com/academia licenses):
             $ python -m amplpy.modules activate <your-license-uuid>
 
         How to use:

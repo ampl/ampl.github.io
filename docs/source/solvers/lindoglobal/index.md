@@ -29,7 +29,7 @@ LINDO Global is a versatile nonlinear optimizer that supports global optimizatio
             # Install AMPL & solver modules:
             $ python -m amplpy.modules install lindoglobal # install LINDO Global
 
-            # Activate your license (e.g., free ampl.com/ce or ampl.com/courses licenses):
+            # Activate your license (e.g., free ampl.com/ce or ampl.com/academia licenses):
             $ python -m amplpy.modules activate <your-license-uuid>
 
         How to use:

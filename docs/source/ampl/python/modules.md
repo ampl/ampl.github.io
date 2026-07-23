@@ -10,7 +10,7 @@ $ python -m pip install amplpy --upgrade
 # Install solvers (e.g., HiGHS and Gurobi)
 $ python -m amplpy.modules install highs gurobi 
 
-# Activate your license (e.g., free https://ampl.com/ce license)
+# Activate your license (e.g., free ampl.com/ce or ampl.com/academia licenses)
 $ python -m amplpy.modules activate <license-uuid>
 
 # Import in Python
@@ -204,7 +204,7 @@ $ python -m pip install amplpy --upgrade
 # Install solvers (e.g., HiGHS, Gurobi, COIN-OR)
 $ python -m amplpy.modules install highs gurobi coin
 
-# Activate your license (e.g., free https://ampl.com/ce license)
+# Activate your license (e.g., free ampl.com/ce or ampl.com/academia licenses)
 $ python -m amplpy.modules activate <license-uuid>
 ```
 

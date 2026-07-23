@@ -29,7 +29,7 @@ A proven choice for highly nonlinear problems, CONOPT’s efficient and reliable
             # Install AMPL & solver modules:
             $ python -m amplpy.modules install conopt # install CONOPT
 
-            # Activate your license (e.g., free ampl.com/ce or ampl.com/courses licenses):
+            # Activate your license (e.g., free ampl.com/ce or ampl.com/academia licenses):
             $ python -m amplpy.modules activate <your-license-uuid>
 
         How to use:

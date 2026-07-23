@@ -1,6 +1,6 @@
 # How to Install AMPL
 
-Get your license at the [AMPL Portal](https://portal.ampl.com). AMPL is free for [academics](https://ampl.com/academia/), and you can easily install it through Python.
+Get your license at the [AMPL Portal](https://portal.ampl.com). AMPL is free for [academics](https://ampl.com/academia/) or for [personal use](free), and you can easily install it through Python.
 
 - [How to Install AMPL](#how-to-install-ampl)
   - [To use with Python](#to-use-with-python)
@@ -43,7 +43,7 @@ $ python -m pip install amplpy --upgrade
 # Install solver modules (e.g., HiGHS, CBC, Gurobi)
 $ python -m amplpy.modules install highs cbc gurobi --upgrade
 
-# Activate your license (e.g., free https://ampl.com/academia or https://ampl.com/ce license)
+# Activate your license (e.g., free ampl.com/ce or ampl.com/academia licenses)
 $ python -m amplpy.modules activate <license-uuid>
 
 # Import in Python
@@ -65,7 +65,7 @@ please follow the instructions below that correspond to your operating system:
 
 **For Windows, we have an installer available that asks for your license UUID during the installation process.**
 
-In case you have AMPL already installed, activate your license if you received a license UUID (e.g., [AMPL for Academics](https://ampl.com/academia/), [AMPL for Courses](https://ampl.com/courses), [AMPL Career Starter](https://portal.ampl.com/user/ampl/request/ampl-career-starter/new), or [AMPL Community Edition](https://ampl.com/ce) licenses):
+In case you have AMPL already installed, activate your license if you received a license UUID (e.g., [AMPL for Academics](https://ampl.com/academia/), [AMPL for Courses](https://ampl.com/academia), [AMPL Career Starter](https://ampl.com/academia/), or [AMPL Community Edition](https://ampl.com/ce) licenses):
 
 Run this command in AMPL to activate your license:
 ```
@@ -87,7 +87,7 @@ Recommend IDE: It is recommend to use [VS Code](https://code.visualstudio.com/do
 
 **For macOS, we have an installer available that asks for the license UUID at the end for the installation process.**
 
-In case you have AMPL already installed, activate your license if you received a license UUID (e.g., [AMPL for Academics](https://ampl.com/academia/) or [AMPL for Courses](https://ampl.com/courses) licenses):
+In case you have AMPL already installed, activate your license if you received a license UUID (e.g., [AMPL for Academics](https://ampl.com/academia/), [AMPL for Courses](https://ampl.com/academia), [AMPL Career Starter](https://ampl.com/academia/), or [AMPL Community Edition](https://ampl.com/ce) licenses):
 
 Run this command in AMPL to activate your license:
 ```

@@ -29,7 +29,7 @@ together with a filter linear search procedure.
             # Install AMPL & solver modules:
             $ python -m amplpy.modules install coin # install IPOPT
 
-            # Activate your license (e.g., free ampl.com/ce or ampl.com/courses licenses):
+            # Activate your license (e.g., free ampl.com/ce or ampl.com/academia licenses):
             $ python -m amplpy.modules activate <your-license-uuid>
 
         How to use:
