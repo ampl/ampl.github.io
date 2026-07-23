@@ -1,5 +1,16 @@
 # AMPL Changelog
 
+## 20260723
+
+* Output from options `times` or `gentimes` will not be redirected to stderr when using APIs (blockmode). When using amplpy or other APIs, the output for these options will be in the file specified by the new option `times_file`.
+
+* New option `times_file` specifies the name of a file to which the output
+caused by options `times = 1` and `gentimes = 1` should be written.
+
+Such output is always appended to the specified file. To start with
+an empty file, use a "remove" command before an "option times_file"
+command. The default '' leaves timing output on stderr as before (with the exception of APIs).
+
 ## 20260520
 
 * Drop partial declarations under error. Errors in declarations would keep the entities declared, so they could be later redeclare (for example, using the `redeclare` command). Now this behavior changes to a more natural one, so errors in declarations of Variables, Parameters, Sets, Objectives or Constraints won't declare the entity partially. With this update, the following code would be valid:
