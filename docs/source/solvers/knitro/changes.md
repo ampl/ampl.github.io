@@ -1,5 +1,12 @@
 # KNITRO Changelog
 
+## 20260714
+- Updated to Knitro 16.0.0, changes include:
+    - Nonlinear Modeler. This new tool allows describing expressions symbolically as expression trees. Once the expression is described, Knitro evaluates it and computes all required derivatives automatically using automatic differentiation AD. Set option `use_asl=0`.
+    -  Performance improvements on MIP and on barrier crossover
+     - New options (see `-=` output)
+
+
 ## 20260108
 - Use MIP warm start
 
