@@ -281,6 +281,12 @@ cvt:names (names, modelnames)
       2 - Read names from AMPL, but create generic names if not provided
       3 - Create generic names.
 
+cvt:nlobj (passnlobj)
+      0*/1: Pass nonlinear objective terms to the solver. When 0, if the
+      solver accepts nonlinear constraints, such a constraint will be created
+      with those, otherwise linearly approximated. With cvt:quadobj=0, ensures
+      the objective is linear.
+
 cvt:plapprox:domain (plapprox:domain, plapproxdomain)
       For piecewise-linear approximated functions, both arguments and result
       are bounded to +-[pladomain]. Default 1e6.
@@ -562,11 +568,12 @@ cvt:pre:unnest (cvt:unnest, cvt:pre:inline, cvt:inline)
       Inline nested expressions. Bitwise OR of the following values:
 
       1 - AND/FORALL and OR/EXISTS expressions
-      2 - Linear subexpressions
-      4 - Quadratic subexpressions
-      8 - MIN/MAX.
+      2 - Linear subexpressions in algebraic constraints
+      4 - Linear and quadratic subexpressions in algebraic constraints
+      8 - MIN/MAX
+      16 - Algebraic subexpressions in indicator constraints.
 
-      See also option cvt:dvelim concerning only the input model. Default 15.
+      See also option cvt:dvelim concerning only the input model. Default 31.
 
 cvt:qp2passes (cvt:qp2pass, qp2passes, qp2pass)
       0/1*: Parse sums of QP expressions in 2 passes. Usually faster.
@@ -579,7 +586,8 @@ cvt:quadcon (passquadcon)
 cvt:quadobj (passquadobj)
       0/1*: Pass quadratic objective terms to the solver. When 0, if the
       solver accepts quadratic constraints, such a constraint will be created
-      with those, otherwise linearly approximated.
+      with those, otherwise linearly approximated. With cvt:nlobj=0, ensures
+      the objective is linear.
 
 cvt:socp (socpmode, socp)
       Second-Order Cone recognition mode:
@@ -735,6 +743,45 @@ mip:mincliquetable (mincliquetable, mip_min_cliquetable_entries_for_parallelism)
       Minimal number of entries in the cliquetable before neighborhood queries
       of the conflict graph use parallel processing(default 100000)
 
+mip:plateau:absgaptol (mip:plateauabsgaptol, plateauabsgaptol)
+      If set (>0), also track the reported absolute MIP gap as progress for
+      mip:plateautime: the plateau timer resets whenever the absolute gap
+      shrinks by at least this amount. Default 0 (disabled).
+
+mip:plateau:abstol (mip:plateauabstol, plateauabstol)
+      Minimum absolute objective improvement to reset the mip:plateautime
+      timer. Default 0 (any improvement resets the timer).
+
+mip:plateau:log (mip:plateaulog, plateaulog)
+      Whether to print the current plateau status. Default 0 (silent).
+
+mip:plateau:relgaptol (mip:plateaurelgaptol, plateaurelgaptol)
+      If set (>0), also track the reported relative MIP gap as progress for
+      mip:plateautime: the plateau timer resets whenever the relative gap
+      shrinks by at least this amount. Default 0 (disabled).
+
+mip:plateau:reltol (mip:plateaureltol, plateaureltol)
+      Minimum relative objective improvement, as a fraction of the current
+      value, to reset the mip:plateautime timer. Default 0.
+
+mip:plateau:time (mip:plateautime, plateautime)
+      Stop the MIP search if the incumbent objective (and, if
+      mip:plateauabsgaptol/mip:plateaurelgaptol are set, the MIP gap) has not
+      improved by at least mip:plateauabstol or mip:plateaureltol for this
+      many seconds. Default 0 (disabled).
+
+mip:plateau:warmup (mip:plateauwarmup, plateauwarmup)
+      Grace period (in seconds) after the solve starts before mip:plateautime
+      is checked. Default 0.
+
+mip:plateau:warmup:absgap (mip:plateauwarmupabsgap, plateauwarmupabsgap)
+      Absolute MIP gap to be reached before mip:plateautime is checked.
+      Default 0.
+
+mip:plateau:warmup:relgap (mip:plateauwarmuprelgap, plateauwarmuprelgap)
+      Relative MIP gap to be reached before mip:plateautime is checked.
+      Default 0.
+
 mip:poolsoftlimit (poolsoftlimit, mip_pool_soft_limit)
       Soft limit on the number of rows in the cutpool for dynamic age
       adjustment(default 10000)
@@ -794,8 +841,8 @@ obj:multi (multiobj)
 
       Note that with solver's native handling (when obj:multi=1 and
       supported), some solvers might have special rules for the tolerances,
-      especially for LP, and not allow quadratic objectives. See the solver
-      documentation.
+      especially for LP, and only allow linear objectives. See the solver
+      documentation and options cvt:quadobj, cvt:nlobj.
 
 obj:multi:options (multiobjoptions)
       0/1*: Regard multiobjective option suffixes which are objective suffixes
@@ -1024,7 +1071,6 @@ tech:writemodelonly (justwriteprob, justwritemodel)
 
 tech:writesolution (writesol, writesolution)
       Specifies the names of files where to export the solution and/or other
-      result files in solver's native formats. Option can be repeated. File
-      name extensions can be ".sol[.tar.gz]", ".json", ".bas", ".ilp", etc.
+      result files in solver's native formats. Option can be repeated.
 ```
 
