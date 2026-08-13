@@ -100,6 +100,14 @@ Constraint Programming Solvers
 
     ilogcp/index
 
+Complementarity Solvers
+-----------------------
+
+.. toctree::
+    :maxdepth: 1
+
+    path/index
+
 NEOS Server
 -----------
 
@@ -109,4 +117,3 @@ Try NEOS directly from Google Colab here: `Open in Google Colab <https://colab.a
     :maxdepth: 2
 
     kestrel/index
-

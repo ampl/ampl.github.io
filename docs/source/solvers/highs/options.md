@@ -732,12 +732,28 @@ mip:heureff (heureff, mip_heuristic_effort)
 mip:intfeastol (intfeastol, inttol, mip_feasibility_tolerance)
       Feasibility tolerance for integer variables (default 1e-06).
 
+mip:ipmsolver (mipipmsolver, mip_ipm_solver)
+      Choose the ipm solver to be used during mip solves:
+
+      choose - Automatic (default)
+      ipm    - Interior Point Method (automatic)
+      hipo   - Highs Interior point method
+
 mip:lifting (lifting, mip_lifting_for_probing)
       Whether lifting for probing should be used (default -1)
 
 mip:lpagelimit (lpagelimit, mip_lp_age_limit)
       Maximal age of dynamic LP rows before they are removed from the LP
       relaxation (default 10)
+
+mip:lpsolver (miplpsolver, mip_lp_solver)
+      Choose the lp solver to be used during mip solves:
+
+      choose  - Automatic (default)
+      simplex - Simplex
+      ipm     - Interior Point Method (automatic)
+      hipo    - Highs Interior point method
+      ipx     - IPX interior point method
 
 mip:mincliquetable (mincliquetable, mip_min_cliquetable_entries_for_parallelism)
       Minimal number of entries in the cliquetable before neighborhood queries

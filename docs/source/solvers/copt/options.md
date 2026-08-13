@@ -11,7 +11,7 @@ Solver options obtained with `$ copt -=`.
 
 ```
 COPT Optimizer Options for AMPL
---------------------------------------------
+-------------------------------
 
 To set these options, assign a string specifying their values to the AMPL
 option "copt_options". For example:
@@ -506,6 +506,12 @@ cvt:names (names, modelnames)
       2 - Read names from AMPL, but create generic names if not provided
       3 - Create generic names.
 
+cvt:nlobj (passnlobj)
+      0/1*: Pass nonlinear objective terms to the solver. When 0, if the
+      solver accepts nonlinear constraints, such a constraint will be created
+      with those, otherwise linearly approximated. With cvt:quadobj=0, ensures
+      the objective is linear.
+
 cvt:plapprox:domain (plapprox:domain, plapproxdomain)
       For piecewise-linear approximated functions, both arguments and result
       are bounded to +-[pladomain]. Default 1e6.
@@ -787,11 +793,12 @@ cvt:pre:unnest (cvt:unnest, cvt:pre:inline, cvt:inline)
       Inline nested expressions. Bitwise OR of the following values:
 
       1 - AND/FORALL and OR/EXISTS expressions
-      2 - Linear subexpressions
-      4 - Quadratic subexpressions
-      8 - MIN/MAX.
+      2 - Linear subexpressions in algebraic constraints
+      4 - Linear and quadratic subexpressions in algebraic constraints
+      8 - MIN/MAX
+      16 - Algebraic subexpressions in indicator constraints.
 
-      See also option cvt:dvelim concerning only the input model. Default 15.
+      See also option cvt:dvelim concerning only the input model. Default 31.
 
 cvt:qp2passes (cvt:qp2pass, qp2passes, qp2pass)
       0/1*: Parse sums of QP expressions in 2 passes. Usually faster.
@@ -804,7 +811,8 @@ cvt:quadcon (passquadcon)
 cvt:quadobj (passquadobj)
       0/1*: Pass quadratic objective terms to the solver. When 0, if the
       solver accepts quadratic constraints, such a constraint will be created
-      with those, otherwise linearly approximated.
+      with those, otherwise linearly approximated. With cvt:nlobj=0, ensures
+      the objective is linear.
 
 cvt:socp (socpmode, socp)
       Second-Order Cone recognition mode:
@@ -883,6 +891,9 @@ iis:method (iismethod, alg:iismethod)
       -1 - Automatic choice (default)
       0  - Find smaller IIS
       1  - Find IIS quickly
+
+lim:memlimit (memlimit)
+      Soft limit (number of MB) on memory allocated; default = 0 (no limit)
 
 lim:mipnlpiterlimit (mipnlpiterlimit)
       Iteration limit for solving NLP problem(s) within the MIP solver
@@ -1120,8 +1131,8 @@ obj:multi (multiobj)
 
       Note that with solver's native handling (when obj:multi=1 and
       supported), some solvers might have special rules for the tolerances,
-      especially for LP, and not allow quadratic objectives. See the solver
-      documentation.
+      especially for LP, and only allow linear objectives. See the solver
+      documentation and options cvt:quadobj, cvt:nlobj.
 
 obj:multi:options (multiobjoptions)
       0/1*: Regard multiobjective option suffixes which are objective suffixes
@@ -1256,9 +1267,19 @@ tech:loglevel (loglevel)
       3 - Print memory usage information in addition to basic optimization
           logs (for MIP problems).
 
+tech:mempeak (mempeak)
+      Return the peak memory used by the solver in the problem suffix
+      "peakmem". Default = 0 (do not return).
+
 tech:miptasks (miptasks)
       Number of MIP tasks in parallel;
       default -1 ==> automatic.
+
+tech:numericalranges (numericalranges, numerical_ranges)
+      Return the numerical ranges of the problem as problem suffixes: minelem,
+      maxelem, minbound, maxbound, minrhs, maxrhs, mincost, maxcost, minqelem,
+      maxqelem, minqlelem, maxqlelem, minqrhs, maxqrhs, minqcost, maxqcost.
+      See CHANGES.copt.md for details. Default = 0 (do not return).
 
 tech:optionfile (optionfile, option:file)
       Name of an AMPL solver option file to read (surrounded by 'single' or
@@ -1335,7 +1356,8 @@ tech:writemodelonly (justwriteprob, justwritemodel)
 
 tech:writesolution (writesol, writesolution)
       Specifies the names of files where to export the solution and/or other
-      result files in solver's native formats. Option can be repeated. File
-      name extensions can be ".sol[.tar.gz]", ".json", ".bas", ".ilp", etc.
+      result files in solver's native formats. Option can be repeated.
+
+      File name extensions can be ".sol", ".bas", ".iis".
 ```
 

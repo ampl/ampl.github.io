@@ -34,6 +34,7 @@ SOLVERS = {
     "GCG-CPX": "gcg-cpx",
     "MP2NL": "mp2nl",
     "Kestrel": "kestrel",
+    "PATH": "path",
 }
 
 import requests

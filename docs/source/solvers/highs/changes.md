@@ -1,5 +1,12 @@
 # HiGHS Changelog
 
+## 20260813
+- Updated to HiGHS 1.15.1
+    - First variant of parallel MIP solver
+- Options *mip:lpsolver* and *mip:ipmsolver* to 
+  fine control solvers used during MIP solves
+
+
 ## 20260812
 - Fixed runtime issue on some containers
 
@@ -23,7 +30,7 @@
 
 
 ## 20260611
-- Updated to HiGHS 1.143.
+- Updated to HiGHS 1.14
 - Added HiPO algorithm, an advanced interior point method,
   accessible with *alg:method=hipo*
 - Added HiPDLP on CPU and GPU (*alg:method=hipdlp* and 
