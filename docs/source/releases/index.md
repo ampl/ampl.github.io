@@ -192,7 +192,7 @@ document.addEventListener('DOMContentLoaded',function(){
 ```
 
 ## Changelogs
-- [**AMPL** Changelog (latest: **20260723**)](../releases/ampl.md)
+- [**AMPL** Changelog (latest: **20260809**)](../releases/ampl.md)
 - [**AMPL MP** Changelog (latest: **20260624**)](../releases/mp.md)
 - [**AMPLPY** Changelog (latest: **20260721**)](../releases/amplpy.md)
 - [**AMPLS** Changelog (latest: **20260526**)](../releases/ampls.md)
@@ -265,6 +265,8 @@ document.addEventListener('DOMContentLoaded',function(){
 - [HiGHS](../solvers/highs/changes.md#20260813)
 ## 20260812
 - [HiGHS](../solvers/highs/changes.md#20260812)
+## 20260809
+- [AMPL](../releases/ampl.md#20260809)
 ## 20260806
 - [HiGHS](../solvers/highs/changes.md#20260806)
 ## 20260723

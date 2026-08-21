@@ -1,5 +1,11 @@
 # AMPL Changelog
 
+## 20260809
+
+* For blockmode users, fix block names for commands being called while `times` and `gentimes` are enabled.
+
+* Fix a bug when evaluating suffixes of indexed objectives via synonyms.
+
 ## 20260723
 
 * Output from options `times` or `gentimes` will not be redirected to stderr when using APIs (blockmode). When using amplpy or other APIs, the output for these options will be in the file specified by the new option `times_file`.
