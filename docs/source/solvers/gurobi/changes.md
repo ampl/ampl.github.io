@@ -1,5 +1,25 @@
 # GUROBI Changelog
 
+## 20260908
+- Updated to Gurobi 13.0.3 that includes bug fixes.
+- Changes in MP:
+  - Option *obj:multi:stats=1* outputs multi-objective
+    pass statistics in the *.objpass[_...]* suffixes.
+  - Options *mip:plateau:...* control MIP
+    tailing-off.
+    Can be used in multi-objective solves,
+    see option *obj:multi:options*. 
+  - Fix a bug in complementarity reformulation
+    with *cvt:compl=2,3*.
+  - Option *cvt:nlobj* controls whether nonlinear
+    objective terms are passed to the objective,
+    vs moved to a constraint or piecewise-linearly
+    approximated. Setting *cvt:nlobj=0*
+    *cvt:quadobj=0* enables native
+    multiobjective method (*obj:multi=1*)
+    if only supported for linear objectives.
+
+
 ## 20260624
 - Changes in MP, in particular:
   - Option *cvt:pow2_as_qp* prefers quadratization
