@@ -483,6 +483,12 @@ cvt:names (names, modelnames)
       2 - Read names from AMPL, but create generic names if not provided
       3 - Create generic names.
 
+cvt:nlobj (passnlobj)
+      0*/1: Pass nonlinear objective terms to the solver. When 0, if the
+      solver accepts nonlinear constraints, such a constraint will be created
+      with those, otherwise linearly approximated. With cvt:quadobj=0, ensures
+      the objective is linear.
+
 cvt:plapprox:domain (plapprox:domain, plapproxdomain)
       For piecewise-linear approximated functions, both arguments and result
       are bounded to +-[pladomain]. Default 1e6.
@@ -502,7 +508,7 @@ cvt:pre:all
 cvt:pre:boundlogarg (boundlogarg)
       0*/1: Bound logarithm arguments to nonnegative.
 
-cvt:pre:boundsbest (boundsbest)
+cvt:pre:boundsbest (boundsbest, bestbounds, bestbound)
       0*/1: Submit best-known variable bounds to the solver. Can inhibit its
       presolve.
 
@@ -764,11 +770,12 @@ cvt:pre:unnest (cvt:unnest, cvt:pre:inline, cvt:inline)
       Inline nested expressions. Bitwise OR of the following values:
 
       1 - AND/FORALL and OR/EXISTS expressions
-      2 - Linear subexpressions
-      4 - Quadratic subexpressions
-      8 - MIN/MAX.
+      2 - Linear subexpressions in algebraic constraints
+      4 - Linear and quadratic subexpressions in algebraic constraints
+      8 - MIN/MAX
+      16 - Algebraic subexpressions in indicator constraints.
 
-      See also option cvt:dvelim concerning only the input model. Default 15.
+      See also option cvt:dvelim concerning only the input model. Default 31.
 
 cvt:qp2passes (cvt:qp2pass, qp2passes, qp2pass)
       0/1*: Parse sums of QP expressions in 2 passes. Usually faster.
@@ -781,7 +788,8 @@ cvt:quadcon (passquadcon)
 cvt:quadobj (passquadobj)
       0*/1: Pass quadratic objective terms to the solver. When 0, if the
       solver accepts quadratic constraints, such a constraint will be created
-      with those, otherwise linearly approximated.
+      with those, otherwise linearly approximated. With cvt:nlobj=0, ensures
+      the objective is linear.
 
 cvt:socp (socpmode, socp)
       Second-Order Cone recognition mode:
@@ -1109,13 +1117,28 @@ obj:multi (multiobj)
 
       Note that with solver's native handling (when obj:multi=1 and
       supported), some solvers might have special rules for the tolerances,
-      especially for LP, and not allow quadratic objectives. See the solver
-      documentation.
+      especially for LP, and only allow linear objectives. See the solver
+      documentation and options cvt:quadobj, cvt:nlobj.
 
 obj:multi:options (multiobjoptions)
       0/1*: Regard multiobjective option suffixes which are objective suffixes
       beginning with option_. Example: suffix option_timelim; let
       _obj[2].option_timelim:=15;
+
+obj:multi:stats (multiobjstats)
+      0*/1: Report multiobjective pass statistics in the following objective
+      suffixes:
+
+      * .objpass: index of the pass where this objective was solved, 0 if not
+        solved due to a stop in a previous pass
+
+      * .objpass_result: the solve_result of the pass where this objective was
+        solved; -1 if not
+
+      * .objpass_runtime, _mipgap, _objval, _objbound, _work, _itercount,
+        _nodecount, _opennodecount if available.
+
+      See also tech:stats.
 
 obj:multi:weight (multiobjweight, obj:multi:weights, multiobjweights)
       How to interpret each objective's weight sign:
@@ -1220,14 +1243,6 @@ pro:maxroundsroot
       Maximal number of propagation rounds in the root node (-1: unlimited; 0:
       off; default: 1000)
 
-ran:lpseed (lpseed)
-      Random seed for LP solver, e.g. for perturbations in the simplex
-      (default: 0: LP default)
-
-ran:permutationseed (permutationseed)
-      Seed value for permuting the problem after reading/transformation
-      (default: 0: no permutation)
-
 ran:permuteconss (permuteconss)
       0/1: whether the order of constraints should be permuted (depends on
       permutationseed)?
@@ -1243,10 +1258,6 @@ ran:permutevars (permutevars)
       0 - Order of variables should not be permuted (default)
 
       1 - Order of variables should be permuted.
-
-ran:randomseedshift (randomseedshift)
-      Global shift of all random seeds in the plugins and the LP random seed
-      (default: 0)
 
 sol:chk:fail (chk:fail, checkfail)
       Fail on MP solution check violations, with solve result 150.
@@ -1318,6 +1329,10 @@ tech:debug (debug)
 tech:logfile (logfile)
       Log file name.
 
+tech:lpseed (lpseed, ran:lpseed, lpseed)
+      Random seed for LP solver, e.g. for perturbations in the simplex
+      (default: 0: LP default)
+
 tech:optionfile (optionfile, option:file)
       Name of an AMPL solver option file to read (surrounded by 'single' or
       "double" quotes if the name contains blanks). Lines that start with #
@@ -1338,6 +1353,14 @@ tech:outlev-native (outlev-native)
 tech:outlev_mp (outlev_mp)
       0*/1: whether to print MP model information.
 
+tech:permseed (permseed, ran:permutationseed, permutationseed)
+      Seed value for permuting the problem after reading/transformation
+      (default: 0: no permutation)
+
+tech:seed (seed, ran:randomseedshift, randomseedshift)
+      Global shift of all random seeds in the plugins and the LP random seed
+      (default: 0)
+
 tech:stats (stats, tech:report_stats, solve_stats)
       Whether to return solve statistics and timings; the information will be
       stored in the problem suffixes: 'simplex_iterations',
@@ -1350,7 +1373,9 @@ tech:stats (stats, tech:report_stats, solve_stats)
       0 - Do not report statistics (default)
       1 - Report statistics in JSON format in the problem suffix 'stats'
       2 - Report statistics in suffixes
-      3 - Report statistics both in suffixes and the suffix 'stats'
+      3 - Report statistics both in suffixes and the suffix 'stats'.
+
+      See also obj:multi:stats.
 
 tech:timing (timing, tech:report_times, report_times)
       0*/1/2: Whether to print and return timings for the run, all times are

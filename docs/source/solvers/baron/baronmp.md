@@ -313,6 +313,12 @@ cvt:names (names, modelnames)
       2 - Read names from AMPL, but create generic names if not provided
       3 - Create generic names.
 
+cvt:nlobj (passnlobj)
+      0/1*: Pass nonlinear objective terms to the solver. When 0, if the
+      solver accepts nonlinear constraints, such a constraint will be created
+      with those, otherwise linearly approximated. With cvt:quadobj=0, ensures
+      the objective is linear.
+
 cvt:plapprox:domain (plapprox:domain, plapproxdomain)
       For piecewise-linear approximated functions, both arguments and result
       are bounded to +-[pladomain]. Default 1e6.
@@ -332,7 +338,7 @@ cvt:pre:all
 cvt:pre:boundlogarg (boundlogarg)
       0*/1: Bound logarithm arguments to nonnegative.
 
-cvt:pre:boundsbest (boundsbest)
+cvt:pre:boundsbest (boundsbest, bestbounds, bestbound)
       0*/1: Submit best-known variable bounds to the solver. Can inhibit its
       presolve.
 
@@ -594,11 +600,12 @@ cvt:pre:unnest (cvt:unnest, cvt:pre:inline, cvt:inline)
       Inline nested expressions. Bitwise OR of the following values:
 
       1 - AND/FORALL and OR/EXISTS expressions
-      2 - Linear subexpressions
-      4 - Quadratic subexpressions
-      8 - MIN/MAX.
+      2 - Linear subexpressions in algebraic constraints
+      4 - Linear and quadratic subexpressions in algebraic constraints
+      8 - MIN/MAX
+      16 - Algebraic subexpressions in indicator constraints.
 
-      See also option cvt:dvelim concerning only the input model. Default 15.
+      See also option cvt:dvelim concerning only the input model. Default 31.
 
 cvt:qp2passes (cvt:qp2pass, qp2passes, qp2pass)
       0/1*: Parse sums of QP expressions in 2 passes. Usually faster.
@@ -611,7 +618,8 @@ cvt:quadcon (passquadcon)
 cvt:quadobj (passquadobj)
       0/1*: Pass quadratic objective terms to the solver. When 0, if the
       solver accepts quadratic constraints, such a constraint will be created
-      with those, otherwise linearly approximated.
+      with those, otherwise linearly approximated. With cvt:nlobj=0, ensures
+      the objective is linear.
 
 cvt:socp (socpmode, socp)
       Second-Order Cone recognition mode:
@@ -745,13 +753,28 @@ obj:multi (multiobj)
 
       Note that with solver's native handling (when obj:multi=1 and
       supported), some solvers might have special rules for the tolerances,
-      especially for LP, and not allow quadratic objectives. See the solver
-      documentation.
+      especially for LP, and only allow linear objectives. See the solver
+      documentation and options cvt:quadobj, cvt:nlobj.
 
 obj:multi:options (multiobjoptions)
       0/1*: Regard multiobjective option suffixes which are objective suffixes
       beginning with option_. Example: suffix option_timelim; let
       _obj[2].option_timelim:=15;
+
+obj:multi:stats (multiobjstats)
+      0*/1: Report multiobjective pass statistics in the following objective
+      suffixes:
+
+      * .objpass: index of the pass where this objective was solved, 0 if not
+        solved due to a stop in a previous pass
+
+      * .objpass_result: the solve_result of the pass where this objective was
+        solved; -1 if not
+
+      * .objpass_runtime, _mipgap, _objval, _objbound, _work, _itercount,
+        _nodecount, _opennodecount if available.
+
+      See also tech:stats.
 
 obj:multi:weight (multiobjweight, obj:multi:weights, multiobjweights)
       How to interpret each objective's weight sign:
@@ -939,7 +962,9 @@ tech:stats (stats, tech:report_stats, solve_stats)
       0 - Do not report statistics (default)
       1 - Report statistics in JSON format in the problem suffix 'stats'
       2 - Report statistics in suffixes
-      3 - Report statistics both in suffixes and the suffix 'stats'
+      3 - Report statistics both in suffixes and the suffix 'stats'.
+
+      See also obj:multi:stats.
 
 tech:sumfile (sumfile)
       Name of summary file.
@@ -992,8 +1017,7 @@ tech:writemodelonly (justwriteprob, justwritemodel)
 
 tech:writesolution (writesol, writesolution)
       Specifies the names of files where to export the solution and/or other
-      result files in solver's native formats. Option can be repeated. File
-      name extensions can be ".sol[.tar.gz]", ".json", ".bas", ".ilp", etc.
+      result files in solver's native formats. Option can be repeated.
 
 tech:xpresslibname (xpresslibname)
       If used, specifies the path to xpress libraries
