@@ -141,7 +141,7 @@ for solver in os.listdir(solvers_dir):
 redirects["ampl/python/colab/index.html"] = "../colab.html"
 redirects["solvers/solver_options/cbc_options.html"] = "../cbc/options.html"
 redirects["solver_options.html"] = "solvers/index.html"
-redirects["social.html"] = "https://www.linkedin.com/company/ampl"
+redirects["social.html"] = "https://www.linkedin.com/company/amplopt"
 redirects["ampl/book.html"] = "books/index.html"
 redirects["more/videos.html"] = "../ampl/videos/index.html"
 redirects["more/interviews.html"] = "../ampl/videos/interviews.html"
