@@ -96,13 +96,6 @@ html_theme = "ampl_sphinx_theme"
 # documentation.
 # html_theme_options = {}
 html_theme_options = {
-    "icon_links": [
-        {
-            "name": "GitHub",
-            "url": "https://github.com/ampl/",
-            "icon": "fab fa-github fa-fw",
-        },
-    ],
     "logo_text": "Development",
 }
 html_context = {"default_mode": "light"}

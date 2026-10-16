@@ -27,16 +27,13 @@
   {%- endif -%}
 {%- endmacro -%}
 
-{%- if theme_icon_links -%}
 <ul class="navbar-icon-links"
     aria-label="{{ theme_icon_links_label }}">
-  {%- for icon_link in theme_icon_links -%}
+  {%- for icon_link in theme_icon_links or [] -%}
     {{ icon_link_nav_item(icon_link["url"], icon_link["icon"], icon_link["name"], icon_link.get("type", "fontawesome"), icon_link.get("attributes", {})) -}}
   {%- endfor %}
-  {{ icon_link_nav_item("https://discuss.ampl.com", "fab fa-discourse fa-fw", "AMPL Support Forum", "fontawesome") -}}
   {{ icon_link_nav_item("https://portal.ampl.com", "fas fa-user fa-fw", "AMPL Portal", "fontawesome") -}}
   {{ icon_link_nav_item("https://ampl.com", "fas fa-home fa-fw", "AMPL Homepage", "fontawesome") -}}
   {{ icon_link_nav_item("https://dev.ampl.com", "fas fa-book fa-fw", "AMPL Resources", "fontawesome") -}}
   {{ icon_link_nav_item("https://l.ampl.com/https://chatgpt.com/g/g-68c00de8b030819185be6db190ad7bce-amplbot", "fas fa-robot fa-fw", "Amplbot", "fontawesome") -}}
 </ul>
-{%- endif -%}
