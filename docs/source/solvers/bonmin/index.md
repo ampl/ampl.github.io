@@ -72,6 +72,50 @@ The algorithms in Bonmin are exact when the functions `f` and `g` are convex; in
   - [Solver options](#solver-options)
   - [Retrieving solutions](#retrieving-solutions)
 
+## Features
+
+### Algorithms
+
+:::{dropdown} Algorithms
+`bonmin.algorithm`: `B-BB` (NLP-based branch-and-bound, default), `B-OA`
+(outer approximation), `B-QG` (Quesada-Grossmann), `B-Hyb` (hybrid),
+`B-Ecp`, `B-iFP`. Exact for convex models, heuristic otherwise. Time
+limit: `bonmin.time_limit`. Ipopt options (for the NLP subproblems) are
+also accepted.
+
+```ampl
+ampl: option bonmin_options 'bonmin.algorithm=B-OA bonmin.time_limit=60';
+```
+:::
+
+### Modeling with MP expressions
+
+:::::{dropdown} MP expressions: logic, counting, complementarity (MP2NL)
+Bonmin reads the classic NL format, without MP's expressions (`==>`, `or`, `atmost`, `count`, `alldiff`, piecewise-linear terms, ...), nor `complements`. Through MP2NL, MP reformulates them first.
+
+Call [MP2NL](../mp2nl/index.md) as the solver and name Bonmin inside it; MP's options go into `mp2nl_options`, Bonmin's own into `bonmin_options`.
+
+MP reformulates logic with binary variables, which Bonmin handles as integer variables.
+
+::::{tab-set}
+:::{tab-item} Python
+```python
+ampl.solve(solver="mp2nl", mp2nl_options="solver=bonmin cvt:compl=1")
+```
+:::
+:::{tab-item} AMPL
+```ampl
+ampl: option solver mp2nl;
+ampl: option mp2nl_options 'solver=bonmin cvt:compl=1';
+ampl: solve;
+```
+:::
+::::
+
+More: [Meta-driver MP2NL](https://mp.ampl.com/modeling-tools.html#meta-driver-mp2nl).
+:::::
+
+
 ## Solver options
 
 Full list of solver options:

@@ -54,6 +54,45 @@ MINOS is an established choice for both linear and nonlinear optimization proble
             ampl: solve; # solve the problem
 ```
 
+## Features
+
+### Algorithms
+
+:::{dropdown} Reduced gradient (local)
+MINOS combines a reduced-gradient method for nonlinear objectives with a
+projected augmented Lagrangian for nonlinear constraints; it is most
+effective when the constraints are linear or nearly so. It returns local
+optima. Time limit: `timelim`.
+:::
+
+### Modeling with MP expressions
+
+:::::{dropdown} MP expressions: logic, counting, complementarity (MP2NL)
+MINOS reads the classic NL format, without MP's expressions (`==>`, `or`, `atmost`, `count`, `alldiff`, piecewise-linear terms, ...), nor `complements`. Through MP2NL, MP reformulates them first.
+
+Call [MP2NL](../mp2nl/index.md) as the solver and name MINOS inside it; MP's options go into `mp2nl_options`, MINOS's own into `minos_options`.
+
+MINOS is a continuous solver: it relaxes the binary variables that MP uses for logical constraints, and the result can violate the logic (MP's solution check then reports it). Use it for constructs that need no binaries, such as complementarity with a smooth reformulation (`cvt:compl=1` or `2`); use an MINLP solver for models with logic.
+
+::::{tab-set}
+:::{tab-item} Python
+```python
+ampl.solve(solver="mp2nl", mp2nl_options="solver=minos cvt:compl=1")
+```
+:::
+:::{tab-item} AMPL
+```ampl
+ampl: option solver mp2nl;
+ampl: option mp2nl_options 'solver=minos cvt:compl=1';
+ampl: solve;
+```
+:::
+::::
+
+More: [Meta-driver MP2NL](https://mp.ampl.com/modeling-tools.html#meta-driver-mp2nl).
+:::::
+
+
 ## Options
 
 Full list of solver options:

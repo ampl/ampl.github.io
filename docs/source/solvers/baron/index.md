@@ -79,10 +79,44 @@ With BARONMP, logical and other MP expressions are reformulated by MP.
 :::
 
 :::{dropdown} Global search: branch-and-reduce
-Stopping tolerances: `alg:epsr` (relative, default 1e-9) and `alg:epsa`.
-Local searches: `alg:numloc` in preprocessing, `alg:dolocal` during
-upper bounding. LP subsolver: `lp:alg`.
+Stopping tolerances: `epsr` (relative) and `epsa` (absolute). Time limit:
+`maxtime`, in CPU seconds, **default 1000**. Local searches: `numloc` in
+preprocessing, `dolocal` during upper bounding. LP solver: `lpsolver`.
+
+With BARONMP, the same controls are `alg:epsr`, `alg:epsa`, `alg:numloc`,
+`alg:dolocal` and `lim:time`; the LP algorithm is `lp:alg`.
 :::
+
+### Modeling with MP expressions
+
+:::::{dropdown} MP expressions: logic and counting (MP2NL)
+BARON reads the classic NL format, without MP's expressions (`==>`, `or`, `atmost`, `count`, `alldiff`, piecewise-linear terms, ...). Through MP2NL, MP reformulates them first. (BARON accepts `complements` natively.)
+
+The BARON driver includes the [MP2NL](../mp2nl/index.md) bridge: set `mp2nl=1` in `baron_options`. MP's own options (`cvt:...`, `sol:chk:...`) then go into the AMPL option `mp_options`.
+
+MP reformulates logic with binary variables, which BARON handles as integer variables. Alternatively, BARONMP (`baronmp`) is built on MP
+and accepts these expressions directly.
+
+::::{tab-set}
+:::{tab-item} Python
+```python
+ampl.solve(solver="baron", baron_options="mp2nl=1", mp_options="cvt:bigM=1e5")
+```
+:::
+:::{tab-item} AMPL
+```ampl
+ampl: option solver baron;
+ampl: option baron_options 'mp2nl=1';
+ampl: option mp_options 'cvt:bigM=1e5';
+ampl: solve;
+```
+:::
+::::
+
+More: [Meta-driver MP2NL](https://mp.ampl.com/modeling-tools.html#meta-driver-mp2nl).
+:::::
+
+
 
 ### Solver features (BARONMP)
 

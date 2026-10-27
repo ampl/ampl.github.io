@@ -36,6 +36,45 @@ RAPOSa is a global optimization solver, specifically designed for mixed-integer 
             ampl: solve; # solve the problem
 ```
 
+## Features
+
+### Algorithms
+
+:::{dropdown} Global: reformulation-linearization
+RAPOSa solves polynomial (mixed-integer) models with bounded variables by
+the reformulation-linearization technique. Time limit: `maxtime` (default
+300). Subsolvers: `linsolver` (LP) and `intnonlinsolver` (MINLP, for the
+upper bounds).
+:::
+
+### Modeling with MP expressions
+
+:::::{dropdown} MP expressions: logic, counting, complementarity (MP2NL)
+RAPOSa reads the classic NL format, without MP's expressions (`==>`, `or`, `atmost`, `count`, `alldiff`, piecewise-linear terms, ...), nor `complements`. Through MP2NL, MP reformulates them first.
+
+Call [MP2NL](../mp2nl/index.md) as the solver and name RAPOSa inside it; MP's options go into `mp2nl_options`, RAPOSa's own into `raposa_options`.
+
+MP reformulates logic with binary variables, which RAPOSa handles as integer variables.
+
+::::{tab-set}
+:::{tab-item} Python
+```python
+ampl.solve(solver="mp2nl", mp2nl_options="solver=raposa cvt:compl=1")
+```
+:::
+:::{tab-item} AMPL
+```ampl
+ampl: option solver mp2nl;
+ampl: option mp2nl_options 'solver=raposa cvt:compl=1';
+ampl: solve;
+```
+:::
+::::
+
+More: [Meta-driver MP2NL](https://mp.ampl.com/modeling-tools.html#meta-driver-mp2nl).
+:::::
+
+
 ## Options
 
 Full list of solver options:

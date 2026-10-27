@@ -54,6 +54,44 @@ LINDO Global is a versatile nonlinear optimizer that supports global optimizatio
             ampl: solve; # solve the problem
 ```
 
+## Features
+
+### Algorithms
+
+:::{dropdown} Global: branch-and-bound with convexification
+Tolerances: `epsr` and `epsa`. Time limit: `maxtime` (CPU seconds).
+Threads: `threads`.
+:::
+
+### Modeling with MP expressions
+
+:::::{dropdown} MP expressions: logic, counting, complementarity (MP2NL)
+LINDO Global reads the classic NL format, without MP's expressions (`==>`, `or`, `atmost`, `count`, `alldiff`, piecewise-linear terms, ...), nor `complements`. Through MP2NL, MP reformulates them first.
+
+The LINDO Global driver includes the [MP2NL](../mp2nl/index.md) bridge: set `mp2nl=1` in `lindoglobal_options`. MP's own options (`cvt:...`, `sol:chk:...`) then go into the AMPL option `mp_options`.
+
+MP reformulates logic with binary variables, which LINDO Global handles as integer variables.
+
+::::{tab-set}
+:::{tab-item} Python
+```python
+ampl.solve(solver="lindoglobal", lindoglobal_options="mp2nl=1", mp_options="cvt:compl=1")
+```
+:::
+:::{tab-item} AMPL
+```ampl
+ampl: option solver lindoglobal;
+ampl: option lindoglobal_options 'mp2nl=1';
+ampl: option mp_options 'cvt:compl=1';
+ampl: solve;
+```
+:::
+::::
+
+More: [Meta-driver MP2NL](https://mp.ampl.com/modeling-tools.html#meta-driver-mp2nl).
+:::::
+
+
 ## Options
 
 Full list of solver options:

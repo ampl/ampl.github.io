@@ -62,6 +62,50 @@ together with a filter linear search procedure.
   - [Solver options](#solver-options)
   - [Retrieving solutions](#retrieving-solutions)
 
+## Features
+
+### Algorithms
+
+:::{dropdown} Interior point (local)
+Ipopt is a primal-dual interior-point method with a filter line search. It
+returns local optima and treats integer variables as continuous.
+Barrier update: `mu_strategy` (`monotone` or `adaptive`). Linear solver:
+`linear_solver` (e.g., `mumps`; HSL solvers such as `ma27`, `ma57` where
+installed). Limits: `max_iter`, `max_cpu_time`.
+
+```ampl
+ampl: option ipopt_options 'mu_strategy=adaptive max_iter=3000';
+```
+:::
+
+### Modeling with MP expressions
+
+:::::{dropdown} MP expressions: logic, counting, complementarity (MP2NL)
+Ipopt reads the classic NL format, without MP's expressions (`==>`, `or`, `atmost`, `count`, `alldiff`, piecewise-linear terms, ...), nor `complements`. Through MP2NL, MP reformulates them first.
+
+Call [MP2NL](../mp2nl/index.md) as the solver and name Ipopt inside it; MP's options go into `mp2nl_options`, Ipopt's own into `ipopt_options`.
+
+Ipopt is a continuous solver: it relaxes the binary variables that MP uses for logical constraints, and the result can violate the logic (MP's solution check then reports it). Use it for constructs that need no binaries, such as complementarity with a smooth reformulation (`cvt:compl=1` or `2`); use an MINLP solver for models with logic.
+
+::::{tab-set}
+:::{tab-item} Python
+```python
+ampl.solve(solver="mp2nl", mp2nl_options="solver=ipopt cvt:compl=1")
+```
+:::
+:::{tab-item} AMPL
+```ampl
+ampl: option solver mp2nl;
+ampl: option mp2nl_options 'solver=ipopt cvt:compl=1';
+ampl: solve;
+```
+:::
+::::
+
+More: [Meta-driver MP2NL](https://mp.ampl.com/modeling-tools.html#meta-driver-mp2nl).
+:::::
+
+
 ## Solver options
 
 Full list of solver options:

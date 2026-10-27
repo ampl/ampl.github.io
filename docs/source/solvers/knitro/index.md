@@ -54,6 +54,59 @@
             ampl: solve; # solve the problem
 ```
 
+## Features
+
+### Algorithms
+
+:::{dropdown} Continuous models: interior point, active set, SQP
+`nlp_algorithm`: `0` automatic (default), `1` interior point (direct),
+`2` interior point (CG), `3` active set (SLQP), `4` SQP, `5` several
+algorithms, `6` augmented Lagrangian. Knitro returns local optima.
+:::
+
+:::{dropdown} Mixed-integer models
+`mip_method`: `0` automatic, `1` branch-and-bound, `3` mixed-integer SQP.
+On nonconvex models the result is a local, not a global, optimum.
+:::
+
+:::{dropdown} Multistart
+`ms_enable=1` solves from several starting points and keeps the best local
+optimum; `ms_maxsolves` sets how many. For MIP, `mip_multistart=1`.
+:::
+
+:::{dropdown} Threads and time
+`numthreads` (parallel features), `maxtime` (seconds).
+:::
+
+### Modeling with MP expressions
+
+:::::{dropdown} MP expressions: logic and counting (MP2NL)
+Knitro reads the classic NL format, without MP's expressions (`==>`, `or`, `atmost`, `count`, `alldiff`, piecewise-linear terms, ...). Through MP2NL, MP reformulates them first. (Knitro accepts `complements` natively.)
+
+The Knitro driver includes the [MP2NL](../mp2nl/index.md) bridge: set `mp2nl=1` in `knitro_options`. MP's own options (`cvt:...`, `sol:chk:...`) then go into the AMPL option `mp_options`.
+
+MP reformulates logic with binary variables, which Knitro handles as integer variables.
+
+::::{tab-set}
+:::{tab-item} Python
+```python
+ampl.solve(solver="knitro", knitro_options="mp2nl=1", mp_options="cvt:bigM=1e5")
+```
+:::
+:::{tab-item} AMPL
+```ampl
+ampl: option solver knitro;
+ampl: option knitro_options 'mp2nl=1';
+ampl: option mp_options 'cvt:bigM=1e5';
+ampl: solve;
+```
+:::
+::::
+
+More: [Meta-driver MP2NL](https://mp.ampl.com/modeling-tools.html#meta-driver-mp2nl).
+:::::
+
+
 ## Options
 
 Full list of solver options:

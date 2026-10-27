@@ -60,6 +60,44 @@ The [COIN Couenne solver (COUENNE, Convex Over and Under ENvelopes for Nonlinear
   - [Solver options](#solver-options)
   - [Retrieving solutions](#retrieving-solutions)
 
+## Features
+
+### Algorithms
+
+:::{dropdown} Global: spatial branch-and-bound
+Couenne builds convex relaxations of the nonconvex terms and branches on
+continuous and integer variables to find a global optimum. Time limit:
+`bonmin.time_limit`; Ipopt options apply to its local NLP solves.
+:::
+
+### Modeling with MP expressions
+
+:::::{dropdown} MP expressions: logic, counting, complementarity (MP2NL)
+Couenne reads the classic NL format, without MP's expressions (`==>`, `or`, `atmost`, `count`, `alldiff`, piecewise-linear terms, ...), nor `complements`. Through MP2NL, MP reformulates them first.
+
+Call [MP2NL](../mp2nl/index.md) as the solver and name Couenne inside it; MP's options go into `mp2nl_options`, Couenne's own into `couenne_options`.
+
+MP reformulates logic with binary variables, which Couenne handles as integer variables.
+
+::::{tab-set}
+:::{tab-item} Python
+```python
+ampl.solve(solver="mp2nl", mp2nl_options="solver=couenne cvt:compl=1")
+```
+:::
+:::{tab-item} AMPL
+```ampl
+ampl: option solver mp2nl;
+ampl: option mp2nl_options 'solver=couenne cvt:compl=1';
+ampl: solve;
+```
+:::
+::::
+
+More: [Meta-driver MP2NL](https://mp.ampl.com/modeling-tools.html#meta-driver-mp2nl).
+:::::
+
+
 ## Solver options
 
 Full list of solver options:

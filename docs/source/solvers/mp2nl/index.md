@@ -16,8 +16,9 @@ or (convex) piecewise-linear expressions.
 Some of the
 [nonlinear AMPL solvers](../index.rst#nonlinear-solvers)
 (currently [Knitro](../knitro/index.md),
-[Baron](../baron/index.md),
-[Conopt](../conopt/index.md)),
+[BARON](../baron/index.md),
+[CONOPT](../conopt/index.md),
+[LINDO Global](../lindoglobal/index.md)),
 as well as the legacy solvers
 [gurobiasl](../gurobi/index.md),
 [cplexasl](../cplex/index.md),

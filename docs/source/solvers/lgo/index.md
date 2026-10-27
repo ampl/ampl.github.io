@@ -53,6 +53,45 @@ LGO is capable of determining high-quality solutions to global optimization prob
             ampl: solve; # solve the problem
 ```
 
+## Features
+
+### Algorithms
+
+:::{dropdown} Global search without derivatives
+`search` (synonym `opmode`): `0` local only, `1` global branch-and-bound
+plus local search, `2` adaptive random search plus local search, `3`
+multistart local search (default). Time limit: `timelim` (default 300).
+Continuous variables only.
+:::
+
+### Modeling with MP expressions
+
+:::::{dropdown} MP expressions: logic, counting, complementarity (MP2NL)
+LGO reads the classic NL format, without MP's expressions (`==>`, `or`, `atmost`, `count`, `alldiff`, piecewise-linear terms, ...), nor `complements`. Through MP2NL, MP reformulates them first.
+
+Call [MP2NL](../mp2nl/index.md) as the solver and name LGO inside it; MP's options go into `mp2nl_options`, LGO's own into `lgo_options`.
+
+LGO is a continuous solver: it relaxes the binary variables that MP uses for logical constraints, and the result can violate the logic (MP's solution check then reports it). Use it for constructs that need no binaries, such as complementarity with a smooth reformulation (`cvt:compl=1` or `2`); use an MINLP solver for models with logic.
+
+::::{tab-set}
+:::{tab-item} Python
+```python
+ampl.solve(solver="mp2nl", mp2nl_options="solver=lgo cvt:compl=1")
+```
+:::
+:::{tab-item} AMPL
+```ampl
+ampl: option solver mp2nl;
+ampl: option mp2nl_options 'solver=lgo cvt:compl=1';
+ampl: solve;
+```
+:::
+::::
+
+More: [Meta-driver MP2NL](https://mp.ampl.com/modeling-tools.html#meta-driver-mp2nl).
+:::::
+
+
 ## Options
 
 Full list of solver options:
