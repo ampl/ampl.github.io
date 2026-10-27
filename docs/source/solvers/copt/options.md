@@ -352,10 +352,11 @@ alg:feasrelax (feasrelax)
       4-6 = Same objective as 1-3, but also optimize the original objective,
       subject to the violation objective being minimized.
 
-      Weights are given by suffixes .lbpen and .ubpen on variables and .rhspen
-      on constraints (when nonnegative), else by keywords alg:lbpen,
-      alg:ubpen, and alg:rhspen, respectively (default values = 1). Weights <
-      0 are treated as Infinity, allowing no violation.
+      COPT does not support modes 2 and 5 (squared violations) for models with
+      integer variables. Weights are given by suffixes .lbpen and .ubpen on
+      variables and .rhspen on constraints (when nonnegative), else by
+      keywords alg:lbpen, alg:ubpen, and alg:rhspen, respectively (default
+      values = 1). Weights < 0 are treated as Infinity, allowing no violation.
 
 alg:feastol (feastol)
       Primal feasibility tolerance (default 1e-6).
@@ -394,6 +395,23 @@ alg:method (method, lp:method, lpmethod)
       5  - Choose between simplex and barrier automatically
       6  - First-order method (PDLP). See also alg:gpumode.
 
+alg:nlplinscale (nlplinscale)
+      Linear system scaling strategy of the nonlinear solver:
+
+      -1 - Automatic (default)
+      0  - No scaling
+      1  - Always scale
+
+alg:nlpmuupdate (nlpmuupdate)
+      Barrier parameter update strategy of the nonlinear solver:
+
+      -1 - Automatic (default)
+      0  - Monotonically decreasing
+      1  - Adaptive adjustment
+
+alg:nlptol (nlptol)
+      Convergence tolerance of the nonlinear solver (default 1e-8).
+
 alg:nonconvex (nonconvex)
       Strategy for continuous nonconvex models (default -1):
 
@@ -421,6 +439,49 @@ alg:relax (relax)
 alg:rhspen (rhspen)
       See alg:feasrelax.
 
+alg:sdpmethod (sdpmethod)
+      Method for semidefinite programs:
+
+      -1 - Automatic (default)
+      0  - Primal-dual method
+      1  - ADMM
+      2  - Dual method
+
+alg:sens (sens, solnsens, sensitivity)
+      Whether to return suffixes for solution sensitivities, i.e., ranges of
+      values for which the optimal basis remains optimal (note that the
+      variable and objective values can change):
+
+      0 - No (default)
+      1 - Yes: suffixes returned on variables are
+      .sensobjlo = smallest objective coefficients
+      .down = same as .sensobjlo
+      .sensobj = current objective coefficients
+      .current = same as .sensobj
+      .sensobjhi = greatest objective coefficients
+      .up = same as .sensobjhi
+      .senslblo = smallest variable lower bounds
+      .senslbhi = greatest variable lower bounds
+      .sensublo = smallest variable upper bounds
+      .sensubhi = greatest variable upper bounds;
+
+      suffixes for all constraints are
+
+      .senslblo = smallest constraint lower bounds
+      .senslbhi = greatest constraint lower bounds
+      .sensublo = smallest constraint upper bounds
+      .sensubhi = greatest constraint upper bounds;
+
+      suffixes for one-sided constraints only:
+
+      .sensrhslo = smallest right-hand side values
+      .down = same as .sensrhslo
+      .sensrhshi = greatest right-hand side values.
+      .up = same as .sensrhshi.
+
+      The suffixes correspond to the AMPL solver model, command 'solexpand'.
+      For easiest interpretation, disable AMPL presolve, 'option presolve 0;'
+
 alg:start (warmstart)
       Whether to use incoming primal (and dual, for LP) variable values in a
       warmstart:
@@ -438,8 +499,16 @@ bar:crossover (crossover)
       Execute crossover to transform a barrier solution to a basic one
       (default 1).
 
-bar:iterlim (BarIterLimit)
+bar:iterlim (bariterlim, BarIterLimit)
       Limit on the number of barrier iterations (default 500).
+
+bar:start (barstart)
+      Algorithm for the barrier starting point:
+
+      -1 - Automatic (default)
+      0  - Simple starting point
+      1  - Mehrotra starting point
+      2  - Modified Mehrotra starting point
 
 cvt:bigM (cvt:bigm, cvt:mip:bigM, cvt:mip:bigm)
       Default value of big-M for linearization of logical constraints. Not
@@ -491,9 +560,18 @@ cvt:mip:eps (cvt:cmp:eps, cmp:eps)
       should be larger or equal to the solver's feasibility tolerance.
       Default: 1e-4.
 
+cvt:mip:intprodbits (intprodbits)
+      Products x*y of variables, when not accepted natively, with an integer
+      factor of finite bounds (and the other factor bounded): exact MIP
+      reformulation by binary expansion of the integer factor with the smaller
+      range if it needs at most this many binary variables. Default 30.
+      Otherwise, and with 0, such products are approximated as
+      ((x+y)^2-x^2-y^2)/2 with piecewise-linear squares, as for continuous
+      factors. Products with a binary factor are always exact.
+
 cvt:multoutcard (multoutcard)
       Up to which (estimated) QP matrix cardinality should a product of 2
-      linear expressions be multiplied out. Default 1e9.
+      linear expressions be multiplied out. Default 1e+09.
 
       Low value can speed up model input, but prone to numerical issues.
 
@@ -512,6 +590,14 @@ cvt:nlobj (passnlobj)
       with those, otherwise linearly approximated. With cvt:quadobj=0, ensures
       the objective is linear.
 
+cvt:pl:domain (pl:domain, pldomain)
+      Max absolute value of the argument of a piecewise-linear expression
+      converted to SOS2 (and further to MIP if SOS2 is not accepted natively).
+      In the MIP reformulation, the solver's feasibility tolerance is
+      amplified by up to this value. Not used by default: then an unbounded
+      argument is an error in the MIP reformulation, and native SOS2 gets
+      exact rays for unbounded sides. Use with care (prefer tight bounds).
+
 cvt:plapprox:domain (plapprox:domain, plapproxdomain)
       For piecewise-linear approximated functions, both arguments and result
       are bounded to +-[pladomain]. Default 1e6.
@@ -528,12 +614,32 @@ cvt:pow2_as_qp (pow2_as_qp, pow2asqp)
 cvt:pre:all
       0/1*: Set to 0 to disable most presolve in the flat converter.
 
+cvt:pre:auxint (auxint)
+      0*/1: Submit as integer the auxiliary result variables whose integrality
+      is implied by their defining constraint (if-then-else, min, max, abs,
+      count, numberof, integer linear and quadratic functions of integer
+      arguments). Default 0: submit them as continuous (MP keeps the
+      integrality for its reformulations). Variables required to have their
+      type by a submitted constraint, e.g., indicator binaries, are not
+      affected.
+
 cvt:pre:boundlogarg (boundlogarg)
       0*/1: Bound logarithm arguments to nonnegative.
 
-cvt:pre:boundsbest (boundsbest)
-      0*/1: Submit best-known variable bounds to the solver. Can inhibit its
-      presolve.
+cvt:pre:boundsbest (boundsbest, bestbounds)
+      0*/1/2/3/4: Submit best-known variable bounds to the solver (can inhibit
+      its presolve):
+
+      0 - no, hard bounds only
+      1 - all variables
+      2 - all but the result variables of smooth nonlinear expressions (exp,
+      log, pow, trigonometric functions, divisions, products), which keep
+      their hard bounds
+      3 - only those variables
+      4 - all variables if the submitted model has no nonlinear or quadratic
+      constraints or objectives, none otherwise (for solvers whose nonlinear
+      relaxations are solved by a barrier method; MP2NL sets it for such
+      subsolvers).
 
       Note: when a variable can be fixed, the stronger bounds are always
       submitted.
@@ -600,6 +706,9 @@ cvt:pre:ctx:atanh (ctx:atanh)
 cvt:pre:ctx:call (ctx:call)
       Context propagation for 'Call' expression, see cvt:pre:ctx:abs.
 
+cvt:pre:ctx:ceil (ctx:ceil)
+      Context propagation for 'Ceil' expression, see cvt:pre:ctx:abs.
+
 cvt:pre:ctx:condlineq (ctx:condlineq)
       Context propagation for 'Conditional< AlgebraicConstraint< LinTerms,
       RhsEQ > >' expression, see cvt:pre:ctx:abs.
@@ -661,11 +770,17 @@ cvt:pre:ctx:exp (ctx:exp)
 cvt:pre:ctx:expa (ctx:expa)
       Context propagation for 'ExpA' expression, see cvt:pre:ctx:abs.
 
+cvt:pre:ctx:floor (ctx:floor)
+      Context propagation for 'Floor' expression, see cvt:pre:ctx:abs.
+
 cvt:pre:ctx:ifthen (ctx:ifthen)
       Context propagation for 'IfThen' expression, see cvt:pre:ctx:abs.
 
 cvt:pre:ctx:impl (ctx:impl)
       Context propagation for 'Implication' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:intdiv (ctx:intdiv)
+      Context propagation for 'IntDiv' expression, see cvt:pre:ctx:abs.
 
 cvt:pre:ctx:linfn (ctx:linfn)
       Context propagation for 'LinearFunctionalConstraint' expression, see
@@ -685,6 +800,12 @@ cvt:pre:ctx:max (ctx:max)
 
 cvt:pre:ctx:min (ctx:min)
       Context propagation for 'Min' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:mod (ctx:mod)
+      Context propagation for 'Mod' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:mul (ctx:mul)
+      Context propagation for 'Mul' expression, see cvt:pre:ctx:abs.
 
 cvt:pre:ctx:not (ctx:not)
       Context propagation for 'Not' expression, see cvt:pre:ctx:abs.
@@ -711,6 +832,9 @@ cvt:pre:ctx:quadfn (ctx:quadfn)
       Context propagation for 'QuadraticFunctionalConstraint' expression, see
       cvt:pre:ctx:abs.
 
+cvt:pre:ctx:round (ctx:round)
+      Context propagation for 'Round' expression, see cvt:pre:ctx:abs.
+
 cvt:pre:ctx:sdpdotprod (ctx:sdpdotprod)
       Context propagation for 'SDPDotProd' expression, see cvt:pre:ctx:abs.
 
@@ -729,6 +853,27 @@ cvt:pre:ctx:tan (ctx:tan)
 
 cvt:pre:ctx:tanh (ctx:tanh)
       Context propagation for 'Tanh' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:disj2ind (disj2ind)
+      Absorb static disjunctions l || C, where C is a conditional comparison
+      used only there (or an AND of such), into indicator constraints !l ==>
+      C. This is how implications b==1 ==> C are received from AMPL. Bitwise
+      OR of the following values:
+
+      1 - Linear comparisons
+      2 - Quadratic comparisons
+      4 - Both disjuncts absorbable: absorb one into an indicator on the
+      other's result (if-else shape, complementarity)
+      8 - Comparisons x==k awaiting the unary encoding decision for x
+      (absorbed only if no encoding is chosen)
+      16 - Any AND of such comparisons (used only there) in positive context,
+      e.g., a disjunct (C1 && C2) of a multi-term disjunction: indicators on
+      the AND's result variable
+      32 - Static disjunctions l1 || .. || lm || (y1 && .. && yk) with the AND
+      used only there: clauses l1 || .. || lm || yj, without the AND's result
+      variable.
+
+      Requires cvt:pre:all=1. Default 11.
 
 cvt:pre:eqbinary
       0/1*: Preprocess reified equality comparison with a binary variable.
@@ -799,6 +944,19 @@ cvt:pre:unnest (cvt:unnest, cvt:pre:inline, cvt:inline)
       16 - Algebraic subexpressions in indicator constraints.
 
       See also option cvt:dvelim concerning only the input model. Default 31.
+
+cvt:pre:vbnd (vbnd)
+      Comparisons x (cmp) c decided by the domain of x reuse an existing
+      binary instead of a new reified comparison. Bitwise OR of the following
+      values:
+
+      1 - Variable-bound constraints x >= L*b, x <= U*b with binary b (AMPL's
+      encoding of x in {0} union interval[L, U], or the user's), 0 <= c <= L:
+      reuse b or its negation
+      2 - Root disjunctions x <= a || x >= b (e.g., x == 0 || x >= L for x >=
+      0), a < c < b: reuse the comparison x >= b or its negation.
+
+      Default 3.
 
 cvt:qp2passes (cvt:qp2pass, qp2passes, qp2pass)
       0/1*: Parse sums of QP expressions in 2 passes. Usually faster.
@@ -893,17 +1051,21 @@ iis:method (iismethod, alg:iismethod)
       1  - Find IIS quickly
 
 lim:memlimit (memlimit)
-      Soft limit (number of MB) on memory allocated; default = 0 (no limit)
+      Soft limit (number of MB) on memory allocated; default 1e20 (no limit).
 
 lim:mipnlpiterlimit (mipnlpiterlimit)
-      Iteration limit for solving NLP problem(s) within the MIP solver
-      (default: no limit).
+      Iteration limit for solving NLP problem(s) within the MIP solver; -1 =
+      no limit. Default 100.
+
+lim:multiobjtime (multiobjtimelim, multiobjtimelimit, obj:multi:timelimit)
+      Time limit (in seconds) for the whole multi-objective solve (default: no
+      limit).
 
 lim:nlpiterlimit (nlpiterlimit)
-      Iteration limit for the nonlinear solver (default: no limit).
+      Iteration limit for the nonlinear solver (default 10000).
 
 lim:nodes (nodelim, nodelimit)
-      Maximum MIP nodes to explore (default: no limit).
+      Maximum MIP nodes to explore; default -1 (no limit).
 
 lim:soltime (soltimelim, soltimelimit)
       Time limit if a primal feasible solution has been found (in seconds;
@@ -924,7 +1086,8 @@ lp:barorder (barorder)
 
       -1 - Choose automatically (default)
       0  - Approximate Minimum Degree (AMD)
-      1  - Nested Dissection (ND)
+      1  - Nested Dissection (ND1)
+      2  - Modified Nested Dissection (ND2)
 
 lp:concurrentmode (lp:concurrentlpmode, concurrentlpmode)
       The LP concurrent solving mode, only effective when alg:method = 4. The
@@ -947,7 +1110,27 @@ lp:dualprice (dualprice)
       1  - Using dual steepest-edge pricing algorithm
 
 lp:pdlptol (pdlptol)
-      Convergence tolerance for PDLP (default 1e-6)
+      Convergence tolerance for PDLP (default 1e-6).
+
+mip:basis (fixmodel, mip:fix)
+      Whether to compute duals / basis / sensitivity for MIP models. Emulated
+      by fixing integer variables to an incumbent and solving a continuous
+      model. Currently supports linear algebraic models only (no SOS,
+      piecewise-linear, logical, or general constraints).
+
+      0 - No (default)
+      1 - Yes.
+
+mip:basis:iterlimit
+      Iteration limit for the fixed-model solve only. -1 (default) uses
+      simplex with the solver default limit. Setting this option selects
+      barrier with crossover and limits barrier iterations. 0 skips the
+      supplementary solve.
+
+mip:basis:timelimit
+      Time limit in seconds for the fixed-model solve only. -1 (default) uses
+      the solver default, independently of the MIP time limit. For emulation,
+      0 skips the supplementary solve.
 
 mip:bestbound (bestbound, return_bound)
       Whether to return suffix .bestbound for the best known MIP dual bound on
@@ -985,6 +1168,16 @@ mip:divingheurlevel (divingheurlevel)
       2  - Normal
       3  - Aggressive
 
+mip:fapheurlevel (fapheurlevel)
+      Level of fix-and-propagate heuristics:
+
+      -1 - Automatic (default)
+      0  - Off
+      1  - Fast
+      2  - Normal
+      3  - Aggressive
+      4  - Heavy
+
 mip:gap (mipgap)
       Relative MIP optimality gap, default 1e-4.
 
@@ -1002,6 +1195,28 @@ mip:heurlevel (heurlevel)
 
 mip:intfeastol (intfeastol, inttol)
       Feasibility tolerance for integer variables (default 1e-06).
+
+mip:lazy (lazy)
+      Whether to recognize suffix .lazy on constraints: sum of
+
+      1 - Accept .lazy>0 values (true lazy constraints, if supported)
+      2 - Accept .lazy<0 values (user cuts, if supported)
+
+      Default lazy = 3 ==> accept both.
+
+mip:linearizeindicators (linearizeindicators)
+      Whether to force the linearization of indicator constraints into
+      equivalent linear constraints:
+
+      0 - No (default)
+      1 - Yes.
+
+mip:linearizesos (linearizesos)
+      Whether to force the linearization of SOS constraints into equivalent
+      linear constraints:
+
+      0 - No (default)
+      1 - Yes.
 
 mip:nodecutrounds (nodecutrounds)
       Rounds of cutting-planes generation of search tree node;
@@ -1085,6 +1300,13 @@ mip:startmode (mipstartmode)
       2  - Only load feasible ones (complete partial solutions by solving
            subMIPs).
 
+      COPT 8.0 also documents 3 = accept all starts (for hierarchical
+      multi-objective models), but the 8.0.6 library limits the value to 2.
+
+mip:startnodelimit (mipstartnodelimit)
+      Node limit for the sub-MIPs completing partial MIP starts (see
+      mip:startmode); default -1 ==> automatic.
+
 mip:strongbranching (strongbranching)
       Level of strong branching:
 
@@ -1139,6 +1361,27 @@ obj:multi:options (multiobjoptions)
       beginning with option_. Example: suffix option_timelim; let
       _obj[2].option_timelim:=15;
 
+obj:multi:stats (multiobjstats)
+      0*/1: Report multiobjective pass statistics in the following objective
+      suffixes:
+
+      * .objpass: index of the pass where this objective was solved, 0 if not
+        solved due to a stop in a previous pass
+
+      * .objpass_result: the solve_result of the pass where this objective was
+        solved; -1 if not
+
+      * .objpass_runtime, _mipgap, _objval, _objbound, _work, _itercount,
+        _nodecount, _opennodecount if available.
+
+      With MP's emulation (obj:multi=2), _objval and _objbound refer to the
+      blended pass objective in the sense of the first objective, and _runtime
+      is the wall-clock time of the pass including model updates; numeric
+      statistics are NaN if not available for a pass. If the solver's native
+      multiobjective mode does not report pass statistics, use obj:multi=2.
+
+      See also tech:stats.
+
 obj:multi:weight (multiobjweight, obj:multi:weights, multiobjweights)
       How to interpret each objective's weight sign:
 
@@ -1184,6 +1427,8 @@ pre:solve (presolve)
       1  - Fast
       2  - Normal
       3  - Aggressive
+      4  - No limitations: presolve until the model cannot be modified any
+           more (may be very time-consuming)
 
 sol:chk:fail (chk:fail, checkfail)
       Fail on MP solution check violations, with solve result 150.
@@ -1234,11 +1479,38 @@ sol:count (countsolutions)
       0*/1: Whether to count the number of solutions and return it in the
       ".nsol" problem suffix.
 
+sol:poolgap (ams_eps, poolgap)
+      Relative tolerance for reporting alternate MIP solutions (default: no
+      limit): a solution is reported if its objective is within poolgap *
+      |best objective| of the best one.
+
+sol:poolgapabs (ams_epsabs, poolgapabs)
+      Absolute tolerance for reporting alternate MIP solutions (default: no
+      limit).
+
+sol:poollimit (ams_limit, poollimit, poolnbest, solnlimit)
+      Limit on the number of alternative MIP solutions reported (see sol:stub,
+      sol:count). Default 10. COPT reports the solutions found during the
+      search and cannot look for more.
+
+sol:poolmode (ams_mode, poolmode)
+      Search mode for MIP solutions when sol:stub/sol:count are specified to
+      request finding several alternative solutions. COPT only collects the
+      solutions found during the search, so all values behave alike; the
+      option is accepted for compatibility:
+
+      0 - Just collect solutions during normal solve
+      1 - Make some effort at finding additional solutions (not supported by
+          COPT; same as 0)
+      2 - Seek "poollimit" best solutions (default; not supported by COPT,
+          same as 0). The solutions reported are limited by poolgap and
+          poolgapabs.
+
 sol:report_uncertain (report_uncertain_sol)
       0/1*: whether to report objective value(s) in solve_message when
       solve_result is '?' (unknown).
 
-sol:stub (solstub, solutionstub)
+sol:stub (ams_stub, solstub, solutionstub)
       Stub for solution files. If "solutionstub" is specified, found solutions
       are written to files ("solutionstub & '1' & '.sol'") ... ("solutionstub
       & Current.nsol & '.sol'"), where "Current.nsol" holds the number of
@@ -1272,7 +1544,7 @@ tech:mempeak (mempeak)
       "peakmem". Default = 0 (do not return).
 
 tech:miptasks (miptasks)
-      Number of MIP tasks in parallel;
+      Number of MIP tasks in parallel (at most 256);
       default -1 ==> automatic.
 
 tech:numericalranges (numericalranges, numerical_ranges)
@@ -1287,11 +1559,33 @@ tech:optionfile (optionfile, option:file)
       are ignored. Otherwise, each nonempty line should contain "name=value",
       e.g., "lim:iter=500".
 
+tech:optionnative (optionnative, optnative, tech:param, param)
+      General way to specify values of both documented and undocumented COPT
+      parameters; value should be a quoted string (delimited by ' or ")
+      containing a parameter name, a space (or '='), and the value to be
+      assigned to the parameter, for example "RelGap 0.01". Can appear more
+      than once. Cannot be used to query current parameter values.
+
+tech:optionnativeread (optionnativeread, tech:param:read, param:read)
+      Name of a COPT parameter file to read (surrounded by 'single' or
+      "double" quotes if the name contains blanks). Each nonempty line
+      contains a parameter name and its value separated by blanks, as written
+      by tech:optionnativewrite.
+
+tech:optionnativewrite (optionnativewrite, tech:param:write, param:write)
+      Name of a COPT parameter file (surrounded by 'single' or "double" quotes
+      if the name contains blanks) to be written with the parameters that
+      differ from their defaults.
+
 tech:outlev (outlev)
       0-1: output logging verbosity. Default = 0 (no logging).
 
 tech:outlev_mp (outlev_mp)
       0*/1: whether to print MP model information.
+
+tech:seed (seed)
+      Random number seed, can influence the solution path (COPT parameter
+      RandSeed, not in the vendor documentation). Default -1.
 
 tech:simplexthreads (simplexthreads)
       Number of threads used by dual simplex;
@@ -1309,7 +1603,9 @@ tech:stats (stats, tech:report_stats, solve_stats)
       0 - Do not report statistics (default)
       1 - Report statistics in JSON format in the problem suffix 'stats'
       2 - Report statistics in suffixes
-      3 - Report statistics both in suffixes and the suffix 'stats'
+      3 - Report statistics both in suffixes and the suffix 'stats'.
+
+      See also obj:multi:stats.
 
 tech:threads (threads)
       Number of threads to use;
@@ -1323,6 +1619,62 @@ tech:timing (timing, tech:report_times, report_times)
       in the solver driver. If set to 2, return more granular times, including
       'time_read', 'time_conversion' and 'time_output'.
 
+tech:tunebase (tunebase)
+      Base name for results of running COPT's search for best parameter
+      settings. The search is run only when tunebase is specified. Results are
+      written to files with names derived from tunebase by appending ".par" if
+      ".par" does not occur in tunebase and inserting _1_, _2_, ... (for the
+      first, second, ... set of parameter settings) before the right-most
+      ".par". The file with _1_ inserted is the best set and the solve results
+      returned are for this set. In a subsequent "solve;", you can use
+      "tech:optionnativeread=..." to apply the settings in results file ... .
+
+tech:tunemeasure (tunemeasure)
+      How tuning results over several permutations are aggregated:
+
+      -1 - Automatic (default)
+      0  - Average over the permutations
+      1  - Maximum over the permutations
+
+tech:tunemethod (tunemethod)
+      Tuning method:
+
+      -1 - Automatic (default)
+      0  - Greedy search
+      1  - Broader search
+
+tech:tunemode (tunemode)
+      Tuning criterion:
+
+      -1 - Automatic (default)
+      0  - Solving time
+      1  - Optimality gap reached
+      2  - Objective value
+      3  - Objective bound
+
+tech:tuneoutlev (tuneoutlev, tuneoutput)
+      Amount of tuning output when tunebase is specified:
+
+      0 - No tuning log
+      1 - Summary of improved parameter sets only
+      2 - Summary of each attempt (default)
+      3 - Detailed log of each attempt
+
+tech:tunepermutes (tunepermutes)
+      Number of permutations of the model tried for each parameter set;
+      default 0 ==> chosen by COPT.
+
+tech:tunetargetrelgap (tunetargetrelgap)
+      Target relative MIP gap for tuning (default 1e-4).
+
+tech:tunetargettime (tunetargettime)
+      Target solve time (in seconds) for tuning: the tuner stops once a
+      parameter set reaches it (default 0.01).
+
+tech:tunetimelim (tunetimelim, lim:tunetime)
+      Time limit (in seconds) on tuning when tunebase is specified; default 0
+      ==> chosen by COPT.
+
 tech:version (version)
       Single-word phrase: report version details before solving the problem.
 
@@ -1334,6 +1686,13 @@ tech:wantsol (wantsol)
       2 - Primal variables to stdout
       4 - Dual variables to stdout
       8 - Suppress solution message.
+
+tech:writedualprob (writedualprob)
+      Whether tech:writeprob writes the dual problem instead of the original
+      one for LP in the LP, MPS and BIN formats:
+
+      0 - No (default)
+      1 - Yes.
 
 tech:writegraph (cvt:writegraph, writegraph, exportgraph)
       File to export conversion graph. Format: JSON Lines.

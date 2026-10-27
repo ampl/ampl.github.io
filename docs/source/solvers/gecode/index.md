@@ -119,17 +119,8 @@ display solve_result_num, solve_result;
 ```
 
 Gecode solve result codes can be obtained by running `gecode -!` or `ampl: shell "gecode -!";`:
-```
-          0- 99 solved: optimal for an optimization problem, feasible for a satisfaction problem
-        100-199 solved? solution candidate returned but error likely
-        200-299 infeasible
-        300-349 unbounded, feasible solution returned
-        350-399 unbounded, no feasible solution returned
-        400-449 limit, feasible: stopped, e.g., on iterations or Ctrl-C
-        450-469 limit, problem is either infeasible or unbounded
-        470-499 limit, no solution returned
-        500-999 failure, no solution returned
-            550 failure: numeric issue, no feasible solution
+```{literalinclude} solve_results.inc
+:language: none
 ```
 
 ## Changelog

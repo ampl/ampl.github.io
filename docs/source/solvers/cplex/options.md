@@ -138,12 +138,12 @@ alg:benders (benders, bendersopt)
       must be present.
 
 alg:benders_feascuttol (benders_feascut_tol)
-      Tolerance for violations of feasibility cuts in Benders
-      algorithm(default 1e-6).
+      Tolerance for violations of feasibility cuts in Benders algorithm
+      (default 1e-6; must be in [1e-9, 0.1]).
 
 alg:benders_optcut_tol (benders_optcut_tol)
-      Tolerance for violations of optimality cuts in Benders algorithm(default
-      1e-6).
+      Tolerance for violations of optimality cuts in Benders algorithm
+      (default 1e-6; must be in [1e-9, 0.1]).
 
 alg:benders_strategy (benders_strategy)
       How to decompose the problem for Benders algorithm:
@@ -168,6 +168,10 @@ alg:benders_worker (benders_worker)
       4 - Barrier
       5 - Sifting
 
+alg:concurrent (concurrentopt, concurrent)
+      Solve LPs and MIP root relaxations with the concurrent optimizer
+      (several algorithms in parallel). Synonym for alg:method=6.
+
 alg:conflictalg (conflictalg)
       Choice of algorithm used by the CPLEX's conflict refiner:
 
@@ -188,7 +192,7 @@ alg:droptol (droptol)
       If droptol > 0 is specified, linear constraint and objective
       coefficients less than droptol in magnitude are treated as zero.
 
-alg:dualopt (alg:dual, dualopt)
+alg:dualopt (alg:dual, dualopt, tranopt)
       Solve (MIP node) LPs by dual simplex method.
 
 alg:dualproblem (dual)
@@ -199,6 +203,25 @@ alg:dualproblem (dual)
       alg:dualproblem pre:dual=-1 - together, equivalent to pre:dual=1
       alg:dualproblem pre:dual=0 - together, equivalent to pre:dual=0
       alg:dualproblem pre:dual=1 - together, equivalent to pre:dual=-1.
+
+alg:feasopt (feasopt)
+      Compatibility option of the cplexasl driver, together with
+      alg:feasoptobj mapped onto alg:feasrelax: for infeasible problems,
+      whether to find a feasible point for a relaxed problem:
+
+      0 - No (default)
+      1 - Find a relaxed feasible point
+      2 - Find a "best" solution among the relaxed feasible points
+
+alg:feasoptobj (feasoptobj)
+      Objective for alg:feasopt:
+
+      1 - Minimize the sum of constraint and variable bound relaxations
+          (default)
+      2 - Minimize the number of constraints and variable bounds relaxed (a
+          MIP problem, generally harder than 1)
+      3 - Minimize the sum of squares of constraint and variable bound
+          relaxations
 
 alg:feasrelax (feasrelax)
       Whether to modify the problem into a feasibility relaxation problem:
@@ -215,7 +238,11 @@ alg:feasrelax (feasrelax)
       alg:lbpen, alg:ubpen, and alg:rhspen, respectively (default values = 1).
       Weights < 0 are treated as Infinity, allowing no violation.
 
-alg:feastol (feastol)
+alg:feasrelax:tol (feasopttol)
+      Tolerance for constraint violations in the relaxed problem of
+      alg:feasrelax; default 1e-6.
+
+alg:feastol (feastol, feasibility)
       Primal feasibility tolerance (default 1e-6, possible values are between
       1e-9 and 0.1).
 
@@ -228,7 +255,7 @@ alg:kappa (kappa, basis_cond)
 alg:lbpen (lbpen)
       See alg:feasrelax.
 
-alg:method (method, lpmethod, qpmethod, simplex, mip:method, mipstartalg)
+alg:method (method, lpmethod, qpmethod, simplex, mip:method, mipstartalg, startalg, startalgorithm)
       Which algorithm to use for non-MIP problems or for the root node of MIP
       problems:
 
@@ -244,8 +271,8 @@ alg:method (method, lpmethod, qpmethod, simplex, mip:method, mipstartalg)
       For MIQP problems (quadratic objective, linear constraints), setting 5
       is treated as 0 and 6 as 4. For MIQCP problems (quadratic objective &
       constraints), all settings are treated as 4. See also mip:nodemethod.
-      Overrides netopt option and primalopt/dualopt/barrier/network/sifting
-      flags.
+      Overrides netopt option and
+      primalopt/dualopt/barrier/network/sifting/concurrent flags.
 
 alg:netfeasibility (netfeasibility, netfeastol)
       Feasibility tolerance for network primal optimization. Can be any number
@@ -254,9 +281,9 @@ alg:netfeasibility (netfeasibility, netfeastol)
 alg:netfind (netfind, netfinder)
       Level of network extraction for network simplex optimization:
 
-      0 - Extract pure network only
-      1 - (Default) try reflection scaling
-      2 - Try general scaling
+      1 - Extract pure network only
+      2 - Try reflection scaling (default)
+      3 - Try general scaling
 
 alg:netopt (netopt)
       Whether to use network simplex method for non-MIP problems or for the
@@ -293,7 +320,7 @@ alg:numericalemphasis (numfocus, numericemphasis, numericalemphasis, alg:numeric
       0*/1: Whether to try to improve numerical accuracy (at a possible cost
       of time or memory).
 
-alg:primalopt (alg:primal, primalopt)
+alg:primalopt (alg:primal, primalopt, optimize)
       Solve (MIP node) LPs by primal simplex method.
 
 alg:primalproblem (primal)
@@ -308,6 +335,10 @@ alg:rays (rays)
       1 - Just .unbdd
       2 - Just .dunbdd
       3 - Both (default)
+
+alg:readbasis (readbasis, startbasis)
+      BAS file containing the starting basis. It is read after any incoming
+      .sstatus basis (see alg:basis) and overrides it.
 
 alg:relax (relax)
       0*/1: Whether to relax integrality of variables.
@@ -350,8 +381,20 @@ alg:sens (sens, solnsens, sensitivity)
       The suffixes correspond to the AMPL solver model, command 'solexpand'.
       For easiest interpretation, disable AMPL presolve, 'option presolve 0;'
 
+alg:siftalg (siftalg)
+      Algorithm for sifting subproblems:
+
+      0 - Automatic (default)
+      1 - Primal simplex
+      2 - Dual simplex
+      3 - Network simplex
+      4 - Barrier
+
 alg:sifting (sifting, siftopt, siftingopt)
       Solve (MIP node) LPs by sifting method.
+
+alg:siftsimplex (simplexsifting)
+      0/1*: Whether the simplex algorithm may use sifting when appropriate.
 
 alg:start (warmstart)
       Whether to use incoming primal (and dual, for LP) variable values in a
@@ -363,7 +406,8 @@ alg:start (warmstart)
       3 - Yes (for LP: together with the incoming alg:basis, if any;
           default).
 
-      For IBM ILOG CPLEX, choices can be refined via alg:start:advance.
+      For IBM ILOG CPLEX, choices can be refined via alg:start:advance and,
+      for MIP starts, mip:start:effort.
 
 alg:start:advance (alg:start:advanced, advance, advind)
       If set to 1 or 2, this parameter specifies that CPLEX should use
@@ -413,14 +457,26 @@ bar:dense (bar:densecol, dense, densecol)
 bar:growth (bargrowth, growth)
       Tolerance for detecting unbounded faces in the barrier algorithm: higher
       values make the test for unbounded faces harder to satisfy (default
-      1e12).
+      1e12; must be >= 1).
 
 bar:iterlim (bariterlim)
-      Maximum barrier iterations allowed (default 9223372036800000000).
+      Maximum barrier iterations allowed (default: no limit).
 
 bar:objrange (barobjrange)
       Limit on the absolute objective value before the barrier algorithm
       considers the problem unbounded (default 1e20).
+
+bar:ordering (ordering)
+      Ordering algorithm used by the barrier algorithm:
+
+      0 - Automatic (default)
+      1 - Approximate minimum degree (AMD)
+      2 - Approximate minimum fill (AMF)
+      3 - Nested dissection (ND)
+
+bar:qcpcomptol (qcpconvergetol, qcpcomptol)
+      Convergence tolerance on relative complementarity for problems with
+      quadratic constraints; default 1e-7.
 
 bar:start (barstart, barstartalg)
       Barrier starting-point algorithm:
@@ -430,27 +486,31 @@ bar:start (barstart, barstartalg)
       3 - Average of primal estimate, 0 dual
       4 - Average of primal and dual estimates
 
-cut:aggforcut (aggforcut)
+cut:aggforcut (aggforcut, aggcutlim)
       Bound on the number of constraints aggregated to generate flow-cover and
       mixed-integer-rounding cuts (default 3).
 
 cut:aggtol (aggtol)
-      Pivot tolerance for aggregating. It seldom needs fiddling. Default =
-      .05; must be in [1e-10, .99].
+      Pivot tolerance for aggregating (undocumented CPLEX parameter 1055). It
+      seldom needs fiddling. Default = .05; must be in [1e-10, .99].
 
 cut:bqp (bqpcuts)
       Whether to enable Boolean Quadric Polytope cut generation for nonconvex
       QP and MIQP problems, choices as for "cut:cuts".
 
-cut:clique (cliquecuts)
+cut:clique (cliquecuts, cliques)
       Whether to use clique cuts in solving MIPs, choices as for "cut:cuts".
 
 cut:cover (covercuts, covers)
       Whether to use cover cuts in solving MIPs, choices as for "cut:cuts".
 
 cut:cuts (cuts, mipcuts)
-      Global cut generation control, valid unless overridden by individual
-      cut-type controls:
+      Global cut generation control, applied to all cut families (cut:bqp,
+      cut:clique, cut:cover, cut:disj, cut:flowcover, cut:frac, cut:gubcover,
+      cut:implied, cut:liftandproject, cut:localimplied, cut:mcf, cut:mir,
+      cut:node, cut:flowpath, cut:rlt, cut:zerohalf) unless overridden by the
+      individual cut-type controls; value 3 is reduced to 2 for families
+      accepting at most 2:
 
       -1 - Disallow
       0  - Automatic (default)
@@ -463,10 +523,10 @@ cut:disj (disjcuts)
       "cut:cuts".
 
 cut:eachcutlim (eachcutlim)
-      Limit on the number of cuts of each time; default=2100000000.
+      Limit on the number of cuts of each type; default=2100000000.
 
 cut:factor (cutsfactor, cutfactor)
-      Limit on MIP cuts added:
+      Limit on MIP cuts added (a real number):
 
       <0          - No limit
       -1          - No limit (default)
@@ -506,7 +566,7 @@ cut:implied (implied, impliedcuts)
       Whether to use implied cuts in solving MIPs, choices as for
       "cut:flowcover".
 
-cut:liftandproject (liftandproject, liftandprojectcuts)
+cut:liftandproject (liftandproject, liftandprojectcuts, splitcuts)
       Whether to use lift and project cuts in solving MIPs, choices as for
       "cut:cuts".
 
@@ -514,13 +574,13 @@ cut:localimplied (localimplied, localimpliedcuts)
       Whether to use locally valid implied cuts in solving MIPs, choices as
       for "cut:cuts".
 
-cut:mfc (mfccuts)
+cut:mcf (mcfcuts, cut:mfc, mfccuts)
       Whether to use multi-commodity flow (MCF) cuts in solving MIPs, choices
-      as for "cut:flowcover".
+      as for "cut:flowcover". (cut:mfc/mfccuts are legacy spellings.)
 
 cut:mir (mircuts)
-      Whether to use MIP roundind cuts in solving MIPs, choices as for
-      "cut:flowcover".
+      Whether to use mixed-integer rounding (MIR) cuts in solving MIPs,
+      choices as for "cut:flowcover".
 
 cut:node (nodecuts)
       Decides whether or not cutting planes are separated at the nodes of the
@@ -597,9 +657,18 @@ cvt:mip:eps (cvt:cmp:eps, cmp:eps)
       should be larger or equal to the solver's feasibility tolerance.
       Default: 1e-4.
 
+cvt:mip:intprodbits (intprodbits)
+      Products x*y of variables, when not accepted natively, with an integer
+      factor of finite bounds (and the other factor bounded): exact MIP
+      reformulation by binary expansion of the integer factor with the smaller
+      range if it needs at most this many binary variables. Default 30.
+      Otherwise, and with 0, such products are approximated as
+      ((x+y)^2-x^2-y^2)/2 with piecewise-linear squares, as for continuous
+      factors. Products with a binary factor are always exact.
+
 cvt:multoutcard (multoutcard)
       Up to which (estimated) QP matrix cardinality should a product of 2
-      linear expressions be multiplied out. Default 1e9.
+      linear expressions be multiplied out. Default 1e+09.
 
       Low value can speed up model input, but prone to numerical issues.
 
@@ -611,6 +680,20 @@ cvt:names (names, modelnames)
           files was written by AMPL (AMPL: `option [<solver>_]auxfiles rc;`) 
       2 - Read names from AMPL, but create generic names if not provided
       3 - Create generic names.
+
+cvt:nlobj (passnlobj)
+      0*/1: Pass nonlinear objective terms to the solver. When 0, if the
+      solver accepts nonlinear constraints, such a constraint will be created
+      with those, otherwise linearly approximated. With cvt:quadobj=0, ensures
+      the objective is linear.
+
+cvt:pl:domain (pl:domain, pldomain)
+      Max absolute value of the argument of a piecewise-linear expression
+      converted to SOS2 (and further to MIP if SOS2 is not accepted natively).
+      In the MIP reformulation, the solver's feasibility tolerance is
+      amplified by up to this value. Not used by default: then an unbounded
+      argument is an error in the MIP reformulation, and native SOS2 gets
+      exact rays for unbounded sides. Use with care (prefer tight bounds).
 
 cvt:plapprox:domain (plapprox:domain, plapproxdomain)
       For piecewise-linear approximated functions, both arguments and result
@@ -628,12 +711,32 @@ cvt:pow2_as_qp (pow2_as_qp, pow2asqp)
 cvt:pre:all
       0/1*: Set to 0 to disable most presolve in the flat converter.
 
+cvt:pre:auxint (auxint)
+      0*/1: Submit as integer the auxiliary result variables whose integrality
+      is implied by their defining constraint (if-then-else, min, max, abs,
+      count, numberof, integer linear and quadratic functions of integer
+      arguments). Default 0: submit them as continuous (MP keeps the
+      integrality for its reformulations). Variables required to have their
+      type by a submitted constraint, e.g., indicator binaries, are not
+      affected.
+
 cvt:pre:boundlogarg (boundlogarg)
       0*/1: Bound logarithm arguments to nonnegative.
 
-cvt:pre:boundsbest (boundsbest)
-      0*/1: Submit best-known variable bounds to the solver. Can inhibit its
-      presolve.
+cvt:pre:boundsbest (boundsbest, bestbounds)
+      0*/1/2/3/4: Submit best-known variable bounds to the solver (can inhibit
+      its presolve):
+
+      0 - no, hard bounds only
+      1 - all variables
+      2 - all but the result variables of smooth nonlinear expressions (exp,
+      log, pow, trigonometric functions, divisions, products), which keep
+      their hard bounds
+      3 - only those variables
+      4 - all variables if the submitted model has no nonlinear or quadratic
+      constraints or objectives, none otherwise (for solvers whose nonlinear
+      relaxations are solved by a barrier method; MP2NL sets it for such
+      subsolvers).
 
       Note: when a variable can be fixed, the stronger bounds are always
       submitted.
@@ -700,6 +803,9 @@ cvt:pre:ctx:atanh (ctx:atanh)
 cvt:pre:ctx:call (ctx:call)
       Context propagation for 'Call' expression, see cvt:pre:ctx:abs.
 
+cvt:pre:ctx:ceil (ctx:ceil)
+      Context propagation for 'Ceil' expression, see cvt:pre:ctx:abs.
+
 cvt:pre:ctx:condlineq (ctx:condlineq)
       Context propagation for 'Conditional< AlgebraicConstraint< LinTerms,
       RhsEQ > >' expression, see cvt:pre:ctx:abs.
@@ -761,11 +867,17 @@ cvt:pre:ctx:exp (ctx:exp)
 cvt:pre:ctx:expa (ctx:expa)
       Context propagation for 'ExpA' expression, see cvt:pre:ctx:abs.
 
+cvt:pre:ctx:floor (ctx:floor)
+      Context propagation for 'Floor' expression, see cvt:pre:ctx:abs.
+
 cvt:pre:ctx:ifthen (ctx:ifthen)
       Context propagation for 'IfThen' expression, see cvt:pre:ctx:abs.
 
 cvt:pre:ctx:impl (ctx:impl)
       Context propagation for 'Implication' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:intdiv (ctx:intdiv)
+      Context propagation for 'IntDiv' expression, see cvt:pre:ctx:abs.
 
 cvt:pre:ctx:linfn (ctx:linfn)
       Context propagation for 'LinearFunctionalConstraint' expression, see
@@ -785,6 +897,12 @@ cvt:pre:ctx:max (ctx:max)
 
 cvt:pre:ctx:min (ctx:min)
       Context propagation for 'Min' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:mod (ctx:mod)
+      Context propagation for 'Mod' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:mul (ctx:mul)
+      Context propagation for 'Mul' expression, see cvt:pre:ctx:abs.
 
 cvt:pre:ctx:not (ctx:not)
       Context propagation for 'Not' expression, see cvt:pre:ctx:abs.
@@ -811,6 +929,9 @@ cvt:pre:ctx:quadfn (ctx:quadfn)
       Context propagation for 'QuadraticFunctionalConstraint' expression, see
       cvt:pre:ctx:abs.
 
+cvt:pre:ctx:round (ctx:round)
+      Context propagation for 'Round' expression, see cvt:pre:ctx:abs.
+
 cvt:pre:ctx:sdpdotprod (ctx:sdpdotprod)
       Context propagation for 'SDPDotProd' expression, see cvt:pre:ctx:abs.
 
@@ -829,6 +950,27 @@ cvt:pre:ctx:tan (ctx:tan)
 
 cvt:pre:ctx:tanh (ctx:tanh)
       Context propagation for 'Tanh' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:disj2ind (disj2ind)
+      Absorb static disjunctions l || C, where C is a conditional comparison
+      used only there (or an AND of such), into indicator constraints !l ==>
+      C. This is how implications b==1 ==> C are received from AMPL. Bitwise
+      OR of the following values:
+
+      1 - Linear comparisons
+      2 - Quadratic comparisons
+      4 - Both disjuncts absorbable: absorb one into an indicator on the
+      other's result (if-else shape, complementarity)
+      8 - Comparisons x==k awaiting the unary encoding decision for x
+      (absorbed only if no encoding is chosen)
+      16 - Any AND of such comparisons (used only there) in positive context,
+      e.g., a disjunct (C1 && C2) of a multi-term disjunction: indicators on
+      the AND's result variable
+      32 - Static disjunctions l1 || .. || lm || (y1 && .. && yk) with the AND
+      used only there: clauses l1 || .. || lm || yj, without the AND's result
+      variable.
+
+      Requires cvt:pre:all=1. Default 11.
 
 cvt:pre:eqbinary
       0/1*: Preprocess reified equality comparison with a binary variable.
@@ -893,11 +1035,25 @@ cvt:pre:unnest (cvt:unnest, cvt:pre:inline, cvt:inline)
       Inline nested expressions. Bitwise OR of the following values:
 
       1 - AND/FORALL and OR/EXISTS expressions
-      2 - Linear subexpressions
-      4 - Quadratic subexpressions
-      8 - MIN/MAX.
+      2 - Linear subexpressions in algebraic constraints
+      4 - Linear and quadratic subexpressions in algebraic constraints
+      8 - MIN/MAX
+      16 - Algebraic subexpressions in indicator constraints.
 
-      See also option cvt:dvelim concerning only the input model. Default 15.
+      See also option cvt:dvelim concerning only the input model. Default 31.
+
+cvt:pre:vbnd (vbnd)
+      Comparisons x (cmp) c decided by the domain of x reuse an existing
+      binary instead of a new reified comparison. Bitwise OR of the following
+      values:
+
+      1 - Variable-bound constraints x >= L*b, x <= U*b with binary b (AMPL's
+      encoding of x in {0} union interval[L, U], or the user's), 0 <= c <= L:
+      reuse b or its negation
+      2 - Root disjunctions x <= a || x >= b (e.g., x == 0 || x >= L for x >=
+      0), a < c < b: reuse the comparison x >= b or its negation.
+
+      Default 3.
 
 cvt:qp2passes (cvt:qp2pass, qp2passes, qp2pass)
       0/1*: Parse sums of QP expressions in 2 passes. Usually faster.
@@ -910,7 +1066,8 @@ cvt:quadcon (passquadcon)
 cvt:quadobj (passquadobj)
       0/1*: Pass quadratic objective terms to the solver. When 0, if the
       solver accepts quadratic constraints, such a constraint will be created
-      with those, otherwise linearly approximated.
+      with those, otherwise linearly approximated. With cvt:nlobj=0, ensures
+      the objective is linear.
 
 cvt:socp (socpmode, socp)
       Second-Order Cone recognition mode:
@@ -985,7 +1142,7 @@ iis:find (iisfind, iis, alg:iisfind)
 lim:dettime (dettimelim)
       Time limit in platform-dependent "ticks".
 
-lim:iter (iterlim, iterlimit, iterations)
+lim:iter (iterlim, iterlimit, iterations, lpiterlim)
       LP iteration limit (default: large).
 
 lim:lowercutoff (lowercutoff, mip:lowercutoff)
@@ -1000,15 +1157,28 @@ lim:lowerobjstop (lowerobjstop, mip:lowerobj)
 lim:netiterations (netiterations, netiter)
       Limit on network simplex iterations (default: large).
 
-lim:nodes (node, nodelim, nodelimit)
-      Maximum MIP nodes to explore (default: 2^31 - 1).
+lim:nodes (nodes, node, nodelim, nodelimit)
+      Maximum MIP nodes to explore (default: no limit).
 
-lim:sol (sollimit, solutionlimit, mipsolutions)
+lim:probetime (probetime)
+      Limit in seconds on time spent probing; default 1e75.
+
+lim:probetimedet (probetimedet)
+      Limit in "ticks" on time spent probing; default 1e75.
+
+lim:siftiter (siftiterations, siftiter)
+      Limit on sifting iterations (default: no limit).
+
+lim:sol (sollimit, solutionlimit, mipsolutions, solutionlim)
       Limit the number of feasible MIP solutions found, causing early
-      termination if exceeded; default = 2e31-1
+      termination if exceeded; must be >= 1; default = no limit.
 
-lim:time (timelim, timelimit, time)
+lim:time (timelim, timelimit, time, lptimelim)
       Limit on solve time (in seconds; default: no limit).
+
+lim:treememory (treememory, treelimit, treememlim)
+      Maximum megabytes of memory for the branch-and-bound tree (default 1e75
+      ==> no limit).
 
 lim:uppercutoff (uppercutoff, mip:uppercutoff)
       Sets the upper cutoff tolerance. When the problem is a minimization
@@ -1052,24 +1222,60 @@ lp:dgradient (dgradient)
       4 - Steepest-edge with unit initial norms
       5 - Devex pricing
 
-lp:doperturb (doperturb)
-      Decides whether to perturb problems when using simplex, setting it to 1
-      is occasionally helpful for highly degenerate problems.:
+lp:doperturb (doperturb, perturb)
+      Whether to perturb the problem initially when using simplex (by the
+      amount given by lp:perturb); setting it to 1 is occasionally helpful for
+      highly degenerate problems:
 
       0 - No (default)
       1 - Yes.
+
+lp:dynamicrows (dynamicrows)
+      Whether CPLEX manages the rows of the basis matrix dynamically during
+      dual simplex:
+
+      -1 - Automatic choice (default)
+      0  - No
+      1  - Yes.
+
+lp:markowitz (markowitz)
+      Markowitz pivot tolerance; default = 0.01; must be between 1e-4 and
+      0.99999. Bigger values may improve numerical properties of the solution
+      (and may take more time).
 
 lp:opttol (optimality, opttol, optimalitytolerance)
       Dual optimality tolerance: simplex will stop when all reduced costs are
       smaller than this value in the improving direction; default=1e-6.
 
-lp:perturb (perturb)
+lp:perturb (perturbation, perturbconst)
       Amount by which to perturb variable bounds when perturbing problems (see
-      "perturb"); default=1e-6, must be positive.
+      "lp:doperturb"); default=1e-6, must be in [1e-8, 1e75].
 
-lp:perturblim (perturblim, perturblimit)
+lp:perturblim (perturblim, perturblimit, limitperturb)
       Number of stalled simplex iterations before the problem is perturbed;
       default=0 => automatic.
+
+lp:pgradient (pgradient)
+      Pricing algorithm for primal simplex (default 0):
+
+      -1 - Reduced-cost pricing
+      0  - Hybrid reduced-cost and devex pricing (default)
+      1  - Devex pricing
+      2  - Steepest-edge pricing
+      3  - Steepest-edge pricing with slack initial norms
+      4  - Full pricing
+
+lp:pricing (pricing)
+      Size of the pricing candidate list for partial pricing; default 0 ==>
+      automatic choice.
+
+lp:refactor (refactor)
+      LP iterations between refactorizing the basis; default 0 ==> automatic
+      choice; maximum 10000.
+
+lp:singular (singular, singularlim)
+      Maximum number of times CPLEX tries to repair the basis when it
+      encounters singularities; default 10.
 
 lp:solutiontype (solutiontype)
       Whether to seek a basic solution when solving an LP:
@@ -1085,10 +1291,32 @@ mip:backtrack (backtrack)
       when subproblems are expensive.
 
 mip:basis (fixmodel, mip:fix)
-      Whether to compute duals / basis / sensitivity for MIP models:
+      Whether to compute duals / basis / sensitivity for MIP models.
 
       0 - No (default)
       1 - Yes.
+
+mip:basis:iterlimit
+      Iteration limit for the fixed-model solve only. -1 (default) uses the
+      solver default. For emulation, 0 skips the supplementary solve.
+
+mip:basis:method (finalmipalg, mip:fixmethod)
+      Algorithm for the fixed (continuous) model solved to obtain duals and a
+      basis for MIP models (see mip:basis):
+
+      0 - Automatic (default)
+      1 - Primal simplex
+      2 - Dual simplex
+      3 - Network simplex
+      4 - Barrier
+      5 - Sifting
+      6 - Concurrent (dual, barrier and primal in opportunistic mode; dual
+          and barrier in deterministic mode; 4 is used for MIPQs).
+
+mip:basis:timelimit
+      Time limit in seconds for the fixed-model solve only. -1 (default) uses
+      the solver default, independently of the MIP time limit. For emulation,
+      0 skips the supplementary solve.
 
 mip:bbinterval (bbinterval)
       For nodeselect = 2, select the best-bound node, rather than the best -
@@ -1126,6 +1354,21 @@ mip:branchdir (branchdir, branch)
       0  - Explore "most promising" branch first (default)
       1  - Explore "up" branch first.
 
+mip:cardls (cardls)
+      Cardinality local search heuristic:
+
+      -1   - Off
+      0    - Automatic (default)
+      1, 2 - Apply with increasing effort
+
+mip:dive (dive)
+      MIP dive strategy (how to choose between child nodes):
+
+      0 - Automatic (default)
+      1 - Traditional dive (never probing dives)
+      2 - Probing dive (look ahead at both children)
+      3 - Guided dive (explore solutions similar to the incumbent)
+
 mip:emphasis (mipemphasis, mip:focus, mipfocus)
       MIP solution strategy:
 
@@ -1137,6 +1380,10 @@ mip:emphasis (mipemphasis, mip:focus, mipfocus)
       4 - Focus on finding hidden feasible solutions
       5 - Focus on finding high quality solutions earlier (heuristic).
 
+mip:eplin (eplin)
+      Epsilon used in CPLEX's linearization of logical constraints, e.g., x <
+      a becomes x <= a - eplin; default 1e-3.
+
 mip:fpheur (fpheur)
       Whether to use the feasibility pump heuristic on MIP problems:
 
@@ -1147,14 +1394,47 @@ mip:fpheur (fpheur)
            solution
 
 mip:gap (mipgap)
-      Max. relative MIP optimality gap (default 1e-4).
+      Max. relative MIP optimality gap (default 1e-4; must be in [0, 1]).
 
 mip:gapabs (mipgapabs, absmipgap)
-      Max. absolute MIP optimality gap (default 1e-6).
+      Max. absolute MIP optimality gap (default 1e-6; must be in [0, 1e20]).
+
+mip:heureffort (heureffort)
+      Effort spent on MIP heuristics: 0 disables them, values < 1 reduce and
+      values > 1 increase the effort; default 1. Do not combine with a
+      non-default mip:heurfreq.
+
+mip:heurfreq (heurfreq, heuristicfreq)
+      How often to apply the periodic (node) heuristic for MIPs:
+
+      -1    - Never
+      0     - Automatic (default)
+      n > 0 - Every n nodes
 
 mip:inttol (inttol, intfeastol, integrality)
       Feasibility tolerance for integer variables (default 1e-05, must be in
       [0.0, 0.5])
+
+mip:kappastats (mipkappa)
+      Whether to compute MIP kappa statistics, which summarize the condition
+      numbers of the optimal bases seen while solving:
+
+      -1 - No MIP kappa statistics
+      0  - Automatic (default): compute for a sample of subproblems when
+           alg:numericalemphasis is on
+      1  - Compute for a sample of subproblems
+      2  - Compute for all subproblems (possibly expensive)
+
+mip:lbheur (lbheur)
+      0*/1: Whether to use a local branching heuristic to try to improve new
+      incumbents found during a MIP search.
+
+mip:miqcpstrat (miqcpstrat)
+      Strategy for solving quadratically-constrained MIPs (MIQCP):
+
+      0 - Automatic (default)
+      1 - Solve a QCP relaxation at each node
+      2 - Solve an LP relaxation at each node
 
 mip:nodefile (nodefile)
       Whether to save node information in a temporary file:
@@ -1164,7 +1444,7 @@ mip:nodefile (nodefile)
       2 - Node file on disk
       3 - Compressed node file on disk
 
-mip:nodemethod (nodemethod, mipalg, mipalgorithm)
+mip:nodemethod (nodemethod, mipalg, mipalgorithm, mipsubalg, subalg, subalgorithm)
       Algorithm used to solve relaxed MIP node problems (after the initial
       relaxation); for MIQP problems (quadratic objective, linear
       constraints), settings other than 3 and 5 are treated as 0. For MIQCP
@@ -1190,7 +1470,7 @@ mip:nodesel (nodesel, nodeselect)
       2 - Best-estimate search
       3 - Alternative best-estimate search
 
-mip:objdiff (objdiff, objdif)
+mip:objdiff (objdiff, objdif, objdifference)
       Used to update the cutoff each time a solution is found. This absolute
       value is subtracted from (added to) the newly found integer objective
       value when minimizing (maximizing). This forces the mixed integer
@@ -1198,9 +1478,59 @@ mip:objdiff (objdiff, objdif)
       amount better than the best one found so far. Positive values may speed
       the search -- and may cause the optimal solution to be missed.
 
+mip:ordertype (ordertype, mipordertype)
+      How to generate default priorities for integer variables when no
+      priority order is given:
+
+      0 - Do not generate priorities (default)
+      1 - Use decreasing costs
+      2 - Use increasing bound range
+      3 - Use coefficient count
+
+mip:polishafter:absgap (polishafter_absmipgap)
+      Start polishing integer solutions after the absolute MIP gap is at most
+      this value; default 0.
+
+mip:polishafter:dettime (polishafter_timedet)
+      Start polishing integer solutions after finding at least one
+      integer-feasible solution and spending this many "ticks"; default 1e75.
+
+mip:polishafter:gap (polishafter_mipgap)
+      Start polishing integer solutions after the relative MIP gap is at most
+      this value; default 0.
+
+mip:polishafter:nodes (polishafter_nodes)
+      Start polishing integer solutions after processing this many nodes;
+      default: no limit.
+
+mip:polishafter:sols (polishafter_intsol)
+      Start polishing integer solutions after finding this many
+      integer-feasible solutions; default: no limit.
+
+mip:polishafter:time (polishafter_time)
+      Start polishing integer solutions after finding at least one
+      integer-feasible solution and spending this many seconds; default 1e75.
+
+mip:probe (probe)
+      How much variable probing to do before MIP branching (sometimes
+      dramatically affects performance, for better or worse):
+
+      -1 - No probing
+      0  - Automatic (default)
+      1  - Moderate probing
+      2  - Aggressive probing
+      3  - Very aggressive probing
+
 mip:relobjdiff (relobjdiff, relobjdif)
       If objdiff parameter is 0, relobjdiff times the absolute value is used
       as a cutoff (see objdiff)
+
+mip:repairtries (repairtries)
+      How many times to try to repair an infeasible MIP start:
+
+      -1    - None
+      0     - Automatic (default)
+      n > 0 - That many times
 
 mip:return_gap (return_mipgap)
       Whether to return mipgap suffixes or include mipgap values (|objectve -
@@ -1213,6 +1543,14 @@ mip:return_gap (return_mipgap)
       Default = 0. The suffixes are on the objective and problem. Returned
       suffix values are +Infinity if no integer-feasible solution has been
       found, in which case no mipgap values are reported in the solve_message.
+
+mip:rinsheur (rinsheur)
+      Frequency of the relaxation induced neighborhood search (RINS)
+      heuristic:
+
+      -1    - Never
+      0     - Automatic (default)
+      n > 0 - Every n nodes
 
 mip:round (round)
       Whether to round integer variables to integral values before returning
@@ -1238,6 +1576,27 @@ mip:search (mipsearch)
       1 - Traditional branch and cut
       2 - Dynamic search
 
+mip:start:effort (mipstartvalue, mipstart:effort)
+      Effort level CPLEX applies to the MIP start passed from the incoming
+      variable values (see alg:start):
+
+      0 - Do not pass the MIP start to CPLEX
+      1 - Automatic choice of effort level (default)
+      2 - Withdrawn; treated as 1
+      3 - CPX_MIPSTART_CHECKFEAS: fail if the start is infeasible
+      4 - CPX_MIPSTART_SOLVEFIXED: solve the problem fixed at the start
+      5 - CPX_MIPSTART_SOLVEMIP: solve a subMIP (see mip:submipnodelim)
+      6 - CPX_MIPSTART_REPAIR: try to repair an infeasible start (see
+          mip:repairtries)
+      7 - CPX_MIPSTART_NOCHECK: assume the start is feasible
+
+mip:strongcand (strongcand)
+      Length of the candidate list for strong branching; default 10.
+
+mip:strongit (strongit)
+      Number of simplex iterations on each variable in the candidate list
+      during strong branching; default 0 ==> automatic choice.
+
 mip:submipalg (submipalg)
       Choice of algorithm used to solve the subproblems of a subMIP: not a
       subproblem, but an auxiliary MIP that CPLEX sometimes forms and solves,
@@ -1252,6 +1611,10 @@ mip:submipalg (submipalg)
       4 - Barrier
       5 - Sifting
 
+mip:submipnodelim (submipnodelim)
+      Limit on nodes explored when CPLEX solves a subMIP (RINS, solution
+      polishing, MIP start processing); default 500.
+
 mip:submipscale (submipscale)
       Rarely used choice of scaling for auxiliary subMIPs (described with
       "submipalg"):
@@ -1262,7 +1625,8 @@ mip:submipscale (submipscale)
 
 mip:submipstartalg (submipstartalg)
       Rarely used choice of algorithm for the initial relaxation of a subMIP
-      (described with "submipalg"):
+      (described with "submipalg"); for MIQPs, 5 is treated as 0; only 0 is
+      allowed for MIQCPs:
 
       0 - Automatic (default)
       1 - Primal simplex
@@ -1270,8 +1634,17 @@ mip:submipstartalg (submipstartalg)
       3 - Network simplex
       4 - Barrier
       5 - Sifting
-      6 - Concurrent (dual, barrier and primal in opportunistic mode; dual
-          and barrier in deterministic mode; 4 is used for MIPQs).
+
+mip:symmetry (symmetry)
+      Whether to break symmetry during preprocessing of MIP problems:
+
+      -1 - Automatic (default)
+      0  - Off
+      1  - Moderate symmetry breaking
+      2  - Aggressive
+      3  - Very aggressive
+      4  - Highly aggressive
+      5  - Extremely aggressive
 
 mip:varbranch (varbranch, varsel, varselect)
       MIP branch variable selection strategy:
@@ -1315,13 +1688,34 @@ obj:multi (multiobj)
 
       Note that with solver's native handling (when obj:multi=1 and
       supported), some solvers might have special rules for the tolerances,
-      especially for LP, and not allow quadratic objectives. See the solver
-      documentation.
+      especially for LP, and only allow linear objectives. See the solver
+      documentation and options cvt:quadobj, cvt:nlobj.
 
 obj:multi:options (multiobjoptions)
       0/1*: Regard multiobjective option suffixes which are objective suffixes
       beginning with option_. Example: suffix option_timelim; let
       _obj[2].option_timelim:=15;
+
+obj:multi:stats (multiobjstats)
+      0*/1: Report multiobjective pass statistics in the following objective
+      suffixes:
+
+      * .objpass: index of the pass where this objective was solved, 0 if not
+        solved due to a stop in a previous pass
+
+      * .objpass_result: the solve_result of the pass where this objective was
+        solved; -1 if not
+
+      * .objpass_runtime, _mipgap, _objval, _objbound, _work, _itercount,
+        _nodecount, _opennodecount if available.
+
+      With MP's emulation (obj:multi=2), _objval and _objbound refer to the
+      blended pass objective in the sense of the first objective, and _runtime
+      is the wall-clock time of the pass including model updates; numeric
+      statistics are NaN if not available for a pass. If the solver's native
+      multiobjective mode does not report pass statistics, use obj:multi=2.
+
+      See also tech:stats.
 
 obj:multi:weight (multiobjweight, obj:multi:weights, multiobjweights)
       How to interpret each objective's weight sign:
@@ -1370,19 +1764,32 @@ pre:dependency (dependency)
       2  - Turn on only at end of preprocessing
       3  - Turn on at both start and end of preprocessing
 
-pre:dual (predual)
+pre:dual (predual, presolvedual)
       Whether CPLEX' presolve phase should present the CPLEX solution
       algorithm with the primal(-1) or dual(1) problem or (default = 0) should
       decide automatically.
 
       For compatibility, pre:dual interacts with alg:dualproblem.
 
+pre:folding (folding)
+      Whether to try LP folding during preprocessing:
+
+      -1 - Automatic (default)
+      0  - Off
+      1  - Moderate folding
+      2  - Aggressive
+      3  - Very aggressive
+      4  - Highly aggressive
+      5  - Extremely aggressive
+
 pre:node (presolvenode)
       Whether to run presolve at each node of the MIP branch-and-bound:
 
-      -1 - No
-      0  - Automatic choice (default)
-      1  - Yes.
+      -1 - No node presolve
+      0  - Automatic (default)
+      1  - Always apply presolve at nodes
+      2  - Probing on integer-infeasible variables
+      3  - Aggressive node probing
 
 pre:passes (prepasses, prepass)
       Limit on the number of CPLEX presolve passes:
@@ -1390,20 +1797,57 @@ pre:passes (prepasses, prepass)
       -1 - Automatic choice (default)
       n>=0 - At most n passes.
 
-pre:reformulations (prereformulations)
+pre:qcpduals (qcpduals)
+      Whether to compute dual values for quadratically constrained problems:
+
+      0 - Do not calculate dual values for QCPs
+      1 - Calculate them unless this interferes with presolve reductions
+          (default)
+      2 - Calculate them, disabling interfering presolve reductions
+
+pre:qpmakepsd (qpmakepsd)
+      0/1*: Whether to reformulate a binary-only MIQP or MIQCP so that its
+      quadratic matrix becomes positive semi-definite.
+
+pre:qtolin (qtolin)
+      Whether to linearize products of bounded variables in quadratic
+      objectives during preprocessing:
+
+      -1 - Automatic choice (default)
+      0  - No
+      1  - Yes.
+
+pre:reduce (prereduce)
       Kinds of reductions permitted during CPLEX presolve:
 
+      0 - No primal or dual reductions
+      1 - Only primal reductions
+      2 - Only dual reductions
+      3 - Both primal and dual reductions (default)
+
+pre:reformulations (prereformulations)
+      Reformulations applied during CPLEX presolve:
+
       0 - None
-      1 - Allow reformulations that interphere with crushing forms
-      2 - Allow reformulations that interphere with uncrushing forms
+      1 - Allow reformulations that interfere with crushing forms
+      2 - Allow reformulations that interfere with uncrushing forms
       3 - All reformulations (default)
 
-pre:relax (prerelax)
+pre:relax (prerelax, relaxpresolve, relpresolve)
       Whether to use CPLEX's presolve on the initial LP relaxation of a MIP:
 
       -1 - Automatic choice (default)
       0  - No
       1  - Yes.
+
+pre:repeat (repeatpresolve)
+      Whether to repeat CPLEX's presolve after root processing:
+
+      -1 - Automatic (default)
+      0  - Off
+      1  - Repeat presolve without cuts
+      2  - Repeat presolve with cuts
+      3  - Repeat presolve with cuts and allow new root cuts
 
 pre:scale (scale)
       How to scale the problem:
@@ -1527,6 +1971,7 @@ sol:poolpopulate (populate)
 
       0 - no; just keep solutions found during the initial solve
       1 - run "populate" after finding a MIP solution
+      2 - run "populate" instead of seeking a single best solution
 
 sol:poolpopulatelim (populatelim)
       Limit on number of solutions added to the solution pool by the populate
@@ -1544,7 +1989,7 @@ sol:report_uncertain (report_uncertain_sol)
       0/1*: whether to report objective value(s) in solve_message when
       solve_result is '?' (unknown).
 
-sol:stub (ams_stub, solstub, solutionstub)
+sol:stub (poolstub, ams_stub, solstub, solutionstub)
       Stub for alternative MIP solutions, written to files with names obtained
       by appending "1.sol", "2.sol", etc., to <solutionstub>. The number of
       such files written is affected by the keywords poolgap, poolgapabs,
@@ -1568,6 +2013,20 @@ tech:bardisplay (bardisplay)
       1 - balanced setup and iteration information
       2 - diagnostic information
 
+tech:clocktype (clocktype)
+      Kind of times CPLEX reports and uses for time limits:
+
+      0 - Automatic
+      1 - CPU time
+      2 - Wall clock time (default)
+
+tech:clonelog (clonelog)
+      Whether clone log files are created during parallel optimization:
+
+      -1 - No clone logs
+      0  - Automatic (default)
+      1  - Write clone logs for parallel optimization
+
 tech:conflictdisplay (conflictdisplay)
       What to report when the conflict finder is working:
 
@@ -1583,12 +2042,23 @@ tech:cpumask (cpumask)
       indicate that CPUs 0, 2, 5, and 7 are available for binding to threads,
       since hex value a5 =2^7+2^5+2^2+2^0.
 
+tech:datacheck (datacheck)
+      Data consistency checking and modeling assistance:
+
+      0 - Off (default)
+      1 - Check data consistency and issue warnings
+      2 - Also offer modeling assistance (warnings about bad scaling etc.)
+
 tech:debug (debug)
       0*/1: whether to assist testing & debugging, e.g., by outputting
       auxiliary information (mostly via suffixes).
 
 tech:endbasis (writebas, endbasis)
       Write the final basis to the specified file (in BAS format).
+
+tech:intsolfileprefix (intsolfileprefix)
+      If set, CPLEX writes every MIP integer solution it finds to a file whose
+      name starts with this prefix.
 
 tech:logfile (logfile)
       Log file name.
@@ -1628,6 +2098,9 @@ tech:modisplay (modisplay, multiobjdisplay)
       0 - No output
       1 - (Default) summary display after each subproblem
       2 - Summary display after each subproblem, as well as subproblem logs
+
+tech:mpslong (mpslong)
+      0/1*: Whether to write numbers with full precision to MPS and REW files.
 
 tech:netdisplay (netdisplay)
       Decides what CPLEX reports to the screen during network optimization:
@@ -1674,13 +2147,35 @@ tech:outlev (outlev)
 tech:outlev_mp (outlev_mp)
       0*/1: whether to print MP model information.
 
-tech:pretunefileprm (pretunefileprm)
+tech:parallelmode (parallelmode)
+      Parallel optimization mode:
+
+      -1 - Opportunistic
+      0  - Automatic (default)
+      1  - Deterministic
+
+tech:prestats (prestats)
+      0*/1: Whether to include CPLEX's presolve statistics (aggregator and
+      presolve log lines) in the solve_message.
+
+tech:pretunefileprm (pretunefileprm, pretunefile)
       File to which nondefault keyword settings are written in CPLEX PRM
       format before tuning.
 
+tech:record (record)
+      0*/1: Whether to record CPLEX library calls for debugging use by IBM in
+      a file with an automatically chosen name of the form cplexXXXXXXX.db.
+
 tech:seed (seed)
-      Seed for random number generator used internally by CPLEX.Use "seed=?"
+      Seed for random number generator used internally by CPLEX. Use "seed=?"
       to see the default, which depends on the CPLEX release.
+
+tech:siftdisplay (siftdisplay)
+      How much the sifting algorithm reports:
+
+      0 - No display
+      1 - Display major iterations (default)
+      2 - Display LP subproblem information
 
 tech:stats (stats, tech:report_stats, solve_stats)
       Whether to return solve statistics and timings; the information will be
@@ -1694,11 +2189,14 @@ tech:stats (stats, tech:report_stats, solve_stats)
       0 - Do not report statistics (default)
       1 - Report statistics in JSON format in the problem suffix 'stats'
       2 - Report statistics in suffixes
-      3 - Report statistics both in suffixes and the suffix 'stats'
+      3 - Report statistics both in suffixes and the suffix 'stats'.
+
+      See also obj:multi:stats.
 
 tech:threads (threads)
-      How many threads to use when using the barrier algorithm
-      or solving MIP problems; default 0 ==> automatic choice.
+      Default maximum number of threads for any of the parallel CPLEX
+      optimizers (simplex, barrier, MIP, concurrent); default 0 ==> automatic
+      choice (maximum available, subject to the license).
 
 tech:timing (timing, tech:report_times, report_times)
       0*/1/2: Whether to print and return timings for the run, all times are
@@ -1709,7 +2207,7 @@ tech:timing (timing, tech:report_times, report_times)
       'time_read', 'time_conversion' and 'time_output'.
 
 tech:tunedisplay (tunedisplay)
-      How much to print during tunin:
+      How much to print during tuning:
 
       0 - Nothing
       1 - Minimal printing (default)
@@ -1721,6 +2219,21 @@ tech:tunefile (tunefile, tunefileprm, tech:tunebase, tunebase)
       will experiment with parameter settings that would make solving faster.
       This can significantly increase execution time of the current
       invocation, but the settings it finds might save time in future runs.
+
+tech:tunefix (tunefix)
+      List of option names not to tune (their current values are kept),
+      separated by commas or white space; enclose in quotes if the list
+      contains white space.
+
+tech:tunefixfile (tunefixfile)
+      Name of a file containing option names not to tune, merged with
+      tech:tunefix.
+
+tech:tunemeasure (tunemeasure)
+      How tuning compares parameter sets across models:
+
+      1 - Mean time over the models (default)
+      2 - Minmax approach
 
 tech:tunerepeat (tunerepeat)
       How many times to perturb the problem during tuning (default = 1).
@@ -1743,15 +2256,31 @@ tech:wantsol (wantsol)
       4 - Dual variables to stdout
       8 - Suppress solution message.
 
+tech:warninglimit (warninglimit)
+      Limit on the number of warnings per issue given when tech:datacheck=2;
+      default 10.
+
 tech:workdir (nodefiledir, workfiledir, workdir)
       Directory where CPLEX creates a temporary subdirectory for temporary
       files, e.g., for node information and Cholesky factors.
 
 tech:workfilelim (workfilelim)
-      Maximum size in megabytes for in-core work "files". Default 2048.
+      Maximum size in megabytes for in-core work "files" (central memory used
+      before node files are written); default 2048.
 
 tech:writegraph (cvt:writegraph, writegraph, exportgraph)
       File to export conversion graph. Format: JSON Lines.
+
+tech:writelevel (writelevel)
+      Level of detail written to SOL and MST files (tech:writesolution,
+      tech:writemipstart):
+
+      0 - Automatic (default): all variables in SOL files, discrete variables
+          in MST files
+      1 - All variables
+      2 - Discrete variables only
+      3 - Variables with nonzero values only
+      4 - Discrete variables with nonzero values only
 
 tech:writemipstart (writemipstart)
       The name of a file to which the MIP starting guess(if any) is written in

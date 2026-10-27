@@ -55,18 +55,11 @@ acc:linrange (acc:linrng)
       1 - Accepted but automatic redefinition will be used where possible
       2 - Accepted natively and preferred
 
-alg:basis (basis)
-      Whether to use and/or return a basis for LP models (variable/constraint
-      suffixes .(s)status):
+alg:dualfeastol (dualfeastol, num:dualfeastol)
+      Feasibility tolerance for reduced costs in LP solution (default: 1e-07)
 
-      0 - No
-      1 - Use incoming basis (if provided)
-      2 - Return final basis
-      3 - Both (1 + 2 = default)
-
-      See alg:start for interaction with the LP warmstart.
-
-      See also mip:basis and qcp:dual (for some solvers).
+alg:feastol (feastol, num:feastol)
+      Feasibility tolerance for constraints (default: 1e-06)
 
 alg:method (method, lpmethod)
       LP algorithm for solving initial LP relaxations:
@@ -74,8 +67,8 @@ alg:method (method, lpmethod)
       s - automatic simplex (default)
       p - primal simplex
       d - dual simplex
-      b - barrier
-      c - barrier with crossover
+      b - barrier (SoPlex has none: runs the dual simplex)
+      c - barrier with crossover (SoPlex: dual simplex)
 
 alg:relax (relax)
       0*/1: Whether to relax integrality of variables.
@@ -86,8 +79,8 @@ alg:remethod (remethod, relpmethod)
       s - automatic simplex (default)
       p - primal simplex
       d - dual simplex
-      b - barrier
-      c - barrier with crossover
+      b - barrier (SoPlex has none: runs the dual simplex)
+      c - barrier with crossover (SoPlex: dual simplex)
 
 branch:preferbinary (preferbinary)
       0/1: whether branching on binary variables should be preferred
@@ -111,8 +104,8 @@ cut:maxcuts (maxcuts)
       separation; default: 100)
 
 cut:maxcutsroot (maxcutsroot)
-      Maximal number of separated cuts at the root node (0: disable root node
-      separation; default: 2000)
+      Maximal number of separated cuts per separation round at the root node
+      (0: disable root node separation; default: 2000)
 
 cut:maxrounds
       Maximal number of separation rounds per node (default: -1: unlimited)
@@ -143,11 +136,11 @@ cut:minefficacyroot
       0.0001)
 
 cut:minortho (minortho)
-      Minimal orthogonality for a cut to enter the LP (default: 0.9)
+      Minimal orthogonality for a cut to enter the LP (0..1; default: 0.9)
 
 cut:minorthoroot (minorthoroot)
-      Minimal orthogonality for a cut to enter the LP in the root node
-      (default: 0.1)
+      Minimal orthogonality for a cut to enter the LP in the root node (0..1;
+      default: 0.9)
 
 cut:objparalweight (objparalweight)
       Weight of objective parallelism in cut score calculation (default: 0.1)
@@ -217,9 +210,18 @@ cvt:mip:eps (cvt:cmp:eps, cmp:eps)
       should be larger or equal to the solver's feasibility tolerance.
       Default: 1e-4.
 
+cvt:mip:intprodbits (intprodbits)
+      Products x*y of variables, when not accepted natively, with an integer
+      factor of finite bounds (and the other factor bounded): exact MIP
+      reformulation by binary expansion of the integer factor with the smaller
+      range if it needs at most this many binary variables. Default 30.
+      Otherwise, and with 0, such products are approximated as
+      ((x+y)^2-x^2-y^2)/2 with piecewise-linear squares, as for continuous
+      factors. Products with a binary factor are always exact.
+
 cvt:multoutcard (multoutcard)
       Up to which (estimated) QP matrix cardinality should a product of 2
-      linear expressions be multiplied out. Default 1e9.
+      linear expressions be multiplied out. Default 1e+09.
 
       Low value can speed up model input, but prone to numerical issues.
 
@@ -231,6 +233,20 @@ cvt:names (names, modelnames)
           files was written by AMPL (AMPL: `option [<solver>_]auxfiles rc;`) 
       2 - Read names from AMPL, but create generic names if not provided
       3 - Create generic names.
+
+cvt:nlobj (passnlobj)
+      0*/1: Pass nonlinear objective terms to the solver. When 0, if the
+      solver accepts nonlinear constraints, such a constraint will be created
+      with those, otherwise linearly approximated. With cvt:quadobj=0, ensures
+      the objective is linear.
+
+cvt:pl:domain (pl:domain, pldomain)
+      Max absolute value of the argument of a piecewise-linear expression
+      converted to SOS2 (and further to MIP if SOS2 is not accepted natively).
+      In the MIP reformulation, the solver's feasibility tolerance is
+      amplified by up to this value. Not used by default: then an unbounded
+      argument is an error in the MIP reformulation, and native SOS2 gets
+      exact rays for unbounded sides. Use with care (prefer tight bounds).
 
 cvt:plapprox:domain (plapprox:domain, plapproxdomain)
       For piecewise-linear approximated functions, both arguments and result
@@ -248,12 +264,32 @@ cvt:pow2_as_qp (pow2_as_qp, pow2asqp)
 cvt:pre:all
       0/1*: Set to 0 to disable most presolve in the flat converter.
 
+cvt:pre:auxint (auxint)
+      0*/1: Submit as integer the auxiliary result variables whose integrality
+      is implied by their defining constraint (if-then-else, min, max, abs,
+      count, numberof, integer linear and quadratic functions of integer
+      arguments). Default 0: submit them as continuous (MP keeps the
+      integrality for its reformulations). Variables required to have their
+      type by a submitted constraint, e.g., indicator binaries, are not
+      affected.
+
 cvt:pre:boundlogarg (boundlogarg)
       0*/1: Bound logarithm arguments to nonnegative.
 
-cvt:pre:boundsbest (boundsbest)
-      0*/1: Submit best-known variable bounds to the solver. Can inhibit its
-      presolve.
+cvt:pre:boundsbest (boundsbest, bestbounds)
+      0*/1/2/3/4: Submit best-known variable bounds to the solver (can inhibit
+      its presolve):
+
+      0 - no, hard bounds only
+      1 - all variables
+      2 - all but the result variables of smooth nonlinear expressions (exp,
+      log, pow, trigonometric functions, divisions, products), which keep
+      their hard bounds
+      3 - only those variables
+      4 - all variables if the submitted model has no nonlinear or quadratic
+      constraints or objectives, none otherwise (for solvers whose nonlinear
+      relaxations are solved by a barrier method; MP2NL sets it for such
+      subsolvers).
 
       Note: when a variable can be fixed, the stronger bounds are always
       submitted.
@@ -320,6 +356,9 @@ cvt:pre:ctx:atanh (ctx:atanh)
 cvt:pre:ctx:call (ctx:call)
       Context propagation for 'Call' expression, see cvt:pre:ctx:abs.
 
+cvt:pre:ctx:ceil (ctx:ceil)
+      Context propagation for 'Ceil' expression, see cvt:pre:ctx:abs.
+
 cvt:pre:ctx:condlineq (ctx:condlineq)
       Context propagation for 'Conditional< AlgebraicConstraint< LinTerms,
       RhsEQ > >' expression, see cvt:pre:ctx:abs.
@@ -381,11 +420,17 @@ cvt:pre:ctx:exp (ctx:exp)
 cvt:pre:ctx:expa (ctx:expa)
       Context propagation for 'ExpA' expression, see cvt:pre:ctx:abs.
 
+cvt:pre:ctx:floor (ctx:floor)
+      Context propagation for 'Floor' expression, see cvt:pre:ctx:abs.
+
 cvt:pre:ctx:ifthen (ctx:ifthen)
       Context propagation for 'IfThen' expression, see cvt:pre:ctx:abs.
 
 cvt:pre:ctx:impl (ctx:impl)
       Context propagation for 'Implication' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:intdiv (ctx:intdiv)
+      Context propagation for 'IntDiv' expression, see cvt:pre:ctx:abs.
 
 cvt:pre:ctx:linfn (ctx:linfn)
       Context propagation for 'LinearFunctionalConstraint' expression, see
@@ -405,6 +450,12 @@ cvt:pre:ctx:max (ctx:max)
 
 cvt:pre:ctx:min (ctx:min)
       Context propagation for 'Min' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:mod (ctx:mod)
+      Context propagation for 'Mod' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:mul (ctx:mul)
+      Context propagation for 'Mul' expression, see cvt:pre:ctx:abs.
 
 cvt:pre:ctx:not (ctx:not)
       Context propagation for 'Not' expression, see cvt:pre:ctx:abs.
@@ -431,6 +482,9 @@ cvt:pre:ctx:quadfn (ctx:quadfn)
       Context propagation for 'QuadraticFunctionalConstraint' expression, see
       cvt:pre:ctx:abs.
 
+cvt:pre:ctx:round (ctx:round)
+      Context propagation for 'Round' expression, see cvt:pre:ctx:abs.
+
 cvt:pre:ctx:sdpdotprod (ctx:sdpdotprod)
       Context propagation for 'SDPDotProd' expression, see cvt:pre:ctx:abs.
 
@@ -449,6 +503,27 @@ cvt:pre:ctx:tan (ctx:tan)
 
 cvt:pre:ctx:tanh (ctx:tanh)
       Context propagation for 'Tanh' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:disj2ind (disj2ind)
+      Absorb static disjunctions l || C, where C is a conditional comparison
+      used only there (or an AND of such), into indicator constraints !l ==>
+      C. This is how implications b==1 ==> C are received from AMPL. Bitwise
+      OR of the following values:
+
+      1 - Linear comparisons
+      2 - Quadratic comparisons
+      4 - Both disjuncts absorbable: absorb one into an indicator on the
+      other's result (if-else shape, complementarity)
+      8 - Comparisons x==k awaiting the unary encoding decision for x
+      (absorbed only if no encoding is chosen)
+      16 - Any AND of such comparisons (used only there) in positive context,
+      e.g., a disjunct (C1 && C2) of a multi-term disjunction: indicators on
+      the AND's result variable
+      32 - Static disjunctions l1 || .. || lm || (y1 && .. && yk) with the AND
+      used only there: clauses l1 || .. || lm || yj, without the AND's result
+      variable.
+
+      Requires cvt:pre:all=1. Default 11.
 
 cvt:pre:eqbinary
       0/1*: Preprocess reified equality comparison with a binary variable.
@@ -513,11 +588,25 @@ cvt:pre:unnest (cvt:unnest, cvt:pre:inline, cvt:inline)
       Inline nested expressions. Bitwise OR of the following values:
 
       1 - AND/FORALL and OR/EXISTS expressions
-      2 - Linear subexpressions
-      4 - Quadratic subexpressions
-      8 - MIN/MAX.
+      2 - Linear subexpressions in algebraic constraints
+      4 - Linear and quadratic subexpressions in algebraic constraints
+      8 - MIN/MAX
+      16 - Algebraic subexpressions in indicator constraints.
 
-      See also option cvt:dvelim concerning only the input model. Default 15.
+      See also option cvt:dvelim concerning only the input model. Default 31.
+
+cvt:pre:vbnd (vbnd)
+      Comparisons x (cmp) c decided by the domain of x reuse an existing
+      binary instead of a new reified comparison. Bitwise OR of the following
+      values:
+
+      1 - Variable-bound constraints x >= L*b, x <= U*b with binary b (AMPL's
+      encoding of x in {0} union interval[L, U], or the user's), 0 <= c <= L:
+      reuse b or its negation
+      2 - Root disjunctions x <= a || x >= b (e.g., x == 0 || x >= L for x >=
+      0), a < c < b: reuse the comparison x >= b or its negation.
+
+      Default 3.
 
 cvt:qp2passes (cvt:qp2pass, qp2passes, qp2pass)
       0/1*: Parse sums of QP expressions in 2 passes. Usually faster.
@@ -530,7 +619,8 @@ cvt:quadcon (passquadcon)
 cvt:quadobj (passquadobj)
       0*/1: Pass quadratic objective terms to the solver. When 0, if the
       solver accepts quadratic constraints, such a constraint will be created
-      with those, otherwise linearly approximated.
+      with those, otherwise linearly approximated. With cvt:nlobj=0, ensures
+      the objective is linear.
 
 cvt:socp (socpmode, socp)
       Second-Order Cone recognition mode:
@@ -599,14 +689,14 @@ cvt:uenc:ratio (uenc:ratio)
 
       With uenc:ratio>3, this triggers unary encoding for x.
 
-det:benders-enabled (benders-enabled)
+det:benders (det:benders-enabled, benders-enabled)
       0/1: whether benders detection should be enabled?
 
       0 - Benders detection not enabled (default)
 
       1 - Benders detection enabled.
 
-det:benders-onlybinmaster (benders-onlybinmaster)
+det:bendersonlybinmaster (det:benders-onlybinmaster, benders-onlybinmaster)
       0/1: whether only decomposition with only binary variables in the master
       are searched?
 
@@ -616,7 +706,7 @@ det:benders-onlybinmaster (benders-onlybinmaster)
       1 - Only decomposition with only binary variables in the master are
       searched.
 
-det:benders-onlycontsubpr (benders-onlycontsubpr)
+det:bendersonlycontsubpr (det:benders-onlycontsubpr, benders-onlycontsubpr)
       0/1: whether only decomposition with only continiuous variables in the
       subproblems are searched?
 
@@ -626,7 +716,7 @@ det:benders-onlycontsubpr (benders-onlycontsubpr)
       1 - Only decomposition with only continiuous variables in the
       subproblems are searched.
 
-det:classification-enabled (classification-enabled)
+det:classification (det:classification-enabled, classification-enabled)
       0/1: whether classification should be enabled?
 
       0 - Classification not enabled
@@ -639,6 +729,10 @@ det:enabled
       0 - Detection not enabled
 
       1 - Detection enabled (default).
+
+det:maxnclasses (maxnclasses)
+      Maximum number of classes a partition can use for voting on the number
+      of blocks (default 18)
 
 det:maxnclassesperpartition (maxnclassesperpartition)
       Maximum number of classes per partition (default: 9)
@@ -653,19 +747,19 @@ det:maxrounds
 det:maxtime
       Maximum detection time in seconds (default: 600)
 
-det:origprob-classificationenabled (origprob-classificationenabled)
-      0/1: whether classification for the original problem should be enabled?
-
-      0 - Classification for the original problem not enabled
-
-      1 - Classification for the original problem enabled (default).
-
-det:origprob-enabled (origprob-enabled)
+det:origprob (det:origprob-enabled, origprob-enabled)
       0/1: whether detection for the original problem should be enabled?
 
       0 - Detection for the original problem not enabled
 
       1 - Detection for the original problem enabled (default).
+
+det:origprobclassification (det:origprob-classificationenabled, origprob-classificationenabled)
+      0/1: whether classification for the original problem should be enabled?
+
+      0 - Classification for the original problem not enabled
+
+      1 - Classification for the original problem enabled (default).
 
 det:postprocess (postprocess)
       0/1: whether postprocessing of complete decompositions should be
@@ -696,6 +790,14 @@ gcg:discretization (discretization)
 
       1 - discretization approach should be used (default).
 
+gcg:dispinfos (dispinfos)
+      0/1: whether additional information about the blocks is displayed
+      (default 0).
+
+gcg:enforceproper (enforceproper)
+      0/1: whether propagated bound changes in the original problem are
+      enforced in the master (only proper variables; default 1).
+
 gcg:mipdiscretization (mipdiscretization)
       0/1: whether discretization (TRUE) or convexification (FALSE) approach
       should be used in mixed-integer programs?
@@ -723,22 +825,25 @@ heu:settings
 
       3 - Sets heuristics off.
 
-lim:absgap (absgap)
-      Solving stops, if the absolute gap = |primalbound - dualbound| is below
-      the given value (default: 0.0)
-
 lim:autorestartnodes
       If solve exceeds this number of nodes for the first time, an automatic
       restart is triggered (default: -1: no automatic restart)
+
+lim:bestbndstop (bestbndstop, lim:dual)
+      Solving stops, if the dual bound is at least as good as this value
+      (default: no limit)
+
+lim:bestobjstop (bestobjstop, lim:primal)
+      Solving stops, if the primal bound is at least as good as this value
+      (default: no limit)
 
 lim:bestsol
       Solving stops, if the given number of solution improvements were found
       (default: -1: no limit)
 
-lim:gap (gap)
-      Solving stops, if the relative gap = |primal -
-      dual|/MIN(|dual|,|primal|) is below the given value, the gap is
-      'Infinity', if primal and dual bound have opposite signs (default: 0.0)
+lim:iter (iterlim, lp:iterlim)
+      Iteration limit for each single LP solve of the original problem
+      (default: -1: no limit). Not a total limit.
 
 lim:maxorigsol
       Maximal number of solutions candidates to store in the solution storage
@@ -748,18 +853,18 @@ lim:maxsol
       Maximal number of solutions to store in the solution storage (default:
       100)
 
-lim:memory (memory)
+lim:memory (memory, memlim)
       #maximal memory usage in MB; reported memory usage is lower than real
       memory usage! (default: 8796093022207.0)
 
-lim:nodes
+lim:nodes (nodelim, nodelimit)
       Maximal number of nodes to process (default: -1: no limit)
 
 lim:restarts
       Solving stops, if the given number of restarts was triggered (default:
       -1: no limit)
 
-lim:solutions
+lim:sol (sollim, solutionlimit, lim:solutions)
       Solving stops, if the given number of solutions were found (default: -1:
       no limit)
 
@@ -802,12 +907,15 @@ lp:pricing (pricing)
       q - quickstart steepest edge pricing
       d - devex pricing
 
+lp:scaling (pre:scale, scale)
+      LP scaling: 0 none, 1 normal (default), 2 aggressive.
+
 lp:solvedepth
       Maximal depth for solving LP at the nodes (default: -1: no depth limit)
 
 lp:solvefreq
       Frequency for solving LP at the nodes (-1: never; 0: only root LP;
-      default: 0)
+      default: 1)
 
 lp:threads
       Number of threads used for solving the LP (default: 0: automatic)
@@ -822,6 +930,15 @@ mip:bestbound (bestbound, return_bound)
       The suffix is on the objective and problem and is -Infinity for
       minimization problems and +Infinity for maximization problems if there
       are no integer variables or if a dual bound is not available.
+
+mip:gap (mipgap, lim:gap, gap)
+      Solving stops, if the relative gap = |primal -
+      dual|/MIN(|dual|,|primal|) is below the given value, the gap is
+      'Infinity', if primal and dual bound have opposite signs (default: 0.0)
+
+mip:gapabs (mipgapabs, lim:absgap, absgap)
+      Solving stops, if the absolute gap = |primalbound - dualbound| is below
+      the given value (default: 0.0)
 
 mip:return_gap (return_mipgap)
       Whether to return mipgap suffixes or include mipgap values (|objectve -
@@ -897,14 +1014,8 @@ num:checkfeastolfac (checkfeastolfac)
       Feasibility tolerance factor; for checking the feasibility of the best
       solution (default: 1.0)
 
-num:dualfeastol (dualfeastol)
-      Feasibility tolerance for reduced costs in LP solution (default: 1e-07)
-
 num:epsilon (epsilon)
       Absolute values smaller than this are considered zero (default: 1e-09)
-
-num:feastol (feastol)
-      Feasibility tolerance for constraints (default: 1e-06)
 
 num:infinity (infinity)
       Values larger than this are considered infinity (default: 1e+20)
@@ -914,7 +1025,7 @@ num:lpfeastolfactor (lpfeastolfactor)
       maximal) primal feasibility tolerance of LP solver (default: 1.0)
 
 num:sumepsilon (sumepsilon)
-      Absolute values of sums smaller than this are considered (default:
+      Absolute values of sums smaller than this are considered zero (default:
       1e-06)
 
 obj:multi (multiobj)
@@ -936,13 +1047,34 @@ obj:multi (multiobj)
 
       Note that with solver's native handling (when obj:multi=1 and
       supported), some solvers might have special rules for the tolerances,
-      especially for LP, and not allow quadratic objectives. See the solver
-      documentation.
+      especially for LP, and only allow linear objectives. See the solver
+      documentation and options cvt:quadobj, cvt:nlobj.
 
 obj:multi:options (multiobjoptions)
       0/1*: Regard multiobjective option suffixes which are objective suffixes
       beginning with option_. Example: suffix option_timelim; let
       _obj[2].option_timelim:=15;
+
+obj:multi:stats (multiobjstats)
+      0*/1: Report multiobjective pass statistics in the following objective
+      suffixes:
+
+      * .objpass: index of the pass where this objective was solved, 0 if not
+        solved due to a stop in a previous pass
+
+      * .objpass_result: the solve_result of the pass where this objective was
+        solved; -1 if not
+
+      * .objpass_runtime, _mipgap, _objval, _objbound, _work, _itercount,
+        _nodecount, _opennodecount if available.
+
+      With MP's emulation (obj:multi=2), _objval and _objbound refer to the
+      blended pass objective in the sense of the first objective, and _runtime
+      is the wall-clock time of the pass including model updates; numeric
+      statistics are NaN if not available for a pass. If the solver's native
+      multiobjective mode does not report pass statistics, use obj:multi=2.
+
+      See also tech:stats.
 
 obj:multi:weight (multiobjweight, obj:multi:weights, multiobjweights)
       How to interpret each objective's weight sign:
@@ -968,8 +1100,9 @@ par:maxnthreads (maxnthreads)
 par:minnthreads (minnthreads)
       Minimum number of threads used during parallel solve (default: 1)
 
-par:mode (mode)
-      0/1: Parallel optimisation mode
+par:mode (parallelmode)
+      0/1: Parallel optimisation mode (SCIP's concurrent solve, not used by
+      GCG)
 
       0 - Opportunistic
 
@@ -999,7 +1132,7 @@ pre:donotmultaggr (donotmultaggr)
 
 pre:immrestartfac (immrestartfac)
       Fraction of integer variables that were fixed in the root node
-      triggering an immediate restart with preprocessing (default: 0.1)
+      triggering an immediate restart with preprocessing (default: 0.05)
 
 pre:maxrestarts
       Maximal number of restarts (default: -1: unlimited)
@@ -1014,7 +1147,7 @@ pre:restartfac (restartfac)
 
 pre:restartminred (restartminred)
       Minimal fraction of integer variables removed after restart to allow for
-      an additional restart (default: 0.1)
+      an additional restart (default: 0.05)
 
 pre:settings
       0/1/2/3: sets presolvings settings
@@ -1027,9 +1160,64 @@ pre:settings
 
       3 - Sets presolvings off.
 
+pre:solve (presolve)
+      0/1: whether to use SCIP presolving on the original problem (default 1);
+      0 is the same as pre:settings=3.
+
 pre:subrestartfac (subrestartfac)
       Fraction of integer variables that were globally fixed during the
       solving process triggering a restart with preprocessing (default: 1.0)
+
+pricing:artificialvars (useartificialvars)
+      0/1: whether artificial variables are used to make the restricted master
+      feasible instead of Farkas pricing (default 0).
+
+pricing:dispinfos (pricingdispinfos)
+      0/1: whether additional information on the pricing process is displayed
+      (default 0).
+
+pricing:eagerfreq (eagerfreq)
+      Frequency at which all pricing problems are solved (default 10; 0:
+      disabled)
+
+pricing:heuriters (heurpricingiters)
+      Maximum number of heuristic pricing iterations per pricing call and
+      problem (default 1)
+
+pricing:maxcolsprob (maxcolsprobredcost)
+      Maximal number of columns per pricing problem per reduced cost pricing
+      round (default 10)
+
+pricing:maxcolsround (maxcolsroundredcost)
+      Maximal number of columns per reduced cost pricing round (default 100)
+
+pricing:maxcolsroundroot (maxcolsroundredcostroot)
+      Maximal number of columns per reduced cost pricing round at the root
+      node (default 100)
+
+pricing:maxheurdepth (maxheurdepth)
+      Maximum depth at which heuristic pricing is performed (default -1: no
+      limit)
+
+pricing:maxrounds (maxroundsredcost)
+      Maximal number of pricing rounds per node after the root node (default:
+      no limit)
+
+pricing:sorting (sorting)
+      Order in which the pricing problems are solved:
+
+      i - indices
+      d - dual solutions of the convexity constraints
+      r - reliability (default)
+      l - last pricing results
+
+pricing:stabilization (stabilization)
+      0/1: whether dual value stabilization should be performed in pricing
+      (default 1).
+
+pricing:stabilizationtree (stabilizationtree)
+      0/1: whether stabilization should also be performed in the tree, in
+      nodes other than the root (default 0).
 
 pro:abortoncutoff
       0/1: whether propagation should be aborted immediately (setting this to
@@ -1047,14 +1235,6 @@ pro:maxroundsroot
       Maximal number of propagation rounds in the root node (-1: unlimited; 0:
       off; default: 1000)
 
-ran:lpseed (lpseed)
-      Random seed for LP solver, e.g. for perturbations in the simplex
-      (default: 0: LP default)
-
-ran:permutationseed (permutationseed)
-      Seed value for permuting the problem after reading/transformation
-      (default: 0: no permutation)
-
 ran:permuteconss (permuteconss)
       0/1: whether the order of constraints should be permuted (depends on
       permutationseed)?
@@ -1070,10 +1250,6 @@ ran:permutevars (permutevars)
       0 - Order of variables should not be permuted (default)
 
       1 - Order of variables should be permuted.
-
-ran:randomseedshift (randomseedshift)
-      Global shift of all random seeds in the plugins and the LP random seed
-      (default: 0)
 
 sol:chk:fail (chk:fail, checkfail)
       Fail on MP solution check violations, with solve result 150.
@@ -1124,28 +1300,44 @@ sol:count (countsolutions)
       0*/1: Whether to count the number of solutions and return it in the
       ".nsol" problem suffix.
 
+sol:poolgap (poolgap, ams_eps)
+      Relative tolerance for reporting alternative solutions (default: no
+      limit).
+
+sol:poolgapabs (poolgapabs, ams_epsabs)
+      Absolute tolerance for reporting alternative solutions (default: no
+      limit).
+
+sol:poollimit (poollimit, ams_limit, solnlimit)
+      Limit on the number of alternative solutions reported (options sol:stub,
+      sol:count); default 10, -1: all solutions stored by GCG (at most
+      lim:maxsol).
+
 sol:report_uncertain (report_uncertain_sol)
       0/1*: whether to report objective value(s) in solve_message when
       solve_result is '?' (unknown).
 
-sol:stub (solstub, solutionstub)
+sol:stub (ams_stub, solstub, solutionstub)
       Stub for solution files. If "solutionstub" is specified, found solutions
       are written to files ("solutionstub & '1' & '.sol'") ... ("solutionstub
       & Current.nsol & '.sol'"), where "Current.nsol" holds the number of
       returned solutions. That is, file names are obtained by appending 1, 2,
       ... "Current.nsol" to "solutionstub".
 
+tech:clocktype (clocktype)
+      Clock type for time limits and reporting: 1 CPU user seconds, 2 wall
+      clock time (default).
+
 tech:debug (debug)
       0*/1: whether to assist testing & debugging, e.g., by outputting
       auxiliary information (mostly via suffixes).
 
-tech:exportfile (writeprob, writemodel)
-      Specifies the name of a file where to export the model before solving
-      it. This file name can have extension ".lp", ".mps", etc. Default = ""
-      (don't export the model).
-
 tech:logfile (logfile)
-      Log file name.
+      Log file name. Without tech:outlev=1 the log goes to the file only.
+
+tech:lpseed (lpseed, ran:lpseed)
+      Random seed for LP solver, e.g. for perturbations in the simplex
+      (default: 0: LP default)
 
 tech:optionfile (optionfile, option:file)
       Name of an AMPL solver option file to read (surrounded by 'single' or
@@ -1153,19 +1345,38 @@ tech:optionfile (optionfile, option:file)
       are ignored. Otherwise, each nonempty line should contain "name=value",
       e.g., "lim:iter=500".
 
+tech:optionnative (optionnative, optnative, tech:param, param)
+      General way to set any GCG/SCIP parameter of the original problem; the
+      value should be a quoted string (delimited by ' or ") containing one or
+      more 'name=value' or 'name value' pairs separated by spaces, for example
+      'pricing/masterpricer/eagerfreq=5 detection/maxrounds 2'. Can appear
+      more than once. Cannot be used to query current parameter values.
+
 tech:optionnativeread (optionnativeread, tech:param:read, param:read)
       Filename of GCG parameter file (as path).The suffix on a parameter file
       should be .set.
 
+tech:optionnativewrite (optionnativewrite, tech:param:write, param:write)
+      Name of a GCG parameter file (.set) to write before solving, with all
+      parameters of the original problem.
+
 tech:outlev (outlev)
       0*/1: Whether to write GCG log lines (chatter) to stdout and to file.
 
-tech:outlev-native (outlev-native)
-      0*/1/2/3/4/5: Whether to write GCG log lines (chatter) to stdout and to
-      file (native output level of SCIP).
-
 tech:outlev_mp (outlev_mp)
       0*/1: whether to print MP model information.
+
+tech:outlevnative (outlevnative, tech:outlev-native, outlev-native)
+      0*/1/2/3/4/5: Native SCIP verbosity level (display/verblevel; the SCIP
+      default is 4, the driver's is 0). tech:outlev=1 selects 4.
+
+tech:permseed (permseed, ran:permutationseed, permutationseed)
+      Seed value for permuting the problem after reading/transformation
+      (default: 0: no permutation)
+
+tech:seed (seed, ran:randomseedshift, randomseedshift)
+      Global shift of all random seeds in the plugins and the LP random seed
+      (default: 0)
 
 tech:stats (stats, tech:report_stats, solve_stats)
       Whether to return solve statistics and timings; the information will be
@@ -1179,7 +1390,13 @@ tech:stats (stats, tech:report_stats, solve_stats)
       0 - Do not report statistics (default)
       1 - Report statistics in JSON format in the problem suffix 'stats'
       2 - Report statistics in suffixes
-      3 - Report statistics both in suffixes and the suffix 'stats'
+      3 - Report statistics both in suffixes and the suffix 'stats'.
+
+      See also obj:multi:stats.
+
+tech:threads (threads, pricing:threads)
+      Maximum number of threads used to parallelize pricing (default 1; 0:
+      automatic, at most 8). The branch-and-price itself is sequential.
 
 tech:timing (timing, tech:report_times, report_times)
       0*/1/2: Whether to print and return timings for the run, all times are
@@ -1203,5 +1420,25 @@ tech:wantsol (wantsol)
 
 tech:writegraph (cvt:writegraph, writegraph, exportgraph)
       File to export conversion graph. Format: JSON Lines.
+
+tech:writemodel (tech:writeprob, writeprob, writemodel, tech:exportfile)
+      Specifies files where to export the model before solving (repeat the
+      option for several files.) File name extensions can be ".lp[.7z]",
+      ".mps", etc.
+      To write a model during iterative solve (e.g., with obj:multi=2), use
+      tech:writemodel:index.
+
+tech:writemodel:index (tech:writeprob:index, writeprobindex, writemodelindex)
+      During iterative solve (e.g., with obj:multi=2), the iteration before
+      which to write solver model. 0 means before iteration is initialized;
+      positive value - before solving that iteration. Default 0.
+
+tech:writemodelonly (justwriteprob, justwritemodel)
+      Specifies files where to export the model, no solving (option can be
+      repeated.) File extensions can be ".dlp", ".mps", etc.
+
+tech:writesolution (writesol, writesolution)
+      Specifies the names of files where to export the solution and/or other
+      result files in solver's native formats. Option can be repeated.
 ```
 

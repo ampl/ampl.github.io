@@ -74,26 +74,46 @@ alg:dualfeastol (dualfeastol, dual_feasibility_tolerance)
 alg:dualrestol (dualrestol, dual_residual_tolerance)
       Dual residual tolerance (default 1e-7).
 
+alg:feasrelax (feasrelax)
+      Whether to modify the problem into a feasibility relaxation problem:
+
+      0 = No (default)
+      1 = Yes, minimizing the weighted sum of violations
+      2 = Yes, minimizing the weighted sum of squared violations
+      3 = Yes, minimizing the weighted count of violations
+      4-6 = Same objective as 1-3, but also optimize the original objective,
+      subject to the violation objective being minimized.
+
+      Weights are given by suffixes .lbpen and .ubpen on variables and .rhspen
+      on constraints (when nonnegative, default values = 0), else by keywords
+      alg:lbpen, alg:ubpen, and alg:rhspen, respectively (default values = 1).
+      Weights < 0 are treated as Infinity, allowing no violation.
+
 alg:feastol (feastol, primal_feasibility_tolerance)
       Primal feasibility tolerance (default 1e-7).
 
 alg:infinitebound (infinitebound, infinite_bound)
-      Limit on |constraint bound|: values larger than this will be treated as
-      infinite (default: 1e20).
+      Limit on |constraint bound|: values greater than or equal to this will
+      be treated as infinite (default: 1e20).
 
 alg:infinitecoeff (infinitecoeff, large_matrix_value)
-      Upper limit on |matrix entries|: values larger than this will be treated
-      as infinite (default: 1e15).
+      Upper limit on |matrix entries|: values greater than or equal to this
+      will be treated as infinite (default: 1e15).
 
 alg:infinitecost (infinitecost, infinite_cost)
-      Limit on cost coefficient : values larger than this will be treated as
-      infinite (default: 1e20).
+      Limit on |cost coefficient|: values greater than or equal to this will
+      be treated as infinite (default: 1e20).
 
 alg:ipmopttol (ipmopttol, ipm_optimality_tolerance)
       IPM optimality tolerance (default 1e-8).
 
-alg:kkt_tolerance (kkttol, kkt_tolerance)
-      KKt tolerance (default 1e-7).
+alg:kkttol (kkttol, alg:kkt_tolerance, kkt_tolerance)
+      KKT tolerance (default 1e-7). If changed from its default, this
+      tolerance is used for all feasibility and optimality (KKT) measures,
+      overriding the individual tolerances.
+
+alg:lbpen (lbpen)
+      See alg:feasrelax.
 
 alg:method (method, lp:method, lpmethod, lp:algorithm, solver)
       Which algorithm to use for non-MIP problems:
@@ -101,7 +121,8 @@ alg:method (method, lp:method, lpmethod, lp:algorithm, solver)
       choose     - Automatic (default)
       simplex    - Simplex
       ipm        - Interior Point Method (automatic)
-      hipo       - Highs Interior point method
+      hipo       - HiPO interior point method (not available in every HiGHS
+                   library build; rejected with a message if unavailable)
       ipx        - IPX interior point method
       pdlp       - cuPDLP-c solver
       pdlp-gpu   - cuPDLP-c solver on NVIDIA GPU. Requires CUDA, not
@@ -111,12 +132,18 @@ alg:method (method, lp:method, lpmethod, lp:algorithm, solver)
                    available on MacOS
       qpasm      - QP active set method
 
+alg:opttol (opttol, optimality_tolerance)
+      Optimality tolerance (default 1e-7).
+
 alg:parallel (parallel)
       Parallel option :
 
       choose - Automatic (default)
       off    - Off
       on     - On
+
+alg:primalrestol (primalrestol, primal_residual_tolerance)
+      Primal residual tolerance (default 1e-7).
 
 alg:rays (rays)
       Whether to return suffix .unbdd (unbounded ray) if the objective is
@@ -131,13 +158,51 @@ alg:rays (rays)
 alg:relax (relax)
       0*/1: Whether to relax integrality of variables.
 
+alg:rhspen (rhspen)
+      See alg:feasrelax.
+
+alg:sens (sens, solnsens, sensitivity)
+      Whether to return suffixes for solution sensitivities, i.e., ranges of
+      values for which the optimal basis remains optimal (note that the
+      variable and objective values can change):
+
+      0 - No (default)
+      1 - Yes: suffixes returned on variables are
+      .sensobjlo = smallest objective coefficients
+      .down = same as .sensobjlo
+      .sensobj = current objective coefficients
+      .current = same as .sensobj
+      .sensobjhi = greatest objective coefficients
+      .up = same as .sensobjhi
+      .senslblo = smallest variable lower bounds
+      .senslbhi = greatest variable lower bounds
+      .sensublo = smallest variable upper bounds
+      .sensubhi = greatest variable upper bounds;
+
+      suffixes for all constraints are
+
+      .senslblo = smallest constraint lower bounds
+      .senslbhi = greatest constraint lower bounds
+      .sensublo = smallest constraint upper bounds
+      .sensubhi = greatest constraint upper bounds;
+
+      suffixes for one-sided constraints only:
+
+      .sensrhslo = smallest right-hand side values
+      .down = same as .sensrhslo
+      .sensrhshi = greatest right-hand side values.
+      .up = same as .sensrhshi.
+
+      The suffixes correspond to the AMPL solver model, command 'solexpand'.
+      For easiest interpretation, disable AMPL presolve, 'option presolve 0;'
+
 alg:simplex (simplex, simplex_strategy)
       Strategy for simplex solver :
 
-      0 - Choose automatically (default)
-      1 - Dual (serial)
-      2 - Dual ('PAMI' - Parallelization Across Multiple Iterations)
-      3 - Dual ('SIP' - Single Iteration Parallelism
+      0 - Choose automatically
+      1 - Dual, serial (default)
+      2 - Dual, 'SIP' (Single Iteration Parallelism)
+      3 - Dual, 'PAMI' (Parallelization Across Multiple Iterations)
       4 - Primal
 
 alg:simplexcrash (simplexcrash, simplex_crash_strategy)
@@ -155,6 +220,12 @@ alg:simplexdualedge (simplexdualedge, simplex_dual_edge_weight_strategy)
       1  - Devex
       2  - Steepest
 
+alg:simplexmaxconcurrency (simplexmaxconcurrency, simplex_max_concurrency)
+      Maximum level of concurrency in parallel simplex (1..8, default 8).
+
+alg:simplexminconcurrency (simplexminconcurrency, simplex_min_concurrency)
+      Minimum level of concurrency in parallel simplex (1..8, default 1).
+
 alg:simplexprimaledge (simplexprimaledge, simplex_primal_edge_weight_strategy)
       Simplex primal edge weights strategy :
 
@@ -167,11 +238,14 @@ alg:simplexscale (simplexscale, simplex_scale_strategy)
       Simplex scaling strategy :
 
       0 - Off
-      1 - Choose automatically (default)
-      2 - Equilibration
+      1 - Choose automatically
+      2 - Equilibration (default)
       3 - Forced equilibration
-      4 - Max value 0
-      5 - Max value 1
+      4 - Max value
+
+alg:simplexupdatelim (simplexupdatelim, simplex_update_limit)
+      Limit on the number of simplex UPDATE operations before refactorization
+      (default 5000).
 
 alg:start (warmstart)
       Whether to use incoming primal (and dual, for LP) variable values in a
@@ -183,18 +257,34 @@ alg:start (warmstart)
       3 - Yes (for LP: together with the incoming alg:basis, if any;
           default).
 
+alg:ubpen (ubpen)
+      See alg:feasrelax.
+
 alg:zerocoeff (zerocoeff, small_matrix_value)
-      Lower limit on |matrix entries|: values smaller than this will be
-      treated as zero (default: 1e-9).
+      Lower limit on |matrix entries|: values less than or equal to this will
+      be treated as zero (default: 1e-9).
+
+bar:centring (centring, pre:centring, run_centring)
+      Perform centring steps or not:
+
+      0 - No (default)
+      1 - Yes.
+
+bar:centringratiotol (centringratiotol, pre:centringratiotolerance, centring_ratio_tolerance, centringratiotolerance)
+      Centring stops when the ratio max(x_j*s_j) / min(x_j*s_j) is below this
+      tolerance (default 100).
 
 bar:crossover (crossover, run_crossover)
-      Run crossover after IPM to get a basic solution
+      Run crossover after IPM to get a basic solution:
 
       choose - Run if the results of IPM without crossover is imprecise
       off    - Off
-      on     - On
+      on     - On (default)
 
-bar:hipo_ordering (hipo_ordering)
+bar:hipoblocksize (hipoblocksize, hipo_block_size)
+      Block size for dense linear algebra within HiPO (default 128).
+
+bar:hipoordering (hipoordering, bar:hipo_ordering, hipo_ordering)
       Control the ordering used by HiPO before factorization:
 
       choose - Choose automatically (default)
@@ -202,19 +292,26 @@ bar:hipo_ordering (hipo_ordering)
       amd    - Approximate minimum degree
       rcm    - Reverse Cuthill-McKee
 
-bar:hipo_parallel_type (hipo_parallel_type)
+bar:hipoparallel (hipoparallel, bar:hipo_parallel_type, hipo_parallel_type)
       Control the type of parallelism used by HiPO:
 
       tree - Tree parallelism
       node - Node parallelism
       both - Both tree and node parallelism
 
-bar:hipo_system (hipo_system)
+bar:hiposystem (hiposystem, bar:hipo_system, hipo_system)
       Control which Newton/KKT system is used by HiPO:
 
       choose    - Choose automatically (default)
       augmented - Augmented system
       normaleq  - Normal equations
+
+bar:iterlim (bariterlim, lim:ipmiterationlimit, ipmiterationlimit, ipm_iteration_limit)
+      Limit on IPM iterations (default: no limit).
+
+bar:maxcentringsteps (maxcentringsteps, pre:maxcentringsteps, max_centring_steps)
+      Maximum number of steps to use when computing the analytic centre
+      (default 5).
 
 cvt:bigM (cvt:bigm, cvt:mip:bigM, cvt:mip:bigm)
       Default value of big-M for linearization of logical constraints. Not
@@ -266,9 +363,18 @@ cvt:mip:eps (cvt:cmp:eps, cmp:eps)
       should be larger or equal to the solver's feasibility tolerance.
       Default: 1e-4.
 
+cvt:mip:intprodbits (intprodbits)
+      Products x*y of variables, when not accepted natively, with an integer
+      factor of finite bounds (and the other factor bounded): exact MIP
+      reformulation by binary expansion of the integer factor with the smaller
+      range if it needs at most this many binary variables. Default 30.
+      Otherwise, and with 0, such products are approximated as
+      ((x+y)^2-x^2-y^2)/2 with piecewise-linear squares, as for continuous
+      factors. Products with a binary factor are always exact.
+
 cvt:multoutcard (multoutcard)
       Up to which (estimated) QP matrix cardinality should a product of 2
-      linear expressions be multiplied out. Default 1e9.
+      linear expressions be multiplied out. Default 1e+09.
 
       Low value can speed up model input, but prone to numerical issues.
 
@@ -287,6 +393,14 @@ cvt:nlobj (passnlobj)
       with those, otherwise linearly approximated. With cvt:quadobj=0, ensures
       the objective is linear.
 
+cvt:pl:domain (pl:domain, pldomain)
+      Max absolute value of the argument of a piecewise-linear expression
+      converted to SOS2 (and further to MIP if SOS2 is not accepted natively).
+      In the MIP reformulation, the solver's feasibility tolerance is
+      amplified by up to this value. Not used by default: then an unbounded
+      argument is an error in the MIP reformulation, and native SOS2 gets
+      exact rays for unbounded sides. Use with care (prefer tight bounds).
+
 cvt:plapprox:domain (plapprox:domain, plapproxdomain)
       For piecewise-linear approximated functions, both arguments and result
       are bounded to +-[pladomain]. Default 1e6.
@@ -303,12 +417,32 @@ cvt:pow2_as_qp (pow2_as_qp, pow2asqp)
 cvt:pre:all
       0/1*: Set to 0 to disable most presolve in the flat converter.
 
+cvt:pre:auxint (auxint)
+      0*/1: Submit as integer the auxiliary result variables whose integrality
+      is implied by their defining constraint (if-then-else, min, max, abs,
+      count, numberof, integer linear and quadratic functions of integer
+      arguments). Default 0: submit them as continuous (MP keeps the
+      integrality for its reformulations). Variables required to have their
+      type by a submitted constraint, e.g., indicator binaries, are not
+      affected.
+
 cvt:pre:boundlogarg (boundlogarg)
       0*/1: Bound logarithm arguments to nonnegative.
 
-cvt:pre:boundsbest (boundsbest)
-      0*/1: Submit best-known variable bounds to the solver. Can inhibit its
-      presolve.
+cvt:pre:boundsbest (boundsbest, bestbounds)
+      0*/1/2/3/4: Submit best-known variable bounds to the solver (can inhibit
+      its presolve):
+
+      0 - no, hard bounds only
+      1 - all variables
+      2 - all but the result variables of smooth nonlinear expressions (exp,
+      log, pow, trigonometric functions, divisions, products), which keep
+      their hard bounds
+      3 - only those variables
+      4 - all variables if the submitted model has no nonlinear or quadratic
+      constraints or objectives, none otherwise (for solvers whose nonlinear
+      relaxations are solved by a barrier method; MP2NL sets it for such
+      subsolvers).
 
       Note: when a variable can be fixed, the stronger bounds are always
       submitted.
@@ -375,6 +509,9 @@ cvt:pre:ctx:atanh (ctx:atanh)
 cvt:pre:ctx:call (ctx:call)
       Context propagation for 'Call' expression, see cvt:pre:ctx:abs.
 
+cvt:pre:ctx:ceil (ctx:ceil)
+      Context propagation for 'Ceil' expression, see cvt:pre:ctx:abs.
+
 cvt:pre:ctx:condlineq (ctx:condlineq)
       Context propagation for 'Conditional< AlgebraicConstraint< LinTerms,
       RhsEQ > >' expression, see cvt:pre:ctx:abs.
@@ -436,11 +573,17 @@ cvt:pre:ctx:exp (ctx:exp)
 cvt:pre:ctx:expa (ctx:expa)
       Context propagation for 'ExpA' expression, see cvt:pre:ctx:abs.
 
+cvt:pre:ctx:floor (ctx:floor)
+      Context propagation for 'Floor' expression, see cvt:pre:ctx:abs.
+
 cvt:pre:ctx:ifthen (ctx:ifthen)
       Context propagation for 'IfThen' expression, see cvt:pre:ctx:abs.
 
 cvt:pre:ctx:impl (ctx:impl)
       Context propagation for 'Implication' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:intdiv (ctx:intdiv)
+      Context propagation for 'IntDiv' expression, see cvt:pre:ctx:abs.
 
 cvt:pre:ctx:linfn (ctx:linfn)
       Context propagation for 'LinearFunctionalConstraint' expression, see
@@ -460,6 +603,12 @@ cvt:pre:ctx:max (ctx:max)
 
 cvt:pre:ctx:min (ctx:min)
       Context propagation for 'Min' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:mod (ctx:mod)
+      Context propagation for 'Mod' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:mul (ctx:mul)
+      Context propagation for 'Mul' expression, see cvt:pre:ctx:abs.
 
 cvt:pre:ctx:not (ctx:not)
       Context propagation for 'Not' expression, see cvt:pre:ctx:abs.
@@ -486,6 +635,9 @@ cvt:pre:ctx:quadfn (ctx:quadfn)
       Context propagation for 'QuadraticFunctionalConstraint' expression, see
       cvt:pre:ctx:abs.
 
+cvt:pre:ctx:round (ctx:round)
+      Context propagation for 'Round' expression, see cvt:pre:ctx:abs.
+
 cvt:pre:ctx:sdpdotprod (ctx:sdpdotprod)
       Context propagation for 'SDPDotProd' expression, see cvt:pre:ctx:abs.
 
@@ -504,6 +656,27 @@ cvt:pre:ctx:tan (ctx:tan)
 
 cvt:pre:ctx:tanh (ctx:tanh)
       Context propagation for 'Tanh' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:disj2ind (disj2ind)
+      Absorb static disjunctions l || C, where C is a conditional comparison
+      used only there (or an AND of such), into indicator constraints !l ==>
+      C. This is how implications b==1 ==> C are received from AMPL. Bitwise
+      OR of the following values:
+
+      1 - Linear comparisons
+      2 - Quadratic comparisons
+      4 - Both disjuncts absorbable: absorb one into an indicator on the
+      other's result (if-else shape, complementarity)
+      8 - Comparisons x==k awaiting the unary encoding decision for x
+      (absorbed only if no encoding is chosen)
+      16 - Any AND of such comparisons (used only there) in positive context,
+      e.g., a disjunct (C1 && C2) of a multi-term disjunction: indicators on
+      the AND's result variable
+      32 - Static disjunctions l1 || .. || lm || (y1 && .. && yk) with the AND
+      used only there: clauses l1 || .. || lm || yj, without the AND's result
+      variable.
+
+      Requires cvt:pre:all=1. Default 11.
 
 cvt:pre:eqbinary
       0/1*: Preprocess reified equality comparison with a binary variable.
@@ -574,6 +747,19 @@ cvt:pre:unnest (cvt:unnest, cvt:pre:inline, cvt:inline)
       16 - Algebraic subexpressions in indicator constraints.
 
       See also option cvt:dvelim concerning only the input model. Default 31.
+
+cvt:pre:vbnd (vbnd)
+      Comparisons x (cmp) c decided by the domain of x reuse an existing
+      binary instead of a new reified comparison. Bitwise OR of the following
+      values:
+
+      1 - Variable-bound constraints x >= L*b, x <= U*b with binary b (AMPL's
+      encoding of x in {0} union interval[L, U], or the user's), 0 <= c <= L:
+      reuse b or its negation
+      2 - Root disjunctions x <= a || x >= b (e.g., x == 0 || x >= L for x >=
+      0), a < c < b: reuse the comparison x >= b or its negation.
+
+      Default 3.
 
 cvt:qp2passes (cvt:qp2pass, qp2passes, qp2pass)
       0/1*: Parse sums of QP expressions in 2 passes. Usually faster.
@@ -656,24 +842,32 @@ cvt:uenc:ratio (uenc:ratio)
 
       With uenc:ratio>3, this triggers unary encoding for x.
 
-iis:strategy (iis_strategy, iisstrategy)
-      Strategy for IIS calculation (sum of):
+iis:find (iisfind, iis, alg:iisfind)
+      Whether to find and export an IIS. Default = 0 (don't export).
 
-      0  - Light test
+iis:strategy (iis_strategy, iisstrategy)
+      Strategy for IIS calculation (with iis:find=1), -1 or a sum of:
+
+      -1 - Automatic: 6 (default)
+      0  - Light test only (infeasible bounds)
       1  - Try dual ray
       2  - Try elastic LP
-      4  - Prioritise columns
-      8  - Find true IIS
-      16 - Find relaxation IIS for MIP
+      4  - Find an irreducible (true) IIS by a deletion filter
+      8  - Prioritise columns over rows in the deletion filter
+      16 - Find the IIS of the LP relaxation for a MIP
 
-lim:iis_time_limit (iis_time_limit, iistimelimit)
+      HiGHS presets: 6 = true IIS with row priority, 14 = true IIS with column
+      priority. HiGHS's IIS finder is LP-based: for a MIP, the reported rows
+      and bounds form an infeasible subsystem found by solving elastic MIPs,
+      which cannot be proven irreducible; with 16, integrality is dropped and
+      the IIS of the LP relaxation is sought.
+
+lim:iistime (iistimelim, lim:iis_time_limit, iis_time_limit, iistimelimit)
       Time limit for computing IIS (default: no limit).
 
-lim:improvingsols (improvingsolslimit, mip_max_improving_sols)
-      Maximum number of improving solutions found (default: no limit).
-
-lim:ipmiterationlimit (ipmiterationlimit, ipm_iteration_limit)
-      Limit on IPM iterations (default: no limit).
+lim:iter (iterlim, lim:simplexiterationlimit, simplexiterationlimit, simplex_iteration_limit)
+      Limit on simplex iterations when solving LPs, not counting MIP
+      subproblems (default: no limit).
 
 lim:leavenodes (leaveslim, mip_max_leaves)
       Maximum MIP number of leaf nodes (default: no limit).
@@ -688,14 +882,15 @@ lim:objectivebound (objective_bound, objectivebound)
 lim:objectivetarget (objective_target, objectivetarget)
       Objective target for termination of the MIP solver (default: no limit).
 
-lim:pdlp_iteration_limit (pdlpiterationlimit, pdlp_iteration_limit)
+lim:pdlpiter (pdlpiterlim, lim:pdlp_iteration_limit, pdlpiterationlimit, pdlp_iteration_limit)
       Iteration limit for PDLP solver (default: no limit).
 
-lim:qp_iteration_limit (qp_iteration_limit, qpiterationlimit)
+lim:qpiter (qpiterlim, lim:qp_iteration_limit, qp_iteration_limit, qpiterationlimit)
       Iteration limit for QP active set method (default: no limit).
 
-lim:simplexiterationlimit (simplexiterationlimit, simplex_iteration_limit)
-      Limit on simplex iterations (default: no limit).
+lim:sol (sollim, lim:improvingsols, improvingsolslimit, mip_max_improving_sols)
+      Stop the MIP solver after this many improving solutions have been found
+      (default: no limit).
 
 lim:stallnodes (stallnodelim, stallnodelimit, mip_max_stall_nodes)
       Maximum MIP number of nodes where estimate is above cutoff bound
@@ -703,6 +898,24 @@ lim:stallnodes (stallnodelim, stallnodelimit, mip_max_stall_nodes)
 
 lim:time (timelim, timelimit, time_limit)
       Limit on solve time (in seconds; default: no limit).
+
+mip:basis (fixmodel, mip:fix)
+      Whether to compute duals / basis / sensitivity for MIP models. Emulated
+      by fixing integer variables to an incumbent and solving a continuous
+      model. Currently supports linear algebraic models only (no SOS,
+      piecewise-linear, logical, or general constraints).
+
+      0 - No (default)
+      1 - Yes.
+
+mip:basis:iterlimit
+      Iteration limit for the fixed-model solve only. -1 (default) uses the
+      solver default. For emulation, 0 skips the supplementary solve.
+
+mip:basis:timelimit
+      Time limit in seconds for the fixed-model solve only. -1 (default) uses
+      the solver default, independently of the MIP time limit. For emulation,
+      0 skips the supplementary solve.
 
 mip:bestbound (bestbound, return_bound)
       Whether to return suffix .bestbound for the best known MIP dual bound on
@@ -715,9 +928,6 @@ mip:bestbound (bestbound, return_bound)
       minimization problems and +Infinity for maximization problems if there
       are no integer variables or if a dual bound is not available.
 
-mip:detsimmetry (detsimmetry, mip_detect_symmetry)
-      Whether symmetry should be detected (default 1)
-
 mip:gap (mipgap, mip:relgaptol, relgaptol, mip_rel_gap)
       Tolerance on relative gap, | ub - lb|/|ub | , to determine whether
       optimality has been reached for a MIP instance (default 1e-04).
@@ -725,6 +935,24 @@ mip:gap (mipgap, mip:relgaptol, relgaptol, mip_rel_gap)
 mip:gapabs (mipgapabs, mip:absgaptol, absgaptol, mip_abs_gap)
       Tolerance on absolute gap of MIP, |ub-lb|, to determine whether
       optimality has been reached for a MIP instance (default 1e-06).
+
+mip:heur:feasjump (heurfeasjump, mip_heuristic_run_feasibility_jump)
+      0/1*: Use the feasibility jump heuristic.
+
+mip:heur:rens (heurrens, mip_heuristic_run_rens)
+      0/1*: Use the RENS heuristic.
+
+mip:heur:rins (heurrins, mip_heuristic_run_rins)
+      0/1*: Use the RINS heuristic.
+
+mip:heur:rootredcost (heurrootredcost, mip_heuristic_run_root_reduced_cost)
+      0/1*: Use the root reduced cost heuristic.
+
+mip:heur:shifting (heurshifting, mip_heuristic_run_shifting)
+      0*/1: Use the Shifting heuristic.
+
+mip:heur:ziround (heurziround, mip_heuristic_run_zi_round)
+      0*/1: Use the ZI Round heuristic.
 
 mip:heureff (heureff, mip_heuristic_effort)
       Fraction of time to spend in MIP heuristics (default 0.05).
@@ -736,15 +964,15 @@ mip:ipmsolver (mipipmsolver, mip_ipm_solver)
       Choose the ipm solver to be used during mip solves:
 
       choose - Automatic (default)
-      ipm    - Interior Point Method (automatic)
-      hipo   - Highs Interior point method
+      ipx    - IPX interior point method
+      hipo   - HiPO interior point method
 
 mip:lifting (lifting, mip_lifting_for_probing)
-      Whether lifting for probing should be used (default -1)
+      Level of lifting for probing that is used (default -1).
 
 mip:lpagelimit (lpagelimit, mip_lp_age_limit)
       Maximal age of dynamic LP rows before they are removed from the LP
-      relaxation (default 10)
+      relaxation (default 10, max 32767).
 
 mip:lpsolver (miplpsolver, mip_lp_solver)
       Choose the lp solver to be used during mip solves:
@@ -752,12 +980,19 @@ mip:lpsolver (miplpsolver, mip_lp_solver)
       choose  - Automatic (default)
       simplex - Simplex
       ipm     - Interior Point Method (automatic)
-      hipo    - Highs Interior point method
+      hipo    - HiPO interior point method
       ipx     - IPX interior point method
+
+mip:maxstartnodes (maxstartnodes, mip_max_start_nodes)
+      Maximum number of MIP nodes when completing a partial MIP start (default
+      500). See mip:start.
 
 mip:mincliquetable (mincliquetable, mip_min_cliquetable_entries_for_parallelism)
       Minimal number of entries in the cliquetable before neighborhood queries
-      of the conflict graph use parallel processing(default 100000)
+      of the conflict graph use parallel processing (default 100000).
+
+mip:nodecuts (nodecuts, mip_allow_cut_separation_at_nodes)
+      0/1*: Whether cut separation at nodes other than the root is permitted.
 
 mip:plateau:absgaptol (mip:plateauabsgaptol, plateauabsgaptol)
       If set (>0), also track the reported absolute MIP gap as progress for
@@ -798,13 +1033,20 @@ mip:plateau:warmup:relgap (mip:plateauwarmuprelgap, plateauwarmuprelgap)
       Relative MIP gap to be reached before mip:plateautime is checked.
       Default 0.
 
+mip:poolagelimit (poolagelimit, mip_pool_age_limit)
+      Maximal age of rows in the MIP cutpool before they are deleted (default
+      30, max 1000).
+
 mip:poolsoftlimit (poolsoftlimit, mip_pool_soft_limit)
       Soft limit on the number of rows in the cutpool for dynamic age
-      adjustment(default 10000)
+      adjustment (default 10000).
 
 mip:pscostreliability (pscostreliability, mip_pscost_minreliable)
       Minimal number of observations before pseudo costs are considered
-      reliable(default 8)
+      reliable (default 8).
+
+mip:restart (miprestart, mip_allow_restart)
+      0/1*: Whether MIP restart is permitted.
 
 mip:return_gap (return_mipgap)
       Whether to return mipgap suffixes or include mipgap values (|objectve -
@@ -817,6 +1059,9 @@ mip:return_gap (return_mipgap)
       Default = 0. The suffixes are on the objective and problem. Returned
       suffix values are +Infinity if no integer-feasible solution has been
       found, in which case no mipgap values are reported in the solve_message.
+
+mip:rootpresolveonly (rootpresolveonly, mip_root_presolve_only)
+      0*/1: Whether MIP presolve is only applied at the root node.
 
 mip:round (round)
       Whether to round integer variables to integral values before returning
@@ -835,8 +1080,18 @@ mip:round_reptol (round_reptol)
       Tolerance for reporting rounding of integer variables to integer values;
       see "mip:round". Default = 1e-9.
 
-obj:blend (blend_multi_objectives)
-      Whether to blend multiple objectives or apply lexicographical ordering
+mip:start (mipstart)
+      How a partial MIP start (initial values for some integer variables, with
+      alg:start>0) is completed:
+
+      1 - Pass the provided values to HiGHS, which completes a partial start
+          itself by a limited MIP search (see mip:maxstartnodes; default)
+      2 - Complete a partial start in the driver: fix the provided values of
+          integer variables, solve, unfix, and pass the complete solution
+          (legacy behavior)
+
+mip:symmetry (symmetry, mip:detsimmetry, detsimmetry, mip_detect_symmetry)
+      0/1*: Whether MIP symmetry should be detected.
 
 obj:multi (multiobj)
       Whether to use multi-objective optimization:
@@ -865,6 +1120,27 @@ obj:multi:options (multiobjoptions)
       beginning with option_. Example: suffix option_timelim; let
       _obj[2].option_timelim:=15;
 
+obj:multi:stats (multiobjstats)
+      0*/1: Report multiobjective pass statistics in the following objective
+      suffixes:
+
+      * .objpass: index of the pass where this objective was solved, 0 if not
+        solved due to a stop in a previous pass
+
+      * .objpass_result: the solve_result of the pass where this objective was
+        solved; -1 if not
+
+      * .objpass_runtime, _mipgap, _objval, _objbound, _work, _itercount,
+        _nodecount, _opennodecount if available.
+
+      With MP's emulation (obj:multi=2), _objval and _objbound refer to the
+      blended pass objective in the sense of the first objective, and _runtime
+      is the wall-clock time of the pass including model updates; numeric
+      statistics are NaN if not available for a pass. If the solver's native
+      multiobjective mode does not report pass statistics, use obj:multi=2.
+
+      See also tech:stats.
+
 obj:multi:weight (multiobjweight, obj:multi:weights, multiobjweights)
       How to interpret each objective's weight sign:
 
@@ -883,17 +1159,10 @@ obj:no (objno)
       1 - First (default, if available)
       2 - Second (if available), etc.
 
-pdlp:cupdlpc_restart_method (pdlpcupdlpcrestartmethod, pdlp_cupdlpc_restart_method)
-      Restart mode for PDLP solver:
-
-      0 - None
-      1 - GPU (default)
-      2 - CPU
-
-pdlp:optimality_tolerance (pdlp_optimality_tolerance, pdlp_opt_tol, pdlpopttol)
+pdlp:opttol (pdlpopttol, pdlp:optimality_tolerance, pdlp_optimality_tolerance, pdlp_opt_tol)
       PDLP optimality tolerance (default 1e-7).
 
-pdlp:restart_strategy (pdlprestartstrategy, pdlp_restart_strategy)
+pdlp:restart (pdlprestart, pdlp:restart_strategy, pdlprestartstrategy, pdlp_restart_strategy)
       Restart strategy for PDLP solver:
 
       0 - Off
@@ -901,37 +1170,30 @@ pdlp:restart_strategy (pdlprestartstrategy, pdlp_restart_strategy)
       2 - Adaptive (default)
       3 - Halpern
 
-pdlp:ruiz_iterations (pdlp_ruiz_iterations)
+pdlp:restartmethod (pdlprestartmethod, pdlp:cupdlpc_restart_method, pdlpcupdlpcrestartmethod, pdlp_cupdlpc_restart_method)
+      Restart mode for PDLP solver:
+
+      0 - None
+      1 - GPU (default)
+      2 - CPU
+
+pdlp:ruiziter (pdlpruiziter, pdlp:ruiz_iterations, pdlp_ruiz_iterations)
       Number of Ruiz scaling iterations for PDLP solver (default 10).
 
-pdlp:step_size_strategy (pdlpstepsizestrategy, pdlp_step_size_strategy)
+pdlp:scaling (pdlpscaling, pre:pdlpscaling_mode, pdlp_scaling_mode)
+      Scaling mode for PDLP solver (default 5 = 1 + 4), sum of:
+
+      1 - Ruiz scaling
+      2 - L2
+      4 - PC (preconditioner-oriented)
+
+pdlp:stepsize (pdlpstepsize, pdlp:step_size_strategy, pdlpstepsizestrategy, pdlp_step_size_strategy)
       Stepsize strategy for PDLP solver:
 
       0 - Fixed
       1 - Adaptive (default)
       2 - Malitsky-Pock
       3 - PID
-
-pre:centring (run_centring, centring)
-      Perform centring steps or not:
-
-      0 - No (default)
-      1 - Yes.
-
-pre:centringratiotolerance (centring_ratio_tolerance, centringratiotolerance)
-      Centring stops when the ratio max(x_j*s_j) / min(x_j*s_j) is below this
-      tolerance (default 100).
-
-pre:maxcentringsteps (max_centring_steps, maxcentringsteps)
-      Maximum number of steps to use when computing the analytic centre
-      (default 5).
-
-pre:pdlpscaling_mode (pdlp_scaling_mode)
-      Scaling mode for PDLP solver, sum of:
-
-      1 - Ruiz scaling
-      2 - L2 (default)
-      4 - PC (preconditioner-oriented)
 
 pre:solve (presolve)
       Whether to use presolve:
@@ -941,15 +1203,20 @@ pre:solve (presolve)
       on     - On
 
 pre:userboundscale (user_bound_scale, userboundscale)
-      Exponent of power-of-two bound scaling for model (default 0).
+      Exponent of power-of-two bound scaling for model (default 0; negative
+      exponents allowed).
 
 pre:userobjectivescale (user_objective_scale, userobjectivescale)
-      Exponent of power-of-two objective scaling for model (default 0).
+      Exponent of power-of-two objective scaling for model (default 0;
+      negative exponents allowed).
 
-qp:nullspace_limit (qp_nullspace_limit, qpnullspacelimit)
-      Nullspace limit for the active set QP solver (default: 4000 ).
+qp:hotstart (qphotstart, qp_allow_hot_start)
+      0*/1: Allow the active set QP solver to hot start.
 
-qp:regularization_value (qp_regularization_value, qpregularizationvalue)
+qp:nullspacelim (qpnullspacelim, qp:nullspace_limit, qp_nullspace_limit, qpnullspacelimit)
+      Nullspace limit for the active set QP solver (default: 4000).
+
+qp:regularization (qpregularization, qp:regularization_value, qp_regularization_value, qpregularizationvalue)
       Regularization value added to the Hessian in the active set QP solver
       (default: 1e-7).
 
@@ -1009,6 +1276,13 @@ tech:debug (debug)
 tech:logfile (logfile)
       Log file name.
 
+tech:logtoconsole (logtoconsole, log_to_console)
+      0/1*: Whether HiGHS log lines go to the console (with tech:outlev=1; set
+      0 to log only to tech:logfile).
+
+tech:miplogfreq (miplogfreq, mip_min_logging_interval)
+      Minimum interval between MIP log lines, in seconds (default 5).
+
 tech:miploglev (miploglev, mip_report_level)
       0/1*/2: MIP solver report level
 
@@ -1019,7 +1293,7 @@ tech:optionfile (optionfile, option:file)
       e.g., "lim:iter=500".
 
 tech:outlev (outlev)
-      0*/1: Whether to write HighS log lines (chatter) to stdout and to file.
+      0*/1: Whether to write HiGHS log lines (chatter) to stdout and to file.
 
 tech:outlev_mp (outlev_mp)
       0*/1: whether to print MP model information.
@@ -1040,11 +1314,16 @@ tech:stats (stats, tech:report_stats, solve_stats)
       0 - Do not report statistics (default)
       1 - Report statistics in JSON format in the problem suffix 'stats'
       2 - Report statistics in suffixes
-      3 - Report statistics both in suffixes and the suffix 'stats'
+      3 - Report statistics both in suffixes and the suffix 'stats'.
+
+      See also obj:multi:stats.
 
 tech:threads (threads)
-      How many threads to use when using the barrier algorithm or solving MIP
-      problems; default 0 ==> automatic choice.
+      Maximum number of threads used by HiGHS (parallel simplex, IPM and MIP);
+      default 0 ==> automatic choice.
+
+tech:timelesslog (timelesslog, timeless_log)
+      0*/1: Suppress time-based data in the HiGHS log.
 
 tech:timing (timing, tech:report_times, report_times)
       0*/1/2: Whether to print and return timings for the run, all times are

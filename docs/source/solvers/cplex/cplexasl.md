@@ -76,7 +76,7 @@ bargrowth              Tolerance for detecting unbounded faces in the
                        for unbounded faces harder to satisfy.
                        Default = 1e12.
 
-bariterlim             Maximum barrier iterations allowed (default 2^31 - 1).
+bariterlim             Maximum barrier iterations allowed (default: no limit).
 
 barobjrange            Limit on the absolute objective value before the
                        barrier algorithm considers the problem unbounded.
@@ -471,8 +471,7 @@ incompat               How to treat parameter settings that CPLEX finds
 
 integrality            Amount by which an integer variable can differ
                        from the nearest integer and still be considered
-                       feasible.  Default = 1e-5; must be in [1e-9, 0.5].
-                       (The upper bound was not enforced prior to CPLEX 11.)
+                       feasible.  Default = 1e-5; must be in [0, 0.5].
 
 intwarntol             Do not warn about perturbations to "integer"
                        variables to make them integers when the maximum
@@ -487,7 +486,7 @@ iparam                 Used with syntax "iparam=n=i" (no spaces), where n
                        a way to modify integer parameters that have not (yet)
                        been assigned a keyword.
 
-iterations             Limit on total LP iterations; default 2^31 - 1.
+iterations             Limit on total LP iterations; default: no limit.
 
 iterlim                Synonym for "iterations".
 
@@ -585,15 +584,17 @@ mipbasis               Whether to compute a basis and dual variables for MIP
 
 mipcrossover           Crossover method used when using the barrier
                        method for MIP subproblems:
-                          -1 = no crossover
                            0 (default) = automatic choice
                            1 = primal
                            2 = dual.
+                       To skip crossover, use solutiontype=2.
 
-mipcuts                Sets all ten of cliques, covers, disjcuts,
+mipcuts                Sets all of cliques, covers, disjcuts,
                        flowcuts, flowpathcuts, fraccuts, gubcuts,
-                       impliedcuts, mircuts and zerohalfcuts to the
-                       specified value.
+                       impliedcuts, mircuts, zerohalfcuts, bqpcuts,
+                       localimpliedcuts, mcfcuts, nodecuts, rltcuts and
+                       splitcuts to the specified value (3 is reduced
+                       to 2 for cut types accepting at most 2).
 
 mipdisplay             Frequency of displaying branch-and-bound
                        information (for optimizing integer variables):
@@ -644,7 +645,7 @@ mipsearch              Search strategy for mixed-integer problems, new
 
 mipsolutions           Stop branch-and-bound for integer variables
                        after finding "mipsolutions" feasible solutions.
-                       Default = 2^31 - 1.
+                       Default = no limit.
 
 mipstart               Synonym for "mipstartvalue".
 
@@ -727,6 +728,10 @@ multiobj               whether to do multi-objective optimization:
                        Similarly, if no .objpriority values are given, 1 is
                        assumed for all.  For .objreltol and .objabstol, if
                        no values are given, all are assumed to be 0.
+                       Algorithm keywords dualopt and primalopt select the LP
+                       method for each objective; other algorithm keywords
+                       are ignored.  For MIP problems, no basis or dual values
+                       are returned (mipbasis and endbasis are ignored).
 
 nameround              Whether to mangle variable and constraint names
                        by turning [ and ] into ( and ), respectively:
@@ -806,7 +811,7 @@ nodefiledir            Synonym for workfiledir.  Prior to CPLEX 7.1,
 nodelim                Synonym for "nodes".
 
 nodes                  Stop branch-and-bound for integer variables
-                       after "nodes" LP relaxations.  Default = 2^31 - 1;
+                       after "nodes" LP relaxations.  Default = no limit;
                        nodes = 0 ==> complete processing at the root (create
                        cuts, apply heuristics at root);
                        1 ==> allow branching from root:  create but do not
@@ -925,7 +930,7 @@ polishafter_absmipgap  Start polishing integer solutions after the
 
 polishafter_intsol     Start polishing integer solutions after the
                        finding polishafter_intsol integer-feasible
-                       solutions.  Default 2^31 - 1.
+                       solutions.  Default: no limit.
 
 polishafter_mipgap     Start polishing integer solutions after the
                        relative mixed-integer optimality gap is at most
@@ -933,7 +938,7 @@ polishafter_mipgap     Start polishing integer solutions after the
 
 polishafter_nodes      Start polishing integer solutions after the
                        processing polishafter_nodes nodes.
-                       Default 2^31 - 1.
+                       Default: no limit.
 
 polishafter_time       Start polishing integer solutions after finding
                        at least one integer feasible solution and spending
@@ -1013,6 +1018,7 @@ predual                Whether CPLEX's presolve phase should present the
 
 prelinear              Whether CPLEX's presolve should do full reductions
                        or only linear ones.  Default = 1 = full.
+                       Deprecated by CPLEX; use prereformulations instead.
 
 prepass                Limit on number of CPLEX presolve passes.
                        Default = -1 = decide limit automatically.
@@ -1042,9 +1048,13 @@ presolve               0 or 1 (default 1): Whether to run CPLEX's presolve
 
 presolvedual           Synonym for "predual".
 
-presolvenode           -1, 0, or 1 (default 0): Whether to run CPLEX's
-                       presolve at each node of the MIP branch-and-bound
-                       tree: -1 = no; 1 = yes; 0 = automatic choice.
+presolvenode           Whether to run CPLEX's presolve at each node
+                       of the MIP branch-and-bound tree:
+                          -1 = no
+                           0 = automatic choice (default)
+                           1 = yes
+                           2 = probing on integer-infeasible variables
+                           3 = aggressive node probing.
 
 presos1reform          Control the reformulation of SOS of type 1:
                          -1 = no reformulation
@@ -1382,10 +1392,7 @@ submipstartalg         Rarely used choice of algorithm for the initial
                         2 = dual simplex
                         3 = network simplex
                         4 = barrier
-                        5 = sifting (0 is used for MIQPs)
-                        6 = concurrent (dual, barrier and primal in
-                                opportunistic mode; dual and barrier in
-                                deterministic mode; 4 is used for MIPQs).
+                        5 = sifting (0 is used for MIQPs).
                        Only 0 is allowed for MIQCPs.
 
 symmetry               Whether to break symmetry during
@@ -1400,11 +1407,8 @@ symmetry               Whether to break symmetry during
 
 threads                Default maximum number of threads for any of
                        the parallel CPLEX optimizers (limited also
-                       by licensing).  Default = 1 prior to CPLEX 11,
-                       or 0 (use maximum threads available) starting
-                       with CPLEX 11.  May be overridden, prior to
-                       CPLEX 11, by more specific limits, such as
-                       barthreads or mipthreads.
+                       by licensing).  Default = 0 (use the maximum
+                       number of threads available).
 
 time                   Time limit in seconds; default = 1e75.
 

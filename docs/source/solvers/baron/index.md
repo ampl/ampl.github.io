@@ -143,33 +143,13 @@ display solve_result_num, solve_result;
 ```
 
 BARONMP solve result codes can be obtained by running `baronmp -!` or `ampl: shell "baronmp -!";`:
+```{literalinclude} solve_results_baronmp.inc
+:language: none
 ```
-Solve result table for BaronMP 24.10.10
-          0- 99 solved: optimal for an optimization problem, feasible for a satisfaction problem
-        100-199 solved? solution candidate returned but error likely
-            150 solved? MP solution check failed (option sol:chk:fail)
-        200-299 infeasible
-            201     infeasible, IIS found
-            202     infeasible, IS found, possibly not irreducible
-            203     infeasible, IIS sought but not found
-        300-349 unbounded, feasible solution returned
-        350-399 unbounded, no feasible solution returned
-        400-449 limit, feasible: stopped, e.g., on iterations or Ctrl-C
-            400     node limit reached
-            401     iteration limit reached
-            402     CPU time limit reached
-        450-469 limit, problem is either infeasible or unbounded
-		Disable dual reductions or run IIS finder for definitive answer.
-        470-499 limit, no solution returned
-        500-999 failure, no solution returned
-            500     licensing error
-            501     numerical difficulties
-            502     interrupted (Control-C)
-            503     too little memory
-            504     terminated by BARON
-            505     BARON syntax error (should not happen)
-            506     operation not supported by BARON
-            507     Interrupted by Control-C
+
+The classic BARON driver (`baron`) uses AMPL's default ranges:
+```{literalinclude} solve_results.inc
+:language: none
 ```
 
 For general information, see [MP result codes guide](https://mp.ampl.com/features-guide.html#solve-result-codes).

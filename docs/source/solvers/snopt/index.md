@@ -99,6 +99,20 @@ Full list of solver options:
 options.md
 ```
 
+## Retrieving solutions
+
+The outcome of the last optimization is stored in the AMPL parameter `solve_result_num` and the relative message in
+`solve_result`.
+
+```ampl
+display solve_result_num, solve_result;
+```
+
+SNOPT solve result codes:
+```{literalinclude} solve_results.inc
+:language: none
+```
+
 ## Changelog
 
 ```{toctree}

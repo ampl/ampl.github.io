@@ -411,7 +411,8 @@ alg:lbpen (lbpen)
 alg:method (method, lpmethod, simplex)
       Algorithm for non-MIP problems or the root node of MIP problems:
 
-      -1 - Automatic (default): 3 for LP, 2 for QP, 1/4/5 for MIP
+      -1 - Automatic (default): concurrent for LP, barrier for QP/QCP, dual
+           simplex for MIP root relaxations
       0  - Primal simplex
       1  - Dual simplex
       2  - Barrier
@@ -470,11 +471,11 @@ alg:pdhgconvtol (pdhgconvtol)
       (default 1e-6).
 
 alg:pdhggpu (pdhggpu)
-      Enables PDHG on GPU on compatible systems (preview):
+      Enables PDHG on GPU on compatible systems (requires alg:method=6 and a
+      GPU-enabled build):
 
-      -1 - Automatic choice (default)
-      0  - No
-      1  - Yes.
+      0 - No (default)
+      1 - Yes.
 
 alg:pdhgreltol (pdhgreltol)
       PDHG relative feasibility tolerance (default 1e-6; set it to 0 to use
@@ -580,8 +581,9 @@ bar:crossover (crossover)
 bar:crossoverbasis (crossoverbasis)
       Strategy for initial basis construction during crossover:
 
-      0 - Favor speed (default)
-      1 - Favor numerical stability.
+      -1 - Automatic choice (default)
+      0  - Favor speed
+      1  - Favor numerical stability.
 
 bar:homog (barhomogeneous)
       Whether to use the homogeneous barrier algorithm (e.g., when method=2 is
@@ -626,10 +628,20 @@ cut:bqp (bqpcuts)
       Overrides the "cuts" keyword.
 
 cut:clique (cliquecuts)
-      Overrides "cuts"; choices as for "cuts".
+      Overrides "cuts":
+
+      -1 - Automatic choice (default)
+      0  - No cuts
+      1  - Conservative cut generation
+      2  - Aggressive cut generation.
 
 cut:cover (covercuts)
-      Overrides "cuts"; choices as for "cuts".
+      Overrides "cuts":
+
+      -1 - Automatic choice (default)
+      0  - No cuts
+      1  - Conservative cut generation
+      2  - Aggressive cut generation.
 
 cut:cuts (cuts)
       Global cut generation control, valid unless overridden by individual
@@ -641,21 +653,49 @@ cut:cuts (cuts)
       2  - Aggressive cut generation
       3  - Very aggressive cut generation.
 
+cut:dualimplied (dualimpliedcuts)
+      Dual implied bound cuts: overrides "cuts":
+
+      -1 - Automatic choice (default)
+      0  - No cuts
+      1  - Conservative cut generation
+      2  - Aggressive cut generation.
+
 cut:flowcover (flowcovercuts)
-      Flowcover cuts: overrides "cuts"; choices as for "cuts".
+      Flowcover cuts: overrides "cuts":
+
+      -1 - Automatic choice (default)
+      0  - No cuts
+      1  - Conservative cut generation
+      2  - Aggressive cut generation.
 
 cut:flowpath (flowpathcuts)
-      Overrides "cuts"; choices as for "cuts".
+      Overrides "cuts":
+
+      -1 - Automatic choice (default)
+      0  - No cuts
+      1  - Conservative cut generation
+      2  - Aggressive cut generation.
 
 cut:gomory (gomorycuts)
       Maximum number of Gomory cut passes during cut generation (-1 = default
       = no limit); overrides "cuts".
 
 cut:gubcover (gubcovercuts)
-      Overrides "cuts"; choices as for "cuts".
+      Overrides "cuts":
+
+      -1 - Automatic choice (default)
+      0  - No cuts
+      1  - Conservative cut generation
+      2  - Aggressive cut generation.
 
 cut:implied (impliedcuts)
-      Implied cuts: overrides "cuts"; choices as for "cuts".
+      Implied cuts: overrides "cuts":
+
+      -1 - Automatic choice (default)
+      0  - No cuts
+      1  - Conservative cut generation
+      2  - Aggressive cut generation.
 
 cut:infproof (infproofcuts)
       Whether to generate infeasibility proof cuts:
@@ -665,14 +705,37 @@ cut:infproof (infproofcuts)
       1  - Moderate cut generation
       2  - Aggressive cut generation.
 
+cut:liftproject (liftprojectcuts)
+      Lift-and-project cuts: overrides "cuts":
+
+      -1 - Automatic choice (default)
+      0  - No cuts
+      1  - Conservative cut generation
+      2  - Aggressive cut generation.
+
 cut:masterkp (masterkpcuts)
-      MIPsep cuts: overrides "cuts"; choices as for "cuts".
+      MIPsep cuts: overrides "cuts":
+
+      -1 - Automatic choice (default)
+      0  - No cuts
+      1  - Conservative cut generation
+      2  - Aggressive cut generation.
 
 cut:mipsep (mipsepcuts)
-      MIPsep cuts: overrides "cuts"; choices as for "cuts".
+      MIPsep cuts: overrides "cuts":
+
+      -1 - Automatic choice (default)
+      0  - No cuts
+      1  - Conservative cut generation
+      2  - Aggressive cut generation.
 
 cut:mir (mircuts)
-      MIR cuts: overrides "cuts"; choices as for "cuts".
+      MIR cuts: overrides "cuts":
+
+      -1 - Automatic choice (default)
+      0  - No cuts
+      1  - Conservative cut generation
+      2  - Aggressive cut generation.
 
 cut:mixingcuts
       Mixing cuts: overrides "cuts"
@@ -683,14 +746,40 @@ cut:mixingcuts
       2  - Aggressive cut generation.
 
 cut:modk (modkcuts)
-      Mod-k cuts: overrides "cuts"; choices as for "cuts".
+      Mod-k cuts: overrides "cuts":
+
+      -1 - Automatic choice (default)
+      0  - No cuts
+      1  - Conservative cut generation
+      2  - Aggressive cut generation.
 
 cut:network (networkcuts)
-      Network cuts: overrides "cuts"; choices as for "cuts".
+      Network cuts: overrides "cuts":
+
+      -1 - Automatic choice (default)
+      0  - No cuts
+      1  - Conservative cut generation
+      2  - Aggressive cut generation.
 
 cut:passes (cutpasses)
       Maximum number of cutting-plane passes during root-cut generation;
       default = -1 ==> automatic choice.
+
+cut:projimplied (projimpliedcuts)
+      Projected implied bound cuts: overrides "cuts":
+
+      -1 - Automatic choice (default)
+      0  - No cuts
+      1  - Conservative cut generation
+      2  - Aggressive cut generation.
+
+cut:psd (psdcuts)
+      PSD cuts for nonconvex quadratic models: overrides "cuts":
+
+      -1 - Automatic choice (default)
+      0  - No cuts
+      1  - Conservative cut generation
+      2  - Aggressive cut generation.
 
 cut:relaxliftcuts (relaxliftcuts)
       Whether to enable relax-and-lift cut generation:
@@ -709,11 +798,29 @@ cut:rltcuts (rltcuts)
       1  - Conservative cut generation
       2  - Aggressive cut generation.
 
+cut:strongcg (strongcgcuts)
+      Strong Chvatal-Gomory cuts: overrides "cuts":
+
+      -1 - Automatic choice (default)
+      0  - No cuts
+      1  - Conservative cut generation
+      2  - Aggressive cut generation.
+
 cut:submip (submipcuts)
-      Sub-MIP cuts: overrides "cuts"; choices as for "cuts".
+      Sub-MIP cuts: overrides "cuts":
+
+      -1 - Automatic choice (default)
+      0  - No cuts
+      1  - Conservative cut generation
+      2  - Aggressive cut generation.
 
 cut:zerohalf (zerohalfcuts)
-      Zero-half cuts: overrides "cuts"; choices as for "cuts".
+      Zero-half cuts: overrides "cuts":
+
+      -1 - Automatic choice (default)
+      0  - No cuts
+      1  - Conservative cut generation
+      2  - Aggressive cut generation.
 
 cvt:bigM (cvt:bigm, cvt:mip:bigM, cvt:mip:bigm)
       Default value of big-M for linearization of logical constraints. Not
@@ -765,9 +872,18 @@ cvt:mip:eps (cvt:cmp:eps, cmp:eps)
       should be larger or equal to the solver's feasibility tolerance.
       Default: 1e-4.
 
+cvt:mip:intprodbits (intprodbits)
+      Products x*y of variables, when not accepted natively, with an integer
+      factor of finite bounds (and the other factor bounded): exact MIP
+      reformulation by binary expansion of the integer factor with the smaller
+      range if it needs at most this many binary variables. Default 30.
+      Otherwise, and with 0, such products are approximated as
+      ((x+y)^2-x^2-y^2)/2 with piecewise-linear squares, as for continuous
+      factors. Products with a binary factor are always exact.
+
 cvt:multoutcard (multoutcard)
       Up to which (estimated) QP matrix cardinality should a product of 2
-      linear expressions be multiplied out. Default 1e9.
+      linear expressions be multiplied out. Default 1e+09.
 
       Low value can speed up model input, but prone to numerical issues.
 
@@ -786,6 +902,14 @@ cvt:nlobj (passnlobj)
       with those, otherwise linearly approximated. With cvt:quadobj=0, ensures
       the objective is linear.
 
+cvt:pl:domain (pl:domain, pldomain)
+      Max absolute value of the argument of a piecewise-linear expression
+      converted to SOS2 (and further to MIP if SOS2 is not accepted natively).
+      In the MIP reformulation, the solver's feasibility tolerance is
+      amplified by up to this value. Not used by default: then an unbounded
+      argument is an error in the MIP reformulation, and native SOS2 gets
+      exact rays for unbounded sides. Use with care (prefer tight bounds).
+
 cvt:plapprox:domain (plapprox:domain, plapproxdomain)
       For piecewise-linear approximated functions, both arguments and result
       are bounded to +-[pladomain]. Default 1e6.
@@ -802,12 +926,32 @@ cvt:pow2_as_qp (pow2_as_qp, pow2asqp)
 cvt:pre:all
       0/1*: Set to 0 to disable most presolve in the flat converter.
 
+cvt:pre:auxint (auxint)
+      0*/1: Submit as integer the auxiliary result variables whose integrality
+      is implied by their defining constraint (if-then-else, min, max, abs,
+      count, numberof, integer linear and quadratic functions of integer
+      arguments). Default 0: submit them as continuous (MP keeps the
+      integrality for its reformulations). Variables required to have their
+      type by a submitted constraint, e.g., indicator binaries, are not
+      affected.
+
 cvt:pre:boundlogarg (boundlogarg)
       0*/1: Bound logarithm arguments to nonnegative.
 
-cvt:pre:boundsbest (boundsbest, bestbounds, bestbound)
-      0*/1: Submit best-known variable bounds to the solver. Can inhibit its
-      presolve.
+cvt:pre:boundsbest (boundsbest, bestbounds)
+      0*/1/2/3/4: Submit best-known variable bounds to the solver (can inhibit
+      its presolve):
+
+      0 - no, hard bounds only
+      1 - all variables
+      2 - all but the result variables of smooth nonlinear expressions (exp,
+      log, pow, trigonometric functions, divisions, products), which keep
+      their hard bounds
+      3 - only those variables
+      4 - all variables if the submitted model has no nonlinear or quadratic
+      constraints or objectives, none otherwise (for solvers whose nonlinear
+      relaxations are solved by a barrier method; MP2NL sets it for such
+      subsolvers).
 
       Note: when a variable can be fixed, the stronger bounds are always
       submitted.
@@ -874,6 +1018,9 @@ cvt:pre:ctx:atanh (ctx:atanh)
 cvt:pre:ctx:call (ctx:call)
       Context propagation for 'Call' expression, see cvt:pre:ctx:abs.
 
+cvt:pre:ctx:ceil (ctx:ceil)
+      Context propagation for 'Ceil' expression, see cvt:pre:ctx:abs.
+
 cvt:pre:ctx:condlineq (ctx:condlineq)
       Context propagation for 'Conditional< AlgebraicConstraint< LinTerms,
       RhsEQ > >' expression, see cvt:pre:ctx:abs.
@@ -935,11 +1082,17 @@ cvt:pre:ctx:exp (ctx:exp)
 cvt:pre:ctx:expa (ctx:expa)
       Context propagation for 'ExpA' expression, see cvt:pre:ctx:abs.
 
+cvt:pre:ctx:floor (ctx:floor)
+      Context propagation for 'Floor' expression, see cvt:pre:ctx:abs.
+
 cvt:pre:ctx:ifthen (ctx:ifthen)
       Context propagation for 'IfThen' expression, see cvt:pre:ctx:abs.
 
 cvt:pre:ctx:impl (ctx:impl)
       Context propagation for 'Implication' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:intdiv (ctx:intdiv)
+      Context propagation for 'IntDiv' expression, see cvt:pre:ctx:abs.
 
 cvt:pre:ctx:linfn (ctx:linfn)
       Context propagation for 'LinearFunctionalConstraint' expression, see
@@ -959,6 +1112,12 @@ cvt:pre:ctx:max (ctx:max)
 
 cvt:pre:ctx:min (ctx:min)
       Context propagation for 'Min' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:mod (ctx:mod)
+      Context propagation for 'Mod' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:mul (ctx:mul)
+      Context propagation for 'Mul' expression, see cvt:pre:ctx:abs.
 
 cvt:pre:ctx:not (ctx:not)
       Context propagation for 'Not' expression, see cvt:pre:ctx:abs.
@@ -985,6 +1144,9 @@ cvt:pre:ctx:quadfn (ctx:quadfn)
       Context propagation for 'QuadraticFunctionalConstraint' expression, see
       cvt:pre:ctx:abs.
 
+cvt:pre:ctx:round (ctx:round)
+      Context propagation for 'Round' expression, see cvt:pre:ctx:abs.
+
 cvt:pre:ctx:sdpdotprod (ctx:sdpdotprod)
       Context propagation for 'SDPDotProd' expression, see cvt:pre:ctx:abs.
 
@@ -1003,6 +1165,27 @@ cvt:pre:ctx:tan (ctx:tan)
 
 cvt:pre:ctx:tanh (ctx:tanh)
       Context propagation for 'Tanh' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:disj2ind (disj2ind)
+      Absorb static disjunctions l || C, where C is a conditional comparison
+      used only there (or an AND of such), into indicator constraints !l ==>
+      C. This is how implications b==1 ==> C are received from AMPL. Bitwise
+      OR of the following values:
+
+      1 - Linear comparisons
+      2 - Quadratic comparisons
+      4 - Both disjuncts absorbable: absorb one into an indicator on the
+      other's result (if-else shape, complementarity)
+      8 - Comparisons x==k awaiting the unary encoding decision for x
+      (absorbed only if no encoding is chosen)
+      16 - Any AND of such comparisons (used only there) in positive context,
+      e.g., a disjunct (C1 && C2) of a multi-term disjunction: indicators on
+      the AND's result variable
+      32 - Static disjunctions l1 || .. || lm || (y1 && .. && yk) with the AND
+      used only there: clauses l1 || .. || lm || yj, without the AND's result
+      variable.
+
+      Requires cvt:pre:all=1. Default 11.
 
 cvt:pre:eqbinary
       0/1*: Preprocess reified equality comparison with a binary variable.
@@ -1073,6 +1256,19 @@ cvt:pre:unnest (cvt:unnest, cvt:pre:inline, cvt:inline)
       16 - Algebraic subexpressions in indicator constraints.
 
       See also option cvt:dvelim concerning only the input model. Default 31.
+
+cvt:pre:vbnd (vbnd)
+      Comparisons x (cmp) c decided by the domain of x reuse an existing
+      binary instead of a new reified comparison. Bitwise OR of the following
+      values:
+
+      1 - Variable-bound constraints x >= L*b, x <= U*b with binary b (AMPL's
+      encoding of x in {0} union interval[L, U], or the user's), 0 <= c <= L:
+      reuse b or its negation
+      2 - Root disjunctions x <= a || x >= b (e.g., x == 0 || x >= L for x >=
+      0), a < c < b: reuse the comparison x >= b or its negation.
+
+      Default 3.
 
 cvt:qp2passes (cvt:qp2pass, qp2passes, qp2pass)
       0/1*: Parse sums of QP expressions in 2 passes. Usually faster.
@@ -1174,16 +1370,19 @@ iis:method (iismethod, alg:iismethod)
       constraints, including variable bounds):
 
       -1 - Automatic choice (default)
-      0  - Often faster than method 1
-      1  - Can find a smaller IIS than method 0
-      2  - Ignore the bound constraints.
+      0  - Filtering-based method
+      1  - Faster LP-based method, may produce a larger IIS
+      2  - Filtering-based method ignoring variable bounds (can fail if
+           bounds are needed for infeasibility)
+      3  - For MIP models, compute the IIS of the LP relaxation.
 
 lim:iter (iterlim, iterlimit)
       Simplex iteration limit (default: no limit).
 
 lim:mem (memlimit, maxmemoryhard)
-      Hard limit (number of MB) on memory allocated, causing early termination
-      if exceeded; default = 0 (no limit)
+      Hard limit (number of GB) on memory allocated, causing early termination
+      if exceeded (solution cannot be retrieved); prefer lim:softmem. Default
+      = Infinity (no limit)
 
 lim:minrelnodes (minrelnodes)
       Number of nodes for the Minimum Relaxation heuristic to explore at the
@@ -1197,11 +1396,14 @@ lim:pdhgiter (pdhgiterlim, pdhgiterlimit)
       Iteration limit (default: no limit).
 
 lim:softmem (softmemlimit, maxmemorysoft)
-      Soft limit (number of MB) on memory allocated; default = 0 (no limit)
+      Soft limit (number of GB) on memory allocated; default = Infinity (no
+      limit)
 
 lim:sol (sollimit, solutionlimit)
       Limit the number of feasible MIP solutions found, causing early
-      termination if exceeded; default = 2e9
+      termination if exceeded; default = 2e9. Since Gurobi 14, value 1 no
+      longer triggers additional feasibility heuristics; use mip:focus=1 for
+      that.
 
 lim:startnodes (startnodelimit, startnodes)
       Limit on how many branch-and-bound nodes to explore when doing a partial
@@ -1304,10 +1506,19 @@ lp:warmstart (lpwarmstart)
            (primal/dual), while setting 1 prioritizes basis statuses.
 
 mip:basis (fixmodel, mip:fix)
-      Whether to compute duals / basis / sensitivity for MIP models:
+      Whether to compute duals / basis / sensitivity for MIP models.
 
       0 - No (default)
       1 - Yes.
+
+mip:basis:iterlimit
+      Iteration limit for the fixed-model solve only. -1 (default) uses the
+      solver default. For emulation, 0 skips the supplementary solve.
+
+mip:basis:timelimit
+      Time limit in seconds for the fixed-model solve only. -1 (default) uses
+      the solver default, independently of the MIP time limit. For emulation,
+      0 skips the supplementary solve.
 
 mip:bestbndstop (bestbndstop)
       Stop once the best bound on the objective value is at least as good as
@@ -1347,6 +1558,14 @@ mip:fixedmethod (fixedmethod)
       Value of "method" to use when seeking a basis for MIP problems when
       "mip:basis=1". Default: if "method" is 0 or 1 then "method" else 1.
 
+mip:fixvarsinindicators (fixvarsinindicators)
+      How indicator constraints are treated in the fixed model used to compute
+      a basis and duals for a MIP (see mip:basis):
+
+      0 - Drop indicator constraints whose binary variable is not at the
+      active value (default)
+      1 - Fix all variables of indicator constraints to their solution values.
+
 mip:focus (mipfocus)
       MIP solution strategy:
 
@@ -1381,9 +1600,9 @@ mip:improvetime (improvetime, impstarttime)
       (default Infinity).
 
 mip:improvework (improvework, impstartwork)
-      Execution seconds after which the MIP solver switches from trying to
-      improve the best bound to trying to find better feasible solutions
-      (default Infinity).
+      Work units after which the MIP solver switches from trying to improve
+      the best bound to trying to find better feasible solutions (default
+      Infinity).
 
 mip:intfocus (integralityfocus, intfocus)
       Setting this parameter to 1 requests the solver to work harder at
@@ -1620,8 +1839,9 @@ nlbar:iterlim (nlbariterlim, lim:nlbariter)
       Limits the number of barrier NL iterations performed (default 1000).
 
 nlbar:pfeastol (nlbarpfeastol)
-      For the NL barrier algorithm, the dual feasibility error must be smaller
-      in order for a model to be declared locally optimal (default 1e-6).
+      For the NL barrier algorithm, the primal feasibility error must be
+      smaller in order for a model to be declared locally optimal (default
+      1e-6).
 
 obj:*:abstol (obj_*_abstol)
       Absolute tolerance for objective with index *. Can only be applied on a
@@ -1668,6 +1888,18 @@ obj:multi (multiobj)
       tolerances and method values may be assigned via keywords of the form
       obj_n_<name>, such as obj_1_method for the first objective.
 
+obj:multi:inheritparams (obj:inheritparams, inheritparams)
+      Whether the environments of lower-priority multi-objective passes
+      inherit parameters from the main environment (Gurobi 14 default:
+      inherit; Gurobi 13 and earlier: not inherit). Per-pass keywords
+      obj_n_<name> always take precedence:
+
+      -1 - Automatic choice (default): same as 1
+      0  - No: only parameters set for the pass apply, others take Gurobi
+           defaults (Gurobi 13 behavior)
+      1  - Yes: parameters not set for the pass are taken from the main
+           environment.
+
 obj:multi:method (obj:multiobjmethod, multiobjmethod)
       Choice of optimization algorithm for lower-priority objectives:
 
@@ -1697,6 +1929,12 @@ obj:multi:stats (multiobjstats)
 
       * .objpass_runtime, _mipgap, _objval, _objbound, _work, _itercount,
         _nodecount, _opennodecount if available.
+
+      With MP's emulation (obj:multi=2), _objval and _objbound refer to the
+      blended pass objective in the sense of the first objective, and _runtime
+      is the wall-clock time of the pass including model updates; numeric
+      statistics are NaN if not available for a pass. If the solver's native
+      multiobjective mode does not report pass statistics, use obj:multi=2.
 
       See also tech:stats.
 
@@ -1737,8 +1975,17 @@ pre:aggfill (aggfill)
       Amount of fill allowed during aggregation in presolve(default -1).
 
 pre:aggregate (aggregate)
-      0/1*: whether to use aggregation in presolve. Setting it to 0 can
-      sometimes reduce numerical errors.
+      Whether to use aggregation in presolve:
+
+      0 - No
+      1 - Moderate (default)
+      2 - Aggressive.
+
+      Setting it to 0 can sometimes reduce numerical errors.
+
+pre:crush (precrush)
+      0*/1: whether presolve should keep user cuts (.lazy=-1) applicable to
+      the presolved model. Required for user cuts added through callbacks.
 
 pre:deprow (predeprow)
       Whether Gurobi's presolve should remove linearly dependent
@@ -1779,30 +2026,32 @@ pre:funcnonlinear (funcnonlinear, global)
       Suffix values mean the same.
 
 pre:funcpieceerror (funcpieceerror)
-      For 'funcpieces=-1' or -2, this option provides the maximum allowed
-      error (absolute for -1, relative for -2) in the piecewise-linear
+      Deprecated by Gurobi together with function constraints. For
+      'funcpieces=-1' or -2, this option provides the maximum allowed error
+      (absolute for -1, relative for -2) in the piecewise-linear
       approximation.
 
       The value can be overridden by suffix .funcpieceerror of the individual
       constraints.
 
 pre:funcpiecelength (funcpiecelength)
-      If 'funcpieces=1', this option or suffix provide the length of each
-      piece of the piecewise-linear approximation.
+      Deprecated by Gurobi together with function constraints. If
+      'funcpieces=1', this option or suffix provide the length of each piece
+      of the piecewise-linear approximation.
 
 pre:funcpieceratio (funcpieceratio)
-      This option (and suffix) control whether the piecewise-linear
-      approximation of a function constraint is an underestimate of the
-      function, an overestimate, or somewhere in between. A value of 0.0 will
-      always underestimate, while a value of 1.0 will always overestimate. A
-      value in between will interpolate between the underestimate and the
-      overestimate. A special value of -1 chooses points that are on the
-      original function.
+      Deprecated by Gurobi together with function constraints. This option
+      (and suffix) control whether the piecewise-linear approximation of a
+      function constraint is an underestimate of the function, an
+      overestimate, or somewhere in between. A value of 0.0 will always
+      underestimate, while a value of 1.0 will always overestimate. A value in
+      between will interpolate between the underestimate and the overestimate.
+      A special value of -1 chooses points that are on the original function.
 
 pre:funcpieces (funcpieces)
-      This option (and suffix) set the strategy used for performing a
-      piecewise-linear approximation of a function constraint. They have the
-      following meaning:
+      Deprecated by Gurobi together with function constraints. This option
+      (and suffix) set the strategy used for performing a piecewise-linear
+      approximation of a function constraint. They have the following meaning:
 
       0 - Automatic choice (default)
       >=2 - Sets the number of pieces; pieces are equal width
@@ -2161,6 +2410,11 @@ tech:server_timeout (server_timeout)
       Report job as rejected by Gurobi Compute Server if the job is not
       started within server_timeout seconds. Default = 10.
 
+tech:solfiles (solfiles)
+      Base name for files to which each new MIP incumbent is written as it is
+      found; the files are named <solfiles>_<n>.sol. Default = "" (do not
+      write).
+
 tech:stats (stats, tech:report_stats, solve_stats)
       Whether to return solve statistics and timings; the information will be
       stored in the problem suffixes: 'simplex_iterations',
@@ -2200,6 +2454,23 @@ tech:tunebase (tunebase)
       returned are for this set. In a subsequent "solve;", you can use
       "tech:param:read=..." to apply the settings in results file ... .
 
+tech:tunecleanup (tunecleanup)
+      Fraction of the total tuning time devoted to a final cleanup phase which
+      tries to reduce the number of parameter changes in the best result
+      (default 0).
+
+tech:tunecriterion (tunecriterion)
+      Secondary criterion for tuning, used when the primary criterion (solve
+      time or optimality gap) does not distinguish parameter sets. For
+      multi-objective models, values 2 and 3 are not supported, and value 1
+      only from Gurobi 14:
+
+      -1 - Automatic choice (default)
+      0  - Ignore the secondary criterion
+      1  - Optimality gap
+      2  - Best feasible objective
+      3  - Best objective bound.
+
 tech:tunedynamicjobs (pool_tunedynamicjobs, tunedynamicjobs)
       Enables distributed parallel tuning, which can significantly increase
       the performance of the tuning tool. A value of n causes the tuning tool
@@ -2216,6 +2487,13 @@ tech:tunejobs (pool_tunejobs, tunejobs)
       Note that distributed tuning is most effective when the worker machines
       have similar performance.
 
+tech:tunemetric (tunemetric)
+      How tuning results over several models are aggregated:
+
+      -1 - Automatic choice (default)
+      0  - Average of the results over the models
+      1  - Maximum of the results.
+
 tech:tuneoutput (tuneoutput)
       Amount of tuning output when tunebase is specified:
 
@@ -2225,17 +2503,26 @@ tech:tuneoutput (tuneoutput)
       3 - Summary plus detailed solver output for each trial.
 
 tech:tuneresults (tuneresults)
-      Limit on the number of tuning result files to write when tunerbase is
+      Limit on the number of tuning result files to write when tunebase is
       specified. The default (-1) is to write results for all parameter sets
-      on the efficient frontier.
+      on the efficient frontier; -2 writes all parameter sets tried.
+
+tech:tunetargetmipgap (tunetargetmipgap)
+      Target MIP gap for tuning: once a parameter set reaches it, the tuner
+      moves to the cleanup phase. Applies only when tech:tunecriterion is -1
+      or 1 (default 0).
+
+tech:tunetargettime (tunetargettime)
+      Target solve time (in seconds) for tuning: once a parameter set reaches
+      it, the tuner moves to the cleanup phase (default 0.005).
 
 tech:tunetimelim (tunetimelim, lim:tunetime)
-      Time limit (in seconds) on tuning when tunebase is specified. Default -1
-      ==> automatic choice of time limit.
+      Time limit (in seconds) on tuning when tunebase is specified. Default
+      86400 (24 hours).
 
 tech:tunetrials (tunetrials)
       Number of trials for each parameter set when tunebase is specified, each
-      with a different random seed value. Default = 3.
+      with a different random seed value. Default 0 ==> automatic choice.
 
 tech:version (version)
       Single-word phrase: report version details before solving the problem.

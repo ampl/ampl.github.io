@@ -56,11 +56,9 @@ together with a filter linear search procedure.
 
 ## Resources
 
-- [IPOPT](#ipopt)
-  - [How to use it](#how-to-use-it)
-  - [Resources](#resources)
-  - [Solver options](#solver-options)
-  - [Retrieving solutions](#retrieving-solutions)
+* [Solver options](#solver-options)
+* [Solve result codes](#retrieving-solutions)
+* [Ipopt documentation](https://coin-or.github.io/Ipopt/)
 
 ## Features
 
@@ -126,12 +124,7 @@ display solve_result_num, solve_result;
 ```
 
 IPOPT solve result codes:
-```
-          0- 99 solved: optimal for an optimization problem, feasible for a satisfaction problem
-        100-199 solved? solution candidate returned but error likely
-        200-299 infeasible
-        300-399 unbounded
-        400-499 limit
-        500-999 failure, no solution returned
+```{literalinclude} solve_results.inc
+:language: none
 ```
 

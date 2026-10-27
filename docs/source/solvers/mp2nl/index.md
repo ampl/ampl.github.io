@@ -99,6 +99,22 @@ Full list of solver options:
 options.md
 ```
 
+## Retrieving solutions
+
+The outcome of the last optimization is stored in the AMPL parameter `solve_result_num` and the relative message in
+`solve_result`.
+
+```ampl
+display solve_result_num, solve_result;
+```
+
+MP2NL solve result codes can be obtained by running `mp2nl -!` or `ampl: shell "mp2nl -!";`:
+```{literalinclude} solve_results.inc
+:language: none
+```
+
+For general information, see [MP result codes guide](https://mp.ampl.com/features-guide.html#solve-result-codes).
+
 ## Changelog
 
 ```{toctree}

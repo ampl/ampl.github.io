@@ -11,7 +11,7 @@ Solver options obtained with `$ xpress -=`.
 
 ```
 XPRESS Optimizer Options for AMPL
---------------------------------------------
+---------------------------------
 
 To set these options, assign a string specifying their values to the AMPL
 option "xpress_options". For example:
@@ -409,7 +409,7 @@ acc:tanh
       1 - Accepted but automatic redefinition will be used where possible
       2 - Accepted natively and preferred
 
-alg:addcutoff (addcutoff, mipaddcutoff, mip:xprs_mipaddcutoff, XPRS_MIPADDCUTOFF)
+alg:addcutoff (addcutoff, mipaddcutoff, XPRS_MIPADDCUTOFF)
       Branch and Bound: The amount to add to the objective function of the
       best integer solution found to give the new CURRMIPCUTOFF. Once an
       integer solution has been found whose objective function is equal to or
@@ -440,7 +440,7 @@ alg:basis (basis)
 
       See also mip:basis and qcp:dual (for some solvers).
 
-alg:clamping (clamping, sol:xprs_clamping, XPRS_CLAMPING)
+alg:clamping (clamping, XPRS_CLAMPING)
       This bit-vector control (see Section Bit-vector controls) allows for the
       adjustment of returned solution values such that they are always within
       bounds.
@@ -461,7 +461,7 @@ alg:clamping (clamping, sol:xprs_clamping, XPRS_CLAMPING)
       * (3) Adjust reduced costs to always be within dual bounds implied by
         the primal solution.
 
-alg:cutoff (cutoff, lim:xprs_mipabscutoff, XPRS_MIPABSCUTOFF)
+alg:cutoff (cutoff, mipabscutoff, XPRS_MIPABSCUTOFF)
       Branch and Bound: If the user knows that they are interested only in
       values of the objective function which are better than some value, this
       can be assigned to MIPABSCUTOFF. This allows the Optimizer to ignore
@@ -477,7 +477,7 @@ alg:cutoff (cutoff, lim:xprs_mipabscutoff, XPRS_MIPABSCUTOFF)
 alg:dual (alg:dualopt, dual, dualopt)
       Solve (MIP node) LPs by dual simplex method.
 
-alg:feastol (feastol, tol:xprs_feastol, XPRS_FEASTOL)
+alg:feastol (feastol, XPRS_FEASTOL)
       This tolerance determines when a solution is treated as feasible. If the
       amount by which a constraint's activity violates its right-hand side or
       ranged bound is less in absolute magnitude than FEASTOL, then the
@@ -487,7 +487,7 @@ alg:feastol (feastol, tol:xprs_feastol, XPRS_FEASTOL)
 
       Default: 1.0E-06
 
-alg:feastolperturb (feastolperturb, sim:xprs_feastolperturb, XPRS_FEASTOLPERTURB)
+alg:feastolperturb (feastolperturb, feastol_perturb, XPRS_FEASTOLPERTURB)
       This tolerance determines how much a feasible primal basic solution is
       allowed to be perturbed when performing basis changes. The tolerance
       FEASTOL is always considered as an upper limit for the perturbations,
@@ -495,7 +495,7 @@ alg:feastolperturb (feastolperturb, sim:xprs_feastolperturb, XPRS_FEASTOLPERTURB
 
       Default: 1.0E-06
 
-alg:feastoltarget (feastoltarget, sol:xprs_feastoltarget, XPRS_FEASTOLTARGET)
+alg:feastoltarget (feastoltarget, feastol_target, XPRS_FEASTOLTARGET)
       This specifies the target feasibility tolerance for the solution
       refiner.
 
@@ -505,7 +505,14 @@ alg:global (global)
       0/1*: Allow global solving. Passing 0 should linearize all expressions
       requiring Xpress Global.
 
-alg:localsolver (localsolver, nlp:localsolver, alg:xslp_solver, XSLP_SOLVER, LOCALSOLVER)
+alg:inputtol (inputtol, XPRS_INPUTTOL)
+      The tolerance on input values elements. If any value is less than or
+      equal to INPUTTOL in absolute value, it is treated as zero. For the
+      internal zero tolerance see MATRIXTOL.
+
+      Default: 0.0
+
+alg:localsolver (localsolver, nlp:localsolver, solver, xslp_solver, XSLP_SOLVER)
       Selects the library to use for local solves
 
       Values (default: -1):
@@ -519,7 +526,19 @@ alg:localsolver (localsolver, nlp:localsolver, alg:xslp_solver, XSLP_SOLVER, LOC
 
       * (2) use Xpress-Optimizer if possible (convex quadratic problems only)
 
-alg:method (method, lpmethod, defaultalg, mip:xprs_defaultalg, XPRS_DEFAULTALG)
+      Selects the library to use for local solves:
+
+      -1 - Automatic selection, based on model characteristics and solver
+           availability (default)
+      0  - Use Xpress-SLP (always available)
+      1  - Use Knitro if available
+      2  - Use Xpress-Optimizer if possible (convex quadratic problems only).
+
+      When solving problems to global optimality (see alg:nlpsolver),
+      alg:localsolver is used to decide which local solver to call for
+      reoptimizing NLP-infeasible solutions heuristically.
+
+alg:method (method, lpmethod, defaultalg, XPRS_DEFAULTALG)
       This selects the algorithm that will be used to solve LPs, standalone or
       during MIP optimization.
 
@@ -536,7 +555,7 @@ alg:method (method, lpmethod, defaultalg, mip:xprs_defaultalg, XPRS_DEFAULTALG)
 alg:network (network)
       Solve (substructure of) (MIP node) LPs by network simplex method.
 
-alg:nlpsolver (nlpsolver, nlp:solver, alg:xslp_nlpsolver, XSLP_NLPSOLVER, NLPSOLVER)
+alg:nlpsolver (nlpsolver, nlp:solver, xslp_nlpsolver, XSLP_NLPSOLVER)
       Controls whether to call FICO Xpress Global or one of the local solvers
 
       Values (default: -1):
@@ -551,7 +570,17 @@ alg:nlpsolver (nlpsolver, nlp:solver, alg:xslp_nlpsolver, XSLP_NLPSOLVER, NLPSOL
       * (2) FICO Xpress Global will be used to find a globally optimal
         solution
 
-alg:numericalemphasis (alg:numericfocus, numericfocus, numfocus, numericemphasis, numericalemphasis, num:xprs_numericalemphasis, XPRS_NUMERICALEMPHASIS)
+      Controls whether to call FICO Xpress Global or one of the local solvers:
+
+      -1 - If the license allows and there are no user functions or
+           multistart jobs, FICO Xpress Global will be called, otherwise a
+           local solver (default)
+      1  - The algorithm selected by alg:localsolver will be used to find a
+           locally optimal solution
+      2  - FICO Xpress Global will be used to find a globally optimal
+           solution.
+
+alg:numericalemphasis (alg:numericfocus, numericfocus, numfocus, numericemphasis, numericalemphasis, XPRS_NUMERICALEMPHASIS)
       How much emphasis to place on numerical stability instead of solve
       speed.
 
@@ -568,17 +597,21 @@ alg:numericalemphasis (alg:numericfocus, numericfocus, numfocus, numericemphasis
 
       * (3) Strong emphasis on numerical stability.
 
+alg:outputtol (outputtol, XPRS_OUTPUTTOL)
+      Zero tolerance on print values.
+
+      Default: 1.0E-05
+
 alg:primal (alg:primalopt, primal, primalopt)
       Solve (MIP node) LPs by primal simplex method.
 
-alg:randomseed (randomseed, tech:xprs_randomseed, XPRS_RANDOMSEED)
-      Sets the initial seed to use for the pseudo-random number generator in
-      the Optimizer. The sequence of random numbers is always reset using the
-      seed when starting a new optimization run.
+alg:readbasis (readbasis, startbasis, basisin)
+      File with the starting basis (Xpress .bas format, see
+      tech:writesolution). It is read after any incoming .sstatus basis (see
+      alg:basis) and overrides it. Xpress matches the basis by row and column
+      names, so the model must be passed with names (AMPL option auxfiles rc).
 
-      Default: 1
-
-alg:refactor (refactor, mip:xprs_refactor, XPRS_REFACTOR)
+alg:refactor (refactor, XPRS_REFACTOR)
       Indicates whether the optimization should restart using the current
       representation of the factorization in memory.
 
@@ -590,7 +623,7 @@ alg:refactor (refactor, mip:xprs_refactor, XPRS_REFACTOR)
 
       * (1) Refactor on reoptimizing.
 
-alg:refineops (refineops, sol:xprs_refineops, XPRS_REFINEOPS)
+alg:refineops (refineops, XPRS_REFINEOPS)
       This specifies when the solution refiner should be executed to reduce
       solution infeasibilities. The refiner will attempt to satisfy the target
       tolerances for all original linear constraints before presolve or
@@ -629,7 +662,7 @@ alg:refineops (refineops, sol:xprs_refineops, XPRS_REFINEOPS)
 alg:relax (relax)
       0*/1: Whether to relax integrality of variables.
 
-alg:relcutoff (relcutoff, miprelcutoff, lim:xprs_miprelcutoff, XPRS_MIPRELCUTOFF)
+alg:relcutoff (relcutoff, miprelcutoff, XPRS_MIPRELCUTOFF)
       Branch and Bound: Percentage of the incumbent value to be added to the
       value of the objective function when an integer solution is found, to
       give the new value of CURRMIPCUTOFF. The effect is to cut off the search
@@ -639,7 +672,7 @@ alg:relcutoff (relcutoff, miprelcutoff, lim:xprs_miprelcutoff, XPRS_MIPRELCUTOFF
 
       Default: 1.0E-04
 
-alg:resourcestrategy (resourcestrategy, tech:xprs_resourcestrategy, XPRS_RESOURCESTRATEGY)
+alg:resourcestrategy (resourcestrategy, XPRS_RESOURCESTRATEGY)
       Controls whether the optimizer is allowed to make nondeterministic
       decisions if memory is running low in an effort to preserve memory and
       finish the solve. Available memory (or container limits) are
@@ -661,52 +694,7 @@ alg:start (warmstart)
       3 - Yes (for LP: together with the incoming alg:basis, if any;
           default).
 
-alg:xslp_msmaxboundrange (XSLP_MSMAXBOUNDRANGE, MSMAXBOUNDRANGE)
-      Defines the maximum range inside which initial points are generated by
-      multistart presets
-
-      Default: 1000
-
-alg:xslp_multistart (XSLP_MULTISTART, MULTISTART)
-      The multistart main control. Defines if the multistart search is to be
-      initiated, or if only the baseline model is to be solved.
-
-      Values (default: -1):
-
-      * (-1) Depends on if any multistart jobs have been added.
-
-      * (0) Multistart is off.
-
-      * (1) Multistart is on.
-
-alg:xslp_multistart_log (XSLP_MULTISTART_LOG, MULTISTART_LOG)
-      The level of logging during the multistart run.
-
-      Default: 0
-
-alg:xslp_multistart_maxsolves (XSLP_MULTISTART_MAXSOLVES, MULTISTART_MAXSOLVES)
-      The maximum number of jobs to create during the multistart search.
-
-      Default: -1 (no upper limit)
-
-alg:xslp_multistart_maxtime (XSLP_MULTISTART_MAXTIME, MULTISTART_MAXTIME)
-      The maximum total time to be spent in the mutlistart search.
-
-      Default: 0 (no upper limit)
-
-alg:xslp_multistart_poolsize (XSLP_MULTISTART_POOLSIZE, MULTISTART_POOLSIZE)
-      The maximum number of problem objects allowed to pool up before
-      synchronization in the deterministic multistart.
-
-      Default: 2
-
-alg:xslp_multistart_seed (XSLP_MULTISTART_SEED, MULTISTART_SEED)
-      Random seed used for the automatic generation of initial point when
-      loading multistart presets
-
-      Default: 0
-
-alg:zerotol (matrixtol, tol:xprs_matrixtol, XPRS_MATRIXTOL)
+alg:zerotol (matrixtol, XPRS_MATRIXTOL)
       The zero tolerance on matrix elements. If the value of a matrix element
       is less than or equal to MATRIXTOL in absolute value, it is treated as
       zero. The control applies when solving a problem, for an input tolerance
@@ -714,7 +702,7 @@ alg:zerotol (matrixtol, tol:xprs_matrixtol, XPRS_MATRIXTOL)
 
       Default: 1.0E-09
 
-bar:alg (baralg, bar:xprs_baralg, XPRS_BARALG)
+bar:alg (baralg, XPRS_BARALG)
       This control determines which barrier algorithm is used to solve the
       problem. Notably, this is also the control to enable the primal-dual
       hybrid gradient algorithm.
@@ -733,12 +721,104 @@ bar:alg (baralg, bar:xprs_baralg, XPRS_BARALG)
 
       * (4) Use the hybrid gradient algorithm.
 
-bar:cachesize (cachesize)
-      Newton Barrier: L2 or L3 (see notes) cache size in kB (kilobytes) of the
-      CPU (default -1). On Intel (or compatible) platforms a value of -1 may
-      be used to determine the cache size automatically.
+bar:algaftercrossover (algaftercrossover, XPRS_ALGAFTERCROSSOVER)
+      The algorithm to be used for the final clean up step after the
+      crossover.
 
-bar:choleskyalg (choleskyalg, bar:xprs_choleskyalg, XPRS_CHOLESKYALG)
+      Values (default: 1):
+
+      * (1) Automatically determined.
+
+      * (2) Dual simplex.
+
+      * (3) Primal simplex.
+
+      * (4) Concurrent.
+
+bar:barfailiterlimit (barfailiterlimit, XPRS_BARFAILITERLIMIT)
+      Newton barrier: The maximum number of consecutive iterations that fail
+      to improve the solution in the barrier algorithm.
+
+      Values (default: 0):
+
+      * (0) Determined automatically
+
+      * (>0) Maximum number of consecutive barrier iterations allowed without
+        progress.
+
+bar:barfreescale (barfreescale, XPRS_BARFREESCALE)
+      Defines how the barrier algorithm scales free variables.
+
+      Default: 1e-6
+
+bar:bariterative (bariterative, XPRS_BARITERATIVE)
+      The maximum number of barrier iterations in which an iterative solver is
+      used instead of the Cholesky decomposition.
+
+      Values (default: -2):
+
+      * (-2) Automatically determined.
+
+      * (-1) Turn iterative solver off.
+
+      * (0) Use iterative solver for the starting point computation.
+
+      * (n>0) Try to apply iterative solver for the first n barrier
+        iterations.
+
+bar:barlargebound (barlargebound, XPRS_BARLARGEBOUND)
+      Threshold for the barrier to handle large bounds.
+
+      Default: 0
+
+bar:barperturb (barperturb, XPRS_BARPERTURB)
+      Newton barrier: In numerically challenging cases it is often
+      advantageous to apply perturbations on the KKT system to improve its
+      numerical properties. BARPERTURB controlls how much perturbation is
+      allowed during the barrier iterations. By default no perturbation is
+      allowed. Set this parameter with care as larger perturbations may lead
+      to less efficient iterates and the best settings are problem-dependent.
+
+      Default: 0
+
+bar:barrhsscale (barrhsscale, XPRS_BARRHSSCALE)
+      Defines how the barrier scales the right hand side.
+
+      Values (default: -1):
+
+      * (-1) Let the optimizer decide.
+
+      * (0) Scale by geometric mean.
+
+      * (>=0) Scale such that the largest right hand side coefficient's
+        largest element does not exceed this number.
+
+bar:barsolution (barsolution, XPRS_BARSOLUTION)
+      This determines whether the barrier has to decide which is the best
+      solution found or return the solution computed by the last barrier
+      iteration.
+
+      Values (default: 0):
+
+      * (-1) (callback only: do not save current soulution as the best one).
+
+      * (0) return the best solution found (in callback: let the barrier
+        decide the current solution is the best or not).
+
+      * (1) return the last barrier iteration (in callback: save current
+        solution as the best solution so far).
+
+bar:barstartweight (barstartweight, XPRS_BARSTARTWEIGHT)
+      Newton barrier: This sets a weight for the warm-start point when
+      warm-start is set for the barrier algorithm. Using larger weight gives
+      more emphasis for the supplied starting point.
+
+      Default: 0.85
+
+bar:cachesize (cachesize)
+      Deprecated: ignored by the current Xpress library.
+
+bar:choleskyalg (choleskyalg, XPRS_CHOLESKYALG)
       Newton barrier: type of Cholesky factorization used; bit-vector-control
       (see Section Bit-vector controls).
 
@@ -767,7 +847,7 @@ bar:choleskyalg (choleskyalg, bar:xprs_choleskyalg, XPRS_CHOLESKYALG)
 
       * (9) Force highest accuracy in refinement 0: off; 1: on.
 
-bar:choleskytol (choleskytol, bar:xprs_choleskytol, XPRS_CHOLESKYTOL)
+bar:choleskytol (choleskytol, XPRS_CHOLESKYTOL)
       Newton barrier: The tolerance for pivot elements in the Cholesky
       decomposition of the normal equations coefficient matrix, computed at
       each iteration of the barrier algorithm. If the absolute value of the
@@ -776,7 +856,7 @@ bar:choleskytol (choleskytol, bar:xprs_choleskytol, XPRS_CHOLESKYTOL)
 
       Default: 1.0E-15
 
-bar:cores (barcores, bar:xprs_barcores, XPRS_BARCORES)
+bar:cores (barcores, XPRS_BARCORES)
       If set to a positive integer it determines the number of physical CPU
       cores assumed to be present in the system by the barrier and hybrid
       gradient algorithms. If the value is set to the default value (-1),
@@ -784,7 +864,7 @@ bar:cores (barcores, bar:xprs_barcores, XPRS_BARCORES)
 
       Default: -1(automatically detected)
 
-bar:corespercpu (corespercpu, sys:xprs_corespercpu, XPRS_CORESPERCPU)
+bar:corespercpu (corespercpu, XPRS_CORESPERCPU)
       Used to override the detected value of the number of cores on a CPU. The
       cache size (either detected or specified via the CACHESIZE control) used
       in Barrier methods will be divided by this amount, and this scaled-down
@@ -792,7 +872,7 @@ bar:corespercpu (corespercpu, sys:xprs_corespercpu, XPRS_CORESPERCPU)
 
       Default: -1
 
-bar:cpuplatform (cpuplatform, sys:xprs_cpuplatform, XPRS_CPUPLATFORM)
+bar:cpuplatform (cpuplatform, XPRS_CPUPLATFORM)
       Newton Barrier: Selects the AMD, Intel x86 or ARM vectorization
       instruction set that Barrier should run optimized code for. On AMD /
       Intel x86 platforms the SSE2, AVX and AVX2 instruction sets are
@@ -814,7 +894,7 @@ bar:cpuplatform (cpuplatform, sys:xprs_cpuplatform, XPRS_CPUPLATFORM)
 
       * (3) Use AVX2 optimized code.
 
-bar:crash (barcrash, bar:xprs_barcrash, XPRS_BARCRASH)
+bar:crash (barcrash, XPRS_BARCRASH)
       Newton barrier and hybrid gradient: This determines the type of crash
       used for the crossover. During the crash procedure, an initial basis is
       determined which attempts to speed up the crossover. A good choice at
@@ -829,7 +909,7 @@ bar:crash (barcrash, bar:xprs_barcrash, XPRS_BARCRASH)
       * (1-6) Available strategies with 1 being conservative and 6 being
         aggressive.
 
-bar:crossover (crossover, bar:xprs_crossover, XPRS_CROSSOVER)
+bar:crossover (crossover, XPRS_CROSSOVER)
       Newton barrier and hybrid gradient: This control determines whether the
       barrier method will cross over to the simplex method when at optimal
       solution has been found, to provide an end basis (see XPRSgetbasis,
@@ -846,7 +926,7 @@ bar:crossover (crossover, bar:xprs_crossover, XPRS_CROSSOVER)
 
       * (2) Dual crossover first.
 
-bar:crossoverops (crossoverops, bar:xprs_crossoverops, XPRS_CROSSOVEROPS)
+bar:crossoverops (crossoverops, XPRS_CROSSOVEROPS)
       Newton barrier and hybrid gradient: a bit-vector (see Section Bit-vector
       controls) for adjusting the behavior of the crossover procedure.
 
@@ -865,14 +945,14 @@ bar:crossoverops (crossoverops, bar:xprs_crossoverops, XPRS_CROSSOVEROPS)
       * (3) Set crossover behaviour: 0: Perform standard crossover; 1: Perform
         a slower, but numerically more careful crossover.
 
-bar:crossoverthreads (crossoverthreads, bar:xprs_crossoverthreads, XPRS_CROSSOVERTHREADS)
+bar:crossoverthreads (crossoverthreads, XPRS_CROSSOVERTHREADS)
       Determines the maximum number of threads that parallel crossover is
       allowed to use. If CROSSOVERTHREADS is set to the default value (-1),
       the BARTHREADS control will determine the number of threads used.
 
       Default: -1 (determined by the BARTHREADS control)
 
-bar:crossovertol (crossovertol, crossoveraccuracytol, bar:xprs_crossoveraccuracytol, XPRS_CROSSOVERACCURACYTOL)
+bar:crossovertol (crossovertol, crossoveraccuracytol, XPRS_CROSSOVERACCURACYTOL)
       Newton barrier: This control determines how crossover adjusts the
       default relative pivot tolerance. When re-inversion is necessary,
       crossover will compare the recalculated working basic solution with the
@@ -882,14 +962,14 @@ bar:crossovertol (crossovertol, crossoveraccuracytol, bar:xprs_crossoveraccuracy
 
       Default: 1e-6
 
-bar:densecollimit (densecollimit, bar:xprs_densecollimit, XPRS_DENSECOLLIMIT)
+bar:densecollimit (densecollimit, XPRS_DENSECOLLIMIT)
       Newton barrier: Columns with more than DENSECOLLIMIT elements are
       considered to be dense. Such columns will be handled specially in the
       Cholesky factorization of this matrix.
 
       Default: 0 — determined automatically.
 
-bar:dualstop (bardualstop, bar:xprs_bardualstop, XPRS_BARDUALSTOP)
+bar:dualstop (bardualstop, XPRS_BARDUALSTOP)
       Newton barrier and hybrid gradient: This is a convergence parameter,
       representing the tolerance for dual infeasibilities. If the difference
       between the constraints and their bounds in the dual problem falls below
@@ -903,48 +983,48 @@ bar:dualstop (bardualstop, bar:xprs_bardualstop, XPRS_BARDUALSTOP)
 
       * (>=0) The tolerance for dual infeasibilities.
 
-bar:gap (bargaptarget, bar:xprs_bargaptarget, XPRS_BARGAPTARGET)
+bar:gap (bargaptarget, XPRS_BARGAPTARGET)
       Newton barrier: The target tolerance for the relative duality gap. The
       barrier algorithm will keep iterating until either BARGAPTARGET is
       satisfied or until no further improvements are possible. In the latter
       case, if BARGAPSTOP is satisfied, it will declare the problem optimal.
 
-      Values (default: 0 ):
+      Values (default: 0):
 
       * (0) The default value is determined automatically based on the problem
         size, structure and algorithm choice.
 
       * (>=0) The target tolerance for the relative duality gap.
 
-bar:gapstop (bargapstop, bar:xprs_bargapstop, XPRS_BARGAPSTOP)
+bar:gapstop (bargapstop, XPRS_BARGAPSTOP)
       Newton barrier and hybrid gradient: This is a convergence parameter,
       representing the tolerance for the relative duality gap. When the
       difference between the primal and dual objective function values falls
       below this tolerance, the Optimizer determines that the optimal solution
       has been found.
 
-      Values (default: 0 ):
+      Values (default: 0):
 
       * (0) The default value is determined automatically based on the problem
         size, structure and algorithm choice.
 
       * (>=0) The tolerance for the relative duality gap.
 
-bar:hgextrapolate (barhgextrapolate, pdhg:xprs_barhgextrapolate, XPRS_BARHGEXTRAPOLATE)
+bar:hgextrapolate (barhgextrapolate, XPRS_BARHGEXTRAPOLATE)
       Extrapolation parameter for the hybrid gradient algorithm. Although
       theory suggests that a value of 1 is best, slightly smaller values
       perform better in general.
 
       Default: 0.15
 
-bar:hgmaxrestarts (barhgmaxrestarts, pdhg:xprs_barhgmaxrestarts, XPRS_BARHGMAXRESTARTS)
+bar:hgmaxrestarts (barhgmaxrestarts, XPRS_BARHGMAXRESTARTS)
       The maximum number of restarts in the hybrid gradient algorithm.
       Restarts play the role of iterations in the hybrid gradient algorithm. A
       log line is printed at every restart, unless BAROUTPUT is set to 0.
 
       Default: 1250
 
-bar:hgops (barhgops, pdhg:xprs_barhgops, XPRS_BARHGOPS)
+bar:hgops (barhgops, XPRS_BARHGOPS)
       Bit-vector control (see Section Bit-vector controls) options for the
       hybrid gradient algorithm. Bits 1, 2 and 3 control which norms of the
       coefficient matrix are used for solution normalization. The
@@ -954,7 +1034,7 @@ bar:hgops (barhgops, pdhg:xprs_barhgops, XPRS_BARHGOPS)
       magnitudes of the objective and the right-hand side.
 
       Values (default: 24, the infinity norm is used for initialization and
-      the L2 norm for measuring the solution quality. ):
+      the L2 norm for measuring the solution quality.):
 
       * (0) Use an asymmetric average for the primal averaging.
 
@@ -973,7 +1053,7 @@ bar:hgops (barhgops, pdhg:xprs_barhgops, XPRS_BARHGOPS)
 
       * (6) Omega is based on the infeasibility.
 
-bar:indeflimit (barindeflimit, bar:xprs_barindeflimit, XPRS_BARINDEFLIMIT)
+bar:indeflimit (barindeflimit, XPRS_BARINDEFLIMIT)
       Newton Barrier. This limits the number of consecutive indefinite barrier
       iterations that will be performed. The optimizer will try to minimize
       (resp. maximize) a QP problem even if the Q matrix is not positive
@@ -987,7 +1067,7 @@ bar:indeflimit (barindeflimit, bar:xprs_barindeflimit, XPRS_BARINDEFLIMIT)
 
       Default: 15
 
-bar:kernel (barkernel, bar:xprs_barkernel, XPRS_BARKERNEL)
+bar:kernel (barkernel, XPRS_BARKERNEL)
       Newton barrier: Defines how centrality is weighted in the barrier
       algorithm.
 
@@ -1000,11 +1080,9 @@ bar:kernel (barkernel, bar:xprs_barkernel, XPRS_BARKERNEL)
         -BARKERNEL].
 
 bar:l1cache (l1cache)
-      Newton barrier: L1 cache size in kB (kilo bytes) of the CPU. On Intel
-      (or compatible) platforms a value of -1 may be used to determine the
-      cache size automatically.
+      Deprecated: ignored by the current Xpress library.
 
-bar:objperturb (barobjperturb, bar:xprs_barobjperturb, XPRS_BAROBJPERTURB)
+bar:objperturb (barobjperturb, XPRS_BAROBJPERTURB)
       Defines how the barrier perturbs the objective.
 
       Values (default: 1e-6):
@@ -1017,7 +1095,7 @@ bar:objperturb (barobjperturb, bar:xprs_barobjperturb, XPRS_BAROBJPERTURB)
       * (<0) Always perturb the objective by the absolute value of the
         parameter.
 
-bar:objscale (barobjscale, bar:xprs_barobjscale, XPRS_BAROBJSCALE)
+bar:objscale (barobjscale, XPRS_BAROBJSCALE)
       Defines how the barrier scales the objective.
 
       Values (default: -1):
@@ -1031,7 +1109,7 @@ bar:objscale (barobjscale, bar:xprs_barobjscale, XPRS_BAROBJSCALE)
         quadratic diagonal is used as reference valuses instead of the linear
         objective.
 
-bar:order (barorder, bar:xprs_barorder, XPRS_BARORDER)
+bar:order (barorder, XPRS_BARORDER)
       Newton barrier: This controls the Cholesky factorization in the
       Newton-Barrier.
 
@@ -1049,12 +1127,12 @@ bar:order (barorder, bar:xprs_barorder, XPRS_BARORDER)
       * (3) Nested dissection method. This considers the adjacency graph and
         recursively seeks to separate it into non-adjacent pieces.
 
-bar:orderthreads (barorderthreads, bar:xprs_barorderthreads, XPRS_BARORDERTHREADS)
+bar:orderthreads (barorderthreads, XPRS_BARORDERTHREADS)
       If set to a positive integer it determines the number of concurrent
       threads for the sparse matrix ordering algorithm in the Newton-barrier
       method.
 
-      Values (default: 0 ):
+      Values (default: 0):
 
       * (0) The default value is determined automatically based on the problem
         size, structure and algorithm choice.
@@ -1062,7 +1140,7 @@ bar:orderthreads (barorderthreads, bar:xprs_barorderthreads, XPRS_BARORDERTHREAD
       * (>=0) The number of concurrent threads for the sparse matrix ordering
         algorithm in the Newton-barrier method.
 
-bar:output (baroutput, bar:xprs_baroutput, XPRS_BAROUTPUT)
+bar:output (baroutput, XPRS_BAROUTPUT)
       Newton barrier and hybrid gradient: This specifies the level of solution
       output provided. Output is provided either after each iteration of the
       algorithm, or else can be turned off completely by this parameter.
@@ -1073,7 +1151,25 @@ bar:output (baroutput, bar:xprs_baroutput, XPRS_BAROUTPUT)
 
       * (1) At each iteration.
 
-bar:presolve (barpresolve, bar:xprs_barpresolveops, XPRS_BARPRESOLVEOPS)
+bar:preanalyticcenter (preanalyticcenter, XPRS_PREANALYTICCENTER)
+      Determines if analytic centers should be computed and used for variable
+      fixing and the generation of alternative reduced costs (-1: Auto 0: Off,
+      1: Fixing, 2: Redcost, 3: Both)
+
+      Values (default: -1):
+
+      * (-1) Automatic.
+
+      * (0) Disable analytic center presolving.
+
+      * (1) Use analytic center for variable fixing only.
+
+      * (2) Use analytic center for reduced cost computation only.
+
+      * (3) Use analytic centers for both, variable fixing and reduced cost
+        computation.
+
+bar:presolve (barpresolve, barpresolveops, XPRS_BARPRESOLVEOPS)
       Newton barrier: This bit-vector (see Section Bit-vector controls)
       controls the Newton-Barrier specific presolve operations.
 
@@ -1085,21 +1181,21 @@ bar:presolve (barpresolve, bar:xprs_barpresolveops, XPRS_BARPRESOLVEOPS)
 
       * (2) Do full matrix eliminations (reduce matrix size).
 
-bar:primalstop (barprimalstop, bar:xprs_barprimalstop, XPRS_BARPRIMALSTOP)
+bar:primalstop (barprimalstop, XPRS_BARPRIMALSTOP)
       Newton barrier and hybrid gradient: This is a convergence parameter,
       indicating the tolerance for primal infeasibilities. If the difference
       between the constraints and their bounds in the primal problem falls
       below this tolerance in absolute value, the Optimizer will terminate and
       return the current solution.
 
-      Values (default: 0 ):
+      Values (default: 0):
 
       * (0) The default value is determined automatically based on the problem
         size, structure and algorithm choice.
 
       * (>=0) The tolerance for primal infeasibilities.
 
-bar:refiter (barrefiter, bar:xprs_barrefiter, XPRS_BARREFITER)
+bar:refiter (barrefiter, XPRS_BARREFITER)
       Newton barrier: After terminating the barrier algorithm, further
       refinement steps can be performed. Such refinement steps are especially
       helpful if the solution is near to the optimum and can improve primal
@@ -1109,7 +1205,7 @@ bar:refiter (barrefiter, bar:xprs_barrefiter, XPRS_BARREFITER)
 
       Default: 0
 
-bar:regularize (barreg, barrregularize, bar:xprs_barregularize, XPRS_BARREGULARIZE)
+bar:regularize (barreg, barrregularize, barregularize, XPRS_BARREGULARIZE)
       This bit-vector control (see Section Bit-vector controls) determines how
       the barrier algorithm applies regularization on the KKT system.
 
@@ -1130,7 +1226,7 @@ bar:regularize (barreg, barrregularize, bar:xprs_barregularize, XPRS_BARREGULARI
 
       * (6) Apply iterative regularization more often.
 
-bar:start (barstart, bar:xprs_barstart, XPRS_BARSTART)
+bar:start (barstart, XPRS_BARSTART)
       Controls the computation of the starting point and warm-starting for the
       Newton barrier and the hybrid gradient algorithms.
 
@@ -1151,7 +1247,7 @@ bar:start (barstart, bar:xprs_barstart, XPRS_BARSTART)
       * (3) Uses the unit starting point for the homogeneous self-dual barrier
         algorithm.
 
-bar:stepstop (barstepstop, bar:xprs_barstepstop, XPRS_BARSTEPSTOP)
+bar:stepstop (barstepstop, XPRS_BARSTEPSTOP)
       Newton barrier: A convergence parameter, representing the minimal step
       size. On each iteration of the barrier algorithm, a step is taken along
       a computed search direction. If that step size is smaller than
@@ -1160,7 +1256,7 @@ bar:stepstop (barstepstop, bar:xprs_barstepstop, XPRS_BARSTEPSTOP)
 
       Default: 1.0E-16
 
-bar:threads (barthreads, bar:xprs_barthreads, XPRS_BARTHREADS)
+bar:threads (barthreads, XPRS_BARTHREADS)
       If set to a positive integer it determines the number of threads
       implemented to run the Newton-barrier and hybrid gradient algorithms. If
       the value is set to the default value (-1), the THREADS control will
@@ -1168,141 +1264,20 @@ bar:threads (barthreads, bar:xprs_barthreads, XPRS_BARTHREADS)
 
       Default: -1(determined by the THREADS control)
 
-bar:xprs_algaftercrossover (XPRS_ALGAFTERCROSSOVER)
-      The algorithm to be used for the final clean up step after the
-      crossover.
-
-      Values (default: 1):
-
-      * (1) Automatically determined.
-
-      * (2) Dual simplex.
-
-      * (3) Primal simplex.
-
-      * (4) Concurrent.
-
-bar:xprs_barfailiterlimit (XPRS_BARFAILITERLIMIT)
-      Newton barrier: The maximum number of consecutive iterations that fail
-      to improve the solution in the barrier algorithm.
-
-      Values (default: 0):
-
-      * (0) Determined automatically
-
-      * (>0) Maximum number of consecutive barrier iterations allowed without
-        progress.
-
-bar:xprs_barfreescale (XPRS_BARFREESCALE)
-      Defines how the barrier algorithm scales free variables.
-
-      Default: 1e-6
-
-bar:xprs_bariterative (XPRS_BARITERATIVE)
-      The maximum number of barrier iterations in which an iterative solver is
-      used instead of the Cholesky decomposition.
-
-      Values (default: -2):
-
-      * (-2) Automatically determined.
-
-      * (-1) Turn iterative solver off.
-
-      * (0) Use iterative solver for the starting point computation.
-
-      * (n>0) Try to apply iterative solver for the first n barrier
-        iterations.
-
-bar:xprs_barlargebound (XPRS_BARLARGEBOUND)
-      Threshold for the barrier to handle large bounds.
-
-      Default: 0
-
-bar:xprs_barperturb (XPRS_BARPERTURB)
-      Newton barrier: In numerically challenging cases it is often
-      advantageous to apply perturbations on the KKT system to improve its
-      numerical properties. BARPERTURB controlls how much perturbation is
-      allowed during the barrier iterations. By default no perturbation is
-      allowed. Set this parameter with care as larger perturbations may lead
-      to less efficient iterates and the best settings are problem-dependent.
-
-      Default: 0
-
-bar:xprs_barrhsscale (XPRS_BARRHSSCALE)
-      Defines how the barrier scales the right hand side.
-
-      Values (default: -1):
-
-      * (-1) Let the optimizer decide.
-
-      * (0) Scale by geometric mean.
-
-      * (>=0) Scale such that the largest right hand side coefficient's
-        largest element does not exceed this number.
-
-bar:xprs_barsolution (XPRS_BARSOLUTION)
-      This determines whether the barrier has to decide which is the best
-      solution found or return the solution computed by the last barrier
-      iteration.
-
-      Values (default: 0):
-
-      * (-1) (callback only: do not save current soulution as the best one).
-
-      * (0) return the best solution found (in callback: let the barrier
-        decide the current solution is the best or not).
-
-      * (1) return the last barrier iteration (in callback: save current
-        solution as the best solution so far).
-
-bar:xprs_barstartweight (XPRS_BARSTARTWEIGHT)
-      Newton barrier: This sets a weight for the warm-start point when
-      warm-start is set for the barrier algorithm. Using larger weight gives
-      more emphasis for the supplied starting point.
-
-      Default: 0.85
-
-bar:xprs_preanalyticcenter (XPRS_PREANALYTICCENTER)
-      Determines if analytic centers should be computed and used for variable
-      fixing and the generation of alternative reduced costs (-1: Auto 0: Off,
-      1: Fixing, 2: Redcost, 3: Both)
+cut:autocutting (autocutting, XPRS_AUTOCUTTING)
+      Should the Optimizer automatically decide whether to generate cutting
+      planes at local nodes in the tree or not? If the CUTFREQ control is set,
+      no automatic selection will be made and local cutting will be enabled.
 
       Values (default: -1):
 
       * (-1) Automatic.
 
-      * (0) Disable analytic center presolving.
+      * (0) Disabled.
 
-      * (1) Use analytic center for variable fixing only.
+      * (1) Enabled.
 
-      * (2) Use analytic center for reduced cost computation only.
-
-      * (3) Use analytic centers for both, variable fixing and reduced cost
-        computation.
-
-bit:xslp_control (XSLP_CONTROL)
-      Bit map describing which Xpress NonLinear functions also activate the
-      corresponding Optimizer Library function
-
-      Values (default: 0 (no bits set)):
-
-      * (0) Xpress NonLinear problem management functions do NOT invoke the
-        corresponding Optimizer Library function for the underlying linear
-        problem.
-
-      * (1) XSLPcopycontrols does NOT invoke XPRScopycontrols.
-
-      * (2) XSLPcopycallbacks does NOT invoke XPRScopycallbacks.
-
-      * (3) XSLPcopyprob does NOT invoke XPRScopyprob.
-
-      * (4) XSLPsetdefaults does NOT invoke XPRSsetdefaults.
-
-      * (5) XSLPsave does NOT invoke XPRSsave.
-
-      * (6) XSLPrestore does NOT invoke XPRSrestore.
-
-cut:cover (covercuts, cut:xprs_covercuts, XPRS_COVERCUTS)
+cut:cover (covercuts, XPRS_COVERCUTS)
       Branch and Bound: The number of rounds of lifted cover inequalities at
       the root node. A lifted cover inequality is an additional constraint
       that can be particularly effective at reducing the size of the feasible
@@ -1314,7 +1289,7 @@ cut:cover (covercuts, cut:xprs_covercuts, XPRS_COVERCUTS)
 
       Default: -1 — determined automatically.
 
-cut:depth (cutdepth, cut:xprs_cutdepth, XPRS_CUTDEPTH)
+cut:depth (cutdepth, XPRS_CUTDEPTH)
       Branch and Bound: Sets the maximum depth in the tree search at which
       cuts will be generated. Generating cuts can take a lot of time, and is
       often less important at deeper levels of the tree since tighter bounds
@@ -1323,7 +1298,7 @@ cut:depth (cutdepth, cut:xprs_cutdepth, XPRS_CUTDEPTH)
 
       Default: -1 — determined automatically.
 
-cut:factor (cutfactor, cut:xprs_cutfactor, XPRS_CUTFACTOR)
+cut:factor (cutfactor, XPRS_CUTFACTOR)
       Limit on the number of cuts and cut coefficients the optimizer is
       allowed to add to the matrix during tree search. The cuts and cut
       coefficients are limited by CUTFACTOR times the number of rows and
@@ -1336,31 +1311,49 @@ cut:factor (cutfactor, cut:xprs_cutfactor, XPRS_CUTFACTOR)
 
       * (>=0) Multiple of number of rows and coefficients to use.
 
-cut:freq (cutfreq, cut:xprs_cutfreq, XPRS_CUTFREQ)
+cut:freq (cutfreq, XPRS_CUTFREQ)
       Branch and Bound: This specifies the frequency at which cuts are
       generated in the tree search. If the depth of the node modulo CUTFREQ is
       zero, then cuts will be generated.
 
       Default: -1 — determined automatically.
 
-cut:gomory (gomcuts, cut:xprs_gomcuts, XPRS_GOMCUTS)
+cut:gomory (gomcuts, XPRS_GOMCUTS)
       Branch and Bound: The number of rounds of Gomory or lift-and-project
       cuts at the root node.
 
       Default: -1 — determined automatically.
 
-cut:lnpbest (lnpbest, cut:xprs_lnpbest, XPRS_LNPBEST)
+cut:lnpbest (lnpbest, XPRS_LNPBEST)
       Number of infeasible MIP entities to create lift-and-project cuts for
       during each round of Gomory cuts at the root node (see GOMCUTS).
 
       Default: 50
 
-cut:lnpiterlimit (lnpiterlimit, cut:xprs_lnpiterlimit, XPRS_LNPITERLIMIT)
+cut:lnpiterlimit (lnpiterlimit, XPRS_LNPITERLIMIT)
       Number of iterations to perform in improving each lift-and-project cut.
 
       Default: -1 — determined automatically.
 
-cut:qccuts (qccuts, cut:xprs_qccuts, XPRS_QCCUTS)
+cut:mcfcutstrategy (mcfcutstrategy, XPRS_MCFCUTSTRATEGY)
+      Level of Multi-Commodity Flow (MCF) cutting planes separation: This
+      specifies how aggressively MCF cuts should be separated. If the
+      separation of MCF cuts is enabled, Xpress will try to detect a MCF
+      network structure in the problem and, if such a structure is identified,
+      it will separate specific cutting planes exploiting the identified
+      network.
+
+      Values (default: -1):
+
+      * (-1) Automatic - let the Optimizer decide.
+
+      * (0) Separation of MCF cuts disabled.
+
+      * (1) Moderate separation of MCF cuts.
+
+      * (2) Aggressive separation of MCF cuts.
+
+cut:qccuts (qccuts, XPRS_QCCUTS)
       Branch and Bound: Limit on the number of rounds of outer approximation
       cuts generated for the root node, when solving a mixed integer quadratic
       constrained or mixed integer second order conic problem with outer
@@ -1368,7 +1361,7 @@ cut:qccuts (qccuts, cut:xprs_qccuts, XPRS_QCCUTS)
 
       Default: -1 — determined automatically.
 
-cut:rltcuts (rltcuts, cut:xprs_rltcuts, XPRS_RLTCUTS)
+cut:rltcuts (rltcuts, XPRS_RLTCUTS)
       Determines whether RLT cuts should be separated in the Xpress Global
       Solver.
 
@@ -1381,7 +1374,7 @@ cut:rltcuts (rltcuts, cut:xprs_rltcuts, XPRS_RLTCUTS)
 
       * (1) RLT cuts are separated.
 
-cut:select (cutselect, cut:xprs_cutselect, XPRS_CUTSELECT)
+cut:select (cutselect, XPRS_CUTSELECT)
       A bit-vector (see Section Bit-vector controls) providing detailed
       control of the cuts created for the root node of a MIP solve. Use
       TREECUTSELECT to control cuts during the tree search.
@@ -1414,7 +1407,7 @@ cut:select (cutselect, cut:xprs_cutselect, XPRS_CUTSELECT)
 
       * (20) Farkas cuts.
 
-cut:strategy (cutstrategy, cut:xprs_cutstrategy, XPRS_CUTSTRATEGY)
+cut:strategy (cutstrategy, XPRS_CUTSTRATEGY)
       Branch and Bound: This specifies the cut strategy. A more aggressive cut
       strategy, generating a greater number of cuts, will result in fewer
       nodes to be explored, but with an associated time cost in generating the
@@ -1433,7 +1426,7 @@ cut:strategy (cutstrategy, cut:xprs_cutstrategy, XPRS_CUTSTRATEGY)
 
       * (3) Aggressive cut strategy.
 
-cut:treecover (treecovercuts, cut:xprs_treecovercuts, XPRS_TREECOVERCUTS)
+cut:treecover (treecovercuts, XPRS_TREECOVERCUTS)
       Branch and Bound: The number of rounds of lifted cover inequalities
       generated at nodes other than the root node in the tree. Compare with
       the description for COVERCUTS. A value of -1 indicates the number of
@@ -1441,7 +1434,7 @@ cut:treecover (treecovercuts, cut:xprs_treecovercuts, XPRS_TREECOVERCUTS)
 
       Default: -1
 
-cut:treegomory (treegomcuts, cut:xprs_treegomcuts, XPRS_TREEGOMCUTS)
+cut:treegomory (treegomcuts, XPRS_TREEGOMCUTS)
       Branch and Bound: The number of rounds of Gomory cuts generated at nodes
       other than the first node in the tree. Compare with the description for
       GOMCUTS. A value of -1 indicates the number of rounds is determined
@@ -1449,7 +1442,7 @@ cut:treegomory (treegomcuts, cut:xprs_treegomcuts, XPRS_TREEGOMCUTS)
 
       Default: -1
 
-cut:treeqccuts (treeqccuts, qp:xprs_treeqccuts, XPRS_TREEQCCUTS)
+cut:treeqccuts (treeqccuts, XPRS_TREEQCCUTS)
       Branch and Bound: Limit on the number of rounds of outer approximation
       cuts generated for nodes other than the root node, when solving a mixed
       integer quadratic constrained or mixed integer second order conic
@@ -1457,7 +1450,7 @@ cut:treeqccuts (treeqccuts, qp:xprs_treeqccuts, XPRS_TREEQCCUTS)
 
       Default: -1 — determined automatically.
 
-cut:treeselect (treecutselect, cut:xprs_treecutselect, XPRS_TREECUTSELECT)
+cut:treeselect (treecutselect, treecuts, XPRS_TREECUTSELECT)
       A bit-vector (see Section Bit-vector controls) providing detailed
       control of the cuts created during the tree search of a MIP solve. Use
       CUTSELECT to control cuts on the root node.
@@ -1489,59 +1482,6 @@ cut:treeselect (treecutselect, cut:xprs_treecutselect, XPRS_TREECUTSELECT)
       * (18) Strong Chvatal-Gomory cuts.
 
       * (20) Farkas cuts.
-
-cut:xprs_autocutting (XPRS_AUTOCUTTING)
-      Should the Optimizer automatically decide whether to generate cutting
-      planes at local nodes in the tree or not? If the CUTFREQ control is set,
-      no automatic selection will be made and local cutting will be enabled.
-
-      Values (default: -1):
-
-      * (-1) Automatic.
-
-      * (0) Disabled.
-
-      * (1) Enabled.
-
-cut:xprs_mcfcutstrategy (XPRS_MCFCUTSTRATEGY)
-      Level of Multi-Commodity Flow (MCF) cutting planes separation: This
-      specifies how aggressively MCF cuts should be separated. If the
-      separation of MCF cuts is enabled, Xpress will try to detect a MCF
-      network structure in the problem and, if such a structure is identified,
-      it will separate specific cutting planes exploiting the identified
-      network.
-
-      Values (default: -1 ):
-
-      * (-1) Automatic - let the Optimizer decide.
-
-      * (0) Separation of MCF cuts disabled.
-
-      * (1) Moderate separation of MCF cuts.
-
-      * (2) Aggressive separation of MCF cuts.
-
-cut:xprs_sdpcutstrategy (XPRS_SDPCUTSTRATEGY)
-      Level of SDP cutting planes separation: This specifies how aggressively
-      SDP cuts should be separated.
-
-      Values (default: -1 ):
-
-      * (-1) Automatic - let the Optimizer decide.
-
-      * (0) Separation of SDP cuts disabled.
-
-      * (1) Conservative separation of SDP cuts.
-
-      * (2) Moderate separation of SDP cuts.
-
-      * (3) Aggressive separation of SDP cuts.
-
-cut:xslp_cutstrategy (XSLP_CUTSTRATEGY, SLPCUTSTRATEGY)
-      Determines whihc cuts to apply in the MISLP search when the default
-      SLP-in-MIP strategy is used.
-
-      Default: 0
 
 cvt:bigM (cvt:bigm, cvt:mip:bigM, cvt:mip:bigm)
       Default value of big-M for linearization of logical constraints. Not
@@ -1593,9 +1533,18 @@ cvt:mip:eps (cvt:cmp:eps, cmp:eps)
       should be larger or equal to the solver's feasibility tolerance.
       Default: 1e-4.
 
+cvt:mip:intprodbits (intprodbits)
+      Products x*y of variables, when not accepted natively, with an integer
+      factor of finite bounds (and the other factor bounded): exact MIP
+      reformulation by binary expansion of the integer factor with the smaller
+      range if it needs at most this many binary variables. Default 30.
+      Otherwise, and with 0, such products are approximated as
+      ((x+y)^2-x^2-y^2)/2 with piecewise-linear squares, as for continuous
+      factors. Products with a binary factor are always exact.
+
 cvt:multoutcard (multoutcard)
       Up to which (estimated) QP matrix cardinality should a product of 2
-      linear expressions be multiplied out. Default 1e9.
+      linear expressions be multiplied out. Default 1e+09.
 
       Low value can speed up model input, but prone to numerical issues.
 
@@ -1607,6 +1556,20 @@ cvt:names (names, modelnames)
           files was written by AMPL (AMPL: `option [<solver>_]auxfiles rc;`) 
       2 - Read names from AMPL, but create generic names if not provided
       3 - Create generic names.
+
+cvt:nlobj (passnlobj)
+      0*/1: Pass nonlinear objective terms to the solver. When 0, if the
+      solver accepts nonlinear constraints, such a constraint will be created
+      with those, otherwise linearly approximated. With cvt:quadobj=0, ensures
+      the objective is linear.
+
+cvt:pl:domain (pl:domain, pldomain)
+      Max absolute value of the argument of a piecewise-linear expression
+      converted to SOS2 (and further to MIP if SOS2 is not accepted natively).
+      In the MIP reformulation, the solver's feasibility tolerance is
+      amplified by up to this value. Not used by default: then an unbounded
+      argument is an error in the MIP reformulation, and native SOS2 gets
+      exact rays for unbounded sides. Use with care (prefer tight bounds).
 
 cvt:plapprox:domain (plapprox:domain, plapproxdomain)
       For piecewise-linear approximated functions, both arguments and result
@@ -1624,12 +1587,32 @@ cvt:pow2_as_qp (pow2_as_qp, pow2asqp)
 cvt:pre:all
       0/1*: Set to 0 to disable most presolve in the flat converter.
 
+cvt:pre:auxint (auxint)
+      0*/1: Submit as integer the auxiliary result variables whose integrality
+      is implied by their defining constraint (if-then-else, min, max, abs,
+      count, numberof, integer linear and quadratic functions of integer
+      arguments). Default 0: submit them as continuous (MP keeps the
+      integrality for its reformulations). Variables required to have their
+      type by a submitted constraint, e.g., indicator binaries, are not
+      affected.
+
 cvt:pre:boundlogarg (boundlogarg)
       0*/1: Bound logarithm arguments to nonnegative.
 
-cvt:pre:boundsbest (boundsbest)
-      0*/1: Submit best-known variable bounds to the solver. Can inhibit its
-      presolve.
+cvt:pre:boundsbest (boundsbest, bestbounds)
+      0*/1/2/3/4: Submit best-known variable bounds to the solver (can inhibit
+      its presolve):
+
+      0 - no, hard bounds only
+      1 - all variables
+      2 - all but the result variables of smooth nonlinear expressions (exp,
+      log, pow, trigonometric functions, divisions, products), which keep
+      their hard bounds
+      3 - only those variables
+      4 - all variables if the submitted model has no nonlinear or quadratic
+      constraints or objectives, none otherwise (for solvers whose nonlinear
+      relaxations are solved by a barrier method; MP2NL sets it for such
+      subsolvers).
 
       Note: when a variable can be fixed, the stronger bounds are always
       submitted.
@@ -1696,6 +1679,9 @@ cvt:pre:ctx:atanh (ctx:atanh)
 cvt:pre:ctx:call (ctx:call)
       Context propagation for 'Call' expression, see cvt:pre:ctx:abs.
 
+cvt:pre:ctx:ceil (ctx:ceil)
+      Context propagation for 'Ceil' expression, see cvt:pre:ctx:abs.
+
 cvt:pre:ctx:condlineq (ctx:condlineq)
       Context propagation for 'Conditional< AlgebraicConstraint< LinTerms,
       RhsEQ > >' expression, see cvt:pre:ctx:abs.
@@ -1757,11 +1743,17 @@ cvt:pre:ctx:exp (ctx:exp)
 cvt:pre:ctx:expa (ctx:expa)
       Context propagation for 'ExpA' expression, see cvt:pre:ctx:abs.
 
+cvt:pre:ctx:floor (ctx:floor)
+      Context propagation for 'Floor' expression, see cvt:pre:ctx:abs.
+
 cvt:pre:ctx:ifthen (ctx:ifthen)
       Context propagation for 'IfThen' expression, see cvt:pre:ctx:abs.
 
 cvt:pre:ctx:impl (ctx:impl)
       Context propagation for 'Implication' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:intdiv (ctx:intdiv)
+      Context propagation for 'IntDiv' expression, see cvt:pre:ctx:abs.
 
 cvt:pre:ctx:linfn (ctx:linfn)
       Context propagation for 'LinearFunctionalConstraint' expression, see
@@ -1781,6 +1773,12 @@ cvt:pre:ctx:max (ctx:max)
 
 cvt:pre:ctx:min (ctx:min)
       Context propagation for 'Min' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:mod (ctx:mod)
+      Context propagation for 'Mod' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:mul (ctx:mul)
+      Context propagation for 'Mul' expression, see cvt:pre:ctx:abs.
 
 cvt:pre:ctx:not (ctx:not)
       Context propagation for 'Not' expression, see cvt:pre:ctx:abs.
@@ -1807,6 +1805,9 @@ cvt:pre:ctx:quadfn (ctx:quadfn)
       Context propagation for 'QuadraticFunctionalConstraint' expression, see
       cvt:pre:ctx:abs.
 
+cvt:pre:ctx:round (ctx:round)
+      Context propagation for 'Round' expression, see cvt:pre:ctx:abs.
+
 cvt:pre:ctx:sdpdotprod (ctx:sdpdotprod)
       Context propagation for 'SDPDotProd' expression, see cvt:pre:ctx:abs.
 
@@ -1825,6 +1826,27 @@ cvt:pre:ctx:tan (ctx:tan)
 
 cvt:pre:ctx:tanh (ctx:tanh)
       Context propagation for 'Tanh' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:disj2ind (disj2ind)
+      Absorb static disjunctions l || C, where C is a conditional comparison
+      used only there (or an AND of such), into indicator constraints !l ==>
+      C. This is how implications b==1 ==> C are received from AMPL. Bitwise
+      OR of the following values:
+
+      1 - Linear comparisons
+      2 - Quadratic comparisons
+      4 - Both disjuncts absorbable: absorb one into an indicator on the
+      other's result (if-else shape, complementarity)
+      8 - Comparisons x==k awaiting the unary encoding decision for x
+      (absorbed only if no encoding is chosen)
+      16 - Any AND of such comparisons (used only there) in positive context,
+      e.g., a disjunct (C1 && C2) of a multi-term disjunction: indicators on
+      the AND's result variable
+      32 - Static disjunctions l1 || .. || lm || (y1 && .. && yk) with the AND
+      used only there: clauses l1 || .. || lm || yj, without the AND's result
+      variable.
+
+      Requires cvt:pre:all=1. Default 11.
 
 cvt:pre:eqbinary
       0/1*: Preprocess reified equality comparison with a binary variable.
@@ -1889,11 +1911,25 @@ cvt:pre:unnest (cvt:unnest, cvt:pre:inline, cvt:inline)
       Inline nested expressions. Bitwise OR of the following values:
 
       1 - AND/FORALL and OR/EXISTS expressions
-      2 - Linear subexpressions
-      4 - Quadratic subexpressions
-      8 - MIN/MAX.
+      2 - Linear subexpressions in algebraic constraints
+      4 - Linear and quadratic subexpressions in algebraic constraints
+      8 - MIN/MAX
+      16 - Algebraic subexpressions in indicator constraints.
 
-      See also option cvt:dvelim concerning only the input model. Default 15.
+      See also option cvt:dvelim concerning only the input model. Default 31.
+
+cvt:pre:vbnd (vbnd)
+      Comparisons x (cmp) c decided by the domain of x reuse an existing
+      binary instead of a new reified comparison. Bitwise OR of the following
+      values:
+
+      1 - Variable-bound constraints x >= L*b, x <= U*b with binary b (AMPL's
+      encoding of x in {0} union interval[L, U], or the user's), 0 <= c <= L:
+      reuse b or its negation
+      2 - Root disjunctions x <= a || x >= b (e.g., x == 0 || x >= L for x >=
+      0), a < c < b: reuse the comparison x >= b or its negation.
+
+      Default 3.
 
 cvt:qp2passes (cvt:qp2pass, qp2passes, qp2pass)
       0/1*: Parse sums of QP expressions in 2 passes. Usually faster.
@@ -1906,7 +1942,8 @@ cvt:quadcon (passquadcon)
 cvt:quadobj (passquadobj)
       0/1*: Pass quadratic objective terms to the solver. When 0, if the
       solver accepts quadratic constraints, such a constraint will be created
-      with those, otherwise linearly approximated.
+      with those, otherwise linearly approximated. With cvt:nlobj=0, ensures
+      the objective is linear.
 
 cvt:socp (socpmode, socp)
       Second-Order Cone recognition mode:
@@ -1975,118 +2012,7 @@ cvt:uenc:ratio (uenc:ratio)
 
       With uenc:ratio>3, this triggers unary encoding for x.
 
-dat:xslp_defaultiv (XSLP_DEFAULTIV, NLPDEFAULTIV)
-      Default initial value for an SLP variable if none is explicitly given
-
-      Default: 100
-
-diff:xslp_delta_a (XSLP_DELTA_A, SLPDELTA_A)
-      Absolute perturbation of values for calculating numerical derivatives
-
-      Default: 0.001
-
-diff:xslp_delta_infinity (XSLP_DELTA_INFINITY, SLPDELTA_INFINITY)
-      Maximum value for partial derivatives
-
-      Default: 1.0e+15
-
-diff:xslp_delta_r (XSLP_DELTA_R, SLPDELTA_R)
-      Relative perturbation of values for calculating numerical derivatives
-
-      Default: 0.001
-
-diff:xslp_delta_x (XSLP_DELTA_X, SLPDELTA_X)
-      Minimum absolute value of delta coefficients to be retained
-
-      Default: 1.0e-6
-
-diff:xslp_delta_z (XSLP_DELTA_Z, SLPDELTA_Z)
-      Tolerance used when calculating derivatives
-
-      Default: 0.00001
-
-diff:xslp_delta_zero (XSLP_DELTA_ZERO, SLPDELTA_ZERO)
-      Absolute zero acceptance tolerance used when calculating derivatives
-
-      Default: -1.0 (not applied)
-
-diff:xslp_derivatives (XSLP_DERIVATIVES, NLPDERIVATIVES)
-      Bitmap describing the method of calculating derivatives
-
-      Values (default: 1):
-
-      * (0) analytic derivatives where possible
-
-      * (1) avoid embedding numerical derivatives of instantiated functions
-        into analytic derivatives
-
-diff:xslp_hessian (XSLP_HESSIAN, NLPHESSIAN)
-      Second order differentiation mode when using analytical derivatives
-
-      Values (default: -1):
-
-      * (-1,0) automatic selection
-
-      * (1) numerical derivatives (finite difference)
-
-      * (2) symbolic differentiation
-
-      * (3) automatic differentiation
-
-diff:xslp_jacobian (XSLP_JACOBIAN, NLPJACOBIAN)
-      First order differentiation mode when using analytical derivatives
-
-      Values (default: -1):
-
-      * (-1,0) automatic selection
-
-      * (1) numerical derivatives (finite difference)
-
-      * (2) symbolic differentiation
-
-      * (3) automatic differentiation
-
-func:xslp_evaluate (XSLP_EVALUATE, NLPEVALUATE)
-      Evaluation strategy for user functions
-
-      Values (default: 0):
-
-      * (0) use derivatives where possible;
-
-      * (1) always re-evaluate.
-
-func:xslp_funceval (XSLP_FUNCEVAL, NLPFUNCEVAL)
-      Bit map for determining the method of evaluating user functions and
-      their derivatives
-
-      Values (default: 0):
-
-      * (3) evaluate function whenever independent variables change.
-
-      * (4) evaluate function when independent variables change outside
-        tolerances.
-
-      * (5) application of bits 3-4: 0 = functions which do not have a defined
-        re-evaluation mode;1 = all functions.
-
-      * (6) tangential derivatives.
-
-      * (7) forward derivatives
-
-      * (8) application of bits 6-7: 0 = functions which do not have a defined
-        derivative mode;1 = all functions.
-
-func:xslp_threadsafeuserfunc (XSLP_THREADSAFEUSERFUNC, NLPTHREADSAFEUSERFUNC)
-      Defines if user functions are allowed to be called in parallel
-
-      Values (default: 0 (no parallel user function calls)):
-
-      * (0) user function are not thread safe, and will not be called in
-        parallel
-
-      * (1) user functions are thread safe, and may be called in parallel
-
-global:xprs_globalboundingbox (XPRS_GLOBALBOUNDINGBOX)
+global:globalboundingbox (globalboundingbox, XPRS_GLOBALBOUNDINGBOX)
       If a nonlinear problem cannot be solved due to appearing unbounded, it
       can automatically be regularized by the application of a bounding box on
       the variables. If this control is set to a negative value, in a second
@@ -2106,14 +2032,14 @@ global:xprs_globalboundingbox (XPRS_GLOBALBOUNDINGBOX)
         original and auxiliary variables if initial LP and first
         regularization are unbounded.
 
-global:xprs_globallsheurstrategy (XPRS_GLOBALLSHEURSTRATEGY)
+global:globallsheurstrategy (globallsheurstrategy, XPRS_GLOBALLSHEURSTRATEGY)
       When integer-feasible (for MINLP, any solution for NLP) but
       nonlinear-infeasible solutions are encountered within a global solve,
       the integer variables can be fixed and a local solver (as defined by the
       LOCALSOLVER control) can be called on the remaining continuous problem.
       This control defines the frequency and effort of such local solves.
 
-      Values (default: -1 ):
+      Values (default: -1):
 
       * (-1) Automatic selection of the strategy.
 
@@ -2125,14 +2051,14 @@ global:xprs_globallsheurstrategy (XPRS_GLOBALLSHEURSTRATEGY)
 
       * (3) Aggressive strategy.
 
-global:xprs_globalnlpcuts (XPRS_GLOBALNLPCUTS)
+global:globalnlpcuts (globalnlpcuts, XPRS_GLOBALNLPCUTS)
       Limit on the number of rounds of outer approximation and convexification
       cuts generated for the root node, when solving an (MI)NLP to global
       optimality.
 
       Default: -1 — determined automatically.
 
-global:xprs_globalnuminitnlpcuts (XPRS_GLOBALNUMINITNLPCUTS)
+global:globalnuminitnlpcuts (globalnuminitnlpcuts, XPRS_GLOBALNUMINITNLPCUTS)
       Specifies the maximum number of tangent cuts when setting up the initial
       relaxation during a global solve. By default, the algorithm chooses the
       number of cuts automatically. Adding more cuts tightens the problem,
@@ -2141,7 +2067,7 @@ global:xprs_globalnuminitnlpcuts (XPRS_GLOBALNUMINITNLPCUTS)
 
       Default: -1 — determined automatically.
 
-global:xprs_globalpresolveobbt (XPRS_GLOBALPRESOLVEOBBT)
+global:globalpresolveobbt (globalpresolveobbt, XPRS_GLOBALPRESOLVEOBBT)
       Controls the amount of work performed by Optimization-Based Bound
       Tightening (OBBT).
 
@@ -2161,7 +2087,7 @@ global:xprs_globalpresolveobbt (XPRS_GLOBALPRESOLVEOBBT)
       * (3) OBBT is run on all variables. This is most computationally taxing
         as a large number of LPs will be solved.
 
-global:xprs_globalspatialbranchcuttingeffort (XPRS_GLOBALSPATIALBRANCHCUTTINGEFFORT)
+global:globalspatialbranchcuttingeffort (globalspatialbranchcuttingeffort, XPRS_GLOBALSPATIALBRANCHCUTTINGEFFORT)
       Limits the effort that is spent on creating cuts during spatial
       branching.
 
@@ -2174,7 +2100,7 @@ global:xprs_globalspatialbranchcuttingeffort (XPRS_GLOBALSPATIALBRANCHCUTTINGEFF
       * (0<n<1) Relative effort to spend on cutting on branching entities.
         Higher values lead to more cuts.
 
-global:xprs_globalspatialbranchifpreferorig (XPRS_GLOBALSPATIALBRANCHIFPREFERORIG)
+global:globalspatialbranchifpreferorig (globalspatialbranchifpreferorig, XPRS_GLOBALSPATIALBRANCHIFPREFERORIG)
       Whether spatial branchings on original variables should be preferred
       over branching on auxiliary variables that were introduced by the
       reformulation of the global solver.
@@ -2189,7 +2115,7 @@ global:xprs_globalspatialbranchifpreferorig (XPRS_GLOBALSPATIALBRANCHIFPREFERORI
 
       * (2) Always prefer branching on auxiliary variables over originals.
 
-global:xprs_globalspatialbranchpropagationeffort (XPRS_GLOBALSPATIALBRANCHPROPAGATIONEFFORT)
+global:globalspatialbranchpropagationeffort (globalspatialbranchpropagationeffort, XPRS_GLOBALSPATIALBRANCHPROPAGATIONEFFORT)
       Limits the effort that is spent on propagation during spatial branching.
 
       Values (default: -1.0):
@@ -2201,141 +2127,22 @@ global:xprs_globalspatialbranchpropagationeffort (XPRS_GLOBALSPATIALBRANCHPROPAG
       * (n>0) Relative effort to spend on propagating on branching entities.
         Higher values lead to more propagation.
 
-global:xprs_globaltreenlpcuts (XPRS_GLOBALTREENLPCUTS)
+global:globaltreenlpcuts (globaltreenlpcuts, XPRS_GLOBALTREENLPCUTS)
       Limit on the number of rounds of outer approximation and convexification
       cuts generated for each node in the tree, when solving an (MI)NLP to
       global optimality.
 
       Default: -1 — determined automatically.
 
-heur:xprs_heurdepth (XPRS_HEURDEPTH)
-      Branch and Bound: Sets the maximum depth in the tree search at which
-      heuristics will be used to find MIP solutions. It may be worth stopping
-      the heuristic search for solutions after a certain depth in the tree
-      search. A value of 0 signifies that heuristics will not be used. This
-      control no longer has any effect and will be removed from future
-      releases.
-
-      Default: -1
-
-heur:xprs_heurmaxsol (XPRS_HEURMAXSOL)
-      Branch and Bound: This specifies the maximum number of heuristic
-      solutions that will be found in the tree search. This control no longer
-      has any effect and will be removed from future releases.
-
-      Default: -1
-
-heur:xprs_heurnodes (XPRS_HEURNODES)
-      Branch and Bound: This specifies the maximum number of nodes at which
-      heuristics are used in the tree search. This control no longer has any
-      effect and will be removed from future releases.
-
-      Default: -1
-
-heur:xprs_heursearchbackgroundselect (XPRS_HEURSEARCHBACKGROUNDSELECT)
-      Bit-vector control (see Section Bit-vector controls) to select which
-      large neighborhood searches to run in the background (for example in
-      parallel to the root cut loop).
-
-      Values (default: -1):
-
-      * (1) Enable L heuristic.
-
-heur:xprs_heursearchcopycontrols (XPRS_HEURSEARCHCOPYCONTROLS)
-      Select how user-set controls should affect local search heuristics.
-
-      Values (default: 1):
-
-      * (0) Do not copy any user-set controls
-
-      * (1) Automatic - Let the Optimizer decide which user-set controls to
-        copy
-
-      * (2) Copy all user-set controls
-
-heur:xprs_prerootthreads (XPRS_PREROOTTHREADS)
-      Specifies an explicit number of threads that should be used for the
-      Pre-root parallel heuristic phase. By default, this phase will use all
-      threads available to the solver (as governed by the control THREADS).
-
-      Values (default: -1):
-
-      * (-1) Use all available threads.
-
-      * (0) Disable pre-root parallel heuristics.
-
-      * (n>0) Use the specified number of threads, superseding the value of
-        THREADS
-
-heur:xprs_usersolheuristic (XPRS_USERSOLHEURISTIC)
-      Determines how much effort to put into running a local search heuristic
-      to find a feasible integer solution from a partial or infeasible user
-      solution.
-
-      Values (default: -1):
-
-      * (-1) Automatically determined.
-
-      * (0) Search heuristic disabled.
-
-      * (1) Light effort.
-
-      * (2) Moderate effort.
-
-      * (3) High effort.
-
-heur:xslp_findiv (XSLP_FINDIV, NLPFINDIV)
-      Option for running a heuristic to find a feasible initial point
-
-      Values (default: -1):
-
-      * (-1) Automatic (default).
-
-      * (0) Disable the heuristic.
-
-      * (1) Enable the heuristic.
-
-heur:xslp_gridheurselect (XSLP_GRIDHEURSELECT, SLPGRIDHEURSELECT)
-      Bit map selectin which heuristics to run if the problem has variable
-      with an integer delta
-
-      Values (default: 6):
-
-      * (0) Enumeration: try all combinations.
-
-      * (1) Simple search heuristics.
-
-      * (2) Simulated annealing.
-
-heur:xslp_heurstrategy (XSLP_HEURSTRATEGY, SLPHEURSTRATEGY)
-      Branch and Bound: This specifies the MINLP heuristic strategy. On some
-      problems it is worth trying more comprehensive heuristic strategies by
-      setting HEURSTRATEGY to 2 or 3.
-
-      Values (default: -1):
-
-      * (-1) Automatic selection of heuristic strategy (depending on
-        XPRS_HEUREMPHASIS).
-
-      * (0) No heuristics.
-
-      * (1) Basic heuristic strategy.
-
-      * (2) Enhanced heuristic strategy.
-
-      * (3) Extensive heuristic strategy.
-
-      * (4) Run all heuristics without effort limits.
-
 iis:find (iisfind, iis, alg:iisfind)
       Whether to find and export an IIS. Default = 0 (don't export).
 
-iis:log (iislog, inf:xprs_iislog, XPRS_IISLOG)
+iis:log (iislog, XPRS_IISLOG)
       Selects how much information should be printed during the IIS procedure.
       Please refer to Appendix The IIS Log for a more detailed description of
       the IIS logging format.
 
-      Values (default: 1, a progress log is printed ):
+      Values (default: 1, a progress log is printed):
 
       * (0) The IIS procedure does not produce any output.
 
@@ -2347,7 +2154,7 @@ iis:log (iislog, inf:xprs_iislog, XPRS_IISLOG)
         subproblem solves in the deletion filter. This setting is recommended
         only for debugging as it may produce a lot of output.
 
-iis:max (iismax, maxiis, inf:xprs_maxiis, XPRS_MAXIIS)
+iis:max (iismax, maxiis, XPRS_MAXIIS)
       This function controls the number of Irreducible Infeasible Sets to be
       found using the XPRSiisall (IIS-a).
 
@@ -2359,7 +2166,7 @@ iis:max (iismax, maxiis, inf:xprs_maxiis, XPRS_MAXIIS)
 
       * (n>0) Search for the first n IIS.
 
-iis:ops (iisops, inf:xprs_iisops, XPRS_IISOPS)
+iis:ops (iisops, XPRS_IISOPS)
       Selects which part of the restrictions (bounds, constraints, entities)
       should always be kept in an IIS. This is useful if certain types of
       restrictions cannot be violated, thus they are known not to be the cause
@@ -2368,7 +2175,7 @@ iis:ops (iisops, inf:xprs_iisops, XPRS_IISOPS)
       Bit-vector controls) has an effect only on the deletion filter of the
       IIS procedure.
 
-      Values (default: 0, all restrictions are valid candidates for removal ):
+      Values (default: 0, all restrictions are valid candidates for removal):
 
       * (0) Keep binary integralities.
 
@@ -2394,14 +2201,14 @@ iis:ops (iisops, inf:xprs_iisops, XPRS_IISOPS)
 
       * (11) Keep all constraints.
 
-inf:xprs_repairinfeastimelimit (XPRS_REPAIRINFEASTIMELIMIT)
+iis:repairinfeastimelimit (repairinfeastimelimit, XPRS_REPAIRINFEASTIMELIMIT)
       Overall time limit for the repairinfeas tool
 
       Values (default: 1e+20):
 
       * (>0) Stop repairinfeas search after the given number of seconds.
 
-lim:bariter (bar:iterlim, bariterlim, bar:xprs_bariterlimit, XPRS_BARITERLIMIT)
+lim:bariter (bar:iterlim, bariterlim, bariterlimit, XPRS_BARITERLIMIT)
       Newton barrier: The maximum number of iterations. While the simplex
       method usually performs a number of iterations which is proportional to
       the number of constraints (rows) in a problem, the barrier method
@@ -2413,14 +2220,14 @@ lim:bariter (bar:iterlim, bariterlim, bar:xprs_bariterlimit, XPRS_BARITERLIMIT)
 
       Default: 500
 
-lim:crossoveriter (bar:crossoveriterlim, crossoveriterlim, crossoveritlim, bar:xprs_crossoveriterlimit, XPRS_CROSSOVERITERLIMIT)
+lim:crossoveriter (bar:crossoveriterlim, crossoveriterlim, crossoveritlim, crossoveriterlimit, XPRS_CROSSOVERITERLIMIT)
       Newton barrier and hybrid gradient: The maximum number of iterations
       that will be performed in the crossover procedure before the
       optimization process terminates.
 
       Default: 2147483647
 
-lim:heurdiveiterlimit (heurdepth, mip:heurdiveiterlimit, heur:xprs_heurdiveiterlimit, XPRS_HEURDIVEITERLIMIT)
+lim:heurdiveiterlimit (mip:heurdiveiterlimit, heurdiveiterlimit, XPRS_HEURDIVEITERLIMIT)
       Branch and Bound: Simplex iteration limit for reoptimizing during the
       diving heuristic.
 
@@ -2434,7 +2241,13 @@ lim:heurdiveiterlimit (heurdepth, mip:heurdiveiterlimit, heur:xprs_heurdiveiterl
         size. The absolute value is used as a multiplier on the automatic
         selection.
 
-lim:iter (lpiterlimit, iterlim, lp:xprs_lpiterlimit, XPRS_LPITERLIMIT)
+lim:iotimeout (iotimeout, XPRS_IOTIMEOUT)
+      The maximum number of seconds to wait for an I/O operation before it is
+      cancelled.
+
+      Default: 30
+
+lim:iter (iterlim, lpiterlimit, XPRS_LPITERLIMIT)
       The maximum number of iterations that will be performed by primal
       simplex or dual simplex before the optimization process terminates. For
       MIP problems, this is the maximum total number of iterations over all
@@ -2442,146 +2255,13 @@ lim:iter (lpiterlimit, iterlim, lp:xprs_lpiterlimit, XPRS_LPITERLIMIT)
 
       Default: 2147483647
 
-lim:lprefineiter (lprefineiterlimit, lp:xprs_lprefineiterlimit, XPRS_LPREFINEITERLIMIT)
+lim:lprefineiter (lprefineiterlimit, lpref_itlim, XPRS_LPREFINEITERLIMIT)
       This specifies the simplex iteration limit the solution refiner can
       spend in attempting to increase the accuracy of an LP solution.
 
       Default: -1 — determined automatically.
 
-lim:maxcuttime (maxcuttime, cut:xprs_maxcuttime, XPRS_MAXCUTTIME)
-      The maximum amount of time allowed for generation of cutting planes and
-      reoptimization. The limit is checked during generation and no further
-      cuts are added once this limit has been exceeded.
-
-      Values (default: 0):
-
-      * (0) No time limit.
-
-      * (>0) Stop cut generation after the given number of seconds.
-
-lim:mem (memlimit, maxmemoryhard, tech:xprs_maxmemoryhard, XPRS_MAXMEMORYHARD)
-      This control sets the maximum amount of memory in megabytes the
-      optimizer should allocate. If this limit is exceeded, the solve will
-      terminate. This control is designed to make the optimizer stop in a
-      controlled manner, so that the problem object is valid once termination
-      occurs. The solve state will be set to incomplete. This is different to
-      an out of memory condition in which case the optimizer returns an error.
-      The optimizer may still allocate memory once the limit is exceeded to be
-      able to finsish the operations and stop in a controlled manner. When
-      RESOURCESTRATEGY is enabled, the control also has the same effect as
-      MAXMEMORYSOFT and will cause the optimizer to try preserving memory when
-      possible.
-
-      Default: 0 (no limit)
-
-lim:mipsol (maxmipsol, lim:xprs_maxmipsol, XPRS_MAXMIPSOL)
-      Branch and Bound: This specifies a limit on the number of integer
-      solutions to be found by the Optimizer. It is possible that during
-      optimization the Optimizer will find the same objective solution from
-      different nodes. However, MAXMIPSOL refers to the total number of
-      integer solutions found, and not necessarily the number of distinct
-      solutions.
-
-      Default: 0
-
-lim:nodes (nodelim, nodelimit, maxnode, mip:xprs_maxnode, XPRS_MAXNODE)
-      Branch and Bound: The maximum number of nodes that will be explored.
-
-      Default: 2147483647
-
-lim:prerooteffort (prerooteffort, mip:prerooteffort, heur:xprs_prerooteffort, XPRS_PREROOTEFFORT)
-      Dial for the work spent during the Pre-root parallel heuristic phase. A
-      positive value sets a suitable work limit that is dependent on
-      problem-characteristics. Changing the value up/or down dials the work
-      spent in this phase up or down. This control also enables/disables
-      Pre-root parallel heuristics.
-
-      Values (default: -1):
-
-      * (-2) Enable Pre-root parallel heuristics without a specific work limit
-        for this phase. The phase will terminate if a different limit is hit,
-        or if it runs out of heuristic work to do.
-
-      * (-1) Enablement of Pre-root parallel heuristics is subject to
-        HEUREMPHASIS.
-
-      * (0) Disable Pre-root parallel heuristics.
-
-      * (x>0) Enable Pre-root parallel heuristics with a work limit dependent
-        on problem characteristics, using x as a factor to dial this work
-        limit up or down.
-
-lim:prerootwork (prerootworklim, prerootworklimit, heur:xprs_prerootworklimit, XPRS_PREROOTWORKLIMIT)
-      Set an explicit work limit in work units for the Pre-root parallel
-      heuristic phase. Any positive value also enables this phase and runs it
-      until the PREROOTWORKLIMIT units of work are hit.
-
-      Values (default: -1):
-
-      * (-1) No explicit work limit for the Pre-root parallel heuristic phase.
-        If enabled, the work limit for this phase is controlled via
-        PREROOTEFFORT.
-
-      * (0) Disable Pre-root parallel heuristics.
-
-      * (x>0) Enable Pre-root parallel heuristics with an explicit work limit
-        of x work units. If set, this work limit has precedence over any work
-        limit set by PREROOTEFFORT.
-
-lim:softmem (softmemlimit, maxmemorysoft, tech:xprs_maxmemorysoft, XPRS_MAXMEMORYSOFT)
-      When RESOURCESTRATEGY is enabled, this control sets the maximum amount
-      of memory in megabytes the optimizer targets to allocate. This may
-      change the solving path, but will not cause the solve to terminate
-      early. To set a hard version of the same, please set MAXMEMORYHARD.
-
-      Default: 0 (no limit)
-
-lim:soltime (soltimelim, soltimelimit, lim:xprs_soltimelimit, XPRS_SOLTIMELIMIT)
-      The maximum time in seconds that the Optimizer will run a MIP solve
-      before it terminates, given that a solution has been found. As long as
-      no solution has been found, this control will have no effect.
-
-      Values (default: 1e+20):
-
-      * (>0) If an integer solution has been found, stop MIP search after the
-        given number of seconds, otherwise continue until an integer solution
-        is finally found.
-
-lim:stalltime (maxstalltime, lim:xprs_maxstalltime, XPRS_MAXSTALLTIME)
-      The maximum time in seconds that the Optimizer will continue to search
-      for improving solution after finding a new incumbent.
-
-      Values (default: 0):
-
-      * (0) No stall time limit.
-
-      * (>0) If an integer solution has been found, stop MIP search after the
-        given number of seconds without a new incumbent. No effect as long as
-        no solution was found.
-
-lim:time (timelim, timelimit, lim:xprs_timelimit, XPRS_TIMELIMIT)
-      The maximum time in seconds that the Optimizer will run before it
-      terminates, including the problem setup time and solution time. For MIP
-      problems, this is the total time taken to solve all nodes.
-
-      Values (default: 1e+20):
-
-      * (>0) Stop LP or MIP search after the given number of seconds.
-
-lim:work (worklim, worklimit, tech:xprs_worklimit, XPRS_WORKLIMIT)
-      The maximum work (measured in work units) that the Optimizer will run
-      before it terminates. WORK is accumulated during the search and ever
-      increasing. In contrast to TIME, WORK is independent of the hardware and
-      platform on which the search is conducted. The WORKLIMIT serves as a
-      deterministic stopping criterion. When it is reached, it leaves the
-      optimizer in a reproducible state.
-
-      Values (default: 1e+20):
-
-      * (>0) Stop LP or MIP search when the given number of work units is
-        reached.
-
-lim:xprs_maxchecksonmaxcuttime (XPRS_MAXCHECKSONMAXCUTTIME)
+lim:maxchecksonmaxcuttime (maxchecksonmaxcuttime, XPRS_MAXCHECKSONMAXCUTTIME)
       This control is intended for use where optimization runs that are
       terminated using the MAXCUTTIME control are required to be reproduced
       exactly. This control is necessary because of the inherent difficulty in
@@ -2607,7 +2287,7 @@ lim:xprs_maxchecksonmaxcuttime (XPRS_MAXCHECKSONMAXCUTTIME)
       * (n>0) The number of times the optimizer should check the MAXCUTTIME
         criterion before triggering a termination.
 
-lim:xprs_maxchecksonmaxtime (XPRS_MAXCHECKSONMAXTIME)
+lim:maxchecksonmaxtime (maxchecksonmaxtime, XPRS_MAXCHECKSONMAXTIME)
       This control is intended for use where optimization runs that are
       terminated using the TIMELIMIT (or the deprecated MAXTIME) control are
       required to be reproduced exactly. This control is necessary because of
@@ -2633,84 +2313,192 @@ lim:xprs_maxchecksonmaxtime (XPRS_MAXCHECKSONMAXTIME)
       * (n>0) The number of times the optimizer should check the TIMELIMIT (or
         MAXTIME) criterion before triggering a termination.
 
-lim:xslp_maxtime (XSLP_MAXTIME, NLPMAXTIME)
-      The maximum time in seconds that the SLP optimization will run before it
-      terminates
+lim:maxcuttime (maxcuttime, XPRS_MAXCUTTIME)
+      The maximum amount of time allowed for generation of cutting planes and
+      reoptimization. The limit is checked during generation and no further
+      cuts are added once this limit has been exceeded.
+
+      Values (default: 0):
+
+      * (0) No time limit.
+
+      * (>0) Stop cut generation after the given number of seconds.
+
+lim:maxtreefilesize (globalfilemax, tech:globalfilemax, maxtreefilesize, XPRS_MAXTREEFILESIZE)
+      The maximum size, in megabytes, to which the tree file may grow, or 0
+      for no limit. When the tree file reaches this limit, a second tree file
+      will be created. Useful if you are using a filesystem that puts a
+      maximum limit on the size of a file.
 
       Default: 0
 
-log:xprs_maxpagelines (XPRS_MAXPAGELINES)
-      Number of lines between page breaks in printable output.
+lim:mem (memlimit, maxmemoryhard, XPRS_MAXMEMORYHARD)
+      This control sets the maximum amount of memory in megabytes the
+      optimizer should allocate. If this limit is exceeded, the solve will
+      terminate. This control is designed to make the optimizer stop in a
+      controlled manner, so that the problem object is valid once termination
+      occurs. The solve state will be set to incomplete. This is different to
+      an out of memory condition in which case the optimizer returns an error.
+      The optimizer may still allocate memory once the limit is exceeded to be
+      able to finsish the operations and stop in a controlled manner. When
+      RESOURCESTRATEGY is enabled, the control also has the same effect as
+      MAXMEMORYSOFT and will cause the optimizer to try preserving memory when
+      possible.
 
-      Default: 23
+      Default: 0 (no limit)
 
-log:xprs_outputcontrols (XPRS_OUTPUTCONTROLS)
-      This control toggles the printing of all control settings at the
-      beginning of the search. This includes the printing of controls that
-      have been explicitly assigned to their default value. All unset controls
-      are omitted as they keep their default value.
+lim:mipsol (maxmipsol, XPRS_MAXMIPSOL)
+      Branch and Bound: This specifies a limit on the number of integer
+      solutions to be found by the Optimizer. It is possible that during
+      optimization the Optimizer will find the same objective solution from
+      different nodes. However, MAXMIPSOL refers to the total number of
+      integer solutions found, and not necessarily the number of distinct
+      solutions.
 
-      Values (default: 1):
+      Default: 0
 
-      * (0) Turn off printing of user-specified control settings.
+lim:nodes (nodelim, nodelimit, maxnode, XPRS_MAXNODE)
+      Branch and Bound: The maximum number of nodes that will be explored.
 
-      * (1) Print controls.
+      Default: 2147483647
 
-log:xprs_outputlog (XPRS_OUTPUTLOG)
-      This controls the level of output produced by the Optimizer during
-      optimization. In the Console Optimizer, OUTPUTLOG controls which
-      messages are sent to the screen (stdout). When using the Optimizer
-      library, no output is sent to the screen. If the user wishes output to
-      be displayed, they must define a callback function and print messages to
-      the screen themselves. In this case, OUTPUTLOG controls which messages
-      are sent to the user output callback.
-
-      Values (default: 1):
-
-      * (0) Turn all output off. Use XPRS_OUTPUTLOG_NO_OUTPUT from xprs.h.
-
-      * (1) Print all messages. Use XPRS_OUTPUTLOG_FULL_OUTPUT from xprs.h.
-
-      * (3) Print error and warning messages. Use
-        XPRS_OUTPUTLOG_ERRORS_AND_WARNINGS from xprs.h.
-
-      * (4) Print error messages only. Use XPRS_OUTPUTLOG_ERRORS from xprs.h.
-
-log:xslp_echoxprsmessages (XSLP_ECHOXPRSMESSAGES)
-      Controls if the XSLP message callback should relay messages from the
-      XPRS library.
+lim:prerooteffort (mip:prerooteffort, prerooteffort, XPRS_PREROOTEFFORT)
+      Dial for the work spent during the Pre-root parallel heuristic phase. A
+      positive value sets a suitable work limit that is dependent on
+      problem-characteristics. Changing the value up/or down dials the work
+      spent in this phase up or down. This control also enables/disables
+      Pre-root parallel heuristics.
 
       Values (default: -1):
 
-      * (-1) automatic: if an XSLP message callback is not set, then messages
-        from the nonlinear solver are sent to the XPRS message callback; if an
-        XSLP message callback is set, then messages are not echoed.
+      * (-2) Enable Pre-root parallel heuristics without a specific work limit
+        for this phase. The phase will terminate if a different limit is hit,
+        or if it runs out of heuristic work to do.
 
-      * (0) the XPRS and XSLP message callbacks are treated as independent.
+      * (-1) Enablement of Pre-root parallel heuristics is subject to
+        HEUREMPHASIS.
 
-      * (1) messages from the XPRS message callback are sent to the XSLP
-        message callback.
+      * (0) Disable Pre-root parallel heuristics.
 
-      * (2) messages from the nonlinear solver are sent to the XPRS message
-        callback.
+      * (x>0) Enable Pre-root parallel heuristics with a work limit dependent
+        on problem characteristics, using x as a factor to dial this work
+        limit up or down.
 
-log:xslp_primalintegralalpha (XSLP_PRIMALINTEGRALALPHA, NLPPRIMALINTEGRALALPHA)
-      Decay term for primal integral computation
+lim:prerootwork (prerootworklim, prerootworklimit, XPRS_PREROOTWORKLIMIT)
+      Set an explicit work limit in work units for the Pre-root parallel
+      heuristic phase. Any positive value also enables this phase and runs it
+      until the PREROOTWORKLIMIT units of work are hit.
 
-      Default: 0
+      Values (default: -1):
 
-log:xslp_primalintegralref (XSLP_PRIMALINTEGRALREF, NLPPRIMALINTEGRALREF)
-      Reference solution value to take into account when calculating the
-      primal integral
+      * (-1) No explicit work limit for the Pre-root parallel heuristic phase.
+        If enabled, the work limit for this phase is controlled via
+        PREROOTEFFORT.
 
-      Default: XPRS_PLUSINFINITY
+      * (0) Disable Pre-root parallel heuristics.
 
-lp:bigm (bigm, bigmpenalty, lp:xprs_bigm, XPRS_BIGM)
+      * (x>0) Enable Pre-root parallel heuristics with an explicit work limit
+        of x work units. If set, this work limit has precedence over any work
+        limit set by PREROOTEFFORT.
+
+lim:softmem (softmemlimit, maxmemorysoft, maxmemory, XPRS_MAXMEMORYSOFT)
+      When RESOURCESTRATEGY is enabled, this control sets the maximum amount
+      of memory in megabytes the optimizer targets to allocate. This may
+      change the solving path, but will not cause the solve to terminate
+      early. To set a hard version of the same, please set MAXMEMORYHARD.
+
+      Default: 0 (no limit)
+
+lim:soltime (soltimelim, soltimelimit, XPRS_SOLTIMELIMIT)
+      The maximum time in seconds that the Optimizer will run a MIP solve
+      before it terminates, given that a solution has been found. As long as
+      no solution has been found, this control will have no effect.
+
+      Values (default: 1e+20):
+
+      * (>0) If an integer solution has been found, stop MIP search after the
+        given number of seconds, otherwise continue until an integer solution
+        is finally found.
+
+lim:stalltime (maxstalltime, XPRS_MAXSTALLTIME)
+      The maximum time in seconds that the Optimizer will continue to search
+      for improving solution after finding a new incumbent.
+
+      Values (default: 0):
+
+      * (0) No stall time limit.
+
+      * (>0) If an integer solution has been found, stop MIP search after the
+        given number of seconds without a new incumbent. No effect as long as
+        no solution was found.
+
+lim:time (timelim, timelimit, XPRS_TIMELIMIT)
+      The maximum time in seconds that the Optimizer will run before it
+      terminates, including the problem setup time and solution time. For MIP
+      problems, this is the total time taken to solve all nodes.
+
+      Values (default: 1e+20):
+
+      * (>0) Stop LP or MIP search after the given number of seconds.
+
+lim:treememorylimit (treememorylimit, treememlimit, XPRS_TREEMEMORYLIMIT)
+      A soft limit, in megabytes, for the amount of memory to use in storing
+      the branch and bound search tree. This doesn't include memory used for
+      presolve, heuristics, solving the LP relaxation, etc. When set to 0 (the
+      default), the optimizer will calculate a limit automatically based on
+      the amount of free physical memory detected in the machine. When the
+      memory used by the branch and bound tree exceeds this limit, the
+      optimizer will try to reduce the memory usage by writing lower-rated
+      sections of the tree to a file called the 'tree file'. Though the solve
+      can continue if it cannot bring the tree memory usage below the
+      specified limit, performance will be inhibited and a message will be
+      printed to the log.
+
+      Default: 0 (calculate limit automatically)
+
+lim:work (worklim, worklimit, XPRS_WORKLIMIT)
+      The maximum work (measured in work units) that the Optimizer will run
+      before it terminates. WORK is accumulated during the search and ever
+      increasing. In contrast to TIME, WORK is independent of the hardware and
+      platform on which the search is conducted. The WORKLIMIT serves as a
+      deterministic stopping criterion. When it is reached, it leaves the
+      optimizer in a reproducible state.
+
+      Values (default: 1e+20):
+
+      * (>0) Stop LP or MIP search when the given number of work units is
+        reached.
+
+lp:algafternetwork (algafternetwork, XPRS_ALGAFTERNETWORK)
+      The algorithm to be used for the clean up step after the network simplex
+      solver.
+
+      Values (default: -1):
+
+      * (-1) Automatically determined.
+
+      * (2) Dual simplex.
+
+      * (3) Primal simplex.
+
+lp:autoperturb (autoperturb, XPRS_AUTOPERTURB)
+      Simplex: This indicates whether automatic perturbation is performed. If
+      this is set to 1, the problem will be perturbed whenever the simplex
+      method encounters an excessive number of degenerate pivot steps, thus
+      preventing the Optimizer being hindered by degeneracies.
+
+      Values (default: 1):
+
+      * (0) No perturbation performed.
+
+      * (1) Automatic perturbation is performed.
+
+lp:bigm (bigmpenalty, bigm, XPRS_BIGM)
       The infeasibility penalty used if the 'Big M' method is implemented.
 
       Default: Dependent on the matrix characteristics.
 
-lp:bigmmethod (bigmmethod, lp:xprs_bigmmethod, XPRS_BIGMMETHOD)
+lp:bigmmethod (bigmmethod, XPRS_BIGMMETHOD)
       Simplex: This specifies whether to use the 'Big M' method, or the
       standard phase I (achieving feasibility) and phase II (achieving
       optimality). In the 'Big M' method, the objective coefficients of the
@@ -2725,7 +2513,16 @@ lp:bigmmethod (bigmmethod, lp:xprs_bigmmethod, XPRS_BIGMMETHOD)
 
       * (1) If 'Big M' method to be used.
 
-lp:crash (crash, lp:xprs_crash, XPRS_CRASH)
+lp:concurrentthreads (concurrentthreads, XPRS_CONCURRENTTHREADS)
+      Determines the number of threads used by the concurrent solver.
+
+      Values (default: -1):
+
+      * (-1) Determined automatically
+
+      * (>0) Number of threads to use.
+
+lp:crash (crash, XPRS_CRASH)
       Simplex: This determines the type of crash used when the algorithm
       begins. During the crash procedure, an initial basis is determined which
       is as close to feasibility and triangularity as possible. A good choice
@@ -2734,6 +2531,8 @@ lp:crash (crash, lp:xprs_crash, XPRS_CRASH)
       proportionally to their time-consumption.
 
       Values (default: 2):
+
+      For the primal simplex algorithm the following choices are available:
 
       * (0) Turns off all crash procedures.
 
@@ -2748,6 +2547,10 @@ lp:crash (crash, lp:xprs_crash, XPRS_CRASH)
 
       * (n>10) As for value 4 but performing at most n - 10 passes.
 
+      For the dual simplex algorithm, the crash control is interpreted as a
+      bit-vector (see Section Bit-vector controls) for adjusting the behavior
+      of the procedure:
+
       * (Bit 0) Perform standard crash.
 
       * (Bit 1) Perform additional numerical checks during crash.
@@ -2759,7 +2562,7 @@ lp:crash (crash, lp:xprs_crash, XPRS_CRASH)
       * (Bit 4) Force crash, i.e., consider all suitable columns/rows as
         candidates for crash.
 
-lp:dualforceparallel (forceparalleldual, dualforceparallel, lp:xprs_forceparalleldual, XPRS_FORCEPARALLELDUAL)
+lp:dualforceparallel (dualforceparallel, forceparalleldual, XPRS_FORCEPARALLELDUAL)
       Dual simplex: specifies whether the dual simplex solver should always
       use the parallel simplex algorithm. By default, when using a single
       thread, the dual simplex solver will execute a dedicated sequential
@@ -2772,7 +2575,7 @@ lp:dualforceparallel (forceparalleldual, dualforceparallel, lp:xprs_forceparalle
       * (1) Enabled. Force the dual simplex solver to use the parallel
         algorithm.
 
-lp:dualgradient (dualgradient, lp:xprs_dualgradient, XPRS_DUALGRADIENT)
+lp:dualgradient (dualgradient, XPRS_DUALGRADIENT)
       Simplex: This specifies the dual simplex pricing method.
 
       Values (default: -1):
@@ -2787,7 +2590,7 @@ lp:dualgradient (dualgradient, lp:xprs_dualgradient, XPRS_DUALGRADIENT)
 
       * (3) Sparse Devex.
 
-lp:dualize (dualize, lp:xprs_dualize, XPRS_DUALIZE)
+lp:dualize (dualize, XPRS_DUALIZE)
       For a linear problem or the initial linear relaxation of a MIP,
       determines whether to form and solve the dual problem.
 
@@ -2799,7 +2602,7 @@ lp:dualize (dualize, lp:xprs_dualize, XPRS_DUALIZE)
 
       * (1) Solve the dualized problem.
 
-lp:dualizeops (dualizeops, lp:xprs_dualizeops, XPRS_DUALIZEOPS)
+lp:dualizeops (dualizeops, XPRS_DUALIZEOPS)
       Bit-vector control (see Section Bit-vector controls) for adjusting the
       behavior when a problem is dualized.
 
@@ -2809,7 +2612,7 @@ lp:dualizeops (dualizeops, lp:xprs_dualizeops, XPRS_DUALIZEOPS)
         the original problem then primal simplex will be run on the dualized
         problem, and simiarly if primal simplex is selected.
 
-lp:dualperturb (dualperturb, lp:xprs_dualperturb, XPRS_DUALPERTURB)
+lp:dualperturb (dualperturb, XPRS_DUALPERTURB)
       The factor by which the problem will be perturbed prior to optimization
       by dual simplex. A value of 0.0 results in no perturbation prior to
       optimization. Note the interconnection to the AUTOPERTURB control. If
@@ -2820,7 +2623,7 @@ lp:dualperturb (dualperturb, lp:xprs_dualperturb, XPRS_DUALPERTURB)
 
       Default: -1 — determined automatically.
 
-lp:dualstrategy (dualstrategy, lp:xprs_dualstrategy, XPRS_DUALSTRATEGY)
+lp:dualstrategy (dualstrategy, XPRS_DUALSTRATEGY)
       This bit-vector control (see Section Bit-vector controls) specifies the
       dual simplex strategy.
 
@@ -2840,14 +2643,14 @@ lp:dualstrategy (dualstrategy, lp:xprs_dualstrategy, XPRS_DUALSTRATEGY)
 
       * (5) Keep using dual simplex even when it's numerically unstable.
 
-lp:dualthreads (dualthreads, tech:xprs_dualthreads, XPRS_DUALTHREADS)
+lp:dualthreads (dualthreads, XPRS_DUALTHREADS)
       Determines the maximum number of threads that dual simplex is allowed to
       use. If DUALTHREADS is set to the default value (-1), the THREADS
       control will determine the number of threads used.
 
       Default: -1 (determined by the THREADS control)
 
-lp:etatol (etatol, sim:xprs_etatol, XPRS_ETATOL)
+lp:etatol (etatol, XPRS_ETATOL)
       Tolerance on eta elements. During each iteration, the basis inverse is
       premultiplied by an elementary matrix, which is the identity except for
       one column - the eta vector. Elements of eta vectors whose absolute
@@ -2855,7 +2658,7 @@ lp:etatol (etatol, sim:xprs_etatol, XPRS_ETATOL)
 
       Default: 1.0E-13
 
-lp:folding (lpfolding, alg:lpfolding, lp:xprs_lpfolding, XPRS_LPFOLDING)
+lp:folding (alg:lpfolding, lpfolding, XPRS_LPFOLDING)
       Simplex and barrier: whether to fold an LP problem before solving it.
 
       Values (default: -1):
@@ -2867,7 +2670,7 @@ lp:folding (lpfolding, alg:lpfolding, lp:xprs_lpfolding, XPRS_LPFOLDING)
       * (1) Enable LP folding. Attempt to fold all LP problems and MIP initial
         relaxations.
 
-lp:invertfreq (invertfreq, sim:xprs_invertfreq, XPRS_INVERTFREQ)
+lp:invertfreq (invertfreq, XPRS_INVERTFREQ)
       Simplex: The frequency with which the basis will be inverted. The basis
       is maintained in a factorized form and on most simplex iterations it is
       incrementally updated to reflect the step just taken. This is
@@ -2879,13 +2682,13 @@ lp:invertfreq (invertfreq, sim:xprs_invertfreq, XPRS_INVERTFREQ)
 
       Default: -1 — the frequency is determined automatically.
 
-lp:invertmin (invertmin, sim:xprs_invertmin, XPRS_INVERTMIN)
+lp:invertmin (invertmin, XPRS_INVERTMIN)
       Simplex: The minimum number of iterations between full inversions of the
       basis matrix. See the description of INVERTFREQ for details.
 
       Default: 3
 
-lp:keepbasis (keepbasis, lp:xprs_keepbasis, XPRS_KEEPBASIS)
+lp:keepbasis (keepbasis, XPRS_KEEPBASIS)
       Simplex: This determines whether the basis should be kept when
       reoptimizing a problem. The choice is between using a crash basis
       created at the beginning of simplex or using a basis from a previous
@@ -2910,7 +2713,7 @@ lp:keepbasis (keepbasis, lp:xprs_keepbasis, XPRS_KEEPBASIS)
       * (3) Use the previous basis only if it is valid and numerically stable
         in the current problem.
 
-lp:keepnrows (keepnrows, prob:xprs_keepnrows, XPRS_KEEPNROWS)
+lp:keepnrows (keepnrows, XPRS_KEEPNROWS)
       How nonbinding rows should be handled by the MPS reader.
 
       Values (default: -1):
@@ -2922,7 +2725,7 @@ lp:keepnrows (keepnrows, prob:xprs_keepnrows, XPRS_KEEPNROWS)
 
       * (1) Keep N type rows.
 
-lp:log (lplog, lp:xprs_lplog, XPRS_LPLOG)
+lp:log (lplog, XPRS_LPLOG)
       Simplex: The frequency at which the simplex log is printed.
 
       Values (default: 100):
@@ -2933,7 +2736,23 @@ lp:log (lplog, lp:xprs_lplog, XPRS_LPLOG)
 
       * (n>0) Summary output every n iterations.
 
-lp:netstalllimit (netstalllimit, sim:xprs_netstalllimit, XPRS_NETSTALLLIMIT)
+lp:lplogdelay (lplogdelay, XPRS_LPLOGDELAY)
+      Time interval between two LP log lines.
+
+      Default: 1.0
+
+lp:lplogstyle (lplogstyle, XPRS_LPLOGSTYLE)
+      Simplex: The style of the simplex log.
+
+      Values (default: 1):
+
+      * (0) Simplex log is printed based on simplex iteration count, at a
+        fixed frequency as specified by the LPLOG control.
+
+      * (1) Simplex log is printed based on an estimation of elapsed time,
+        determined by an internal deterministic timer.
+
+lp:netstalllimit (netstalllimit, XPRS_NETSTALLLIMIT)
       Limit the number of degenerate pivots of the network simplex algorithm,
       before switching to either primal or dual simplex, depending on
       ALGAFTERNETWORK.
@@ -2946,12 +2765,12 @@ lp:netstalllimit (netstalllimit, sim:xprs_netstalllimit, XPRS_NETSTALLLIMIT)
 
       * (n>0) Limit to n network simplex iterations.
 
-lp:optimalitytoltarget (optimalitytoltarget, sol:xprs_optimalitytoltarget, XPRS_OPTIMALITYTOLTARGET)
+lp:optimalitytoltarget (optimalitytoltarget, opttol_target, XPRS_OPTIMALITYTOLTARGET)
       This specifies the target optimality tolerance for the solution refiner.
 
       Default: 0 — use the value specified by OPTIMALITYTOL.
 
-lp:opttol (lp:optimalitytol, opttol, optimalitytol, tol:xprs_optimalitytol, XPRS_OPTIMALITYTOL)
+lp:opttol (lp:optimalitytol, opttol, optimalitytol, XPRS_OPTIMALITYTOL)
       Simplex: This is the zero tolerance for reduced costs. On each
       iteration, the simplex method searches for a variable to enter the basis
       which has a negative reduced cost. The candidates are only those
@@ -2960,19 +2779,32 @@ lp:opttol (lp:optimalitytol, opttol, optimalitytol, tol:xprs_optimalitytol, XPRS
 
       Default: 1.0E-06
 
-lp:penalty (penalty, pre:xprs_penalty, XPRS_PENALTY)
+lp:penalty (penalty, XPRS_PENALTY)
       Minimum absolute penalty variable coefficient. BIGM and PENALTY are set
       by the input routine (XPRSreadprob (READPROB)) but may be reset by the
       user prior to XPRSlpoptimize (LPOPTIMIZE).
 
       Default: Dependent on the matrix characteristics.
 
-lp:pivtol (pivtol, markowitztol, lp:xprs_markowitztol, XPRS_MARKOWITZTOL)
+lp:pivottol (pivottol, XPRS_PIVOTTOL)
+      Simplex: The zero tolerance for matrix elements. On each iteration, the
+      simplex method seeks a nonzero matrix element to pivot on. Any element
+      with absolute value less than PIVOTTOL is treated as zero for this
+      purpose.
+
+      Default: 1.0E-09
+
+lp:pivtol (pivtol, markowitztol, XPRS_MARKOWITZTOL)
       The Markowitz tolerance used for the factorization of the basis matrix.
 
       Default: 0.01
 
-lp:pricingalg (pricingalg, lp:xprs_pricingalg, XPRS_PRICINGALG)
+lp:ppfactor (ppfactor, XPRS_PPFACTOR)
+      The partial pricing candidate list sizing parameter.
+
+      Default: 1.0
+
+lp:pricingalg (pricingalg, XPRS_PRICINGALG)
       Simplex: This determines the primal simplex pricing method. It is used
       to select which variable enters the basis on each iteration. In general
       Devex pricing requires more time on each iteration, but may reduce the
@@ -2991,125 +2823,7 @@ lp:pricingalg (pricingalg, lp:xprs_pricingalg, XPRS_PRICINGALG)
 
       * (3) Steepest edge with unit initial weights.
 
-lp:primalunshift (primalunshift, lp:xprs_primalunshift, XPRS_PRIMALUNSHIFT)
-      Determines whether primal is allowed to call dual to unshift.
-
-      Values (default: 0):
-
-      * (0) Allow the dual algorithm to be used to unshift.
-
-      * (1) Don't allow the dual algorithm to be used to unshift.
-
-lp:relpivottol (relpivottol, sim:xprs_relpivottol, XPRS_RELPIVOTTOL)
-      Simplex: At each iteration a pivot element is chosen within a given
-      column of the matrix. The relative pivot tolerance, RELPIVOTTOL, is the
-      size of the element chosen relative to the largest possible pivot
-      element in the same column.
-
-      Default: 1.0E-06
-
-lp:sifting (sifting, lp:xprs_sifting, XPRS_SIFTING)
-      Determines whether to enable sifting algorithm with the dual simplex
-      method.
-
-      Values (default: -1):
-
-      * (-1) Automatically determined.
-
-      * (0) Disable sifting.
-
-      * (1) Enable sifting.
-
-lp:siftpasses (siftpasses, lp:xprs_siftpasses, XPRS_SIFTPASSES)
-      Determines how quickly we allow to grow the worker problems during the
-      sifting algorithm. Using larger values can increase the number of
-      columns added to the worker problem which often results in increased
-      solve times for the worker problems but the number of necessary sifting
-      iterations may be reduced.
-
-      Default: 4
-
-lp:siftpresolveops (siftpresolveops, lp:xprs_siftpresolveops, XPRS_SIFTPRESOLVEOPS)
-      Determines the presolve operations for solving the subproblems during
-      the sifting algorithm.
-
-      Values (default: -1):
-
-      * (-1) Use the PRESOLVEOPS setting specified for the original problem.
-
-      * (>=0) Use the value for the PRESOLVEOPS parameter for solving the
-        subproblems during the sifting algorithm.
-
-lp:siftswitch (siftswitch, lp:xprs_siftswitch, XPRS_SIFTSWITCH)
-      Determines which algorithm to use for solving the subproblems during
-      sifting.
-
-      Values (default: -1):
-
-      * (-1) Dual simplex.
-
-      * (0) Barrier.
-
-      * (>0) Use the barrier algorithm while the number of dual
-        infeasibilities is larger than this value, otherwise use dual simplex.
-
-lp:xprs_algafternetwork (XPRS_ALGAFTERNETWORK)
-      The algorithm to be used for the clean up step after the network simplex
-      solver.
-
-      Values (default: -1):
-
-      * (-1) Automatically determined.
-
-      * (2) Dual simplex.
-
-      * (3) Primal simplex.
-
-lp:xprs_autoperturb (XPRS_AUTOPERTURB)
-      Simplex: This indicates whether automatic perturbation is performed. If
-      this is set to 1, the problem will be perturbed whenever the simplex
-      method encounters an excessive number of degenerate pivot steps, thus
-      preventing the Optimizer being hindered by degeneracies.
-
-      Values (default: 1):
-
-      * (0) No perturbation performed.
-
-      * (1) Automatic perturbation is performed.
-
-lp:xprs_lpflags (XPRS_LPFLAGS)
-      A bit-vector control (see Section Bit-vector controls) which defines the
-      algorithm for solving an LP problem or the initial LP relaxation of a
-      MIP problem.
-
-      Values (default: 0):
-
-      * (0) Use the dual simplex method.
-
-      * (1) Use the primal simplex method.
-
-      * (2) Use the barrier method (or hybrid gradient method if BARALG=4 is
-        set).
-
-      * (3) Use the network simplex method.
-
-lp:xprs_lplogdelay (XPRS_LPLOGDELAY)
-      Time interval between two LP log lines.
-
-      Default: 1.0
-
-lp:xprs_lplogstyle (XPRS_LPLOGSTYLE)
-      Simplex: The style of the simplex log.
-
-      Values (default: 1):
-
-      * (0) Simplex log is printed based on simplex iteration count, at a
-        fixed frequency as specified by the LPLOG control.
-
-      * (1) Simplex log is printed based on an estimation of elapsed time,
-        determined by an internal deterministic timer.
-
-lp:xprs_primalops (XPRS_PRIMALOPS)
+lp:primalops (primalops, XPRS_PRIMALOPS)
       Primal simplex: allows fine tuning the variable selection in the primal
       simplex solver.
 
@@ -3126,7 +2840,7 @@ lp:xprs_primalops (XPRS_PRIMALOPS)
 
       * (4) Keep solving even after potential cycling is detected.
 
-lp:xprs_primalperturb (XPRS_PRIMALPERTURB)
+lp:primalperturb (primalperturb, XPRS_PRIMALPERTURB)
       The factor by which the problem will be perturbed prior to optimization
       by primal simplex. A value of 0.0 results in no perturbation prior to
       optimization. Note the interconnection to the AUTOPERTURB control. If
@@ -3137,11 +2851,153 @@ lp:xprs_primalperturb (XPRS_PRIMALPERTURB)
 
       Default: -1 — determined automatically.
 
+lp:primalunshift (primalunshift, XPRS_PRIMALUNSHIFT)
+      Determines whether primal is allowed to call dual to unshift.
+
+      Values (default: 0):
+
+      * (0) Allow the dual algorithm to be used to unshift.
+
+      * (1) Don't allow the dual algorithm to be used to unshift.
+
+lp:relpivottol (relpivottol, XPRS_RELPIVOTTOL)
+      Simplex: At each iteration a pivot element is chosen within a given
+      column of the matrix. The relative pivot tolerance, RELPIVOTTOL, is the
+      size of the element chosen relative to the largest possible pivot
+      element in the same column.
+
+      Default: 1.0E-06
+
+lp:sifting (sifting, XPRS_SIFTING)
+      Determines whether to enable sifting algorithm with the dual simplex
+      method.
+
+      Values (default: -1):
+
+      * (-1) Automatically determined.
+
+      * (0) Disable sifting.
+
+      * (1) Enable sifting.
+
+lp:siftpasses (siftpasses, XPRS_SIFTPASSES)
+      Determines how quickly we allow to grow the worker problems during the
+      sifting algorithm. Using larger values can increase the number of
+      columns added to the worker problem which often results in increased
+      solve times for the worker problems but the number of necessary sifting
+      iterations may be reduced.
+
+      Default: 4
+
+lp:siftpresolveops (siftpresolveops, XPRS_SIFTPRESOLVEOPS)
+      Determines the presolve operations for solving the subproblems during
+      the sifting algorithm.
+
+      Values (default: -1):
+
+      * (-1) Use the PRESOLVEOPS setting specified for the original problem.
+
+      * (>=0) Use the value for the PRESOLVEOPS parameter for solving the
+        subproblems during the sifting algorithm.
+
+lp:siftswitch (siftswitch, XPRS_SIFTSWITCH)
+      Determines which algorithm to use for solving the subproblems during
+      sifting.
+
+      Values (default: -1):
+
+      * (-1) Dual simplex.
+
+      * (0) Barrier.
+
+      * (>0) Use the barrier algorithm while the number of dual
+        infeasibilities is larger than this value, otherwise use dual simplex.
+
+mip:backtrack (backtrack, XPRS_BACKTRACK)
+      Branch and Bound: Specifies how to select the next node to work on when
+      a full backtrack is performed.
+
+      Values (default: 3):
+
+      * (-1) Automatically determined.
+
+      * (1) Unused.
+
+      * (2) Select the node with the best estimated solution.
+
+      * (3) Select the node with the best bound on the solution.
+
+      * (4) Select the deepest node in the search tree (equivalent to
+        depth-first search).
+
+      * (5) Select the highest node in the search tree (equivalent to
+        breadth-first search).
+
+      * (6) Select the earliest node created.
+
+      * (7) Select the latest node created.
+
+      * (8) Select a node randomly.
+
+      * (9) Select the node whose LP relaxation contains the fewest number of
+        infeasible MIP entities.
+
+      * (10) Combination of 2 and 9.
+
+      * (11) Combination of 2 and 4.
+
+      * (12) Combination of 3 and 4.
+
+mip:backtracktie (backtracktie, XPRS_BACKTRACKTIE)
+      Branch and Bound: Specifies how to break ties when selecting the next
+      node to work on when a full backtrack is performed. The options are the
+      same as for the BACKTRACK control.
+
+      Values (default: -1):
+
+      * (-1) Default selection.
+
+      * (1) Unused.
+
+      * (2) Select the node with the best estimated solution.
+
+      * (3) Select the node with the best bound on the solution.
+
+      * (4) Select the deepest node in the search tree (equivalent to
+        depth-first search).
+
+      * (5) Select the highest node in the search tree (equivalent to
+        breadth-first search).
+
+      * (6) Select the earliest node created.
+
+      * (7) Select the latest node created.
+
+      * (8) Select a node randomly.
+
+      * (9) Select the node whose LP relaxation contains the fewest number of
+        infeasible MIP entities.
+
+      * (10) Combination of 2 and 9.
+
+      * (11) Combination of 2 and 4.
+
+      * (12) Combination of 3 and 4.
+
 mip:basis (fixmodel, mip:fix)
-      Whether to compute duals / basis / sensitivity for MIP models:
+      Whether to compute duals / basis / sensitivity for MIP models.
 
       0 - No (default)
       1 - Yes.
+
+mip:basis:iterlimit
+      Iteration limit for the fixed-model solve only. -1 (default) uses the
+      solver default. For emulation, 0 skips the supplementary solve.
+
+mip:basis:timelimit
+      Time limit in seconds for the fixed-model solve only. -1 (default) uses
+      the solver default, independently of the MIP time limit. For emulation,
+      0 skips the supplementary solve.
 
 mip:bestbound (bestbound, return_bound)
       Whether to return suffix .bestbound for the best known MIP dual bound on
@@ -3154,7 +3010,7 @@ mip:bestbound (bestbound, return_bound)
       minimization problems and +Infinity for maximization problems if there
       are no integer variables or if a dual bound is not available.
 
-mip:branchchoice (branchchoice, mip:xprs_branchchoice, XPRS_BRANCHCHOICE)
+mip:branchchoice (branchchoice, XPRS_BRANCHCHOICE)
       Once a MIP entity has been selected for branching, this control
       determines which of the branches is solved first.
 
@@ -3173,7 +3029,7 @@ mip:branchchoice (branchchoice, mip:xprs_branchchoice, XPRS_BRANCHCHOICE)
         If the branching entity is not a simple variable, solve the minimum
         estimate branch first (option 0).
 
-mip:branchdisj (branchdisj, mip:xprs_branchdisj, XPRS_BRANCHDISJ)
+mip:branchdisj (branchdisj, XPRS_BRANCHDISJ)
       Branch and Bound: Determines whether the optimizer should attempt to
       branch on general split disjunctions during the branch and bound search.
 
@@ -3191,7 +3047,7 @@ mip:branchdisj (branchdisj, mip:xprs_branchdisj, XPRS_BRANCHDISJ)
       * (3) Aggressive strategy. Disjunctive branches will be created for both
         binaries and integers.
 
-mip:branchstructural (branchstructural, branchstruct, mip:xprs_branchstructural, XPRS_BRANCHSTRUCTURAL)
+mip:branchstructural (branchstruct, branchstructural, XPRS_BRANCHSTRUCTURAL)
       Branch and Bound: Determines whether the optimizer should search for
       special structure in the problem to branch on during the branch and
       bound search.
@@ -3204,19 +3060,19 @@ mip:branchstructural (branchstructural, branchstruct, mip:xprs_branchstructural,
 
       * (1) Enabled.
 
-mip:breadthfirst (breadthfirst, mip:xprs_breadthfirst, XPRS_BREADTHFIRST)
+mip:breadthfirst (breadthfirst, XPRS_BREADTHFIRST)
       The number of nodes to include in the best-first search before switching
       to the local first search (NODESELECTION=4).
 
       Default: 11
 
-mip:components (mipcomponents, mip:xprs_mipcomponents, XPRS_MIPCOMPONENTS)
+mip:components (mipcomponents, XPRS_MIPCOMPONENTS)
       Determines whether disconnected components in a MIP should be solved as
       separate MIPs. There can be significant performence benefits from
       solving disconnected components individual instead of being part of the
       main branch-and-bound search.
 
-      Values (default: -1 ):
+      Values (default: -1):
 
       * (-1) Automatic - let the solver decide.
 
@@ -3224,20 +3080,20 @@ mip:components (mipcomponents, mip:xprs_mipcomponents, XPRS_MIPCOMPONENTS)
 
       * (1) Solve disconnected components separately.
 
-mip:concurrentnodes (mipconcurrentnodes, mip:xprs_mipconcurrentnodes, XPRS_MIPCONCURRENTNODES)
+mip:concurrentnodes (mipconcurrentnodes, mipconcurnodes, XPRS_MIPCONCURRENTNODES)
       Sets the node limit for when a winning solve is selected when concurrent
       MIP solves are enabled. When multiple MIP solves are started, they each
       run up to the MIPCONCURRENTNODES node limit and only one winning solve
       is selected for contuinuing the search with.
 
-      Values (default: -1 ):
+      Values (default: -1):
 
       * (-1) Automatic - let the solver decide on a node limit.
 
       * (>0) Number of nodes each concurrent solve should complete before a
         winner is selected.
 
-mip:concurrentsolves (mipconcurrentsolves, mip:xprs_mipconcurrentsolves, XPRS_MIPCONCURRENTSOLVES)
+mip:concurrentsolves (mipconcurrentsolves, mipconcursolves, XPRS_MIPCONCURRENTSOLVES)
       Selects the number of concurrent solves to start for a MIP. Each solve
       will use a unique random seed for its random number generator, but will
       otherwise apply the same user controls. The first concurrent solve to
@@ -3245,7 +3101,7 @@ mip:concurrentsolves (mipconcurrentsolves, mip:xprs_mipconcurrentsolves, XPRS_MI
       terminated at this point. Using concurrent solves can be advantageous
       when a MIP displays a high level of performance variability.
 
-      Values (default: 0 ):
+      Values (default: 0):
 
       * (-1) Enabled. The number of concurrent solves depends on MIPTHREADS.
 
@@ -3253,7 +3109,25 @@ mip:concurrentsolves (mipconcurrentsolves, mip:xprs_mipconcurrentsolves, XPRS_MI
 
       * (n>1) Enabled. The number of concurrent solves to start is given by n.
 
-mip:deterministic (deterministic, tech:xprs_deterministic, XPRS_DETERMINISTIC)
+mip:conflictcuts (conflictcuts, XPRS_CONFLICTCUTS)
+      Branch and Bound: Specifies how cautious or aggressive the optimizer
+      should be when searching for and applying conflict cuts. Conflict cuts
+      are in-tree cuts derived from nodes found to be infeasible or cut off,
+      which can be used to cut off other branches of the search tree.
+
+      Values (default: -1):
+
+      * (-1) Automatic.
+
+      * (0) Disable conflict cuts.
+
+      * (1) Cautious application of conflict cuts.
+
+      * (2) Medium application of conflict cuts.
+
+      * (3) Aggressive application of conflict cuts.
+
+mip:deterministic (deterministic, XPRS_DETERMINISTIC)
       Selects whether to use a deterministic or opportunistic mode when
       solving a problem using multiple threads.
 
@@ -3266,7 +3140,7 @@ mip:deterministic (deterministic, tech:xprs_deterministic, XPRS_DETERMINISTIC)
       * (2) Use deterministic mode, except allow the initial concurrent
         continuous solve of a MIP to be opportunistic.
 
-mip:dualreductions (mipdualreductions, pre:xprs_mipdualreductions, XPRS_MIPDUALREDUCTIONS)
+mip:dualreductions (mipdualreductions, XPRS_MIPDUALREDUCTIONS)
       Branch and Bound: Limits operations that can reduce the MIP solution
       space.
 
@@ -3278,7 +3152,10 @@ mip:dualreductions (mipdualreductions, pre:xprs_mipdualreductions, XPRS_MIPDUALR
 
       * (0) Prevent all dual reductions.
 
-mip:feasibilityjump (feasibilityjump, heur:xprs_feasibilityjump, XPRS_FEASIBILITYJUMP)
+      The driver sets 2 when a solution pool is requested (sol:count or
+      sol:stub).
+
+mip:feasibilityjump (feasibilityjump, XPRS_FEASIBILITYJUMP)
       MIP: Decides if the Feasibility Jump heuristic should be run. The value
       for this control is either -1 (let Xpress decide), 0 (off) or a value
       that indicates for which type of models the heuristic should be run.
@@ -3297,7 +3174,7 @@ mip:feasibilityjump (feasibilityjump, heur:xprs_feasibilityjump, XPRS_FEASIBILIT
       * (3) Run the heuristic on models in which all non-integer variables
         have integer bounds.
 
-mip:feasibilitypump (feasibilitypump, heur:xprs_feasibilitypump, XPRS_FEASIBILITYPUMP)
+mip:feasibilitypump (feasibilitypump, feaspump, XPRS_FEASIBILITYPUMP)
       Branch and Bound: Decides if the Feasibility Pump heuristic should be
       run at the root node.
 
@@ -3312,7 +3189,7 @@ mip:feasibilitypump (feasibilitypump, heur:xprs_feasibilitypump, XPRS_FEASIBILIT
       * (2) Try the Feasibility Pump only if other heuristics have failed to
         find an integer solution.
 
-mip:gap (mipgap, lim:xprs_miprelstop, XPRS_MIPRELSTOP)
+mip:gap (mipgap, miprelstop, XPRS_MIPRELSTOP)
       Branch and Bound: This determines when the branch and bound tree search
       will terminate. Branch and bound tree search will stop if: |MIPOBJVAL -
       BESTBOUND| ≤ MIPRELSTOP x max(|BESTBOUND|,|MIPOBJVAL|) where MIPOBJVAL
@@ -3323,7 +3200,7 @@ mip:gap (mipgap, lim:xprs_miprelstop, XPRS_MIPRELSTOP)
 
       Default: 0.0001
 
-mip:gapabs (mipgapabs, lim:xprs_mipabsstop, XPRS_MIPABSSTOP)
+mip:gapabs (mipgapabs, mipabsstop, XPRS_MIPABSSTOP)
       Branch and Bound: The absolute tolerance determining whether the tree
       search will continue or not. It will terminate if |MIPOBJVAL -
       BESTBOUND| ≤ MIPABSSTOP where MIPOBJVAL is the value of the best
@@ -3334,7 +3211,7 @@ mip:gapabs (mipgapabs, lim:xprs_mipabsstop, XPRS_MIPABSSTOP)
 
       Default: 0.0
 
-mip:heurbeforelp (heurbeforelp, heur:xprs_heurbeforelp, XPRS_HEURBEFORELP)
+mip:heurbeforelp (heurbeforelp, XPRS_HEURBEFORELP)
       Branch and Bound: Determines whether primal heuristics should be run
       before the initial LP relaxation has been solved.
 
@@ -3346,7 +3223,17 @@ mip:heurbeforelp (heurbeforelp, heur:xprs_heurbeforelp, XPRS_HEURBEFORELP)
 
       * (1) Enabled.
 
-mip:heurdiverandomize (hdive_rand, heurdiverandomize, heur:xprs_heurdiverandomize, XPRS_HEURDIVERANDOMIZE)
+mip:heurdepth (heur:heurdepth, heurdepth, XPRS_HEURDEPTH)
+      Branch and Bound: Sets the maximum depth in the tree search at which
+      heuristics will be used to find MIP solutions. It may be worth stopping
+      the heuristic search for solutions after a certain depth in the tree
+      search. A value of 0 signifies that heuristics will not be used. This
+      control no longer has any effect and will be removed from future
+      releases.
+
+      Default: -1
+
+mip:heurdiverandomize (hdive_rand, heurdiverandomize, XPRS_HEURDIVERANDOMIZE)
       The level of randomization to apply in the diving heuristic. The diving
       heuristic uses priority weights on rows and columns to determine the
       order in which to e.g. round fractional columns, or the direction in
@@ -3357,7 +3244,7 @@ mip:heurdiverandomize (hdive_rand, heurdiverandomize, heur:xprs_heurdiverandomiz
 
       * (0.0-1.0) Amount of randomization (0.0=none, 1.0=full)
 
-mip:heurdivesoftrounding (hdive_rounding, heurdivesoftrounding, heur:xprs_heurdivesoftrounding, XPRS_HEURDIVESOFTROUNDING)
+mip:heurdivesoftrounding (hdive_rounding, heurdivesoftrounding, XPRS_HEURDIVESOFTROUNDING)
       Branch and Bound: Enables a more cautious strategy for the diving
       heuristic, where it tries to push binaries and integer variables to
       their bounds using the objective, instead of directly fixing them. This
@@ -3374,7 +3261,7 @@ mip:heurdivesoftrounding (hdive_rounding, heurdivesoftrounding, heur:xprs_heurdi
 
       * (2) More aggressive use of the soft rounding strategy.
 
-mip:heurdivespeedup (hdive_speed, heurdivespeedup, heur:xprs_heurdivespeedup, XPRS_HEURDIVESPEEDUP)
+mip:heurdivespeedup (hdive_speed, heurdivespeedup, XPRS_HEURDIVESPEEDUP)
       Branch and Bound: Changes the emphasis of the diving heuristic from
       solution quality to diving speed.
 
@@ -3387,7 +3274,7 @@ mip:heurdivespeedup (hdive_speed, heurdivespeedup, heur:xprs_heurdivespeedup, XP
       * (0-4) manual emphasis bias from emphasis on quality (0) to emphasis on
         speed (4).
 
-mip:heurdivestrategy (hdive_strategy, heurdivestrategy, heur:xprs_heurdivestrategy, XPRS_HEURDIVESTRATEGY)
+mip:heurdivestrategy (hdive_strategy, heurdivestrategy, XPRS_HEURDIVESTRATEGY)
       Branch and Bound: Chooses the strategy for the diving heuristic.
 
       Values (default: -1):
@@ -3399,7 +3286,7 @@ mip:heurdivestrategy (hdive_strategy, heurdivestrategy, heur:xprs_heurdivestrate
       * (1-18) Available pre-set strategies for rounding infeasible MIP
         entities and reoptimizing during the heuristic dive.
 
-mip:heuremphasis (heuremphasis, heur:xprs_heuremphasis, XPRS_HEUREMPHASIS)
+mip:heuremphasis (heuremphasis, XPRS_HEUREMPHASIS)
       Branch and Bound: This control specifies an emphasis for the search
       w.r.t. primal heuristics and other procedures that affect the speed of
       convergence of the primal-dual gap. For problems where the goal is to
@@ -3420,7 +3307,7 @@ mip:heuremphasis (heuremphasis, heur:xprs_heuremphasis, XPRS_HEUREMPHASIS)
 
       * (2) Extremely aggressive search heuristics.
 
-mip:heurforcespecialobj (heurforcespecobj, heurforcespecialobj, heur:xprs_heurforcespecialobj, XPRS_HEURFORCESPECIALOBJ)
+mip:heurforcespecialobj (heurforcespecobj, heurforcespecialobj, XPRS_HEURFORCESPECIALOBJ)
       Branch and Bound: This specifies whether local search heuristics without
       objective or with an auxiliary objective should always be used, despite
       the automatic selection of the Optimiezr. Deactivated by default.
@@ -3432,19 +3319,54 @@ mip:heurforcespecialobj (heurforcespecobj, heurforcespecialobj, heur:xprs_heurfo
       * (1) Enabled. Run special objective heuristics on large problems and
         even if incumbent exists.
 
-mip:heurfreq (heurfreq, heur:xprs_heurfreq, XPRS_HEURFREQ)
+mip:heurfreq (heurfreq, XPRS_HEURFREQ)
       Branch and Bound: This specifies the frequency at which heuristics are
       used in the tree search. Heuristics will only be used at a node if the
       depth of the node is a multiple of HEURFREQ.
 
       Default: -1
 
-mip:heursearcheffort (heursearcheffort, heur:xprs_heursearcheffort, XPRS_HEURSEARCHEFFORT)
+mip:heurmaxsol (heur:heurmaxsol, heurmaxsol, XPRS_HEURMAXSOL)
+      Branch and Bound: This specifies the maximum number of heuristic
+      solutions that will be found in the tree search. This control no longer
+      has any effect and will be removed from future releases.
+
+      Default: -1
+
+mip:heurnodes (heur:heurnodes, heurnodes, XPRS_HEURNODES)
+      Branch and Bound: This specifies the maximum number of nodes at which
+      heuristics are used in the tree search. This control no longer has any
+      effect and will be removed from future releases.
+
+      Default: -1
+
+mip:heursearchbackgroundselect (heur:heursearchbackgroundselect, heursearchbackgroundselect, XPRS_HEURSEARCHBACKGROUNDSELECT)
+      Bit-vector control (see Section Bit-vector controls) to select which
+      large neighborhood searches to run in the background (for example in
+      parallel to the root cut loop).
+
+      Values (default: -1):
+
+      * (1) Enable L heuristic.
+
+mip:heursearchcopycontrols (heur:heursearchcopycontrols, heursearchcopycontrols, XPRS_HEURSEARCHCOPYCONTROLS)
+      Select how user-set controls should affect local search heuristics.
+
+      Values (default: 1):
+
+      * (0) Do not copy any user-set controls
+
+      * (1) Automatic - Let the Optimizer decide which user-set controls to
+        copy
+
+      * (2) Copy all user-set controls
+
+mip:heursearcheffort (heursearcheffort, heureffort, XPRS_HEURSEARCHEFFORT)
       Adjusts the overall level of the local search heuristics.
 
       Default: 1.0
 
-mip:heursearchfreq (heurfreq, heursearchfreq, heur:xprs_heursearchfreq, XPRS_HEURSEARCHFREQ)
+mip:heursearchfreq (heursearchfreq, heursearch, XPRS_HEURSEARCHFREQ)
       Branch and Bound: This specifies how often the local search heuristic
       should be run in the tree.
 
@@ -3456,7 +3378,7 @@ mip:heursearchfreq (heurfreq, heursearchfreq, heur:xprs_heursearchfreq, XPRS_HEU
 
       * (n>0) Number of nodes between each run.
 
-mip:heursearchrootcutfreq (heurrootcutfreq, heursearchrootcutfreq, heur:xprs_heursearchrootcutfreq, XPRS_HEURSEARCHROOTCUTFREQ)
+mip:heursearchrootcutfreq (heurrootcutfreq, heursearchrootcutfreq, XPRS_HEURSEARCHROOTCUTFREQ)
       How frequently to run the local search heuristic during root cutting.
       This is given as how many cut rounds to perform between runs of the
       heuristic. Set to zero to avoid applying the heuristic during root
@@ -3471,7 +3393,7 @@ mip:heursearchrootcutfreq (heurrootcutfreq, heursearchrootcutfreq, heur:xprs_heu
 
       * (n>0) Number of cutting rounds between each run.
 
-mip:heursearchrootselect (heursearchrootselect, heur:xprs_heursearchrootselect, XPRS_HEURSEARCHROOTSELECT)
+mip:heursearchrootselect (heursearchrootselect, heurroot, XPRS_HEURSEARCHROOTSELECT)
       A bit-vector control (see Section Bit-vector controls) for selecting
       which local search heuristics to apply on the root node of a MIP solve.
       Use HEURSEARCHTREESELECT to control local search heuristics during the
@@ -3501,7 +3423,7 @@ mip:heursearchrootselect (heursearchrootselect, heur:xprs_heursearchrootselect, 
       * (6) Local search with an auxiliary objective function. Called seldom
         and only when no feasible solution is available.
 
-mip:heursearchtreeselect (heursearchtreeselect, heur:xprs_heursearchtreeselect, XPRS_HEURSEARCHTREESELECT)
+mip:heursearchtreeselect (heursearchtreeselect, heurtree, XPRS_HEURSEARCHTREESELECT)
       A bit-vector control (see Section Bit-vector controls) for selecting
       which local search heuristics to apply during the tree search of a MIP
       solve. Use HEURSEARCHROOTSELECT to control local search heuristics on
@@ -3531,7 +3453,7 @@ mip:heursearchtreeselect (heursearchtreeselect, heur:xprs_heursearchtreeselect, 
       * (6) Local search with an auxiliary objective function. Called seldom
         and only when no feasible solution is available.
 
-mip:heurshiftprop (heurshiftprop, heur:xprs_heurshiftprop, XPRS_HEURSHIFTPROP)
+mip:heurshiftprop (heurshiftprop, XPRS_HEURSHIFTPROP)
       Determines whether the Shift-and-propagate primal heuristic should be
       executed. If enabled, Shift-and-propagate is an LP-free primal heuristic
       that is executed immediately after presolve.
@@ -3545,7 +3467,7 @@ mip:heurshiftprop (heurshiftprop, heur:xprs_heurshiftprop, XPRS_HEURSHIFTPROP)
 
       * (1) Shift-and-propagate is enabled.
 
-mip:heurthreads (heurthreads, heur:xprs_heurthreads, XPRS_HEURTHREADS)
+mip:heurthreads (heurthreads, XPRS_HEURTHREADS)
       Branch and Bound: The number of threads to dedicate to running
       heuristics during the root solve.
 
@@ -3557,7 +3479,7 @@ mip:heurthreads (heurthreads, heur:xprs_heurthreads, XPRS_HEURTHREADS)
 
       * (>=1) Number of additional threads to dedicate to parallel heuristics.
 
-mip:historycosts (historycosts, mip:xprs_historycosts, XPRS_HISTORYCOSTS)
+mip:historycosts (historycosts, pseudocost_ud, XPRS_HISTORYCOSTS)
       Branch and Bound: How to update the pseudo cost for a MIP entity when a
       strong branch or a regular branch is applied.
 
@@ -3575,13 +3497,13 @@ mip:historycosts (historycosts, mip:xprs_historycosts, XPRS_HISTORYCOSTS)
       * (3) Update using any regular branching or strong branching information
         from all nodes solves before the current node.
 
-mip:intfeastol (inttol, intfeastol, tol:xprs_miptol, XPRS_MIPTOL)
+mip:intfeastol (inttol, intfeastol, miptol, XPRS_MIPTOL)
       Branch and Bound: This is the tolerance within which a decision
       variable's value is considered to be integral.
 
       Default: 5.0E-06
 
-mip:kappafreq (mipkappafreq, mip:xprs_mipkappafreq, XPRS_MIPKAPPAFREQ)
+mip:kappafreq (mipkappafreq, XPRS_MIPKAPPAFREQ)
       Branch and Bound: Specifies how frequently the basis condition number
       (also known as kappa) should be calculated during the branch-and-bound
       search.
@@ -3596,7 +3518,7 @@ mip:kappafreq (mipkappafreq, mip:xprs_mipkappafreq, XPRS_MIPKAPPAFREQ)
       * (n>1) Calculate a condition number once per node of every n'th level
         of the branch-and-bound tree.
 
-mip:localchoice (localchoice, mip:xprs_localchoice, XPRS_LOCALCHOICE)
+mip:localchoice (localchoice, XPRS_LOCALCHOICE)
       Controls when to perform a local backtrack between the two child nodes
       during a dive in the branch and bound tree.
 
@@ -3610,7 +3532,7 @@ mip:localchoice (localchoice, mip:xprs_localchoice, XPRS_LOCALCHOICE)
 
       * (3) Automatically determined.
 
-mip:log (miplog, log:xprs_miplog, XPRS_MIPLOG)
+mip:log (miplog, XPRS_MIPLOG)
       MIP log print control.
 
       Values (default: -100):
@@ -3625,7 +3547,23 @@ mip:log (miplog, log:xprs_miplog, XPRS_MIPLOG)
 
       * (3) Print out detailed log at each node.
 
-mip:maxlocalbacktrack (maxlocalbacktrack, maxlocalbt, mip:xprs_maxlocalbacktrack, XPRS_MAXLOCALBACKTRACK)
+mip:lpflags (lpflags, XPRS_LPFLAGS)
+      A bit-vector control (see Section Bit-vector controls) which defines the
+      algorithm for solving an LP problem or the initial LP relaxation of a
+      MIP problem.
+
+      Values (default: 0):
+
+      * (0) Use the dual simplex method.
+
+      * (1) Use the primal simplex method.
+
+      * (2) Use the barrier method (or hybrid gradient method if BARALG=4 is
+        set).
+
+      * (3) Use the network simplex method.
+
+mip:maxlocalbacktrack (maxlocalbt, maxlocalbacktrack, XPRS_MAXLOCALBACKTRACK)
       Branch-and-Bound: How far back up the current dive path the optimizer is
       allowed to look for a local backtrack candidate node.
 
@@ -3635,7 +3573,7 @@ mip:maxlocalbacktrack (maxlocalbacktrack, maxlocalbt, mip:xprs_maxlocalbacktrack
 
       * (n>0) Local backtrack limit.
 
-mip:maxtasks (maxmiptasks, tech:xprs_maxmiptasks, XPRS_MAXMIPTASKS)
+mip:maxtasks (maxmiptasks, XPRS_MAXMIPTASKS)
       Branch-and-Bound: The maximum number of tasks to run in parallel during
       a MIP solve.
 
@@ -3645,18 +3583,59 @@ mip:maxtasks (maxmiptasks, tech:xprs_maxmiptasks, XPRS_MAXMIPTASKS)
 
       * (>0) Fixed task limit.
 
-mip:miprefineiterlimit (miprefiterlim, miprefineiterlimit, sol:xprs_miprefineiterlimit, XPRS_MIPREFINEITERLIMIT)
+mip:mipfracreduce (mipfracreduce, XPRS_MIPFRACREDUCE)
+      Branch and Bound: Specifies how often the optimizer should run a
+      heuristic to reduce the number of fractional integer variables in the
+      node LP solutions.
+
+      Values (default: -1):
+
+      * (-1) Automatic.
+
+      * (0) Disabled.
+
+      * (1) Run before and after cutting on the root node.
+
+      * (2) Run also during root cutting.
+
+      * (3) Run also during the tree search.
+
+mip:miprefineiterlimit (miprefiterlim, miprefineiterlimit, XPRS_MIPREFINEITERLIMIT)
       This defines an effort limit expressed as simplex iterations for the MIP
       solution refiner. The limit is per reoptimizations in the MIP refiner.
 
       Default: -1 — determined automatically.
 
-mip:nodeprobingeffort (nodeprobingeffort, pre:xprs_nodeprobingeffort, XPRS_NODEPROBINGEFFORT)
+mip:mipterminationmethod (mipterminationmethod, mipstop, XPRS_MIPTERMINATIONMETHOD)
+      Branch and Bound: How a MIP solve should be stopped on early termination
+      when there are still active tasks in the system. This can happen when,
+      for example, a time or node limit is reached.
+
+      Values (default: 0):
+
+      * (0) Terminate tasks at the earliest opportunity. This can result in
+        some unfinished node solves being discarded, although never integer
+        solutions.
+
+      * (1) Allow tasks to complete their current work but prevent new tasks
+        from being started.
+
+mip:mutexcallbacks (mutexcallbacks, XPRS_MUTEXCALLBACKS)
+      Branch and Bound: This determines whether the callback routines are
+      mutexed from within the optimizer.
+
+      Values (default: 1):
+
+      * (0) Callbacks are not mutexed.
+
+      * (1) Callbacks are mutexed.
+
+mip:nodeprobingeffort (nodeprobingeffort, XPRS_NODEPROBINGEFFORT)
       Adjusts the overall level of node probing.
 
       Default: 1.0
 
-mip:nodeselection (nodeselection, mip:xprs_nodeselection, XPRS_NODESELECTION)
+mip:nodeselection (nodeselection, XPRS_NODESELECTION)
       Branch and Bound: This determines which nodes will be considered for
       solution once the current node has been solved.
 
@@ -3675,7 +3654,21 @@ mip:nodeselection (nodeselection, mip:xprs_nodeselection, XPRS_NODESELECTION)
 
       * (5) Pure depth first: Choose from the deepest outstanding nodes.
 
-mip:presolve (mippresolve, pre:xprs_mippresolve, XPRS_MIPPRESOLVE)
+mip:prerootthreads (heur:prerootthreads, prerootthreads, XPRS_PREROOTTHREADS)
+      Specifies an explicit number of threads that should be used for the
+      Pre-root parallel heuristic phase. By default, this phase will use all
+      threads available to the solver (as governed by the control THREADS).
+
+      Values (default: -1):
+
+      * (-1) Use all available threads.
+
+      * (0) Disable pre-root parallel heuristics.
+
+      * (n>0) Use the specified number of threads, superseding the value of
+        THREADS
+
+mip:presolve (mippresolve, XPRS_MIPPRESOLVE)
       Branch and Bound: Type of integer processing to be performed. If set to
       0, no processing will be performed. This is a bit-vector control (see
       Section Bit-vector controls).
@@ -3713,7 +3706,7 @@ mip:presolve (mippresolve, pre:xprs_mippresolve, XPRS_MIPPRESOLVE)
 
       * (8) Allow that symmetry is used to presolve the node problem.
 
-mip:pseudocost (pseudocost, mip:xprs_pseudocost, XPRS_PSEUDOCOST)
+mip:pseudocost (pseudocost, XPRS_PSEUDOCOST)
       Branch and Bound: The default pseudo cost used in estimation of the
       degradation associated with an unexplored node in the tree search. A
       pseudo cost is associated with each integer decision variable and is an
@@ -3722,7 +3715,7 @@ mip:pseudocost (pseudocost, mip:xprs_pseudocost, XPRS_PSEUDOCOST)
 
       Default: 0.01
 
-mip:qcrootalg (qcrootalg, qp:xprs_qcrootalg, XPRS_QCROOTALG)
+mip:qcrootalg (qcrootalg, XPRS_QCROOTALG)
       This control determines which algorithm is to be used to solve the root
       of a mixed integer quadratic constrained or mixed integer second order
       cone problem, when outer approximation is used.
@@ -3736,7 +3729,7 @@ mip:qcrootalg (qcrootalg, qp:xprs_qcrootalg, XPRS_QCROOTALG)
       * (1) Use the dual simplex on a relaxation of the problem constructed
         using outer approximation.
 
-mip:rampup (miprampup, mip:xprs_miprampup, XPRS_MIPRAMPUP)
+mip:rampup (miprampup, XPRS_MIPRAMPUP)
       Controls the strategy used by the parallel MIP solver during the ramp-up
       phase of a branch-and-bound tree search.
 
@@ -3749,7 +3742,7 @@ mip:rampup (miprampup, mip:xprs_miprampup, XPRS_MIPRAMPUP)
 
       * (1) Limit the number of tasks until the initial dives have completed.
 
-mip:relaxtreememorylimit (relaxtreemem, relaxtreememorylimit, tech:xprs_relaxtreememorylimit, XPRS_RELAXTREEMEMORYLIMIT)
+mip:relaxtreememorylimit (relaxtreemem, relaxtreememorylimit, XPRS_RELAXTREEMEMORYLIMIT)
       When the memory used by the branch and bound search tree exceeds the
       target specified by the TREEMEMORYLIMIT control, the optimizer will try
       to reduce this by writing nodes to the tree file. In rare cases, usually
@@ -3766,7 +3759,7 @@ mip:relaxtreememorylimit (relaxtreemem, relaxtreememorylimit, tech:xprs_relaxtre
 
       Default: 0.1
 
-mip:restart (miprestart, mip:xprs_miprestart, XPRS_MIPRESTART)
+mip:restart (miprestart, XPRS_MIPRESTART)
       Branch and Bound: controls strategy for in-tree restarts.
 
       Values (default: -1):
@@ -3781,16 +3774,14 @@ mip:restart (miprestart, mip:xprs_miprestart, XPRS_MIPRESTART)
       * (2) Allow in-tree restarts at higher aggressiveness (more likely to
         trigger a restart) (XPRS_MIPRESTART_AGGRESSIVE).
 
-mip:restartfactor (miprestartfactor, mip:xprs_miprestartfactor, XPRS_MIPRESTARTFACTOR)
+mip:restartfactor (miprestartfactor, XPRS_MIPRESTARTFACTOR)
       Branch and Bound: Fine tune initial conditions to trigger an in-tree
-      restart. Use a value > 1 to increase the aggressiveness with which the
-      Optimizer restarts. Use a value < 1 to relax the aggressiveness with
-      which the Optimizer restarts. Note that this control does not affect the
-      initial condition on the gap, which must be set separately.
+      restart. Use a value 1 to increase the aggressiveness with which the
+      Optimizer restarts. Use a value
 
       Default: 1.0
 
-mip:restartgapthreshold (miprestartgapthreshold, mip:xprs_miprestartgapthreshold, XPRS_MIPRESTARTGAPTHRESHOLD)
+mip:restartgapthreshold (miprestartgapthreshold, miprestartgaptol, XPRS_MIPRESTARTGAPTHRESHOLD)
       Branch and Bound: Initial gap threshold to delay in-tree restart. The
       restart is delayed initially if the gap, given as a fraction between 0
       and 1, is below this threshold. The optimizer adjusts the threshold
@@ -3828,7 +3819,7 @@ mip:round_reptol (round_reptol)
       Tolerance for reporting rounding of integer variables to integer values;
       see "mip:round". Default = 1e-9.
 
-mip:sbbest (sbbest, mip:xprs_sbbest, XPRS_SBBEST)
+mip:sbbest (sbbest, XPRS_SBBEST)
       Number of infeasible MIP entities to initialize pseudo costs for on each
       node.
 
@@ -3840,13 +3831,13 @@ mip:sbbest (sbbest, mip:xprs_sbbest, XPRS_SBBEST)
 
       * (n>0) perform strong branching on up to n entities at each node.
 
-mip:sbeffort (sbeffort, mip:xprs_sbeffort, XPRS_SBEFFORT)
+mip:sbeffort (sbeffort, XPRS_SBEFFORT)
       Adjusts the overall amount of effort when using strong branching to
       select an infeasible MIP entity to branch on.
 
       Default: 1.0
 
-mip:sbestimate (sbestimate, mip:xprs_sbestimate, XPRS_SBESTIMATE)
+mip:sbestimate (sbestimate, XPRS_SBESTIMATE)
       Branch and Bound: How to calculate pseudo costs from the local node when
       selecting an infeasible MIP entity to branch on. These pseudo costs are
       used in combination with local strong branching and history costs to
@@ -3858,13 +3849,13 @@ mip:sbestimate (sbestimate, mip:xprs_sbestimate, XPRS_SBESTIMATE)
 
       * (1-6) Different variants of local pseudo costs.
 
-mip:sbiterlimit (sbiterlimit, mip:xprs_sbiterlimit, XPRS_SBITERLIMIT)
+mip:sbiterlimit (sbiterlimit, XPRS_SBITERLIMIT)
       Number of dual iterations to perform the strong branching for each
       entity.
 
       Default: -1 — determined automatically.
 
-mip:sbselect (sbselect, mip:xprs_sbselect, XPRS_SBSELECT)
+mip:sbselect (sbselect, XPRS_SBSELECT)
       The size of the candidate list of MIP entities for strong branching.
 
       Values (default: -2):
@@ -3876,7 +3867,7 @@ mip:sbselect (sbselect, mip:xprs_sbselect, XPRS_SBSELECT)
       * (n>=0) Include n entities in the candidate list (but always at least
         SBBEST candidates).
 
-mip:symmetry (symmetry, pre:xprs_symmetry, XPRS_SYMMETRY)
+mip:symmetry (symmetry, XPRS_SYMMETRY)
       Adjusts the overall amount of effort for symmetry detection.
 
       Values (default: 1):
@@ -3887,7 +3878,7 @@ mip:symmetry (symmetry, pre:xprs_symmetry, XPRS_SYMMETRY)
 
       * (2) Intensive symmetry search.
 
-mip:symselect (symselect, pre:xprs_symselect, XPRS_SYMSELECT)
+mip:symselect (symselect, XPRS_SYMSELECT)
       Adjusts the overall amount of effort for symmetry detection.
 
       Values (default: -1):
@@ -3897,7 +3888,7 @@ mip:symselect (symselect, pre:xprs_symselect, XPRS_SYMSELECT)
 
       * (1) Search all entities (otherwise binaries only).
 
-mip:threads (mipthreads, mip:xprs_mipthreads, XPRS_MIPTHREADS)
+mip:threads (mipthreads, XPRS_MIPTHREADS)
       If set to a positive integer it determines the number of threads
       implemented to run the parallel MIP code. If MIPTHREADS is set to the
       default value (-1), the THREADS control will determine the number of
@@ -3905,13 +3896,84 @@ mip:threads (mipthreads, mip:xprs_mipthreads, XPRS_MIPTHREADS)
 
       Default: -1 (determined by the THREADS control)
 
-mip:toltarget (miptoltarget, sol:xprs_miptoltarget, XPRS_MIPTOLTARGET)
+mip:toltarget (miptoltarget, XPRS_MIPTOLTARGET)
       Target MIPTOL value used by the automatic MIP solution refiner as
       defined by REFINEOPS. Negative and zero values are ignored.
 
       Default: 0.0
 
-mip:varselection (varselection, mip:xprs_varselection, XPRS_VARSELECTION)
+mip:treecompression (treecompression, treecompress, XPRS_TREECOMPRESSION)
+      When writing nodes to the gloal file, the optimizer can try to use
+      data-compression techniques to reduce the size of the tree file on disk.
+      The TREECOMPRESSION control determines the strength of the
+      data-compression algorithm used; higher values give superior
+      data-compression at the affect of decreasing performance, while lower
+      values compress quicker but not as effectively. Where TREECOMPRESSION is
+      set to 0, no data compression will be used on the tree file.
+
+      Default: 2
+
+mip:treediagnostics (treediagnostics, treeoutlev, XPRS_TREEDIAGNOSTICS)
+      A bit-vector (see Section Bit-vector controls) providing control over
+      how various tree-management-related messages get printed in the tree log
+      file during the branch-and-bound search.
+
+      Values (default: 7):
+
+      * (0) Output regular summaries of current tree memory usage.
+
+      * (1) Output messages whenever tree data is being written to tree file.
+
+      * (2) Output progress messages while tree data is being written to the
+        tree file, at an interval controlled by the TREEFILELOGINTERVAL
+        control.
+
+mip:treefileloginterval (globalfileloginterval, tech:globalfileloginterval, treefileloginterval, XPRS_TREEFILELOGINTERVAL)
+      This control sets the interval between progress messages output while
+      writing tree data to the tree file, in seconds. The solve is slowed
+      greatly while data is being written to the tree file and this output
+      allows the user to see how much progress is being made.
+
+      Default: 60
+
+mip:treememorysavingtarget (treememorysavingtarget, treememtarget, XPRS_TREEMEMORYSAVINGTARGET)
+      When the memory used by the branch-and-bound search tree exceeds the
+      limit specified by the TREEMEMORYLIMIT control, the optimizer will try
+      to save memory by writing lower-rated sections of the tree to the tree
+      file. The target amount of memory to save will be enough to bring memory
+      usage back below the limit, plus enough extra to give the tree room to
+      grow. The TREEMEMORYSAVINGTARGET control specifies the extra proportion
+      of the tree's size to try to save; for example, if the tree memory limit
+      is 1000Mb and TREEMEMORYSAVINGTARGET is 0.1, when the tree size exceeds
+      1000Mb the optimizer will try to reduce the tree size to 900Mb. Reducing
+      the value of TREEMEMORYSAVINGTARGET will cause less extra nodes of the
+      tree to be written to the tree file, but will result in the memory
+      saving routine being triggered more often (as the tree will have less
+      room in which to grow), which can reduce performance. Increasing the
+      value of TREEMEMORYSAVINGTARGET will cause additional, more highly-rated
+      nodes, of the tree to be written to the tree file, which can cause
+      performance issues if these nodes are required later in the solve.
+
+      Default: 0.4
+
+mip:usersolheuristic (heur:usersolheuristic, usersolheuristic, XPRS_USERSOLHEURISTIC)
+      Determines how much effort to put into running a local search heuristic
+      to find a feasible integer solution from a partial or infeasible user
+      solution.
+
+      Values (default: -1):
+
+      * (-1) Automatically determined.
+
+      * (0) Search heuristic disabled.
+
+      * (1) Light effort.
+
+      * (2) Moderate effort.
+
+      * (3) High effort.
+
+mip:varselection (varselection, XPRS_VARSELECTION)
       Branch and Bound: This determines the formula used to calculate the
       estimate of each integer variable, and thus which integer variable is
       selected to be branched on at a given node. The variable selected to be
@@ -3939,183 +4001,19 @@ mip:varselection (varselection, mip:xprs_varselection, XPRS_VARSELECTION)
 
       * (8) The product of the 'up' and 'down' pseudo costs.
 
-mip:xprs_backtrack (XPRS_BACKTRACK)
-      Branch and Bound: Specifies how to select the next node to work on when
-      a full backtrack is performed.
+mislp:cutstrategy (xslp_cutstrategy, XSLP_CUTSTRATEGY, SLPCUTSTRATEGY)
+      Determines whihc cuts to apply in the MISLP search when the default
+      SLP-in-MIP strategy is used.
 
-      Values (default: 3):
+      Default: 0
 
-      * (-1) Automatically determined.
+mislp:deterministic (xslp_deterministic, XSLP_DETERMINISTIC, NLPDETERMINISTIC)
+      Determines if the parallel features of SLP should be guaranteed to be
+      deterministic
 
-      * (1) Unused.
+      Default: 1
 
-      * (2) Select the node with the best estimated solution.
-
-      * (3) Select the node with the best bound on the solution.
-
-      * (4) Select the deepest node in the search tree (equivalent to
-        depth-first search).
-
-      * (5) Select the highest node in the search tree (equivalent to
-        breadth-first search).
-
-      * (6) Select the earliest node created.
-
-      * (7) Select the latest node created.
-
-      * (8) Select a node randomly.
-
-      * (9) Select the node whose LP relaxation contains the fewest number of
-        infeasible MIP entities.
-
-      * (10) Combination of 2 and 9.
-
-      * (11) Combination of 2 and 4.
-
-      * (12) Combination of 3 and 4.
-
-mip:xprs_backtracktie (XPRS_BACKTRACKTIE)
-      Branch and Bound: Specifies how to break ties when selecting the next
-      node to work on when a full backtrack is performed. The options are the
-      same as for the BACKTRACK control.
-
-      Values (default: -1):
-
-      * (-1) Default selection.
-
-      * (1) Unused.
-
-      * (2) Select the node with the best estimated solution.
-
-      * (3) Select the node with the best bound on the solution.
-
-      * (4) Select the deepest node in the search tree (equivalent to
-        depth-first search).
-
-      * (5) Select the highest node in the search tree (equivalent to
-        breadth-first search).
-
-      * (6) Select the earliest node created.
-
-      * (7) Select the latest node created.
-
-      * (8) Select a node randomly.
-
-      * (9) Select the node whose LP relaxation contains the fewest number of
-        infeasible MIP entities.
-
-      * (10) Combination of 2 and 9.
-
-      * (11) Combination of 2 and 4.
-
-      * (12) Combination of 3 and 4.
-
-mip:xprs_conflictcuts (XPRS_CONFLICTCUTS)
-      Branch and Bound: Specifies how cautious or aggressive the optimizer
-      should be when searching for and applying conflict cuts. Conflict cuts
-      are in-tree cuts derived from nodes found to be infeasible or cut off,
-      which can be used to cut off other branches of the search tree.
-
-      Values (default: -1):
-
-      * (-1) Automatic.
-
-      * (0) Disable conflict cuts.
-
-      * (1) Cautious application of conflict cuts.
-
-      * (2) Medium application of conflict cuts.
-
-      * (3) Aggressive application of conflict cuts.
-
-mip:xprs_mipfracreduce (XPRS_MIPFRACREDUCE)
-      Branch and Bound: Specifies how often the optimizer should run a
-      heuristic to reduce the number of fractional integer variables in the
-      node LP solutions.
-
-      Values (default: -1):
-
-      * (-1) Automatic.
-
-      * (0) Disabled.
-
-      * (1) Run before and after cutting on the root node.
-
-      * (2) Run also during root cutting.
-
-      * (3) Run also during the tree search.
-
-mip:xprs_mipterminationmethod (XPRS_MIPTERMINATIONMETHOD)
-      Branch and Bound: How a MIP solve should be stopped on early termination
-      when there are still active tasks in the system. This can happen when,
-      for example, a time or node limit is reached.
-
-      Values (default: 0):
-
-      * (0) Terminate tasks at the earliest opportunity. This can result in
-        some unfinished node solves being discarded, although never integer
-        solutions.
-
-      * (1) Allow tasks to complete their current work but prevent new tasks
-        from being started.
-
-mip:xprs_mutexcallbacks (XPRS_MUTEXCALLBACKS)
-      Branch and Bound: This determines whether the callback routines are
-      mutexed from within the optimizer.
-
-      Values (default: 1):
-
-      * (0) Callbacks are not mutexed.
-
-      * (1) Callbacks are mutexed.
-
-mip:xprs_treecompression (XPRS_TREECOMPRESSION)
-      When writing nodes to the gloal file, the optimizer can try to use
-      data-compression techniques to reduce the size of the tree file on disk.
-      The TREECOMPRESSION control determines the strength of the
-      data-compression algorithm used; higher values give superior
-      data-compression at the affect of decreasing performance, while lower
-      values compress quicker but not as effectively. Where TREECOMPRESSION is
-      set to 0, no data compression will be used on the tree file.
-
-      Default: 2
-
-mip:xprs_treediagnostics (XPRS_TREEDIAGNOSTICS)
-      A bit-vector (see Section Bit-vector controls) providing control over
-      how various tree-management-related messages get printed in the tree log
-      file during the branch-and-bound search.
-
-      Values (default: 7):
-
-      * (0) Output regular summaries of current tree memory usage.
-
-      * (1) Output messages whenever tree data is being written to tree file.
-
-      * (2) Output progress messages while tree data is being written to the
-        tree file, at an interval controlled by the TREEFILELOGINTERVAL
-        control.
-
-mip:xprs_treememorysavingtarget (XPRS_TREEMEMORYSAVINGTARGET)
-      When the memory used by the branch-and-bound search tree exceeds the
-      limit specified by the TREEMEMORYLIMIT control, the optimizer will try
-      to save memory by writing lower-rated sections of the tree to the tree
-      file. The target amount of memory to save will be enough to bring memory
-      usage back below the limit, plus enough extra to give the tree room to
-      grow. The TREEMEMORYSAVINGTARGET control specifies the extra proportion
-      of the tree's size to try to save; for example, if the tree memory limit
-      is 1000Mb and TREEMEMORYSAVINGTARGET is 0.1, when the tree size exceeds
-      1000Mb the optimizer will try to reduce the tree size to 900Mb. Reducing
-      the value of TREEMEMORYSAVINGTARGET will cause less extra nodes of the
-      tree to be written to the tree file, but will result in the memory
-      saving routine being triggered more often (as the tree will have less
-      room in which to grow), which can reduce performance. Increasing the
-      value of TREEMEMORYSAVINGTARGET will cause additional, more highly-rated
-      nodes, of the tree to be written to the tree file, which can cause
-      performance issues if these nodes are required later in the solve.
-
-      Default: 0.4
-
-mislp:xslp_mipalgorithm (XSLP_MIPALGORITHM, SLPMIPALGORITHM)
+mislp:mipalgorithm (mipalgorithm, xslp_mipalgorithm, XSLP_MIPALGORITHM, SLPMIPALGORITHM)
       Bitmap describing the MISLP algorithms to be used
 
       Values (default: 17 (bits 0 and4 are set)):
@@ -4146,44 +4044,44 @@ mislp:xslp_mipalgorithm (XSLP_MIPALGORITHM, SLPMIPALGORITHM)
       * (10) Use MIP on converged SLP solution and then SLP on the resulting
         MIP solution.
 
-mislp:xslp_mipcutoff_a (XSLP_MIPCUTOFF_A, SLPMIPCUTOFF_A)
+mislp:mipcutoff_a (mipcutoff_a, xslp_mipcutoff_a, XSLP_MIPCUTOFF_A, SLPMIPCUTOFF_A)
       Absolute objective function cutoff for MIP termination
 
       Default: 0.00001
 
-mislp:xslp_mipcutoff_r (XSLP_MIPCUTOFF_R, SLPMIPCUTOFF_R)
+mislp:mipcutoff_r (mipcutoff_r, xslp_mipcutoff_r, XSLP_MIPCUTOFF_R, SLPMIPCUTOFF_R)
       Absolute objective function cutoff for MIP termination
 
       Default: 0.00001
 
-mislp:xslp_mipcutoffcount (XSLP_MIPCUTOFFCOUNT, SLPMIPCUTOFFCOUNT)
+mislp:mipcutoffcount (mipcutoffcount, xslp_mipcutoffcount, XSLP_MIPCUTOFFCOUNT, SLPMIPCUTOFFCOUNT)
       Number of SLP iterations to check when considering a node for cutting
       off
 
       Default: 5
 
-mislp:xslp_mipcutofflimit (XSLP_MIPCUTOFFLIMIT, SLPMIPCUTOFFLIMIT)
+mislp:mipcutofflimit (mipcutofflimit, xslp_mipcutofflimit, XSLP_MIPCUTOFFLIMIT, SLPMIPCUTOFFLIMIT)
       Number of SLP iterations to check when considering a node for cutting
       off
 
       Default: 10
 
-mislp:xslp_mipdefaultalgorithm (XSLP_MIPDEFAULTALGORITHM, SLPMIPDEFAULTALGORITHM)
+mislp:mipdefaultalgorithm (mipdefaultalgorithm, xslp_mipdefaultalgorithm, XSLP_MIPDEFAULTALGORITHM, SLPMIPDEFAULTALGORITHM)
       Default algorithm to be used during the tree search in MISLP
 
       Default: 3
 
-mislp:xslp_miperrortol_a (XSLP_MIPERRORTOL_A, SLPMIPERRORTOL_A)
+mislp:miperrortol_a (miperrortol_a, xslp_miperrortol_a, XSLP_MIPERRORTOL_A, SLPMIPERRORTOL_A)
       Absolute penalty error cost tolerance for MIP cut-off
 
       Default: 0 (inactive)
 
-mislp:xslp_miperrortol_r (XSLP_MIPERRORTOL_R, SLPMIPERRORTOL_R)
+mislp:miperrortol_r (miperrortol_r, xslp_miperrortol_r, XSLP_MIPERRORTOL_R, SLPMIPERRORTOL_R)
       Relative penalty error cost tolerance for MIP cut-off
 
       Default: 0 (inactive)
 
-mislp:xslp_mipfixstepbounds (XSLP_MIPFIXSTEPBOUNDS, SLPMIPFIXSTEPBOUNDS)
+mislp:mipfixstepbounds (mipfixstepbounds, xslp_mipfixstepbounds, XSLP_MIPFIXSTEPBOUNDS, SLPMIPFIXSTEPBOUNDS)
       Bitmap describing the step-bound fixing strategy during MISLP
 
       Values (default: 0):
@@ -4197,33 +4095,33 @@ mislp:xslp_mipfixstepbounds (XSLP_MIPFIXSTEPBOUNDS, SLPMIPFIXSTEPBOUNDS)
 
       * (3) Fix step bounds on SLP variables appearing in coefficients.
 
-mislp:xslp_mipiterlimit (XSLP_MIPITERLIMIT, SLPMIPITERLIMIT)
+mislp:mipiterlimit (mipiterlimit, xslp_mipiterlimit, XSLP_MIPITERLIMIT, SLPMIPITERLIMIT)
       Maximum number of SLP iterations at each node
 
       Default: 0
 
-mislp:xslp_miplog (XSLP_MIPLOG, SLPMIPLOG)
+mislp:miplog (xslp_miplog, XSLP_MIPLOG, SLPMIPLOG)
       Frequency with which MIP status is printed
 
       Default: 0 (deterministic logging)
 
-mislp:xslp_mipocount (XSLP_MIPOCOUNT, SLPMIPOCOUNT)
+mislp:mipocount (mipocount, xslp_mipocount, XSLP_MIPOCOUNT, SLPMIPOCOUNT)
       Number of SLP iterations at each node over which to measure objective
       function variation
 
       Default: 5
 
-mislp:xslp_mipotol_a (XSLP_MIPOTOL_A, SLPMIPOTOL_A)
+mislp:mipotol_a (mipotol_a, xslp_mipotol_a, XSLP_MIPOTOL_A, SLPMIPOTOL_A)
       Absolute objective function tolerance for MIP termination
 
       Default: 0.00001
 
-mislp:xslp_mipotol_r (XSLP_MIPOTOL_R, SLPMIPOTOL_R)
+mislp:mipotol_r (mipotol_r, xslp_mipotol_r, XSLP_MIPOTOL_R, SLPMIPOTOL_R)
       Relative objective function tolerance for MIP termination
 
       Default: 0.00001
 
-mislp:xslp_miprelaxstepbounds (XSLP_MIPRELAXSTEPBOUNDS, SLPMIPRELAXSTEPBOUNDS)
+mislp:miprelaxstepbounds (miprelaxstepbounds, xslp_miprelaxstepbounds, XSLP_MIPRELAXSTEPBOUNDS, SLPMIPRELAXSTEPBOUNDS)
       Bitmap describing the step-bound relaxation strategy during MISLP
 
       Values (default: 15 (relax all types)):
@@ -4236,30 +4134,6 @@ mislp:xslp_miprelaxstepbounds (XSLP_MIPRELAXSTEPBOUNDS, SLPMIPRELAXSTEPBOUNDS)
       * (2) Relax step bounds on SLP variables appearing only in coefficients.
 
       * (3) Relax step bounds on SLP variables appearing in coefficients.
-
-num:xprs_autoscaling (XPRS_AUTOSCALING)
-      Whether the Optimizer should automatically select between different
-      scaling algorithms. If the SCALING control is set, no automatic scaling
-      will be applied.
-
-      Values (default: -1):
-
-      * (-1) Automatic.
-
-      * (0) Disabled.
-
-      * (1) Cautious strategy. Non-standard scaling will only be selected if
-        it appears to be clearly superior.
-
-      * (2) Moderate strategy.
-
-      * (3) Aggressive strategy. Standard scaling will only be selected if it
-        appears to be clearly superior.
-
-num:xslp_infinity (XSLP_INFINITY, NLPINFINITY)
-      Value returned by a divide-by-zero in a formula
-
-      Default: 1.0e+10
 
 obj:multi (multiobj)
       Whether to use multi-objective optimization:
@@ -4280,26 +4154,10 @@ obj:multi (multiobj)
 
       Note that with solver's native handling (when obj:multi=1 and
       supported), some solvers might have special rules for the tolerances,
-      especially for LP, and not allow quadratic objectives. See the solver
-      documentation.
+      especially for LP, and only allow linear objectives. See the solver
+      documentation and options cvt:quadobj, cvt:nlobj.
 
-obj:multi:options (multiobjoptions)
-      0/1*: Regard multiobjective option suffixes which are objective suffixes
-      beginning with option_. Example: suffix option_timelim; let
-      _obj[2].option_timelim:=15;
-
-obj:multi:weight (multiobjweight, obj:multi:weights, multiobjweights)
-      How to interpret each objective's weight sign:
-
-      1 - relative to the sense of the 1st objective
-      2 - relative to its own sense (default)
-
-      With the 1st option (legacy behaviour), negative .objweight for
-      objective i would make objective i's sense the opposite of the model's
-      1st objective. Otherwise, it would make objective i's sense the opposite
-      to its sense defined in the model.
-
-obj:multi:xprs_multiobjlog (XPRS_MULTIOBJLOG)
+obj:multi:log (multiobjlog, XPRS_MULTIOBJLOG)
       Log level for multi-objective optimization.
 
       Values (default: 2):
@@ -4312,7 +4170,7 @@ obj:multi:xprs_multiobjlog (XPRS_MULTIOBJLOG)
       * (2) In addition to summaries, print messages produced by each solve at
         the level determined by OUTPUTLOG.
 
-obj:multi:xprs_multiobjops (XPRS_MULTIOBJOPS)
+obj:multi:ops (multiobjops, XPRS_MULTIOBJOPS)
       Modifies the behaviour of the optimizer when solving multi-objective
       problems.
 
@@ -4335,6 +4193,43 @@ obj:multi:xprs_multiobjops (XPRS_MULTIOBJOPS)
         not set, optimality of earlier objectives will be preserved by adding
         constraints to the problem.
 
+obj:multi:options (multiobjoptions)
+      0/1*: Regard multiobjective option suffixes which are objective suffixes
+      beginning with option_. Example: suffix option_timelim; let
+      _obj[2].option_timelim:=15;
+
+obj:multi:stats (multiobjstats)
+      0*/1: Report multiobjective pass statistics in the following objective
+      suffixes:
+
+      * .objpass: index of the pass where this objective was solved, 0 if not
+        solved due to a stop in a previous pass
+
+      * .objpass_result: the solve_result of the pass where this objective was
+        solved; -1 if not
+
+      * .objpass_runtime, _mipgap, _objval, _objbound, _work, _itercount,
+        _nodecount, _opennodecount if available.
+
+      With MP's emulation (obj:multi=2), _objval and _objbound refer to the
+      blended pass objective in the sense of the first objective, and _runtime
+      is the wall-clock time of the pass including model updates; numeric
+      statistics are NaN if not available for a pass. If the solver's native
+      multiobjective mode does not report pass statistics, use obj:multi=2.
+
+      See also tech:stats.
+
+obj:multi:weight (multiobjweight, obj:multi:weights, multiobjweights)
+      How to interpret each objective's weight sign:
+
+      1 - relative to the sense of the 1st objective
+      2 - relative to its own sense (default)
+
+      With the 1st option (legacy behaviour), negative .objweight for
+      objective i would make objective i's sense the opposite of the model's
+      1st objective. Otherwise, it would make objective i's sense the opposite
+      to its sense defined in the model.
+
 obj:no (objno)
       Objective to optimize:
 
@@ -4342,7 +4237,7 @@ obj:no (objno)
       1 - First (default, if available)
       2 - Second (if available), etc.
 
-pdhg:xprs_barhggpu (XPRS_BARHGGPU)
+pdhg:barhggpu (barhggpu, XPRS_BARHGGPU)
       Whether to use a GPU for the hybrid gradient algorithm. Even though the
       GPU implementation of the hybrid gradient algorithm is identical in
       operation and functionality to the CPU implementation, the returned
@@ -4356,12 +4251,12 @@ pdhg:xprs_barhggpu (XPRS_BARHGGPU)
 
       * (1) Use the GPU.
 
-pdhg:xprs_barhggpublocksize (XPRS_BARHGGPUBLOCKSIZE)
+pdhg:barhggpublocksize (barhggpublocksize, XPRS_BARHGGPUBLOCKSIZE)
       The size of CUDA blocks to use for the GPU calculations.
 
       Default: 256
 
-pdhg:xprs_barhgprecision (XPRS_BARHGPRECISION)
+pdhg:barhgprecision (barhgprecision, XPRS_BARHGPRECISION)
       Whether to use single or double precision floating-point arithmetic in
       the hybrid gardient algorithm. The single precision implementation uses
       less memory and is, in general, faster than the double precision
@@ -4380,12 +4275,43 @@ pdhg:xprs_barhgprecision (XPRS_BARHGPRECISION)
 
       * (1) Use double precision arithmetic on both CPU and GPU platforms.
 
-pdhg:xprs_barhgreltol (XPRS_BARHGRELTOL)
+pdhg:barhgreltol (barhgreltol, XPRS_BARHGRELTOL)
       Relative feasibility tolerance for the hybrid gradient algorithm.
 
       Default: 0, determined automatically.
 
-pre:basisred (prebasisred, pre:xprs_prebasisred, XPRS_PREBASISRED)
+pre:alternativeredcosts (alternativeredcosts, XPRS_ALTERNATIVEREDCOSTS)
+      Controls aggressiveness of searching for alternative reduced cost
+
+      Values (default: -1):
+
+      * (-1) The solver decides if searching for alternative reduced cost is
+        beneficial or not. This is the default setting.
+
+      * (0) Searching for alternative reduced cost is disabled.
+
+      * (1) Searching for alternative reduced cost is enabled.
+
+pre:autoscaling (autoscaling, XPRS_AUTOSCALING)
+      Whether the Optimizer should automatically select between different
+      scaling algorithms. If the SCALING control is set, no automatic scaling
+      will be applied.
+
+      Values (default: -1):
+
+      * (-1) Automatic.
+
+      * (0) Disabled.
+
+      * (1) Cautious strategy. Non-standard scaling will only be selected if
+        it appears to be clearly superior.
+
+      * (2) Moderate strategy.
+
+      * (3) Aggressive strategy. Standard scaling will only be selected if it
+        appears to be clearly superior.
+
+pre:basisred (prebasisred, XPRS_PREBASISRED)
       Determines if a lattice basis reduction algorithm should be attempted as
       part of presolve
 
@@ -4397,7 +4323,7 @@ pre:basisred (prebasisred, pre:xprs_prebasisred, XPRS_PREBASISRED)
 
       * (1) Enable basis reduction.
 
-pre:bndredcone (prebndredcone, pre:xprs_prebndredcone, XPRS_PREBNDREDCONE)
+pre:bndredcone (prebndredcone, XPRS_PREBNDREDCONE)
       Determines if second order cone constraints should be used for inferring
       bound reductions on variables when solving a MIP.
 
@@ -4409,7 +4335,7 @@ pre:bndredcone (prebndredcone, pre:xprs_prebndredcone, XPRS_PREBNDREDCONE)
 
       * (1) Enable bound reductions from second order cone constraints.
 
-pre:bndredquad (prebndredquad, pre:xprs_prebndredquad, XPRS_PREBNDREDQUAD)
+pre:bndredquad (prebndredquad, XPRS_PREBNDREDQUAD)
       Determines if convex quadratic constraints should be used for inferring
       bound reductions on variables when solving a MIP.
 
@@ -4421,12 +4347,12 @@ pre:bndredquad (prebndredquad, pre:xprs_prebndredquad, XPRS_PREBNDREDQUAD)
 
       * (1) Enable bound reductions from quadratic constraints.
 
-pre:cliquestrategy (precliquestrategy, pre:xprs_precliquestrategy, XPRS_PRECLIQUESTRATEGY)
+pre:cliquestrategy (precliquestrategy, XPRS_PRECLIQUESTRATEGY)
       Determines how much effort to spend on clique covers in presolve.
 
       Default: -1
 
-pre:coefelim (precoefelim, pre:xprs_precoefelim, XPRS_PRECOEFELIM)
+pre:coefelim (precoefelim, XPRS_PRECOEFELIM)
       Presolve: Specifies whether the optimizer should attempt to recombine
       constraints in order to reduce the number of non zero coefficients when
       presolving a mixed integer problem.
@@ -4440,7 +4366,7 @@ pre:coefelim (precoefelim, pre:xprs_precoefelim, XPRS_PRECOEFELIM)
       * (2) Cautious eliminations. Will not perform a reduction if it might
         destroy problem structure useful to e.g. heuristics or cutting.
 
-pre:components (precomponents, pre:xprs_precomponents, XPRS_PRECOMPONENTS)
+pre:components (precomponents, XPRS_PRECOMPONENTS)
       Presolve: determines whether small independent components should be
       detected and solved as individual subproblems during root node
       processing.
@@ -4453,7 +4379,7 @@ pre:components (precomponents, pre:xprs_precomponents, XPRS_PRECOMPONENTS)
 
       * (1) Enable detection of independent components.
 
-pre:componentseffort (precomponentseffort, pre:xprs_precomponentseffort, XPRS_PRECOMPONENTSEFFORT)
+pre:componentseffort (precomponentseffort, XPRS_PRECOMPONENTSEFFORT)
       Presolve: adjusts the overall effort for the independent component
       presolver. This control affects working limits for the subproblem
       solving as well as thresholds when it is called. Increase to put more
@@ -4461,7 +4387,7 @@ pre:componentseffort (precomponentseffort, pre:xprs_precomponentseffort, XPRS_PR
 
       Default: 1.0
 
-pre:configuration (preconfiguration, pre:xprs_preconfiguration, XPRS_PRECONFIGURATION)
+pre:configuration (preconfiguration, XPRS_PRECONFIGURATION)
       MIP Presolve: determines whether binary rows with only few repeating
       coefficients should be reformulated. The reformulation enumerates the
       extremal feasible configurations of a row and introduces new columns and
@@ -4475,7 +4401,7 @@ pre:configuration (preconfiguration, pre:xprs_preconfiguration, XPRS_PRECONFIGUR
 
       * (0) Disable configuration presolving.
 
-pre:convertseparable (preconvertseparable, pre:xprs_preconvertseparable, XPRS_PRECONVERTSEPARABLE)
+pre:convertseparable (preconvertseparable, preconvertsep, XPRS_PRECONVERTSEPARABLE)
       Presolve: reformulate problems with a non-diagonal quadratic objective
       and/or constraints as diagonal quadratic or second-order conic
       constraints.
@@ -4491,7 +4417,7 @@ pre:convertseparable (preconvertseparable, pre:xprs_preconvertseparable, XPRS_PR
       * (2) Enable reformulation to diagonal quadratic constraints and
         reduction to second-order cones.
 
-pre:domcol (predomcol, pre:xprs_predomcol, XPRS_PREDOMCOL)
+pre:domcol (predomcol, XPRS_PREDOMCOL)
       Presolve: Determines the level of dominated column removal reductions to
       perform when presolving a mixed integer problem. Only binary columns
       will be checked.
@@ -4509,7 +4435,7 @@ pre:domcol (predomcol, pre:xprs_predomcol, XPRS_PREDOMCOL)
       * (3) Includes 1 and 2 but also looks for more generic column
         domination.
 
-pre:domrow (predomrow, pre:xprs_predomrow, XPRS_PREDOMROW)
+pre:domrow (predomrow, XPRS_PREDOMROW)
       Presolve: Determines the level of dominated row removal reductions to
       perform when presolving a problem.
 
@@ -4526,7 +4452,7 @@ pre:domrow (predomrow, pre:xprs_predomrow, XPRS_PREDOMROW)
       * (3) Aggressive strategy. All candidate row combinations will be
         considered.
 
-pre:duprow (preduprow, pre:xprs_preduprow, XPRS_PREDUPROW)
+pre:duprow (preduprow, XPRS_PREDUPROW)
       Presolve: Determines the type of duplicate rows to look for and
       eliminate when presolving a problem.
 
@@ -4544,12 +4470,12 @@ pre:duprow (preduprow, pre:xprs_preduprow, XPRS_PREDUPROW)
       * (3) Same as option 2 plus eliminate duplicate rows with more complex
         penalty variable expressions. (MIP only).
 
-pre:elimfillin (elimfillin, pre:xprs_elimfillin, XPRS_ELIMFILLIN)
+pre:elimfillin (elimfillin, XPRS_ELIMFILLIN)
       Amount of fill-in allowed when performing an elimination in presolve .
 
       Default: 7
 
-pre:elimquad (preelimquad, pre:xprs_preelimquad, XPRS_PREELIMQUAD)
+pre:elimquad (preelimquad, XPRS_PREELIMQUAD)
       Presolve: Allows for elimination of quadratic variables via doubleton
       rows.
 
@@ -4561,12 +4487,12 @@ pre:elimquad (preelimquad, pre:xprs_preelimquad, XPRS_PREELIMQUAD)
 
       * (1) Eliminate at least one quadratic variable for each doubleton row.
 
-pre:elimtol (elimtol, pre:xprs_elimtol, XPRS_ELIMTOL)
+pre:elimtol (elimtol, XPRS_ELIMTOL)
       The Markowitz tolerance for the elimination phase of the presolve.
 
       Default: 0.001
 
-pre:folding (prefolding, pre:xprs_prefolding, XPRS_PREFOLDING)
+pre:folding (prefolding, XPRS_PREFOLDING)
       Presolve: Determines if a folding procedure should be used to aggregate
       continuous columns in an equitable partition.
 
@@ -4578,7 +4504,19 @@ pre:folding (prefolding, pre:xprs_prefolding, XPRS_PREFOLDING)
 
       * (1) Enabled.
 
-pre:genconsdualreductions (genconsdualreductions, pre:xprs_genconsdualreductions, XPRS_GENCONSDUALREDUCTIONS)
+pre:genconsabstransformation (genconsabstransformation, XPRS_GENCONSABSTRANSFORMATION)
+      This control specifies the reformulation method for absolute value
+      general constraints at the beginning of the search.
+
+      Values (default: -1):
+
+      * (-1) Automatic.
+
+      * (0) Use a formulation based on indicator constraints.
+
+      * (1) Use a formulation based on SOS1-constraints.
+
+pre:genconsdualreductions (genconsdualreductions, XPRS_GENCONSDUALREDUCTIONS)
       This parameter specifies whether dual reductions should be applied to
       reduce the number of columns and rows added when transforming general
       constraints to MIP structs.
@@ -4590,7 +4528,7 @@ pre:genconsdualreductions (genconsdualreductions, pre:xprs_genconsdualreductions
       * (1) Enabled. Only add neccessary columns and rows, drop those implied
         by the objective sense.
 
-pre:implications (preimplications, pre:xprs_preimplications, XPRS_PREIMPLICATIONS)
+pre:implications (preimplications, XPRS_PREIMPLICATIONS)
       Presolve: Determines whether to use implication structures to remove
       redundant rows. If implication sequences are detected, they might also
       be used in probing.
@@ -4603,7 +4541,7 @@ pre:implications (preimplications, pre:xprs_preimplications, XPRS_PREIMPLICATION
 
       * (1) Use implications to remove reduandant rows.
 
-pre:indlinbigbigm (indprelinbigm, pre:indlinbigm, pre:xprs_indprelinbigm, XPRS_INDPRELINBIGM)
+pre:indlinbigbigm (indprelinbigm, XPRS_INDPRELINBIGM)
       During presolve, indicator constraints will be linearized using a BigM
       coefficient whenever that BigM coefficient is small enough. This control
       defines the largest BigM for which the original constraint will be
@@ -4614,7 +4552,7 @@ pre:indlinbigbigm (indprelinbigm, pre:indlinbigm, pre:xprs_indprelinbigm, XPRS_I
 
       Default: 100.0
 
-pre:indlinsmallbigm (indlinbigm, alg:indlinbigm, pre:xprs_indlinbigm, XPRS_INDLINBIGM)
+pre:indlinsmallbigm (alg:indlinbigm, indlinbigm, XPRS_INDLINBIGM)
       During presolve, indicator constraints will be linearized using a BigM
       coefficient whenever that BigM coefficient is small enough. This control
       defines the largest BigM for which such a linearized version will be
@@ -4624,7 +4562,7 @@ pre:indlinsmallbigm (indlinbigm, alg:indlinbigm, pre:xprs_indlinbigm, XPRS_INDLI
 
       Default: 1.0E+05
 
-pre:lindep (prelindep, pre:xprs_prelindep, XPRS_PRELINDEP)
+pre:lindep (prelindep, XPRS_PRELINDEP)
       Presolve: Determines whether to check for and remove linearly dependent
       equality constraints when presolving a problem.
 
@@ -4636,21 +4574,21 @@ pre:lindep (prelindep, pre:xprs_prelindep, XPRS_PRELINDEP)
 
       * (1) Check for and remove linearly dependent equality constraints.
 
-pre:maxgrow (presolvemaxgrow, pre:xprs_presolvemaxgrow, XPRS_PRESOLVEMAXGROW)
+pre:maxgrow (presolvemaxgrow, XPRS_PRESOLVEMAXGROW)
       Limit on how much the number of non-zero coefficients is allowed to grow
       during presolve, specified as a ratio of the number of non-zero
       coefficients in the original problem.
 
       Default: 0.1
 
-pre:maximpliedbound (maximpliedbound, pre:xprs_maximpliedbound, XPRS_MAXIMPLIEDBOUND)
+pre:maximpliedbound (maximpliedbound, XPRS_MAXIMPLIEDBOUND)
       Presolve: When tighter bounds are calculated during MIP preprocessing,
       only bounds whose absolute value are smaller than MAXIMPLIEDBOUND will
       be applied to the problem.
 
       Default: 1.0E+08
 
-pre:maxscalefactor (maxscalefactor, pre:xprs_maxscalefactor, XPRS_MAXSCALEFACTOR)
+pre:maxscalefactor (maxscalefactor, maxlogscale, XPRS_MAXSCALEFACTOR)
       This determines the maximum scaling factor that can be applied during
       scaling. The maximum is provided as an exponent of a power of 2.
 
@@ -4658,7 +4596,7 @@ pre:maxscalefactor (maxscalefactor, pre:xprs_maxscalefactor, XPRS_MAXSCALEFACTOR
 
       * (0-64) The maximum is provided an exponent of a power of 2.
 
-pre:objcutdetect (preobjcutdetect, pre:xprs_preobjcutdetect, XPRS_PREOBJCUTDETECT)
+pre:objcutdetect (preobjcutdetect, XPRS_PREOBJCUTDETECT)
       Presolve: Determines whether to check for constraints that are parallel
       or near parallel to a linear objective function, and which can safely be
       removed. This reduction applies to MIPs only.
@@ -4669,7 +4607,7 @@ pre:objcutdetect (preobjcutdetect, pre:xprs_preobjcutdetect, XPRS_PREOBJCUTDETEC
 
       * (1) Enable check and reductions.
 
-pre:objscalefactor (objscalefactor, num:xprs_objscalefactor, XPRS_OBJSCALEFACTOR)
+pre:objscalefactor (objscalefactor, XPRS_OBJSCALEFACTOR)
       Custom objective scaling factor, expressed as a power of 2. When set, it
       overwrites the automatic objective scaling factor. A value of 0 means no
       objective scaling. This control is applied for the full solve, and is
@@ -4679,7 +4617,7 @@ pre:objscalefactor (objscalefactor, num:xprs_objscalefactor, XPRS_OBJSCALEFACTOR
 
       Default: 0
 
-pre:ops (presolveops, pre:xprs_presolveops, XPRS_PRESOLVEOPS)
+pre:ops (presolveops, XPRS_PRESOLVEOPS)
       This bit-vector control (see Section Bit-vector controls) specifies the
       operations which are performed during the presolve.
 
@@ -4724,12 +4662,12 @@ pre:ops (presolveops, pre:xprs_presolveops, XPRS_PRESOLVEOPS)
 
       * (18) No mod2 presolve.
 
-pre:passes (presolvepasses, pre:xprs_presolvepasses, XPRS_PRESOLVEPASSES)
+pre:passes (presolvepasses, XPRS_PRESOLVEPASSES)
       Number of reduction rounds to be performed in presolve
 
       Default: 1
 
-pre:permute (prepermute, pre:xprs_prepermute, XPRS_PREPERMUTE)
+pre:permute (prepermute, XPRS_PREPERMUTE)
       This bit-vector control (see Section Bit-vector controls) specifies
       whether to randomly permute rows, columns and MIP entities when starting
       the presolve. With the default value 0, no permutation will take place.
@@ -4742,14 +4680,36 @@ pre:permute (prepermute, pre:xprs_prepermute, XPRS_PREPERMUTE)
 
       * (2) Permute MIP entities. This bit only affects MIP problems.
 
-pre:permuteseed (prepermuteseed, pre:xprs_prepermuteseed, XPRS_PREPERMUTESEED)
-      This control sets the seed for the pseudo-random number generator for
-      permuting the problem when starting the presolve. This control only has
-      effects when PREPERMUTE is enabled.
+pre:preconvertobjtocons (preconvertobjtocons, XPRS_PRECONVERTOBJTOCONS)
+      Presolve: convert a linear or quadratic objective function into an
+      objective transfer constraint
 
-      Default: 1
+      Values (default: -1):
 
-pre:probing (preprobing, pre:xprs_preprobing, XPRS_PREPROBING)
+      * (-1) Automatically determined.
+
+      * (0) Disable reformulation.
+
+      * (1) Move only the quadratic part of the objective into a constraint.
+
+      * (2) Move both the linear and quadratic parts of the objective into a
+        constraint.
+
+pre:presort (presort, XPRS_PRESORT)
+      This bit-vector control (see Section Bit-vector controls) specifies
+      whether to sort rows, columns and MIP entities by their names when
+      starting the presolve. With the default value 0, no sorting will take
+      place.
+
+      Values (default: 0):
+
+      * (0) Sort rows.
+
+      * (1) Sort columns.
+
+      * (2) Sort MIP entities. This bit only affects MIP problems.
+
+pre:probing (preprobing, XPRS_PREPROBING)
       Presolve: Amount of probing to perform on binary variables during
       presolve. This is done by fixing a binary to each of its values in turn
       and analyzing the implications.
@@ -4768,7 +4728,7 @@ pre:probing (preprobing, pre:xprs_preprobing, XPRS_PREPROBING)
       * (+3) Full probing and repeat as long as the problem is significantly
         reduced.
 
-pre:protectdual (preprotectdual, pre:xprs_preprotectdual, XPRS_PREPROTECTDUAL)
+pre:protectdual (preprotectdual, XPRS_PREPROTECTDUAL)
       Presolve: specifies whether the presolver should protect a given dual
       solution by maintaining the same level of dual feasibility. Enabling
       this control often results in a worse presolved model. This control only
@@ -4780,7 +4740,7 @@ pre:protectdual (preprotectdual, pre:xprs_preprotectdual, XPRS_PREPROTECTDUAL)
 
       * (1) Enabled. Protect the dual solution during presolve.
 
-pre:pwldualreductions (pwldualreductions, pre:xprs_pwldualreductions, XPRS_PWLDUALREDUCTIONS)
+pre:pwldualreductions (pwldualreductions, XPRS_PWLDUALREDUCTIONS)
       This parameter specifies whether dual reductions should be applied to
       reduce the number of columns, rows and SOS-constraints added when
       transforming piecewise linear objectives and constraints to MIP structs.
@@ -4793,7 +4753,7 @@ pre:pwldualreductions (pwldualreductions, pre:xprs_pwldualreductions, XPRS_PWLDU
       * (1) Enabled. Only add neccessary columns, rows and sets, drop those
         implied by the objective sense.
 
-pre:pwlnonconvextransformation (pwlnonconvextransformation, pre:xprs_pwlnonconvextransformation, XPRS_PWLNONCONVEXTRANSFORMATION)
+pre:pwlnonconvextransformation (pwlnonconvextransformation, XPRS_PWLNONCONVEXTRANSFORMATION)
       This control specifies the reformulation method for piecewise linear
       constraints at the beginning of the search. Note that the chosen
       formulation will only be used if MIP entities are necessary but not if
@@ -4810,7 +4770,7 @@ pre:pwlnonconvextransformation (pwlnonconvextransformation, pre:xprs_pwlnonconve
 
       * (1) Use a formulation based on binary variables.
 
-pre:rootpresolve (rootpresolve, mip:xprs_rootpresolve, XPRS_ROOTPRESOLVE)
+pre:rootpresolve (rootpresolve, XPRS_ROOTPRESOLVE)
       Determines if presolving should be performed on the problem after the
       tree search has finished with root cutting and heuristics.
 
@@ -4823,7 +4783,7 @@ pre:rootpresolve (rootpresolve, mip:xprs_rootpresolve, XPRS_ROOTPRESOLVE)
 
       * (+1) Always presolve the root problem.
 
-pre:scaling (scaling, num:xprs_scaling, XPRS_SCALING)
+pre:scaling (scaling, XPRS_SCALING)
       This bit-vector control (see Section Bit-vector controls) determines how
       the Optimizer will rescale a model internally before optimization. If
       set to 0, no scaling will take place.
@@ -4863,7 +4823,7 @@ pre:scaling (scaling, num:xprs_scaling, XPRS_SCALING)
 
       * (15) Enable explicit linear slack scaling.
 
-pre:solve (presolve, pre:xprs_presolve, XPRS_PRESOLVE)
+pre:solve (presolve, XPRS_PRESOLVE)
       This control determines whether presolving should be performed prior to
       starting the main algorithm. Presolve attempts to simplify the problem
       by detecting and removing redundant constraints, tightening variable
@@ -4887,7 +4847,7 @@ pre:solve (presolve, pre:xprs_presolve, XPRS_PRESOLVE)
       * (3) Presolve is applied, and bounds detected to be redundant are
         always removed.
 
-pre:solve_nlp (presolve_nlp, presolve_slp, pre:xslp_presolve, XSLP_PRESOLVE, NLPPRESOLVE)
+pre:solve_nlp (presolve_nlp, presolve_slp, xslp_presolve, XSLP_PRESOLVE, NLPPRESOLVE)
       This control determines whether presolving should be performed on the
       nonlinear problem prior to starting the main algorithm
 
@@ -4903,14 +4863,14 @@ pre:solve_nlp (presolve_nlp, presolve_slp, pre:xslp_presolve, XSLP_PRESOLVE, NLP
       * (2) Low memory presolve. Original problem is not restored by postsolve
         and dual solution may not be completely postsolved.
 
-pre:sosreftol (sosreftol, tol:xprs_sosreftol, XPRS_SOSREFTOL)
+pre:sosreftol (sosreftol, XPRS_SOSREFTOL)
       The minimum relative gap between the ordering values of elements in a
       special ordered set. The gap divided by the absolute value of the larger
       of the two adjacent values must be at least SOSREFTOL.
 
       Default: 1.0E-06
 
-pre:trace (trace, pre:xprs_trace, XPRS_TRACE)
+pre:trace (trace, XPRS_TRACE)
       Display the infeasibility diagnosis during presolve. If non-zero, an
       explanation of the logical deductions made by presolve to deduce
       infeasibility or unboundedness will be displayed on screen or sent to
@@ -4918,31 +4878,45 @@ pre:trace (trace, pre:xprs_trace, XPRS_TRACE)
 
       Default: 0
 
-pre:xprs_alternativeredcosts (XPRS_ALTERNATIVEREDCOSTS)
-      Controls aggressiveness of searching for alternative reduced cost
+qp:convexitychk (convexitychk, ifcheckconvexity, XPRS_IFCHECKCONVEXITY)
+      Determines if the convexity of the problem is checked before
+      optimization. Applies to quadratic, mixed integer quadratic and
+      quadratically constrained problems. Checking convexity takes some time,
+      thus for problems that are known to be convex it might be reasonable to
+      switch the checking off.
+
+      Values (default: 1):
+
+      * (0) Turn off convexity checking.
+
+      * (1) Turn on convexity checking.
+
+qp:eigenvaluetol (eigenvaluetol, eigenvaltol, XPRS_EIGENVALUETOL)
+      A quadratic matrix is considered not to be positive semi-definite, if
+      its smallest eigenvalue is smaller than the negative of this value.
+
+      Default: 1E-6
+
+qp:miqcpalg (miqcpalg, XPRS_MIQCPALG)
+      This control determines which algorithm is to be used to solve mixed
+      integer quadratic constrained and mixed integer second order cone
+      problems.
 
       Values (default: -1):
 
-      * (-1) The solver decides if searching for alternative reduced cost is
-        beneficial or not. This is the default setting.
+      * (-1) Determined automatically.
 
-      * (0) Searching for alternative reduced cost is disabled.
+      * (0) Use the barrier algorithm in the branch and bound algorithm.
 
-      * (1) Searching for alternative reduced cost is enabled.
+      * (1) Use outer approximations in the branch and bound algorithm.
 
-pre:xprs_genconsabstransformation (XPRS_GENCONSABSTRANSFORMATION)
-      This control specifies the reformulation method for absolute value
-      general constraints at the beginning of the search.
+qp:nonconvex (nonconvex)
+      Deprecated, use qp:convexitychk. Values 0 and 1 are passed on to
+      qp:convexitychk (convexity check off/on); the value 2, with which other
+      AMPL drivers allow nonconvex quadratics, switches the convexity check
+      off as well.
 
-      Values (default: -1):
-
-      * (-1) Automatic.
-
-      * (0) Use a formulation based on indicator constraints.
-
-      * (1) Use a formulation based on SOS1-constraints.
-
-pre:xprs_preconedecomp (XPRS_PRECONEDECOMP)
+qp:preconedecomp (preconedecomp, conedecomp, XPRS_PRECONEDECOMP)
       Presolve: decompose regular and rotated cones with more than two
       elements and apply Outer Approximation on the resulting components.
 
@@ -4961,293 +4935,7 @@ pre:xprs_preconedecomp (XPRS_PRECONEDECOMP)
       * (3) Cones are decomposed within the Outer Approximation domain only,
         i.e., the problem maintains the original cones.
 
-pre:xprs_preconvertobjtocons (XPRS_PRECONVERTOBJTOCONS)
-      Presolve: convert a linear or quadratic objective function into an
-      objective transfer constraint
-
-      Values (default: -1):
-
-      * (-1) Automatically determined.
-
-      * (0) Disable reformulation.
-
-      * (1) Move only the quadratic part of the objective into a constraint.
-
-      * (2) Move both the linear and quadratic parts of the objective into a
-        constraint.
-
-pre:xprs_presort (XPRS_PRESORT)
-      This bit-vector control (see Section Bit-vector controls) specifies
-      whether to sort rows, columns and MIP entities by their names when
-      starting the presolve. With the default value 0, no sorting will take
-      place.
-
-      Values (default: 0):
-
-      * (0) Sort rows.
-
-      * (1) Sort columns.
-
-      * (2) Sort MIP entities. This bit only affects MIP problems.
-
-pre:xslp_boundthreshold (XSLP_BOUNDTHRESHOLD, SLPBOUNDTHRESHOLD)
-      The maximum size of a bound that can be introduced by nonlinear
-      presolve.
-
-      Default: 1.0e+10
-
-pre:xslp_linquadbr (XSLP_LINQUADBR, NLPLINQUADBR)
-      Use linear and quadratic constraints and objective function to further
-      reduce bounds on all variables
-
-      Values (default: -1):
-
-      * (-1) automatic selection
-
-      * (0) disable
-
-      * (1) enable
-
-pre:xslp_postsolve (XSLP_POSTSOLVE, NLPPOSTSOLVE)
-      This control determines whether postsolving should be performed
-      automatically
-
-      Values (default: -1):
-
-      * (-1) Postsolve if the problem could be solved to
-        optimality/infeasibility.
-
-      * (0) Do not automatically postsolve.
-
-      * (1) Postsolve automatically.
-
-pre:xslp_presolve_elimtol (XSLP_PRESOLVE_ELIMTOL, NLPPRESOLVE_ELIMTOL)
-      Tolerance for nonlinear eliminations during SLP presolve
-
-      Default: 0.001
-
-pre:xslp_presolvelevel (XSLP_PRESOLVELEVEL, NLPPRESOLVELEVEL)
-      This control determines the level of changes presolve may carry out on
-      the problem and whether column/row indices may change
-
-      Values (default: XSLP_PRESOLVELEVEL_FULL):
-
-      * (1) Individual rows only presolve, no dropped columns/rows or index
-        changes, no nonlinear transformations (XSLP_PRESOLVELEVEL_LOCALIZED).
-
-      * (2) All linear presolve that does not drop columns/rows, no index
-        changes, no nonlinear transformations (XSLP_PRESOLVELEVEL_BASIC).
-
-      * (3) Full linear presolve including dropping columns/rows and index
-        changes, no nonlinear transformations (XSLP_PRESOLVELEVEL_LINEAR).
-
-      * (4) Full presolve (XSLP_PRESOLVELEVEL_FULL).
-
-pre:xslp_presolveops (XSLP_PRESOLVEOPS, NLPPRESOLVEOPS)
-      Bitmap indicating the SLP presolve actions to be taken
-
-      Values (default: 2104):
-
-      * (0) Generic SLP presolve.
-
-      * (1) Explicitly fix columns identified as fixed to zero.
-
-      * (2) Explicitly fix all columns identified as fixed.
-
-      * (3) SLP bound tightening.
-
-      * (4) MISLP bound tightening.
-
-      * (5) Bound tightening based on function domains.
-
-      * (8) Do not presolve coefficients.
-
-      * (9) Do not remove delta variables.
-
-      * (10) Avoid reductions that can not be dual postsolved.
-
-      * (11) Allow eliminations on determined variables.
-
-      * (12) Avoid performing linear reductions at the nlp level.
-
-      * (13) Avoid simplifying nonlinear expressions.
-
-pre:xslp_presolvezero (XSLP_PRESOLVEZERO, NLPPRESOLVEZERO)
-      Minimum absolute value for a variable which is identified as nonzero
-      during SLP presolve
-
-      Default: 1.0E-09
-
-pre:xslp_probing (XSLP_PROBING, NLPPROBING)
-      This control determines whether probing on a subset of variables should
-      be performed prior to starting the main algorithm. Probing runs multiple
-      times bound reduction in order to further tighten the bounding box.
-
-      Values (default: -1):
-
-      * (-1) Automatic.
-
-      * (0) Disable SLP probing.
-
-      * (1) Activate SLP probing only on binary variables.
-
-      * (2) Activate SLP probing only on binary or unbounded integer
-        variables.
-
-      * (3) Activate SLP probing only on binary or integer variables.
-
-      * (4) Activate SLP probing only on binary, integer variables, and
-        unbounded continuous variables.
-
-      * (5) Activate SLP probing on any variable.
-
-pre:xslp_reformulate (XSLP_REFORMULATE, NLPREFORMULATE)
-      Controls the problem reformulations carried out before augmentation.
-      This allows SLP to take advantage of dedicated algorithms for special
-      problem classes.
-
-      Values (default: 511 (bits 0 — 8 incl. are set)):
-
-      * (0) Solve convex quadratic objectives using the XPRS library .
-
-      * (1) Convert non-convex quadratic objectives to SLP constructs .
-
-      * (2) Solve convex quadratic constraints using the XPRS library.
-
-      * (3) Convert non-convex QCQP constraints to SLP constructs.
-
-      * (4) Keep second order cones in the XPRS problem to keep them in the
-        linearizations.
-
-      * (5) Convexity of a quadratic only problem may be checked by calling
-        the optimizer to solve the instance.
-
-      * (6) Convert pievewise linear functions to MIP constructs.
-
-      * (7) Convert ABS functions to MIP constraints if the full problem can
-        be made not nonlinear.
-
-      * (8) Convert MIN and MAX functions to MIP expressions if the full
-        problem can be made not nonlinear.
-
-      * (9) Always convert ABS expressions.
-
-      * (10) Always convert MIN and MAX expressions.
-
-prob:xprs_checkinputdata (XPRS_CHECKINPUTDATA)
-      Check input arrays for bad data.
-
-      Values (default: 1 (on)):
-
-      * (0) Do not check.
-
-      * (1) Check input arrays.
-
-prob:xprs_extracols (XPRS_EXTRACOLS)
-      The initial number of extra columns to allow for in the matrix. If
-      columns are to be added to the matrix, then, for maximum efficiency,
-      space should be reserved for the columns before the matrix is input by
-      setting the EXTRACOLS control. If this is not done, resizing will occur
-      automatically, but more space may be allocated than the user actually
-      requires.
-
-      Default: 0
-
-prob:xprs_extraelems (XPRS_EXTRAELEMS)
-      The initial number of extra matrix elements to allow for in the matrix,
-      including coefficients for cuts. If rows or columns are to be added to
-      the matrix, then, for maximum efficiency, space should be reserved for
-      the extra matrix elements before the matrix is input by setting the
-      EXTRAELEMS control. If this is not done, resizing will occur
-      automatically, but more space may be allocated than the user actually
-      requires.
-
-      Default: Hardware/platform dependent.
-
-prob:xprs_extramipents (XPRS_EXTRAMIPENTS)
-      The initial number of extra MIP entities to allow for.
-
-      Default: 0
-
-prob:xprs_extrarows (XPRS_EXTRAROWS)
-      The initial number of extra rows to allow for in the matrix, including
-      cuts. If rows are to be added to the matrix, then, for maximum
-      efficiency, space should be reserved for the rows before the matrix is
-      input by setting the EXTRAROWS control. If this is not done, resizing
-      will occur automatically, but more space may be allocated than the user
-      actually requires.
-
-      Default: 0
-
-prob:xprs_extrasetelems (XPRS_EXTRASETELEMS)
-      The initial number of extra elements in sets to allow for in the matrix.
-      If sets are to be added to the matrix, then, for maximum efficiency,
-      space should be reserved for the set elements before the matrix is input
-      by setting the EXTRASETELEMS control. If this is not done, resizing will
-      occur automatically, but more space may be allocated than the user
-      actually requires.
-
-      Default: 0
-
-prob:xprs_extrasets (XPRS_EXTRASETS)
-      The initial number of extra sets to allow for in the matrix. If sets are
-      to be added to the matrix, then, for maximum efficiency, space should be
-      reserved for the sets before the matrix is input by setting the
-      EXTRASETS control. If this is not done, resizing will occur
-      automatically, but more space may be allocated than the user actually
-      requires.
-
-      Default: 0
-
-prob:xprs_inputtol (XPRS_INPUTTOL)
-      The tolerance on input values elements. If any value is less than or
-      equal to INPUTTOL in absolute value, it is treated as zero. For the
-      internal zero tolerance see MATRIXTOL.
-
-      Default: 0.0
-
-prob:xprs_maxmcoeffbufferelems (XPRS_MAXMCOEFFBUFFERELEMS)
-      The maximum number of matrix coefficients to buffer before flushing into
-      the internal representation of the problem. Buffering coefficients can
-      offer a significant performance gain when you are building a matrix
-      using XPRSchgcoef or XPRSchgmcoef, but can lead to a significant memory
-      overhead for large matrices, which this control allows you to influence.
-
-      Default: 2147483647
-
-qp:eigenvaluetol (eigenvaluetol, qp:xprs_eigenvaluetol, XPRS_EIGENVALUETOL)
-      A quadratic matrix is considered not to be positive semi-definite, if
-      its smallest eigenvalue is smaller than the negative of this value.
-
-      Default: 1E-6
-
-qp:miqcpalg (miqcpalg, qp:xprs_miqcpalg, XPRS_MIQCPALG)
-      This control determines which algorithm is to be used to solve mixed
-      integer quadratic constrained and mixed integer second order cone
-      problems.
-
-      Values (default: -1):
-
-      * (-1) Determined automatically.
-
-      * (0) Use the barrier algorithm in the branch and bound algorithm.
-
-      * (1) Use outer approximations in the branch and bound algorithm.
-
-qp:nonconvex (nonconvex, pre:xprs_ifcheckconvexity, XPRS_IFCHECKCONVEXITY)
-      Determines if the convexity of the problem is checked before
-      optimization. Applies to quadratic, mixed integer quadratic and
-      quadratically constrained problems. Checking convexity takes some time,
-      thus for problems that are known to be convex it might be reasonable to
-      switch the checking off.
-
-      Values (default: 1):
-
-      * (0) Turn off convexity checking.
-
-      * (1) Turn on convexity checking.
-
-qp:repairindefiniteq (repairindefq, repairindefiniteq, qp:xprs_repairindefiniteq, XPRS_REPAIRINDEFINITEQ)
+qp:repairindefiniteq (repairindefq, repairindefiniteq, XPRS_REPAIRINDEFINITEQ)
       Controls if the optimizer should make indefinite quadratic matrices
       positive definite when it is possible.
 
@@ -5257,11 +4945,27 @@ qp:repairindefiniteq (repairindefq, repairindefiniteq, qp:xprs_repairindefiniteq
 
       * (1) Do not repair.
 
-qp:simplexops (qsimplexops, qp:xprs_qsimplexops, XPRS_QSIMPLEXOPS)
+qp:sdpcutstrategy (sdpcutstrategy, XPRS_SDPCUTSTRATEGY)
+      Level of SDP cutting planes separation: This specifies how aggressively
+      SDP cuts should be separated.
+
+      Values (default: -1):
+
+      * (-1) Automatic - let the Optimizer decide.
+
+      * (0) Separation of SDP cuts disabled.
+
+      * (1) Conservative separation of SDP cuts.
+
+      * (2) Moderate separation of SDP cuts.
+
+      * (3) Aggressive separation of SDP cuts.
+
+qp:simplexops (qsimplexops, mipops, XPRS_QSIMPLEXOPS)
       Controls the behavior of the quadratic simplex solvers via a bit-vector
       (see Section Bit-vector controls).
 
-      Values (default: 0 ):
+      Values (default: 0):
 
       * (0) Force traditional primal first phase.
 
@@ -5303,7 +5007,7 @@ qp:simplexops (qsimplexops, qp:xprs_qsimplexops, XPRS_QSIMPLEXOPS)
       * (16) Perform cleanup if a superbasic solution is provided for
         warm-start.
 
-qp:unshift (quadunshift, quadraticunshift, qp:xprs_quadraticunshift, XPRS_QUADRATICUNSHIFT)
+qp:unshift (quadunshift, quadraticunshift, XPRS_QUADRATICUNSHIFT)
       Determines whether an extra solution purification step is called after a
       solution found by the quadratic simplex (either primal or dual).
 
@@ -5315,20 +5019,7 @@ qp:unshift (quadunshift, quadraticunshift, qp:xprs_quadraticunshift, XPRS_QUADRA
 
       * (1) Always do the purification step.
 
-sim:xprs_pivottol (XPRS_PIVOTTOL)
-      Simplex: The zero tolerance for matrix elements. On each iteration, the
-      simplex method seeks a nonzero matrix element to pivot on. Any element
-      with absolute value less than PIVOTTOL is treated as zero for this
-      purpose.
-
-      Default: 1.0E-09
-
-sim:xprs_ppfactor (XPRS_PPFACTOR)
-      The partial pricing candidate list sizing parameter.
-
-      Default: 1.0
-
-slp:xslp_algorithm (XSLP_ALGORITHM, SLPALGORITHM)
+slp:algorithm (xslp_algorithm, XSLP_ALGORITHM, SLPALGORITHM)
       Bit map describing the SLP algorithm(s) to be used
 
       Values (default: 166 (sets bits 1, 2, 5, 7)):
@@ -5370,7 +5061,7 @@ slp:xslp_algorithm (XSLP_ALGORITHM, SLPALGORITHM)
 
       * (16) Apply clamping when converged on extended criteria only.
 
-slp:xslp_analyze (XSLP_ANALYZE, SLPANALYZE)
+slp:analyze (analyze, xslp_analyze, XSLP_ANALYZE, SLPANALYZE)
       Bit map activating additional options supporting model / solution path
       analysis
 
@@ -5388,17 +5079,17 @@ slp:xslp_analyze (XSLP_ANALYZE, SLPANALYZE)
 
       * (8) Create an XSLP save file at every XSLP_AUTOSAVE iterations.
 
-slp:xslp_atol_a (XSLP_ATOL_A, SLPATOL_A)
+slp:atol_a (atol_a, xslp_atol_a, XSLP_ATOL_A, SLPATOL_A)
       Absolute delta convergence tolerance
 
       Default: -1.0
 
-slp:xslp_atol_r (XSLP_ATOL_R, SLPATOL_R)
+slp:atol_r (atol_r, xslp_atol_r, XSLP_ATOL_R, SLPATOL_R)
       Relative delta convergence tolerance
 
       Default: -1.0
 
-slp:xslp_augmentation (XSLP_AUGMENTATION, SLPAUGMENTATION)
+slp:augmentation (augmentation, xslp_augmentation, XSLP_AUGMENTATION, SLPAUGMENTATION)
       Bit map describing the SLP augmentation method(s) to be used
 
       Values (default: 12 (sets bits 2 and 3)):
@@ -5428,40 +5119,40 @@ slp:xslp_augmentation (XSLP_AUGMENTATION, SLPAUGMENTATION)
       * (12) Avoid running an LP around fixed initial values trying to get
         feasible.
 
-slp:xslp_autosave (XSLP_AUTOSAVE, SLPAUTOSAVE)
+slp:autosave (autosave, xslp_autosave, XSLP_AUTOSAVE, SLPAUTOSAVE)
       Frequency with which to save the model
 
       Default: 0
 
-slp:xslp_barcrossoverstart (XSLP_BARCROSSOVERSTART, SLPBARCROSSOVERSTART)
+slp:barcrossoverstart (barcrossoverstart, xslp_barcrossoverstart, XSLP_BARCROSSOVERSTART, SLPBARCROSSOVERSTART)
       Default crossover activation behaviour for barrier start
 
       Default: 0
 
-slp:xslp_barlimit (XSLP_BARLIMIT, SLPBARLIMIT)
+slp:barlimit (barlimit, xslp_barlimit, XSLP_BARLIMIT, SLPBARLIMIT)
       Number of initial SLP iterations using the barrier method
 
       Default: 0
 
-slp:xslp_barstallinglimit (XSLP_BARSTALLINGLIMIT, SLPBARSTALLINGLIMIT)
+slp:barstallinglimit (barstallinglimit, xslp_barstallinglimit, XSLP_BARSTALLINGLIMIT, SLPBARSTALLINGLIMIT)
       Number of iterations to allow numerical failures in barrier before
       switching to dual
 
       Default: 3
 
-slp:xslp_barstallingobjlimit (XSLP_BARSTALLINGOBJLIMIT, SLPBARSTALLINGOBJLIMIT)
+slp:barstallingobjlimit (barstallingobjlimit, xslp_barstallingobjlimit, XSLP_BARSTALLINGOBJLIMIT, SLPBARSTALLINGOBJLIMIT)
       Number of iterations over which to measure the objective change for
       barrier iterations with no crossover
 
       Default: 3
 
-slp:xslp_barstallingtol (XSLP_BARSTALLINGTOL, SLPBARSTALLINGTOL)
+slp:barstallingtol (barstallingtol, xslp_barstallingtol, XSLP_BARSTALLINGTOL, SLPBARSTALLINGTOL)
       Required change in the objective when progress is measured in barrier
       iterations without crossover
 
       Default: 0.05
 
-slp:xslp_barstartops (XSLP_BARSTARTOPS, SLPBARSTARTOPS)
+slp:barstartops (barstartops, xslp_barstartops, XSLP_BARSTARTOPS, SLPBARSTARTOPS)
       Controls behaviour when the barrier is used to solve the linearizations
 
       Values (default: -1):
@@ -5474,7 +5165,18 @@ slp:xslp_barstartops (XSLP_BARSTARTOPS, SLPBARSTARTOPS)
       * (2) If a non-vertex converged solution found by barrier without
         crossover can be returned as a final solution.
 
-slp:xslp_cascade (XSLP_CASCADE, SLPCASCADE)
+slp:boundthreshold (boundthreshold, xslp_boundthreshold, XSLP_BOUNDTHRESHOLD, SLPBOUNDTHRESHOLD)
+      The maximum size of a bound that can be introduced by nonlinear
+      presolve.
+
+      Default: 1.0e+10
+
+slp:calcthreads (calcthreads, xslp_calcthreads, XSLP_CALCTHREADS, NLPCALCTHREADS)
+      Number of threads used for formula and derivatives evaluations
+
+      Default: -1 (determined by XSLP_THREADS)
+
+slp:cascade (cascade, xslp_cascade, XSLP_CASCADE, SLPCASCADE)
       Bit map describing the cascading to be used
 
       Values (default: 257):
@@ -5502,39 +5204,71 @@ slp:xslp_cascade (XSLP_CASCADE, SLPCASCADE)
 
       * (8) Automatically determine whether to apply cascading.
 
-slp:xslp_cascadenlimit (XSLP_CASCADENLIMIT, SLPCASCADENLIMIT)
+slp:cascadenlimit (cascadenlimit, xslp_cascadenlimit, XSLP_CASCADENLIMIT, SLPCASCADENLIMIT)
       Maximum number of iterations for cascading with non-linear determining
       rows
 
       Default: 10
 
-slp:xslp_cascadetol_pa (XSLP_CASCADETOL_PA, SLPCASCADETOL_PA)
+slp:cascadetol_pa (cascadetol_pa, xslp_cascadetol_pa, XSLP_CASCADETOL_PA, SLPCASCADETOL_PA)
       Absolute cascading print tolerance
 
       Default: 0.01
 
-slp:xslp_cascadetol_pr (XSLP_CASCADETOL_PR, SLPCASCADETOL_PR)
+slp:cascadetol_pr (cascadetol_pr, xslp_cascadetol_pr, XSLP_CASCADETOL_PR, SLPCASCADETOL_PR)
       Relative cascading print tolerance
 
       Default: 0.01
 
-slp:xslp_clampshrink (XSLP_CLAMPSHRINK, SLPCLAMPSHRINK)
+slp:cdtol_a (cdtol_a, xslp_cdtol_a, XSLP_CDTOL_A, SLPCDTOL_A)
+      Absolute tolerance for deducing constant derivatives
+
+      Default: 1.0e-08
+
+slp:cdtol_r (cdtol_r, xslp_cdtol_r, XSLP_CDTOL_R, SLPCDTOL_R)
+      Relative tolerance for deducing constant derivatives
+
+      Default: 1.0e-08
+
+slp:clampshrink (clampshrink, xslp_clampshrink, XSLP_CLAMPSHRINK, SLPCLAMPSHRINK)
       Shrink ratio used to impose strict convergence on variables converged in
       extended criteria only
 
       Default: 0.3
 
-slp:xslp_clampvalidationtol_a (XSLP_CLAMPVALIDATIONTOL_A, SLPCLAMPVALIDATIONTOL_A)
+slp:clampvalidationtol_a (clampvalidationtol_a, xslp_clampvalidationtol_a, XSLP_CLAMPVALIDATIONTOL_A, SLPCLAMPVALIDATIONTOL_A)
       Absolute validation tolerance for applying XSLP_CLAMPSHRINK
 
       Default: 1.0e-06
 
-slp:xslp_clampvalidationtol_r (XSLP_CLAMPVALIDATIONTOL_R, SLPCLAMPVALIDATIONTOL_R)
+slp:clampvalidationtol_r (clampvalidationtol_r, xslp_clampvalidationtol_r, XSLP_CLAMPVALIDATIONTOL_R, SLPCLAMPVALIDATIONTOL_R)
       Relative validation tolerance for applying XSLP_CLAMPSHRINK
 
       Default: 1.0e-06
 
-slp:xslp_convergenceops (XSLP_CONVERGENCEOPS, SLPCONVERGENCEOPS)
+slp:control (control, xslp_control, XSLP_CONTROL)
+      Bit map describing which Xpress NonLinear functions also activate the
+      corresponding Optimizer Library function
+
+      Values (default: 0 (no bits set)):
+
+      * (0) Xpress NonLinear problem management functions do NOT invoke the
+        corresponding Optimizer Library function for the underlying linear
+        problem.
+
+      * (1) XSLPcopycontrols does NOT invoke XPRScopycontrols.
+
+      * (2) XSLPcopycallbacks does NOT invoke XPRScopycallbacks.
+
+      * (3) XSLPcopyprob does NOT invoke XPRScopyprob.
+
+      * (4) XSLPsetdefaults does NOT invoke XPRSsetdefaults.
+
+      * (5) XSLPsave does NOT invoke XPRSsave.
+
+      * (6) XSLPrestore does NOT invoke XPRSrestore.
+
+slp:convergenceops (convergenceops, xslp_convergenceops, XSLP_CONVERGENCEOPS, SLPCONVERGENCEOPS)
       Bit map describing which convergence tests should be carried out
 
       Values (default: 39935 (bits 0-9, 11-12, and 15 are set)):
@@ -5570,110 +5304,155 @@ slp:xslp_convergenceops (XSLP_CONVERGENCEOPS, SLPCONVERGENCEOPS)
       * (15) Do not declare converged if still sufficient improvement in
         objective.
 
-slp:xslp_ctol (XSLP_CTOL, SLPCTOL)
+slp:ctol (ctol, xslp_ctol, XSLP_CTOL, SLPCTOL)
       Closure convergence tolerance
 
       Default: -1.0
 
-slp:xslp_damp (XSLP_DAMP, SLPDAMP)
+slp:damp (damp, xslp_damp, XSLP_DAMP, SLPDAMP)
       Damping factor for updating values of variables
 
       Default: 1
 
-slp:xslp_dampexpand (XSLP_DAMPEXPAND, SLPDAMPEXPAND)
+slp:dampexpand (dampexpand, xslp_dampexpand, XSLP_DAMPEXPAND, SLPDAMPEXPAND)
       Multiplier to increase damping factor during dynamic damping
 
       Default: 1
 
-slp:xslp_dampmax (XSLP_DAMPMAX, SLPDAMPMAX)
+slp:dampmax (dampmax, xslp_dampmax, XSLP_DAMPMAX, SLPDAMPMAX)
       Maximum value for the damping factor of a variable during dynamic
       damping
 
       Default: 1
 
-slp:xslp_dampmin (XSLP_DAMPMIN, SLPDAMPMIN)
+slp:dampmin (dampmin, xslp_dampmin, XSLP_DAMPMIN, SLPDAMPMIN)
       Minimum value for the damping factor of a variable during dynamic
       damping
 
       Default: 1
 
-slp:xslp_dampshrink (XSLP_DAMPSHRINK, SLPDAMPSHRINK)
+slp:dampshrink (dampshrink, xslp_dampshrink, XSLP_DAMPSHRINK, SLPDAMPSHRINK)
       Multiplier to decrease damping factor during dynamic damping
 
       Default: 1
 
-slp:xslp_dampstart (XSLP_DAMPSTART, SLPDAMPSTART)
+slp:dampstart (dampstart, xslp_dampstart, XSLP_DAMPSTART, SLPDAMPSTART)
       SLP iteration at which damping is activated
 
       Default: 0
 
-slp:xslp_defaultstepbound (XSLP_DEFAULTSTEPBOUND, SLPDEFAULTSTEPBOUND)
+slp:defaultiv (defaultiv, xslp_defaultiv, XSLP_DEFAULTIV, NLPDEFAULTIV)
+      Default initial value for an SLP variable if none is explicitly given
+
+      Default: 100
+
+slp:defaultstepbound (defaultstepbound, xslp_defaultstepbound, XSLP_DEFAULTSTEPBOUND, SLPDEFAULTSTEPBOUND)
       Minimum initial value for the step bound of an SLP variable if none is
       explicitly given
 
       Default: 16
 
-slp:xslp_delayupdaterows (XSLP_DELAYUPDATEROWS, SLPDELAYUPDATEROWS)
+slp:delayupdaterows (delayupdaterows, xslp_delayupdaterows, XSLP_DELAYUPDATEROWS, SLPDELAYUPDATEROWS)
       Number of SLP iterations before update rows are fully activated
 
       Default: 2
 
-slp:xslp_deltacost (XSLP_DELTACOST, SLPDELTACOST)
+slp:delta_a (delta_a, xslp_delta_a, XSLP_DELTA_A, SLPDELTA_A)
+      Absolute perturbation of values for calculating numerical derivatives
+
+      Default: 0.001
+
+slp:delta_infinity (delta_infinity, xslp_delta_infinity, XSLP_DELTA_INFINITY, SLPDELTA_INFINITY)
+      Maximum value for partial derivatives
+
+      Default: 1.0e+15
+
+slp:delta_r (delta_r, xslp_delta_r, XSLP_DELTA_R, SLPDELTA_R)
+      Relative perturbation of values for calculating numerical derivatives
+
+      Default: 0.001
+
+slp:delta_x (delta_x, xslp_delta_x, XSLP_DELTA_X, SLPDELTA_X)
+      Minimum absolute value of delta coefficients to be retained
+
+      Default: 1.0e-6
+
+slp:delta_z (delta_z, xslp_delta_z, XSLP_DELTA_Z, SLPDELTA_Z)
+      Tolerance used when calculating derivatives
+
+      Default: 0.00001
+
+slp:delta_zero (delta_zero, xslp_delta_zero, XSLP_DELTA_ZERO, SLPDELTA_ZERO)
+      Absolute zero acceptance tolerance used when calculating derivatives
+
+      Default: -1.0 (not applied)
+
+slp:deltacost (deltacost, xslp_deltacost, XSLP_DELTACOST, SLPDELTACOST)
       Initial penalty cost multiplier for penalty delta vectors
 
       Default: 200
 
-slp:xslp_deltacostfactor (XSLP_DELTACOSTFACTOR, SLPDELTACOSTFACTOR)
+slp:deltacostfactor (deltacostfactor, xslp_deltacostfactor, XSLP_DELTACOSTFACTOR, SLPDELTACOSTFACTOR)
       Factor for increasing cost multiplier on total penalty delta vectors
 
       Default: 1.3
 
-slp:xslp_deltaformat (XSLP_DELTAFORMAT, SLPDELTAFORMAT)
+slp:deltaformat (deltaformat, xslp_deltaformat, XSLP_DELTAFORMAT, SLPDELTAFORMAT)
       Formatting string for creation of names for SLP delta vectors
 
       Default: pD_%s where p is a unique prefix for names in the current
       problem
 
-slp:xslp_deltamaxcost (XSLP_DELTAMAXCOST, SLPDELTAMAXCOST)
+slp:deltamaxcost (deltamaxcost, xslp_deltamaxcost, XSLP_DELTAMAXCOST, SLPDELTAMAXCOST)
       Maximum penalty cost multiplier for penalty delta vectors
 
       Default: XPRS_PLUSINFINITY
 
-slp:xslp_deltaoffset (XSLP_DELTAOFFSET, SLPDELTAOFFSET)
+slp:deltaoffset (deltaoffset, xslp_deltaoffset, XSLP_DELTAOFFSET, SLPDELTAOFFSET)
       Position of first character of SLP variable name used to create name of
       delta vector
 
       Default: 0
 
-slp:xslp_deltazlimit (XSLP_DELTAZLIMIT, SLPDELTAZLIMIT)
+slp:deltazlimit (deltazlimit, xslp_deltazlimit, XSLP_DELTAZLIMIT, SLPDELTAZLIMIT)
       Number of SLP iterations during which to apply XSLP_DELTA_Z
 
       Default: 0
 
-slp:xslp_djtol (XSLP_DJTOL, SLPDJTOL)
+slp:derivatives (derivatives, xslp_derivatives, XSLP_DERIVATIVES, NLPDERIVATIVES)
+      Bitmap describing the method of calculating derivatives
+
+      Values (default: 1):
+
+      * (0) analytic derivatives where possible
+
+      * (1) avoid embedding numerical derivatives of instantiated functions
+        into analytic derivatives
+
+slp:djtol (djtol, xslp_djtol, XSLP_DJTOL, SLPDJTOL)
       Tolerance on DJ value for determining if a variable is at its step bound
 
       Default: 1.0e-6
 
-slp:xslp_drcoldjtol (XSLP_DRCOLDJTOL, SLPDRCOLDJTOL)
+slp:drcoldjtol (drcoldjtol, xslp_drcoldjtol, XSLP_DRCOLDJTOL, SLPDRCOLDJTOL)
       Reduced cost tolerance on the delta variable when fixing due to the
       determining column being below XSLP_DRCOLTOL.
 
       Default: 0.0
 
-slp:xslp_drcoltol (XSLP_DRCOLTOL, SLPDRCOLTOL)
+slp:drcoltol (drcoltol, xslp_drcoltol, XSLP_DRCOLTOL, SLPDRCOLTOL)
       The minimum absolute magnitude of a determining column, for which the
       determined variable is still regarded as well defined
 
       Default: 1.0e-6
 
-slp:xslp_drfixrange (XSLP_DRFIXRANGE, SLPDRFIXRANGE)
+slp:drfixrange (drfixrange, xslp_drfixrange, XSLP_DRFIXRANGE, SLPDRFIXRANGE)
       The range around the previous value where variables are fixed in
       cascading if the determining column is below XSLP_DRCOLTOL.
 
       Default: 0.1
 
-slp:xslp_ecfcheck (XSLP_ECFCHECK, SLPECFCHECK)
+slp:ecfcheck (ecfcheck, xslp_ecfcheck, XSLP_ECFCHECK, SLPECFCHECK)
       Check feasibility at the point of linearization for extended convergence
       criteria
 
@@ -5685,97 +5464,124 @@ slp:xslp_ecfcheck (XSLP_ECFCHECK, SLPECFCHECK)
 
       * (2) check all constraints.
 
-slp:xslp_ecftol_a (XSLP_ECFTOL_A, SLPECFTOL_A)
+slp:ecftol_a (ecftol_a, xslp_ecftol_a, XSLP_ECFTOL_A, SLPECFTOL_A)
       Absolute tolerance on testing feasibility at the point of linearization
 
       Default: -1.0
 
-slp:xslp_ecftol_r (XSLP_ECFTOL_R, SLPECFTOL_R)
+slp:ecftol_r (ecftol_r, xslp_ecftol_r, XSLP_ECFTOL_R, SLPECFTOL_R)
       Relative tolerance on testing feasibility at the point of linearization
 
       Default: -1.0
 
-slp:xslp_enforcecostshrink (XSLP_ENFORCECOSTSHRINK, SLPENFORCECOSTSHRINK)
+slp:echoxprsmessages (echoxprsmessages, xslp_echoxprsmessages, XSLP_ECHOXPRSMESSAGES)
+      Controls if the XSLP message callback should relay messages from the
+      XPRS library.
+
+      Values (default: -1):
+
+      * (-1) automatic: if an XSLP message callback is not set, then messages
+        from the nonlinear solver are sent to the XPRS message callback; if an
+        XSLP message callback is set, then messages are not echoed.
+
+      * (0) the XPRS and XSLP message callbacks are treated as independent.
+
+      * (1) messages from the XPRS message callback are sent to the XSLP
+        message callback.
+
+      * (2) messages from the nonlinear solver are sent to the XPRS message
+        callback.
+
+slp:enforcecostshrink (enforcecostshrink, xslp_enforcecostshrink, XSLP_ENFORCECOSTSHRINK, SLPENFORCECOSTSHRINK)
       Factor by which to decrease the current penalty multiplier when
       enforcing rows.
 
       Default: 0.00001
 
-slp:xslp_enforcemaxcost (XSLP_ENFORCEMAXCOST, SLPENFORCEMAXCOST)
+slp:enforcemaxcost (enforcemaxcost, xslp_enforcemaxcost, XSLP_ENFORCEMAXCOST, SLPENFORCEMAXCOST)
       Maximum penalty cost in the objective before enforcing most violating
       rows
 
       Default: 1.0e+11
 
-slp:xslp_errorcost (XSLP_ERRORCOST, SLPERRORCOST)
+slp:errorcost (errorcost, xslp_errorcost, XSLP_ERRORCOST, SLPERRORCOST)
       Initial penalty cost multiplier for penalty error vectors
 
       Default: 200
 
-slp:xslp_errorcostfactor (XSLP_ERRORCOSTFACTOR, SLPERRORCOSTFACTOR)
+slp:errorcostfactor (errorcostfactor, xslp_errorcostfactor, XSLP_ERRORCOSTFACTOR, SLPERRORCOSTFACTOR)
       Factor for increasing cost multiplier on total penalty error vectors
 
       Default: 1.3
 
-slp:xslp_errormaxcost (XSLP_ERRORMAXCOST, SLPERRORMAXCOST)
+slp:errormaxcost (errormaxcost, xslp_errormaxcost, XSLP_ERRORMAXCOST, SLPERRORMAXCOST)
       Maximum penalty cost multiplier for penalty error vectors
 
       Default: XPRS_PLUSINFINITY
 
-slp:xslp_erroroffset (XSLP_ERROROFFSET, SLPERROROFFSET)
+slp:erroroffset (erroroffset, xslp_erroroffset, XSLP_ERROROFFSET, SLPERROROFFSET)
       Position of first character of constraint name used to create name of
       penalty error vectors
 
       Default: 0
 
-slp:xslp_errortol_a (XSLP_ERRORTOL_A, SLPERRORTOL_A)
+slp:errortol_a (errortol_a, xslp_errortol_a, XSLP_ERRORTOL_A, SLPERRORTOL_A)
       Absolute tolerance for error vectors
 
       Default: 0.00001
 
-slp:xslp_errortol_p (XSLP_ERRORTOL_P, SLPERRORTOL_P)
+slp:errortol_p (errortol_p, xslp_errortol_p, XSLP_ERRORTOL_P, SLPERRORTOL_P)
       Absolute tolerance for printing error vectors
 
       Default: 0.0001
 
-slp:xslp_escalation (XSLP_ESCALATION, SLPESCALATION)
+slp:escalation (escalation, xslp_escalation, XSLP_ESCALATION, SLPESCALATION)
       Factor for increasing cost multiplier on individual penalty error
       vectors
 
       Default: 1.25
 
-slp:xslp_etol_a (XSLP_ETOL_A, SLPETOL_A)
+slp:etol_a (etol_a, xslp_etol_a, XSLP_ETOL_A, SLPETOL_A)
       Absolute tolerance on penalty vectors
 
       Default: 0.0001
 
-slp:xslp_etol_r (XSLP_ETOL_R, SLPETOL_R)
+slp:etol_r (etol_r, xslp_etol_r, XSLP_ETOL_R, SLPETOL_R)
       Relative tolerance on penalty vectors
 
       Default: 0.0001
 
-slp:xslp_evtol_a (XSLP_EVTOL_A, SLPEVTOL_A)
+slp:evaluate (evaluate, xslp_evaluate, XSLP_EVALUATE, NLPEVALUATE)
+      Evaluation strategy for user functions
+
+      Values (default: 0):
+
+      * (0) use derivatives where possible;
+
+      * (1) always re-evaluate.
+
+slp:evtol_a (evtol_a, xslp_evtol_a, XSLP_EVTOL_A, SLPEVTOL_A)
       Absolute tolerance on total penalty costs
 
       Default: -1.0
 
-slp:xslp_evtol_r (XSLP_EVTOL_R, SLPEVTOL_R)
+slp:evtol_r (evtol_r, xslp_evtol_r, XSLP_EVTOL_R, SLPEVTOL_R)
       Relative tolerance on total penalty costs
 
       Default: -1.0
 
-slp:xslp_expand (XSLP_EXPAND, SLPEXPAND)
+slp:expand (expand, xslp_expand, XSLP_EXPAND, SLPEXPAND)
       Multiplier to increase a step bound
 
       Default: 2
 
-slp:xslp_feastoltarget (XSLP_FEASTOLTARGET, SLPFEASTOLTARGET)
+slp:feastoltarget (xslp_feastoltarget, XSLP_FEASTOLTARGET, SLPFEASTOLTARGET)
       When set, this defines a target feasibility tolerance to which the
       linearizations are solved to
 
       Default: 0 (ignored, not set)
 
-slp:xslp_filter (XSLP_FILTER, SLPFILTER)
+slp:filter (filter, xslp_filter, XSLP_FILTER, SLPFILTER)
       Bit map for controlling solution updates
 
       Values (default: 3 (bit 0,1)):
@@ -5790,39 +5596,157 @@ slp:xslp_filter (XSLP_FILTER, SLPFILTER)
       * (3) accept the trust region step is the line search returns a zero
         step size.
 
-slp:xslp_granularity (XSLP_GRANULARITY, SLPGRANULARITY)
+slp:findiv (findiv, xslp_findiv, XSLP_FINDIV, NLPFINDIV)
+      Option for running a heuristic to find a feasible initial point
+
+      Values (default: -1):
+
+      * (-1) Automatic (default).
+
+      * (0) Disable the heuristic.
+
+      * (1) Enable the heuristic.
+
+slp:funceval (funceval, xslp_funceval, XSLP_FUNCEVAL, NLPFUNCEVAL)
+      Bit map for determining the method of evaluating user functions and
+      their derivatives
+
+      Values (default: 0):
+
+      * (3) evaluate function whenever independent variables change.
+
+      * (4) evaluate function when independent variables change outside
+        tolerances.
+
+      * (5) application of bits 3-4: 0 = functions which do not have a defined
+        re-evaluation mode;1 = all functions.
+
+      * (6) tangential derivatives.
+
+      * (7) forward derivatives
+
+      * (8) application of bits 6-7: 0 = functions which do not have a defined
+        derivative mode;1 = all functions.
+
+slp:granularity (granularity, xslp_granularity, XSLP_GRANULARITY, SLPGRANULARITY)
       Base for calculating penalty costs
 
       Default: 4
 
-slp:xslp_infeaslimit (XSLP_INFEASLIMIT, SLPINFEASLIMIT)
+slp:gridheurselect (gridheurselect, xslp_gridheurselect, XSLP_GRIDHEURSELECT, SLPGRIDHEURSELECT)
+      Bit map selectin which heuristics to run if the problem has variable
+      with an integer delta
+
+      Values (default: 6):
+
+      * (0) Enumeration: try all combinations.
+
+      * (1) Simple search heuristics.
+
+      * (2) Simulated annealing.
+
+slp:hessian (hessian, xslp_hessian, XSLP_HESSIAN, NLPHESSIAN)
+      Second order differentiation mode when using analytical derivatives
+
+      Values (default: -1):
+
+      * (-1,0) automatic selection
+
+      * (1) numerical derivatives (finite difference)
+
+      * (2) symbolic differentiation
+
+      * (3) automatic differentiation
+
+slp:heurstrategy (heurstrategy, xslp_heurstrategy, XSLP_HEURSTRATEGY, SLPHEURSTRATEGY)
+      Branch and Bound: This specifies the MINLP heuristic strategy. On some
+      problems it is worth trying more comprehensive heuristic strategies by
+      setting HEURSTRATEGY to 2 or 3.
+
+      Values (default: -1):
+
+      * (-1) Automatic selection of heuristic strategy (depending on
+        XPRS_HEUREMPHASIS).
+
+      * (0) No heuristics.
+
+      * (1) Basic heuristic strategy.
+
+      * (2) Enhanced heuristic strategy.
+
+      * (3) Extensive heuristic strategy.
+
+      * (4) Run all heuristics without effort limits.
+
+slp:infeaslimit (infeaslimit, xslp_infeaslimit, XSLP_INFEASLIMIT, SLPINFEASLIMIT)
       The maximum number of consecutive infeasible SLP iterations which can
       occur before Xpress-SLP terminates
 
       Default: 3
 
-slp:xslp_iterfallbackops (XSLP_ITERFALLBACKOPS, SLPITERFALLBACKOPS)
+slp:infinity (infinity, xslp_infinity, XSLP_INFINITY, NLPINFINITY)
+      Value returned by a divide-by-zero in a formula
+
+      Default: 1.0e+10
+
+slp:iterfallbackops (iterfallbackops, xslp_iterfallbackops, XSLP_ITERFALLBACKOPS, SLPITERFALLBACKOPS)
       Alternative LP level control values for numerically challengeing
       problems
 
       Default: none
 
-slp:xslp_iterlimit (XSLP_ITERLIMIT, SLPITERLIMIT)
+slp:iterlimit (iterlimit, xslp_iterlimit, XSLP_ITERLIMIT, SLPITERLIMIT)
       The maximum number of SLP iterations
 
       Default: 1000
 
-slp:xslp_itol_a (XSLP_ITOL_A, SLPITOL_A)
+slp:itol_a (itol_a, xslp_itol_a, XSLP_ITOL_A, SLPITOL_A)
       Absolute impact convergence tolerance
 
       Default: -1.0
 
-slp:xslp_itol_r (XSLP_ITOL_R, SLPITOL_R)
+slp:itol_r (itol_r, xslp_itol_r, XSLP_ITOL_R, SLPITOL_R)
       Relative impact convergence tolerance
 
       Default: -1.0
 
-slp:xslp_log (XSLP_LOG, NLPLOG)
+slp:ivname (ivname, xslp_ivname, XSLP_IVNAME, NLPIVNAME)
+      Name of the set of initial values to be used
+
+      Default: none
+
+slp:jacobian (jacobian, xslp_jacobian, XSLP_JACOBIAN, NLPJACOBIAN)
+      First order differentiation mode when using analytical derivatives
+
+      Values (default: -1):
+
+      * (-1,0) automatic selection
+
+      * (1) numerical derivatives (finite difference)
+
+      * (2) symbolic differentiation
+
+      * (3) automatic differentiation
+
+slp:keepequalscolumn (keepequalscolumn, xslp_keepequalscolumn, XSLP_KEEPEQUALSCOLUMN, NLPKEEPEQUALSCOLUMN)
+      When set to a nonzero value, the MPS reader will keep the equals column
+      in the problem
+
+      Default: 0
+
+slp:linquadbr (linquadbr, xslp_linquadbr, XSLP_LINQUADBR, NLPLINQUADBR)
+      Use linear and quadratic constraints and objective function to further
+      reduce bounds on all variables
+
+      Values (default: -1):
+
+      * (-1) automatic selection
+
+      * (0) disable
+
+      * (1) enable
+
+slp:log (log, xslp_log, XSLP_LOG, NLPLOG)
       Level of printing during SLP iterations
 
       Values (default: 0):
@@ -5842,186 +5766,384 @@ slp:xslp_log (XSLP_LOG, NLPLOG)
 
       * (5) include user function call communications in the log
 
-slp:xslp_lsiterlimit (XSLP_LSITERLIMIT, SLPLSITERLIMIT)
+slp:lsiterlimit (lsiterlimit, xslp_lsiterlimit, XSLP_LSITERLIMIT, SLPLSITERLIMIT)
       Number of iterations in the line search
 
       Default: 0
 
-slp:xslp_lspatternlimit (XSLP_LSPATTERNLIMIT, SLPLSPATTERNLIMIT)
+slp:lspatternlimit (lspatternlimit, xslp_lspatternlimit, XSLP_LSPATTERNLIMIT, SLPLSPATTERNLIMIT)
       Number of iterations in the pattern search preceding the line search
 
       Default: 0
 
-slp:xslp_lsstart (XSLP_LSSTART, SLPLSSTART)
+slp:lsstart (lsstart, xslp_lsstart, XSLP_LSSTART, SLPLSSTART)
       Iteration in which to active the line search
 
       Default: 8
 
-slp:xslp_lszerolimit (XSLP_LSZEROLIMIT, SLPLSZEROLIMIT)
+slp:lszerolimit (lszerolimit, xslp_lszerolimit, XSLP_LSZEROLIMIT, SLPLSZEROLIMIT)
       Maximum number of zero length line search steps before line search is
       deactivated
 
       Default: 5
 
-slp:xslp_matrixtol (XSLP_MATRIXTOL, SLPMATRIXTOL)
+slp:matrixtol (xslp_matrixtol, XSLP_MATRIXTOL, SLPMATRIXTOL)
       Nonzero tolerance for dropping coefficients from the linearization.
 
       Default: 0.0
 
-slp:xslp_maxweight (XSLP_MAXWEIGHT, SLPMAXWEIGHT)
+slp:maxtime (maxtime, xslp_maxtime, XSLP_MAXTIME, NLPMAXTIME)
+      The maximum time in seconds that the SLP optimization will run before it
+      terminates
+
+      Default: 0
+
+slp:maxweight (maxweight, xslp_maxweight, XSLP_MAXWEIGHT, SLPMAXWEIGHT)
       Maximum penalty weight for delta or error vectors
 
       Default: 100
 
-slp:xslp_meritlambda (XSLP_MERITLAMBDA, NLPMERITLAMBDA)
+slp:memoryfactor (memoryfactor, xslp_memoryfactor, XSLP_MEMORYFACTOR)
+      Factor for expanding size of dynamic arrays in memory
+
+      Default: 1.6
+
+slp:meritlambda (meritlambda, xslp_meritlambda, XSLP_MERITLAMBDA, NLPMERITLAMBDA)
       Factor by which the net objective is taken into account in the merit
       function
 
       Default: 0.0
 
-slp:xslp_minsbfactor (XSLP_MINSBFACTOR, SLPMINSBFACTOR)
+slp:minsbfactor (minsbfactor, xslp_minsbfactor, XSLP_MINSBFACTOR, SLPMINSBFACTOR)
       Factor by which step bounds can be decreased beneath XSLP_ATOL_A
 
       Default: 1.0
 
-slp:xslp_minusdeltaformat (XSLP_MINUSDELTAFORMAT, SLPMINUSDELTAFORMAT)
+slp:minusdeltaformat (minusdeltaformat, xslp_minusdeltaformat, XSLP_MINUSDELTAFORMAT, SLPMINUSDELTAFORMAT)
       Formatting string for creation of names for SLP negative penalty delta
       vectors
 
       Default: pD-%s where p is a unique prefix for names in the current
       problem
 
-slp:xslp_minuserrorformat (XSLP_MINUSERRORFORMAT, SLPMINUSERRORFORMAT)
+slp:minuserrorformat (minuserrorformat, xslp_minuserrorformat, XSLP_MINUSERRORFORMAT, SLPMINUSERRORFORMAT)
       Formatting string for creation of names for SLP negative penalty error
       vectors
 
       Default: pE-%s where p is a unique prefix for names in the current
       problem
 
-slp:xslp_minweight (XSLP_MINWEIGHT, SLPMINWEIGHT)
+slp:minweight (minweight, xslp_minweight, XSLP_MINWEIGHT, SLPMINWEIGHT)
       Minimum penalty weight for delta or error vectors
 
       Default: 0.01
 
-slp:xslp_mtol_a (XSLP_MTOL_A, SLPMTOL_A)
+slp:msmaxboundrange (msmaxboundrange, xslp_msmaxboundrange, XSLP_MSMAXBOUNDRANGE, MSMAXBOUNDRANGE)
+      Defines the maximum range inside which initial points are generated by
+      multistart presets
+
+      Default: 1000
+
+slp:mtol_a (mtol_a, xslp_mtol_a, XSLP_MTOL_A, SLPMTOL_A)
       Absolute effective matrix element convergence tolerance
 
       Default: -1.0
 
-slp:xslp_mtol_r (XSLP_MTOL_R, SLPMTOL_R)
+slp:mtol_r (mtol_r, xslp_mtol_r, XSLP_MTOL_R, SLPMTOL_R)
       Relative effective matrix element convergence tolerance
 
       Default: -1.0
 
-slp:xslp_mvtol (XSLP_MVTOL, SLPMVTOL)
+slp:multistart (multistart, xslp_multistart, XSLP_MULTISTART, MULTISTART)
+      The multistart main control. Defines if the multistart search is to be
+      initiated, or if only the baseline model is to be solved.
+
+      Values (default: -1):
+
+      * (-1) Depends on if any multistart jobs have been added.
+
+      * (0) Multistart is off.
+
+      * (1) Multistart is on.
+
+slp:multistart_log (multistart_log, xslp_multistart_log, XSLP_MULTISTART_LOG, MULTISTART_LOG)
+      The level of logging during the multistart run.
+
+      Default: 0
+
+slp:multistart_maxsolves (multistart_maxsolves, xslp_multistart_maxsolves, XSLP_MULTISTART_MAXSOLVES, MULTISTART_MAXSOLVES)
+      The maximum number of jobs to create during the multistart search.
+
+      Default: -1 (no upper limit)
+
+slp:multistart_maxtime (multistart_maxtime, xslp_multistart_maxtime, XSLP_MULTISTART_MAXTIME, MULTISTART_MAXTIME)
+      The maximum total time to be spent in the mutlistart search.
+
+      Default: 0 (no upper limit)
+
+slp:multistart_poolsize (multistart_poolsize, xslp_multistart_poolsize, XSLP_MULTISTART_POOLSIZE, MULTISTART_POOLSIZE)
+      The maximum number of problem objects allowed to pool up before
+      synchronization in the deterministic multistart.
+
+      Default: 2
+
+slp:multistart_seed (multistart_seed, xslp_multistart_seed, XSLP_MULTISTART_SEED, MULTISTART_SEED)
+      Random seed used for the automatic generation of initial point when
+      loading multistart presets
+
+      Default: 0
+
+slp:multistart_threads (multistart_threads, xslp_multistart_threads, XSLP_MULTISTART_THREADS, MULTISTART_THREADS)
+      The maximum number of threads to be used in multistart
+
+      Default: -1 (determined by XSLP_THREADS)
+
+slp:mvtol (mvtol, xslp_mvtol, XSLP_MVTOL, SLPMVTOL)
       Marginal value tolerance for determining if a constraint is slack
 
       Default: -1.0
 
-slp:xslp_objthreshold (XSLP_OBJTHRESHOLD, SLPOBJTHRESHOLD)
+slp:objthreshold (objthreshold, xslp_objthreshold, XSLP_OBJTHRESHOLD, SLPOBJTHRESHOLD)
       Assumed maximum value of the objective function in absolute value.
 
       Default: 1.0e+15
 
-slp:xslp_objtopenaltycost (XSLP_OBJTOPENALTYCOST, SLPOBJTOPENALTYCOST)
+slp:objtopenaltycost (objtopenaltycost, xslp_objtopenaltycost, XSLP_OBJTOPENALTYCOST, SLPOBJTOPENALTYCOST)
       Factor to estimate initial penalty costs from objective function
 
       Default: 0
 
-slp:xslp_ocount (XSLP_OCOUNT, SLPOCOUNT)
+slp:ocount (ocount, xslp_ocount, XSLP_OCOUNT, SLPOCOUNT)
       Number of SLP iterations over which to measure objective function
       variation for static objective (2) convergence criterion
 
       Default: 5
 
-slp:xslp_optimalitytoltarget (XSLP_OPTIMALITYTOLTARGET, SLPOPTIMALITYTOLTARGET)
+slp:optimalitytoltarget (xslp_optimalitytoltarget, XSLP_OPTIMALITYTOLTARGET, SLPOPTIMALITYTOLTARGET)
       When set, this defines a target optimality tolerance to which the
       linearizations are solved to
 
       Default: 0 (ignored, not set)
 
-slp:xslp_otol_a (XSLP_OTOL_A, SLPOTOL_A)
+slp:otol_a (otol_a, xslp_otol_a, XSLP_OTOL_A, SLPOTOL_A)
       Absolute static objective (2) convergence tolerance
 
       Default: -1.0
 
-slp:xslp_otol_r (XSLP_OTOL_R, SLPOTOL_R)
+slp:otol_r (otol_r, xslp_otol_r, XSLP_OTOL_R, SLPOTOL_R)
       Relative static objective (2) convergence tolerance
 
       Default: -1.0
 
-slp:xslp_penaltycolformat (XSLP_PENALTYCOLFORMAT, SLPPENALTYCOLFORMAT)
+slp:penaltycolformat (penaltycolformat, xslp_penaltycolformat, XSLP_PENALTYCOLFORMAT, SLPPENALTYCOLFORMAT)
       Formatting string for creation of the names of the SLP penalty transfer
       vectors
 
       Default: pPC_%s where p is a unique prefix for names in the current
       problem
 
-slp:xslp_penaltyinfostart (XSLP_PENALTYINFOSTART, SLPPENALTYINFOSTART)
+slp:penaltyinfostart (penaltyinfostart, xslp_penaltyinfostart, XSLP_PENALTYINFOSTART, SLPPENALTYINFOSTART)
       Iteration from which to record row penalty information
 
       Default: 3
 
-slp:xslp_penaltyrowformat (XSLP_PENALTYROWFORMAT, SLPPENALTYROWFORMAT)
+slp:penaltyrowformat (penaltyrowformat, xslp_penaltyrowformat, XSLP_PENALTYROWFORMAT, SLPPENALTYROWFORMAT)
       Formatting string for creation of the names of the SLP penalty rows
 
       Default: pPR_%s where p is a unique prefix for names in the current
       problem
 
-slp:xslp_plusdeltaformat (XSLP_PLUSDELTAFORMAT, SLPPLUSDELTAFORMAT)
+slp:plusdeltaformat (plusdeltaformat, xslp_plusdeltaformat, XSLP_PLUSDELTAFORMAT, SLPPLUSDELTAFORMAT)
       Formatting string for creation of names for SLP positive penalty delta
       vectors
 
       Default: pD+%s where p is a unique prefix for names in the current
       problem
 
-slp:xslp_pluserrorformat (XSLP_PLUSERRORFORMAT, SLPPLUSERRORFORMAT)
+slp:pluserrorformat (pluserrorformat, xslp_pluserrorformat, XSLP_PLUSERRORFORMAT, SLPPLUSERRORFORMAT)
       Formatting string for creation of names for SLP positive penalty error
       vectors
 
       Default: pE+%s where p is a unique prefix for names in the current
       problem
 
-slp:xslp_samecount (XSLP_SAMECOUNT, SLPSAMECOUNT)
+slp:postsolve (postsolve, xslp_postsolve, XSLP_POSTSOLVE, NLPPOSTSOLVE)
+      This control determines whether postsolving should be performed
+      automatically
+
+      Values (default: -1):
+
+      * (-1) Postsolve if the problem could be solved to
+        optimality/infeasibility.
+
+      * (0) Do not automatically postsolve.
+
+      * (1) Postsolve automatically.
+
+slp:presolve_elimtol (presolve_elimtol, xslp_presolve_elimtol, XSLP_PRESOLVE_ELIMTOL, NLPPRESOLVE_ELIMTOL)
+      Tolerance for nonlinear eliminations during SLP presolve
+
+      Default: 0.001
+
+slp:presolvelevel (presolvelevel, xslp_presolvelevel, XSLP_PRESOLVELEVEL, NLPPRESOLVELEVEL)
+      This control determines the level of changes presolve may carry out on
+      the problem and whether column/row indices may change
+
+      Values (default: XSLP_PRESOLVELEVEL_FULL):
+
+      * (1) Individual rows only presolve, no dropped columns/rows or index
+        changes, no nonlinear transformations (XSLP_PRESOLVELEVEL_LOCALIZED).
+
+      * (2) All linear presolve that does not drop columns/rows, no index
+        changes, no nonlinear transformations (XSLP_PRESOLVELEVEL_BASIC).
+
+      * (3) Full linear presolve including dropping columns/rows and index
+        changes, no nonlinear transformations (XSLP_PRESOLVELEVEL_LINEAR).
+
+      * (4) Full presolve (XSLP_PRESOLVELEVEL_FULL).
+
+slp:presolveops (xslp_presolveops, XSLP_PRESOLVEOPS, NLPPRESOLVEOPS)
+      Bitmap indicating the SLP presolve actions to be taken
+
+      Values (default: 2104):
+
+      * (0) Generic SLP presolve.
+
+      * (1) Explicitly fix columns identified as fixed to zero.
+
+      * (2) Explicitly fix all columns identified as fixed.
+
+      * (3) SLP bound tightening.
+
+      * (4) MISLP bound tightening.
+
+      * (5) Bound tightening based on function domains.
+
+      * (8) Do not presolve coefficients.
+
+      * (9) Do not remove delta variables.
+
+      * (10) Avoid reductions that can not be dual postsolved.
+
+      * (11) Allow eliminations on determined variables.
+
+      * (12) Avoid performing linear reductions at the nlp level.
+
+      * (13) Avoid simplifying nonlinear expressions.
+
+slp:presolvezero (presolvezero, xslp_presolvezero, XSLP_PRESOLVEZERO, NLPPRESOLVEZERO)
+      Minimum absolute value for a variable which is identified as nonzero
+      during SLP presolve
+
+      Default: 1.0E-09
+
+slp:primalintegralalpha (primalintegralalpha, xslp_primalintegralalpha, XSLP_PRIMALINTEGRALALPHA, NLPPRIMALINTEGRALALPHA)
+      Decay term for primal integral computation
+
+      Default: 0
+
+slp:primalintegralref (primalintegralref, xslp_primalintegralref, XSLP_PRIMALINTEGRALREF, NLPPRIMALINTEGRALREF)
+      Reference solution value to take into account when calculating the
+      primal integral
+
+      Default: XPRS_PLUSINFINITY
+
+slp:probing (probing, xslp_probing, XSLP_PROBING, NLPPROBING)
+      This control determines whether probing on a subset of variables should
+      be performed prior to starting the main algorithm. Probing runs multiple
+      times bound reduction in order to further tighten the bounding box.
+
+      Values (default: -1):
+
+      * (-1) Automatic.
+
+      * (0) Disable SLP probing.
+
+      * (1) Activate SLP probing only on binary variables.
+
+      * (2) Activate SLP probing only on binary or unbounded integer
+        variables.
+
+      * (3) Activate SLP probing only on binary or integer variables.
+
+      * (4) Activate SLP probing only on binary, integer variables, and
+        unbounded continuous variables.
+
+      * (5) Activate SLP probing on any variable.
+
+slp:reformulate (reformulate, xslp_reformulate, XSLP_REFORMULATE, NLPREFORMULATE)
+      Controls the problem reformulations carried out before augmentation.
+      This allows SLP to take advantage of dedicated algorithms for special
+      problem classes.
+
+      Values (default: 511 (bits 0 — 8 incl. are set)):
+
+      * (0) Solve convex quadratic objectives using the XPRS library .
+
+      * (1) Convert non-convex quadratic objectives to SLP constructs .
+
+      * (2) Solve convex quadratic constraints using the XPRS library.
+
+      * (3) Convert non-convex QCQP constraints to SLP constructs.
+
+      * (4) Keep second order cones in the XPRS problem to keep them in the
+        linearizations.
+
+      * (5) Convexity of a quadratic only problem may be checked by calling
+        the optimizer to solve the instance.
+
+      * (6) Convert pievewise linear functions to MIP constructs.
+
+      * (7) Convert ABS functions to MIP constraints if the full problem can
+        be made not nonlinear.
+
+      * (8) Convert MIN and MAX functions to MIP expressions if the full
+        problem can be made not nonlinear.
+
+      * (9) Always convert ABS expressions.
+
+      * (10) Always convert MIN and MAX expressions.
+
+slp:samecount (samecount, xslp_samecount, XSLP_SAMECOUNT, SLPSAMECOUNT)
       Number of steps reaching the step bound in the same direction before
       step bounds are increased
 
       Default: 3
 
-slp:xslp_samedamp (XSLP_SAMEDAMP, SLPSAMEDAMP)
+slp:samedamp (samedamp, xslp_samedamp, XSLP_SAMEDAMP, SLPSAMEDAMP)
       Number of steps in same direction before damping factor is increased
 
       Default: 3
 
-slp:xslp_sblorowformat (XSLP_SBLOROWFORMAT, SLPSBLOROWFORMAT)
+slp:sblorowformat (sblorowformat, xslp_sblorowformat, XSLP_SBLOROWFORMAT, SLPSBLOROWFORMAT)
       Formatting string for creation of names for SLP lower step bound rows
 
       Default: pSB-%s where p is a unique prefix for names in the current
       problem
 
-slp:xslp_sbname (XSLP_SBNAME, SLPSBNAME)
+slp:sbname (sbname, xslp_sbname, XSLP_SBNAME, SLPSBNAME)
       Name of the set of initial step bounds to be used
 
       Default: none
 
-slp:xslp_sbrowoffset (XSLP_SBROWOFFSET, SLPSBROWOFFSET)
+slp:sbrowoffset (sbrowoffset, xslp_sbrowoffset, XSLP_SBROWOFFSET, SLPSBROWOFFSET)
       Position of first character of SLP variable name used to create name of
       SLP lower and upper step bound rows
 
       Default: 0
 
-slp:xslp_sbstart (XSLP_SBSTART, SLPSBSTART)
+slp:sbstart (sbstart, xslp_sbstart, XSLP_SBSTART, SLPSBSTART)
       SLP iteration after which step bounds are first applied
 
       Default: 8
 
-slp:xslp_sbuprowformat (XSLP_SBUPROWFORMAT, SLPSBUPROWFORMAT)
+slp:sbuprowformat (sbuprowformat, xslp_sbuprowformat, XSLP_SBUPROWFORMAT, SLPSBUPROWFORMAT)
       Formatting string for creation of names for SLP upper step bound rows
 
       Default: pSB+%s where p is a unique prefix for names in the current
       problem
 
-slp:xslp_scale (XSLP_SCALE, SLPSCALE)
+slp:scale (xslp_scale, XSLP_SCALE, SLPSCALE)
       When to re-scale the SLP problem
 
       Values (default: 1):
@@ -6044,50 +6166,70 @@ slp:xslp_scale (XSLP_SCALE, SLPSCALE)
       * (6) Re-scale every XSLP_SCALECOUNT SLP iterations after the end of
         barrier optimization.
 
-slp:xslp_scalecount (XSLP_SCALECOUNT, SLPSCALECOUNT)
+slp:scalecount (scalecount, xslp_scalecount, XSLP_SCALECOUNT, SLPSCALECOUNT)
       Iteration limit used in determining when to re-scale the SLP matrix
 
       Default: 0
 
-slp:xslp_shrink (XSLP_SHRINK, SLPSHRINK)
+slp:shrink (shrink, xslp_shrink, XSLP_SHRINK, SLPSHRINK)
       Multiplier to reduce a step bound
 
       Default: 0.5
 
-slp:xslp_shrinkbias (XSLP_SHRINKBIAS, SLPSHRINKBIAS)
+slp:shrinkbias (shrinkbias, xslp_shrinkbias, XSLP_SHRINKBIAS, SLPSHRINKBIAS)
       Defines an overwrite / adjustment of step bounds for improving
       iterations
 
       Default: 0 (ignored, not set)
 
-slp:xslp_slplog (XSLP_SLPLOG, SLPLOG)
+slp:slplog (slplog, xslp_slplog, XSLP_SLPLOG, SLPLOG)
       Frequency with which SLP status is printed
 
       Default: 1
 
-slp:xslp_stol_a (XSLP_STOL_A, SLPSTOL_A)
+slp:stol_a (stol_a, xslp_stol_a, XSLP_STOL_A, SLPSTOL_A)
       Absolute slack convergence tolerance
 
       Default: -1.0
 
-slp:xslp_stol_r (XSLP_STOL_R, SLPSTOL_R)
+slp:stol_r (stol_r, xslp_stol_r, XSLP_STOL_R, SLPSTOL_R)
       Relative slack convergence tolerance
 
       Default: -1.0
 
-slp:xslp_stopoutofrange (XSLP_STOPOUTOFRANGE, NLPSTOPOUTOFRANGE)
+slp:stopoutofrange (stopoutofrange, xslp_stopoutofrange, XSLP_STOPOUTOFRANGE, NLPSTOPOUTOFRANGE)
       Stop optimization and return error code if internal function argument is
       out of range
 
       Default: 0
 
-slp:xslp_tracemask (XSLP_TRACEMASK, SLPTRACEMASK)
+slp:threads (xslp_threads, XSLP_THREADS, NLPTHREADS)
+      Default number of threads to be used
+
+      Default: -1 (use XPRS_THREADS value)
+
+slp:threadsafeuserfunc (threadsafeuserfunc, xslp_threadsafeuserfunc, XSLP_THREADSAFEUSERFUNC, NLPTHREADSAFEUSERFUNC)
+      Defines if user functions are allowed to be called in parallel
+
+      Values (default: 0 (no parallel user function calls)):
+
+      * (0) user function are not thread safe, and will not be called in
+        parallel
+
+      * (1) user functions are thread safe, and may be called in parallel
+
+slp:tolname (tolname, xslp_tolname, XSLP_TOLNAME, SLPTOLNAME)
+      Name of the set of tolerance sets to be used
+
+      Default: none
+
+slp:tracemask (tracemask, xslp_tracemask, XSLP_TRACEMASK, SLPTRACEMASK)
       Mask of variable or row names that are to be traced through the SLP
       iterates
 
       Default: none (no tracing)
 
-slp:xslp_tracemaskops (XSLP_TRACEMASKOPS, SLPTRACEMASKOPS)
+slp:tracemaskops (tracemaskops, xslp_tracemaskops, XSLP_TRACEMASKOPS, SLPTRACEMASKOPS)
       Controls the information printed for XSLP_TRACEMASK. The order in which
       the information is printed is determined by the order of bits in
       XSLP_TRACEMASKOPS.
@@ -6122,110 +6264,120 @@ slp:xslp_tracemaskops (XSLP_TRACEMASKOPS, SLPTRACEMASKOPS)
 
       * (13) Trace line search.
 
-slp:xslp_unfinishedlimit (XSLP_UNFINISHEDLIMIT, SLPUNFINISHEDLIMIT)
+slp:unfinishedlimit (unfinishedlimit, xslp_unfinishedlimit, XSLP_UNFINISHEDLIMIT, SLPUNFINISHEDLIMIT)
       The number of consecutive SLP iterations that may have an unfinished
       status before the solve is terminated.
 
       Default: 3
 
-slp:xslp_updateformat (XSLP_UPDATEFORMAT, SLPUPDATEFORMAT)
+slp:updateformat (updateformat, xslp_updateformat, XSLP_UPDATEFORMAT, SLPUPDATEFORMAT)
       Formatting string for creation of names for SLP update rows
 
       Default: pU_%s where p is a unique prefix for names in the current
       problem
 
-slp:xslp_updateoffset (XSLP_UPDATEOFFSET, SLPUPDATEOFFSET)
+slp:updateoffset (updateoffset, xslp_updateoffset, XSLP_UPDATEOFFSET, SLPUPDATEOFFSET)
       Position of first character of SLP variable name used to create name of
       SLP update row
 
       Default: 0
 
-slp:xslp_validationfactor (XSLP_VALIDATIONFACTOR, NLPVALIDATIONFACTOR)
+slp:validationfactor (validationfactor, xslp_validationfactor, XSLP_VALIDATIONFACTOR, NLPVALIDATIONFACTOR)
       Minimum improvement in validation targets to continue iterating
 
       Default: 0.001
 
-slp:xslp_validationtarget_k (XSLP_VALIDATIONTARGET_K, NLPVALIDATIONTARGET_K)
+slp:validationtarget_k (validationtarget_k, xslp_validationtarget_k, XSLP_VALIDATIONTARGET_K, NLPVALIDATIONTARGET_K)
       Optimality target tolerance
 
       Default: 1e-6
 
-slp:xslp_validationtarget_r (XSLP_VALIDATIONTARGET_R, NLPVALIDATIONTARGET_R)
+slp:validationtarget_r (validationtarget_r, xslp_validationtarget_r, XSLP_VALIDATIONTARGET_R, NLPVALIDATIONTARGET_R)
       Feasiblity target tolerance
 
       Default: 1e-6
 
-slp:xslp_validationtol_a (XSLP_VALIDATIONTOL_A, NLPVALIDATIONTOL_A)
+slp:validationtol_a (validationtol_a, xslp_validationtol_a, XSLP_VALIDATIONTOL_A, NLPVALIDATIONTOL_A)
       Absolute tolerance for the XSLPvalidate procedure
 
       Default: 0.00001
 
-slp:xslp_validationtol_k (XSLP_VALIDATIONTOL_K, NLPVALIDATIONTOL_K)
+slp:validationtol_k (validationtol_k, xslp_validationtol_k, XSLP_VALIDATIONTOL_K, NLPVALIDATIONTOL_K)
       Relative tolerance for the XSLPvalidatekkt procedure
 
       Default: 0.00001
 
-slp:xslp_vcount (XSLP_VCOUNT, SLPVCOUNT)
+slp:validationtol_r (validationtol_r, xslp_validationtol_r, XSLP_VALIDATIONTOL_R, NLPVALIDATIONTOL_R)
+      Relative tolerance for the XSLPvalidate procedure
+
+      Default: 0.00001
+
+slp:vcount (vcount, xslp_vcount, XSLP_VCOUNT, SLPVCOUNT)
       Number of SLP iterations over which to measure static objective (3)
       convergence
 
       Default: 0
 
-slp:xslp_vlimit (XSLP_VLIMIT, SLPVLIMIT)
+slp:vlimit (vlimit, xslp_vlimit, XSLP_VLIMIT, SLPVLIMIT)
       Number of SLP iterations after which static objective (3) convergence
       testing starts
 
       Default: 0
 
-slp:xslp_vtol_a (XSLP_VTOL_A, SLPVTOL_A)
+slp:vtol_a (vtol_a, xslp_vtol_a, XSLP_VTOL_A, SLPVTOL_A)
       Absolute static objective (3) convergence tolerance
 
       Default: -1.0
 
-slp:xslp_vtol_r (XSLP_VTOL_R, SLPVTOL_R)
+slp:vtol_r (vtol_r, xslp_vtol_r, XSLP_VTOL_R, SLPVTOL_R)
       Relative static objective (3) convergence tolerance
 
       Default: -1.0
 
-slp:xslp_wcount (XSLP_WCOUNT, SLPWCOUNT)
+slp:wcount (wcount, xslp_wcount, XSLP_WCOUNT, SLPWCOUNT)
       Number of SLP iterations over which to measure the objective for the
       extended convergence continuation criterion
 
       Default: 0
 
-slp:xslp_wtol_a (XSLP_WTOL_A, SLPWTOL_A)
+slp:wtol_a (wtol_a, xslp_wtol_a, XSLP_WTOL_A, SLPWTOL_A)
       Absolute extended convergence continuation tolerance
 
       Default: -1.0
 
-slp:xslp_wtol_r (XSLP_WTOL_R, SLPWTOL_R)
+slp:wtol_r (wtol_r, xslp_wtol_r, XSLP_WTOL_R, SLPWTOL_R)
       Relative extended convergence continuation tolerance
 
       Default: -1.0
 
-slp:xslp_xcount (XSLP_XCOUNT, SLPXCOUNT)
+slp:xcount (xcount, xslp_xcount, XSLP_XCOUNT, SLPXCOUNT)
       Number of SLP iterations over which to measure static objective (1)
       convergence
 
       Default: 5
 
-slp:xslp_xlimit (XSLP_XLIMIT, SLPXLIMIT)
+slp:xlimit (xlimit, xslp_xlimit, XSLP_XLIMIT, SLPXLIMIT)
       Number of SLP iterations up to which static objective (1) convergence
       testing is performed
 
       Default: 100
 
-slp:xslp_xtol_a (XSLP_XTOL_A, SLPXTOL_A)
+slp:xtol_a (xtol_a, xslp_xtol_a, XSLP_XTOL_A, SLPXTOL_A)
       Absolute static objective function (1) tolerance
 
       Default: -1.0
 
-slp:xslp_xtol_r (XSLP_XTOL_R, SLPXTOL_R)
+slp:xtol_r (xtol_r, xslp_xtol_r, XSLP_XTOL_R, SLPXTOL_R)
       Relative static objective function (1) tolerance
 
       Default: -1.0
 
-slp:xslp_zerocriterion (XSLP_ZEROCRITERION, SLPZEROCRITERION)
+slp:zero (zero, xslp_zero, XSLP_ZERO, NLPZERO)
+      Absolute tolerance
+
+      Default: 1.0E-15
+
+slp:zerocriterion (zerocriterion, xslp_zerocriterion, XSLP_ZEROCRITERION, SLPZEROCRITERION)
       Bitmap determining the behavior of the placeholder deletion procedure
 
       Values (default: 0):
@@ -6245,13 +6397,13 @@ slp:xslp_zerocriterion (XSLP_ZEROCRITERION, SLPZEROCRITERION)
 
       * (5) (=32) Print information about zero placeholders
 
-slp:xslp_zerocriterioncount (XSLP_ZEROCRITERIONCOUNT, SLPZEROCRITERIONCOUNT)
+slp:zerocriterioncount (zerocriterioncount, xslp_zerocriterioncount, XSLP_ZEROCRITERIONCOUNT, SLPZEROCRITERIONCOUNT)
       Number of consecutive times a placeholder entry is zero before being
       considered for deletion
 
       Default: 0
 
-slp:xslp_zerocriterionstart (XSLP_ZEROCRITERIONSTART, SLPZEROCRITERIONSTART)
+slp:zerocriterionstart (zerocriterionstart, xslp_zerocriterionstart, XSLP_ZEROCRITERIONSTART, SLPZEROCRITERIONSTART)
       SLP iteration at which criteria for deletion of placeholder entries are
       first activated.
 
@@ -6322,9 +6474,36 @@ sol:pooldupcol (pooldupcol)
       1 - No
       2 - Honor presolveops bit 3 (2^3 = 8)
 
-sol:poollimit (poollimit, poolnbest)
-      When poollimit = n > 1, the solution pool (see sol:stub) is allowed to
-      keep n best solutions. Default 10.
+sol:pooldups (pooldups)
+      How the solution pool handles duplicate solutions:
+
+      0 - Retain all duplicates
+      1 - Discard exact matches
+      2 - Discard exact matches of continuous variables and matches of
+          rounded values of discrete variables
+      3 - Discard matches of rounded values of discrete variables (default)
+
+sol:poolgap (ams_eps, poolgap)
+      Relative tolerance for reporting alternate MIP solutions (default: no
+      limit): a solution is reported if its objective is within poolgap *
+      |best objective| of the best one.
+
+sol:poolgapabs (ams_epsabs, poolgapabs)
+      Absolute tolerance for reporting alternate MIP solutions (default: no
+      limit).
+
+sol:poollimit (ams_limit, poollimit, poolnbest, solnlimit)
+      Limit on the number of alternative MIP solutions kept in the solution
+      pool (see sol:stub, sol:count). Default 10.
+
+sol:poolmode (ams_mode, poolmode)
+      Search mode for MIP solutions when sol:stub/sol:count are specified to
+      request finding several alternative solutions:
+
+      0 - Just collect the solutions found during the normal solve
+      1 - Same as 2
+      2 - Seek "poollimit" best solutions (default); the solutions reported
+          are limited by poolgap and poolgapabs
 
 sol:report_uncertain (report_uncertain_sol)
       0/1*: whether to report objective value(s) in solve_message when
@@ -6337,18 +6516,7 @@ sol:stub (ams_stub, solstub, solutionstub)
       returned solutions. That is, file names are obtained by appending 1, 2,
       ... "Current.nsol" to "solutionstub".
 
-sys:xprs_gpuplatform (XPRS_GPUPLATFORM)
-      Controls what kind of GPU support is enabled overall in Xpress.
-      Individual solver components may disable GPU support.
-
-      Values (default: 1, use GPU support if available, unless disabled by
-      another control ):
-
-      * (0) Do not use any GPU support.
-
-      * (1) Use GPU support based on CUDA (if available).
-
-tech:backgroundselect (backgroundselect, heur:xprs_backgroundselect, XPRS_BACKGROUNDSELECT)
+tech:backgroundselect (backgroundselect, XPRS_BACKGROUNDSELECT)
       Bit-vector control (see Section Bit-vector controls) to select which
       tasks to run in background jobs (for example in parallel to the root cut
       loop).
@@ -6363,13 +6531,96 @@ tech:backgroundselect (backgroundselect, heur:xprs_backgroundselect, XPRS_BACKGR
 
       * (3) Fix-propagate-repair heuristic.
 
-tech:backgroundthreads (backgroundmaxthreads, backgroundthreads, tech:xprs_backgroundmaxthreads, XPRS_BACKGROUNDMAXTHREADS)
+tech:backgroundthreads (backgroundthreads, backgroundmaxthreads, XPRS_BACKGROUNDMAXTHREADS)
       Limit the number of threads to use in background jobs (for example in
       parallel to the root cut loop).
 
       Default: -1, let Xpress decide.
 
-tech:cputime (cputime, sys:xprs_cputime, XPRS_CPUTIME)
+tech:callbackchecktimedelay (callbackchecktimedelay, XPRS_CALLBACKCHECKTIMEDELAY)
+      Minimum delay in milliseconds between two consecutive executions of the
+      CHECKTIME callback in the same solution process
+
+      Values (default: 0):
+
+      * (0) Callback delay is disabled - the callback is executed every time;
+
+      * (n>0) Callback invocation is suppressed if less than n milliseconds
+        have passed since the last invocation.
+
+tech:callbackchecktimeworkdelay (callbackchecktimeworkdelay, XPRS_CALLBACKCHECKTIMEWORKDELAY)
+      Minimum delay in work units between two consecutive executions of the
+      CHECKTIME callback in the same solution process
+
+      Values (default: 0):
+
+      * (0) Callback delay is disabled - the callback is executed every time;
+
+      * (n>0) Callback invocation if less than n work units, which may be a
+        fraction of a work unit, have passed since the last invocation.
+
+tech:callbackfrommainthread (callbackfrommainthread, XPRS_CALLBACKFROMMAINTHREAD)
+      Branch and Bound: specifies whether the MIP callbacks should only be
+      called on the main thread.
+
+      Values (default: 0):
+
+      * (0) Invoke callbacks on worker threads during parallel MIP;
+
+      * (1) Only ever invoke a callback on the thread that called
+        XPRSmipoptimize.
+
+tech:checkinputdata (checkinputdata, XPRS_CHECKINPUTDATA)
+      Check input arrays for bad data.
+
+      Values (default: 1 (on)):
+
+      * (0) Do not check.
+
+      * (1) Check input arrays.
+
+tech:compute (compute, XPRS_COMPUTE)
+      Controls whether the next solve is performed directly or on an Insight
+      Compute Interface.
+
+      Values (default: Depends on environment):
+
+      * (0) Solve locally.
+
+      * (1) Solve using an Insight Compute Interface.
+
+tech:computeexecservice (computeexecservice, XPRS_COMPUTEEXECSERVICE)
+      Selects the Insight execution service that will be used for solving
+      remote optimizations.
+
+      Default: Empty string
+
+tech:computejobpriority (computejobpriority, XPRS_COMPUTEJOBPRIORITY)
+      Selects the priority that will be used for remote optimization jobs.
+
+      Default: 0
+
+tech:computelog (computelog, XPRS_COMPUTELOG)
+      Controls how the run log is fetched when a solve is performed on an
+      Insight Compute Interface.
+
+      Values (default: 1):
+
+      * (0) Run log will not be fetched
+
+      * (1) Run log will be fetched in real-time
+
+      * (2) Run log will be fetched at the end of the solve
+
+      * (3) Run log will be fetched at the end of the solve if the solve fails
+        with an error
+
+tech:cpialpha (cpialpha, XPRS_CPIALPHA)
+      decay term for confined primal integral computation.
+
+      Default: 0
+
+tech:cputime (cputime, XPRS_CPUTIME)
       How time should be measured when timings are reported in the log and
       when checking against time limits
 
@@ -6385,30 +6636,236 @@ tech:debug (debug)
       0*/1: whether to assist testing & debugging, e.g., by outputting
       auxiliary information (mostly via suffixes).
 
-tech:globalfileloginterval (globalfileloginterval, mip:xprs_treefileloginterval, XPRS_TREEFILELOGINTERVAL)
-      This control sets the interval between progress messages output while
-      writing tree data to the tree file, in seconds. The solve is slowed
-      greatly while data is being written to the tree file and this output
-      allows the user to see how much progress is being made.
+tech:deterministiclog (deterministiclog, XPRS_DETERMINISTICLOG)
+      Suppress non-deterministic log information in the standard MIP log. In
+      particular, wall clock time stamps are replaced by (deterministic) work
+      units.
 
-      Default: 60
+      Values (default: 0):
 
-tech:globalfilemax (globalfilemax, tech:xprs_maxtreefilesize, XPRS_MAXTREEFILESIZE)
-      The maximum size, in megabytes, to which the tree file may grow, or 0
-      for no limit. When the tree file reaches this limit, a second tree file
-      will be created. Useful if you are using a filesystem that puts a
-      maximum limit on the size of a file.
+      * (0) Report wall clock time stamps and other non-deterministic log
+        information (the default)
+
+      * (1) Suppress non-deterministic log information. In particular, report
+        deterministic work units instead of time.
+
+tech:escapenames (escapenames, XPRS_ESCAPENAMES)
+      If characters illegal to an mps or lp file should be escaped to
+      guarantee readability, and whether escaped characters should be
+      transformed back when reading such a file.
+
+      Values (default: 1):
+
+      * (0) Illegal characters are not escaped.
+
+      * (1) Illegal characters are escaped.
+
+tech:extracols (extracols, XPRS_EXTRACOLS)
+      The initial number of extra columns to allow for in the matrix. If
+      columns are to be added to the matrix, then, for maximum efficiency,
+      space should be reserved for the columns before the matrix is input by
+      setting the EXTRACOLS control. If this is not done, resizing will occur
+      automatically, but more space may be allocated than the user actually
+      requires.
 
       Default: 0
 
+tech:extraelems (extraelems, XPRS_EXTRAELEMS)
+      The initial number of extra matrix elements to allow for in the matrix,
+      including coefficients for cuts. If rows or columns are to be added to
+      the matrix, then, for maximum efficiency, space should be reserved for
+      the extra matrix elements before the matrix is input by setting the
+      EXTRAELEMS control. If this is not done, resizing will occur
+      automatically, but more space may be allocated than the user actually
+      requires.
+
+      Default: Hardware/platform dependent.
+
+tech:extramipents (extramipents, XPRS_EXTRAMIPENTS)
+      The initial number of extra MIP entities to allow for.
+
+      Default: 0
+
+tech:extrarows (extrarows, XPRS_EXTRAROWS)
+      The initial number of extra rows to allow for in the matrix, including
+      cuts. If rows are to be added to the matrix, then, for maximum
+      efficiency, space should be reserved for the rows before the matrix is
+      input by setting the EXTRAROWS control. If this is not done, resizing
+      will occur automatically, but more space may be allocated than the user
+      actually requires.
+
+      Default: 0
+
+tech:extrasetelems (extrasetelems, XPRS_EXTRASETELEMS)
+      The initial number of extra elements in sets to allow for in the matrix.
+      If sets are to be added to the matrix, then, for maximum efficiency,
+      space should be reserved for the set elements before the matrix is input
+      by setting the EXTRASETELEMS control. If this is not done, resizing will
+      occur automatically, but more space may be allocated than the user
+      actually requires.
+
+      Default: 0
+
+tech:extrasets (extrasets, XPRS_EXTRASETS)
+      The initial number of extra sets to allow for in the matrix. If sets are
+      to be added to the matrix, then, for maximum efficiency, space should be
+      reserved for the sets before the matrix is input by setting the
+      EXTRASETS control. If this is not done, resizing will occur
+      automatically, but more space may be allocated than the user actually
+      requires.
+
+      Default: 0
+
+tech:forceoutput (forceoutput, XPRS_FORCEOUTPUT)
+      Certain names in the problem object may be incompatible with different
+      file formats (such as names containing spaces for LP files). If the
+      optimizer might be unable to read back a problem because of non-standard
+      names, it will first attempt to write it out using an extended naming
+      convention. If the names would not be possible to extend so that they
+      would be reproducible and recognizable, it will give an error message
+      and won't create the file. If the optimizer might be unable to read back
+      a problem because of non-standard names, it will give an error message
+      and won't create the file. This option may be used to force output
+      anyway.
+
+      Values (default: 0):
+
+      * (0) Check format compatibility, and in case of failure try to extend
+        names so that they are reproducible and recognizable.
+
+      * (1) Force output using problem names as is.
+
+      * (2) Always use 'x(' original name ')' in LP files to create a
+        representation that can be read by Xpress. Default for problem having
+        spaces in names
+
+      * (3) Substitute spaces by the '_' character in LP files
+
+tech:gpuplatform (gpuplatform, XPRS_GPUPLATFORM)
+      Controls what kind of GPU support is enabled overall in Xpress.
+      Individual solver components may disable GPU support.
+
+      Values (default: 1, use GPU support if available, unless disabled by
+      another control ):
+
+      * (0) Do not use any GPU support.
+
+      * (1) Use GPU support based on CUDA (if available).
+
 tech:logfile (logfile)
       Log file name; default=no file
+
+tech:maxmcoeffbufferelems (maxmcoeffbufferelems, XPRS_MAXMCOEFFBUFFERELEMS)
+      The maximum number of matrix coefficients to buffer before flushing into
+      the internal representation of the problem. Buffering coefficients can
+      offer a significant performance gain when you are building a matrix
+      using XPRSchgcoef or XPRSchgmcoef, but can lead to a significant memory
+      overhead for large matrices, which this control allows you to influence.
+
+      Default: 2147483647
+
+tech:maxpagelines (maxpagelines, XPRS_MAXPAGELINES)
+      Number of lines between page breaks in printable output.
+
+      Default: 23
+
+tech:mipabsgapnotify (mipabsgapnotify, XPRS_MIPABSGAPNOTIFY)
+      Branch and bound: if the gapnotify callback has been set using
+      XPRSaddcbgapnotify, then this callback will be triggered during the tree
+      search when the absolute gap reaches or passes the value you set of the
+      MIPRELGAPNOTIFY control.
+
+      Default: -1.0
+
+tech:mipabsgapnotifybound (mipabsgapnotifybound, XPRS_MIPABSGAPNOTIFYBOUND)
+      Branch and bound: if the gapnotify callback has been set using
+      XPRSaddcbgapnotify, then this callback will be triggered during the tree
+      search when the best bound reaches or passes the value you set of the
+      MIPRELGAPNOTIFYBOUND control.
+
+      Default: 1.0E+20 (for minimization problems); -1.0E+20 (for maximization
+      problems)
+
+tech:mipabsgapnotifyobj (mipabsgapnotifyobj, XPRS_MIPABSGAPNOTIFYOBJ)
+      Branch and bound: if the gapnotify callback has been set using
+      XPRSaddcbgapnotify, then this callback will be triggered during the tree
+      search when the best solution value reaches or passes the value you set
+      of the MIPRELGAPNOTIFYOBJ control.
+
+      Default: -1.0E+20 (for minimization problems); 1.0E+20 (for maximization
+      problems)
+
+tech:miprelgapnotify (miprelgapnotify, XPRS_MIPRELGAPNOTIFY)
+      Branch and bound: if the gapnotify callback has been set using
+      XPRSaddcbgapnotify, then this callback will be triggered during the
+      branch and bound tree search when the relative gap reaches or passes the
+      value you set of the MIPRELGAPNOTIFY control.
+
+      Default: -1.0
+
+tech:mps18compatible (mps18compatible, XPRS_MPS18COMPATIBLE)
+      Provides compatibility of MPS file output for older MPS readers.
+
+      Values (default: 0):
+
+      * (Bit 0) Do not write objective sense (OBJSENSE section).
+
+      * (Bit 1) Fixed binaries are written as fixed only (unless used as a
+        base variable for an indicator constraint).
+
+tech:mpsboundname (mpsboundname, XPRS_MPSBOUNDNAME)
+      When reading an MPS file, this control determines which entries from the
+      BOUNDS section will be read. As with all string controls, this is of
+      length 64 characters plus a null terminator,
+
+tech:mpsecho (mpsecho, XPRS_MPSECHO)
+      Determines whether comments in MPS matrix files are to be printed out
+      during matrix input.
+
+      Values (default: 0):
+
+      * (0) MPS comments are not to be echoed.
+
+      * (1) MPS comments are to be echoed.
+
+tech:mpsformat (mpsformat, XPRS_MPSFORMAT)
+      Specifies the format of MPS files.
+
+      Values (default: 1):
+
+      * (-1) To determine the file type automatically.
+
+      * (0) For fixed format.
+
+      * (1) If MPS files are assumed to be in free format by input.
+
+tech:mpsobjname (mpsobjname, XPRS_MPSOBJNAME)
+      When reading an MPS file, this control determines which neutral row will
+      be read as the objective function. If this control is set when reading a
+      multi-objective MPS file, only the named objective will be read; all
+      other objectives will be ignored. As with all string controls, this is
+      of length 64 characters plus a null terminator,
+
+tech:mpsrangename (mpsrangename, XPRS_MPSRANGENAME)
+      When reading an MPS file, this control determines which entries from the
+      RANGES section will be read. As with all string controls, this is of
+      length 64 characters plus a null terminator,
+
+tech:mpsrhsname (mpsrhsname, XPRS_MPSRHSNAME)
+      When reading an MPS file, this control determines which entries from the
+      RHS section will be read. As with all string controls, this is of length
+      64 characters plus a null terminator,
 
 tech:optionfile (optionfile, option:file)
       Name of an AMPL solver option file to read (surrounded by 'single' or
       "double" quotes if the name contains blanks). Lines that start with #
       are ignored. Otherwise, each nonempty line should contain "name=value",
       e.g., "lim:iter=500".
+
+tech:optionnative (optionnative, optnative, tech:param, param)
+      Xpress control by name: a quoted string "NAME=value" or "NAME value",
+      for documented and undocumented controls; can be repeated. "NAME=?"
+      prints the current value.
 
 tech:outlev (outlev)
       Whether to write xpress log lines (chatter) to stdout and to file:
@@ -6423,12 +6880,70 @@ tech:outlev (outlev)
 tech:outlev_mp (outlev_mp)
       0*/1: whether to print MP model information.
 
-tech:sleeponthreadwait (sleeponthreadwait)
-      Whether threads should sleep while awaiting work:
+tech:outputcontrols (outputcontrols, XPRS_OUTPUTCONTROLS)
+      This control toggles the printing of all control settings at the
+      beginning of the search. This includes the printing of controls that
+      have been explicitly assigned to their default value. All unset controls
+      are omitted as they keep their default value.
 
-      -1 - automatically determined
-      0  - no (busy-wait)
-      >0 - yes (sleep, might add overhead)
+      Values (default: 1):
+
+      * (0) Turn off printing of user-specified control settings.
+
+      * (1) Print controls.
+
+tech:outputlog (outputlog, XPRS_OUTPUTLOG)
+      This controls the level of output produced by the Optimizer during
+      optimization. In the Console Optimizer, OUTPUTLOG controls which
+      messages are sent to the screen (stdout). When using the Optimizer
+      library, no output is sent to the screen. If the user wishes output to
+      be displayed, they must define a callback function and print messages to
+      the screen themselves. In this case, OUTPUTLOG controls which messages
+      are sent to the user output callback.
+
+      Values (default: 1):
+
+      * (0) Turn all output off. Use XPRS_OUTPUTLOG_NO_OUTPUT from xprs.h.
+
+      * (1) Print all messages. Use XPRS_OUTPUTLOG_FULL_OUTPUT from xprs.h.
+
+      * (3) Print error and warning messages. Use
+        XPRS_OUTPUTLOG_ERRORS_AND_WARNINGS from xprs.h.
+
+      * (4) Print error messages only. Use XPRS_OUTPUTLOG_ERRORS from xprs.h.
+
+tech:outputmask (outputmask, XPRS_OUTPUTMASK)
+      Mask to restrict the row and column names written to file. As with all
+      string controls, this is of length 64 characters plus a null terminator,
+
+tech:permseed (permseed, pre:permuteseed, permuteseed, prepermuteseed, XPRS_PREPERMUTESEED)
+      This control sets the seed for the pseudo-random number generator for
+      permuting the problem when starting the presolve. This control only has
+      effects when PREPERMUTE is enabled.
+
+      Default: 1
+
+tech:seed (seed, alg:randomseed, randomseed, XPRS_RANDOMSEED)
+      Sets the initial seed to use for the pseudo-random number generator in
+      the Optimizer. The sequence of random numbers is always reset using the
+      seed when starting a new optimization run.
+
+      Default: 1
+
+tech:serializepreintsol (serializepreintsol, XPRS_SERIALIZEPREINTSOL)
+      Setting SERIALIZEPREINTSOL to 1 will ensure that the preintsol callback
+      is always fired in a deterministic order during a parallel MIP solve.
+      This applies only when the control DETERMINISTIC is set to 1.
+
+      Values (default: 0):
+
+      * (0) The preintsol callbacks will be fired asynchronously from
+        different threads.
+
+      * (1) The preintsol callbacks will be fired in a deterministic order.
+
+tech:sleeponthreadwait (sleeponthreadwait)
+      Deprecated: ignored by the current Xpress library.
 
 tech:stats (stats, tech:report_stats, solve_stats)
       Whether to return solve statistics and timings; the information will be
@@ -6442,9 +6957,11 @@ tech:stats (stats, tech:report_stats, solve_stats)
       0 - Do not report statistics (default)
       1 - Report statistics in JSON format in the problem suffix 'stats'
       2 - Report statistics in suffixes
-      3 - Report statistics both in suffixes and the suffix 'stats'
+      3 - Report statistics both in suffixes and the suffix 'stats'.
 
-tech:threads (threads, tech:xprs_threads, XPRS_THREADS)
+      See also obj:multi:stats.
+
+tech:threads (threads, XPRS_THREADS)
       The default number of threads used during optimization.
 
       Values (default: -1):
@@ -6472,7 +6989,7 @@ tech:tunebase (tunerdir, tunebase)
 tech:tunename (tunesessionname)
       Set problem name within the tuner "tunebase" is specified.
 
-tech:tuneoutput (tuneroutput, tuneoutput, tech:xprs_tuneroutput, XPRS_TUNEROUTPUT)
+tech:tuneoutput (tuneoutput, tuneroutput, XPRS_TUNEROUTPUT)
       Tuner: Whether to output tuner results and logs to the file system.
 
       Values (default: 1):
@@ -6481,7 +6998,7 @@ tech:tuneoutput (tuneroutput, tuneoutput, tech:xprs_tuneroutput, XPRS_TUNEROUTPU
 
       * (1) Output results and logs to the file system.
 
-tech:tunerhistory (tunerhistory, tech:xprs_tunerhistory, XPRS_TUNERHISTORY)
+tech:tunerhistory (tunerhistory, XPRS_TUNERHISTORY)
       Tuner: Whether to reuse and append to previous tuner results of the same
       problem.
 
@@ -6494,7 +7011,7 @@ tech:tunerhistory (tunerhistory, tech:xprs_tunerhistory, XPRS_TUNERHISTORY)
 
       * (2) Reuse the previous results and append new results to it.
 
-tech:tunermethod (tunermethod, tech:xprs_tunermethod, XPRS_TUNERMETHOD)
+tech:tunermethod (tunermethod, XPRS_TUNERMETHOD)
       Tuner: Selects a factory tuner method. A tuner method consists of a list
       of controls with different settings that the tuner will evaluate and try
       to combine.
@@ -6524,6 +7041,12 @@ tech:tunermethod (tunermethod, tech:xprs_tunermethod, XPRS_TUNERMETHOD)
 
       * (9) Select the default Xpress Global tuner method.
 
+tech:tunermethodfile (tunermethodfile, XPRS_TUNERMETHODFILE)
+      Tuner: Defines a file from which the tuner can read user-defined tuner
+      method.
+
+      Default: (empty)
+
 tech:tunermethodread (tunermethodread)
       Read existing tuner method from the specified .xtm file, see
       "tunermethodwrite" to obtaing a template file
@@ -6531,7 +7054,42 @@ tech:tunermethodread (tunermethodread)
 tech:tunermethodwrite (tunermethodwrite)
       Write existing tuner method from the specified .xtm file
 
-tech:tunertarget (tunertarget, tech:xprs_tunertarget, XPRS_TUNERTARGET)
+tech:tunermode (tunermode, XPRS_TUNERMODE)
+      Tuner: Whether to always enable the tuner or disable it.
+
+      Values (default: -1):
+
+      * (-1) No effect.
+
+      * (0) Always disable the tuner. XPRStune (TUNE) will have no effect.
+
+      * (1) Always enable the tuner. XPRSmipoptimize (MIPOPTIMIZE),
+        XPRSlpoptimize (LPOPTIMIZE), etc. will call the tuner before solving
+        the problem.
+
+tech:tuneroutputpath (tuneroutputpath, XPRS_TUNEROUTPUTPATH)
+      Tuner: Defines a root path to which the tuner writes the result file and
+      logs.
+
+      Default: tuneroutput
+
+tech:tunerpermute (tunerpermute, XPRS_TUNERPERMUTE)
+      Tuner: Defines the number of permutations to solve for each control
+      setting.
+
+      Values (default: 0):
+
+      * (0) Solve the original problem only for each setting.
+
+      * (n>0) Solve the original problem and n permuted problems for each
+        setting.
+
+tech:tunersessionname (tunersessionname, XPRS_TUNERSESSIONNAME)
+      Tuner: Defines a session name for the tuner.
+
+      Default: (empty)
+
+tech:tunertarget (tunertarget, XPRS_TUNERTARGET)
       Tuner: Defines the tuner target -- what should be evaluated when
       comparing two runs with different control settings.
 
@@ -6563,7 +7121,7 @@ tech:tunertarget (tunertarget, tech:xprs_tunertarget, XPRS_TUNERTARGET)
       * (10) Best primal integral. (Only for individual instances, not for
         problem sets)
 
-tech:tunerthreads (tunerthreads, tech:xprs_tunerthreads, XPRS_TUNERTHREADS)
+tech:tunerthreads (tunerthreads, XPRS_TUNERTHREADS)
       Tuner: the number of threads used by the tuner.
 
       Values (default: 1):
@@ -6574,7 +7132,7 @@ tech:tunerthreads (tunerthreads, tech:xprs_tunerthreads, XPRS_TUNERTHREADS)
 
       * (n>1) The tuner will run in parallel with n threads.
 
-tech:tunerverbose (tunerverbose, tech:xprs_tunerverbose, XPRS_TUNERVERBOSE)
+tech:tunerverbose (tunerverbose, XPRS_TUNERVERBOSE)
       Tuner: whether the tuner should prints detailed information for each
       run.
 
@@ -6584,7 +7142,7 @@ tech:tunerverbose (tunerverbose, tech:xprs_tunerverbose, XPRS_TUNERVERBOSE)
 
       * (0) Print less information.
 
-tech:tunetimelim (tunermaxtime, tunetimelim, lim:tunetime, tech:xprs_tunermaxtime, XPRS_TUNERMAXTIME)
+tech:tunetimelim (tunetimelim, lim:tunetime, tunermaxtime, XPRS_TUNERMAXTIME)
       Tuner: The maximum time in seconds that the tuner will run before it
       terminates.
 
@@ -6627,379 +7185,11 @@ tech:writemodelonly (justwriteprob, justwritemodel)
 
 tech:writesolution (writesol, writesolution)
       Specifies the names of files where to export the solution and/or other
-      result files in solver's native formats. Option can be repeated. File
-      name extensions can be ".sol[.tar.gz]", ".json", ".bas", ".ilp", etc.
+      result files in solver's native formats. Option can be repeated.
 
-tech:xprs_callbackchecktimedelay (XPRS_CALLBACKCHECKTIMEDELAY)
-      Minimum delay in milliseconds between two consecutive executions of the
-      CHECKTIME callback in the same solution process
+      Supported name extensions: ".sol/.prt", ".iss", ".bas/.bss".
 
-      Values (default: 0):
-
-      * (0) Callback delay is disabled - the callback is executed every time;
-
-      * (n>0) Callback invocation is suppressed if less than n milliseconds
-        have passed since the last invocation.
-
-tech:xprs_callbackchecktimeworkdelay (XPRS_CALLBACKCHECKTIMEWORKDELAY)
-      Minimum delay in work units between two consecutive executions of the
-      CHECKTIME callback in the same solution process
-
-      Values (default: 0):
-
-      * (0) Callback delay is disabled - the callback is executed every time;
-
-      * (n>0) Callback invocation if less than n work units, which may be a
-        fraction of a work unit, have passed since the last invocation.
-
-tech:xprs_callbackfrommainthread (XPRS_CALLBACKFROMMAINTHREAD)
-      Branch and Bound: specifies whether the MIP callbacks should only be
-      called on the main thread.
-
-      Values (default: 0):
-
-      * (0) Invoke callbacks on worker threads during parallel MIP;
-
-      * (1) Only ever invoke a callback on the thread that called
-        XPRSmipoptimize.
-
-tech:xprs_compute (XPRS_COMPUTE)
-      Controls whether the next solve is performed directly or on an Insight
-      Compute Interface.
-
-      Values (default: Depends on environment):
-
-      * (0) Solve locally.
-
-      * (1) Solve using an Insight Compute Interface.
-
-tech:xprs_computeexecservice (XPRS_COMPUTEEXECSERVICE)
-      Selects the Insight execution service that will be used for solving
-      remote optimizations.
-
-      Default: Empty string
-
-tech:xprs_computejobpriority (XPRS_COMPUTEJOBPRIORITY)
-      Selects the priority that will be used for remote optimization jobs.
-
-      Default: 0
-
-tech:xprs_computelog (XPRS_COMPUTELOG)
-      Controls how the run log is fetched when a solve is performed on an
-      Insight Compute Interface.
-
-      Values (default: 1):
-
-      * (0) Run log will not be fetched
-
-      * (1) Run log will be fetched in real-time
-
-      * (2) Run log will be fetched at the end of the solve
-
-      * (3) Run log will be fetched at the end of the solve if the solve fails
-        with an error
-
-tech:xprs_concurrentthreads (XPRS_CONCURRENTTHREADS)
-      Determines the number of threads used by the concurrent solver.
-
-      Values (default: -1):
-
-      * (-1) Determined automatically
-
-      * (>0) Number of threads to use.
-
-tech:xprs_cpialpha (XPRS_CPIALPHA)
-      decay term for confined primal integral computation.
-
-      Default: 0
-
-tech:xprs_deterministiclog (XPRS_DETERMINISTICLOG)
-      Suppress non-deterministic log information in the standard MIP log. In
-      particular, wall clock time stamps are replaced by (deterministic) work
-      units.
-
-      Values (default: 0):
-
-      * (0) Report wall clock time stamps and other non-deterministic log
-        information (the default)
-
-      * (1) Suppress non-deterministic log information. In particular, report
-        deterministic work units instead of time.
-
-tech:xprs_escapenames (XPRS_ESCAPENAMES)
-      If characters illegal to an mps or lp file should be escaped to
-      guarantee readability, and whether escaped characters should be
-      transformed back when reading such a file.
-
-      Values (default: 1):
-
-      * (0) Illegal characters are not escaped.
-
-      * (1) Illegal characters are escaped.
-
-tech:xprs_forceoutput (XPRS_FORCEOUTPUT)
-      Certain names in the problem object may be incompatible with different
-      file formats (such as names containing spaces for LP files). If the
-      optimizer might be unable to read back a problem because of non-standard
-      names, it will first attempt to write it out using an extended naming
-      convention. If the names would not be possible to extend so that they
-      would be reproducible and recognizable, it will give an error message
-      and won't create the file. If the optimizer might be unable to read back
-      a problem because of non-standard names, it will give an error message
-      and won't create the file. This option may be used to force output
-      anyway.
-
-      Values (default: 0):
-
-      * (0) Check format compatibility, and in case of failure try to extend
-        names so that they are reproducible and recognizable.
-
-      * (1) Force output using problem names as is.
-
-      * (2) Always use 'x(' original name ')' in LP files to create a
-        representation that can be read by Xpress. Default for problem having
-        spaces in names
-
-      * (3) Substitute spaces by the '_' character in LP files
-
-tech:xprs_iotimeout (XPRS_IOTIMEOUT)
-      The maximum number of seconds to wait for an I/O operation before it is
-      cancelled.
-
-      Default: 30
-
-tech:xprs_mipabsgapnotify (XPRS_MIPABSGAPNOTIFY)
-      Branch and bound: if the gapnotify callback has been set using
-      XPRSaddcbgapnotify, then this callback will be triggered during the tree
-      search when the absolute gap reaches or passes the value you set of the
-      MIPRELGAPNOTIFY control.
-
-      Default: -1.0
-
-tech:xprs_mipabsgapnotifybound (XPRS_MIPABSGAPNOTIFYBOUND)
-      Branch and bound: if the gapnotify callback has been set using
-      XPRSaddcbgapnotify, then this callback will be triggered during the tree
-      search when the best bound reaches or passes the value you set of the
-      MIPRELGAPNOTIFYBOUND control.
-
-      Default: 1.0E+20 (for minimization problems); -1.0E+20 (for maximization
-      problems)
-
-tech:xprs_mipabsgapnotifyobj (XPRS_MIPABSGAPNOTIFYOBJ)
-      Branch and bound: if the gapnotify callback has been set using
-      XPRSaddcbgapnotify, then this callback will be triggered during the tree
-      search when the best solution value reaches or passes the value you set
-      of the MIPRELGAPNOTIFYOBJ control.
-
-      Default: -1.0E+20 (for minimization problems); 1.0E+20 (for maximization
-      problems)
-
-tech:xprs_miprelgapnotify (XPRS_MIPRELGAPNOTIFY)
-      Branch and bound: if the gapnotify callback has been set using
-      XPRSaddcbgapnotify, then this callback will be triggered during the
-      branch and bound tree search when the relative gap reaches or passes the
-      value you set of the MIPRELGAPNOTIFY control.
-
-      Default: -1.0
-
-tech:xprs_mps18compatible (XPRS_MPS18COMPATIBLE)
-      Provides compatibility of MPS file output for older MPS readers.
-
-      Values (default: 0):
-
-      * (Bit 0) Do not write objective sense (OBJSENSE section).
-
-      * (Bit 1) Fixed binaries are written as fixed only (unless used as a
-        base variable for an indicator constraint).
-
-tech:xprs_mpsboundname (XPRS_MPSBOUNDNAME)
-      When reading an MPS file, this control determines which entries from the
-      BOUNDS section will be read. As with all string controls, this is of
-      length 64 characters plus a null terminator,
-
-tech:xprs_mpsecho (XPRS_MPSECHO)
-      Determines whether comments in MPS matrix files are to be printed out
-      during matrix input.
-
-      Values (default: 0):
-
-      * (0) MPS comments are not to be echoed.
-
-      * (1) MPS comments are to be echoed.
-
-tech:xprs_mpsformat (XPRS_MPSFORMAT)
-      Specifies the format of MPS files.
-
-      Values (default: 1):
-
-      * (-1) To determine the file type automatically.
-
-      * (0) For fixed format.
-
-      * (1) If MPS files are assumed to be in free format by input.
-
-tech:xprs_mpsobjname (XPRS_MPSOBJNAME)
-      When reading an MPS file, this control determines which neutral row will
-      be read as the objective function. If this control is set when reading a
-      multi-objective MPS file, only the named objective will be read; all
-      other objectives will be ignored. As with all string controls, this is
-      of length 64 characters plus a null terminator,
-
-tech:xprs_mpsrangename (XPRS_MPSRANGENAME)
-      When reading an MPS file, this control determines which entries from the
-      RANGES section will be read. As with all string controls, this is of
-      length 64 characters plus a null terminator,
-
-tech:xprs_mpsrhsname (XPRS_MPSRHSNAME)
-      When reading an MPS file, this control determines which entries from the
-      RHS section will be read. As with all string controls, this is of length
-      64 characters plus a null terminator,
-
-tech:xprs_outputmask (XPRS_OUTPUTMASK)
-      Mask to restrict the row and column names written to file. As with all
-      string controls, this is of length 64 characters plus a null terminator,
-
-tech:xprs_outputtol (XPRS_OUTPUTTOL)
-      Zero tolerance on print values.
-
-      Default: 1.0E-05
-
-tech:xprs_serializepreintsol (XPRS_SERIALIZEPREINTSOL)
-      Setting SERIALIZEPREINTSOL to 1 will ensure that the preintsol callback
-      is always fired in a deterministic order during a parallel MIP solve.
-      This applies only when the control DETERMINISTIC is set to 1.
-
-      Values (default: 0):
-
-      * (0) The preintsol callbacks will be fired asynchronously from
-        different threads.
-
-      * (1) The preintsol callbacks will be fired in a deterministic order.
-
-tech:xprs_treememorylimit (XPRS_TREEMEMORYLIMIT)
-      A soft limit, in megabytes, for the amount of memory to use in storing
-      the branch and bound search tree. This doesn't include memory used for
-      presolve, heuristics, solving the LP relaxation, etc. When set to 0 (the
-      default), the optimizer will calculate a limit automatically based on
-      the amount of free physical memory detected in the machine. When the
-      memory used by the branch and bound tree exceeds this limit, the
-      optimizer will try to reduce the memory usage by writing lower-rated
-      sections of the tree to a file called the 'tree file'. Though the solve
-      can continue if it cannot bring the tree memory usage below the
-      specified limit, performance will be inhibited and a message will be
-      printed to the log.
-
-      Default: 0 (calculate limit automatically)
-
-tech:xprs_tunermethodfile (XPRS_TUNERMETHODFILE)
-      Tuner: Defines a file from which the tuner can read user-defined tuner
-      method.
-
-      Default: (empty)
-
-tech:xprs_tunermode (XPRS_TUNERMODE)
-      Tuner: Whether to always enable the tuner or disable it.
-
-      Values (default: -1):
-
-      * (-1) No effect.
-
-      * (0) Always disable the tuner. XPRStune (TUNE) will have no effect.
-
-      * (1) Always enable the tuner. XPRSmipoptimize (MIPOPTIMIZE),
-        XPRSlpoptimize (LPOPTIMIZE), etc. will call the tuner before solving
-        the problem.
-
-tech:xprs_tuneroutputpath (XPRS_TUNEROUTPUTPATH)
-      Tuner: Defines a root path to which the tuner writes the result file and
-      logs.
-
-      Default: tuneroutput
-
-tech:xprs_tunerpermute (XPRS_TUNERPERMUTE)
-      Tuner: Defines the number of permutations to solve for each control
-      setting.
-
-      Values (default: 0):
-
-      * (0) Solve the original problem only for each setting.
-
-      * (n>0) Solve the original problem and n permuted problems for each
-        setting.
-
-tech:xprs_tunersessionname (XPRS_TUNERSESSIONNAME)
-      Tuner: Defines a session name for the tuner.
-
-      Default: (empty)
-
-tech:xprs_version (XPRS_VERSION)
-      The Optimizer version number, e.g. 1301 meaning release 13.01.
-
-      Default: Software version dependent
-
-tech:xslp_calcthreads (XSLP_CALCTHREADS, NLPCALCTHREADS)
-      Number of threads used for formula and derivatives evaluations
-
-      Default: -1 (determined by XSLP_THREADS)
-
-tech:xslp_deterministic (XSLP_DETERMINISTIC, NLPDETERMINISTIC)
-      Determines if the parallel features of SLP should be guaranteed to be
-      deterministic
-
-      Default: 1
-
-tech:xslp_ivname (XSLP_IVNAME, NLPIVNAME)
-      Name of the set of initial values to be used
-
-      Default: none
-
-tech:xslp_keepequalscolumn (XSLP_KEEPEQUALSCOLUMN, NLPKEEPEQUALSCOLUMN)
-      When set to a nonzero value, the MPS reader will keep the equals column
-      in the problem
-
-      Default: 0
-
-tech:xslp_memoryfactor (XSLP_MEMORYFACTOR)
-      Factor for expanding size of dynamic arrays in memory
-
-      Default: 1.6
-
-tech:xslp_multistart_threads (XSLP_MULTISTART_THREADS, MULTISTART_THREADS)
-      The maximum number of threads to be used in multistart
-
-      Default: -1 (determined by XSLP_THREADS)
-
-tech:xslp_threads (XSLP_THREADS, NLPTHREADS)
-      Default number of threads to be used
-
-      Default: -1 (use XPRS_THREADS value)
-
-tech:xslp_tolname (XSLP_TOLNAME, SLPTOLNAME)
-      Name of the set of tolerance sets to be used
-
-      Default: none
-
-tol:xslp_cdtol_a (XSLP_CDTOL_A, SLPCDTOL_A)
-      Absolute tolerance for deducing constant derivatives
-
-      Default: 1.0e-08
-
-tol:xslp_cdtol_r (XSLP_CDTOL_R, SLPCDTOL_R)
-      Relative tolerance for deducing constant derivatives
-
-      Default: 1.0e-08
-
-tol:xslp_validationtol_r (XSLP_VALIDATIONTOL_R, NLPVALIDATIONTOL_R)
-      Relative tolerance for the XSLPvalidate procedure
-
-      Default: 0.00001
-
-tol:xslp_zero (XSLP_ZERO, NLPZERO)
-      Absolute tolerance
-
-      Default: 1.0E-15
-
-xktr:param_algorithm (XKTR_PARAM_ALGORITHM, KNITRO_PARAM_ALGORITHM)
+xktr:algorithm (algorithm, xktr_param_algorithm, XKTR_PARAM_ALGORITHM, KNITRO_PARAM_ALGORITHM)
       Indicates which algorithm to use to solve nonlinear problems
 
       Values (default: 0):
@@ -7019,14 +7209,14 @@ xktr:param_algorithm (XKTR_PARAM_ALGORITHM, KNITRO_PARAM_ALGORITHM)
 
       * (6) (al) use the Augmented Lagrangian algorithm.
 
-xktr:param_bar_directinterval (XKTR_PARAM_BAR_DIRECTINTERVAL, KNITRO_PARAM_BAR_DIRECTINTERVAL)
+xktr:bar_directinterval (bar_directinterval, xktr_param_bar_directinterval, XKTR_PARAM_BAR_DIRECTINTERVAL, KNITRO_PARAM_BAR_DIRECTINTERVAL)
       Controls the maximum number of consecutive conjugate gradient (CG) steps
       before Knitro will try to enforce that a step is taken using direct
       linear algebra.
 
       Default: 10
 
-xktr:param_bar_feasible (XKTR_PARAM_BAR_FEASIBLE, KNITRO_PARAM_BAR_FEASIBLE)
+xktr:bar_feasible (bar_feasible, xktr_param_bar_feasible, XKTR_PARAM_BAR_FEASIBLE, KNITRO_PARAM_BAR_FEASIBLE)
       Specifies whether special emphasis is placed on getting and staying
       feasible in the interior-point algorithms.
 
@@ -7042,20 +7232,20 @@ xktr:param_bar_feasible (XKTR_PARAM_BAR_FEASIBLE, KNITRO_PARAM_BAR_FEASIBLE)
 
       * (3) (get_stay) Implement both options 1 and 2 above.
 
-xktr:param_bar_feasmodetol (XKTR_PARAM_BAR_FEASMODETOL, KNITRO_PARAM_BAR_FEASMODETOL)
+xktr:bar_feasmodetol (bar_feasmodetol, xktr_param_bar_feasmodetol, XKTR_PARAM_BAR_FEASMODETOL, KNITRO_PARAM_BAR_FEASMODETOL)
       Specifies the tolerance in equation that determines whether Knitro will
       force subsequent iterates to remain feasible.
 
       Default: 1.0e-4
 
-xktr:param_bar_initmu (XKTR_PARAM_BAR_INITMU, KNITRO_PARAM_BAR_INITMU)
+xktr:bar_initmu (bar_initmu, xktr_param_bar_initmu, XKTR_PARAM_BAR_INITMU, KNITRO_PARAM_BAR_INITMU)
       Specifies the initial value for the barrier parameter : μ used with the
       barrier algorithms. This option has no effect on the Active Set
       algorithm.
 
       Default: 1.0e-1
 
-xktr:param_bar_initpt (XKTR_PARAM_BAR_INITPT, KNITRO_PARAM_BAR_INITPT)
+xktr:bar_initpt (bar_initpt, xktr_param_bar_initpt, XKTR_PARAM_BAR_INITPT, KNITRO_PARAM_BAR_INITPT)
       Indicates whether an initial point strategy is used with barrier
       algorithms.
 
@@ -7068,26 +7258,26 @@ xktr:param_bar_initpt (XKTR_PARAM_BAR_INITPT, KNITRO_PARAM_BAR_INITPT)
 
       * (2) (no) Do no alter the initial slacks and multipliers.
 
-xktr:param_bar_maxbacktrack (XKTR_PARAM_BAR_MAXBACKTRACK, KNITRO_PARAM_BAR_MAXBACKTRACK)
+xktr:bar_maxbacktrack (bar_maxbacktrack, xktr_param_bar_maxbacktrack, XKTR_PARAM_BAR_MAXBACKTRACK, KNITRO_PARAM_BAR_MAXBACKTRACK)
       Indicates the maximum allowable number of backtracks during the
       linesearch of the Interior/Direct algorithm before reverting to a CG
       step.
 
       Default: 3
 
-xktr:param_bar_maxcrossit (XKTR_PARAM_BAR_MAXCROSSIT, KNITRO_PARAM_BAR_MAXCROSSIT)
+xktr:bar_maxcrossit (bar_maxcrossit, xktr_param_bar_maxcrossit, XKTR_PARAM_BAR_MAXCROSSIT, KNITRO_PARAM_BAR_MAXCROSSIT)
       Specifies the maximum number of crossover iterations before termination.
 
       Default: 0
 
-xktr:param_bar_maxrefactor (XKTR_PARAM_BAR_MAXREFACTOR, KNITRO_PARAM_BAR_MAXREFACTOR)
+xktr:bar_maxrefactor (bar_maxrefactor, xktr_param_bar_maxrefactor, XKTR_PARAM_BAR_MAXREFACTOR, KNITRO_PARAM_BAR_MAXREFACTOR)
       Indicates the maximum number of refactorizations of the KKT system per
       iteration of the Interior/Direct algorithm before reverting to a CG
       step.
 
       Default: -1
 
-xktr:param_bar_murule (XKTR_PARAM_BAR_MURULE, KNITRO_PARAM_BAR_MURULE)
+xktr:bar_murule (bar_murule, xktr_param_bar_murule, XKTR_PARAM_BAR_MURULE, KNITRO_PARAM_BAR_MURULE)
       Indicates which strategy to use for modifying the barrier parameter mu
       in the barrier algorithms.
 
@@ -7118,7 +7308,7 @@ xktr:param_bar_murule (XKTR_PARAM_BAR_MURULE, KNITRO_PARAM_BAR_MURULE)
         determine the barrier parameter. Available only for the
         Interior/Direct algorithm.
 
-xktr:param_bar_pencons (XKTR_PARAM_BAR_PENCONS, KNITRO_PARAM_BAR_PENCONS)
+xktr:bar_pencons (bar_pencons, xktr_param_bar_pencons, XKTR_PARAM_BAR_PENCONS, KNITRO_PARAM_BAR_PENCONS)
       Indicates whether a penalty approach is applied to the constraints.
 
       Values (default: 0):
@@ -7129,7 +7319,7 @@ xktr:param_bar_pencons (XKTR_PARAM_BAR_PENCONS, KNITRO_PARAM_BAR_PENCONS)
 
       * (2) (all) A penalty approach is applied to all general constraints.
 
-xktr:param_bar_penrule (XKTR_PARAM_BAR_PENRULE, KNITRO_PARAM_BAR_PENRULE)
+xktr:bar_penrule (bar_penrule, xktr_param_bar_penrule, XKTR_PARAM_BAR_PENRULE, KNITRO_PARAM_BAR_PENRULE)
       Indicates which penalty parameter strategy to use for determining
       whether or not to accept a trial iterate.
 
@@ -7143,7 +7333,7 @@ xktr:param_bar_penrule (XKTR_PARAM_BAR_PENRULE, KNITRO_PARAM_BAR_PENRULE)
       * (2) (flex) Use a more tolerant and flexible step acceptance procedure
         based on a range of penalty parameter values.
 
-xktr:param_bar_switchrule (XKTR_PARAM_BAR_SWITCHRULE, KNITRO_PARAM_BAR_SWITCHRULE)
+xktr:bar_switchrule (bar_switchrule, xktr_param_bar_switchrule, XKTR_PARAM_BAR_SWITCHRULE, KNITRO_PARAM_BAR_SWITCHRULE)
       Indicates whether or not the barrier algorithms will allow switching
       from an optimality phase to a pure feasibility phase.
 
@@ -7157,25 +7347,25 @@ xktr:param_bar_switchrule (XKTR_PARAM_BAR_SWITCHRULE, KNITRO_PARAM_BAR_SWITCHRUL
 
       * (3) (level2) Use a more aggressive switching rule.
 
-xktr:param_delta (XKTR_PARAM_DELTA, KNITRO_PARAM_DELTA)
+xktr:delta (delta, xktr_param_delta, XKTR_PARAM_DELTA, KNITRO_PARAM_DELTA)
       Specifies the initial trust region radius scaling factor used to
       determine the initial trust region size.
 
       Default: 1.0e0
 
-xktr:param_feastol (XKTR_PARAM_FEASTOL, KNITRO_PARAM_FEASTOL)
+xktr:feastol (xktr_param_feastol, XKTR_PARAM_FEASTOL, KNITRO_PARAM_FEASTOL)
       Specifies the final relative stopping tolerance for the feasibility
       error.
 
       Default: 1.0e-6
 
-xktr:param_feastolabs (XKTR_PARAM_FEASTOLABS, KNITRO_PARAM_FEASTOLABS)
+xktr:feastolabs (feastolabs, xktr_param_feastolabs, XKTR_PARAM_FEASTOLABS, KNITRO_PARAM_FEASTOLABS)
       Specifies the final absolute stopping tolerance for the feasibility
       error.
 
       Default: 0.0e0
 
-xktr:param_gradopt (XKTR_PARAM_GRADOPT, KNITRO_PARAM_GRADOPT)
+xktr:gradopt (gradopt, xktr_param_gradopt, XKTR_PARAM_GRADOPT, KNITRO_PARAM_GRADOPT)
       Specifies how to compute the gradients of the objective and constraint
       functions.
 
@@ -7187,7 +7377,7 @@ xktr:param_gradopt (XKTR_PARAM_GRADOPT, KNITRO_PARAM_GRADOPT)
 
       * (3) (central) Knitro computes gradients by central finite differences.
 
-xktr:param_hessopt (XKTR_PARAM_HESSOPT, KNITRO_PARAM_HESSOPT)
+xktr:hessopt (hessopt, xktr_param_hessopt, XKTR_PARAM_HESSOPT, KNITRO_PARAM_HESSOPT)
       Specifies how to compute the (approximate) Hessian of the Lagrangian.
 
       Values (default: 0):
@@ -7213,7 +7403,7 @@ xktr:param_hessopt (XKTR_PARAM_HESSOPT, KNITRO_PARAM_HESSOPT)
         hessian (available for least-squares only, and default value for
         least-squares)
 
-xktr:param_honorbnds (XKTR_PARAM_HONORBNDS, KNITRO_PARAM_HONORBNDS)
+xktr:honorbnds (honorbnds, xktr_param_honorbnds, XKTR_PARAM_HONORBNDS, KNITRO_PARAM_HONORBNDS)
       Indicates whether or not to enforce satisfaction of simple variable
       bounds throughout the optimization.
 
@@ -7228,19 +7418,19 @@ xktr:param_honorbnds (XKTR_PARAM_HONORBNDS, KNITRO_PARAM_HONORBNDS)
       * (2) (initpt) Knitro enforces that the initial point satisfies the
         bounds on the variables.
 
-xktr:param_infeastol (XKTR_PARAM_INFEASTOL, KNITRO_PARAM_INFEASTOL)
+xktr:infeastol (infeastol, xktr_param_infeastol, XKTR_PARAM_INFEASTOL, KNITRO_PARAM_INFEASTOL)
       Specifies the (relative) tolerance used for declaring infeasibility of a
       model.
 
       Default: 1.0e-8
 
-xktr:param_lmsize (XKTR_PARAM_LMSIZE, KNITRO_PARAM_LMSIZE)
+xktr:lmsize (lmsize, xktr_param_lmsize, XKTR_PARAM_LMSIZE, KNITRO_PARAM_LMSIZE)
       Specifies the number of limited memory pairs stored when approximating
       the Hessian using the limited-memory quasi-Newton BFGS option.
 
       Default: 10
 
-xktr:param_maxcgit (XKTR_PARAM_MAXCGIT, KNITRO_PARAM_MAXCGIT)
+xktr:maxcgit (maxcgit, xktr_param_maxcgit, XKTR_PARAM_MAXCGIT, KNITRO_PARAM_MAXCGIT)
       Specifies the number of limited memory pairs stored when approximating
       the Hessian using the limited-memory quasi-Newton BFGS option.
 
@@ -7248,10 +7438,10 @@ xktr:param_maxcgit (XKTR_PARAM_MAXCGIT, KNITRO_PARAM_MAXCGIT)
 
       * (0) Let Knitro automatically choose a value based on the problem size.
 
-      * (n) At most n>0 CG iterations may be performed during one minor
+      * (n) At most n0 CG iterations may be performed during one minor
         iteration of Knitro.
 
-xktr:param_maxit (XKTR_PARAM_MAXIT, KNITRO_PARAM_MAXIT)
+xktr:maxit (maxit, xktr_param_maxit, XKTR_PARAM_MAXIT, KNITRO_PARAM_MAXIT)
       Specifies the maximum number of iterations before termination.
 
       Values (default: 0):
@@ -7260,9 +7450,9 @@ xktr:param_maxit (XKTR_PARAM_MAXIT, KNITRO_PARAM_MAXIT)
         Currently Knitro sets this value to 10000 for LPs/NLPs and 3000 for
         MIP problems.
 
-      * (n) At most n>0 iterations may be performed before terminating.
+      * (n) At most n0 iterations may be performed before terminating.
 
-xktr:param_mip_branchrule (XKTR_PARAM_MIP_BRANCHRULE, KNITRO_PARAM_MIP_BRANCHRULE)
+xktr:mip_branchrule (mip_branchrule, xktr_param_mip_branchrule, XKTR_PARAM_MIP_BRANCHRULE, KNITRO_PARAM_MIP_BRANCHRULE)
       Specifies which branching rule to use for MIP branch and bound
       procedure.
 
@@ -7279,7 +7469,7 @@ xktr:param_mip_branchrule (XKTR_PARAM_MIP_BRANCHRULE, KNITRO_PARAM_MIP_BRANCHRUL
         XKTR_PARAM_MIP_STRONG_MAXIT for further control of strong branching
         procedure).
 
-xktr:param_mip_gub_branch (XKTR_PARAM_MIP_GUB_BRANCH, KNITRO_PARAM_MIP_GUB_BRANCH)
+xktr:mip_gub_branch (mip_gub_branch, xktr_param_mip_gub_branch, XKTR_PARAM_MIP_GUB_BRANCH, KNITRO_PARAM_MIP_GUB_BRANCH)
       Specifies whether or not to branch on generalized upper bounds (GUBs).
 
       Values (default: 0):
@@ -7288,7 +7478,7 @@ xktr:param_mip_gub_branch (XKTR_PARAM_MIP_GUB_BRANCH, KNITRO_PARAM_MIP_GUB_BRANC
 
       * (1) (yes) Allow branching on GUBs.
 
-xktr:param_mip_heuristic (XKTR_PARAM_MIP_HEURISTIC, KNITRO_PARAM_MIP_HEURISTIC)
+xktr:mip_heuristic (mip_heuristic, xktr_param_mip_heuristic, XKTR_PARAM_MIP_HEURISTIC, KNITRO_PARAM_MIP_HEURISTIC)
       Specifies which MIP heuristic search approach to apply to try to find an
       initial integer feasible point.
 
@@ -7302,7 +7492,7 @@ xktr:param_mip_heuristic (XKTR_PARAM_MIP_HEURISTIC, KNITRO_PARAM_MIP_HEURISTIC)
 
       * (3) (mpec) Apply heuristic based on MPEC formulation.
 
-xktr:param_mip_implicatns (XKTR_PARAM_MIP_IMPLICATNS, KNITRO_PARAM_MIP_IMPLICATNS)
+xktr:mip_implicatns (mip_implicatns, xktr_param_mip_implicatns, XKTR_PARAM_MIP_IMPLICATNS, KNITRO_PARAM_MIP_IMPLICATNS)
       Specifies whether or not to add constraints to the MIP derived from
       logical implications.
 
@@ -7312,17 +7502,17 @@ xktr:param_mip_implicatns (XKTR_PARAM_MIP_IMPLICATNS, KNITRO_PARAM_MIP_IMPLICATN
 
       * (1) (yes) Knitro adds constraints from logical implications.
 
-xktr:param_mip_intgapabs (XKTR_PARAM_MIP_INTGAPABS, KNITRO_PARAM_INTGAPABS)
+xktr:mip_intgapabs (mip_intgapabs, xktr_param_mip_intgapabs, XKTR_PARAM_MIP_INTGAPABS, KNITRO_PARAM_INTGAPABS)
       The absolute integrality gap stop tolerance for MIP.
 
       Default: 1.0e-6
 
-xktr:param_mip_intgaprel (XKTR_PARAM_MIP_INTGAPREL, KNITRO_PARAM_INTGAPREL)
+xktr:mip_intgaprel (mip_intgaprel, xktr_param_mip_intgaprel, XKTR_PARAM_MIP_INTGAPREL, KNITRO_PARAM_INTGAPREL)
       The relative integrality gap stop tolerance for MIP.
 
       Default: 1.0e-6
 
-xktr:param_mip_knapsack (XKTR_PARAM_MIP_KNAPSACK, KNITRO_PARAM_MIP_KNAPSACK)
+xktr:mip_knapsack (mip_knapsack, xktr_param_mip_knapsack, XKTR_PARAM_MIP_KNAPSACK, KNITRO_PARAM_MIP_KNAPSACK)
       Specifies rules for adding MIP knapsack cuts.
 
       Values (default: 1):
@@ -7334,7 +7524,7 @@ xktr:param_mip_knapsack (XKTR_PARAM_MIP_KNAPSACK, KNITRO_PARAM_MIP_KNAPSACK)
       * (2) (ineqs_eqs) Add cuts derived from both inequalities and
         equalities.
 
-xktr:param_mip_lpalg (XKTR_PARAM_MIP_LPALG, KNITRO_PARAM_MIP_LPALG)
+xktr:mip_lpalg (mip_lpalg, xktr_param_mip_lpalg, XKTR_PARAM_MIP_LPALG, KNITRO_PARAM_MIP_LPALG)
       Specifies which algorithm to use for any linear programming (LP)
       subproblem solves that may occur in the MIP branch and bound procedure.
 
@@ -7349,12 +7539,12 @@ xktr:param_mip_lpalg (XKTR_PARAM_MIP_LPALG, KNITRO_PARAM_MIP_LPALG)
 
       * (3) (active) Use the Active Set (simplex) algorithm.
 
-xktr:param_mip_maxnodes (XKTR_PARAM_MIP_MAXNODES, KNITRO_PARAM_MIP_MAXNODES)
+xktr:mip_maxnodes (mip_maxnodes, xktr_param_mip_maxnodes, XKTR_PARAM_MIP_MAXNODES, KNITRO_PARAM_MIP_MAXNODES)
       Specifies the maximum number of nodes explored.
 
       Default: 100000
 
-xktr:param_mip_method (XKTR_PARAM_MIP_METHOD, KNITRO_PARAM_MIP_METHOD)
+xktr:mip_method (mip_method, xktr_param_mip_method, XKTR_PARAM_MIP_METHOD, KNITRO_PARAM_MIP_METHOD)
       Specifies which MIP method to use.
 
       Values (default: 0):
@@ -7366,9 +7556,9 @@ xktr:param_mip_method (XKTR_PARAM_MIP_METHOD, KNITRO_PARAM_MIP_METHOD)
       * (2) (HQG) Use the hybrid Quesada-Grossman method (for convex,
         nonlinear problems only).
 
-xktr:param_mip_outinterval (XKTR_PARAM_MIP_OUTINTERVAL, KNITRO_PARAM_MIP_OUTINTERVAL)
+xktr:mip_outinterval (mip_outinterval, xktr_param_mip_outinterval, XKTR_PARAM_MIP_OUTINTERVAL, KNITRO_PARAM_MIP_OUTINTERVAL)
       Specifies node printing interval for XKTR_PARAM_MIP_OUTLEVEL when
-      XKTR_PARAM_MIP_OUTLEVEL > 0.
+      XKTR_PARAM_MIP_OUTLEVEL 0.
 
       Values (default: 10):
 
@@ -7378,7 +7568,7 @@ xktr:param_mip_outinterval (XKTR_PARAM_MIP_OUTINTERVAL, KNITRO_PARAM_MIP_OUTINTE
 
       * (N) Print output every Nth node.
 
-xktr:param_mip_outlevel (XKTR_PARAM_MIP_OUTLEVEL, KNITRO_PARAM_MIP_OUTLEVEL)
+xktr:mip_outlevel (mip_outlevel, xktr_param_mip_outlevel, XKTR_PARAM_MIP_OUTLEVEL, KNITRO_PARAM_MIP_OUTLEVEL)
       Specifies how much MIP information to print.
 
       Values (default: 1):
@@ -7387,7 +7577,7 @@ xktr:param_mip_outlevel (XKTR_PARAM_MIP_OUTLEVEL, KNITRO_PARAM_MIP_OUTLEVEL)
 
       * (1) (iters) Print one line of output for every node.
 
-xktr:param_mip_pseudoinit (XKTR_PARAM_MIP_PSEUDOINIT, KNITRO_PARAM_MIP_PSEUDOINIT)
+xktr:mip_pseudoinit (mip_pseudoinit, xktr_param_mip_pseudoinit, XKTR_PARAM_MIP_PSEUDOINIT, KNITRO_PARAM_MIP_PSEUDOINIT)
       Specifies the method used to initialize pseudo-costs corresponding to
       variables that have not yet been branched on in the MIP method.
 
@@ -7399,13 +7589,13 @@ xktr:param_mip_pseudoinit (XKTR_PARAM_MIP_PSEUDOINIT, KNITRO_PARAM_MIP_PSEUDOINI
 
       * (2) Initialize using strong branching.
 
-xktr:param_mip_rootalg (XKTR_PARAM_MIP_ROOTALG, KNITRO_PARAM_MIP_ROOTALG)
+xktr:mip_rootalg (mip_rootalg, xktr_param_mip_rootalg, XKTR_PARAM_MIP_ROOTALG, KNITRO_PARAM_MIP_ROOTALG)
       Specifies which algorithm to use for the root node solve in MIP (same
       options as XKTR_PARAM_ALGORITHM user option).
 
       Default: 0
 
-xktr:param_mip_rounding (XKTR_PARAM_MIP_ROUNDING, KNITRO_PARAM_MIP_ROUNDING)
+xktr:mip_rounding (mip_rounding, xktr_param_mip_rounding, XKTR_PARAM_MIP_ROUNDING, KNITRO_PARAM_MIP_ROUNDING)
       Specifies the MIP rounding rule to apply.
 
       Values (default: 0):
@@ -7420,7 +7610,7 @@ xktr:param_mip_rounding (XKTR_PARAM_MIP_ROUNDING, KNITRO_PARAM_MIP_ROUNDING)
 
       * (4) (nlp_always) Always round and solve a subproblem.
 
-xktr:param_mip_selectrule (XKTR_PARAM_MIP_SELECTRULE, KNITRO_PARAM_MIP_SELECTRULE)
+xktr:mip_selectrule (mip_selectrule, xktr_param_mip_selectrule, XKTR_PARAM_MIP_SELECTRULE, KNITRO_PARAM_MIP_SELECTRULE)
       Specifies the MIP select rule for choosing the next node in the branch
       and bound tree.
 
@@ -7434,43 +7624,43 @@ xktr:param_mip_selectrule (XKTR_PARAM_MIP_SELECTRULE, KNITRO_PARAM_MIP_SELECTRUL
 
       * (3) (combo_1) Use depth first unless pruned, then best bound.
 
-xktr:param_mip_strong_candlim (XKTR_PARAM_MIP_STRONG_CANDLIM, KNITRO_PARAM_MIP_STRONG_CANDLIM)
+xktr:mip_strong_candlim (mip_strong_candlim, xktr_param_mip_strong_candlim, XKTR_PARAM_MIP_STRONG_CANDLIM, KNITRO_PARAM_MIP_STRONG_CANDLIM)
       Specifies the maximum number of candidates to explore for MIP strong
       branching.
 
       Default: 10
 
-xktr:param_mip_strong_level (XKTR_PARAM_MIP_STRONG_LEVEL, KNITRO_PARAM_MIP_STRONG_LEVEL)
+xktr:mip_strong_level (mip_strong_level, xktr_param_mip_strong_level, XKTR_PARAM_MIP_STRONG_LEVEL, KNITRO_PARAM_MIP_STRONG_LEVEL)
       Specifies the maximum number of tree levels on which to perform MIP
       strong branching.
 
       Default: 10
 
-xktr:param_mip_strong_maxit (XKTR_PARAM_MIP_STRONG_MAXIT, KNITRO_PARAM_MIP_STRONG_MAXIT)
+xktr:mip_strong_maxit (mip_strong_maxit, xktr_param_mip_strong_maxit, XKTR_PARAM_MIP_STRONG_MAXIT, KNITRO_PARAM_MIP_STRONG_MAXIT)
       Specifies the maximum number of iterations to allow for MIP strong
       branching solves.
 
       Default: 1000
 
-xktr:param_objrange (XKTR_PARAM_OBJRANGE, KNITRO_PARAM_OBJRANGE)
+xktr:objrange (objrange, xktr_param_objrange, XKTR_PARAM_OBJRANGE, KNITRO_PARAM_OBJRANGE)
       Specifies the extreme limits of the objective function for purposes of
       determining unboundedness.
 
       Default: 1.0e20
 
-xktr:param_opttol (XKTR_PARAM_OPTTOL, KNITRO_PARAM_OPTTOL)
+xktr:opttol (xktr_param_opttol, XKTR_PARAM_OPTTOL, KNITRO_PARAM_OPTTOL)
       Specifies the final relative stopping tolerance for the KKT (optimality)
       error.
 
       Default: 1.0e-6
 
-xktr:param_opttolabs (XKTR_PARAM_OPTTOLABS, KNITRO_PARAM_OPTTOLABS)
+xktr:opttolabs (opttolabs, xktr_param_opttolabs, XKTR_PARAM_OPTTOLABS, KNITRO_PARAM_OPTTOLABS)
       Specifies the final absolute stopping tolerance for the KKT (optimality)
       error.
 
       Default: 0.0e0
 
-xktr:param_outlev (XKTR_PARAM_OUTLEV, KNITRO_PARAM_OUTLEV)
+xktr:outlev (xktr_param_outlev, XKTR_PARAM_OUTLEV, KNITRO_PARAM_OUTLEV)
       Controls the level of output produced by Knitro.
 
       Values (default: 2):
@@ -7492,7 +7682,7 @@ xktr:param_outlev (XKTR_PARAM_OUTLEV, KNITRO_PARAM_OUTLEV)
       * (6) (all) Print all the above, and the values of the constraints c at
         x and the Lagrange multipliers lambda.
 
-xktr:param_presolve (XKTR_PARAM_PRESOLVE, KNITRO_PARAM_PRESOLVE)
+xktr:presolve (xktr_param_presolve, XKTR_PARAM_PRESOLVE, KNITRO_PARAM_PRESOLVE)
       Determine whether or not to use the Knitro presolver to try to simplify
       the model by removing variables or constraints. Specifies conditions for
       terminating the MIP algorithm.
@@ -7503,13 +7693,13 @@ xktr:param_presolve (XKTR_PARAM_PRESOLVE, KNITRO_PARAM_PRESOLVE)
 
       * (1) (basic) Use the Knitro basic presolver.
 
-xktr:param_presolve_tol (XKTR_PARAM_PRESOLVE_TOL, KNITRO_PARAM_PRESOLVE_TOL)
+xktr:presolve_tol (presolve_tol, xktr_param_presolve_tol, XKTR_PARAM_PRESOLVE_TOL, KNITRO_PARAM_PRESOLVE_TOL)
       Determines the tolerance used by the Knitro presolver to remove
       variables and constraints from the model.
 
       Default: 1.0e-6
 
-xktr:param_scale (XKTR_PARAM_SCALE, KNITRO_PARAM_SCALE)
+xktr:scale (scale, xktr_param_scale, XKTR_PARAM_SCALE, KNITRO_PARAM_SCALE)
       Performs a scaling of the objective and constraint functions based on
       their values at the initial point.
 
@@ -7520,7 +7710,7 @@ xktr:param_scale (XKTR_PARAM_SCALE, KNITRO_PARAM_SCALE)
       * (1) (yes) Knitro is allowed to scale the objective function and
         constraints.
 
-xktr:param_soc (XKTR_PARAM_SOC, KNITRO_PARAM_SOC)
+xktr:soc (soc, xktr_param_soc, XKTR_PARAM_SOC, KNITRO_PARAM_SOC)
       Specifies whether or not to try second order corrections (SOC).
 
       Values (default: 1):
@@ -7533,7 +7723,7 @@ xktr:param_soc (XKTR_PARAM_SOC, KNITRO_PARAM_SOC)
       * (2) (yes) Second order correction steps are always attempted if the
         original step is rejected and there are nonlinear constraints.
 
-xktr:param_soltype (XKTR_PARAM_SOLTYPE, KNITRO_PARAM_SOLTYPE)
+xktr:soltype (soltype, xktr_param_soltype, XKTR_PARAM_SOLTYPE, KNITRO_PARAM_SOLTYPE)
       This option specifies the solution returned by Knitro. Generally, the
       solution converged to by Knitro is a locally optimal solution that
       corresponds to the best feasible solution found. However, on rare
@@ -7550,7 +7740,7 @@ xktr:param_soltype (XKTR_PARAM_SOLTYPE, KNITRO_PARAM_SOLTYPE)
       * (1) (bestfeas) Always return the best feasible solution encountered
         during the optimization.
 
-xktr:param_xtol (XKTR_PARAM_XTOL, KNITRO_PARAM_XTOL)
+xktr:xtol (xtol, xktr_param_xtol, XKTR_PARAM_XTOL, KNITRO_PARAM_XTOL)
       The optimization process will terminate if the relative change in all
       components of the solution point estimate is less than xtol.
 

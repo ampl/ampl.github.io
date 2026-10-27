@@ -15,7 +15,8 @@ aggfill          Amount of fill allowed during aggregation during
 
 aggregate        Whether to use aggregation during Gurobi presolve:
                         0 = no (sometimes reduces numerical errors)
-                        1 = yes (default).
+                        1 = yes (default)
+                        2 = aggressive.
 
 ams_eps          Relative tolerance for reporting alternate MIP solutions
                         (default 0 = no limit).
@@ -154,7 +155,8 @@ crossover        How to transform a barrier solution to a basic one:
                          4 = push primal vars first, finish with dual simplex
 
 crossoverbasis   strategy for initial basis construction during crossover:
-                        0 = favor speed (default)
+                        -1 = automatic choice (default)
+                        0 = favor speed
                         1 = favor numerical stability.
 
 cutagg           Maximum number of constraint aggregation passes
@@ -174,6 +176,7 @@ cuts             Global cut generation control, valid unless overridden
                          0 = no cuts
                          1 = conservative cut generation
                          2 = aggressive cut generation
+                         3 = very aggressive cut generation
                          3 = very aggressive cut generation.
 
 degenmoves       Limit on the number of degenerate simplex moves -- for use
@@ -243,8 +246,11 @@ iisfind          Whether to return an IIS (irreducible infeasible set of
 iismethod        Which method to use when finding an IIS (irreducible
                  infeasible set of constraints, including variable bounds):
                         -1 = automatic choice (default)
-                         0 = often faster than method 1
-                         1 = can find a smaller IIS than method 0.
+                         0 = filtering: often faster, may give a larger IIS
+                         1 = solve an LP resembling the dual (useful if faster)
+                         2 = ignore bound constraints (faster; fails if bounds
+                             are needed for infeasibility)
+                         3 = for a MIP, the IIS of its infeasible LP relaxation.
 
 implied          implied cuts:  Overrides "cuts"; choices as for "cuts".
 
@@ -323,12 +329,13 @@ logfreq          Interval in seconds between log lines (default 5).
 lpmethod         Synonym for method.
 
 lpwarmstart      Controls how gurobi uses warm-start in LP optimization:
+                        -1 = automatic choice (default): 1, or 2 with PDHG
                         0 = ignore information
                         1 = use information to solve the original problem
                         2 = use the (crushed) information to solve the
                             presolved problem.
                  Note that if presolve is disabled, 1 prioritizes basis
-                 statuses, 2 prioritizes start vectors.  Default = 1.
+                 statuses, 2 prioritizes start vectors.  Default = -1.
 
 maxmipsub        Maximum number of nodes for RIMS heuristic to explore
                  on MIP problems (default 500).
@@ -436,8 +443,9 @@ networkcuts      Network cuts:  Overrides "cuts"; choices as for "cuts".
 
 nlpheur          Controls the NLP heuristic, affecting non-convex quadratic
                  problems:
-                         0 = Do not apply heuristic
-                         1 = Apply heuristic (default).
+                        -1 = automatic choice (default)
+                         0 = do not apply the heuristic
+                         1-3 = apply it, increasingly aggressively.
 
 nodefiledir      Directory where MIP tree nodes are written after memory
                  for them exceeds nodefilestart; default "."
@@ -450,7 +458,7 @@ nodelim          maximum MIP nodes to explore (default: no limit)
 nodemethod       Algorithm used to solve relaxed MIP node problems:
                         -1 = automatic choice (default)
                          0 = primal simplex
-                         1 = dual simplex (default)
+                         1 = dual simplex
                          2 = barrier.
 
 nonconvex        How to handle non-convex quadratic objectives and constraints:
@@ -628,9 +636,10 @@ presos2enc       Encoding used for SOS2 reformulation, see presos1enc.
 
 presparsify      Whether Gurobi's presolve should use its "sparsify reduction",
                  which sometimes gives significant problem-size reductions:
-                        -1 = automatic choice
+                        -1 = automatic choice (default)
                          0 = no
-                         1 = yes.
+                         1 = yes for MIP problems
+                         2 = yes for all problem types.
 
 pricing          Pricing strategy:
                         -1 = automatic choice (default)
@@ -880,11 +889,11 @@ tuneresults      Limit on the number of tuning result files to write
                  results for all parameter sets on the efficient frontier.
 
 tunetimelimit    Time limit (in seconds) on tuning when tunebase
-                 is specified.  Default -1 ==> automatic choice of time limit.
+                 is specified.  Default = 86400 (24 hours).
 
 tunetrials       Number of trials for each parameter set when tunebase
                  is specified, each with a different random seed value.
-                 Default = 3.
+                 Default = 0 ==> automatic choice.
 
 ubpen            See feasrelax.
 

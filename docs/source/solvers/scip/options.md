@@ -313,11 +313,37 @@ acc:sos2
       2 - Accepted natively and preferred
 
 alg:concurrent (concurrent)
-      0/1: whether to solve the problem using concurrent solvers
+      -1/0/1: whether to solve the problem using concurrent solvers (several
+      SCIP instances with different settings, options par:*, tech:threads)
 
-      0 - No concurrent solvers are used to solve the problem (default)
+      -1 - Concurrent solvers are used if tech:threads > 1 (default)
 
-      1 - Concurrent solvers are used to solve the problem.
+      0 - No concurrent solvers
+
+      1 - Concurrent solvers are used, par:maxnthreads at most.
+
+alg:dualfeastol (dualfeastol, num:dualfeastol)
+      Feasibility tolerance for reduced costs in LP solution (default: 1e-07)
+
+alg:emphasis (emphasis)
+      Predefined parameter settings (SCIPsetEmphasis), applied before solving,
+      after individual parameter settings:
+
+      0  - default settings (default)
+      1  - cpsolver: CP-like search (e.g., no LP relaxation)
+      2  - easycip: solve easy problems fast
+      3  - feasibility: detect feasibility fast
+      4  - hardlp: be capable to handle hard LPs
+      5  - optimality: prove optimality fast
+      6  - counter: feasible and fast counting process
+      7  - phasefeas: feasibility phase of the 3-phase approach
+      8  - phaseimprove: improvement phase of the 3-phase approach
+      9  - phaseproof: proof phase of the 3-phase approach
+      10 - numerics: increased numerical safety
+      11 - benchmark: do not try to avoid running into the memory limit
+
+alg:feastol (feastol, num:feastol)
+      Feasibility tolerance for constraints (default: 1e-06)
 
 alg:method (method, lpmethod)
       LP algorithm for solving initial LP relaxations:
@@ -325,8 +351,8 @@ alg:method (method, lpmethod)
       s - automatic simplex (default)
       p - primal simplex
       d - dual simplex
-      b - barrier
-      c - barrier with crossover
+      b - barrier (SoPlex has none: runs the dual simplex)
+      c - barrier with crossover (SoPlex: dual simplex)
 
 alg:relax (relax)
       0*/1: Whether to relax integrality of variables.
@@ -337,8 +363,18 @@ alg:remethod (remethod, relpmethod)
       s - automatic simplex (default)
       p - primal simplex
       d - dual simplex
-      b - barrier
-      c - barrier with crossover
+      b - barrier (SoPlex has none: runs the dual simplex)
+      c - barrier with crossover (SoPlex: dual simplex)
+
+alg:start (warmstart)
+      Whether to use incoming primal (and dual, for LP) variable values in a
+      warmstart:
+
+      0 - No
+      1 - Yes (for LP: if there is no incoming alg:basis)
+      2 - Yes (for LP: omitting the incoming alg:basis, if any)
+      3 - Yes (for LP: together with the incoming alg:basis, if any;
+          default).
 
 branch:preferbinary (preferbinary)
       0/1: whether branching on binary variables should be preferred
@@ -347,12 +383,46 @@ branch:preferbinary (preferbinary)
 
       1 - Binary variables should be preferred on branching.
 
+cut:aggregation (aggregationcuts)
+      Frequency of aggregated (c-MIR and flow cover) cuts (default 10):
+      separation frequency (-1: off, 0: root node only, n: every n-th depth
+      level)
+
+cut:clique (cliquecuts)
+      Frequency of clique cuts (default 0: root node only): separation
+      frequency (-1: off, 0: root node only, n: every n-th depth level)
+
+cut:cover (covercuts, cut:knapsackcover)
+      Frequency of knapsack cover cuts (default 10): separation frequency (-1:
+      off, 0: root node only, n: every n-th depth level)
+
 cut:dircutoffdistweight (dircutoffdistweight)
       Weight of directed cutoff distance in cut score calculation (default:
       0.0)
 
+cut:disjunctive (disjunctivecuts)
+      Frequency of disjunctive cuts (default 0: root node only): separation
+      frequency (-1: off, 0: root node only, n: every n-th depth level)
+
 cut:efficacyweight (efficacyweight)
       Weight of efficacy in cut score calculation (default: 1.0)
+
+cut:flowcover (flowcovercuts)
+      Frequency of flow cover cuts (default 10): separation frequency (-1:
+      off, 0: root node only, n: every n-th depth level)
+
+cut:gomory (gomorycuts)
+      Frequency of Gomory mixed-integer cuts (default 10): separation
+      frequency (-1: off, 0: root node only, n: every n-th depth level)
+
+cut:gomorymi (gomorymicuts)
+      Frequency of Gomory mixed-integer cuts from the LP tableau (default 10):
+      separation frequency (-1: off, 0: root node only, n: every n-th depth
+      level)
+
+cut:implied (impliedcuts, cut:impliedbounds)
+      Frequency of implied bound cuts (default 10): separation frequency (-1:
+      off, 0: root node only, n: every n-th depth level)
 
 cut:intsupportweight (intsupportweight)
       Weight of integral support in cut score calculation (default: 0.1)
@@ -362,8 +432,8 @@ cut:maxcuts (maxcuts)
       separation; default: 100)
 
 cut:maxcutsroot (maxcutsroot)
-      Maximal number of separated cuts at the root node (0: disable root node
-      separation; default: 5000)
+      Maximal number of separated cuts per separation round at the root node
+      (0: disable root node separation; default: 2000)
 
 cut:maxrounds
       Maximal number of separation rounds per node (default: -1: unlimited)
@@ -382,6 +452,11 @@ cut:maxstallroundsroot
       integrality improvement in the root node (-1: no additional restriction;
       default: 10)
 
+cut:mcf (mcfcuts)
+      Frequency of multi-commodity-flow network cuts (default 0: root node
+      only): separation frequency (-1: off, 0: root node only, n: every n-th
+      depth level)
+
 cut:minactivityquot
       Minimum cut activity quotient to convert cuts into constraints during a
       restart (0.0: all cuts are converted; default: 0.8)
@@ -394,18 +469,32 @@ cut:minefficacyroot
       0.0001)
 
 cut:minortho (minortho)
-      Minimal orthogonality for a cut to enter the LP (default: 0.9)
+      Minimal orthogonality for a cut to enter the LP (0..1; default: 0.9)
 
 cut:minorthoroot (minorthoroot)
-      Minimal orthogonality for a cut to enter the LP in the root node
-      (default: 0.1)
+      Minimal orthogonality for a cut to enter the LP in the root node (0..1;
+      default: 0.9)
+
+cut:mir (mircuts, cut:cmir)
+      Frequency of complemented mixed-integer rounding (c-MIR) cuts (default
+      10): separation frequency (-1: off, 0: root node only, n: every n-th
+      depth level)
 
 cut:objparalweight (objparalweight)
       Weight of objective parallelism in cut score calculation (default: 0.1)
 
+cut:oddcycle (oddcyclecuts)
+      Frequency of odd cycle cuts (default -1: off): separation frequency (-1:
+      off, 0: root node only, n: every n-th depth level)
+
 cut:poolfreq
       Separation frequency for the global cut pool (-1: disable global cut
       pool; 0: only separate pool at the root; default: 10)
+
+cut:rlt (rltcuts)
+      Frequency of reformulation-linearization-technique cuts (default 0: root
+      node only): separation frequency (-1: off, 0: root node only, n: every
+      n-th depth level)
 
 cut:settings
       0/1/2/3: sets cuts settings
@@ -417,6 +506,14 @@ cut:settings
       2 - Sets cuts fast
 
       3 - Sets cuts off.
+
+cut:strongcg (strongcgcuts)
+      Frequency of strong Chvatal-Gomory cuts (default 10): separation
+      frequency (-1: off, 0: root node only, n: every n-th depth level)
+
+cut:zerohalf (zerohalfcuts)
+      Frequency of {0,1/2}-cuts (default 10): separation frequency (-1: off,
+      0: root node only, n: every n-th depth level)
 
 cvt:bigM (cvt:bigm, cvt:mip:bigM, cvt:mip:bigm)
       Default value of big-M for linearization of logical constraints. Not
@@ -468,9 +565,18 @@ cvt:mip:eps (cvt:cmp:eps, cmp:eps)
       should be larger or equal to the solver's feasibility tolerance.
       Default: 1e-4.
 
+cvt:mip:intprodbits (intprodbits)
+      Products x*y of variables, when not accepted natively, with an integer
+      factor of finite bounds (and the other factor bounded): exact MIP
+      reformulation by binary expansion of the integer factor with the smaller
+      range if it needs at most this many binary variables. Default 30.
+      Otherwise, and with 0, such products are approximated as
+      ((x+y)^2-x^2-y^2)/2 with piecewise-linear squares, as for continuous
+      factors. Products with a binary factor are always exact.
+
 cvt:multoutcard (multoutcard)
       Up to which (estimated) QP matrix cardinality should a product of 2
-      linear expressions be multiplied out. Default 1e9.
+      linear expressions be multiplied out. Default 1e+09.
 
       Low value can speed up model input, but prone to numerical issues.
 
@@ -489,6 +595,14 @@ cvt:nlobj (passnlobj)
       with those, otherwise linearly approximated. With cvt:quadobj=0, ensures
       the objective is linear.
 
+cvt:pl:domain (pl:domain, pldomain)
+      Max absolute value of the argument of a piecewise-linear expression
+      converted to SOS2 (and further to MIP if SOS2 is not accepted natively).
+      In the MIP reformulation, the solver's feasibility tolerance is
+      amplified by up to this value. Not used by default: then an unbounded
+      argument is an error in the MIP reformulation, and native SOS2 gets
+      exact rays for unbounded sides. Use with care (prefer tight bounds).
+
 cvt:plapprox:domain (plapprox:domain, plapproxdomain)
       For piecewise-linear approximated functions, both arguments and result
       are bounded to +-[pladomain]. Default 1e6.
@@ -505,12 +619,32 @@ cvt:pow2_as_qp (pow2_as_qp, pow2asqp)
 cvt:pre:all
       0/1*: Set to 0 to disable most presolve in the flat converter.
 
+cvt:pre:auxint (auxint)
+      0*/1: Submit as integer the auxiliary result variables whose integrality
+      is implied by their defining constraint (if-then-else, min, max, abs,
+      count, numberof, integer linear and quadratic functions of integer
+      arguments). Default 0: submit them as continuous (MP keeps the
+      integrality for its reformulations). Variables required to have their
+      type by a submitted constraint, e.g., indicator binaries, are not
+      affected.
+
 cvt:pre:boundlogarg (boundlogarg)
       0*/1: Bound logarithm arguments to nonnegative.
 
-cvt:pre:boundsbest (boundsbest, bestbounds, bestbound)
-      0*/1: Submit best-known variable bounds to the solver. Can inhibit its
-      presolve.
+cvt:pre:boundsbest (boundsbest, bestbounds)
+      0*/1/2/3/4: Submit best-known variable bounds to the solver (can inhibit
+      its presolve):
+
+      0 - no, hard bounds only
+      1 - all variables
+      2 - all but the result variables of smooth nonlinear expressions (exp,
+      log, pow, trigonometric functions, divisions, products), which keep
+      their hard bounds
+      3 - only those variables
+      4 - all variables if the submitted model has no nonlinear or quadratic
+      constraints or objectives, none otherwise (for solvers whose nonlinear
+      relaxations are solved by a barrier method; MP2NL sets it for such
+      subsolvers).
 
       Note: when a variable can be fixed, the stronger bounds are always
       submitted.
@@ -577,6 +711,9 @@ cvt:pre:ctx:atanh (ctx:atanh)
 cvt:pre:ctx:call (ctx:call)
       Context propagation for 'Call' expression, see cvt:pre:ctx:abs.
 
+cvt:pre:ctx:ceil (ctx:ceil)
+      Context propagation for 'Ceil' expression, see cvt:pre:ctx:abs.
+
 cvt:pre:ctx:condlineq (ctx:condlineq)
       Context propagation for 'Conditional< AlgebraicConstraint< LinTerms,
       RhsEQ > >' expression, see cvt:pre:ctx:abs.
@@ -638,11 +775,17 @@ cvt:pre:ctx:exp (ctx:exp)
 cvt:pre:ctx:expa (ctx:expa)
       Context propagation for 'ExpA' expression, see cvt:pre:ctx:abs.
 
+cvt:pre:ctx:floor (ctx:floor)
+      Context propagation for 'Floor' expression, see cvt:pre:ctx:abs.
+
 cvt:pre:ctx:ifthen (ctx:ifthen)
       Context propagation for 'IfThen' expression, see cvt:pre:ctx:abs.
 
 cvt:pre:ctx:impl (ctx:impl)
       Context propagation for 'Implication' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:intdiv (ctx:intdiv)
+      Context propagation for 'IntDiv' expression, see cvt:pre:ctx:abs.
 
 cvt:pre:ctx:linfn (ctx:linfn)
       Context propagation for 'LinearFunctionalConstraint' expression, see
@@ -662,6 +805,12 @@ cvt:pre:ctx:max (ctx:max)
 
 cvt:pre:ctx:min (ctx:min)
       Context propagation for 'Min' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:mod (ctx:mod)
+      Context propagation for 'Mod' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:ctx:mul (ctx:mul)
+      Context propagation for 'Mul' expression, see cvt:pre:ctx:abs.
 
 cvt:pre:ctx:not (ctx:not)
       Context propagation for 'Not' expression, see cvt:pre:ctx:abs.
@@ -688,6 +837,9 @@ cvt:pre:ctx:quadfn (ctx:quadfn)
       Context propagation for 'QuadraticFunctionalConstraint' expression, see
       cvt:pre:ctx:abs.
 
+cvt:pre:ctx:round (ctx:round)
+      Context propagation for 'Round' expression, see cvt:pre:ctx:abs.
+
 cvt:pre:ctx:sdpdotprod (ctx:sdpdotprod)
       Context propagation for 'SDPDotProd' expression, see cvt:pre:ctx:abs.
 
@@ -706,6 +858,27 @@ cvt:pre:ctx:tan (ctx:tan)
 
 cvt:pre:ctx:tanh (ctx:tanh)
       Context propagation for 'Tanh' expression, see cvt:pre:ctx:abs.
+
+cvt:pre:disj2ind (disj2ind)
+      Absorb static disjunctions l || C, where C is a conditional comparison
+      used only there (or an AND of such), into indicator constraints !l ==>
+      C. This is how implications b==1 ==> C are received from AMPL. Bitwise
+      OR of the following values:
+
+      1 - Linear comparisons
+      2 - Quadratic comparisons
+      4 - Both disjuncts absorbable: absorb one into an indicator on the
+      other's result (if-else shape, complementarity)
+      8 - Comparisons x==k awaiting the unary encoding decision for x
+      (absorbed only if no encoding is chosen)
+      16 - Any AND of such comparisons (used only there) in positive context,
+      e.g., a disjunct (C1 && C2) of a multi-term disjunction: indicators on
+      the AND's result variable
+      32 - Static disjunctions l1 || .. || lm || (y1 && .. && yk) with the AND
+      used only there: clauses l1 || .. || lm || yj, without the AND's result
+      variable.
+
+      Requires cvt:pre:all=1. Default 11.
 
 cvt:pre:eqbinary
       0/1*: Preprocess reified equality comparison with a binary variable.
@@ -776,6 +949,19 @@ cvt:pre:unnest (cvt:unnest, cvt:pre:inline, cvt:inline)
       16 - Algebraic subexpressions in indicator constraints.
 
       See also option cvt:dvelim concerning only the input model. Default 31.
+
+cvt:pre:vbnd (vbnd)
+      Comparisons x (cmp) c decided by the domain of x reuse an existing
+      binary instead of a new reified comparison. Bitwise OR of the following
+      values:
+
+      1 - Variable-bound constraints x >= L*b, x <= U*b with binary b (AMPL's
+      encoding of x in {0} union interval[L, U], or the user's), 0 <= c <= L:
+      reuse b or its negation
+      2 - Root disjunctions x <= a || x >= b (e.g., x == 0 || x >= L for x >=
+      0), a < c < b: reuse the comparison x >= b or its negation.
+
+      Default 3.
 
 cvt:qp2passes (cvt:qp2pass, qp2passes, qp2pass)
       0/1*: Parse sums of QP expressions in 2 passes. Usually faster.
@@ -879,7 +1065,7 @@ est:method
       w - tree weight (default)
       s - ssg
       t - tree profile
-      b - wbe 
+      b - weighted backtrack estimate (wbe)
 
 heu:settings
       0/1/2/3: sets heuristics settings
@@ -892,22 +1078,44 @@ heu:settings
 
       3 - Sets heuristics off.
 
-lim:absgap (absgap, mip:gapabs, mipgapabs)
-      Solving stops, if the absolute gap = |primalbound - dualbound| is below
-      the given value (default: 0.0)
+iis:bounds (iisbounds)
+      0/1: whether variable bounds take part in the IIS analysis (SCIP
+      parameter iis/removebounds; driver default 1: a variable in the IIS gets
+      .iis = low/upp/fix, with 0 all stay non)
+
+iis:find (iisfind, iis, alg:iisfind)
+      Whether to find and export an IIS. Default = 0 (don't export).
+
+iis:irreducible (iisirreducible)
+      0/1: whether the infeasible subsystem should be irreducible (an IIS,
+      default 1) rather than any infeasible subsystem
 
 lim:autorestartnodes
       If solve exceeds this number of nodes for the first time, an automatic
       restart is triggered (default: -1: no automatic restart)
 
+lim:bestbndstop (bestbndstop, lim:dual)
+      Solving stops, if the dual bound is at least as good as this value
+      (default: no limit)
+
+lim:bestobjstop (bestobjstop, lim:primal)
+      Solving stops, if the primal bound is at least as good as this value
+      (default: no limit)
+
 lim:bestsol
       Solving stops, if the given number of solution improvements were found
       (default: -1: no limit)
 
-lim:gap (gap, mip:gap, mipgap)
-      Solving stops, if the relative gap = |primal -
-      dual|/MIN(|dual|,|primal|) is below the given value, the gap is
-      'Infinity', if primal and dual bound have opposite signs (default: 0.0)
+lim:iisnodes (iisnodes)
+      Maximal number of branch-and-bound nodes for the IIS finders (default:
+      -1: no limit)
+
+lim:iistime (iistime)
+      Maximal time in seconds for the IIS finders (default: 1e+20)
+
+lim:iter (iterlim, lp:iterlim)
+      Iteration limit for each single LP solve (default: -1: no limit). Unlike
+      in other solvers, this is not a total limit.
 
 lim:maxorigsol
       Maximal number of solutions candidates to store in the solution storage
@@ -917,24 +1125,27 @@ lim:maxsol
       Maximal number of solutions to store in the solution storage (default:
       100)
 
-lim:memory (memory)
+lim:memory (memory, memlim)
       #maximal memory usage in MB; reported memory usage is lower than real
       memory usage! (default: 8796093022207.0)
 
-lim:nodes
+lim:nodes (nodelim, nodelimit)
       Maximal number of nodes to process (default: -1: no limit)
 
 lim:restarts
       Solving stops, if the given number of restarts was triggered (default:
       -1: no limit)
 
+lim:rootiter (rootiterlim, lp:rootiterlim)
+      Iteration limit for the initial root LP solve (default: -1: no limit)
+
 lim:softtime (softtime)
       Soft time limit which should be applied after first solution was found
       (default: -1.0: disabled)
 
-lim:solutions
-      Solving stops, if the given number of solutions were found (default: -1:
-      no limit)
+lim:sol (sollim, solutionlimit, lim:solutions)
+      Solving stops, if the given number of solutions were found; this limit
+      is first checked in presolving (default: -1: no limit)
 
 lim:stallnodes
       Solving stops, if the given number of nodes was processed since the last
@@ -975,6 +1186,13 @@ lp:pricing (pricing)
       q - quickstart steepest edge pricing
       d - devex pricing
 
+lp:scaling (pre:scale, scale)
+      LP scaling:
+
+      0 - none
+      1 - normal (default)
+      2 - aggressive
+
 lp:solvedepth
       Maximal depth for solving LP at the nodes (default: -1: no depth limit)
 
@@ -984,6 +1202,24 @@ lp:solvefreq
 
 lp:threads
       Number of threads used for solving the LP (default: 0: automatic)
+
+mip:basis (fixmodel, mip:fix)
+      Whether to compute duals / basis / sensitivity for MIP models. Emulated
+      by fixing integer variables to an incumbent and solving a continuous
+      model. Currently supports linear algebraic models only (no SOS,
+      piecewise-linear, logical, or general constraints).
+
+      0 - No (default)
+      1 - Yes.
+
+mip:basis:iterlimit
+      Iteration limit for the fixed-model solve only. -1 (default) uses the
+      solver default. For emulation, 0 skips the supplementary solve.
+
+mip:basis:timelimit
+      Time limit in seconds for the fixed-model solve only. -1 (default) uses
+      the solver default, independently of the MIP time limit. For emulation,
+      0 skips the supplementary solve.
 
 mip:bestbound (bestbound, return_bound)
       Whether to return suffix .bestbound for the best known MIP dual bound on
@@ -995,6 +1231,15 @@ mip:bestbound (bestbound, return_bound)
       The suffix is on the objective and problem and is -Infinity for
       minimization problems and +Infinity for maximization problems if there
       are no integer variables or if a dual bound is not available.
+
+mip:gap (mipgap, lim:gap, gap)
+      Solving stops, if the relative gap = |primal -
+      dual|/MIN(|dual|,|primal|) is below the given value, the gap is
+      'Infinity', if primal and dual bound have opposite signs (default: 0.0)
+
+mip:gapabs (mipgapabs, lim:absgap, absgap)
+      Solving stops, if the absolute gap = |primalbound - dualbound| is below
+      the given value (default: 0.0)
 
 mip:return_gap (return_mipgap)
       Whether to return mipgap suffixes or include mipgap values (|objectve -
@@ -1024,6 +1269,21 @@ mip:round (round)
 mip:round_reptol (round_reptol)
       Tolerance for reporting rounding of integer variables to integer values;
       see "mip:round". Default = 1e-9.
+
+mip:symmetry (symmetry, misc:usesymmetry)
+      Bitset describing the symmetry handling techniques:
+
+      0 - off
+      1 - constraint-based (orbitopes, symresacks; lexicographic and
+          orbitopal reduction if dynamic)
+      2 - orbital reduction
+      3 - orbitopes and symresacks, and lexicographic/orbital reduction
+      4 - Schreier Sims cuts
+      5 - Schreier Sims cuts, orbitopes, symresacks, and/or lexicographic
+          reduction
+      6 - Schreier Sims cuts, orbital reduction
+      7 - Schreier Sims cuts, orbitopes, symresacks, and/or
+          lexicographic/orbital reduction (default)
 
 misc:allowstrongdualreds (allowstrongdualreds)
       0/1: whether strong dual reductions should be allowed in propagation and
@@ -1078,14 +1338,8 @@ num:checkfeastolfac (checkfeastolfac)
       Feasibility tolerance factor; for checking the feasibility of the best
       solution (default: 1.0)
 
-num:dualfeastol (dualfeastol)
-      Feasibility tolerance for reduced costs in LP solution (default: 1e-07)
-
 num:epsilon (epsilon)
       Absolute values smaller than this are considered zero (default: 1e-09)
-
-num:feastol (feastol)
-      Feasibility tolerance for constraints (default: 1e-06)
 
 num:infinity (infinity)
       Values larger than this are considered infinity (default: 1e+20)
@@ -1095,7 +1349,7 @@ num:lpfeastolfactor (lpfeastolfactor)
       maximal) primal feasibility tolerance of LP solver (default: 1.0)
 
 num:sumepsilon (sumepsilon)
-      Absolute values of sums smaller than this are considered (default:
+      Absolute values of sums smaller than this are considered zero (default:
       1e-06)
 
 obj:multi (multiobj)
@@ -1137,6 +1391,12 @@ obj:multi:stats (multiobjstats)
 
       * .objpass_runtime, _mipgap, _objval, _objbound, _work, _itercount,
         _nodecount, _opennodecount if available.
+
+      With MP's emulation (obj:multi=2), _objval and _objbound refer to the
+      blended pass objective in the sense of the first objective, and _runtime
+      is the wall-clock time of the pass including model updates; numeric
+      statistics are NaN if not available for a pass. If the solver's native
+      multiobjective mode does not report pass statistics, use obj:multi=2.
 
       See also tech:stats.
 
@@ -1195,7 +1455,7 @@ pre:donotmultaggr (donotmultaggr)
 
 pre:immrestartfac (immrestartfac)
       Fraction of integer variables that were fixed in the root node
-      triggering an immediate restart with preprocessing (default: 0.1)
+      triggering an immediate restart with preprocessing (default: 0.05)
 
 pre:maxrestarts
       Maximal number of restarts (default: -1: unlimited)
@@ -1210,7 +1470,7 @@ pre:restartfac (restartfac)
 
 pre:restartminred (restartminred)
       Minimal fraction of integer variables removed after restart to allow for
-      an additional restart (default: 0.1)
+      an additional restart (default: 0.05)
 
 pre:settings
       0/1/2/3: sets presolvings settings
@@ -1222,6 +1482,10 @@ pre:settings
       2 - Sets presolvings fast
 
       3 - Sets presolvings off.
+
+pre:solve (presolve)
+      0/1: whether to use SCIP presolving (default 1); 0 is the same as
+      pre:settings=3.
 
 pre:subrestartfac (subrestartfac)
       Fraction of integer variables that were globally fixed during the
@@ -1308,19 +1572,48 @@ sol:count (countsolutions)
       0*/1: Whether to count the number of solutions and return it in the
       ".nsol" problem suffix.
 
-sol:poollimit (poollimit)
-      Soft limit on the number of alternative solutions (option sol:stub).
+sol:poolgap (poolgap, ams_eps)
+      Relative tolerance for reporting alternative solutions (default: no
+      limit).
+
+sol:poolgapabs (poolgapabs, ams_epsabs)
+      Absolute tolerance for reporting alternative solutions (default: no
+      limit).
+
+sol:poollimit (poollimit, ams_limit, solnlimit)
+      Limit on the number of alternative solutions reported (options sol:stub,
+      sol:count); default 10, -1: all solutions stored by SCIP (at most
+      lim:maxsol) or enumerated.
+
+sol:poolmode (ams_mode, poolmode)
+      Search mode for alternative solutions when sol:stub/sol:count are
+      specified:
+
+      0 - Report the solutions found during the search (default)
+      1, 2 - Enumerate the feasible solutions with SCIP's solution counting
+      (models with integer variables only; counting stops after sol:poollimit
+      solutions), report the best of them (default 2).
+
+      The enumeration runs on a copy of the model after the solve;
+      sol:poolgap, sol:poolgapabs and sol:poollimit filter the reported
+      solutions.
 
 sol:report_uncertain (report_uncertain_sol)
       0/1*: whether to report objective value(s) in solve_message when
       solve_result is '?' (unknown).
 
-sol:stub (solstub, solutionstub)
+sol:stub (ams_stub, solstub, solutionstub)
       Stub for solution files. If "solutionstub" is specified, found solutions
       are written to files ("solutionstub & '1' & '.sol'") ... ("solutionstub
       & Current.nsol & '.sol'"), where "Current.nsol" holds the number of
       returned solutions. That is, file names are obtained by appending 1, 2,
       ... "Current.nsol" to "solutionstub".
+
+tech:clocktype (clocktype)
+      Clock type for time limits and reporting:
+
+      1 - CPU user seconds
+      2 - wall clock time (default)
 
 tech:debug (debug)
       0*/1: whether to assist testing & debugging, e.g., by outputting
@@ -1329,7 +1622,7 @@ tech:debug (debug)
 tech:logfile (logfile)
       Log file name.
 
-tech:lpseed (lpseed, ran:lpseed, lpseed)
+tech:lpseed (lpseed, ran:lpseed)
       Random seed for LP solver, e.g. for perturbations in the simplex
       (default: 0: LP default)
 
@@ -1339,19 +1632,30 @@ tech:optionfile (optionfile, option:file)
       are ignored. Otherwise, each nonempty line should contain "name=value",
       e.g., "lim:iter=500".
 
+tech:optionnative (optionnative, optnative, tech:param, param)
+      General way to set any SCIP parameter; the value should be a quoted
+      string (delimited by ' or ") containing one or more 'name=value' or
+      'name value' pairs separated by spaces, for example
+      'separating/maxrounds=5 heuristics/rins/freq -1'. Can appear more than
+      once. Cannot be used to query current parameter values.
+
 tech:optionnativeread (optionnativeread, tech:param:read, param:read)
       Filename of SCIP parameter file (as path).The suffix on a parameter file
       should be .set.
 
+tech:optionnativewrite (optionnativewrite, tech:param:write, param:write)
+      Name of a SCIP parameter file (.set) to write before solving, with all
+      parameters.
+
 tech:outlev (outlev)
       0*/1: Whether to write SCIP log lines (chatter) to stdout and to file.
 
-tech:outlev-native (outlev-native)
-      0*/1/2/3/4/5: Whether to write SCIP log lines (chatter) to stdout and to
-      file (native output level of SCIP).
-
 tech:outlev_mp (outlev_mp)
       0*/1: whether to print MP model information.
+
+tech:outlevnative (outlevnative, tech:outlev-native, outlev-native)
+      0*/1/2/3/4/5: Native SCIP verbosity level (display/verblevel; the SCIP
+      default is 4, the driver's is 0). tech:outlev=1 selects 4.
 
 tech:permseed (permseed, ran:permutationseed, permutationseed)
       Seed value for permuting the problem after reading/transformation
@@ -1376,6 +1680,13 @@ tech:stats (stats, tech:report_stats, solve_stats)
       3 - Report statistics both in suffixes and the suffix 'stats'.
 
       See also obj:multi:stats.
+
+tech:threads (threads)
+      Number of threads to use (default 0: SCIP defaults). A value > 1 runs
+      SCIP's concurrent solve with at most this many threads (unless
+      alg:concurrent=0) and sets lp:threads for a multi-threaded LP solver;
+      the bundled SoPlex is single-threaded. SCIP's branch-and-bound itself is
+      sequential.
 
 tech:timing (timing, tech:report_times, report_times)
       0*/1/2: Whether to print and return timings for the run, all times are
@@ -1415,5 +1726,9 @@ tech:writemodel:index (tech:writeprob:index, writeprobindex, writemodelindex)
 tech:writemodelonly (justwriteprob, justwritemodel)
       Specifies files where to export the model, no solving (option can be
       repeated.) File extensions can be ".dlp", ".mps", etc.
+
+tech:writesolution (writesol, writesolution)
+      Specifies the names of files where to export the solution and/or other
+      result files in solver's native formats. Option can be repeated.
 ```
 

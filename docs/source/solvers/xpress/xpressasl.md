@@ -25,7 +25,7 @@ algaftercrossover  algorithm for final cleanup after running the barrier
 
 algafternetwork    algorithm for final cleanup after the network simplex
                    algorithm:
-                        1 = automatic choice (default)
+                        -1 = automatic choice (default)
                         2 = dual simplex
                         3 = primal simplex
 
@@ -173,7 +173,7 @@ barstart           choice of starting point for barrier method:
                             barrier algorithm.
 
 barstepstop        barrier method convergence tolerance: stop when
-                   step size <= barstepstop; default = 1e-10
+                   step size <= barstepstop; default = 1e-16
 
 barthreads         number of threads used in the Newton Barrier algorithm;
                    default = -1 (determined by "threads")
@@ -189,7 +189,7 @@ bestbound          [no assignment] return suffix .bestbound for the best known
                    variables or if an integer feasible solution has not yet
                    been found.
 
-bigm               infeasibility penalty; default = 1024
+bigm               infeasibility penalty; default depends on the matrix
 
 bigmmethod         0 = phase I/II, 1 = BigM method (default)
 
@@ -253,7 +253,9 @@ clamping           control adjustements of the returned solution values
                          3 ==> adjust reduced costs to be within dual
                                bounds
 
-concurrentthreads  synonym for lpthreads
+concurrentthreads  number of threads in concurrent LP solves:
+                        -1 = determine from "threads" keyword (default)
+                        n > 0 ==> use n threads
 
 conedecomp         whether to decompose regular and rotated cone constraints
                    having more than two elements and to use the result in an
@@ -307,7 +309,7 @@ crossover          whether to find a simplex basis after the barrier alg.:
                          2 = dual crossover first
 
 crossoveritlim     limit on crossover iterations after the barrier
-                   algorithm; default = 2147483645
+                   algorithm; default = 2147483647
 
 crossoverops       bit vector affecting crossover after the barrier
                    algorithm:  sum of
@@ -411,20 +413,19 @@ eigenvaltol        regard the matrix in a quadratic form as indefinite if its
                    smallest eigvenalue is < -eigevnaltol; default = 1e-6
 
 elimfillin         maximum fillins allowed for a presolve elimination;
-                   default = 10.
+                   default = 7.
 
 elimtol            Markowitz tolerance for the elimination phase of
                    XPRESS's presolve; default = 0.001
 
-etatol             zero tolerance on eta elements; default varies with XPRESS
-                   version; default = 1e-12 or 1e-13 with some versions.
-                   Use etatol=? to see the current value.
+etatol             zero tolerance on eta elements; default = 1e-13.
 
 feaspump           whether to run the Feasibility Pump heuristic at the top
                    node during branch-and-bound:  one of
-                        0 = no (default)
+                        -1 = automatic choice (default)
+                        0 = no
                         1 = yes
-                        2 = only if other heurstics found no integer solution
+                        2 = only if other heuristics found no integer solution
 
 feastol            zero tolerance on RHS; default = 1e-6
 
@@ -504,7 +505,7 @@ heurmaxsol         deprecated:  no longer has any effect:
 
 heurnodes          deprecated:  no longer has any effect:
                    maximum nodes at which to use heuristics during
-                   branch-and-bound tree search; default = 1000
+                   branch-and-bound tree search; default = -1
 
 heurroot           bit vector controlling local search heuristics to apply at
                    the root node:  sum of
@@ -566,10 +567,12 @@ invertmin          minimum simplex iterations before refactoring the basis:
                    default = 3
 
 keepbasis          basis choice for the next LP iteration:
-                        0 = ignore previous basis
-                        1 = use previous basis (default)
-                        2 = use previous basis only if the number of basic
-                                variables == number of constraints
+                        0 = ignore previous basis (default)
+                        1 = use previous basis
+                        2 = use previous basis only if it is valid for the
+                                current problem
+                        3 = use previous basis only if it is valid and
+                                numerically stable
 
 keepnrows          1 (default) if unconstrained rows are to be kept, else 0
 
@@ -607,17 +610,15 @@ lplog              frequency of printing simplex iteration log; default = 100
 lpref_itlim        limit on simplex iterations used by the solution refiner
                    (see refineops); default = -1 ==> automatic choice
 
-lpthreads          number of threads in concurrent LP solves:
-                        -1 = determine from "threads" keyword (default)
-                        n > 0 ==> use n threads
+lpthreads          synonym for concurrentthreads
 
 markowitztol       Markowitz tolerance used when factoring the basis matrix
                    default = 0.01
 
 matrixtol          zero tolerance on matrix elements; default = 1e-9
 
-maxcuttime         maximum time (CPU seconds) to spend generating cuts
-                   and reoptimizing; default = 0 ==> no limit
+maxcuttime         maximum time (seconds, see cputime) to spend generating
+                   cuts and reoptimizing; default = 0 ==> no limit
 
 maxiis             maximum number of Irreducible Infeasible Sets to find:
                         -1 = no limit (default)
@@ -633,13 +634,13 @@ maximpliedbound    when preprocessing MIP problems, only use computed bounds
                    at most maximpliedbound (default 1e8) in absolute value
 
 maxlocalbt         max height above current node to look for a local backtrack
-                   candidate node; default = 1
+                   candidate node; default = -1 (automatic choice)
 
 maxlogscale        max log2 of factors used in scaling; must be >= 0 and
                    <= 64; default 64
 
-maxmemory          limit (integer number of megabytes) on memory used:
-                        -1 = automatic choice (default)
+maxmemory          soft limit (integer number of megabytes) on memory used:
+                         0 = no limit (default)
                         >0 = target megabytes of memory to use
 
 maxmemoryhard      hard limit (integer number of megabytes) on memory
@@ -668,7 +669,8 @@ maxstalltime       maximum time in seconds that the Optimizer will continue to
                                   new incumbent (no effet before
                                   the first has been found
 
-maxtime            limit on solution time:  for maxtime=n (an integer),
+maxtime            deprecated by XPRESS; use timelimit and soltimelimit.
+                   Limit on solution time:  for maxtime=n (an integer),
                         n < 0 ==> stop LP or MIP search after -n seconds
                         n = 0 ==> no time limit (default)
                         n > 0 ==> for MIP problems, stop after n seconds
@@ -865,7 +867,7 @@ objrep             Whether to replace
                    For a maximization problem, "<=" replaces ">=".
 
 objscalefactor     Power of 2 (default 0) by which the objective is scaled.
-                   Nonzero objscalfactor values override automatic global
+                   Nonzero objscalefactor values override automatic global
                    objective scaling.
 
 optimalitytol      tolerance on reduced cost; default = 1e-6
@@ -922,14 +924,6 @@ pooldups           How poolstub should handle duplicate solutions:
                                 variables
                         3 = default: discard matches of rounded values of
                                 discrete variables
-                   Rounding of discrete variables is affected by poolmiptol
-                   and poolfeastol.
-
-poolfeastol        Zero tolerance for discrete variables in the solution
-                   pool (see poolstub); default = 1e-6.
-
-poolmiptol         Error (nonintegrality) allowed in discrete variables
-                   in the solution pool (see poolstub); default = 5e-6.
 
 poolnbest          Whether the solution pool (see poolstub) should contain
                    inferior solutions.  When poolnbest = n > 1, the
@@ -961,8 +955,8 @@ preanalyticcenter  whether to compute and use analytic centers while solving
 
 prebasisred        whether XPRESS's presolve should try to use a lattice basis
                    reduction algorithm:
-                        -1 = automatic choice (default)
-                         0 = no
+                        -1 = automatic choice
+                         0 = no (default)
                          1 = yes.
 
 prebndredcone      for MIP problems, whether to use cone constraints to
@@ -1266,6 +1260,10 @@ sleeponthreadwait  whether threads should sleep while awaiting work:
                         1 = yes (sleep; may add overhead)
                    default = -1 (automatic choice)
 
+soltimelimit       limit on solution time (seconds, see cputime) once a
+                   feasible MIP solution has been found; default = 1e20
+                   (no limit).  See also timelimit.
+
 sos                whether to use explicit SOS information; default 1 ==> yes
 
 sos2               whether to tell XPRESS about SOS2 constraints for
@@ -1282,6 +1280,14 @@ symmetry           amount of effort to detect symmetry in MIP problems:
 threads            default number of threads to use:
                         -1 = automatic choice (based on hardware)
                          n > 0 ==> use n threads
+
+timelim            synonym for timelimit
+
+timelimit          limit on solution time (seconds, see cputime) for LP
+                   and MIP solves; default = 1e20 (no limit).  For MIP
+                   problems, soltimelimit can stop the search earlier once a
+                   feasible solution has been found.  Replaces the deprecated
+                   maxtime.
 
 timing             [no assignment] give timing statistics
 
@@ -1325,7 +1331,8 @@ treeoutlev         how much to report about branch-and-bound trees
                    (if allowed by outlev):  sum of
                         1 = regular summaries
                         2 = report tree compression and output to nodefile
-                   default = 3
+                        4 = report progress of the tree file
+                   default = 7
 
 tunerdir           directory for tuner results; specifying tunerdir causes
                    the XPRESS tuner to solve the problem several times
@@ -1378,7 +1385,7 @@ tunertarget        what to measure to compare two problem solutions
                          9 = best integer solution only.
 
 tunerthreads       number of tuner threads to run in parallel:
-                   default -1 ==> automatic choice.
+                   -1 ==> automatic choice; default 1 (sequential).
                    "threads" controls the number of threads for each solve.
                    The product of threads and tunerthreads should not exceed
                    the number of threads the system can run in parallel.

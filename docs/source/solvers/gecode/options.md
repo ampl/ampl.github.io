@@ -214,3 +214,4 @@ tech:wantsol (wantsol)
       4 - Dual variables to stdout
       8 - Suppress solution message.
 ```
+

@@ -24,6 +24,19 @@ flg_convex        convex model flag (0*/1)
 flg_crash_slack   preselect slacks for initial basis (0*/1)
 flg_dbg_intv      debug interval evaluations (0*/1)
 flg_fordefc       force definitional constraints on (0*/1)
+flg_interv        use interval evaluations in the preprocessor (0/1*)
+flg_negcurve      search for negative curvature at apparent optima (0/1*)
+flg_nodefc        turn off the search for definitional constraints (0*/1)
+flg_nopen         allow the no-penalty sub-model (0/1*)
+flg_prep          use the preprocessor (0/1*)
+flg_range         identify sets of ranged constraints (0/1*)
+flg_slpmode       enable SLP mode (0/1*)
+flg_sqpmode       enable SQP mode (0/1*)
+flg_square        declare the model a square system (0*/1)
+flg_tracecns      trace a CNS solution while optimizing the objective (0*/1)
+frq_log_simple    log frequency for non-SLP/SQP iterations (int, default auto)
+frq_log_slpsqp    log frequency for SLP/SQP iterations (int, default auto)
+frq_rescale       rescaling frequency (int >= 1, default 5)
 hess              whether to use the Hessian:
 		    0 = no
 		    1 = yes: just the explicit Hessian
@@ -33,10 +46,13 @@ hess              whether to use the Hessian:
 		        Hessian computations (debug option).
 iterlim           iteration limit (default 1000000)
 licshow           show license details
+lim_dbg_1drv      frequency of first-derivative debugging: 0 = never (default), -1 = at the starting point, n = every n iterations
 lim_err_2ddir     limit on directional 2nd-derivative errors (int, default 10)
-lim_err_fnc_drv   limit on function evaluation errors (int, default gams domlim)
+lim_err_fnc_drv   limit on function evaluation errors (int, default: errlim)
 lim_err_hessian   limit on hessian evaluation errors (int, default 10)
+lim_hess_est      upper bound on second-order terms (double, default 1.e4)
 lim_iteration     synonym for iterlimit
+lim_msg_dbg_1drv  limit on derivative-debugger error messages (int, default 10)
 lim_msg_large     Limit on number of error messages related to large function value and Jacobian elements (int, default 10)
 lim_newsuper      max new superbasic vars per iteration (int, default auto)
 lim_pre_msg       Limit on number of error messages related to infeasible pre-triangle (int, default 25)
@@ -51,7 +67,8 @@ logfreq           frequency of log lines when outlev = 3
 maxftime          time limit (default 999999 seconds)
 maxfwd            max vars in fwd AD of common exprs (default 5)
 maximize          maximize the objective (no matter what the model says)
-maxiter           synonymn for iterlim
+maxiter           synonym for iterlim
+maxtime           synonym for maxftime
 minimize          minimize the objective (no matter what the model says)
 mtd_dbg_1drv      method for function/derivative debugger (int, default 0)
 mtd_redhess       init diagonal of approx reduced hessian (int, default 0)
@@ -66,6 +83,8 @@ outlev            output level:
 		    2 = CONOPT "SCREEN" output on stdout.
 		    3 = log line every logfreq iterations.
 		    4 = also show preprocessing information.
+param             any CONOPT option as Name=value, e.g. param=Flg_NegCurve=0;
+		can be repeated (CONOPT 4 option names, see the CONOPT manual)
 rat_nopen         ratio limit of penalty constraints for no-penalty model (double, default 0.1)
 superbasics       limit on number of superbasic variables (default >= 500)
 threads           maximum number of threads to use. Override specific threads settings
