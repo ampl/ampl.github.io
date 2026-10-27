@@ -647,6 +647,26 @@ if ampl.solve_result == "infeasible":
     print(var_iis, con_iis)
 ```
 
+**2.2. What the status does and does not tell you**
+- **A failed solve does not raise an exception.** For example, with no solver selected, `ampl.solve()` prints an error and returns; `ampl.solve_result` is then `'?'` (`solve_result_num` = -1). Always check the status in scripts.
+- **`assert ampl.solve_result == "solved"` is too strict** for a MIP with a time limit, where `limit` with a feasible solution is a normal outcome, and **too weak** for a local nonlinear solver, whose `solved` on a nonconvex model means *locally* optimal.
+- **A `limit` can return the starting point.** When a solver stops without an improved point, the variables keep their previous values. Check that the point moved.
+- Read `solve_message` along with the status: it carries the solver's own description and MP's solution-check warnings.
+
+```python
+def solve_checked(ampl, var_name, **solve_args):
+    before = ampl.var[var_name].to_dict()
+    ampl.solve(verbose=False, **solve_args)
+    after = ampl.var[var_name].to_dict()
+    moved = any(abs(after[k] - before.get(k, 0.0)) > 1e-9 for k in after)
+    ok = ampl.solve_result in ("solved", "limit") and moved
+    if not ok:
+        print(ampl.solve_result, ampl.get_value("solve_message"))
+    return ok
+```
+
+More on reading results and comparing runs: [Reading solver results](https://mp.ampl.com/modeling-troublesh.html#reading-solver-results) in the MP documentation.
+
 **Important Notes:**
 - **Error Handling**: Use assertions or conditional checks to handle unsolved models gracefully.
 - **Performance**: For large models, consider setting solver-specific options for enhanced performance, as a reference, see specific solver features in this [MP Solvers advanced features](https://mp.ampl.com/features-guide.html).
