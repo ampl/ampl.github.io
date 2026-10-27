@@ -1,7 +1,18 @@
+"""Update the solver pages and the release index from the installed solvers.
+
+For each solver in SOLVERS found on PATH, writes
+- source/solvers/<page>/options.md from `<solver> -=`,
+- source/solvers/<page>/solve_results.inc from `<solver> -!`, or, for drivers
+  without `-!` (classic ASL drivers), AMPL's generic solve result table,
+- source/solvers/<page>/changes.md from CHANGES.<solver>.md next to `ampl`
+  (in <ampl dir>/docs), when that file exists.
+Then downloads the MP, amplpy, GSL, AMPLS and cuOpt changelogs and rewrites
+source/releases/index.md.
+"""
+import argparse
 import subprocess
 import os
 import re
-import json
 from generate_activity_chart import activity_chart_block
 
 SOLVERS = {
@@ -39,6 +50,52 @@ SOLVERS = {
     "Gecode": "gecode",
 }
 
+# AMPL's default option solve_result_table, for drivers without `-!`
+GENERIC_SOLVE_RESULTS = """\
+Solve result table (AMPL default ranges; the driver does not list its own codes)
+          0- 99 solved: optimal for an optimization problem, feasible for a satisfaction problem
+        100-199 solved? solution candidate returned but error likely
+        200-299 infeasible
+        300-399 unbounded
+        400-499 limit
+        500-999 failure, no solution returned
+"""
+
+parser = argparse.ArgumentParser(
+    description=__doc__,
+    formatter_class=argparse.RawDescriptionHelpFormatter,
+    epilog="""Examples:
+  # full update from the AMPL bundle on PATH (as for a release):
+  python update_changes.py
+  # only CP-SAT and Gecode, keep the downloaded changelogs as they are:
+  PATH=~/solvers/bin:$PATH python update_changes.py --solvers cpsat,gecode --no-fetch
+""",
+)
+parser.add_argument(
+    "--solvers",
+    help="comma-separated driver names (values of SOLVERS) to update; the others "
+    "keep their pages and are indexed from their existing changes.md. "
+    "Default: all. Example: --solvers gurobi,highs,cpsat",
+)
+parser.add_argument(
+    "--no-fetch",
+    action="store_true",
+    help="do not download the MP, amplpy, GSL, AMPLS and cuOpt changelogs; index "
+    "the copies already in source/ instead. Example: --no-fetch",
+)
+parser.add_argument(
+    "--no-changes",
+    action="store_true",
+    help="do not rewrite solver changes.md files, only options and solve results; "
+    "the release index is built from the existing changes.md files. "
+    "Example: --no-changes",
+)
+args = parser.parse_args()
+selected = set(args.solvers.split(",")) if args.solvers else set(SOLVERS.values())
+unknown = selected - set(SOLVERS.values())
+if unknown:
+    parser.error(f"unknown solver(s): {', '.join(sorted(unknown))}")
+
 import requests
 
 
@@ -58,17 +115,72 @@ def filter_changelog(changelog):
     return filtered_changelog
 
 
+def solver_output(solver, flag):
+    """Output of `solver flag`, or None if the driver is missing or rejects the flag."""
+    try:
+        r = subprocess.run(
+            [solver, flag],
+            capture_output=True,
+            text=True,
+            timeout=60,
+            stdin=subprocess.DEVNULL,
+        )
+    except (OSError, subprocess.TimeoutExpired):
+        return None
+    if r.returncode != 0:
+        return None
+    return r.stdout.strip()
+
+
+def solve_results(solver):
+    """`solver -!` when the driver lists its codes, else AMPL's generic table."""
+    output = solver_output(solver, "-!")
+    if output and output.startswith("Solve result table"):
+        return output.expandtabs(8) + "\n"
+    return GENERIC_SOLVE_RESULTS
+
+
+def page_file(solver, name):
+    """Path of a generated file for a driver; variants go to the main page."""
+    for suffix in ("asl", "mp", "-cpx"):
+        if solver.endswith(suffix):
+            page = solver[: -len(suffix)]
+            stem, ext = os.path.splitext(name)
+            return f"source/solvers/{page}/{stem}_{solver}{ext}"
+    return f"source/solvers/{solver}/{name}"
+
+
+def changes_file(solver):
+    if solver.endswith("asl"):
+        return f"solvers/{solver[:-3]}/changesasl.md"
+    if solver.endswith("mp"):
+        return f"solvers/{solver[:-2]}/changesmp.md"
+    return f"solvers/{solver}/changes.md"
+
+
+def index_entry(label, fname):
+    return {
+        "label": label,
+        "file": fname,
+        "versions": re.findall(
+            r"^## (\d{8})", open(f"source/{fname}").read(), re.MULTILINE
+        ),
+    }
+
+
 releases = {}
 ampl_location = subprocess.check_output(["which", "ampl"]).decode()
 for label, solver in SOLVERS.items():
-    try:
-        output = subprocess.check_output([solver, "-="]).decode().strip()
-    except:
+    fname = changes_file(solver)
+    if solver not in selected:
+        if os.path.exists(f"source/{fname}"):
+            releases[solver] = index_entry(label, fname)
+        continue
+
+    output = solver_output(solver, "-=")
+    if output is None:
         print(f"{solver} -= failed")
         output = ""
-        #continue
-    # (errors="ignore")
-    # subprocess.check_output(f"{solver} -= || true", shell=True).decode().strip()
 
     if solver in ["lgo"]:
         # handle solvers whose changelog are not being distributed
@@ -78,7 +190,7 @@ for label, solver in SOLVERS.items():
             os.path.dirname(ampl_location), "docs", f"CHANGES.{solver}.md"
         )
 
-    if os.path.exists(changes):
+    if not args.no_changes and os.path.exists(changes):
         content = open(changes, "r").read().strip()
         if content.startswith("#"):
             content = content[content.find("#") :]
@@ -88,20 +200,11 @@ for label, solver in SOLVERS.items():
             content = content[content.find("\n") + 1 :]
         content = re.sub(r"###+ (\d+)", r"## \g<1>", content)
         content = f"# {label} Changelog\n\n" + filter_changelog(content)
-        fname = f"solvers/{solver}/changes.md"
-        if solver.endswith("asl"):
-            fname = f"solvers/{solver[:-3]}/changesasl.md"
-        elif solver.endswith("mp"):
-            fname = f"solvers/{solver[:-2]}/changesmp.md"
-        # Index solver changelog
-        releases[solver] = {
-            "label": label,
-            "file": fname,
-            "versions": re.findall(r"^## (\d{8})", content, re.MULTILINE),
-        }
         open(f"source/{fname}", "w").write(content)
-    else:
+    elif not args.no_changes:
         print(f"No changelog for {solver}.")
+    if os.path.exists(f"source/{fname}"):
+        releases[solver] = index_entry(label, fname)
 
     if output == "":
         print(f"No options for {solver}.")
@@ -136,75 +239,60 @@ Solver options obtained with `$ {solver} -=`.
             file=f,
         )
 
+    with open(page_file(solver, "solve_results.inc"), "w") as f:
+        f.write(solve_results(solver))
+
 # Index AMPL changelog
-releases["ampl"] = {
-    "label": "AMPL",
-    "file": "releases/ampl.md",
-    "versions": re.findall(r"## (\d{8})", open("source/releases/ampl.md").read()),
-}
+releases["ampl"] = index_entry("AMPL", "releases/ampl.md")
 
-# Download and index MP changelog
-mp_changelog = fetch_url_content(
-    "https://raw.githubusercontent.com/ampl/mp/refs/heads/develop/CHANGES.mp.md"
-)
-mp_changelog = mp_changelog[mp_changelog.find("##") :]
-mp_changelog = f"# AMPL MP Library Changelog\n\n{mp_changelog}"
-open("source/releases/mp.md", "w").write(mp_changelog)
-releases["mp"] = {
-    "label": "AMPL MP",
-    "file": "releases/mp.md",
-    "versions": re.findall(r"## (\d{8})", open("source/releases/mp.md").read()),
-}
-
-amplpy_changelog = fetch_url_content(
-    "https://raw.githubusercontent.com/ampl/amplpy/refs/heads/master/CHANGELOG.md"
-)
-amplpy_changelog = amplpy_changelog[amplpy_changelog.find("##") :]
-amplpy_changelog = f"# amplpy Changelog\n\n{amplpy_changelog}"
-open("source/releases/amplpy.md", "w").write(amplpy_changelog)
-releases["amplpy"] = {
-    "label": "AMPLPY",
-    "file": "releases/amplpy.md",
-    "versions": re.findall(r"## (\d{8})", open("source/releases/amplpy.md").read()),
-}
-
-amplgsl_changelog = fetch_url_content(
-    "https://raw.githubusercontent.com/ampl/gsl/cf180cd7fbd06039a577f9c9ff0b428784765ac1/ampl/CHANGES.amplgsl.md"
-)
-amplgsl_changelog = amplgsl_changelog[amplgsl_changelog.find("##") :]
-amplgsl_changelog = f"# AMPL GSL Library Changelog\n\n{amplgsl_changelog}"
-open("source/releases/amplgsl.md", "w").write(amplgsl_changelog)
-releases["amplgsl"] = {
-    "label": "GSL",
-    "file": "releases/amplgsl.md",
-    "versions": re.findall(r"## (\d{8})", open("source/releases/amplgsl.md").read()),
-}
-
-ampls_changelog = fetch_url_content(
-    "https://raw.githubusercontent.com/ampl/ampls-api/refs/heads/master/changes.md"
-)
-ampls_changelog = ampls_changelog[ampls_changelog.find("##") :]
-ampls_changelog = f"# AMPLS Libraries Changelog\n\n{ampls_changelog}"
-open("source/releases/ampls.md", "w").write(ampls_changelog)
-releases["ampls"] = {
-    "label": "AMPLS",
-    "file": "releases/ampls.md",
-    "versions": re.findall(r"## (\d{8})", open("source/releases/ampls.md").read()),
-}
-
-cuopt_changelog = fetch_url_content(
-    "https://raw.githubusercontent.com/ampl/mp/refs/heads/develop/solvers/cuoptmp/CHANGES.cuoptmp.md"
-)
-cuopt_changelog = cuopt_changelog[cuopt_changelog.find("##") :]
-cuopt_changelog = f"# CUOPT Changelog\n\n{cuopt_changelog}"
-open("source/solvers/cuopt/changes.md", "w").write(cuopt_changelog)
-releases["cuopt"] = {
-    "label": "cuOpt",
-    "file": "solvers/cuopt/changes.md",
-    "versions": re.findall(
-        r"## (\d{8})", open("source/solvers/cuopt/changes.md").read()
+# Download (unless --no-fetch) and index the other changelogs
+REMOTE = [
+    (
+        "mp",
+        "AMPL MP",
+        "releases/mp.md",
+        "# AMPL MP Library Changelog",
+        "https://raw.githubusercontent.com/ampl/mp/refs/heads/develop/CHANGES.mp.md",
     ),
-}
+    (
+        "amplpy",
+        "AMPLPY",
+        "releases/amplpy.md",
+        "# amplpy Changelog",
+        "https://raw.githubusercontent.com/ampl/amplpy/refs/heads/master/CHANGELOG.md",
+    ),
+    (
+        "amplgsl",
+        "GSL",
+        "releases/amplgsl.md",
+        "# AMPL GSL Library Changelog",
+        "https://raw.githubusercontent.com/ampl/gsl/cf180cd7fbd06039a577f9c9ff0b428784765ac1/ampl/CHANGES.amplgsl.md",
+    ),
+    (
+        "ampls",
+        "AMPLS",
+        "releases/ampls.md",
+        "# AMPLS Libraries Changelog",
+        "https://raw.githubusercontent.com/ampl/ampls-api/refs/heads/master/changes.md",
+    ),
+    (
+        "cuopt",
+        "cuOpt",
+        "solvers/cuopt/changes.md",
+        "# CUOPT Changelog",
+        "https://raw.githubusercontent.com/ampl/mp/refs/heads/develop/solvers/cuoptmp/CHANGES.cuoptmp.md",
+    ),
+]
+for item, label, fname, title, url in REMOTE:
+    if not args.no_fetch:
+        text = fetch_url_content(url)
+        text = text[text.find("##") :]
+        open(f"source/{fname}", "w").write(f"{title}\n\n{text}")
+    releases[item] = {
+        "label": label,
+        "file": fname,
+        "versions": re.findall(r"## (\d{8})", open(f"source/{fname}").read()),
+    }
 
 released_on = {}
 for item in releases:
@@ -212,6 +300,19 @@ for item in releases:
         if date not in released_on:
             released_on[date] = []
         released_on[date].append(item)
+
+
+def anchor(fname, date):
+    """Anchor of the heading for date in fname: '## <date>' if there is one,
+    else the first heading that starts with it, e.g. '## 20190605, 20190606'
+    has the anchor 20190605-20190606."""
+    headings = [l[3:].strip() for l in open(f"source/{fname}") if l.startswith("## ")]
+    if date in headings:
+        return date
+    for text in headings:
+        if text.startswith(date):
+            return re.sub(r"[^a-z0-9]+", "-", text.lower()).strip("-")
+    return date
 
 
 changes = open("source/releases/index.md", "w")
@@ -256,4 +357,4 @@ for date in sorted(released_on, reverse=True):
         print(date, released_on[date])
     for item in sorted(set(released_on[date])):
         label, fname = releases[item]["label"], releases[item]["file"]
-        print(f"- [{label}](../{fname}#{date})", file=changes)
+        print(f"- [{label}](../{fname}#{anchor(fname, date)})", file=changes)
