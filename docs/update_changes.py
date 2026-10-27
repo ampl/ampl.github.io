@@ -35,6 +35,8 @@ SOLVERS = {
     "MP2NL": "mp2nl",
     "Kestrel": "kestrel",
     "PATH": "path",
+    "CP-SAT": "cpsat",
+    "Gecode": "gecode",
 }
 
 import requests

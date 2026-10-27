@@ -98,6 +98,8 @@ Constraint Programming Solvers
 .. toctree::
     :maxdepth: 1
 
+    cpsat/index
+    gecode/index
     ilogcp/index
 
 Complementarity Solvers
