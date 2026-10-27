@@ -542,6 +542,21 @@ Below are two examples demonstrating how to modify the values of the cost parame
     print("New objective value:", ampl.obj['Total_Cost'].value())    # Get the updated objective value
     ```
     **Explanation:** The code assigns 5.01 to `BEEF` and 4.55 to `HAM`. Other values in the `cost` parameter remain unchanged.    
+
+- #### Modify the model, not only the data
+    Iterative methods (heuristics, rolling horizons, decompositions, scenario loops) usually solve **one loaded model many times**, changing which variables are fixed and which constraints are active instead of reading the model again:
+    ```python
+    ampl.var["Open"][3].fix(1)       # fix one variable at a value
+    ampl.var["Open"].unfix()         # release all of them
+    ampl.var["Open"][3].unfix()      # or only one
+
+    ampl.con["Capacity"].drop()      # deactivate a whole constraint family
+    ampl.con["Capacity"].restore()   # and activate it again
+    # deactivate only some instances, e.g. the periods outside a window
+    ampl.eval("drop {t in T: t > w_end} Balance[t];")
+    ampl.eval("restore {t in T: t > w_end} Balance[t];")
+    ```
+    AMPL's presolve removes fixed variables, so fixing the discrete decisions of a model turns it into a smaller continuous problem. Use a separate `AMPL()` object only when the *structure* differs, for example when a parameter switches a family of `complements` constraints on and off: keep one session per structure and copy the current point across. A worked example: the notebooks tagged [fix-and-solve](https://colab.ampl.com/tags/fix-and-solve.html).
 ---
 
 ## Section 5. Set Options
