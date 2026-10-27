@@ -142,7 +142,7 @@ This can happen when:
 **Reference:**
 
 Installation and activation workflow details:
-[https://dev.ampl.com/ampl/install.html]()
+[https://dev.ampl.com/ampl/install.html](../ampl/install.md)
 
 ---
 

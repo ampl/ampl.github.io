@@ -1,6 +1,6 @@
 # How to Install AMPL
 
-Get your license at the [AMPL Portal](https://portal.ampl.com). AMPL is free for [academics](https://ampl.com/academia/) or for [personal use](free), and you can easily install it through Python.
+Get your license at the [AMPL Portal](https://portal.ampl.com). AMPL is free for [academics](https://ampl.com/academia/) or for [personal use](free.md), and you can easily install it through Python.
 
 - [How to Install AMPL](#how-to-install-ampl)
   - [To use with Python](#to-use-with-python)

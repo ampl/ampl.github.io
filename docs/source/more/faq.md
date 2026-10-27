@@ -7,11 +7,11 @@
 
 2. AMPL's familiar algebraic notation and interactive command environment are designed to help formulate models, **communicate with a wide variety of solvers (e.g., Gurobi, CPLEX, etc.)**, and examine solutions. **AMPL connects to most open-source and commercial solvers and allows you to switch easily between them.**
 
-3. **AMPL has [APIs](../ampl/apis.rst) for several popular programming languages (e.g., Python, R, etc.)** and it allows you to only model once in AMPL and interact with it using an API for a language you are familiar with, and possibly deploy to a completely different language with minimal effort since the model remains the same.
+3. **AMPL has [APIs](../ampl/reference/apis.rst) for several popular programming languages (e.g., Python, R, etc.)** and it allows you to only model once in AMPL and interact with it using an API for a language you are familiar with, and possibly deploy to a completely different language with minimal effort since the model remains the same.
 
 4. If you are in Academia: students, researchers, professors teaching optimization, or just graduated, **you can use AMPL and commercial solvers for free** with an [Academic License](https://ampl.com/academia/).
 
-5. **You can use AMPL for free** with open-source solvers with a [Community Edition License](https://ampl.com/ce/) for personal, or commercial prototyping purposes using [AMPL APIs](../ampl/apis.rst). You can also start 30-day trials for individual commercial solvers. We also offer a few other free licenses for you to [start for free now](https://ampl.com/start-free-now/).
+5. **You can use AMPL for free** with open-source solvers with a [Community Edition License](https://ampl.com/ce/) for personal, or commercial prototyping purposes using [AMPL APIs](../ampl/reference/apis.rst). You can also start 30-day trials for individual commercial solvers. We also offer a few other free licenses for you to [start for free now](https://ampl.com/start-free-now/).
 
 ## How to Install AMPL
 

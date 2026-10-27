@@ -88,4 +88,4 @@ To define these values unambiguously, all constraints are assumed to be put in t
 ## AMPL Presolve and Suffixes
 
 AMPL presolve can eliminate variables and change constraints. To avoid interference with
-custom or built-in suffixes, switch off presolve by setting [AMPL option](../options.md#ampl-options) ``presolve 0;``
+custom or built-in suffixes, switch off presolve by setting [AMPL option](options.md#presolve-options) ``presolve 0;``

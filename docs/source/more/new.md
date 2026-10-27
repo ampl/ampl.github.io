@@ -103,7 +103,7 @@ Learn more and apply at: **[https://ampl.com/academia/](https://ampl.com/academi
 
 ## AMPL Community Edition
 
-**Free, full-powered AMPL for personal, academic, or commercial prototyping purposes using [AMPL APIs](../ampl/apis.rst)**.
+**Free, full-powered AMPL for personal, academic, or commercial prototyping purposes using [AMPL APIs](../ampl/reference/apis.rst)**.
 
 -   License never expires
 -   Unlimited variables & constraints
