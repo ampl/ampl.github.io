@@ -8,7 +8,7 @@ Option `tech:writemodel`. [Details](https://mp.ampl.com/features-guide.html#mode
 :::
 
 :::{dropdown} Solution export
-Option `tech:writesolution`. Writes the solution in the solver's native format, e.g., `writesol=model.sol`.
+Option `tech:writesolution`. [Details](https://mp.ampl.com/features-guide.html#solution-export)
 :::
 
 :::{dropdown} Feasibility relaxation
