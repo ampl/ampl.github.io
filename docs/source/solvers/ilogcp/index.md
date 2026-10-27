@@ -1,3 +1,5 @@
+(ilogcp)=
+
 # ILOG CP
 
 IBM ILOG CP Optimizer is a generic CP-based system to model and solve scheduling problems.

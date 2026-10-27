@@ -1,3 +1,5 @@
+(path)=
+
 # PATH
 
 Solver path solvers "square" nonlinear complementarity problem;

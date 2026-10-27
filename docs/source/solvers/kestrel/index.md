@@ -1,3 +1,5 @@
+(kestrel)=
+
 # NEOS: Kestrel client
 
 To simplify the work of comparing and testing solvers, we have made AMPL and solver resources available online in collaboration with the [NEOS Server](https://www.neos-server.org/) project, under the auspices of the [Wisconsin Institutes for Discovery](https://www.discovery.wisc.edu/) at the University of Wisconsin, Madison. AMPL users can interact with the NEOS server in either of two ways:

@@ -1,0 +1,4 @@
+,Logic and counting,alldiff,"Integer |br| arithmetic","Real |br| functions",Continuous |br| variables,|mp|
+:ref:`cpsat`,|y|,|y|,|y|,|n|,|n|,|y|
+:ref:`gecode`,|y|,|y|,|a| [#gecode]_,|n|,|n|,|n|
+:ref:`ilogcp`,|y|,|y|,|y|,|y|,|n| [#ilogcp]_,|n|

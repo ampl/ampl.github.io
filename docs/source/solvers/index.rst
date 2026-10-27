@@ -23,26 +23,69 @@ an easy way to switch between them.
 
    <br />
 
-Linear-Quadratic Solvers
-------------------------
+.. toctree::
+   :hidden:
+   :caption: Linear and mixed-integer
 
-Traditional Linear-Quadratic solvers are advancing into the
-nonlinear domain (MINLP,  *Mixed Integer NonLinear Programming*).
+   gurobi/index
+   xpress/index
+   cplex/index
+   copt/index
+   cuopt/index
+   mosek/index
+   highs/index
+   scip/index
+   gcg/index
+   cbc/index
 
 .. toctree::
-    :hidden:
+   :hidden:
+   :caption: Global nonlinear
 
-    gurobi/index
-    xpress/index
-    cplex/index
-    copt/index
-    cuopt/index
-    mosek/index
-    highs/index
-    scip/index
-    gcg/index
-    cbc/index
-    mp2nl/index
+   baron/index
+   lindoglobal/index
+   couenne/index
+   raposa/index
+   lgo/index
+
+.. toctree::
+   :hidden:
+   :caption: Local nonlinear
+
+   knitro/index
+   conopt/index
+   ipopt/index
+   bonmin/index
+   snopt/index
+   minos/index
+   loqo/index
+
+.. toctree::
+   :hidden:
+   :caption: Constraint programming
+
+   cpsat/index
+   gecode/index
+   ilogcp/index
+
+.. toctree::
+   :hidden:
+   :caption: Complementarity
+
+   path/index
+
+.. toctree::
+   :hidden:
+   :caption: Meta-driver and NEOS
+
+   mp2nl/index
+   kestrel/index
+
+Linear and Mixed-Integer Solvers
+--------------------------------
+
+Linear and mixed-integer solvers are advancing into the
+nonlinear domain (MINLP,  *Mixed Integer NonLinear Programming*).
 
 .. csv-table::
    :file: _tables/slv_lin.csv
@@ -74,48 +117,37 @@ However, some solvers accept integer variables (MINLP), and some target global o
    they only guarantee local optimum for non-convex models.
 .. [#mp2nl] With the `MP2NL meta-driver <https://mp.ampl.com/modeling-tools.html#meta-driver-mp2nl>`_.
 
-.. toctree::
-    :hidden:
-
-    
-    knitro/index
-    baron/index
-    snopt/index
-    loqo/index
-    minos/index
-    conopt/index
-    lgo/index
-    lindoglobal/index
-    raposa/index
-    ipopt/index
-    bonmin/index
-    couenne/index
-
+.. _cp-solvers:
 
 Constraint Programming Solvers
 ------------------------------
 
-.. toctree::
-    :maxdepth: 1
+Constraint programming solvers search over integer variables by propagation
+and branching, and receive logical and counting constraints directly. The
+same AMPL constructs are reformulated for MIP solvers by the
+`MP library <https://mp.ampl.com/model-guide.html>`_, so a constraint
+programming model can also be solved by the solvers above.
 
-    cpsat/index
-    gecode/index
-    ilogcp/index
+.. csv-table::
+   :file: _tables/slv_cp.csv
+   :header-rows: 1
+
+.. rubric:: Footnotes
+
+.. [#gecode] Gecode: ``*``, ``div``, ``mod``, ``abs``, ``min``, ``max``; no ``^``.
+.. [#ilogcp] ILOG CP: a model with continuous variables is passed to CPLEX
+   if it is linear and has no logical constraints (option ``optimizer``).
 
 Complementarity Solvers
 -----------------------
 
-.. toctree::
-    :maxdepth: 1
+:ref:`path` solves square complementarity problems (MCP). MP-based solvers
+also accept ``complements`` and reformulate it, see
+`complementarity <https://mp.ampl.com/modeling-expressions.html#complementarity>`_ in the MP modeling guide.
 
-    path/index
+MP2NL and NEOS
+--------------
 
-NEOS Server
------------
-
-Try NEOS directly from Google Colab here: `Open in Google Colab <https://colab.ampl.com/tags/neos.html>`_.
-
-.. toctree::
-    :maxdepth: 2
-
-    kestrel/index
+:ref:`mp2nl` applies MP's reformulations for any solver that reads NL files.
+Try NEOS directly from Google Colab here: `Open in Google Colab <https://colab.ampl.com/tags/neos.html>`_,
+or with the :ref:`Kestrel client <kestrel>`.
