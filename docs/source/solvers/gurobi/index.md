@@ -52,16 +52,7 @@ Our enhanced Gurobi driver is now the default. The new driver provides significa
 
         Learn more about what we have to offer to implement and deploy `Optimization in Python <https://ampl.com/python/>`_.
 
-   .. tab-item:: Other APIs
-
-        `AMPL APIs <https://ampl.com/apis/>`_ are interfaces that allow developers to access the features of the AMPL interpreter from within a programming language. We have APIs available for:
-
-        - `Python <https://ampl.com/api/latest/python>`_
-        - `R <https://ampl.com/api/latest/R>`_
-        - `C++ <https://ampl.com/api/latest/cpp>`_
-        - `C#/.NET <https://ampl.com/api/latest/dotnet>`_
-        - `Java <https://ampl.com/api/latest/java>`_
-        - `MATLAB <https://ampl.com/api/latest/matlab>`_
+   .. include:: /solvers/_include/other_apis_ampls.rst.inc
 
    .. tab-item:: AMPL
 
@@ -164,16 +155,7 @@ A list of all supported solver options is available [here](options.md) or can be
             import os
             exit_code = os.system("gurobi -=")
 
-   .. tab-item:: Other APIs
-
-        `AMPL APIs <https://ampl.com/apis/>`_ are interfaces that allow developers to access the features of the AMPL interpreter from within a programming language. We have APIs available for:
-
-        - `Python <https://ampl.com/api/latest/python>`_
-        - `R <https://ampl.com/api/latest/R>`_
-        - `C++ <https://ampl.com/api/latest/cpp>`_
-        - `C#/.NET <https://ampl.com/api/latest/dotnet>`_
-        - `Java <https://ampl.com/api/latest/java>`_
-        - `MATLAB <https://ampl.com/api/latest/matlab>`_
+   .. include:: /solvers/_include/other_apis.rst.inc
 
    .. tab-item:: AMPL
 
@@ -228,16 +210,7 @@ After formulating the model in AMPL, execute the following to select `gurobi` as
                 mp_options="return_mipgap=3 outlev=1",     # or: gurobi_options
                 verbose=True)
 
-   .. tab-item:: Other APIs
-
-        `AMPL APIs <https://ampl.com/apis/>`_ are interfaces that allow developers to access the features of the AMPL interpreter from within a programming language. We have APIs available for:
-
-        - `Python <https://ampl.com/api/latest/python>`_
-        - `R <https://ampl.com/api/latest/R>`_
-        - `C++ <https://ampl.com/api/latest/cpp>`_
-        - `C#/.NET <https://ampl.com/api/latest/dotnet>`_
-        - `Java <https://ampl.com/api/latest/java>`_
-        - `MATLAB <https://ampl.com/api/latest/matlab>`_
+   .. include:: /solvers/_include/other_apis.rst.inc
 
    .. tab-item:: AMPL
 
@@ -278,16 +251,7 @@ The outcome of the last optimization is stored in the AMPL parameter `solve_resu
             ampl.param["a"] = ampl2.var["x"].get_values()
             ampl.eval(r" x >(“obj” & n & “.out”) ;")       #save solution in a .out file
 
-   .. tab-item:: Other APIs
-
-        `AMPL APIs <https://ampl.com/apis/>`_ are interfaces that allow developers to access the features of the AMPL interpreter from within a programming language. We have APIs available for:
-
-        - `Python <https://ampl.com/api/latest/python>`_
-        - `R <https://ampl.com/api/latest/R>`_
-        - `C++ <https://ampl.com/api/latest/cpp>`_
-        - `C#/.NET <https://ampl.com/api/latest/dotnet>`_
-        - `Java <https://ampl.com/api/latest/java>`_
-        - `MATLAB <https://ampl.com/api/latest/matlab>`_
+   .. include:: /solvers/_include/other_apis.rst.inc
 
    .. tab-item:: AMPL
 

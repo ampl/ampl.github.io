@@ -150,6 +150,9 @@ MATLAB API
 
 - Documentation: https://ampl.com/api/latest/matlab/
 
+
+.. _apis_ampls:
+
 Solver Callbacks
 ----------------
 

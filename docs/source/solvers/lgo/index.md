@@ -42,16 +42,7 @@ LGO is capable of determining high-quality solutions to global optimization prob
 
         Learn more about what we have to offer to implement and deploy `Optimization in Python <https://ampl.com/python/>`_.
 
-   .. tab-item:: Other APIs
-
-        `AMPL APIs <https://ampl.com/apis/>`_ are interfaces that allow developers to access the features of the AMPL interpreter from within a programming language. We have APIs available for:
-
-        - `Python <https://ampl.com/api/latest/python>`_
-        - `R <https://ampl.com/api/latest/R>`_
-        - `C++ <https://ampl.com/api/latest/cpp>`_
-        - `C#/.NET <https://ampl.com/api/latest/dotnet>`_
-        - `Java <https://ampl.com/api/latest/java>`_
-        - `MATLAB <https://ampl.com/api/latest/matlab>`_
+   .. include:: /solvers/_include/other_apis.rst.inc
 
    .. tab-item:: AMPL
 
