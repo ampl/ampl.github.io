@@ -821,8 +821,13 @@ def sensitivity_analysis_parameter(ampl, param_name, deltas):
     original_value = ampl.param[param_name].value()
     for delta in deltas:
         ampl.param[param_name] = original_value*(1 + delta)
-        ampl.solve()
-        results_dict[delta] = ampl.obj['Profit'].value()
+        ampl.solve(verbose=False)
+        # record a value only for a successful solve
+        if ampl.solve_result == "solved":
+            results_dict[delta] = ampl.obj['Profit'].value()
+        else:
+            results_dict[delta] = None
+    ampl.param[param_name] = original_value      # leave the model as it was
     return results_dict
 
 # Define deltas
@@ -830,6 +835,7 @@ deltas = [-0.3, -0.25, -0.2, -0.15, -0.1, -0.05, 0, 0.05, 0.1, 0.15, 0.2, 0.25, 
 # Analyze profit for different budgets by updating the parameter ampl.param['budget'] for every delta
 results_dict = sensitivity_analysis_parameter(ampl, "budget", deltas)
 ```
+Each solve starts from the previous solution, which is usually what a sweep wants. When the timings of different runs are to be compared, give every run the same starting point instead.
 
 ---
 
@@ -856,3 +862,22 @@ ampl.set_error_handler(WarnOnly())
 ```
 
 Use it only where the warning is understood; otherwise a warning that signals a real problem goes unnoticed. More: the notebooks tagged [error-handler](https://colab.ampl.com/tags/error-handler.html).
+
+---
+
+## Section 11. Iterative algorithms and long runs
+
+Heuristics, decompositions and rolling horizons solve one model thousands of times. Besides modifying the model in place (Section 4) and checking every solve (Section 6):
+
+- **Use one evaluator.** Value every candidate with the same procedure and tolerances; recompute the reported objective from the returned values with independent code and compare. Values produced by different procedures cannot be ranked against each other.
+- **Make infeasible candidates comparable** with an elastic version of the model: slack variables on the constraints that can be violated, priced high in the objective. Rank by total slack, then by objective, and report only exact-model results.
+- **Compare against the status-quo optimum**: keep the current discrete decisions and optimize only the continuous ones. It costs one solve, and an improvement over it is the one worth claiming.
+- **Bound the wall time twice.** Set the solver's own time limit, and as a backstop enforce a deadline from outside the Python process: while `ampl.solve()` runs, other Python threads of the same process may not get to run until it returns. A killed AMPL or solver process can leave child processes running, which slows everything measured after it; check for leftover solver processes before trusting a slow result.
+- **Save a reproducer when a solve fails.** Write the model and data from a fresh session holding the same model and data, together with the options and the solver version:
+
+  ```python
+  ampl.export_model("repro.mod")
+  ampl.export_data("repro.dat")
+  ```
+
+A worked example of these practices: the notebooks tagged [fix-and-solve](https://colab.ampl.com/tags/fix-and-solve.html).
