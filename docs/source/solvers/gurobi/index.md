@@ -325,7 +325,7 @@ For general information, see [MP result codes guide](https://mp.ampl.com/feature
 ### Irreducible inconsistent set (IIS)
 
 When a model is infeasible, one useful information kind is the IIS, which are subsets of constraints that are
-incompatible. See the details [here](https://mp.ampl.com/features-guide.html#irreducible-inconsistent-set-iis).
+incompatible. See the details [here](https://mp.ampl.com/features-guide.html#irreducible-inconsistent-subset-iis).
 
 
 ### Feasibility relaxation

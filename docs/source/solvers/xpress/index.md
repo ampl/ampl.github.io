@@ -220,7 +220,7 @@ For general information, see [MP result codes guide](https://mp.ampl.com/feature
 ### IIS
 
 When a model is unfeasible, one usedful information is finding the irreducible inconsistent sets, which are subsets of constraints that are
-incompatible. This is supported by the framework, see the description [here](https://mp.ampl.com/features-guide.html#irreducible-inconsistent-set-iis).
+incompatible. This is supported by the framework, see the description [here](https://mp.ampl.com/features-guide.html#irreducible-inconsistent-subset-iis).
 
 ## Changelog
 
