@@ -830,3 +830,29 @@ deltas = [-0.3, -0.25, -0.2, -0.15, -0.1, -0.05, 0, 0.05, 0.1, 0.15, 0.2, 0.25, 
 # Analyze profit for different budgets by updating the parameter ampl.param['budget'] for every delta
 results_dict = sensitivity_analysis_parameter(ampl, "budget", deltas)
 ```
+
+---
+
+## Section 10. Errors and warnings
+
+amplpy reports AMPL's errors **and warnings** through an error handler, as `amplpy.AMPLException`. With the default handler:
+
+- in `ampl.eval(...)`, an error or a warning raises an exception;
+- in `ampl.solve()`, a warning (for example a presolve message) is printed and the solve continues; the outcome is in `ampl.solve_result`.
+
+Where a warning is expected and harmless, for example AMPL's "Nonsquare complementarity system" for a model with an objective and `complements` constraints, install a handler that raises on errors and only logs warnings:
+
+```python
+from amplpy import ErrorHandler
+
+class WarnOnly(ErrorHandler):
+    def error(self, exception):
+        raise exception
+
+    def warning(self, exception):
+        print("AMPL warning:", exception)
+
+ampl.set_error_handler(WarnOnly())
+```
+
+Use it only where the warning is understood; otherwise a warning that signals a real problem goes unnoticed. More: the notebooks tagged [error-handler](https://colab.ampl.com/tags/error-handler.html).
