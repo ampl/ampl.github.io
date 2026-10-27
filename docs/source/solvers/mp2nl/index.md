@@ -14,7 +14,7 @@ or (convex) piecewise-linear expressions.
 ## Invocation
 
 Some of the
-[nonlinear AMPL solvers](../index.rst#nonlinear-solvers)
+{ref}`nonlinear AMPL solvers <nonlinear-solvers>`
 (currently [Knitro](../knitro/index.md),
 [BARON](../baron/index.md),
 [CONOPT](../conopt/index.md),
