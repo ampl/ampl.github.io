@@ -504,10 +504,12 @@ Below are two examples demonstrating how to modify the values of the cost parame
 - #### Example 1: Modify All Values
     If you need to update **all** values in a vectorial parameter at once, you can pass a list of new values to the `set_values()` method. The order of the values in the list should correspond to the order of indices in the parameter as defined in AMPL.
     ```python
+    cost = ampl.get_parameter("cost")
     cost.set_values([3, 5, 5, 6, 1, 2, 5.01, 4.55])     # Update all costs in order
     print("Updated all costs.")
     ampl.solve()                                        # Solve the model
-    print("New objective value:", totalcost.value())    # Get the updated objective value
+    print("New objective value:", ampl.obj["Total_Cost"].value())    # Get the updated objective value
+    ```
 
 **Explanation:**
 - The list `[3, 5, 5, 6, 1, 2, 5.01, 4.55]` assigns new values to all entries in the `cost` parameter.
@@ -547,7 +549,7 @@ Below are two examples demonstrating how to modify the values of the cost parame
     AMPL provides a comprehensive set of options that allow users to customize the behavior of their models in various ways. These options can be divided into several categories, each focusing on a different aspect of model setup, solution process, and solver options. Here's how to access and change these options through Amplpy within Python. First option is to directly assign the value of an option through an option name. 
     **Example Python code to configure solver-related options:**
     ```python
-    ampl.option['solver'] = 'highs'  # Configure mp-solvers options (output level and time limit)
+    ampl.option['solver'] = 'highs'  # Select the solver
     ampl.option['mp_options'] = 'outlev=0 lim:time=20'  # Configure mp-solvers options (output level and time limit)
     ```
     To increase the number of presolve iterations in AMPL or to turn if off, use the "presolve" option (by default 10):
@@ -556,7 +558,7 @@ Below are two examples demonstrating how to modify the values of the cost parame
     ```
     As an alternative syntax, it is possible to use the `set_option(option_name, value)` method:
     ```python
-    ampl.set_option('solver', 'highs')  # Set 90 Presolve iterations
+    ampl.set_option('solver', 'highs')  # Select the solver
     ampl.set_option('presolve', 90)  # Set 90 Presolve iterations
     ampl.set_option('mp_options', 'outlev=0 lim:time=20')  # Configure mp-solvers options (output level and time limit)
     ```
@@ -577,8 +579,10 @@ Below are two examples demonstrating how to modify the values of the cost parame
     ```python
     # Solve the problem with Highs, with outlev=0 and time limit of 30 seconds
     ampl.solve(solver='highs', mp_options='outlev=0 lim:time=30')
-    # Solve the problem with Gurobi, with mipfocus=1 and time limit of 180 seconds
-    ampl.solve(solver='gurobi', mp_options='mipfocus=1 lim:time=180')
+    # Solve the problem with Gurobi, with mipfocus=1 and time limit of 180 seconds.
+    # mipfocus is a Gurobi keyword, so it goes into gurobi_options;
+    # mp_options is for options common to all MP solvers, such as lim:time.
+    ampl.solve(solver='gurobi', gurobi_options='mipfocus=1 lim:time=180')
     ```
     Notice that `mp_options` are options common to AMPL solvers built by the MP framework, but `gurobi_options` and `highs_options` would be accepted too.
 ---
@@ -789,5 +793,5 @@ def sensitivity_analysis_parameter(ampl, param_name, deltas):
 # Define deltas
 deltas = [-0.3, -0.25, -0.2, -0.15, -0.1, -0.05, 0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3]  # Percentage changes
 # Analyze profit for different budgets by updating the parameter ampl.param['budget'] for every delta
-results_dict = sensitivity_analysis_parameters(ampl, "budget", deltas)
+results_dict = sensitivity_analysis_parameter(ampl, "budget", deltas)
 ```
