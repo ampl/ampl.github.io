@@ -20,20 +20,69 @@ as well as the legacy solvers
 [gurobiasl](../gurobi/index.md),
 [cplexasl](../cplex/index.md),
 [xpressasl](../xpress/index.md)
-support option `mp2nl=1`:
+include the bridge and support option `mp2nl=1`.
+For any other AMPL solver, call `mp2nl` as the solver and name the real
+solver (the *subsolver*) inside it:
 
+::::{tab-set}
+:::{tab-item} Python
+```python
+# a driver with the bridge built in
+ampl.solve(solver="knitro", knitro_options="mp2nl=1 outlev=1")
+
+# any other NL solver: MP2NL is the solver, the subsolver is named inside
+ampl.solve(solver="mp2nl",
+           mp2nl_options="solver=ipopt cvt:compl=2 cvt:compl:eps=1e-8 lim:time=60",
+           ipopt_options="print_level=0")
+```
+:::
+:::{tab-item} AMPL
 ```ampl
-ampl: option knitro_options 'soltype=1 mp2nl=1';
+ampl: option knitro_options 'mp2nl=1 outlev=1';
+ampl: option solver knitro; solve;
+
+ampl: option solver mp2nl;
+ampl: option mp2nl_options 'solver=ipopt cvt:compl=2 cvt:compl:eps=1e-8 lim:time=60';
+ampl: option ipopt_options 'print_level=0';
 ampl: solve;
 ```
+:::
+::::
 
-For any other AMPL solver, invoke `mp2nl` manually:
+Enable the bridge whenever the model uses MP's expressions, including the
+`==>` syntax of indicator constraints: a solver that does not understand such
+a construct may misread the model without an error message.
 
-```python
-ampl.solve(solver='mp2nl',
-           ipopt_options='max_cpu_time 15',
-           mp2nl_options='solver=ipopt cvt:compl=2 cvt:compl:eps=1e-8')
-```
+## Where the options go
+
+- `mp2nl_options`: MP's options. `solver=`, `cvt:...` (reformulations),
+  `acc:...` (what the subsolver accepts), `sol:chk:...` (solution check),
+  and generic ones such as `lim:time`, `mip:gap`, `outlev`.
+  `lim:time` and `mip:gap` are passed on as the subsolver's own keywords
+  where MP2NL knows them.
+- `<subsolver>_options`: the subsolver's own keywords. MP keywords placed
+  here are usually rejected by the subsolver, and the solve fails.
+- With a built-in bridge (`mp2nl=1`), pass MP's `cvt:...` and `sol:chk:...`
+  options through the AMPL option `mp_options`.
+
+## Choosing the subsolver
+
+MP reformulates logic with binary variables, so the subsolver must accept the
+problem class *after* reformulation (`outlev=1` prints the model before and
+after). A continuous NLP subsolver relaxes those binaries and can report an
+optimal solution that violates the logic; MP's automatic solution check then
+prints "Tolerance violations". Use an MINLP solver for models with logic;
+complementarity constraints alone, with a smooth reformulation (`cvt:compl=1`
+or `2`), can go to an NLP solver.
+
+The status is the subsolver's: a local solver's "optimal" on a nonconvex
+model is a local optimum.
+
+More: the MP documentation section
+[Meta-driver MP2NL](https://mp.ampl.com/modeling-tools.html#meta-driver-mp2nl)
+(configurations, `printconfigs`, `config=`, `stub=`, complementarity
+reformulations), and the notebooks tagged
+[mp2nl](https://colab.ampl.com/tags/mp2nl.html).
 
 ## Solver options
 
