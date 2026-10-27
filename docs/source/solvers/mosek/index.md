@@ -3,8 +3,8 @@
 # MOSEK
 
 Mosek is a versatile linear, convex quadratic, convex quadratically constrained and conic optimizer that supports continuous and discrete variables.
-The framework used by the driver supports automatic reformulation for many expression types; the modeling guide can be
-found [here](https://mp.ampl.com/model-guide.html).
+The driver is built on the [MP library](https://mp.ampl.com/), which reformulates
+logical and other expressions that the solver does not accept natively.
 
 [Product Page](https://ampl.com/products/solvers/solvers-we-sell/mosek/)
 | [Modeling guide](https://mp.ampl.com/model-guide.html)
@@ -58,9 +58,7 @@ found [here](https://mp.ampl.com/model-guide.html).
             ampl: solve; # solve the problem
 ```
 
-## At a glance
-
-### Resources
+## Resources
 
 * [Modeling guide](https://mp.ampl.com/model-guide.html)
 * [Important features](https://mp.ampl.com/features-guide.html#important-features)
@@ -68,33 +66,33 @@ found [here](https://mp.ampl.com/model-guide.html).
 * [Solve result codes](#retrieving-solutions)
 * [Driver sources](https://github.com/ampl/mp/tree/develop/solvers/mosek)
 
-### Features
+## Features
 
-* Problem types: 
+### Problem types and algorithms
 
-  * LP, convex QP, convex QCP, conic programs (SOCP, exponential cones)
-  * MIP, MIQP, MIQCP, mixed-integer conic programs
+:::{dropdown} Problem types
+:open:
+* LP, convex QP, convex QCP, conic programs (SOCP, exponential cones)
+* MILP, convex MIQP and MIQCP, mixed-integer conic programs
 
-* Features for all models:
-    * Problem input
-        * [Basis IO](https://mp.ampl.com/features-guide.html#input-and-output-basis)
-        * [Warm start](https://mp.ampl.com/features-guide.html#warm-start)
+Second-order and exponential cones are recognized from their algebraic form
+([conic modeling](https://mp.ampl.com/modeling-expressions.html#socp)).
+:::
 
-    * Model investigation
+:::{dropdown} LP and conic: interior point, simplex
+`alg:method`: `2` automatic (default), `4` interior point, `1`/`6` dual
+simplex, `8`/`7` primal simplex, `3` free simplex. After the interior-point
+method, `bar:basis` controls the basis computation (default: always).
+:::
 
-        * [Sensitivity analysis](https://mp.ampl.com/features-guide.html#sensitivity-analysis)
+:::{dropdown} MIP: branch-and-cut
+Relative gap: `mip:gap`.
+:::
 
-    * Dealing with infeasibility/unboundedness
-    
-        * [Unbounded rays](https://mp.ampl.com/features-guide.html#unbounded-rays)
+### Solver features
 
-
-
-* Features for MIP models:
-    * Model investigation
-      * [Return MIP gap](https://mp.ampl.com/features-guide.html#return-mip-gap)
-      * [Return best dual bound](https://mp.ampl.com/features-guide.html#return-best-dual-bound)
-      
+```{include} features.inc
+```
 
 ## Solver options
 
@@ -134,7 +132,6 @@ mosek -=lim:
 ```
 
 More details on solver options: [Features guide](https://mp.ampl.com/features-guide.html).
-
 
 ## Specifying solver options and solving a model
 

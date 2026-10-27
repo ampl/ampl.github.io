@@ -64,9 +64,7 @@ This package contains an all-new Xpress driver, that provides significantly exte
             ampl: solve; # solve the problem
 ```
 
-## At a glance
-
-### Resources
+## Resources
 
 * [Modeling guide](https://mp.ampl.com/model-guide.html)
 * [Important features](https://mp.ampl.com/features-guide.html#important-features)
@@ -75,66 +73,64 @@ This package contains an all-new Xpress driver, that provides significantly exte
 * [Driver sources](https://github.com/ampl/mp/tree/develop/solvers/xpress)
 * [Using with callbacks](https://ampls.ampl.com/)
 
-### Features
+## Features
 
-* Problem types: 
+### Problem types and algorithms
 
-  * LP, QP, QCP, SOCP, NLP
-  * MIP, MIQP, MIQCP, MISOCP
-  * MINLP
+:::{dropdown} Problem types
+:open:
+* LP, QP, QCP, SOCP, NLP
+* MILP, MIQP, MIQCP, MISOCP, MINLP
 
-* Algorithms for nonlinear models (NLP, MINLP, nonconvex QCP):
+Nonlinear functions are passed to Xpress natively as expressions
+(`acc:_expr=1`, the default).
+:::
 
-  * **Global** (default, option `alg:nlpsolver=-1`): FICO Xpress Global, if the license
-    allows and the model has no user functions; otherwise a local solver.
-    Force it with `alg:nlpsolver=2`.
-  * **Local**: `alg:nlpsolver=1` uses the local solver chosen by `alg:localsolver`:
-    `0` Xpress-SLP (always available), `1` Knitro (only if Knitro is installed for
-    Xpress), `2` the Xpress Optimizer (convex quadratic problems only); the default `-1`
-    chooses automatically. The result is a locally optimal solution (`solve_result`
-    `solved?`, message "locally optimal solution"); different starting points can give
-    different local optima.
-  * Nonlinear functions are passed to Xpress natively as expressions (`acc:_expr=1`,
-    the default). `alg:global=0` linearizes the expressions that require Xpress Global.
+:::{dropdown} LP and convex QP: simplex, barrier, hybrid gradient
+`alg:method`: `1` automatic (default), `2` dual simplex, `3` primal simplex,
+`4` barrier. The primal-dual hybrid gradient method (first-order) is
+`alg:method=4 bar:alg=4`, on a GPU with `pdhg:barhggpu=1`.
+:::
 
-  ::::{tab-set}
-  :::{tab-item} Python
-  ```python
-  ampl.solve(solver="xpress", xpress_options="nlpsolver=1 localsolver=0")  # local, SLP
-  ampl.solve(solver="xpress", xpress_options="nlpsolver=2")                # global
-  ```
-  :::
-  :::{tab-item} AMPL
-  ```ampl
-  ampl: option solver xpress;
-  ampl: option xpress_options 'nlpsolver=1 localsolver=0';  # local, SLP
-  ampl: solve;
-  ```
-  :::
-  ::::
+:::{dropdown} MIP: branch-and-cut
+Relative gap: `mip:gap`. Most other controls are `mip:...` and `cut:...`
+options.
+:::
 
-* Features for all models:
-    * Problem input
-        * [Basis IO](https://mp.ampl.com/features-guide.html#input-and-output-basis)
-        * [Warm start](https://mp.ampl.com/features-guide.html#warm-start)
-        * [Multiple objectives](https://mp.ampl.com/features-guide.html#multiple-objectives)
+:::::{dropdown} Nonlinear models: global or local
+* **Global** (default, `alg:nlpsolver=-1`): FICO Xpress Global, if the
+  license allows and the model has no user functions; otherwise a local
+  solver. Force it with `alg:nlpsolver=2`.
+* **Local**: `alg:nlpsolver=1` uses the local solver chosen by
+  `alg:localsolver`: `0` Xpress-SLP (always available), `1` Knitro (only if
+  Knitro is installed for Xpress), `2` the Xpress Optimizer (convex
+  quadratic problems only); the default `-1` chooses automatically. The
+  result is a locally optimal solution (`solve_result` `solved?`, message
+  "locally optimal solution"); different starting points can give different
+  local optima.
+* `alg:global=0` linearizes the expressions that require Xpress Global.
 
-    * Model investigation
+::::{tab-set}
+:::{tab-item} Python
+```python
+ampl.solve(solver="xpress", xpress_options="nlpsolver=1 localsolver=0")  # local, SLP
+ampl.solve(solver="xpress", xpress_options="nlpsolver=2")                # global
+```
+:::
+:::{tab-item} AMPL
+```ampl
+ampl: option solver xpress;
+ampl: option xpress_options 'nlpsolver=1 localsolver=0';  # local, SLP
+ampl: solve;
+```
+:::
+::::
+:::::
 
-        * [Multiple solutions](https://mp.ampl.com/features-guide.html#multiple-solutions)
+### Solver features
 
-    * Dealing with infeasibility/unboundedness
-    
-        * [IIS](https://mp.ampl.com/features-guide.html#irreducible-inconsistent-subset-iis)
-
-
-
-* Features for MIP models:
-    * Model investigation
-      * [Return MIP gap](https://mp.ampl.com/features-guide.html#return-mip-gap)
-      * [Return best dual bound](https://mp.ampl.com/features-guide.html#return-best-dual-bound)
-      * [Fixed model](https://mp.ampl.com/features-guide.html#fixed-model-return-basis-for-mip)
-
+```{include} features.inc
+```
 
 ## Solver options
 
@@ -178,7 +174,6 @@ xpress -=lim:
 ```
 
 More details on solver options: [Features guide](https://mp.ampl.com/features-guide.html).
-
 
 ## Specifying solver options and solving a model
 

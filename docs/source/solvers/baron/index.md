@@ -66,6 +66,29 @@ An experimental version of the driver, BARONMP, supports the extended modeling c
 * [BARONMP solve result codes](#retrieving-solutions)
 * [BARONMP sources](https://github.com/ampl/mp/tree/develop/solvers/baronmp)
 
+## Features
+
+### Problem types and algorithms
+
+:::{dropdown} Problem types
+:open:
+* NLP, MINLP, nonconvex, solved to global optimality
+* LP, MILP
+
+With BARONMP, logical and other MP expressions are reformulated by MP.
+:::
+
+:::{dropdown} Global search: branch-and-reduce
+Stopping tolerances: `alg:epsr` (relative, default 1e-9) and `alg:epsa`.
+Local searches: `alg:numloc` in preprocessing, `alg:dolocal` during
+upper bounding. LP subsolver: `lp:alg`.
+:::
+
+### Solver features (BARONMP)
+
+```{include} features.inc
+```
+
 ## Solver options
 
 Full list of solver options:
@@ -116,7 +139,6 @@ Solve result table for BaronMP 24.10.10
 ```
 
 For general information, see [MP result codes guide](https://mp.ampl.com/features-guide.html#solve-result-codes).
-
 
 ## Changelog
 

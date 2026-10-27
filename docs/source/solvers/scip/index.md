@@ -6,8 +6,8 @@
 and mixed integer nonlinear programming (MINLP). It is also a framework for constraint integer
 programming and branch-cut-and-price. It allows for total control of the solution process and
 the access of detailed information down to the guts of the solver.
-The framework used by the driver supports automatic reformulation for many expression types; the modeling guide can be
-found [here](https://mp.ampl.com/model-guide.html).
+The driver is built on the [MP library](https://mp.ampl.com/), which reformulates
+logical and other expressions that the solver does not accept natively.
 
 [Learn More](https://ampl.com/products/solvers/open-source-solvers/)
 | [Modeling guide](https://mp.ampl.com/model-guide.html)
@@ -68,6 +68,34 @@ found [here](https://mp.ampl.com/model-guide.html).
 * [Solve result codes](#retrieving-solutions)
 * [Driver sources](https://github.com/ampl/mp/tree/develop/solvers/scipmp)
 
+## Features
+
+### Problem types and algorithms
+
+:::{dropdown} Problem types
+:open:
+* LP, QP, QCP, SOCP, NLP
+* MILP, MIQP, MIQCP, MINLP
+
+Nonlinear functions are passed to SCIP natively as expressions and solved
+to global optimality.
+:::
+
+:::{dropdown} MIP and MINLP: branch-and-cut, spatial branch-and-bound
+Relative gap: `mip:gap`. Predefined settings: `alg:emphasis` (for example
+`3` feasibility, `5` optimality). Several SCIP instances in parallel (`alg:concurrent`): by default when
+`tech:threads` is above 1.
+:::
+
+:::{dropdown} LP relaxations
+Solved by SoPlex: `alg:method` (`s` automatic simplex, `p` primal, `d` dual).
+:::
+
+### Solver features
+
+```{include} features.inc
+```
+
 ## Solver options
 
 Full list of solver options:
@@ -80,7 +108,6 @@ scip-cpx.md
 ```
 
 More details on solver options: [Features guide](https://mp.ampl.com/features-guide.html).
-
 
 ## Retrieving solutions
 

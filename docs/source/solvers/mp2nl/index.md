@@ -86,6 +86,11 @@ More: the MP documentation section
 reformulations), and the notebooks tagged
 [mp2nl](https://colab.ampl.com/tags/mp2nl.html).
 
+## Features
+
+```{include} features.inc
+```
+
 ## Solver options
 
 Full list of solver options:

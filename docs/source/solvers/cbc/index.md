@@ -3,8 +3,8 @@
 # CBC
 
 The [COIN Branch and Cut solver (CBC)](https://github.com/coin-or/Cbc) is an open-source mixed-integer program (MIP) solver written in C++.
-The framework used by the driver supports automatic reformulation for many expression types; the modeling guide can be
-found [here](https://mp.ampl.com/model-guide.html).
+The driver is built on the [MP library](https://mp.ampl.com/), which reformulates
+logical and other expressions that the solver does not accept natively.
 
 [Learn More](https://ampl.com/products/solvers/open-source-solvers/)
 | [Modeling guide](https://mp.ampl.com/model-guide.html)
@@ -65,6 +65,31 @@ found [here](https://mp.ampl.com/model-guide.html).
 * [Solve result codes](#retrieving-solutions)
 * [Driver sources](https://github.com/ampl/mp/tree/develop/solvers/cbcmp)
 
+## Features
+
+### Problem types and algorithms
+
+:::{dropdown} Problem types
+:open:
+* LP, convex QP
+* MILP, MIQP
+
+Logical and nonlinear expressions are reformulated by MP.
+:::
+
+:::{dropdown} LP: CLP simplex and barrier
+CBC solves LPs with CLP. Barrier settings: `bar:...` options.
+:::
+
+:::{dropdown} MIP: branch-and-cut
+Cut generators: `cut:...` options, e.g., `cut:gomorycuts`.
+:::
+
+### Solver features
+
+```{include} features.inc
+```
+
 ## Solver options
 
 Full list of solver options:
@@ -73,7 +98,6 @@ options.md
 ```
 
 More details on solver options: [Features guide](https://mp.ampl.com/features-guide.html).
-
 
 ## Retrieving solutions
 

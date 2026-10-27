@@ -5,8 +5,8 @@
 A leading free solver that has evolved from a large-scale optimization project
 at the University of Edinburgh. [HiGHS](https://highs.dev/) is open-source software to solve
 linear programming, mixed-integer programming, and convex quadratic programming models.
-The framework used by the driver supports automatic reformulation for many expression types; the modeling guide can be
-found [here](https://mp.ampl.com/model-guide.html).
+The driver is built on the [MP library](https://mp.ampl.com/), which reformulates
+logical and other expressions that the solver does not accept natively.
 
 [Learn More](https://ampl.com/products/solvers/open-source-solvers/)
 | [Modeling guide](https://mp.ampl.com/model-guide.html)
@@ -67,6 +67,38 @@ found [here](https://mp.ampl.com/model-guide.html).
 * [Solve result codes](#retrieving-solutions)
 * [Driver sources](https://github.com/ampl/mp/tree/develop/solvers/highsmp)
 
+## Features
+
+### Problem types and algorithms
+
+:::{dropdown} Problem types
+:open:
+* LP, convex QP
+* MILP
+
+Logical and nonlinear expressions are reformulated by MP; nonlinear
+functions are
+[approximated piecewise-linearly](https://mp.ampl.com/modeling-expressions.html#piecewise-linear-approximation).
+:::
+
+:::{dropdown} LP: simplex, interior point, PDLP
+`alg:method`: `choose` (default), `simplex`, `ipm` (interior point,
+automatic), `ipx`, `hipo`, `pdlp` (first-order), `pdlp-gpu` (NVIDIA GPU,
+not on macOS). Parallel simplex: `alg:parallel=on`.
+:::
+
+:::{dropdown} Convex QP: active set
+QPs are solved by the active-set method (`alg:method=qpasm`).
+:::
+
+:::{dropdown} MIP: branch-and-cut
+Relative gap: `mip:gap`.
+:::
+
+### Solver features
+
+```{include} features.inc
+```
 
 ## Solver options
 
@@ -76,7 +108,6 @@ options.md
 ```
 
 More details on solver options: [Features guide](https://mp.ampl.com/features-guide.html).
-
 
 ## Retrieving solutions
 

@@ -83,7 +83,8 @@ Passed to CP-SAT natively: linear constraints and objectives, `alldiff`,
 counting (`count`, `numberof`, `atmost`, `atleast`, `exactly`), `if-then-else`,
 implications (`==>`), `and`/`forall`, `or`/`exists`, `min`, `max`, `abs`,
 products and integer powers of variables, `div` and `mod`. MP reformulates
-other expressions where possible; see the
+other expressions where possible. Real-valued functions (`/`, `exp`, `log`,
+...) need continuous variables and are therefore rejected. See the
 [modeling guide](https://mp.ampl.com/model-guide.html) and the
 [acceptance options](https://mp.ampl.com/modeling-tools.html#acceptance-options)
 (`cpsat -=acc:`).

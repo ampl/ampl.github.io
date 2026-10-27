@@ -6,8 +6,8 @@ Cardinal Optimizer (COPT) incorporates a full suite of solvers for
 linear, (non-)convex quadratic, second-order and exponential conic mixed-integer programming.
 It ranks at the top of benchmark tests on continuous linear programs,
 and has been fully extended to handle integer variables.
-The framework used by the driver supports automatic reformulation for many expression types; the modeling guide can be
-found [here](https://mp.ampl.com/model-guide.html).
+The driver is built on the [MP library](https://mp.ampl.com/), which reformulates
+logical and other expressions that the solver does not accept natively.
 
 
 [Product Page](https://ampl.com/products/solvers/solvers-we-sell/copt/)
@@ -70,67 +70,64 @@ found [here](https://mp.ampl.com/model-guide.html).
 * [Solve result codes](#retrieving-solutions)
 * [Driver sources](https://github.com/ampl/mp/tree/develop/solvers/copt)
 
-### Features
+## Features
 
-* Supported problem types: 
+### Problem types and algorithms
 
-  * LP, (non-)convex QP, (non-)convex QCP, conic programs (SOCP, exponential cones)
-  * MIP, (non-)convex MIQP, (non-)convex MIQCP, mixed-integer conic programs
-  * NLP
-  * MINLP (approximated)
-  
-* Algorithms:
+:::{dropdown} Problem types
+:open:
+* LP, (non-)convex QP, (non-)convex QCP, conic programs (SOCP, exponential
+  cones)
+* MILP, (non-)convex MIQP, (non-)convex MIQCP, mixed-integer conic programs
+* NLP (local)
+* MINLP (approximated)
+:::
 
-  * LP: simplex method, barrier (CPU/GPU), PDLP (CPU/GPU). See option `lp:method`.
-  * Convex Q(C)P / Conic: barrier (CPU/GPU). 
-  * MIP and non-convex Q(C)P: (Spatial) Branch-and-Cut.
-    * For non-convex (MI)Q(C)P, use COPT option `alg:nonconvex=2`.
-    * Note that AMPL/COPT will [approximate any nonlinear non-quadratic functions
-      by piecewise-linear expressions](https://mp.ampl.com/modeling-expressions.html#piecewise-linear-approximation).
-      This enables approximate solving of MINLP.
-  * NLP: barrier, a **local** solver. To use it, set option `acc:_expr=1`:
-    nonlinear functions (`exp`, `log`, trigonometric, powers, divisions) are then passed
-    to COPT natively as expressions. The result is a locally optimal solution
-    (`solve_result` `solved?`, message "locally optimal solution"); on a nonconvex
-    model, different starting points can give different local optima. To locally solve
-    the continuous relaxation of an MINLP, add `alg:relax=1`.
-    * With the default `acc:_expr=0`, AMPL/COPT instead approximates these functions
-      piecewise-linearly, producing an LP/QCP/MIP that COPT solves to optimality *for the
-      approximation*.
-    * `alg:nonconvex=2` (global search) addresses nonconvex quadratic terms; for general
-      nonlinear functions with `acc:_expr=1`, COPT returns a local optimum.
+:::{dropdown} LP: simplex, barrier, PDLP
+`alg:method`: `-1` automatic (default), `1` dual simplex, `2` barrier,
+`4` concurrent, `5` simplex or barrier, `6` first-order (PDLP). GPU for
+barrier and PDLP: `alg:gpumode` (CUDA, Windows and Linux).
+:::
 
-    ::::{tab-set}
-    :::{tab-item} Python
-    ```python
-    ampl.solve(solver="copt", copt_options="acc:_expr=1 outlev=1")  # local NLP
-    print(ampl.solve_result, ampl.get_value("solve_message"))
-    ```
-    :::
-    :::{tab-item} AMPL
-    ```ampl
-    ampl: option solver copt;
-    ampl: option copt_options 'acc:_expr=1 outlev=1';  # local NLP
-    ampl: solve;
-    ```
-    :::
-    ::::
+:::{dropdown} MIP and nonconvex quadratic models: branch-and-cut
+Relative gap: `mip:gap`. For continuous nonconvex quadratic models,
+`alg:nonconvex`: `-1` default (as of COPT 8 a local search), `1` local,
+`2` global. Nonlinear functions other than quadratic are
+[approximated piecewise-linearly](https://mp.ampl.com/modeling-expressions.html#piecewise-linear-approximation)
+by default, which allows approximate solving of MINLP.
+:::
 
-* Features for all models:
-    * Problem input
-        * [Basis IO](https://mp.ampl.com/features-guide.html#input-and-output-basis)
-        * [Warm start](https://mp.ampl.com/features-guide.html#warm-start)
+:::::{dropdown} Nonlinear models: local
+With `acc:_expr=1`, nonlinear functions (`exp`, `log`, trigonometric,
+powers, divisions) are passed to COPT natively as expressions, and its
+barrier returns a locally optimal solution (`solve_result` `solved?`,
+message "locally optimal solution"); on a nonconvex model, different
+starting points can give different local optima. For the continuous
+relaxation of an MINLP, add `alg:relax=1`. With the default `acc:_expr=0`,
+these functions are approximated piecewise-linearly instead.
 
-    * Dealing with infeasibility/unboundedness
-    
-        * [Unbounded rays](https://mp.ampl.com/features-guide.html#unbounded-rays)
+::::{tab-set}
+:::{tab-item} Python
+```python
+ampl.solve(solver="copt", copt_options="acc:_expr=1 outlev=1")  # local NLP
+print(ampl.solve_result, ampl.get_value("solve_message"))
+```
+:::
+:::{tab-item} AMPL
+```ampl
+ampl: option solver copt;
+ampl: option copt_options 'acc:_expr=1 outlev=1';  # local NLP
+ampl: solve;
+```
+:::
+::::
+:::::
 
-* Features for MIP models:
-    * Model investigation
-      * [Return MIP gap](https://mp.ampl.com/features-guide.html#return-mip-gap)
-      * [Return best dual bound](https://mp.ampl.com/features-guide.html#return-best-dual-bound)
-      
-      
+### Solver features
+
+```{include} features.inc
+```
+
 ## Solver options
 
 Full list of solver options:
@@ -139,7 +136,6 @@ options.md
 ```
 
 More details on solver options: [Features guide](https://mp.ampl.com/features-guide.html).
-
 
 ## Retrieving solutions
 

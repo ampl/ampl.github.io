@@ -3,8 +3,8 @@
 # NVIDIA cuOpt
 
 NVIDIA [cuOpt](https://www.nvidia.com/en-eu/ai-data-science/products/cuopt/)  is an open-source GPU-accelerated optimization engine delivering near real-time solutions for complex decision-making challenges.
-The framework used by the driver supports automatic reformulation for many expression types; the modeling guide can be
-found [here](https://mp.ampl.com/model-guide.html).
+The driver is built on the [MP library](https://mp.ampl.com/), which reformulates
+logical and other expressions that the solver does not accept natively.
 
 [Try cuOpt on Google Colab using NVIDIA GPUs for free!](https://ampl.com/cuOpt)
 
@@ -85,6 +85,32 @@ An example of supported container is::
 * [Solve result codes](#retrieving-solutions)
 * [Driver sources](https://github.com/ampl/mp/tree/develop/solvers/cuoptmp)
 
+## Features
+
+### Problem types and algorithms
+
+:::{dropdown} Problem types
+:open:
+* LP
+* MILP
+
+Logical and nonlinear expressions are reformulated by MP.
+:::
+
+:::{dropdown} LP: PDLP on the GPU, dual simplex
+`alg:method`: `0` concurrent (default), `1` PDLP, `2` dual simplex. PDLP
+settings: `alg:solver_mode` (`1` Stable2, default).
+:::
+
+:::{dropdown} MIP
+Relative and absolute tolerances: `mip:reltol`, `mip:abstol`.
+:::
+
+### Solver features
+
+```{include} features.inc
+```
+
 ## Solver options
 
 Full list of solver options:
@@ -93,7 +119,6 @@ options.md
 ```
 
 More details on solver options: [Features guide](https://mp.ampl.com/features-guide.html).
-
 
 ## Retrieving solutions
 

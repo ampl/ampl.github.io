@@ -69,6 +69,29 @@ No user interaction is necessary, thus GCG provides decomposition-based MIP solv
   - [Retrieving solutions](#retrieving-solutions)
   - [Changelog](#changelog)
 
+## Features
+
+### Problem types and algorithms
+
+:::{dropdown} Problem types
+:open:
+* LP, QP, QCP, NLP
+* MILP, MIQP, MIQCP, MINLP
+
+GCG is built on SCIP; decomposition applies to MIP models.
+:::
+
+:::{dropdown} Dantzig-Wolfe and Benders decomposition
+`gcg:mode`: `0` Dantzig-Wolfe with branch-price-and-cut (default), `1`
+Benders, `2` no decomposition. Detection of the structure: `det:...`
+options; see the [GCG modeling guide](#gcg-modeling-guide).
+:::
+
+### Solver features
+
+```{include} features.inc
+```
+
 ## GCG modeling guide
 
 GCG can apply Dantzig-Wolfe or Benders decomposition,
@@ -94,7 +117,6 @@ gcg-cpx.md
 ```
 
 More details on solver options: [Features guide](https://mp.ampl.com/features-guide.html).
-
 
 ## Retrieving solutions
 

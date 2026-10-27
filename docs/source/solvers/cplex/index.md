@@ -3,8 +3,8 @@
 # IBM CPLEX
 
 IBM ILOG CPLEX has been a well known and widely used large-scale solver for over three decades. Its efficiency and robustness have been demonstrated through varied applications in thousands of commercial installations worldwide.
-The framework used by the driver supports automatic reformulation for many expression types; the modeling guide can be
-found [here](https://mp.ampl.com/model-guide.html).
+The driver is built on the [MP library](https://mp.ampl.com/), which reformulates
+logical and other expressions that the solver does not accept natively.
 
 [Product Page](https://ampl.com/products/solvers/solvers-we-sell/cplex/)
 | [Modeling guide](https://mp.ampl.com/model-guide.html)
@@ -16,7 +16,6 @@ found [here](https://mp.ampl.com/model-guide.html).
 | [Start a CPLEX Trial Now!](https://ampl.com/trial/cplex)
 
 This package contains an all-new CPLEX driver, that provides significantly extended modeling support for logical and nonlinear operators through linearizations performed by the [MP library](https://mp.ampl.com/). For compatibility, there are two binaries in this package: `cplex` [[options](options.md)] is the new version, `cplexasl` [[options](cplexasl.md)] is the legacy version. If you are upgrading an existing installation and encounter any issues with the new version please report them to [support@ampl.com](mailto:support@ampl.com).
-
 
 ## How to use it
 
@@ -72,6 +71,42 @@ This package contains an all-new CPLEX driver, that provides significantly exten
 * [Driver sources](https://github.com/ampl/mp/tree/develop/solvers/cplex)
 * [Using with callbacks](https://ampls.ampl.com/)
 
+## Features
+
+### Problem types and algorithms
+
+:::{dropdown} Problem types
+:open:
+* LP, convex QP and QCP, SOCP, nonconvex QP objective
+* MILP, MIQP, MIQCP, MISOCP
+
+Logical constraints become CPLEX indicator constraints where possible.
+Other nonlinear functions are
+[approximated piecewise-linearly](https://mp.ampl.com/modeling-expressions.html#piecewise-linear-approximation).
+:::
+
+:::{dropdown} LP and QP: simplex, barrier, sifting, network
+`alg:method`: `0` automatic (default), `1` primal simplex, `2` dual simplex,
+`3` network simplex, `4` barrier, `5` sifting, `6` concurrent. After
+barrier, `bar:crossover` controls the basis computation.
+:::
+
+:::{dropdown} MIP: branch-and-cut, Benders
+Relative and absolute gaps: `mip:gap`, `mip:gapabs`. Benders decomposition:
+`alg:benders=1` (the model needs integer and continuous variables). Most
+other controls are `mip:...` and `cut:...` options.
+:::
+
+:::{dropdown} Nonconvex quadratic objective
+`qp:target=3` solves a (MI)QP with a nonconvex quadratic objective to global
+optimality; `2` searches for a first-order (local) point of a continuous QP.
+Nonconvex quadratic constraints are not supported.
+:::
+
+### Solver features
+
+```{include} features.inc
+```
 
 ## Solver options
 
@@ -85,7 +120,6 @@ cplexasl.md
 ```
 
 More details on solver options: [Features guide](https://mp.ampl.com/features-guide.html).
-
 
 ## Retrieving solutions
 
@@ -115,7 +149,6 @@ Solve result table for CPLEX 22.1.1
 ```
 
 For general information, see [MP result codes guide](https://mp.ampl.com/features-guide.html#solve-result-codes).
-
 
 ## Changelog
 

@@ -63,9 +63,7 @@ Our enhanced Gurobi driver is now the default. The new driver provides significa
             ampl: solve;
 ```
 
-## At a glance
-
-### Resources
+## Resources
 
 * [Modeling guide](https://mp.ampl.com/model-guide.html)
 * [Features](#features)
@@ -74,61 +72,68 @@ Our enhanced Gurobi driver is now the default. The new driver provides significa
 * [Driver sources](https://github.com/ampl/mp/tree/develop/solvers/gurobi)
 * [Using with callbacks](https://ampls.ampl.com/)
 
-### Features
+## Features
 
-* Problem types: 
+### Problem types and algorithms
 
-  * LP, QP, QCP, SOCP, NLP
-  * MILP, MIQP, MIQCP, MISOCP
-  * MINLP
-  * <details>
-    <summary>General constraints and nonlinear expressions</summary>  
+:::{dropdown} Problem types
+:open:
+* LP, QP, QCP, SOCP, NLP
+* MILP, MIQP, MIQCP, MISOCP, MINLP
 
-    * log / exp / logistic
-    * min / max
-    * and / or
-    * abs
-    * sin / cos / tan / tanh
-    * pow / signpow
-    </details>
+Passed to Gurobi natively: quadratic terms, and as general constraints or
+expressions `min`, `max`, `abs`, `and`, `or`, indicator constraints, `exp`,
+`log`, logistic, `sin`, `cos`, `tan`, `tanh`, `pow` and `signpow`
+(`acc:...` options; see the
+[modeling guide](https://mp.ampl.com/model-guide.html) for the others).
+:::
 
-* Algorithms:
+:::{dropdown} LP and convex QP: simplex, barrier, PDHG
+`alg:method`: `-1` automatic (default), `0` primal simplex, `1` dual simplex,
+`2` barrier, `3`/`4` concurrent, `6` PDHG (first-order). PDHG on a GPU:
+`alg:pdhggpu=1`. After barrier, `bar:crossover=0` returns the interior
+solution without a basis.
+:::
 
-  * Simplex method, parallel barrier, PDHG ([options](#gurobi-options) `alg:method`, `alg:pdhggpu`)
-  * Nonlinear barrier (option `alg:optimalitytarget=1`)
-  * Branch-and-Bound, Branch-and-Cut (mainly `mip:` and `cut:` options)
-    
-* [Important features](https://mp.ampl.com/features-guide.html#important-features)
+:::{dropdown} MIP: branch-and-cut
+Relative and absolute gaps: `mip:gap`, `mip:gapabs`. Search focus:
+`mip:focus`. Most other controls are `mip:...` and `cut:...` options.
+:::
 
-* Features for all models:
-    * Problem input
-        * [Basis IO](https://mp.ampl.com/features-guide.html#input-and-output-basis)
-        * [Warm start](https://mp.ampl.com/features-guide.html#warm-start)
-        * [Multiple objectives](https://mp.ampl.com/features-guide.html#multiple-objectives)
+:::{dropdown} Nonconvex and nonlinear models: global
+Nonconvex quadratic terms and nonlinear functions are solved to global
+optimality by spatial branch-and-bound (`qp:nonconvex`, default `-1`).
+Gurobi's piecewise-linear approximation of nonlinear functions remains
+available with `pre:funcnonlinear=-1 acc:_expr=0`.
+:::
 
-    * Model investigation
+:::::{dropdown} Nonlinear models: local
+`alg:optimalitytarget=1` uses Gurobi's nonlinear barrier, which returns a
+local optimum without a gap. Only for continuous models: add `alg:relax=1`
+to solve the relaxation of a model with integer variables. Its iteration
+limit `nlbar:iterlim` (default 1000) can stop large models before a
+feasible point; raise it together with `lim:time`.
 
-        * [Condition number](https://mp.ampl.com/features-guide.html#kappa)
-        * [Multiple solutions](https://mp.ampl.com/features-guide.html#multiple-solutions)
-        * [Sensitivity analysis](https://mp.ampl.com/features-guide.html#sensitivity-analysis)
+::::{tab-set}
+:::{tab-item} Python
+```python
+ampl.solve(solver="gurobi", gurobi_options="optimalitytarget=1 nlbar:iterlim=100000")
+```
+:::
+:::{tab-item} AMPL
+```ampl
+ampl: option solver gurobi;
+ampl: option gurobi_options 'optimalitytarget=1 nlbar:iterlim=100000';
+ampl: solve;
+```
+:::
+::::
+:::::
 
-    * Dealing with infeasibility/unboundedness
-    
-        * [Feasibility relaxation](https://mp.ampl.com/eatures-guide.html#feasibility-relaxation)
-        * [IIS](https://mp.ampl.com/features-guide.html#irreducible-inconsistent-subset-iis)
-        * [Unbounded rays](https://mp.ampl.com/features-guide.html#unbounded-rays)
+### Solver features
 
-
-
-* Features for MIP models:
-    * Model investigation
-      * [Return MIP gap](https://mp.ampl.com/features-guide.html#return-mip-gap)
-      * [Return best dual bound](https://mp.ampl.com/features-guide.html#return-best-dual-bound)
-      * [Fixed model](https://mp.ampl.com/features-guide.html#fixed-model-return-basis-for-mip)
-    * Solution process:
-      * [Lazy constraints and user cuts](https://mp.ampl.com/features-guide.html#lazy-constraints-and-user-cuts)
-      * [Branching variable priorites](https://mp.ampl.com/features-guide.html#variable-priorities)
-      
+```{include} features.inc
+```
 
 ## Gurobi options
 
@@ -190,7 +195,6 @@ gurobi -=lim:
 
 More details on solver options: [Features guide](https://mp.ampl.com/features-guide.html).
 
-
 ## Specify solver options and solve
 
 After formulating the model in AMPL, execute the following to select `gurobi` as the solver and pass the two options:
@@ -230,7 +234,6 @@ After formulating the model in AMPL, execute the following to select `gurobi` as
             $ gurobi_options='kappa_exact=1' gurobi model  # Version 2
             $ gurobi model lim:time=100 wantsol=7          # Version 3
 ```
-
 
 ## Retrieve solutions
 
@@ -329,7 +332,6 @@ incompatible. See the details [here](https://mp.ampl.com/features-guide.html#irr
 
 Another approach to tackle infeasibilities is the feasibility relaxation to find a solution which only penalizes infeasibilities. 
 See the details  [here](https://mp.ampl.com/features-guide.html#feasibility-relaxation).
-
 
 ## Gurobi compute server and Gurobi cloud
 
