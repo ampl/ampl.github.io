@@ -97,12 +97,33 @@ found [here](https://mp.ampl.com/model-guide.html).
     * Note that AMPL/COPT will [approximate any nonlinear non-quadratic functions
       by piecewise-linear expressions](https://mp.ampl.com/modeling-expressions.html#piecewise-linear-approximation).
       This enables approximate solving of MINLP.
-  * NLP: barrier. To enable, submit a nonlinear problem with
-    the option `alg:_expr=1`. To locally solve the continuous relaxation of an MINLP,
-    add `alg:relax=1`.
-    * Note that the barrier local solver natively handles nonlinear functions, such as
-      trigonometric. In contrast, AMPL/COPT default behavior (`alg:_expr=0`) piecewise-linearly
-      approximates them, producing LP/QCP/MIP.
+  * NLP: barrier, a **local** solver. To use it, set option `acc:_expr=1`:
+    nonlinear functions (`exp`, `log`, trigonometric, powers, divisions) are then passed
+    to COPT natively as expressions. The result is a locally optimal solution
+    (`solve_result` `solved?`, message "locally optimal solution"); on a nonconvex
+    model, different starting points can give different local optima. To locally solve
+    the continuous relaxation of an MINLP, add `alg:relax=1`.
+    * With the default `acc:_expr=0`, AMPL/COPT instead approximates these functions
+      piecewise-linearly, producing an LP/QCP/MIP that COPT solves to optimality *for the
+      approximation*.
+    * `alg:nonconvex=2` (global search) addresses nonconvex quadratic terms; for general
+      nonlinear functions with `acc:_expr=1`, COPT returns a local optimum.
+
+    ::::{tab-set}
+    :::{tab-item} Python
+    ```python
+    ampl.solve(solver="copt", copt_options="acc:_expr=1 outlev=1")  # local NLP
+    print(ampl.solve_result, ampl.get_value("solve_message"))
+    ```
+    :::
+    :::{tab-item} AMPL
+    ```ampl
+    ampl: option solver copt;
+    ampl: option copt_options 'acc:_expr=1 outlev=1';  # local NLP
+    ampl: solve;
+    ```
+    :::
+    ::::
 
 * Features for all models:
     * Problem input
