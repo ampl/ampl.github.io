@@ -92,6 +92,36 @@ This package contains an all-new Xpress driver, that provides significantly exte
   * MIP, MIQP, MIQCP, MISOCP
   * MINLP
 
+* Algorithms for nonlinear models (NLP, MINLP, nonconvex QCP):
+
+  * **Global** (default, option `alg:nlpsolver=-1`): FICO Xpress Global, if the license
+    allows and the model has no user functions; otherwise a local solver.
+    Force it with `alg:nlpsolver=2`.
+  * **Local**: `alg:nlpsolver=1` uses the local solver chosen by `alg:localsolver`:
+    `0` Xpress-SLP (always available), `1` Knitro (only if Knitro is installed for
+    Xpress), `2` the Xpress Optimizer (convex quadratic problems only); the default `-1`
+    chooses automatically. The result is a locally optimal solution (`solve_result`
+    `solved?`, message "locally optimal solution"); different starting points can give
+    different local optima.
+  * Nonlinear functions are passed to Xpress natively as expressions (`acc:_expr=1`,
+    the default). `alg:global=0` linearizes the expressions that require Xpress Global.
+
+  ::::{tab-set}
+  :::{tab-item} Python
+  ```python
+  ampl.solve(solver="xpress", xpress_options="nlpsolver=1 localsolver=0")  # local, SLP
+  ampl.solve(solver="xpress", xpress_options="nlpsolver=2")                # global
+  ```
+  :::
+  :::{tab-item} AMPL
+  ```ampl
+  ampl: option solver xpress;
+  ampl: option xpress_options 'nlpsolver=1 localsolver=0';  # local, SLP
+  ampl: solve;
+  ```
+  :::
+  ::::
+
 * Features for all models:
     * Problem input
         * [Basis IO](https://mp.ampl.com/features-guide.html#input-and-output-basis)
