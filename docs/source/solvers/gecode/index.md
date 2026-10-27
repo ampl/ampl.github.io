@@ -73,11 +73,11 @@ Models with **integer variables only** and integer coefficients; continuous
 variables and fractional objective coefficients are rejected. The objective
 must be linear.
 
-Supported in constraints: linear and nonlinear integer arithmetic (`+`, `-`,
-`*`, integer powers, `div`, `mod`, `abs`, `min`, `max`, `floor`, `ceil`,
-`round`, `trunc`), comparisons including `!=`, logical operators (`and`,
+Supported in constraints: integer arithmetic (`+`, `-`, `*`, `div`, `mod`,
+`abs`, `min`, `max`), comparisons including `!=`, logical operators (`and`,
 `or`, `not`, `==>`, `<==>`, `exists`, `forall`), `if-then-else`, `alldiff`,
-`count` and `numberof`.
+`count` and `numberof`. Not supported: `^`, `/` and other real-valued
+functions; write `x*x` for a square and `div` for integer division.
 :::
 
 :::{dropdown} Propagation and branching
