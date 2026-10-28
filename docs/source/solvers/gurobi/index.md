@@ -130,10 +130,11 @@ ampl: solve;
 ::::
 :::::
 
-### Solver features
+### Instrumentation
 
-For the options used most often, such as time limits, gaps and tolerances,
-see the [MP options overview](https://mp.ampl.com/features-guide.html#important-features).
+For a generic summary of the options and features used most often, see
+[Important features](https://mp.ampl.com/features-guide.html#important-features)
+in the MP documentation.
 
 ```{include} features.inc
 ```

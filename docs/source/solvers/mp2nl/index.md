@@ -2,7 +2,10 @@
 
 # MP2NL
 
-MP2NL translates MP-compatible syntax and features to any AMPL solver.
+MP2NL translates MP-compatible syntax and features to any AMPL solver:
+the expressions described in the [MP Modeling Guide](https://mp.ampl.com/model-guide.html)
+(logical and counting constraints, piecewise-linear terms, complementarity, ...)
+are reformulated for a solver that reads only the classic NL format.
 While this might mostly benefit MINLP solvers, such as
 [Knitro](../knitro/index.md)
 or [Couenne](../couenne/index.md),
@@ -88,6 +91,12 @@ reformulations), and the notebooks tagged
 [mp2nl](https://colab.ampl.com/tags/mp2nl.html).
 
 ## Features
+
+### Instrumentation
+
+For a generic summary of the options and features used most often, see
+[Important features](https://mp.ampl.com/features-guide.html#important-features)
+in the MP documentation.
 
 ```{include} features.inc
 ```
