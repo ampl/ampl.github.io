@@ -68,7 +68,7 @@ Continuous variables only.
 ### Modeling with MP expressions
 
 :::::{dropdown} MP expressions: logic, counting, complementarity (MP2NL)
-LGO reads the classic NL format, without MP's expressions (`==>`, `or`, `atmost`, `count`, `alldiff`, piecewise-linear terms, ...), nor `complements`. Through MP2NL, MP reformulates them first.
+Natively, LGO solves nonlinear models with continuous variables, whose functions need not be smooth. MP's expressions (`==>`, `or`, `atmost`, `count`, `alldiff`, piecewise-linear terms, ...) and `complements` are not part of its native model type: through MP2NL, MP reformulates them into it first.
 
 Call [MP2NL](../mp2nl/index.md) as the solver and name LGO inside it; MP's options go into `mp2nl_options`, LGO's own into `lgo_options`.
 

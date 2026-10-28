@@ -67,7 +67,7 @@ Threads: `threads`.
 ### Modeling with MP expressions
 
 :::::{dropdown} MP expressions: logic, counting, complementarity (MP2NL)
-LINDO Global reads the classic NL format, without MP's expressions (`==>`, `or`, `atmost`, `count`, `alldiff`, piecewise-linear terms, ...), nor `complements`. Through MP2NL, MP reformulates them first.
+Natively, LINDO Global solves nonlinear models with continuous and integer variables. MP's expressions (`==>`, `or`, `atmost`, `count`, `alldiff`, piecewise-linear terms, ...) and `complements` are not part of its native model type: through MP2NL, MP reformulates them into it first.
 
 The LINDO Global driver includes the [MP2NL](../mp2nl/index.md) bridge: set `mp2nl=1` in `lindoglobal_options`. MP's own options (`cvt:...`, `sol:chk:...`) then go into the AMPL option `mp_options`.
 

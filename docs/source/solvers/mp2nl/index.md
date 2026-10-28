@@ -5,7 +5,8 @@
 MP2NL translates MP-compatible syntax and features to any AMPL solver:
 the expressions described in the [MP Modeling Guide](https://mp.ampl.com/model-guide.html)
 (logical and counting constraints, piecewise-linear terms, complementarity, ...)
-are reformulated into algebraic expressions, for solvers that accept only those.
+are reformulated into the solver's native model type, for example a smooth
+nonlinear model for Ipopt or a model with integer variables for an MINLP solver.
 While this might mostly benefit MINLP solvers, such as
 [Knitro](../knitro/index.md)
 or [Couenne](../couenne/index.md),

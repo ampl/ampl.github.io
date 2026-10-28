@@ -90,7 +90,7 @@ With BARONMP, the same controls are `alg:epsr`, `alg:epsa`, `alg:numloc`,
 ### Modeling with MP expressions
 
 :::::{dropdown} MP expressions: logic and counting (MP2NL)
-BARON reads the classic NL format, without MP's expressions (`==>`, `or`, `atmost`, `count`, `alldiff`, piecewise-linear terms, ...). Through MP2NL, MP reformulates them first. (BARON accepts `complements` natively.)
+Natively, BARON solves algebraic models with continuous and integer variables (polynomials, `exp`, `log`, powers), and complementarity (`complements`); trigonometric functions reach it only through MP2NL, which approximates them piecewise-linearly. MP's expressions (`==>`, `or`, `atmost`, `count`, `alldiff`, piecewise-linear terms, ...) are not part of its native model type: through MP2NL, MP reformulates them into it first.
 
 The BARON driver includes the [MP2NL](../mp2nl/index.md) bridge: set `mp2nl=1` in `baron_options`. MP's own options (`cvt:...`, `sol:chk:...`) then go into the AMPL option `mp_options`.
 

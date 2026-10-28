@@ -80,7 +80,7 @@ ampl: option ipopt_options 'mu_strategy=adaptive max_iter=3000';
 ### Modeling with MP expressions
 
 :::::{dropdown} MP expressions: logic, counting, complementarity (MP2NL)
-Ipopt reads the classic NL format, without MP's expressions (`==>`, `or`, `atmost`, `count`, `alldiff`, piecewise-linear terms, ...), nor `complements`. Through MP2NL, MP reformulates them first.
+Natively, Ipopt solves smooth nonlinear models with continuous variables. MP's expressions (`==>`, `or`, `atmost`, `count`, `alldiff`, piecewise-linear terms, ...) and `complements` are not part of its native model type: through MP2NL, MP reformulates them into it first.
 
 Call [MP2NL](../mp2nl/index.md) as the solver and name Ipopt inside it; MP's options go into `mp2nl_options`, Ipopt's own into `ipopt_options`.
 

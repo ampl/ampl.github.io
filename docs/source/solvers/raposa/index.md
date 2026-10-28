@@ -51,7 +51,7 @@ upper bounds).
 ### Modeling with MP expressions
 
 :::::{dropdown} MP expressions: logic, counting, complementarity (MP2NL)
-RAPOSa reads the classic NL format, without MP's expressions (`==>`, `or`, `atmost`, `count`, `alldiff`, piecewise-linear terms, ...), nor `complements`. Through MP2NL, MP reformulates them first.
+Natively, RAPOSa solves polynomial models with continuous and integer variables. MP's expressions (`==>`, `or`, `atmost`, `count`, `alldiff`, piecewise-linear terms, ...) and `complements` are not part of its native model type: through MP2NL, MP reformulates them into it first.
 
 Call [MP2NL](../mp2nl/index.md) as the solver and name RAPOSa inside it; MP's options go into `mp2nl_options`, RAPOSa's own into `raposa_options`.
 

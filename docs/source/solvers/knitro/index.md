@@ -82,7 +82,7 @@ optimum; `ms_maxsolves` sets how many. For MIP, `mip_multistart=1`.
 ### Modeling with MP expressions
 
 :::::{dropdown} MP expressions: logic and counting (MP2NL)
-Knitro reads the classic NL format, without MP's expressions (`==>`, `or`, `atmost`, `count`, `alldiff`, piecewise-linear terms, ...). Through MP2NL, MP reformulates them first. (Knitro accepts `complements` natively.)
+Natively, Knitro solves smooth nonlinear models with continuous and integer variables, and complementarity (`complements`). MP's expressions (`==>`, `or`, `atmost`, `count`, `alldiff`, piecewise-linear terms, ...) are not part of its native model type: through MP2NL, MP reformulates them into it first.
 
 The Knitro driver includes the [MP2NL](../mp2nl/index.md) bridge: set `mp2nl=1` in `knitro_options`. MP's own options (`cvt:...`, `sol:chk:...`) then go into the AMPL option `mp_options`.
 
