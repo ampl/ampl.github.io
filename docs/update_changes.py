@@ -52,7 +52,7 @@ SOLVERS = {
 
 # AMPL's default option solve_result_table, for drivers without `-!`
 GENERIC_SOLVE_RESULTS = """\
-Solve result table (AMPL default ranges; the driver does not list its own codes)
+Solve result table (AMPL default ranges)
           0- 99 solved: optimal for an optimization problem, feasible for a satisfaction problem
         100-199 solved? solution candidate returned but error likely
         200-299 infeasible
