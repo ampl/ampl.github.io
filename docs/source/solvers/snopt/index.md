@@ -5,6 +5,7 @@
 SNOPT is a widely used large-scale optimizer for difficult large-scale nonlinear problems. It incorporates proven methods that have wide applicability and are especially effective for nonlinear problems whose functions and gradients are expensive to evaluate.
 
 [Product Page](https://ampl.com/products/solvers/solvers-we-sell/snopt/)
+| [Features](#features)
 | [Options](options.md)
 | [Changes](changes.md)
 

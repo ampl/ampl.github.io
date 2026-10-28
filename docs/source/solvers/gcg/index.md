@@ -10,7 +10,7 @@ No user interaction is necessary, thus GCG provides decomposition-based MIP solv
 
 [Learn More](https://ampl.com/products/solvers/open-source-solvers/)
 | [GCG modeling guide](#gcg-modeling-guide)
-| [Features guide](https://mp.ampl.com/features-guide.html)
+| [Features](#features)
 | [Options](#solver-options)
 | [Changes](changes.md)
 
@@ -89,6 +89,9 @@ options; see the [GCG modeling guide](#gcg-modeling-guide).
 
 ### Solver features
 
+For the options used most often, such as time limits, gaps and tolerances,
+see the [MP options overview](https://mp.ampl.com/features-guide.html#important-features).
+
 ```{include} features.inc
 ```
 
@@ -116,7 +119,7 @@ options.md
 gcg-cpx.md
 ```
 
-More details on solver options: [Features guide](https://mp.ampl.com/features-guide.html).
+More details on solver options: [MP solver options](https://mp.ampl.com/features-guide.html#solver-options).
 
 ## Retrieving solutions
 

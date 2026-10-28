@@ -5,6 +5,7 @@
 The [COIN Couenne solver (COUENNE, Convex Over and Under ENvelopes for Nonlinear Estimation)](https://github.com/coin-or/Couenne) is a spatial branch & bound algorithm that implements linearization, bound reduction, and branching techniques for Mixed-integer, Nonlinear Programming (MINLP) problems. The purpose of Couenne is to find global optima of nonconvex MINLPs.
 
 [Learn More](https://ampl.com/products/solvers/open-source-solvers/)
+| [Features](#features)
 | [Options](#solver-options)
 
 [Download COUENNE](https://ampl.com/download/coin)
@@ -105,7 +106,6 @@ Full list of solver options:
 options.md
 ```
 
-More details on solver options: [Features guide](https://mp.ampl.com/features-guide.html).
 
 
 ## Retrieving solutions

@@ -132,6 +132,9 @@ ampl: solve;
 
 ### Solver features
 
+For the options used most often, such as time limits, gaps and tolerances,
+see the [MP options overview](https://mp.ampl.com/features-guide.html#important-features).
+
 ```{include} features.inc
 ```
 
@@ -193,7 +196,7 @@ run:
 gurobi -=lim:
 ```
 
-More details on solver options: [Features guide](https://mp.ampl.com/features-guide.html).
+More details on solver options: [MP solver options](https://mp.ampl.com/features-guide.html#solver-options).
 
 ## Specify solver options and solve
 

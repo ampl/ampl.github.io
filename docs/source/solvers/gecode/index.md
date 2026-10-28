@@ -9,6 +9,7 @@ puzzles, assignment, sequencing and other combinatorial problems. The driver
 reads AMPL's logical and constraint programming expressions directly.
 
 [Learn More](https://www.gecode.org/)
+| [Features](#features)
 | [Options](#solver-options)
 | [Changes](changes.md)
 

@@ -7,6 +7,7 @@ BARON is a general nonlinear optimizer capable of solving nonconvex optimization
 An experimental version of the driver, BARONMP, supports the extended modeling capabilities of the [MP library](https://mp.ampl.com/).
 
 [Product Page](https://ampl.com/products/solvers/solvers-we-sell/baron/)
+| [Features](#features)
 | [Options](options.md)
 | [BARONMP Options](baronmp.md)
 | [Changes](changes.md)
@@ -60,7 +61,6 @@ An experimental version of the driver, BARONMP, supports the extended modeling c
 ## Resources
 
 * [BARONMP modeling guide](https://mp.ampl.com/model-guide.html)
-* [Important features](https://mp.ampl.com/features-guide.html#important-features)
 * [Solver options](options.md)
 * [BARONMP solver options](baronmp.md)
 * [BARONMP solve result codes](#retrieving-solutions)
@@ -120,6 +120,9 @@ More: [Meta-driver MP2NL](https://mp.ampl.com/modeling-tools.html#meta-driver-mp
 
 ### Solver features (BARONMP)
 
+For the options used most often, such as time limits, gaps and tolerances,
+see the [MP options overview](https://mp.ampl.com/features-guide.html#important-features).
+
 ```{include} features.inc
 ```
 
@@ -131,7 +134,7 @@ options.md
 baronmp.md
 ```
 
-More details on solver options: [Features guide](https://mp.ampl.com/features-guide.html).
+More details on the BARONMP options: [MP solver options](https://mp.ampl.com/features-guide.html#solver-options).
 
 ## Retrieving solutions
 

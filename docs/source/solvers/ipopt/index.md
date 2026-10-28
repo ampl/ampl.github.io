@@ -7,6 +7,7 @@ for large-scale nonlinear continuous optimization. Ipopt uses an interior point 
 together with a filter linear search procedure.
 
 [Learn More](https://ampl.com/products/solvers/open-source-solvers/)
+| [Features](#features)
 | [Options](#solver-options)
 
 [Download IPOPT](https://ampl.com/download/coin)
@@ -111,7 +112,6 @@ Full list of solver options:
 options.md
 ```
 
-More details on solver options: [Features guide](https://mp.ampl.com/features-guide.html).
 
 
 ## Retrieving solutions

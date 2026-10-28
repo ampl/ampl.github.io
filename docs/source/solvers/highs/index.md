@@ -10,7 +10,7 @@ logical and other expressions that the solver does not accept natively.
 
 [Learn More](https://ampl.com/products/solvers/open-source-solvers/)
 | [Modeling guide](https://mp.ampl.com/model-guide.html)
-| [Features guide](https://mp.ampl.com/features-guide.html)
+| [Features](#features)
 | [Options](#solver-options)
 | [Changes](changes.md)
 
@@ -62,7 +62,6 @@ logical and other expressions that the solver does not accept natively.
 ## Resources
 
 * [Modeling guide](https://mp.ampl.com/model-guide.html)
-* [Important features](https://mp.ampl.com/features-guide.html#important-features)
 * [Solver options](#solver-options)
 * [Solve result codes](#retrieving-solutions)
 * [Driver sources](https://github.com/ampl/mp/tree/develop/solvers/highsmp)
@@ -97,6 +96,9 @@ Relative gap: `mip:gap`.
 
 ### Solver features
 
+For the options used most often, such as time limits, gaps and tolerances,
+see the [MP options overview](https://mp.ampl.com/features-guide.html#important-features).
+
 ```{include} features.inc
 ```
 
@@ -107,7 +109,7 @@ Full list of solver options:
 options.md
 ```
 
-More details on solver options: [Features guide](https://mp.ampl.com/features-guide.html).
+More details on solver options: [MP solver options](https://mp.ampl.com/features-guide.html#solver-options).
 
 ## Retrieving solutions
 

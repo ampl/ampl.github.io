@@ -5,6 +5,7 @@
 [Artelys Knitro](https://www.artelys.com/solvers/knitro/) is an especially powerful nonlinear solver, offering a range of state-of-the-art algorithms and options for working with both smooth and discrete objective and constraint functions in continuous and integer variables. It is designed for local optimization of large-scale problems with up to hundreds of thousands of variables.
 
 [Product Page](https://ampl.com/products/solvers/solvers-we-sell/knitro/)
+| [Features](#features)
 | [Options](options.md)
 | [Changes](changes.md)
 
