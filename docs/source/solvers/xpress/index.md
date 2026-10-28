@@ -81,8 +81,13 @@ This package contains an all-new Xpress driver, that provides significantly exte
 * LP, QP, QCP, SOCP, NLP
 * MILP, MIQP, MIQCP, MISOCP, MINLP
 
-Nonlinear functions are passed to Xpress natively as expressions
-(`acc:_expr=1`, the default).
+Received natively: `and`, `or`, indicator constraints, `min`, `max`, `abs`,
+piecewise-linear functions, SOS; quadratic terms; `exp`, `log`, powers, `/`,
+trigonometric and inverse trigonometric functions, as expressions
+(`acc:_expr=1`, the default). Hyperbolic functions are accepted, but MP
+reformulates them by default. MP reformulates the other constructs.
+
+All constructs: [native constraints and expressions by driver](https://mp.ampl.com/modeling-tools.html#full-cons-list).
 :::
 
 :::{dropdown} LP and convex QP: simplex, barrier, hybrid gradient

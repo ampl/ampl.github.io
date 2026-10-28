@@ -75,7 +75,11 @@ An experimental version of the driver, BARONMP, supports the extended modeling c
 * NLP, MINLP, nonconvex, solved to global optimality
 * LP, MILP
 
-With BARONMP, logical and other MP expressions are reformulated by MP.
+Received natively by BARONMP: quadratic terms, `exp`, `log`, `x^a`, `a^x`,
+`/`. MP reformulates logical constraints; trigonometric functions are
+[approximated piecewise-linearly](https://mp.ampl.com/modeling-expressions.html#piecewise-linear-approximation).
+
+All constructs: [native constraints and expressions by driver](https://mp.ampl.com/modeling-tools.html#full-cons-list).
 :::
 
 :::{dropdown} Global search: branch-and-reduce

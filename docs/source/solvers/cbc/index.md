@@ -70,10 +70,14 @@ logical and other expressions that the solver does not accept natively.
 
 :::{dropdown} Problem types
 :open:
-* LP, convex QP
-* MILP, MIQP
+* LP
+* MILP
 
-Logical and nonlinear expressions are reformulated by MP.
+Received natively: linear constraints and ranges, SOS. Quadratic objectives
+are not supported; nonlinear functions are [approximated piecewise-linearly](https://mp.ampl.com/modeling-expressions.html#piecewise-linear-approximation);
+logical constraints become big-M rows.
+
+All constructs: [native constraints and expressions by driver](https://mp.ampl.com/modeling-tools.html#full-cons-list).
 :::
 
 :::{dropdown} LP: CLP simplex and barrier

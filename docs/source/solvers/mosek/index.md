@@ -74,8 +74,14 @@ logical and other expressions that the solver does not accept natively.
 * LP, convex QP, convex QCP, conic programs (SOCP, exponential cones)
 * MILP, convex MIQP and MIQCP, mixed-integer conic programs
 
-Second-order and exponential cones are recognized from their algebraic form
+Received natively: indicator constraints, convex quadratic constraints and
+ranges, second-order (also rotated) and exponential cones, which MP
+recognizes from their algebraic form
 ([conic modeling](https://mp.ampl.com/modeling-expressions.html#socp)).
+Other logical constraints become big-M rows; other nonlinear functions are
+[approximated piecewise-linearly](https://mp.ampl.com/modeling-expressions.html#piecewise-linear-approximation).
+
+All constructs: [native constraints and expressions by driver](https://mp.ampl.com/modeling-tools.html#full-cons-list).
 :::
 
 :::{dropdown} LP and conic: interior point, simplex

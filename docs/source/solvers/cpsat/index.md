@@ -87,6 +87,8 @@ other expressions where possible. Real-valued functions (`/`, `exp`, `log`,
 [modeling guide](https://mp.ampl.com/model-guide.html) and the
 [acceptance options](https://mp.ampl.com/modeling-tools.html#acceptance-options)
 (`cpsat -=acc:`).
+
+All constructs: [native constraints and expressions by driver](https://mp.ampl.com/modeling-tools.html#full-cons-list).
 :::
 
 :::{dropdown} Search

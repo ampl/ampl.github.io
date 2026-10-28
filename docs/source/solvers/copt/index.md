@@ -80,6 +80,13 @@ logical and other expressions that the solver does not accept natively.
 * MILP, (non-)convex MIQP, (non-)convex MIQCP, mixed-integer conic programs
 * NLP (local)
 * MINLP (approximated)
+
+Received natively: indicator constraints, SOS, quadratic constraints,
+second-order (also rotated) and exponential cones. With `acc:_expr=1`, also
+`abs` and all nonlinear functions, as expressions; by default they are
+[approximated piecewise-linearly](https://mp.ampl.com/modeling-expressions.html#piecewise-linear-approximation).
+
+All constructs: [native constraints and expressions by driver](https://mp.ampl.com/modeling-tools.html#full-cons-list).
 :::
 
 :::{dropdown} LP: simplex, barrier, PDLP

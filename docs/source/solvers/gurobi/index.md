@@ -81,11 +81,12 @@ Our enhanced Gurobi driver is now the default. The new driver provides significa
 * LP, QP, QCP, SOCP, NLP
 * MILP, MIQP, MIQCP, MISOCP, MINLP
 
-Passed to Gurobi natively: quadratic terms, and as general constraints or
-expressions `min`, `max`, `abs`, `and`, `or`, indicator constraints, `exp`,
-`log`, logistic, `sin`, `cos`, `tan`, `tanh`, `pow` and `signpow`
-(`acc:...` options; see the
-[modeling guide](https://mp.ampl.com/model-guide.html) for the others).
+Received natively: `and`, `or`, indicator constraints, `min`, `max`, `abs`,
+piecewise-linear functions, SOS; quadratic terms; `exp`, `log`, `x^a`, `a^x`,
+`/`, `sin`, `cos`, `tan`, `tanh`, logistic and signed power. MP reformulates
+the other constructs.
+
+All constructs: [native constraints and expressions by driver](https://mp.ampl.com/modeling-tools.html#full-cons-list).
 :::
 
 :::{dropdown} LP and convex QP: simplex, barrier, PDHG

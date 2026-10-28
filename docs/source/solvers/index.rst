@@ -86,6 +86,9 @@ Linear and Mixed-Integer Solvers
 
 Linear and mixed-integer solvers are advancing into the
 nonlinear domain (MINLP,  *Mixed Integer NonLinear Programming*).
+Which constraints and expressions each MP-based driver receives natively is
+compared in the MP documentation:
+`native constraints and expressions by driver <https://mp.ampl.com/modeling-tools.html#full-cons-list>`_.
 
 .. csv-table::
    :file: _tables/slv_lin.csv
@@ -95,7 +98,7 @@ nonlinear domain (MINLP,  *Mixed Integer NonLinear Programming*).
 
 .. [1] GPU-accelerated algorithms, such as `PDLP <https://ampl.com/cuPDLP>`_, are available.
 .. [2] Conic programming: MOSEK and COPT support SOCP and `exponential cones <https://amplopt.streamlit.app/Logistic_Regression>`_, other solvers only SOCP.
-.. [3] (MI)NLP: for solvers not supporting it directly, `piecewise-linear approximation <https://mp.ampl.com/modeling-expressions.html#piecewise-linear-approximation>`_ is applied.
+.. [3] Approximated: quadratic or nonlinear terms that the solver does not accept natively are approximated by `piecewise-linear functions <https://mp.ampl.com/modeling-expressions.html#piecewise-linear-approximation>`_.
 .. [4] COPT solves NLP to local optimality.
 
 .. _nonlinear-solvers:

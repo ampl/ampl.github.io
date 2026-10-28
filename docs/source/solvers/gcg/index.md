@@ -75,10 +75,14 @@ No user interaction is necessary, thus GCG provides decomposition-based MIP solv
 
 :::{dropdown} Problem types
 :open:
-* LP, QP, QCP, NLP
-* MILP, MIQP, MIQCP, MINLP
+* LP
+* MILP
 
-GCG is built on SCIP; decomposition applies to MIP models.
+Received natively: linear constraints and ranges. GCG does not accept
+quadratic objectives: quadratic and nonlinear terms are [approximated piecewise-linearly](https://mp.ampl.com/modeling-expressions.html#piecewise-linear-approximation);
+logical constraints become big-M rows. Decomposition applies to MIP models.
+
+All constructs: [native constraints and expressions by driver](https://mp.ampl.com/modeling-tools.html#full-cons-list).
 :::
 
 :::{dropdown} Dantzig-Wolfe and Benders decomposition

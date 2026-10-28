@@ -79,9 +79,11 @@ This package contains an all-new CPLEX driver, that provides significantly exten
 * LP, convex QP and QCP, SOCP, nonconvex QP objective
 * MILP, MIQP, MIQCP, MISOCP
 
-Logical constraints become CPLEX indicator constraints where possible.
-Other nonlinear functions are
-[approximated piecewise-linearly](https://mp.ampl.com/modeling-expressions.html#piecewise-linear-approximation).
+Received natively: indicator constraints, piecewise-linear functions, SOS,
+quadratic constraints. Other logical constraints become indicator
+constraints or big-M rows; other nonlinear functions are [approximated piecewise-linearly](https://mp.ampl.com/modeling-expressions.html#piecewise-linear-approximation).
+
+All constructs: [native constraints and expressions by driver](https://mp.ampl.com/modeling-tools.html#full-cons-list).
 :::
 
 :::{dropdown} LP and QP: simplex, barrier, sifting, network

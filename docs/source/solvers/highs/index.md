@@ -75,9 +75,12 @@ logical and other expressions that the solver does not accept natively.
 * LP, convex QP
 * MILP
 
-Logical and nonlinear expressions are reformulated by MP; nonlinear
-functions are
-[approximated piecewise-linearly](https://mp.ampl.com/modeling-expressions.html#piecewise-linear-approximation).
+Received natively: linear constraints and ranges, and a quadratic objective
+for models without integer variables (for MIQP, `cvt:quadobj=0` approximates
+the quadratic objective). Logical constraints become big-M rows; quadratic
+constraints and nonlinear functions are [approximated piecewise-linearly](https://mp.ampl.com/modeling-expressions.html#piecewise-linear-approximation).
+
+All constructs: [native constraints and expressions by driver](https://mp.ampl.com/modeling-tools.html#full-cons-list).
 :::
 
 :::{dropdown} LP: simplex, interior point, PDLP

@@ -76,8 +76,13 @@ logical and other expressions that the solver does not accept natively.
 * LP, QP, QCP, SOCP, NLP
 * MILP, MIQP, MIQCP, MINLP
 
-Nonlinear functions are passed to SCIP natively as expressions and solved
-to global optimality.
+Received natively and solved to global optimality: `and`, `or`, indicator
+constraints, `abs`, SOS, quadratic constraints and ranges, `exp`, `log`,
+`x^a`, `sin`, `cos`. MP reformulates `tan`, inverse trigonometric and
+hyperbolic functions, `/` and the other constructs, approximating functions
+piecewise-linearly where needed.
+
+All constructs: [native constraints and expressions by driver](https://mp.ampl.com/modeling-tools.html#full-cons-list).
 :::
 
 :::{dropdown} MIP and MINLP: branch-and-cut, spatial branch-and-bound
