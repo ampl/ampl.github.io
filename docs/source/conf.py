@@ -117,7 +117,7 @@ redirects = {
 }
 solvers_dir = os.path.join(os.path.dirname(__file__), "solvers")
 for solver in os.listdir(solvers_dir):
-    if solver.startswith("."):
+    if solver.startswith((".", "_")):  # hidden folders, _include, _tables
         continue
     redirects["solvers/x-gurobi"] = f"gurobi/index.html"
     redirects["solver_options/x-gurobi_options"] = f"../solvers/gurobi/options.html"
