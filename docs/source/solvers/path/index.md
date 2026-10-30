@@ -8,21 +8,45 @@ his (current or former) students Steven P. Dirkse and Todd S. Munson.
 
 ## How to use it
 
-Install the Python API for AMPL and the PATH module:
+```{eval-rst}
 
-```bash
-python -m pip install amplpy --upgrade
-python -m amplpy.modules install path
-```
+.. tab-set::
 
-Use PATH from Python:
+   .. tab-item:: Python
 
-```python
-from amplpy import AMPL
+        How to install using `amplpy <https://amplpy.ampl.com>`_:
 
-ampl = AMPL()
-# Load your model and data, then solve:
-ampl.solve(solver="path")
+        .. code-block:: bash
+
+            # Install Python API for AMPL:
+            $ python -m pip install amplpy --upgrade
+
+            # Install AMPL & solver modules:
+            $ python -m amplpy.modules install path # install PATH
+
+            # Activate your license (e.g., free ampl.com/ce or ampl.com/academia licenses):
+            $ python -m amplpy.modules activate <your-license-uuid>
+
+        How to use:
+
+        .. code-block:: python
+
+            from amplpy import AMPL
+            ampl = AMPL()
+            ...
+            ampl.solve(solver="path", path_options="option1=value1 option2=value2")
+
+        Learn more about what we have to offer to implement and deploy `Optimization in Python <https://ampl.com/python/>`_.
+
+   .. include:: /solvers/_include/other_apis.rst.inc
+
+   .. tab-item:: AMPL
+
+        .. code-block:: ampl
+
+            ampl: option solver path; # change the solver
+            ampl: option path_options 'option1=value1 option2=value2'; # specify options
+            ampl: solve; # solve the problem
 ```
 
 ## License setup

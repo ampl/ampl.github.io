@@ -37,7 +37,11 @@ IBM ILOG CP Optimizer is a generic CP-based system to model and solve scheduling
             from amplpy import AMPL
             ampl = AMPL()
             ...
-            ampl.solve(solver="iglocp", ilogcp_options="option1=value1 option2=value2")
+            ampl.solve(solver="ilogcp", ilogcp_options="option1=value1 option2=value2")
+
+        Learn more about what we have to offer to implement and deploy `Optimization in Python <https://ampl.com/python/>`_.
+
+   .. include:: /solvers/_include/other_apis.rst.inc
 
    .. tab-item:: AMPL
 
