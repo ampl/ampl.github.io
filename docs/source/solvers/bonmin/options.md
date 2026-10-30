@@ -10,7 +10,7 @@ ampl: solve; # solve the problem
 Solver options obtained with `$ bonmin -=`.
 
 ```
-Bonmin 1.8.8 using Cbc 2.10.5 and Ipopt 3.12.13
+Bonmin 1.8.9 using Cbc 2.10.13 and Ipopt 3.14.20
 acceptable_compl_inf_tol                       Acceptance threshold for the complementarity conditions
 acceptable_constr_viol_tol                     Acceptance threshold for the constraint violation
 acceptable_dual_inf_tol                        Acceptance threshold for the dual infeasibility
@@ -131,15 +131,11 @@ honor_original_bounds                          If no, solution might slightly vi
 linear_scaling_on_demand                       Enables heuristic for scaling only when seems required
 linear_solver                                  Linear solver to be used for step calculation
 linear_system_scaling                          Method for scaling the linear systems
-ma27_pivtol                                    Pivot tolerance for the linear solver MA27
-ma27_pivtolmax                                 Maximal pivot tolerance for the linear solver MA27
-ma57_pivot_order                               Controls pivot order in MA57
-ma57_pivtol                                    Pivot tolerance for the linear solver MA57
-ma57_pivtolmax                                 Maximal pivot tolerance for the linear solver MA57
 max_cpu_time                                   CPU time limit
 max_iter                                       Maximum number of iterations
 max_refinement_steps                           Maximal number of iterative refinement steps per linear system solve
 max_soc                                        Maximal number of second order correction trial steps
+max_wall_time                                  Wallclock time limit
 maxit                                          Maximum number of iterations
 min_refinement_steps                           Minimum number of iterative refinement steps per linear system solve
 mu_init                                        Initial value for the barrier parameter
@@ -152,7 +148,6 @@ obj_scaling_factor                             Scaling factor for the objective 
 option_file_name                               File name of options file (default: ipopt.opt)
 outlev                                         Verbosity level
 output_file                                    File name of an output file (leave unset for no file output)
-pardiso_matching_strategy                      Matching strategy for linear solver Pardiso
 print_level                                    Verbosity level
 print_options_documentation                    Print all available options (for ipopt.opt)
 print_user_options                             Toggle printing of user options
@@ -160,11 +155,7 @@ required_infeasibility_reduction               Required infeasibility reduction 
 slack_bound_frac                               Desired minimal relative distance of initial slack to bound
 slack_bound_push                               Desired minimal absolute distance of initial slack to bound
 tol                                            Desired convergence tolerance (relative)
-wantsol                                        solution report without -AMPL: sum of
-		1 ==> write .sol file
-		2 ==> print primal variable values
-		4 ==> print dual variable values
-		8 ==> do not print solution message
+wantsol                                        solution report without -AMPL: sum of 1 (write .sol file), 2 (print primal variable values), 4 (print dual variable values), 8 (do not print solution message)
 warm_start_bound_push                          Enables to specify how much should variables should be pushed inside the feasible region
 warm_start_init_point                          Enables to specify bound multiplier values
 warm_start_mult_bound_push                     Enables to specify how much should bound multipliers should be pushed inside the feasible region

@@ -128,3 +128,9 @@ IPOPT solve result codes:
 :language: none
 ```
 
+## Changelog
+
+```{toctree}
+changes.md
+```
+
