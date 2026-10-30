@@ -1,5 +1,31 @@
 # MP2NL Changelog
 
+## 20261029
+- Version 0.2.
+- Configuration *alglib4nl* (ALGLIB for AMPL), from Knitro's: logical
+  expressions, if-then-else, min/max/abs, SOS and indicators are
+  linearized by MP; complementarity is converted with
+  *cvt:compl=1* (product): ALGLIB ignores NL complementarity
+  constraints, and the disjunctive and Fischer-Burmeister forms failed
+  on the tests. Its time limit and relative gap are *timeout* and
+  *pdgap*.
+- *lim:time* (did nothing), and new *mip:gap*, *mip:gapabs*, are
+  passed to the subsolver as its own keywords (e.g., Knitro's
+  *maxtime*, *mip_opt_gap_rel*, *mip_opt_gap_abs*; BARON's *maxtime*,
+  *epsr*, *epsa*) for the known configurations. They can be set per
+  objective in a multi-objective solve (suffixes *.option_timelimit*,
+  *.option_mipgap*), which used to fail with "Option not found".
+- Fix: in a multi-objective solve (*obj:multi*), the NL file of
+  every pass after the first had a wrong header (counts only for
+  the items added since the previous pass); the subsolver read
+  wrong data or stopped.
+- Objective suffixes (e.g., *.objpriority*) are no longer passed
+  on to the auxiliary variables and constraints of the objective's
+  conversion. Knitro 16.0.0 with *use_asl=0* misreads binary NL
+  files with any suffix, so a multi-objective solve of a model with
+  logical expressions returned a zero solution.
+
+
 ## 20260624
 - Changes in MP, in particular:
   - Option *cvt:pow2_as_qp* prefers quadratization

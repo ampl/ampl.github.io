@@ -1,5 +1,14 @@
 # amplpy Changelog
 
+## 20261028
+
+### 0.18.1
+- Remove Python 3.8 wheel builds from GitHub Actions and Azure Pipelines.
+- Fix type hints for indexed entities, iteration, dataframes, callbacks, and solve results; add the `py.typed` marker.
+- Add Python 3.15 and Python 3.15t wheel builds.
+- Fix `Constraint.drop()` and `Constraint.restore()` on indexed instances affecting the whole constraint family.
+- Fix `Objective.drop()` and `Objective.restore()` on indexed instances affecting the whole objective family.
+
 ## 20260721
 
 ### 0.18.0

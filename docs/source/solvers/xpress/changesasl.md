@@ -1,5 +1,21 @@
 # XPRESSASL Changelog
 
+## 20261029
+- Fix: with mp2nl=1, multiobjective models (emulated by MP2NL)
+  crashed or returned no solution.
+- With mp2nl=1, an invalid option or another MP2NL error is reported
+  in the solution file (solve_result_num 500 and the message); before,
+  the driver exited without a solution file (AMPL reported 999).
+- Fixed *pooldups* (it is a control of the solution pool object and was
+  rejected); removed *poolfeastol* and *poolmiptol*, which never worked.
+- Fixed the control types of *objscalefactor* (integer) and of
+  *maxcuttime*, *maxstalltime*, *tunermaxtime* (double).
+- New keywords *timelimit* (*timelim*) and *soltimelimit*; *maxtime* is
+  deprecated by XPRESS. *concurrentthreads* and *lpthreads* are back,
+  on CONCURRENTTHREADS.
+- Defaults in the keyword descriptions updated to XPRESS 9.8.1;
+  README regenerated from `xpress -=`.
+
 ## 20220112
 - Updated for XPRESS 8.13, linked with libs version 39.01.02
 - New keywords: 

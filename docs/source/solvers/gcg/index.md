@@ -140,6 +140,12 @@ GCG solve result codes can be obtained by running `gcg -!` or `ampl: shell "gcg 
 :language: none
 ```
 
+:::{dropdown} Solve result codes of the gcg-cpx driver
+```{literalinclude} solve_results_gcg-cpx.inc
+:language: none
+```
+:::
+
 For general information, see [MP result codes guide](https://mp.ampl.com/features-guide.html#solve-result-codes).
 
 ## Changelog

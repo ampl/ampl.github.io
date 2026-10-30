@@ -1,5 +1,23 @@
 # GUROBIASL Changelog
 
+## 20261029
+- Fix: with multiobj=1, an objective whose sense differs from that of
+  the current objective was optimized in the wrong direction; its
+  weight is now negated.
+- Fix: with mp2nl=1, multiobjective models (emulated by MP2NL)
+  crashed or returned no solution.
+- With mp2nl=1, an invalid option or another MP2NL error is reported
+  in the solution file (solve_result_num 500 and the message); before,
+  the driver exited without a solution file (AMPL reported 999).
+- Keyword descriptions aligned with Gurobi 13.0.3: *lpwarmstart* and
+  *crossoverbasis* gain the automatic value -1 (their default),
+  *tunetimelimit* (default 86400) and *tunetrials* (default 0 =
+  automatic) state the current defaults, *aggregate* lists 2 =
+  aggressive, *cuts* 3 = very aggressive, *iismethod* the four methods,
+  *nlpheur* the -1 default and levels 1 to 3, *nodemethod* no longer
+  marks 1 as default, *presparsify* distinguishes 1 (MIP) and 2 (all).
+  Same change in the public asl/solvers/gurobi/gurobi.c.
+
 ## 20231208
 - Relinked with Gurobi 11.0
 - Added control *solutiontarget*

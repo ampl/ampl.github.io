@@ -1,5 +1,41 @@
 # GUROBI Changelog
 
+## 20261029
+- Prepare for Gurobi 14 (options available when built against 14):
+  *alg:method=7* (NL barrier), *alg:concurrentmethod=4*,
+  *cut:oa*, *mip:noreltreeheur*, *mip:pdhgheursolutions*,
+  *mip:pdhgheurtime*, *mip:pdhgheurwork*, *nlbar:initmu*,
+  *nlbar:startpush*; *alg:pdhggpu* follows the 14 range.
+  New option *obj:multi:inheritparams* (all versions) controls
+  parameter inheritance of multi-objective passes, whose Gurobi
+  default changes in 14. Solution pool values are read via
+  *PoolNX*/*PoolNObjVal*.
+- Add separate fixed-model limits *mip:basis:timelimit* and
+  *mip:basis:iterlimit*.
+- Align option documentation with Gurobi 13.0.3 parameters:
+  - Value lists updated: *pre:aggregate* (2 = aggressive),
+    *iis:method* (3 = LP-relaxation IIS for MIP, revised texts),
+    *bar:crossoverbasis* (-1 = automatic, the default),
+    *alg:pdhggpu* (0/1), *alg:method* (automatic choice text).
+  - Individual *cut:...* controls document the -1..2 range;
+    only *cut:cuts* goes up to 3.
+  - Documented ranges and defaults corrected for *mip:gap*,
+    *mip:gapabs*, *mip:heurfrac*, *mip:inttol*, *lim:sol*, *lim:mem*,
+    *lim:softmem*, *mip:improvework*, *tech:threads*,
+    *tech:concurrentmip*, *pre:sos1bigm*, *pre:sos2bigm*,
+    *tech:tunetimelim*, *tech:tunetrials*, *tech:tuneresults* and
+    *tech:tunedynamicjobs*. Gurobi itself validates parameter values.
+  - Option *tech:tuneusefilename* removed: the parameter is not
+    available in the Gurobi C library (grbtune only).
+  - *pre:funcpiece...* options note the deprecation of function
+    constraints since Gurobi 13.0.
+  - New options: *cut:dualimplied*, *cut:liftproject*,
+    *cut:projimplied*, *cut:psd*, *cut:strongcg*,
+    *mip:fixvarsinindicators*, *pre:crush*, *tech:solfiles*,
+    *tech:tunecleanup*, *tech:tunecriterion*, *tech:tunemetric*,
+    *tech:tunetargetmipgap*, *tech:tunetargettime*.
+
+
 ## 20260908
 - Updated to Gurobi 13.0.3 that includes bug fixes.
 - Changes in MP:

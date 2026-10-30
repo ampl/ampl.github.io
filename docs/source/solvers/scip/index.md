@@ -131,6 +131,12 @@ SCIP solve result codes can be obtained by running `scip -!` or `ampl: shell "sc
 :language: none
 ```
 
+:::{dropdown} Solve result codes of the scip-cpx driver
+```{literalinclude} solve_results_scip-cpx.inc
+:language: none
+```
+:::
+
 For general information, see [MP result codes guide](https://mp.ampl.com/features-guide.html#solve-result-codes).
 
 ## Changelog

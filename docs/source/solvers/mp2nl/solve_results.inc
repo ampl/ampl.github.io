@@ -1,4 +1,4 @@
-Solve result table for MP2NL 0.1
+Solve result table for MP2NL 0.2
           0- 99 solved: optimal for an optimization problem,
                 feasible for a satisfaction problem 
         100-199 solved? solution candidate returned but error likely 

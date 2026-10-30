@@ -72,7 +72,7 @@ acc:lineq
       1 - Accepted but automatic redefinition will be used where possible
       2 - Accepted natively and preferred
 
-acc:linfn (acc:linfunccon)
+acc:linfunccon
       Solver acceptance level for 'LinearFunctionalConstraint' as expression,
       default 4:
 
@@ -154,7 +154,7 @@ acc:nlcon (acc:nlalgcon)
       1 - Accepted but automatic redefinition will be used where possible
       2 - Accepted natively and preferred
 
-acc:powc (acc:powconstexp)
+acc:powconstexp
       Solver acceptance level for 'PowConstExpConstraint' as either constraint
       or expression, default 4:
 
@@ -173,7 +173,7 @@ acc:quadeq
       1 - Accepted but automatic redefinition will be used where possible
       2 - Accepted natively and preferred
 
-acc:quadfn (acc:quadfunccon)
+acc:quadfunccon
       Solver acceptance level for 'QuadraticFunctionalConstraint' as
       expression, default 4:
 
@@ -203,13 +203,6 @@ acc:quadrange (acc:quadrng)
       1 - Accepted but automatic redefinition will be used where possible
       2 - Accepted natively and preferred
 
-alg:boxtol (boxtol)
-      Boxes smaller than this are eliminated (default 1e-8, min 1e-12).
-
-alg:cutoff (cutoff)
-      Ignore solutions that are no better than this value (default: no
-      cutoff).
-
 alg:deltaa (deltaa)
       Adjustment parameter for delta values.
 
@@ -222,9 +215,6 @@ alg:deltat (deltat)
 alg:deltaterm (deltaterm)
       Delta termination criterion.
 
-alg:dolocal (dolocal)
-      0/1: whether to use local search during upper bounding (default 1).
-
 alg:epsa (epsa)
       EpsA convergence tolerance (default 1e-6). BARON stops if the current
       function value f satisfies abs(f - L) <= epsa, where L is the currently
@@ -234,10 +224,6 @@ alg:epsr (epsr)
       BARON's EpsR convergence tolerance (default 1e-9). BARON stops if the
       current function value f satisfies abs(f - L) <= abs(L*epsr), where L is
       the currently best available bound on f.
-
-alg:feastol (feastol, absconfeastol)
-      Absolute constraint and bound feasibility tolerance (default 1e-6, min
-      1e-12).
 
 alg:firstfeas (firstfeas)
       If set to 1, BARON will terminate once it finds numsol feasible
@@ -249,37 +235,8 @@ alg:firstloc (firstloc)
       irrespective of solution quality. Default is 0, meaning that BARON will
       search for the best numsol feasible solutions.
 
-alg:isoltol (isoltol)
-      Feasible solutions closer than this are considered identical (default
-      1e-4).
-
-alg:nouter1 (nouter1)
-      Number of outer approximators of convex univariate functions (default
-      4).
-
-alg:noutiter (noutiter)
-      Number of rounds of cutting-plane generation at each node (default 4).
-
-alg:noutpervar (noutpervar)
-      Number of outer approximators per variable for convex multivariate
-      functions (default 4).
-
-alg:numloc (numloc)
-      Number of local searches in preprocessing:
-
-      -2 - Automatic (default)
-      -1 - Until global optimality is proven or the time limit is reached
-      n>=0 - n local searches.
-
-alg:outgrid (outgrid)
-      Number of grid points per variable for the outer approximators of convex
-      multivariate functions (default 20).
-
 alg:relax (relax)
       0*/1: Whether to relax integrality of variables.
-
-alg:relfeastol (relconfeastol)
-      Relative constraint feasibility tolerance (default 0, max 0.1).
 
 alg:start (warmstart)
       Whether to use incoming primal (and dual, for LP) variable values in a
@@ -290,25 +247,6 @@ alg:start (warmstart)
       2 - Yes (for LP: omitting the incoming alg:basis, if any)
       3 - Yes (for LP: together with the incoming alg:basis, if any;
           default).
-
-alg:wantdual (wantdual)
-      0/1: whether BARON computes dual values for the best solution (default
-      0).
-
-branch:point (brptstra)
-      Branching point selection strategy:
-
-      0 - Dynamic (default)
-      1 - Omega-branching
-      2 - Bisection
-      3 - Convex combination.
-
-branch:var (brvarstra)
-      Branching variable selection strategy:
-
-      0 - Dynamic (default)
-      1 - Largest violation
-      2 - Longest edge.
 
 cvt:bigM (cvt:bigm, cvt:mip:bigM, cvt:mip:bigm)
       Default value of big-M for linearization of logical constraints. Not
@@ -333,10 +271,11 @@ cvt:dvelim (dvelim)
       and polynomial expressions:
 
       0 - Do not eliminate, always instantiate the variables.
-      1 - Eliminate only those used once.
-      2 - (Default). Always substitute where possible, even if the variable
-          needs to be instantiated for use in other places. Can introduce
-          redundancy but proves efficient in many cases.
+      1 - Eliminate only those used 1x. This can increase model density but
+          greatly simplifies some models.
+      2 - Always substitute where possible, even if the variable needs to be
+          instantiated for use in other places. Can introduce redundancy, but
+          seems best for some models (default.)
 
       See also cvt:pre:unnest, as well as AMPL options linelim and substout.
 
@@ -344,14 +283,8 @@ cvt:expcones (expcones)
       0*/1: Recognize exponential cones.
 
 cvt:expr:nlassign (expr:nlassign)
-      Above which reference count, an algebraic formula node should be
-      assigned to a variable (see acc: options). 0 means all nodes assigned.
-      Default 1.
-
-cvt:expr:nlreif (expr:nlreif, expr:nlreify)
-      Above which reference count, a logical formula node should be assigned
-      (reified) to a variable (see acc: options). 0 means all nodes reified.
-      Default 1.
+      Above which reference count, a formula node should be assigned to a
+      variable (see acc: options). 0 means all nodes outlined. Default 1.
 
 cvt:mip:eps (cvt:cmp:eps, cmp:eps)
       Tolerance for strict comparison of continuous variables for MIP. Applies
@@ -360,18 +293,9 @@ cvt:mip:eps (cvt:cmp:eps, cmp:eps)
       should be larger or equal to the solver's feasibility tolerance.
       Default: 1e-4.
 
-cvt:mip:intprodbits (intprodbits)
-      Products x*y of variables, when not accepted natively, with an integer
-      factor of finite bounds (and the other factor bounded): exact MIP
-      reformulation by binary expansion of the integer factor with the smaller
-      range if it needs at most this many binary variables. Default 30.
-      Otherwise, and with 0, such products are approximated as
-      ((x+y)^2-x^2-y^2)/2 with piecewise-linear squares, as for continuous
-      factors. Products with a binary factor are always exact.
-
 cvt:multoutcard (multoutcard)
       Up to which (estimated) QP matrix cardinality should a product of 2
-      linear expressions be multiplied out. Default 1e+09.
+      linear expressions be multiplied out. Default 1e9.
 
       Low value can speed up model input, but prone to numerical issues.
 
@@ -384,20 +308,6 @@ cvt:names (names, modelnames)
       2 - Read names from AMPL, but create generic names if not provided
       3 - Create generic names.
 
-cvt:nlobj (passnlobj)
-      0/1*: Pass nonlinear objective terms to the solver. When 0, if the
-      solver accepts nonlinear constraints, such a constraint will be created
-      with those, otherwise linearly approximated. With cvt:quadobj=0, ensures
-      the objective is linear.
-
-cvt:pl:domain (pl:domain, pldomain)
-      Max absolute value of the argument of a piecewise-linear expression
-      converted to SOS2 (and further to MIP if SOS2 is not accepted natively).
-      In the MIP reformulation, the solver's feasibility tolerance is
-      amplified by up to this value. Not used by default: then an unbounded
-      argument is an error in the MIP reformulation, and native SOS2 gets
-      exact rays for unbounded sides. Use with care (prefer tight bounds).
-
 cvt:plapprox:domain (plapprox:domain, plapproxdomain)
       For piecewise-linear approximated functions, both arguments and result
       are bounded to +-[pladomain]. Default 1e6.
@@ -405,47 +315,11 @@ cvt:plapprox:domain (plapprox:domain, plapproxdomain)
 cvt:plapprox:reltol (plapprox:reltol, plapproxreltol)
       Relative tolerance for piecewise-linear approximation. Default 0.01.
 
-cvt:pow2_as_qp (pow2_as_qp, pow2asqp)
-      0/1*: whenever both quadratics and ^2 are accepted, submit (expr)^2 as
-      out-multiplied quadratics, if (expr) is linear.
-
-      See also cvt:multoutcard, cvt:quadobj, cvt:quadcon.
-
 cvt:pre:all
       0/1*: Set to 0 to disable most presolve in the flat converter.
 
-cvt:pre:auxint (auxint)
-      0*/1: Submit as integer the auxiliary result variables whose integrality
-      is implied by their defining constraint (if-then-else, min, max, abs,
-      count, numberof, integer linear and quadratic functions of integer
-      arguments). Default 0: submit them as continuous (MP keeps the
-      integrality for its reformulations). Variables required to have their
-      type by a submitted constraint, e.g., indicator binaries, are not
-      affected.
-
 cvt:pre:boundlogarg (boundlogarg)
       0*/1: Bound logarithm arguments to nonnegative.
-
-cvt:pre:boundsbest (boundsbest, bestbounds)
-      0*/1/2/3/4: Submit best-known variable bounds to the solver (can inhibit
-      its presolve):
-
-      0 - no, hard bounds only
-      1 - all variables
-      2 - all but the result variables of smooth nonlinear expressions (exp,
-      log, pow, trigonometric functions, divisions, products), which keep
-      their hard bounds
-      3 - only those variables
-      4 - all variables if the submitted model has no nonlinear or quadratic
-      constraints or objectives, none otherwise (for solvers whose nonlinear
-      relaxations are solved by a barrier method; MP2NL sets it for such
-      subsolvers).
-
-      Note: when a variable can be fixed, the stronger bounds are always
-      submitted.
-
-cvt:pre:continuous_fixed_vars (continuous_fixed_vars, ctg_fixed)
-      0/1*: Make fixed variables continuous, to avoid fake MIPs.
 
 cvt:pre:ctx2bndeq (ctx2bndeq)
       0/1*: Propagate exact context into conditional (dis)equalities-to-bound,
@@ -502,12 +376,6 @@ cvt:pre:ctx:atan (ctx:atan)
 
 cvt:pre:ctx:atanh (ctx:atanh)
       Context propagation for 'Atanh' expression, see cvt:pre:ctx:abs.
-
-cvt:pre:ctx:call (ctx:call)
-      Context propagation for 'Call' expression, see cvt:pre:ctx:abs.
-
-cvt:pre:ctx:ceil (ctx:ceil)
-      Context propagation for 'Ceil' expression, see cvt:pre:ctx:abs.
 
 cvt:pre:ctx:condlineq (ctx:condlineq)
       Context propagation for 'Conditional< AlgebraicConstraint< LinTerms,
@@ -570,19 +438,13 @@ cvt:pre:ctx:exp (ctx:exp)
 cvt:pre:ctx:expa (ctx:expa)
       Context propagation for 'ExpA' expression, see cvt:pre:ctx:abs.
 
-cvt:pre:ctx:floor (ctx:floor)
-      Context propagation for 'Floor' expression, see cvt:pre:ctx:abs.
-
 cvt:pre:ctx:ifthen (ctx:ifthen)
       Context propagation for 'IfThen' expression, see cvt:pre:ctx:abs.
 
 cvt:pre:ctx:impl (ctx:impl)
       Context propagation for 'Implication' expression, see cvt:pre:ctx:abs.
 
-cvt:pre:ctx:intdiv (ctx:intdiv)
-      Context propagation for 'IntDiv' expression, see cvt:pre:ctx:abs.
-
-cvt:pre:ctx:linfn (ctx:linfn)
+cvt:pre:ctx:linfunccon (ctx:linfunccon)
       Context propagation for 'LinearFunctionalConstraint' expression, see
       cvt:pre:ctx:abs.
 
@@ -592,7 +454,7 @@ cvt:pre:ctx:log (ctx:log)
 cvt:pre:ctx:loga (ctx:loga)
       Context propagation for 'LogA' expression, see cvt:pre:ctx:abs.
 
-cvt:pre:ctx:logi (ctx:logi)
+cvt:pre:ctx:logistic (ctx:logistic)
       Context propagation for 'Logistic' expression, see cvt:pre:ctx:abs.
 
 cvt:pre:ctx:max (ctx:max)
@@ -600,12 +462,6 @@ cvt:pre:ctx:max (ctx:max)
 
 cvt:pre:ctx:min (ctx:min)
       Context propagation for 'Min' expression, see cvt:pre:ctx:abs.
-
-cvt:pre:ctx:mod (ctx:mod)
-      Context propagation for 'Mod' expression, see cvt:pre:ctx:abs.
-
-cvt:pre:ctx:mul (ctx:mul)
-      Context propagation for 'Mul' expression, see cvt:pre:ctx:abs.
 
 cvt:pre:ctx:not (ctx:not)
       Context propagation for 'Not' expression, see cvt:pre:ctx:abs.
@@ -625,20 +481,14 @@ cvt:pre:ctx:pl (ctx:pl)
 cvt:pre:ctx:pow (ctx:pow)
       Context propagation for 'Pow' expression, see cvt:pre:ctx:abs.
 
-cvt:pre:ctx:powc (ctx:powc)
+cvt:pre:ctx:powconstexp (ctx:powconstexp)
       Context propagation for 'PowConstExp' expression, see cvt:pre:ctx:abs.
 
-cvt:pre:ctx:quadfn (ctx:quadfn)
+cvt:pre:ctx:quadfunccon (ctx:quadfunccon)
       Context propagation for 'QuadraticFunctionalConstraint' expression, see
       cvt:pre:ctx:abs.
 
-cvt:pre:ctx:round (ctx:round)
-      Context propagation for 'Round' expression, see cvt:pre:ctx:abs.
-
-cvt:pre:ctx:sdpdotprod (ctx:sdpdotprod)
-      Context propagation for 'SDPDotProd' expression, see cvt:pre:ctx:abs.
-
-cvt:pre:ctx:signpowc (ctx:signpowc)
+cvt:pre:ctx:signpowconstexp (ctx:signpowconstexp)
       Context propagation for 'SignpowConstExp' expression, see
       cvt:pre:ctx:abs.
 
@@ -653,27 +503,6 @@ cvt:pre:ctx:tan (ctx:tan)
 
 cvt:pre:ctx:tanh (ctx:tanh)
       Context propagation for 'Tanh' expression, see cvt:pre:ctx:abs.
-
-cvt:pre:disj2ind (disj2ind)
-      Absorb static disjunctions l || C, where C is a conditional comparison
-      used only there (or an AND of such), into indicator constraints !l ==>
-      C. This is how implications b==1 ==> C are received from AMPL. Bitwise
-      OR of the following values:
-
-      1 - Linear comparisons
-      2 - Quadratic comparisons
-      4 - Both disjuncts absorbable: absorb one into an indicator on the
-      other's result (if-else shape, complementarity)
-      8 - Comparisons x==k awaiting the unary encoding decision for x
-      (absorbed only if no encoding is chosen)
-      16 - Any AND of such comparisons (used only there) in positive context,
-      e.g., a disjunct (C1 && C2) of a multi-term disjunction: indicators on
-      the AND's result variable
-      32 - Static disjunctions l1 || .. || lm || (y1 && .. && yk) with the AND
-      used only there: clauses l1 || .. || lm || yj, without the AND's result
-      variable.
-
-      Requires cvt:pre:all=1. Default 11.
 
 cvt:pre:eqbinary
       0/1*: Preprocess reified equality comparison with a binary variable.
@@ -738,39 +567,24 @@ cvt:pre:unnest (cvt:unnest, cvt:pre:inline, cvt:inline)
       Inline nested expressions. Bitwise OR of the following values:
 
       1 - AND/FORALL and OR/EXISTS expressions
-      2 - Linear subexpressions in algebraic constraints
-      4 - Linear and quadratic subexpressions in algebraic constraints
-      8 - MIN/MAX
-      16 - Algebraic subexpressions in indicator constraints.
+      2 - Linear subexpressions
+      4 - Quadratic subexpressions
+      8 - MIN/MAX.
 
-      See also option cvt:dvelim concerning only the input model. Default 31.
-
-cvt:pre:vbnd (vbnd)
-      Comparisons x (cmp) c decided by the domain of x reuse an existing
-      binary instead of a new reified comparison. Bitwise OR of the following
-      values:
-
-      1 - Variable-bound constraints x >= L*b, x <= U*b with binary b (AMPL's
-      encoding of x in {0} union interval[L, U], or the user's), 0 <= c <= L:
-      reuse b or its negation
-      2 - Root disjunctions x <= a || x >= b (e.g., x == 0 || x >= L for x >=
-      0), a < c < b: reuse the comparison x >= b or its negation.
-
-      Default 3.
+      See also option cvt:dvelim concerning only the input model. Default 15.
 
 cvt:qp2passes (cvt:qp2pass, qp2passes, qp2pass)
       0/1*: Parse sums of QP expressions in 2 passes. Usually faster.
 
 cvt:quadcon (passquadcon)
-      0/1*: set to 0 to disable quadratic constraints. Synonym for
-      acc:quad..=0. Setting to 0 disables out-multiplication of quadratic
-      terms, then they are linearized.
+      Convenience option. Set to 0 to disable quadratic constraints. Synonym
+      for acc:quad..=0. Currently this disables out-multiplication of
+      quadratic terms, then they are linearized.
 
 cvt:quadobj (passquadobj)
       0/1*: Pass quadratic objective terms to the solver. When 0, if the
       solver accepts quadratic constraints, such a constraint will be created
-      with those, otherwise linearly approximated. With cvt:nlobj=0, ensures
-      the objective is linear.
+      with those, otherwise linearly approximated.
 
 cvt:socp (socpmode, socp)
       Second-Order Cone recognition mode:
@@ -806,8 +620,7 @@ cvt:sos (sos)
 cvt:sos2 (sos2)
       0*/1: Whether to honor SOS2 constraints for nonconvex piecewise-linear
       terms, using suffixes .sos and .sosref provided by AMPL. Currently under
-      rework; we recommend to switch off PL expression linearization in AMPL
-      (option pl_linearize 0).
+      rework.
 
 cvt:uenc:negctx:max (uenc:negctx:max, cvt:uenc:negctx, uenc:negctx)
       If cvt:uenc:ratio applies, max number of constants in comparisons
@@ -845,14 +658,6 @@ lim:iter (iterlimit, maxiter)
 lim:time (timelim, timelimit, maxtime)
       Maximum time in seconds (default 1000).
 
-lp:alg (lpalg)
-      LP algorithm when CPLEX is the LP solver:
-
-      0 - Automatic (default)
-      1 - Primal simplex
-      2 - Dual simplex
-      3 - Barrier.
-
 mip:bestbound (bestbound, return_bound)
       Whether to return suffix .bestbound for the best known MIP dual bound on
       the objective value:
@@ -863,20 +668,6 @@ mip:bestbound (bestbound, return_bound)
       The suffix is on the objective and problem and is -Infinity for
       minimization problems and +Infinity for maximization problems if there
       are no integer variables or if a dual bound is not available.
-
-mip:intfeastol (intfeastol, absintfeastol)
-      Absolute integer feasibility tolerance (default 1e-5, min 1e-12).
-
-mip:nodesel (nodesel)
-      Node selection strategy:
-
-      0 - Mixed (default)
-      1 - Best bound
-      2 - LIFO
-      3 - Minimum infeasibilities.
-
-mip:relintfeastol (relintfeastol)
-      Relative integer feasibility tolerance (default 0, max 0.1).
 
 mip:return_gap (return_mipgap)
       Whether to return mipgap suffixes or include mipgap values (|objectve -
@@ -926,34 +717,13 @@ obj:multi (multiobj)
 
       Note that with solver's native handling (when obj:multi=1 and
       supported), some solvers might have special rules for the tolerances,
-      especially for LP, and only allow linear objectives. See the solver
-      documentation and options cvt:quadobj, cvt:nlobj.
+      especially for LP, and not allow quadratic objectives. See the solver
+      documentation.
 
 obj:multi:options (multiobjoptions)
       0/1*: Regard multiobjective option suffixes which are objective suffixes
       beginning with option_. Example: suffix option_timelim; let
       _obj[2].option_timelim:=15;
-
-obj:multi:stats (multiobjstats)
-      0*/1: Report multiobjective pass statistics in the following objective
-      suffixes:
-
-      * .objpass: index of the pass where this objective was solved, 0 if not
-        solved due to a stop in a previous pass
-
-      * .objpass_result: the solve_result of the pass where this objective was
-        solved; -1 if not
-
-      * .objpass_runtime, _mipgap, _objval, _objbound, _work, _itercount,
-        _nodecount, _opennodecount if available.
-
-      With MP's emulation (obj:multi=2), _objval and _objbound refer to the
-      blended pass objective in the sense of the first objective, and _runtime
-      is the wall-clock time of the pass including model updates; numeric
-      statistics are NaN if not available for a pass. If the solver's native
-      multiobjective mode does not report pass statistics, use obj:multi=2.
-
-      See also tech:stats.
 
 obj:multi:weight (multiobjweight, obj:multi:weights, multiobjweights)
       How to interpret each objective's weight sign:
@@ -972,26 +742,6 @@ obj:no (objno)
       0 - None
       1 - First (default, if available)
       2 - Second (if available), etc.
-
-pre:lbttdo (lbttdo)
-      0/1: linear-feasibility-based range reduction (default 1).
-
-pre:mdo (mdo)
-      0/1: marginals-based range reduction (default 1).
-
-pre:obttdo (obttdo)
-      0/1: optimality-based range tightening (default 1).
-
-pre:pdo (pdo)
-      Number of probing problems in range reduction:
-
-      -2 - Automatic (default)
-      -1 - All
-      0 - None
-      n>0 - n problems.
-
-pre:tdo (tdo)
-      0/1: nonlinear-feasibility-based range reduction (default 1).
 
 sol:chk:fail (chk:fail, checkfail)
       Fail on MP solution check violations, with solve result 150.
@@ -1149,22 +899,6 @@ tech:seed (seed)
       Initial seed for random number generation, must be a positive integer
       (default 19631963).
 
-tech:stats (stats, tech:report_stats, solve_stats)
-      Whether to return solve statistics and timings; the information will be
-      stored in the problem suffixes: 'simplex_iterations',
-      'barrier_iterations', 'nodes' and possibly other solver-dependent
-      suffixes. A JSON representation of the information above is returned in
-      the problem suffix `stats`.
-      Note that timing information will also be included in the JSON
-      representation if tech:timing>0. Values:
-
-      0 - Do not report statistics (default)
-      1 - Report statistics in JSON format in the problem suffix 'stats'
-      2 - Report statistics in suffixes
-      3 - Report statistics both in suffixes and the suffix 'stats'.
-
-      See also obj:multi:stats.
-
 tech:sumfile (sumfile)
       Name of summary file.
 
@@ -1216,7 +950,8 @@ tech:writemodelonly (justwriteprob, justwritemodel)
 
 tech:writesolution (writesol, writesolution)
       Specifies the names of files where to export the solution and/or other
-      result files in solver's native formats. Option can be repeated.
+      result files in solver's native formats. Option can be repeated. File
+      name extensions can be ".sol[.tar.gz]", ".json", ".bas", ".ilp", etc.
 
 tech:xpresslibname (xpresslibname)
       If used, specifies the path to xpress libraries

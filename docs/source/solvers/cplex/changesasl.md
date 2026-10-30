@@ -1,5 +1,36 @@
 # CPLEXASL Changelog
 
+## 20261029
+- Fix: with multiobj=1, .objpriority values were assigned to the wrong
+  objectives unless the objectives were declared in increasing
+  priority order; the reported objective values were mixed up too.
+- Fix: with multiobj=1, an objective whose sense differs from that of
+  the current objective was optimized in the wrong direction.
+- Fix: with multiobj=1, an algorithm keyword such as dualopt silently
+  disabled multiobjective optimization. Now dualopt and primalopt
+  select the LP method of each objective; other algorithm keywords
+  are ignored with a message.
+- Fix: multiobjective MIP problems returned no solution (error 1200
+  from CPXmultiobjgetobjval). No basis or dual values are returned for
+  them; mipbasis and endbasis are ignored.
+- Fix: with mp2nl=1, multiobjective models (emulated by MP2NL)
+  crashed or returned no solution.
+- With mp2nl=1, an invalid option or another MP2NL error is reported
+  in the solution file (solve_result_num 500 and the message); before,
+  the driver exited without a solution file (AMPL reported 999).
+- Fixed keyword presos2reform, which set the SOS1 reformulation
+  parameter instead of the SOS2 one.
+- mipcuts now also sets bqpcuts, localimpliedcuts, mcfcuts, nodecuts,
+  rltcuts and splitcuts (3 is reduced to 2 where a cut type accepts
+  at most 2).
+- Documentation fixes: mipcrossover no longer lists -1 (rejected by
+  CPLEX; use solutiontype=2), submipstartalg no longer lists 6,
+  presolvenode documents values 2 and 3, default texts of iteration,
+  node and solution limits, integrality range, threads; prelinear is
+  marked deprecated by CPLEX. README.cplexasl.txt regenerated from
+  the -= output.
+- Relinked with CPLEX 22.2.0.
+
 ## 20230228
 - Relinked with CPLEX 22.01.02
 

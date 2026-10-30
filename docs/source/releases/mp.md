@@ -1,5 +1,148 @@
 # AMPL MP Library Changelog
 
+## 20261029
+- New: AMPL's *floor*, *ceil*, *round(x[, n])* (ties to even),
+  *trunc(x[, n])*, *div* and *mod* (also for real numbers and variable
+  divisors), before rejected as "unsupported". MIP reformulations:
+  floor/ceil by bounds with *cvt:mip:eps*, round with an even/odd
+  decomposition, div/mod by quotient and remainder as in MiniZinc's
+  linearization library. Options *acc:floor*, *acc:ceil*,
+  *acc:round*, *acc:intdiv*, *acc:mod*.
+- Products of variables with a bounded integer factor are reformulated
+  exactly for MIP solvers without (nonconvex) quadratics, by binary
+  expansion of the integer factor (option *cvt:mip:intprodbits*, default
+  30; 0 restores the piecewise-linear approximation); integer powers
+  x^k likewise. Before, such products were approximated.
+- Fix: with *cvt:quadcon=0*, quadratic range constraints were still
+  passed to solvers accepting them (e.g., MOSEK).
+- New functional constraint *r = x\*y* (*acc:mul*) for solvers taking
+  products of variables natively (CP-SAT): quadratic terms of
+  non-binary variables become such constraints instead of the
+  piecewise-linear approximation of *((x+y)^2-x^2-y^2)/2*; equal
+  products share one constraint. The default of *cvt:multoutcard*
+  is now per solver (1 for CP-SAT: a product of sums stays one
+  product of two auxiliary variables).
+- Fix: inlining algebraic subexpressions into an objective
+  (*cvt:pre:unnest*) could make it quadratic for solvers without
+  quadratic objectives (*cvt:quadobj=0*), which then failed.
+- Fix: checking whether an auxiliary variable can be replaced by its
+  defining expression (e.g., for MP2NL and expression-based solvers)
+  could add an unused copy of a comparison to the model.
+- Fix: a dual ray requested for a model without constraints
+  (MOSEK, "infeasible or unbounded") failed with "map::at".
+- Fix: *tech:writegraph* wrote empty names for auxiliary variables.
+- Fix: a nonconvex piecewise-linear term whose argument becomes
+  fixed at a breakpoint failed with "MIPFlatConverter: vector"
+  in solvers without native SOS2 (e.g., HiGHS, MOSEK, or
+  *acc:sos2=0*). The term now reduces to its value at that point.
+  A term with a single linear piece over its argument's domain
+  becomes one linear equality, without an SOS2 constraint.
+- Fix: chained piecewise-linear terms (one term's argument depends
+  on another term's result) could get wrong solutions in solvers
+  without native SOS2. The results of piecewise-linear terms now
+  receive bounds from their arguments' domains, also when these
+  are narrowed later, e.g., by linear constraints.
+- Change: the MIP reformulation of a nonconvex piecewise-linear
+  term (solvers without native SOS2, e.g., HiGHS, MOSEK, or
+  *acc:pl=0 acc:sos2=0*) no longer limits an unbounded argument to
+  +-1e6 silently: this amplified the feasibility tolerance by up to
+  1e6 and could give wrong solutions. An unbounded argument is now
+  an error; finite bounds are used as given. New option
+  *cvt:pl:domain* sets the limit explicitly, with a warning when
+  it applies (use with caution). With native SOS2, unbounded sides
+  of the argument are now modeled exactly by ray variables instead
+  of extending the end segments to 1e6; *cvt:pl:domain* restores
+  the extension.
+- Fix: *AMPLSSolve* (AMPLS C API) called the solver once, skipping
+  the iterations of the multiobjective emulator (*obj:multi=2*, or
+  *obj:multi=1* without native support); postsolving the results then
+  read uninitialized objectives and crashed. It now solves as drivers
+  do. This affected ASL drivers run with mp2nl=1.
+- AMPLS C API: *AMPLSReportError* writes the .sol file with a
+  solve result and message after a failed *AMPLSLoadNLModel* or
+  *AMPLSReportResults*, as drivers do on errors.
+- Fix: 64-bit integer options rejected values above 2^31
+  ("this number is larger than an int"); they are now parsed
+  as 64-bit integers.
+- Fix: the IIS of a model with logical constraints or if-then-else
+  expressions marked many unrelated constraints (*upp*): every
+  constraint that used a constant, e.g. the implicit else-0 of
+  *if ... then*, received the IIS status of MP's shared fixed
+  variable for that constant. Constants are no longer linked to
+  the constraints using them. Constraints sharing a subexpression
+  that is in the IIS are all reported.
+- Fix: with several objectives (*obj:multi*), *mip:return_gap* and
+  *mip:bestbound* stopped debug builds with an assertion in
+  *ReportSuffix*; release builds were unaffected. The objective
+  suffixes *.relmipgap*, *.absmipgap* and *.bestbound* carry the value
+  for the first objective and 0 for the others.
+- Option *cvt:pre:boundsbest* value 4: best-known bounds for all
+  variables when the submitted model has no nonlinear or quadratic
+  constraints or objectives, hard bounds otherwise. MP2NL sets it in
+  the configurations of the nonlinear subsolvers (knitro, ipopt,
+  conopt, snopt, minos, lgo, bonmin, couenne, baron, lindoglobal):
+  on MILPs the bounds speed up their branch-and-bound, on MINLPs the
+  bounds of auxiliary results degrade their barrier subproblems.
+- Option *cvt:pre:boundsbest* has values 2 and 3: 2 submits the
+  best-known bounds of all result variables except those of smooth
+  nonlinear expressions (exp, log, pow, trigonometric functions,
+  divisions, products), 3 only those. The decision whether a result
+  variable with a significant best-known bound stays explicit follows
+  the same per-variable rule.
+- Option *cvt:pre:auxint* (default 0): auxiliary result variables
+  whose integrality is implied by their defining constraint
+  (if-then-else, min/max/abs, count/numberof, integer linear and
+  quadratic functions of integer arguments) are submitted as
+  continuous; MP keeps their integrality for its reformulations.
+  Results of logical constraints, indicator binaries and arguments
+  of logical constraints submitted to the solver stay integer.
+  Solvers without continuous variables (CP-SAT) default to 1.
+  Fixed variables made continuous (*cvt:pre:continuous_fixed_vars*)
+  no longer change MP's internal variable types.
+- Fix: the big-M linearization of an indicator *b==v ==> c'x >= d*
+  (or *<=*) dropped the row when *d* equalled the body's best-known
+  bound, although that bound is not submitted by default
+  (*cvt:pre:boundsbest=0*). The solver then saw, e.g., the result of
+  *if b then x else 0* without its lower bound 0, and objectives
+  containing it were underestimated. The plain row is now kept.
+- *cvt:pre:disj2ind*: a variable reused as an indicator binary
+  (an if-then-else result in {0, 1}) gets hard bounds [0, 1]
+  (Xpress: "Non binary variable used as an indicator binary").
+- Option *cvt:pre:disj2ind* (default 11): convert disjunctions
+  *literal || C* with a single-use comparison *C*, which is how AMPL
+  sends implications *b==1 ==> C*, into indicators *b==1 ==> C*,
+  without auxiliary binaries. Also for conjunctions *C1 && C2* and
+  for *x != k*; *x == k* awaiting the unary encoding decision is
+  absorbed only if no encoding is chosen.
+- Option *cvt:pre:vbnd* (default 3): a comparison *x (cmp) c*
+  decided by the domain of *x* reuses an existing binary.
+  Bit 1: variable-bound constraints *x >= L*b*, *x <= U*b*
+  (*b* binary; AMPL's encoding of *x in {0} union interval[L, U]*),
+  with *0 <= c <= L*: *b* or its negation. Bit 2: root disjunctions
+  *x <= a || x >= b* (e.g., *x == 0 || x >= L*), *a < c < b*:
+  the comparison *x >= b* or its negation.
+- *cvt:pre:disj2ind* bits 16 (an AND of comparisons in positive
+  context, e.g., a disjunct of a multi-term disjunction, becomes
+  indicators on the AND's result) and 32 (a static disjunction
+  with an AND argument is distributed into clauses); AND members
+  which are not comparisons are implied by clauses.
+- Solution check: in the realistic mode, evaluate recomputed
+  conditional comparisons within *sol:chk:feastol*; recompute only
+  eliminated auxiliary variables.
+- Emulate *mip:basis* for linear algebraic MIPs in COPT, MOSEK, HiGHS,
+  and SCIP. Add independent fixed-model limits *mip:basis:timelimit*
+  and *mip:basis:iterlimit*, including native fixed-model paths.
+- *obj:multi:stats* with multi-objective emulation:
+  report *.objpass_objbound* separately from *.objpass_mipgap*;
+  report the statistics also when a pass stops
+  the solve (*.objpass=0*, *.objpass_result=-1*
+  and NaN values for the passes not run).
+- Fix multi-objective emulation when objectives of different
+  senses share a priority level: the sign of the weight was flipped
+  twice for objectives of a sense different from the first
+  objective of the level, giving wrong solutions.
+
+
 ## 20260908
 - Set membership operator discouraged
   during rework, see Modeling Guide.

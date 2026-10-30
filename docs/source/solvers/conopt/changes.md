@@ -1,5 +1,23 @@
 # CONOPT Changelog
 
+## 20261029
+- Fix: with mp2nl=1, multiobjective models (emulated by MP2NL)
+  crashed or returned no solution.
+- With mp2nl=1, an invalid option or another MP2NL error is reported
+  in the solution file (solve_result_num 500 and the message); before,
+  the driver exited without a solution file (AMPL reported 999).
+- Fixed: double-valued CONOPT options (tol_*, rat_nopen, lim_variable,
+  lim_time, trace_minstep) were truncated to integers before being
+  passed to CONOPT (tol_feas_max=1e-7 became 0).
+- New keywords for the documented CONOPT 4 options: flg_interv,
+  flg_negcurve, flg_nodefc, flg_nopen, flg_prep, flg_range, flg_slpmode,
+  flg_sqpmode, flg_square, flg_tracecns, frq_log_simple, frq_log_slpsqp,
+  frq_rescale, lim_dbg_1drv, lim_hess_est, lim_msg_dbg_1drv; maxtime as
+  a synonym of maxftime; param=Name=value for any CONOPT option.
+- lim_err_fnc_drv description: the default is errlim, not a GAMS
+  setting.
+
+
 ## 20251022
 - Added keywords *threads_fd* and *threads_2d* to control the number
   of threads used in function, first and second derivative evaluations.

@@ -1,5 +1,60 @@
 # XPRESS Changelog
 
+## 20261029
+- Fix: a global (spatial branch-and-bound) solve stopped by a time,
+  work or node limit, or interrupted, was reported as *solved?*
+  (*solve_result_num* 120, "locally optimal solution") with its
+  incumbent; it is now reported as a limit (e.g. 402, "time limit,
+  feasible solution"; 4xx without a feasible solution), from
+  XPRS_NLPSTOPSTATUS (or XPRS_STOPSTATUS).
+- Fix: in a native multi-objective solve (*obj:multi=1*), the MIP gap
+  combined the first objective's value with the last pass's bound; it
+  is now the last pass's gap.
+- Fix: *mip:basis* with *sol:poolmode=2* fixed the integer variables to
+  the enumerator's last solution; they are now fixed to the pool's
+  best, the reported solution.
+- Fix: with *sol:poolmode=2* (solution enumeration), the reported
+  solution and objective were the last solution the enumerator
+  visited, not the pool's best; the MIP gap and *.bestbound* referred
+  to the enumerator's search. The primary solution is now the pool's
+  best, and the bound is valid for it.
+- Options generated from the Xpress parameter database are named after
+  the control with MP prefixes (e.g. *mip:backtrack*, *lp:autoperturb*,
+  *bar:algaftercrossover*, *slp:algorithm*) instead of *<topic>:xprs_<name>*;
+  the control name (*backtrack*) and *XPRS_<NAME>* are synonyms, and the
+  ASL driver's keywords (*treeoutlev*, *mipops*, *heurroot*, ...) are
+  accepted. The headers are regenerated from the SDK database at build
+  time when it is available, with the control types verified against
+  the SDK headers.
+- The vendor documentation is used for every option in the database;
+  wrong defaults in the driver's own texts are gone.
+- *qp:nonconvex* is deprecated: the convexity check is *qp:convexitychk*
+  (*convexitychk*, IFCHECKCONVEXITY). *tech:globalfilemax* and
+  *tech:globalfileloginterval* are synonyms of *lim:maxtreefilesize* and
+  *mip:treefileloginterval*. *bar:cachesize*, *bar:l1cache* and
+  *tech:sleeponthreadwait* are ignored by Xpress.
+- *heurdepth* now sets HEURDEPTH as in the ASL driver (it was a synonym
+  of *lim:heurdiveiterlimit*); *heurfreq* is no longer ambiguous.
+- Solution pool: *sol:pooldups* (duplicate policy) is set on the pool
+  object and works, and distinct solutions are the default (the pool
+  used to report duplicates up to the limit); new *sol:poolgap*,
+  *sol:poolgapabs* and *sol:poolmode* with the same meaning as in the
+  Gurobi and CPLEX drivers; *sol:poollimit* defaults to 10 as
+  documented; *obj:multi:ops* and *obj:multi:log* added.
+- New *tech:optionnative* (*tech:param*, *param*): any Xpress control by
+  name, "NAME=value" or "NAME=?"; *alg:readbasis* (*basisin*): starting
+  basis from a .bas file. Rows are now named in the Xpress model, so
+  basis files written with *tech:writesolution* can be read back.
+- Add separate fixed-model limits *mip:basis:timelimit* and
+  *mip:basis:iterlimit*.
+- Retain the MIP solution when a supplementary fixed solve reaches a limit.
+- Optimized input of nonlinear expressions.
+- Fixed LP basis input.
+- Fixes in IIS reporting.
+- Option *tech:writesolution* supports formats
+  .sol/.prt, .iis, .bas/.bss.
+
+
 ## 20260624
 - Changes in MP, in particular:
   - Option *cvt:pow2_as_qp* prefers quadratization
@@ -189,15 +244,15 @@
 
 ## 20240617
 - *Multi-objective emulator*
-	- obj:multi=2 forces emulation, even if MO natively supported.
+  - *obj:multi=2* forces emulation, even if MO natively supported.
 	- Fixed a bug in the objective degradation suffixes
 		.objasbtol, .objreltol.
 
 
 ## 20240606
-- Fix mip:basis (post-solving as fixed MIP),
+- Fix *mip:basis* (post-solving as fixed MIP),
 	although fix + resolve from AMPL can be faster.
-- Fix reporting infeasibility with obj:multi=1.
+- Fix reporting infeasibility with *obj:multi=1*.
 
 
 ## 20240604
@@ -207,15 +262,15 @@
 
 ## 20240529
 - *Multi-objective emulator*
-	- All flat MP solvers support multi-objective mode (obj:multi=1),
+  - All flat MP solvers support multi-objective mode (*obj:multi=1*),
 		either natively, or via emulation.
 	- Suffixes .objpriority, .objweight, .objabstol, .objreltol.
-	- [BREAKING] Default intuitive handling of .objweight,
-		see option obj:multi:weight, even when natively supported.
+  - [BREAKING] Default intuitive handling of .objweight,
+    see option *obj:multi:weight*, even when natively supported.
 
 
 ## 20240429
-- [BREAKING] Merged `report_times` and `timing`; they 
+- [BREAKING] Merged options *report_times* and *timing*; they 
   are now aliases, set the value to 1 to have basic info,
   to 2 to have more detailed info.
 
@@ -228,13 +283,13 @@
     native PL functions or MP linearization.)
   - Disallow repeated weights for SOS constraints
     (suffixes `.sosno`/`.ref`.)
-- *Native handling of POW(x, INT)*.
+- Native handling of POW(x, INT).
   - Power expressions with positive integer exponent
     are passed natively to the solvers accepting them,
     vs previously quadratic or linear reformulation.
-- *Option `report_times`*.
-- *Unused `acc:` options*.
-  - The constraint acceptance options `acc:...`
+- Option *report_times*.
+- Unused *acc:* options.
+  - The constraint acceptance options *acc:...*
     for non-handled constraints are ignored
     (previously triggered error.)
 

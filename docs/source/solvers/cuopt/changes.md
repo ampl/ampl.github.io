@@ -1,5 +1,10 @@
 # CUOPT Changelog
 
+## 20261029
+- Option *mip:heuristicsonly* spelled correctly; the old
+  spelling *mip:hueristicsonly* remains as a synonym.
+
+
 ## 20251210
 - Option *obj:multi:options*: fix integer-valued
   objective-specific options.
