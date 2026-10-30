@@ -6,6 +6,25 @@ Solver path solvers "square" nonlinear complementarity problem;
 it is based on the PATH solver of Professor Michael C. Ferris and
 his (current or former) students Steven P. Dirkse and Todd S. Munson.
 
+## How to use it
+
+Install the Python API for AMPL and the PATH module:
+
+```bash
+python -m pip install amplpy --upgrade
+python -m amplpy.modules install path
+```
+
+Use PATH from Python:
+
+```python
+from amplpy import AMPL
+
+ampl = AMPL()
+# Load your model and data, then solve:
+ampl.solve(solver="path")
+```
+
 ## License setup
 
 To setup a license see:
