@@ -38,7 +38,7 @@ The algorithms in Bonmin are exact when the functions `f` and `g` are convex; in
             $ python -m pip install amplpy --upgrade
 
             # Install AMPL & solver modules:
-            $ python -m amplpy.modules install coin # install BONMIN
+            $ python -m amplpy.modules install bonmin # install BONMIN
 
             # Activate your license (e.g., free ampl.com/ce or ampl.com/academia licenses):
             $ python -m amplpy.modules activate <your-license-uuid>

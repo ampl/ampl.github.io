@@ -39,8 +39,8 @@ In case `amplpy.bundle` is not available, please upgrade amplpy to the latest ve
 	# Install Python API for AMPL
 	$ python -m pip install amplpy --upgrade
 
-	# Install solvers (e.g., HiGHS, Gurobi, COIN-OR)
-	$ python -m amplpy.modules install highs gurobi coin
+	# Install solvers (e.g., HiGHS, Gurobi, Ipopt)
+	$ python -m amplpy.modules install highs gurobi ipopt
 	```
 
 4) Create your main python script.

@@ -53,7 +53,7 @@ Google Colab offers a default [AMPL Community Edition](https://ampl.com/ce/) lic
     ```python
     from amplpy import AMPL, ampl_notebook
     ampl = ampl_notebook(
-    modules=["coin", "highs", "cplex", "gurobi"],   # Solvers to install
+    modules=["cbc", "couenne", "ipopt", "bonmin", "highs", "cplex", "gurobi"],   # Solvers to install
     license_uuid="default"  )                           # Use the default license
     ```
     This command will set up AMPL in the notebook with the required solvers and register magic commands for seamless operation.

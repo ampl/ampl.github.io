@@ -28,7 +28,7 @@ together with a filter linear search procedure.
             $ python -m pip install amplpy --upgrade
 
             # Install AMPL & solver modules:
-            $ python -m amplpy.modules install coin # install IPOPT
+            $ python -m amplpy.modules install ipopt # install IPOPT
 
             # Activate your license (e.g., free ampl.com/ce or ampl.com/academia licenses):
             $ python -m amplpy.modules activate <your-license-uuid>

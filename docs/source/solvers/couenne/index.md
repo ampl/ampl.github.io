@@ -26,7 +26,7 @@ The [COIN Couenne solver (COUENNE, Convex Over and Under ENvelopes for Nonlinear
             $ python -m pip install amplpy --upgrade
 
             # Install AMPL & solver modules:
-            $ python -m amplpy.modules install coin # install COUENNE
+            $ python -m amplpy.modules install couenne # install COUENNE
 
             # Activate your license (e.g., free ampl.com/ce or ampl.com/academia licenses):
             $ python -m amplpy.modules activate <your-license-uuid>

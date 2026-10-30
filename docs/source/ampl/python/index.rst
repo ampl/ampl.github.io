@@ -87,7 +87,8 @@ You can also install AMPL on :ref:`Google Colab <colab>` (`where it is free by d
     In the list ``modules`` you need to include
     ``"gokestrel"`` to use the `kestrel <https://dev.ampl.com/solvers/kestrel.html>`_ driver;
     ``"highs"`` for the `HiGHS <https://highs.dev/>`_ solver;
-    ``"coin"`` for the `COIN-OR <https://www.coin-or.org/>`_ solvers.
+    ``"cbc"``, ``"couenne"``, ``"ipopt"``, or ``"bonmin"`` for the corresponding
+    `COIN-OR <https://www.coin-or.org/>`_ solver.
     To use other commercial solvers, your license needs to include the commercial solver (e.g., an AMPL CE commercial solver trial).
 
 [`Model Colaboratory <https://colab.ampl.com>`_]

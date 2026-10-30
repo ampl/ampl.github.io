@@ -25,7 +25,7 @@ $ python
 
 List of modules available:
 
-- [Open-source solvers](https://ampl.com/products/solvers/open-source-solvers/): `highs`, `cbc`, `coin` (includes: CBC, Couenne, Ipopt, Bonmin), `open` (includes all open-source solvers)
+- [Open-source solvers](https://ampl.com/products/solvers/open-source-solvers/): `highs`, `cbc`, `couenne`, `ipopt`, `bonmin`, `coin` (includes: CBC, Couenne, Ipopt, Bonmin), `open` (includes all open-source solvers)
 
 -  [NEOS Server](https://www.neos-server.org/): `gokestrel` ([kestrel client](https://dev.ampl.com/solvers/kestrel.html))
 
@@ -107,10 +107,12 @@ You can install any of the following modules:
 	amplgsl
 	baron
 	base
+	bonmin
 	cbc
 	coin
 	conopt
 	copt
+	couenne
 	cplex
 	gcg
 	gecode
@@ -118,6 +120,7 @@ You can install any of the following modules:
 	gurobi
 	highs
 	ilogcp
+	ipopt
 	knitro
 	lgo
 	lindoglobal
@@ -184,7 +187,7 @@ All of this is also available from Python programmatically:
 >>> modules.installed()
 ['base', 'gurobi', 'highs']
 >>> modules.available()
-['baron', 'cbc', 'lindoglobal', 'xpress', 'gurobi', 'lgo', 'open', 'minos', 'copt', 'plugins', 'amplgsl', 'loqo', 'conopt', 'base', 'cplex', 'snopt', 'coin', 'knitro', 'highs', 'gokestrel']
+['baron', 'bonmin', 'cbc', 'couenne', 'ipopt', 'lindoglobal', 'xpress', 'gurobi', 'lgo', 'open', 'minos', 'copt', 'plugins', 'amplgsl', 'loqo', 'conopt', 'base', 'cplex', 'snopt', 'coin', 'knitro', 'highs', 'gokestrel']
 >>> modules.install('cplex')
 >>> modules.installed()
 ['base', 'cplex', 'gurobi', 'highs']
@@ -201,8 +204,8 @@ All of this is also available from Python programmatically:
 # Install Python API for AMPL
 $ python -m pip install amplpy --upgrade
 
-# Install solvers (e.g., HiGHS, Gurobi, COIN-OR)
-$ python -m amplpy.modules install highs gurobi coin
+# Install solvers (e.g., HiGHS, Gurobi, Ipopt)
+$ python -m amplpy.modules install highs gurobi ipopt
 
 # Activate your license (e.g., free ampl.com/ce or ampl.com/academia licenses)
 $ python -m amplpy.modules activate <license-uuid>
@@ -239,7 +242,7 @@ that is compatible with solvers that read .nl files, which means it works with a
 Install modules for HiGHS, CBC, Couenne, Bonmin, Ipopt, SCIP, and GCG:
 ```bash
 !pip install amplpy pyomo -q
-!python -m amplpy.modules install coin highs scip gcg -q  # Install HiGHS, CBC, Couenne, Bonmin, Ipopt, SCIP, and GCG
+!python -m amplpy.modules install highs cbc couenne bonmin ipopt scip gcg -q  # Install HiGHS, CBC, Couenne, Bonmin, Ipopt, SCIP, and GCG
 ```
 
 Use the solver modules from Pyomo:
