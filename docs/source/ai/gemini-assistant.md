@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # Gemini Assistant
 
 AMPLbot is a specialized custom Gem designed to act as your expert consultant for Mathematical Optimization and the AMPL modeling ecosystem directly within Google Gemini. 

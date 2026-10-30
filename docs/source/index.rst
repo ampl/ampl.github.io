@@ -63,7 +63,7 @@ It connects seamlessly to major :ref:`commercial and open-source solvers <solver
         :link: ai_for_optimization
         :link-type: ref
 
-        AI-focused resources for AMPL users, including amplbot and related tools.
+        AI-focused resources for AMPL users, including the Model Builder and related tools.
         
     .. grid-item-card:: AMPL on Google Colab
         :link: https://ampl.com/colab/

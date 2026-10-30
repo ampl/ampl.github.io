@@ -146,7 +146,9 @@ redirects["ampl/cicd/index.html"] = "../python/cicd.html"
 redirects["projects.html"] = "more/projects.html"
 redirects["faq.html"] = "more/faq.html"
 redirects["features.html"] = "more/new.html"
-redirects["help/faq-amplbot"] = "../ai/faq-amplbot.html"
+redirects["help/faq-amplbot"] = "../ai/model-builder.html"
+redirects["ai/faq-amplbot"] = "model-builder.html"
+redirects["ai/amplbot-chatgpt"] = "model-builder.html"
 
 examples_dir = os.path.join(os.path.dirname(__file__), "ampl/books/ampl/examples/")
 examples_list = os.listdir(examples_dir)
