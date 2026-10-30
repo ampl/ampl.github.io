@@ -25,7 +25,7 @@ $ python
 
 List of modules available:
 
-- [Open-source solvers](https://ampl.com/products/solvers/open-source-solvers/): `highs`, `cbc`, `couenne`, `ipopt`, `bonmin`, `coin` (includes: CBC, Couenne, Ipopt, Bonmin), `open` (includes all open-source solvers)
+- [Open-source solvers](https://ampl.com/products/solvers/open-source-solvers/): `highs`, `cbc`, `cpsat`, `couenne`, `ipopt`, `bonmin`, `coin` (includes: CBC, Couenne, Ipopt, Bonmin), `open` (includes all open-source solvers)
 
 -  [NEOS Server](https://www.neos-server.org/): `gokestrel` ([kestrel client](https://dev.ampl.com/solvers/kestrel.html))
 
@@ -114,6 +114,7 @@ You can install any of the following modules:
 	copt
 	couenne
 	cplex
+	cpsat
 	gcg
 	gecode
 	gokestrel
@@ -187,7 +188,7 @@ All of this is also available from Python programmatically:
 >>> modules.installed()
 ['base', 'gurobi', 'highs']
 >>> modules.available()
-['baron', 'bonmin', 'cbc', 'couenne', 'ipopt', 'lindoglobal', 'xpress', 'gurobi', 'lgo', 'open', 'minos', 'copt', 'plugins', 'amplgsl', 'loqo', 'conopt', 'base', 'cplex', 'snopt', 'coin', 'knitro', 'highs', 'gokestrel']
+['baron', 'bonmin', 'cbc', 'couenne', 'ipopt', 'lindoglobal', 'xpress', 'gurobi', 'lgo', 'open', 'minos', 'copt', 'plugins', 'amplgsl', 'loqo', 'conopt', 'base', 'cplex', 'cpsat', 'snopt', 'coin', 'knitro', 'highs', 'gokestrel']
 >>> modules.install('cplex')
 >>> modules.installed()
 ['base', 'cplex', 'gurobi', 'highs']

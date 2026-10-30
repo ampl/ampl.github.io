@@ -24,7 +24,7 @@ at the beginning of your notebook:
         license_uuid="default") # license to use
 
 In the list ``MODULES`` you can specify the AMPL solvers you want to use in your notebook.
-Full list of AMPL modules available: ``amplgsl``, ``baron``, ``bonmin``, ``cbc``, ``coin``, ``conopt``, ``copt``, ``couenne``, ``cplex``, ``gcg``, ``gecode``, ``gokestrel``, ``gurobi``, ``highs``, ``ilogcp``, ``ipopt``, ``knitro``, ``lgo``, ``lindoglobal``, ``loqo``, ``minos``, ``mosek``, ``open``, ``plugins``, ``scip``, ``snopt``, ``xpress``.
+Full list of AMPL modules available: ``amplgsl``, ``baron``, ``bonmin``, ``cbc``, ``coin``, ``conopt``, ``copt``, ``couenne``, ``cplex``, ``cpsat``, ``gcg``, ``gecode``, ``gokestrel``, ``gurobi``, ``highs``, ``ilogcp``, ``ipopt``, ``knitro``, ``lgo``, ``lindoglobal``, ``loqo``, ``minos``, ``mosek``, ``open``, ``plugins``, ``scip``, ``snopt``, ``xpress``.
 
 .. raw:: html
 
