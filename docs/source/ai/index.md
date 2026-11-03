@@ -11,16 +11,7 @@ This section documents AMPL's AI-related resources and how to use them effective
 AMPL Agentic Skill <ampl-agentic-skill>
 Model Builder Demo <model-builder>
 AMPL MCP Knowledge Server <mcp-server>
-```
-
-```{toctree}
-:hidden:
-:maxdepth: 1
-:caption: Other Agentic AI tools
-
-Gemini Notebook for AMPL <notebooklm>
-AMPL for ChatGPT <amplbot-chatgpt>
-AMPL for Gemini <gemini-assistant>
+Other Agentic AI tools <other-tools>
 ```
 
 We provide AMPL-focused tools that work across the main LLM ecosystems, including platforms from OpenAI, Google, and Anthropic: an Agentic Skill, an interactive Model Builder, and an MCP server that connects any compatible assistant to AMPL's knowledge base, plus a grounded Gemini Notebook and custom assistants for ChatGPT and Gemini. The goal is to give optimization practitioners faster, more relevant guidance for AMPL modeling, solver usage, and AMPL+Python workflows, directly in the AI tools they already use.
