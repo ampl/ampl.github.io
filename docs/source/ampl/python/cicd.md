@@ -9,7 +9,7 @@ Since AMPL and all solvers are now available as [Python Packages](../python/modu
 ```bash
 python -m pip install amplpy
 python -m amplpy.modules install <solver1> <solver2> # install the solvers you need
-python -m amplpy.activate <license-uuid> # activate your license
+python -m amplpy.modules activate <license-uuid> # activate your license
 ```
 
 In order to then be able to access AMPL and solvers when using
@@ -55,7 +55,7 @@ jobs:
           python -m pip install -r requirements.txt
           python -m pip install amplpy
           python -m amplpy.modules install <solver1> <solver2>
-          python -m amplpy.activate <license-uuid>
+          python -m amplpy.modules activate <license-uuid>
       - name: Install package
         run: |
           python -m pip install .
@@ -88,7 +88,7 @@ jobs:
         python -m pip install -r requirements.txt
         python -m pip install amplpy
         python -m amplpy.modules install <solver1> <solver2>
-        python -m amplpy.activate <license-uuid>
+        python -m amplpy.modules activate <license-uuid>
       displayName: Install dependencies
     - bash: |
         python -m pip install .
