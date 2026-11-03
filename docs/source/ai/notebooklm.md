@@ -33,5 +33,5 @@ Unlike general-purpose LLMs that rely on broad and sometimes outdated training d
 
 ## Notes
 
-- **Larger Coding Projects:** The AMPL Notebook can generate models and `amplpy` code. For larger optimization projects, where the assistant works across many files in your own environment, the [AMPL Skill](claude-skills.md) or the [AMPL MCP Knowledge Server](mcp-server.md) may fit better.
+- **Larger Coding Projects:** The AMPL Notebook can generate models and `amplpy` code. For larger optimization projects, where the assistant works across many files in your own environment, the [AMPL Agentic Skill](ampl-agentic-skill.md) or the [AMPL MCP Knowledge Server](mcp-server.md) may fit better.
 - **Verification:** Grounding reduces hallucinations, but you should always review the generated syntax and logic, and run and validate the model, before deploying it to production.

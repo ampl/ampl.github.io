@@ -8,13 +8,22 @@ This section documents AMPL's AI-related resources and how to use them effective
 :hidden:
 :maxdepth: 1
 
-AMPL Skill <claude-skills>
-Gemini Notebook for AMPL <notebooklm>
-AMPL Model Builder <model-builder>
+AMPL Agentic Skill <ampl-agentic-skill>
+Model Builder Demo <model-builder>
 AMPL MCP Knowledge Server <mcp-server>
 ```
 
-We provide AMPL-focused tools that work across the main LLM ecosystems, including platforms from OpenAI, Google, and Anthropic: an Agent Skill, a grounded Gemini Notebook, an interactive Model Builder, and an MCP server that connects any compatible assistant to AMPL's knowledge base. The goal is to give optimization practitioners faster, more relevant guidance for AMPL modeling, solver usage, and AMPL+Python workflows, directly in the AI tools they already use.
+```{toctree}
+:hidden:
+:maxdepth: 1
+:caption: Other Agentic AI tools
+
+Gemini Notebook for AMPL <notebooklm>
+AMPL for ChatGPT <amplbot-chatgpt>
+AMPL for Gemini <gemini-assistant>
+```
+
+We provide AMPL-focused tools that work across the main LLM ecosystems, including platforms from OpenAI, Google, and Anthropic: an Agentic Skill, an interactive Model Builder, and an MCP server that connects any compatible assistant to AMPL's knowledge base, plus a grounded Gemini Notebook and custom assistants for ChatGPT and Gemini. The goal is to give optimization practitioners faster, more relevant guidance for AMPL modeling, solver usage, and AMPL+Python workflows, directly in the AI tools they already use.
 
 If you already subscribe to one of these platforms, you can typically use the AMPL tools within that subscription instead of adding a separate AI tool. Paid tiers often offer better model quality, higher usage limits, and faster responses.
 
@@ -40,27 +49,17 @@ Pick the tool that fits your workflow. Each card links to the tool and to its do
 ::::{grid} 1 1 2 2
 :gutter: 3
 
-:::{grid-item-card} {octicon}`stack;1.2em;sd-mr-1` AMPL Skill
+:::{grid-item-card} {octicon}`stack;1.2em;sd-mr-1` AMPL Agentic Skill
 *Agent Skill · Claude, ChatGPT, Gemini and other skills-capable assistants*
 
 Packages AMPL's modeling know-how: turns business logic into AMPL models and `amplpy` code, uses MP logical, piecewise and nonlinear operators where they fit, and knows solver options and callbacks. It suggests current best practices and still helps if you keep using `.dat` and `.run` files.
 
 **Best for:** day-to-day modeling and coding in the assistant you already use.
 +++
-[Get the Skill ↗](https://skill.ampl.com) · [Documentation](claude-skills.md)
+[Get the Skill ↗](https://skill.ampl.com) · [Documentation](ampl-agentic-skill.md)
 :::
 
-:::{grid-item-card} {octicon}`book;1.2em;sd-mr-1` Gemini Notebook for AMPL
-*Grounded notebook · Gemini Notebook*
-
-Answers only from official AMPL documents, with inline citations. Turns business logic into a model, writes `amplpy` code, and generates flashcards, reports, and audio overviews.
-
-**Best for:** learning, lookup, and solver callbacks with `ampls-api`.
-+++
-[Open notebook ↗](https://notebooklm.google.com/notebook/cae69bfc-18cf-4ffc-8c44-ca8141a1670f) · [Documentation](notebooklm.md)
-:::
-
-:::{grid-item-card} [{octicon}`dependabot;1.2em;sd-mr-1`](https://ampl.com/model-builder-demo/) Model Builder
+:::{grid-item-card} [{octicon}`dependabot;1.2em;sd-mr-1`](https://ampl.com/model-builder-demo/) Model Builder Demo
 *Interactive demo · ampl.com*
 
 Transforms plain-language business logic into an optimization model, guiding you through design and formulation in real time.
@@ -81,17 +80,56 @@ Connects your own assistant or IDE to AMPL's curated knowledge base, with cited 
 :::
 ::::
 
-### Which tool should I use?
+## Other Agentic AI tools
+
+AMPL-focused assistants that run inside a specific AI platform. Use them if you already work in that platform.
+
+::::{grid} 1 1 2 2
+:gutter: 3
+
+:::{grid-item-card} {octicon}`book;1.2em;sd-mr-1` Gemini Notebook for AMPL
+*Grounded notebook · Gemini Notebook*
+
+Answers only from official AMPL documents, with inline citations. Turns business logic into a model, writes `amplpy` code, and generates flashcards, reports, and audio overviews.
+
+**Best for:** learning, lookup, and solver callbacks with `ampls-api`.
++++
+[Open notebook ↗](https://notebooklm.google.com/notebook/cae69bfc-18cf-4ffc-8c44-ca8141a1670f) · [Documentation](notebooklm.md)
+:::
+
+:::{grid-item-card} {octicon}`comment-discussion;1.2em;sd-mr-1` AMPL for ChatGPT
+*Custom GPT · ChatGPT*
+
+AMPL's optimization assistant inside ChatGPT. Turns problem descriptions into AMPL models, bridges them to Python with `amplpy`, and helps troubleshoot infeasibility and solver performance.
+
+**Best for:** ChatGPT users who want AMPL guidance without leaving ChatGPT.
++++
+[Open in ChatGPT ↗](https://l.ampl.com/https://chatgpt.com/g/g-68c00de8b030819185be6db190ad7bce-amplbot) · [Documentation](amplbot-chatgpt.md)
+:::
+
+:::{grid-item-card} {octicon}`sparkle-fill;1.2em;sd-mr-1` AMPL for Gemini
+*Custom Gem · Google Gemini*
+
+AMPL's optimization consultant inside Gemini. Formulates and debugs models with an `amplpy`-first approach and relates answers to the AMPL Book and official documentation.
+
+**Best for:** Gemini users who want AMPL guidance without leaving Gemini.
++++
+[Open in Gemini ↗](https://gemini.google.com/gem/1u6aK9nY_4HUERmBtPSH58WJiFQfR7uLa?usp=sharing) · [Documentation](gemini-assistant.md)
+:::
+::::
+
+## Which tool should I use?
 
 | If you want to… | Use |
 | --- | --- |
-| Turn business logic into a model | [Model Builder](https://ampl.com/model-builder-demo/), [AMPL Skill](https://skill.ampl.com), [Gemini Notebook](https://notebooklm.google.com/notebook/cae69bfc-18cf-4ffc-8c44-ca8141a1670f) |
-| Get AMPL model and `amplpy` code | [AMPL Skill](https://skill.ampl.com), [Gemini Notebook](https://notebooklm.google.com/notebook/cae69bfc-18cf-4ffc-8c44-ca8141a1670f), [MCP Knowledge Server](mcp-server.md) |
-| Debug an infeasible or slow model | AMPL Skill, MCP Knowledge Server |
+| Turn business logic into a model | [Model Builder](https://ampl.com/model-builder-demo/), [AMPL Agentic Skill](https://skill.ampl.com) |
+| Get AMPL model and `amplpy` code | [AMPL Agentic Skill](https://skill.ampl.com), [MCP Knowledge Server](mcp-server.md) |
+| Debug an infeasible or slow model | AMPL Agentic Skill, MCP Knowledge Server |
 | Get answers that cite the AMPL documentation | [Gemini Notebook](https://notebooklm.google.com/notebook/cae69bfc-18cf-4ffc-8c44-ca8141a1670f), MCP Knowledge Server |
-| Write logical constraints with MP operators | AMPL Skill, MCP Knowledge Server |
-| Set up solver callbacks | Gemini Notebook, AMPL Skill |
-| Create study material for a team | Gemini Notebook |
+| Write logical constraints with MP operators | AMPL Agentic Skill, MCP Knowledge Server |
+| Set up solver callbacks | Gemini Notebook, AMPL Agentic Skill |
+| Create study material for a team | Gemini Notebook, MCP Knowledge Server |
+| Get AMPL help inside ChatGPT or Gemini | [AMPL for ChatGPT](amplbot-chatgpt.md), [AMPL for Gemini](gemini-assistant.md) |
 | Use your own AI client or IDE | [MCP Knowledge Server](mcp-server.md) |
 | Keep everything on your own servers | [MCP Knowledge Server, on-premises](mcp-server.md#on-premises-deployment) |
 

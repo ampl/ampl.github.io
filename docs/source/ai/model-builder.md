@@ -1,6 +1,6 @@
-# AMPL Model Builder
+# Model Builder Demo
 
-The AMPL Model Builder is an interactive demo that transforms plain-language business logic directly into optimization models. Powered by AMPL's specialized optimization agent, it guides you through designing, translating, and formulating decision problems in real time.
+The AMPL Model Builder is a free interactive demo that lets you discover how optimization could be applied to your business. It can transform plain-language business logic directly into optimization models, and it guides you through designing, translating, and formulating decision problems in real time.
 
 Try it here: [AMPL Model Builder demo](https://ampl.com/model-builder-demo/). It runs on ampl.com, with nothing to install.
 
@@ -15,7 +15,7 @@ Try it here: [AMPL Model Builder demo](https://ampl.com/model-builder-demo/). It
 
 The Model Builder is best for drafting a first model, especially when the problem is still described in business terms. Once you have a formulation, continue in your own environment:
 
-- Use the [AMPL Skill](claude-skills.md) in your AI assistant to turn the draft into an AMPL model and `amplpy` code, and to refine it.
+- Use the [AMPL Agentic Skill](ampl-agentic-skill.md) in your AI assistant to turn the draft into an AMPL model and `amplpy` code, and to refine it.
 - Connect the [AMPL MCP Knowledge Server](mcp-server.md) to get source-cited answers while you extend and debug the model.
 - Use the [Gemini Notebook for AMPL](notebooklm.md) to look up the AMPL syntax and features the model uses.
 
