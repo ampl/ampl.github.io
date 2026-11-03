@@ -1,25 +1,22 @@
 (what_is_new)=
 # What's New?
 
-## Amplbot — AI Companion for Optimization
+## AMPL Model Builder — From Business Logic to Optimization Models
 
-We've introduced Amplbot, a specialized AI assistant for optimization that helps you build, improve, and debug AMPL and Python models directly from natural language prompts. It's integrated as a GPT on ChatGPT and trained specifically on AMPL modeling workflows.
+The AMPL Model Builder transforms plain-language business logic directly into optimization models. Powered by AMPL's specialized optimization agent, it guides you through designing, translating, and formulating decision problems in real time.
 
-Access amplbot directly [here](https://l.ampl.com/https://chatgpt.com/g/g-68c00de8b030819185be6db190ad7bce-amplbot).
+Try it [here](https://ampl.com/model-builder-demo/).
 
-### What amplbot can do
+### What the Model Builder can do
 
-* Explain AMPL syntax and modeling concepts
-* Translate natural language descriptions into AMPL or Python (amplpy) code
-* Help debug and refine models, including diagnosing infeasibilities and suggesting reformulations
-* Assist with data handling and integration in Python workflows
-* Offer guidance on solver usage and modeling best practices
+* Start from a plain-language description of your decision problem
+* Help you design the model structure with the agent
+* Translate business rules into sets, parameters, variables, constraints, and an objective
+* Let you test AI-drafted models without starting from scratch
 
-Amplbot does not execute code, but the code it generates is usually ready to run in environments like Google Colab or VS Code.
+The Model Builder does not replace validation: check every constraint against your business rules, then run and validate the model in your own environment.
 
-Whether you're new to optimization or tackling complex models, amplbot can streamline your workflow and reduce the time from idea to optimized model.
-
-See the [Amplbot FAQ section](https://dev.ampl.com/ai/faq-amplbot.html) for more details. 
+See the [AMPL Model Builder page](../ai/model-builder.md) for more details.
 
 
 ## New IDE for AMPL: Official Extension for Visual Studio Code

@@ -70,11 +70,11 @@ In this example, we use the image [`python:3.9-slim-bullseye`](https://hub.docke
 
 In the example above we used a Python container, for other options see [AMPL on Docker Containers](ampl_docker).
 
-## What is amplbot?
+## What is the AMPL Model Builder?
 
-Amplbot is a specialized AI companion for optimization that helps you learn AMPL, formulate models from natural language, and generate ready-to-run Amplpy code. It streamlines the entire modeling workflow. [Amplbot FAQ](https://dev.ampl.com/ai/faq-amplbot.html).
+The AMPL Model Builder transforms plain-language business logic directly into optimization models. Powered by AMPL's specialized optimization agent, it guides you through designing, translating, and formulating decision problems in real time. See [AMPL Model Builder](../ai/model-builder.md).
 
-You can access it for free in [Amplbot GPT](https://l.ampl.com/https://chatgpt.com/g/g-68c00de8b030819185be6db190ad7bce-amplbot).
+You can try it in the [Model Builder demo](https://ampl.com/model-builder-demo/).
 
 ## How to Add AMPL Installation Directory to PATH/Path?
 
