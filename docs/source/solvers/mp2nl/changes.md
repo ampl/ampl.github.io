@@ -2,7 +2,23 @@
 
 ## 20261029
 - Version 0.2.
-- Configuration *alglib4nl* (ALGLIB for AMPL), from Knitro's: logical
+- Fix: complementarity was reformulated (e.g., product with Knitro's
+  configuration) instead of written as NL complementarity
+  (*acc:nlcompl=2*, default), since 20261029.
+- Configurations no longer set *acc:compl*, which has no effect in
+  MP2NL (it accepts complementarity as *acc:nlcompl*). The help of
+  *cvt:compl* says that it applies only with *acc:nlcompl=0*.
+- New configurations of solvers not accepting NL complementarity
+  convert it (*acc:nlcompl=0*): *gurobiasl*, *cplexasl*, *xpressasl*
+  (disjunction), *bonmin*, *snopt*, *minos*, *lgo*, *loqo* (product,
+  *cvt:compl=1*), in addition to *ipopt*, *lindoglobal* and others.
+  MINOS and SNOPT ignored NL complementarity
+  constraints, the others failed.
+- Quadratic constraints created by reformulations (e.g., *acc:div=0*)
+  are written as quadratic expressions again, as before 20261029
+  (*cvt:quadcon=0* linearizes them). ASL MIP solvers may need their
+  nonconvex options (e.g., Gurobi's *nonconvex=2*).
+- Configuration *alglib4nl* (ALGLIB for AMPL): logical
   expressions, if-then-else, min/max/abs, SOS and indicators are
   linearized by MP; complementarity is converted with
   *cvt:compl=1* (product): ALGLIB ignores NL complementarity

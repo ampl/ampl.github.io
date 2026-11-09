@@ -1,5 +1,21 @@
 # BARONMP Changelog
 
+## 20261029
+- New options for documented BARON settings: *alg:feastol*
+  (AbsConFeasTol), *mip:intfeastol* (AbsIntFeasTol), *alg:boxtol*,
+  *alg:cutoff*, *alg:isoltol*, *alg:relfeastol*, *mip:relintfeastol*,
+  *branch:point*, *branch:var*, *alg:dolocal*, *pre:lbttdo*, *lp:alg*,
+  *pre:mdo*, *mip:nodesel*, *alg:nouter1*, *alg:noutiter*,
+  *alg:noutpervar*, *alg:numloc*, *pre:obttdo*, *alg:outgrid*, *pre:pdo*,
+  *pre:tdo*, *alg:wantdual*.
+- Fixed: with *numsol* > 1 the last of BARON's solutions was reported
+  instead of the best; the alternative solutions were reported
+  numsol times each; *sol:stub* files were written into BARON's scratch
+  directory (deleted afterwards) instead of the working directory;
+  a relative *tech:scratch* path failed; limits with an intermediate
+  feasible solution were reported as "without a feasible solution".
+
+
 ## 20260624
 - Changes in MP, in particular:
   - Option *cvt:pow2_as_qp* prefers quadratization

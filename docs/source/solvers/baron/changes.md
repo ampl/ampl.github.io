@@ -1,5 +1,23 @@
 # BARON Changelog
 
+## 20261029
+- Fix: with mp2nl=1, multiobjective models (emulated by MP2NL)
+  crashed or returned no solution.
+- With mp2nl=1, an invalid option or another MP2NL error is reported
+  in the solution file (solve_result_num 500 and the message); before,
+  the driver exited without a solution file (AMPL reported 999).
+- New keywords for documented BARON options: absconfeastol,
+  absintfeastol, boxtol, brptstra, brvarstra, cutoff, dolocal, isoltol,
+  lbttdo, lpalg, mdo, nodesel, nouter1, noutiter, noutpervar, numloc,
+  obttdo, outgrid, pdo, relconfeastol, relintfeastol, tdo, wantdual, and
+  param=Name=value to pass any BARON option.
+- Fixed: iisint was written with a misplaced semicolon; tolerance and
+  bound values were written with one significant digit (epsa=1.5e-6
+  became 2e-06); iisint and lpsolver descriptions corrected (default 0,
+  la04 accepted); the epsr default of this driver (1e-6) is stated
+  against BARON's own (1e-9).
+- README.baron.txt regenerated from `baron -=`.
+
 ## 20251225
 - Updated to Baron 25.12.10, which inlcludes bug fixes.
 

@@ -516,8 +516,7 @@ cvt:bigM (cvt:bigm, cvt:mip:bigM, cvt:mip:bigm)
       than (1.0 / [integrality tolerance])
 
 cvt:compl (cvt:complementarity)
-      Complementarity conversion method (if not accepted natively, see
-      acc:compl and acc:nlcompl). Default 0:
+      Complementarity conversion method (unless accepted natively). Default 0:
 
       0 - Disjunction: a<=0 || b<=0, a>=0, b>=0
       1 - Product: a*b=cvt:compl:tol

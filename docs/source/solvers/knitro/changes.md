@@ -1,5 +1,9 @@
 # KNITRO Changelog
 
+## 20261029
+- Fix: crash with `use_asl=1` and `numthreads` > 1 in local
+  builds (the driver's C code was compiled without OpenMP).
+
 ## 20260714
 - Updated to Knitro 16.0.0, changes include:
     - Nonlinear Modeler. This new tool allows describing expressions symbolically as expression trees. Once the expression is described, Knitro evaluates it and computes all required derivatives automatically using automatic differentiation AD. Set option `use_asl=0`.
