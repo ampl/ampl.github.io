@@ -16,6 +16,8 @@
   a synonym of maxftime; param=Name=value for any CONOPT option.
 - lim_err_fnc_drv description: the default is errlim, not a GAMS
   setting.
+- When CONOPT stops because of evaluation errors at the starting
+  point, the message says so (solve_result_num 531 as before).
 
 
 ## 20251022
