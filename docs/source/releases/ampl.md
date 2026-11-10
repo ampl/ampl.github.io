@@ -1,5 +1,29 @@
 # AMPL Changelog
 
+## 20261109
+
+* Fix a bug (fault) in `display` of an ordered set's parameter when the ordering set had not been evaluated yet. Example:
+```
+set A;
+set B ordered = {a in A: a <> 'x'};
+param p {B};
+data; set A := x y z w; model;
+let p['y'] := 0.5;
+let p['z'] := 0.6;
+display p;   # fault
+```
+
+* Set operations (`union`, `inter`, `diff`, `symdiff`) whose operands have different dimension now give an error instead of a warning.
+
+* Fix minor errors such as "*Initial.objscalefactor has not been assigned a value*" for suffixes declared with bounds, e.g.
+```
+suffix objscalefactor IN, >=1e-6, <=1e6;
+```
+
+* Fix a bug when displaying the cardinal of empty integer intervals.
+
+* Fix an obscure bug (fault) related to indexed `environ` under certain circumstances.
+
 ## 20260809
 
 * For blockmode users, fix block names for commands being called while `times` and `gentimes` are enabled.
