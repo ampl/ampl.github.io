@@ -215,6 +215,14 @@ acc:nlassignle
       1 - Accepted but automatic redefinition will be used where possible
       2 - Accepted natively and preferred
 
+acc:nlcon (acc:nlalgcon)
+      Solver acceptance level for 'NLConstraint' as flat constraint, default
+      2:
+
+      0 - Not accepted natively, automatic redefinition will be attempted
+      1 - Accepted but automatic redefinition will be used where possible
+      2 - Accepted natively and preferred
+
 acc:or (acc:exists)
       Solver acceptance level for 'OrConstraint' as flat constraint, default
       2:
@@ -357,6 +365,7 @@ alg:concurrentmethod (concurrentmethod)
       1  - Barrier and dual simplex
       2  - Barrier and primal simplex
       3  - Dual and primal simplex
+      4  - PDHG, dual and primal simplex (Gurobi 14+)
 
 alg:cutoff (cutoff)
       If the optimal objective value is worse than cutoff, report "objective
@@ -422,6 +431,7 @@ alg:method (method, lpmethod, simplex)
            alg:concurrentmethod).
       6  - PDHG (Primal-Dual Hybrid Gradient). For PDHG on GPU, see
            alg:pdhggpu.
+      7  - NL barrier (Gurobi 14+); see also alg:optimalitytarget.
 
       Note: for NLP barrier method, see alg:optimalitytarget.
 
@@ -470,12 +480,20 @@ alg:pdhgconvtol (pdhgconvtol)
       the solution respects the feasibility tolerance (see alg:pdhgabstol)
       (default 1e-6).
 
-alg:pdhggpu (pdhggpu)
-      Enables PDHG on GPU on compatible systems (requires alg:method=6 and a
-      GPU-enabled build):
+alg:pdhgearlycrossover (pdhgearlycrossover)
+      How early PDHG starts concurrent crossover (Gurobi 14+): the first
+      crossover thread starts once the PDHG iterate satisfies the feasibility
+      and convergence tolerances relaxed by a factor of 10^value. Value 0 runs
+      crossover only after PDHG has finished, as in Gurobi 13 (default 2;
+      should be in [0, 16]).
 
-      0 - No (default)
-      1 - Yes.
+alg:pdhggpu (pdhggpu)
+      Enables PDHG on GPU on compatible systems (requires alg:method=6 or a
+      PDHG MIP heuristic option, and a GPU-enabled build):
+
+      -1 - Automatic choice (default)
+      0  - No
+      1  - Yes.
 
 alg:pdhgreltol (pdhgreltol)
       PDHG relative feasibility tolerance (default 1e-6; set it to 0 to use
@@ -569,7 +587,8 @@ bar:corr (barcorrectors)
       iteration (default -1 = automatic choice).
 
 bar:crossover (crossover)
-      How to transform a barrier solution to a basic one:
+      How to transform an interior LP solution (from barrier, PDHG or NL
+      barrier) to a basic one:
 
       -1 - Automatic choice (default)
       0  - None: return an interior solution
@@ -761,6 +780,15 @@ cut:network (networkcuts)
       1  - Conservative cut generation
       2  - Aggressive cut generation.
 
+cut:oa (oacuts)
+      Outer approximation cuts for MIQP, MIQCP and MINLP (Gurobi 14+; not
+      overridden by "cuts"):
+
+      -1 - Automatic choice (default)
+      0  - No cuts
+      1  - Conservative cut generation
+      2  - Aggressive cut generation.
+
 cut:passes (cutpasses)
       Maximum number of cutting-plane passes during root-cut generation;
       default = -1 ==> automatic choice.
@@ -896,7 +924,7 @@ cvt:names (names, modelnames)
       3 - Create generic names.
 
 cvt:nlobj (passnlobj)
-      0*/1: Pass nonlinear objective terms to the solver. When 0, if the
+      0/1*: Pass nonlinear objective terms to the solver. When 0, if the
       solver accepts nonlinear constraints, such a constraint will be created
       with those, otherwise linearly approximated. With cvt:quadobj=0, ensures
       the objective is linear.
@@ -1662,6 +1690,15 @@ mip:norelheurwork (norelheurwork, norelwork)
       relaxation. The work metrix is hard to define precisely, as it depends
       on the machine (default 0).
 
+mip:noreltreeheur (noreltreeheur)
+      How aggressively to run the NoRel heuristic during the tree search
+      (Gurobi 14+). Helps when LP relaxations are cheap but feasible solutions
+      are hard to find; the final dual bound may be weaker:
+
+      -1 - Automatic: only when mip:focus=1 (default)
+      0 - Off
+      1-3 - Increasingly aggressive.
+
 mip:obbt (obbt)
       Controls aggressiveness of Optimality - Based Bound Tightening:
 
@@ -1690,6 +1727,19 @@ mip:partition (partitionplace)
 
       The partition heuristic is only run when partition_place is between 1
       and 31 and some variables have suitable .partition suffix values.
+
+mip:pdhgheursolutions (pdhgmipheursolutions)
+      Limit on the number of solutions found by the PDHG MIP heuristic, which
+      runs branch-and-bound with PDHG node relaxations (Gurobi 14+; default 0
+      = heuristic off). See also alg:pdhggpu.
+
+mip:pdhgheurtime (pdhgmipheurtime)
+      Time limit (in seconds) for the PDHG MIP heuristic (Gurobi 14+; default
+      0). Introduces nondeterminism; use mip:pdhgheurwork for deterministic
+      results.
+
+mip:pdhgheurwork (pdhgmipheurwork)
+      Work limit for the PDHG MIP heuristic (Gurobi 14+; default 0).
 
 mip:plateau:absgaptol (mip:plateauabsgaptol, plateauabsgaptol)
       If set (>0), also track the reported absolute MIP gap as progress for
@@ -1834,13 +1884,22 @@ nlbar:dfeastol (nlbardfeastol)
       For the NL barrier algorithm, the dual feasibility error must be smaller
       in order for a model to be declared locally optimal (default 1e-6).
 
+nlbar:initmu (nlbarinitmu)
+      Initial barrier parameter of the NL barrier algorithm; smaller values
+      suit starting points close to the optimum (default 1).
+
 nlbar:iterlim (nlbariterlim, lim:nlbariter)
-      Limits the number of barrier NL iterations performed (default 1000).
+      Limits the number of barrier NL iterations performed (default 10000).
 
 nlbar:pfeastol (nlbarpfeastol)
       For the NL barrier algorithm, the primal feasibility error must be
       smaller in order for a model to be declared locally optimal (default
       1e-6).
+
+nlbar:startpush (nlbarstartpush)
+      Minimum distance by which the NL barrier algorithm pushes a user
+      starting point away from variable bounds, never past the midpoint of
+      finite bounds (default 1e-2).
 
 obj:*:abstol (obj_*_abstol)
       Absolute tolerance for objective with index *. Can only be applied on a
@@ -2064,7 +2123,9 @@ pre:funcpieces (funcpieces)
 pre:funcpiecesuf (funcpiecesuf, funcpiecesuffixes)
       0/1*: whether to consider the individual .funcpiece... suffixes in
       objectives and constraints, which impact Gurobi's approximation quality
-      of nonlinear constraints, beyond the corresponding global options
+      of nonlinear constraints, beyond the corresponding global options. With
+      Gurobi 14 the suffixes apply only to function constraints, obtained by
+      setting acc:_expr=0
 
 pre:miqcpform (premiqcpform)
       For mixed-integer quadratically constrained (MIQCP) problems, how Gurobi
@@ -2155,7 +2216,8 @@ pre:sparsify (presparsify)
 
       -1 - Automatic choice (default)
       0  - No
-      1  - Yes.
+      1  - Yes, for MIP models
+      2  - Yes, for all models, including LP and MIP relaxations.
 
 qcp:dual (qcpdual)
       Whether to compute dual variables when the problem has quadratic

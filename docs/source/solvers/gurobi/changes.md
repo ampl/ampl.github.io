@@ -1,15 +1,29 @@
 # GUROBI Changelog
 
+## 20261119
+- Support for Gurobi 14:
+  - New option *alg:pdhgearlycrossover* controls how early PDHG starts
+    concurrent crossover; 0 runs crossover only after PDHG has finished.
+  - *iis:find* reports nonlinear constraints as IIS members and suffix
+    *.iisforce* applies to them.
+  - Suffixes *.funcpieces*, *.funcpieceerror*, *.funcpiecelength* and
+    *.funcpieceratio* apply only to function constraints: set
+    *acc:_expr=0* to pass nonlinear functions that way. For nonlinear
+    constraints the suffixes are ignored, with a warning.
+- *pre:sparsify* documents value 2 (all model types).
+  Documented ranges of *pre:funcpieceerror*, *pre:funcpiecelength*
+  and *pre:funcpieces* follow the Gurobi limits.
+
+
 ## 20261029
-- Prepare for Gurobi 14 (options available when built against 14):
+- Add options requiring Gurobi 14:
   *alg:method=7* (NL barrier), *alg:concurrentmethod=4*,
   *cut:oa*, *mip:noreltreeheur*, *mip:pdhgheursolutions*,
   *mip:pdhgheurtime*, *mip:pdhgheurwork*, *nlbar:initmu*,
   *nlbar:startpush*; *alg:pdhggpu* follows the 14 range.
   New option *obj:multi:inheritparams* (all versions) controls
   parameter inheritance of multi-objective passes, whose Gurobi
-  default changes in 14. Solution pool values are read via
-  *PoolNX*/*PoolNObjVal*.
+  default changes in 14.
 - Add separate fixed-model limits *mip:basis:timelimit* and
   *mip:basis:iterlimit*.
 - Align option documentation with Gurobi 13.0.3 parameters:
